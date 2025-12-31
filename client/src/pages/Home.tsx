@@ -1,0 +1,165 @@
+import { motion } from "framer-motion";
+import { ArrowRight, Scale, Shield, FileText, Users } from "lucide-react";
+import { Link } from "wouter";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.1 } }
+};
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 bg-grid-pattern overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background via-transparent to-background z-0 pointer-events-none" />
+        
+        <div className="container mx-auto max-w-4xl relative z-10 text-center">
+          <motion.div 
+            initial="hidden" 
+            animate="visible" 
+            variants={stagger}
+            className="space-y-6"
+          >
+            <motion.div variants={fadeIn}>
+              <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-primary/5 text-primary rounded-full mb-4">
+                Public Benefit Organization
+              </span>
+            </motion.div>
+            
+            <motion.h1 
+              variants={fadeIn}
+              className="text-4xl md:text-6xl font-serif font-bold text-primary leading-tight text-balance"
+            >
+              Barran Dodger Legal & Ethical Trust Fund
+            </motion.h1>
+            
+            <motion.p 
+              variants={fadeIn}
+              className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance"
+            >
+              Converting sworn testimony, verified documentation, and lived evidence into public-benefit action.
+            </motion.p>
+            
+            <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/mission" className="w-full sm:w-auto px-8 py-3 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+                Our Mission <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="/contact" className="w-full sm:w-auto px-8 py-3 bg-white border border-border text-foreground font-medium rounded hover:bg-muted/50 transition-all shadow-sm">
+                Get Involved
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Core Principles */}
+      <section className="py-20 bg-white border-y border-border/50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <PrincipleCard 
+              icon={<Shield className="h-8 w-8" />}
+              title="Truth Over Narrative"
+              description="We prioritize verifiable facts and documented evidence over convenient storytelling or political expediency."
+            />
+            <PrincipleCard 
+              icon={<FileText className="h-8 w-8" />}
+              title="Evidence Over Ideology"
+              description="Our foundation rests on sworn testimony, affidavits, and concrete documentation rather than theoretical frameworks."
+            />
+            <PrincipleCard 
+              icon={<Scale className="h-8 w-8" />}
+              title="Accountability Over Silence"
+              description="Breaking the cycle of institutional silence through transparent, lawful, and ethical confrontation of misconduct."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1 relative">
+              {/* Abstract visual representation of documents/archives */}
+              <div className="aspect-[4/3] bg-white rounded-lg shadow-xl border border-border p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+                <div className="relative z-10 h-full flex flex-col justify-center space-y-6">
+                  <div className="h-2 w-24 bg-primary/20 rounded" />
+                  <div className="space-y-3">
+                    <div className="h-px w-full bg-border" />
+                    <div className="h-px w-full bg-border" />
+                    <div className="h-px w-3/4 bg-border" />
+                  </div>
+                  <div className="pl-6 border-l-2 border-primary/30 py-2">
+                    <p className="font-serif italic text-muted-foreground">
+                      "The Trust is founded upon the complete body of testimony, affidavits, and evidence archives authored and compiled by Barran Dodger."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="order-1 lg:order-2 space-y-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">Founding Basis</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                The Trust exists for the benefit of humanity to uphold ethical governance and lawful accountability. We operate as a non-profit, faith-neutral, and non-partisan entity solely for public benefit.
+              </p>
+              <ul className="space-y-4 pt-4">
+                {[
+                  "Protect vulnerable persons and whistleblowers",
+                  "Support truth-telling grounded in due process",
+                  "Advocate for justice and institutional transparency",
+                  "Prevent abuse of power through education"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <span className="text-foreground/80">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Founder Quote */}
+      <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
+        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-3xl">
+          <Users className="h-12 w-12 mx-auto mb-8 opacity-80" />
+          <blockquote className="font-serif text-2xl md:text-3xl italic leading-relaxed mb-8 opacity-90">
+            "I claim no special authority beyond documented experience, sworn statements, and an ethical responsibility to the public."
+          </blockquote>
+          <cite className="not-italic font-medium tracking-wide text-sm opacity-70">
+            — BARRAN DODGER, FOUNDER & LIVING WITNESS
+          </cite>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
+
+function PrincipleCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
+  return (
+    <div className="group p-8 rounded-lg border border-border bg-background hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div className="mb-6 text-primary opacity-80 group-hover:opacity-100 transition-opacity">
+        {icon}
+      </div>
+      <h3 className="text-xl font-bold mb-3 font-serif">{title}</h3>
+      <p className="text-muted-foreground leading-relaxed">
+        {description}
+      </p>
+    </div>
+  );
+}
