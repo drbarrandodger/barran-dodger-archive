@@ -29,10 +29,15 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2 mb-4">
               <Scale className="h-6 w-6" />
-              <span className="font-serif font-bold text-lg">BarranDodger.com.au Trust</span>
+              <div className="flex flex-col">
+                <span className="font-serif font-bold text-lg leading-none">Barran Dodger Legal & Ethical Trust Fund</span>
+                <span className="text-[10px] uppercase tracking-wider text-secondary-foreground/60 font-medium mt-1">
+                  The Trustee for www.barrandodger.com.au
+                </span>
+              </div>
             </div>
             <p className="text-secondary-foreground/80 text-sm leading-relaxed max-w-xs">
-              The Trustee for www.barrandodger.com.au — Upholding ethical governance, protecting truth-tellers, and converting evidence into public-benefit action.
+              Upholding ethical governance, protecting truth-tellers, and converting evidence into public-benefit action.
             </p>
           </div>
 
@@ -84,9 +89,10 @@ export function Footer() {
 
         <div className="pt-8 border-t border-secondary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-secondary-foreground/60">
           <div className="flex flex-col items-center md:items-start gap-1">
-            <p>&copy; {new Date().getFullYear()} The Trustee for www.barrandodger.com.au. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund. All rights reserved.</p>
             <div className="flex flex-col sm:flex-row gap-x-4 gap-y-1 font-mono text-secondary-foreground/40">
               <p>ABN: 78 833 496 164</p>
+              <p>The Trustee for www.barrandodger.com.au</p>
             </div>
           </div>
           <div className="flex gap-6">

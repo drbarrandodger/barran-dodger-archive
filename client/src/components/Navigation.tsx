@@ -30,9 +30,14 @@ export function Navigation() {
           <div className="bg-primary text-primary-foreground p-2 rounded-sm group-hover:bg-primary/90 transition-colors">
             <Scale className="h-5 w-5" />
           </div>
-          <span className="font-serif font-bold text-lg md:text-xl text-primary tracking-tight">
-            BarranDodger.com.au Trust
-          </span>
+          <div className="flex flex-col">
+            <span className="font-serif font-bold text-lg md:text-xl text-primary tracking-tight leading-none">
+              Barran Dodger Legal & Ethical Trust Fund
+            </span>
+            <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium mt-1">
+              The Trustee for www.barrandodger.com.au
+            </span>
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

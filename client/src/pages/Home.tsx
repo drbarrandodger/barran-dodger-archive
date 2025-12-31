@@ -48,8 +48,14 @@ export default function Home() {
               variants={fadeIn}
               className="text-4xl md:text-6xl font-serif font-bold text-primary leading-tight text-balance"
             >
-              The Trustee for www.barrandodger.com.au
+              Barran Dodger Legal & Ethical Trust Fund
             </motion.h1>
+            <motion.p
+              variants={fadeIn}
+              className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium mt-4"
+            >
+              The Trustee for www.barrandodger.com.au
+            </motion.p>
             
             <motion.p 
               variants={fadeIn}
