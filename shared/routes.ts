@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertSubscriberSchema, insertInquirySchema, subscribers, inquiries } from './schema';
+import { insertSubscriberSchema, insertInquirySchema, insertEvidenceSchema, subscribers, inquiries, evidenceItems } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -33,6 +33,15 @@ export const api = {
         201: z.custom<typeof inquiries.$inferSelect>(),
         400: errorSchemas.validation,
         500: errorSchemas.internal,
+      },
+    },
+  },
+  evidence: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/evidence',
+      responses: {
+        200: z.array(z.custom<typeof evidenceItems.$inferSelect>()),
       },
     },
   },

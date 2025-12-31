@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Gavel, Globe, ShieldAlert } from "lucide-react";
 
 export default function Mission() {
   return (
@@ -42,27 +42,46 @@ export default function Mission() {
               <h2 className="text-2xl font-serif font-bold text-primary mb-8 text-center">Core Objectives</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <ObjectiveCard 
-                  title="Ethical Governance"
-                  description="Advocating for systems that prioritize moral responsibility and lawful accountability over institutional self-protection."
+                  icon={<Globe className="h-6 w-6 text-primary" />}
+                  title="Human Rights Advocacy"
+                  description="Upholding the rights afforded under the UN Convention on the Rights of Persons with Disabilities and seeking redress for systemic violations."
                 />
                 <ObjectiveCard 
+                  icon={<ShieldAlert className="h-6 w-6 text-primary" />}
                   title="Whistleblower Protection"
                   description="Creating safe pathways and support networks for individuals who risk their safety to expose corruption and misconduct."
                 />
                 <ObjectiveCard 
+                  icon={<Gavel className="h-6 w-6 text-primary" />}
                   title="Evidence-Based Justice"
-                  description="Supporting legal actions and public inquiries that rely on verified documentation rather than hearsay or narrative control."
+                  description="Supporting legal actions and public inquiries that rely on verified documentation, forensic timestamps, and immutable records."
                 />
                 <ObjectiveCard 
-                  title="Public Education"
-                  description="Providing resources to help citizens understand their rights, the nature of institutional abuse, and methods of lawful resistance."
+                  icon={<CheckCircle2 className="h-6 w-6 text-primary" />}
+                  title="Public Accountability"
+                  description="Ensuring that institutional failures are acknowledged publicly and formal apologies are issued alongside meaningful redress."
                 />
               </div>
             </section>
 
             <section className="bg-primary/5 p-8 md:p-12 rounded-xl border border-primary/10">
+              <h2 className="text-2xl font-serif font-bold text-primary mb-6">Human Rights Focus</h2>
+              <div className="prose prose-slate max-w-none text-muted-foreground">
+                <p className="mb-4">
+                  As documented in our submissions to the OHCHR and UNHRC, our focus includes:
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Ending systemic abuse and financial exploitation within disability support systems.</li>
+                  <li>Addressing professional isolation and social neglect of persons with disabilities.</li>
+                  <li>Combatting psychological torture and technological harassment (V2K).</li>
+                  <li>Ensuring transparency in NDIS management and oversight.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="bg-white p-8 md:p-12 rounded-xl border border-border">
               <h2 className="text-2xl font-serif font-bold text-primary mb-6">Our Public Commitment</h2>
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <CommitmentItem text="Truth over narrative" />
                 <CommitmentItem text="Evidence over ideology" />
                 <CommitmentItem text="Accountability over silence" />
@@ -78,9 +97,10 @@ export default function Mission() {
   );
 }
 
-function ObjectiveCard({ title, description }: { title: string, description: string }) {
+function ObjectiveCard({ title, description, icon }: { title: string, description: string, icon: React.ReactNode }) {
   return (
     <div className="bg-white p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+      <div className="mb-4">{icon}</div>
       <h3 className="font-bold text-lg text-primary mb-3">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
     </div>
@@ -89,9 +109,9 @@ function ObjectiveCard({ title, description }: { title: string, description: str
 
 function CommitmentItem({ text }: { text: string }) {
   return (
-    <div className="flex items-center gap-4 bg-white p-4 rounded border border-border/50">
+    <div className="flex items-center gap-4 bg-muted/30 p-4 rounded border border-border/50">
       <CheckCircle2 className="h-5 w-5 text-primary" />
-      <span className="font-medium text-foreground uppercase tracking-wide text-sm">{text}</span>
+      <span className="font-medium text-foreground uppercase tracking-wide text-xs">{text}</span>
     </div>
   );
 }

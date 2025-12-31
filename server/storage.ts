@@ -2,15 +2,20 @@ import { db } from "./db";
 import {
   subscribers,
   inquiries,
+  evidenceItems,
   type InsertSubscriber,
   type InsertInquiry,
+  type InsertEvidence,
   type Subscriber,
-  type Inquiry
+  type Inquiry,
+  type EvidenceItem
 } from "@shared/schema";
 
 export interface IStorage {
   createSubscriber(subscriber: InsertSubscriber): Promise<Subscriber>;
   createInquiry(inquiry: InsertInquiry): Promise<Inquiry>;
+  getEvidenceItems(): Promise<EvidenceItem[]>;
+  createEvidenceItem(evidence: InsertEvidence): Promise<EvidenceItem>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -28,6 +33,18 @@ export class DatabaseStorage implements IStorage {
       .values(insertInquiry)
       .returning();
     return inquiry;
+  }
+
+  async getEvidenceItems(): Promise<EvidenceItem[]> {
+    return await db.select().from(evidenceItems);
+  }
+
+  async createEvidenceItem(insertEvidence: InsertEvidence): Promise<EvidenceItem> {
+    const [evidence] = await db
+      .insert(evidenceItems)
+      .values(insertEvidence)
+      .returning();
+    return evidence;
   }
 }
 

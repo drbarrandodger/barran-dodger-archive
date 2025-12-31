@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Scale, Shield, FileText, Users } from "lucide-react";
+import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useQuery } from "@tanstack/react-query";
+import type { EvidenceItem } from "@shared/schema";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -14,6 +19,10 @@ const stagger = {
 };
 
 export default function Home() {
+  const { data: evidence } = useQuery<EvidenceItem[]>({ 
+    queryKey: ["/api/evidence"] 
+  });
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
@@ -50,19 +59,69 @@ export default function Home() {
             </motion.p>
             
             <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/mission" className="w-full sm:w-auto px-8 py-3 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
-                Our Mission <ArrowRight className="h-4 w-4" />
+              <Link href="/mission" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full gap-2">
+                  Our Mission <ArrowRight className="h-4 w-4" />
+                </Button>
               </Link>
-              <Link href="/contact" className="w-full sm:w-auto px-8 py-3 bg-white border border-border text-foreground font-medium rounded hover:bg-muted/50 transition-all shadow-sm">
-                Get Involved
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full">
+                  Get Involved
+                </Button>
               </Link>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
+      {/* Urgent Appeals Section */}
+      <section className="py-20 bg-muted/30 border-y border-border/50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-primary">
+                <AlertCircle className="h-5 w-5" />
+                <h2 className="text-3xl font-serif font-bold">Urgent Appeals & Forensic Evidence</h2>
+              </div>
+              <p className="text-muted-foreground">Formal human rights submissions and verified documentation.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {evidence?.map((item) => (
+              <Card key={item.id} className="hover-elevate">
+                <CardHeader>
+                  <div className="flex justify-between items-start mb-2">
+                    <Badge variant="secondary">{item.category}</Badge>
+                    <span className="text-xs font-mono text-muted-foreground">{item.referenceCode}</span>
+                  </div>
+                  <CardTitle className="font-serif text-xl">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                  {item.sha256 && (
+                    <div className="p-3 bg-muted rounded font-mono text-[10px] break-all border border-border">
+                      <span className="text-primary font-bold">SHA256:</span> {item.sha256}
+                    </div>
+                  )}
+                  <div className="pt-4">
+                    <Button variant="outline" className="w-full gap-2" asChild>
+                      <a href={item.externalUrl || "#"} target="_blank" rel="noopener noreferrer">
+                        View Document <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Core Principles */}
-      <section className="py-20 bg-white border-y border-border/50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             <PrincipleCard 
@@ -89,7 +148,6 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-              {/* Abstract visual representation of documents/archives */}
               <div className="aspect-[4/3] bg-white rounded-lg shadow-xl border border-border p-8 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="relative z-10 h-full flex flex-col justify-center space-y-6">

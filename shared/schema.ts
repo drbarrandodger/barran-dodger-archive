@@ -18,6 +18,18 @@ export const inquiries = pgTable("inquiries", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const evidenceItems = pgTable("evidence_items", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  category: text("category").notNull(), // e.g., "Legal", "Medical", "V2K", "Financial"
+  description: text("description"),
+  externalUrl: text("external_url"),
+  referenceCode: text("reference_code"), // e.g., "Ref. UR/UST/23/AUS/17"
+  timestamp: text("timestamp"), // Forensic timestamp from PDF
+  sha256: text("sha256"), // Forensic hash
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 export const insertSubscriberSchema = createInsertSchema(subscribers).pick({
   email: true,
 });
@@ -29,8 +41,16 @@ export const insertInquirySchema = createInsertSchema(inquiries).pick({
   message: true,
 });
 
+export const insertEvidenceSchema = createInsertSchema(evidenceItems).omit({
+  id: true,
+  createdAt: true,
+});
+
 export type Subscriber = typeof subscribers.$inferSelect;
 export type InsertSubscriber = z.infer<typeof insertSubscriberSchema>;
 
 export type Inquiry = typeof inquiries.$inferSelect;
 export type InsertInquiry = z.infer<typeof insertInquirySchema>;
+
+export type EvidenceItem = typeof evidenceItems.$inferSelect;
+export type InsertEvidence = z.infer<typeof insertEvidenceSchema>;
