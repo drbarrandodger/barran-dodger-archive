@@ -118,13 +118,13 @@ export default function Home() {
                   PhD Thesis & Academic Record
                 </CardTitle>
                 <CardDescription>
-                  Dr. Richard McLean's PhD research from Victoria University.
+                  "A Splice of My Life" - Dr. Richard McLean's PhD research from Victoria University.
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 bg-muted/20">
                 <div className="relative w-full aspect-[4/3] min-h-[400px]">
                   <iframe 
-                    src="https://simplebooklet.com/richardmcleanphd" 
+                    src="https://vuir.vu.edu.au/41836/" 
                     className="absolute inset-0 w-full h-full border-0"
                     allowFullScreen
                     title="Richard McLean PhD Thesis"

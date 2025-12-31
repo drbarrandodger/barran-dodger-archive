@@ -72,9 +72,9 @@ export async function registerRoutes(
       await storage.createEvidenceItem({
         title: "PhD Thesis: Victoria University",
         category: "Academic",
-        description: "What Are Young People's Ethical Opinions of What It Means to Be Human Both Now and in the Future Through the Lens of Technology?",
+        description: "A Splice of My Life: Arts-based research amplifying young people's ethical opinions of what it means to be human through technological lenses.",
         referenceCode: "PhD VU",
-        externalUrl: "https://simplebooklet.com/richardmcleanphd"
+        externalUrl: "https://vuir.vu.edu.au/41836/"
       });
 
       await storage.createEvidenceItem({
