@@ -31,7 +31,7 @@ export function Navigation() {
             <Scale className="h-5 w-5" />
           </div>
           <span className="font-serif font-bold text-lg md:text-xl text-primary tracking-tight">
-            Barran Dodger Trust
+            BarranDodger.com.au Trust
           </span>
         </Link>
 

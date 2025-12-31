@@ -27,7 +27,7 @@ export default function Mission() {
               <h2 className="text-2xl font-serif font-bold text-primary mb-6">Nature of the Trust</h2>
               <div className="prose prose-slate max-w-none text-muted-foreground">
                 <p className="leading-relaxed mb-6">
-                  The Barran Dodger Legal & Ethical Trust Fund is a non-profit, faith-neutral, and non-partisan organization. 
+                  The Trustee for www.barrandodger.com.au is a non-profit, faith-neutral, and non-partisan organization. 
                   We operate solely for the public benefit, independent of political affiliations or corporate interests.
                 </p>
                 <p className="leading-relaxed">

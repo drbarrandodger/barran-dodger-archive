@@ -67,8 +67,8 @@ export default function Contact() {
                       <h3 className="font-bold text-foreground mb-1">Office</h3>
                       <p className="text-sm text-muted-foreground">
                         Registered Non-Profit Address<br />
-                        [Address Redacted for Privacy]<br />
-                        United Kingdom
+                        VIC 3173<br />
+                        Australia
                       </p>
                     </div>
                   </div>

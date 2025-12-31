@@ -48,7 +48,7 @@ export default function Home() {
               variants={fadeIn}
               className="text-4xl md:text-6xl font-serif font-bold text-primary leading-tight text-balance"
             >
-              Barran Dodger Legal & Ethical Trust Fund
+              The Trustee for www.barrandodger.com.au
             </motion.h1>
             
             <motion.p 
