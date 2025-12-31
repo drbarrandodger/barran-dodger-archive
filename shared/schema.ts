@@ -21,12 +21,12 @@ export const inquiries = pgTable("inquiries", {
 export const evidenceItems = pgTable("evidence_items", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
-  category: text("category").notNull(), // e.g., "Legal", "Medical", "V2K", "Financial"
+  category: text("category").notNull(), // e.g., "Legal", "Medical", "V2K", "Financial", "Publications"
   description: text("description"),
   externalUrl: text("external_url"),
-  referenceCode: text("reference_code"), // e.g., "Ref. UR/UST/23/AUS/17"
-  timestamp: text("timestamp"), // Forensic timestamp from PDF
-  sha256: text("sha256"), // Forensic hash
+  referenceCode: text("reference_code"), 
+  timestamp: text("timestamp"), 
+  sha256: text("sha256"), 
   createdAt: timestamp("created_at").defaultNow(),
 });
 

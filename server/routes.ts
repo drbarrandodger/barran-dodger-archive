@@ -53,31 +53,61 @@ export async function registerRoutes(
     res.json(items);
   });
 
-  // Seeding Evidence Data
-  async function seedEvidence() {
+  // Seeding Data
+  async function seedData() {
     const existing = await storage.getEvidenceItems();
     if (existing.length === 0) {
+      // Forensic Documents
       await storage.createEvidenceItem({
         title: "CHOSEN THROUGH FIRE - Forensic Origin Document",
         category: "Legal/Spiritual",
-        description: "Immutable historical record proving authorship, intent, and chronology of the 50,000-word narrative project. Documents high-order executive function and structured reasoning.",
+        description: "Immutable historical record proving authorship, intent, and chronology of the 50,000-word narrative project.",
         referenceCode: "STAMP & VERIFY",
         timestamp: "SUCCESS! OpenTimestamps receipt created",
         sha256: "100fce740fd4829c0f81d447180532fb986ae06f08bdd8e25eb1fae958a7eb6d",
         externalUrl: "attached_assets/“CHOSEN_THROUGH_FIRE”_1767161917354.pdf"
       });
+
+      // Apple Books / Publications
       await storage.createEvidenceItem({
-        title: "UNHRC Asylum Claim & OHCHR Submission",
-        category: "Human Rights",
-        description: "Urgent appeal for recognition and redress regarding systemic human rights violations, financial exploitation, and systemic neglect in Australia.",
-        referenceCode: "Ref. UR/UST/23/AUS/17",
-        sha256: "b484027e371179b5888380ceb4697ee20f7bcef78e53b2df773bfdd659f090c7",
-        externalUrl: "attached_assets/ONHCR%20UN%20Barran%20Dodger%20Asylum%20Claim%20.pdf_1767161751365.pdf"
+        title: "Betrayed, Murdered, Forsaken: The Harrowing Life of Barran Dodger",
+        category: "Publications",
+        description: "Autobiography chronicling persecution and systemic abuse; published in 2024.",
+        referenceCode: "Apple Books",
+        externalUrl: "https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290"
+      });
+      await storage.createEvidenceItem({
+        title: "CORONIAL INVESTIGATION REPORT",
+        category: "Publications",
+        description: "Documents investigation into alleged state-backed persecution and suspicious circumstances.",
+        referenceCode: "Apple Books",
+        externalUrl: "https://books.apple.com/gb/book/coronial-investigation-report/id6743447570"
+      });
+      await storage.createEvidenceItem({
+        title: "Recovered Not Cured: A Journey Through Schizophrenia",
+        category: "Publications",
+        description: "First autobiography dealing with mental illness and recovery; originally published by Allen & Unwin.",
+        referenceCode: "Apple Books",
+        externalUrl: "https://books.apple.com/us/author/rich-mclean/id258911491"
+      });
+      await storage.createEvidenceItem({
+        title: "Diary of a PhD Researcher",
+        category: "Publications",
+        description: "Exploration of young people's ethical opinions through the lens of technology.",
+        referenceCode: "Apple Books",
+        externalUrl: "https://books.apple.com/us/author/rich-mclean/id258911491"
+      });
+      await storage.createEvidenceItem({
+        title: "The Shrink!... And You Thought You Were Crazy!",
+        category: "Publications",
+        description: "Graphic novel/illustrated work exploring mental health themes.",
+        referenceCode: "Apple Books",
+        externalUrl: "https://books.apple.com/us/author/rich-mclean/id258911491"
       });
     }
   }
   
-  seedEvidence().catch(console.error);
+  seedData().catch(console.error);
 
   return httpServer;
 }
