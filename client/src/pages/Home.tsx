@@ -87,8 +87,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* SimpleBooklet Embed */}
-          <div className="mb-12">
+          {/* Interactive Archives Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             <Card className="overflow-hidden border-primary/20 shadow-lg">
               <CardHeader className="bg-primary/5 border-b border-primary/10">
                 <CardTitle className="font-serif text-2xl flex items-center gap-2 text-primary">
@@ -100,12 +100,34 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 bg-muted/20">
-                <div className="relative w-full aspect-[16/9] min-h-[500px]">
+                <div className="relative w-full aspect-[4/3] min-h-[400px]">
                   <iframe 
                     src="https://simplebooklet.com/barrandodger" 
                     className="absolute inset-0 w-full h-full border-0"
                     allowFullScreen
                     title="Barran Dodger Interactive Booklet"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden border-primary/20 shadow-lg">
+              <CardHeader className="bg-primary/5 border-b border-primary/10">
+                <CardTitle className="font-serif text-2xl flex items-center gap-2 text-primary">
+                  <Scale className="h-6 w-6" />
+                  PhD Thesis & Academic Record
+                </CardTitle>
+                <CardDescription>
+                  Dr. Richard McLean's PhD research from Victoria University.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 bg-muted/20">
+                <div className="relative w-full aspect-[4/3] min-h-[400px]">
+                  <iframe 
+                    src="https://simplebooklet.com/richardmcleanphd" 
+                    className="absolute inset-0 w-full h-full border-0"
+                    allowFullScreen
+                    title="Richard McLean PhD Thesis"
                   />
                 </div>
               </CardContent>

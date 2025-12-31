@@ -68,6 +68,15 @@ export async function registerRoutes(
         externalUrl: "attached_assets/“CHOSEN_THROUGH_FIRE”_1767161917354.pdf"
       });
 
+      // PhD & Academic Works
+      await storage.createEvidenceItem({
+        title: "PhD Thesis: Victoria University",
+        category: "Academic",
+        description: "What Are Young People's Ethical Opinions of What It Means to Be Human Both Now and in the Future Through the Lens of Technology?",
+        referenceCode: "PhD VU",
+        externalUrl: "https://simplebooklet.com/richardmcleanphd"
+      });
+
       await storage.createEvidenceItem({
         title: "EVIDENCE ARCHIVE RECREATED - OpenTimestamps Record",
         category: "Blockchain Evidence",
@@ -87,22 +96,6 @@ export async function registerRoutes(
         externalUrl: "https://medium.com/barrandodger/unveiling-the-truth-the-harrowing-yet-inspiring-journey-of-barran-dodger-12c7ac8f3a38"
       });
 
-      await storage.createEvidenceItem({
-        title: "The Invisible Warfare: White PsyOps Against the Cosmic Witness",
-        category: "Medium Articles",
-        description: "Detailed analysis of psychological operations, digital suppression, and identity deletion tactics.",
-        referenceCode: "Medium",
-        externalUrl: "https://medium.com/barrandodger/emergency-public-testimonial-of-dr-richard-william-mclean-barran-dodger-25c6a9f455b0"
-      });
-
-      await storage.createEvidenceItem({
-        title: "Barran Dodger: Australia's Most Infamous Truth-Seeker",
-        category: "Medium Articles",
-        description: "Examination of the 'Innocent Criminal' narrative and the fight against state machinery.",
-        referenceCode: "Medium",
-        externalUrl: "https://medium.com/barrandodger/barran-dodger-australias-most-infamous-truth-seeker-the-innocent-criminal-and-the-man-who-8582297afd8e"
-      });
-
       // Apple Books / Publications
       await storage.createEvidenceItem({
         title: "Betrayed, Murdered, Forsaken: The Harrowing Life of Barran Dodger",
@@ -118,14 +111,6 @@ export async function registerRoutes(
         description: "Documents investigation into alleged state-backed persecution and suspicious circumstances.",
         referenceCode: "Apple Books",
         externalUrl: "https://books.apple.com/gb/book/coronial-investigation-report/id6743447570"
-      });
-
-      await storage.createEvidenceItem({
-        title: "Recovered Not Cured: A Journey Through Schizophrenia",
-        category: "Publications",
-        description: "First autobiography dealing with recovery; originally published by Allen & Unwin.",
-        referenceCode: "Apple Books",
-        externalUrl: "https://books.apple.com/us/author/rich-mclean/id258911491"
       });
     }
   }
