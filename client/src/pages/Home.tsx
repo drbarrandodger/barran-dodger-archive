@@ -87,6 +87,31 @@ export default function Home() {
             </div>
           </div>
 
+          {/* SimpleBooklet Embed */}
+          <div className="mb-12">
+            <Card className="overflow-hidden border-primary/20 shadow-lg">
+              <CardHeader className="bg-primary/5 border-b border-primary/10">
+                <CardTitle className="font-serif text-2xl flex items-center gap-2 text-primary">
+                  <FileText className="h-6 w-6" />
+                  Barran Dodger Interactive Archive
+                </CardTitle>
+                <CardDescription>
+                  Digital interactive flipbook documenting the complete case and evidence.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 bg-muted/20">
+                <div className="relative w-full aspect-[16/9] min-h-[500px]">
+                  <iframe 
+                    src="https://simplebooklet.com/barrandodger" 
+                    className="absolute inset-0 w-full h-full border-0"
+                    allowFullScreen
+                    title="Barran Dodger Interactive Booklet"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {evidence?.map((item) => (
               <Card key={item.id} className="hover-elevate">
