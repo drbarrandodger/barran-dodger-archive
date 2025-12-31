@@ -121,7 +121,7 @@ export default function Home() {
                   "A Splice of My Life" - Dr. Richard McLean's PhD research from Victoria University.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-0 bg-muted/20">
+              <CardContent className="p-0 bg-muted/20 flex flex-col">
                 <div className="relative w-full aspect-[4/3] min-h-[400px]">
                   <iframe 
                     src="https://vuir.vu.edu.au/41836/" 
@@ -129,6 +129,17 @@ export default function Home() {
                     allowFullScreen
                     title="Richard McLean PhD Thesis"
                   />
+                </div>
+                <div className="p-4 bg-primary/5 border-t border-primary/10">
+                  <h4 className="font-bold text-sm mb-2">Publishing to Apple Books</h4>
+                  <p className="text-xs text-muted-foreground mb-4">
+                    To publish this work to Apple Books, you will need to export it as an EPUB file and upload it via the Apple Books Publishing Portal.
+                  </p>
+                  <Button variant="outline" size="sm" className="w-full gap-2" asChild>
+                    <a href="https://authors.apple.com/epub-upload" target="_blank" rel="noopener noreferrer">
+                      Apple Books Publishing Portal <ExternalLink className="h-3 w-3" />
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
