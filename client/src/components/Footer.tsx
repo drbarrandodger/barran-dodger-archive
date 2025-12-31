@@ -83,7 +83,10 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-secondary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-secondary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund. All rights reserved.</p>
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <p>&copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund. All rights reserved.</p>
+            <p className="font-mono text-secondary-foreground/40">ABN: 72 066 207 615</p>
+          </div>
           <div className="flex gap-6">
             <span>Privacy Policy</span>
             <span>Terms of Use</span>
