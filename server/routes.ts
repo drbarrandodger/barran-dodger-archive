@@ -57,15 +57,50 @@ export async function registerRoutes(
   async function seedData() {
     const existing = await storage.getEvidenceItems();
     if (existing.length === 0) {
-      // Forensic Documents
+      // Forensic / Blockchain Timestamped Documents
       await storage.createEvidenceItem({
         title: "CHOSEN THROUGH FIRE - Forensic Origin Document",
         category: "Legal/Spiritual",
-        description: "Immutable historical record proving authorship, intent, and chronology of the 50,000-word narrative project.",
+        description: "Immutable historical record proving authorship, intent, and chronology of the 50,000-word narrative project. Verified via OpenTimestamps.",
         referenceCode: "STAMP & VERIFY",
         timestamp: "SUCCESS! OpenTimestamps receipt created",
         sha256: "100fce740fd4829c0f81d447180532fb986ae06f08bdd8e25eb1fae958a7eb6d",
         externalUrl: "attached_assets/“CHOSEN_THROUGH_FIRE”_1767161917354.pdf"
+      });
+
+      await storage.createEvidenceItem({
+        title: "EVIDENCE ARCHIVE RECREATED - OpenTimestamps Record",
+        category: "Blockchain Evidence",
+        description: "2,048+ evidence files catalogued and linked. Chronological record of 35+ years of persecution, timestamped on the Bitcoin blockchain.",
+        referenceCode: "OTS Verification",
+        timestamp: "SUCCESS! OpenTimestamps receipt created",
+        sha256: "b484027e371179b5888380ceb4697ee20f7bcef78e53b2df773bfdd659f090c7",
+        externalUrl: "https://medium.com/@barrandodger/evidence-archive-recreated-14c6790baedc"
+      });
+
+      // Medium Publications
+      await storage.createEvidenceItem({
+        title: "Unveiling the Truth: The Harrowing Journey of Barran Dodger",
+        category: "Medium Articles",
+        description: "Comprehensive overview of Dr. McLean's struggle against corruption and systemic abuse.",
+        referenceCode: "Medium",
+        externalUrl: "https://medium.com/barrandodger/unveiling-the-truth-the-harrowing-yet-inspiring-journey-of-barran-dodger-12c7ac8f3a38"
+      });
+
+      await storage.createEvidenceItem({
+        title: "The Invisible Warfare: White PsyOps Against the Cosmic Witness",
+        category: "Medium Articles",
+        description: "Detailed analysis of psychological operations, digital suppression, and identity deletion tactics.",
+        referenceCode: "Medium",
+        externalUrl: "https://medium.com/barrandodger/emergency-public-testimonial-of-dr-richard-william-mclean-barran-dodger-25c6a9f455b0"
+      });
+
+      await storage.createEvidenceItem({
+        title: "Barran Dodger: Australia's Most Infamous Truth-Seeker",
+        category: "Medium Articles",
+        description: "Examination of the 'Innocent Criminal' narrative and the fight against state machinery.",
+        referenceCode: "Medium",
+        externalUrl: "https://medium.com/barrandodger/barran-dodger-australias-most-infamous-truth-seeker-the-innocent-criminal-and-the-man-who-8582297afd8e"
       });
 
       // Apple Books / Publications
@@ -76,6 +111,7 @@ export async function registerRoutes(
         referenceCode: "Apple Books",
         externalUrl: "https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290"
       });
+
       await storage.createEvidenceItem({
         title: "CORONIAL INVESTIGATION REPORT",
         category: "Publications",
@@ -83,24 +119,11 @@ export async function registerRoutes(
         referenceCode: "Apple Books",
         externalUrl: "https://books.apple.com/gb/book/coronial-investigation-report/id6743447570"
       });
+
       await storage.createEvidenceItem({
         title: "Recovered Not Cured: A Journey Through Schizophrenia",
         category: "Publications",
-        description: "First autobiography dealing with mental illness and recovery; originally published by Allen & Unwin.",
-        referenceCode: "Apple Books",
-        externalUrl: "https://books.apple.com/us/author/rich-mclean/id258911491"
-      });
-      await storage.createEvidenceItem({
-        title: "Diary of a PhD Researcher",
-        category: "Publications",
-        description: "Exploration of young people's ethical opinions through the lens of technology.",
-        referenceCode: "Apple Books",
-        externalUrl: "https://books.apple.com/us/author/rich-mclean/id258911491"
-      });
-      await storage.createEvidenceItem({
-        title: "The Shrink!... And You Thought You Were Crazy!",
-        category: "Publications",
-        description: "Graphic novel/illustrated work exploring mental health themes.",
+        description: "First autobiography dealing with recovery; originally published by Allen & Unwin.",
         referenceCode: "Apple Books",
         externalUrl: "https://books.apple.com/us/author/rich-mclean/id258911491"
       });
