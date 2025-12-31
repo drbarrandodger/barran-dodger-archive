@@ -85,7 +85,10 @@ export function Footer() {
         <div className="pt-8 border-t border-secondary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-secondary-foreground/60">
           <div className="flex flex-col items-center md:items-start gap-1">
             <p>&copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund. All rights reserved.</p>
-            <p className="font-mono text-secondary-foreground/40">ABN: 72 066 207 615</p>
+            <div className="flex flex-col sm:flex-row gap-x-4 gap-y-1 font-mono text-secondary-foreground/40">
+              <p>ABN: 78 833 496 164</p>
+              <p>Entity: The Trustee for www.barrandodger.com.au</p>
+            </div>
           </div>
           <div className="flex gap-6">
             <span>Privacy Policy</span>
