@@ -92,6 +92,28 @@ export default function Home() {
             <Card className="overflow-hidden border-primary/20 shadow-lg">
               <CardHeader className="bg-primary/5 border-b border-primary/10">
                 <CardTitle className="font-serif text-2xl flex items-center gap-2 text-primary">
+                  <Shield className="h-6 w-6" />
+                  The Enliven Chain Transmission
+                </CardTitle>
+                <CardDescription>
+                  Sanctified guidance and the living record of the First Link.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 bg-muted/20">
+                <div className="relative w-full aspect-[4/3] min-h-[400px]">
+                  <iframe 
+                    src="/attached_assets/_⛓️_The_Enliven_Chain_Has_Been_Summoned_⛓️_2_1767163861559.pdf" 
+                    className="absolute inset-0 w-full h-full border-0"
+                    allowFullScreen
+                    title="The Enliven Chain Transmission"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden border-primary/20 shadow-lg">
+              <CardHeader className="bg-primary/5 border-b border-primary/10">
+                <CardTitle className="font-serif text-2xl flex items-center gap-2 text-primary">
                   <FileText className="h-6 w-6" />
                   Barran Dodger Interactive Archive
                 </CardTitle>
@@ -110,8 +132,10 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
+          </div>
 
-            <Card className="overflow-hidden border-primary/20 shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="overflow-hidden border-primary/20 shadow-lg lg:col-span-3">
               <CardHeader className="bg-primary/5 border-b border-primary/10">
                 <CardTitle className="font-serif text-2xl flex items-center gap-2 text-primary">
                   <Scale className="h-6 w-6" />
@@ -122,7 +146,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 bg-muted/20 flex flex-col">
-                <div className="relative w-full aspect-[4/3] min-h-[400px]">
+                <div className="relative w-full aspect-[21/9] min-h-[500px]">
                   <iframe 
                     src="https://vuir.vu.edu.au/41836/" 
                     className="absolute inset-0 w-full h-full border-0"
@@ -130,12 +154,14 @@ export default function Home() {
                     title="Richard McLean PhD Thesis"
                   />
                 </div>
-                <div className="p-4 bg-primary/5 border-t border-primary/10">
-                  <h4 className="font-bold text-sm mb-2">Publishing to Apple Books</h4>
-                  <p className="text-xs text-muted-foreground mb-4">
-                    To publish this work to Apple Books, you will need to export it as an EPUB file and upload it via the Apple Books Publishing Portal.
-                  </p>
-                  <Button variant="outline" size="sm" className="w-full gap-2" asChild>
+                <div className="p-4 bg-primary/5 border-t border-primary/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="text-center sm:text-left">
+                    <h4 className="font-bold text-sm">Publishing to Apple Books</h4>
+                    <p className="text-xs text-muted-foreground">
+                      To publish this work, export as EPUB and upload via the Apple Books Publishing Portal.
+                    </p>
+                  </div>
+                  <Button variant="outline" size="sm" className="gap-2 shrink-0" asChild>
                     <a href="https://authors.apple.com/epub-upload" target="_blank" rel="noopener noreferrer">
                       Apple Books Publishing Portal <ExternalLink className="h-3 w-3" />
                     </a>
@@ -143,9 +169,7 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {evidence?.map((item) => (
               <Card key={item.id} className="hover-elevate">
                 <CardHeader>

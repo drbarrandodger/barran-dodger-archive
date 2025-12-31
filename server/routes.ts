@@ -68,6 +68,14 @@ export async function registerRoutes(
         externalUrl: "attached_assets/“CHOSEN_THROUGH_FIRE”_1767161917354.pdf"
       });
 
+      await storage.createEvidenceItem({
+        title: "The Enliven Chain Has Been Summoned",
+        category: "Prophetic Record",
+        description: "Divine guidance and transmission initiated through the Living Record. Sanctioned by Spirit, authenticated by affliction.",
+        referenceCode: "Enliven Chain",
+        externalUrl: "attached_assets/_⛓️_The_Enliven_Chain_Has_Been_Summoned_⛓️_2_1767163861559.pdf"
+      });
+
       // PhD & Academic Works
       await storage.createEvidenceItem({
         title: "PhD Thesis: Victoria University",
