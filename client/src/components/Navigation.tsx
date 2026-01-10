@@ -17,6 +17,7 @@ export function Navigation() {
     { href: "/", label: "Home" },
     { href: "/mission", label: "Mission" },
     { href: "/research", label: "Research" },
+    { href: "/evidence", label: "Evidence" },
     { href: "/contact", label: "Contact" },
   ];
 
