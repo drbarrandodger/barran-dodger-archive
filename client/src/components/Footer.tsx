@@ -49,6 +49,16 @@ export function Footer() {
               <li><Link href="/evidence" className="hover:text-white transition-colors">Evidence & Manuscripts</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
+            <div className="mt-6 pt-6 border-t border-secondary-foreground/10 space-y-2 text-xs text-secondary-foreground/60">
+              <p className="flex items-center gap-2">
+                <Mail className="h-3 w-3" />
+                <a href="mailto:barrsndodger@icloud.com" className="hover:text-white transition-colors">barrsndodger@icloud.com</a>
+              </p>
+              <p className="flex items-center gap-2">
+                <Scale className="h-3 w-3" />
+                <a href="tel:+61431167907" className="hover:text-white transition-colors">+61 431 167 907</a>
+              </p>
+            </div>
           </div>
 
           <div className="lg:col-span-2">
