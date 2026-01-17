@@ -44,7 +44,7 @@ export default function Home() {
             >
               <motion.div variants={fadeIn}>
                 <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-primary/5 text-primary rounded-full mb-4">
-                  Public Benefit Organization
+                  Public Benefit Organization • ABN: 78 833 496 164
                 </span>
               </motion.div>
               
@@ -65,15 +65,20 @@ export default function Home() {
                 variants={fadeIn}
                 className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed text-balance"
               >
-                Converting sworn testimony, verified documentation, and lived evidence into public-benefit action.
+                Establishing an incorruptible forensic record against institutional misconduct. Converting sworn testimony into public-benefit action.
               </motion.p>
               
-              <motion.p 
+              <motion.div 
                 variants={fadeIn}
-                className="text-lg text-muted-foreground italic border-l-4 border-primary/20 pl-6 py-1"
+                className="p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg space-y-3"
               >
-                "The Eliven Chain has been summoned. An incorruptible archive of lived trauma and whistleblower testimony, sealed in the immutable substrate of blockchain."
-              </motion.p>
+                <p className="text-lg font-serif italic text-primary leading-relaxed">
+                  "The Eliven Chain has been summoned. An incorruptible archive of lived trauma and whistleblower testimony, sealed in the immutable substrate of blockchain to dismantle the 'Humiliation Machine'."
+                </p>
+                <p className="text-xs uppercase tracking-widest font-bold text-muted-foreground">
+                  — The First Link Transmission
+                </p>
+              </motion.div>
 
               <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link href="/mission" className="w-full sm:w-auto">
@@ -332,14 +337,14 @@ export default function Home() {
             <div className="order-1 lg:order-2 space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">Founding Basis</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                The Trust exists for the benefit of humanity to uphold ethical governance and lawful accountability. We operate as a non-profit, faith-neutral, and non-partisan entity solely for public benefit.
+                The Trust exists for the benefit of humanity to dismantle the 'Humiliation Machine'—the systemic processes of institutional erasure and psychological containment. We operate as a non-profit, faith-neutral entity dedicated to the preservation of forensic truth.
               </p>
               <ul className="space-y-4 pt-4">
                 {[
                   "Protect vulnerable persons and whistleblowers",
                   "Support truth-telling grounded in due process",
                   "Advocate for justice and institutional transparency",
-                  "Prevent abuse of power through education"
+                  "Preserve the Eliven Chain as a permanent moral archive"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
@@ -372,7 +377,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Support the Mission</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Invest in a fact-based, evidence-published venture dedicated to institutional accountability and the protection of truth.
+              Invest in a legitimate, fact-based evidence published worthy venture dedicated to institutional accountability and the protection of truth.
             </p>
           </div>
 
@@ -403,9 +408,9 @@ export default function Home() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                   <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-2xl font-serif">A Strategic Investment</CardTitle>
+                <CardTitle className="text-2xl font-serif">Strategic Investment</CardTitle>
                 <CardDescription className="text-base">
-                  An invitation to invest in a legitimate, evidence-published venture for public benefit.
+                  An invitation to invest in a legitimate, fact-based evidence published worthy venture for public benefit.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow pt-8 space-y-4">
@@ -413,7 +418,7 @@ export default function Home() {
                   {[
                     "Fact-based accountability venture",
                     "Evidence-published documentation",
-                    "Global human rights advocacy scale",
+                    "Dismantling the 'Humiliation Machine'",
                     "Forensic legal-spiritual infrastructure"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm">
@@ -436,7 +441,7 @@ export default function Home() {
           <div className="mt-16 p-8 bg-muted/30 rounded-2xl border border-border text-center">
             <h3 className="font-serif text-xl font-bold text-primary mb-4">Why Invest?</h3>
             <p className="text-muted-foreground leading-relaxed">
-              This is more than a fund; it is a documented, immutable archive of truth. By supporting this venture, you are investing in the preservation of forensic evidence and the systematic undoing of institutional misconduct. Our foundation is built on 35 years of verified records, making this a legitimate and worthy public benefit undertaking.
+              This is more than a fund; it is a documented, immutable archive of truth. By supporting this venture, you are investing in the preservation of forensic evidence and the systematic undoing of the 'Humiliation Machine'—the institutional structures that rely on silence and erasure. Our foundation is built on 35 years of verified records, making this a legitimate and worthy public benefit undertaking.
             </p>
           </div>
         </div>
