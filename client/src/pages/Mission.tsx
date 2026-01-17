@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { CheckCircle2, Gavel, Globe, ShieldAlert } from "lucide-react";
+import { CheckCircle2, Gavel, Globe, ShieldAlert, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Mission() {
   return (
