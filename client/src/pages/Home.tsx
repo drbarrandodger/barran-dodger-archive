@@ -9,6 +9,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+import portraitImg from "@assets/A5BDF951-1AE5-4EFF-9F6E-3F29C2C5CDC9_1768633103014.png";
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -31,52 +33,78 @@ export default function Home() {
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 bg-grid-pattern overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background via-transparent to-background z-0 pointer-events-none" />
         
-        <div className="container mx-auto max-w-4xl relative z-10 text-center">
-          <motion.div 
-            initial="hidden" 
-            animate="visible" 
-            variants={stagger}
-            className="space-y-6"
-          >
-            <motion.div variants={fadeIn}>
-              <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-primary/5 text-primary rounded-full mb-4">
-                Public Benefit Organization
-              </span>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <motion.div 
+              initial="hidden" 
+              animate="visible" 
+              variants={stagger}
+              className="flex-1 text-center lg:text-left space-y-6"
+            >
+              <motion.div variants={fadeIn}>
+                <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-primary/5 text-primary rounded-full mb-4">
+                  Public Benefit Organization
+                </span>
+              </motion.div>
+              
+              <motion.h1 
+                variants={fadeIn}
+                className="text-4xl md:text-6xl font-serif font-bold text-primary leading-tight text-balance"
+              >
+                Barran Dodger Legal & Ethical Trust Fund
+              </motion.h1>
+              <motion.p
+                variants={fadeIn}
+                className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium mt-4"
+              >
+                The Trustee for www.barrandodger.com.au
+              </motion.p>
+              
+              <motion.p 
+                variants={fadeIn}
+                className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed text-balance"
+              >
+                Converting sworn testimony, verified documentation, and lived evidence into public-benefit action.
+              </motion.p>
+              
+              <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <Link href="/mission" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full gap-2">
+                    Our Mission <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button variant="outline" size="lg" className="w-full">
+                    Get Involved
+                  </Button>
+                </Link>
+              </motion.div>
             </motion.div>
-            
-            <motion.h1 
-              variants={fadeIn}
-              className="text-4xl md:text-6xl font-serif font-bold text-primary leading-tight text-balance"
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex-1 relative max-w-md lg:max-w-none"
             >
-              Barran Dodger Legal & Ethical Trust Fund
-            </motion.h1>
-            <motion.p
-              variants={fadeIn}
-              className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium mt-4"
-            >
-              The Trustee for www.barrandodger.com.au
-            </motion.p>
-            
-            <motion.p 
-              variants={fadeIn}
-              className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance"
-            >
-              Converting sworn testimony, verified documentation, and lived evidence into public-benefit action.
-            </motion.p>
-            
-            <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/mission" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full gap-2">
-                  Our Mission <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/contact" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="w-full">
-                  Get Involved
-                </Button>
-              </Link>
+              <div className="relative aspect-[2/3] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+                <img 
+                  src={portraitImg} 
+                  alt="Barran Dodger with Crystal" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none" />
+              </div>
+              <div className="absolute -bottom-6 -right-6 -left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-border shadow-lg text-center hidden md:block">
+                <p className="text-sm font-serif italic text-primary">
+                  "I claim no special authority beyond documented experience, sworn statements, and an ethical responsibility to the public."
+                </p>
+                <p className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground mt-2">
+                  — BARRAN DODGER & CRYSTAL
+                </p>
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
