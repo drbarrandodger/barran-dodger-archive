@@ -91,7 +91,21 @@ export default function Mission() {
             </section>
 
             <section className="bg-white p-8 md:p-12 rounded-xl border border-border">
-              <h2 className="text-2xl font-serif font-bold text-primary mb-6">Our Public Commitment</h2>
+              <h2 className="text-2xl font-serif font-bold text-primary mb-6">Financial Accountability</h2>
+              <div className="prose prose-slate max-w-none text-muted-foreground mb-8">
+                <p>
+                  The Trust seeks full financial restitution for documented damages totaling <strong>$32.9M - $47.5M</strong>. This includes:
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>NDIA:</strong> $2.5M+ in denied supports and housing failures.</li>
+                  <li><strong>WorkCover/ComCare:</strong> $1.8M (19+ year delay in impairment benefits).</li>
+                  <li><strong>Identity Theft:</strong> $7.8M in losses related to 350+ fraudulent registrations.</li>
+                  <li><strong>Human Rights:</strong> $15M for systematic violations and psychological torture.</li>
+                </ul>
+                <p className="mt-4 font-serif italic">
+                  "They will fight against you, but they shall not prevail against you." — Jeremiah 1:19
+                </p>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <CommitmentItem text="Truth over narrative" />
                 <CommitmentItem text="Evidence over ideology" />

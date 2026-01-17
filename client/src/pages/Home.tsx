@@ -95,6 +95,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <AppealCard 
+              title="Truth, Testimony & Conscience"
+              description="Establishing testimony as a permanent moral fact that endures beyond institutional denial and temporal power."
+              link="/attached_assets/Truth,_Testimony,_and_Conscience_-_Barran_Dodger_and_the_Moral_1768632930720.pdf"
+              tag="PHILOSOPHY"
+            />
+            <AppealCard 
               title="UN Asylum Claim"
               description="Urgent formal submission to the OHCHR documenting systemic human rights violations and seeking international protection."
               link="/attached_assets/ONHCR_UN_Barran_Dodger_Asylum_Claim__1768620108623.pdf"

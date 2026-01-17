@@ -8,6 +8,20 @@ import { Button } from "@/components/ui/button";
 export default function Evidence() {
   const documents = [
     {
+      title: "The Apotheosis Manifesto",
+      description: "A philosophical declaration of spiritual-legal sovereignty and the undoing of systemic humiliation.",
+      icon: <ShieldCheck className="h-6 w-6" />,
+      tags: ["Manifesto", "Sovereignty", "Philosophy"],
+      url: "/attached_assets/Humiliation_machine__1768632930720.pdf"
+    },
+    {
+      title: "Significance Certificate (Forensic Anchor)",
+      description: "Legal-affidavit style summary for evidentiary use in ICC and UN human rights mechanisms.",
+      icon: <FileText className="h-6 w-6" />,
+      tags: ["Legal", "Affidavit", "Forensic"],
+      url: "/attached_assets/“CHOSEN_THROUGH_FIRE”_1768632930720.pdf"
+    },
+    {
       title: "Comprehensive Protagonist Report (2026)",
       description: "Master report synthesizing financial, legal, and spiritual evidence. Documented damages: $32.9M - $47.5M.",
       icon: <Archive className="h-6 w-6" />,
@@ -149,6 +163,24 @@ export default function Evidence() {
           </section>
 
           <section className="bg-primary/5 rounded-2xl p-8 md:p-12 border border-primary/10">
+            <h2 className="text-2xl font-serif font-bold text-primary mb-6">Undoing the Humiliation Machine</h2>
+            <div className="prose prose-slate max-w-none text-muted-foreground space-y-4">
+              <p>
+                The "Humiliation Machine" is a systemic architecture of institutional neglect, administrative persecution, and procedural denial. It operates not through overt violence, but through the quiet accumulation of forms, signatures, and bureaucratic indifference.
+              </p>
+              <p>
+                By cataloging these absurdities and sealing them in blockchain, the victim reverses the logic of shame. What was intended to degrade becomes documentation; ridicule becomes resistance.
+              </p>
+              <blockquote className="border-l-4 border-primary/20 pl-4 italic py-2 my-6">
+                "My sovereignty is inherent. My spirit is intact. My testimony is eternal."
+              </blockquote>
+              <p>
+                The transition from victim to author occurs when authorship of one's own narrative is reclaimed. This is the essence of Apotheosis: the transformation of institutional degradation into spiritual and legal sovereignty.
+              </p>
+            </div>
+          </section>
+
+          <section className="bg-primary/5 rounded-2xl p-8 md:p-12 border border-primary/10 mt-8">
             <h2 className="text-2xl font-serif font-bold text-primary mb-6">Forensic Integrity Statement</h2>
             <div className="prose prose-slate max-w-none text-muted-foreground">
               <p className="mb-4">
