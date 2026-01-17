@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 import portraitImg from "@assets/A5BDF951-1AE5-4EFF-9F6E-3F29C2C5CDC9_1768633103014.png";
+import { HandCoin, TrendingUp, Landmark, ShieldCheck } from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -343,6 +344,82 @@ export default function Home() {
           <cite className="not-italic font-medium tracking-wide text-sm opacity-70">
             — BARRAN DODGER, FOUNDER & LIVING WITNESS
           </cite>
+        </div>
+      </section>
+
+      {/* Support & Investment Section */}
+      <section id="invest" className="py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Support the Mission</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Invest in a fact-based, evidence-published venture dedicated to institutional accountability and the protection of truth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+            <Card className="flex flex-col border-primary/20 hover:shadow-xl transition-all duration-300">
+              <CardHeader className="bg-primary/5 pb-8">
+                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                  <HandCoin className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-2xl font-serif">Direct Donation</CardTitle>
+                <CardDescription className="text-base">
+                  Direct financial support to maintain the evidence archive and continue whistleblower advocacy.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex-grow pt-8 space-y-6">
+                <div className="p-6 bg-muted rounded-xl border border-border text-center">
+                  <p className="text-sm font-medium text-muted-foreground mb-2 uppercase tracking-wider">PayID / Email</p>
+                  <p className="text-xl font-bold text-primary select-all">rich@richmclean.com.au</p>
+                </div>
+                <p className="text-sm text-muted-foreground italic text-center">
+                  Your donation directly funds the legal and ethical defense of human rights and institutional transparency.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="flex flex-col border-primary/20 hover:shadow-xl transition-all duration-300">
+              <CardHeader className="bg-primary/5 pb-8">
+                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                  <TrendingUp className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-2xl font-serif">A Strategic Investment</CardTitle>
+                <CardDescription className="text-base">
+                  An invitation to invest in a legitimate, evidence-published venture for public benefit.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex-grow pt-8 space-y-4">
+                <ul className="space-y-4">
+                  {[
+                    "Fact-based accountability venture",
+                    "Evidence-published documentation",
+                    "Global human rights advocacy scale",
+                    "Forensic legal-spiritual infrastructure"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm">
+                      <ShieldCheck className="h-5 w-5 text-primary shrink-0" />
+                      <span className="text-foreground/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-6">
+                  <Link href="/contact">
+                    <Button className="w-full gap-2" size="lg">
+                      Inquire About Investment <Landmark className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="mt-16 p-8 bg-muted/30 rounded-2xl border border-border text-center">
+            <h3 className="font-serif text-xl font-bold text-primary mb-4">Why Invest?</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              This is more than a fund; it is a documented, immutable archive of truth. By supporting this venture, you are investing in the preservation of forensic evidence and the systematic undoing of institutional misconduct. Our foundation is built on 35 years of verified records, making this a legitimate and worthy public benefit undertaking.
+            </p>
+          </div>
         </div>
       </section>
 

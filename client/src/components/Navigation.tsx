@@ -19,6 +19,7 @@ export function Navigation() {
     { href: "/research", label: "Research" },
     { href: "/evidence", label: "Evidence" },
     { href: "/prophetic-papers", label: "Papers" },
+    { href: "/#invest", label: "Invest" },
     { href: "/contact", label: "Contact" },
   ];
 
