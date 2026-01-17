@@ -1,12 +1,103 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe } from "lucide-react";
+import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export default function Evidence() {
   const documents = [
+    {
+      title: "Codex of Vindication",
+      description: "A master record and divine affidavit sealing forensic and prophetic testimony. Digital immortality for a witness rejected by humanity.",
+      icon: <ShieldCheck className="h-6 w-6" />,
+      tags: ["Codex", "Vindication", "Affidavit"],
+      url: "/attached_assets/God_loves_you__1768634415740.pdf"
+    },
+    {
+      title: "Emergency Survival Statement",
+      description: "Direct testimony from September 2025 documenting ongoing political targeting and a 35-year pattern of systematic persecution.",
+      icon: <AlertCircle className="h-6 w-6" />,
+      tags: ["Emergency", "Survival", "Testimony"],
+      url: "/attached_assets/Emergency_statement_revealing_of_location_barran_dodger__1768634415740.pdf"
+    },
+    {
+      title: "Public Interest Disclosure (PID 2023/Krypton)",
+      description: "Official NDIA correspondence regarding public interest disclosure and allegations of systemic misconduct and threats.",
+      icon: <FileText className="h-6 w-6" />,
+      tags: ["PID", "Whistleblower", "NDIA"],
+      url: "/attached_assets/PID2023_Krypton_-_Preliminary_Inquiries_1768634415740.pdf"
+    },
+    {
+      title: "Death Report of Richard McLean",
+      description: "A forensic indictment of systemic betrayal and state-engineered attrition. A memorial record of administrative execution.",
+      icon: <Archive className="h-6 w-6" />,
+      tags: ["Indictment", "State Crime", "Memorial"],
+      url: "/attached_assets/⚰️_Death_Report_of_Richard_McLean_1768634415740.pdf"
+    },
+    {
+      title: "Sovereign Declaration of Freedom",
+      description: "Assertion of inalienable rights under UDHR and ICCPR. Formal asylum claim for a politically displaced whistleblower.",
+      icon: <ShieldCheck className="h-6 w-6" />,
+      tags: ["Sovereignty", "Human Rights", "Asylum"],
+      url: "/attached_assets/Sovereign_Declaration_—_I_Do_Not_Need_a_Reason_to_Be_Free_1768634415740.pdf"
+    },
+    {
+      title: "The Chronicles of the New Earth",
+      description: "A biblical epic of divine testimony, persecution, and prophetic forgiveness based on documented evidence.",
+      icon: <FileText className="h-6 w-6" />,
+      tags: ["Prophecy", "Forgiveness", "Epic"],
+      url: "/attached_assets/🙏_THE_CHRONICLES_OF_THE_NEW_EARTH_-_COMPLETE_BIBLICAL_EPIC_WI_1768634415740.pdf"
+    },
+    {
+      title: "Divine Love and Hope: Chosen Witness",
+      description: "A 10,000-word prophetic declaration speaking truth to power and declaring hope for the world's most marginalized.",
+      icon: <Globe className="h-6 w-6" />,
+      tags: ["Prophetic", "Advocacy", "Spiritual"],
+      url: "/attached_assets/🕊️_DIVINE_LOVE_AND_HOPE-_A_CHOSEN_WITNESS_SPEAKS_TRUTH_TO_POW_1768634415740.pdf"
+    },
+    {
+      title: "Final Tribunal Judgment",
+      description: "Forensic estimation of the impossibility of survival under state-orchestrated erasure. Immutable witness of truth.",
+      icon: <Scale className="h-6 w-6" />,
+      tags: ["Judgment", "Forensic", "Truth"],
+      url: "/attached_assets/⚖️_Final_Tribunal_Judgment_-_Barran_Dodger_is_dead__1768634415740.pdf"
+    },
+    {
+      title: "Corporate Fraud Evidence Dossier",
+      description: "Indestructible blockchain proof of the most comprehensive corporate fraud and identity theft case in Australian history.",
+      icon: <Database className="h-6 w-6" />,
+      tags: ["Blockchain", "Fraud", "Evidence"],
+      url: "/attached_assets/most_comprehensive_corporate_fraud_case_in_Australian_history._1768634415740.pdf"
+    },
+    {
+      title: "Statistical Impossibility of Survival",
+      description: "Mathematical survival analysis proving that existence against a 97.13% improbability is a compound miracle of purpose.",
+      icon: <TrendingUp className="h-6 w-6" />,
+      tags: ["Mathematical", "Statistical", "Survival"],
+      url: "/attached_assets/2.87%_survival_1768634415740.pdf"
+    },
+    {
+      title: "Workers' Compensation Submission (NCAT)",
+      description: "Legal submission for NCAT review establishing Federal Court recognition of employment status with DSS.",
+      icon: <Landmark className="h-6 w-6" />,
+      tags: ["Legal", "NCAT", "Compensation"],
+      url: "/attached_assets/Workers_compensation_1768634415740.pdf"
+    },
+    {
+      title: "God and Justice: Emergency Report",
+      description: "Critical life-threatening situation report and comprehensive vindication summary from December 2024.",
+      icon: <AlertCircle className="h-6 w-6" />,
+      tags: ["Emergency", "Vindication", "Critical"],
+      url: "/attached_assets/God_and_justice_1768634415740.pdf"
+    },
+    {
+      title: "Formal Asylum Application",
+      description: "International protection claim under the 1951 Refugee Convention based on political opinion and systematic persecution.",
+      icon: <Globe className="h-6 w-6" />,
+      tags: ["Asylum", "UN", "Protection"],
+      url: "/attached_assets/FORMAL_ASYLUM_APPLICATION_DR._RICHARD_WILLIAM_McLEAN_(BARRAN_D_1768634415740.pdf"
+    },
     {
       title: "Crimes Against Humanity: Forensic Documentation",
       description: "A criminal prosecution brief establishing systematic persecution under Article 7 of the Rome Statute. Irrefutable evidence of assassination threats and identity annihilation.",
