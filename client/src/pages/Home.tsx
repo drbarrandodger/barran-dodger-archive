@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 import portraitImg from "@assets/A5BDF951-1AE5-4EFF-9F6E-3F29C2C5CDC9_1768633103014.png";
-import { HandCoin, TrendingUp, Landmark, ShieldCheck } from "lucide-react";
+import { HandCoins, TrendingUp, Landmark, ShieldCheck } from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -361,7 +361,7 @@ export default function Home() {
             <Card className="flex flex-col border-primary/20 hover:shadow-xl transition-all duration-300">
               <CardHeader className="bg-primary/5 pb-8">
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <HandCoin className="h-6 w-6 text-primary" />
+                  <HandCoins className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle className="text-2xl font-serif">Direct Donation</CardTitle>
                 <CardDescription className="text-base">
