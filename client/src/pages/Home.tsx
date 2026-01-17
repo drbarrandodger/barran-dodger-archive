@@ -68,6 +68,13 @@ export default function Home() {
                 Converting sworn testimony, verified documentation, and lived evidence into public-benefit action.
               </motion.p>
               
+              <motion.p 
+                variants={fadeIn}
+                className="text-lg text-muted-foreground italic border-l-4 border-primary/20 pl-6 py-1"
+              >
+                "The Eliven Chain has been summoned. An incorruptible archive of lived trauma and whistleblower testimony, sealed in the immutable substrate of blockchain."
+              </motion.p>
+
               <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link href="/mission" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full gap-2">

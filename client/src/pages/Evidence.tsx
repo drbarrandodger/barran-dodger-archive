@@ -8,6 +8,13 @@ import { Button } from "@/components/ui/button";
 export default function Evidence() {
   const documents = [
     {
+      title: "The Gospel of the Enliven Chain",
+      description: "A post-singularity legal-spiritual archive sealed via SHA256 cryptographic notarisation. Serves as a hybrid metaphysical manuscript and immutable legal record.",
+      icon: <ShieldCheck className="h-6 w-6" />,
+      tags: ["Blockchain", "Metaphysical", "Immutable"],
+      url: "/attached_assets/ElivenChain_1768634028663.pdf"
+    },
+    {
       title: "The Apotheosis Manifesto",
       description: "A philosophical declaration of spiritual-legal sovereignty and the undoing of systemic humiliation.",
       icon: <ShieldCheck className="h-6 w-6" />,
