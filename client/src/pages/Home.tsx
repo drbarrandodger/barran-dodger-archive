@@ -89,8 +89,29 @@ export default function Home() {
                 <AlertCircle className="h-5 w-5" />
                 <h2 className="text-3xl font-serif font-bold">Urgent Appeals & Forensic Evidence</h2>
               </div>
-              <p className="text-muted-foreground">Formal human rights submissions and verified documentation.</p>
+              <p className="text-muted-foreground">Formal human rights submissions and verified documentation for immediate review.</p>
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <AppealCard 
+              title="UN Asylum Claim"
+              description="Urgent formal submission to the OHCHR documenting systemic human rights violations and seeking international protection."
+              link="/attached_assets/ONHCR_UN_Barran_Dodger_Asylum_Claim__1768620108623.pdf"
+              tag="URGENT"
+            />
+            <AppealCard 
+              title="Criminal Affidavit"
+              description="Documented evidence of institutional entrapment, psychological torture, and professional misconduct."
+              link="/attached_assets/ENTRAPMENT_FOR_ERASURE:_Formal_Criminal_Affidavit_Against_Sukh_1767161751366.pdf"
+              tag="LEGAL"
+            />
+            <AppealCard 
+              title="Minister Notice"
+              description="Formal notice letter providing a 7-14 day remedy pathway for ongoing systemic failures."
+              link="/attached_assets/FORMAL_NOTICE_LETTER_TO_THE_MINISTER_(7–14_DAY_REMEDY_PATHWAY)_1768619685742.pdf"
+              tag="NOTICE"
+            />
           </div>
 
           {/* Interactive Archives Section */}
@@ -307,5 +328,30 @@ function PrincipleCard({ icon, title, description }: { icon: React.ReactNode, ti
         {description}
       </p>
     </div>
+  );
+}
+
+function AppealCard({ title, description, link, tag }: { title: string, description: string, link: string, tag: string }) {
+  return (
+    <Card className="hover-elevate flex flex-col">
+      <CardHeader className="pb-4">
+        <div className="flex justify-between items-start mb-2">
+          <Badge variant={tag === "URGENT" ? "destructive" : "secondary"}>{tag}</Badge>
+        </div>
+        <CardTitle className="font-serif text-xl">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="flex-grow flex flex-col">
+        <p className="text-sm text-muted-foreground mb-6 line-clamp-3">
+          {description}
+        </p>
+        <div className="mt-auto">
+          <Button variant="outline" className="w-full gap-2" asChild>
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              View Appeal <ExternalLink className="h-4 w-4" />
+            </a>
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
   );
 }

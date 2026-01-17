@@ -11,25 +11,43 @@ export default function Evidence() {
       title: "Apotheosis of Barran Resonance Dodger",
       description: "Manuscript detailing the Final Command Protocol, Gospel of the Enliven Chain, and spiritual revelations.",
       icon: <ShieldCheck className="h-6 w-6" />,
-      tags: ["Manuscript", "Spiritual", "Revelation"]
+      tags: ["Manuscript", "Spiritual", "Revelation"],
+      url: "/attached_assets/Apotheosis_of_Barran_Resonance_Dodger__1768620108624.pdf"
     },
     {
       title: "Chosen Through Fire",
       description: "Forensic anchor point proving authorship, intent, and cognitive capacity through immutable timestamps.",
       icon: <FileText className="h-6 w-6" />,
-      tags: ["Forensic", "Affidavit", "Timestamped"]
+      tags: ["Forensic", "Affidavit", "Timestamped"],
+      url: "/attached_assets/“CHOSEN_THROUGH_FIRE”_1768620108624.pdf"
     },
     {
       title: "Compensation & Damages Report",
       description: "Forensic quantification of economic and non-economic losses based on legal frameworks and novel evidence.",
       icon: <Database className="h-6 w-6" />,
-      tags: ["Legal", "Finance", "Reparations"]
+      tags: ["Legal", "Finance", "Reparations"],
+      url: "/attached_assets/Compensation_for_barran_dodger__1768620108624.pdf"
     },
     {
       title: "100 Pressing Questions Dossier",
       description: "Comprehensive dossier addressing critical inquiries regarding the life and work of Richard W. McLean.",
       icon: <Archive className="h-6 w-6" />,
-      tags: ["Dossier", "Inquiry", "Archive"]
+      tags: ["Dossier", "Inquiry", "Archive"],
+      url: "/attached_assets/100_Pressing_Questions_About_Barran_Dodger_(Richard_W._McLean)_1768620108623.pdf"
+    },
+    {
+      title: "Criminal Affidavit Against Entrapment",
+      description: "Formal criminal affidavit documenting the 'Entrapment for Erasure' and systemic misconduct.",
+      icon: <ShieldCheck className="h-6 w-6" />,
+      tags: ["Legal", "Criminal", "Affidavit"],
+      url: "/attached_assets/ENTRAPMENT_FOR_ERASURE:_Formal_Criminal_Affidavit_Against_Sukh_1767161751366.pdf"
+    },
+    {
+      title: "UNHRC Asylum Claim",
+      description: "Official human rights submission and asylum claim documentation filed with international bodies.",
+      icon: <Globe className="h-6 w-6" />,
+      tags: ["Human Rights", "UNHRC", "Asylum"],
+      url: "/attached_assets/ONHCR_UN_Barran_Dodger_Asylum_Claim__1768620108623.pdf"
     }
   ];
 
@@ -76,11 +94,15 @@ export default function Evidence() {
                       {doc.description}
                     </p>
                     <div className="flex gap-3">
-                      <Button variant="outline" className="flex-1 gap-2" disabled>
-                        View Record <ExternalLink className="h-4 w-4" />
+                      <Button variant="outline" className="flex-1 gap-2" asChild>
+                        <a href={doc.url} target="_blank" rel="noopener noreferrer">
+                          View Record <ExternalLink className="h-4 w-4" />
+                        </a>
                       </Button>
-                      <Button variant="ghost" size="icon" disabled>
-                        <Download className="h-4 w-4" />
+                      <Button variant="ghost" size="icon" asChild>
+                        <a href={doc.url} download>
+                          <Download className="h-4 w-4" />
+                        </a>
                       </Button>
                     </div>
                   </CardContent>

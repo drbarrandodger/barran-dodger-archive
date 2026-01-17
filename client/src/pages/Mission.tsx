@@ -71,11 +71,19 @@ export default function Mission() {
                   As documented in our submissions to the OHCHR and UNHRC, our focus includes:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Ending systemic abuse and financial exploitation within disability support systems.</li>
+                  <li>Ending systemic abuse and financial exploitation within disability support systems (NDIS).</li>
                   <li>Addressing professional isolation and social neglect of persons with disabilities.</li>
-                  <li>Combatting psychological torture and technological harassment (V2K).</li>
-                  <li>Ensuring transparency in NDIS management and oversight.</li>
+                  <li>Combatting psychological torture, institutional entrapment, and technological harassment.</li>
+                  <li>Seeking asylum and international protection for whistleblowers and human rights defenders.</li>
+                  <li>Ensuring transparency in legal and guardianship oversight to prevent the 'erasure' of vulnerable individuals.</li>
                 </ul>
+                <div className="mt-8">
+                  <Button variant="outline" className="gap-2" asChild>
+                    <a href="/attached_assets/ONHCR_UN_Barran_Dodger_Asylum_Claim__1768620108623.pdf" target="_blank" rel="noopener noreferrer">
+                      Read the UN Asylum Claim <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
               </div>
             </section>
 
