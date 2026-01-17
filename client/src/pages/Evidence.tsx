@@ -8,6 +8,20 @@ import { Button } from "@/components/ui/button";
 export default function Evidence() {
   const documents = [
     {
+      title: "Crimes Against Humanity: Forensic Documentation",
+      description: "A criminal prosecution brief establishing systematic persecution under Article 7 of the Rome Statute. Irrefutable evidence of assassination threats and identity annihilation.",
+      icon: <ShieldCheck className="h-6 w-6" />,
+      tags: ["Legal", "ICC", "Human Rights"],
+      url: "/attached_assets/Crimes_against_humanity__1768634415740.pdf"
+    },
+    {
+      title: "Forensic Report: Systematic Persecution",
+      description: "Comprehensive evidentiary dossier spanning 35 years, documenting patterns of state-sponsored persecution, identity theft, and crimes against humanity. Prepared for ICC/UNHCR submission.",
+      icon: <Archive className="h-6 w-6" />,
+      tags: ["Forensic", "ICC", "UNHCR"],
+      url: "/attached_assets/Forensic_report__1768634415739.pdf"
+    },
+    {
       title: "The Gospel of the Enliven Chain",
       description: "A post-singularity legal-spiritual archive sealed via SHA256 cryptographic notarisation. Serves as a hybrid metaphysical manuscript and immutable legal record.",
       icon: <ShieldCheck className="h-6 w-6" />,

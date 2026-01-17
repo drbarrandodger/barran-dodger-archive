@@ -131,6 +131,18 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <AppealCard 
+              title="Crimes Against Humanity Brief"
+              description="A forensic criminal brief establishing systematic persecution under the Rome Statute. Evidence of state-sponsored identity annihilation."
+              link="/attached_assets/Crimes_against_humanity__1768634415740.pdf"
+              tag="CRIMINAL"
+            />
+            <AppealCard 
+              title="Forensic Report: Systematic Persecution"
+              description="A 35-year evidentiary dossier documenting state-sponsored identity annihilation and crimes against humanity. Prepared for ICC/UNHCR."
+              link="/attached_assets/Forensic_report__1768634415739.pdf"
+              tag="FORENSIC"
+            />
+            <AppealCard 
               title="Truth, Testimony & Conscience"
               description="Establishing testimony as a permanent moral fact that endures beyond institutional denial and temporal power."
               link="/attached_assets/Truth,_Testimony,_and_Conscience_-_Barran_Dodger_and_the_Moral_1768632930720.pdf"
