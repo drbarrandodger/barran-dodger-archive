@@ -46,6 +46,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-secondary-foreground/80">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/mission" className="hover:text-white transition-colors">Mission & Vision</Link></li>
+              <li><Link href="/prophetic-papers" className="hover:text-white transition-colors">Prophetic Papers</Link></li>
               <li><Link href="/evidence" className="hover:text-white transition-colors">Evidence & Manuscripts</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>

@@ -18,6 +18,7 @@ export function Navigation() {
     { href: "/mission", label: "Mission" },
     { href: "/research", label: "Research" },
     { href: "/evidence", label: "Evidence" },
+    { href: "/prophetic-papers", label: "Papers" },
     { href: "/contact", label: "Contact" },
   ];
 

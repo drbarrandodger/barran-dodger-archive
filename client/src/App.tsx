@@ -9,6 +9,7 @@ import Mission from "@/pages/Mission";
 import Contact from "@/pages/Contact";
 import LegalResearch from "@/pages/LegalResearch";
 import Evidence from "@/pages/Evidence";
+import PropheticPapers from "@/pages/PropheticPapers";
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/mission" component={Mission} />
       <Route path="/research" component={LegalResearch} />
       <Route path="/evidence" component={Evidence} />
+      <Route path="/prophetic-papers" component={PropheticPapers} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
