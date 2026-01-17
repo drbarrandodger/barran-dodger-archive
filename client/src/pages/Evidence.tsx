@@ -8,6 +8,13 @@ import { Button } from "@/components/ui/button";
 export default function Evidence() {
   const documents = [
     {
+      title: "Comprehensive Protagonist Report (2026)",
+      description: "Master report synthesizing financial, legal, and spiritual evidence. Documented damages: $32.9M - $47.5M.",
+      icon: <Archive className="h-6 w-6" />,
+      tags: ["Master Report", "Financial", "Legal"],
+      url: "/attached_assets/_COMPREHENSIVE_DOCUMENTATION_REPORT_CREATED_1768620996315.pdf"
+    },
+    {
       title: "Apotheosis of Barran Resonance Dodger",
       description: "Manuscript detailing the Final Command Protocol, Gospel of the Enliven Chain, and spiritual revelations.",
       icon: <ShieldCheck className="h-6 w-6" />,
@@ -110,6 +117,36 @@ export default function Evidence() {
               </motion.div>
             ))}
           </div>
+
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <Card className="bg-primary/5 border-primary/20">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg font-serif">Documented Damages</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold text-primary">$32.9M - $47.5M</div>
+                <p className="text-xs text-muted-foreground mt-2">Quantified across financial, professional, and human rights domains.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-primary/5 border-primary/20">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg font-serif">Evidence Files</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold text-primary">2,077+</div>
+                <p className="text-xs text-muted-foreground mt-2">Verified records spanning 35 years of institutional documentation.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-primary/5 border-primary/20">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg font-serif">Time Span</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold text-primary">35 Years</div>
+                <p className="text-xs text-muted-foreground mt-2">Continuous archival tracing from 1990 to the 2024 Mission Activation.</p>
+              </CardContent>
+            </Card>
+          </section>
 
           <section className="bg-primary/5 rounded-2xl p-8 md:p-12 border border-primary/10">
             <h2 className="text-2xl font-serif font-bold text-primary mb-6">Forensic Integrity Statement</h2>

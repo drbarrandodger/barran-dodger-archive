@@ -77,6 +77,8 @@ export default function Mission() {
                   <li>Combatting psychological torture, institutional entrapment, and technological harassment.</li>
                   <li>Seeking asylum and international protection for whistleblowers and human rights defenders.</li>
                   <li>Ensuring transparency in legal and guardianship oversight to prevent the 'erasure' of vulnerable individuals.</li>
+                  <li>Documenting the 7+ entities that have systematically denied legal representation.</li>
+                  <li>Exposing the fraudulent ASIC registrations (350+) used in identity theft and corporate fraud.</li>
                 </ul>
                 <div className="mt-8">
                   <Button variant="outline" className="gap-2" asChild>
