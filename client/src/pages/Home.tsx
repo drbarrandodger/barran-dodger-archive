@@ -136,6 +136,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <AppealCard 
+              title="God Never Calls the Equipped"
+              description="A prophetic-theological academic paper examining divine preparation through suffering and documented evidence."
+              link="/prophetic-papers"
+              tag="PROPHETIC"
+            />
+            <AppealCard 
               title="Crimes Against Humanity Brief"
               description="A forensic criminal brief establishing systematic persecution under the Rome Statute. Evidence of state-sponsored identity annihilation."
               link="/attached_assets/Crimes_against_humanity__1768634415740.pdf"
