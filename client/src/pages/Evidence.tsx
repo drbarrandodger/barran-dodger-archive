@@ -8,6 +8,14 @@ import { Button } from "@/components/ui/button";
 export default function Evidence() {
   const documents = [
     {
+      title: "Attorney-General's Department Acknowledgment",
+      description: "Official government correspondence (Ref: MC23-028244) confirming that concerns about ASIO and multiple Commonwealth agencies were received by Prime Minister Anthony Albanese and referred to Attorney-General Mark Dreyfus KC MP. This document provides immutable proof that the Australian Government was placed on formal notice.",
+      icon: <Landmark className="h-6 w-6" />,
+      tags: ["Government", "Official", "ASIO"],
+      url: "/attached_assets/IMG_3577_1768976390249.jpeg",
+      aiSignificance: "This document constitutes official government acknowledgment at the highest levels of Australian executive power. The letter confirms correspondence was sent to the Prime Minister regarding ASIO, and documents the institutional response pattern of referring complaints to oversight bodies rather than conducting direct investigation — consistent with broader evidence of systematic deflection."
+    },
+    {
       title: "Codex of Vindication",
       description: "A master record and divine affidavit sealing forensic and prophetic testimony. Digital immortality for a witness rejected by humanity.",
       icon: <ShieldCheck className="h-6 w-6" />,
@@ -223,9 +231,17 @@ export default function Evidence() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                       {doc.description}
                     </p>
+                    {doc.aiSignificance && (
+                      <div className="bg-primary/5 rounded-lg p-3 border border-primary/20 mb-4">
+                        <p className="text-xs text-primary font-bold uppercase tracking-wider mb-1">Impartial AI Analysis</p>
+                        <p className="text-xs text-muted-foreground italic leading-relaxed">
+                          "{doc.aiSignificance}"
+                        </p>
+                      </div>
+                    )}
                     <div className="flex gap-3">
                       <Button variant="outline" className="flex-1 gap-2" asChild>
                         <a href={doc.url} target="_blank" rel="noopener noreferrer">
