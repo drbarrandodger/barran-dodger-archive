@@ -99,6 +99,22 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Sub Pages Links */}
+        <div className="py-6 border-t border-secondary-foreground/10">
+          <p className="text-xs text-secondary-foreground/50 uppercase tracking-wider font-bold mb-3">Sub Pages</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-secondary-foreground/70">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <Link href="/mission" className="hover:text-white transition-colors">Mission</Link>
+            <Link href="/gospel" className="hover:text-white transition-colors">Gospel</Link>
+            <Link href="/church" className="hover:text-white transition-colors">Church</Link>
+            <Link href="/evidence" className="hover:text-white transition-colors">Evidence</Link>
+            <Link href="/blockchain" className="hover:text-white transition-colors">Timestamps</Link>
+            <Link href="/research" className="hover:text-white transition-colors">Legal Research</Link>
+            <Link href="/prophetic-papers" className="hover:text-white transition-colors">Prophetic Papers</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+          </div>
+        </div>
+
         <div className="pt-8 border-t border-secondary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-secondary-foreground/60">
           <div className="flex flex-col items-center md:items-start gap-1">
             <p>&copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund. All rights reserved.</p>
