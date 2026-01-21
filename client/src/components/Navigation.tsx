@@ -19,7 +19,7 @@ export function Navigation() {
     { href: "/gospel", label: "Gospel" },
     { href: "/church", label: "Church" },
     { href: "/evidence", label: "Evidence" },
-    { href: "/#invest", label: "Invest" },
+    { href: "/blockchain", label: "Timestamps" },
     { href: "/contact", label: "Contact" },
   ];
 
