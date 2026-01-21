@@ -53,7 +53,7 @@ export function Footer() {
             <div className="mt-6 pt-6 border-t border-secondary-foreground/10 space-y-2 text-xs text-secondary-foreground/60">
               <p className="flex items-center gap-2">
                 <Mail className="h-3 w-3" />
-                <a href="mailto:barrsndodger@icloud.com" className="hover:text-white transition-colors">barrsndodger@icloud.com</a>
+                <a href="mailto:barrandodger@icloud.com" className="hover:text-white transition-colors">barrandodger@icloud.com</a>
               </p>
               <p className="flex items-center gap-2">
                 <Scale className="h-3 w-3" />

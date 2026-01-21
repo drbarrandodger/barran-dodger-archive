@@ -58,7 +58,7 @@ export default function Contact() {
                       <h3 className="font-bold text-foreground mb-1">General Inquiries</h3>
                       <p className="text-sm text-muted-foreground mb-2">For questions about our mission or documentation.</p>
                       <div className="flex flex-col gap-1">
-                        <a href="mailto:barrsndodger@icloud.com" className="text-primary font-medium hover:underline text-sm">barrsndodger@icloud.com</a>
+                        <a href="mailto:barrandodger@icloud.com" className="text-primary font-medium hover:underline text-sm">barrandodger@icloud.com</a>
                         <a href="tel:+61431167907" className="text-primary font-medium hover:underline text-sm">+61 431 167 907</a>
                       </div>
                     </div>
