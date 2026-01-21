@@ -8,6 +8,14 @@ import { Button } from "@/components/ui/button";
 export default function Evidence() {
   const documents = [
     {
+      title: "THE EVIDENCE SPEAKS: Forensic Documentation of State Persecution",
+      description: "Comprehensive forensic analysis of 2,000+ primary source documents spanning 35 years (1990-2025), documenting systematic state persecution including assassination threats, 350+ fraudulent business registrations, $6.5+ million in denied claims, and forced internal exile. Total estimated damages: $32.9 million.",
+      icon: <Scale className="h-6 w-6" />,
+      tags: ["Forensic", "Master Report", "$32.9M"],
+      url: "/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768976939113.pdf",
+      aiSignificance: "This document represents the definitive forensic synthesis of the entire evidence archive. It establishes four unprecedented categories of abuse: (1) Direct assassination threat from NDIA official with SAS background stating 'You will be sacrificed'; (2) The most sophisticated identity theft in Australian history with 350+ fraudulent ASIC registrations; (3) Systematic financial destruction across 8+ agencies totaling $6.5+ million; (4) Forced internal exile orchestrated by federal cabinet minister. The analysis concludes this evidence meets UNHCR refugee criteria and Rome Statute definitions of crimes against humanity. This is the master evidentiary document that synthesizes 35 years of persecution into a single forensic record."
+    },
+    {
       title: "Federal Court Employment Status Confirmation",
       description: "Official Federal Court of Australia assessment (27 March 2023) confirming employment status with the Department of Social Services. The General Counsel explicitly states: 'I am satisfied that you are, or were, an employee with the Department of Social Services.' Critical evidence for WorkCover case where employment was disputed.",
       icon: <Scale className="h-6 w-6" />,
