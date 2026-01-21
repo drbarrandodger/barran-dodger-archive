@@ -122,42 +122,91 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CRITICAL EVIDENCE - NSW Trustee Notice - Most Significant at Top */}
+      {/* CRITICAL EVIDENCE - Most Significant at Top */}
       <section className="py-16 bg-primary/5 border-y border-primary/20">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-5xl mx-auto"
           >
-            <Badge variant="outline" className="mb-6 border-primary text-primary px-4 py-1.5 text-sm font-bold" data-testid="badge-critical-evidence">
-              CRITICAL EVIDENCE
-            </Badge>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">
-              NSW Trustee & Guardian Notice
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto">
-              Official certification pursuant to s122(2) of the NSW Trustee and Guardian Act 2009, confirming management of the estate of Barran Resonance Dodger by NSW Trustee and Guardian as committed by the NSW Civil and Administrative Tribunal on 16/10/2024.
-            </p>
-            <div className="bg-white rounded-xl border border-border p-8 shadow-lg mb-8">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Gavel className="h-8 w-8 text-primary" />
-                <h3 className="text-xl font-serif font-bold text-primary">Section 122(2) Certificate</h3>
-              </div>
-              <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                This certificate is admissible in any legal proceedings and serves as evidence of the matters stated therein and the authority of NSW Trustee and Guardian. Signed by Brian Woods, Chief Executive Officer, dated 20/01/2026.
+            <div className="text-center mb-12">
+              <Badge variant="outline" className="mb-6 border-primary text-primary px-4 py-1.5 text-sm font-bold" data-testid="badge-critical-evidence">
+                CRITICAL EVIDENCE
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-4">
+                The Evidence Speaks
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                Forensic documentation of systematic state persecution spanning 35 years (1990-2025), comprising 2,000+ primary source documents.
               </p>
+            </div>
+
+            {/* Primary Evidence Document */}
+            <div className="bg-white rounded-xl border-2 border-primary/30 p-8 shadow-xl mb-8">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <Scale className="h-10 w-10 text-primary" />
+                <h3 className="text-2xl font-serif font-bold text-primary">Forensic Analysis: $32.9 Million in Damages</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-start gap-2">
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <span><strong>Direct assassination threat</strong> from NDIA official with SAS background</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <span><strong>350+ fraudulent business registrations</strong> - most sophisticated identity theft in Australian history</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <span><strong>Forced internal exile</strong> from home state by federal cabinet minister</span>
+                  </div>
+                </div>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-start gap-2">
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <span><strong>$6.5+ million</strong> in denied claims across 8+ regulatory agencies</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <span><strong>Persecution-induced brain injury</strong> from 2021 medical crisis</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <span><strong>UNHCR refugee criteria met</strong> - strongest asylum case from Western democracy</span>
+                  </div>
+                </div>
+              </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-view-s122">
-                  <a href="/attached_assets/s_122_-_Redacted.pdf_1768970361556.pdf" target="_blank" rel="noopener noreferrer">
-                    <FileText className="h-5 w-5" /> View Certified Notice
+                <Button size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-download-evidence">
+                  <a href="/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf" target="_blank" rel="noopener noreferrer" download>
+                    <FileText className="h-5 w-5" /> Download Full Report
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-all-evidence">
                   <Link href="/evidence">
-                    <Scale className="h-5 w-5" /> All Evidence
+                    <Scale className="h-5 w-5" /> Evidence Archive
                   </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* NSW Trustee Notice - Secondary */}
+            <div className="bg-white rounded-xl border border-border p-6 shadow-lg">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Gavel className="h-6 w-6 text-primary" />
+                <h3 className="text-lg font-serif font-bold text-primary">NSW Trustee & Guardian Notice - Section 122(2)</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 text-sm leading-relaxed text-center max-w-2xl mx-auto">
+                Official certification confirming management of the estate of Barran Resonance Dodger by NSW Trustee and Guardian, committed by NCAT on 16/10/2024. Signed by Brian Woods, CEO, dated 20/01/2026.
+              </p>
+              <div className="flex justify-center">
+                <Button variant="outline" className="gap-2" asChild data-testid="button-view-s122">
+                  <a href="/attached_assets/s_122_-_Redacted.pdf_1768970361556.pdf" target="_blank" rel="noopener noreferrer">
+                    <FileText className="h-4 w-4" /> View Certified Notice
+                  </a>
                 </Button>
               </div>
             </div>
