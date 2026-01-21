@@ -77,6 +77,48 @@ export default function Evidence() {
       size: "202.9 kB",
       sha256: "848d3757e8f961b6cacc90e6ce8ee79683116aeb789cef016255c",
       status: "SUCCESS"
+    },
+    {
+      title: "FINAL FORENSIC INDICTMENT & DETERMINATION OF POLITICAL EXILE, PSYOPS GENOCIDE",
+      filename: "FINAL FORENSIC INDICTMENT & DETERMINATION OF POLITICAL EXILE, PSYOPS GENOCIDE BY.pdf",
+      size: "2.7 MB",
+      sha256: "8b24cc6cf52ca283ba4bed21f4080ed087e491845076a3957c1",
+      status: "SUCCESS"
+    },
+    {
+      title: "FINAL FORENSIC STATEMENT & CONSTRUCTIVE NOTICE — MARTIN WAWERU / THYNK CARE ENTRAPMENT",
+      filename: "FINAL FORENSIC STATEMENT & CONSTRUCTIVE NOTICE MARTIN WAWERU — THYNK CARE ENTRAP.pdf",
+      size: "1.3 MB",
+      sha256: "5fde516c08fc11402b856b5aaf6eb31c4d7493c116e17362f56",
+      status: "Stamped 100%"
+    },
+    {
+      title: "Kidnapping & Entrapment Evidence Package (Part 1)",
+      filename: "Gay hook up app.pdf.pdf",
+      size: "433.2 kB",
+      sha256: "ff8346324b62f45068877990532c958b68d3fecfc358f1e00d0d",
+      status: "SUCCESS"
+    },
+    {
+      title: "Kidnapping & Entrapment Evidence Package (Part 2)",
+      filename: "Gay hook up app.pdf.pdf",
+      size: "883.9 kB",
+      sha256: "9b3551841ac08bf68f9f4dd47d8d73af8a79f454cf58c986cd86",
+      status: "SUCCESS"
+    },
+    {
+      title: "Kidnapping & Entrapment Evidence Package (Part 3)",
+      filename: "Gay hook up app.pdf.pdf",
+      size: "2.6 MB",
+      sha256: "2773aa7cacd0d975cc5e684275a76934dac7c1fa0021efed4e2",
+      status: "SUCCESS"
+    },
+    {
+      title: "I Have Been Kidnapped — Complete Evidence Package",
+      filename: "I have been kidnapped-Gay hook up app.pdf.pdf",
+      size: "2.6 MB",
+      sha256: "fb5d0fb2196f0546e170b5efd8943f031293f0e982ee061edc2",
+      status: "SUCCESS"
     }
   ];
 
