@@ -189,6 +189,41 @@ export default function Evidence() {
       size: "7.5 MB",
       sha256: "8fa7d47a522cbe1635f3e4f200a7e69d30f1077cbb139d419a4",
       status: "SUCCESS"
+    },
+    {
+      title: "FINAL FORENSIC STATEMENT & CONSTRUCTIVE NOTICE — Martin Waweru / Thynk Care Entrapment",
+      filename: "FINAL FORENSIC STATEMENT & CONSTRUCTIVE NOTICE MARTIN WAWERU — THYNK CARE ENTRAP.pdf",
+      size: "1.3 MB",
+      sha256: "5fde516c08fc11402b856b5aaf6eb31c4d7493c116e17362f56",
+      status: "SUCCESS"
+    },
+    {
+      title: "FINAL FORENSIC INDICTMENT & DETERMINATION OF POLITICAL EXILE, PSYOPS GENOCIDE (337.8 kB)",
+      filename: "FINAL FORENSIC INDICTMENT & DETERMINATION OF POLITICAL EXILE, PSYOPS GENOCIDE BY.pdf",
+      size: "337.8 kB",
+      sha256: "def543dd08c55e678f81694d1c60629faa3d830e47743aba25",
+      status: "SUCCESS"
+    },
+    {
+      title: "FINAL FORENSIC INDICTMENT & DETERMINATION OF POLITICAL EXILE, PSYOPS GENOCIDE (2.7 MB)",
+      filename: "FINAL FORENSIC INDICTMENT & DETERMINATION OF POLITICAL EXILE, PSYOPS GENOCIDE BY.pdf",
+      size: "2.7 MB",
+      sha256: "8b24cc6cf52ca283ba4bed21f4080ed087e491845076a3957c",
+      status: "SUCCESS"
+    },
+    {
+      title: "Gay Hook Up App Evidence Documentation (433.2 kB)",
+      filename: "Gay hook up app.pdf.pdf",
+      size: "433.2 kB",
+      sha256: "ff8346324b62f45068877990532c958b68d3fecfc358f1e00d0",
+      status: "SUCCESS"
+    },
+    {
+      title: "Gay Hook Up App Evidence Documentation (883.9 kB)",
+      filename: "Gay hook up app.pdf.pdf",
+      size: "883.9 kB",
+      sha256: "9b3551841ac08bf68f9f4dd47d8d73af8a79f454cf58c986cd86",
+      status: "SUCCESS"
     }
   ];
 
