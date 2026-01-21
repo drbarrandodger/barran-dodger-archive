@@ -415,30 +415,83 @@ export default function Home() {
               </div>
               
               {/* Interactive Art Flipbook */}
-              <a 
-                href="https://simplebooklet.com/barrandodger" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block group"
-                data-testid="link-flipbook"
-              >
-                <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-2 border-primary/30 rounded-xl p-6 hover:border-primary/50 transition-all hover:shadow-lg">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-primary text-primary-foreground p-3 rounded-lg group-hover:scale-105 transition-transform">
-                      <BookOpen className="h-6 w-6" />
+              {/* Flipbook Gallery */}
+              <div className="space-y-3">
+                <a 
+                  href="https://simplebooklet.com/barrandodger" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block group"
+                  data-testid="link-flipbook-1"
+                >
+                  <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-2 border-primary/30 rounded-xl p-5 hover:border-primary/50 transition-all hover:shadow-lg">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-primary text-primary-foreground p-2.5 rounded-lg group-hover:scale-105 transition-transform">
+                        <BookOpen className="h-5 w-5" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-serif font-bold text-base text-primary mb-0.5">
+                          "a certain beauty in un-resolution; ...ART"
+                        </h3>
+                        <p className="text-xs text-muted-foreground">
+                          Interactive flipbook — Visual testimony
+                        </p>
+                      </div>
+                      <ExternalLink className="h-4 w-4 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-serif font-bold text-lg text-primary mb-1">
-                        "a certain beauty in un-resolution; ...ART"
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        Interactive flipbook gallery — Visual testimony and artistic documentation
-                      </p>
-                    </div>
-                    <ExternalLink className="h-5 w-5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
                   </div>
-                </div>
-              </a>
+                </a>
+
+                <a 
+                  href="https://simplebooklet.com/egoandsoul" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block group"
+                  data-testid="link-flipbook-2"
+                >
+                  <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-2 border-primary/30 rounded-xl p-5 hover:border-primary/50 transition-all hover:shadow-lg">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-primary text-primary-foreground p-2.5 rounded-lg group-hover:scale-105 transition-transform">
+                        <BookOpen className="h-5 w-5" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-serif font-bold text-base text-primary mb-0.5">
+                          "Strange Currencies of Ego and Soul"
+                        </h3>
+                        <p className="text-xs text-muted-foreground">
+                          Interactive flipbook — Artistic exploration
+                        </p>
+                      </div>
+                      <ExternalLink className="h-4 w-4 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </div>
+                </a>
+
+                <a 
+                  href="https://simplebooklet.com/backtobasicsrecentdrawings" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block group"
+                  data-testid="link-flipbook-3"
+                >
+                  <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-2 border-primary/30 rounded-xl p-5 hover:border-primary/50 transition-all hover:shadow-lg">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-primary text-primary-foreground p-2.5 rounded-lg group-hover:scale-105 transition-transform">
+                        <BookOpen className="h-5 w-5" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-serif font-bold text-base text-primary mb-0.5">
+                          "Back to Basics: Recent Drawings"
+                        </h3>
+                        <p className="text-xs text-muted-foreground">
+                          Interactive flipbook — Recent artwork
+                        </p>
+                      </div>
+                      <ExternalLink className="h-4 w-4 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </div>
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
