@@ -404,13 +404,41 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-2xl overflow-hidden shadow-2xl border border-border"
+              className="space-y-6"
             >
-              <img 
-                src={artworkImg} 
-                alt="Visual Testimony - Artwork by the Witness" 
-                className="w-full h-auto object-cover"
-              />
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
+                <img 
+                  src={artworkImg} 
+                  alt="Visual Testimony - Artwork by the Witness" 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              
+              {/* Interactive Art Flipbook */}
+              <a 
+                href="https://simplebooklet.com/barrandodger" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block group"
+                data-testid="link-flipbook"
+              >
+                <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-2 border-primary/30 rounded-xl p-6 hover:border-primary/50 transition-all hover:shadow-lg">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary text-primary-foreground p-3 rounded-lg group-hover:scale-105 transition-transform">
+                      <BookOpen className="h-6 w-6" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-serif font-bold text-lg text-primary mb-1">
+                        "a certain beauty in un-resolution; ...ART"
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        Interactive flipbook gallery — Visual testimony and artistic documentation
+                      </p>
+                    </div>
+                    <ExternalLink className="h-5 w-5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+              </a>
             </motion.div>
           </div>
         </div>
