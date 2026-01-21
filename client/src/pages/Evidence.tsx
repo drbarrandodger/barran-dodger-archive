@@ -1,11 +1,85 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp } from "lucide-react";
+import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, Lock } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export default function Evidence() {
+  // Bitcoin blockchain-verified documents via OpenTimestamps
+  const blockchainDocuments = [
+    {
+      title: "PRECISION AS EVIDENCE — The Complete Evidentiary Synthesis",
+      filename: "PRECISION AS EVIDENCE — The Complete Evidentiary Synthesis of Systematic Persecu.pdf",
+      size: "705.2 kB",
+      sha256: "a3cff1df52006cd460b50aac4dedc892e3cbbd3d354c65bb199c9",
+      status: "Stamped 100%"
+    },
+    {
+      title: "PRECISION AS EVIDENCE — Extended Documentation",
+      filename: "PRECISION AS EVIDENCE — The Complete Evidentiary Synthesis of Systematic Persecu.pdf",
+      size: "796.1 kB",
+      sha256: "265caf788eb8673b972334ffaf0e42fda9ec064dd6fe12cdcdf6dd",
+      status: "Stamped 100%"
+    },
+    {
+      title: "MAGNETISM IS NOT AN INVITATION — When Evidence Becomes a Beacon THE VERDICT",
+      filename: "MAGNETISM IS NOT AN INVITATION - When Evidence Becomes a Beacon THE VERDICT.pdf",
+      size: "337.1 kB",
+      sha256: "5348f90c1555f1e256c34ecddd54f20dea5381144eeaf0744c222",
+      status: "Stamped 100%"
+    },
+    {
+      title: "WHEN EVIDENCE STOPS WHISPERING AND STARTS COMMANDING",
+      filename: "WHEN EVIDENCE STOPS WHISPERING AND STARTS COMMANDING- The Documentation That For.pdf",
+      size: "208.7 kB",
+      sha256: "cb99c5c3f569dfcf5ea06dc436ef31cea1110080fcf3fcdf6444f86",
+      status: "Stamped 100%"
+    },
+    {
+      title: "CRITICAL EVIDENCE DOCUMENTATION — Goulburn Cops",
+      filename: "\"Goulbourn cops\" CRITICAL EVIDENCE DOCUMENTATION.pdf",
+      size: "589.4 kB",
+      sha256: "ff61fa5f99b7c6787326b35d93bea526512956ecef2d0e7a661ec",
+      status: "SUCCESS"
+    },
+    {
+      title: "Comprehensive Evidence Package",
+      filename: "Cocksucker .pdf",
+      size: "1.4 MB",
+      sha256: "ad731e14038182c0af5574160f5e17d3367960b1e64e1f748fa1a",
+      status: "Stamped 100%"
+    },
+    {
+      title: "God Wins, Barran Wins, You Win",
+      filename: "God wins Barran wins YoU win .pdf",
+      size: "875.5 kB",
+      sha256: "282af0872e63c1696ecff1f2d97ad1fe13c180b7106193c7992b6",
+      status: "SUCCESS"
+    },
+    {
+      title: "UNHCR/ICC Cryptographically Verified Evidence Package",
+      filename: "Subject- Submission of Cryptographically Verified UNHCR:ICC Evidence Package — D 2.pdf",
+      size: "190.3 kB",
+      sha256: "119e666f3596492a0e0e8bab641999571ac8acf7a5a927ad6e8a",
+      status: "Stamped 100%"
+    },
+    {
+      title: "PUBLIC STATEMENT — DR RICHARD WILLIAM McLEAN (BARRAN DODGER)",
+      filename: "PUBLIC STATEMENT — DR RICHARD WILLIAM McLEAN (BARRAN DODGER).pdf",
+      size: "351.3 kB",
+      sha256: "97116c25e66f522b9a15557aebfbd7f569ea014f8fa25f57ed385",
+      status: "SUCCESS"
+    },
+    {
+      title: "Barran Dodger and Apotheosis",
+      filename: "Barran dodger and Apotheosis.pdf",
+      size: "202.9 kB",
+      sha256: "848d3757e8f961b6cacc90e6ce8ee79683116aeb789cef016255c",
+      status: "SUCCESS"
+    }
+  ];
+
   const documents = [
     {
       title: "THE EVIDENCE SPEAKS: Forensic Documentation of State Persecution",
@@ -273,6 +347,70 @@ export default function Evidence() {
               A repository of timestamped documents, legal reports, and sacred manuscripts preserved for historical and judicial witness.
             </p>
           </motion.div>
+
+          {/* Bitcoin Blockchain-Verified Evidence Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-16"
+          >
+            <Card className="bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-yellow-500/10 border-amber-500/30">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 bg-amber-500/20 rounded-lg">
+                    <Link2 className="h-6 w-6 text-amber-600" />
+                  </div>
+                  <CardTitle className="text-2xl font-serif text-amber-700 dark:text-amber-400">
+                    Bitcoin Blockchain-Verified Evidence
+                  </CardTitle>
+                </div>
+                <CardDescription className="text-base">
+                  The following documents have been cryptographically timestamped on the Bitcoin blockchain via <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:underline font-semibold">OpenTimestamps.org</a>. These immutable SHA256 hashes provide forensic-grade proof that each document existed at the moment of timestamping — evidence that cannot be altered, disputed, or destroyed.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-primary/5 rounded-lg p-4 border border-primary/20 mb-6">
+                  <p className="text-xs text-primary font-bold uppercase tracking-wider mb-2">Impartial AI Analysis</p>
+                  <p className="text-sm text-muted-foreground italic leading-relaxed">
+                    "Bitcoin blockchain timestamping represents the gold standard in cryptographic evidence preservation. Unlike centralised databases that can be modified or deleted, the Bitcoin blockchain is maintained by thousands of independent nodes worldwide. Once a document's SHA256 hash is embedded in a Bitcoin block, it becomes part of an immutable, publicly verifiable record. This provides several forensic guarantees: (1) Proof of Existence — the document existed at the timestamp; (2) Proof of Integrity — any modification to the document would produce a different hash; (3) Proof of Non-Repudiation — the timestamp cannot be backdated or forged. For legal proceedings, this creates evidence of authenticity that exceeds traditional notarisation standards."
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  {blockchainDocuments.map((doc, index) => (
+                    <div key={index} className="flex flex-col md:flex-row md:items-center justify-between p-3 bg-background/50 rounded-lg border border-border/50 gap-2">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Lock className="h-4 w-4 text-amber-600 flex-shrink-0" />
+                          <span className="font-medium text-sm truncate">{doc.title}</span>
+                          <span className="text-[10px] bg-green-500/20 text-green-700 dark:text-green-400 px-2 py-0.5 rounded-full uppercase font-bold tracking-wider flex-shrink-0">
+                            {doc.status}
+                          </span>
+                        </div>
+                        <p className="text-xs text-muted-foreground ml-6">{doc.size}</p>
+                      </div>
+                      <div className="md:text-right ml-6 md:ml-0">
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-0.5">SHA256</p>
+                        <code className="text-[10px] font-mono text-amber-600 dark:text-amber-400 break-all">{doc.sha256}...</code>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                  <Button variant="outline" className="gap-2" asChild>
+                    <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer">
+                      Verify on OpenTimestamps <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                  <p className="text-xs text-muted-foreground self-center">
+                    Upload any document to OpenTimestamps.org to verify its blockchain timestamp
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.section>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {documents.map((doc, index) => (
