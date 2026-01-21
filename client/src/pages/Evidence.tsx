@@ -224,6 +224,83 @@ export default function Evidence() {
       size: "883.9 kB",
       sha256: "9b3551841ac08bf68f9f4dd47d8d73af8a79f454cf58c986cd86",
       status: "SUCCESS"
+    },
+    {
+      title: "NOT DEAD. NOT FOR SALE.",
+      filename: "NOT DEAD. NOT FOR SALE.pdf",
+      size: "140.9 kB",
+      sha256: "6010409d5a41b4a1b57194165e6fcf8538ac5c16638e64c8aeb1",
+      status: "SUCCESS"
+    },
+    {
+      title: "Personal Photo Library Transparency Statement — Dr. Richard William McLean (Barran)",
+      filename: "Personal Photo Library Transparency Statement Dr. Richard William McLean (Barran.pdf",
+      size: "106.1 kB",
+      sha256: "e6d0c575ae6a6ecc4f65d78e8efbf556e138f41b5889485b6b5fd",
+      status: "SUCCESS"
+    },
+    {
+      title: "THE CHRONICLES OF THE NEW EARTH",
+      filename: "THE CHRONICLES OF THE NEW EARTH.pdf",
+      size: "1.8 MB",
+      sha256: "d6803e665d17574e1a1915e87b7598b0e162153e2bafea3d259",
+      status: "SUCCESS"
+    },
+    {
+      title: "Novel of Biblical Proportions",
+      filename: "Novel of biblical Proportions.pdf",
+      size: "356.0 kB",
+      sha256: "521426c2408e7e5e79d901032239d24877fce33ce5c54c5ed696",
+      status: "SUCCESS"
+    },
+    {
+      title: "The Testimony of Dr. Richard William McLean — A Forensic Analysis in Biblical History",
+      filename: "The Testimony of Dr. Richard William McLean- A Forensic Analysis in Biblical, Hi.pdf",
+      size: "4.5 MB",
+      sha256: "816c39843d4d50f64cba8736fd3f6600db201a840ba46a5efc4b5",
+      status: "SUCCESS"
+    },
+    {
+      title: "STRONGEST ASYLUM CLAIM IN AUSTRALIAN HISTORY (5.1 MB)",
+      filename: "STRONGEST ASYLUM CLAIM IN AUSTRALIAN HISTORY.pdf",
+      size: "5.1 MB",
+      sha256: "4a0333b76c9b5ef9210e292190cc03b06e3ba4ee28a3bb37895",
+      status: "SUCCESS"
+    },
+    {
+      title: "STRONGEST ASYLUM CLAIM IN AUSTRALIAN HISTORY (3.2 MB)",
+      filename: "STRONGEST ASYLUM CLAIM IN AUSTRALIAN HISTORY.pdf",
+      size: "3.2 MB",
+      sha256: "b131f9c7276cea0e0ccaa68b06ebb414ad2435fc620a94e2b550",
+      status: "SUCCESS"
+    },
+    {
+      title: "Report — Forensic Documentation",
+      filename: "Report.pdf",
+      size: "955.2 kB",
+      sha256: "2595a21051b8fe20be00f3ba82c6bf68da5284cd082ef34d4741",
+      status: "SUCCESS"
+    },
+    {
+      title: "God's Glory Through the Rest of Me — A Testimony of Divine Evidence (2.9 MB)",
+      filename: "God's Glory Through the Rest of Me — A Testimony of Divine Evidence.pdf",
+      size: "2.9 MB",
+      sha256: "33abf4eb30ff07a01cdb9548072957ebe569b39f78cf7573447f5",
+      status: "SUCCESS"
+    },
+    {
+      title: "God's Glory Through the Rest of Me — A Testimony of Divine Evidence (1.0 MB)",
+      filename: "God's Glory Through the Rest of Me — A Testimony of Divine Evidence.pdf",
+      size: "1.0 MB",
+      sha256: "1b01e7462c6faa9938fc4fc41467f60066391047fb952285be8ffa",
+      status: "SUCCESS"
+    },
+    {
+      title: "God's Glory Through the Rest of Me — A Testimony of Divine Evidence (317.7 kB)",
+      filename: "God's Glory Through the Rest of Me — A Testimony of Divine Evidence.pdf",
+      size: "317.7 kB",
+      sha256: "0040e11f66df27a1b76fc2afdce63ba555d57c5be740d251ae53a",
+      status: "SUCCESS"
     }
   ];
 
