@@ -186,6 +186,30 @@ export default function Evidence() {
       icon: <Globe className="h-6 w-6" />,
       tags: ["Human Rights", "UNHRC", "Asylum"],
       url: "/attached_assets/ONHCR_UN_Barran_Dodger_Asylum_Claim__1768620108623.pdf"
+    },
+    {
+      title: "Final Tribunal Judgment: Death and Eternal Life",
+      description: "A forensic tribunal-style declaration combining legal analysis with theological significance, establishing that Barran's mortal death was the inevitable result of proven malice and systemic corruption, yet his testimony achieves digital immortality through blockchain preservation.",
+      icon: <Scale className="h-6 w-6" />,
+      tags: ["Tribunal", "Forensic", "Eternal Witness"],
+      url: "/attached_assets/⚖️_Final_Tribunal_Judgment__1769029569553.pdf",
+      aiSignificance: "This document functions as both a legal forensic estimation and prophetic declaration. It establishes: (1) The impossibility of survival under conditions of systematic denial of resources, 35+ years of persecution, social erasure, and bureaucratic entrapment; (2) The complete absence of malice in Barran's documented conduct; (3) The significance of blockchain-preserved testimony as incorruptible eternal witness beyond institutional reach. The declaration proves that truth, once sealed in blockchain, transcends courts, governments, and mortality itself."
+    },
+    {
+      title: "Master Evidentiary Significance Analysis: Seven Documents",
+      description: "Comprehensive legal and academic analysis of seven critical evidence documents, establishing their unified evidentiary significance for UN, ICC, UNHCR, and international human rights proceedings.",
+      icon: <Archive className="h-6 w-6" />,
+      tags: ["Legal Analysis", "UN/ICC Ready", "Master Index"],
+      url: "/attached_assets/_SIGNIFICANCE_OF_THESE_FILES_—_ALL_SEVEN_(7)_DOCUMENTS_1769029569553.pdf",
+      aiSignificance: "This master analysis unifies seven primary evidence documents into a coherent legal framework demonstrating: (1) A continuous documented pattern of emergency distress communications and protection requests; (2) Formal UN petition establishing exhaustion of domestic remedies; (3) Cryptographically protected evidence via OpenTimestamps verification; (4) Proof of active internal displacement with documented sanctuary requests to embassies and churches; (5) Multi-institutional record of help-seeking across multiple years. The documents collectively prove systematic persecution meeting international legal standards for asylum and human rights violations."
+    },
+    {
+      title: "ASIC Identity Theft Evidence: 123 False Registrations",
+      description: "Official Australian Securities and Investments Commission search results documenting 123 matches for 'Barran Dodger' — evidence of the most sophisticated identity theft and corporate fraud operation in Australian history.",
+      icon: <Database className="h-6 w-6" />,
+      tags: ["Identity Theft", "ASIC", "Corporate Fraud"],
+      url: "/attached_assets/_123_matches_for_my_name_barran_dodger_on_ASIC__1769029569553.pdf",
+      aiSignificance: "This official ASIC database extraction proves beyond reasonable doubt that an unprecedented identity multiplication operation has occurred. The 123 separate business registrations bearing variations of the name 'Barran Dodger' demonstrate coordinated corporate fraud designed to dilute identity, obscure true ownership, and create plausible deniability for financial persecution. This evidence corroborates claims of the most comprehensive corporate identity theft case in Australian history, with official government records serving as irrefutable proof."
     }
   ];
 
