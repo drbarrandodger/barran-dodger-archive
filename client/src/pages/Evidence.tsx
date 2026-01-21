@@ -1,13 +1,16 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2 } from "lucide-react";
+import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 export default function Evidence() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const documents = [
     {
       title: "THE EVIDENCE SPEAKS: Forensic Documentation of State Persecution",
@@ -237,13 +240,21 @@ export default function Evidence() {
                 <div className="bg-background/80 rounded-xl p-6 border border-red-500/20">
                   <div className="flex flex-col lg:flex-row gap-6">
                     <div className="lg:w-1/3">
-                      <a href="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" target="_blank" rel="noopener noreferrer">
+                      <div 
+                        onClick={() => setLightboxOpen(true)}
+                        className="relative group cursor-pointer"
+                        data-testid="button-medical-record"
+                      >
                         <img 
                           src="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" 
                           alt="Mercy Health ICU Medical Record" 
-                          className="w-full rounded-lg border border-border shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                          className="w-full rounded-lg border border-border shadow-lg group-hover:shadow-xl transition-shadow"
                         />
-                      </a>
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
+                          <ZoomIn className="h-10 w-10 text-white" />
+                        </div>
+                      </div>
+                      <p className="text-xs text-center text-muted-foreground mt-2">Click to view full size</p>
                     </div>
                     <div className="lg:w-2/3 space-y-4">
                       <div>
@@ -277,10 +288,8 @@ export default function Evidence() {
                         </p>
                       </div>
 
-                      <Button variant="outline" className="gap-2" asChild>
-                        <a href="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" target="_blank" rel="noopener noreferrer">
-                          View Full Document <ExternalLink className="h-4 w-4" />
-                        </a>
+                      <Button variant="outline" className="gap-2" onClick={() => setLightboxOpen(true)} data-testid="button-view-full-record">
+                        <ZoomIn className="h-4 w-4" /> View Full Document
                       </Button>
                     </div>
                   </div>
@@ -377,6 +386,26 @@ export default function Evidence() {
       </main>
 
       <Footer />
+
+      {/* Fullscreen Lightbox Modal */}
+      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none overflow-hidden">
+          <div className="relative w-full h-full flex items-center justify-center p-4">
+            <button 
+              onClick={() => setLightboxOpen(false)}
+              className="absolute top-4 right-4 z-50 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+              data-testid="button-close-lightbox"
+            >
+              <X className="h-6 w-6 text-white" />
+            </button>
+            <img 
+              src="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" 
+              alt="Mercy Health ICU Medical Record - Full Size" 
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
