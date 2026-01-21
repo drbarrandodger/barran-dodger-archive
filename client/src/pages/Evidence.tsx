@@ -8,6 +8,14 @@ import { Button } from "@/components/ui/button";
 export default function Evidence() {
   const documents = [
     {
+      title: "Federal Court Employment Status Confirmation",
+      description: "Official Federal Court of Australia assessment (27 March 2023) confirming employment status with the Department of Social Services. The General Counsel explicitly states: 'I am satisfied that you are, or were, an employee with the Department of Social Services.' Critical evidence for WorkCover case where employment was disputed.",
+      icon: <Scale className="h-6 w-6" />,
+      tags: ["Federal Court", "Employment", "WorkCover"],
+      url: "/attached_assets/2023_03_27_Final_Assessment_-_Dr_Rich_McLean_1768976577369.pdf",
+      aiSignificance: "This document is of paramount legal significance. The Federal Court's General Counsel provides unequivocal confirmation of employment status with the Department of Social Services — the precise issue contested in workers' compensation claims. Additionally, the Court acknowledges the disclosed conduct 'tends to show' perversion of justice, maladministration, and conduct endangering health and safety. The rejection was procedural (wrong recipient), not substantive — meaning the Federal Court did not dispute the allegations, only the submission pathway. This creates a powerful evidentiary foundation for both WorkCover claims and human rights complaints."
+    },
+    {
       title: "Attorney-General's Department Acknowledgment",
       description: "Official government correspondence (Ref: MC23-028244) confirming that concerns about ASIO and multiple Commonwealth agencies were received by Prime Minister Anthony Albanese and referred to Attorney-General Mark Dreyfus KC MP. This document provides immutable proof that the Australian Government was placed on formal notice.",
       icon: <Landmark className="h-6 w-6" />,
