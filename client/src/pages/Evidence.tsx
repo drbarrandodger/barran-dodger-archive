@@ -427,6 +427,13 @@ export default function Evidence() {
       size: "1.5 MB",
       sha256: "ccbb3640e6e7c41b88591a60faf3540963e8645993f6aba65d0",
       status: "SUCCESS"
+    },
+    {
+      title: "Mercy Health ICU Record — Lethal Self-Harm Attempt (26/02/2021)",
+      filename: "4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png",
+      size: "Medical Record",
+      sha256: "PENDING VERIFICATION",
+      status: "CRITICAL EVIDENCE"
     }
   ];
 
@@ -757,6 +764,83 @@ export default function Evidence() {
                   <p className="text-xs text-muted-foreground self-center">
                     Upload any document to OpenTimestamps.org to verify its blockchain timestamp
                   </p>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.section>
+
+          {/* Critical Medical Evidence Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-16"
+          >
+            <Card className="bg-gradient-to-br from-red-500/10 via-red-500/5 to-orange-500/10 border-red-500/30">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 bg-red-500/20 rounded-lg">
+                    <AlertCircle className="h-6 w-6 text-red-600" />
+                  </div>
+                  <CardTitle className="text-2xl font-serif text-red-700 dark:text-red-400">
+                    Critical Medical Evidence
+                  </CardTitle>
+                </div>
+                <CardDescription className="text-base">
+                  Medical documentation of near-fatal events resulting from institutional persecution — evidence that speaks to the human cost of the "Humiliation Machine."
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-background/80 rounded-xl p-6 border border-red-500/20 mb-6">
+                  <div className="flex flex-col lg:flex-row gap-6">
+                    <div className="lg:w-1/3">
+                      <a href="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" target="_blank" rel="noopener noreferrer">
+                        <img 
+                          src="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" 
+                          alt="Mercy Health ICU Medical Record" 
+                          className="w-full rounded-lg border border-border shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                        />
+                      </a>
+                    </div>
+                    <div className="lg:w-2/3 space-y-4">
+                      <div>
+                        <h3 className="font-serif font-bold text-xl text-red-700 dark:text-red-400 mb-2">
+                          Mercy Health ICU Record — Lethal Self-Harm Attempt
+                        </h3>
+                        <p className="text-xs uppercase tracking-widest font-bold text-muted-foreground mb-3">
+                          Werribee Mercy Hospital Consultation Liaison Psychiatry Service • 26/02/2021
+                        </p>
+                      </div>
+                      
+                      <div className="space-y-3 text-sm text-foreground leading-relaxed">
+                        <p>
+                          <strong className="text-red-600">Medical Assessment:</strong> "Referral received from inpatient psychiatry team to review above consumer currently admitted to ICU after <span className="bg-yellow-200 dark:bg-yellow-900/50 px-1 font-semibold">serious attempt to self-harm with intent to end his life</span>."
+                        </p>
+                        <p>
+                          <strong className="text-red-600">Clinical Finding:</strong> "Brief discussion with ICU team who have advised that <span className="bg-yellow-200 dark:bg-yellow-900/50 px-1 font-semibold">attempt was lethal and still requires surgical repair</span>."
+                        </p>
+                        <p>
+                          <strong className="text-red-600">Patient Statement:</strong> "Richard reported he thought <span className="bg-yellow-200 dark:bg-yellow-900/50 px-1 font-semibold">this was the only way 'out of that place'</span>. He referred to himself as being <span className="bg-yellow-200 dark:bg-yellow-900/50 px-1 font-semibold">'jailed'</span>."
+                        </p>
+                        <p>
+                          <strong className="text-red-600">Institutional Distrust:</strong> "Richard refused to talk any further as he felt that CL team were recording. <span className="bg-yellow-200 dark:bg-yellow-900/50 px-1 font-semibold">Referred to CL team as 'Part of the system'</span>."
+                        </p>
+                      </div>
+
+                      <div className="bg-red-500/10 rounded-lg p-4 border border-red-500/20">
+                        <p className="text-xs text-red-700 dark:text-red-400 font-bold uppercase tracking-wider mb-2">Forensic Significance</p>
+                        <p className="text-sm text-muted-foreground italic leading-relaxed">
+                          This official medical record documents a near-fatal event directly attributed to institutional persecution. The patient's own words — "the only way out" and being "jailed" — provide first-person testimony that death appeared preferable to continued systemic abuse. The documented distrust of psychiatric teams as "part of the system" corroborates claims of coordinated institutional gaslighting. This evidence meets threshold criteria for establishing psychological torture under international human rights frameworks.
+                        </p>
+                      </div>
+
+                      <Button variant="outline" className="gap-2" asChild>
+                        <a href="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" target="_blank" rel="noopener noreferrer">
+                          View Full Document <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
