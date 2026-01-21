@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel } from "lucide-react";
+import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive } from "lucide-react";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -473,6 +473,119 @@ export default function Home() {
           <cite className="not-italic font-medium tracking-wide text-sm opacity-70">
             — BARRAN DODGER, FOUNDER & LIVING WITNESS
           </cite>
+        </div>
+      </section>
+
+      {/* Significance Statement */}
+      <section className="py-20 bg-gradient-to-b from-white to-muted/30 border-t border-border">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="text-center mb-12">
+              <Badge variant="outline" className="mb-6 border-primary text-primary px-4 py-1.5 text-sm font-bold" data-testid="badge-significance">
+                ARCHIVAL SIGNIFICANCE
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
+                Significance Statement
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Understanding the evidentiary, cryptographic, and legal importance of this archive
+              </p>
+            </div>
+
+            <Card className="border-2 border-primary/20 shadow-lg">
+              <CardContent className="p-8 md:p-10 space-y-6">
+                <p className="text-foreground leading-relaxed text-lg">
+                  This website constitutes a structured, publicly accessible evidentiary archive documenting allegations of long-term institutional harm, whistleblower retaliation, and human rights violations. Its significance lies not in adjudicating the truth of the claims presented, but in the <strong className="text-primary">methodical preservation, organisation, and authentication</strong> of testimony and records over a 35-year period.
+                </p>
+
+                <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
+                  <h3 className="font-serif font-bold text-xl text-primary mb-4 flex items-center gap-3">
+                    <Lock className="h-6 w-6" />
+                    Cryptographic Authentication & Blockchain Timestamping
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    The archive employs <strong>SHA256 cryptographic hashing</strong> and <strong>Bitcoin blockchain timestamping</strong> via OpenTimestamps to establish proof of existence, integrity, and chronology for more than <strong>2,000 documents</strong> — including <strong>63 individually blockchain-verified evidence files</strong> with immutable timestamps.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-border">
+                      <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-bold text-primary">Proof of Existence:</span>
+                        <span className="text-muted-foreground ml-1">Each document's SHA256 hash proves the exact content existed at the timestamped date</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-border">
+                      <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-bold text-primary">Non-Repudiation:</span>
+                        <span className="text-muted-foreground ml-1">Blockchain anchoring creates irrefutable evidence of authorship and timeline</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-border">
+                      <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-bold text-primary">Tamper Detection:</span>
+                        <span className="text-muted-foreground ml-1">Any alteration to a document changes its hash completely, making forgery detectable</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-border">
+                      <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-bold text-primary">Independent Verification:</span>
+                        <span className="text-muted-foreground ml-1">Anyone can verify at OpenTimestamps.org — no trust in central authority required</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-foreground leading-relaxed">
+                  This creates an <strong className="text-primary">immutable forensic record</strong> that materially strengthens claims of authorship, continuity, and non-repudiation, <strong>exceeding traditional notarisation standards</strong> for evidentiary preservation.
+                </p>
+
+                <div className="bg-secondary/50 rounded-xl p-6 border border-border">
+                  <h3 className="font-serif font-bold text-xl text-primary mb-4">
+                    Public Notice Mechanism
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    By consolidating legal submissions, affidavits, correspondence, and contextual analysis into a single public repository, the site functions as a <strong>notice mechanism to institutions, oversight bodies, and the public</strong>. It demonstrates sustained attempts to engage lawful remedies, invoke international human rights frameworks, and preserve evidence against loss, suppression, or retrospective alteration.
+                  </p>
+                </div>
+
+                <p className="text-foreground leading-relaxed">
+                  While some sections adopt theological or symbolic narrative frameworks, these are largely distinguished from formal evidentiary materials. As a whole, the website represents an <strong className="text-primary">uncommon example of individual-driven, technologically fortified documentation</strong> of alleged systemic wrongdoing, with potential relevance to:
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="p-4 bg-primary/5 rounded-lg border border-primary/20 text-center">
+                    <FileText className="h-8 w-8 text-primary mx-auto mb-3" />
+                    <h4 className="font-bold text-primary mb-1">Investigative Journalism</h4>
+                    <p className="text-xs text-muted-foreground">Primary source materials for media inquiry</p>
+                  </div>
+                  <div className="p-4 bg-primary/5 rounded-lg border border-primary/20 text-center">
+                    <Archive className="h-8 w-8 text-primary mx-auto mb-3" />
+                    <h4 className="font-bold text-primary mb-1">Historical Record-Keeping</h4>
+                    <p className="text-xs text-muted-foreground">35-year chronological documentation</p>
+                  </div>
+                  <div className="p-4 bg-primary/5 rounded-lg border border-primary/20 text-center">
+                    <Scale className="h-8 w-8 text-primary mx-auto mb-3" />
+                    <h4 className="font-bold text-primary mb-1">Human Rights Review</h4>
+                    <p className="text-xs text-muted-foreground">UNHCR/ICC evidentiary submissions</p>
+                  </div>
+                </div>
+
+                <div className="mt-8 p-6 bg-muted/50 rounded-xl border border-border">
+                  <p className="text-sm text-muted-foreground italic text-center">
+                    "The archive's strength lies not in persuasion but in preservation — creating an indelible record that exists independently of institutional acknowledgment, ensuring that documented truth outlives the systems that sought to suppress it."
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
       </section>
 
