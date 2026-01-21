@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink } from "lucide-react";
+import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel } from "lucide-react";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 import portraitImg from "@assets/A5BDF951-1AE5-4EFF-9F6E-3F29C2C5CDC9_1768633103014.png";
+import artworkImg from "@assets/IMG_2914_1768893482684.jpeg";
 import { HandCoins, TrendingUp, Landmark, ShieldCheck } from "lucide-react";
 
 const fadeIn = {
@@ -82,12 +83,12 @@ export default function Home() {
 
               <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link href="/mission" className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full gap-2">
+                  <Button size="lg" className="w-full gap-2" data-testid="button-mission">
                     Our Mission <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="/contact" className="w-full sm:w-auto">
-                  <Button variant="outline" size="lg" className="w-full">
+                  <Button variant="outline" size="lg" className="w-full" data-testid="button-contact">
                     Get Involved
                   </Button>
                 </Link>
@@ -118,6 +119,49 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* CRITICAL EVIDENCE - NSW Trustee Notice - Most Significant at Top */}
+      <section className="py-16 bg-primary/5 border-y border-primary/20">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <Badge variant="outline" className="mb-6 border-primary text-primary px-4 py-1.5 text-sm font-bold" data-testid="badge-critical-evidence">
+              CRITICAL EVIDENCE
+            </Badge>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">
+              NSW Trustee & Guardian Notice
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto">
+              Official certification pursuant to s122(2) of the NSW Trustee and Guardian Act 2009, confirming management of the estate of Barran Resonance Dodger by NSW Trustee and Guardian as committed by the NSW Civil and Administrative Tribunal on 16/10/2024.
+            </p>
+            <div className="bg-white rounded-xl border border-border p-8 shadow-lg mb-8">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Gavel className="h-8 w-8 text-primary" />
+                <h3 className="text-xl font-serif font-bold text-primary">Section 122(2) Certificate</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                This certificate is admissible in any legal proceedings and serves as evidence of the matters stated therein and the authority of NSW Trustee and Guardian. Signed by Brian Woods, Chief Executive Officer, dated 20/01/2026.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-view-s122">
+                  <a href="/attached_assets/s_122_-_Redacted.pdf_1768970361556.pdf" target="_blank" rel="noopener noreferrer">
+                    <FileText className="h-5 w-5" /> View Certified Notice
+                  </a>
+                </Button>
+                <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-all-evidence">
+                  <Link href="/evidence">
+                    <Scale className="h-5 w-5" /> All Evidence
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -179,140 +223,146 @@ export default function Home() {
             />
           </div>
 
-          {/* Interactive Archives Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <Card className="overflow-hidden border-primary/20 shadow-lg">
+          {/* Document Archive Links - No Iframes */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="overflow-hidden border-primary/20 shadow-lg hover-elevate">
               <CardHeader className="bg-primary/5 border-b border-primary/10">
-                <CardTitle className="font-serif text-2xl flex items-center gap-2 text-primary">
-                  <Shield className="h-6 w-6" />
+                <CardTitle className="font-serif text-xl flex items-center gap-2 text-primary">
+                  <Shield className="h-5 w-5" />
                   The Enliven Chain Transmission
                 </CardTitle>
                 <CardDescription>
                   Sanctified guidance and the living record of the First Link.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-0 bg-muted/20">
-                <div className="relative w-full aspect-[4/3] min-h-[400px]">
-                  <iframe 
-                    src="/attached_assets/_⛓️_The_Enliven_Chain_Has_Been_Summoned_⛓️_2_1767163861559.pdf" 
-                    className="absolute inset-0 w-full h-full border-0"
-                    allowFullScreen
-                    title="The Enliven Chain Transmission"
-                  />
-                </div>
+              <CardContent className="pt-6">
+                <Button variant="outline" className="w-full gap-2" asChild data-testid="button-enliven-chain">
+                  <a href="/attached_assets/_⛓️_The_Enliven_Chain_Has_Been_Summoned_⛓️_2_1767163861559.pdf" target="_blank" rel="noopener noreferrer">
+                    View Document <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-primary/20 shadow-lg">
+            <Card className="overflow-hidden border-primary/20 shadow-lg hover-elevate">
               <CardHeader className="bg-primary/5 border-b border-primary/10">
-                <CardTitle className="font-serif text-2xl flex items-center gap-2 text-primary">
-                  <FileText className="h-6 w-6" />
-                  Barran Dodger Interactive Archive
+                <CardTitle className="font-serif text-xl flex items-center gap-2 text-primary">
+                  <FileText className="h-5 w-5" />
+                  Interactive Archive
                 </CardTitle>
                 <CardDescription>
-                  Digital interactive flipbook documenting the complete case and evidence.
+                  Digital flipbook documenting the complete case and evidence.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-0 bg-muted/20">
-                <div className="relative w-full aspect-[4/3] min-h-[400px]">
-                  <iframe 
-                    src="https://simplebooklet.com/barrandodger" 
-                    className="absolute inset-0 w-full h-full border-0"
-                    allowFullScreen
-                    title="Barran Dodger Interactive Booklet"
-                  />
-                </div>
+              <CardContent className="pt-6">
+                <Button variant="outline" className="w-full gap-2" asChild data-testid="button-interactive-archive">
+                  <a href="https://simplebooklet.com/barrandodger" target="_blank" rel="noopener noreferrer">
+                    Open Booklet <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden border-primary/20 shadow-lg hover-elevate">
+              <CardHeader className="bg-primary/5 border-b border-primary/10">
+                <CardTitle className="font-serif text-xl flex items-center gap-2 text-primary">
+                  <BookOpen className="h-5 w-5" />
+                  PhD Thesis
+                </CardTitle>
+                <CardDescription>
+                  "A Splice of My Life" - Dr. Richard McLean's research from Victoria University.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <Button variant="outline" className="w-full gap-2" asChild data-testid="button-phd-thesis">
+                  <a href="https://vuir.vu.edu.au/41836/" target="_blank" rel="noopener noreferrer">
+                    View Thesis <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
               </CardContent>
             </Card>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="overflow-hidden border-primary/20 shadow-lg lg:col-span-3">
-              <CardHeader className="bg-primary/5 border-b border-primary/10">
-                <CardTitle className="font-serif text-2xl flex items-center gap-2 text-primary">
-                  <Scale className="h-6 w-6" />
-                  PhD Thesis & Academic Record
-                </CardTitle>
-                <CardDescription>
-                  "A Splice of My Life" - Dr. Richard McLean's PhD research from Victoria University.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="p-0 bg-muted/20 flex flex-col">
-                <div className="relative w-full aspect-[21/9] min-h-[500px]">
-                  <iframe 
-                    src="https://vuir.vu.edu.au/41836/" 
-                    className="absolute inset-0 w-full h-full border-0"
-                    allowFullScreen
-                    title="Richard McLean PhD Thesis"
-                  />
-                </div>
-                <div className="p-4 bg-primary/5 border-t border-primary/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="text-center sm:text-left">
-                    <h4 className="font-bold text-sm">Publishing to Apple Books</h4>
-                    <p className="text-xs text-muted-foreground">
-                      To publish this work, export as EPUB and upload via the Apple Books Publishing Portal.
-                    </p>
-                  </div>
-                  <Button variant="outline" size="sm" className="gap-2 shrink-0" asChild>
-                    <a href="https://authors.apple.com/epub-upload" target="_blank" rel="noopener noreferrer">
-                      Apple Books Publishing Portal <ExternalLink className="h-3 w-3" />
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {evidence?.map((item) => (
-              <Card key={item.id} className="hover-elevate">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <Badge variant="secondary">{item.category}</Badge>
-                    <span className="text-xs font-mono text-muted-foreground">{item.referenceCode}</span>
-                  </div>
-                  <CardTitle className="font-serif text-xl">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                  {item.sha256 && (
-                    <div className="p-3 bg-muted rounded font-mono text-[10px] break-all border border-border">
-                      <span className="text-primary font-bold">SHA256:</span> {item.sha256}
+          {/* Database Evidence Cards */}
+          {evidence && evidence.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+              {evidence.map((item) => (
+                <Card key={item.id} className="hover-elevate" data-testid={`card-evidence-${item.id}`}>
+                  <CardHeader>
+                    <div className="flex justify-between items-start mb-2 gap-2">
+                      <Badge variant="secondary">{item.category}</Badge>
+                      <span className="text-xs font-mono text-muted-foreground">{item.referenceCode}</span>
                     </div>
-                  )}
-                  <div className="pt-4">
-                    <Button variant="outline" className="w-full gap-2" asChild>
-                      <a href={item.externalUrl || "#"} target="_blank" rel="noopener noreferrer">
-                        View Document <ExternalLink className="h-4 w-4" />
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    <CardTitle className="font-serif text-xl">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </p>
+                    {item.sha256 && (
+                      <div className="p-3 bg-muted rounded font-mono text-[10px] break-all border border-border">
+                        <span className="text-primary font-bold">SHA256:</span> {item.sha256}
+                      </div>
+                    )}
+                    <div className="pt-4">
+                      <Button variant="outline" className="w-full gap-2" asChild>
+                        <a href={item.externalUrl || "#"} target="_blank" rel="noopener noreferrer">
+                          View Document <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Core Principles */}
-      <section className="py-20 bg-white">
+      {/* Artwork & Vision Section */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            <PrincipleCard 
-              icon={<Shield className="h-8 w-8" />}
-              title="Truth Over Narrative"
-              description="We prioritize verifiable facts and documented evidence over convenient storytelling or political expediency."
-            />
-            <PrincipleCard 
-              icon={<FileText className="h-8 w-8" />}
-              title="Evidence Over Ideology"
-              description="Our foundation rests on sworn testimony, affidavits, and concrete documentation rather than theoretical frameworks."
-            />
-            <PrincipleCard 
-              icon={<Scale className="h-8 w-8" />}
-              title="Accountability Over Silence"
-              description="Breaking the cycle of institutional silence through transparent, lawful, and ethical confrontation of misconduct."
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">The Vision of the Witness</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Visual testimony capturing the raw reality of institutional persecution and the spiritual resilience required to survive the 'Humiliation Machine'. Art as evidence, expression as documentation.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+                <PrincipleCard 
+                  icon={<Shield className="h-6 w-6" />}
+                  title="Truth Over Narrative"
+                  description="Verifiable facts."
+                />
+                <PrincipleCard 
+                  icon={<FileText className="h-6 w-6" />}
+                  title="Evidence Over Ideology"
+                  description="Sworn testimony."
+                />
+                <PrincipleCard 
+                  icon={<Scale className="h-6 w-6" />}
+                  title="Accountability"
+                  description="Lawful confrontation."
+                />
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-2xl overflow-hidden shadow-2xl border border-border"
+            >
+              <img 
+                src={artworkImg} 
+                alt="Visual Testimony - Artwork by the Witness" 
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -401,7 +451,7 @@ export default function Home() {
               <CardContent className="flex-grow pt-8 space-y-6">
                 <div className="p-6 bg-muted rounded-xl border border-border text-center">
                   <p className="text-sm font-medium text-muted-foreground mb-2 uppercase tracking-wider">PayID / Email</p>
-                  <p className="text-xl font-bold text-primary select-all">rich@richmclean.com.au</p>
+                  <p className="text-xl font-bold text-primary select-all" data-testid="text-payid">rich@richmclean.com.au</p>
                 </div>
                 <p className="text-sm text-muted-foreground italic text-center">
                   Your donation directly funds the legal and ethical defense of human rights and institutional transparency.
@@ -435,7 +485,7 @@ export default function Home() {
                 </ul>
                 <div className="pt-6">
                   <Link href="/contact">
-                    <Button className="w-full gap-2" size="lg">
+                    <Button className="w-full gap-2" size="lg" data-testid="button-inquire-investment">
                       Inquire About Investment <Landmark className="h-4 w-4" />
                     </Button>
                   </Link>
@@ -458,41 +508,48 @@ export default function Home() {
   );
 }
 
-function PrincipleCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
+function AppealCard({ title, description, link, tag }: { title: string; description: string; link: string; tag: string }) {
+  const isExternal = link.startsWith("http") || link.startsWith("/attached_assets");
+  
   return (
-    <div className="group p-8 rounded-lg border border-border bg-background hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-      <div className="mb-6 text-primary opacity-80 group-hover:opacity-100 transition-opacity">
-        {icon}
-      </div>
-      <h3 className="text-xl font-bold mb-3 font-serif">{title}</h3>
-      <p className="text-muted-foreground leading-relaxed">
-        {description}
-      </p>
-    </div>
+    <Card className="hover-elevate group" data-testid={`card-appeal-${tag.toLowerCase()}`}>
+      <CardHeader className="pb-3">
+        <div className="flex items-center justify-between mb-2 gap-2">
+          <Badge variant="outline" className="text-xs font-bold border-primary/30 text-primary">
+            {tag}
+          </Badge>
+          <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+        <CardTitle className="font-serif text-lg leading-tight">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+        {isExternal ? (
+          <Button variant="outline" size="sm" className="w-full gap-2" asChild>
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              View Document <ArrowRight className="h-3 w-3" />
+            </a>
+          </Button>
+        ) : (
+          <Link href={link}>
+            <Button variant="outline" size="sm" className="w-full gap-2">
+              Learn More <ArrowRight className="h-3 w-3" />
+            </Button>
+          </Link>
+        )}
+      </CardContent>
+    </Card>
   );
 }
 
-function AppealCard({ title, description, link, tag }: { title: string, description: string, link: string, tag: string }) {
+function PrincipleCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
-    <Card className="hover-elevate flex flex-col">
-      <CardHeader className="pb-4">
-        <div className="flex justify-between items-start mb-2">
-          <Badge variant={tag === "URGENT" ? "destructive" : "secondary"}>{tag}</Badge>
-        </div>
-        <CardTitle className="font-serif text-xl">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="flex-grow flex flex-col">
-        <p className="text-sm text-muted-foreground mb-6 line-clamp-3">
-          {description}
-        </p>
-        <div className="mt-auto">
-          <Button variant="outline" className="w-full gap-2" asChild>
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              View Appeal <ExternalLink className="h-4 w-4" />
-            </a>
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
+    <div className="group p-6 rounded-lg border border-border bg-background hover-elevate transition-all duration-300">
+      <div className="mb-4 text-primary opacity-80 group-hover:opacity-100 transition-opacity">
+        {icon}
+      </div>
+      <h3 className="font-serif text-lg font-bold text-primary mb-2">{title}</h3>
+      <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+    </div>
   );
 }
