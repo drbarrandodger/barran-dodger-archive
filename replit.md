@@ -20,7 +20,7 @@ Preferred communication style: Simple, everyday language.
 - **Animations**: Framer Motion for smooth transitions
 - **Form Handling**: React Hook Form with Zod validation
 - **Typography**: Libre Baskerville (serif headings) + Inter (body text)
-- **Color Scheme**: Navy, slate, white professional palette
+- **Color Scheme**: Deep Navy (#1a2744) + Warm Gold/Amber (#e9a00a) accents - Trust & Truth palette
 
 ### Backend Architecture
 - **Runtime**: Node.js with TypeScript (tsx for development)

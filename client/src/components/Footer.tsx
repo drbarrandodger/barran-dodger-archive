@@ -23,7 +23,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-secondary text-secondary-foreground pt-16 pb-8">
+    <footer className="bg-[hsl(222,55%,12%)] text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-4">
@@ -31,26 +31,26 @@ export function Footer() {
               <Scale className="h-6 w-6" />
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-lg leading-none">Barran Dodger Legal & Ethical Trust Fund</span>
-                <span className="text-[10px] uppercase tracking-wider text-secondary-foreground/60 font-medium mt-1">
+                <span className="text-[10px] uppercase tracking-wider text-white/60 font-medium mt-1">
                   The Trustee for www.barrandodger.com.au
                 </span>
               </div>
             </div>
-            <p className="text-secondary-foreground/80 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/80 text-sm leading-relaxed max-w-xs">
               Upholding ethical governance, protecting truth-tellers, and converting evidence into public-benefit action.
             </p>
           </div>
 
           <div>
             <h3 className="font-serif font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-3 text-sm text-secondary-foreground/80">
+            <ul className="space-y-3 text-sm text-white/80">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/mission" className="hover:text-white transition-colors">Mission & Vision</Link></li>
               <li><Link href="/prophetic-papers" className="hover:text-white transition-colors">Prophetic Papers</Link></li>
               <li><Link href="/evidence" className="hover:text-white transition-colors">Evidence & Manuscripts</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
-            <div className="mt-6 pt-6 border-t border-secondary-foreground/10 space-y-2 text-xs text-secondary-foreground/60">
+            <div className="mt-6 pt-6 border-t border-white/10 space-y-2 text-xs text-white/60">
               <p className="flex items-center gap-2">
                 <Mail className="h-3 w-3" />
                 <a href="mailto:barrandodger@icloud.com" className="hover:text-white transition-colors">barrandodger@icloud.com</a>
@@ -64,7 +64,7 @@ export function Footer() {
 
           <div className="lg:col-span-2">
             <h3 className="font-serif font-semibold text-lg mb-4">Stay Informed</h3>
-            <p className="text-sm text-secondary-foreground/80 mb-4 max-w-md">
+            <p className="text-sm text-white/80 mb-4 max-w-md">
               Receive updates on our advocacy work, public records releases, and ethical governance initiatives.
             </p>
             
@@ -79,7 +79,7 @@ export function Footer() {
                         <Input 
                           placeholder="Email address" 
                           {...field} 
-                          className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/50 focus-visible:ring-secondary-foreground/30"
+                          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus-visible:ring-[hsl(38,92%,50%)]/50"
                         />
                       </FormControl>
                       <FormMessage />
@@ -89,8 +89,7 @@ export function Footer() {
                 <Button 
                   type="submit" 
                   disabled={isPending}
-                  variant="secondary"
-                  className="bg-background text-primary hover:bg-background/90 font-medium px-6"
+                  className="bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)] font-medium px-6"
                 >
                   {isPending ? "..." : "Subscribe"}
                 </Button>
@@ -100,9 +99,9 @@ export function Footer() {
         </div>
 
         {/* Sub Pages Links */}
-        <div className="py-6 border-t border-secondary-foreground/10">
-          <p className="text-xs text-secondary-foreground/50 uppercase tracking-wider font-bold mb-3">Sub Pages</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-secondary-foreground/70">
+        <div className="py-6 border-t border-white/10">
+          <p className="text-xs text-[hsl(38,92%,50%)] uppercase tracking-wider font-bold mb-3">Sub Pages</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/70">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <Link href="/mission" className="hover:text-white transition-colors">Mission</Link>
             <Link href="/gospel" className="hover:text-white transition-colors">Gospel</Link>
@@ -115,10 +114,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-secondary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-secondary-foreground/60">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60">
           <div className="flex flex-col items-center md:items-start gap-1">
             <p>&copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund. All rights reserved.</p>
-            <div className="flex flex-col sm:flex-row gap-x-4 gap-y-1 font-mono text-secondary-foreground/40">
+            <div className="flex flex-col sm:flex-row gap-x-4 gap-y-1 font-mono text-white/40">
               <p>ABN: 78 833 496 164</p>
               <p>The Trustee for www.barrandodger.com.au</p>
             </div>

@@ -44,7 +44,7 @@ export default function Home() {
               className="flex-1 text-center lg:text-left space-y-6"
             >
               <motion.div variants={fadeIn}>
-                <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-primary/5 text-primary rounded-full mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-[hsl(38,92%,50%)]/10 text-[hsl(38,92%,40%)] rounded-full mb-4 border border-[hsl(38,92%,50%)]/30">
                   Public Benefit Organization • ABN: 78 833 496 164
                 </span>
               </motion.div>
@@ -71,7 +71,7 @@ export default function Home() {
               
               <motion.div 
                 variants={fadeIn}
-                className="p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg space-y-3"
+                className="p-6 bg-primary/5 border-l-4 border-[hsl(38,92%,50%)] rounded-r-lg space-y-3"
               >
                 <p className="text-lg font-serif italic text-primary leading-relaxed">
                   "The Eliven Chain has been summoned. An incorruptible archive of lived trauma and whistleblower testimony, sealed in the immutable substrate of blockchain to dismantle the 'Humiliation Machine'."
@@ -83,7 +83,7 @@ export default function Home() {
 
               <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link href="/mission" className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full gap-2" data-testid="button-mission">
+                  <Button size="lg" className="w-full gap-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)]" data-testid="button-mission">
                     Our Mission <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>

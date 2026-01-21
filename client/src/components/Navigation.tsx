@@ -51,7 +51,7 @@ export function Navigation() {
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary relative py-1",
                 location === link.href 
-                  ? "text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-primary" 
+                  ? "text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[hsl(38,92%,50%)]" 
                   : "text-muted-foreground"
               )}
             >
@@ -60,7 +60,7 @@ export function Navigation() {
           ))}
           <Link 
             href="/contact" 
-            className="px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium rounded hover:bg-primary/90 transition-all shadow-sm hover:shadow"
+            className="px-5 py-2.5 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] text-sm font-semibold rounded hover:bg-[hsl(38,92%,55%)] transition-all shadow-sm hover:shadow"
           >
             Get Involved
           </Link>
