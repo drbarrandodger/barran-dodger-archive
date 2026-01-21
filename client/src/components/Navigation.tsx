@@ -16,9 +16,9 @@ export function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/mission", label: "Mission" },
-    { href: "/research", label: "Research" },
+    { href: "/gospel", label: "Gospel" },
+    { href: "/church", label: "Church" },
     { href: "/evidence", label: "Evidence" },
-    { href: "/prophetic-papers", label: "Prophetic Papers" },
     { href: "/#invest", label: "Invest" },
     { href: "/contact", label: "Contact" },
   ];

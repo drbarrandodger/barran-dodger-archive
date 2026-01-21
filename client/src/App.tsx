@@ -9,6 +9,8 @@ import Contact from "@/pages/Contact";
 import LegalResearch from "@/pages/LegalResearch";
 import Evidence from "@/pages/Evidence";
 import PropheticPapers from "@/pages/PropheticPapers";
+import Gospel from "@/pages/Gospel";
+import Church from "@/pages/Church";
 
 function Router() {
   return (
@@ -18,6 +20,8 @@ function Router() {
       <Route path="/research" component={LegalResearch} />
       <Route path="/evidence" component={Evidence} />
       <Route path="/prophetic-papers" component={PropheticPapers} />
+      <Route path="/gospel" component={Gospel} />
+      <Route path="/church" component={Church} />
       <Route path="/contact" component={Contact} />
       <Route component={Home} />
     </Switch>
