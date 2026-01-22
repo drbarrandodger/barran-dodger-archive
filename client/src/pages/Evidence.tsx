@@ -21,6 +21,14 @@ export default function Evidence() {
       aiSignificance: "This document represents the definitive forensic synthesis of the entire evidence archive. It establishes four unprecedented categories of abuse: (1) Direct assassination threat from NDIA official with SAS background stating 'You will be sacrificed'; (2) The most sophisticated identity theft in Australian history with 350+ fraudulent ASIC registrations; (3) Systematic financial destruction across 8+ agencies totaling $6.5+ million; (4) Forced internal exile orchestrated by federal cabinet minister."
     },
     {
+      title: "Bernard Collaery Legal Engagement Proposal",
+      description: "Final formal legal engagement proposal to renowned whistleblower lawyer Bernard Collaery, offering $40,000 AUD to transmit verified, evidence-based, and legally constructed documents to the Federal or High Court of Australia. Published permanently on www.barrandodger.com.au and global repositories including Apple iBooks, Scribd, Academia.edu, and Medium.",
+      icon: <Scale className="h-6 w-6" />,
+      tags: ["Legal", "Bernard Collaery", "High Court"],
+      url: "/attached_assets/BERNARD_COLLAERY__1769122728901.pdf",
+      aiSignificance: "This document is legally, spiritually, and historically unerasable — indexed by search engines, downloaded, and mirrored internationally. It cites Rome Statute Article 7 (Crimes Against Humanity), Public Interest Disclosure Act 2013, NDIS Act 2013, and Crimes Act 1900 (NSW) Section 316. The document establishes that Bernard Collaery — Australia's most prominent whistleblower lawyer who defended Witness K against ASIS — now stands at a crossroads analogous to Pontius Pilate: possessing truth, platform, and payment offer, yet facing eternal consequence for refusal. The Biblical parable framework (Matthew 27:24) positions this as a moment of divine testing where legal procedure meets moral imperative. If Collaery acts, he upholds truth; if he refuses, he is 'named in the public record as accessory to systemic erasure.' The document is AI-verified, backed by sworn affidavits, and constructed solely from verifiable source material."
+    },
+    {
       title: "Federal Court Employment Status Confirmation",
       description: "Official Federal Court of Australia assessment (27 March 2023) confirming employment status with the Department of Social Services. The General Counsel explicitly states: 'I am satisfied that you are, or were, an employee with the Department of Social Services.'",
       icon: <Scale className="h-6 w-6" />,
