@@ -134,7 +134,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60">
+        {/* Copyright & Legal Protection Notice */}
+        <div className="py-6 border-t border-white/10">
+          <div className="bg-white/5 rounded-lg p-4 mb-4">
+            <h4 className="text-sm font-semibold text-[hsl(38,92%,50%)] mb-2 uppercase tracking-wider">Copyright & Intellectual Property Notice</h4>
+            <p className="text-xs text-white/70 leading-relaxed mb-3">
+              &copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved.
+            </p>
+            <p className="text-xs text-white/60 leading-relaxed mb-3">
+              All content on this website and the domain <strong className="text-white/80">www.barrandodger.com.au</strong>, including but not limited to: testimony documents, witness statements, forensic evidence, gospel writings, blockchain-verified manuscripts, legal correspondence, evidence archives, photographic materials, audio/video recordings, and all downloadable documents, are protected under Australian and international copyright law.
+            </p>
+            <p className="text-xs text-white/60 leading-relaxed mb-3">
+              These materials constitute original works of authorship and sworn testimony. Unauthorised reproduction, distribution, modification, public display, or commercial use of any materials from this website is strictly prohibited without prior written consent from the Barran Dodger Legal & Ethical Trust Fund.
+            </p>
+            <p className="text-xs text-white/60 leading-relaxed">
+              Evidence documents are blockchain-timestamped and legally sealed. Any tampering, misrepresentation, or unauthorised alteration of these materials may constitute fraud and will be prosecuted to the fullest extent of the law. These materials are preserved for evidentiary purposes in ongoing and future legal proceedings.
+            </p>
+          </div>
+        </div>
+
+        <div className="pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60">
           <div className="flex flex-col items-center md:items-start gap-1">
             <p>&copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund. All rights reserved.</p>
             <div className="flex flex-col sm:flex-row gap-x-4 gap-y-1 font-mono text-white/40">
