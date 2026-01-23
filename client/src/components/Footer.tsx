@@ -138,7 +138,14 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start gap-1">
             <p>&copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund. All rights reserved.</p>
             <div className="flex flex-col sm:flex-row gap-x-4 gap-y-1 font-mono text-white/40">
-              <p>ABN: 78 833 496 164</p>
+              <a 
+                href="https://abr.business.gov.au/ABN/View?abn=78833496164" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[hsl(38,92%,50%)] transition-colors underline"
+              >
+                ABN: 78 833 496 164 (Verify on ABR.gov.au)
+              </a>
               <p>The Trustee for www.barrandodger.com.au</p>
             </div>
           </div>
