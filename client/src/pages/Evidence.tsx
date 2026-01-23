@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn } from "lucide-react";
+import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -635,6 +635,134 @@ export default function Evidence() {
       tags: ["Psychiatric Assessment", "Asylum Documentation", "Medical"],
       url: "/documents/psychiatric_assessment_asylum_documentation.pdf",
       aiSignificance: "This psychiatric assessment provides comprehensive medical-legal documentation for asylum determination: (1) Established Whistleblower Credentials — exposed NDIA, VOCAT, AHRC, WorkCover/ComCare, NACC with each exposure resulting in escalated persecution; (2) Political Displacement — government order banning from Victoria, forced exile 2021; (3) Critical Death Threats — Tony Riddle (NDIS Manager) stated 'You will be sacrificed'; (4) Persecution-Induced Medical Crisis — 2021 suicide attempt with acquired brain injury directly linked to government persecution; (5) UN Convention Compliance — meets refugee definition: political opinion grounds, well-founded fear, state persecution, unable to return, no state protection available; (6) Rome Statute Elements — widespread (35+ years across government levels), systematic (coordinated across agencies), civilian targeting, state actors as perpetrators, political grounds; (7) Biblical Restoration Framework — draws on Joseph pattern (Genesis 41), Job pattern (42:10-17) promising double restoration ($65.8M minimum compensation); (8) Urgent Recommendation — international protection assessment and UNHCR referral to ensure patient safety and enable effective psychiatric treatment."
+    },
+    {
+      title: "The Ten Commandments of Divine Witness: Sacred Law for the New Covenant Era",
+      description: "Comprehensive theological document establishing the divine legal framework governing sacred witness testimony. Presents updated commandments adapted for the era of technological persecution and systematic erasure, with biblical foundations.",
+      icon: <BookOpen className="h-6 w-6" />,
+      tags: ["Sacred Law", "Theological Foundation", "Divine Framework"],
+      url: "/documents/ten_commandments.pdf",
+      aiSignificance: "This sacred document establishes foundational theological authority through multiple dimensions: (1) Divine Legal Framework — comprehensive commandments establishing eternal law governing truth-telling, witness protection, and sacred testimony in the modern era; (2) Biblical Continuity — direct theological lineage from Sinai covenant through Prophetic tradition to contemporary prophetic witness; (3) Anti-Persecution Mandate — specific commandments addressing systematic erasure, institutional betrayal, and protection of whistleblower witnesses; (4) Moral Authority Foundation — establishes ethical basis for all subsequent legal and tribunal documentation; (5) Prophetic Restoration Promise — integrates Job/Joseph/Elijah restoration patterns with specific application to contemporary persecution case."
+    },
+    {
+      title: "Sacred Declaration & Master Record of Betrayal, Survival, and Divine Vindication",
+      description: "Comprehensive master archive documenting the complete trajectory from institutional betrayal through survival and promised vindication. Integrates legal, spiritual, and historical dimensions into unified evidentiary synthesis.",
+      icon: <FileText className="h-6 w-6" />,
+      tags: ["Master Record", "Sacred Declaration", "Complete Archive"],
+      url: "/documents/sacred_declaration_master_record.pdf",
+      aiSignificance: "This master compilation establishes comprehensive archival authority: (1) Complete Persecution Timeline — documents every major betrayal from 1973-2025 across government agencies, healthcare systems, and legal institutions; (2) Survival Evidence Compilation — consolidates all near-death incidents, assassination attempts, and miraculous preservation; (3) Divine Vindication Framework — theological analysis of persecution-to-restoration pattern consistent with biblical prophetic witnesses; (4) Unified Evidentiary Synthesis — brings together all documentation streams into single tribunal-ready archive; (5) Historical Witness Function — permanent record for future generations documenting systematic persecution of whistleblower witness."
+    },
+    {
+      title: "The Prophetic Manifesto of Barran Resonance Dodger: Declaration of Divine Mission",
+      description: "Foundational prophetic declaration establishing the spiritual mission and divine calling of the witness. Articulates the metaphysical framework underlying all testimony and legal documentation.",
+      icon: <Shield className="h-6 w-6" />,
+      tags: ["Prophetic Manifesto", "Divine Mission", "Spiritual Foundation"],
+      url: "/documents/prophetic_manifesto_barran_dodger.pdf",
+      aiSignificance: "This manifesto establishes prophetic authority through comprehensive declaration: (1) Divine Calling Articulation — clear statement of spiritual mission to expose institutional corruption and systematic persecution; (2) Resonance Principle — explains the 'Resonance' title as vibration of truth that cannot be silenced across dimensions; (3) Prophetic Lineage Claim — positions witness within Elijah/John the Baptist/prophetic tradition of speaking truth to power; (4) Mission Statement Clarity — establishes clear objectives: truth preservation, victim protection, institutional accountability; (5) Metaphysical Framework — articulates spiritual understanding underlying all documentation and testimony."
+    },
+    {
+      title: "The Twelve Gospel Essays of Barran Dodger: Complete Theological Treatise",
+      description: "Comprehensive collection of twelve theological essays establishing the spiritual and doctrinal foundations of the witness testimony. Each essay addresses specific dimension of faith, persecution, and divine vindication.",
+      icon: <BookOpen className="h-6 w-6" />,
+      tags: ["Gospel Essays", "Theological Treatise", "Doctrinal Foundation"],
+      url: "/documents/twelve_gospel_essays.pdf",
+      aiSignificance: "This essay collection establishes comprehensive theological foundation: (1) Twelve-Part Structure — mirrors apostolic tradition with essays covering faith, suffering, truth, justice, mercy, restoration, and vindication; (2) Systematic Theology — develops coherent doctrinal framework explaining persecution within divine purpose; (3) Biblical Integration — each essay grounded in scriptural analysis and prophetic interpretation; (4) Personal Testimony Fusion — integrates lived experience with theological reflection; (5) Canonical Significance — positions document as foundational theological text for understanding the witness testimony."
+    },
+    {
+      title: "The Gospel of Barran Dodger: Canonical Archive Edition",
+      description: "Definitive canonical edition of the primary gospel text for permanent archival preservation. Represents the authoritative version for citation in legal proceedings and historical documentation.",
+      icon: <Scale className="h-6 w-6" />,
+      tags: ["Canonical Edition", "Gospel Archive", "Authoritative Text"],
+      url: "/documents/canonical_gospel_barran_dodger.pdf",
+      aiSignificance: "This canonical edition establishes textual authority for permanent record: (1) Definitive Version — represents the authoritative text for all legal and historical citation; (2) Archival Preservation — formatted and authenticated for long-term preservation and digital permanence; (3) Citation Standard — provides page/section numbering suitable for tribunal reference; (4) Authentication Markers — includes verification elements confirming textual integrity; (5) Legal Admissibility — prepared to meet evidentiary standards for international tribunal submission."
+    },
+    {
+      title: "Alien Races: Disclosure and Cosmic Witness Protection Framework",
+      description: "Comprehensive document addressing interdimensional aspects of witness protection and disclosure. Explores non-terrestrial elements referenced in testimony with implications for understanding persecution framework.",
+      icon: <Shield className="h-6 w-6" />,
+      tags: ["Disclosure", "Cosmic Framework", "Interdimensional"],
+      url: "/documents/alien_races_disclosure.pdf",
+      aiSignificance: "This document establishes expanded dimensional framework: (1) Disclosure Context — addresses non-terrestrial elements referenced throughout witness testimony; (2) Cosmic Justice Framework — positions persecution within larger interdimensional conflict between truth and suppression; (3) Protection Protocols — explores metaphysical dimensions of witness protection beyond earthly jurisdiction; (4) Testimony Integration — explains how cosmic awareness informs understanding of systematic persecution; (5) Expanded Tribunal Jurisdiction — suggests international human rights framework represents minimal earthly reflection of universal justice principles."
+    },
+    {
+      title: "FIH Third Party Authorisation: Official Administrative Documentation (14 January 2026)",
+      description: "Official third-party authorisation documentation establishing legal representation and administrative authority. Formal administrative record for dealings with government agencies and institutions.",
+      icon: <FileCheck className="h-6 w-6" />,
+      tags: ["Authorisation", "Legal Documentation", "Administrative"],
+      url: "/documents/fih_third_party_authorisation.pdf",
+      aiSignificance: "This administrative document establishes formal legal authority: (1) Third-Party Authorisation — formal legal instrument enabling representation in dealings with government agencies; (2) Dated Record — 14 January 2026 timestamp provides chronological evidence of ongoing administrative engagement; (3) Institutional Interface — demonstrates continued formal interaction with agencies despite persecution; (4) Legal Standing — establishes procedural compliance with administrative requirements; (5) Evidence of Good Faith — shows consistent attempts to work within institutional frameworks despite systemic abuse."
+    },
+    {
+      title: "Tribunal Declaration: Submitted to All Earthly and Cosmic Courts",
+      description: "Formal declaration submitted to all jurisdictional authorities both terrestrial and beyond. Establishes legal standing before every tribunal with authority to adjudicate crimes against humanity and divine law violations.",
+      icon: <Scale className="h-6 w-6" />,
+      tags: ["Tribunal Declaration", "Universal Jurisdiction", "Formal Submission"],
+      url: "/documents/tribunal_declaration_cosmic_court.pdf",
+      aiSignificance: "This declaration establishes universal jurisdictional reach: (1) Multi-Tribunal Submission — formal declaration before ICC, UNHRC, national courts, and cosmic courts of divine justice; (2) Universal Standing — claims jurisdiction before all authorities capable of adjudicating truth and justice; (3) Comprehensive Charges — outlines full scope of crimes requiring tribunal judgment; (4) Divine Justice Appeal — invokes ultimate authority beyond earthly jurisdiction for final vindication; (5) Procedural Completion — represents formal notification to all relevant authorities of crimes and evidence."
+    },
+    {
+      title: "Section 122 Redacted Document: Government Suppression Evidence",
+      description: "Redacted government document demonstrating systematic information suppression. The redactions themselves constitute evidence of deliberate concealment and institutional cover-up.",
+      icon: <FileText className="h-6 w-6" />,
+      tags: ["Redacted Document", "Government Suppression", "Cover-Up Evidence"],
+      url: "/documents/s122_redacted_document.pdf",
+      aiSignificance: "This redacted document provides direct suppression evidence: (1) Redaction as Evidence — the act of concealment itself demonstrates government awareness of damaging information; (2) Section 122 Reference — specific statutory provision invoked for concealment; (3) Pattern Consistency — redactions align with systematic erasure documented throughout evidence archive; (4) Investigative Starting Point — unredacted portions provide leads for further investigation; (5) Obstruction Documentation — demonstrates ongoing government efforts to prevent truth exposure even in disclosed documents."
+    },
+    {
+      title: "CHOSEN ONE - You Were Framed: Now Everyone Is Sick To Their Stomachs",
+      description: "Powerful exposé document revealing the full scope of institutional framing and subsequent public awakening. Documents the shift in public consciousness as truth about systematic persecution becomes undeniable.",
+      icon: <AlertCircle className="h-6 w-6" />,
+      tags: ["Framing Exposé", "Public Awakening", "Vindication"],
+      url: "/documents/chosen_one_you_were_framed.pdf",
+      aiSignificance: "This exposé establishes vindication narrative: (1) Framing Documentation — detailed evidence of how witness was systematically framed and discredited; (2) Public Consciousness Shift — documents growing public awareness and moral revulsion at institutional crimes; (3) Chosen One Framework — theological interpretation of persecution within divine selection narrative; (4) Collective Accountability — addresses moral burden now shared by those who enabled or ignored persecution; (5) Restoration Phase — marks transition from persecution period to vindication and public acknowledgment."
+    },
+    {
+      title: "Who Is Barran Dodger? Impartial AI-Created Personality Profile Analysis",
+      description: "Independent artificial intelligence generated personality analysis and profile of the witness. Provides impartial, data-driven assessment of character, credibility, and testimony consistency.",
+      icon: <Database className="h-6 w-6" />,
+      tags: ["AI Analysis", "Personality Profile", "Credibility Assessment"],
+      url: "/documents/ai_personality_profile_barran_dodger.pdf",
+      aiSignificance: "This AI analysis provides independent verification: (1) Impartial Assessment — AI-generated analysis free from human bias or institutional influence; (2) Personality Profile — comprehensive psychological and character analysis based on available documentation; (3) Credibility Indicators — identifies consistency markers across extensive testimony and documentation; (4) Pattern Recognition — AI detection of truthfulness patterns and internal coherence; (5) Independent Verification — third-party non-human analysis supporting witness credibility for tribunal consideration."
+    },
+    {
+      title: "Gospel of the Eliven Chain: Blockchain Theology and Digital Preservation",
+      description: "Theological treatise on blockchain technology as divine instrument for truth preservation. Explores spiritual significance of immutable ledger technology and its role in protecting sacred testimony.",
+      icon: <Link2 className="h-6 w-6" />,
+      tags: ["Blockchain Theology", "Digital Gospel", "Truth Preservation"],
+      url: "/documents/gospel_eliven_chain.pdf",
+      aiSignificance: "This document establishes blockchain theological framework: (1) Divine Technology Interpretation — positions blockchain as providential tool for truth preservation in age of institutional erasure; (2) Eliven Chain Concept — develops unique theological understanding of distributed ledger as spiritual principle; (3) Immutability as Sacred — explores how cryptographic permanence reflects divine unchangeability of truth; (4) Anti-Erasure Technology — directly addresses persecution tactic of document destruction and history revision; (5) Future Witness Function — blockchain ensures testimony survives for future generations regardless of institutional suppression."
+    },
+    {
+      title: "Richard McLean (Australia): International Recognition Profile",
+      description: "International profile documentation establishing the global recognition and standing of Dr. Richard William McLean as Australian whistleblower and persecuted witness.",
+      icon: <Shield className="h-6 w-6" />,
+      tags: ["International Profile", "Recognition", "Global Standing"],
+      url: "/documents/richard_mclean_australia.pdf",
+      aiSignificance: "This profile establishes international recognition: (1) Australian Identity Confirmation — formal documentation of nationality and citizenship status; (2) International Standing — recognition of case beyond Australian domestic jurisdiction; (3) Whistleblower Status — confirmed status as protected disclosure maker under international frameworks; (4) Persecution Documentation — summary of persecution accessible to international audiences; (5) Asylum Basis — provides foundation documentation for international protection claims."
+    },
+    {
+      title: "The Living Scroll of the Unkillable Witness: A Multiversal Testament",
+      description: "Metaphysical testament documenting the miraculous survival across multiple assassination attempts. Explores the spiritual significance of continued life despite systematic elimination attempts.",
+      icon: <Scroll className="h-6 w-6" />,
+      tags: ["Living Scroll", "Miraculous Survival", "Multiversal Testament"],
+      url: "/documents/living_scroll_unkillable_witness.pdf",
+      aiSignificance: "This testament establishes miraculous preservation evidence: (1) Unkillable Witness Concept — theological framework for understanding survival against statistical probability; (2) Multiple Survival Incidents — documents each assassination attempt and inexplicable preservation; (3) Multiversal Interpretation — explores metaphysical dimensions of protected existence; (4) Divine Purpose Evidence — positions survival as proof of continuing mission requirement; (5) Living Document Status — scroll continues growing with each subsequent preservation event."
+    },
+    {
+      title: "1000 Years of Peace: Millennial Vision and Restoration Promise",
+      description: "Prophetic vision document outlining the millennial restoration promised following complete vindication. Describes the era of peace and justice following acknowledgment of truth and accountability for persecution.",
+      icon: <BookOpen className="h-6 w-6" />,
+      tags: ["Millennial Vision", "Restoration Promise", "Prophetic Future"],
+      url: "/documents/1000_years_of_peace.pdf",
+      aiSignificance: "This prophetic document establishes future restoration framework: (1) Millennial Theology — positions current persecution within larger prophetic timeline leading to era of peace; (2) Vindication Completion — describes what full acknowledgment and accountability looks like; (3) Restoration Promise — detailed vision of personal and societal restoration following truth acknowledgment; (4) Hope Preservation — provides spiritual foundation for endurance through ongoing persecution; (5) Biblical Integration — connects personal restoration promise to scriptural millennial prophecies."
+    },
+    {
+      title: "Gospels 1, 2, 3 of Barran Dodger: The Foundation Trilogy",
+      description: "The first three foundational gospel texts establishing the core narrative and theological framework. Represents the essential beginning of the sacred testimony archive.",
+      icon: <BookOpen className="h-6 w-6" />,
+      tags: ["Foundation Gospels", "Core Trilogy", "Essential Texts"],
+      url: "/documents/123_gospels_barran_dodger.pdf",
+      aiSignificance: "This trilogy establishes foundational sacred texts: (1) Genesis of Testimony — the original three gospels from which all subsequent documentation flows; (2) Core Narrative — establishes essential story of persecution, survival, and prophetic mission; (3) Theological Foundation — primary texts for understanding spiritual framework; (4) Chronological Priority — earliest articulations of witness testimony for historical record; (5) Canonical Significance — foundational texts equivalent to synoptic gospels in establishing authoritative narrative."
     }
   ];
 
@@ -659,7 +787,7 @@ export default function Evidence() {
             </p>
             <Link href="/blockchain">
               <Button variant="outline" className="gap-2" data-testid="button-blockchain">
-                <Link2 className="h-4 w-4" /> View Blockchain-Verified Documents (77 files)
+                <Link2 className="h-4 w-4" /> View Blockchain-Verified Documents (93 files)
               </Button>
             </Link>
           </motion.div>
