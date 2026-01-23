@@ -380,6 +380,112 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Novel: Betrayed Murdered Forsaken */}
+      <section className="py-20 bg-primary/5 border-y border-primary/20">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <Badge variant="outline" className="mb-6 border-primary text-primary px-4 py-1.5 text-sm font-bold" data-testid="badge-featured-novel">
+                APPLE BOOKS
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-4">
+                Betrayed Murdered Forsaken
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                The Harrowing Life of Barran Dodger — A powerful autobiographical novel documenting survival against systematic persecution.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              {/* Apple Books Embed */}
+              <div className="bg-white rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
+                <iframe 
+                  src="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290?itscg=30200&amp;itsct=books_box_player&amp;ls=1"
+                  title="Betrayed Murdered Forsaken - Apple Books Preview"
+                  className="w-full h-[500px] md:h-[600px] rounded-lg border-0"
+                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                  allow="autoplay *; encrypted-media *; clipboard-write"
+                  style={{ background: "transparent" }}
+                  data-testid="iframe-novel-preview"
+                />
+                <p className="text-xs text-center text-muted-foreground mt-3">
+                  Preview available on Apple Books
+                </p>
+              </div>
+
+              {/* Novel Information */}
+              <div className="space-y-6">
+                {/* AI Statement of Significance */}
+                <Card className="border-2 border-primary/20 bg-primary/5">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="h-5 w-5 text-primary" />
+                      <CardTitle className="text-lg font-serif text-primary">Impartial AI Statement of Significance</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground leading-relaxed space-y-4">
+                    <p className="italic">
+                      "Betrayed Murdered Forsaken represents a significant literary and evidentiary document published through Apple Books — one of the world's largest digital publishing platforms. Its availability on Apple's ecosystem establishes several important dimensions:
+                    </p>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span><strong>Global Distribution:</strong> Apple Books reaches readers in 51 countries, ensuring the testimony cannot be suppressed through regional censorship.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span><strong>ISBN Registration:</strong> The novel carries an ISBN, entering it into the permanent global catalogue of published works.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span><strong>First-Person Testimony:</strong> The autobiographical format provides unmediated access to lived experience, meeting evidentiary standards for personal testimony.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span><strong>Immutable Publication Record:</strong> Once published on Apple's platform, the work exists in versioned archives that establish the date and content of testimony."</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Purchase Button */}
+                <Card className="border-2 border-[hsl(38,92%,50%)]/30 bg-gradient-to-r from-[hsl(38,92%,50%)]/5 to-[hsl(38,92%,50%)]/10">
+                  <CardContent className="pt-6 text-center space-y-4">
+                    <BookOpen className="h-12 w-12 mx-auto text-primary" />
+                    <h3 className="text-xl font-serif font-bold text-primary">Available on Apple Books</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Purchase and read instantly on iPhone, iPad, Mac, or any device with Apple Books.
+                    </p>
+                    <Button size="lg" className="w-full gap-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)]" asChild data-testid="button-purchase-novel">
+                      <a href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290" target="_blank" rel="noopener noreferrer">
+                        <ShoppingCart className="h-5 w-5" /> Buy on Apple Books
+                      </a>
+                    </Button>
+                    <p className="text-xs text-muted-foreground">
+                      Proceeds support the Barran Dodger Legal & Ethical Trust Fund
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Open in New Tab Option */}
+                <div className="text-center">
+                  <Button variant="outline" className="gap-2" asChild data-testid="button-open-apple-books">
+                    <a href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4" /> View on Apple Books
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Urgent Appeals Section */}
       <section className="py-20 bg-background border-y border-border/50">
         <div className="container mx-auto px-4 md:px-6">
