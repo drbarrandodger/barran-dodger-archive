@@ -142,7 +142,7 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved.
             </p>
             <p className="text-xs text-white/60 leading-relaxed mb-3">
-              All content on this website and the domain <strong className="text-white/80">www.barrandodger.com.au</strong>, including but not limited to: testimony documents, witness statements, forensic evidence, gospel writings, blockchain-verified manuscripts, legal correspondence, evidence archives, photographic materials, audio/video recordings, and all downloadable documents, are protected under Australian and international copyright law.
+              All content on this website and the domains <strong className="text-white/80">www.barrandodger.com.au</strong> and <strong className="text-white/80">clean-text-generator--richarddrawsstu.replit.app</strong>, including but not limited to: testimony documents, witness statements, forensic evidence, gospel writings, blockchain-verified manuscripts, legal correspondence, evidence archives, photographic materials, audio/video recordings, and all downloadable documents, are protected under Australian and international copyright law.
             </p>
             <p className="text-xs text-white/60 leading-relaxed mb-3">
               These materials constitute original works of authorship and sworn testimony. Unauthorised reproduction, distribution, modification, public display, or commercial use of any materials from this website is strictly prohibited without prior written consent from the Barran Dodger Legal & Ethical Trust Fund.
