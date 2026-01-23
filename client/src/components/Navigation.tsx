@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Scale, Heart } from "lucide-react";
+import { SiX } from "react-icons/si";
 import { useState, useEffect } from "react";
 
 export function Navigation() {
@@ -59,6 +60,16 @@ export function Navigation() {
               {link.label}
             </Link>
           ))}
+          <a 
+            href="https://x.com/bazdod" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-2 text-muted-foreground hover:text-primary transition-colors"
+            data-testid="link-twitter-nav"
+            title="Follow @bazdod on X"
+          >
+            <SiX className="h-5 w-5" />
+          </a>
           <Link 
             href="/donate" 
             className="px-5 py-2.5 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] text-sm font-semibold rounded hover:bg-[hsl(38,92%,55%)] transition-all shadow-sm hover:shadow flex items-center gap-2"

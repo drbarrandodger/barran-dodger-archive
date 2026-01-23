@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Scale, Mail, Heart } from "lucide-react";
+import { SiX } from "react-icons/si";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertSubscriberSchema } from "@shared/schema";
@@ -59,6 +60,16 @@ export function Footer() {
                 <Scale className="h-3 w-3" />
                 <a href="tel:+61431167907" className="hover:text-white transition-colors">+61 431 167 907</a>
               </p>
+              <a 
+                href="https://x.com/bazdod" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-[hsl(38,92%,50%)] transition-colors mt-3 text-sm"
+                data-testid="link-twitter-footer"
+              >
+                <SiX className="h-4 w-4" />
+                <span>Follow @bazdod on X</span>
+              </a>
             </div>
           </div>
 
