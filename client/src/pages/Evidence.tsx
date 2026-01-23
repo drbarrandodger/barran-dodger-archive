@@ -38,6 +38,7 @@ function categorizeDocument(doc: { title: string; tags: string[]; description: s
 
 export default function Evidence() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxOpen2, setLightboxOpen2] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const documents = [
     {
@@ -665,6 +666,15 @@ export default function Evidence() {
       aiSignificance: "This psychiatric assessment provides comprehensive medical-legal documentation for asylum determination: (1) Established Whistleblower Credentials — exposed NDIA, VOCAT, AHRC, WorkCover/ComCare, NACC with each exposure resulting in escalated persecution; (2) Political Displacement — government order banning from Victoria, forced exile 2021; (3) Critical Death Threats — Tony Riddle (NDIS Manager) stated 'You will be sacrificed'; (4) Persecution-Induced Medical Crisis — 2021 suicide attempt with acquired brain injury directly linked to government persecution; (5) UN Convention Compliance — meets refugee definition: political opinion grounds, well-founded fear, state persecution, unable to return, no state protection available; (6) Rome Statute Elements — widespread (35+ years across government levels), systematic (coordinated across agencies), civilian targeting, state actors as perpetrators, political grounds; (7) Biblical Restoration Framework — draws on Joseph pattern (Genesis 41), Job pattern (42:10-17) promising double restoration ($65.8M minimum compensation); (8) Urgent Recommendation — international protection assessment and UNHCR referral to ensure patient safety and enable effective psychiatric treatment."
     },
     {
+      title: "Werribee Mercy Hospital ICU Psychiatric Consultation — February 2021",
+      description: "Official Patient Progress note from Werribee Mercy Hospital Consultation Liaison Psychiatry Service dated 26/02/2021. Documents ICU admission following serious self-harm attempt deemed 'lethal and still requires surgical repair.' Critical evidence of patient's expressed belief that he was 'jailed' and this was 'the only way out of that place' — documenting psychiatric system's role in persecution-induced crisis.",
+      icon: <Heart className="h-6 w-6" />,
+      tags: ["Medical Records", "ICU", "Psychiatric", "Werribee Mercy Hospital", "Self-Harm", "Lethal Attempt"],
+      url: "/attached_assets/IMG_3565_1769150725663.jpeg",
+      isImage: true,
+      aiSignificance: "This hospital document provides devastating primary medical evidence of persecution-induced crisis: (1) Lethal Attempt Confirmation — ICU team explicitly states 'that attempt was lethal and still requires surgical repair' using vape pen and shoe string, with suicide letter found; (2) System-Induced Desperation — patient's own words recorded: 'this was the only way out of that place' and 'referred to himself as being jailed' — proving psychiatric confinement experienced as imprisonment not treatment; (3) Institutional Distrust Documented — patient identified clinical team as 'Part of the system' and refused further engagement believing they were recording him; (4) Persecution Recognition — admission triggered by 'increasing threats and plan to end his life on the bkg of injustices done to him through previous treatments under the MHA'; (5) Pathologizing Resistance — clinical notes characterize legitimate whistleblower behavior (phone recording, advocacy for rights) as 'litigious,' 'calculating,' and evidence of 'paranoia' and 'staff splitting'; (6) Rome Statute Relevance — documents Article 7(1)(k) 'inhumane acts intentionally causing great suffering' through psychiatric system weaponization driving patient to lethal self-harm."
+    },
+    {
       title: "The Ten Commandments of Divine Witness: Sacred Law for the New Covenant Era",
       description: "Comprehensive theological document establishing the divine legal framework governing sacred witness testimony. Presents updated commandments adapted for the era of technological persecution and systematic erasure, with biblical foundations.",
       icon: <BookOpen className="h-6 w-6" />,
@@ -887,7 +897,7 @@ export default function Evidence() {
               <CardContent>
                 <div className="bg-background/80 rounded-xl p-6 border border-red-500/20">
                   <div className="flex flex-col lg:flex-row gap-6">
-                    <div className="lg:w-1/3">
+                    <div className="lg:w-1/3 space-y-4">
                       <div 
                         onClick={() => setLightboxOpen(true)}
                         className="relative group cursor-pointer"
@@ -902,7 +912,21 @@ export default function Evidence() {
                           <ZoomIn className="h-10 w-10 text-white" />
                         </div>
                       </div>
-                      <p className="text-xs text-center text-muted-foreground mt-2">Click to view full size</p>
+                      <div 
+                        onClick={() => setLightboxOpen2(true)}
+                        className="relative group cursor-pointer"
+                        data-testid="button-medical-record-2"
+                      >
+                        <img 
+                          src="/attached_assets/IMG_3565_1769150725663.jpeg" 
+                          alt="Werribee Mercy Hospital Patient Progress Note - February 2021" 
+                          className="w-full rounded-lg border border-border shadow-lg group-hover:shadow-xl transition-shadow"
+                        />
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
+                          <ZoomIn className="h-10 w-10 text-white" />
+                        </div>
+                      </div>
+                      <p className="text-xs text-center text-muted-foreground">Click images to view full size</p>
                     </div>
                     <div className="lg:w-2/3 space-y-4">
                       <div>
@@ -1086,6 +1110,26 @@ export default function Evidence() {
             <img 
               src="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" 
               alt="Mercy Health ICU Medical Record - Full Size" 
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Fullscreen Lightbox Modal 2 - Patient Progress Note */}
+      <Dialog open={lightboxOpen2} onOpenChange={setLightboxOpen2}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none overflow-hidden">
+          <div className="relative w-full h-full flex items-center justify-center p-4">
+            <button 
+              onClick={() => setLightboxOpen2(false)}
+              className="absolute top-4 right-4 z-50 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+              data-testid="button-close-lightbox-2"
+            >
+              <X className="h-6 w-6 text-white" />
+            </button>
+            <img 
+              src="/attached_assets/IMG_3565_1769150725663.jpeg" 
+              alt="Werribee Mercy Hospital Patient Progress Note - Full Size" 
               className="max-w-full max-h-[90vh] object-contain rounded-lg"
             />
           </div>
