@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -13,6 +14,59 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export default function StartHere() {
+  useEffect(() => {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Barran Dodger case about?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This is a 35+ year documented case of systematic persecution involving government agencies, NDIS fraud, identity theft, and human rights violations against Dr Richard McLean. Over 2,000 evidence documents are blockchain-verified."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much documented damage has occurred?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The documented damages total $32.9 million AUD, including lost income, medical expenses, property losses, and compensatory damages for human rights violations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What legal proceedings are currently active?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Active proceedings include submissions to the International Criminal Court (ICC), United Nations High Commissioner for Refugees (UNHCR), Federal Court of Australia, and Office of the Australian Information Commissioner (OAIC)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the evidence verified?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All evidence is blockchain-timestamped using OpenTimestamps with SHA-256 cryptographic hashes, providing immutable proof of document existence and authenticity."
+          }
+        }
+      ]
+    };
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    script.id = 'faq-schema';
+    document.head.appendChild(script);
+    
+    return () => {
+      const existingScript = document.getElementById('faq-schema');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
   const quickFacts = [
     { label: "Years of Persecution", value: "35+", icon: <Clock className="h-5 w-5" /> },
     { label: "Evidence Documents", value: "2,000+", icon: <FileText className="h-5 w-5" /> },

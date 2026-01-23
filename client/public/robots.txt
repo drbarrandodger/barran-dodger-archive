@@ -20,3 +20,7 @@ Allow: /contact
 Allow: /church
 Allow: /prophetic-papers
 Allow: /legal-research
+Allow: /start-here
+Allow: /timeline
+Allow: /legal-status
+Allow: /media

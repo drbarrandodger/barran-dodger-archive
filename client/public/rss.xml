@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Barran Dodger Legal & Ethical Trust Fund - Case Updates</title>
+    <link>https://www.barrandodger.com.au</link>
+    <description>Updates on blockchain-verified evidence archive, legal proceedings, and whistleblower protection advocacy. 94+ forensic documents with AI-verified significance statements.</description>
+    <language>en-au</language>
+    <lastBuildDate>Thu, 23 Jan 2025 00:00:00 +1000</lastBuildDate>
+    <atom:link href="https://www.barrandodger.com.au/rss.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://www.barrandodger.com.au/favicon.png</url>
+      <title>Barran Dodger Trust Fund</title>
+      <link>https://www.barrandodger.com.au</link>
+    </image>
+    
+    <item>
+      <title>Legal Status Tracker Now Live</title>
+      <link>https://www.barrandodger.com.au/legal-status</link>
+      <description>Track the status of submissions to the International Criminal Court, UNHCR, Federal Court of Australia, and Office of the Australian Information Commissioner. Real-time progress updates on ongoing legal proceedings.</description>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +1000</pubDate>
+      <guid>https://www.barrandodger.com.au/legal-status</guid>
+    </item>
+    
+    <item>
+      <title>Interactive 35-Year Timeline Published</title>
+      <link>https://www.barrandodger.com.au/timeline</link>
+      <description>Explore the complete chronological documentation of persecution events from 1989 to present. Color-coded categories include government actions, legal proceedings, critical events, and spiritual milestones.</description>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +1000</pubDate>
+      <guid>https://www.barrandodger.com.au/timeline</guid>
+    </item>
+    
+    <item>
+      <title>Evidence Archive Expanded to 94+ Documents</title>
+      <link>https://www.barrandodger.com.au/evidence</link>
+      <description>The blockchain-verified evidence archive now contains over 94 forensic documents including Federal Court certifications, tribunal records, UNHCR submissions, and AI-analyzed testimonials.</description>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +1000</pubDate>
+      <guid>https://www.barrandodger.com.au/evidence</guid>
+    </item>
+    
+    <item>
+      <title>Press & Media Resources Available</title>
+      <link>https://www.barrandodger.com.au/media</link>
+      <description>Journalists and researchers can now access press kits, media contact information, and pre-approved statements for coverage of the Barran Dodger case.</description>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +1000</pubDate>
+      <guid>https://www.barrandodger.com.au/media</guid>
+    </item>
+    
+  </channel>
+</rss>

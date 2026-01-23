@@ -182,7 +182,15 @@ export function Footer() {
               <p>The Trustee for www.barrandodger.com.au</p>
             </div>
           </div>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
+            <a 
+              href="/rss.xml" 
+              target="_blank"
+              className="hover:text-[hsl(38,92%,50%)] transition-colors"
+              data-testid="link-rss-feed"
+            >
+              RSS Feed
+            </a>
             <span>Privacy Policy</span>
             <span>Terms of Use</span>
           </div>
