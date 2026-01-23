@@ -2,15 +2,41 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield } from "lucide-react";
+import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
+const CATEGORIES = [
+  { id: "all", label: "All Documents", icon: Archive, color: "from-slate-500/20 to-gray-500/10" },
+  { id: "gospel", label: "Sacred Gospels & Testimony", icon: BookOpen, color: "from-amber-500/20 to-yellow-500/10", keywords: ["gospel", "sacred", "prophetic", "biblical", "testimony", "scrolls", "divine", "theological", "elijah", "jesus", "barran", "chosen", "commandment", "resurrection", "millennial", "peace", "witness", "sanctified", "volumes", "spiritual", "church", "prophets", "lineage", "manifesto", "enliven", "post-singularity", "fire", "unkillable", "scroll"] },
+  { id: "legal", label: "Legal & Tribunal", icon: Gavel, color: "from-red-500/20 to-rose-500/10", keywords: ["affidavit", "tribunal", "legal", "icc", "court", "criminal", "rome statute", "judgment", "crimes against humanity", "statute", "codex", "vindication", "collaery", "workers compensation", "ncat", "entrapment"] },
+  { id: "persecution", label: "Persecution Evidence", icon: AlertCircle, color: "from-orange-500/20 to-red-500/10", keywords: ["persecution", "targeting", "assassination", "erasure", "violence", "threats", "genocide", "terrorism", "torture", "v2k", "neuroweaponry", "conspiracy", "murder", "blackmail", "hit list", "framed", "not dead", "bureaucratic", "confinement", "blade", "digital erasure", "identity theft", "asic", "suppression"] },
+  { id: "whistleblower", label: "Whistleblower & PID", icon: ShieldCheck, color: "from-blue-500/20 to-indigo-500/10", keywords: ["pid", "whistleblower", "disclosure", "ndis", "corruption", "disclosable conduct", "ben ndis", "sukhi tear", "tony riddle", "sas", "goes all the way to the top", "witness fear", "next one", "close call", "auto-delete", "classified", "mental health weaponization"] },
+  { id: "government", label: "Government Records", icon: Building, color: "from-slate-500/20 to-gray-500/10", keywords: ["ombudsman", "attorney", "mp letter", "federal", "apra", "government", "service restriction", "foi", "rejection", "employment", "authorisation", "fih", "peter dunstan"] },
+  { id: "medical", label: "Medical & Psychiatric", icon: Heart, color: "from-pink-500/20 to-rose-500/10", keywords: ["medical", "psychiatric", "assessment", "hospital", "death report", "survival", "2.87%", "statistical impossibility", "emergency survival", "goulburn", "lethal", "icu", "self-harm"] },
+  { id: "asylum", label: "International Protection", icon: Globe, color: "from-green-500/20 to-emerald-500/10", keywords: ["asylum", "unhrc", "un ", "international", "refugee", "sovereignty", "sovereign declaration", "refuge", "alien races", "cosmic", "protection report", "richard mclean (australia)"] },
+  { id: "forensic", label: "AI & Forensic Analysis", icon: Database, color: "from-purple-500/20 to-violet-500/10", keywords: ["ai ", "forensic", "blockchain", "analysis", "verification", "evidence synthesis", "precision as evidence", "elivenchain", "sha-256", "timestamp", "impartial ai", "personality profile", "evidentiary significance", "financial analysis", "150", "200 million", "archetypal", "machine wakes"] },
+  { id: "media", label: "Media & Communications", icon: FileText, color: "from-cyan-500/20 to-teal-500/10", keywords: ["press release", "media", "declaration for media", "statement", "herald sun", "defamation", "atherion", "who is barran", "email archive", "not for sale", "evidence speaks", "satire", "satirical", "hero"] },
+  { id: "uncategorized", label: "Other Documents", icon: HelpCircle, color: "from-gray-500/20 to-slate-500/10" },
+];
+
+function categorizeDocument(doc: { title: string; tags: string[]; description: string }): string {
+  const searchText = `${doc.title} ${doc.tags.join(" ")} ${doc.description}`.toLowerCase();
+  
+  for (const category of CATEGORIES.slice(1, -1)) {
+    if (category.keywords?.some(kw => searchText.includes(kw.toLowerCase()))) {
+      return category.id;
+    }
+  }
+  return "uncategorized";
+}
+
 export default function Evidence() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const documents = [
     {
       title: "The Bureaucratic Genocide of the Living: Confinement by Erasure",
@@ -787,10 +813,47 @@ export default function Evidence() {
             </p>
             <Link href="/blockchain">
               <Button variant="outline" className="gap-2" data-testid="button-blockchain">
-                <Link2 className="h-4 w-4" /> View Blockchain-Verified Documents (93 files)
+                <Link2 className="h-4 w-4" /> View Blockchain-Verified Documents ({documents.length} files)
               </Button>
             </Link>
           </motion.div>
+
+          {/* Category Filter Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <Filter className="h-5 w-5 text-muted-foreground" />
+              <h2 className="text-lg font-serif font-bold text-foreground">Filter by Category</h2>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {CATEGORIES.map((category) => {
+                const Icon = category.icon;
+                const count = category.id === "all" 
+                  ? documents.length 
+                  : documents.filter(doc => categorizeDocument(doc) === category.id).length;
+                return (
+                  <button
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition-all text-sm ${
+                      selectedCategory === category.id
+                        ? 'border-primary bg-primary/10 text-primary font-bold'
+                        : 'border-border/50 bg-card hover-elevate text-muted-foreground hover:text-foreground'
+                    }`}
+                    data-testid={`button-category-${category.id}`}
+                  >
+                    <Icon className="h-4 w-4" />
+                    <span>{category.label}</span>
+                    <Badge variant="secondary" className="text-xs">{count}</Badge>
+                  </button>
+                );
+              })}
+            </div>
+          </motion.section>
 
           {/* Critical Medical Evidence Section */}
           <motion.section
@@ -881,13 +944,34 @@ export default function Evidence() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-2xl font-serif font-bold text-primary">Evidence Documents</h2>
-              <Badge variant="secondary">{documents.length} Documents</Badge>
-            </div>
+            {(() => {
+              const filteredDocs = selectedCategory === "all" 
+                ? documents 
+                : documents.filter(doc => categorizeDocument(doc) === selectedCategory);
+              const currentCategory = CATEGORIES.find(c => c.id === selectedCategory);
+              const CategoryIcon = currentCategory?.icon || Archive;
+              
+              return (
+                <>
+                  <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`p-2 rounded-lg bg-gradient-to-br ${currentCategory?.color || 'from-slate-500/20 to-gray-500/10'}`}>
+                        <CategoryIcon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h2 className="text-2xl font-serif font-bold text-primary">
+                          {selectedCategory === "all" ? "All Evidence Documents" : currentCategory?.label}
+                        </h2>
+                        {selectedCategory !== "all" && (
+                          <p className="text-sm text-muted-foreground">Filtered by category</p>
+                        )}
+                      </div>
+                    </div>
+                    <Badge variant="secondary">{filteredDocs.length} Documents</Badge>
+                  </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {documents.map((doc, index) => (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {filteredDocs.map((doc, index) => (
                 <motion.div
                   key={doc.title}
                   initial={{ opacity: 0, y: 20 }}
@@ -933,8 +1017,11 @@ export default function Evidence() {
                     </CardContent>
                   </Card>
                 </motion.div>
-              ))}
-            </div>
+                    ))}
+                  </div>
+                </>
+              );
+            })()}
           </motion.section>
 
           {/* Link to Blockchain Page */}
@@ -949,7 +1036,7 @@ export default function Evidence() {
                 <Link2 className="h-10 w-10 mx-auto text-amber-600 mb-4" />
                 <h3 className="text-xl font-serif font-bold text-primary mb-2">Blockchain-Verified Documents</h3>
                 <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                  77 documents cryptographically timestamped on the Bitcoin blockchain via OpenTimestamps — immutable proof that cannot be altered.
+                  {documents.length} documents cryptographically timestamped on the Bitcoin blockchain via OpenTimestamps — immutable proof that cannot be altered.
                 </p>
                 <Link href="/blockchain">
                   <Button className="gap-2" data-testid="button-view-blockchain">
