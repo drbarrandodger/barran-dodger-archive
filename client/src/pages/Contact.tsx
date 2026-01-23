@@ -35,7 +35,7 @@ export default function Contact() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
         title="Contact Us"
-        description="Contact the Barran Dodger Legal & Ethical Trust Fund for inquiries about whistleblower protection, evidence documentation, or legal support. Email: barrandodger@icloud.com | Phone: +61 431 167 907"
+        description="Contact the Barran Dodger Legal & Ethical Trust Fund for inquiries about whistleblower protection, evidence documentation, or legal support. Email: drbarrandodger@proton.me | Phone: +61 431 167 907"
         keywords="contact Barran Dodger, whistleblower support Australia, legal inquiry, human rights advocacy contact, evidence submission"
         path="/contact"
       />
@@ -65,7 +65,7 @@ export default function Contact() {
                       <h3 className="font-bold text-foreground mb-1">General Inquiries</h3>
                       <p className="text-sm text-muted-foreground mb-2">For questions about our mission or documentation.</p>
                       <div className="flex flex-col gap-1">
-                        <a href="mailto:barrandodger@icloud.com" className="text-primary font-medium hover:underline text-sm">barrandodger@icloud.com</a>
+                        <a href="mailto:drbarrandodger@proton.me" className="text-primary font-medium hover:underline text-sm">drbarrandodger@proton.me</a>
                         <a href="tel:+61431167907" className="text-primary font-medium hover:underline text-sm">+61 431 167 907</a>
                       </div>
                     </div>
