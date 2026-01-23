@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Scale, Mail } from "lucide-react";
+import { Scale, Mail, Heart } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertSubscriberSchema } from "@shared/schema";
@@ -98,6 +98,25 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Donate Call-to-Action */}
+        <div className="py-6 border-t border-white/10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <Heart className="h-6 w-6 text-[hsl(38,92%,50%)]" />
+              <div>
+                <p className="font-serif font-semibold text-lg">Support the Mission</p>
+                <p className="text-sm text-white/70">PayID: <span className="font-mono text-[hsl(38,92%,50%)]">rich@richmclean.com.au</span></p>
+              </div>
+            </div>
+            <Link 
+              href="/donate" 
+              className="px-6 py-3 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] font-semibold rounded hover:bg-[hsl(38,92%,55%)] transition-all flex items-center gap-2"
+            >
+              <Heart className="h-4 w-4" /> Donate Now
+            </Link>
+          </div>
+        </div>
+
         {/* Sub Pages Links */}
         <div className="py-6 border-t border-white/10">
           <p className="text-xs text-[hsl(38,92%,50%)] uppercase tracking-wider font-bold mb-3">Sub Pages</p>
@@ -108,6 +127,7 @@ export function Footer() {
             <Link href="/church" className="hover:text-white transition-colors">Church</Link>
             <Link href="/evidence" className="hover:text-white transition-colors">Evidence</Link>
             <Link href="/blockchain" className="hover:text-white transition-colors">Timestamps</Link>
+            <Link href="/donate" className="hover:text-white transition-colors font-semibold text-[hsl(38,92%,50%)]">Donate</Link>
             <Link href="/research" className="hover:text-white transition-colors">Legal Research</Link>
             <Link href="/prophetic-papers" className="hover:text-white transition-colors">Prophetic Papers</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>

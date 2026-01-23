@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Scale } from "lucide-react";
+import { Scale, Heart } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Navigation() {
@@ -20,6 +20,7 @@ export function Navigation() {
     { href: "/church", label: "Church" },
     { href: "/evidence", label: "Evidence" },
     { href: "/blockchain", label: "Timestamps" },
+    { href: "/donate", label: "Donate" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -59,10 +60,11 @@ export function Navigation() {
             </Link>
           ))}
           <Link 
-            href="/contact" 
-            className="px-5 py-2.5 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] text-sm font-semibold rounded hover:bg-[hsl(38,92%,55%)] transition-all shadow-sm hover:shadow"
+            href="/donate" 
+            className="px-5 py-2.5 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] text-sm font-semibold rounded hover:bg-[hsl(38,92%,55%)] transition-all shadow-sm hover:shadow flex items-center gap-2"
+            data-testid="button-nav-donate"
           >
-            Get Involved
+            <Heart className="h-4 w-4" /> Donate
           </Link>
         </div>
         

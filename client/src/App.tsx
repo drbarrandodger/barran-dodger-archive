@@ -12,6 +12,7 @@ import Blockchain from "@/pages/Blockchain";
 import PropheticPapers from "@/pages/PropheticPapers";
 import Gospel from "@/pages/Gospel";
 import Church from "@/pages/Church";
+import Donate from "@/pages/Donate";
 
 function Router() {
   return (
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/prophetic-papers" component={PropheticPapers} />
       <Route path="/gospel" component={Gospel} />
       <Route path="/church" component={Church} />
+      <Route path="/donate" component={Donate} />
       <Route path="/contact" component={Contact} />
       <Route component={Home} />
     </Switch>
