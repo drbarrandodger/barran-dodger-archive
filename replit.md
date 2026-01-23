@@ -64,6 +64,15 @@ The `shared/` directory contains code used by both frontend and backend:
 - **AustLII Database**: Legal research integration via external search links
 - **Google Fonts**: Libre Baskerville, Inter, DM Sans font families
 
+### SEO Implementation
+- **Meta Tags**: Comprehensive title, description, keywords in `client/index.html`
+- **Open Graph**: Full OG tags for Facebook/LinkedIn social sharing
+- **Twitter Cards**: summary_large_image cards with @bazdod handle
+- **Structured Data**: JSON-LD schemas for Organization, WebSite, and Collection
+- **Dynamic SEO**: `client/src/components/SEO.tsx` component updates page-specific meta tags
+- **Canonical URLs**: Points to https://www.barrandodger.com.au
+- **Keywords**: Extracted from evidence archive including whistleblower, human rights, blockchain, persecution, UNHRC, asylum, forensic, tribunal
+
 ### Development Tools
 - **Vite**: Frontend build tool with HMR
 - **Replit Plugins**: Runtime error overlay, cartographer, dev banner (development only)
