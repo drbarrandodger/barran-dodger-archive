@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
-import { api, type InsertInquiry } from "@shared/routes";
+import { api } from "@shared/routes";
+import { type InsertInquiry } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 
 export function useCreateInquiry() {
@@ -27,8 +28,9 @@ export function useCreateInquiry() {
     },
     onSuccess: () => {
       toast({
-        title: "Inquiry Sent",
-        description: "We have received your message and will review it shortly.",
+        title: "Message Received",
+        description: "Thank you for contacting us. We have received your enquiry and will respond to you at the email address provided as soon as possible.",
+        duration: 8000,
       });
     },
     onError: (error) => {

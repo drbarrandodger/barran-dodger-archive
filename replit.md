@@ -73,6 +73,12 @@ The `shared/` directory contains code used by both frontend and backend:
 - **Canonical URLs**: Points to https://www.barrandodger.com.au
 - **Keywords**: Extracted from evidence archive including whistleblower, human rights, blockchain, persecution, UNHRC, asylum, forensic, tribunal
 
+### Contact Form & Enquiries
+- **Contact Email**: drbarrandodger@proton.me
+- **Enquiry Storage**: All contact form submissions are saved to the PostgreSQL `inquiries` table
+- **Confirmation**: Users see an immediate confirmation message after submitting
+- **Future Enhancement**: To enable automatic email notifications, set up Resend or SendGrid integration via Replit's integration system
+
 ### Development Tools
 - **Vite**: Frontend build tool with HMR
 - **Replit Plugins**: Runtime error overlay, cartographer, dev banner (development only)
