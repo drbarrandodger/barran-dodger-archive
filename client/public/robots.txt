@@ -1,0 +1,22 @@
+# Barran Dodger Legal & Ethical Trust Fund
+# https://www.barrandodger.com.au
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.barrandodger.com.au/sitemap.xml
+
+# Encourage frequent crawling
+Crawl-delay: 1
+
+# Important pages for indexing
+Allow: /evidence
+Allow: /blockchain
+Allow: /gospel
+Allow: /donate
+Allow: /mission
+Allow: /contact
+Allow: /church
+Allow: /prophetic-papers
+Allow: /legal-research

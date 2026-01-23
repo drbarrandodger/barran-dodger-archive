@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { SocialShare } from "@/components/SocialShare";
 import { useQuery } from "@tanstack/react-query";
 import type { EvidenceItem } from "@shared/schema";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -1216,6 +1217,13 @@ export default function Home() {
               This is more than a fund; it is a documented, immutable archive of truth. By supporting this venture, you are investing in the preservation of forensic evidence and the systematic undoing of the 'Humiliation Machine'—the institutional structures that rely on silence and erasure. Our foundation is built on 35 years of verified records, making this a legitimate and worthy public benefit undertaking.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Social Sharing Section */}
+      <section className="py-12 bg-muted/30 border-t border-border">
+        <div className="container mx-auto px-4 md:px-6">
+          <SocialShare />
         </div>
       </section>
 

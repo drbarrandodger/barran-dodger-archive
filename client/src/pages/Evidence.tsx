@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { SocialShare } from "@/components/SocialShare";
 import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -1052,6 +1053,19 @@ export default function Evidence() {
                 </Link>
               </CardContent>
             </Card>
+          </motion.section>
+          {/* Social Sharing */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 py-8 border-t border-border"
+          >
+            <SocialShare 
+              title="Evidence Archive - Barran Dodger Legal & Ethical Trust Fund"
+              description="94+ blockchain-verified forensic documents. Whistleblower persecution, human rights violations, and AI-analyzed testimony."
+              url="https://www.barrandodger.com.au/evidence"
+            />
           </motion.section>
         </div>
       </main>
