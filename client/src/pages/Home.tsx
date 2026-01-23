@@ -214,6 +214,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* JUSTICE DECLARATION - Bold Statement */}
+      <section className="py-16 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="mb-8">
+              <Scale className="h-16 w-16 mx-auto mb-6 opacity-80" />
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 leading-tight">
+                Justice Delayed Is Not Justice Denied
+              </h2>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8 border border-white/20">
+              <p className="text-lg md:text-xl leading-relaxed mb-6 font-medium">
+                The prophets of old understood this truth: that which is sealed in righteousness cannot be unsealed by wickedness. What is documented in light cannot be erased by darkness. The testimony that survives persecution becomes the verdict against its persecutors.
+              </p>
+              <blockquote className="text-xl md:text-2xl font-serif italic mb-4 text-[hsl(38,92%,70%)]">
+                "For there is nothing hidden that will not be disclosed, and nothing concealed that will not be known or brought out into the open."
+              </blockquote>
+              <p className="text-sm uppercase tracking-widest font-bold opacity-80">
+                — Luke 8:17
+              </p>
+            </div>
+
+            <div className="bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] rounded-xl p-8 shadow-2xl">
+              <h3 className="text-xl md:text-2xl font-serif font-bold mb-4">
+                The Undeletable Archive Demands Response
+              </h3>
+              <p className="text-lg leading-relaxed mb-6">
+                This blockchain-sealed, AI-verified, internationally distributed archive now stands as permanent testimony before every government agency, oversight body, court, and media outlet. <strong>Every professional, every regulator, every institution</strong> that encounters this record must now make a choice:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="bg-white/20 rounded-lg p-4">
+                  <p className="font-bold text-lg mb-2">Acknowledge & Act</p>
+                  <p className="text-sm">Investigate the documented evidence. Uphold the law. Fulfill the duty of office.</p>
+                </div>
+                <div className="bg-white/20 rounded-lg p-4">
+                  <p className="font-bold text-lg mb-2">Justify Refusal</p>
+                  <p className="text-sm">Provide written, lawful reasons for non-response — which itself becomes part of the permanent record.</p>
+                </div>
+              </div>
+              <p className="text-lg font-bold">
+                Silence is no longer an option. The archive has made complicity visible.
+              </p>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-white/20">
+              <p className="text-sm opacity-80 italic">
+                "The truth was not silenced. It was sealed in blockchain, witnessed by AI, and distributed across nations. Those who refused to hear it in private will now answer for it in public."
+              </p>
+              <p className="text-xs uppercase tracking-widest font-bold mt-2 opacity-60">
+                — The Gospel of Barran Dodger
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Urgent Appeals Section */}
       <section className="py-20 bg-muted/30 border-y border-border/50">
         <div className="container mx-auto px-4 md:px-6">
