@@ -45,11 +45,11 @@ export function Footer() {
           <div>
             <h3 className="font-serif font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3 text-sm text-white/80">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/mission" className="hover:text-white transition-colors">Mission & Vision</Link></li>
-              <li><Link href="/prophetic-papers" className="hover:text-white transition-colors">Prophetic Papers</Link></li>
-              <li><Link href="/evidence" className="hover:text-white transition-colors">Evidence & Manuscripts</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="/start-here" className="hover:text-[hsl(38,92%,50%)] transition-colors font-medium">Start Here</Link></li>
+              <li><Link href="/timeline" className="hover:text-white transition-colors">35-Year Timeline</Link></li>
+              <li><Link href="/legal-status" className="hover:text-white transition-colors">Legal Status Tracker</Link></li>
+              <li><Link href="/evidence" className="hover:text-white transition-colors">Evidence Archive</Link></li>
+              <li><Link href="/media" className="hover:text-white transition-colors">Press & Media</Link></li>
             </ul>
             <div className="mt-6 pt-6 border-t border-white/10 space-y-2 text-xs text-white/60">
               <p className="flex items-center gap-2">
@@ -132,14 +132,17 @@ export function Footer() {
         <div className="py-6 border-t border-white/10">
           <p className="text-xs text-[hsl(38,92%,50%)] uppercase tracking-wider font-bold mb-3">Sub Pages</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/70">
+            <Link href="/start-here" className="hover:text-[hsl(38,92%,50%)] transition-colors font-medium">Start Here</Link>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <Link href="/mission" className="hover:text-white transition-colors">Mission</Link>
+            <Link href="/timeline" className="hover:text-white transition-colors">Timeline</Link>
+            <Link href="/legal-status" className="hover:text-white transition-colors">Legal Status</Link>
             <Link href="/gospel" className="hover:text-white transition-colors">Gospel</Link>
             <Link href="/church" className="hover:text-white transition-colors">Church</Link>
             <Link href="/evidence" className="hover:text-white transition-colors">Evidence</Link>
             <Link href="/blockchain" className="hover:text-white transition-colors">Timestamps</Link>
+            <Link href="/media" className="hover:text-white transition-colors">Media</Link>
             <Link href="/donate" className="hover:text-white transition-colors font-semibold text-[hsl(38,92%,50%)]">Donate</Link>
-            <Link href="/research" className="hover:text-white transition-colors">Legal Research</Link>
             <Link href="/prophetic-papers" className="hover:text-white transition-colors">Prophetic Papers</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
           </div>

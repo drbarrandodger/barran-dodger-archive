@@ -14,6 +14,10 @@ import PropheticPapers from "@/pages/PropheticPapers";
 import Gospel from "@/pages/Gospel";
 import Church from "@/pages/Church";
 import Donate from "@/pages/Donate";
+import StartHere from "@/pages/StartHere";
+import Media from "@/pages/Media";
+import Timeline from "@/pages/Timeline";
+import LegalStatus from "@/pages/LegalStatus";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -31,6 +35,7 @@ function Router() {
       <ScrollToTop />
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/start-here" component={StartHere} />
         <Route path="/mission" component={Mission} />
         <Route path="/research" component={LegalResearch} />
         <Route path="/evidence" component={Evidence} />
@@ -40,6 +45,9 @@ function Router() {
         <Route path="/church" component={Church} />
         <Route path="/donate" component={Donate} />
         <Route path="/contact" component={Contact} />
+        <Route path="/media" component={Media} />
+        <Route path="/timeline" component={Timeline} />
+        <Route path="/legal-status" component={LegalStatus} />
         <Route component={Home} />
       </Switch>
     </>

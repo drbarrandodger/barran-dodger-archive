@@ -1,12 +1,15 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Scale, Heart } from "lucide-react";
-import { SiX } from "react-icons/si";
+import { Scale, Heart, Compass, Menu, X } from "lucide-react";
+import { SiX as TwitterX } from "react-icons/si";
 import { useState, useEffect } from "react";
+import { GlobalSearch } from "./GlobalSearch";
+import { Button } from "@/components/ui/button";
 
 export function Navigation() {
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -14,14 +17,17 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
   const navLinks = [
+    { href: "/start-here", label: "Start Here", highlight: true },
     { href: "/", label: "Home" },
     { href: "/mission", label: "Mission" },
     { href: "/gospel", label: "Gospel" },
-    { href: "/church", label: "Church" },
     { href: "/evidence", label: "Evidence" },
     { href: "/blockchain", label: "Timestamps" },
-    { href: "/donate", label: "Donate" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -45,21 +51,26 @@ export function Navigation() {
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link 
               key={link.href} 
               href={link.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary relative py-1",
-                location === link.href 
-                  ? "text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[hsl(38,92%,50%)]" 
-                  : "text-muted-foreground"
+                link.highlight && location !== link.href
+                  ? "text-[hsl(38,92%,50%)] flex items-center gap-1"
+                  : location === link.href 
+                    ? "text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[hsl(38,92%,50%)]" 
+                    : "text-muted-foreground"
               )}
+              data-testid={`nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
             >
+              {link.highlight && <Compass className="h-3.5 w-3.5" />}
               {link.label}
             </Link>
           ))}
+          <GlobalSearch />
           <a 
             href="https://x.com/bazdod" 
             target="_blank" 
@@ -68,7 +79,7 @@ export function Navigation() {
             data-testid="link-twitter-nav"
             title="Follow @bazdod on X"
           >
-            <SiX className="h-5 w-5" />
+            <TwitterX className="h-5 w-5" />
           </a>
           <Link 
             href="/donate" 
@@ -79,8 +90,57 @@ export function Navigation() {
           </Link>
         </div>
         
-        {/* Mobile menu button could go here - keeping simple for now */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          data-testid="button-mobile-menu"
+        >
+          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </Button>
       </div>
+
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-background border-t border-border">
+          <div className="container mx-auto px-4 py-4 space-y-2">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.href} 
+                href={link.href}
+                className={cn(
+                  "block py-3 px-4 rounded-lg text-sm font-medium transition-colors",
+                  link.highlight
+                    ? "bg-[hsl(38,92%,50%)]/10 text-[hsl(38,92%,50%)] flex items-center gap-2"
+                    : location === link.href 
+                      ? "bg-primary/10 text-primary" 
+                      : "text-muted-foreground hover:bg-muted"
+                )}
+                data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
+              >
+                {link.highlight && <Compass className="h-4 w-4" />}
+                {link.label}
+              </Link>
+            ))}
+            <div className="pt-4 border-t border-border flex items-center justify-between">
+              <a 
+                href="https://x.com/bazdod" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
+              >
+                <TwitterX className="h-4 w-4" /> @bazdod
+              </a>
+              <Link 
+                href="/donate" 
+                className="px-4 py-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] text-sm font-semibold rounded hover:bg-[hsl(38,92%,55%)] flex items-center gap-2"
+              >
+                <Heart className="h-4 w-4" /> Donate
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
