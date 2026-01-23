@@ -3,6 +3,7 @@ import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, 
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { useQuery } from "@tanstack/react-query";
 import type { EvidenceItem } from "@shared/schema";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -29,6 +30,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO 
+        title="Whistleblower Protection & Human Rights Documentation"
+        description="Official archive of blockchain-verified evidence documenting whistleblower persecution, human rights violations, government corruption, and forensic testimony. 94+ documents with AI-verified significance."
+        keywords="whistleblower persecution Australia, human rights violations, government corruption evidence, blockchain verified testimony, Richard McLean asylum, UNHRC submission, targeted individual, systematic persecution, public interest disclosure"
+        path="/"
+      />
       <Navigation />
       
       {/* Hero Section */}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Search, ExternalLink, Gavel, Book, Landmark, Scale } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -19,6 +20,12 @@ export default function LegalResearch() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO 
+        title="Legal Research - Australian Case Law Database"
+        description="Search Australian legal databases including AustLII for case law, legislation, and legal research related to whistleblower protection, human rights, and government accountability."
+        keywords="Australian legal research, AustLII search, case law database, whistleblower legislation, human rights law Australia, legal precedents, tribunal decisions, government accountability law"
+        path="/legal-research"
+      />
       <Navigation />
       
       <main className="flex-grow pt-32 pb-20">

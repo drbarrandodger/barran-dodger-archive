@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Heart, Shield, FileText, CheckCircle, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -60,6 +61,12 @@ export default function Donate() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO 
+        title="Donate to Support Truth & Justice"
+        description="Support the Barran Dodger Legal & Ethical Trust Fund through secure PayID donation. Every contribution directly funds whistleblower protection, evidence preservation, and human rights advocacy. ABN 78 833 496 164."
+        keywords="donate whistleblower protection, support human rights Australia, PayID donation, legal trust fund, ethical governance funding, evidence preservation donation"
+        path="/donate"
+      />
       <Navigation />
       
       <main className="flex-grow pt-32 pb-20">

@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { CheckCircle2, Gavel, Globe, ShieldAlert, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Mission() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO 
+        title="Our Mission - Truth, Transparency & Ethical Governance"
+        description="The Barran Dodger Legal & Ethical Trust Fund is committed to truth, transparency, and the restoration of ethical governance through lawful means. Supporting whistleblower protection and human rights advocacy."
+        keywords="ethical governance mission, whistleblower protection mission, human rights advocacy, transparency advocacy, truth restoration, legal reform Australia"
+        path="/mission"
+      />
       <Navigation />
       
       <main className="flex-grow pt-32 pb-20">

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { BookOpen, FileText, Shield, Sparkles, Scale, ExternalLink, Download, ScrollText, Flame, Link2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -117,6 +118,12 @@ export default function PropheticPapers() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO 
+        title="Prophetic Papers - Sacred Scrolls & Forensic Testimony"
+        description="The Prophetic Papers collection: sacred scrolls documenting persecution, survival, and divine testimony. AI-analyzed forensic evidence meeting international legal standards."
+        keywords="prophetic papers, sacred scrolls, forensic testimony, AI analysis, persecution documentation, survival testimony, divine witness, Ten Commandments, blockchain testimony, prophetic archive"
+        path="/prophetic-papers"
+      />
       <Navigation />
       
       <main className="flex-grow pt-32 pb-20">

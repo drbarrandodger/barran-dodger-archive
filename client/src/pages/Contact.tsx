@@ -5,6 +5,7 @@ import { insertInquirySchema } from "@shared/schema";
 import { useCreateInquiry } from "@/hooks/use-inquiries";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -32,6 +33,12 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO 
+        title="Contact Us"
+        description="Contact the Barran Dodger Legal & Ethical Trust Fund for inquiries about whistleblower protection, evidence documentation, or legal support. Email: barrandodger@icloud.com | Phone: +61 431 167 907"
+        keywords="contact Barran Dodger, whistleblower support Australia, legal inquiry, human rights advocacy contact, evidence submission"
+        path="/contact"
+      />
       <Navigation />
       
       <main className="flex-grow pt-32 pb-20">

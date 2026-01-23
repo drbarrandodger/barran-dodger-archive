@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -794,6 +795,12 @@ export default function Evidence() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO 
+        title="Evidence Archive - Blockchain-Verified Documentation"
+        description="94+ forensic documents with SHA-256 hash verification and OpenTimestamps blockchain attestation. Legal affidavits, tribunal records, human rights submissions, medical assessments, and AI-verified testimonial analysis."
+        keywords="blockchain evidence archive, forensic documentation, SHA-256 verification, OpenTimestamps, legal affidavits, tribunal records, medical evidence, persecution documentation, whistleblower evidence, AI forensic analysis, immutable testimony, cryptographic proof"
+        path="/evidence"
+      />
       <Navigation />
       
       <main className="flex-grow pt-32 pb-20">

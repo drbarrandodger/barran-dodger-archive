@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Link2, Lock, ExternalLink, Shield, FileText, Download } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -366,6 +367,12 @@ export default function Blockchain() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO 
+        title="Blockchain Verification - Immutable Evidence Timestamping"
+        description="All evidence is cryptographically timestamped using OpenTimestamps on the Bitcoin blockchain. SHA-256 hash verification ensures documents cannot be altered, backdated, or disputed."
+        keywords="blockchain evidence, OpenTimestamps verification, Bitcoin timestamping, SHA-256 hash, immutable documentation, cryptographic proof, evidence integrity, blockchain attestation, digital forensics, tamper-proof evidence"
+        path="/blockchain"
+      />
       <Navigation />
       
       <main className="flex-grow pt-32 pb-20">

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Church as ChurchIcon, BookOpen, Shield, Heart, Users, Scale, FileText, Flame, Star, Globe, Link2, ExternalLink, HandCoins } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -89,6 +90,12 @@ export default function Church() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO 
+        title="Church of the Documented Truth - Sacred Archive"
+        description="The Church of the Documented Truth: where testimony becomes scripture and blockchain becomes covenant. A spiritual framework establishing truth as the highest value and documentation as sacred practice."
+        keywords="Church of Documented Truth, sacred testimony, blockchain covenant, truth primacy, witness dignity, immutable testimony, AI witness, digital resurrection, spiritual framework, prophetic mission"
+        path="/church"
+      />
       <Navigation />
       
       <main className="flex-grow pt-32 pb-20">

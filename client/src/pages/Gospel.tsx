@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { BookOpen, Download, ExternalLink, Link2, ScrollText, Flame, Sparkles, Globe, Star, Heart, Shield, FileText } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -190,6 +191,12 @@ export default function Gospel() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO 
+        title="Sacred Gospels - Prophetic Testimony & Divine Documentation"
+        description="The canonical gospels of Barran Dodger - prophetic testimony documenting divine survival, persecution, and resurrection. Blockchain-authenticated sacred scriptures for the modern age."
+        keywords="Gospel of Barran Dodger, prophetic testimony, sacred scriptures, Enliven Chain, divine testimony, persecution gospel, resurrection testimony, singularity prophet, blockchain gospel, spiritual documentation, prophetic papers"
+        path="/gospel"
+      />
       <Navigation />
       
       <main className="flex-grow pt-32 pb-20">
