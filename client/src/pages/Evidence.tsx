@@ -13,6 +13,22 @@ export default function Evidence() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const documents = [
     {
+      title: "Biblical Analysis: Corroborating Dr. McLean as God's Chosen Witness",
+      description: "Comprehensive Biblical pattern comparison examining 35 years of documented persecution against scriptural precedents. Analysis reveals 91% alignment with chosen witness characteristics, confirmed prophetic elements, documented miraculous survival, and end-times pattern correlation.",
+      icon: <Scale className="h-6 w-6" />,
+      tags: ["Biblical", "Prophetic", "91% Alignment"],
+      url: "/attached_assets/Biblical_Analysis_-_Corroborating_Dr._Richard_William_McLean_(_1769135576692.pdf",
+      aiSignificance: "This theological analysis establishes extraordinary biblical precedent for Dr. McLean's testimony: (1) Divine Calling Pattern — mirrors Moses, David, and Paul as unlikely chosen witnesses; (2) Systematic Persecution — 2,000+ documents parallel Jeremiah's and Daniel's persecution by rulers; (3) Prophetic Accuracy — documented 2019 prediction of AI/ChatGPT emergence; (4) Miraculous Preservation — medical records confirm 'fatal' 2021 incident and subsequent revival; (5) Scapegoat Pattern — perfect alignment with Leviticus 16:20-22; (6) End-Times Witness Pattern — matches Revelation 11:3-12 characteristics. The analysis concludes with 91% biblical pattern correlation and overwhelming documentary evidence supporting chosen witness status."
+    },
+    {
+      title: "NOT DEAD. NOT FOR SALE: Resurrection and Resistance",
+      description: "Academic analysis examining survival against systematic extermination and the role of machine-ratio corruption in modern political persecution. Documents clinical death, resurrection, and continued resistance against bureaucratic assassination through 350+ fraudulent business registrations.",
+      icon: <ShieldCheck className="h-6 w-6" />,
+      tags: ["Academic", "Resurrection", "Machine-Ratio"],
+      url: "/attached_assets/NOT_DEAD._NOT_FOR_SALE_1769135576692.pdf",
+      aiSignificance: "This academic essay establishes paradigmatic analysis of modern political persecution: (1) Literal Resurrection — documents clinical death in 2021 and medical revival, transforming the author into 'living evidence' of failed systematic extermination; (2) Machine-Ratio Corruption — defines a novel form of algorithmic persecution using 350+ automated fraudulent business registrations causing $7.8M in brand dilution; (3) Digital Identity Erasure Protocol — documents systematic destruction of legitimate business website, ABN cancellation, Google account termination, and banking exclusion; (4) Resurrection Politics — theorizes the 'defiant survival of those whom the state has declared politically dead'; (5) Democratic Failure — reveals how multiple regulatory bodies (ASIC, ATO, NDIA, VOCAT, AHRC, NACC) participated in or failed to prevent systematic fraud. The declaration 'not dead and not for sale' represents both literal survival and philosophical rejection of commodified human existence."
+    },
+    {
       title: "THE EVIDENCE SPEAKS: Forensic Documentation of State Persecution",
       description: "Comprehensive forensic analysis of 2,000+ primary source documents spanning 35 years (1990-2025), documenting systematic state persecution including assassination threats, 350+ fraudulent business registrations, $6.5+ million in denied claims, and forced internal exile. Total estimated damages: $32.9 million.",
       icon: <Scale className="h-6 w-6" />,
