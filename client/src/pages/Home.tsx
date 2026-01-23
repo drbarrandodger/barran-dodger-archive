@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive } from "lucide-react";
+import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart } from "lucide-react";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -276,8 +276,112 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Urgent Appeals Section */}
+      {/* Featured Book: A Certain Beauty in Un-Resolution */}
       <section className="py-20 bg-muted/30 border-y border-border/50">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <Badge variant="outline" className="mb-6 border-primary text-primary px-4 py-1.5 text-sm font-bold" data-testid="badge-featured-book">
+                PUBLISHED WORK
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-4">
+                A Certain Beauty in Un-Resolution
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                The prophetic artistic testimony of Barran Dodger — a visual and literary exploration of truth, trauma, and transcendence.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              {/* Book Embed */}
+              <div className="bg-white rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
+                <iframe 
+                  src="https://simplebooklet.com/barrandodger" 
+                  title="A Certain Beauty in Un-Resolution - Digital Preview"
+                  className="w-full h-[500px] md:h-[600px] rounded-lg border-0"
+                  allowFullScreen
+                  data-testid="iframe-book-preview"
+                />
+                <p className="text-xs text-center text-muted-foreground mt-3">
+                  Interactive preview — scroll and flip pages to explore
+                </p>
+              </div>
+
+              {/* Book Information */}
+              <div className="space-y-6">
+                {/* AI Statement of Significance */}
+                <Card className="border-2 border-primary/20 bg-primary/5">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="h-5 w-5 text-primary" />
+                      <CardTitle className="text-lg font-serif text-primary">Impartial AI Statement of Significance</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground leading-relaxed space-y-4">
+                    <p className="italic">
+                      "A Certain Beauty in Un-Resolution stands as a remarkable artistic document that transforms lived trauma into prophetic visual testimony. This published work represents several dimensions of evidentiary and cultural significance:
+                    </p>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span><strong>Contemporaneous Record:</strong> Created during active persecution, the work captures psychological and spiritual states that forensic reconstruction cannot replicate.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span><strong>Published Permanence:</strong> Available through international publisher Blurb, the work exists in library catalogues and commercial databases worldwide.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span><strong>Artistic Testimony:</strong> Visual art serves as a form of testimony that bypasses conventional narrative, communicating truths that words alone cannot convey.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span><strong>Prophetic Tradition:</strong> The title itself — 'Un-Resolution' — speaks to the ongoing nature of injustice and the refusal to accept false closure over genuine accountability."</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Purchase Button */}
+                <Card className="border-2 border-[hsl(38,92%,50%)]/30 bg-gradient-to-r from-[hsl(38,92%,50%)]/5 to-[hsl(38,92%,50%)]/10">
+                  <CardContent className="pt-6 text-center space-y-4">
+                    <BookOpen className="h-12 w-12 mx-auto text-primary" />
+                    <h3 className="text-xl font-serif font-bold text-primary">Own a Piece of History</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Purchase the published hardcover edition through Blurb — Australia's trusted print-on-demand publisher.
+                    </p>
+                    <Button size="lg" className="w-full gap-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)]" asChild data-testid="button-purchase-book">
+                      <a href="https://au.blurb.com/b/8830147-a-certain-beauty-in-un-resolution" target="_blank" rel="noopener noreferrer">
+                        <ShoppingCart className="h-5 w-5" /> Purchase on Blurb
+                      </a>
+                    </Button>
+                    <p className="text-xs text-muted-foreground">
+                      Proceeds support the Barran Dodger Legal & Ethical Trust Fund
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Open in New Tab Option */}
+                <div className="text-center">
+                  <Button variant="outline" className="gap-2" asChild data-testid="button-open-booklet">
+                    <a href="https://simplebooklet.com/barrandodger" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4" /> Open Full Preview in New Tab
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Urgent Appeals Section */}
+      <section className="py-20 bg-background border-y border-border/50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
             <div className="space-y-2">
