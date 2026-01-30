@@ -7,7 +7,7 @@ interface SEOProps {
   path?: string;
 }
 
-const BASE_KEYWORDS = "Barran Dodger, Richard McLean, whistleblower protection Australia, public interest disclosure, human rights violations, government corruption, blockchain evidence, forensic documentation, legal testimony, ethical governance, truth archive";
+const BASE_KEYWORDS = "Barran Dodger, Dr Richard McLean, Rich McLean whistleblower, Australian whistleblower protection, public interest disclosure Australia, PID Act, human rights violations Australia, government corruption Australia, NDIS fraud, OAIC corruption, Commonwealth Ombudsman, blockchain evidence, forensic documentation, legal testimony, ethical governance, truth archive, VCAT tribunal, AAT tribunal, Federal Court Australia, Rome Statute crimes, ICC Australia, asylum claim, UNHRC submission, persecution evidence, institutional abuse, whistleblower retaliation, Mercy Hospital malpractice, Salt Water Clinic, Micron21, digital identity destruction, FOI refusal, privacy complaint, service restriction ombudsman, AHPRA complaint, Centrelink rejection, police harassment, disability discrimination, LGBTQ persecution, Church of Barran Dodger, divine forgiveness, blockchain gospel, SHA-256 verification, OpenTimestamps Bitcoin, AI forensic analysis";
 
 export function SEO({ title, description, keywords = "", path = "" }: SEOProps) {
   useEffect(() => {
