@@ -2,11 +2,23 @@
 import { listDriveFiles, downloadDriveFile, DriveFile } from '../server/googleDrive';
 import { db } from '../server/db';
 import { evidenceItems } from '../shared/schema';
+import { ilike } from 'drizzle-orm';
 
 interface DocumentToImport {
   file: DriveFile;
   category: string;
   significance: string;
+}
+
+// Check if a document with similar title already exists in the database
+async function documentExists(title: string): Promise<boolean> {
+  // Normalize the title for comparison (first 50 chars, case-insensitive)
+  const searchTitle = title.substring(0, 50);
+  const existing = await db.select({ id: evidenceItems.id })
+    .from(evidenceItems)
+    .where(ilike(evidenceItems.title, `${searchTitle}%`))
+    .limit(1);
+  return existing.length > 0;
 }
 
 function categorizeDocument(name: string): { category: string; significance: string } {
@@ -94,11 +106,6 @@ async function importOfficialDocuments() {
   
   for (const doc of docsToImport) {
     try {
-      // Download file
-      console.log(`  Downloading: ${doc.file.name}...`);
-      const localPath = await downloadDriveFile(doc.file.id, doc.file.name);
-      console.log(`  ✅ Downloaded to: ${localPath}`);
-      
       // Clean up the title (remove extension, truncate if needed)
       let title = doc.file.name
         .replace(/\.pdf$/i, '')
@@ -109,6 +116,27 @@ async function importOfficialDocuments() {
       if (title.length > 200) {
         title = title.substring(0, 197) + '...';
       }
+      
+      // Check if document already exists in database (de-duplication)
+      const exists = await documentExists(title);
+      if (exists) {
+        console.log(`  ⏭️  Skipping (already exists): ${doc.file.name}`);
+        skipped++;
+        continue;
+      }
+      
+      // Skip zero-byte files
+      const fileSize = parseInt(doc.file.size || '0');
+      if (fileSize === 0) {
+        console.log(`  ⏭️  Skipping (zero-byte file): ${doc.file.name}`);
+        skipped++;
+        continue;
+      }
+      
+      // Download file
+      console.log(`  Downloading: ${doc.file.name}...`);
+      const localPath = await downloadDriveFile(doc.file.id, doc.file.name);
+      console.log(`  ✅ Downloaded to: ${localPath}`);
       
       // Create evidence item
       await db.insert(evidenceItems).values({
