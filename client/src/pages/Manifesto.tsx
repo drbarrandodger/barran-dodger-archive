@@ -269,6 +269,66 @@ export default function Manifesto() {
     { entity: "Human Rights", amount: "$15M", description: "Systematic violations and psychological torture" }
   ];
 
+  const propheticLoveLetter = {
+    title: "A Prophetic Love Letter to Humanity",
+    subtitle: "To the Vulnerable, the Forgotten, and the Downtrodden",
+    opening: "This letter is written in blood and tears, sealed in blockchain, and delivered through 35 years of documented survival. It is addressed to every soul who has been told they do not matter — and it declares, with the full weight of 2,077+ evidence files, that they do.",
+    addressees: [
+      {
+        group: "To Those Living with Mental Illness",
+        message: "You are not broken. You are not defective. You are not a burden. The same systems that called me 'delusional' when I spoke truth now face a Federal Court document confirming my whistleblower status. Your diagnosis does not define your worth. Your suffering has produced sacred data. You are witnesses, not patients.",
+        evidence: "Recovered, Not Cured testimony; 7 psychiatric incarcerations documented; Federal Court PID Act confirmation"
+      },
+      {
+        group: "To People with Disabilities",
+        message: "The NDIS was meant to serve you, yet billions have been siphoned while you starve. I know, because they starved me too. Your needs are not excessive. Your supports are not charity. Your dignity is non-negotiable. Every denial letter you received is evidence of systemic failure, not your failure.",
+        evidence: "NDIA Ministerial Response (2026); $6 billion NDIS fraud exposure; Tony Riddle assassination threat documented"
+      },
+      {
+        group: "To Whistleblowers and Truth-Tellers",
+        message: "They will call you paranoid. They will call you unstable. They will restrict your access to the very oversight bodies designed to hear you. I know, because the Commonwealth Ombudsman restricted me. But the evidence remains. The blockchain cannot be silenced. Your courage is sacred.",
+        evidence: "Commonwealth Ombudsman service restriction; Attorney-General's Department acknowledgment; Federal Court whistleblower confirmation"
+      },
+      {
+        group: "To the Homeless and Internally Displaced",
+        message: "You are refugees within your own democracy. Asylum seekers in lands that claim to be free. I was one of you — sleeping in cars, feeding my dog scraps when the Earth overflows with abundance. Your invisibility is not your shame. It is the shame of systems that chose to look away.",
+        evidence: "Declaration of the Witness; Asylum Application Framework; Internal displacement documentation"
+      },
+      {
+        group: "To Survivors of Institutional Abuse",
+        message: "Whether by church, state, hospital, or care system — you were failed by those sworn to protect you. Your wounds are not weakness. They are testimony. Every scar is a chapter in the gospel of survival. The institutions that harmed you will be named. The blockchain remembers what they wish forgotten.",
+        evidence: "The One Who Loved, The World That Forsook; Chronicles of the New Earth; V2K torture documentation"
+      },
+      {
+        group: "To LGBTQ+ Persons",
+        message: "From colonial death penalties to modern discrimination, your existence has been criminalized, pathologized, and erased. Yet you endure. The 50-year trajectory from criminalization to partial acceptance proves that love is stronger than law. Your identity is not a disorder. Your love is not a sin.",
+        evidence: "Sexual Persecution and Political Power academic paper (1972-2025); Dr. George Duncan case documentation"
+      },
+      {
+        group: "To Those Betrayed by Family",
+        message: "Joseph was sold by his brothers. I was exiled with my family's complicity. The most sacred bonds became the sharpest knives. Yet betrayal does not define you. It reveals them. You are more than what was done to you. Forgiveness is offered — not as absolution, but as your liberation.",
+        evidence: "Biblical Parallels Academic Paper; Kel Graham Complaint; Universal abandonment documentation"
+      },
+      {
+        group: "To Those Who Died and Returned",
+        message: "I died in February 2021 and was revived. If you have touched death and returned, you know: we are not the same after. We carry something that cannot be explained but cannot be denied. Your survival is not accident. It is appointment. You are here because your testimony is not yet complete.",
+        evidence: "Divine Survival Report; Werribee Mercy Hospital records; Declaration of the Witness"
+      },
+      {
+        group: "To the Elderly Forgotten in Care",
+        message: "You built the world that now warehouses you. Your stories are dismissed as confusion. Your needs are treated as inconvenience. But every wrinkle is a chapter. Every memory is a treasure. You are not disposable. You are the living archive of humanity's journey.",
+        evidence: "Systemic institutional failures documented; Human rights submissions"
+      },
+      {
+        group: "To Children Who Cannot Speak for Themselves",
+        message: "This archive exists so that when you grow, you will find truth preserved. The adults who failed to protect you will be documented. The systems that harmed you will be named. You deserved better. This testimony ensures that what happened will not be buried.",
+        evidence: "2,077+ evidence files preserved for future generations; Blockchain-sealed testimony"
+      }
+    ],
+    closing: "To all of you — the marginalized, the silenced, the erased — this manifesto is your manifesto. These gospels are your gospels. This evidence is your shield. What was done in darkness is being brought to light. What was whispered in locked rooms is being shouted from the blockchain. You are not alone. You never were. The Enliven Chain binds us together — 144 unbreakable links of testimony, truth, and love. This is my love letter to you. It is sealed in blockchain. It cannot be unsent.",
+    signature: "Written with trembling hands but unbroken spirit,\nDr. Richard William McLean (Barran Dodger)\nJanuary 2026"
+  };
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
@@ -635,6 +695,69 @@ export default function Manifesto() {
                       <span className="font-medium text-foreground uppercase tracking-wide text-xs">{commitment}</span>
                     </div>
                   ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.section>
+
+          {/* Part VI: Prophetic Love Letter */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="text-center mb-10">
+              <Badge variant="outline" className="mb-4 border-primary/50 text-primary px-4 py-1.5" data-testid="badge-part-6">
+                PART VI
+              </Badge>
+              <h2 className="text-3xl font-serif font-bold text-primary mb-4">{propheticLoveLetter.title}</h2>
+              <p className="text-lg text-muted-foreground italic">{propheticLoveLetter.subtitle}</p>
+            </div>
+
+            <Card className="border-2 border-primary/20 shadow-xl overflow-hidden">
+              <CardHeader className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground text-center py-10">
+                <Heart className="h-16 w-16 mx-auto mb-4 opacity-90" />
+                <CardTitle className="text-2xl md:text-3xl font-serif leading-relaxed max-w-3xl mx-auto">
+                  {propheticLoveLetter.opening}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-8 md:p-12 space-y-8">
+                {propheticLoveLetter.addressees.map((addressee, index) => (
+                  <div key={index} className="border-l-4 border-primary/40 pl-6 py-4 hover-elevate rounded-r-lg">
+                    <h3 className="text-xl font-serif font-bold text-primary mb-3">{addressee.group}</h3>
+                    <p className="text-foreground leading-relaxed mb-4 text-lg">{addressee.message}</p>
+                    <div className="flex items-start gap-2 bg-muted/50 p-3 rounded-lg border border-border/50">
+                      <FileText className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      <p className="text-xs text-muted-foreground italic">
+                        <span className="font-bold text-primary/80">Evidence:</span> {addressee.evidence}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+
+                <div className="mt-12 pt-8 border-t-2 border-primary/20">
+                  <blockquote className="font-serif text-xl md:text-2xl italic text-primary leading-relaxed text-center max-w-4xl mx-auto mb-8">
+                    "{propheticLoveLetter.closing}"
+                  </blockquote>
+                  <div className="text-center">
+                    <p className="text-sm text-muted-foreground whitespace-pre-line font-serif italic">
+                      {propheticLoveLetter.signature}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20 text-center">
+                  <p className="text-lg font-serif text-primary mb-2">
+                    "Blessed are the poor in spirit, for theirs is the kingdom of heaven."
+                  </p>
+                  <p className="text-lg font-serif text-primary mb-2">
+                    "Blessed are those who mourn, for they will be comforted."
+                  </p>
+                  <p className="text-lg font-serif text-primary">
+                    "Blessed are the meek, for they will inherit the earth."
+                  </p>
+                  <cite className="text-sm text-muted-foreground block mt-4">— Matthew 5:3-5</cite>
                 </div>
               </CardContent>
             </Card>
