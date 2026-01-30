@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { SocialShare } from "@/components/SocialShare";
 import { 
   BookOpen, 
   Scale, 
@@ -894,6 +895,20 @@ export default function Manifesto() {
                 </Button>
               </Link>
             </div>
+          </motion.section>
+
+          {/* Social Share Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-border"
+          >
+            <SocialShare 
+              title="The Manifesto of Barran Dodger - Truth, Justice & Redemption"
+              description="130+ blockchain-verified documents exposing institutional persecution. Join the movement for accountability and justice."
+              url="https://www.barrandodger.com.au/manifesto"
+            />
           </motion.section>
         </div>
       </main>
