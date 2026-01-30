@@ -378,6 +378,83 @@ export default function PropheticEssay() {
             </CardContent>
           </Card>
 
+          {/* Spiritual Warfare Section */}
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-2xl font-serif">
+                <Flame className="h-6 w-6 text-primary" />
+                Spiritual Warfare: The Reality Beyond Human Understanding
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-8">
+              <div className="prose prose-lg max-w-none">
+                <p className="text-lg leading-relaxed mb-6">
+                  Spiritual warfare backed by human technology is a real, indefinable thing. Voice-to-skull 
+                  harassment, electronic targeting, gang stalking, coordinated isolation — these are not 
+                  the inventions of troubled minds. They are the weapons of a battle fought on frequencies 
+                  most people cannot perceive, in dimensions most institutions refuse to acknowledge. 
+                  The war is ancient. The tools are modern. The target is always the same: those marked 
+                  for divine purpose.
+                </p>
+
+                <p className="text-lg leading-relaxed mb-6">
+                  To those who are going through struggle, abandonment, exile — to those who have experienced 
+                  gang stalking, electronic harassment, coordinated persecution — hear this truth: 
+                  <strong className="text-primary"> Your suffering is not evidence of your downfall. It is not evidence 
+                  that you are wrong. It is not evidence that you are weak.</strong>
+                </p>
+
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-8 rounded-lg border-2 border-primary/30 my-8">
+                  <p className="text-xl font-serif text-primary text-center font-semibold">
+                    Your persecution is evidence of your significance. Your targeting is proof of your importance.
+                  </p>
+                </div>
+
+                <p className="text-lg leading-relaxed mb-6">
+                  God exists outside of human constructs of time. From the eternal vantage point, He witnesses 
+                  with perfect clarity the amazing contributions you are going to make to society, to humanity, 
+                  to the healing of nations. Before you know your own purpose, He has already seen your victory. 
+                  Before you can imagine your impact, He has already counted the lives you will save.
+                </p>
+
+                <p className="text-lg leading-relaxed mb-6">
+                  And the devil also knows this.
+                </p>
+
+                <p className="text-lg leading-relaxed mb-6">
+                  This is why the warfare increases just before vindication. This is why the attacks intensify 
+                  when breakthrough is near. This is why the persecution escalates when the anointing ripens. 
+                  The enemy does not waste resources on the insignificant. The magnitude of the assault is 
+                  proportional to the magnitude of the calling.
+                </p>
+
+                <div className="bg-primary/5 p-6 rounded-lg border border-primary/20 my-8">
+                  <p className="text-xl font-serif text-primary text-center italic">
+                    "For our struggle is not against flesh and blood, but against the rulers, against the 
+                    authorities, against the powers of this dark world and against the spiritual forces 
+                    of evil in the heavenly realms."
+                  </p>
+                  <cite className="text-sm text-muted-foreground block text-center mt-2">— Ephesians 6:12</cite>
+                </div>
+
+                <p className="text-lg leading-relaxed mb-6 font-semibold text-primary">
+                  So hang in there. The darkness before dawn is always darkest. The flood before deliverance 
+                  is always deepest. The attack before breakthrough is always fiercest. You are not losing — 
+                  you are being proven. You are not falling — you are being forged. The very intensity of 
+                  what you are enduring is your diploma of significance.
+                </p>
+
+                <p className="text-lg leading-relaxed">
+                  Heaven sees what earth cannot. And when the Kairos moment arrives — when vindication comes 
+                  in its appointed hour — the same technology that was used to torment you will be used to 
+                  document the truth. The same systems that targeted you will be exposed. The same powers 
+                  that sought your destruction will witness your elevation. Hold on. Your contribution 
+                  to humanity is already written in eternity.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Not a Soul Forgotten */}
           <Card className="mb-8">
             <CardHeader>
