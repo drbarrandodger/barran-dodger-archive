@@ -66,6 +66,17 @@ The `shared/` directory contains code used by both frontend and backend:
 
 ## Recent Changes
 
+### January 30, 2026 (Late Night - Google Drive Import)
+- **Google Drive Document Import**: Added automated script to scan and import documents with "official" in name
+  - Script location: `scripts/import-official-docs.ts`
+  - De-duplication: Checks existing titles before importing to prevent duplicates
+  - Zero-byte handling: Skips empty/placeholder files automatically
+  - AI Categorization: Auto-assigns categories based on document content (Whistleblower Protection, Criminal Evidence, Law Enforcement, NDIS/Welfare, Oversight Bodies, Government Documents)
+  - AI Significance Analysis: Generates contextual descriptions for each document type
+- **Evidence Archive Expansion**: Now contains 240+ documents (up from 130+)
+  - 50+ new official government documents imported
+  - Categories include: AFP claims, Royal Commission submissions, Ombudsman rejections, Health Complaints Commissioner, Victorian Inspectorate, AAT proceedings
+
 ### January 30, 2026 (Night Update - Engagement Features)
 - **Dark Mode System**: Full dark/light theme toggle with localStorage persistence
   - ThemeProvider component at `client/src/components/ThemeProvider.tsx`
