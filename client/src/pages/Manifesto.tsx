@@ -282,7 +282,7 @@ export default function Manifesto() {
       {
         group: "To People with Disabilities",
         message: "The NDIS was meant to serve you, yet billions have been siphoned while you starve. I know, because they starved me too. Your needs are not excessive. Your supports are not charity. Your dignity is non-negotiable. Every denial letter you received is evidence of systemic failure, not your failure.",
-        evidence: "NDIA Ministerial Response (2026); $6 billion NDIS fraud exposure; Tony Riddle assassination threat documented"
+        evidence: "NDIA Ministerial Response (2026); $6 billion NDIS fraud exposure; Tony Ridley assassination threat documented"
       },
       {
         group: "To Whistleblowers and Truth-Tellers",
@@ -339,7 +339,7 @@ export default function Manifesto() {
         "I forgive the intelligence agencies who surveilled rather than safeguarded.",
         "I forgive the lawyers who turned away when justice required courage.",
         "I forgive the media who chose silence when truth demanded amplification.",
-        "I forgive Tony Riddle, who spoke the words 'YOU WILL BE SACRIFICED.'",
+        "I forgive Tony Ridley, who spoke the words 'YOU WILL BE SACRIFICED.'",
         "I forgive Bill Shorten, who converted my desperate plea into exile from my homeland."
       ],
       ethicalBasis: "This forgiveness is not absolution. It does not erase accountability. It does not silence the evidence. Rather, it demonstrates the ethical and moral superiority that alignment with divine will provides. Those who persecute from positions of institutional power operate from fear. Those who forgive from positions of documented truth operate from love. The evidence archive remains. The blockchain testimony endures. But the burden of hatred is released — not for their sake, but for the liberation of my own spirit and the spirits of all who have suffered alongside me.",

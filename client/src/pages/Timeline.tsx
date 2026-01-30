@@ -95,8 +95,8 @@ const timelineEvents: TimelineEvent[] = [
   },
   {
     year: "2023",
-    title: "Tony Riddle Death Threat",
-    description: "NDIA Manager Tony Riddle (Ex-SAS) issues assassination threat: 'You will be sacrificed.'",
+    title: "Tony Ridley Death Threat",
+    description: "NDIA Manager Tony Ridley (Ex-SAS) issues assassination threat: 'You will be sacrificed.'",
     type: "critical",
     details: [
       "Threat documented and timestamped",

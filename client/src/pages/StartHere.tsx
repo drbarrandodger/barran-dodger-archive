@@ -92,7 +92,7 @@ export default function StartHere() {
 
   const perpetrators = [
     { name: "Bill Shorten", role: "Former NDIS Minister", allegation: "Coordination of systematic obstruction" },
-    { name: "Tony Riddle", role: "NDIA Manager (Ex-SAS)", allegation: "'You will be sacrificed' death threat" },
+    { name: "Tony Ridley", role: "NDIA Manager (Ex-SAS)", allegation: "'You will be sacrificed' death threat" },
     { name: "Sukhi Tear", role: "Diversitas WA Director", allegation: "Illegal cease and desist, fund withholding" },
   ];
 

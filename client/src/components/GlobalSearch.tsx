@@ -27,7 +27,7 @@ const searchableContent: SearchResult[] = [
   { title: "Blockchain Timestamps", description: "SHA256 verified evidence on Bitcoin blockchain", category: "Verification", url: "/blockchain", tags: ["Blockchain", "SHA256", "Bitcoin", "Verification"], page: "Timestamps" },
   { title: "ICC Submission", description: "International Criminal Court filing", category: "Legal", url: "/evidence", tags: ["ICC", "Rome Statute", "Crimes Against Humanity"], page: "Evidence" },
   { title: "Bill Shorten", description: "Documentation of political persecution involvement", category: "Perpetrator", url: "/evidence", tags: ["Bill Shorten", "NDIS", "Political"], page: "Evidence" },
-  { title: "Tony Riddle", description: "NDIA Manager assassination threat documentation", category: "Perpetrator", url: "/evidence", tags: ["Tony Riddle", "NDIA", "Death Threat"], page: "Evidence" },
+  { title: "Tony Ridley", description: "NDIA Manager assassination threat documentation", category: "Perpetrator", url: "/evidence", tags: ["Tony Ridley", "NDIA", "Death Threat"], page: "Evidence" },
   { title: "Sukhi Tear", description: "Diversitas WA misconduct and illegal cease and desist", category: "Perpetrator", url: "/evidence", tags: ["Sukhi Tear", "Diversitas", "NDIS", "Misconduct"], page: "Evidence" },
   { title: "Attorney-General's Department", description: "Government knowledge documentation with PM&C awareness", category: "Government", url: "/evidence", tags: ["Attorney-General", "Government", "PM&C"], page: "Evidence" },
   { title: "Species Codex", description: "Sacred catalogue of interstellar civilizations", category: "Prophetic", url: "/prophetic-papers", tags: ["Alien", "Cosmic", "Species"], page: "Prophetic Papers" },
