@@ -39,8 +39,78 @@ export default function Home() {
       />
       <Navigation />
       
+      {/* BRUTAL HOOK - Divine Challenge */}
+      <section className="relative pt-24 pb-8 md:pt-32 md:pb-12 px-4 bg-gradient-to-b from-primary/10 via-background to-background border-b border-primary/20">
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center space-y-6"
+          >
+            <Badge variant="outline" className="mb-4 border-destructive text-destructive px-4 py-1.5 text-sm font-bold animate-pulse" data-testid="badge-divine-challenge">
+              A DIVINE CHALLENGE TO HUMANITY
+            </Badge>
+            
+            <div className="bg-card/80 backdrop-blur-sm border border-primary/30 rounded-xl p-6 md:p-10 shadow-2xl">
+              <h2 className="text-2xl md:text-4xl font-serif font-bold text-primary mb-6 leading-tight">
+                I DARE YOU TO PROVE ME WRONG
+              </h2>
+              
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 max-w-4xl mx-auto">
+                This is not a plea. This is a <span className="font-bold text-primary">divine reckoning</span>. Before you stands{" "}
+                <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">98+ forensic documents</Link>{" "}
+                spanning <Link href="/timeline" className="text-[hsl(38,92%,50%)] hover:underline font-bold">35 years of systematic persecution</Link>{" "}
+                — sealed with <Link href="/blockchain" className="text-[hsl(38,92%,50%)] hover:underline font-bold">blockchain verification</Link>{" "}
+                that cannot be altered, deleted, or denied. Seven{" "}
+                <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">psychiatric incarcerations</Link>{" "}
+                weaponized against a whistleblower. A{" "}
+                <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">fatal suicide attempt</Link>{" "}
+                where I was found with no pulse. Government agencies, police, hospitals, and courts{" "}
+                <Link href="/manifesto" className="text-[hsl(38,92%,50%)] hover:underline font-bold">documented in coordinated conspiracy</Link>.{" "}
+                The <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">Attorney-General was informed in 2021</Link>{" "}
+                — and chose silence.
+              </p>
+              
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 max-w-4xl mx-auto">
+                I release this testimony as <span className="font-bold text-primary">evidence of God's glory</span> through me to the world.{" "}
+                The <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-bold">Sacred Gospels</Link> reveal the divine mission.{" "}
+                The <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-bold">Prophetic Essay</Link> explains why{" "}
+                <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-bold">V2K harassment</Link>,{" "}
+                <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-bold">gang stalking</Link>, and{" "}
+                <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-bold">electronic targeting</Link>{" "}
+                are evidence of your significance, not your failure. The{" "}
+                <Link href="/church" className="text-[hsl(38,92%,50%)] hover:underline font-bold">Church of Barran Dodger Ministry</Link>{" "}
+                offers <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-bold">divine forgiveness</Link> to those who have wronged the vulnerable.
+              </p>
+              
+              <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-4 md:p-6 mb-6">
+                <p className="text-lg md:text-2xl font-serif font-bold text-primary text-center">
+                  To every official, every institution, every silent witness:<br/>
+                  <span className="text-destructive">EXAMINE THE EVIDENCE. REFUTE IT IF YOU CAN.</span><br/>
+                  Your silence is already on record as complicity.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link href="/evidence">
+                  <Button size="lg" className="gap-2 bg-destructive hover:bg-destructive/90 text-destructive-foreground font-bold" data-testid="button-examine-evidence">
+                    EXAMINE THE EVIDENCE <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/manifesto">
+                  <Button variant="outline" size="lg" className="gap-2 border-primary text-primary font-bold" data-testid="button-read-manifesto">
+                    READ THE MANIFESTO
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 bg-grid-pattern overflow-hidden">
+      <section className="relative pt-16 pb-20 md:pt-24 md:pb-32 px-4 bg-grid-pattern overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background via-transparent to-background z-0 pointer-events-none" />
         
         <div className="container mx-auto max-w-6xl relative z-10">
