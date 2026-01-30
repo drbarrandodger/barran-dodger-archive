@@ -99,17 +99,23 @@ export async function downloadDriveFile(fileId: string, fileName: string): Promi
   let outputFileName: string;
   let exportMimeType: string | undefined;
   
+  // Use provided fileName if available, otherwise use original
+  const baseName = fileName || originalName;
+  
   if (mimeType === 'application/vnd.google-apps.document') {
     // Export Google Docs as PDF
     exportMimeType = 'application/pdf';
-    outputFileName = `${originalName.replace(/\.[^/.]+$/, '')}_${timestamp}.pdf`;
+    outputFileName = `${baseName.replace(/\.[^/.]+$/, '')}_${timestamp}.pdf`;
   } else {
     // For binary files (PDFs, images), download directly
-    const ext = originalName.split('.').pop() || 'pdf';
-    outputFileName = `${originalName.replace(/\.[^/.]+$/, '')}_${timestamp}.${ext}`;
+    const ext = baseName.split('.').pop() || 'pdf';
+    outputFileName = `${baseName.replace(/\.[^/.]+$/, '')}_${timestamp}.${ext}`;
   }
   
-  const outputPath = path.join('attached_assets', outputFileName.replace(/[^a-zA-Z0-9._-]/g, '_'));
+  // Truncate filename if too long (max 200 chars before extension)
+  const sanitized = outputFileName.replace(/[^a-zA-Z0-9._-]/g, '_');
+  const maxLen = 200;
+  const outputPath = path.join('attached_assets', sanitized.length > maxLen ? sanitized.substring(0, maxLen) : sanitized);
   
   // Create attached_assets directory if it doesn't exist
   if (!fs.existsSync('attached_assets')) {
