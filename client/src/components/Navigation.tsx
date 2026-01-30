@@ -24,7 +24,7 @@ export function Navigation() {
   const navLinks = [
     { href: "/start-here", label: "Start Here", highlight: true },
     { href: "/", label: "Home" },
-    { href: "/mission", label: "Mission" },
+    { href: "/manifesto", label: "Manifesto" },
     { href: "/gospel", label: "Gospel" },
     { href: "/evidence", label: "Evidence" },
     { href: "/blockchain", label: "Timestamps" },

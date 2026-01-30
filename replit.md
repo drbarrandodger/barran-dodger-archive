@@ -64,6 +64,18 @@ The `shared/` directory contains code used by both frontend and backend:
 - **AustLII Database**: Legal research integration via external search links
 - **Google Fonts**: Libre Baskerville, Inter, DM Sans font families
 
+## Recent Changes
+
+### January 30, 2026
+- **New Manifesto Page**: Created a comprehensive consolidated Manifesto page (`/manifesto`) that combines:
+  - Trust Fund Purpose & Nature (PART I) - ABN, mission, and core objectives
+  - Church of Barran Dodger Ministry (PART II) - Six Sacred Tenets and Four Sacraments
+  - The Sacred Gospels & Prophetic Papers (PART III) - 12 canonical gospels with access links
+  - The Evidence Archive (PART IV) - Document categories overview
+  - Financial Accountability & Restitution (PART V) - Damages claims breakdown
+- **Navigation Update**: Replaced "Mission" link with "Manifesto" in main navigation
+- **Dependency Fix**: Reinstalled npm packages to fix tsx not found error after qs security update
+
 ### SEO Implementation
 - **Meta Tags**: Comprehensive title, description, keywords in `client/index.html`
 - **Open Graph**: Full OG tags for Facebook/LinkedIn social sharing
