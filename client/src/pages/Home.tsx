@@ -92,12 +92,17 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
                 <Link href="/evidence">
                   <Button size="lg" className="gap-2 bg-destructive hover:bg-destructive/90 text-destructive-foreground font-bold" data-testid="button-examine-evidence">
                     EXAMINE THE EVIDENCE <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
+                <a href="/attached_assets/EDITABLE_Betrayed,_Forsaken,_Murdered_The_Harrowing_Journey_of_1769761635218.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="gap-2" data-testid="button-read-autobiography">
+                    READ THE AUTOBIOGRAPHY <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </a>
                 <Link href="/manifesto">
                   <Button variant="outline" size="lg" className="gap-2 border-primary text-primary font-bold" data-testid="button-read-manifesto">
                     READ THE MANIFESTO

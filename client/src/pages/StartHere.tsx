@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { 
-  Clock, Shield, FileText, Scale, BookOpen, Heart, 
+  Clock, Shield, FileText, Scale, BookOpen, Heart, Download,
   ExternalLink, AlertTriangle, CheckCircle, ArrowRight,
   Landmark, Globe, Users, Lock, Sparkles
 } from "lucide-react";
@@ -84,6 +84,7 @@ export default function StartHere() {
   ];
 
   const keyDocuments = [
+    { title: "Betrayed, Forsaken, Murdered — Complete Autobiography", description: "The definitive 35-year first-person account of systematic persecution and survival", link: "/attached_assets/EDITABLE_Betrayed,_Forsaken,_Murdered_The_Harrowing_Journey_of_1769761635218.pdf", type: "Featured", external: true },
     { title: "Federal Court Employment Certification", description: "Proves DSS employment, voids ComCare/AAT denials", link: "/evidence", type: "Critical" },
     { title: "UNTOUCHABLE: $32.9M Damage Assessment", description: "Complete financial and human rights damage breakdown", link: "/evidence", type: "Financial" },
     { title: "PM&C FOI Reversal", description: "Proves state knowledge and attempted concealment", link: "/evidence", type: "Government" },
@@ -190,18 +191,33 @@ export default function StartHere() {
                 </h2>
                 <div className="grid gap-4">
                   {keyDocuments.map((doc, index) => (
-                    <Link key={index} href={doc.link}>
-                      <div className="flex items-center justify-between p-4 rounded-lg border border-border hover:border-[hsl(38,92%,50%)]/50 hover:bg-muted/30 transition-all group cursor-pointer">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <Badge variant="outline" className="text-[10px]">{doc.type}</Badge>
-                            <p className="font-medium text-foreground">{doc.title}</p>
+                    doc.external ? (
+                      <a key={index} href={doc.link} target="_blank" rel="noopener noreferrer">
+                        <div className="flex items-center justify-between p-4 rounded-lg border border-[hsl(38,92%,50%)]/50 bg-[hsl(38,92%,50%)]/5 hover:bg-[hsl(38,92%,50%)]/10 transition-all group cursor-pointer">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <Badge className="text-[10px] bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)]">{doc.type}</Badge>
+                              <p className="font-medium text-foreground">{doc.title}</p>
+                            </div>
+                            <p className="text-sm text-muted-foreground">{doc.description}</p>
                           </div>
-                          <p className="text-sm text-muted-foreground">{doc.description}</p>
+                          <Download className="h-5 w-5 text-[hsl(38,92%,50%)] group-hover:scale-110 transition-transform" />
                         </div>
-                        <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-[hsl(38,92%,50%)] transition-colors" />
-                      </div>
-                    </Link>
+                      </a>
+                    ) : (
+                      <Link key={index} href={doc.link}>
+                        <div className="flex items-center justify-between p-4 rounded-lg border border-border hover:border-[hsl(38,92%,50%)]/50 hover:bg-muted/30 transition-all group cursor-pointer">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <Badge variant="outline" className="text-[10px]">{doc.type}</Badge>
+                              <p className="font-medium text-foreground">{doc.title}</p>
+                            </div>
+                            <p className="text-sm text-muted-foreground">{doc.description}</p>
+                          </div>
+                          <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-[hsl(38,92%,50%)] transition-colors" />
+                        </div>
+                      </Link>
+                    )
                   ))}
                 </div>
               </CardContent>
