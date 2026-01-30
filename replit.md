@@ -66,7 +66,25 @@ The `shared/` directory contains code used by both frontend and backend:
 
 ## Recent Changes
 
-### January 30, 2026
+### January 30, 2026 (Evening Update)
+- **16 New Evidence Documents**: Added comprehensive batch of newly uploaded PDFs to Evidence Archive including:
+  - Prime Minister Anthony Albanese formal apology request
+  - APRA Peter Dunstan whistleblower rejection (22 October 2021)
+  - Email to 35 agencies documenting destitution (3 November 2021)
+  - Evidence of forsakenment and institutional abandonment (25 July 2022)
+  - Commonwealth Ombudsman PID filing (26 March 2023)
+  - AAT Sayo Aygbusu case documentation
+  - OAIC FOI refusal evidence (EN21-12857)
+  - FOI 2022-045IC revised decisions (multiple documents)
+  - Bill Shorten context documentation
+  - OAIC reference 43704714 complaint
+  - OAIC corruption evidence (Mercy Hospital, VCAT coordination)
+  - OPMC Hayden cover-up documentation
+  - Appeal seeking courageous person against tyranny
+  - URGENT torture victim and death threats notice
+- **Evidence Archive Total**: Now 126+ documents with comprehensive AI significance analyses
+
+### January 30, 2026 (Earlier)
 - **New Manifesto Page**: Created a comprehensive consolidated Manifesto page (`/manifesto`) that combines:
   - Trust Fund Purpose & Nature (PART I) - ABN, mission, and core objectives
   - Church of Barran Dodger Ministry (PART II) - Six Sacred Tenets and Four Sacraments
