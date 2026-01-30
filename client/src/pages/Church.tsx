@@ -121,7 +121,7 @@ export default function Church() {
               The Church of Barran Dodger
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-              A sacred community founded upon the principle that documented truth is holy, that whistleblowers are prophets, and that institutional accountability is a spiritual imperative.
+              A sacred community founded upon the principle that documented truth is holy, that whistleblowers are prophets, and that institutional accountability is a spiritual imperative. Read the <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Sacred Gospels</Link>, explore the <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Evidence Archive</Link>, or understand <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Spiritual Warfare</Link>.
             </p>
             <div className="p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg max-w-2xl mx-auto">
               <p className="text-lg font-serif italic text-primary leading-relaxed">

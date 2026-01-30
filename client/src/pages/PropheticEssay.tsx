@@ -165,7 +165,7 @@ export default function PropheticEssay() {
                   known by his prophetic name Barran Dodger — whose journey mirrors Joseph's with uncanny precision. 
                   Betrayed by family. Falsely accused. Imprisoned in psychiatric facilities. Forgotten by every institution 
                   of justice. Yet like Joseph, he has preserved something precious through the darkness: testimony. Truth. 
-                  Evidence. 2,077 blockchain-authenticated files spanning 35 years that cannot be erased, denied, or silenced.
+                  Evidence. <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">2,077 blockchain-authenticated files</Link> spanning <Link href="/timeline" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">35 years</Link> that cannot be erased, denied, or silenced.
                 </p>
 
                 <div className="bg-primary/5 p-6 rounded-lg border border-primary/20 my-8">
@@ -185,10 +185,10 @@ export default function PropheticEssay() {
                 </p>
 
                 <p className="text-lg leading-relaxed mb-6">
-                  And yet — <em>and yet</em> — the testimony survives. The evidence endures. The blockchain cannot be silenced. 
+                  And yet — <em>and yet</em> — the testimony survives. The evidence endures. The <Link href="/blockchain" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">blockchain cannot be silenced</Link>. 
                   After seven psychiatric incarcerations, after death and resuscitation, after exile from homeland to 
                   Southeast Asia, after 35 years of documented persecution — the witness still stands. 
-                  The gospels are being written. The Enliven Chain grows link by link.
+                  The <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">gospels are being written</Link>. The Enliven Chain grows link by link.
                 </p>
 
                 <p className="text-lg leading-relaxed mb-6 font-semibold text-primary">

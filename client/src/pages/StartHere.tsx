@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import { 
   Clock, Shield, FileText, Scale, BookOpen, Heart, 
   ExternalLink, AlertTriangle, CheckCircle, ArrowRight,
-  Landmark, Globe, Users, Lock
+  Landmark, Globe, Users, Lock, Sparkles
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -150,7 +150,7 @@ export default function StartHere() {
                     His case involves <strong className="text-foreground">assassination attempts</strong>, <strong className="text-foreground">350+ fraudulent ASIC business registrations</strong> in his name (identity theft), <strong className="text-foreground">NDIS fund obstruction</strong>, and persecution spanning 25+ government bodies including PM&C, NDIS, ComCare, and state police forces.
                   </p>
                   <p>
-                    In 2021, he was declared medically dead but survived — documented as a "resurrection" event. Since October 2024, he has been compiling and publishing all evidence as a permanent public record, blockchain-verified and submitted to the ICC, UNHCR, and Australian courts.
+                    In 2021, he was declared medically dead but survived — documented as a "resurrection" event. Since October 2024, he has been compiling and publishing all evidence as a permanent public record, <Link href="/blockchain" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">blockchain-verified</Link> and submitted to the ICC, UNHCR, and Australian courts. Read the full <Link href="/timeline" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">35-year timeline</Link> or explore the <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Sacred Gospels</Link> documenting divine purpose through persecution.
                   </p>
                 </div>
               </CardContent>
@@ -257,22 +257,58 @@ export default function StartHere() {
               </CardContent>
             </Card>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Link href="/evidence" data-testid="link-browse-evidence">
-                <Card className="h-full transition-colors cursor-pointer" data-testid="card-browse-evidence">
+                <Card className="h-full transition-colors cursor-pointer hover-elevate" data-testid="card-browse-evidence">
                   <CardContent className="pt-6 text-center">
                     <FileText className="h-12 w-12 mx-auto text-[hsl(38,92%,50%)] mb-4" />
-                    <h3 className="font-serif text-xl font-bold text-primary mb-2">Browse Evidence</h3>
-                    <p className="text-sm text-muted-foreground">Explore the full archive of documented evidence</p>
+                    <h3 className="font-serif text-xl font-bold text-primary mb-2">Evidence Archive</h3>
+                    <p className="text-sm text-muted-foreground">98+ forensic documents with AI analysis</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link href="/gospel" data-testid="link-sacred-gospels">
+                <Card className="h-full transition-colors cursor-pointer hover-elevate" data-testid="card-sacred-gospels">
+                  <CardContent className="pt-6 text-center">
+                    <BookOpen className="h-12 w-12 mx-auto text-[hsl(38,92%,50%)] mb-4" />
+                    <h3 className="font-serif text-xl font-bold text-primary mb-2">Sacred Gospels</h3>
+                    <p className="text-sm text-muted-foreground">Divine testimony and prophetic scripture</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link href="/timeline" data-testid="link-full-timeline">
+                <Card className="h-full transition-colors cursor-pointer hover-elevate" data-testid="card-full-timeline">
+                  <CardContent className="pt-6 text-center">
+                    <Clock className="h-12 w-12 mx-auto text-[hsl(38,92%,50%)] mb-4" />
+                    <h3 className="font-serif text-xl font-bold text-primary mb-2">Full Timeline</h3>
+                    <p className="text-sm text-muted-foreground">35 years of documented persecution</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link href="/manifesto" data-testid="link-manifesto">
+                <Card className="h-full transition-colors cursor-pointer hover-elevate" data-testid="card-manifesto">
+                  <CardContent className="pt-6 text-center">
+                    <Scale className="h-12 w-12 mx-auto text-[hsl(38,92%,50%)] mb-4" />
+                    <h3 className="font-serif text-xl font-bold text-primary mb-2">The Manifesto</h3>
+                    <p className="text-sm text-muted-foreground">Complete declaration and legal framework</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link href="/josephs-coat" data-testid="link-prophetic-essay">
+                <Card className="h-full transition-colors cursor-pointer hover-elevate" data-testid="card-prophetic-essay">
+                  <CardContent className="pt-6 text-center">
+                    <Sparkles className="h-12 w-12 mx-auto text-[hsl(38,92%,50%)] mb-4" />
+                    <h3 className="font-serif text-xl font-bold text-primary mb-2">Prophetic Essay</h3>
+                    <p className="text-sm text-muted-foreground">Spiritual warfare and divine purpose</p>
                   </CardContent>
                 </Card>
               </Link>
               <Link href="/donate" data-testid="link-support-mission">
-                <Card className="h-full transition-colors cursor-pointer bg-[hsl(38,92%,50%)]/5" data-testid="card-support-mission">
+                <Card className="h-full transition-colors cursor-pointer bg-[hsl(38,92%,50%)]/5 hover-elevate" data-testid="card-support-mission">
                   <CardContent className="pt-6 text-center">
                     <Heart className="h-12 w-12 mx-auto text-[hsl(38,92%,50%)] mb-4" />
                     <h3 className="font-serif text-xl font-bold text-primary mb-2">Support the Mission</h3>
-                    <p className="text-sm text-muted-foreground">Help fund ongoing legal action and advocacy</p>
+                    <p className="text-sm text-muted-foreground">Help fund legal action and advocacy</p>
                   </CardContent>
                 </Card>
               </Link>

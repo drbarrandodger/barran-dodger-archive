@@ -210,7 +210,7 @@ export default function Timeline() {
                 Persecution Timeline
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Every major event documented with blockchain-verified evidence.
+                Every major event documented with <Link href="/blockchain" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">blockchain-verified evidence</Link>. Explore the complete <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Evidence Archive</Link> or read the <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Prophetic Essay</Link> on divine purpose through persecution.
               </p>
             </div>
 

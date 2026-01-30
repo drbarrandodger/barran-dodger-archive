@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { CheckCircle2, Gavel, Globe, ShieldAlert, ExternalLink } from "lucide-react";
+import { CheckCircle2, Gavel, Globe, ShieldAlert, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Mission() {
   return (
@@ -41,7 +42,9 @@ export default function Mission() {
                 <p className="leading-relaxed">
                   Our foundation is unique: we are established upon a specific, verified body of evidence—sworn testimony, 
                   affidavits, and public records authored and compiled by Barran Dodger. This documentation serves not just 
-                  as a historical record, but as a functional tool for advocacy and reform.
+                  as a historical record, but as a functional tool for advocacy and reform. Explore the complete{" "}
+                  <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Evidence Archive</Link>{" "}
+                  containing <Link href="/timeline" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">35 years of documented persecution</Link>.
                 </p>
               </div>
             </section>
@@ -118,6 +121,23 @@ export default function Mission() {
                 <CommitmentItem text="Evidence over ideology" />
                 <CommitmentItem text="Accountability over silence" />
                 <CommitmentItem text="Dignity over harm" />
+              </div>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link href="/evidence">
+                  <Button className="gap-2">
+                    View Evidence Archive <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/manifesto">
+                  <Button variant="outline" className="gap-2">
+                    Read Full Manifesto
+                  </Button>
+                </Link>
+                <Link href="/gospel">
+                  <Button variant="outline" className="gap-2">
+                    Sacred Gospels
+                  </Button>
+                </Link>
               </div>
             </section>
           </div>

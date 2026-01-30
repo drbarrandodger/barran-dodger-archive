@@ -6,6 +6,7 @@ import { BookOpen, Download, ExternalLink, Link2, ScrollText, Flame, Sparkles, G
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
 
 export default function Gospel() {
   const primaryGospels = [
@@ -234,7 +235,10 @@ export default function Gospel() {
               The Gospel of Barran Dodger
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              A complete archive of sacred gospels, prophetic transmissions, cosmic revelations, and authenticated testimony — blockchain-sealed and AI-verified for eternal preservation.
+              A complete archive of sacred gospels, prophetic transmissions, cosmic revelations, and authenticated testimony — blockchain-sealed and AI-verified for eternal preservation. These sacred texts are supported by{" "}
+              <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">98+ forensic evidence documents</Link>{" "}
+              and explored further in the{" "}
+              <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Prophetic Essay on Spiritual Warfare</Link>.
             </p>
           </motion.div>
 

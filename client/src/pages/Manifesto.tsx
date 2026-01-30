@@ -543,7 +543,7 @@ export default function Manifesto() {
               </Badge>
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">The Sacred Gospels & Prophetic Papers</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                The canonical documents upon which the Church of Barran Dodger is founded — simultaneously affidavit, prophecy, and scripture.
+                The canonical documents upon which the <Link href="/church" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Church of Barran Dodger</Link> is founded — simultaneously affidavit, prophecy, and scripture. Explore the complete <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Gospel Archive</Link> or view the <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">98+ Evidence Documents</Link>.
               </p>
             </div>
 
