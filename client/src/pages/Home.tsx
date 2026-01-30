@@ -122,6 +122,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Historical Evidence: Mark Dreyfus Meeting */}
+      <section className="py-12 px-4 bg-muted/30 border-y border-[hsl(38,92%,50%)]/20">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-center gap-8"
+          >
+            <div className="flex-shrink-0">
+              <img 
+                src="/attached_assets/IMG_3509_1769762879418.jpeg" 
+                alt="Barran Dodger meeting Attorney-General Mark Dreyfus at 2013 Marriage Equality Rally Melbourne"
+                className="rounded-lg shadow-xl border-2 border-[hsl(38,92%,50%)]/30 w-full max-w-sm md:max-w-xs object-cover"
+                data-testid="img-dreyfus-meeting"
+              />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <Badge className="mb-3 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)]">Historical Evidence</Badge>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary mb-3">
+                Barran Dodger Meets Mark Dreyfus KC MP
+              </h2>
+              <p className="text-lg text-muted-foreground mb-2">
+                <strong className="text-foreground">2013 Marriage Equality Rally, Melbourne</strong>
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Photographic evidence of Barran Dodger meeting Mark Dreyfus — who later became Attorney-General of Australia — at the historic 2013 Marriage Equality Rally. 
+                This same Attorney-General later received formal notification of the persecution case (Ref: MC23-028244) on 19 September 2023.
+              </p>
+              <p className="text-sm text-[hsl(38,92%,50%)] font-medium italic">
+                "The official who marched for human rights in 2013 would later preside over a department formally notified of human rights violations against the same person who marched alongside him."
+              </p>
+              <div className="mt-4">
+                <Link href="/evidence">
+                  <Button variant="outline" className="gap-2 border-[hsl(38,92%,50%)] text-[hsl(38,92%,50%)]" data-testid="button-view-full-analysis">
+                    View Full Analysis <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative pt-16 pb-20 md:pt-24 md:pb-32 px-4 bg-grid-pattern overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background via-transparent to-background z-0 pointer-events-none" />
