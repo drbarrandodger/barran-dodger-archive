@@ -1,5 +1,7 @@
 # Barran Dodger Legal & Ethical Trust Fund
 # https://www.barrandodger.com.au
+# ABN 78 833 496 164
+# 130+ Blockchain-Verified Evidence Documents
 
 User-agent: *
 Allow: /
@@ -12,15 +14,20 @@ Crawl-delay: 1
 
 # Important pages for indexing
 Allow: /evidence
+Allow: /manifesto
 Allow: /blockchain
-Allow: /gospel
-Allow: /donate
-Allow: /mission
-Allow: /contact
+Allow: /divine-challenge
+Allow: /gospels
+Allow: /timeline
+Allow: /start-here
 Allow: /church
 Allow: /prophetic-papers
-Allow: /legal-research
-Allow: /start-here
-Allow: /timeline
 Allow: /legal-status
+Allow: /legal-research
+Allow: /drive
 Allow: /media
+Allow: /contact
+Allow: /donate
+
+# Allow all attached assets (evidence PDFs)
+Allow: /attached_assets/
