@@ -104,6 +104,14 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
+              
+              <p className="text-sm text-muted-foreground mt-6 pt-4 border-t border-primary/20">
+                <span className="font-semibold">Secure Contact:</span>{" "}
+                <a href="mailto:drbarrandodger@proton.me" className="text-[hsl(38,92%,50%)] hover:underline font-medium">
+                  drbarrandodger@proton.me
+                </a>{" "}
+                <span className="text-xs">(ProtonMail encrypted)</span>
+              </p>
             </div>
           </motion.div>
         </div>

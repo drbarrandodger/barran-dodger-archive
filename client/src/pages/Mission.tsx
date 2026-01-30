@@ -139,6 +139,16 @@ export default function Mission() {
                   </Button>
                 </Link>
               </div>
+              
+              <div className="mt-8 pt-6 border-t border-border text-center">
+                <p className="text-muted-foreground text-sm">
+                  <span className="font-semibold text-foreground">Secure Contact:</span>{" "}
+                  <a href="mailto:drbarrandodger@proton.me" className="text-[hsl(38,92%,50%)] hover:underline font-medium">
+                    drbarrandodger@proton.me
+                  </a>{" "}
+                  <span className="text-xs">(ProtonMail encrypted)</span>
+                </p>
+              </div>
             </section>
           </div>
         </div>

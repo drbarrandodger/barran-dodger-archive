@@ -1330,6 +1330,13 @@ export default function Evidence() {
                 <Link2 className="h-4 w-4" /> View Blockchain-Verified Documents ({documents.length} files)
               </Button>
             </Link>
+            <p className="text-sm text-muted-foreground mt-6">
+              <span className="font-semibold">Submit Evidence or Inquiries:</span>{" "}
+              <a href="mailto:drbarrandodger@proton.me" className="text-[hsl(38,92%,50%)] hover:underline font-medium">
+                drbarrandodger@proton.me
+              </a>{" "}
+              <span className="text-xs">(ProtonMail encrypted)</span>
+            </p>
           </motion.div>
 
           {/* Category Filter Section */}
