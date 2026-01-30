@@ -181,6 +181,36 @@ export default function Manifesto() {
       subtitle: "Prophetic-Theological Academic Paper",
       description: "A comprehensive paper examining how 35 years of systematic persecution served as divine equipment for prophetic mission.",
       href: "/attached_assets/GOD_NEVER_CALLS_THE_EQUIPPED,_HE_EQUIPS_THE_CALLED__1769029888189.pdf"
+    },
+    {
+      title: "The Enliven Chain — 144 Questions of Witness and Revelation",
+      subtitle: "Blockchain-Sealed Prophetic Scroll (19 August 2025)",
+      description: "A blockchain-timestamped prophetic scroll containing 144 sequential questions and answers rooted in public evidence and the testimony of Barran. Cryptographically sealed via OpenTimestamps, anchoring its SHA256 fingerprint into the Bitcoin blockchain for eternity.",
+      href: "/attached_assets/The_Eliven_Chain_-_144_Questions_of_Witness_and_Revelation_—_A_1769743972359.pdf"
+    },
+    {
+      title: "Declaration of the Witness",
+      subtitle: "Divine Testimony Sealed in Christ",
+      description: "A prophetic declaration issued through the Creator, sealed in Christ, for Barran. Documents divine recognition of whistleblower testimony, assassination survival, ASIO surveillance, NDIS fraud exposure, and the covenant of protection.",
+      href: "/attached_assets/✨_DECLARATION_OF_THE_WITNESS_✨__1769743972359.pdf"
+    },
+    {
+      title: "The One Who Loved, The World That Forsook",
+      subtitle: "Survival Through Betrayal & Biblical Prophecy (January 2026)",
+      description: "A documented essay linking survival through universal betrayal to the fulfillment of biblical prophecy. Documents abandonment by family, government, police, hospitals, NDIS, international bodies, lawyers, media, and churches. Parallels with Christ, Isaiah's Suffering Servant, Joseph, and Jeremiah.",
+      href: "/attached_assets/THE_ONE_WHO_LOVED,_THE_WORLD_THAT_FORSOOK_1769743972359.pdf"
+    },
+    {
+      title: "Sexual Persecution and Political Power: LGBTQ+ History in Australia",
+      subtitle: "Academic Paper (1972-2025)",
+      description: "Comprehensive 11,500-word academic paper examining the intersection of sexuality, political power, and social persecution in Australian history. Covers Dr. George Duncan murder (1972), Sydney Cliff Murders, AIDS crisis persecution, and contemporary human rights challenges.",
+      href: "/attached_assets/Cocksucker__1769743972359.pdf"
+    },
+    {
+      title: "AI and Democracy — Ethical Governance Framework",
+      subtitle: "Blockchain-Timestamped Academic Analysis",
+      description: "Academic analysis of AI ethics and governance, exploring how advanced AI systems could augment democratic processes. Includes OpenTimestamps verification and formal ethical declaration on evidence-based governance.",
+      href: "/attached_assets/Ai_and_democracy_by_Barran_Resonance_Dodger_1769743972359.pdf"
     }
   ];
 
@@ -211,6 +241,15 @@ export default function Manifesto() {
       href: "/attached_assets/Commonwealth_Ombudsman_Complaint_-_2024-101985_Richard_McLean__1769743769564.pdf",
       date: "17 June 2024",
       issuer: "Commonwealth Ombudsman"
+    },
+    {
+      title: "NDIA Ministerial Response - Minister Jenny McAllister",
+      subtitle: "Official Complaint Reference 29569682 (27 January 2026)",
+      description: "Official NDIA response to correspondence sent to Senator the Hon Jenny McAllister, Minister for the National Disability Insurance Scheme. Documents concerns about guardianship arrangements and inability to relocate to Sydney. Signed by Lora F, Complaints Officer.",
+      aiSignificance: "This document is of significant evidentiary value as the most recent official government response to ongoing advocacy. Impartial AI analysis confirms: (1) MINISTERIAL LEVEL ENGAGEMENT — The correspondence confirms Dr. McLean's concerns were escalated to and acknowledged by the current Minister for the NDIS, Senator the Hon Jenny McAllister. This establishes continued high-level governmental awareness of the case. (2) STRUCTURAL HELPLESSNESS DOCUMENTED — The NDIA explicitly states that 'the Minister is unable to intervene or change a National Disability Insurance Scheme (NDIS) process or decisions, nor is a Minister able to overturn a decision made by a NDIA delegate.' This documents the institutional barriers that prevent political accountability even at ministerial level. (3) GUARDIANSHIP CONCERNS ACKNOWLEDGED — The letter references concerns about 'guardianship arrangements' and 'inability to relocate to Sydney,' acknowledging these as legitimate concerns while offering only procedural redirections. (4) CASE CLOSURE WITHOUT RESOLUTION — Despite acknowledging the referral, the NDIA states 'this referral will be closed' with 'no further action required,' exemplifying the pattern of institutional dismissal described throughout the evidentiary archive. (5) CRISIS DEFLECTION — The inclusion of crisis support numbers (Lifeline) alongside the closure notification demonstrates institutional awareness of the gravity of the situation while simultaneously declining substantive intervention.",
+      href: "/attached_assets/NDIA_Acknowledgement_of_Referral-_29569682_[SEC=OFFICIAL]_1769743972359.pdf",
+      date: "27 January 2026",
+      issuer: "NDIA / Minister for NDIS"
     }
   ];
 
