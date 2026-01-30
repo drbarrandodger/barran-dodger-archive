@@ -66,6 +66,32 @@ The `shared/` directory contains code used by both frontend and backend:
 
 ## Recent Changes
 
+### January 30, 2026 (Night Update - Engagement Features)
+- **Dark Mode System**: Full dark/light theme toggle with localStorage persistence
+  - ThemeProvider component at `client/src/components/ThemeProvider.tsx`
+  - ThemeToggle button in navigation (desktop + mobile)
+  - Respects system preference on first load
+- **Case Studies Page** (`/case-studies`): Deep-dive analysis of 4 major corruption cases:
+  - The OAIC Cover-Up
+  - The Mercy Hospital Incident  
+  - Digital Identity Destruction (Micron21)
+  - Commonwealth Ombudsman Service Restriction
+- **Statistics Dashboard**: Visual stats overview on Home page showing:
+  - 130+ Total Documents, 35+ Government Agencies, 35 Years of Evidence, 100% SHA-256 Verified
+  - Evidence by Category breakdown
+  - Persecution Timeline visualization
+- **Evidence Explorer**: Interactive agency connection map on Home page
+  - Clickable agency cards showing connections between corrupt entities
+  - Category color-coding (oversight, government, medical, legal, private)
+  - Details panel shows connections and document counts
+- **New Components Created**:
+  - `EvidenceCounter.tsx`: Animated counter widget for document totals
+  - `QuotableSnippet.tsx`: Shareable quotes from evidence documents
+  - `ProgressTracker.tsx`: User progress tracking for document viewing
+  - `TestimonialsSection.tsx`: Supporter testimonials display
+  - `DocumentPreview.tsx`: Modal for previewing documents with AI analysis
+- **Sitemap Updates**: Added /case-studies and /josephs-coat pages
+
 ### January 30, 2026 (Evening Update)
 - **16 New Evidence Documents**: Added comprehensive batch of newly uploaded PDFs to Evidence Archive including:
   - Prime Minister Anthony Albanese formal apology request

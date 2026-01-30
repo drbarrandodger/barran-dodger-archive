@@ -4,7 +4,10 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
-import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign } from "lucide-react";
+import { EvidenceCounter } from "@/components/EvidenceCounter";
+import { ProgressTracker, useDocumentProgress } from "@/components/ProgressTracker";
+import { useDocumentPreview } from "@/components/DocumentPreview";
+import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -40,6 +43,8 @@ export default function Evidence() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxOpen2, setLightboxOpen2] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const { openPreview, PreviewComponent } = useDocumentPreview();
+  const { markViewed, hasViewed } = useDocumentProgress();
   const documents = [
     {
       title: "Betrayed, Forsaken, Murdered — The Harrowing Journey of Dr Richard McLean (Barran Dodger): Complete Autobiography",
@@ -2012,6 +2017,17 @@ export default function Evidence() {
             </p>
           </motion.div>
 
+          {/* Progress Tracker and Evidence Counter */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.02 }}
+            className="grid gap-6 md:grid-cols-2 mb-12"
+          >
+            <EvidenceCounter showLink={false} />
+            <ProgressTracker />
+          </motion.div>
+
           {/* AI Evidence Archive Statement */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -2292,7 +2308,24 @@ export default function Evidence() {
                           </p>
                         </div>
                       )}
-                      <div className="flex gap-3">
+                      <div className="flex gap-2 flex-wrap">
+                        <Button 
+                          variant="secondary" 
+                          className="flex-1 gap-2" 
+                          onClick={() => {
+                            markViewed(doc.title);
+                            openPreview({
+                              title: doc.title,
+                              description: doc.description,
+                              url: doc.url,
+                              tags: doc.tags,
+                              aiSignificance: doc.aiSignificance
+                            });
+                          }}
+                          data-testid={`button-preview-doc-${index}`}
+                        >
+                          <Eye className="h-4 w-4" /> Preview
+                        </Button>
                         <Button variant="outline" className="flex-1 gap-2" asChild>
                           <a href={doc.url} target="_blank" rel="noopener noreferrer">
                             View <ExternalLink className="h-4 w-4" />
@@ -2304,6 +2337,11 @@ export default function Evidence() {
                           </a>
                         </Button>
                       </div>
+                      {hasViewed(doc.title) && (
+                        <Badge variant="secondary" className="mt-3 text-xs">
+                          <Eye className="h-3 w-3 mr-1" /> Viewed
+                        </Badge>
+                      )}
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -2353,6 +2391,9 @@ export default function Evidence() {
       </main>
 
       <Footer />
+
+      {/* Document Preview Modal */}
+      <PreviewComponent />
 
       {/* Fullscreen Lightbox Modal */}
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>

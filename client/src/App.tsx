@@ -5,6 +5,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import Home from "@/pages/Home";
 import Mission from "@/pages/Mission";
 import Contact from "@/pages/Contact";
@@ -21,6 +22,7 @@ import Timeline from "@/pages/Timeline";
 import LegalStatus from "@/pages/LegalStatus";
 import Manifesto from "@/pages/Manifesto";
 import PropheticEssay from "@/pages/PropheticEssay";
+import CaseStudies from "@/pages/CaseStudies";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -53,6 +55,7 @@ function Router() {
         <Route path="/legal-status" component={LegalStatus} />
         <Route path="/manifesto" component={Manifesto} />
         <Route path="/josephs-coat" component={PropheticEssay} />
+        <Route path="/case-studies" component={CaseStudies} />
         <Route component={Home} />
       </Switch>
     </>
@@ -62,11 +65,13 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Breadcrumbs />
-        <Router />
-      </TooltipProvider>
+      <ThemeProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Breadcrumbs />
+          <Router />
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

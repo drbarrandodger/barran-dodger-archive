@@ -5,6 +5,7 @@ import { SiX as TwitterX } from "react-icons/si";
 import { useState, useEffect } from "react";
 import { GlobalSearch } from "./GlobalSearch";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Navigation() {
   const [location] = useLocation();
@@ -72,6 +73,7 @@ export function Navigation() {
             </Link>
           ))}
           <GlobalSearch />
+          <ThemeToggle />
           <a 
             href="https://x.com/bazdod" 
             target="_blank" 
@@ -124,14 +126,17 @@ export function Navigation() {
               </Link>
             ))}
             <div className="pt-4 border-t border-border flex items-center justify-between">
-              <a 
-                href="https://x.com/bazdod" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
-              >
-                <TwitterX className="h-4 w-4" /> @bazdod
-              </a>
+              <div className="flex items-center gap-3">
+                <ThemeToggle />
+                <a 
+                  href="https://x.com/bazdod" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
+                >
+                  <TwitterX className="h-4 w-4" /> @bazdod
+                </a>
+              </div>
               <Link 
                 href="/donate" 
                 className="px-4 py-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] text-sm font-semibold rounded hover:bg-[hsl(38,92%,55%)] flex items-center gap-2"

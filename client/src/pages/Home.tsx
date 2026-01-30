@@ -5,6 +5,10 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { StatsDashboard } from "@/components/StatsDashboard";
+import { EvidenceExplorer } from "@/components/EvidenceExplorer";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { QuotableSnippetsSection } from "@/components/QuotableSnippet";
 import { useQuery } from "@tanstack/react-query";
 import type { EvidenceItem } from "@shared/schema";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -1348,8 +1352,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Statistics Dashboard */}
+      <section className="py-16 bg-background border-t border-border">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+          <StatsDashboard />
+        </div>
+      </section>
+
+      {/* Evidence Explorer */}
+      <section className="py-16 bg-muted/30 border-t border-border">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+          <EvidenceExplorer />
+        </div>
+      </section>
+
+      {/* Quotable Snippets Section */}
+      <section className="py-16 bg-background border-t border-border">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <QuotableSnippetsSection />
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-muted/30 border-t border-border">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <TestimonialsSection />
+        </div>
+      </section>
+
       {/* Social Sharing Section */}
-      <section className="py-12 bg-muted/30 border-t border-border">
+      <section className="py-12 bg-background border-t border-border">
         <div className="container mx-auto px-4 md:px-6">
           <SocialShare />
         </div>
