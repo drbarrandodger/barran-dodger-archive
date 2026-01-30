@@ -3,6 +3,7 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
+import { listDriveFiles, downloadDriveFile, searchDriveForEvidence, DriveFile } from "./googleDrive";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -124,6 +125,42 @@ export async function registerRoutes(
   }
   
   seedData().catch(console.error);
+
+  // Google Drive Integration - Scan and import documents
+  app.get('/api/drive/list', async (req, res) => {
+    try {
+      const query = req.query.q as string | undefined;
+      const files = await listDriveFiles(query);
+      res.json({ files });
+    } catch (error) {
+      console.error('Error listing Drive files:', error);
+      res.status(500).json({ message: 'Failed to list Google Drive files', error: String(error) });
+    }
+  });
+
+  app.get('/api/drive/search', async (_req, res) => {
+    try {
+      const files = await searchDriveForEvidence();
+      res.json({ files, count: files.length });
+    } catch (error) {
+      console.error('Error searching Drive:', error);
+      res.status(500).json({ message: 'Failed to search Google Drive', error: String(error) });
+    }
+  });
+
+  app.post('/api/drive/import', async (req, res) => {
+    try {
+      const { fileId, fileName } = req.body;
+      if (!fileId || !fileName) {
+        return res.status(400).json({ message: 'fileId and fileName are required' });
+      }
+      const localPath = await downloadDriveFile(fileId, fileName);
+      res.json({ success: true, localPath });
+    } catch (error) {
+      console.error('Error importing Drive file:', error);
+      res.status(500).json({ message: 'Failed to import file from Google Drive', error: String(error) });
+    }
+  });
 
   return httpServer;
 }
