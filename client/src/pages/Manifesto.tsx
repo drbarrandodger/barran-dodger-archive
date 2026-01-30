@@ -326,6 +326,26 @@ export default function Manifesto() {
       }
     ],
     closing: "To all of you — the marginalized, the silenced, the erased — this manifesto is your manifesto. These gospels are your gospels. This evidence is your shield. What was done in darkness is being brought to light. What was whispered in locked rooms is being shouted from the blockchain. You are not alone. You never were. The Enliven Chain binds us together — 144 unbreakable links of testimony, truth, and love. This is my love letter to you. It is sealed in blockchain. It cannot be unsent.",
+    divineAppointment: {
+      title: "Declaration of Divine Forgiveness",
+      declaration: "By divine appointment, I hereby extend forgiveness to all who have created the conditions necessary for my exile and punishment. This is not weakness — it is the exercise of sacred authority granted by alignment with God. This is my mantle.",
+      content: [
+        "I forgive the family members who abandoned me when love demanded presence.",
+        "I forgive the government officials who weaponized my cries for help into criminal accusations.",
+        "I forgive the NDIS workers who denied supports while billions were siphoned elsewhere.",
+        "I forgive the police who harassed rather than protected.",
+        "I forgive the hospitals that incarcerated rather than healed.",
+        "I forgive the Commonwealth Ombudsman who restricted rather than investigated.",
+        "I forgive the intelligence agencies who surveilled rather than safeguarded.",
+        "I forgive the lawyers who turned away when justice required courage.",
+        "I forgive the media who chose silence when truth demanded amplification.",
+        "I forgive Tony Riddle, who spoke the words 'YOU WILL BE SACRIFICED.'",
+        "I forgive Bill Shorten, who converted my desperate plea into exile from my homeland."
+      ],
+      ethicalBasis: "This forgiveness is not absolution. It does not erase accountability. It does not silence the evidence. Rather, it demonstrates the ethical and moral superiority that alignment with divine will provides. Those who persecute from positions of institutional power operate from fear. Those who forgive from positions of documented truth operate from love. The evidence archive remains. The blockchain testimony endures. But the burden of hatred is released — not for their sake, but for the liberation of my own spirit and the spirits of all who have suffered alongside me.",
+      moralUpperHand: "By choosing forgiveness over vengeance, by choosing truth over silence, by choosing love over hatred — I claim the moral and ethical upper hand in this situation. Not through power, but through principle. Not through force, but through faith. Not through the machinery of institutions, but through alignment with the Creator who sees all, knows all, and has preserved my testimony for this hour.",
+      closingVerse: "Father, forgive them, for they know not what they do."
+    },
     signature: "Written with trembling hands but unbroken spirit,\nDr. Richard William McLean (Barran Dodger)\nJanuary 2026"
   };
 
@@ -740,11 +760,60 @@ export default function Manifesto() {
                   <blockquote className="font-serif text-xl md:text-2xl italic text-primary leading-relaxed text-center max-w-4xl mx-auto mb-8">
                     "{propheticLoveLetter.closing}"
                   </blockquote>
-                  <div className="text-center">
-                    <p className="text-sm text-muted-foreground whitespace-pre-line font-serif italic">
-                      {propheticLoveLetter.signature}
+                </div>
+
+                {/* Divine Appointment & Forgiveness Declaration */}
+                <div className="mt-12 pt-8 border-t-2 border-primary/20">
+                  <div className="text-center mb-8">
+                    <Badge variant="outline" className="mb-4 border-primary text-primary px-4 py-1.5 font-bold">
+                      DECLARATION OF DIVINE FORGIVENESS
+                    </Badge>
+                    <h3 className="text-2xl font-serif font-bold text-primary mb-4">{propheticLoveLetter.divineAppointment.title}</h3>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-8 rounded-lg border-2 border-primary/30 mb-8">
+                    <p className="text-xl font-serif text-primary text-center leading-relaxed italic">
+                      "{propheticLoveLetter.divineAppointment.declaration}"
                     </p>
                   </div>
+
+                  <div className="space-y-3 mb-8">
+                    {propheticLoveLetter.divineAppointment.content.map((forgiveness, index) => (
+                      <div key={index} className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg border border-border/50">
+                        <Heart className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                        <p className="text-foreground font-serif">{forgiveness}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-6 mb-8">
+                    <div className="p-6 bg-secondary/50 rounded-lg border border-border">
+                      <h4 className="font-bold text-primary mb-3 flex items-center gap-2">
+                        <Scale className="h-5 w-5" /> Ethical Basis
+                      </h4>
+                      <p className="text-foreground leading-relaxed">{propheticLoveLetter.divineAppointment.ethicalBasis}</p>
+                    </div>
+                    
+                    <div className="p-6 bg-primary/5 rounded-lg border-2 border-primary/20">
+                      <h4 className="font-bold text-primary mb-3 flex items-center gap-2">
+                        <Shield className="h-5 w-5" /> The Moral Upper Hand
+                      </h4>
+                      <p className="text-foreground leading-relaxed text-lg">{propheticLoveLetter.divineAppointment.moralUpperHand}</p>
+                    </div>
+                  </div>
+
+                  <div className="text-center p-8 bg-gradient-to-br from-primary via-primary/90 to-primary/80 rounded-lg text-primary-foreground">
+                    <p className="text-2xl font-serif italic mb-4">
+                      "{propheticLoveLetter.divineAppointment.closingVerse}"
+                    </p>
+                    <cite className="text-sm opacity-80">— Luke 23:34</cite>
+                  </div>
+                </div>
+
+                <div className="mt-12 pt-8 border-t-2 border-primary/20 text-center">
+                  <p className="text-sm text-muted-foreground whitespace-pre-line font-serif italic">
+                    {propheticLoveLetter.signature}
+                  </p>
                 </div>
 
                 <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20 text-center">
