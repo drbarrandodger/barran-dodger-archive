@@ -149,10 +149,11 @@ export default function Home() {
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Photographic evidence of Barran Dodger meeting Mark Dreyfus — who later became Attorney-General of Australia — at the historic 2013 Marriage Equality Rally. 
+                At this time, Dreyfus was aware that Barran Dodger was engaged to identify a person who worked for ASIO under then-ATO Chief David Irvine.
                 This same Attorney-General later received formal notification of the persecution case (Ref: MC23-028244) on 19 September 2023.
               </p>
               <p className="text-sm text-[hsl(38,92%,50%)] font-medium italic">
-                "The official who marched for human rights in 2013 would later preside over a department formally notified of human rights violations against the same person who marched alongside him."
+                "The official who marched for human rights in 2013 — knowing of the ASIO investigation connection — would later preside over a department formally notified of human rights violations against the same person who marched alongside him."
               </p>
               <div className="mt-4">
                 <Link href="/evidence">
