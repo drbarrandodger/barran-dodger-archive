@@ -25,6 +25,7 @@ export function Navigation() {
     { href: "/start-here", label: "Start Here", highlight: true },
     { href: "/", label: "Home" },
     { href: "/manifesto", label: "Manifesto" },
+    { href: "/josephs-coat", label: "Joseph's Coat" },
     { href: "/gospel", label: "Gospel" },
     { href: "/evidence", label: "Evidence" },
     { href: "/blockchain", label: "Timestamps" },

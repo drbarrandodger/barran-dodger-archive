@@ -20,6 +20,7 @@ import Media from "@/pages/Media";
 import Timeline from "@/pages/Timeline";
 import LegalStatus from "@/pages/LegalStatus";
 import Manifesto from "@/pages/Manifesto";
+import PropheticEssay from "@/pages/PropheticEssay";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -51,6 +52,7 @@ function Router() {
         <Route path="/timeline" component={Timeline} />
         <Route path="/legal-status" component={LegalStatus} />
         <Route path="/manifesto" component={Manifesto} />
+        <Route path="/josephs-coat" component={PropheticEssay} />
         <Route component={Home} />
       </Switch>
     </>
