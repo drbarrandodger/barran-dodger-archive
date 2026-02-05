@@ -9,6 +9,7 @@ import { StatsDashboard } from "@/components/StatsDashboard";
 import { EvidenceExplorer } from "@/components/EvidenceExplorer";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { QuotableSnippetsSection } from "@/components/QuotableSnippet";
+import { GovernmentResponses } from "@/components/GovernmentResponses";
 import { useQuery } from "@tanstack/react-query";
 import type { EvidenceItem } from "@shared/schema";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -125,6 +126,9 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Official Government Responses */}
+      <GovernmentResponses />
 
       {/* Historical Evidence: Mark Dreyfus Meeting */}
       <section className="py-12 px-4 bg-muted/30 border-y border-[hsl(38,92%,50%)]/20">
