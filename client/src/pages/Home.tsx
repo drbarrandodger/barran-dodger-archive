@@ -18,6 +18,7 @@ import { Badge } from "@/components/ui/badge";
 
 import portraitImg from "@assets/A5BDF951-1AE5-4EFF-9F6E-3F29C2C5CDC9_1768633103014.png";
 import artworkImg from "@assets/IMG_2914_1768893482684.jpeg";
+import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_1770287537689.png";
 import { HandCoins, TrendingUp, Landmark, ShieldCheck } from "lucide-react";
 
 const fadeIn = {
@@ -129,6 +130,65 @@ export default function Home() {
 
       {/* Official Government Responses */}
       <GovernmentResponses />
+
+      {/* Featured Book Section */}
+      <section className="py-16 px-4 bg-black">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
+          >
+            <a 
+              href={bookCoverImg} 
+              download="Betrayed-Murdered-Forsaken-Richard-McLean.png"
+              className="block flex-shrink-0 hover-elevate rounded-lg overflow-visible transition-transform hover:scale-105"
+              data-testid="link-download-book"
+            >
+              <img 
+                src={bookCoverImg} 
+                alt="Betrayed, Murdered, Forsaken - Book Cover by Richard William McLean" 
+                className="w-64 md:w-80 shadow-2xl rounded-lg"
+              />
+            </a>
+            <div className="text-center md:text-left">
+              <Badge className="mb-4 bg-red-600 text-white border-red-500">NEW RELEASE</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">
+                Betrayed, Murdered, Forsaken
+              </h2>
+              <p className="text-xl text-gray-300 mb-2 italic">
+                The True Account of Survival Beyond Death, Silence, and Erasure
+              </p>
+              <p className="text-gray-400 mb-6">
+                "They tried to erase a life. The record refused to die."
+              </p>
+              <p className="text-gray-300 mb-6">
+                By <span className="text-[hsl(38,92%,50%)] font-semibold">Richard William McLean</span> (Barran Dodger)
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,40%)] text-black font-semibold"
+                >
+                  <a href={bookCoverImg} download="Betrayed-Murdered-Forsaken-Richard-McLean.png">
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    Download Cover
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-white/30 text-white">
+                  <Link href="/evidence">
+                    <Archive className="w-5 h-5 mr-2" />
+                    View Evidence Archive
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Historical Evidence: Mark Dreyfus Meeting */}
       <section className="py-12 px-4 bg-muted/30 border-y border-[hsl(38,92%,50%)]/20">
