@@ -47,8 +47,7 @@ export default function Home() {
       <Navigation />
       
       {/* DIVINE RECKONING - The Challenge */}
-      <section className="relative pt-36 pb-4 md:pt-44 md:pb-8 px-4 bg-gradient-to-b from-black via-[hsl(222,55%,8%)] to-background border-b border-destructive/30">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_hsl(0,70%,20%)_0%,_transparent_60%)] opacity-30 pointer-events-none" />
+      <section className="relative pt-36 pb-4 md:pt-44 md:pb-8 px-4 bg-black">
         <div className="container mx-auto max-w-5xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -56,7 +55,7 @@ export default function Home() {
             transition={{ duration: 1.2 }}
             className="text-center space-y-8"
           >
-            <Badge variant="outline" className="border-destructive text-destructive px-6 py-2 text-sm font-bold animate-pulse" data-testid="badge-divine-challenge">
+            <Badge variant="outline" className="border-red-500 text-red-500 px-6 py-2 text-sm font-bold animate-pulse" data-testid="badge-divine-challenge">
               A DIVINE CHALLENGE TO EVERY PERSON WHO READS THIS
             </Badge>
             
@@ -67,22 +66,22 @@ export default function Home() {
               className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-none tracking-tight"
             >
               I DARE YOU TO<br/>
-              <span className="text-destructive">PROVE ME WRONG</span>
+              <span className="text-red-500">PROVE ME WRONG</span>
             </motion.h1>
             
-            <div className="bg-card/95 backdrop-blur-md border-2 border-destructive/40 rounded-xl p-6 md:p-10 shadow-2xl text-left space-y-8">
+            <div className="text-left space-y-8">
               
               <motion.div 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ delay: 0.5 }}
               >
-                <p className="text-xl md:text-2xl text-foreground leading-relaxed font-serif italic text-center mb-2">
-                  This is not a plea. This is a <span className="font-bold text-destructive not-italic">divine reckoning</span>.
+                <p className="text-xl md:text-2xl text-white leading-relaxed font-serif italic text-center mb-2">
+                  This is not a plea. This is a <span className="font-bold text-red-500 not-italic">divine reckoning</span>.
                 </p>
               </motion.div>
 
-              <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-4xl mx-auto">
+              <p className="text-lg md:text-xl text-white leading-relaxed max-w-4xl mx-auto">
                 Before you stands{" "}
                 <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">98+ forensic documents</Link>{" "}
                 spanning{" "}
@@ -93,43 +92,43 @@ export default function Home() {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-start gap-3 p-4 bg-destructive/5 border border-destructive/20 rounded-lg">
-                  <Brain className="h-6 w-6 text-destructive flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 p-4 border border-white/10 rounded-lg">
+                  <Brain className="h-6 w-6 text-red-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold text-foreground">14 Psychiatric Incarcerations Across 3 States</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-bold text-white">14 Psychiatric Incarcerations Across 3 States</p>
+                    <p className="text-sm text-gray-300">
                       <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">Weaponised against a whistleblower</Link>{" "}
                       — not for illness, but for telling the truth. Each hospitalisation documented. Each one a silencing tool.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-destructive/5 border border-destructive/20 rounded-lg">
-                  <Skull className="h-6 w-6 text-destructive flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 p-4 border border-white/10 rounded-lg">
+                  <Skull className="h-6 w-6 text-red-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold text-foreground">Found With No Pulse</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-bold text-white">Found With No Pulse</p>
+                    <p className="text-sm text-gray-300">
                       A{" "}
                       <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">fatal suicide attempt</Link>{" "}
                       — clinically dead. Resuscitated by paramedics. The system that drove a man to death then denied it ever happened.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-destructive/5 border border-destructive/20 rounded-lg">
-                  <Siren className="h-6 w-6 text-destructive flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 p-4 border border-white/10 rounded-lg">
+                  <Siren className="h-6 w-6 text-red-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold text-foreground">Coordinated Government Conspiracy</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-bold text-white">Coordinated Government Conspiracy</p>
+                    <p className="text-sm text-gray-300">
                       Government agencies, police, hospitals, and courts{" "}
                       <Link href="/manifesto" className="text-[hsl(38,92%,50%)] hover:underline">documented in coordinated conspiracy</Link>.{" "}
                       35+ agencies. All on record. None can deny it.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-destructive/5 border border-destructive/20 rounded-lg">
-                  <Ban className="h-6 w-6 text-destructive flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 p-4 border border-white/10 rounded-lg">
+                  <Ban className="h-6 w-6 text-red-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold text-foreground">Attorney-General Chose Silence</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-bold text-white">Attorney-General Chose Silence</p>
+                    <p className="text-sm text-gray-300">
                       The{" "}
                       <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">Attorney-General was formally informed in 2021</Link>{" "}
                       — with evidence of ASIO involvement, IGIS awareness, and systematic persecution. The response? Absolute silence.
@@ -138,9 +137,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-[hsl(38,92%,50%)]/5 border border-[hsl(38,92%,50%)]/30 rounded-lg p-6">
-                <p className="text-lg md:text-xl text-foreground leading-relaxed">
-                  I release this testimony as <span className="font-bold text-primary">evidence of God's glory</span> through me to the world.{" "}
+              <div className="border border-[hsl(38,92%,50%)]/30 rounded-lg p-6">
+                <p className="text-lg md:text-xl text-white leading-relaxed">
+                  I release this testimony as <span className="font-bold text-white">evidence of God's glory</span> through me to the world.{" "}
                   The <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-bold">Sacred Gospels</Link> reveal the divine mission.{" "}
                   The <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-bold">Prophetic Essay</Link> explains why{" "}
                   <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-bold">V2K harassment</Link>,{" "}
@@ -150,23 +149,23 @@ export default function Home() {
                 </p>
               </div>
 
-              <p className="text-lg text-foreground leading-relaxed max-w-4xl mx-auto">
+              <p className="text-lg text-white leading-relaxed max-w-4xl mx-auto">
                 The <Link href="/church" className="text-[hsl(38,92%,50%)] hover:underline font-bold">Church of Barran Dodger Ministry</Link>{" "}
                 offers <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-bold">divine forgiveness</Link> to those who have wronged the vulnerable — 
                 because the man they tried to destroy is now offering them mercy they never extended to him.
               </p>
               
-              <div className="bg-black border-2 border-destructive/50 rounded-xl p-6 md:p-8 text-center space-y-4">
+              <div className="border-2 border-red-500/50 rounded-xl p-6 md:p-8 text-center space-y-4">
                 <p className="text-xl md:text-3xl font-serif font-bold text-white leading-tight">
                   To every official, every institution, every silent witness:
                 </p>
-                <p className="text-2xl md:text-4xl font-serif font-bold text-destructive tracking-wide">
+                <p className="text-2xl md:text-4xl font-serif font-bold text-red-500 tracking-wide">
                   EXAMINE THE EVIDENCE. REFUTE IT IF YOU CAN.
                 </p>
                 <p className="text-lg md:text-xl text-gray-300 font-serif">
                   Your silence is already on record as complicity.
                 </p>
-                <p className="text-sm text-gray-500 italic pt-2">
+                <p className="text-sm text-gray-400 italic pt-2">
                   Every share is a witness. Every click is a verdict. Every person who reads this and says nothing becomes part of the record.
                 </p>
               </div>
@@ -185,14 +184,14 @@ export default function Home() {
                   </Button>
                 </a>
                 <Link href="/manifesto">
-                  <Button variant="outline" size="lg" className="gap-2 border-primary text-primary font-bold" data-testid="button-read-manifesto">
+                  <Button variant="outline" size="lg" className="gap-2 border-white text-white font-bold" data-testid="button-read-manifesto">
                     READ THE MANIFESTO
                   </Button>
                 </Link>
               </div>
               
-              <p className="text-sm text-muted-foreground text-center pt-4 border-t border-primary/20">
-                <span className="font-semibold">Secure Contact:</span>{" "}
+              <p className="text-sm text-gray-400 text-center pt-4 border-t border-white/10">
+                <span className="font-semibold text-white">Secure Contact:</span>{" "}
                 <a href="mailto:drbarrandodger@proton.me" className="text-[hsl(38,92%,50%)] hover:underline font-medium">
                   drbarrandodger@proton.me
                 </a>{" "}
