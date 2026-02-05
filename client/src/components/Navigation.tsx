@@ -35,7 +35,7 @@ export function Navigation() {
 
   return (
     <nav className={cn(
-      "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent",
+      "fixed top-[var(--banner-height,40px)] w-full z-50 transition-all duration-300 border-b border-transparent",
       scrolled ? "bg-background/95 backdrop-blur-sm border-border py-3 shadow-sm" : "bg-transparent py-6"
     )}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">

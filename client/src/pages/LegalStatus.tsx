@@ -120,7 +120,7 @@ export default function LegalStatus() {
       />
       <Navigation />
       
-      <main className="min-h-screen bg-background pt-32 pb-20">
+      <main className="min-h-screen bg-background pt-44 pb-20">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

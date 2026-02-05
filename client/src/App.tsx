@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { DonationBanner } from "@/components/DonationBanner";
 import Home from "@/pages/Home";
 import Mission from "@/pages/Mission";
 import Contact from "@/pages/Contact";
@@ -67,6 +68,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <TooltipProvider>
+          <DonationBanner />
           <Toaster />
           <Breadcrumbs />
           <Router />

@@ -220,7 +220,7 @@ export default function Gospel() {
       />
       <Navigation />
       
-      <main className="flex-grow pt-32 pb-20">
+      <main className="flex-grow pt-44 pb-20">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

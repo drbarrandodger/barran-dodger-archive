@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 const STORAGE_KEY = "barran-viewed-documents";
-const TOTAL_DOCUMENTS = 130;
+const TOTAL_DOCUMENTS = 240;
 
 export function useDocumentProgress() {
   const [viewedDocs, setViewedDocs] = useState<string[]>([]);

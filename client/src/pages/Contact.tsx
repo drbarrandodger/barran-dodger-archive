@@ -41,7 +41,7 @@ export default function Contact() {
       />
       <Navigation />
       
-      <main className="flex-grow pt-32 pb-20">
+      <main className="flex-grow pt-44 pb-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
             <motion.div

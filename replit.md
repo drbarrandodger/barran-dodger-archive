@@ -66,6 +66,24 @@ The `shared/` directory contains code used by both frontend and backend:
 
 ## Recent Changes
 
+### February 5, 2026 (SEO Overhaul & Donation Visibility)
+- **Comprehensive SEO Overhaul**: Complete rewrite of `client/index.html` metadata
+  - 240+ document count reflected everywhere (updated from 130+)
+  - 14 psychiatric hospitalisations across 3 states (updated from 7)
+  - Viral-optimized keywords covering all evidence topics, agency names, legal terms
+  - Structured data schemas: Organization, Person, WebSite, Collection, BreadcrumbList, FAQPage, NewsArticle
+  - Multi-locale OG tags (en_AU, en_US, en_GB)
+  - Platform-specific Twitter/X, Facebook, LinkedIn meta tags
+- **SEO Component Enhancement**: Expanded `SEO.tsx` with comprehensive BASE_KEYWORDS covering all evidence terms
+- **Sitemap Update**: All 17 page routes with today's date and correct URLs
+- **Robots.txt**: Per-bot directives for Google, Bing, DuckDuckGo, Yandex, Baidu, Facebook, Twitter, LinkedIn, WhatsApp, Telegram, Apple, Sogou
+- **Donation Banner**: Fixed gold banner at top of every page with PayID `rich@richmclean.com.au`
+  - Copy PayID button, Donate link button, dismissible
+  - Navigation repositioned below banner using CSS variable `--banner-height`
+  - All page padding adjusted (pt-32 → pt-44) to account for banner + nav space
+- **Document Count Update**: All 130+ references changed to 240+ across 8 component files
+- **Social Share Messages**: Updated to reflect 14 hospitalisations across 3 states
+
 ### January 30, 2026 (Late Night - Google Drive Import)
 - **Google Drive Document Import**: Added automated script to scan and import documents with "official" in name
   - Script location: `scripts/import-official-docs.ts`

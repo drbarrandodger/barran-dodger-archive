@@ -34,7 +34,7 @@ const quotableSnippets = [
     date: "April 2022"
   },
   {
-    quote: "130+ forensic documents with blockchain verification exposing Australian government corruption, whistleblower persecution, and institutional abuse.",
+    quote: "240+ forensic documents with blockchain verification exposing Australian government corruption, whistleblower persecution, and institutional abuse.",
     source: "Evidence Archive",
     date: "2026"
   }

@@ -15,7 +15,7 @@ import { Badge } from "@/components/ui/badge";
 const stats = [
   { 
     label: "Total Documents", 
-    value: "130+", 
+    value: "240+", 
     icon: FileText, 
     color: "text-primary",
     description: "Blockchain-verified evidence files"
@@ -63,7 +63,7 @@ const timeline = [
   { year: "2023", event: "Federal Court PID assessment", type: "legal" },
   { year: "2024", event: "Ombudsman service restriction", type: "persecution" },
   { year: "2025", event: "Blockchain archive created", type: "evidence" },
-  { year: "2026", event: "130+ documents verified", type: "milestone" }
+  { year: "2026", event: "240+ documents verified", type: "milestone" }
 ];
 
 export function StatsDashboard() {

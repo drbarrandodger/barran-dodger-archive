@@ -47,7 +47,7 @@ export default function Home() {
       <Navigation />
       
       {/* DIVINE RECKONING - The Challenge */}
-      <section className="relative pt-24 pb-4 md:pt-32 md:pb-8 px-4 bg-gradient-to-b from-black via-[hsl(222,55%,8%)] to-background border-b border-destructive/30">
+      <section className="relative pt-36 pb-4 md:pt-44 md:pb-8 px-4 bg-gradient-to-b from-black via-[hsl(222,55%,8%)] to-background border-b border-destructive/30">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_hsl(0,70%,20%)_0%,_transparent_60%)] opacity-30 pointer-events-none" />
         <div className="container mx-auto max-w-5xl relative z-10">
           <motion.div

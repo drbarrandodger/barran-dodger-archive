@@ -13,7 +13,7 @@ interface SocialShareProps {
 
 export function SocialShare({ 
   title = "Barran Dodger Legal & Ethical Trust Fund - Blockchain-Verified Evidence Archive",
-  description = "130+ forensic documents with blockchain verification. Whistleblower protection & human rights documentation.",
+  description = "240+ forensic documents with blockchain verification. Whistleblower protection & human rights documentation.",
   url = "https://www.barrandodger.com.au",
   compact = false
 }: SocialShareProps) {

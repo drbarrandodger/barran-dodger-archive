@@ -360,7 +360,7 @@ export default function Manifesto() {
       />
       <Navigation />
       
-      <main className="flex-grow pt-32 pb-20">
+      <main className="flex-grow pt-44 pb-20">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           {/* Hero Section */}
           <motion.div
@@ -906,7 +906,7 @@ export default function Manifesto() {
           >
             <SocialShare 
               title="The Manifesto of Barran Dodger - Truth, Justice & Redemption"
-              description="130+ blockchain-verified documents exposing institutional persecution. Join the movement for accountability and justice."
+              description="240+ blockchain-verified documents exposing institutional persecution. Join the movement for accountability and justice."
               url="https://www.barrandodger.com.au/manifesto"
             />
           </motion.section>
