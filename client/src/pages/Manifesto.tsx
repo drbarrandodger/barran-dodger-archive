@@ -278,7 +278,7 @@ export default function Manifesto() {
       {
         group: "To Those Living with Mental Illness",
         message: "You are not broken. You are not defective. You are not a burden. The same systems that called me 'delusional' when I spoke truth now face a Federal Court document confirming my whistleblower status. Your diagnosis does not define your worth. Your suffering has produced sacred data. You are witnesses, not patients.",
-        evidence: "Recovered, Not Cured testimony; 7 psychiatric incarcerations documented; Federal Court PID Act confirmation"
+        evidence: "Recovered, Not Cured testimony; 14 psychiatric hospitalisations across 3 states documented; Federal Court PID Act confirmation"
       },
       {
         group: "To People with Disabilities",

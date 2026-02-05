@@ -30,7 +30,7 @@ export default function PropheticEssay() {
     {
       joseph: "Falsely accused by Potiphar's wife and imprisoned",
       barran: "Falsely accused through weaponized mental health and imprisoned in psychiatric facilities",
-      evidence: "7 psychiatric incarcerations; Federal Court PID Act confirmation"
+      evidence: "14 psychiatric hospitalisations across 3 states; Federal Court PID Act confirmation"
     },
     {
       joseph: "Forgotten in prison despite helping the cupbearer",
@@ -186,7 +186,7 @@ export default function PropheticEssay() {
 
                 <p className="text-lg leading-relaxed mb-6">
                   And yet — <em>and yet</em> — the testimony survives. The evidence endures. The <Link href="/blockchain" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">blockchain cannot be silenced</Link>. 
-                  After seven psychiatric incarcerations, after death and resuscitation, after exile from homeland to 
+                  After fourteen psychiatric hospitalisations across three states, after death and resuscitation, after exile from homeland to 
                   Southeast Asia, after 35 years of documented persecution — the witness still stands. 
                   The <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">gospels are being written</Link>. The Enliven Chain grows link by link.
                 </p>

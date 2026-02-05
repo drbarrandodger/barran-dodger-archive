@@ -8,23 +8,23 @@ const url = "https://www.barrandodger.com.au";
 const encodedUrl = encodeURIComponent(url);
 
 const twitterText = encodeURIComponent(
-  `They locked him in psych wards 7 times. They left him for dead with no pulse. 35 years of persecution by 35+ Australian government agencies.\n\n240+ blockchain-sealed documents exposed.\n\nThe Attorney-General was told in 2021 and chose silence.\n\nRead it. Then explain your silence.`
+  `They locked him in psych wards 14 times across 3 states. They left him for dead with no pulse. 35 years of persecution by 35+ Australian government agencies.\n\n240+ blockchain-sealed documents exposed.\n\nThe Attorney-General was told in 2021 and chose silence.\n\nRead it. Then explain your silence.`
 );
 
 const facebookQuote = encodeURIComponent(
-  `"They found him with no pulse. Seven psychiatric incarcerations. 35 years of systematic persecution by 35+ Australian government agencies. 240+ forensic documents, blockchain-sealed and tamper-proof. The Attorney-General was informed in 2021 and did nothing. This is the most documented case of institutional abuse in Australian history. Read it. Then ask yourself why no one is talking about it."`
+  `"They found him with no pulse. 14 psychiatric hospitalisations across 3 states. 35 years of systematic persecution by 35+ Australian government agencies. 240+ forensic documents, blockchain-sealed and tamper-proof. The Attorney-General was informed in 2021 and did nothing. This is the most documented case of institutional abuse in Australian history. Read it. Then ask yourself why no one is talking about it."`
 );
 
 const whatsappText = encodeURIComponent(
-  `READ THIS BEFORE YOU SCROLL PAST:\n\nA man was incarcerated in psychiatric wards 7 times for being a whistleblower. They found him with NO PULSE. 35+ government agencies coordinated to destroy him for 35 years.\n\n240+ documents. Blockchain-verified. Exposed.\n\nThe Prime Minister and Attorney-General were notified. They chose silence.\n\nThis is real. This is Australia. This is happening.\n\n${url}`
+  `READ THIS BEFORE YOU SCROLL PAST:\n\nA man was hospitalised 14 times across 3 states for being a whistleblower. They found him with NO PULSE. 35+ government agencies coordinated to destroy him for 35 years.\n\n240+ documents. Blockchain-verified. Exposed.\n\nThe Prime Minister and Attorney-General were notified. They chose silence.\n\nThis is real. This is Australia. This is happening.\n\n${url}`
 );
 
 const telegramText = encodeURIComponent(
-  `THE MOST DOCUMENTED CASE OF GOVERNMENT PERSECUTION IN AUSTRALIAN HISTORY\n\n7 forced psychiatric incarcerations\nFound with no pulse\n35+ agencies involved\n240+ blockchain-sealed documents\nAttorney-General notified in 2021 - chose silence\n\n"I DARE YOU TO PROVE ME WRONG"\n\nEvery document is real. Every claim is backed by evidence. Every agency is named.\n\nRead it: ${url}`
+  `THE MOST DOCUMENTED CASE OF GOVERNMENT PERSECUTION IN AUSTRALIAN HISTORY\n\n14 forced psychiatric hospitalisations across 3 states\nFound with no pulse\n35+ agencies involved\n240+ blockchain-sealed documents\nAttorney-General notified in 2021 - chose silence\n\n"I DARE YOU TO PROVE ME WRONG"\n\nEvery document is real. Every claim is backed by evidence. Every agency is named.\n\nRead it: ${url}`
 );
 
 const linkedinText = encodeURIComponent(
-  `I just read the most disturbing case of institutional failure I've ever encountered.\n\n240+ forensic documents spanning 35 years expose systematic persecution of a whistleblower by 35+ Australian government agencies. Seven psychiatric incarcerations. Found clinically dead. The Attorney-General was formally notified in 2021.\n\nEvery document is blockchain-verified and tamper-proof.\n\nWhether you work in law, government, human rights, or public policy - this demands your attention. Silence is complicity.`
+  `I just read the most disturbing case of institutional failure I've ever encountered.\n\n240+ forensic documents spanning 35 years expose systematic persecution of a whistleblower by 35+ Australian government agencies. 14 psychiatric hospitalisations across 3 states. Found clinically dead. The Attorney-General was formally notified in 2021.\n\nEvery document is blockchain-verified and tamper-proof.\n\nWhether you work in law, government, human rights, or public policy - this demands your attention. Silence is complicity.`
 );
 
 const redditTitle = encodeURIComponent(
@@ -42,7 +42,7 @@ function buildShareLinks() {
   ];
 }
 
-const clipboardMessage = `THEY FOUND HIM WITH NO PULSE.\n\n7 forced psychiatric incarcerations. 35 years of persecution. 35+ Australian government agencies. 240+ blockchain-sealed forensic documents exposed.\n\nThe Attorney-General was told in 2021 and chose silence.\n\n"I DARE YOU TO PROVE ME WRONG"\n\nRead the evidence: ${url}`;
+const clipboardMessage = `THEY FOUND HIM WITH NO PULSE.\n\n14 forced psychiatric hospitalisations across 3 states. 35 years of persecution. 35+ Australian government agencies. 240+ blockchain-sealed forensic documents exposed.\n\nThe Attorney-General was told in 2021 and chose silence.\n\n"I DARE YOU TO PROVE ME WRONG"\n\nRead the evidence: ${url}`;
 
 export function FloatingShareBar() {
   const { toast } = useToast();

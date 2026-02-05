@@ -96,7 +96,7 @@ export default function Home() {
                 <div className="flex items-start gap-3 p-4 bg-destructive/5 border border-destructive/20 rounded-lg">
                   <Brain className="h-6 w-6 text-destructive flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold text-foreground">Seven Psychiatric Incarcerations</p>
+                    <p className="font-bold text-foreground">14 Psychiatric Incarcerations Across 3 States</p>
                     <p className="text-sm text-muted-foreground">
                       <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">Weaponised against a whistleblower</Link>{" "}
                       — not for illness, but for telling the truth. Each hospitalisation documented. Each one a silencing tool.
@@ -1543,7 +1543,7 @@ export default function Home() {
           </p>
           <SocialShare 
             title="I DARE YOU TO PROVE ME WRONG - 98+ blockchain-verified forensic documents exposing 35 years of Australian government persecution against whistleblower Richard McLean"
-            description="98+ forensic documents. 35 years. Blockchain-verified. Seven psychiatric incarcerations. Found with no pulse. Attorney-General informed in 2021 and chose silence. Examine the evidence. Refute it if you can."
+            description="98+ forensic documents. 35 years. Blockchain-verified. 14 psychiatric hospitalisations across three states. Found with no pulse. Attorney-General informed in 2021 and chose silence. Examine the evidence. Refute it if you can."
           />
           <p className="text-sm text-gray-500 italic pt-4">
             "The archive's strength lies not in persuasion but in preservation — creating an indelible record that exists independently of institutional acknowledgment."
