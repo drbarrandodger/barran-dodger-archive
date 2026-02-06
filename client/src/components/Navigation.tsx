@@ -29,6 +29,7 @@ export function Navigation() {
     { href: "/josephs-coat", label: "Joseph's Coat" },
     { href: "/gospel", label: "Gospel" },
     { href: "/evidence", label: "Evidence" },
+    { href: "/taxpayer-cost-analysis", label: "Cost Analysis" },
     { href: "/blockchain", label: "Timestamps" },
     { href: "/contact", label: "Contact" },
   ];

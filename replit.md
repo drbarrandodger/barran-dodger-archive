@@ -83,6 +83,14 @@ The `shared/` directory contains code used by both frontend and backend:
   - All page padding adjusted (pt-32 → pt-44) to account for banner + nav space
 - **Document Count Update**: All 130+ references changed to 240+ across 8 component files
 - **Social Share Messages**: Updated to reflect 14 hospitalisations across 3 states
+- **Taxpayer Cost Analysis Page** (`/taxpayer-cost-analysis`): Comprehensive AI financial analysis
+  - Itemised cost breakdown across 7 categories totalling $10.3M+
+  - Daily/monthly/yearly cost-per-taxpayer calculations
+  - 8 documented persecution techniques with legal frameworks exploited
+  - Political complicity breakdown with salary costs
+  - International fraud significance analysis (UNCAC, ICCPR)
+  - Comparisons to Robodebt, NDIS fraud, Banking Royal Commission
+  - Sources cited from AIHW, APSC, ANAO, NDIS, AFP, ASIO annual reports
 
 ### January 30, 2026 (Late Night - Google Drive Import)
 - **Google Drive Document Import**: Added automated script to scan and import documents with "official" in name

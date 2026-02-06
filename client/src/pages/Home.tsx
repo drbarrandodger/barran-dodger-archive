@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart } from "lucide-react";
+import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign } from "lucide-react";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -183,6 +183,11 @@ export default function Home() {
                     READ THE AUTOBIOGRAPHY <ArrowRight className="h-4 w-4" />
                   </Button>
                 </a>
+                <Link href="/taxpayer-cost-analysis">
+                  <Button size="lg" className="gap-2 bg-[hsl(38,92%,50%)] text-black font-bold" data-testid="button-cost-analysis">
+                    SEE WHAT IT COST YOU <DollarSign className="h-4 w-4" />
+                  </Button>
+                </Link>
                 <Link href="/manifesto">
                   <Button variant="outline" size="lg" className="gap-2 border-white text-white font-bold" data-testid="button-read-manifesto">
                     READ THE MANIFESTO
