@@ -103,6 +103,7 @@ export default function StartHere() {
     { year: "2022-2023", event: "NDIS funds systematically withheld despite professional clinical recommendations", type: "persecution" },
     { year: "2024", event: "October spiritual awakening. Evidence compilation begins. Blockchain sealing.", type: "spiritual" },
     { year: "2025", event: "ICC, UNHCR, Federal Court submissions filed. Cryptographically verified evidence packages delivered.", type: "legal" },
+    { year: "2025", event: "Father Doug McLean gravely ill — Centrelink, NDIS, and Guardianship all block son from attending. Family excommunication exposed.", type: "critical" },
   ];
 
   const flagshipDocuments = [

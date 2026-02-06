@@ -156,8 +156,21 @@ const timelineEvents: TimelineEvent[] = [
   },
   {
     year: "2025",
+    title: "A Dying Father — Denied the Right to Say Goodbye",
+    description: "Doug McLean is gravely ill. His son begged Centrelink, NDIS, and Public Guardianship for travel assistance to attend his father's side. All three agencies blocked him — despite spending $900+ per day sustaining the corruption that keeps him destitute.",
+    type: "critical",
+    details: [
+      "Mother April McLean refused to help, instead directing him to NDIS and Phillip Glass — his documented abusers",
+      "Family's response exposed that toxic scapegoating originated from within — not just from government",
+      "Family have consciously excommunicated him whilst feigning care — performing concern publicly while enforcing exile privately",
+      "Full alignment revealed between family complicity and the orchestrated institutional persecution",
+      "A son cannot see his dying father because every pathway to reunion has been deliberately sealed by the same people who claim to care"
+    ]
+  },
+  {
+    year: "2025",
     title: "Blockchain Archive Complete",
-    description: "2,000+ evidence documents blockchain-verified and permanently timestamped.",
+    description: "240+ evidence documents blockchain-verified and permanently timestamped.",
     type: "evidence",
     details: [
       "SHA256 hashing completed",
