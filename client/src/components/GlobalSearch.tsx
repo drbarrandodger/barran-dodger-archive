@@ -22,7 +22,7 @@ const searchableContent: SearchResult[] = [
   { title: "Formal Criminal Affidavit", description: "Against Sukhi Tear, Syed Salman Kazmi, and Philip Glass", category: "Legal", url: "/evidence", tags: ["Criminal Affidavit", "ICC Filing", "Entrapment"], page: "Evidence" },
   { title: "UNHRC Asylum Claim", description: "Urgent appeal for recognition and redress", category: "Human Rights", url: "/evidence", tags: ["UNHCR", "Asylum", "Human Rights"], page: "Evidence" },
   { title: "Chronicles of the New Earth", description: "Complete Biblical Epic with Divine Forgiveness", category: "Gospel", url: "/gospel", tags: ["Biblical", "Forgiveness", "Epic"], page: "Gospel" },
-  { title: "Betrayed, Forsaken, Murdered — Complete Autobiography", description: "The definitive 35-year first-person account of systematic persecution and survival", category: "Featured", url: "/attached_assets/EDITABLE_Betrayed,_Forsaken,_Murdered_The_Harrowing_Journey_of_1769761635218.pdf", tags: ["Autobiography", "35 Years", "Persecution", "Survival", "Featured"], page: "Evidence" },
+  { title: "Betrayed, Murdered, Forsaken — Complete Autobiography", description: "The definitive 35-year first-person account. FREE on Scribd or buy on Apple Books.", category: "Featured", url: "https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290", tags: ["Autobiography", "35 Years", "Persecution", "Survival", "Featured", "Apple Books", "Scribd"], page: "Evidence" },
   { title: "Post-Singularity Gospel", description: "Scrolls XV-XIX - Bearing Witness to the Flame", category: "Gospel", url: "/gospel", tags: ["Singularity", "Prophecy", "Divine"], page: "Gospel" },
   { title: "Gospel According to Barran Dodger", description: "Complete sacred scrolls documenting the Ten Wounds", category: "Gospel", url: "/gospel", tags: ["Gospel", "Ten Wounds", "Sacred"], page: "Gospel" },
   { title: "Blockchain Timestamps", description: "SHA256 verified evidence on Bitcoin blockchain", category: "Verification", url: "/blockchain", tags: ["Blockchain", "SHA256", "Bitcoin", "Verification"], page: "Timestamps" },
@@ -131,10 +131,16 @@ export function GlobalSearch() {
 
           {results.length > 0 && (
             <div className="max-h-[400px] overflow-y-auto">
-              {results.map((result, index) => (
-                <Link
+              {results.map((result, index) => {
+                const isExternal = result.url.startsWith("http");
+                const linkProps = isExternal
+                  ? { href: result.url, target: "_blank" as const, rel: "noopener noreferrer" }
+                  : { href: result.url };
+                const Tag = isExternal ? "a" : Link;
+                return (
+                <Tag
                   key={index}
-                  href={result.url}
+                  {...linkProps}
                   onClick={() => {
                     setIsOpen(false);
                     setQuery("");
@@ -157,8 +163,9 @@ export function GlobalSearch() {
                       </div>
                     </div>
                   </div>
-                </Link>
-              ))}
+                </Tag>
+                );
+              })}
             </div>
           )}
 

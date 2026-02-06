@@ -19,7 +19,7 @@ import { Badge } from "@/components/ui/badge";
 
 import portraitImg from "@assets/A5BDF951-1AE5-4EFF-9F6E-3F29C2C5CDC9_1768633103014.png";
 import artworkImg from "@assets/IMG_2914_1768893482684.jpeg";
-import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_1770287537689.png";
+import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_1770345931447.png";
 import { HandCoins, TrendingUp, Landmark, ShieldCheck, Clock, Building2 } from "lucide-react";
 
 const fadeIn = {
@@ -178,7 +178,7 @@ export default function Home() {
                     EXAMINE THE EVIDENCE <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
-                <a href="/attached_assets/EDITABLE_Betrayed,_Forsaken,_Murdered_The_Harrowing_Journey_of_1769761635218.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="gap-2" data-testid="button-read-autobiography">
                     READ THE AUTOBIOGRAPHY <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -453,10 +453,11 @@ export default function Home() {
             className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
           >
             <a 
-              href={bookCoverImg} 
-              download="Betrayed-Murdered-Forsaken-Richard-McLean.png"
-              className="block flex-shrink-0 rounded-lg overflow-visible transition-transform hover:scale-105"
-              data-testid="link-download-book"
+              href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block flex-shrink-0 rounded-lg overflow-visible"
+              data-testid="link-book-apple-hero"
             >
               <img 
                 src={bookCoverImg} 
@@ -466,7 +467,7 @@ export default function Home() {
             </a>
             <div className="text-center md:text-left">
               <Badge className="mb-4 bg-red-600 text-white border-red-500">NEW RELEASE</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif" data-testid="heading-book-hero">
                 Betrayed, Murdered, Forsaken
               </h2>
               <p className="text-xl text-gray-300 mb-2 italic">
@@ -478,25 +479,54 @@ export default function Home() {
               <p className="text-gray-300 mb-6">
                 By <span className="text-[hsl(38,92%,50%)] font-semibold">Richard William McLean</span> (Barran Dodger)
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start flex-wrap mb-4">
                 <Button 
                   asChild 
                   size="lg" 
-                  className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,40%)] text-black font-semibold"
+                  className="bg-[hsl(38,92%,50%)] text-black font-semibold"
+                  data-testid="button-buy-apple-hero"
                 >
-                  <a href={bookCoverImg} download="Betrayed-Murdered-Forsaken-Richard-McLean.png">
-                    <BookOpen className="w-5 h-5 mr-2" />
-                    Download Cover
+                  <a href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290" target="_blank" rel="noopener noreferrer">
+                    <ShoppingCart className="w-5 h-5 mr-2" />
+                    Buy on Apple Books
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/30 text-white">
-                  <Link href="/evidence">
-                    <Archive className="w-5 h-5 mr-2" />
-                    View Evidence Archive
+                <Button 
+                  asChild 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-green-500/50 text-green-400"
+                  data-testid="button-read-free-scribd-hero"
+                >
+                  <a href="https://www.scribd.com/book/757033591" target="_blank" rel="noopener noreferrer">
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    Read FREE on Scribd
+                  </a>
+                </Button>
+              </div>
+
+              <div className="bg-gray-900/80 border border-gray-700 rounded-lg p-4 mb-6">
+                <p className="text-green-400 text-sm font-semibold mb-1" data-testid="text-free-distribution">
+                  This evidence is freely distributed as a service to truth.
+                </p>
+                <p className="text-gray-400 text-xs leading-relaxed">
+                  Barran gives this book away for free — unfettered by any accusation that he is exploitative or doing this for money. If you download it, a donation is appreciated for his service to the public.
+                </p>
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  size="sm" 
+                  className="mt-3 border-[hsl(38,92%,50%)]/50 text-[hsl(38,92%,50%)]"
+                  data-testid="button-donate-book-hero"
+                >
+                  <Link href="/donate">
+                    <Heart className="w-4 h-4 mr-1" />
+                    Donate to Support Truth
                   </Link>
                 </Button>
               </div>
-              <SocialShare compact title="BETRAYED, MURDERED, FORSAKEN - The True Account by Richard William McLean (Barran Dodger). They tried to erase a life. The record refused to die." />
+
+              <SocialShare compact title="BETRAYED, MURDERED, FORSAKEN - The True Account by Richard William McLean (Barran Dodger). They tried to erase a life. The record refused to die. FREE on Scribd." />
             </div>
           </motion.div>
         </div>
@@ -1105,13 +1135,13 @@ export default function Home() {
           >
             <div className="text-center mb-12">
               <Badge variant="outline" className="mb-6 border-primary text-primary px-4 py-1.5 text-sm font-bold" data-testid="badge-featured-novel">
-                APPLE BOOKS
+                AVAILABLE NOW
               </Badge>
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-4">
-                Betrayed Murdered Forsaken
+                Betrayed, Murdered, Forsaken
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                The Harrowing Life of Barran Dodger — A powerful autobiographical novel documenting survival against systematic persecution.
+                The Harrowing Life of Barran Dodger — A powerful autobiographical account documenting survival against systematic persecution.
               </p>
             </div>
 
@@ -1134,48 +1164,78 @@ export default function Home() {
 
               {/* Novel Information */}
               <div className="space-y-6">
-                {/* AI Statement of Significance */}
+                {/* Free Distribution Statement */}
+                <Card className="border-2 border-green-600/30 bg-green-950/20">
+                  <CardContent className="pt-6 space-y-4">
+                    <div className="flex items-center gap-2">
+                      <Heart className="h-5 w-5 text-green-400" />
+                      <h3 className="text-lg font-serif font-bold text-green-400">A Service to Truth — Not for Profit</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Barran is giving this evidence away for free as his service to truth — unfettered by any accusation that he is exploitative or doing this for money. The complete book is available at no cost on Scribd, ensuring no barrier exists between the public and the evidence.
+                    </p>
+                    <Button size="lg" className="w-full gap-2 bg-green-700 text-white" asChild data-testid="button-read-free-scribd">
+                      <a href="https://www.scribd.com/book/757033591" target="_blank" rel="noopener noreferrer">
+                        <BookOpen className="h-5 w-5" /> Read FREE on Scribd
+                      </a>
+                    </Button>
+                    <p className="text-xs text-muted-foreground text-center italic">
+                      If you download it, a donation is appreciated for his service to the public.
+                    </p>
+                    <Button variant="outline" size="sm" className="w-full gap-2 border-[hsl(38,92%,50%)]/50 text-[hsl(38,92%,50%)]" asChild data-testid="button-donate-from-book">
+                      <Link href="/donate">
+                        <Heart className="h-4 w-4" /> Donate to Support Truth
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                {/* Why This Approach Is Significant */}
                 <Card className="border-2 border-primary/20 bg-primary/5">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <Sparkles className="h-5 w-5 text-primary" />
-                      <CardTitle className="text-lg font-serif text-primary">Impartial AI Statement of Significance</CardTitle>
+                      <CardTitle className="text-lg font-serif text-primary">Why This Approach Is Significant</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground leading-relaxed space-y-4">
                     <p className="italic">
-                      "Betrayed Murdered Forsaken represents a significant literary and evidentiary document published through Apple Books — one of the world's largest digital publishing platforms. Its availability on Apple's ecosystem establishes several important dimensions:
+                      "The dual distribution strategy — paid on Apple Books, free on Scribd — is itself a form of evidence. It demonstrates:
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
                         <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                        <span><strong>Global Distribution:</strong> Apple Books reaches readers in 51 countries, ensuring the testimony cannot be suppressed through regional censorship.</span>
+                        <span><strong>No Profit Motive:</strong> By making the book freely available, the author eliminates any claim that this is a commercial enterprise or an attempt to profit from suffering. The truth is the product, not the book.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                        <span><strong>ISBN Registration:</strong> The novel carries an ISBN, entering it into the permanent global catalogue of published works.</span>
+                        <span><strong>Global Accessibility:</strong> Apple Books reaches 51 countries. Scribd reaches millions more. Combined, there is no corner of the world where this testimony can be suppressed through regional censorship.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                        <span><strong>First-Person Testimony:</strong> The autobiographical format provides unmediated access to lived experience, meeting evidentiary standards for personal testimony.</span>
+                        <span><strong>ISBN Permanence:</strong> The novel carries an ISBN, entering it into the permanent global catalogue of published works — a record that cannot be removed.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                        <span><strong>Immutable Publication Record:</strong> Once published on Apple's platform, the work exists in versioned archives that establish the date and content of testimony."</span>
+                        <span><strong>Immutable Publication Record:</strong> Once published on Apple and Scribd, the work exists in versioned archives that establish the date and content of testimony beyond dispute.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span><strong>Moral Authority:</strong> A person giving away evidence of their own persecution — at their own expense — cannot credibly be accused of exploitation. This act of free distribution is itself a testament to integrity."</span>
                       </li>
                     </ul>
                   </CardContent>
                 </Card>
 
-                {/* Purchase Button */}
+                {/* Purchase on Apple Books */}
                 <Card className="border-2 border-[hsl(38,92%,50%)]/30 bg-gradient-to-r from-[hsl(38,92%,50%)]/5 to-[hsl(38,92%,50%)]/10">
                   <CardContent className="pt-6 text-center space-y-4">
                     <BookOpen className="h-12 w-12 mx-auto text-primary" />
-                    <h3 className="text-xl font-serif font-bold text-primary">Available on Apple Books</h3>
+                    <h3 className="text-xl font-serif font-bold text-primary">Also Available on Apple Books</h3>
                     <p className="text-sm text-muted-foreground">
                       Purchase and read instantly on iPhone, iPad, Mac, or any device with Apple Books.
                     </p>
-                    <Button size="lg" className="w-full gap-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)]" asChild data-testid="button-purchase-novel">
+                    <Button size="lg" className="w-full gap-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)]" asChild data-testid="button-purchase-novel">
                       <a href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290" target="_blank" rel="noopener noreferrer">
                         <ShoppingCart className="h-5 w-5" /> Buy on Apple Books
                       </a>
@@ -1185,15 +1245,6 @@ export default function Home() {
                     </p>
                   </CardContent>
                 </Card>
-
-                {/* Open in New Tab Option */}
-                <div className="text-center">
-                  <Button variant="outline" className="gap-2" asChild data-testid="button-open-apple-books">
-                    <a href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290" target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4" /> View on Apple Books
-                    </a>
-                  </Button>
-                </div>
               </div>
             </div>
           </motion.div>

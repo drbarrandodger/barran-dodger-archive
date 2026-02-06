@@ -84,7 +84,7 @@ export default function StartHere() {
   ];
 
   const keyDocuments = [
-    { title: "Betrayed, Forsaken, Murdered — Complete Autobiography", description: "The definitive 35-year first-person account of systematic persecution and survival", link: "/attached_assets/EDITABLE_Betrayed,_Forsaken,_Murdered_The_Harrowing_Journey_of_1769761635218.pdf", type: "Featured", external: true },
+    { title: "Betrayed, Murdered, Forsaken — Complete Autobiography", description: "The definitive 35-year first-person account of systematic persecution and survival. FREE on Scribd or buy on Apple Books.", link: "https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290", type: "Featured", external: true },
     { title: "Federal Court Employment Certification", description: "Proves DSS employment, voids ComCare/AAT denials", link: "/evidence", type: "Critical" },
     { title: "UNTOUCHABLE: $32.9M Damage Assessment", description: "Complete financial and human rights damage breakdown", link: "/evidence", type: "Financial" },
     { title: "PM&C FOI Reversal", description: "Proves state knowledge and attempted concealment", link: "/evidence", type: "Government" },
