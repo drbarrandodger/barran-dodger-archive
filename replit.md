@@ -66,6 +66,20 @@ The `shared/` directory contains code used by both frontend and backend:
 
 ## Recent Changes
 
+### February 6, 2026 (Dying Father & Family Betrayal)
+- **"A Dying Father" Section on Taxpayer Cost Analysis**: New major section "THE ULTIMATE CRUELTY"
+  - Doug McLean dying — son denied the right to say goodbye and attend funeral
+  - Coordinated denial documented: Danny Met Sally (NDIS), NSW Trustee & Public Guardian (Phillip Glass), Centrelink, Sukhi Tear (corrupt NDIS Support Coordinator)
+  - "Mathematics of Cruelty" comparison: $900+/day persecution cost vs $200-$400 car hire to see dying father
+  - Family scapegoating exposed: April McLean, Jodie & Dave Bongetti, Brad & Ciara McLean, Bruce & Marie McMaster, Tony Ridley, Stefan Iasonidis (former ASIO partner)
+  - AVO signed by family to exile him — corruption genesis traced to family betrayal
+  - Sukhi Tear refuses cease and desist, appointed by same minister who ordered assassination
+  - Share strip for dying father section
+- **Homepage Timeline Update**: New "NOW" entry in cost timeline highlighting dying father denial
+  - Red-highlighted entry linking to full taxpayer cost analysis section
+- **Share Icon Redesign**: All share components updated with hover-elevate utility, removed custom hover states
+  - Cleaned up CSS: removed share-ripple keyframe and hover overrides
+
 ### February 6, 2026 (AI Analysis & Assassination Evidence)
 - **Homepage AI Analysis Section**: New prominent section "AN AI CANNOT BE BRIBED, CORRUPTED, OR SILENCED"
   - 3 stat cards: $11.5M+ total cost, 35+ years targeting, 35+ agencies

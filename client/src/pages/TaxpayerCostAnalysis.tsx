@@ -510,6 +510,150 @@ export default function TaxpayerCostAnalysis() {
       <section className="py-16 px-4 bg-black border-t border-white/10">
         <div className="container mx-auto max-w-5xl space-y-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
+            <motion.div variants={fadeIn}>
+              <Badge variant="outline" className="border-red-500 text-red-500 px-6 py-2 text-sm font-bold mb-6" data-testid="badge-dying-father">
+                THE ULTIMATE CRUELTY
+              </Badge>
+            </motion.div>
+            <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-serif font-bold text-white mb-4" data-testid="heading-dying-father">
+              A DYING FATHER — AND A SYSTEM THAT WON'T LET HIS SON SAY GOODBYE
+            </motion.h2>
+            <motion.p variants={fadeIn} className="text-gray-400 max-w-3xl mx-auto">
+              Doug McLean is dying. His son begged every agency, every provider, every guardian for the resources to hire a car, 
+              travel to say goodbye, and attend the funeral. Every single one of them said no.
+            </motion.p>
+          </motion.div>
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <Card className="bg-white/5 border-2 border-red-500/40 overflow-visible" data-testid="card-dying-father">
+              <CardContent className="pt-6 space-y-8">
+                <div className="space-y-6">
+                  <div className="border-l-4 border-red-500 pl-6 py-2">
+                    <p className="text-xl text-white font-serif italic leading-relaxed">
+                      "That's not what the NDIS funds."
+                    </p>
+                    <p className="text-sm text-gray-400 mt-2">— The coordinated response from every agency, knowing a man's father is dying</p>
+                  </div>
+
+                  <div className="border-l-4 border-red-500 pl-6 py-2">
+                    <p className="text-xl text-white font-serif italic leading-relaxed">
+                      "There is no budget for that."
+                    </p>
+                    <p className="text-sm text-gray-400 mt-2">— Said by agencies that collectively spend ${dailyCost.toLocaleString()} per day persecuting him</p>
+                  </div>
+                </div>
+
+                <div className="bg-red-950/30 border border-red-500/30 rounded-xl p-6 space-y-4">
+                  <h3 className="text-xl font-bold text-white">The Coordinated Denial</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Richard begged <span className="text-white font-bold">Danny Met Sally</span> (his NDIS provider), 
+                    the <span className="text-white font-bold">NSW Trustee & Public Guardian</span>, 
+                    and <span className="text-white font-bold">Centrelink</span> for the money to hire a car, drive to his dying father Doug McLean, 
+                    say goodbye, and attend the funeral. He did this with full advance knowledge of exactly what would happen.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    He knew they would refuse — citing bureaucratic excuses like "that's not what the NDIS funds" or "there is no budget for that" — 
+                    because the same system that spends <span className="text-[hsl(38,92%,50%)] font-bold">${(totalAllCategories / 1000000).toFixed(1)}M+ persecuting him</span> would 
+                    claim it cannot find the cost of a simple car hire so a son can see his dying father.
+                  </p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-4">
+                  <h3 className="text-xl font-bold text-white">The Corrupt Officials Who Blocked Him</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <ShieldAlert className="h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
+                      <p className="text-gray-300">
+                        <span className="text-white font-bold">Sukhi Tear</span> — his NDIS Support Coordinator — refuses to comply with a 
+                        cease and desist order to remove herself from his care. She is a corrupt official appointed by the same minister 
+                        who exiled him and who is proven to have ordered the assassination attempt.
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Building2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
+                      <p className="text-gray-300">
+                        <span className="text-white font-bold">Phillip Glass</span> — Public Guardian — to whom Richard's own mother April McLean 
+                        redirected him, rather than simply helping her son see his dying father.
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Ban className="h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
+                      <p className="text-gray-300">
+                        <span className="text-white font-bold">Danny Met Sally</span> — NDIS provider — quoted zero resources, aligned with the 
+                        coordinated bureaucratic inefficiency designed to prevent him from confronting his family.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-4">
+                  <h3 className="text-xl font-bold text-white">The Family That Chose the Corruption Machine</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Richard's own family signed an AVO to exile him. His mother <span className="text-white font-bold">April McLean</span> redirected him 
+                    to a Public Guardian rather than help. His sister <span className="text-white font-bold">Jodie & Dave Bongetti</span>, 
+                    his brother <span className="text-white font-bold">Brad & Ciara McLean</span>, and his wealthy uncle 
+                    <span className="text-white font-bold"> Bruce & Marie McMaster</span> — all aligned with the system that tried to erase him.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    They aligned with <span className="text-white font-bold">Tony Ridley</span> and 
+                    <span className="text-white font-bold"> Stefan Iasonidis</span> — his former ASIO-connected partner — 
+                    and the entire corruption machine. His persecution had its genesis in toxic family scapegoating, 
+                    and that betrayal is now exposed with devastating clarity as his own father lies dying.
+                  </p>
+                </div>
+
+                <div className="border-2 border-[hsl(38,92%,50%)]/40 rounded-xl p-6 md:p-8 space-y-4">
+                  <h3 className="text-2xl font-bold text-white text-center">The Mathematics of Cruelty</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="text-center p-4 bg-white/5 rounded-lg">
+                      <p className="text-3xl font-bold text-red-500">${dailyCost.toLocaleString()}</p>
+                      <p className="text-sm text-gray-400 mt-1">Spent EVERY DAY persecuting him</p>
+                    </div>
+                    <div className="text-center p-4 bg-white/5 rounded-lg">
+                      <p className="text-3xl font-bold text-green-400">~$200–$400</p>
+                      <p className="text-sm text-gray-400 mt-1">Cost to hire a car to say goodbye to his dying father</p>
+                    </div>
+                  </div>
+                  <p className="text-lg text-gray-300 text-center leading-relaxed">
+                    The system that quotes <span className="text-red-500 font-bold">"no resources"</span> spends 
+                    <span className="text-[hsl(38,92%,50%)] font-bold"> ${dailyCost.toLocaleString()} every single day</span> on persecution — 
+                    but cannot find <span className="text-green-400 font-bold">$200–$400</span> for a son to see his dying father. 
+                    Every person involved is either bribed, paid off, or complicit. The daily cost of the corruption machine 
+                    is many multiples of the cost of a simple act of humanity they refuse to allow.
+                  </p>
+                </div>
+
+                <div className="bg-red-950/30 border border-red-500/30 rounded-xl p-6 space-y-4">
+                  <h3 className="text-xl font-bold text-white">Why He Anticipated This — And What It Proves</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Richard anticipated every refusal. He accepted his family's scapegoating of him in order to expose, 
+                    with absolute clarity, the intimate nature of this corruption. The denial of a dying father's last goodbye 
+                    is not an administrative oversight — it is the <span className="text-white font-bold">logical endpoint of a 35-year persecution</span> that 
+                    began with family betrayal and expanded into a state-sponsored machinery of destruction.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    When the entire system — from NDIS providers to Centrelink to the Public Guardian to his own blood relatives — 
+                    coordinates to prevent a son from seeing his dying father, while spending 
+                    <span className="text-[hsl(38,92%,50%)] font-bold">${monthlyCost.toLocaleString()} per month</span> on his persecution, 
+                    the corruption is no longer institutional. <span className="text-red-500 font-bold">It is intimate. It is personal. And it is undeniable.</span>
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    This is what economic stonewalling looks like: not walls or chains, but a thousand bureaucratic denials 
+                    that add up to one man, alone, unable to say goodbye to his father — while the people who did this to him 
+                    collect their taxpayer-funded salaries and sleep soundly.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      <InlineShareStrip id="dying-father" context="support" message="A dying father. A son begging to say goodbye. An entire system — NDIS, Centrelink, Public Guardian, his own family — coordinated to say NO. They spend $900/day persecuting him but claim 'no resources' for a car hire. This is what corruption looks like up close." />
+
+      <section className="py-16 px-4 bg-black border-t border-white/10">
+        <div className="container mx-auto max-w-5xl space-y-8">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
             <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-serif font-bold text-white mb-4" data-testid="heading-complicity">
               THE PRICE OF POLITICAL SILENCE
             </motion.h2>

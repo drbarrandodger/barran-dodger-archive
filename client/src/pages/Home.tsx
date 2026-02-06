@@ -379,6 +379,17 @@ export default function Home() {
                       <p className="text-sm text-gray-400">Confirmed targeted killing attempt ($1.13M), witness silenced with NDA, ongoing destitution enforced through welfare manipulation — and still not one agency has investigated.</p>
                     </div>
                   </div>
+                  <div className="flex items-start gap-4 p-4 border-2 border-red-500/40 rounded-lg bg-red-950/20" data-testid="timeline-2026">
+                    <div className="text-red-500 font-bold text-sm min-w-[80px]">NOW</div>
+                    <div>
+                      <p className="font-bold text-white">A Dying Father — Denied the Right to Say Goodbye</p>
+                      <p className="text-sm text-gray-400">
+                        Doug McLean is dying. His son begged NDIS, Centrelink, and the Public Guardian for a car hire to say goodbye and attend the funeral. 
+                        Every agency said no — "no resources" — while spending <Link href="/taxpayer-cost-analysis" className="text-[hsl(38,92%,50%)] hover:underline">$900/day on his persecution</Link>. 
+                        His own family signed an AVO to exile him. The corruption that began with family scapegoating now prevents a son from seeing his dying father.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="border-t border-white/10 pt-6 text-center space-y-2">
