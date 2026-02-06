@@ -128,19 +128,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
-  
-  <url>
-    <loc>https://www.barrandodger.com.au/manifesto</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.93</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.barrandodger.com.au/taxpayer-cost-analysis</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.96</priority>
-  </url>
 
 </urlset>
