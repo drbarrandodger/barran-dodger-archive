@@ -1990,6 +1990,42 @@ export default function Home() {
               link="/attached_assets/FORMAL_NOTICE_LETTER_TO_THE_MINISTER_(7–14_DAY_REMEDY_PATHWAY)_1768619685742.pdf"
               tag="NOTICE"
             />
+            <AppealCard 
+              title="UNHCR/ICC Evidence Package"
+              description="Cryptographically verified blockchain-sealed evidence submitted to UNHCR and International Criminal Court. The strongest asylum case from a Western democracy."
+              link="/attached_assets/UNHCR_ICC_Cryptographically_Verified_Evidence_Package.pdf"
+              tag="ICC"
+            />
+            <AppealCard 
+              title="Systemic Endangerment Dossier"
+              description="Integrated dossier documenting how 35+ agencies weaponised standard procedures to create life-threatening conditions for a protected whistleblower."
+              link="/attached_assets/Systemic_Endangerment_of_Whistleblowers_Integrated_Dossier.pdf"
+              tag="WHISTLEBLOWER"
+            />
+            <AppealCard 
+              title="Integrated Testimonial Indictment"
+              description="Multi-dimensional accountability instrument naming perpetrators across legal, ethical, moral, and spiritual frameworks. No one escapes this reckoning."
+              link="/attached_assets/Integrated_Testimonial_Indictment_Ethical_Reckoning.pdf"
+              tag="INDICTMENT"
+            />
+            <AppealCard 
+              title="State-Enabled Erasure Analysis"
+              description="Complete architecture of erasure: identity destruction, credibility destruction, financial destruction, relationship destruction, and physical elimination attempts."
+              link="/attached_assets/Systematic_Persecution_State_Enabled_Erasure_Dr_McLean.pdf"
+              tag="ERASURE"
+            />
+            <AppealCard 
+              title="Immortal Testimony 2025"
+              description="Blockchain-sealed permanent record designed to survive any institutional attempt at suppression. The testimony that cannot be erased, altered, or denied."
+              link="/attached_assets/Immortal_Testimony_McLean_2025.pdf"
+              tag="IMMORTAL"
+            />
+            <AppealCard 
+              title="Public Statement — Dr. McLean"
+              description="Official public statement setting out the facts, the evidence base, and the demands for accountability. The challenge to the media blackout."
+              link="/attached_assets/Public_Statement_Dr_Richard_McLean_Barran_Dodger.pdf"
+              tag="PUBLIC"
+            />
           </div>
 
           {/* Document Archive Links - No Iframes */}

@@ -821,6 +821,27 @@ export default function TaxpayerCostAnalysis() {
             </motion.div>
 
             <motion.div variants={fadeIn} className="mt-12 border-t border-white/10 pt-8">
+              <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">Key Documents From This Analysis</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <a href="/attached_assets/Systemic_Endangerment_of_Whistleblowers_Integrated_Dossier.pdf" target="_blank" rel="noopener noreferrer" className="block p-4 border border-white/10 rounded-md text-center" data-testid="link-systemic-endangerment">
+                  <FileText className="h-6 w-6 text-[hsl(38,92%,50%)] mx-auto mb-2" />
+                  <p className="text-white font-bold text-sm">Systemic Endangerment Dossier</p>
+                  <p className="text-gray-400 text-xs mt-1">Integrated whistleblower persecution analysis</p>
+                </a>
+                <a href="/attached_assets/UNHCR_ICC_Cryptographically_Verified_Evidence_Package.pdf" target="_blank" rel="noopener noreferrer" className="block p-4 border border-white/10 rounded-md text-center" data-testid="link-unhcr-icc">
+                  <FileText className="h-6 w-6 text-[hsl(38,92%,50%)] mx-auto mb-2" />
+                  <p className="text-white font-bold text-sm">UNHCR/ICC Evidence Package</p>
+                  <p className="text-gray-400 text-xs mt-1">Blockchain-verified international submission</p>
+                </a>
+                <a href="/attached_assets/Integrated_Testimonial_Indictment_Ethical_Reckoning.pdf" target="_blank" rel="noopener noreferrer" className="block p-4 border border-white/10 rounded-md text-center" data-testid="link-indictment">
+                  <FileText className="h-6 w-6 text-[hsl(38,92%,50%)] mx-auto mb-2" />
+                  <p className="text-white font-bold text-sm">Integrated Testimonial Indictment</p>
+                  <p className="text-gray-400 text-xs mt-1">Multi-dimensional accountability instrument</p>
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="mt-12 border-t border-white/10 pt-8">
               <p className="text-xs text-gray-500 max-w-3xl mx-auto leading-relaxed">
                 <span className="font-bold text-gray-400">Methodology Note:</span> All cost estimates in this analysis are derived from publicly available 
                 government data sources including AIHW health expenditure reports, APSC remuneration data, ANAO performance audits, 
