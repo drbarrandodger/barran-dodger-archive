@@ -66,6 +66,21 @@ The `shared/` directory contains code used by both frontend and backend:
 
 ## Recent Changes
 
+### February 6, 2026 (AI Analysis & Assassination Evidence)
+- **Homepage AI Analysis Section**: New prominent section "AN AI CANNOT BE BRIBED, CORRUPTED, OR SILENCED"
+  - 3 stat cards: $11.5M+ total cost, 35+ years targeting, 35+ agencies
+  - "Why This AI Analysis Cannot Be Dismissed" — 6 points explaining AI impartiality
+  - Full cost timeline: Herald Sun humiliation (1990s), The Age firing (2000s), 14 hospitalisations (2010s), assassination attempt (2020s)
+  - Quote: "When every human institution fails... the only witness left that cannot be corrupted is mathematics itself"
+  - CTA buttons to full breakdown and evidence archive
+- **Taxpayer Cost Analysis Expansion**: Total now $11.5M+ (up from $10.3M+)
+  - New cost category: "Targeted Killing Attempt, NDA Cover-Up & Witness Intimidation" — $1,130,000
+  - New technique: "Targeted Killing & Non-Disclosure Agreement Cover-Up" with Criminal Code Act, Witness Protection Act citations
+  - New assassination evidence section with 4 SMS screenshots from NDIS provider "Ben"
+  - 5 key quotes from Ben: "I thought you were just paranoid. You were right", "systematic corruption that goes all the way to the top", "They could put a hit on me too"
+  - "The Cost of Professional Silence" — $50M+ in cumulative salaries to silent professionals
+  - Share strip for assassination section
+
 ### February 5, 2026 (SEO Overhaul & Donation Visibility)
 - **Comprehensive SEO Overhaul**: Complete rewrite of `client/index.html` metadata
   - 240+ document count reflected everywhere (updated from 130+)
