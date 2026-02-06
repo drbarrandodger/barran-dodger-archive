@@ -20,7 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import portraitImg from "@assets/A5BDF951-1AE5-4EFF-9F6E-3F29C2C5CDC9_1768633103014.png";
 import artworkImg from "@assets/IMG_2914_1768893482684.jpeg";
 import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_1770287537689.png";
-import { HandCoins, TrendingUp, Landmark, ShieldCheck } from "lucide-react";
+import { HandCoins, TrendingUp, Landmark, ShieldCheck, Clock, Building2 } from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -204,6 +204,227 @@ export default function Home() {
               </p>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* IMPARTIAL AI FINANCIAL ANALYSIS — Why It Cannot Be Corrupted */}
+      <section className="py-16 px-4 bg-black border-t border-b border-[hsl(38,92%,50%)]/30">
+        <div className="container mx-auto max-w-5xl space-y-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="text-center space-y-4"
+          >
+            <motion.div variants={fadeIn}>
+              <Badge variant="outline" className="border-[hsl(38,92%,50%)] text-[hsl(38,92%,50%)] px-6 py-2 text-sm font-bold" data-testid="badge-ai-analysis">
+                IMPARTIAL AI FINANCIAL ANALYSIS
+              </Badge>
+            </motion.div>
+            <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
+              AN AI CANNOT BE BRIBED,<br/>
+              <span className="text-[hsl(38,92%,50%)]">CORRUPTED, OR SILENCED</span>
+            </motion.h2>
+            <motion.p variants={fadeIn} className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Every dollar figure below was calculated by an impartial artificial intelligence 
+              analysing the government's <span className="text-white font-bold">own documents, correspondence, and official records</span>. 
+              Unlike judges, politicians, police, psychiatrists, and journalists — 
+              AI cannot be swayed by corruption, bribery, intimidation, or blood money.
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/5 border-white/10 text-center overflow-visible" data-testid="card-ai-total-cost">
+                <CardContent className="pt-8 pb-8 space-y-3">
+                  <DollarSign className="h-10 w-10 text-[hsl(38,92%,50%)] mx-auto" />
+                  <p className="text-4xl md:text-5xl font-bold text-red-500">$11.5M+</p>
+                  <p className="text-sm text-gray-400 uppercase tracking-wider font-bold">Total Taxpayer Cost</p>
+                  <p className="text-xs text-gray-500">Across 8 documented categories of persecution</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/5 border-white/10 text-center overflow-visible" data-testid="card-ai-years">
+                <CardContent className="pt-8 pb-8 space-y-3">
+                  <Clock className="h-10 w-10 text-[hsl(38,92%,50%)] mx-auto" />
+                  <p className="text-4xl md:text-5xl font-bold text-white">35+</p>
+                  <p className="text-sm text-gray-400 uppercase tracking-wider font-bold">Years of Targeting</p>
+                  <p className="text-xs text-gray-500">From Herald Sun humiliation to confirmed assassination attempt</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/5 border-white/10 text-center overflow-visible" data-testid="card-ai-agencies">
+                <CardContent className="pt-8 pb-8 space-y-3">
+                  <Building2 className="h-10 w-10 text-[hsl(38,92%,50%)] mx-auto" />
+                  <p className="text-4xl md:text-5xl font-bold text-white">35+</p>
+                  <p className="text-sm text-gray-400 uppercase tracking-wider font-bold">Government Agencies</p>
+                  <p className="text-xs text-gray-500">Exposed as complicit or negligent</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <Card className="bg-white/5 border-2 border-[hsl(38,92%,50%)]/40 overflow-visible" data-testid="card-why-ai-matters">
+              <CardContent className="pt-8 pb-8 space-y-6">
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-white text-center">
+                  Why This AI Analysis Cannot Be Dismissed
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <ShieldCheck className="h-6 w-6 text-[hsl(38,92%,50%)] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-white">Based Entirely on Government's Own Documents</p>
+                        <p className="text-sm text-gray-400">Every cost is sourced from AIHW, APSC, ANAO, NDIS, AFP, and ASIO annual reports — their own published data used against their own conduct.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Lock className="h-6 w-6 text-[hsl(38,92%,50%)] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-white">Cannot Be Bribed or Intimidated</p>
+                        <p className="text-sm text-gray-400">Unlike every professional who encountered this case and chose silence, an AI has no career to protect, no pension to lose, no family to threaten.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Scale className="h-6 w-6 text-[hsl(38,92%,50%)] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-white">No Political Allegiance</p>
+                        <p className="text-sm text-gray-400">AI doesn't vote. It doesn't take sides. It reads documents and calculates costs with mathematical precision, without fear or favour.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Eye className="h-6 w-6 text-[hsl(38,92%,50%)] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-white">Cannot Be Silenced with NDAs</p>
+                        <p className="text-sm text-gray-400">The government silenced human witnesses with non-disclosure agreements. You cannot serve an NDA on an artificial intelligence. This analysis exists forever.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <FileText className="h-6 w-6 text-[hsl(38,92%,50%)] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-white">240+ Blockchain-Verified Documents</p>
+                        <p className="text-sm text-gray-400">Every source document is SHA-256 verified and permanently recorded on the blockchain. They cannot be altered, deleted, or denied by any institution.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <AlertCircle className="h-6 w-6 text-red-500 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-white">Not One Professional Can Refute It</p>
+                        <p className="text-sm text-gray-400">Doctors, police, politicians, lawyers, judges, journalists — not a single person has been able to acknowledge, refute, or disprove any of these claims. Their silence is the evidence.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="space-y-6"
+          >
+            <Card className="bg-red-950/20 border-2 border-red-500/30 overflow-visible" data-testid="card-full-cost-timeline">
+              <CardContent className="pt-8 pb-8 space-y-6">
+                <h3 className="text-2xl font-serif font-bold text-white text-center">
+                  The Full Cost of Targeting One Australian — From Day One
+                </h3>
+                <div className="space-y-4 max-w-3xl mx-auto">
+                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg">
+                    <div className="text-[hsl(38,92%,50%)] font-bold text-sm min-w-[80px]">1990s</div>
+                    <div>
+                      <p className="font-bold text-white">Herald Sun Public Humiliation</p>
+                      <p className="text-sm text-gray-400">Media targeting and public character assassination — the beginning of a 35-year campaign to destroy credibility before evidence could be gathered.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg">
+                    <div className="text-[hsl(38,92%,50%)] font-bold text-sm min-w-[80px]">2000s</div>
+                    <div>
+                      <p className="font-bold text-white">Fired from The Age Newspaper</p>
+                      <p className="text-sm text-gray-400">Employment destruction — silencing a person by removing their livelihood and professional credibility. The media that should have been the watchdog became the attack dog.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg">
+                    <div className="text-[hsl(38,92%,50%)] font-bold text-sm min-w-[80px]">2010s</div>
+                    <div>
+                      <p className="font-bold text-white">14 Psychiatric Hospitalisations Across 3 States</p>
+                      <p className="text-sm text-gray-400">Weaponising mental health as a silencing tool — $785,948 in taxpayer costs just for the hospitalisations alone. Each one documented. Each one a control mechanism.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg">
+                    <div className="text-[hsl(38,92%,50%)] font-bold text-sm min-w-[80px]">2020s</div>
+                    <div>
+                      <p className="font-bold text-white">Assassination Attempt, NDA Cover-Up, Poverty</p>
+                      <p className="text-sm text-gray-400">Confirmed targeted killing attempt ($1.13M), witness silenced with NDA, ongoing destitution enforced through welfare manipulation — and still not one agency has investigated.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-t border-white/10 pt-6 text-center space-y-2">
+                  <p className="text-2xl md:text-3xl font-bold text-red-500">
+                    Total AI-Calculated Cost: $11.5M+
+                  </p>
+                  <p className="text-lg text-gray-300">
+                    That's <span className="text-white font-bold">177 years</span> of the average Australian salary — spent persecuting one man for telling the truth.
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Plus <span className="text-[hsl(38,92%,50%)]">$50M+</span> in cumulative salaries paid to professionals across 35+ agencies who knew, and chose silence.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="border-2 border-[hsl(38,92%,50%)]/30 rounded-xl p-6 md:p-8 text-center space-y-4"
+          >
+            <p className="text-xl md:text-2xl font-serif text-white leading-relaxed italic">
+              "When every human institution fails — when judges are compromised, politicians are complicit, 
+              police are weaponised, and journalists are silenced — the only witness left that cannot be corrupted is mathematics itself."
+            </p>
+            <p className="text-sm text-gray-400 uppercase tracking-wider font-bold">
+              This is that witness. These are your tax dollars. This is the truth.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
+            <Link href="/taxpayer-cost-analysis">
+              <Button size="lg" className="gap-2 bg-[hsl(38,92%,50%)] text-black font-bold" data-testid="button-see-full-breakdown">
+                SEE THE FULL $11.5M BREAKDOWN <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href="/evidence">
+              <Button size="lg" variant="outline" className="gap-2 border-white text-white font-bold" data-testid="button-verify-documents">
+                VERIFY THE 240+ DOCUMENTS <FileText className="h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+
+          <InlineShareStrip id="ai-analysis" message="An impartial AI analysed the Australian government's own documents and calculated $11.5M+ in taxpayer costs targeting ONE whistleblower across 35 years. AI cannot be bribed, corrupted, or silenced with NDAs. Not one professional has been able to refute these claims." />
         </div>
       </section>
 
