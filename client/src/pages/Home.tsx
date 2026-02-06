@@ -351,28 +351,28 @@ export default function Home() {
                   The Full Cost of Targeting One Australian — From Day One
                 </h3>
                 <div className="space-y-4 max-w-3xl mx-auto">
-                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg">
+                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg" data-testid="timeline-1990s">
                     <div className="text-[hsl(38,92%,50%)] font-bold text-sm min-w-[80px]">1990s</div>
                     <div>
                       <p className="font-bold text-white">Herald Sun Public Humiliation</p>
                       <p className="text-sm text-gray-400">Media targeting and public character assassination — the beginning of a 35-year campaign to destroy credibility before evidence could be gathered.</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg">
+                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg" data-testid="timeline-2000s">
                     <div className="text-[hsl(38,92%,50%)] font-bold text-sm min-w-[80px]">2000s</div>
                     <div>
                       <p className="font-bold text-white">Fired from The Age Newspaper</p>
                       <p className="text-sm text-gray-400">Employment destruction — silencing a person by removing their livelihood and professional credibility. The media that should have been the watchdog became the attack dog.</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg">
+                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg" data-testid="timeline-2010s">
                     <div className="text-[hsl(38,92%,50%)] font-bold text-sm min-w-[80px]">2010s</div>
                     <div>
                       <p className="font-bold text-white">14 Psychiatric Hospitalisations Across 3 States</p>
                       <p className="text-sm text-gray-400">Weaponising mental health as a silencing tool — $785,948 in taxpayer costs just for the hospitalisations alone. Each one documented. Each one a control mechanism.</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg">
+                  <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg" data-testid="timeline-2020s">
                     <div className="text-[hsl(38,92%,50%)] font-bold text-sm min-w-[80px]">2020s</div>
                     <div>
                       <p className="font-bold text-white">Assassination Attempt, NDA Cover-Up, Poverty</p>
