@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin, ExternalLink } from "lucide-react";
+import { SocialShare } from "@/components/SocialShare";
 
 export default function Contact() {
   const { mutate, isPending } = useCreateInquiry();
@@ -171,6 +172,20 @@ export default function Contact() {
               </div>
             </motion.div>
           </div>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-border max-w-5xl mx-auto"
+            data-testid="section-share-contact"
+          >
+            <SocialShare 
+              title="Contact the Barran Dodger Legal & Ethical Trust Fund"
+              description="Reach out for whistleblower support, legal inquiries, media requests, or to contribute to the fight for truth and accountability. Secure communications via ProtonMail."
+              url="https://www.barrandodger.com.au/contact"
+            />
+          </motion.section>
         </div>
       </main>
 

@@ -4,10 +4,12 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { EvidenceCounter } from "@/components/EvidenceCounter";
 import { ProgressTracker, useDocumentProgress } from "@/components/ProgressTracker";
 import { useDocumentPreview } from "@/components/DocumentPreview";
-import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye } from "lucide-react";
+import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye, Search } from "lucide-react";
+import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -43,6 +45,7 @@ export default function Evidence() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxOpen2, setLightboxOpen2] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
   const { openPreview, PreviewComponent } = useDocumentPreview();
   const { markViewed, hasViewed } = useDocumentProgress();
   const documents = [
@@ -2348,6 +2351,37 @@ export default function Evidence() {
             </Card>
           </motion.section>
 
+          {/* Search Bar */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mb-8"
+          >
+            <div className="relative" data-testid="search-evidence">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Search 240+ documents by keyword, agency, person, or topic..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-11 pr-10 h-12 text-base"
+                data-testid="input-search-evidence"
+              />
+              {searchQuery && (
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-1 top-1/2 -translate-y-1/2"
+                  onClick={() => setSearchQuery("")}
+                  data-testid="button-clear-search"
+                >
+                  <X className="h-4 w-4" />
+                </Button>
+              )}
+            </div>
+          </motion.section>
+
           {/* Evidence Documents Grid */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -2355,9 +2389,18 @@ export default function Evidence() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {(() => {
-              const filteredDocs = selectedCategory === "all" 
+              const query = searchQuery.toLowerCase().trim();
+              let filteredDocs = selectedCategory === "all" 
                 ? documents 
                 : documents.filter(doc => categorizeDocument(doc) === selectedCategory);
+              
+              if (query) {
+                filteredDocs = filteredDocs.filter(doc => {
+                  const searchText = `${doc.title} ${doc.tags.join(" ")} ${doc.description} ${doc.aiSignificance || ""}`.toLowerCase();
+                  return query.split(/\s+/).every(term => searchText.includes(term));
+                });
+              }
+
               const currentCategory = CATEGORIES.find(c => c.id === selectedCategory);
               const CategoryIcon = currentCategory?.icon || Archive;
               
@@ -2370,14 +2413,19 @@ export default function Evidence() {
                       </div>
                       <div>
                         <h2 className="text-2xl font-serif font-bold text-primary">
-                          {selectedCategory === "all" ? "All Evidence Documents" : currentCategory?.label}
+                          {searchQuery ? `Search Results for "${searchQuery}"` : selectedCategory === "all" ? "All Evidence Documents" : currentCategory?.label}
                         </h2>
-                        {selectedCategory !== "all" && (
+                        {selectedCategory !== "all" && !searchQuery && (
                           <p className="text-sm text-muted-foreground">Filtered by category</p>
+                        )}
+                        {searchQuery && (
+                          <p className="text-sm text-muted-foreground">
+                            {filteredDocs.length === 0 ? "No documents found" : `Showing ${filteredDocs.length} matching document${filteredDocs.length !== 1 ? "s" : ""}`}
+                          </p>
                         )}
                       </div>
                     </div>
-                    <Badge variant="secondary">{filteredDocs.length} Documents</Badge>
+                    <Badge variant="secondary" data-testid="badge-document-count">{filteredDocs.length} Documents</Badge>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -2478,6 +2526,19 @@ export default function Evidence() {
               </CardContent>
             </Card>
           </motion.section>
+
+          {/* Newsletter Signup */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12"
+          >
+            <div className="max-w-md mx-auto mb-12">
+              <NewsletterSignup />
+            </div>
+          </motion.section>
+
           {/* Social Sharing */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}

@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import { SocialShare } from "@/components/SocialShare";
 
 export default function Church() {
   const tenets = [
@@ -376,6 +377,20 @@ export default function Church() {
             <cite className="not-italic font-medium tracking-wide text-sm text-muted-foreground">
               — BARRAN DODGER, FOUNDING WITNESS
             </cite>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-border"
+            data-testid="section-share-church"
+          >
+            <SocialShare 
+              title="The Church of Documented Truth - Where Evidence Is the Sermon"
+              description="A faith built not on tradition alone, but on blockchain-verified testimony, forensic evidence, and the sacred duty to witness. The archive is the altar. The blockchain is the covenant."
+              url="https://www.barrandodger.com.au/church"
+            />
           </motion.section>
         </div>
       </main>

@@ -10,6 +10,8 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { InlineShareStrip } from "@/components/FloatingShareBar";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 interface TimelineEvent {
   year: string;
@@ -295,6 +297,31 @@ export default function Timeline() {
                 </Button>
               </Link>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mt-12"
+            >
+              <div className="max-w-md mx-auto mb-12">
+                <NewsletterSignup />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mt-16 pt-8 border-t border-border"
+              data-testid="section-share-timeline"
+            >
+              <InlineShareStrip 
+                id="timeline-share" 
+                context="default" 
+                message="35 years of systematic persecution documented in a single timeline. 2,077+ blockchain-verified evidence files. 35+ government agencies. This is not conspiracy — this is evidence. Share the timeline." 
+              />
+            </motion.div>
           </motion.div>
         </div>
       </main>

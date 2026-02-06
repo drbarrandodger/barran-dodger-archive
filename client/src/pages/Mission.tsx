@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { CheckCircle2, Gavel, Globe, ShieldAlert, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { SocialShare } from "@/components/SocialShare";
 
 export default function Mission() {
   return (
@@ -151,6 +152,20 @@ export default function Mission() {
               </div>
             </section>
           </div>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-border"
+            data-testid="section-share-mission"
+          >
+            <SocialShare 
+              title="Our Mission: Truth, Transparency & Ethical Governance"
+              description="The Barran Dodger Legal & Ethical Trust Fund seeks full accountability for $32.9M-$47.5M in documented damages across 35+ government agencies. Evidence-based justice demands public awareness."
+              url="https://www.barrandodger.com.au/mission"
+            />
+          </motion.section>
         </div>
       </main>
 

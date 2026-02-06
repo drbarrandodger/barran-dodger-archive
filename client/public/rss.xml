@@ -3,9 +3,9 @@
   <channel>
     <title>Barran Dodger Legal & Ethical Trust Fund - Case Updates</title>
     <link>https://www.barrandodger.com.au</link>
-    <description>Updates on blockchain-verified evidence archive, legal proceedings, and whistleblower protection advocacy. 94+ forensic documents with AI-verified significance statements.</description>
+    <description>Updates on blockchain-verified evidence archive, legal proceedings, and whistleblower protection advocacy. 240+ forensic documents with AI-verified significance statements.</description>
     <language>en-au</language>
-    <lastBuildDate>Thu, 23 Jan 2025 00:00:00 +1000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 00:00:00 +1100</lastBuildDate>
     <atom:link href="https://www.barrandodger.com.au/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://www.barrandodger.com.au/favicon.png</url>
@@ -30,11 +30,27 @@
     </item>
     
     <item>
-      <title>Evidence Archive Expanded to 94+ Documents</title>
+      <title>Evidence Archive Expanded to 240+ Blockchain-Verified Documents</title>
       <link>https://www.barrandodger.com.au/evidence</link>
-      <description>The blockchain-verified evidence archive now contains over 94 forensic documents including Federal Court certifications, tribunal records, UNHCR submissions, and AI-analyzed testimonials.</description>
-      <pubDate>Wed, 22 Jan 2025 00:00:00 +1000</pubDate>
-      <guid>https://www.barrandodger.com.au/evidence</guid>
+      <description>The blockchain-verified evidence archive now contains over 240 forensic documents including Federal Court certifications, tribunal records, UNHCR/ICC submissions, clinical NDIS reports, theological analyses, and AI-analyzed testimonials spanning 35 years.</description>
+      <pubDate>Thu, 06 Feb 2026 00:00:00 +1100</pubDate>
+      <guid>https://www.barrandodger.com.au/evidence-240</guid>
+    </item>
+    
+    <item>
+      <title>Taxpayer Cost Analysis: $11.5M+ in Government Persecution Costs</title>
+      <link>https://www.barrandodger.com.au/taxpayer-cost-analysis</link>
+      <description>AI-powered impartial financial analysis reveals $11.5M+ in taxpayer costs funding the systematic persecution of one whistleblower across 35+ Australian government agencies. Includes agency-by-agency cost breakdown and timeline of expenditure.</description>
+      <pubDate>Thu, 06 Feb 2026 00:00:00 +1100</pubDate>
+      <guid>https://www.barrandodger.com.au/taxpayer-cost-analysis</guid>
+    </item>
+    
+    <item>
+      <title>UNHCR/ICC Evidence Package and New Document Imports</title>
+      <link>https://www.barrandodger.com.au/evidence</link>
+      <description>13 new flagship documents imported including UNHCR/ICC Evidence Package, Systemic Endangerment Dossier, Integrated Testimonial Indictment, clinical NDIS reports naming perpetrators, theological analysis, and accountability instruments.</description>
+      <pubDate>Thu, 06 Feb 2026 00:00:00 +1100</pubDate>
+      <guid>https://www.barrandodger.com.au/evidence-unhcr-icc</guid>
     </item>
     
     <item>

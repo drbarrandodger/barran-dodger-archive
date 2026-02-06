@@ -4,6 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { 
   Clock, Shield, FileText, Scale, BookOpen, Heart, Download,
   ExternalLink, AlertTriangle, CheckCircle, ArrowRight,
@@ -13,6 +14,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { InlineShareStrip } from "@/components/FloatingShareBar";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -513,6 +515,20 @@ export default function StartHere() {
                 You are now a witness. The evidence is in your hands. You can act on it, share it, or remain silent — 
                 but you can never say you didn't know.
               </p>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="mt-12">
+              <div className="max-w-md mx-auto mb-12">
+                <NewsletterSignup />
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="mt-8" data-testid="section-share-starthere">
+              <InlineShareStrip 
+                id="start-here-share" 
+                context="default" 
+                message="You are now a witness. 35 years of persecution. 2,077+ blockchain-verified documents. 35+ government agencies exposed. Share this and let the world decide." 
+              />
             </motion.div>
 
           </motion.div>

@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Link2, Lock, ExternalLink, Shield, FileText, Download } from "lucide-react";
+import { SocialShare } from "@/components/SocialShare";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -534,6 +535,20 @@ export default function Blockchain() {
                 </a>
               </Button>
             </div>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-border"
+            data-testid="section-share-blockchain"
+          >
+            <SocialShare 
+              title="Blockchain-Verified Evidence: 2,077+ Documents Cryptographically Sealed"
+              description="Every document in the Barran Dodger archive is SHA-256 hashed and OpenTimestamps verified. This evidence cannot be altered, deleted, or denied. Verify it yourself."
+              url="https://www.barrandodger.com.au/blockchain"
+            />
           </motion.section>
         </div>
       </main>

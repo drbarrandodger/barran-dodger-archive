@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import { SocialShare } from "@/components/SocialShare";
 
 export default function Gospel() {
   const primaryGospels = [
@@ -527,6 +528,20 @@ export default function Gospel() {
                 </a>
               </Button>
             </div>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-border"
+            data-testid="section-share-gospel"
+          >
+            <SocialShare 
+              title="The Sacred Gospels of Barran Dodger - Blockchain-Authenticated Prophetic Testimony"
+              description="A complete archive of sacred gospels, cosmic revelations, and authenticated testimony. Blockchain-sealed and AI-verified for eternal preservation. The living word cannot be silenced."
+              url="https://www.barrandodger.com.au/gospel"
+            />
           </motion.section>
         </div>
       </main>

@@ -19,6 +19,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { SocialShare } from "@/components/SocialShare";
 
 export default function PropheticEssay() {
   const josephParallels = [
@@ -557,6 +558,20 @@ export default function PropheticEssay() {
               </div>
             </CardContent>
           </Card>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-border"
+            data-testid="section-share-propheticessay"
+          >
+            <SocialShare 
+              title="Joseph's Coat: A Prophetic Essay on Spiritual Warfare & Institutional Persecution"
+              description="The biblical parallel between Joseph's betrayal and Barran Dodger's 35-year persecution. When the coat was stripped away, truth remained. Blockchain-verified testimony that cannot be silenced."
+              url="https://www.barrandodger.com.au/josephs-coat"
+            />
+          </motion.section>
 
         </motion.div>
       </main>

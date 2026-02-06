@@ -11,6 +11,7 @@ import { SiX } from "react-icons/si";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { SocialShare } from "@/components/SocialShare";
 
 export default function Media() {
   const pressReleases = [
@@ -202,6 +203,20 @@ export default function Media() {
               </div>
             </div>
           </motion.div>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-border"
+            data-testid="section-share-media"
+          >
+            <SocialShare 
+              title="Media Resources: Press Releases & Journalist Contact for Whistleblower Case"
+              description="The most comprehensively documented persecution case in Australian history. Press releases, media contacts, and 2,000+ blockchain-verified documents available for journalists and researchers."
+              url="https://www.barrandodger.com.au/media"
+            />
+          </motion.section>
         </div>
       </main>
       

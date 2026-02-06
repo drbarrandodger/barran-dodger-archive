@@ -11,6 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { SocialShare } from "@/components/SocialShare";
 
 interface LegalSubmission {
   body: string;
@@ -270,6 +271,20 @@ export default function LegalStatus() {
                 </Button>
               </Link>
             </div>
+
+            <motion.section
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mt-16 pt-8 border-t border-border"
+              data-testid="section-share-legalstatus"
+            >
+              <SocialShare 
+                title="Active Legal Proceedings: ICC, UNHCR & Federal Court Submissions"
+                description="Track the status of legal submissions to the International Criminal Court, UN Human Rights Council, and Australian Federal Court. Every submission is blockchain-verified and publicly documented."
+                url="https://www.barrandodger.com.au/legal-status"
+              />
+            </motion.section>
           </motion.div>
         </div>
       </main>

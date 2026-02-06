@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { InlineShareStrip } from "@/components/FloatingShareBar";
 
 export default function Donate() {
   const [copied, setCopied] = useState(false);
@@ -333,6 +334,20 @@ export default function Donate() {
                 </a>
               </Button>
             </div>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-border"
+            data-testid="section-share-donate"
+          >
+            <InlineShareStrip 
+              id="donate-share" 
+              context="support" 
+              message="Support the fight for truth and accountability. The Barran Dodger Legal & Ethical Trust Fund sustains a permanent, blockchain-verified record of 35 years of persecution. Every contribution defends the evidence." 
+            />
           </motion.section>
         </div>
       </main>
