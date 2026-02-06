@@ -2382,8 +2382,8 @@ export default function Evidence() {
             className="mt-16 py-8 border-t border-border"
           >
             <SocialShare 
-              title="Evidence Archive - Barran Dodger Legal & Ethical Trust Fund"
-              description="94+ blockchain-verified forensic documents. Whistleblower persecution, human rights violations, and AI-analyzed testimony."
+              title="Evidence Archive - 240+ Blockchain-Verified Documents"
+              description="240+ blockchain-verified forensic documents exposing 35 years of Australian government corruption. Whistleblower persecution, human rights violations, and AI-analyzed testimony."
               url="https://www.barrandodger.com.au/evidence"
             />
           </motion.section>

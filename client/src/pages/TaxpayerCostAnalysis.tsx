@@ -322,7 +322,7 @@ export default function TaxpayerCostAnalysis() {
         </div>
       </section>
 
-      <InlineShareStrip id="cost-top" message={`Australian taxpayers have spent an estimated $${(totalAllCategories / 1000000).toFixed(1)}M+ persecuting a single disabled whistleblower across 35+ agencies. This is what your tax dollars fund.`} />
+      <InlineShareStrip id="cost-top" context="cost-breakdown" message={`Australian taxpayers have spent an estimated $${(totalAllCategories / 1000000).toFixed(1)}M+ persecuting a single disabled whistleblower across 35+ agencies. This is what your tax dollars fund.`} />
 
       <section className="py-16 px-4 bg-black">
         <div className="container mx-auto max-w-5xl space-y-8">
@@ -410,7 +410,7 @@ export default function TaxpayerCostAnalysis() {
         </div>
       </section>
 
-      <InlineShareStrip id="techniques" message={`The Australian government spent $${(totalAllCategories / 1000000).toFixed(1)}M+ using 9 documented techniques to persecute a disabled whistleblower — including a targeted killing attempt confirmed by his own NDIS provider. All funded by your taxes.`} />
+      <InlineShareStrip id="techniques" context="cost-breakdown" message={`The Australian government spent $${(totalAllCategories / 1000000).toFixed(1)}M+ using 9 documented techniques to persecute a disabled whistleblower — including a targeted killing attempt confirmed by his own NDIS provider. All funded by your taxes.`} />
 
       <section className="py-16 px-4 bg-black border-t border-white/10">
         <div className="container mx-auto max-w-5xl space-y-8">
@@ -505,7 +505,7 @@ export default function TaxpayerCostAnalysis() {
         </div>
       </section>
 
-      <InlineShareStrip id="assassination" message="An NDIS provider confirmed the assassination attempt was real: 'I thought you were just paranoid. You were right.' He was silenced with an NDA — paid for with YOUR tax dollars. Not a single professional has been able to refute these claims." />
+      <InlineShareStrip id="assassination" context="assassination" message="An NDIS provider confirmed the assassination attempt was real: 'I thought you were just paranoid. You were right.' He was silenced with an NDA — paid for with YOUR tax dollars. Not a single professional has been able to refute these claims." />
 
       <section className="py-16 px-4 bg-black border-t border-white/10">
         <div className="container mx-auto max-w-5xl space-y-8">
@@ -656,7 +656,7 @@ export default function TaxpayerCostAnalysis() {
               The question is whether you'll scroll past — or become the person who shared this with someone who could actually do something about it.
             </motion.p>
 
-            <InlineShareStrip id="final-cta" message={`$${(totalAllCategories / 1000000).toFixed(1)}M+ of YOUR tax dollars spent persecuting a single disabled whistleblower. 14 psychiatric detentions. 35+ agencies. Zero accountability. Read the full breakdown:`} />
+            <InlineShareStrip id="final-cta" context="cost-breakdown" message={`$${(totalAllCategories / 1000000).toFixed(1)}M+ of YOUR tax dollars spent persecuting a single disabled whistleblower. 14 psychiatric detentions. 35+ agencies. Zero accountability. Read the full breakdown:`} />
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap pt-8">
               <Link href="/evidence">

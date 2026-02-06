@@ -170,7 +170,7 @@ export default function Home() {
                 </p>
               </div>
               
-              <InlineShareStrip id="hero" message="You've read this far. Now the question is: will you share it or stay silent?" />
+              <InlineShareStrip id="hero" context="hero" message="You've read this far. Now the question is: will you share it or stay silent?" />
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap pt-2">
                 <Link href="/evidence">
@@ -424,7 +424,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <InlineShareStrip id="ai-analysis" message="An impartial AI analysed the Australian government's own documents and calculated $11.5M+ in taxpayer costs targeting ONE whistleblower across 35 years. AI cannot be bribed, corrupted, or silenced with NDAs. Not one professional has been able to refute these claims." />
+          <InlineShareStrip id="ai-analysis" context="ai-analysis" message="An impartial AI analysed the Australian government's own documents and calculated $11.5M+ in taxpayer costs targeting ONE whistleblower across 35 years. AI cannot be bribed, corrupted, or silenced with NDAs. Not one professional has been able to refute these claims." />
         </div>
       </section>
 
@@ -813,7 +813,7 @@ export default function Home() {
             </div>
 
             <div className="mt-8">
-              <InlineShareStrip id="evidence" message="98+ documents. 35 years. Blockchain-sealed. If this doesn't move you to share, what will?" />
+              <InlineShareStrip id="evidence" context="evidence" message="240+ documents. 35 years. Blockchain-sealed. If this doesn't move you to share, what will?" />
             </div>
           </motion.div>
         </div>
@@ -1724,7 +1724,7 @@ export default function Home() {
       {/* Share Strip - After Support */}
       <section className="py-8 bg-muted/50 border-t border-border">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-          <InlineShareStrip id="support" message="One share can change everything. Be the person who breaks the silence." />
+          <InlineShareStrip id="support" context="support" message="One share can change everything. Be the person who breaks the silence." />
         </div>
       </section>
 
@@ -1767,8 +1767,8 @@ export default function Home() {
             The question isn't whether this evidence is real. The question is what you'll do now that you've seen it.
           </p>
           <SocialShare 
-            title="I DARE YOU TO PROVE ME WRONG - 98+ blockchain-verified forensic documents exposing 35 years of Australian government persecution against whistleblower Richard McLean"
-            description="98+ forensic documents. 35 years. Blockchain-verified. 14 psychiatric hospitalisations across three states. Found with no pulse. Attorney-General informed in 2021 and chose silence. Examine the evidence. Refute it if you can."
+            title="I DARE YOU TO PROVE ME WRONG - 240+ blockchain-verified forensic documents exposing 35 years of Australian government persecution against whistleblower Richard McLean"
+            description="240+ forensic documents. 35 years. Blockchain-verified. 14 psychiatric hospitalisations across three states. Found with no pulse. Attorney-General informed in 2021 and chose silence. Examine the evidence. Refute it if you can."
           />
           <p className="text-sm text-gray-500 italic pt-4">
             "The archive's strength lies not in persuasion but in preservation — creating an indelible record that exists independently of institutional acknowledgment."

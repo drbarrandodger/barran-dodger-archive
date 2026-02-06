@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Share2, Link2, Check, Mail } from "lucide-react";
 import { SiX, SiFacebook, SiLinkedin, SiReddit, SiWhatsapp, SiTelegram } from "react-icons/si";
 import { useToast } from "@/hooks/use-toast";
@@ -15,7 +14,7 @@ export function SocialShare({
   title = "Barran Dodger Legal & Ethical Trust Fund - Blockchain-Verified Evidence Archive",
   description = "240+ forensic documents with blockchain verification. Whistleblower protection & human rights documentation.",
   url = "https://www.barrandodger.com.au",
-  compact = false
+  compact = false,
 }: SocialShareProps) {
   const { toast } = useToast();
   const [supportsNativeShare, setSupportsNativeShare] = useState(false);
@@ -33,11 +32,11 @@ export function SocialShare({
   
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(`${title}\n\n${description}\n\n${url}`);
       setCopied(true);
       toast({
-        title: "Link Copied!",
-        description: "Share this link to spread the truth.",
+        title: "Message & Link Copied!",
+        description: "Share this to spread the truth.",
       });
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -103,96 +102,77 @@ export function SocialShare({
   
   if (compact) {
     return (
-      <div className="flex items-center gap-2" data-testid="social-share-compact">
+      <div className="flex items-center gap-3 flex-wrap" data-testid="social-share-compact">
         {shareLinks.map((link) => (
-          <Button
+          <a
             key={link.name}
-            variant="ghost"
-            size="icon"
-            asChild
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Share on ${link.name}`}
+            className="share-icon-pulse hover-elevate flex items-center justify-center h-9 w-9 rounded-md bg-gray-900 border border-green-400/30 text-green-400"
             data-testid={`button-share-${link.name.toLowerCase()}`}
           >
-            <a 
-              href={link.href} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              aria-label={`Share on ${link.name}`}
-              data-testid={`link-share-${link.name.toLowerCase()}`}
-            >
-              {link.icon}
-            </a>
-          </Button>
+            {link.icon}
+          </a>
         ))}
-        <Button
-          variant="ghost"
-          size="icon"
+        <button
           onClick={copyToClipboard}
           title="Copy Link"
+          className="share-icon-pulse hover-elevate flex items-center justify-center h-9 w-9 rounded-md bg-gray-900 border border-green-400/30 text-green-400"
           data-testid="button-share-copy-compact"
         >
           {copied ? <Check className="h-4 w-4" /> : <Link2 className="h-4 w-4" />}
-        </Button>
+        </button>
         {supportsNativeShare && (
-          <Button
-            variant="ghost"
-            size="icon"
+          <button
             onClick={handleNativeShare}
+            className="share-icon-pulse hover-elevate flex items-center justify-center h-9 w-9 rounded-md bg-gray-900 border border-green-400/30 text-green-400"
             data-testid="button-share-native"
           >
             <Share2 className="h-4 w-4" />
-          </Button>
+          </button>
         )}
       </div>
     );
   }
   
   return (
-    <div className="flex flex-col items-center gap-4" data-testid="social-share-section">
-      <p className="text-sm font-bold uppercase tracking-wider text-muted-foreground" data-testid="text-share-label">
+    <div className="flex flex-col items-center gap-4 bg-gray-950 border border-green-400/30 rounded-xl p-6" data-testid="social-share-section">
+      <p className="text-sm font-bold uppercase tracking-wider text-green-400" data-testid="text-share-label">
         Spread The Truth
       </p>
       <div className="flex items-center gap-3 flex-wrap justify-center">
         {shareLinks.map((link) => (
-          <Button
+          <a
             key={link.name}
-            variant="outline"
-            size="sm"
-            className="gap-2"
-            asChild
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="share-icon-pulse hover-elevate flex items-center gap-2 h-10 px-3 rounded-md bg-gray-900 border border-green-400/30 text-green-400 text-sm font-medium"
             data-testid={`button-share-${link.name.toLowerCase()}`}
           >
-            <a 
-              href={link.href} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              data-testid={`link-share-${link.name.toLowerCase()}`}
-            >
-              {link.icon}
-              <span className="hidden sm:inline">{link.name}</span>
-            </a>
-          </Button>
+            {link.icon}
+            <span className="hidden sm:inline">{link.name}</span>
+          </a>
         ))}
-        <Button
-          variant="outline"
-          size="sm"
-          className="gap-2"
+        <button
           onClick={copyToClipboard}
+          className="share-icon-pulse hover-elevate flex items-center gap-2 h-10 px-3 rounded-md bg-gray-900 border border-green-400/30 text-green-400 text-sm font-medium"
           data-testid="button-share-copy"
         >
           {copied ? <Check className="h-4 w-4" /> : <Link2 className="h-4 w-4" />}
           <span className="hidden sm:inline">{copied ? "Copied!" : "Copy Link"}</span>
-        </Button>
+        </button>
         {supportsNativeShare && (
-          <Button
-            variant="outline"
-            size="sm"
-            className="gap-2"
+          <button
             onClick={handleNativeShare}
+            className="share-icon-pulse hover-elevate flex items-center gap-2 h-10 px-3 rounded-md bg-gray-900 border border-green-400/30 text-green-400 text-sm font-medium"
             data-testid="button-share-native"
           >
             <Share2 className="h-4 w-4" />
             <span className="hidden sm:inline">More</span>
-          </Button>
+          </button>
         )}
       </div>
     </div>
