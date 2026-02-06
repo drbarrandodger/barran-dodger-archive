@@ -1829,20 +1829,35 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-              {/* Apple Books Embed */}
-              <div className="bg-white rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
-                <iframe 
-                  src="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290?itscg=30200&amp;itsct=books_box_player&amp;ls=1"
-                  title="Betrayed Murdered Forsaken - Apple Books Preview"
-                  className="w-full h-[500px] md:h-[600px] rounded-lg border-0"
-                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-                  allow="autoplay *; encrypted-media *; clipboard-write"
-                  style={{ background: "transparent" }}
-                  data-testid="iframe-novel-preview"
-                />
-                <p className="text-xs text-center text-muted-foreground mt-3">
-                  Preview available on Apple Books
-                </p>
+              <div className="space-y-6">
+                <a 
+                  href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                  data-testid="link-book-cover-featured"
+                >
+                  <img 
+                    src={bookCoverImg} 
+                    alt="Betrayed, Murdered, Forsaken - Book Cover by Richard William McLean" 
+                    className="w-full max-w-md mx-auto shadow-2xl rounded-lg"
+                    data-testid="img-book-cover-featured"
+                  />
+                </a>
+                <div className="bg-white rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
+                  <iframe 
+                    src="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290?itscg=30200&amp;itsct=books_box_player&amp;ls=1"
+                    title="Betrayed Murdered Forsaken - Apple Books Preview"
+                    className="w-full h-[500px] md:h-[600px] rounded-lg border-0"
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                    allow="autoplay *; encrypted-media *; clipboard-write"
+                    style={{ background: "transparent" }}
+                    data-testid="iframe-novel-preview"
+                  />
+                  <p className="text-xs text-center text-muted-foreground mt-3">
+                    Preview available on Apple Books
+                  </p>
+                </div>
               </div>
 
               {/* Novel Information */}
