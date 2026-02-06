@@ -13,6 +13,7 @@ export type ShareContext =
   | "cost-breakdown"
   | "evidence"
   | "support"
+  | "complicity"
   | "default";
 
 const contextMessages: Record<ShareContext, {
@@ -78,6 +79,15 @@ const contextMessages: Record<ShareContext, {
     clipboard: `ONE SHARE CAN CHANGE EVERYTHING\n\nA whistleblower survived 14 psychiatric detentions across 3 states, a confirmed assassination attempt, and 35 years of persecution by 35+ Australian government agencies.\n\n240+ blockchain-sealed documents prove every single claim.\n\nYour silence is your choice. Your share could be the one that breaks the dam.\n\n${url}`,
     label: "Help Break The Silence",
   },
+  complicity: {
+    twitter: `$11.5M of YOUR tax dollars spent destroying one innocent whistleblower.\n\n14 psych incarcerations. Assassination attempt. 35 years. 35+ agencies.\n\nIf you tolerate this, your children will be next.\n\nSilence is complicity.`,
+    facebook: `$11.5 million of Australian taxpayer money — your wages, your Medicare levy, your income tax — spent systematically destroying one person whose only crime was telling the truth. 14 psychiatric incarcerations. A confirmed assassination attempt. 35+ agencies across 35 years. This evidence is blockchain-sealed, AI-verified, and permanent. If you tolerate this, your children will be next. Silence is complicity.`,
+    whatsapp: `$11.5M of YOUR tax dollars:\n\n14 psych incarcerations\nAssassination attempt\n35+ agencies\n35 years\n\nIf this can happen to an author & academic, it WILL happen to you.\n\nSilence is complicity. Share this.\n\n${url}`,
+    telegram: `YOUR TAX DOLLARS FUNDED THIS\n\n$11.5M persecuting ONE whistleblower\n14 psychiatric incarcerations\nAssassination attempt\n35+ agencies / 35 years\n\nSilence is complicity.\nIf you tolerate this, your children will be next.\n\n${url}`,
+    reddit: `$11.5M of Australian taxpayer money spent destroying one whistleblower — if you tolerate this, your children will be next`,
+    clipboard: `$11.5 MILLION OF YOUR TAX DOLLARS\n\nSpent destroying one innocent person whose only crime was telling the truth.\n\n14 psychiatric incarcerations. A confirmed assassination attempt. 35+ agencies. 35 years.\n\nThis evidence is blockchain-sealed, AI-verified, and permanent. No government, no lawyer, no agency can delete it.\n\nIf this can happen to an author, academic, and artist with an international professional profile — it WILL happen to you.\n\nIF YOU TOLERATE THIS, YOUR CHILDREN WILL BE NEXT.\n\nSilence is complicity. Act now: ${url}`,
+    label: "Break Your Silence",
+  },
   default: {
     twitter: `14 psych detentions across 3 states. No pulse. 35 yrs of persecution by 35+ Aust govt agencies. 240+ blockchain-sealed docs exposed.\n\nThe Attorney-General was told in 2021 & chose silence.\n\n"I DARE YOU TO PROVE ME WRONG"`,
     facebook: `They found him with no pulse. 14 psychiatric hospitalisations across 3 states. 35 years of systematic persecution by 35+ Australian government agencies. 240+ forensic documents, blockchain-sealed and tamper-proof. The Attorney-General was informed in 2021 and did nothing.`,
@@ -94,6 +104,7 @@ function getContextUrl(context: ShareContext): string {
     case "ai-analysis":
     case "cost-breakdown":
     case "assassination":
+    case "complicity":
       return `${url}/taxpayer-cost-analysis`;
     case "evidence":
       return `${url}/evidence`;

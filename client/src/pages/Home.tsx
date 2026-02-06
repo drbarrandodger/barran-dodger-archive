@@ -439,6 +439,188 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TAXPAYER COMPLICITY — Call to Action */}
+      <section className="py-16 px-4 bg-black border-t border-b border-red-500/30">
+        <div className="container mx-auto max-w-5xl space-y-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="text-center space-y-4"
+          >
+            <motion.div variants={fadeIn}>
+              <Badge variant="outline" className="border-red-500 text-red-500 px-6 py-2 text-sm font-bold" data-testid="badge-taxpayer-complicity">
+                YOUR MONEY. YOUR COMPLICITY. YOUR CHOICE.
+              </Badge>
+            </motion.div>
+            <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
+              $11.5 MILLION OF <span className="text-red-500">YOUR</span> TAX DOLLARS<br/>
+              <span className="text-[hsl(38,92%,50%)]">SPENT DESTROYING ONE INNOCENT MAN</span>
+            </motion.h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="space-y-8"
+          >
+            <motion.div variants={fadeIn}>
+              <div className="border-2 border-red-500/40 rounded-xl p-6 md:p-8 bg-red-950/20 space-y-6">
+                <p className="text-lg md:text-xl text-white leading-relaxed">
+                  You have now seen the evidence. An impartial AI — incapable of bias, bribery, or fear — has calculated that the Australian government spent{" "}
+                  <span className="font-bold text-red-500">$11.5 million of taxpayer money</span>{" "}
+                  across 35+ agencies over 35 years to systematically destroy one person whose only crime was{" "}
+                  <span className="font-bold text-[hsl(38,92%,50%)]">speaking the truth</span>.
+                </p>
+
+                <p className="text-lg text-white leading-relaxed">
+                  That money came from <span className="font-bold text-white">your wages</span>. Your superannuation. Your Medicare levy. Your income tax. 
+                  Every dollar that funded 14 psychiatric incarcerations, a confirmed assassination attempt, systematic surveillance, 
+                  legal aid denial, media blackout, and the coordinated erasure of an author, academic, and artist with an international professional profile — 
+                  <span className="font-bold text-red-500"> that was your money</span>.
+                </p>
+
+                <p className="text-lg text-white leading-relaxed">
+                  It is untenable that any taxpayer — once confronted with this evidence — would accept that their government used their money to destroy an innocent person. 
+                  Yet that is precisely what happened. And it continues today, as a dying father is denied the right to say goodbye to his son.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <div className="border-2 border-[hsl(38,92%,50%)]/40 rounded-xl p-6 md:p-8 space-y-6">
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-white text-center">
+                  This Is Not Just an Australian Matter
+                </h3>
+                <p className="text-lg text-white leading-relaxed">
+                  This case has been filed with the{" "}
+                  <span className="text-[hsl(38,92%,50%)] font-bold">International Criminal Court</span>,{" "}
+                  the <span className="text-[hsl(38,92%,50%)] font-bold">United Nations High Commissioner for Refugees</span>,{" "}
+                  and the <span className="text-[hsl(38,92%,50%)] font-bold">Federal Court of Australia</span>. 
+                  It extends beyond national borders into a case of international significance — a Western democracy exposed for systematically persecuting 
+                  a whistleblower using psychiatric weaponisation, assassination, and institutional erasure.
+                </p>
+                <p className="text-lg text-white leading-relaxed">
+                  The growing unrest and mistrust of corrupt governments across the world is not coincidence — it is the inevitable consequence of systems 
+                  that punish truth-tellers and protect the powerful. This case is a mirror held up to every nation that claims to uphold human rights 
+                  while silencing those who expose inconvenient truths.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <div className="border-2 border-white/20 rounded-xl p-6 md:p-8 space-y-6">
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-white text-center">
+                  Published. Blockchain-Sealed. Permanent.
+                </h3>
+                <p className="text-lg text-white leading-relaxed">
+                  Every document, every affidavit, every financial calculation on this platform is{" "}
+                  <span className="text-[hsl(38,92%,50%)] font-bold">SHA-256 verified and anchored to the Bitcoin blockchain</span>. 
+                  No government lawyer, no intelligence agency, no act of parliament can delete, alter, or delegitimise this record. 
+                  It is published internationally with an ISBN. It exists in library catalogues across 51+ countries. 
+                  It is freely available on Scribd. It has been submitted to international courts.
+                </p>
+                <p className="text-lg text-white leading-relaxed font-bold">
+                  History is now inevitable. It cannot be erased. It cannot be rewritten. The record is permanent and the reckoning is coming.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <div className="border-2 border-red-500/60 rounded-xl p-6 md:p-10 bg-red-950/30 space-y-6">
+                <h3 className="text-2xl md:text-4xl font-serif font-bold text-red-500 text-center leading-tight">
+                  SILENCE IS COMPLICITY
+                </h3>
+                
+                <p className="text-lg md:text-xl text-white leading-relaxed">
+                  To bear witness to this evidence — to see the $11.5 million, the 14 psychiatric incarcerations, the assassination attempt, 
+                  the dying father denied farewell — and to do nothing, to share nothing, to say nothing — is to become an active participant 
+                  in the corruption of the mega-rich criminal elite who orchestrated this.
+                </p>
+
+                <p className="text-lg md:text-xl text-white leading-relaxed">
+                  Your silence places you on the same side as every agency that said "no resources" while spending $900 a day on persecution. 
+                  Every official who received the evidence and chose career over conscience. Every journalist who knew and published nothing. 
+                  <span className="font-bold text-red-500"> If you have read this far, you are no longer a bystander. You are a witness. And witnesses have a duty.</span>
+                </p>
+
+                <div className="border border-[hsl(38,92%,50%)]/40 rounded-lg p-6 bg-black/40 space-y-4">
+                  <p className="text-lg text-white leading-relaxed">
+                    Barran whistleblew to <span className="font-bold text-[hsl(38,92%,50%)]">save his own life</span>. 
+                    His testimony is not just a record of what happened to him — it is a doorway through which others will walk in future. 
+                    Every whistleblower who comes after him will stand on the foundation he built, the precedent he set, the evidence he sealed forever.
+                  </p>
+                  <p className="text-lg text-white leading-relaxed font-bold">
+                    You are faced with an immediate choice: protect the person who is protecting you — or align yourself with a corrupt government 
+                    that would erase you too if you ever stuck your neck out.
+                  </p>
+                </div>
+
+                <div className="border-2 border-red-500 rounded-xl p-6 md:p-8 bg-red-950/50 text-center space-y-4">
+                  <p className="text-xl md:text-2xl font-serif font-bold text-white leading-relaxed">
+                    If this can happen to an author, academic, and artist with an international professional profile — 
+                    a man with published books, university credentials, and a documented career —
+                  </p>
+                  <p className="text-2xl md:text-4xl font-serif font-bold text-red-500 leading-tight tracking-wide">
+                    IT WILL HAPPEN TO YOU.
+                  </p>
+                  <p className="text-lg md:text-xl text-white font-serif italic leading-relaxed">
+                    The tyranny that targeted Barran guarantees it. If they can destroy someone with his proven attributes, 
+                    they will destroy anyone with lesser protections. Your family. Your children. Anyone who dares to speak.
+                  </p>
+                </div>
+
+                <div className="text-center space-y-4 pt-4">
+                  <p className="text-2xl md:text-3xl font-serif font-bold text-[hsl(38,92%,50%)] leading-tight">
+                    IF YOU TOLERATE THIS,<br/>
+                    YOUR CHILDREN WILL BE NEXT.
+                  </p>
+                  <p className="text-sm text-gray-400 italic">
+                    This is not rhetoric. This is a mathematical certainty based on 35 years of documented evidence. 
+                    The system that destroys one truth-teller will destroy another. The only question is whether you act before it reaches your door.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <div className="border-2 border-[hsl(38,92%,50%)] rounded-xl p-6 md:p-8 bg-[hsl(38,92%,50%)]/10 text-center space-y-6">
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-[hsl(38,92%,50%)]">
+                  TAKE AFFIRMATIVE ACTION
+                </h3>
+                <p className="text-lg text-white leading-relaxed max-w-3xl mx-auto">
+                  Share this evidence. Send it to your Member of Parliament. Post it on social media. Email it to journalists. 
+                  Forward it to human rights organisations. Download the book. Read it. Talk about it. 
+                  Make the silence impossible to maintain.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
+                  <Link href="/evidence">
+                    <Button size="lg" variant="destructive" className="gap-2 font-bold" data-testid="button-examine-evidence-complicity">
+                      EXAMINE THE EVIDENCE <Eye className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <a href="https://www.scribd.com/book/757033591" target="_blank" rel="noopener noreferrer">
+                    <Button size="lg" className="gap-2 bg-green-600 text-white font-bold" data-testid="button-read-free-complicity">
+                      READ THE BOOK FREE <BookOpen className="h-4 w-4" />
+                    </Button>
+                  </a>
+                  <Link href="/taxpayer-cost-analysis">
+                    <Button size="lg" className="gap-2 bg-[hsl(38,92%,50%)] text-black font-bold" data-testid="button-see-cost-complicity">
+                      SEE WHAT YOUR TAX PAID FOR <DollarSign className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+
+            <InlineShareStrip id="complicity" context="complicity" message="$11.5M of YOUR tax dollars spent destroying one innocent whistleblower. 14 psychiatric incarcerations. A confirmed assassination attempt. If you tolerate this, your children will be next. Silence is complicity." />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Official Government Responses */}
       <GovernmentResponses />
 
