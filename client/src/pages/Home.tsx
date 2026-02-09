@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign } from "lucide-react";
+import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download } from "lucide-react";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -603,6 +603,42 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+
+                <motion.div
+                  variants={fadeIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="rounded-xl border-2 border-[hsl(38,92%,50%)] bg-gradient-to-br from-[hsl(222,55%,15%)] to-[hsl(222,55%,8%)] p-6 md:p-10 text-center space-y-5"
+                >
+                  <div className="flex justify-center">
+                    <FileText className="h-12 w-12 text-[hsl(38,92%,50%)]" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                    Read the Full Whistleblower Expose
+                  </h3>
+                  <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+                    "The Man Australia Tried to Erase" — a legally fortified forensic reconstruction built entirely from the government's own documents, 
+                    their own words, and their own institutional records. Second Edition, Expanded and Unabridged.
+                  </p>
+                  <p className="text-sm text-[hsl(38,92%,50%)]/80 italic">
+                    By Dr. Richard William McLean (Barran Dodger)
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf"
+                      download
+                      className="inline-flex items-center gap-3 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] font-bold text-lg px-8 py-4 rounded-md hover:opacity-90 transition-opacity"
+                      data-testid="button-download-expose-pdf"
+                    >
+                      <Download className="h-6 w-6" />
+                      Download Free PDF
+                    </a>
+                  </div>
+                  <p className="text-xs text-white/50">
+                    PDF Document — Free to download, share, and distribute
+                  </p>
+                </motion.div>
 
                 <div className="border-2 border-red-500 rounded-xl p-6 md:p-8 bg-red-950/50 text-center space-y-4">
                   <p className="text-xl md:text-2xl font-serif font-bold text-white leading-relaxed">
