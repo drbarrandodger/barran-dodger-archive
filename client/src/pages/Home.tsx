@@ -19,6 +19,7 @@ import { Badge } from "@/components/ui/badge";
 
 import portraitImg from "@assets/A5BDF951-1AE5-4EFF-9F6E-3F29C2C5CDC9_1768633103014.png";
 import artworkImg from "@assets/IMG_2914_1768893482684.jpeg";
+import richPortraitImg from "@assets/rich_mclean_ndis_portrait.jpg";
 import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_1770345931447.png";
 import { HandCoins, TrendingUp, Landmark, ShieldCheck, Clock, Building2 } from "lucide-react";
 
@@ -559,10 +560,58 @@ export default function Home() {
                   </p>
                 </div>
 
+                <div className="border border-[hsl(38,92%,50%)]/50 rounded-xl p-6 md:p-8 bg-[hsl(222,55%,12%)]/80 space-y-5">
+                  <h4 className="text-xl md:text-2xl font-serif font-bold text-[hsl(38,92%,50%)] text-center">
+                    The Man They Tried to Erase
+                  </h4>
+                  <div className="flex justify-center">
+                    <div className="relative">
+                      <img
+                        src={richPortraitImg}
+                        alt="Dr Richard 'Rich' McLean - NDIS therapeutic arts-life-coach and published artist before government targeting"
+                        className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-2 border-[hsl(38,92%,50%)]/60"
+                        data-testid="img-rich-mclean-portrait"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-base md:text-lg text-white/90 leading-relaxed">
+                    Before the targeting began, Dr Richard "Rich" McLean was a respected professional helping vulnerable Australians. He was a registered{" "}
+                    <span className="font-bold text-[hsl(38,92%,50%)]">NDIS therapeutic arts-life-coach</span> in Melbourne, working with marginalised people with mental health concerns and trauma.
+                    He held a <span className="font-bold text-white">Bachelor of Fine Art (Honours)</span>, a{" "}
+                    <span className="font-bold text-white">Masters of Education</span>, and passed his{" "}
+                    <span className="font-bold text-white">PhD (merit-based scholarship)</span>. He was a{" "}
+                    <span className="font-bold text-white">human rights awarded autobiographer</span>, a published artist who illustrated for{" "}
+                    <span className="font-bold text-white">The Age</span> and{" "}
+                    <span className="font-bold text-white">The Herald Sun</span>, a public speaker, musician, and academic with over 25 years of creative practice.
+                  </p>
+                  <p className="text-base md:text-lg text-white/90 leading-relaxed">
+                    His published art book <span className="italic text-white">"A Certain Beauty in Un-Resolution"</span> received praise from RMIT University researchers and professional copywriters alike.
+                    He was described as delivering therapy that was{" "}
+                    <span className="italic text-white/80">"empathic, intuitive and unique"</span> — a "professional friend" who aimed for measurable outcomes in 6-8 sessions.
+                    He was fully insured, held Working With Children and Police Checks, and was LGBTIA+ friendly.
+                  </p>
+                  <p className="text-base md:text-lg text-white leading-relaxed font-semibold">
+                    This is who the Australian government spent $11.5 million to destroy. Not a criminal. Not a threat to national security. 
+                    A compassionate artist and NDIS provider who helped the most vulnerable people in society — and dared to tell the truth.
+                  </p>
+                  <div className="text-center pt-2">
+                    <a
+                      href="https://barrandodger.wixsite.com/richmclean"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[hsl(38,92%,50%)] hover:underline font-medium text-sm"
+                      data-testid="link-rich-mclean-original-site"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      View Rich McLean's original professional website (before targeting)
+                    </a>
+                  </div>
+                </div>
+
                 <div className="border-2 border-red-500 rounded-xl p-6 md:p-8 bg-red-950/50 text-center space-y-4">
                   <p className="text-xl md:text-2xl font-serif font-bold text-white leading-relaxed">
-                    If this can happen to an author, academic, and artist with an international professional profile — 
-                    a man with published books, university credentials, and a documented career —
+                    If this can happen to an author, academic, NDIS provider, and artist with an international professional profile — 
+                    a man with published books, university credentials, and a documented career helping Australia's most vulnerable —
                   </p>
                   <p className="text-2xl md:text-4xl font-serif font-bold text-red-500 leading-tight tracking-wide">
                     IT WILL HAPPEN TO YOU.
