@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { 
   FileText, 
   Building2, 
@@ -38,7 +39,7 @@ const caseStudies = [
       "CP21/02752 - Micron21 complaint dismissal",
       "Multiple FOI refusals under various reference numbers"
     ],
-    legalImplications: "Potential breach of Privacy Act duties, maladministration under PID Act"
+    legalImplications: "Potential breach of Privacy Act duties, maladministration under PID Act. See legal status for current proceedings."
   },
   {
     id: "mercy-hospital",
@@ -70,7 +71,7 @@ const caseStudies = [
     icon: Database,
     severity: "critical",
     documents: 8,
-    summary: "Web hosting company deliberately destroyed website, email, and business records while client was hospitalized after suicide attempt.",
+    summary: "Micron21 deliberately destroyed website, email, and business records while client was hospitalized after suicide attempt.",
     timeline: [
       { date: "February 2021", event: "Hospitalization following suicide attempt" },
       { date: "March 2021", event: "Micron21 accuses client of being 'conspiratorial'" },
@@ -133,7 +134,7 @@ export default function CaseStudies() {
             </Badge>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Case Studies</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Detailed examination of the most significant corruption cases documented in the evidence archive.
+              Detailed examination of the most significant corruption cases documented in the <CrossLink to="/evidence">evidence archive</CrossLink>. Each case is backed by <CrossLink to="/blockchain">blockchain-verified</CrossLink> documents and mapped on the <CrossLink to="/timeline">35-year timeline</CrossLink>.
             </p>
           </motion.div>
 
@@ -169,7 +170,12 @@ export default function CaseStudies() {
                   </CardHeader>
                   
                   <CardContent className="p-6">
-                    <p className="text-foreground leading-relaxed mb-6">{study.summary}</p>
+                    <p className="text-foreground leading-relaxed mb-6">
+                      {study.id === "oaic-coverup" && (<>{study.summary} This case is central to the <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>PID Act analysis</DocumentPopup> and the <CrossLink to="/taxpayer-cost-analysis">$11.5M+ taxpayer cost breakdown</CrossLink>.</>)}
+                      {study.id === "mercy-hospital" && (<>{study.summary} This incident is one of <CrossLink to="/case-studies">14 psychiatric hospitalisations</CrossLink> documented in the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup>.</>)}
+                      {study.id === "micron21-destruction" && (<><DocumentPopup {...KEY_DOCUMENTS.micron21}>Micron21</DocumentPopup> deliberately destroyed website, email, and business records while client was hospitalized after suicide attempt. The full <CrossLink to="/evidence">evidence archive</CrossLink> documents the digital erasure campaign.</>)}
+                      {study.id === "ombudsman-restriction" && (<>{study.summary} The <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment affidavit</DocumentPopup> documents how oversight bodies were weaponised. Read the full <CrossLink to="/manifesto">manifesto</CrossLink> for context.</>)}
+                    </p>
                     
                     <div className="grid gap-6 md:grid-cols-2 mb-6">
                       <div>
@@ -205,7 +211,7 @@ export default function CaseStudies() {
                       <h4 className="font-bold text-primary mb-2 flex items-center gap-2">
                         <Scale className="h-4 w-4" /> Legal Implications
                       </h4>
-                      <p className="text-sm text-foreground">{study.legalImplications}</p>
+                      <p className="text-sm text-foreground">{study.legalImplications} Track current proceedings on the <CrossLink to="/legal-status">legal status tracker</CrossLink>.</p>
                     </div>
                     
                     <div className="mt-6 flex justify-end">
@@ -227,6 +233,11 @@ export default function CaseStudies() {
             transition={{ delay: 0.5 }}
             className="mt-16 pt-8 border-t border-border"
           >
+            <div className="mb-8 bg-muted/30 rounded-lg p-6 text-center">
+              <p className="text-muted-foreground">
+                These case studies represent a fraction of the <CrossLink to="/evidence">240+ verified documents</CrossLink> in the archive. The total cost of this persecution exceeds <CrossLink to="/taxpayer-cost-analysis">$11.5 million</CrossLink> in taxpayer funds. Read the <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>state-sanctioned targeting record</DocumentPopup> or the <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Crimes Against Humanity analysis</DocumentPopup> for the full legal framework.
+              </p>
+            </div>
             <SocialShare 
               title="Case Studies - Barran Dodger Evidence Archive"
               description="Detailed analysis of OAIC cover-ups, medical malpractice, and whistleblower persecution in Australia."

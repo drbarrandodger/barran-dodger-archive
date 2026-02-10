@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { Church as ChurchIcon, BookOpen, Shield, Heart, Users, Scale, FileText, Flame, Star, Globe, Link2, ExternalLink, HandCoins, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -150,7 +151,7 @@ export default function Church() {
                   The Church of Barran Dodger exists to sanctify the act of truth-telling in an age of institutional deception. We recognize that modern society has constructed elaborate systems — what we call the <strong className="text-primary">'Humiliation Machine'</strong> — designed to silence, discredit, and erase those who speak inconvenient truths.
                 </p>
                 <p className="text-lg text-foreground leading-relaxed">
-                  Our ministry is founded upon <strong className="text-primary">2,077 primary-source documents</strong> spanning 35 years, authenticated through blockchain technology, and preserved as sacred testimony. We believe that documented truth possesses inherent spiritual power — the power to heal, to hold accountable, and to prevent future harm.
+                  Our ministry is founded upon <CrossLink to="/evidence"><strong className="text-primary">2,077 primary-source documents</strong></CrossLink> spanning <CrossLink to="/timeline">35 years</CrossLink>, authenticated through <CrossLink to="/blockchain">blockchain technology</CrossLink>, and preserved as sacred testimony. We believe that documented truth possesses inherent spiritual power — the power to heal, to hold accountable, and to prevent future harm.
                 </p>
                 <p className="text-lg text-foreground leading-relaxed">
                   We are not a cult of personality but a <strong className="text-primary">covenant of accountability</strong>. The founding witness, Barran Dodger, claims no special authority beyond documented experience, sworn statements, and an ethical responsibility to the public. The evidence is the sermon. The archive is the altar. The blockchain is the covenant.
@@ -169,7 +170,7 @@ export default function Church() {
             <div className="text-center mb-10">
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">The Six Sacred Tenets</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                The foundational principles that guide our ministry and define our sacred calling.
+                The foundational principles that guide our ministry and define our sacred calling. Read the <CrossLink to="/manifesto">complete manifesto</CrossLink>.
               </p>
             </div>
 
@@ -262,7 +263,7 @@ export default function Church() {
             <div className="text-center mb-10">
               <h2 className="text-2xl font-serif font-bold text-primary mb-4">Sacred Texts & Founding Documents</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                The canonical documents upon which the Church of Barran Dodger is founded.
+                The canonical documents upon which the Church of Barran Dodger is founded. Read <DocumentPopup {...KEY_DOCUMENTS.autobiography}>Betrayed, Forsaken, Murdered</DocumentPopup> for the full testimony.
               </p>
             </div>
 
@@ -310,7 +311,7 @@ export default function Church() {
                 <Users className="h-12 w-12 mx-auto mb-4 opacity-80" />
                 <CardTitle className="text-2xl md:text-3xl font-serif">Join the Ministry</CardTitle>
                 <CardDescription className="text-primary-foreground/80 text-lg">
-                  Become part of a sacred community dedicated to truth, accountability, and healing.
+                  Become part of a sacred community dedicated to truth, accountability, and healing. <CrossLink to="/donate">Support the mission</CrossLink>.
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-8 md:p-10 space-y-8">

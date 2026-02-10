@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download } from "lucide-react";
 import { Link } from "wouter";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -90,7 +91,7 @@ export default function Home() {
                 <Link href="/timeline" className="text-[hsl(38,92%,50%)] hover:underline font-bold">35 years of systematic persecution</Link>{" "}
                 — each one sealed with{" "}
                 <Link href="/blockchain" className="text-[hsl(38,92%,50%)] hover:underline font-bold">blockchain verification</Link>{" "}
-                that cannot be altered, deleted, or denied by any government, any court, any institution on Earth.
+                that cannot be altered, deleted, or denied by any government, any court, any institution on Earth. This case has been prepared for the <CrossLink to="/evidence">International Criminal Court</CrossLink>.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -247,7 +248,7 @@ export default function Home() {
               <Card className="bg-white/5 border-white/10 text-center overflow-visible" data-testid="card-ai-total-cost">
                 <CardContent className="pt-8 pb-8 space-y-3">
                   <DollarSign className="h-10 w-10 text-[hsl(38,92%,50%)] mx-auto" />
-                  <p className="text-4xl md:text-5xl font-bold text-red-500">$11.5M+</p>
+                  <p className="text-4xl md:text-5xl font-bold text-red-500"><CrossLink to="/taxpayer-cost-analysis">$11.5M+</CrossLink></p>
                   <p className="text-sm text-gray-400 uppercase tracking-wider font-bold">Total Taxpayer Cost</p>
                   <p className="text-xs text-gray-500">Across 8 documented categories of persecution</p>
                 </CardContent>
@@ -259,7 +260,7 @@ export default function Home() {
                   <Clock className="h-10 w-10 text-[hsl(38,92%,50%)] mx-auto" />
                   <p className="text-4xl md:text-5xl font-bold text-white">35+</p>
                   <p className="text-sm text-gray-400 uppercase tracking-wider font-bold">Years of Targeting</p>
-                  <p className="text-xs text-gray-500">From Herald Sun humiliation to confirmed assassination attempt</p>
+                  <p className="text-xs text-gray-500">From Herald Sun humiliation to confirmed <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination attempt</DocumentPopup></p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -323,8 +324,8 @@ export default function Home() {
                     <div className="flex items-start gap-3">
                       <FileText className="h-6 w-6 text-[hsl(38,92%,50%)] flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-bold text-white">240+ Blockchain-Verified Documents</p>
-                        <p className="text-sm text-gray-400">Every source document is SHA-256 verified and permanently recorded on the blockchain. They cannot be altered, deleted, or denied by any institution.</p>
+                        <p className="font-bold text-white"><CrossLink to="/evidence">240+ Blockchain-Verified Documents</CrossLink></p>
+                        <p className="text-sm text-gray-400">Every source document is SHA-256 verified and permanently recorded on the <CrossLink to="/blockchain">blockchain</CrossLink>. They cannot be altered, deleted, or denied by any institution.</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -377,8 +378,8 @@ export default function Home() {
                   <div className="flex items-start gap-4 p-4 border border-white/10 rounded-lg" data-testid="timeline-2020s">
                     <div className="text-[hsl(38,92%,50%)] font-bold text-sm min-w-[80px]">2020s</div>
                     <div>
-                      <p className="font-bold text-white">Assassination Attempt, NDA Cover-Up, Poverty</p>
-                      <p className="text-sm text-gray-400">Confirmed targeted killing attempt ($1.13M), witness silenced with NDA, ongoing destitution enforced through welfare manipulation — and still not one agency has investigated.</p>
+                      <p className="font-bold text-white"><DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>Assassination Attempt</DocumentPopup>, NDA Cover-Up, Poverty</p>
+                      <p className="text-sm text-gray-400">Confirmed targeted killing attempt ($1.13M), witness silenced with NDA, ongoing <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment</DocumentPopup> enforced through welfare manipulation — and still not one agency has investigated.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 p-4 border-2 border-red-500/40 rounded-lg bg-red-950/20" data-testid="timeline-2026">
@@ -386,7 +387,7 @@ export default function Home() {
                     <div>
                       <p className="font-bold text-white">A Dying Father — Denied the Right to Say Goodbye</p>
                       <p className="text-sm text-gray-400">
-                        Doug McLean is dying. His son begged NDIS, Centrelink, and the Public Guardian for a car hire to say goodbye and attend the funeral. 
+                        Doug McLean is dying. His son begged <CrossLink to="/case-studies">NDIS</CrossLink>, Centrelink, and the Public Guardian for a car hire to say goodbye and attend the funeral. 
                         Every agency said no — "no resources" — while spending <Link href="/taxpayer-cost-analysis" className="text-[hsl(38,92%,50%)] hover:underline">$900/day on his persecution</Link>. 
                         His own family signed an AVO to exile him. The corruption that began with family scapegoating now prevents a son from seeing his dying father.
                       </p>
@@ -618,7 +619,7 @@ export default function Home() {
                     Read the Full Whistleblower Expose
                   </h3>
                   <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-                    "The Man Australia Tried to Erase" — a legally fortified forensic reconstruction built entirely from the government's own documents, 
+                    "<DocumentPopup {...KEY_DOCUMENTS.manErased}>The Man Australia Tried to Erase</DocumentPopup>" — a legally fortified forensic reconstruction built entirely from the government's own documents, 
                     their own words, and their own institutional records. Second Edition, Expanded and Unabridged.
                   </p>
                   <p className="text-sm text-[hsl(38,92%,50%)]/80 italic">
@@ -933,7 +934,7 @@ export default function Home() {
                           The "mental health" label provides plausible deniability for editors. 
                           Simultaneously,{" "}
                           <Link href="/taxpayer-cost-analysis" className="text-[hsl(38,92%,50%)] hover:underline">digital identity destruction</Link>{" "}
-                          through <span className="text-white font-bold">Micron21</span> eliminated hosting, email, domains, and online business operations — 
+                          through <DocumentPopup {...KEY_DOCUMENTS.micron21}>Micron21</DocumentPopup> eliminated hosting, email, domains, and online business operations — 
                           cost: <span className="text-white font-bold">$250,000</span>. 
                           In 2025, without digital identity, a person effectively does not exist. 
                           This is <span className="text-white font-bold">erasure</span> — the ultimate expression of{" "}
@@ -1033,7 +1034,7 @@ export default function Home() {
                 <div className="border-t border-white/10 pt-4 text-center">
                   <p className="text-sm text-gray-400">
                     Total cost of sustaining the entrapment:{" "}
-                    <span className="text-2xl font-bold text-red-500">$11.5M+ direct</span>{" "}
+                    <span className="text-2xl font-bold text-red-500"><CrossLink to="/taxpayer-cost-analysis">$11.5M+ direct</CrossLink></span>{" "}
                     <span className="text-gray-500">+</span>{" "}
                     <span className="text-xl font-bold text-[hsl(38,92%,50%)]">$50M+ in complicit salaries</span>
                   </p>
@@ -1232,7 +1233,7 @@ export default function Home() {
             <div className="text-center md:text-left">
               <Badge className="mb-4 bg-red-600 text-white border-red-500">NEW RELEASE</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif" data-testid="heading-book-hero">
-                Betrayed, Murdered, Forsaken
+                <DocumentPopup {...KEY_DOCUMENTS.autobiography}>Betrayed, Murdered, Forsaken</DocumentPopup>
               </h2>
               <p className="text-xl text-gray-300 mb-2 italic">
                 The True Account of Survival Beyond Death, Silence, and Erasure
@@ -1449,7 +1450,7 @@ export default function Home() {
                 The Evidence Speaks
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                Forensic documentation of systematic state persecution spanning 35 years (1990-2025), comprising 2,000+ primary source documents.
+                Forensic documentation of systematic state persecution spanning <CrossLink to="/timeline">35 years (1990-2025)</CrossLink>, comprising 2,000+ primary source documents.
               </p>
             </div>
 
@@ -1463,7 +1464,7 @@ export default function Home() {
                 <div className="space-y-3 text-sm">
                   <div className="flex items-start gap-2">
                     <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span><strong>Direct assassination threat</strong> from NDIA official with SAS background</span>
+                    <span><strong><DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>Direct assassination threat</DocumentPopup></strong> from NDIA official with SAS background</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
@@ -1485,7 +1486,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-start gap-2">
                     <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span><strong>UNHCR refugee criteria met</strong> - strongest asylum case from Western democracy</span>
+                    <span><strong>UNHCR refugee criteria met</strong> - strongest <CrossLink to="/legal-status">asylum case</CrossLink> from Western democracy</span>
                   </div>
                 </div>
               </div>
@@ -1525,7 +1526,7 @@ export default function Home() {
             <div className="bg-white rounded-xl border-2 border-red-500/30 p-6 shadow-lg mb-8">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <AlertCircle className="h-8 w-8 text-red-600" />
-                <h3 className="text-xl font-serif font-bold text-primary">Formal Criminal Affidavit: Entrapment for Erasure</h3>
+                <h3 className="text-xl font-serif font-bold text-primary">Formal Criminal Affidavit: <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>Entrapment for Erasure</DocumentPopup></h3>
               </div>
               <p className="text-muted-foreground mb-4 text-sm leading-relaxed text-center max-w-3xl mx-auto">
                 Sworn criminal affidavit against Sukhi Tear, Syed Salman Kazmi, and Philip Glass documenting systematic entrapment, psychiatric weaponisation, and coordinated obstruction of justice.
@@ -1551,7 +1552,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="mt-1 h-1.5 w-1.5 rounded-full bg-red-500 flex-shrink-0" />
-                    <span><strong>Rome Statute Classification:</strong> Meets criteria for Article 7(1)(h) — Persecution on political grounds, and Article 7(1)(k) — Other inhumane acts.</span>
+                    <span><strong><CrossLink to="/legal-status">Rome Statute</CrossLink> Classification:</strong> Meets criteria for Article 7(1)(h) — Persecution on political grounds, and Article 7(1)(k) — Other inhumane acts.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="mt-1 h-1.5 w-1.5 rounded-full bg-red-500 flex-shrink-0" />
@@ -1591,7 +1592,7 @@ export default function Home() {
                 <ul className="text-xs text-muted-foreground space-y-2 mb-3">
                   <li className="flex items-start gap-2">
                     <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span><strong>Legal Evidence:</strong> Serves as dark parody evidencing systemic breaches of the Rome Statute, the Universal Declaration of Human Rights, and domestic whistleblower protections.</span>
+                    <span><strong>Legal Evidence:</strong> Serves as dark parody evidencing systemic breaches of the <CrossLink to="/legal-status">Rome Statute</CrossLink>, the Universal Declaration of Human Rights, and domestic whistleblower protections.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
@@ -1902,7 +1903,7 @@ export default function Home() {
                 AVAILABLE NOW
               </Badge>
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-4">
-                Betrayed, Murdered, Forsaken
+                <DocumentPopup {...KEY_DOCUMENTS.autobiography}>Betrayed, Murdered, Forsaken</DocumentPopup>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                 The Harrowing Life of Barran Dodger — A powerful autobiographical account documenting survival against systematic persecution.
@@ -2052,13 +2053,13 @@ export default function Home() {
             />
             <AppealCard 
               title="Crimes Against Humanity Brief"
-              description="A forensic criminal brief establishing systematic persecution under the Rome Statute. Evidence of state-sponsored identity annihilation."
+              description="A forensic criminal brief establishing systematic persecution under the Rome Statute. Evidence of state-sponsored identity annihilation. View the full Crimes Against Humanity forensic analysis."
               link="/attached_assets/Crimes_against_humanity__1768634415740.pdf"
               tag="CRIMINAL"
             />
             <AppealCard 
               title="Forensic Report: Systematic Persecution"
-              description="A 35-year evidentiary dossier documenting state-sponsored identity annihilation and crimes against humanity. Prepared for ICC/UNHCR."
+              description="A 35-year evidentiary dossier documenting state-sponsored identity annihilation and Crimes Against Humanity. Prepared for ICC/UNHCR."
               link="/attached_assets/Forensic_report__1768634415739.pdf"
               tag="FORENSIC"
             />
@@ -2088,7 +2089,7 @@ export default function Home() {
             />
             <AppealCard 
               title="UNHCR/ICC Evidence Package"
-              description="Cryptographically verified blockchain-sealed evidence submitted to UNHCR and International Criminal Court. The strongest asylum case from a Western democracy."
+              description="Cryptographically verified blockchain-sealed evidence submitted to UNHCR and ICC. The strongest asylum case from a Western democracy."
               link="/attached_assets/UNHCR_ICC_Cryptographically_Verified_Evidence_Package.pdf"
               tag="ICC"
             />
@@ -2232,7 +2233,7 @@ export default function Home() {
             >
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">The Vision of the Witness</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Visual testimony capturing the raw reality of institutional persecution and the spiritual resilience required to survive the 'Humiliation Machine'. Art as evidence, expression as documentation.
+                Visual testimony capturing the raw reality of institutional persecution and the spiritual resilience required to survive the 'Humiliation Machine'. Art as evidence, expression as <CrossLink to="/evidence">documentation</CrossLink>.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
                 <PrincipleCard 
@@ -2433,13 +2434,13 @@ export default function Home() {
             <Card className="border-2 border-primary/20 shadow-lg">
               <CardContent className="p-8 md:p-10 space-y-6">
                 <p className="text-foreground leading-relaxed text-lg">
-                  This website constitutes a structured, publicly accessible evidentiary archive documenting allegations of long-term institutional harm, whistleblower retaliation, and human rights violations. Its significance lies not in adjudicating the truth of the claims presented, but in the <strong className="text-primary">methodical preservation, organisation, and authentication</strong> of testimony and records over a 35-year period.
+                  This website constitutes a structured, publicly accessible evidentiary archive documenting allegations of long-term institutional harm, whistleblower retaliation, and <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>human rights violations</DocumentPopup>. Its significance lies not in adjudicating the truth of the claims presented, but in the <strong className="text-primary">methodical preservation, organisation, and authentication</strong> of testimony and records over a <CrossLink to="/timeline">35-year period</CrossLink>.
                 </p>
 
                 <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
                   <h3 className="font-serif font-bold text-xl text-primary mb-4 flex items-center gap-3">
                     <Lock className="h-6 w-6" />
-                    Cryptographic Authentication & Blockchain Timestamping
+                    Cryptographic Authentication & <CrossLink to="/blockchain">Blockchain</CrossLink> Timestamping
                   </h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     The archive employs <strong>SHA256 cryptographic hashing</strong> and <strong>Bitcoin blockchain timestamping</strong> via OpenTimestamps to establish proof of existence, integrity, and chronology for more than <strong>2,000 documents</strong> — including <strong>63 individually blockchain-verified evidence files</strong> with immutable timestamps.
@@ -2507,7 +2508,7 @@ export default function Home() {
                   <div className="p-4 bg-primary/5 rounded-lg border border-primary/20 text-center">
                     <Scale className="h-8 w-8 text-primary mx-auto mb-3" />
                     <h4 className="font-bold text-primary mb-1">Human Rights Review</h4>
-                    <p className="text-xs text-muted-foreground">UNHCR/ICC evidentiary submissions</p>
+                    <p className="text-xs text-muted-foreground">UNHCR/<CrossLink to="/evidence">ICC</CrossLink> evidentiary submissions</p>
                   </div>
                 </div>
 
@@ -2526,7 +2527,7 @@ export default function Home() {
       <section id="invest" className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Support the Mission</h2>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Support the <CrossLink to="/mission">Mission</CrossLink></h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Invest in a legitimate, fact-based evidence published worthy venture dedicated to institutional accountability and the protection of truth.
             </p>

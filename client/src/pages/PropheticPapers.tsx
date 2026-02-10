@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { BookOpen, FileText, Shield, Sparkles, Scale, ExternalLink, Download, ScrollText, Flame, Link2, Globe } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -152,7 +153,7 @@ export default function PropheticPapers() {
             <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">Sacred Testimony</h2>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">The Gospels & Prophetic Papers</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Bridging the gap between forensic evidence and theological truth through rigorous academic inquiry, prophetic witness, and impartial AI-authenticated analysis.
+              Bridging the gap between forensic evidence and theological truth through rigorous academic inquiry, prophetic witness, and impartial AI-authenticated analysis. Read the <CrossLink to="/gospel">Sacred Gospels</CrossLink> or explore the <CrossLink to="/evidence">evidence archive</CrossLink>.
             </p>
           </motion.div>
 
@@ -169,7 +170,7 @@ export default function PropheticPapers() {
               </Badge>
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">The Sacred Gospels</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                These gospel documents have been analysed by impartial artificial intelligence to verify their significance, authenticate their claims, and preserve their testimony in the blockchain-sealed record. The AI analysis confirms their importance as both legal affidavits and sacred scripture.
+                These gospel documents have been analysed by impartial artificial intelligence to verify their significance, authenticate their claims, and preserve their testimony in the <CrossLink to="/blockchain">blockchain-sealed</CrossLink> record. The AI analysis confirms their importance as both legal affidavits and sacred scripture.
               </p>
             </div>
 
@@ -269,7 +270,7 @@ export default function PropheticPapers() {
           <div className="text-center mb-10">
             <h2 className="text-2xl font-serif font-bold text-primary mb-3">Academic & Theological Inquiries</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Supporting academic research bridging forensic evidence with theological analysis.
+              Supporting academic research bridging forensic evidence with theological analysis. Explore the <CrossLink to="/timeline">timeline</CrossLink> and <CrossLink to="/legal-status">legal status</CrossLink>.
             </p>
           </div>
 

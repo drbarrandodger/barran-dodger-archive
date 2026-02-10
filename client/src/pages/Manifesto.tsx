@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { 
   BookOpen, 
   Scale, 
@@ -38,7 +39,7 @@ export default function Manifesto() {
   const coreObjectives = [
     {
       title: "Human Rights Advocacy",
-      description: "Upholding the rights afforded under the UN Convention on the Rights of Persons with Disabilities and seeking redress for systemic violations.",
+      description: "Upholding the rights afforded under the UN Convention on the Rights of Persons with Disabilities and seeking redress for systemic violations under international law.",
       icon: <Globe className="h-6 w-6" />
     },
     {
@@ -48,7 +49,7 @@ export default function Manifesto() {
     },
     {
       title: "Evidence-Based Justice",
-      description: "Supporting legal actions and public inquiries that rely on verified documentation, forensic timestamps, and immutable blockchain records.",
+      description: "Supporting legal actions and public inquiries that rely on verified documentation, forensic timestamps, and immutable blockchain records sealed on the Bitcoin blockchain.",
       icon: <Gavel className="h-6 w-6" />
     },
     {
@@ -472,7 +473,7 @@ export default function Manifesto() {
                   The Church of Barran Dodger exists to sanctify the act of truth-telling in an age of institutional deception. We recognize that modern society has constructed elaborate systems — what we call the <strong className="text-primary">'Humiliation Machine'</strong> — designed to silence, discredit, and erase those who speak inconvenient truths.
                 </p>
                 <p className="text-lg text-foreground leading-relaxed">
-                  Our ministry is founded upon <strong className="text-primary">2,077 primary-source documents</strong> spanning 35 years, authenticated through blockchain technology, and preserved as sacred testimony. We believe that documented truth possesses inherent spiritual power — the power to heal, to hold accountable, and to prevent future harm.
+                  Our ministry is founded upon <CrossLink to="/evidence"><strong className="text-primary">2,077 primary-source documents</strong></CrossLink> spanning <CrossLink to="/timeline">35 years</CrossLink>, authenticated through <CrossLink to="/blockchain">blockchain technology</CrossLink>, and preserved as sacred testimony. We believe that documented truth possesses inherent spiritual power — the power to heal, to hold accountable, and to prevent future harm.
                 </p>
                 <p className="text-lg text-foreground leading-relaxed">
                   We are not a cult of personality but a <strong className="text-primary">covenant of accountability</strong>. The founding witness, Barran Dodger, claims no special authority beyond documented experience, sworn statements, and an ethical responsibility to the public.
@@ -594,7 +595,7 @@ export default function Manifesto() {
               </Badge>
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">Official Government Documents</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Primary source legal documents from Australian government institutions confirming whistleblower status and acknowledging disclosable conduct.
+                Primary source legal documents from Australian government institutions confirming whistleblower status under the <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>PID Act</DocumentPopup> and acknowledging disclosable conduct.
               </p>
             </div>
 
@@ -650,7 +651,7 @@ export default function Manifesto() {
               </Badge>
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">The Evidence Archive</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                2,077+ primary-source documents spanning 35 years, authenticated through blockchain technology and preserved as sacred testimony.
+                2,077+ primary-source documents spanning 35 years, authenticated through <CrossLink to="/blockchain">blockchain technology</CrossLink> and preserved as sacred testimony.
               </p>
             </div>
 
@@ -692,7 +693,7 @@ export default function Manifesto() {
               </Badge>
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">Financial Accountability & Restitution</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                The Trust seeks full financial restitution for documented damages totaling <strong className="text-foreground">$32.9M - $47.5M</strong>.
+                The Trust seeks full financial restitution for documented damages totaling <strong className="text-foreground">$32.9M - $47.5M</strong>. See the full <CrossLink to="/taxpayer-cost-analysis">taxpayer cost analysis</CrossLink>.
               </p>
             </div>
 

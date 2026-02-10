@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { Search, ExternalLink, Gavel, Book, Landmark, Scale } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -39,7 +40,7 @@ export default function LegalResearch() {
           >
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Legal Research & Transparency</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Empowering the public with direct access to Australasian legal databases, legislation, and case law to support accountability and justice.
+              Empowering the public with direct access to Australasian legal databases, legislation, and case law to support accountability and justice. Explore our <CrossLink to="/evidence">evidence archive</CrossLink> or review <CrossLink to="/legal-status">legal status findings</CrossLink>.
             </p>
           </motion.div>
 
@@ -52,7 +53,7 @@ export default function LegalResearch() {
                   <CardTitle className="font-serif text-2xl">AustLII Database Search</CardTitle>
                 </div>
                 <CardDescription>
-                  Search over 1.5 million cases, legislation, and treaties via the Australasian Legal Information Institute.
+                  Search over 1.5 million cases, legislation, and treaties via the Australasian Legal Information Institute. Key whistleblower protections include the <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>PID Act framework</DocumentPopup>.
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-8">

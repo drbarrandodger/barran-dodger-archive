@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { Link } from "wouter";
 import { 
   Clock, AlertTriangle, FileText, Shield, Heart, 
@@ -52,14 +53,14 @@ const timelineEvents: TimelineEvent[] = [
   {
     year: "2015",
     title: "NDIS Entrapment Begins",
-    description: "National Disability Insurance Scheme used as mechanism for financial control and coercion.",
+    description: "National Disability Insurance Scheme used as mechanism for financial control and coercion. Documented as systematic entrapment.",
     type: "persecution",
     details: ["Fund obstruction despite eligibility", "Conditional support tied to jurisdictional coercion", "Welfare weaponization initiated"]
   },
   {
     year: "2018",
     title: "Bill Shorten Involvement Documented",
-    description: "Evidence of political coordination involving then-NDIS Minister Bill Shorten.",
+    description: "Evidence of political coordination involving then-NDIS Minister Bill Shorten. Full manifesto details coordination.",
     type: "government",
     details: ["Political interference in NDIS case", "Coordination with state agencies", "Protection of perpetrators"]
   },
@@ -103,7 +104,7 @@ const timelineEvents: TimelineEvent[] = [
     details: [
       "Threat documented and timestamped",
       "Government official as perpetrator",
-      "Rome Statute Article 7 threshold met"
+      "Rome Statute Article 7 threshold met — Crimes Against Humanity"
     ]
   },
   {
@@ -147,7 +148,7 @@ const timelineEvents: TimelineEvent[] = [
   {
     year: "2025",
     title: "ICC & UNHCR Submissions Filed",
-    description: "International Criminal Court and UN Human Rights Council submissions formally filed.",
+    description: "International Criminal Court and UN Human Rights Council submissions formally filed. Evidence blockchain-verified.",
     type: "legal",
     details: [
       "Rome Statute violations documented",
@@ -225,7 +226,7 @@ export default function Timeline() {
                 Persecution Timeline
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Every major event documented with <Link href="/blockchain" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">blockchain-verified evidence</Link>. Explore the complete <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Evidence Archive</Link> or read the <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Prophetic Essay</Link> on divine purpose through persecution.
+                Every major event documented with <CrossLink to="/blockchain">blockchain-verified evidence</CrossLink>. <CrossLink to="/taxpayer-cost-analysis">$11.5M+ in taxpayer costs</CrossLink> exposed across <CrossLink to="/evidence">240+ documents</CrossLink>. Read the <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Prophetic Essay</Link> on divine purpose through persecution.
               </p>
             </div>
 
@@ -270,8 +271,26 @@ export default function Timeline() {
                               </Link>
                             )}
                           </div>
-                          <h3 className="font-semibold text-foreground mb-1">{event.title}</h3>
-                          <p className="text-sm text-muted-foreground mb-3">{event.description}</p>
+                          <h3 className="font-semibold text-foreground mb-1">
+                            {event.title.includes("Tony Ridley") ? (
+                              <><CrossLink to="/evidence">Tony Ridley</CrossLink> Death Threat</>
+                            ) : event.title.includes("Bill Shorten") ? (
+                              <><CrossLink to="/manifesto">Bill Shorten</CrossLink> Involvement Documented</>
+                            ) : event.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mb-3">
+                            {event.title.includes("NDIS Entrapment") ? (
+                              <>National Disability Insurance Scheme used as mechanism for financial control and coercion. Documented as systematic <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment</DocumentPopup>.</>
+                            ) : event.title.includes("ICC & UNHCR") ? (
+                              <>International Criminal Court and UN Human Rights Council submissions formally filed. Evidence <CrossLink to="/blockchain">blockchain</CrossLink>-verified. <CrossLink to="/legal-status">Crimes Against Humanity</CrossLink> analysis completed.</>
+                            ) : event.title.includes("Tony Ridley") ? (
+                              <>NDIA Manager <CrossLink to="/evidence">Tony Ridley</CrossLink> (Ex-SAS) issues <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination</DocumentPopup> threat: 'You will be sacrificed.'</>
+                            ) : event.title.includes("Blockchain Archive") ? (
+                              <><CrossLink to="/evidence">240+ evidence documents</CrossLink> <CrossLink to="/blockchain">blockchain</CrossLink>-verified and permanently timestamped.</>
+                            ) : event.title.includes("Bill Shorten") ? (
+                              <>Evidence of political coordination involving then-NDIS Minister <CrossLink to="/manifesto">Bill Shorten</CrossLink>.</>
+                            ) : event.description}
+                          </p>
                           {event.details && (
                             <ul className="space-y-1">
                               {event.details.map((detail, i) => (

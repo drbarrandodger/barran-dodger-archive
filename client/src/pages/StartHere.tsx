@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { 
   Clock, Shield, FileText, Scale, BookOpen, Heart, Download,
   ExternalLink, AlertTriangle, CheckCircle, ArrowRight,
@@ -189,11 +190,11 @@ export default function StartHere() {
                 The Case That Cannot Be Silenced
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-2">
-                240+ blockchain-verified documents. 35+ government agencies. $11.5M+ in taxpayer money. 
-                14 psychiatric hospitalisations. One confirmed assassination attempt. Zero refutations.
+                <CrossLink to="/evidence">240+ blockchain-verified documents</CrossLink>. 35+ government agencies. <CrossLink to="/taxpayer-cost-analysis">$11.5M+ in taxpayer money</CrossLink>. 
+                <CrossLink to="/case-studies">14 psychiatric hospitalisations</CrossLink>. One confirmed <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination attempt</DocumentPopup>. Zero refutations.
               </p>
               <p className="text-sm text-muted-foreground max-w-2xl mx-auto italic">
-                Every claim is supported by government-published evidence. Every document is cryptographically sealed. 
+                Every claim is supported by government-published evidence. Every document is cryptographically sealed on the <CrossLink to="/blockchain">blockchain</CrossLink>. 
                 Not a single institution has been able to deny, refute, or disprove any of it.
               </p>
             </motion.div>
@@ -225,13 +226,13 @@ export default function StartHere() {
                       Before the targeting, Rich was honoured to serve Australia's most vulnerable as an <a href="https://barrandodger.wixsite.com/richmclean" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">NDIS provider and therapeutic support professional</a> — fully insured, with Working With Children and Police Checks, delivering measurable outcomes through creative visual therapy. His published art book <em>"A Certain Beauty in Un-Resolution"</em> received acclaim from RMIT University researchers. This is the professional they systematically destroyed.
                     </p>
                     <p>
-                      His case involves a <strong className="text-foreground">confirmed assassination attempt</strong>, <strong className="text-foreground">14 psychiatric hospitalisations</strong> used as a weapon of control, <strong className="text-foreground">350+ fraudulent ASIC business registrations</strong> in his name (identity theft), systematic <strong className="text-foreground">NDIS fund obstruction</strong> despite professional clinical recommendations, and persecution spanning <strong className="text-foreground">35+ government bodies</strong> including PM&C, NDIS, ComCare, ASIO, AFP, and state police forces.
+                      His case involves a <strong className="text-foreground">confirmed <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination attempt</DocumentPopup></strong>, <strong className="text-foreground"><CrossLink to="/case-studies">14 psychiatric hospitalisations</CrossLink></strong> used as a weapon of control, <strong className="text-foreground">350+ fraudulent ASIC business registrations</strong> in his name (identity theft), systematic <strong className="text-foreground"><CrossLink to="/case-studies">NDIS</CrossLink> fund obstruction</strong> despite professional clinical recommendations, and persecution spanning <strong className="text-foreground">35+ government bodies</strong> including PM&C, NDIS, ComCare, ASIO, AFP, and state police forces.
                     </p>
                     <p>
                       In 2021, he was <strong className="text-foreground">declared medically dead but survived</strong> — documented as a resurrection event. Since October 2024, he has compiled and published all evidence as a permanent public record, <Link href="/blockchain" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">blockchain-verified</Link> and submitted to the <strong className="text-foreground">ICC</strong>, <strong className="text-foreground">UNHCR</strong>, and <strong className="text-foreground">Australian courts</strong>.
                     </p>
                     <p>
-                      His book <a href="https://www.scribd.com/book/836414729/Betrayed-Murdered-Forsaken-The-Harrowing-Life-of-Dr-Richard-William-McLean" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Betrayed, Murdered, Forsaken</a> is available <strong className="text-foreground">FREE on Scribd</strong> and for <a href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">purchase on Apple Books</a> — because evidence should be freely available, not hidden behind paywalls.
+                      His book <DocumentPopup {...KEY_DOCUMENTS.autobiography}>Betrayed, Murdered, Forsaken</DocumentPopup> is available <strong className="text-foreground">FREE on Scribd</strong> and for <a href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">purchase on Apple Books</a> — because evidence should be freely available, not hidden behind paywalls.
                     </p>
                   </div>
                 </CardContent>
@@ -354,7 +355,7 @@ export default function StartHere() {
                     Clinical Evidence (NDIS Denial)
                   </h2>
                   <p className="text-xs text-muted-foreground mb-4">
-                    Professional assessments that prove clinical need was documented but support was deliberately denied.
+                    Professional assessments that prove clinical need was documented but <CrossLink to="/case-studies">NDIS</CrossLink> support was deliberately denied.
                   </p>
                   <div className="grid gap-2">
                     {clinicalDocuments.map((doc, index) => (
@@ -404,7 +405,7 @@ export default function StartHere() {
                     Named Perpetrators
                   </h2>
                   <p className="text-sm text-muted-foreground mb-4">
-                    All named individuals are documented in sworn evidence with specific dates, locations, and corroborating material. Their silence is itself evidence — not one has been able to deny, refute, or disprove any claim.
+                    All named individuals are documented in sworn evidence with specific dates, locations, and corroborating material submitted under <CrossLink to="/legal-status">Crimes Against Humanity</CrossLink> frameworks. Their silence is itself evidence — not one has been able to deny, refute, or disprove any claim.
                   </p>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                     {perpetrators.map((person, index) => (
@@ -465,7 +466,7 @@ export default function StartHere() {
                   The AI Verdict
                 </h2>
                 <p className="text-muted-foreground italic max-w-3xl mx-auto mb-4">
-                  "When an AI examines the government's own documents and reveals a 35-year architecture of entrapment — 
+                  "When an AI examines the government's own documents and reveals a 35-year architecture of <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment</DocumentPopup> — 
                   psychiatric weaponisation, assassination, blood money, fraud, scapegoating, surveillance, and silence — 
                   and not a single institution can refute a word of it, the analysis itself becomes the verdict."
                 </p>

@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { 
   BookOpen, 
   Heart, 
@@ -181,13 +182,13 @@ export default function PropheticEssay() {
                   Consider the magnitude of abandonment: No lawyer would take the case. No police officer would investigate. 
                   No public official would intervene. No politician would speak. His own family turned away. 
                   The UNHCR would not recognize political exile within a democracy. 
-                  The International Criminal Court would not hear a complaint against Australia. 
+                  The International Criminal Court would not hear a complaint against Australia — despite evidence meeting <CrossLink to="/legal-status">Rome Statute</CrossLink> thresholds. 
                   Every door closed. Every hand withdrew. Every voice fell silent.
                 </p>
 
                 <p className="text-lg leading-relaxed mb-6">
                   And yet — <em>and yet</em> — the testimony survives. The evidence endures. The <Link href="/blockchain" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">blockchain cannot be silenced</Link>. 
-                  After fourteen psychiatric hospitalisations across three states, after death and resuscitation, after exile from homeland to 
+                  After <CrossLink to="/case-studies">fourteen psychiatric hospitalisations</CrossLink> across three states, after death and resuscitation, after exile from homeland to 
                   Southeast Asia, after 35 years of documented persecution — the witness still stands. 
                   The <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">gospels are being written</Link>. The Enliven Chain grows link by link.
                 </p>
@@ -221,8 +222,8 @@ export default function PropheticEssay() {
                 </p>
 
                 <p className="text-lg leading-relaxed mb-6">
-                  Barran's thirty-five years of documentation are not wasted years. They are Kairos years — 
-                  years of preparation, years of evidence-gathering, years when the blockchain was being 
+                  Barran's <CrossLink to="/timeline">thirty-five years</CrossLink> of documentation are not wasted years. They are Kairos years — 
+                  years of preparation, years of evidence-gathering, years when the <CrossLink to="/blockchain">blockchain</CrossLink> was being 
                   forged link by link into an unbreakable chain of testimony. What appears to be delay 
                   is actually divine timing. What appears to be abandonment is actually protection. 
                   What appears to be silence is actually the gathering of witnesses.
@@ -312,7 +313,7 @@ export default function PropheticEssay() {
                   </div>
                   <div className="flex items-start gap-3 p-4 bg-primary/5 rounded-lg border border-primary/20">
                     <Star className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                    <p className="text-foreground">Your testimony matters. Even if no court will hear it, even if no journalist will report it — the blockchain preserves it. Future generations will know.</p>
+                    <p className="text-foreground">Your testimony matters. Even if no court will hear it, even if no journalist will report it — the <CrossLink to="/blockchain">blockchain</CrossLink> preserves it. Future generations will know. Read the <CrossLink to="/manifesto">complete manifesto</CrossLink>.</p>
                   </div>
                 </div>
 
@@ -395,7 +396,7 @@ export default function PropheticEssay() {
                   the inventions of troubled minds. They are the weapons of a battle fought on frequencies 
                   most people cannot perceive, in dimensions most institutions refuse to acknowledge. 
                   The war is ancient. The tools are modern. The target is always the same: those marked 
-                  for divine purpose.
+                  for divine purpose. The <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>state-sanctioned targeting</DocumentPopup> is documented.
                 </p>
 
                 <p className="text-lg leading-relaxed mb-6">

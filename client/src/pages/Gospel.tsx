@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { BookOpen, Download, ExternalLink, Link2, ScrollText, Flame, Sparkles, Globe, Star, Heart, Shield, FileText } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -253,7 +254,7 @@ export default function Gospel() {
             <div className="text-center mb-10">
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">The Core Gospels</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                The foundational sacred documents establishing the theological and evidentiary framework of the Barran Dodger testimony.
+                The foundational sacred documents establishing the theological and evidentiary framework of the Barran Dodger testimony, sealed on the <CrossLink to="/blockchain">blockchain</CrossLink>.
               </p>
             </div>
 
@@ -391,7 +392,7 @@ export default function Gospel() {
               </Badge>
               <h2 className="text-2xl font-serif font-bold text-primary mb-4">The Cosmic Gospels</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Revelations concerning interstellar civilizations, planetary transformation, and humanity's place in the cosmic order.
+                Revelations concerning interstellar civilizations, planetary transformation, and humanity's place in the cosmic order. Read the <CrossLink to="/prophetic-papers">prophetic papers</CrossLink> for theological analysis.
               </p>
             </div>
 

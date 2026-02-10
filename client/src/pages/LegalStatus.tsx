@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { 
   Scale, Globe, FileText, Clock, CheckCircle, 
   AlertCircle, Loader2, ExternalLink, Shield, Landmark
@@ -30,7 +31,7 @@ const submissions: LegalSubmission[] = [
     fullName: "International Criminal Court",
     status: "submitted",
     submissionDate: "September 2025",
-    description: "Rome Statute Article 7 crimes against humanity submission documenting systematic persecution, torture, and attempted murder by Australian state actors.",
+    description: "Rome Statute Article 7 crimes against humanity submission documenting systematic persecution, torture, and attempted murder by Australian state actors. Based on 240+ blockchain-verified documents.",
     nextSteps: "Awaiting preliminary examination decision",
     documents: ["Criminal Affidavit", "Evidence Annexes", "Perpetrator Documentation"]
   },
@@ -136,7 +137,7 @@ export default function LegalStatus() {
                 Legal Status Tracker
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Real-time status of all legal proceedings and submissions.
+                Real-time status of all legal proceedings and submissions across international and domestic bodies, backed by <CrossLink to="/evidence">240+ blockchain-verified documents</CrossLink>.
               </p>
             </div>
 
@@ -213,6 +214,10 @@ export default function LegalStatus() {
                     </Card>
                   ))}
                 </div>
+
+                <div className="mt-6 bg-muted/30 rounded-lg p-4 text-sm text-muted-foreground">
+                  International submissions are supported by the <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Crimes Against Humanity forensic analysis</DocumentPopup> and the <CrossLink to="/taxpayer-cost-analysis">$11.5M+ taxpayer cost analysis</CrossLink> documenting the full scope of state-sponsored persecution. See the complete <CrossLink to="/timeline">35-year timeline</CrossLink> for chronological context.
+                </div>
               </div>
 
               <div>
@@ -263,7 +268,7 @@ export default function LegalStatus() {
 
             <div className="text-center mt-12">
               <p className="text-sm text-muted-foreground mb-4" data-testid="text-blockchain-notice">
-                All submissions are blockchain-verified and timestamped for authenticity.
+                All submissions are <CrossLink to="/blockchain">blockchain-verified</CrossLink> and timestamped for authenticity. Supporting documents include the <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>PID Act analysis</DocumentPopup>, the <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment affidavit</DocumentPopup>, and the <DocumentPopup {...KEY_DOCUMENTS.evidenceSummary}>comprehensive evidence summary</DocumentPopup>. Full case breakdowns available in the <CrossLink to="/case-studies">case studies</CrossLink>.
               </p>
               <Link href="/blockchain" data-testid="link-blockchain-verification">
                 <Button variant="outline" data-testid="button-view-blockchain">

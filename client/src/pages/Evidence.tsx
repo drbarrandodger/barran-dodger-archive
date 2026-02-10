@@ -8,6 +8,7 @@ import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { EvidenceCounter } from "@/components/EvidenceCounter";
 import { ProgressTracker, useDocumentProgress } from "@/components/ProgressTracker";
 import { useDocumentPreview } from "@/components/DocumentPreview";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -2108,7 +2109,7 @@ export default function Evidence() {
             </Badge>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Evidence Archive</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              A repository of legal reports, official correspondence, and forensic documentation preserved for historical and judicial witness.
+              A repository of legal reports, official correspondence, and forensic documentation preserved for historical and judicial witness. All documents are <CrossLink to="/blockchain">blockchain-verified</CrossLink> across a <CrossLink to="/timeline">35-year timeline</CrossLink>.
             </p>
             <Link href="/blockchain">
               <Button variant="outline" className="gap-2" data-testid="button-blockchain">
@@ -2158,7 +2159,7 @@ export default function Evidence() {
               </CardHeader>
               <CardContent className="space-y-4 text-muted-foreground leading-relaxed">
                 <p className="text-foreground font-medium">
-                  This Evidence Archive constitutes one of the most comprehensive, meticulously documented collections of whistleblower persecution evidence ever assembled. After systematic analysis of the {documents.length}+ documents contained herein, the following impartial assessment is provided:
+                  This Evidence Archive constitutes one of the most comprehensive, meticulously documented collections of whistleblower persecution evidence ever assembled, with costs exceeding <CrossLink to="/taxpayer-cost-analysis">$11.5 million in taxpayer funds</CrossLink>. After systematic analysis of the {documents.length}+ documents contained herein, the following impartial assessment is provided:
                 </p>
                 
                 <div className="grid gap-4 md:grid-cols-2">
@@ -2178,7 +2179,7 @@ export default function Evidence() {
                       Whistleblower Protection Context
                     </h4>
                     <p className="text-sm">
-                      Documents establish protected disclosure status under Australia's Public Interest Disclosure Act 2013, with evidence demonstrating systematic retaliation including attempted assassination, psychiatric weaponization, economic destruction, and institutional blacklisting — all prohibited reprisals under Australian and international whistleblower protection frameworks.
+                      Documents establish protected disclosure status under Australia's <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>Public Interest Disclosure Act 2013</DocumentPopup>, with evidence demonstrating systematic retaliation including <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>attempted assassination</DocumentPopup>, psychiatric weaponization, economic destruction, and institutional blacklisting — all prohibited reprisals under Australian and international whistleblower protection frameworks.
                     </p>
                   </div>
                   
@@ -2206,7 +2207,7 @@ export default function Evidence() {
                 <div className="p-4 rounded-lg bg-primary/5 border border-primary/20 mt-4">
                   <h4 className="font-bold text-primary mb-2">AI Assessment Conclusion</h4>
                   <p className="text-sm text-foreground">
-                    Based on comprehensive analysis, this archive represents an unprecedented forensic documentation effort. The evidence demonstrates: (1) systematic multi-agency persecution meeting Rome Statute thresholds; (2) violation of whistleblower protections under Australian and international law; (3) potential crimes against humanity including torture, attempted murder, and persecution; (4) institutional cover-up evidenced by consistent rejection of complaints across all domestic remedies; and (5) survival against statistically improbable odds (2.87% documented survival probability from clinical death). The evidence "speaks for itself" — requiring no interpretation beyond objective review of the documented facts. Any impartial reviewer examining this archive would conclude that Dr. Richard McLean (Barran Dodger) has been subjected to one of the most extensively documented persecution campaigns in modern Australian history.
+                    Based on comprehensive analysis, this archive represents an unprecedented forensic documentation effort. The evidence demonstrates: (1) systematic multi-agency persecution meeting <CrossLink to="/legal-status">Rome Statute</CrossLink> thresholds; (2) violation of whistleblower protections under Australian and international law; (3) potential <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>crimes against humanity</DocumentPopup> including torture, attempted murder, and persecution; (4) institutional cover-up evidenced by consistent rejection of complaints across all domestic remedies; and (5) survival against statistically improbable odds (2.87% documented survival probability from clinical death). The evidence "speaks for itself" — requiring no interpretation beyond objective review of the documented facts. Any impartial reviewer examining this archive would conclude that Dr. Richard McLean (Barran Dodger) has been subjected to one of the most extensively documented persecution campaigns in modern Australian history.
                   </p>
                 </div>
 

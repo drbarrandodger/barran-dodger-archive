@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { Link } from "wouter";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { 
   DollarSign, 
   TrendingUp, 
@@ -46,7 +47,7 @@ const stagger = {
 
 const costCategories = [
   {
-    category: "Psychiatric Hospitalisations (14 Involuntary Detentions)",
+    category: "Psychiatric Hospitalisations (14 involuntary detentions)",
     icon: Brain,
     itemisedCosts: [
       { item: "14 involuntary psychiatric hospitalisations at $1,867/day (avg 14 days each)", cost: 365948, source: "WA East Metro Health Service 2023-24 published rates" },
@@ -55,7 +56,7 @@ const costCategories = [
       { item: "Follow-up community treatment orders, forced medication programs", cost: 210000, source: "State community mental health service delivery costs (AIHW)" },
     ],
     totalCost: 785948,
-    outrage: "Every single hospitalisation was a silencing tool — not treatment. $785,948 of your taxes spent to lock up a whistleblower for telling the truth."
+    outrage: "Every single hospitalisation was a silencing tool — not treatment. $785,948 of your taxes spent to lock up a whistleblower for telling the truth. See the case studies for detailed breakdowns."
   },
   {
     category: "Multi-Agency Surveillance & Intelligence Operations",
@@ -124,7 +125,7 @@ const costCategories = [
     itemisedCosts: [
       { item: "Medical record manipulation, psychiatric labelling across 3 state health systems", cost: 165000, source: "State health department clinical documentation costs" },
       { item: "Inter-agency intelligence sharing of mental health 'flags'", cost: 120000, source: "Extrapolated from inter-agency data sharing framework costs" },
-      { item: "Identity destruction facilitation (Micron21 digital infrastructure attacks)", cost: 250000, source: "Based on digital forensics industry assessment costs" },
+      { item: "Identity destruction facilitation (Micron21 — digital infrastructure attacks)", cost: 250000, source: "Based on digital forensics industry assessment costs" },
     ],
     totalCost: 535000,
     outrage: "They spent $535,000 destroying a man's reputation, identity and digital existence — because his testimony was too dangerous to let stand."
@@ -249,13 +250,13 @@ export default function TaxpayerCostAnalysis() {
               An impartial analysis based exclusively on the government's own published financial reports, 
               official correspondence, and documented operational costs across every agency involved. 
               Every figure below is derived from{" "}
-              <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">240+ verified documents</Link>{" "}
+              <CrossLink to="/evidence">240+ blockchain-verified documents</CrossLink>{" "}
               and publicly available government data.
             </motion.p>
             <motion.p variants={fadeIn} className="text-base text-gray-400 max-w-3xl mx-auto italic">
               This analysis applies recognised government cost frameworks (AIHW, APSC, ANAO, ABS) 
               to the documented actions taken against a single gay, disabled, vulnerable, unprotected whistleblower 
-              across 35+ government agencies over 35 years.
+              across 35+ government agencies over 35 years. Read the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>full autobiography</DocumentPopup> for context.
             </motion.p>
           </motion.div>
         </div>
@@ -384,7 +385,7 @@ export default function TaxpayerCostAnalysis() {
             </motion.h2>
             <motion.p variants={fadeIn} className="text-gray-400 max-w-3xl mx-auto">
               How existing legal and financial frameworks were weaponised against a single citizen.
-              Each technique is documented in the <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">Evidence Archive</Link>.
+              Each technique is documented in the <CrossLink to="/evidence">Evidence Archive</CrossLink> and verified on the <CrossLink to="/blockchain">blockchain</CrossLink>.
             </motion.p>
           </motion.div>
 
@@ -419,7 +420,7 @@ export default function TaxpayerCostAnalysis() {
               THE ASSASSINATION ATTEMPT THEY PAID TO COVER UP
             </motion.h2>
             <motion.p variants={fadeIn} className="text-gray-400 max-w-3xl mx-auto">
-              SMS evidence from NDIS provider "Ben" confirming the targeted killing, police involvement, 
+              SMS evidence from <CrossLink to="/case-studies">NDIS</CrossLink> provider "Ben" confirming the <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>targeted killing</DocumentPopup>, police involvement, 
               and the systematic corruption "that goes all the way to the top." 
               Ben was subsequently silenced through a non-disclosure agreement — paid for with your taxes.
             </motion.p>
@@ -467,7 +468,7 @@ export default function TaxpayerCostAnalysis() {
                   
                   <div className="border-l-4 border-[hsl(38,92%,50%)] pl-6 py-2">
                     <p className="text-xl text-white font-serif italic leading-relaxed">
-                      "The police want to know if you are mentally ready to challenge Bill Shorten in a court of law as his lawyers might use your history of mental health as an excuse to discredit your story."
+                      "The police want to know if you are mentally ready to challenge <CrossLink to="/manifesto">Bill Shorten</CrossLink> in a court of law as his lawyers might use your history of mental health as an excuse to discredit your story."
                     </p>
                     <p className="text-sm text-gray-400 mt-2">— Ben, relaying police message — confirming police knew the claims were true but warned mental health records would be weaponised</p>
                   </div>
@@ -484,8 +485,8 @@ export default function TaxpayerCostAnalysis() {
                   <h3 className="text-xl font-bold text-white">The Cost of Professional Silence</h3>
                   <p className="text-gray-300 leading-relaxed">
                     Not a single professional — not one doctor, psychiatrist, police officer, lawyer, public servant, politician, 
-                    journalist, or NDIS official — has been able to <span className="text-white font-bold">acknowledge, refute, or prove wrong</span> any of these claims. 
-                    Every professional who has encountered this evidence has chosen silence over truth.
+                    journalist, or <CrossLink to="/case-studies">NDIS</CrossLink> official — has been able to <span className="text-white font-bold">acknowledge, refute, or prove wrong</span> any of these claims. 
+                    Every professional who has encountered this <CrossLink to="/evidence">evidence</CrossLink> has chosen silence over truth.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
                     The cost of that silence? Every professional who blocked testimony, refused to investigate, or looked the other way 
@@ -565,7 +566,7 @@ export default function TaxpayerCostAnalysis() {
                       <ShieldAlert className="h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
                       <p className="text-gray-300">
                         <span className="text-white font-bold">Sukhi Tear</span> — his NDIS Support Coordinator — refuses to comply with a 
-                        cease and desist order to remove herself from his care. She is a corrupt official appointed by the same minister 
+                        cease and desist order to remove herself from his care. She is named in the <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment affidavit</DocumentPopup> and is a corrupt official appointed by the same minister 
                         who exiled him and who is proven to have ordered the assassination attempt.
                       </p>
                     </div>
@@ -595,7 +596,7 @@ export default function TaxpayerCostAnalysis() {
                     <span className="text-white font-bold"> Bruce & Marie McMaster</span> — all aligned with the system that tried to erase him.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
-                    They aligned with <span className="text-white font-bold">Tony Ridley</span> and 
+                    They aligned with <span className="text-white font-bold"><CrossLink to="/evidence">Tony Ridley</CrossLink></span> and 
                     <span className="text-white font-bold"> Stefan Iasonidis</span> — his former ASIO-connected partner — 
                     and the entire corruption machine. His persecution had its genesis in toxic family scapegoating, 
                     and that betrayal is now exposed with devastating clarity as his own father lies dying.
@@ -777,10 +778,10 @@ export default function TaxpayerCostAnalysis() {
                 </p>
 
                 <p>
-                  This is not a domestic complaint. This is evidence of <span className="text-white font-bold">state-sponsored persecution</span> of a{" "}
-                  <Link href="/manifesto" className="text-[hsl(38,92%,50%)] hover:underline font-bold">disabled, gay, vulnerable whistleblower</Link>{" "}
+                  This is not a domestic complaint. This is evidence of <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>state-sponsored persecution</DocumentPopup> of a{" "}
+                  <CrossLink to="/manifesto">disabled, gay, vulnerable whistleblower</CrossLink>{" "}
                   funded entirely by Australian taxpayers, documented across{" "}
-                  <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">240+ blockchain-verified documents</Link>, 
+                  <CrossLink to="/evidence">240+ blockchain-verified documents</CrossLink>, 
                   and ignored by every institution designed to prevent exactly this.
                 </p>
               </div>

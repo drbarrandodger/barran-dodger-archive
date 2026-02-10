@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { 
   Newspaper, Mail, Download, ExternalLink, FileText, 
   Camera, Video, Mic, Globe, Clock, Share2
@@ -18,7 +19,7 @@ export default function Media() {
     {
       date: "20 September 2025",
       title: "Systematic Persecution of Australian Whistleblower — Imminent Risk to Life",
-      description: "Comprehensive media pack documenting 35-year persecution, $32.9M damages, Rome Statute violations",
+      description: "Comprehensive media pack documenting 35-year persecution, $32.9M damages, Rome Statute violations. Key case documents available.",
       url: "/attached_assets/📢_Press_Release_–_Systematic_Persecution_of_Australian_Whistl_1769156961382.pdf"
     },
     {
@@ -70,7 +71,7 @@ export default function Media() {
                 Media Resources
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Press releases, media contacts, and resources for journalists and researchers.
+                Press releases, media contacts, and resources for journalists and researchers. Review the <CrossLink to="/evidence">evidence archive</CrossLink> or read the <CrossLink to="/manifesto">complete manifesto</CrossLink>.
               </p>
             </div>
 
@@ -114,7 +115,7 @@ export default function Media() {
                       Share This Story
                     </h3>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Help spread awareness by sharing on social media. Every share helps expose the truth.
+                      Help spread awareness by sharing on social media. Every share helps expose the truth. All evidence is <CrossLink to="/blockchain">blockchain-verified</CrossLink>.
                     </p>
                     <div className="flex gap-3">
                       <a 
@@ -158,7 +159,7 @@ export default function Media() {
                       </div>
                     ))}
                     <p className="text-xs text-muted-foreground pt-2 border-t border-border">
-                      Response within 24-48 hours for media inquiries
+                      Response within 24-48 hours for media inquiries. <CrossLink to="/donate">Support the mission</CrossLink>.
                     </p>
                   </CardContent>
                 </Card>

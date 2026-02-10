@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { CheckCircle2, Gavel, Globe, ShieldAlert, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -41,7 +42,7 @@ export default function Mission() {
                   We operate solely for the public benefit, independent of political affiliations or corporate interests.
                 </p>
                 <p className="leading-relaxed">
-                  Our foundation is unique: we are established upon a specific, verified body of evidence—sworn testimony, 
+                  Our foundation is unique: we are established upon a specific, <CrossLink to="/blockchain">blockchain</CrossLink>-verified body of evidence—sworn testimony, 
                   affidavits, and public records authored and compiled by Barran Dodger. This documentation serves not just 
                   as a historical record, but as a functional tool for advocacy and reform. Explore the complete{" "}
                   <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Evidence Archive</Link>{" "}
@@ -83,13 +84,13 @@ export default function Mission() {
                   As documented in our submissions to the OHCHR and UNHRC, our focus includes:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Ending systemic abuse and financial exploitation within disability support systems (NDIS).</li>
+                  <li>Ending systemic abuse and financial exploitation within disability support systems (<CrossLink to="/case-studies">NDIS</CrossLink>).</li>
                   <li>Addressing professional isolation and social neglect of persons with disabilities.</li>
-                  <li>Combatting psychological torture, institutional entrapment, and technological harassment.</li>
-                  <li>Seeking asylum and international protection for whistleblowers and human rights defenders.</li>
+                  <li>Combatting psychological torture, institutional <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment</DocumentPopup>, and technological harassment.</li>
+                  <li>Seeking asylum and international protection for whistleblowers protected under the <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>PID Act</DocumentPopup> and human rights defenders.</li>
                   <li>Ensuring transparency in legal and guardianship oversight to prevent the 'erasure' of vulnerable individuals.</li>
                   <li>Documenting the 7+ entities that have systematically denied legal representation.</li>
-                  <li>Exposing the fraudulent ASIC registrations (350+) used in identity theft and corporate fraud.</li>
+                  <li>Exposing the fraudulent ASIC registrations (350+) used in identity theft and corporate fraud — full details in the <CrossLink to="/evidence">evidence archive</CrossLink>.</li>
                 </ul>
                 <div className="mt-8">
                   <Button variant="outline" className="gap-2" asChild>
@@ -105,13 +106,13 @@ export default function Mission() {
               <h2 className="text-2xl font-serif font-bold text-primary mb-6">Financial Accountability</h2>
               <div className="prose prose-slate max-w-none text-muted-foreground mb-8">
                 <p>
-                  The Trust seeks full financial restitution for documented damages totaling <strong>$32.9M - $47.5M</strong>. This includes:
+                  The Trust seeks full financial restitution for documented damages totaling <strong>$32.9M - $47.5M</strong>, as detailed in the <CrossLink to="/taxpayer-cost-analysis">$11.5M taxpayer cost analysis</CrossLink>. This includes:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>NDIA:</strong> $2.5M+ in denied supports and housing failures.</li>
                   <li><strong>WorkCover/ComCare:</strong> $1.8M (19+ year delay in impairment benefits).</li>
                   <li><strong>Identity Theft:</strong> $7.8M in losses related to 350+ fraudulent registrations.</li>
-                  <li><strong>Human Rights:</strong> $15M for systematic violations and psychological torture.</li>
+                  <li><strong>Human Rights:</strong> $15M for systematic violations and psychological torture under the <CrossLink to="/legal-status">Rome Statute</CrossLink>.</li>
                 </ul>
                 <p className="mt-4 font-serif italic">
                   "They will fight against you, but they shall not prevail against you." — Jeremiah 1:19

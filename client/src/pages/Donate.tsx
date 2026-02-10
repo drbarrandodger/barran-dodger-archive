@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { Heart, Shield, FileText, CheckCircle, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -40,7 +41,7 @@ export default function Donate() {
     },
     {
       title: "Blockchain-Sealed Testimony",
-      description: "All evidence is cryptographically timestamped using OpenTimestamps on the Bitcoin blockchain, ensuring immutability and permanent verification.",
+      description: "All evidence is cryptographically timestamped using OpenTimestamps on the Bitcoin blockchain, ensuring immutability and permanent verification. View all verified documents.",
       icon: <Scale className="h-6 w-6" />
     },
     {
@@ -85,7 +86,7 @@ export default function Donate() {
               Donate to the Trust Fund
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Your contribution directly supports the documentation, preservation, and advocacy mission of the Barran Dodger Legal & Ethical Trust Fund.
+              Your contribution directly supports the documentation, preservation, and advocacy mission of the Barran Dodger Legal & Ethical Trust Fund. See the <CrossLink to="/evidence">evidence archive</CrossLink> and <CrossLink to="/manifesto">manifesto</CrossLink>.
             </p>
           </motion.div>
 
