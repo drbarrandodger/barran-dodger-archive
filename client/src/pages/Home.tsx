@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download } from "lucide-react";
+import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play } from "lucide-react";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { Navigation } from "@/components/Navigation";
@@ -33,6 +34,49 @@ const fadeIn = {
 const stagger = {
   visible: { transition: { staggerChildren: 0.1 } }
 };
+
+function YouTubeEmbed({ videoId, title, testId }: { videoId: string; title: string; testId: string }) {
+  const [playing, setPlaying] = useState(false);
+
+  if (playing) {
+    return (
+      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+        <iframe
+          className="absolute inset-0 w-full h-full rounded-t-lg"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+          title={title}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          data-testid={testId}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="relative w-full cursor-pointer group"
+      style={{ paddingBottom: "56.25%" }}
+      onClick={() => setPlaying(true)}
+      data-testid={`${testId}-thumbnail`}
+    >
+      <img
+        src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+        alt={title}
+        className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+        onError={(e) => {
+          (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        }}
+      />
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors rounded-t-lg flex items-center justify-center">
+        <div className="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+          <Play className="h-8 w-8 md:h-10 md:w-10 text-white fill-white ml-1" />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const { data: evidence } = useQuery<EvidenceItem[]>({ 
@@ -2645,17 +2689,7 @@ export default function Home() {
             <motion.div variants={fadeIn}>
               <Card className="overflow-visible" data-testid="card-youtube-strength">
                 <CardContent className="p-0">
-                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                    <iframe
-                      className="absolute inset-0 w-full h-full rounded-t-lg"
-                      src="https://www.youtube.com/embed/YZAobynjIjc"
-                      title="Chosen Ones, The Truth Is Out — God's Anointed Ones"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      data-testid="iframe-youtube-strength"
-                    />
-                  </div>
+                  <YouTubeEmbed videoId="YZAobynjIjc" title="Chosen Ones, The Truth Is Out — God's Anointed Ones" testId="iframe-youtube-strength" />
                   <div className="p-6 space-y-4">
                     <div className="flex items-center gap-3 flex-wrap">
                       <Badge variant="outline" className="border-primary text-primary">
@@ -2691,17 +2725,7 @@ export default function Home() {
             <motion.div variants={fadeIn}>
               <Card className="overflow-visible" data-testid="card-youtube-strength-2">
                 <CardContent className="p-0">
-                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                    <iframe
-                      className="absolute inset-0 w-full h-full rounded-t-lg"
-                      src="https://www.youtube.com/embed/ENwiVyE6Er4"
-                      title="They Showed No Mercy — The Mystic Covenant"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      data-testid="iframe-youtube-strength-2"
-                    />
-                  </div>
+                  <YouTubeEmbed videoId="ENwiVyE6Er4" title="They Showed No Mercy — The Mystic Covenant" testId="iframe-youtube-strength-2" />
                   <div className="p-6 space-y-4">
                     <div className="flex items-center gap-3 flex-wrap">
                       <Badge variant="outline" className="border-primary text-primary">
@@ -2737,17 +2761,7 @@ export default function Home() {
             <motion.div variants={fadeIn}>
               <Card className="overflow-visible" data-testid="card-youtube-strength-3">
                 <CardContent className="p-0">
-                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                    <iframe
-                      className="absolute inset-0 w-full h-full rounded-t-lg"
-                      src="https://www.youtube.com/embed/TRjdQqAHDVs"
-                      title="Whatever You Exposed Just Went International — Joker Noira"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      data-testid="iframe-youtube-strength-3"
-                    />
-                  </div>
+                  <YouTubeEmbed videoId="TRjdQqAHDVs" title="Whatever You Exposed Just Went International — Joker Noira" testId="iframe-youtube-strength-3" />
                   <div className="p-6 space-y-4">
                     <div className="flex items-center gap-3 flex-wrap">
                       <Badge variant="outline" className="border-primary text-primary" data-testid="badge-joker-noira">
@@ -2789,17 +2803,7 @@ export default function Home() {
 
               <Card className="overflow-visible" data-testid="card-youtube-strength-4">
                 <CardContent className="p-0">
-                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                    <iframe
-                      className="absolute inset-0 w-full h-full rounded-t-lg"
-                      src="https://www.youtube.com/embed/OgxFgmEcR7M"
-                      title="God's Chosen One, The Truth Is Even More Disturbing — God's Chosen Gifts"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      data-testid="iframe-youtube-strength-4"
-                    />
-                  </div>
+                  <YouTubeEmbed videoId="OgxFgmEcR7M" title="God's Chosen One, The Truth Is Even More Disturbing — God's Chosen Gifts" testId="iframe-youtube-strength-4" />
                   <div className="p-6 space-y-4">
                     <div className="flex items-center gap-3 flex-wrap">
                       <Badge variant="outline" className="border-primary text-primary" data-testid="badge-gods-chosen-gifts">
@@ -2833,6 +2837,47 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="pt-12 border-t border-border">
+              <h3 className="text-2xl font-serif font-bold text-center text-foreground mb-8" data-testid="text-biblical-heading">
+                Scripture That Sustains
+              </h3>
+              <div className="grid gap-6 md:grid-cols-3">
+                <Card className="overflow-visible" data-testid="card-bible-quote-1">
+                  <CardContent className="p-6 text-center space-y-4">
+                    <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
+                      <BookOpen className="h-6 w-6 text-primary" />
+                    </div>
+                    <blockquote className="text-sm text-muted-foreground leading-relaxed italic">
+                      "No weapon forged against you will prevail, and you will refute every tongue that accuses you. This is the heritage of the servants of the Lord, and this is their vindication from me," declares the Lord.
+                    </blockquote>
+                    <p className="text-xs font-semibold text-primary" data-testid="text-bible-ref-1">Isaiah 54:17</p>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-visible" data-testid="card-bible-quote-2">
+                  <CardContent className="p-6 text-center space-y-4">
+                    <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
+                      <Shield className="h-6 w-6 text-primary" />
+                    </div>
+                    <blockquote className="text-sm text-muted-foreground leading-relaxed italic">
+                      "Blessed are those who are persecuted because of righteousness, for theirs is the kingdom of heaven. Blessed are you when people insult you, persecute you and falsely say all kinds of evil against you because of me. Rejoice and be glad, because great is your reward in heaven."
+                    </blockquote>
+                    <p className="text-xs font-semibold text-primary" data-testid="text-bible-ref-2">Matthew 5:10-12</p>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-visible" data-testid="card-bible-quote-3">
+                  <CardContent className="p-6 text-center space-y-4">
+                    <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
+                      <Heart className="h-6 w-6 text-primary" />
+                    </div>
+                    <blockquote className="text-sm text-muted-foreground leading-relaxed italic">
+                      "Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go."
+                    </blockquote>
+                    <p className="text-xs font-semibold text-primary" data-testid="text-bible-ref-3">Joshua 1:9</p>
+                  </CardContent>
+                </Card>
+              </div>
             </motion.div>
           </motion.div>
         </div>
