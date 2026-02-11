@@ -2620,6 +2620,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Strength & Gratitude — God's Anointed Ones */}
+      <section className="py-16 bg-gradient-to-b from-muted/30 to-background border-t border-border" data-testid="section-strength-gratitude">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="space-y-8"
+          >
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-[hsl(38,92%,50%)] text-[hsl(38,92%,50%)] font-bold" data-testid="badge-strength-message">
+                A MESSAGE THAT GIVES STRENGTH
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary" data-testid="text-strength-heading">
+                "The Truth Is Out"
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Thank you to God's Anointed Ones and their team for this message. Through everything documented on this website — the persecution, the exile, the separation from family — messages like this one provide real strength. Every word resonates with what has been lived and survived.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="overflow-visible" data-testid="card-youtube-strength">
+                <CardContent className="p-0">
+                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                    <iframe
+                      className="absolute inset-0 w-full h-full rounded-t-lg"
+                      src="https://www.youtube.com/embed/YZAobynjIjc"
+                      title="Chosen Ones, The Truth Is Out — God's Anointed Ones"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      data-testid="iframe-youtube-strength"
+                    />
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <Badge variant="outline" className="border-primary text-primary">
+                        God's Anointed Ones
+                      </Badge>
+                      <Badge variant="outline" className="border-[hsl(38,92%,50%)] text-[hsl(38,92%,50%)]">
+                        Chosen Ones
+                      </Badge>
+                    </div>
+                    <h3 className="text-xl font-serif font-bold text-foreground" data-testid="text-youtube-title">
+                      Chosen Ones, The Truth Is Out... How Far This Group Went to Hurt You Is Exposed
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      This message speaks directly to what is documented across this entire archive. They went far — 35 years, 25+ agencies, 14 psychiatric hospitalisations, an assassination attempt, exile, and separation from a dying father. But the truth has left tracks that cannot be erased. 240+ blockchain-verified documents now ensure this record exists permanently. Thank you to the entire team behind this channel for giving strength to those of us who were targeted in ways few people ever fully understood.
+                    </p>
+                    <div className="flex items-center gap-3 pt-2 flex-wrap">
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-youtube-channel">
+                        <a href="https://www.youtube.com/@GodsAnointedOnes777" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" /> Visit Their Channel
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-youtube-video">
+                        <a href="https://youtu.be/YZAobynjIjc" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" /> Watch on YouTube
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Quotable Snippets Section */}
       <section className="py-16 bg-background border-t border-border">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
