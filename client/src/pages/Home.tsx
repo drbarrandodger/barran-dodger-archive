@@ -2635,10 +2635,10 @@ export default function Home() {
                 A MESSAGE THAT GIVES STRENGTH
               </Badge>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary" data-testid="text-strength-heading">
-                "The Truth Is Out"
+                Messages That Give Strength
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Thank you to God's Anointed Ones and their team for this message. Through everything documented on this website — the persecution, the exile, the separation from family — messages like this one provide real strength. Every word resonates with what has been lived and survived.
+                Through everything documented on this website — the persecution, the exile, the separation from family — these messages provide real strength. I am very grateful to these teams for their work. Every word resonates with what has been lived and survived, and I want to bless them and thank them for supporting me through this journey.
               </p>
             </motion.div>
 
@@ -2679,6 +2679,52 @@ export default function Home() {
                       </Button>
                       <Button variant="outline" className="gap-2" asChild data-testid="link-youtube-video">
                         <a href="https://youtu.be/YZAobynjIjc" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" /> Watch on YouTube
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="overflow-visible" data-testid="card-youtube-strength-2">
+                <CardContent className="p-0">
+                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                    <iframe
+                      className="absolute inset-0 w-full h-full rounded-t-lg"
+                      src="https://www.youtube.com/embed/ENwiVyE6Er4"
+                      title="They Showed No Mercy — The Mystic Covenant"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      data-testid="iframe-youtube-strength-2"
+                    />
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <Badge variant="outline" className="border-primary text-primary">
+                        The Mystic Covenant
+                      </Badge>
+                      <Badge variant="outline" className="border-red-500 text-red-500">
+                        Intentional Persecution
+                      </Badge>
+                    </div>
+                    <h3 className="text-xl font-serif font-bold text-foreground" data-testid="text-youtube-title-2">
+                      They Showed No Mercy... What You Endured Was Intentional — Now Repercussions Hit Hard
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      I am very grateful to The Mystic Covenant and their team for this message — it supports me very much. What was endured was not a misunderstanding or bad luck. It was calculated, coordinated, and crafted with intention by people who showed no mercy. 25+ agencies, 14 psychiatric hospitalisations, an assassination attempt, exile from home, separation from a dying father — every move was intentional. But endurance became power, and silence became evidence. 240+ blockchain-verified documents now ensure the truth can never be erased. God bless this team for their work.
+                    </p>
+                    <div className="flex items-center gap-3 pt-2 flex-wrap">
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-youtube-channel-2">
+                        <a href="https://www.youtube.com/@LillianDavis-k8k" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" /> Visit Their Channel
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-youtube-video-2">
+                        <a href="https://youtu.be/ENwiVyE6Er4" target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="h-4 w-4" /> Watch on YouTube
                         </a>
                       </Button>
