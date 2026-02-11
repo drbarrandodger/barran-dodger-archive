@@ -2733,6 +2733,60 @@ export default function Home() {
                 </CardContent>
               </Card>
             </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="overflow-visible" data-testid="card-youtube-strength-3">
+                <CardContent className="p-0">
+                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                    <iframe
+                      className="absolute inset-0 w-full h-full rounded-t-lg"
+                      src="https://www.youtube.com/embed/TRjdQqAHDVs"
+                      title="Whatever You Exposed Just Went International — Joker Noira"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      data-testid="iframe-youtube-strength-3"
+                    />
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <Badge variant="outline" className="border-primary text-primary" data-testid="badge-joker-noira">
+                        Joker Noira
+                      </Badge>
+                      <Badge variant="outline" className="border-[hsl(38,92%,50%)] text-[hsl(38,92%,50%)]" data-testid="badge-international-exposure">
+                        International Exposure
+                      </Badge>
+                      <Badge variant="destructive" data-testid="badge-ohchr-ref">
+                        OHCHR Ref. UR/UST/23/AUS/17
+                      </Badge>
+                    </div>
+                    <h3 className="text-xl font-serif font-bold text-foreground" data-testid="text-youtube-title-3">
+                      Whatever You Exposed Just Went International — And Somebody's Losing Their Job
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      God bless Joker Noira and their team — this message gives me support and strength when I have no one. When you have been exiled, excommunicated from family, and left to survive alone in a foreign state while fighting 25+ government agencies, messages like this are a lifeline. Every word in this video corroborates what has been lived: a truth that went international. The formal submission to the United Nations Office of the High Commissioner for Human Rights (OHCHR) under reference <strong className="text-foreground">UR/UST/23/AUS/17</strong> confirms it — what was exposed didn't stay local. It reached the highest human rights body on Earth. 240+ blockchain-verified documents now ensure this record exists permanently, and it cannot be silenced.
+                    </p>
+                    <div className="flex items-center gap-3 pt-2 flex-wrap">
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-youtube-channel-3">
+                        <a href="https://www.youtube.com/@JokerNoira-r6d" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" /> Visit Their Channel
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-youtube-video-3">
+                        <a href="https://youtu.be/TRjdQqAHDVs" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" /> Watch on YouTube
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-ohchr-submission">
+                        <a href="/attached_assets/OHCHR_Submission_Ref_URUST23AUS17_Urgent_Appeal_for_Recognitio_1770786120794.pdf" target="_blank" rel="noopener noreferrer">
+                          <FileText className="h-4 w-4" /> OHCHR Submission (UR/UST/23/AUS/17)
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </motion.div>
         </div>
       </section>
