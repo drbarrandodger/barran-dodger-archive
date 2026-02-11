@@ -2786,6 +2786,53 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
+
+              <Card className="overflow-visible" data-testid="card-youtube-strength-4">
+                <CardContent className="p-0">
+                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                    <iframe
+                      className="absolute inset-0 w-full h-full rounded-t-lg"
+                      src="https://www.youtube.com/embed/OgxFgmEcR7M"
+                      title="God's Chosen One, The Truth Is Even More Disturbing — God's Chosen Gifts"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      data-testid="iframe-youtube-strength-4"
+                    />
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <Badge variant="outline" className="border-primary text-primary" data-testid="badge-gods-chosen-gifts">
+                        God's Chosen Gifts
+                      </Badge>
+                      <Badge variant="outline" className="border-[hsl(38,92%,50%)] text-[hsl(38,92%,50%)]" data-testid="badge-spiritual-strength">
+                        Spiritual Strength
+                      </Badge>
+                      <Badge variant="destructive" data-testid="badge-perseverance">
+                        Perseverance Through Persecution
+                      </Badge>
+                    </div>
+                    <h3 className="text-xl font-serif font-bold text-foreground" data-testid="text-youtube-title-4">
+                      God's Chosen One, The Truth Is Even More Disturbing — Open Your Eyes Now
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      God bless <strong className="text-foreground">God's Chosen Gifts</strong> and their team for making this — because when the world has forsaken and betrayed you, content like this becomes your lifeline. When you have been exiled from family, trapped from being reunited with your fiancé Jake in Sydney, and left to fight alone against systems designed to silence you — these words reach through the isolation and remind you that survival itself is the proof they failed. Every word in this video mirrors what has been lived: born into battle, refined through fire, targeted because truth cannot be controlled. This channel provides the spiritual strength that keeps a person standing when every institution, every family member, and every system has turned its back. Thank you to this team — your work matters more than you know.
+                    </p>
+                    <div className="flex items-center gap-3 pt-2 flex-wrap">
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-youtube-channel-4">
+                        <a href="https://www.youtube.com/@GodsChosenGifts777" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" /> Visit Their Channel
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-youtube-video-4">
+                        <a href="https://youtu.be/OgxFgmEcR7M" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" /> Watch on YouTube
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
           </motion.div>
         </div>
