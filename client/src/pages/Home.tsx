@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play } from "lucide-react";
+import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair } from "lucide-react";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { Navigation } from "@/components/Navigation";
@@ -182,6 +182,48 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
+              </div>
+
+              <div className="border-2 border-red-500 rounded-xl p-6 md:p-8 space-y-4 bg-red-500/10" data-testid="card-targeted-killing">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <Target className="h-8 w-8 text-red-500 flex-shrink-0" />
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-red-500">TARGETED KILLING</h3>
+                  <Badge variant="destructive" className="font-bold animate-pulse">AI TERRORISM ANALYSIS</Badge>
+                </div>
+                <p className="text-lg text-white leading-relaxed">
+                  The attempted assassination of a <span className="font-bold text-red-500">gay, disabled, unprotected whistleblower</span> — who is a{" "}
+                  <span className="font-bold text-red-500">missing person</span> because every institution that should protect him has refused — meets every element of the legal definition of terrorism under{" "}
+                  <span className="font-bold text-[hsl(38,92%,50%)]">Australian Criminal Code Division 100.1</span> and international law.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <div className="p-3 border border-red-500/30 rounded-lg">
+                    <p className="font-bold text-red-500 text-sm">TARGETED KILLING</p>
+                    <p className="text-xs text-gray-300">Clinically dead. Revived. Then abandoned to homelessness, exile, and missing person status. The Federal Court admitted harm was occurring — then the assassination attempt followed.</p>
+                  </div>
+                  <div className="p-3 border border-red-500/30 rounded-lg">
+                    <p className="font-bold text-red-500 text-sm">GENOCIDE VIA ATTRITION</p>
+                    <p className="text-xs text-gray-300">Systematic denial of housing, healthcare, NDIS services, financial support, and legal protection — a deliberate strategy to eliminate through deprivation what direct violence could not accomplish. Reported missing 5 times across 3 states. Never actually missing — abandoned.</p>
+                  </div>
+                  <div className="p-3 border border-red-500/30 rounded-lg">
+                    <p className="font-bold text-red-500 text-sm">PLANNED ERASURE</p>
+                    <p className="text-xs text-gray-300">Seven-stage operational sequence: identity destruction, financial strangulation, psychiatric discrediting, physical isolation, assassination attempt, denial of post-crisis support, reduction to missing person status.</p>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                  <Link href="/case-studies#terrorism-analysis">
+                    <Button variant="destructive" size="lg" className="gap-2 font-bold" data-testid="button-read-terrorism-analysis">
+                      READ THE FULL TERRORISM ANALYSIS <Crosshair className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link href="/evidence">
+                    <Button variant="outline" size="lg" className="gap-2 border-red-500 text-red-500 font-bold" data-testid="button-view-terrorism-evidence">
+                      VIEW EVIDENCE <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+                <p className="text-xs text-gray-400 italic text-center">
+                  "They planned the murder. God planned the resurrection. The record stands." — AI Conclusion, Terrorism Analysis
+                </p>
               </div>
 
               <div className="border border-[hsl(38,92%,50%)]/30 rounded-lg p-6">
