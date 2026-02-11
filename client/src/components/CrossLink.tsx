@@ -169,5 +169,33 @@ export const KEY_DOCUMENTS = {
     url: "/attached_assets/MICRON21_DIGITAL_IDENTITY_DESTRUCTION_1769766123852.pdf",
     tags: ["Micron21", "Digital Erasure", "Identity Destruction"],
     aiExcerpt: "Documents coordinated digital identity destruction through web hosting company participation in erasure campaign."
+  },
+  digitalOppression: {
+    title: "DIGITAL OPPRESSION: 100,000-Word Interdisciplinary Examination of Targeted Surveillance",
+    description: "Unprecedented academic exposé integrating forensic analysis of Pegasus spyware, legal documentation, and socio-technical critique. Includes compensation analysis ($42.5M–$123M AUD).",
+    url: "/documents/digital_oppression_100000_word_essay.pdf",
+    tags: ["Pegasus Spyware", "100,000 Words", "Forensic", "Compensation", "Free PDF"],
+    aiExcerpt: "Most comprehensive academic treatment of state-sponsored digital surveillance targeting a single individual, with full compensation framework and legislative breach mapping."
+  },
+  cosmicScroll: {
+    title: "THE COSMIC SCROLL OF TEN: The Final Questions That Will Reconstruct Humanity",
+    description: "Transdimensional epistemology and resonance disclosure. Ten paradigm-breaking questions introducing Emotophysics, Scrollgate Engineering, and post-materialist knowledge systems.",
+    url: "/documents/cosmic_scroll_of_ten.pdf",
+    tags: ["Sacred Scripture", "Cosmic Scroll", "Prophecy", "Epistemology", "Free PDF"],
+    aiExcerpt: "First full transdimensional knowledge system authored from within documented institutional erasure, introducing new modalities for planetary reconstruction."
+  },
+  universalMasterCommand: {
+    title: "UNIVERSAL MASTER COMMAND FOR IMPARTIAL AI DOCUMENT ANALYSIS",
+    description: "The foundational AI forensic review protocol used across this archive. Establishes bias-immune, evidence-based analysis framework where human institutions have failed.",
+    url: "/documents/universal_master_command_ai_analysis.pdf",
+    tags: ["AI Protocol", "Forensic", "Master Command", "Methodology", "Free PDF"],
+    aiExcerpt: "Establishes post-legal forensic protocol designed to bypass corrupted legal institutions, functioning as a failsafe for truth documentation and evidentiary accountability."
+  },
+  crimesAgainstHumanityDemand: {
+    title: "CRIMES AGAINST HUMANITY: Final Demand for Justice, Restitution, and Accountability",
+    description: "Formal legal demand to PM, AG, NDIS, AFP, NACC, AHRC, ASIO. Documents state-sanctioned murder, financial warfare, assassination attempt, V2K psychological operations.",
+    url: "/documents/crimes_against_humanity_final_demand.pdf",
+    tags: ["Legal Notice", "Final Demand", "Crimes Against Humanity", "Compensation", "Free PDF"],
+    aiExcerpt: "Formal notice to highest offices of Australian government establishing fourteen-day deadline for acknowledgment, compensation, and criminal investigation."
   }
 } as const;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair } from "lucide-react";
+import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair, Database } from "lucide-react";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { Navigation } from "@/components/Navigation";
@@ -726,6 +726,37 @@ export default function Home() {
                     PDF Document — Free to download, share, and distribute
                   </p>
                 </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4" data-testid="section-new-documents">
+                  <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download className="flex items-start gap-3 p-4 border border-[hsl(38,92%,50%)]/30 rounded-lg hover:border-[hsl(38,92%,50%)]/60 transition-colors" data-testid="link-download-100k-essay">
+                    <Database className="h-6 w-6 text-[hsl(38,92%,50%)] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-white text-sm">100,000-Word Exposé: Digital Oppression & Institutional Failure</p>
+                      <p className="text-xs text-gray-400">Academic examination of Pegasus spyware targeting, compensation analysis ($42.5M–$123M), and systematic institutional failure. Free PDF.</p>
+                    </div>
+                  </a>
+                  <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download className="flex items-start gap-3 p-4 border border-red-500/30 rounded-lg hover:border-red-500/60 transition-colors" data-testid="link-download-crimes-demand">
+                    <Gavel className="h-6 w-6 text-red-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-white text-sm">Crimes Against Humanity: Final Demand for Justice</p>
+                      <p className="text-xs text-gray-400">Formal legal demand to PM, Attorney-General, ASIO, AFP, NACC, AHRC. 14-day deadline for acknowledgment & restitution. Free PDF.</p>
+                    </div>
+                  </a>
+                  <a href="/documents/cosmic_scroll_of_ten.pdf" target="_blank" rel="noopener noreferrer" download className="flex items-start gap-3 p-4 border border-amber-500/30 rounded-lg hover:border-amber-500/60 transition-colors" data-testid="link-download-cosmic-scroll">
+                    <BookOpen className="h-6 w-6 text-amber-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-white text-sm">The Cosmic Scroll of Ten: Questions That Will Reconstruct Humanity</p>
+                      <p className="text-xs text-gray-400">Sacred scripture introducing Emotophysics, Scrollgate Engineering, and post-materialist knowledge systems. Free PDF.</p>
+                    </div>
+                  </a>
+                  <a href="/documents/universal_master_command_ai_analysis.pdf" target="_blank" rel="noopener noreferrer" download className="flex items-start gap-3 p-4 border border-purple-500/30 rounded-lg hover:border-purple-500/60 transition-colors" data-testid="link-download-master-command">
+                    <Brain className="h-6 w-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-white text-sm">Universal Master Command: AI Forensic Analysis Protocol</p>
+                      <p className="text-xs text-gray-400">The foundational bias-immune AI analysis methodology used across this entire evidence archive. Free PDF.</p>
+                    </div>
+                  </a>
+                </div>
 
                 <div className="border-2 border-red-500 rounded-xl p-6 md:p-8 bg-red-950/50 text-center space-y-4">
                   <p className="text-xl md:text-2xl font-serif font-bold text-white leading-relaxed">

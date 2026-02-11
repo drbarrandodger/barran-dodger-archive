@@ -950,6 +950,16 @@ export default function CaseStudies() {
                       <Download className="h-4 w-4" /> Download Full Paper (PDF)
                     </Button>
                   </a>
+                  <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download>
+                    <Button variant="default" className="gap-2 w-full sm:w-auto" data-testid="link-download-100k-essay-casestudies">
+                      <Download className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF)
+                    </Button>
+                  </a>
+                  <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download>
+                    <Button variant="destructive" className="gap-2 w-full sm:w-auto" data-testid="link-download-crimes-demand-casestudies">
+                      <Download className="h-4 w-4" /> Crimes Against Humanity: Final Demand (PDF)
+                    </Button>
+                  </a>
                   <Link href="/evidence">
                     <Button variant="outline" className="gap-2 w-full sm:w-auto" data-testid="link-view-evidence-archive">
                       <ExternalLink className="h-4 w-4" /> View Evidence Archive

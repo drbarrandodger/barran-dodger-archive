@@ -266,6 +266,31 @@ export default function LegalStatus() {
               </div>
             </div>
 
+            <Card className="mt-8 border-2 border-red-500/30 bg-gradient-to-br from-red-500/5 to-background" data-testid="card-legal-demand-download">
+              <CardContent className="p-6 space-y-3">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <Scale className="h-6 w-6 text-red-500 flex-shrink-0" />
+                  <h3 className="text-lg font-serif font-bold text-primary">Formal Legal Demand: Crimes Against Humanity</h3>
+                  <Badge variant="destructive" className="font-bold">FREE PDF</Badge>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Historical Legal Notice & Final Demand for Justice addressed to the Prime Minister, Attorney-General, NDIS, AFP, NACC, AHRC, and ASIO. Documents state-sanctioned murder, financial entombment, assassination attempt, and V2K psychological warfare. Establishes 14-day deadline for acknowledgment, restitution ($42.5M–$123M), and criminal investigation.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button variant="destructive" className="gap-2" asChild data-testid="button-download-legal-demand">
+                    <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download>
+                      <FileText className="h-4 w-4" /> Download Final Demand (PDF)
+                    </a>
+                  </Button>
+                  <Button variant="outline" className="gap-2" asChild data-testid="button-download-100k-essay-legal">
+                    <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download>
+                      <FileText className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF)
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
             <div className="text-center mt-12">
               <p className="text-sm text-muted-foreground mb-4" data-testid="text-blockchain-notice">
                 All submissions are <CrossLink to="/blockchain">blockchain-verified</CrossLink> and timestamped for authenticity. Supporting documents include the <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>PID Act analysis</DocumentPopup>, the <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment affidavit</DocumentPopup>, and the <DocumentPopup {...KEY_DOCUMENTS.evidenceSummary}>comprehensive evidence summary</DocumentPopup>. Full case breakdowns available in the <CrossLink to="/case-studies">case studies</CrossLink>.
