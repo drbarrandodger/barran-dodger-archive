@@ -11,12 +11,31 @@ export function Navigation() {
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hideNav, setHideNav] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const atBottom = (window.innerHeight + currentY) >= (document.body.scrollHeight - 100);
+      setScrolled(currentY > 20);
+
+      if (window.innerWidth < 768) {
+        if (atBottom || currentY < 60) {
+          setHideNav(false);
+        } else if (currentY > lastScrollY && currentY > 80) {
+          setHideNav(true);
+        } else if (currentY < lastScrollY) {
+          setHideNav(false);
+        }
+      } else {
+        setHideNav(false);
+      }
+      setLastScrollY(currentY);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -37,7 +56,8 @@ export function Navigation() {
   return (
     <nav className={cn(
       "fixed top-[var(--banner-height,40px)] w-full z-50 transition-all duration-300 border-b border-transparent",
-      scrolled ? "bg-background/95 backdrop-blur-sm border-border py-3 shadow-sm" : "bg-transparent py-6"
+      scrolled ? "bg-background/95 backdrop-blur-sm border-border py-3 shadow-sm" : "bg-transparent py-6",
+      hideNav && !mobileMenuOpen && "opacity-0 pointer-events-none -translate-y-2"
     )}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
