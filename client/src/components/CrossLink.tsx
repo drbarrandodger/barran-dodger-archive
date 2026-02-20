@@ -27,7 +27,7 @@ interface DocumentPopupProps {
   title: string;
   description: string;
   url: string;
-  tags?: string[];
+  tags?: string[] | readonly string[];
   aiExcerpt?: string;
   "data-testid"?: string;
 }
@@ -35,8 +35,8 @@ interface DocumentPopupProps {
 export function DocumentPopup({ children, title, description, url, tags, aiExcerpt, "data-testid": testId }: DocumentPopupProps) {
   const [open, setOpen] = useState(false);
 
-  const isExternal = url.startsWith("http");
-  const isPdf = url.endsWith(".pdf");
+  const isExternal = url?.startsWith("http");
+  const isPdf = url?.endsWith(".pdf");
 
   return (
     <>

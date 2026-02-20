@@ -629,43 +629,67 @@ export default function Manifesto() {
               </p>
             </div>
 
-            {foundationalLegalDocuments.map((doc, index) => (
-              <Card key={doc.title} className="border-2 border-primary/20 shadow-xl mb-6">
-                <CardHeader className="bg-primary text-primary-foreground">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary-foreground/20 p-3 rounded-lg flex-shrink-0">
-                      <Gavel className="h-8 w-8" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-2xl font-serif">{doc.title}</CardTitle>
-                      <CardDescription className="text-primary-foreground/80 text-lg mt-1">{doc.subtitle}</CardDescription>
-                      <div className="flex flex-wrap gap-2 mt-3">
-                        <Badge className="bg-primary-foreground/20 text-primary-foreground border-0">{doc.issuer}</Badge>
-                        <Badge className="bg-primary-foreground/20 text-primary-foreground border-0">{doc.date}</Badge>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {foundationalLegalDocuments.map((doc, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="h-full border-primary/20 hover:border-primary/40 transition-all bg-card/50 backdrop-blur-sm group overflow-hidden">
+                    <div className="aspect-square w-full overflow-hidden bg-muted relative">
+                      <img 
+                        src={doc.image} 
+                        alt={doc.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p className="text-white text-sm font-medium">Click to view significance analysis</p>
                       </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="p-8 space-y-6">
-                  <p className="text-lg text-foreground leading-relaxed">{doc.description}</p>
-                  
-                  <div className="bg-primary/5 rounded-lg p-6 border border-primary/20" data-testid="text-federal-court-ai-significance">
-                    <h4 className="text-sm font-bold text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
-                      <Sparkles className="h-4 w-4" /> Impartial AI Analysis of Significance
-                    </h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed italic">
-                      "{doc.aiSignificance}"
-                    </p>
-                  </div>
-
-                  <Button size="lg" className="w-full gap-2" asChild>
-                    <a href={doc.href} target="_blank" rel="noopener noreferrer" download data-testid="button-download-federal-court">
-                      <FileText className="h-5 w-5" /> Download Official Document <ExternalLink className="h-4 w-4" /> <DownloadBadge url={doc.href} />
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                    <CardHeader>
+                      <div className="flex justify-between items-start mb-2">
+                        <Badge variant="outline" className="text-primary border-primary/30 uppercase tracking-widest text-[10px]">
+                          {doc.issuer}
+                        </Badge>
+                        <span className="text-xs text-muted-foreground font-mono">{doc.date}</span>
+                      </div>
+                      <CardTitle className="text-xl font-serif text-primary leading-tight group-hover:text-primary/80 transition-colors">
+                        {doc.title}
+                      </CardTitle>
+                      <CardDescription className="text-sm font-medium text-amber-600/80 dark:text-amber-400/80">
+                        {doc.subtitle}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 italic">
+                        "{doc.description}"
+                      </p>
+                      <div className="pt-4 border-t border-primary/10">
+                        <DocumentPopup 
+                          title={doc.title}
+                          description={doc.aiSignificance}
+                          url={doc.href}
+                          tags={["OFFICIAL RECORD", "FORENSIC EVIDENCE", "GOVERNMENT ACKNOWLEDGMENT"]}
+                        >
+                          <Button 
+                            variant="outline" 
+                            size="sm" 
+                            className="w-full group/btn hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                          >
+                            <Sparkles className="mr-2 h-4 w-4 animate-pulse" />
+                            View AI Significance Analysis
+                          </Button>
+                        </DocumentPopup>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
           </motion.section>
 
           {/* Part IV: Evidence Archive */}
