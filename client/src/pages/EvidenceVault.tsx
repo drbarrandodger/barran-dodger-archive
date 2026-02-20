@@ -1,0 +1,631 @@
+import { useState, useMemo } from "react";
+import { motion } from "framer-motion";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
+import { SocialShare } from "@/components/SocialShare";
+import { FloatingCTA } from "@/components/FloatingCTA";
+import {
+  ExternalLink, Search, X, Shield, Lock, FolderOpen, Archive,
+  Scale, FileText, AlertTriangle, Globe, Heart, Brain, BookOpen,
+  Landmark, Database, Clock, Gavel, ShieldCheck, Eye, Flame,
+  LayoutGrid, List, ChevronRight, Info
+} from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
+interface VaultFolder {
+  name: string;
+  description: string;
+  url: string;
+  icon: JSX.Element;
+  category: string;
+  documentCount?: string;
+}
+
+const VAULT_CATEGORIES = [
+  { id: "all", label: "All Folders", icon: Archive },
+  { id: "legal", label: "Legal & Court", icon: Scale },
+  { id: "evidence", label: "Evidence & Analysis", icon: Database },
+  { id: "medical", label: "Medical Records", icon: Heart },
+  { id: "financial", label: "Financial", icon: Landmark },
+  { id: "government", label: "Government & NDIS", icon: Landmark },
+  { id: "international", label: "International", icon: Globe },
+  { id: "publications", label: "Published Works", icon: BookOpen },
+  { id: "blockchain", label: "Blockchain & Timestamps", icon: Clock },
+  { id: "safety", label: "Safety & Emergency", icon: AlertTriangle },
+  { id: "correspondence", label: "Correspondence", icon: FileText },
+  { id: "other", label: "Other Archives", icon: FolderOpen },
+];
+
+const VAULT_FOLDERS: VaultFolder[] = [
+  {
+    name: "Advocacy Campaign",
+    description: "Documents related to advocacy campaigns, public awareness initiatives, and outreach efforts for justice and accountability.",
+    url: "https://myaidrive.com/ThSA3xooaaMuxYDHXEfvXw/ADVOCACY_CAM.folder.pdf",
+    icon: <Flame className="h-5 w-5" />,
+    category: "publications",
+  },
+  {
+    name: "Archived Evidence",
+    description: "Historical evidence archive containing primary source documents from across the 35-year persecution timeline.",
+    url: "https://myaidrive.com/QqxS5hUTTSfJL4tbczM4A4/ARCHIVED_EVI.folder.pdf",
+    icon: <Archive className="h-5 w-5" />,
+    category: "evidence",
+  },
+  {
+    name: "ASIC Records",
+    description: "Australian Securities & Investments Commission records documenting corporate and regulatory interactions.",
+    url: "https://myaidrive.com/uWhgDqubaWq5Q2eaNbxQtP/ASIC.folder.pdf",
+    icon: <Landmark className="h-5 w-5" />,
+    category: "government",
+  },
+  {
+    name: "Analysis Documents",
+    description: "AI-generated and forensic analysis documents examining patterns of persecution, financial costs, and institutional corruption.",
+    url: "https://myaidrive.com/AraK3TGzNUGLiKNuqviLtG/Analysis.folder.pdf",
+    icon: <Brain className="h-5 w-5" />,
+    category: "evidence",
+  },
+  {
+    name: "Correspondence Archive",
+    description: "Official correspondence with government agencies, legal bodies, and institutions documenting systemic failures and cover-ups.",
+    url: "https://myaidrive.com/rdcV8sXqqn4FUe8ksY9Qbq/CORRESPONDEN.folder.pdf",
+    icon: <FileText className="h-5 w-5" />,
+    category: "correspondence",
+  },
+  {
+    name: "Chrome Downloads Archive",
+    description: "Web-sourced evidence and downloaded documentation preserved from online research and investigations.",
+    url: "https://myaidrive.com/RgrbdNhizpnD2RTJFvmoGB/Chrome-downl.folder.pdf",
+    icon: <Database className="h-5 w-5" />,
+    category: "other",
+  },
+  {
+    name: "Downloads Archive",
+    description: "Collected downloads and supplementary documentation supporting the evidence base.",
+    url: "https://myaidrive.com/fjd5zxY5WWEjWCFHYJQ7mG/Download-fol.folder.pdf",
+    icon: <FolderOpen className="h-5 w-5" />,
+    category: "other",
+  },
+  {
+    name: "Emergency Welfare Documents",
+    description: "Emergency welfare records, crisis intervention documentation, and urgent safety-related files.",
+    url: "https://myaidrive.com/ahtuSFCPeSSpFwhg85Trzh/EMERGENCY_WE.folder.pdf",
+    icon: <AlertTriangle className="h-5 w-5" />,
+    category: "safety",
+  },
+  {
+    name: "Essential 5 — Core Evidence Package",
+    description: "The five most critical evidence documents distilled from the complete archive — the essential starting point for any investigator or legal reviewer.",
+    url: "https://myaidrive.com/WuxwJ56Kh8F7ejTGuKwP4S/ESSENTIAL_5_.folder.pdf",
+    icon: <ShieldCheck className="h-5 w-5" />,
+    category: "evidence",
+  },
+  {
+    name: "Evidence Collection",
+    description: "Primary evidence collection containing core documents supporting claims of systematic persecution and institutional corruption.",
+    url: "https://myaidrive.com/3qReQRg34jpj7okfEcm4UC/Evidence.folder.pdf",
+    icon: <Database className="h-5 w-5" />,
+    category: "evidence",
+  },
+  {
+    name: "Evidence Analysis",
+    description: "Detailed analytical documents examining and cross-referencing evidence, identifying patterns and establishing timelines.",
+    url: "https://myaidrive.com/cJe6z22QCvu642UZWGJy4t/Evidence_Ana.folder.pdf",
+    icon: <Brain className="h-5 w-5" />,
+    category: "evidence",
+  },
+  {
+    name: "Financial Documentation",
+    description: "Financial records documenting the $11.5M+ taxpayer cost of persecution, economic warfare, and financial destruction targeting Dr. McLean.",
+    url: "https://myaidrive.com/ks54ZQBdgwHs6zUUbqZ6yR/FINANCIAL_DO.folder.pdf",
+    icon: <Landmark className="h-5 w-5" />,
+    category: "financial",
+  },
+  {
+    name: "International Submissions",
+    description: "Submissions to international bodies including the UN Human Rights Council, ICC, and foreign government agencies.",
+    url: "https://myaidrive.com/af42GcWPibN4iGrLGr3tWU/INTERNATIONA.folder.pdf",
+    icon: <Globe className="h-5 w-5" />,
+    category: "international",
+  },
+  {
+    name: "Legal Proceedings",
+    description: "Court documents, tribunal records, legal filings, and proceedings documentation from 35 years of legal battles.",
+    url: "https://myaidrive.com/pd6byPzApFwt9sryi2FBv3/LEGAL_PROCEE.folder.pdf",
+    icon: <Scale className="h-5 w-5" />,
+    category: "legal",
+  },
+  {
+    name: "Medical Evidence",
+    description: "Medical records documenting 14 psychiatric hospitalizations, the 2021 institutional murder/resurrection at Werribee Mercy Hospital, and weaponized psychiatry.",
+    url: "https://myaidrive.com/5XEdMwS5nEFzhcLEfdRR62/MEDICAL_EVID.folder.pdf",
+    icon: <Heart className="h-5 w-5" />,
+    category: "medical",
+  },
+  {
+    name: "Mission & Activism",
+    description: "Mission statements, activism records, and campaign documentation for justice, accountability, and systemic reform.",
+    url: "https://myaidrive.com/zAEhgzQbxLEzNzae6bbtqd/MISSION_ACTI.folder.pdf",
+    icon: <Flame className="h-5 w-5" />,
+    category: "publications",
+  },
+  {
+    name: "Blockchain Verification Records",
+    description: "Blockchain timestamps and cryptographic verification records proving document authenticity and preventing tampering.",
+    url: "https://myaidrive.com/o4qttNzRxhQMsLUto8pi7H/My-blockchai.folder.pdf",
+    icon: <Lock className="h-5 w-5" />,
+    category: "blockchain",
+  },
+  {
+    name: "NDIS Documentation",
+    description: "National Disability Insurance Scheme records documenting institutional failures, funding denials, and systemic discrimination.",
+    url: "https://myaidrive.com/QuAuf9cmDakLxBsabpeoLy/NDIS.folder.pdf",
+    icon: <Landmark className="h-5 w-5" />,
+    category: "government",
+  },
+  {
+    name: "New Essays & Publications",
+    description: "Recently authored essays, analyses, and publications expanding the evidentiary record and public advocacy.",
+    url: "https://myaidrive.com/JwL622NX5DcEFC9rKpgM9b/New-essays-N.folder.pdf",
+    icon: <BookOpen className="h-5 w-5" />,
+    category: "publications",
+  },
+  {
+    name: "New Files Archive",
+    description: "Recently added files and documents expanding the evidence archive with new discoveries and submissions.",
+    url: "https://myaidrive.com/Mjkvtto9YtXrVdRzDRPK29/New-files-.folder.pdf",
+    icon: <FolderOpen className="h-5 w-5" />,
+    category: "other",
+  },
+  {
+    name: "New Documents",
+    description: "Latest document additions to the archive including fresh evidence, updated analyses, and new filings.",
+    url: "https://myaidrive.com/V8LD7PZF86md6ssLDeW5Nv/New.folder.pdf",
+    icon: <FileText className="h-5 w-5" />,
+    category: "other",
+  },
+  {
+    name: "Personal Testimony",
+    description: "First-person testimonial records, personal statements, and sworn declarations from Dr. Richard McLean.",
+    url: "https://myaidrive.com/Qz4GoFteQv2oxiYfsePwMC/PERSONAL_TES.folder.pdf",
+    icon: <Eye className="h-5 w-5" />,
+    category: "evidence",
+  },
+  {
+    name: "Public Interest Disclosures (PIDs)",
+    description: "Protected public interest disclosure documents filed under the PID Act 2013 documenting government corruption and institutional failures.",
+    url: "https://myaidrive.com/zRsXCswY9G2sZV5mtAFo8u/PIDs-.folder.pdf",
+    icon: <ShieldCheck className="h-5 w-5" />,
+    category: "legal",
+  },
+  {
+    name: "Published Works",
+    description: "Formally published books, articles, and papers including 'Betrayed, Murdered, Forsaken' and related publications.",
+    url: "https://myaidrive.com/EG9DitiZDfF7sTPdV33ogJ/PUBLISHED_WO.folder.pdf",
+    icon: <BookOpen className="h-5 w-5" />,
+    category: "publications",
+  },
+  {
+    name: "Pages Archive",
+    description: "Supplementary pages, appendices, and supporting documentation from the broader evidence collection.",
+    url: "https://myaidrive.com/R5SCaUabmiRMHcMwa4Nnfe/Pages.folder.pdf",
+    icon: <FileText className="h-5 w-5" />,
+    category: "other",
+  },
+  {
+    name: "Ready to Send — Prepared Submissions",
+    description: "Documents prepared and formatted for submission to courts, government bodies, international organizations, and media outlets.",
+    url: "https://myaidrive.com/QBFDhx2NvMZdZZqPi7J8wR/READY_TO_SEN.folder.pdf",
+    icon: <Gavel className="h-5 w-5" />,
+    category: "legal",
+  },
+  {
+    name: "Recent Documents",
+    description: "Most recently added evidence and documentation, reflecting the latest developments in the ongoing case.",
+    url: "https://myaidrive.com/5vTM949ENoY334gMNY4Qmx/Recent.folder.pdf",
+    icon: <Clock className="h-5 w-5" />,
+    category: "other",
+  },
+  {
+    name: "Strategic Briefings",
+    description: "Strategic briefing documents prepared for legal teams, investigators, journalists, and international observers.",
+    url: "https://myaidrive.com/m8PBQX9gsTjcu9DBtsujbh/STRATEGIC_BR.folder.pdf",
+    icon: <Brain className="h-5 w-5" />,
+    category: "evidence",
+  },
+  {
+    name: "Supporting Evidence",
+    description: "Supplementary evidence documents that corroborate and strengthen the primary evidence collection.",
+    url: "https://myaidrive.com/dfkKfr8QSnGAeWmyYjiYwo/SUPPORTING_E.folder.pdf",
+    icon: <Database className="h-5 w-5" />,
+    category: "evidence",
+  },
+  {
+    name: "Timestamps — Blockchain Proof Set 1",
+    description: "First set of blockchain timestamp certificates proving document existence and integrity at specific dates.",
+    url: "https://myaidrive.com/XaTMKAHftsRToQTFWoquZ5/Time-stamps-.folder.pdf",
+    icon: <Clock className="h-5 w-5" />,
+    category: "blockchain",
+  },
+  {
+    name: "Timestamps — Blockchain Proof Set 2",
+    description: "Second set of blockchain timestamp certificates providing cryptographic proof of document authenticity.",
+    url: "https://myaidrive.com/KKBRJgdjnrBrygHcYCFtm9/Timestamps-.folder.pdf",
+    icon: <Clock className="h-5 w-5" />,
+    category: "blockchain",
+  },
+  {
+    name: "Urgent Safety Documents",
+    description: "Urgent safety notices, emergency protection orders, and critical safety-related documentation including the 2024 assassination attempt evidence.",
+    url: "https://myaidrive.com/8DWDVxnRn734VmsCSpNqs5/URGENT_SAFET.folder.pdf",
+    icon: <AlertTriangle className="h-5 w-5" />,
+    category: "safety",
+  },
+  {
+    name: "iCloud Downloads Archive",
+    description: "Evidence and documentation preserved from iCloud storage, ensuring redundancy and immutability of the record.",
+    url: "https://myaidrive.com/ZEFSacNuDNTPpxR8gdFQwy/iCloud-downl.folder.pdf",
+    icon: <FolderOpen className="h-5 w-5" />,
+    category: "other",
+  },
+  {
+    name: "Mounted Drive Archive",
+    description: "Documents recovered and preserved from mounted storage drives, containing additional evidence files.",
+    url: "https://myaidrive.com/Xpncx8edAwxfoFvfgbwk9K/mnt.folder.pdf",
+    icon: <Database className="h-5 w-5" />,
+    category: "other",
+  },
+];
+
+export default function EvidenceVault() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+
+  const filtered = useMemo(() => {
+    let results = [...VAULT_FOLDERS];
+
+    if (selectedCategory !== "all") {
+      results = results.filter(f => f.category === selectedCategory);
+    }
+
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      results = results.filter(f => {
+        const text = `${f.name} ${f.description} ${f.category}`.toLowerCase();
+        return query.split(/\s+/).every(term => text.includes(term));
+      });
+    }
+
+    return results;
+  }, [searchQuery, selectedCategory]);
+
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = { all: VAULT_FOLDERS.length };
+    VAULT_FOLDERS.forEach(f => {
+      counts[f.category] = (counts[f.category] || 0) + 1;
+    });
+    return counts;
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
+      <SEO
+        title="Evidence Vault — Immutable Public Archive | Barran Dodger Legal & Ethical Trust Fund"
+        description="Access the complete immutable evidence archive of 2,077+ blockchain-verified documents. Read-only public access to 35 years of documented persecution evidence."
+      />
+      <Navigation />
+
+      <main className="flex-1 pt-32 pb-20">
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <Badge variant="secondary" className="mb-4" data-testid="badge-vault-count">
+              <Lock className="h-3 w-3 mr-1" /> {VAULT_FOLDERS.length} Evidence Folders
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4" data-testid="text-vault-title">
+              Evidence Vault
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-6">
+              The complete immutable evidence archive — 2,077+ documents spanning 35 years of documented 
+              persecution, institutional corruption, and whistleblower suppression. Every document is 
+              publicly accessible and read-only. This record cannot be altered or deleted by anyone.
+            </p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="inline-flex items-center gap-3 bg-primary/5 border border-primary/20 rounded-xl px-6 py-4 mb-8"
+            >
+              <Shield className="h-6 w-6 text-primary flex-shrink-0" />
+              <div className="text-left">
+                <p className="text-sm font-bold text-primary">Read-Only Public Archive</p>
+                <p className="text-xs text-muted-foreground">
+                  All documents are hosted externally on MyAIDrive. Visitors can view and read every document — 
+                  but no one can modify, delete, or tamper with them.
+                </p>
+              </div>
+            </motion.div>
+
+            <div className="flex justify-center">
+              <Button variant="outline" size="lg" className="gap-2" asChild>
+                <a href="https://myaidrive.com/home" target="_blank" rel="noopener noreferrer" data-testid="link-myaidrive-home">
+                  <ExternalLink className="h-4 w-4" /> Browse Full MyAIDrive Archive
+                </a>
+              </Button>
+            </div>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-8 space-y-4"
+          >
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="Search evidence folders..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-11 pr-10 h-12 text-base"
+                  data-testid="input-search-vault"
+                />
+                {searchQuery && (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute right-1 top-1/2 -translate-y-1/2"
+                    onClick={() => setSearchQuery("")}
+                    data-testid="button-clear-vault-search"
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                )}
+              </div>
+
+              <div className="flex border rounded-lg overflow-hidden">
+                <Button
+                  variant={viewMode === "grid" ? "default" : "ghost"}
+                  size="icon"
+                  className="h-12 w-12 rounded-none"
+                  onClick={() => setViewMode("grid")}
+                  data-testid="button-vault-view-grid"
+                >
+                  <LayoutGrid className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant={viewMode === "list" ? "default" : "ghost"}
+                  size="icon"
+                  className="h-12 w-12 rounded-none"
+                  onClick={() => setViewMode("list")}
+                  data-testid="button-vault-view-list"
+                >
+                  <List className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {VAULT_CATEGORIES.map(cat => {
+                const Icon = cat.icon;
+                const count = categoryCounts[cat.id] || 0;
+                if (cat.id !== "all" && count === 0) return null;
+                return (
+                  <Button
+                    key={cat.id}
+                    variant={selectedCategory === cat.id ? "default" : "outline"}
+                    size="sm"
+                    className="gap-1.5 text-xs"
+                    onClick={() => setSelectedCategory(cat.id)}
+                    data-testid={`filter-vault-${cat.id}`}
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                    {cat.label}
+                    <Badge variant="secondary" className="ml-1 h-5 px-1.5 text-[10px]">
+                      {count}
+                    </Badge>
+                  </Button>
+                );
+              })}
+            </div>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="flex items-center justify-between mb-6">
+              <p className="text-sm text-muted-foreground" data-testid="text-vault-results">
+                Showing {filtered.length} of {VAULT_FOLDERS.length} evidence folders
+                {selectedCategory !== "all" && ` in "${VAULT_CATEGORIES.find(c => c.id === selectedCategory)?.label}"`}
+                {searchQuery && ` matching "${searchQuery}"`}
+              </p>
+              {(selectedCategory !== "all" || searchQuery) && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => { setSelectedCategory("all"); setSearchQuery(""); }}
+                  data-testid="button-clear-vault-filters"
+                >
+                  <X className="h-3 w-3 mr-1" /> Clear filters
+                </Button>
+              )}
+            </div>
+
+            {filtered.length === 0 ? (
+              <div className="text-center py-16">
+                <Search className="h-12 w-12 mx-auto text-muted-foreground/50 mb-4" />
+                <h3 className="text-lg font-serif font-bold text-primary mb-2">No folders found</h3>
+                <p className="text-muted-foreground mb-4">Try adjusting your search or category filter.</p>
+                <Button variant="outline" onClick={() => { setSelectedCategory("all"); setSearchQuery(""); }}>
+                  Reset All Filters
+                </Button>
+              </div>
+            ) : viewMode === "grid" ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {filtered.map((folder, index) => {
+                  const catLabel = VAULT_CATEGORIES.find(c => c.id === folder.category)?.label || folder.category;
+                  return (
+                    <motion.div
+                      key={folder.url}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.03 }}
+                    >
+                      <a
+                        href={folder.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block group"
+                        data-testid={`link-vault-folder-${index}`}
+                      >
+                        <Card className="h-full hover-elevate transition-all border-border/50 group-hover:border-primary/30 group-hover:shadow-lg">
+                          <CardContent className="p-5">
+                            <div className="flex items-start gap-3 mb-3">
+                              <div className="p-2.5 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                {folder.icon}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <h3 className="font-serif font-bold text-sm text-primary leading-tight group-hover:underline">
+                                  {folder.name}
+                                </h3>
+                                <Badge variant="outline" className="mt-1 text-[10px]">
+                                  {catLabel}
+                                </Badge>
+                              </div>
+                              <ExternalLink className="h-4 w-4 text-muted-foreground/50 group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
+                            </div>
+                            <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
+                              {folder.description}
+                            </p>
+                            <div className="mt-3 flex items-center gap-1.5 text-[10px] text-primary/60 font-medium uppercase tracking-wider">
+                              <Lock className="h-3 w-3" /> Read-Only Access
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </a>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {filtered.map((folder, index) => {
+                  const catLabel = VAULT_CATEGORIES.find(c => c.id === folder.category)?.label || folder.category;
+                  return (
+                    <motion.div
+                      key={folder.url}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.2, delay: index * 0.02 }}
+                    >
+                      <a
+                        href={folder.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block group"
+                        data-testid={`list-vault-folder-${index}`}
+                      >
+                        <Card className="hover-elevate transition-all border-border/50 group-hover:border-primary/30">
+                          <CardContent className="p-4 flex items-center gap-4">
+                            <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-shrink-0">
+                              {folder.icon}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 mb-1">
+                                <h3 className="font-serif font-bold text-sm text-primary leading-tight group-hover:underline truncate">
+                                  {folder.name}
+                                </h3>
+                                <Badge variant="outline" className="text-[10px] flex-shrink-0 hidden sm:inline-flex">
+                                  {catLabel}
+                                </Badge>
+                              </div>
+                              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-1">
+                                {folder.description}
+                              </p>
+                            </div>
+                            <div className="flex items-center gap-2 flex-shrink-0">
+                              <span className="text-[10px] text-primary/60 font-medium uppercase tracking-wider hidden md:flex items-center gap-1">
+                                <Lock className="h-3 w-3" /> Read-Only
+                              </span>
+                              <ChevronRight className="h-4 w-4 text-muted-foreground/50 group-hover:text-primary transition-colors" />
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </a>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            )}
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <Card className="border-primary/20 bg-primary/5">
+              <CardContent className="p-6 md:p-8">
+                <div className="flex items-start gap-4">
+                  <Info className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-serif font-bold text-lg text-primary mb-2">About This Archive</h3>
+                    <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                      <p>
+                        This Evidence Vault provides public, read-only access to the complete document archive 
+                        of Dr. Richard William McLean (Barran Dodger). The archive contains 2,077+ primary source 
+                        documents spanning from 1990 to 2025, organized across {VAULT_FOLDERS.length} evidence folders.
+                      </p>
+                      <p>
+                        All documents are hosted on MyAIDrive, an independent cloud storage platform. Documents are 
+                        blockchain-timestamped to prove their existence and integrity at specific dates. No visitor, 
+                        administrator, or external party can modify or delete these records.
+                      </p>
+                      <p>
+                        This archive exists to ensure that truth cannot be erased. It serves as a permanent, 
+                        immutable record available to investigators, journalists, legal professionals, human rights 
+                        organizations, and the general public.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 py-8 border-t border-border"
+          >
+            <SocialShare
+              title="Evidence Vault — Immutable Public Archive"
+              description="Access 2,077+ blockchain-verified documents exposing 35 years of Australian government corruption and whistleblower persecution."
+              url="https://www.barrandodger.com.au/evidence-vault"
+            />
+          </motion.section>
+        </div>
+      </main>
+
+      <Footer />
+      <FloatingCTA />
+    </div>
+  );
+}

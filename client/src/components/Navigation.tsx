@@ -49,6 +49,7 @@ export function Navigation() {
     { href: "/gospel", label: "Gospel" },
     { href: "/evidence", label: "Evidence" },
     { href: "/publications", label: "Publications" },
+    { href: "/evidence-vault", label: "Evidence Vault" },
     { href: "/taxpayer-cost-analysis", label: "Cost Analysis" },
     { href: "/blockchain", label: "Timestamps" },
     { href: "/contact", label: "Contact" },
