@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { BookOpen, Download, ExternalLink, Link2, ScrollText, Flame, Sparkles, Globe, Star, Heart, Shield, FileText } from "lucide-react";
+import { DownloadBadge } from "@/components/DownloadCounter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -313,7 +314,7 @@ export default function Gospel() {
                       </div>
                       <Button className="w-full gap-2" asChild data-testid={`button-download-primary-${index}`}>
                         <a href={gospel.href} target="_blank" rel="noopener noreferrer" download>
-                          <Download className="h-4 w-4" /> Download Gospel
+                          <Download className="h-4 w-4" /> Download Gospel <DownloadBadge url={gospel.href} />
                         </a>
                       </Button>
                     </CardContent>
@@ -369,7 +370,7 @@ export default function Gospel() {
                       </div>
                       <Button variant="outline" className="w-full gap-2" asChild data-testid={`button-download-additional-${index}`}>
                         <a href={gospel.href} target="_blank" rel="noopener noreferrer" download>
-                          <Download className="h-4 w-4" /> Download
+                          <Download className="h-4 w-4" /> Download <DownloadBadge url={gospel.href} />
                         </a>
                       </Button>
                     </CardContent>
@@ -446,7 +447,7 @@ export default function Gospel() {
                       </div>
                       <Button className="w-full gap-2" asChild data-testid={`button-download-cosmic-${index}`}>
                         <a href={gospel.href} target="_blank" rel="noopener noreferrer" download>
-                          <Download className="h-4 w-4" /> Download Revelation
+                          <Download className="h-4 w-4" /> Download Revelation <DownloadBadge url={gospel.href} />
                         </a>
                       </Button>
                     </CardContent>
@@ -483,7 +484,7 @@ export default function Gospel() {
                 </div>
                 <Button variant="default" size="lg" className="gap-2" asChild data-testid="button-download-cosmic-scroll">
                   <a href="/documents/cosmic_scroll_of_ten.pdf" target="_blank" rel="noopener noreferrer" download>
-                    <Download className="h-5 w-5" /> Download The Cosmic Scroll of Ten (Free PDF)
+                    <Download className="h-5 w-5" /> Download The Cosmic Scroll of Ten (Free PDF) <DownloadBadge url="/documents/cosmic_scroll_of_ten.pdf" />
                   </a>
                 </Button>
               </CardContent>

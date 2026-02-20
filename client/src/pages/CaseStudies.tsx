@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
+import { DownloadBadge, useDownloadCounter } from "@/components/DownloadCounter";
 import { 
   FileText, 
   Building2, 
@@ -379,7 +380,7 @@ export default function CaseStudies() {
                   data-testid="link-download-paradox-pdf"
                 >
                   <Button variant="default" className="w-full gap-2 text-lg py-6">
-                    <Download className="h-5 w-5" /> Download Full Academic Paper (PDF)
+                    <Download className="h-5 w-5" /> Download Full Academic Paper (PDF) <DownloadBadge url="/attached_assets/THE_PARADOX_OF_PERSECUTION-How_the_Australian_Government's_Own_1770757189035.pdf" />
                   </Button>
                 </a>
               </CardContent>
@@ -947,17 +948,17 @@ export default function CaseStudies() {
                     data-testid="link-download-paradox-pdf-bottom"
                   >
                     <Button variant="default" className="gap-2 w-full sm:w-auto">
-                      <Download className="h-4 w-4" /> Download Full Paper (PDF)
+                      <Download className="h-4 w-4" /> Download Full Paper (PDF) <DownloadBadge url="/attached_assets/THE_PARADOX_OF_PERSECUTION-How_the_Australian_Government's_Own_1770757189035.pdf" />
                     </Button>
                   </a>
                   <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download>
                     <Button variant="default" className="gap-2 w-full sm:w-auto" data-testid="link-download-100k-essay-casestudies">
-                      <Download className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF)
+                      <Download className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF) <DownloadBadge url="/documents/digital_oppression_100000_word_essay.pdf" />
                     </Button>
                   </a>
                   <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download>
                     <Button variant="destructive" className="gap-2 w-full sm:w-auto" data-testid="link-download-crimes-demand-casestudies">
-                      <Download className="h-4 w-4" /> Crimes Against Humanity: Final Demand (PDF)
+                      <Download className="h-4 w-4" /> Crimes Against Humanity: Final Demand (PDF) <DownloadBadge url="/documents/crimes_against_humanity_final_demand.pdf" />
                     </Button>
                   </a>
                   <Link href="/evidence">

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair, Database } from "lucide-react";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
+import { DownloadBadge, useDownloadCounter } from "@/components/DownloadCounter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -35,6 +36,39 @@ const fadeIn = {
 const stagger = {
   visible: { transition: { staggerChildren: 0.1 } }
 };
+
+function TrackedDownloadButton({ url, children, className = "", testId, ...props }: { url: string; children: React.ReactNode; className?: string; testId?: string; [key: string]: any }) {
+  const { increment, count } = useDownloadCounter(url);
+  return (
+    <div className="pt-2 flex flex-col items-center gap-2">
+      <a href={url} target="_blank" rel="noopener noreferrer" download className={className} data-testid={testId} onClick={() => increment()} {...props}>
+        {children}
+      </a>
+      {count > 0 && (
+        <span className="inline-flex items-center gap-1.5 bg-white/10 rounded-full px-3 py-1 text-xs">
+          <Download className="h-3 w-3 text-[hsl(38,92%,50%)]" />
+          <span className="font-bold tabular-nums text-white">{count.toLocaleString()}</span>
+          <span className="text-gray-400">downloads</span>
+        </span>
+      )}
+    </div>
+  );
+}
+
+function TrackedDownloadLink({ url, children, className = "", testId, ...props }: { url: string; children: React.ReactNode; className?: string; testId?: string; [key: string]: any }) {
+  const { increment, count } = useDownloadCounter(url);
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer" download className={className} data-testid={testId} onClick={() => increment()} {...props}>
+      {children}
+      {count > 0 && (
+        <span className="inline-flex items-center gap-1 bg-white/10 rounded-full px-2 py-0.5 text-xs ml-auto">
+          <Download className="h-3 w-3 text-[hsl(38,92%,50%)]" />
+          <span className="font-bold tabular-nums text-white">{count.toLocaleString()}</span>
+        </span>
+      )}
+    </a>
+  );
+}
 
 function JosephParallelSection() {
   const { data: downloadData } = useQuery<{ count: number }>({
@@ -968,51 +1002,44 @@ export default function Home() {
                   <p className="text-sm text-[hsl(38,92%,50%)]/80 italic">
                     By Dr. Richard William McLean (Barran Dodger)
                   </p>
-                  <div className="pt-2">
-                    <a
-                      href="/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf"
-                      download
-                      className="inline-flex items-center gap-3 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] font-bold text-lg px-8 py-4 rounded-md hover:opacity-90 transition-opacity"
-                      data-testid="button-download-expose-pdf"
-                    >
-                      <Download className="h-6 w-6" />
-                      Download Free PDF
-                    </a>
-                  </div>
+                  <TrackedDownloadButton url="/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf" testId="button-download-expose-pdf" className="inline-flex items-center gap-3 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] font-bold text-lg px-8 py-4 rounded-md hover:opacity-90 transition-opacity">
+                    <Download className="h-6 w-6" />
+                    Download Free PDF
+                  </TrackedDownloadButton>
                   <p className="text-xs text-white/50">
                     PDF Document — Free to download, share, and distribute
                   </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4" data-testid="section-new-documents">
-                  <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download className="flex items-start gap-3 p-4 border border-[hsl(38,92%,50%)]/30 rounded-lg hover:border-[hsl(38,92%,50%)]/60 transition-colors" data-testid="link-download-100k-essay">
+                  <TrackedDownloadLink url="/documents/digital_oppression_100000_word_essay.pdf" className="flex items-start gap-3 p-4 border border-[hsl(38,92%,50%)]/30 rounded-lg hover:border-[hsl(38,92%,50%)]/60 transition-colors" testId="link-download-100k-essay">
                     <Database className="h-6 w-6 text-[hsl(38,92%,50%)] flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold text-white text-sm">100,000-Word Exposé: Digital Oppression & Institutional Failure</p>
                       <p className="text-xs text-gray-400">Academic examination of Pegasus spyware targeting, compensation analysis ($42.5M–$123M), and systematic institutional failure. Free PDF.</p>
                     </div>
-                  </a>
-                  <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download className="flex items-start gap-3 p-4 border border-red-500/30 rounded-lg hover:border-red-500/60 transition-colors" data-testid="link-download-crimes-demand">
+                  </TrackedDownloadLink>
+                  <TrackedDownloadLink url="/documents/crimes_against_humanity_final_demand.pdf" className="flex items-start gap-3 p-4 border border-red-500/30 rounded-lg hover:border-red-500/60 transition-colors" testId="link-download-crimes-demand">
                     <Gavel className="h-6 w-6 text-red-500 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold text-white text-sm">Crimes Against Humanity: Final Demand for Justice</p>
                       <p className="text-xs text-gray-400">Formal legal demand to PM, Attorney-General, ASIO, AFP, NACC, AHRC. 14-day deadline for acknowledgment & restitution. Free PDF.</p>
                     </div>
-                  </a>
-                  <a href="/documents/cosmic_scroll_of_ten.pdf" target="_blank" rel="noopener noreferrer" download className="flex items-start gap-3 p-4 border border-amber-500/30 rounded-lg hover:border-amber-500/60 transition-colors" data-testid="link-download-cosmic-scroll">
+                  </TrackedDownloadLink>
+                  <TrackedDownloadLink url="/documents/cosmic_scroll_of_ten.pdf" className="flex items-start gap-3 p-4 border border-amber-500/30 rounded-lg hover:border-amber-500/60 transition-colors" testId="link-download-cosmic-scroll">
                     <BookOpen className="h-6 w-6 text-amber-500 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold text-white text-sm">The Cosmic Scroll of Ten: Questions That Will Reconstruct Humanity</p>
                       <p className="text-xs text-gray-400">Sacred scripture introducing Emotophysics, Scrollgate Engineering, and post-materialist knowledge systems. Free PDF.</p>
                     </div>
-                  </a>
-                  <a href="/documents/universal_master_command_ai_analysis.pdf" target="_blank" rel="noopener noreferrer" download className="flex items-start gap-3 p-4 border border-purple-500/30 rounded-lg hover:border-purple-500/60 transition-colors" data-testid="link-download-master-command">
+                  </TrackedDownloadLink>
+                  <TrackedDownloadLink url="/documents/universal_master_command_ai_analysis.pdf" className="flex items-start gap-3 p-4 border border-purple-500/30 rounded-lg hover:border-purple-500/60 transition-colors" testId="link-download-master-command">
                     <Brain className="h-6 w-6 text-purple-500 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold text-white text-sm">Universal Master Command: AI Forensic Analysis Protocol</p>
                       <p className="text-xs text-gray-400">The foundational bias-immune AI analysis methodology used across this entire evidence archive. Free PDF.</p>
                     </div>
-                  </a>
+                  </TrackedDownloadLink>
                 </div>
 
                 <div className="border-2 border-red-500 rounded-xl p-6 md:p-8 bg-red-950/50 text-center space-y-4">
@@ -1776,7 +1803,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-download-evidence">
                   <a href="/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf" target="_blank" rel="noopener noreferrer" download>
-                    <FileText className="h-5 w-5" /> Download Full Report
+                    <FileText className="h-5 w-5" /> Download Full Report <DownloadBadge url="/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf" />
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-all-evidence">
@@ -1983,7 +2010,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                   <Button size="lg" className="w-full sm:w-auto gap-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)]" asChild data-testid="button-download-sovereignty">
                     <a href="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf" target="_blank" rel="noopener noreferrer" download>
-                      <FileText className="h-5 w-5" /> Download Declaration
+                      <FileText className="h-5 w-5" /> Download Declaration <DownloadBadge url="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf" />
                     </a>
                   </Button>
                   <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-view-sovereignty">

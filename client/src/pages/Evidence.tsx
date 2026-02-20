@@ -9,6 +9,7 @@ import { EvidenceCounter } from "@/components/EvidenceCounter";
 import { ProgressTracker, useDocumentProgress } from "@/components/ProgressTracker";
 import { useDocumentPreview } from "@/components/DocumentPreview";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
+import { DownloadBadge } from "@/components/DownloadCounter";
 import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye, Search, Brain, MessageCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -2590,7 +2591,7 @@ export default function Evidence() {
                       <Button variant="default" className="bg-red-600 hover:bg-red-700 text-white" asChild data-testid="link-download-weaponised-email">
                         <a href="/attached_assets/I_am_planning_a_terrorist_attack_at_36_Aston_Martin_drive_Goul_1770764660293.pdf" target="_blank" rel="noopener noreferrer">
                           <Download className="mr-2 h-4 w-4" />
-                          Download Complete Document (PDF)
+                          Download Complete Document (PDF) <DownloadBadge url="/attached_assets/I_am_planning_a_terrorist_attack_at_36_Aston_Martin_drive_Goul_1770764660293.pdf" />
                         </a>
                       </Button>
                     </div>
@@ -3064,6 +3065,7 @@ export default function Evidence() {
                         <Button variant="ghost" size="icon" asChild>
                           <a href={doc.url} download>
                             <Download className="h-4 w-4" />
+                            <DownloadBadge url={doc.url} />
                           </a>
                         </Button>
                       </div>

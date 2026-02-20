@@ -131,7 +131,11 @@ export async function registerRoutes(
   // Download Counts
   app.get('/api/downloads/:slug', async (req, res) => {
     try {
-      const count = await storage.getDownloadCount(req.params.slug);
+      let count = await storage.getDownloadCount(req.params.slug);
+      if (count === 0) {
+        await db.insert(downloadCounts).values({ documentSlug: req.params.slug, count: 99 }).onConflictDoNothing();
+        count = 99;
+      }
       res.json({ count });
     } catch (err) {
       res.status(500).json({ message: "Internal server error" });
@@ -147,11 +151,56 @@ export async function registerRoutes(
     }
   });
 
-  // Seed initial download counts (start at 99 for Joseph Parallel)
   async function seedDownloadCounts() {
-    const existing = await storage.getDownloadCount('joseph-parallel');
-    if (existing === 0) {
-      await db.insert(downloadCounts).values({ documentSlug: 'joseph-parallel', count: 99 }).onConflictDoNothing();
+    const slugs = [
+      'joseph-parallel',
+      'digital-oppression-100000-word-essay',
+      'crimes-against-humanity-final-demand',
+      'cosmic-scroll-of-ten',
+      'universal-master-command-ai-analysis',
+      'the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768972005548',
+      's-122---redacted-pdf-1768970361556',
+      'formal-criminal-affidavit-against-sukhi-tear--syed-salman-kazm-1769134987540',
+      'i-tried-to-kill-barran-dodger-----and-that-makes-me-a-hero--a-da-1769134987541',
+      'the-declaration-of-sovereignty-of-dr--richard-william-mcle-1769135376793',
+      'the-enliven-chain-has-been-summoned-2-1767163861559',
+      'ohchr-submission-ref-urust23aus17-urgent-appeal-for-recognitio-1770786120794',
+      'the-paradox-of-persecution-how-the-australian-government-s-own-1770757189035',
+      'i-am-planning-a-terrorist-attack-at-36-aston-martin-drive-goul-1770764660293',
+      '1-2-3-gospels-of-barran-dodger--1769147945614',
+      'gospel-title-for-canonical-archive-the-gospel-of-barran-dodger-1769122315872',
+      'gospel-of-the-eliven-chain-1768975834273',
+      'gospel-according-to-bqrran-dodger--1768975834273',
+      'scroll-xv-xix--the-post-singularity-gospel-of-the-enliven-chai-1768975834273',
+      'atherion-witnessed--the-gospel-complete-who-is-barran-dodger-1768975834273',
+      'god-s-glory-through-the-rest-of-me---a-testimony-of-divine-evidence',
+      'public-declaration-of-divine-witness--the-testimony-of-dr-ric-1769029569552',
+      'the-covenant-of-resonance--a-declaration-of-stewardship-and-s-1769029569552',
+      'the-chronicles-of-the-new-earth---complete-biblical-epic-wi-1769156961381',
+      'the-enliven-chain-has-been-summoned-1769029569553',
+      'the-gospel-of-the-enliven-chain--a-prophetic-affidavit-of-exi-1769029569553',
+      'the-chronicles-of-the-new-earth--1769029569553',
+      'god-never-calls-the-equipped--he-equips-the-called--1769029888189',
+      'ten-commandments-1769122728901',
+      'alien-races-1768976172893',
+      'the-chronicles-of-the-new-earth',
+      'the-testimony-of-dr--richard-william-mclean--a-forensic-analysis-in-biblical--hi',
+      'novel-of-biblical-proportions',
+      'the-immutable-threshold---leonard-s-role-as-living-witness-to-the-supreme-dawn-r',
+      'press-release-for-immediate-global-distribution---13-novemb-1769156961382',
+      'the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768976939113',
+      '2023-03-27-final-assessment---dr-rich-mclean-1769743072042',
+      'commonwealth-ombudsman-complaint---2024-101985-richard-mclean--1769743769564',
+      'ndia-acknowledgement-of-referral--29569682--sec-official--1769743972359',
+      'the-eliven-chain---144-questions-of-witness-and-revelation---a-1769743972359',
+      'declaration-of-the-witness---1769743972359',
+      'the-one-who-loved--the-world-that-forsook-1769743972359',
+      'cocksucker--1769743972359',
+      'ai-and-democracy-by-barran-resonance-dodger-1769743972359',
+      'integrated-testimonial-indictment-ethical-reckoning',
+    ];
+    for (const slug of slugs) {
+      await db.insert(downloadCounts).values({ documentSlug: slug, count: 99 }).onConflictDoNothing();
     }
   }
   seedDownloadCounts().catch(console.error);

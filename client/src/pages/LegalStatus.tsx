@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
+import { DownloadBadge } from "@/components/DownloadCounter";
 import { 
   Scale, Globe, FileText, Clock, CheckCircle, 
   AlertCircle, Loader2, ExternalLink, Shield, Landmark
@@ -279,12 +280,12 @@ export default function LegalStatus() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button variant="destructive" className="gap-2" asChild data-testid="button-download-legal-demand">
                     <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download>
-                      <FileText className="h-4 w-4" /> Download Final Demand (PDF)
+                      <FileText className="h-4 w-4" /> Download Final Demand (PDF) <DownloadBadge url="/documents/crimes_against_humanity_final_demand.pdf" />
                     </a>
                   </Button>
                   <Button variant="outline" className="gap-2" asChild data-testid="button-download-100k-essay-legal">
                     <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download>
-                      <FileText className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF)
+                      <FileText className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF) <DownloadBadge url="/documents/digital_oppression_100000_word_essay.pdf" />
                     </a>
                   </Button>
                 </div>

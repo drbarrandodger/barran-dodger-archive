@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
+import { DownloadBadge } from "@/components/DownloadCounter";
 import { BookOpen, FileText, Shield, Sparkles, Scale, ExternalLink, Download, ScrollText, Flame, Link2, Globe } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -215,7 +216,7 @@ export default function PropheticPapers() {
                       </div>
                       <Button className="w-full gap-2" asChild data-testid={`button-download-${index}`}>
                         <a href={gospel.href} target="_blank" rel="noopener noreferrer" download>
-                          <Download className="h-4 w-4" /> Download Gospel
+                          <Download className="h-4 w-4" /> Download Gospel <DownloadBadge url={gospel.href} />
                         </a>
                       </Button>
                     </CardContent>
@@ -256,7 +257,7 @@ export default function PropheticPapers() {
                       </div>
                       <Button variant="outline" className="w-full gap-2" asChild data-testid={`button-download-scroll-${index}`}>
                         <a href={gospel.href} target="_blank" rel="noopener noreferrer" download>
-                          <Download className="h-4 w-4" /> Download Document
+                          <Download className="h-4 w-4" /> Download Document <DownloadBadge url={gospel.href} />
                         </a>
                       </Button>
                     </CardContent>

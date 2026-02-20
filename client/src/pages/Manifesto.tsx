@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
+import { DownloadBadge } from "@/components/DownloadCounter";
 import { 
   BookOpen, 
   Scale, 
@@ -630,7 +631,7 @@ export default function Manifesto() {
 
                   <Button size="lg" className="w-full gap-2" asChild>
                     <a href={doc.href} target="_blank" rel="noopener noreferrer" download data-testid="button-download-federal-court">
-                      <FileText className="h-5 w-5" /> Download Official Document <ExternalLink className="h-4 w-4" />
+                      <FileText className="h-5 w-5" /> Download Official Document <ExternalLink className="h-4 w-4" /> <DownloadBadge url={doc.href} />
                     </a>
                   </Button>
                 </CardContent>

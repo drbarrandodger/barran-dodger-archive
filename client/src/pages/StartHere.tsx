@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
+import { DownloadBadge } from "@/components/DownloadCounter";
 import { 
   Clock, Shield, FileText, Scale, BookOpen, Heart, Download,
   ExternalLink, AlertTriangle, CheckCircle, ArrowRight,
@@ -294,6 +295,7 @@ export default function StartHere() {
                             <p className="text-xs text-muted-foreground">{doc.description}</p>
                           </div>
                           <Download className="h-5 w-5 text-[hsl(38,92%,50%)] shrink-0 group-hover:scale-110 transition-transform" />
+                          <DownloadBadge url={doc.link} />
                         </div>
                       </a>
                     ))}
@@ -325,6 +327,7 @@ export default function StartHere() {
                               <p className="text-xs text-muted-foreground">{doc.description}</p>
                             </div>
                             <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-[hsl(38,92%,50%)] shrink-0 transition-colors" />
+                            <DownloadBadge url={doc.link} />
                           </div>
                         </a>
                       ) : (
@@ -366,6 +369,7 @@ export default function StartHere() {
                           <p className="text-[10px] text-muted-foreground truncate">{doc.description}</p>
                         </div>
                         <Download className="h-3 w-3 text-muted-foreground group-hover:text-[hsl(38,92%,50%)] shrink-0" />
+                        <DownloadBadge url={doc.link} />
                       </a>
                     ))}
                   </div>
@@ -390,6 +394,7 @@ export default function StartHere() {
                           <p className="text-[10px] text-muted-foreground truncate">{doc.description}</p>
                         </div>
                         <Download className="h-3 w-3 text-muted-foreground group-hover:text-[hsl(38,92%,50%)] shrink-0" />
+                        <DownloadBadge url={doc.link} />
                       </a>
                     ))}
                   </div>
