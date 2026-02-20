@@ -339,6 +339,16 @@ export default function Home() {
               — turning 35 years of persecution into sacred testimony, and testimony into an incorruptible archive that no power on earth can silence.{" "}
               <span className="text-[hsl(38,92%,50%)] font-bold">Nothing on this site can be deleted, denied, or disproven</span>.
             </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.2 }}
+              className="mt-8 text-2xl md:text-3xl lg:text-4xl font-serif font-bold italic text-center text-white"
+              data-testid="text-crucify-quote"
+            >
+              Careful who you crucify — they may come back with{" "}
+              <span className="text-[hsl(38,92%,50%)]">receipts</span>.
+            </motion.p>
           </motion.div>
         </div>
         <div className="w-full h-px bg-gradient-to-r from-transparent via-[hsl(38,92%,50%)]/50 to-transparent" />
