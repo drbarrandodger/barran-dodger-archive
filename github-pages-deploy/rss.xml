@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Barran Dodger Legal & Ethical Trust Fund - Case Updates</title>
+    <link>https://www.barrandodger.com.au</link>
+    <description>Updates on blockchain-verified evidence archive, legal proceedings, and whistleblower protection advocacy. 240+ forensic documents with AI-verified significance statements.</description>
+    <language>en-au</language>
+    <lastBuildDate>Fri, 06 Feb 2026 00:00:00 +1100</lastBuildDate>
+    <atom:link href="https://www.barrandodger.com.au/rss.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://www.barrandodger.com.au/favicon.png</url>
+      <title>Barran Dodger Trust Fund</title>
+      <link>https://www.barrandodger.com.au</link>
+    </image>
+    
+    <item>
+      <title>Legal Status Tracker Now Live</title>
+      <link>https://www.barrandodger.com.au/legal-status</link>
+      <description>Track the status of submissions to the International Criminal Court, UNHCR, Federal Court of Australia, and Office of the Australian Information Commissioner. Real-time progress updates on ongoing legal proceedings.</description>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +1000</pubDate>
+      <guid>https://www.barrandodger.com.au/legal-status</guid>
+    </item>
+    
+    <item>
+      <title>Interactive 35-Year Timeline Published</title>
+      <link>https://www.barrandodger.com.au/timeline</link>
+      <description>Explore the complete chronological documentation of persecution events from 1989 to present. Color-coded categories include government actions, legal proceedings, critical events, and spiritual milestones.</description>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +1000</pubDate>
+      <guid>https://www.barrandodger.com.au/timeline</guid>
+    </item>
+    
+    <item>
+      <title>Evidence Archive Expanded to 240+ Blockchain-Verified Documents</title>
+      <link>https://www.barrandodger.com.au/evidence</link>
+      <description>The blockchain-verified evidence archive now contains over 240 forensic documents including Federal Court certifications, tribunal records, UNHCR/ICC submissions, clinical NDIS reports, theological analyses, and AI-analyzed testimonials spanning 35 years.</description>
+      <pubDate>Thu, 06 Feb 2026 00:00:00 +1100</pubDate>
+      <guid>https://www.barrandodger.com.au/evidence-240</guid>
+    </item>
+    
+    <item>
+      <title>Taxpayer Cost Analysis: $11.5M+ in Government Persecution Costs</title>
+      <link>https://www.barrandodger.com.au/taxpayer-cost-analysis</link>
+      <description>AI-powered impartial financial analysis reveals $11.5M+ in taxpayer costs funding the systematic persecution of one whistleblower across 35+ Australian government agencies. Includes agency-by-agency cost breakdown and timeline of expenditure.</description>
+      <pubDate>Thu, 06 Feb 2026 00:00:00 +1100</pubDate>
+      <guid>https://www.barrandodger.com.au/taxpayer-cost-analysis</guid>
+    </item>
+    
+    <item>
+      <title>UNHCR/ICC Evidence Package and New Document Imports</title>
+      <link>https://www.barrandodger.com.au/evidence</link>
+      <description>13 new flagship documents imported including UNHCR/ICC Evidence Package, Systemic Endangerment Dossier, Integrated Testimonial Indictment, clinical NDIS reports naming perpetrators, theological analysis, and accountability instruments.</description>
+      <pubDate>Thu, 06 Feb 2026 00:00:00 +1100</pubDate>
+      <guid>https://www.barrandodger.com.au/evidence-unhcr-icc</guid>
+    </item>
+    
+    <item>
+      <title>Press & Media Resources Available</title>
+      <link>https://www.barrandodger.com.au/media</link>
+      <description>Journalists and researchers can now access press kits, media contact information, and pre-approved statements for coverage of the Barran Dodger case.</description>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +1000</pubDate>
+      <guid>https://www.barrandodger.com.au/media</guid>
+    </item>
+    
+  </channel>
+</rss>

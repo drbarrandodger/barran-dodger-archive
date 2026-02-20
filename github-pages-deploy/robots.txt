@@ -1,0 +1,105 @@
+# Barran Dodger Legal & Ethical Trust Fund
+# https://www.barrandodger.com.au
+# ABN 78 833 496 164
+# 240+ Blockchain-Verified Evidence Documents
+# I DARE YOU TO PROVE ME WRONG
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bing Preview
+User-agent: BingPreview
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Yahoo / Slurp
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# Facebook / Meta
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter / X
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# WhatsApp
+User-agent: WhatsApp
+Allow: /
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+# Sogou (Chinese search engine)
+User-agent: Sogou
+Allow: /
+Crawl-delay: 2
+
+# All other crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Important pages for indexing
+Allow: /
+Allow: /start-here
+Allow: /evidence
+Allow: /manifesto
+Allow: /blockchain
+Allow: /gospel
+Allow: /timeline
+Allow: /case-studies
+Allow: /josephs-coat
+Allow: /church
+Allow: /prophetic-papers
+Allow: /legal-status
+Allow: /mission
+Allow: /research
+Allow: /media
+Allow: /donate
+Allow: /contact
+
+# Allow all attached assets (evidence PDFs and images)
+Allow: /attached_assets/
+
+# Sitemap location
+Sitemap: https://www.barrandodger.com.au/sitemap.xml
+
+# RSS Feed
+# https://www.barrandodger.com.au/rss.xml
