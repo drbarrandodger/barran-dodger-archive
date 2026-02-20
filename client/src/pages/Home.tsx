@@ -29,6 +29,10 @@ import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_177034593
 import { HandCoins, TrendingUp, Landmark, ShieldCheck, Clock, Building2 } from "lucide-react";
 import { FloatingCTA } from "@/components/FloatingCTA";
 
+import bookCoverBetrayed from "@assets/images/book-cover-betrayed.png";
+import docCoverJoseph from "@assets/images/doc-cover-joseph.png";
+import docCoverGospel from "@assets/images/doc-cover-gospel.png";
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -149,30 +153,33 @@ function JosephParallelSection() {
             </div>
 
             <div className="lg:col-span-2 flex flex-col items-center gap-6">
-              <div className="w-full border-2 border-[hsl(38,92%,50%)] rounded-xl p-6 md:p-8 bg-[hsl(38,92%,50%)]/5 text-center space-y-5" data-testid="card-joseph-download">
-                <BookOpen className="h-12 w-12 text-[hsl(38,92%,50%)] mx-auto" />
-                <h3 className="text-xl font-serif font-bold text-white">The Joseph Parallel</h3>
-                <p className="text-sm text-gray-400">
-                  A Prophetic Evidentiary Narrative — The fact-checked, evidence-based, source-linked Biblical comparison 
-                  of the life of Dr. Richard William McLean with the Story of Joseph (Genesis 37–50)
-                </p>
-                <p className="text-xs text-gray-500 uppercase tracking-wider font-bold">
-                  2,146 Evidence Files • 35 Years • Genesis 37–50
-                </p>
-                <Button
-                  size="lg"
-                  className="w-full gap-2 bg-[hsl(38,92%,50%)] text-black font-bold hover:bg-[hsl(38,92%,55%)] text-lg py-6"
-                  onClick={handleDownload}
-                  data-testid="button-download-joseph-parallel"
-                >
-                  <Download className="h-5 w-5" /> Download Free (PDF)
-                </Button>
-
-                <div className="flex items-center justify-center gap-2 pt-2" data-testid="counter-joseph-downloads">
-                  <div className="flex items-center gap-1.5 bg-white/10 rounded-full px-4 py-2">
-                    <Download className="h-4 w-4 text-[hsl(38,92%,50%)]" />
-                    <span className="text-2xl font-bold text-white tabular-nums">{count.toLocaleString()}</span>
-                    <span className="text-xs text-gray-400 uppercase tracking-wider">downloads</span>
+              <div className="w-full border-2 border-[hsl(38,92%,50%)] rounded-xl overflow-hidden bg-[hsl(38,92%,50%)]/5 text-center space-y-0" data-testid="card-joseph-download">
+                <div className="aspect-[3/4] relative w-full overflow-hidden">
+                  <img src={docCoverJoseph} alt="The Joseph Parallel Cover" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                    <h3 className="text-2xl font-serif font-bold text-white mb-2">The Joseph Parallel</h3>
+                    <p className="text-xs text-[hsl(38,92%,50%)] uppercase tracking-widest font-bold">Prophetic Narrative</p>
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <p className="text-sm text-gray-400">
+                    A Prophetic Evidentiary Narrative — The fact-checked, evidence-based, source-linked Biblical comparison 
+                    of the life of Dr. Richard William McLean with the Story of Joseph (Genesis 37–50)
+                  </p>
+                  <Button
+                    size="lg"
+                    className="w-full gap-2 bg-[hsl(38,92%,50%)] text-black font-bold hover:bg-[hsl(38,92%,55%)] text-lg py-6"
+                    onClick={handleDownload}
+                    data-testid="button-download-joseph-parallel"
+                  >
+                    <Download className="h-5 w-5" /> Download Free (PDF)
+                  </Button>
+                  <div className="flex items-center justify-center gap-2 pt-2" data-testid="counter-joseph-downloads">
+                    <div className="flex items-center gap-1.5 bg-white/10 rounded-full px-4 py-2">
+                      <Download className="h-4 w-4 text-[hsl(38,92%,50%)]" />
+                      <span className="text-2xl font-bold text-white tabular-nums">{count.toLocaleString()}</span>
+                      <span className="text-xs text-gray-400 uppercase tracking-wider">downloads</span>
+                    </div>
                   </div>
                 </div>
               </div>

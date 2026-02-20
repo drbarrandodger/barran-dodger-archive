@@ -18,6 +18,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 
+import catMedical from "@assets/images/cat-medical.png";
+import catLegal from "@assets/images/cat-legal.png";
+import catNdis from "@assets/images/cat-ndis.png";
+
 interface Agency {
   id: string;
   name: string;
@@ -168,11 +172,25 @@ export function EvidenceExplorer() {
                   onMouseLeave={() => setHoveredAgency(null)}
                   data-testid={`agency-card-${agency.id}`}
                 >
-                  <Card className={`h-full transition-all ${isSelected ? 'border-primary bg-primary/5' : 'hover-elevate'}`}>
-                    <CardContent className="p-4 text-center">
-                      <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3 ${categoryColors[agency.category]}`}>
-                        <agency.icon className="h-6 w-6 text-white" />
+                  <Card className={`h-full transition-all overflow-hidden ${isSelected ? 'border-primary bg-primary/5' : 'hover-elevate'}`}>
+                    <div className="aspect-square relative w-full overflow-hidden border-b border-border/50">
+                      <img 
+                        src={
+                          agency.category === 'medical' ? catMedical :
+                          agency.category === 'legal' ? catLegal :
+                          agency.category === 'government' ? catNdis :
+                          agency.category === 'oversight' ? catLegal :
+                          catNdis
+                        } 
+                        alt={agency.shortName} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                      <div className={`absolute top-2 left-2 w-8 h-8 rounded-full flex items-center justify-center ${categoryColors[agency.category]}`}>
+                        <agency.icon className="h-4 w-4 text-white" />
                       </div>
+                    </div>
+                    <CardContent className="p-4 text-center">
                       <p className="font-medium text-sm text-foreground mb-1">{agency.shortName}</p>
                       <Badge 
                         variant={agency.severity === "critical" ? "destructive" : "secondary"}
