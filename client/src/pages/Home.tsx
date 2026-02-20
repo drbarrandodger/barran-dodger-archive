@@ -26,7 +26,7 @@ import artworkImg from "@assets/IMG_2914_1768893482684.jpeg";
 import richPortraitImg from "@assets/rich_mclean_ndis_portrait.jpg";
 import manErasedImg from "@assets/A826B3FD-2BC3-48B6-B6FA-F7A4F9FA1909_1770630251378.png";
 import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_1770345931447.png";
-import propheticPortraitImg from "../assets/images/prophetic-portrait-v5.png";
+import propheticPortraitImg from "../assets/images/prophetic-portrait-v6.png";
 import { HandCoins, TrendingUp, Landmark, ShieldCheck, Clock, Building2 } from "lucide-react";
 import { FloatingCTA } from "@/components/FloatingCTA";
 
