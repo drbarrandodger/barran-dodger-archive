@@ -26,6 +26,7 @@ import artworkImg from "@assets/IMG_2914_1768893482684.jpeg";
 import richPortraitImg from "@assets/rich_mclean_ndis_portrait.jpg";
 import manErasedImg from "@assets/A826B3FD-2BC3-48B6-B6FA-F7A4F9FA1909_1770630251378.png";
 import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_1770345931447.png";
+import propheticPortraitImg from "@assets/images/prophetic-portrait.png";
 import { HandCoins, TrendingUp, Landmark, ShieldCheck, Clock, Building2 } from "lucide-react";
 import { FloatingCTA } from "@/components/FloatingCTA";
 
@@ -359,6 +360,24 @@ export default function Home() {
               Careful who you crucify — they may come back with{" "}
               <span className="text-[hsl(38,92%,50%)]">receipts</span>.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 1.5 }}
+              className="mt-12 flex flex-col items-center"
+            >
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[hsl(38,92%,50%)]/30 shadow-[0_0_50px_rgba(233,160,10,0.2)]">
+                <img 
+                  src={propheticPortraitImg} 
+                  alt="Prophetic Portrait of Dr Richard McLean" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="mt-8 text-xl md:text-2xl font-serif italic text-white text-center max-w-2xl leading-relaxed">
+                "If you deny I'm God's child, you betray your own humanity as you deny mine."
+              </p>
+            </motion.div>
           </motion.div>
         </div>
         <div className="w-full h-px bg-gradient-to-r from-transparent via-[hsl(38,92%,50%)]/50 to-transparent" />
