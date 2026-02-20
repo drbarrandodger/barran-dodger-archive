@@ -18,9 +18,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 
-import catMedical from "@assets/images/cat-medical.png";
-import catLegal from "@assets/images/cat-legal.png";
-import catNdis from "@assets/images/cat-ndis.png";
+const catMedical = "/images/cat-medical.png";
+const catLegal = "/images/cat-legal.png";
+const catNdis = "/images/cat-ndis.png";
 
 interface Agency {
   id: string;

@@ -29,9 +29,9 @@ import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_177034593
 import { HandCoins, TrendingUp, Landmark, ShieldCheck, Clock, Building2 } from "lucide-react";
 import { FloatingCTA } from "@/components/FloatingCTA";
 
-import bookCoverBetrayed from "@assets/images/book-cover-betrayed.png";
-import docCoverJoseph from "@assets/images/doc-cover-joseph.png";
-import docCoverGospel from "@assets/images/doc-cover-gospel.png";
+const bookCoverBetrayed = "/images/book-cover-betrayed.png";
+const docCoverJoseph = "/images/doc-cover-joseph.png";
+const docCoverGospel = "/images/doc-cover-gospel.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
