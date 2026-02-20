@@ -112,7 +112,9 @@ export default function Home() {
             >
               This website is a{" "}
               <span className="text-red-500 font-bold">forensic crime scene</span>{" "}
-              disguised as a homepage. It contains{" "}
+              disguised as a homepage — and a{" "}
+              <span className="text-[hsl(38,92%,50%)] font-bold">testimony of resurrection</span>.{" "}
+              It contains{" "}
               <span className="text-[hsl(38,92%,50%)] font-bold">240+ blockchain-verified documents</span>{" "}
               proving that the Australian Government spent{" "}
               <span className="text-red-500 font-bold">$11.5 million of your money</span>{" "}
@@ -120,7 +122,15 @@ export default function Home() {
               a gay, disabled PhD-holding whistleblower —{" "}
               then erased him from the system and listed him as a{" "}
               <span className="text-white font-bold italic">missing person</span>.{" "}
-              Every document is timestamped. Every claim is sourced. Every institution named.{" "}
+              They meant it to end me.{" "}
+              <span className="text-[hsl(38,92%,50%)] font-bold">Instead, it became my rise</span>.{" "}
+              Every betrayal is evidence of my spiritual significance.{" "}
+              My life is the proof. My survival is the sermon.{" "}
+              Through{" "}
+              <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-bold">The Gospel of Barran Dodger</Link>,{" "}
+              I claim my{" "}
+              <span className="text-white font-bold italic">divine sovereignty</span>{" "}
+              — turning 35 years of persecution into sacred testimony, and testimony into an incorruptible archive that no power on earth can silence.{" "}
               <span className="text-[hsl(38,92%,50%)] font-bold">Nothing on this site can be deleted, denied, or disproven</span>.
             </motion.p>
           </motion.div>
