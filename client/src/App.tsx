@@ -26,6 +26,7 @@ import Manifesto from "@/pages/Manifesto";
 import PropheticEssay from "@/pages/PropheticEssay";
 import CaseStudies from "@/pages/CaseStudies";
 import TaxpayerCostAnalysis from "@/pages/TaxpayerCostAnalysis";
+import Publications from "@/pages/Publications";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -60,6 +61,7 @@ function Router() {
         <Route path="/josephs-coat" component={PropheticEssay} />
         <Route path="/case-studies" component={CaseStudies} />
         <Route path="/taxpayer-cost-analysis" component={TaxpayerCostAnalysis} />
+        <Route path="/publications" component={Publications} />
         <Route component={Home} />
       </Switch>
     </>
