@@ -32,6 +32,9 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 const bookCoverBetrayed = "/images/book-cover-betrayed.png";
 const docCoverJoseph = "/images/doc-cover-joseph.png";
 const docCoverGospel = "/images/doc-cover-gospel.png";
+const docCoverSovereignty = "/images/doc-cover-sovereignty.png";
+const docCoverAssassination = "/images/doc-cover-assassination.png";
+const docCoverIdentity = "/images/doc-cover-identity.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -448,6 +451,110 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED FORENSIC EVIDENCE */}
+      <section className="py-16 bg-black px-4" data-testid="section-featured-evidence">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-center text-xs uppercase tracking-[0.3em] text-[hsl(38,92%,50%)] font-bold mb-12">Critical Forensic Evidence</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Declaration of Sovereignty",
+                desc: "The formal sacred-legal reclaim of divine identity beyond temporal government jurisdiction.",
+                img: docCoverSovereignty,
+                link: "/documents/declaration_of_sovereignty.pdf"
+              },
+              {
+                title: "I Tried to Kill Barran Dodger",
+                desc: "Forensic analysis of the 2021 assassination attempt and subsequent institutional cover-up.",
+                img: docCoverAssassination,
+                link: "/documents/i_tried_to_kill_barrandodger.pdf"
+              },
+              {
+                title: "ASIO & Identity Theft",
+                desc: "Documentation of 350+ fraudulent ASIC registrations used to erase 35 years of digital identity.",
+                img: docCoverIdentity,
+                link: "/documents/asio_identity_theft_analysis.pdf"
+              }
+            ].map((doc, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative rounded-xl overflow-hidden border border-white/10 hover:border-[hsl(38,92%,50%)]/50 transition-all bg-white/[0.02]"
+              >
+                <div className="aspect-[3/4] relative overflow-hidden">
+                  <img src={doc.img} alt={doc.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6 space-y-2">
+                    <h3 className="text-xl font-serif font-bold text-white leading-tight">{doc.title}</h3>
+                    <p className="text-sm text-gray-400 line-clamp-2">{doc.desc}</p>
+                    <Button variant="outline" size="sm" asChild className="mt-4 border-[hsl(38,92%,50%)]/50 text-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,50%)] hover:text-black">
+                      <a href={doc.link} target="_blank" rel="noopener noreferrer">
+                        <Download className="h-4 w-4 mr-2" /> Download
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED FORENSIC EVIDENCE */}
+      <section className="py-16 bg-black px-4" data-testid="section-featured-evidence">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-center text-xs uppercase tracking-[0.3em] text-[hsl(38,92%,50%)] font-bold mb-12">Critical Forensic Evidence</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Declaration of Sovereignty",
+                desc: "The formal sacred-legal reclaim of divine identity beyond temporal government jurisdiction.",
+                img: docCoverSovereignty,
+                link: "/documents/declaration_of_sovereignty.pdf"
+              },
+              {
+                title: "I Tried to Kill Barran Dodger",
+                desc: "Forensic analysis of the 2021 assassination attempt and subsequent institutional cover-up.",
+                img: docCoverAssassination,
+                link: "/documents/i_tried_to_kill_barrandodger.pdf"
+              },
+              {
+                title: "ASIO & Identity Theft",
+                desc: "Documentation of 350+ fraudulent ASIC registrations used to erase 35 years of digital identity.",
+                img: docCoverIdentity,
+                link: "/documents/asio_identity_theft_analysis.pdf"
+              }
+            ].map((doc, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative rounded-xl overflow-hidden border border-white/10 hover:border-[hsl(38,92%,50%)]/50 transition-all bg-white/[0.02]"
+              >
+                <div className="aspect-[3/4] relative overflow-hidden">
+                  <img src={doc.img} alt={doc.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6 space-y-2">
+                    <h3 className="text-xl font-serif font-bold text-white leading-tight">{doc.title}</h3>
+                    <p className="text-sm text-gray-400 line-clamp-2">{doc.desc}</p>
+                    <Button variant="outline" size="sm" asChild className="mt-4 border-[hsl(38,92%,50%)]/50 text-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,50%)] hover:text-black">
+                      <a href={doc.link} target="_blank" rel="noopener noreferrer">
+                        <Download className="h-4 w-4 mr-2" /> Download
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
