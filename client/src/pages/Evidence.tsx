@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 const CATEGORIES = [
   { id: "all", label: "All Documents", icon: Archive, color: "from-slate-500/20 to-gray-500/10" },
@@ -2218,9 +2219,9 @@ export default function Evidence() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Evidence Archive - Blockchain-Verified Documentation"
-        description="94+ forensic documents with SHA-256 hash verification and OpenTimestamps blockchain attestation. Legal affidavits, tribunal records, human rights submissions, medical assessments, and AI-verified testimonial analysis."
-        keywords="blockchain evidence archive, forensic documentation, SHA-256 verification, OpenTimestamps, legal affidavits, tribunal records, medical evidence, persecution documentation, whistleblower evidence, AI forensic analysis, immutable testimony, cryptographic proof"
+        title="Evidence Archive — 240+ Blockchain-Sealed Documents The Government Cannot Deny"
+        description="Browse 240+ forensic documents with SHA-256 hash verification and Bitcoin blockchain timestamps. Legal affidavits, tribunal records, medical reports, and AI-verified analysis. Every document is tamper-proof."
+        keywords="blockchain evidence archive, forensic documentation Australia, SHA-256 verified documents, whistleblower evidence, government corruption proof, immutable legal records, Bitcoin timestamp evidence"
         path="/evidence"
       />
       <Navigation />
@@ -3179,6 +3180,7 @@ export default function Evidence() {
           </div>
         </DialogContent>
       </Dialog>
-    </div>
+          <FloatingCTA />
+</div>
   );
 }

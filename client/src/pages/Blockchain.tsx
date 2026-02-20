@@ -8,6 +8,7 @@ import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function Blockchain() {
   const blockchainDocuments = [
@@ -370,9 +371,9 @@ export default function Blockchain() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Blockchain Verification - Immutable Evidence Timestamping"
-        description="All evidence is cryptographically timestamped using OpenTimestamps on the Bitcoin blockchain. SHA-256 hash verification ensures documents cannot be altered, backdated, or disputed."
-        keywords="blockchain evidence, OpenTimestamps verification, Bitcoin timestamping, SHA-256 hash, immutable documentation, cryptographic proof, evidence integrity, blockchain attestation, digital forensics, tamper-proof evidence"
+        title="Blockchain Verification — Why This Evidence Cannot Be Altered or Denied"
+        description="Every document is cryptographically timestamped on the Bitcoin blockchain using OpenTimestamps. SHA-256 hash verification ensures nothing can be altered, backdated, or disputed. The truth is permanent."
+        keywords="blockchain evidence verification, OpenTimestamps Bitcoin proof, SHA-256 document hash, immutable evidence, cryptographic proof corruption, tamper-proof legal documents"
         path="/blockchain"
       />
       <Navigation />
@@ -555,6 +556,7 @@ export default function Blockchain() {
       </main>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }

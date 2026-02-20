@@ -14,6 +14,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SocialShare } from "@/components/SocialShare";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function Media() {
   const pressReleases = [
@@ -52,8 +53,9 @@ export default function Media() {
   return (
     <>
       <SEO 
-        title="Media & Press | Barran Dodger Legal & Ethical Trust Fund"
-        description="Press releases, media resources, and contact information for journalists covering the systematic persecution case."
+        title="Media & Press — For Journalists Ready to Tell This Story"
+        description="Press releases, media resources, and contact information for journalists investigating the most documented whistleblower persecution case in Australian history."
+        keywords="media press whistleblower Australia, journalist resources corruption, press release government persecution, media contact Barran Dodger"
       />
       <Navigation />
       
@@ -223,6 +225,7 @@ export default function Media() {
       </main>
       
       <Footer />
-    </>
+          <FloatingCTA />
+</>
   );
 }

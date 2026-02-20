@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { SocialShare } from "@/components/SocialShare";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 interface LegalSubmission {
   body: string;
@@ -118,8 +119,9 @@ export default function LegalStatus() {
   return (
     <>
       <SEO 
-        title="Legal Status Tracker | Barran Dodger Legal & Ethical Trust Fund"
-        description="Track the status of all legal submissions to ICC, UNHCR, Federal Court, and Australian oversight bodies."
+        title="Legal Status — Active Proceedings & Formal Demands for Justice"
+        description="Current legal proceedings, formal demands sent to the Prime Minister, Attorney-General, AFP, ASIO, and AHRC. 14-day deadlines. No response. The silence is the evidence."
+        keywords="legal proceedings whistleblower Australia, formal demand justice, Attorney General silence, Prime Minister Albanese corruption, active legal case Australia"
       />
       <Navigation />
       
@@ -321,6 +323,7 @@ export default function LegalStatus() {
       </main>
       
       <Footer />
-    </>
+          <FloatingCTA />
+</>
   );
 }

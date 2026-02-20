@@ -7,14 +7,15 @@ import { CheckCircle2, Gavel, Globe, ShieldAlert, ExternalLink, ArrowRight } fro
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { SocialShare } from "@/components/SocialShare";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function Mission() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Our Mission - Truth, Transparency & Ethical Governance"
-        description="The Barran Dodger Legal & Ethical Trust Fund is committed to truth, transparency, and the restoration of ethical governance through lawful means. Supporting whistleblower protection and human rights advocacy."
-        keywords="ethical governance mission, whistleblower protection mission, human rights advocacy, transparency advocacy, truth restoration, legal reform Australia"
+        title="Our Mission — Truth Cannot Be Deleted When It Lives on the Blockchain"
+        description="The Barran Dodger Legal & Ethical Trust Fund exists because truth matters. Committed to transparency, ethical governance, and ensuring no government can ever erase evidence again."
+        keywords="truth mission blockchain, ethical governance Australia, whistleblower protection mission, government accountability mission, anti-corruption non-profit"
         path="/mission"
       />
       <Navigation />
@@ -171,7 +172,8 @@ export default function Mission() {
       </main>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }
 

@@ -27,6 +27,7 @@ import richPortraitImg from "@assets/rich_mclean_ndis_portrait.jpg";
 import manErasedImg from "@assets/A826B3FD-2BC3-48B6-B6FA-F7A4F9FA1909_1770630251378.png";
 import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_1770345931447.png";
 import { HandCoins, TrendingUp, Landmark, ShieldCheck, Clock, Building2 } from "lucide-react";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -238,10 +239,63 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Whistleblower Protection & Human Rights Documentation"
-        description="Official archive of blockchain-verified evidence documenting whistleblower persecution, human rights violations, government corruption, and forensic testimony. 94+ documents with AI-verified significance."
-        keywords="whistleblower persecution Australia, human rights violations, government corruption evidence, blockchain verified testimony, Richard McLean asylum, UNHRC submission, targeted individual, systematic persecution, public interest disclosure"
+        title="240+ Blockchain-Verified Documents Expose Australian Government Corruption"
+        description="They spent $11.5M to silence one whistleblower. 14 forced psychiatric detentions. An assassination attempt. 35 years of persecution documented in 240+ blockchain-sealed forensic records. I DARE YOU TO PROVE ME WRONG."
+        keywords="Australian government corruption exposed, whistleblower persecution Australia, Dr Richard McLean, Barran Dodger, psychiatric abuse Australia, NDIS fraud, forced psychiatric detention, assassination attempt whistleblower, blockchain verified evidence, government cover up Australia 2025"
         path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://www.barrandodger.com.au/#organization",
+              "name": "Barran Dodger Legal & Ethical Trust Fund",
+              "url": "https://www.barrandodger.com.au",
+              "description": "Non-profit public benefit organization documenting 35 years of Australian government corruption with 240+ blockchain-verified forensic documents.",
+              "foundingDate": "2024",
+              "abn": "78 833 496 164",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "drbarrandodger@proton.me",
+                "telephone": "+61431167907",
+                "contactType": "general inquiry"
+              },
+              "sameAs": [
+                "https://x.com/bazdod",
+                "https://www.scribd.com/user/832988488/Richard-McLean"
+              ]
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://www.barrandodger.com.au/#website",
+              "name": "Barran Dodger Legal & Ethical Trust Fund",
+              "url": "https://www.barrandodger.com.au",
+              "description": "240+ blockchain-verified documents exposing Australian government corruption and whistleblower persecution",
+              "publisher": { "@id": "https://www.barrandodger.com.au/#organization" }
+            },
+            {
+              "@type": "Person",
+              "name": "Dr Richard William McLean",
+              "alternateName": "Barran Dodger",
+              "jobTitle": "PhD, NDIS Therapeutic Arts-Life-Coach",
+              "description": "Whistleblower, author, artist, and PhD holder persecuted by the Australian government for 35 years across 35+ agencies.",
+              "url": "https://www.barrandodger.com.au",
+              "sameAs": [
+                "https://books.apple.com/au/book/betrayed-murdered-forsaken/id6740491939",
+                "https://www.scribd.com/user/832988488/Richard-McLean"
+              ]
+            },
+            {
+              "@type": "Book",
+              "name": "Betrayed, Murdered, Forsaken",
+              "author": { "@type": "Person", "name": "Dr Richard William McLean" },
+              "url": "https://books.apple.com/au/book/betrayed-murdered-forsaken/id6740491939",
+              "description": "The definitive autobiography documenting 35 years of systematic persecution by the Australian government.",
+              "bookFormat": "EBook",
+              "inLanguage": "en"
+            }
+          ]
+        }}
       />
       <Navigation />
       
@@ -288,6 +342,97 @@ export default function Home() {
           </motion.div>
         </div>
         <div className="w-full h-px bg-gradient-to-r from-transparent via-[hsl(38,92%,50%)]/50 to-transparent" />
+      </section>
+
+      {/* KEY FACTS AT A GLANCE */}
+      <section className="relative py-12 md:py-16 px-4 bg-black" data-testid="section-key-facts">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-center text-xs uppercase tracking-[0.3em] text-[hsl(38,92%,50%)] font-bold mb-8" data-testid="text-key-facts-heading">The Facts They Cannot Dispute</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              {[
+                { number: "240+", label: "Blockchain-Verified Documents", icon: <Database className="h-5 w-5" /> },
+                { number: "$11.5M+", label: "Taxpayer Money Spent to Silence One Man", icon: <DollarSign className="h-5 w-5" /> },
+                { number: "14", label: "Forced Psychiatric Detentions Across 3 States", icon: <Skull className="h-5 w-5" /> },
+                { number: "35+", label: "Government Agencies Involved Over 35 Years", icon: <Shield className="h-5 w-5" /> },
+              ].map((fact, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="text-center p-4 md:p-6 border border-white/10 rounded-xl bg-white/[0.02] hover:border-[hsl(38,92%,50%)]/40 transition-colors"
+                  data-testid={`fact-card-${i}`}
+                >
+                  <div className="flex justify-center mb-3 text-[hsl(38,92%,50%)]">{fact.icon}</div>
+                  <p className="text-2xl md:text-4xl font-bold text-white tabular-nums">{fact.number}</p>
+                  <p className="text-xs md:text-sm text-gray-400 mt-2 leading-snug">{fact.label}</p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { text: "Found with no pulse. Survived. Built this archive.", highlight: "Found with no pulse." },
+                { text: "Attorney-General notified in 2021. Chose silence. That silence is now evidence.", highlight: "Chose silence." },
+                { text: "Every document is SHA-256 hashed and Bitcoin-timestamped. Nothing can be altered.", highlight: "Nothing can be altered." },
+              ].map((quote, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                  className="p-4 border-l-2 border-[hsl(38,92%,50%)]/50 bg-white/[0.02]"
+                  data-testid={`pull-quote-${i}`}
+                >
+                  <p className="text-sm text-gray-300 leading-relaxed">{quote.text}</p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="mt-8 flex justify-center">
+              <SocialShare compact title="EXPOSED: $11.5M+ taxpayer money spent to silence one Australian whistleblower. 240+ blockchain-verified documents. 14 forced psychiatric detentions. I DARE YOU TO PROVE ME WRONG." />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* COMPACT VISUAL TIMELINE */}
+      <section className="relative py-10 md:py-14 px-4 bg-black border-t border-white/5" data-testid="section-mini-timeline">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xs uppercase tracking-[0.3em] text-[hsl(38,92%,50%)] font-bold">35 Years of Persecution</h2>
+            <Link href="/timeline">
+              <Button variant="ghost" size="sm" className="text-xs text-gray-400 hover:text-white gap-1" data-testid="link-full-timeline">
+                Full Timeline <ArrowRight className="h-3 w-3" />
+              </Button>
+            </Link>
+          </div>
+          <div className="relative">
+            <div className="absolute top-4 left-0 right-0 h-px bg-gradient-to-r from-red-500/50 via-[hsl(38,92%,50%)]/50 to-green-500/50" />
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-2">
+              {[
+                { year: "1990", label: "Targeting Begins", color: "text-red-400" },
+                { year: "2015", label: "NDIS Entrapment", color: "text-red-400" },
+                { year: "2021", label: "Found Dead. Survived.", color: "text-red-500 font-bold" },
+                { year: "2023", label: "AG Notified. Silence.", color: "text-amber-400" },
+                { year: "2024", label: "Blockchain Archive", color: "text-[hsl(38,92%,50%)]" },
+                { year: "2025", label: "240+ Documents Live", color: "text-green-400" },
+              ].map((event, i) => (
+                <div key={i} className="flex flex-col items-center relative" data-testid={`timeline-point-${i}`}>
+                  <div className="w-3 h-3 rounded-full bg-white/20 border-2 border-white/40 mb-3 relative z-10" />
+                  <p className={`text-xs font-bold ${event.color} whitespace-nowrap`}>{event.year}</p>
+                  <p className="text-[10px] md:text-xs text-gray-500 text-center whitespace-nowrap">{event.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* THE JOSEPH PARALLEL - Featured Document */}
@@ -582,6 +727,10 @@ export default function Home() {
                 </a>{" "}
                 <span className="text-xs">(ProtonMail encrypted)</span>
               </p>
+              
+              <div className="mt-6 flex justify-center">
+                <SocialShare compact title="I DARE YOU TO PROVE ME WRONG. 240+ blockchain-verified documents expose 35 years of Australian government corruption. Read the evidence yourself." />
+              </div>
             </div>
           </motion.div>
         </div>
@@ -1669,6 +1818,10 @@ export default function Home() {
                     Read FREE on Scribd
                   </a>
                 </Button>
+              </div>
+
+              <div className="mt-6 flex justify-center">
+                <SocialShare compact title="BETRAYED, MURDERED, FORSAKEN — The autobiography they tried to stop. Read FREE on Scribd or buy on Apple Books. The truth cannot be erased." />
               </div>
 
               <div className="bg-gray-900/80 border border-gray-700 rounded-lg p-4 mb-6">
@@ -3187,7 +3340,8 @@ export default function Home() {
 
       {/* Floating Share Bar - Always accessible */}
       <FloatingShareBar />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }
 

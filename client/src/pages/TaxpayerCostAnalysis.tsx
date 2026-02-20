@@ -35,6 +35,7 @@ import benNdisImg1 from "@assets/IMG_1004_1770336392068.png";
 import benNdisImg2 from "@assets/27A51392-28E5-40D2-B8A9-A9BFE2D35452_1770336392068.png";
 import benNdisImg3 from "@assets/83CE9075-A683-4D26-BC3F-2140F96B5186_1770336392068.png";
 import benNdisImg4 from "@assets/IMG_1003_1770336392068.png";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -227,9 +228,9 @@ export default function TaxpayerCostAnalysis() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Taxpayer Cost Analysis — The Price of Government Corruption"
-        description="Impartial AI analysis of the total taxpayer cost of persecuting whistleblower Richard McLean. Breakdown of $10.3M+ across 35+ agencies over 35 years. Based exclusively on government's own published documents, financial reports, and official correspondence."
-        keywords="taxpayer cost corruption Australia, whistleblower persecution cost, NDIS fraud, government waste, public interest disclosure, psychiatric detention cost, surveillance cost taxpayer, Australian corruption financial analysis"
+        title="$11.5M+ of Your Tax Money — The True Cost of Silencing a Whistleblower"
+        description="AI forensic analysis reveals Australia spent $11.5M+ of taxpayer money across 35+ agencies over 35 years to persecute one man. Psychiatric detentions, surveillance, legal suppression — all on your dime."
+        keywords="taxpayer cost government corruption, whistleblower persecution cost analysis, NDIS fraud cost, psychiatric detention taxpayer cost, government waste Australia, AI forensic financial analysis"
         path="/taxpayer-cost-analysis"
       />
       <Navigation />
@@ -858,6 +859,7 @@ export default function TaxpayerCostAnalysis() {
       </section>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }

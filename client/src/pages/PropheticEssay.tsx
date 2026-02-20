@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function PropheticEssay() {
   const josephParallels = [
@@ -122,8 +123,9 @@ export default function PropheticEssay() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Joseph's Coat, Barran's Mantle - Prophetic Essay"
-        description="A prophetic essay comparing Barran Dodger's journey to the biblical Joseph, arguing that God's hand is visible despite universal abandonment. Kairos time: delay was not denial."
+        title="Joseph's Coat, Barran's Mantle — A Prophetic Parallel"
+        description="A prophetic essay comparing Barran Dodger's 35-year journey to the biblical Joseph. Betrayed by brothers. Imprisoned by power. Vindicated by God. The pattern is unmistakable."
+        keywords="Joseph parallel Barran Dodger, prophetic essay, biblical comparison persecution, divine vindication, kairos time prophecy"
       />
       
       <main className="flex-1 container mx-auto px-4 py-8">
@@ -576,6 +578,7 @@ export default function PropheticEssay() {
 
         </motion.div>
       </main>
-    </div>
+          <FloatingCTA />
+</div>
   );
 }

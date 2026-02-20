@@ -38,6 +38,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { useState } from "react";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 const caseStudies = [
   {
@@ -317,9 +318,9 @@ export default function CaseStudies() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="The Paradox of Persecution — Case Studies & Academic Analysis"
-        description="How the Australian Government's own records simultaneously prove systematic targeting and guarantee legal vindication. Fact-checked academic analysis by Dr. Richard William McLean, Ph.D., backed by 2,077 primary-source documents spanning 35 years."
-        keywords="paradox of persecution, case studies, academic analysis, government records, legal vindication, whistleblower persecution, evidence analysis, Richard McLean PhD, ASIC fraud, NDIS corruption"
+        title="The Paradox of Persecution — The Government's Own Records Prove Everything"
+        description="How Australia's own bureaucratic records simultaneously document systematic targeting AND guarantee legal vindication. Fact-checked academic analysis backed by 2,077 primary-source documents spanning 35 years."
+        keywords="government persecution case study, whistleblower vindication, paradox of persecution, Australian bureaucracy corruption, systematic targeting evidence, academic analysis government corruption"
         path="/case-studies"
       />
       <Navigation />
@@ -1101,6 +1102,7 @@ export default function CaseStudies() {
       </main>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }

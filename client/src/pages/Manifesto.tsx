@@ -29,6 +29,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function Manifesto() {
   const trustFundPurpose = {
@@ -355,9 +356,9 @@ export default function Manifesto() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Complete Manifesto - Barran Dodger Legal & Ethical Trust Fund & Church Ministry"
-        description="The complete manifesto of the Barran Dodger Legal & Ethical Trust Fund and Church of Barran Dodger Ministry. Comprehensive documentation of purpose, tenets, gospels, and evidence archive."
-        keywords="Barran Dodger manifesto, trust fund purpose, church ministry, gospels, evidence archive, whistleblower protection, human rights, blockchain testimony, sacred tenets"
+        title="The Complete Manifesto — Purpose, Evidence & Sacred Mission"
+        description="The complete manifesto of the Barran Dodger Legal & Ethical Trust Fund. Purpose, tenets, gospels, and the full evidence archive laid bare. Read it. Challenge it. Share it."
+        keywords="Barran Dodger manifesto, trust fund purpose, whistleblower manifesto, evidence archive manifesto, sacred mission Australia"
         path="/manifesto"
       />
       <Navigation />
@@ -916,6 +917,7 @@ export default function Manifesto() {
       </main>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }

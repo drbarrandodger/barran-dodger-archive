@@ -17,6 +17,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -170,8 +171,9 @@ export default function StartHere() {
   return (
     <>
       <SEO 
-        title="Start Here - Understanding the Case | Barran Dodger Legal & Ethical Trust Fund"
-        description="Your guide to 240+ blockchain-verified documents exposing 35 years of government corruption, $11.5M in taxpayer costs, and the most documented persecution case in Australian history."
+        title="Start Here — The Most Documented Persecution Case in Australian History"
+        description="New here? Start with this guide to 240+ blockchain-verified documents exposing how Australia spent $11.5M to destroy one whistleblower. The evidence speaks for itself."
+        keywords="whistleblower case Australia explained, government corruption explained, start here evidence, persecution case overview, Barran Dodger introduction"
       />
       <Navigation />
       
@@ -545,6 +547,7 @@ export default function StartHere() {
       </main>
       
       <Footer />
-    </>
+          <FloatingCTA />
+</>
   );
 }

@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function Donate() {
   const [copied, setCopied] = useState(false);
@@ -64,9 +65,9 @@ export default function Donate() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Donate to Support Truth & Justice"
-        description="Support the Barran Dodger Legal & Ethical Trust Fund through secure PayID donation. Every contribution directly funds whistleblower protection, evidence preservation, and human rights advocacy. ABN 78 833 496 164."
-        keywords="donate whistleblower protection, support human rights Australia, PayID donation, legal trust fund, ethical governance funding, evidence preservation donation"
+        title="Donate — Fund the Fight for Truth & Justice"
+        description="Every dollar directly funds evidence preservation, whistleblower legal protection, and the fight against government corruption. Secure PayID donation. ABN 78 833 496 164."
+        keywords="donate whistleblower protection, support truth justice Australia, PayID donation, fund anti-corruption, legal trust fund donation"
         path="/donate"
       />
       <Navigation />
@@ -354,6 +355,7 @@ export default function Donate() {
       </main>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }

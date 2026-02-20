@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 interface TimelineEvent {
   year: string;
@@ -206,8 +207,9 @@ export default function Timeline() {
   return (
     <>
       <SEO 
-        title="35-Year Timeline | Barran Dodger Legal & Ethical Trust Fund"
-        description="Interactive timeline documenting 35 years of systematic persecution, from 1990 to present day legal proceedings."
+        title="35 Years of Persecution — Interactive Timeline of Government Targeting"
+        description="From 1990 to 2025: an interactive timeline documenting 35 years of systematic persecution by 35+ Australian government agencies. Every event backed by blockchain-verified evidence."
+        keywords="persecution timeline Australia, whistleblower targeting timeline, 35 years government corruption, systematic persecution chronology, Richard McLean timeline"
       />
       <Navigation />
       
@@ -346,6 +348,7 @@ export default function Timeline() {
       </main>
       
       <Footer />
-    </>
+          <FloatingCTA />
+</>
   );
 }

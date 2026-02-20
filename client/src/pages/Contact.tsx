@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin, ExternalLink } from "lucide-react";
 import { SocialShare } from "@/components/SocialShare";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function Contact() {
   const { mutate, isPending } = useCreateInquiry();
@@ -35,9 +36,9 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Contact Us"
-        description="Contact the Barran Dodger Legal & Ethical Trust Fund for inquiries about whistleblower protection, evidence documentation, or legal support. Email: drbarrandodger@proton.me | Phone: +61 431 167 907"
-        keywords="contact Barran Dodger, whistleblower support Australia, legal inquiry, human rights advocacy contact, evidence submission"
+        title="Contact — Reach the Barran Dodger Legal & Ethical Trust Fund"
+        description="Contact Dr Richard McLean (Barran Dodger) for media inquiries, whistleblower support, evidence submission, or legal correspondence. Email: drbarrandodger@proton.me | Phone: +61 431 167 907."
+        keywords="contact Barran Dodger, whistleblower contact Australia, media inquiry Richard McLean, evidence submission, legal correspondence"
         path="/contact"
       />
       <Navigation />
@@ -190,6 +191,7 @@ export default function Contact() {
       </main>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }

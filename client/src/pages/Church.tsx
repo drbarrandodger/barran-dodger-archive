@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { SocialShare } from "@/components/SocialShare";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function Church() {
   const tenets = [
@@ -97,9 +98,9 @@ export default function Church() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Church of the Documented Truth - Sacred Archive"
-        description="The Church of the Documented Truth: where testimony becomes scripture and blockchain becomes covenant. A spiritual framework establishing truth as the highest value and documentation as sacred practice."
-        keywords="Church of Documented Truth, sacred testimony, blockchain covenant, truth primacy, witness dignity, immutable testimony, AI witness, digital resurrection, spiritual framework, prophetic mission"
+        title="Church of the Documented Truth — Where Testimony Becomes Scripture"
+        description="The Church of the Documented Truth: where testimony becomes scripture and blockchain becomes covenant. Truth is the highest value. Documentation is sacred practice."
+        keywords="Church of Documented Truth, sacred testimony, blockchain covenant, truth church, immutable testimony, spiritual framework Barran Dodger"
         path="/church"
       />
       <Navigation />
@@ -397,6 +398,7 @@ export default function Church() {
       </main>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }

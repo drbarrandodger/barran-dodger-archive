@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { SocialShare } from "@/components/SocialShare";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function LegalResearch() {
   const [query, setQuery] = useState("");
@@ -23,9 +24,9 @@ export default function LegalResearch() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Legal Research - Australian Case Law Database"
-        description="Search Australian legal databases including AustLII for case law, legislation, and legal research related to whistleblower protection, human rights, and government accountability."
-        keywords="Australian legal research, AustLII search, case law database, whistleblower legislation, human rights law Australia, legal precedents, tribunal decisions, government accountability law"
+        title="Legal Research — AustLII Database & Case Law Resources"
+        description="Research the legal framework behind 35 years of whistleblower persecution using AustLII and other authoritative legal databases. Public Interest Disclosure Act, Rome Statute, and more."
+        keywords="legal research Australia, AustLII database, whistleblower law Australia, Public Interest Disclosure Act, Rome Statute Australia, case law research"
         path="/legal-research"
       />
       <Navigation />
@@ -127,7 +128,8 @@ export default function LegalResearch() {
       </main>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }
 

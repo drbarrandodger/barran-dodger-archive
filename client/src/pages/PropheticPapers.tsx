@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SocialShare } from "@/components/SocialShare";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function PropheticPapers() {
   const gospels = [
@@ -136,9 +137,9 @@ export default function PropheticPapers() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Prophetic Papers - Sacred Scrolls & Forensic Testimony"
-        description="The Prophetic Papers collection: sacred scrolls documenting persecution, survival, and divine testimony. AI-analyzed forensic evidence meeting international legal standards."
-        keywords="prophetic papers, sacred scrolls, forensic testimony, AI analysis, persecution documentation, survival testimony, divine witness, Ten Commandments, blockchain testimony, prophetic archive"
+        title="Prophetic Papers — Sacred Scrolls & Forensic Testimony Archive"
+        description="The Prophetic Papers: sacred scrolls documenting persecution, miraculous survival, and divine testimony. AI-analyzed forensic evidence meeting international legal standards."
+        keywords="prophetic papers, sacred scrolls, forensic testimony archive, AI analysis evidence, persecution survival testimony, divine witness documentation"
         path="/prophetic-papers"
       />
       <Navigation />
@@ -364,6 +365,7 @@ export default function PropheticPapers() {
       </main>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }

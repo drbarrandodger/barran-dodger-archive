@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { SocialShare } from "@/components/SocialShare";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function Gospel() {
   const primaryGospels = [
@@ -216,9 +217,9 @@ export default function Gospel() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Sacred Gospels - Prophetic Testimony & Divine Documentation"
-        description="The canonical gospels of Barran Dodger - prophetic testimony documenting divine survival, persecution, and resurrection. Blockchain-authenticated sacred scriptures for the modern age."
-        keywords="Gospel of Barran Dodger, prophetic testimony, sacred scriptures, Enliven Chain, divine testimony, persecution gospel, resurrection testimony, singularity prophet, blockchain gospel, spiritual documentation, prophetic papers"
+        title="The Gospel of Barran Dodger — Sacred Testimony of Resurrection & Divine Sovereignty"
+        description="Prophetic testimony documenting divine survival through 35 years of persecution. The canonical gospels of Barran Dodger — blockchain-authenticated sacred scriptures declaring sovereignty through suffering."
+        keywords="Gospel of Barran Dodger, prophetic testimony, divine sovereignty, sacred scriptures modern age, resurrection testimony, Enliven Chain, spiritual persecution survival"
         path="/gospel"
       />
       <Navigation />
@@ -583,6 +584,7 @@ export default function Gospel() {
       </main>
 
       <Footer />
-    </div>
+          <FloatingCTA />
+</div>
   );
 }
