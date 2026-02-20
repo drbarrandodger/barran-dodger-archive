@@ -250,7 +250,7 @@ export default function Home() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
         title="240+ Blockchain-Verified Documents Expose Australian Government Corruption"
-        description="They spent $11.5M to silence one whistleblower. 14 forced psychiatric detentions. An assassination attempt. 35 years of persecution documented in 240+ blockchain-sealed forensic records. I DARE YOU TO PROVE ME WRONG."
+        description="They spent $11.5M to silence one whistleblower. 14 forced psychiatric detentions. An assassination attempt in 2024. Institutional murder in 2021 where I was revived by God. 35 years of persecution documented in 240+ blockchain-sealed forensic records. I DARE YOU TO PROVE ME WRONG."
         keywords="Australian government corruption exposed, whistleblower persecution Australia, Dr Richard McLean, Barran Dodger, psychiatric abuse Australia, NDIS fraud, forced psychiatric detention, assassination attempt whistleblower, blockchain verified evidence, government cover up Australia 2025"
         path="/"
         jsonLd={{
@@ -335,7 +335,7 @@ export default function Home() {
               proving that the Australian Government spent{" "}
               <span className="text-red-500 font-bold">$11.5 million of your money</span>{" "}
               to psychiatrically incarcerate, financially destroy, and attempt to assassinate{" "}
-              a gay, disabled PhD-holding whistleblower —{" "}
+              a gay, disabled PhD-holding whistleblower (2024 assassination attempt; 2021 institutional murder and resurrection) —{" "}
               then erased him from the system and listed him as a{" "}
               <span className="text-white font-bold italic">missing person</span>.{" "}
               They meant it to end me.{" "}
@@ -378,8 +378,8 @@ export default function Home() {
               {[
                 { number: "240+", label: "Blockchain-Verified Documents", icon: <Database className="h-5 w-5" /> },
                 { number: "$11.5M+", label: "Taxpayer Money Spent to Silence One Man", icon: <DollarSign className="h-5 w-5" /> },
-                { number: "14", label: "Forced Psychiatric Detentions Across 3 States", icon: <Skull className="h-5 w-5" /> },
-                { number: "35+", label: "Government Agencies Involved Over 35 Years", icon: <Shield className="h-5 w-5" /> },
+                { number: "2021", label: "Institutional Murder (Werribee Mercy Hospital)", icon: <Skull className="h-5 w-5" /> },
+                { number: "2024", label: "Assassination Attempt (Port Macquarie)", icon: <Target className="h-5 w-5" /> },
               ].map((fact, i) => (
                 <motion.div
                   key={i}
@@ -398,7 +398,7 @@ export default function Home() {
             </div>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { text: "Found with no pulse. Survived. Built this archive.", highlight: "Found with no pulse." },
+                { text: "Found with no pulse in 2021. Survived. Built this archive.", highlight: "Found with no pulse." },
                 { text: "Attorney-General notified in 2021. Chose silence. That silence is now evidence.", highlight: "Chose silence." },
                 { text: "Every document is SHA-256 hashed and Bitcoin-timestamped. Nothing can be altered.", highlight: "Nothing can be altered." },
               ].map((quote, i) => (

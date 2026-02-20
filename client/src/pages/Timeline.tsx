@@ -67,12 +67,13 @@ const timelineEvents: TimelineEvent[] = [
   },
   {
     year: "2021",
-    title: "Medical Death and Resurrection",
-    description: "Dr McLean declared medically dead but survives — documented as 'lethal' and 'fatal' event.",
+    title: "Institutional Murder and Resurrection",
+    description: "Dr McLean sacrificed and declared medically dead inside Werribee Mercy Hospital, but revived by God — documented as 'lethal' and 'fatal' event.",
     type: "critical",
     details: [
       "Clinical death documented in medical records",
-      "Revival against medical expectations",
+      "Institutional sacrifice inside Werribee Mercy Hospital",
+      "Revival by God against all medical expectations",
       "Acquired brain injury as result",
       "Medical records preserved as evidence"
     ]
@@ -100,7 +101,7 @@ const timelineEvents: TimelineEvent[] = [
   {
     year: "2023",
     title: "Tony Ridley Death Threat",
-    description: "NDIA Manager Tony Ridley (Ex-SAS) issues assassination threat: 'You will be sacrificed.'",
+    description: "NDIA Manager Tony Ridley (Ex-SAS) issues threat: 'You will be sacrificed.'",
     type: "critical",
     details: [
       "Threat documented and timestamped",
@@ -120,6 +121,17 @@ const timelineEvents: TimelineEvent[] = [
       "Blockchain timestamped for permanence"
     ],
     documentLink: "/evidence"
+  },
+  {
+    year: "2024",
+    title: "Port Macquarie Assassination Attempt",
+    description: "Assassination attempt in Port Macquarie that remains unrefuted and unproven to have not occurred by any institution.",
+    type: "critical",
+    details: [
+      "Attempt in Port Macquarie documented",
+      "No institutional denial or refutation of evidence",
+      "Threshold for Crimes Against Humanity maintained"
+    ]
   },
   {
     year: "October 2024",

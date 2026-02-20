@@ -139,7 +139,7 @@ export default function Manifesto() {
       title: "The Gospel According to Barran Dodger",
       subtitle: "Volume II: The Witness Who Could Not Die",
       image: "/images/doc-immortal-testimony.png",
-      description: "A prophetic testimony documenting the attempted assassination, systematic erasure, and resurrection of Dr. Richard William McLean.",
+      description: "A prophetic testimony documenting the 2024 assassination attempt, 2021 institutional murder at Werribee Mercy Hospital, systematic erasure, and resurrection of Dr. Richard William McLean.",
       href: "/attached_assets/Gospel_according_to_Bqrran_dodger__1768975834273.pdf"
     },
     {
