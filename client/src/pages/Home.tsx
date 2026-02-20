@@ -93,8 +93,134 @@ export default function Home() {
       />
       <Navigation />
       
-      {/* DIVINE RECKONING - The Challenge */}
-      <section className="relative pt-36 pb-4 md:pt-44 md:pb-8 px-4 bg-black">
+      {/* PURPOSE STATEMENT - The Opening Strike */}
+      <section className="relative pt-32 pb-0 md:pt-40 md:pb-0 px-4 bg-black overflow-hidden" data-testid="section-purpose-statement">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(233,160,10,0.08)_0%,_transparent_70%)] pointer-events-none" />
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
+            className="text-center py-16 md:py-24"
+          >
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="text-xl md:text-2xl lg:text-3xl text-white leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
+              data-testid="text-purpose-statement"
+            >
+              This website is a{" "}
+              <span className="text-red-500 font-bold">forensic crime scene</span>{" "}
+              disguised as a homepage. It contains{" "}
+              <span className="text-[hsl(38,92%,50%)] font-bold">240+ blockchain-verified documents</span>{" "}
+              proving that the Australian Government spent{" "}
+              <span className="text-red-500 font-bold">$11.5 million of your money</span>{" "}
+              to psychiatrically incarcerate, financially destroy, and attempt to assassinate{" "}
+              a gay, disabled PhD-holding whistleblower —{" "}
+              then erased him from the system and listed him as a{" "}
+              <span className="text-white font-bold italic">missing person</span>.{" "}
+              Every document is timestamped. Every claim is sourced. Every institution named.{" "}
+              <span className="text-[hsl(38,92%,50%)] font-bold">Nothing on this site can be deleted, denied, or disproven</span>.
+            </motion.p>
+          </motion.div>
+        </div>
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-[hsl(38,92%,50%)]/50 to-transparent" />
+      </section>
+
+      {/* Hero Section - Barran Dodger Trust */}
+      <section className="relative pt-16 pb-20 md:pt-24 md:pb-32 px-4 bg-grid-pattern overflow-hidden" data-testid="section-trust-hero">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background via-transparent to-background z-0 pointer-events-none" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <motion.div 
+              initial="hidden" 
+              animate="visible" 
+              variants={stagger}
+              className="flex-1 text-center lg:text-left space-y-6"
+            >
+              <motion.div variants={fadeIn}>
+                <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-[hsl(38,92%,50%)]/10 text-[hsl(38,92%,40%)] rounded-full mb-4 border border-[hsl(38,92%,50%)]/30">
+                  Public Benefit Organization • ABN: 78 833 496 164
+                </span>
+              </motion.div>
+              
+              <motion.h1 
+                variants={fadeIn}
+                className="text-4xl md:text-6xl font-serif font-bold text-primary leading-tight text-balance"
+              >
+                Barran Dodger Legal & Ethical Trust Fund
+              </motion.h1>
+              <motion.p
+                variants={fadeIn}
+                className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium mt-4"
+              >
+                The Trustee for www.barrandodger.com.au
+              </motion.p>
+              
+              <motion.p 
+                variants={fadeIn}
+                className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed text-balance"
+              >
+                Establishing an incorruptible forensic record against institutional misconduct. Converting sworn testimony into public-benefit action.
+              </motion.p>
+              
+              <motion.div 
+                variants={fadeIn}
+                className="p-6 bg-primary/5 border-l-4 border-[hsl(38,92%,50%)] rounded-r-lg space-y-3"
+              >
+                <p className="text-lg font-serif italic text-primary leading-relaxed">
+                  "The Eliven Chain has been summoned. An incorruptible archive of lived trauma and whistleblower testimony, sealed in the immutable substrate of blockchain to dismantle the 'Humiliation Machine'."
+                </p>
+                <p className="text-xs uppercase tracking-widest font-bold text-muted-foreground">
+                  — The First Link Transmission
+                </p>
+              </motion.div>
+
+              <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <Link href="/mission" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full gap-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)]" data-testid="button-mission-hero">
+                    Our Mission <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button variant="outline" size="lg" className="w-full" data-testid="button-contact-hero">
+                    Get Involved
+                  </Button>
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex-1 relative max-w-md lg:max-w-none"
+            >
+              <div className="relative aspect-[2/3] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+                <img 
+                  src={portraitImg} 
+                  alt="Barran Dodger with Crystal" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none" />
+              </div>
+              <div className="absolute -bottom-6 -right-6 -left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-border shadow-lg text-center hidden md:block">
+                <p className="text-sm font-serif italic text-primary">
+                  "I claim no special authority beyond documented experience, sworn statements, and an ethical responsibility to the public."
+                </p>
+                <p className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground mt-2">
+                  — BARRAN DODGER & CRYSTAL
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* DIVINE RECKONING - I Dare You To Prove Me Wrong */}
+      <section className="relative py-16 md:py-24 px-4 bg-black">
         <div className="container mx-auto max-w-5xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -1456,97 +1582,6 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Hero Section */}
-      <section className="relative pt-16 pb-20 md:pt-24 md:pb-32 px-4 bg-grid-pattern overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background via-transparent to-background z-0 pointer-events-none" />
-        
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <motion.div 
-              initial="hidden" 
-              animate="visible" 
-              variants={stagger}
-              className="flex-1 text-center lg:text-left space-y-6"
-            >
-              <motion.div variants={fadeIn}>
-                <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-[hsl(38,92%,50%)]/10 text-[hsl(38,92%,40%)] rounded-full mb-4 border border-[hsl(38,92%,50%)]/30">
-                  Public Benefit Organization • ABN: 78 833 496 164
-                </span>
-              </motion.div>
-              
-              <motion.h1 
-                variants={fadeIn}
-                className="text-4xl md:text-6xl font-serif font-bold text-primary leading-tight text-balance"
-              >
-                Barran Dodger Legal & Ethical Trust Fund
-              </motion.h1>
-              <motion.p
-                variants={fadeIn}
-                className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium mt-4"
-              >
-                The Trustee for www.barrandodger.com.au
-              </motion.p>
-              
-              <motion.p 
-                variants={fadeIn}
-                className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed text-balance"
-              >
-                Establishing an incorruptible forensic record against institutional misconduct. Converting sworn testimony into public-benefit action.
-              </motion.p>
-              
-              <motion.div 
-                variants={fadeIn}
-                className="p-6 bg-primary/5 border-l-4 border-[hsl(38,92%,50%)] rounded-r-lg space-y-3"
-              >
-                <p className="text-lg font-serif italic text-primary leading-relaxed">
-                  "The Eliven Chain has been summoned. An incorruptible archive of lived trauma and whistleblower testimony, sealed in the immutable substrate of blockchain to dismantle the 'Humiliation Machine'."
-                </p>
-                <p className="text-xs uppercase tracking-widest font-bold text-muted-foreground">
-                  — The First Link Transmission
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <Link href="/mission" className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full gap-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)]" data-testid="button-mission">
-                    Our Mission <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="/contact" className="w-full sm:w-auto">
-                  <Button variant="outline" size="lg" className="w-full" data-testid="button-contact">
-                    Get Involved
-                  </Button>
-                </Link>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex-1 relative max-w-md lg:max-w-none"
-            >
-              <div className="relative aspect-[2/3] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-                <img 
-                  src={portraitImg} 
-                  alt="Barran Dodger with Crystal" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none" />
-              </div>
-              <div className="absolute -bottom-6 -right-6 -left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-border shadow-lg text-center hidden md:block">
-                <p className="text-sm font-serif italic text-primary">
-                  "I claim no special authority beyond documented experience, sworn statements, and an ethical responsibility to the public."
-                </p>
-                <p className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground mt-2">
-                  — BARRAN DODGER & CRYSTAL
-                </p>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
 
