@@ -1,6 +1,8 @@
 import type { Express } from "express";
 import type { Server } from "http";
 import { storage } from "./storage";
+import { db } from "./db";
+import { downloadCounts } from "@shared/schema";
 import { api } from "@shared/routes";
 import { z } from "zod";
 import { listDriveFiles, downloadDriveFile, searchDriveForEvidence, DriveFile } from "./googleDrive";
@@ -125,6 +127,34 @@ export async function registerRoutes(
   }
   
   seedData().catch(console.error);
+
+  // Download Counts
+  app.get('/api/downloads/:slug', async (req, res) => {
+    try {
+      const count = await storage.getDownloadCount(req.params.slug);
+      res.json({ count });
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  app.post('/api/downloads/:slug/increment', async (req, res) => {
+    try {
+      const count = await storage.incrementDownloadCount(req.params.slug);
+      res.json({ count });
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Seed initial download counts (start at 99 for Joseph Parallel)
+  async function seedDownloadCounts() {
+    const existing = await storage.getDownloadCount('joseph-parallel');
+    if (existing === 0) {
+      await db.insert(downloadCounts).values({ documentSlug: 'joseph-parallel', count: 99 }).onConflictDoNothing();
+    }
+  }
+  seedDownloadCounts().catch(console.error);
 
   // Google Drive Integration - Scan and import documents
   app.get('/api/drive/list', async (req, res) => {

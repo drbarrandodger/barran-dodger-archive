@@ -1,14 +1,17 @@
 import { db } from "./db";
+import { eq, sql } from "drizzle-orm";
 import {
   subscribers,
   inquiries,
   evidenceItems,
+  downloadCounts,
   type InsertSubscriber,
   type InsertInquiry,
   type InsertEvidence,
   type Subscriber,
   type Inquiry,
-  type EvidenceItem
+  type EvidenceItem,
+  type DownloadCount
 } from "@shared/schema";
 
 export interface IStorage {
@@ -16,6 +19,8 @@ export interface IStorage {
   createInquiry(inquiry: InsertInquiry): Promise<Inquiry>;
   getEvidenceItems(): Promise<EvidenceItem[]>;
   createEvidenceItem(evidence: InsertEvidence): Promise<EvidenceItem>;
+  getDownloadCount(slug: string): Promise<number>;
+  incrementDownloadCount(slug: string): Promise<number>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -45,6 +50,26 @@ export class DatabaseStorage implements IStorage {
       .values(insertEvidence)
       .returning();
     return evidence;
+  }
+
+  async getDownloadCount(slug: string): Promise<number> {
+    const [row] = await db
+      .select()
+      .from(downloadCounts)
+      .where(eq(downloadCounts.documentSlug, slug));
+    return row ? row.count : 0;
+  }
+
+  async incrementDownloadCount(slug: string): Promise<number> {
+    const [row] = await db
+      .insert(downloadCounts)
+      .values({ documentSlug: slug, count: 1 })
+      .onConflictDoUpdate({
+        target: downloadCounts.documentSlug,
+        set: { count: sql`${downloadCounts.count} + 1` },
+      })
+      .returning();
+    return row.count;
   }
 }
 

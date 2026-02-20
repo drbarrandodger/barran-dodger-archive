@@ -1,4 +1,4 @@
-import { pgTable, text, serial, timestamp, boolean } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, timestamp, boolean, integer } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -54,3 +54,11 @@ export type InsertInquiry = z.infer<typeof insertInquirySchema>;
 
 export type EvidenceItem = typeof evidenceItems.$inferSelect;
 export type InsertEvidence = z.infer<typeof insertEvidenceSchema>;
+
+export const downloadCounts = pgTable("download_counts", {
+  id: serial("id").primaryKey(),
+  documentSlug: text("document_slug").notNull().unique(),
+  count: integer("count").notNull().default(0),
+});
+
+export type DownloadCount = typeof downloadCounts.$inferSelect;
