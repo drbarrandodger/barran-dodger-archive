@@ -634,7 +634,7 @@ export default function CaseStudies() {
                     <HeartPulse className="h-5 w-5" /> The Significance of Revival from Death
                   </h4>
                   <p className="text-sm text-foreground leading-relaxed mb-3">
-                    Dr McLean was clinically dead in February 2021 and revived. The Werribee Mercy Hospital ICU team documented the attempt as <span className="font-bold">"lethal and still requires surgical repair."</span> He was revived by the government's own medical system. What followed his resurrection is the critical legal question:
+                    Dr McLean was clinically dead in February 2021 at Werribee Mercy Hospital and revived. The Werribee Mercy Hospital ICU team documented the attempt as <span className="font-bold">"lethal and still requires surgical repair."</span> He was revived by the government's own medical system. What followed his resurrection is the critical legal question:
                   </p>
                   <ul className="space-y-2 text-sm text-foreground">
                     <li className="flex items-start gap-2">

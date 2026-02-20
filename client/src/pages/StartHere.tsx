@@ -194,7 +194,7 @@ export default function StartHere() {
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-2">
                 <CrossLink to="/evidence">240+ blockchain-verified documents</CrossLink>. 35+ government agencies. <CrossLink to="/taxpayer-cost-analysis">$11.5M+ in taxpayer money</CrossLink>. 
-                <CrossLink to="/case-studies">14 psychiatric hospitalisations</CrossLink>. One confirmed <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination attempt</DocumentPopup>. Zero refutations.
+                <CrossLink to="/case-studies">14 psychiatric hospitalisations</CrossLink>. One confirmed <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>2024 assassination attempt in Port Macquarie</DocumentPopup>. Zero refutations.
               </p>
               <p className="text-sm text-muted-foreground max-w-2xl mx-auto italic">
                 Every claim is supported by government-published evidence. Every document is cryptographically sealed on the <CrossLink to="/blockchain">blockchain</CrossLink>. 
