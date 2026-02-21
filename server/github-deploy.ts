@@ -39,6 +39,8 @@ async function getAccessToken() {
   return accessToken;
 }
 
+const MAX_FILE_SIZE = 25 * 1024 * 1024;
+
 function getAllFiles(dir: string, base: string = dir): { path: string; content: string }[] {
   const results: { path: string; content: string }[] = [];
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -50,6 +52,11 @@ function getAllFiles(dir: string, base: string = dir): { path: string; content: 
     if (entry.isDirectory()) {
       results.push(...getAllFiles(fullPath, base));
     } else {
+      const stats = fs.statSync(fullPath);
+      if (stats.size > MAX_FILE_SIZE) {
+        console.log(`   Skipping large file (${(stats.size / 1024 / 1024).toFixed(1)}MB): ${relativePath}`);
+        continue;
+      }
       const content = fs.readFileSync(fullPath);
       results.push({
         path: relativePath,
@@ -115,24 +122,38 @@ async function deploy() {
 
   console.log('Creating git tree...');
 
-  const blobs = [];
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    if (i % 10 === 0) {
-      console.log(`   Uploading file ${i + 1}/${files.length}...`);
+  const blobs: Array<{path: string; mode: '100644'; type: 'blob'; sha: string}> = [];
+  let skipped = 0;
+  const BATCH_SIZE = 10;
+  for (let i = 0; i < files.length; i += BATCH_SIZE) {
+    const batch = files.slice(i, i + BATCH_SIZE);
+    console.log(`   Uploading files ${i + 1}-${Math.min(i + BATCH_SIZE, files.length)}/${files.length}...`);
+    const results = await Promise.allSettled(
+      batch.map(file =>
+        octokit.git.createBlob({
+          owner: user.login,
+          repo: repoName,
+          content: file.content,
+          encoding: 'base64',
+        }).then(({ data: blob }) => ({
+          path: file.path,
+          mode: '100644' as const,
+          type: 'blob' as const,
+          sha: blob.sha,
+        }))
+      )
+    );
+    for (const r of results) {
+      if (r.status === 'fulfilled') {
+        blobs.push(r.value);
+      } else {
+        console.log(`   Failed: ${r.reason?.message?.substring(0, 80)}`);
+        skipped++;
+      }
     }
-    const { data: blob } = await octokit.git.createBlob({
-      owner: user.login,
-      repo: repoName,
-      content: file.content,
-      encoding: 'base64',
-    });
-    blobs.push({
-      path: file.path,
-      mode: '100644' as const,
-      type: 'blob' as const,
-      sha: blob.sha,
-    });
+  }
+  if (skipped > 0) {
+    console.log(`   Skipped ${skipped} files due to upload errors.`);
   }
 
   console.log('Building tree from blobs...');

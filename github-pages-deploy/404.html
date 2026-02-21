@@ -294,6 +294,7 @@
     <script>
       (function() {
         var basePath = '/barran-dodger-archive';
+        var replitHost = 'https://barran-dodger-legal-ethical-trust.replit.app';
         var originalFetch = window.fetch;
         window.fetch = function(url, options) {
           if (typeof url === 'string' && url.startsWith('/api/')) {
@@ -317,6 +318,23 @@
           }
           return origReplace(state, title, url);
         };
+        document.addEventListener('click', function(e) {
+          var link = e.target.closest ? e.target.closest('a') : null;
+          if (link && link.href && link.href.indexOf('.pdf') !== -1) {
+            var href = link.getAttribute('href') || '';
+            if (href.indexOf(basePath + '/attached_assets/') !== -1 || href.indexOf(basePath + '/documents/') !== -1) {
+              var pdfPath = href.replace(basePath, '');
+              e.preventDefault();
+              var ghUrl = 'https://drbarrandodger.github.io' + basePath + pdfPath;
+              fetch(ghUrl, {method: 'HEAD'}).then(function(r) {
+                if (r.ok) { window.open(ghUrl, '_blank'); }
+                else { window.open(replitHost + pdfPath, '_blank'); }
+              }).catch(function() {
+                window.open(replitHost + pdfPath, '_blank');
+              });
+            }
+          }
+        });
       })();
     </script>
     <script type="module" crossorigin src="./assets/index-BlbosTt-.js"></script>
