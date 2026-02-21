@@ -80,11 +80,14 @@ Crawl-delay: 1
 Allow: /
 Allow: /start-here
 Allow: /evidence
+Allow: /evidence-vault
+Allow: /publications
 Allow: /manifesto
-Allow: /blockchain
-Allow: /gospel
-Allow: /timeline
+Allow: /taxpayer-cost-analysis
 Allow: /case-studies
+Allow: /blockchain
+Allow: /timeline
+Allow: /gospel
 Allow: /josephs-coat
 Allow: /church
 Allow: /prophetic-papers
@@ -95,11 +98,13 @@ Allow: /media
 Allow: /donate
 Allow: /contact
 
-# Allow all attached assets (evidence PDFs and images)
+# Allow all documents and evidence PDFs
+Allow: /documents/
 Allow: /attached_assets/
+Allow: /images/
 
-# Sitemap location
-Sitemap: https://www.barrandodger.com.au/sitemap.xml
+# Sitemap locations
+Sitemap: https://drbarrandodger.github.io/barran-dodger-archive/sitemap.xml
 
 # RSS Feed
-# https://www.barrandodger.com.au/rss.xml
+# https://drbarrandodger.github.io/barran-dodger-archive/rss.xml
