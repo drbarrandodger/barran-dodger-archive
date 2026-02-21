@@ -28,10 +28,10 @@ import manErasedImg from "@assets/A826B3FD-2BC3-48B6-B6FA-F7A4F9FA1909_177063025
 import bookCoverImg from "@assets/58915462-AA05-424A-BE2B-3EA61FDEFA5A_1770345931447.png";
 import { HandCoins, TrendingUp, Landmark, ShieldCheck, Clock, Building2 } from "lucide-react";
 
-const coverDigitalOppression = "/images/cover-digital-oppression.png";
-const coverCrimesHumanity = "/images/cover-crimes-against-humanity.png";
-const coverCosmicScroll = "/images/cover-cosmic-scroll.png";
-const coverMasterCommand = "/images/cover-master-command.png";
+import coverDigitalOppression from "@/assets/images/cover-digital-oppression.png";
+import coverCrimesHumanity from "@/assets/images/cover-crimes-against-humanity.png";
+import coverCosmicScroll from "@/assets/images/cover-cosmic-scroll.png";
+import coverMasterCommand from "@/assets/images/cover-master-command.png";
 import { FloatingCTA } from "@/components/FloatingCTA";
 
 const bookCoverBetrayed = "/images/book-cover-betrayed.png";
