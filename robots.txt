@@ -104,7 +104,7 @@ Allow: /attached_assets/
 Allow: /images/
 
 # Sitemap locations
-Sitemap: https://drbarrandodger.github.io/barran-dodger-archive/sitemap.xml
+Sitemap: https://barran-dodger-legal-ethical-trust.replit.app/sitemap.xml
 
 # RSS Feed
-# https://drbarrandodger.github.io/barran-dodger-archive/rss.xml
+# https://barran-dodger-legal-ethical-trust.replit.app/rss.xml
