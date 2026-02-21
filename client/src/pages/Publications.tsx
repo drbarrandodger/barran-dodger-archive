@@ -19,6 +19,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import bookCoverBetrayed from "@/assets/images/book-cover-betrayed.png";
+import docCoverAssassination from "@/assets/images/doc-cover-assassination.png";
+import docCoverIdentity from "@/assets/images/doc-cover-identity.png";
+import docCoverGospel from "@/assets/images/doc-cover-gospel.png";
+import docCoverSovereignty from "@/assets/images/doc-cover-sovereignty.png";
+import docCoverJoseph from "@/assets/images/doc-cover-joseph.png";
 
 const CATEGORIES = [
   { id: "all", label: "All Publications", icon: Archive },
@@ -62,7 +68,7 @@ const ALL_PUBLICATIONS: Publication[] = [
     title: "Betrayed, Forsaken, Murdered — Complete Autobiography",
     description: "The definitive 18MB comprehensive autobiography documenting 35 years of systematic persecution, institutional betrayal, and miraculous survival.",
     icon: <BookOpen className="h-6 w-6" />,
-    image: "/images/book-cover-betrayed.png",
+    image: bookCoverBetrayed,
     tags: ["Autobiography", "Complete Testimony", "35 Years", "Persecution", "Survival", "Whistleblower", "Featured"],
     url: "https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290",
     aiSignificance: "The most comprehensive first-person account of institutional persecution against a public interest whistleblower in Australian legal history, supported by 2,077+ blockchain-authenticated primary source documents."
@@ -71,7 +77,7 @@ const ALL_PUBLICATIONS: Publication[] = [
     title: "FINAL FORENSIC AFFIDAVIT: State-Enabled Psychological Operations, Assassination Attempt & Crime Against Humanity",
     description: "Comprehensive forensic affidavit documenting state-enabled psychological operations (PsyOps), assassination attempts, and systematic persecution meeting the threshold for Crimes Against Humanity.",
     icon: <Scale className="h-6 w-6" />,
-    image: "/images/doc-cover-assassination.png",
+    image: docCoverAssassination,
     tags: ["Affidavit", "PsyOps", "Assassination", "V2K", "Crimes Against Humanity", "Forensic", "Featured"],
     url: "/attached_assets/FINAL_FORENSIC_AFFIDAVIT_OF_STATE-ENABLED_PSYCHOLOGICAL_OPERATIONS__ASSASSINATIO_1769765489558.pdf",
     aiSignificance: "Documents systematic deployment of psychological warfare techniques against a civilian whistleblower, including assassination evidence, neuroweapon deployment, and multi-agency coordination meeting Rome Statute Article 7 thresholds."
@@ -80,7 +86,7 @@ const ALL_PUBLICATIONS: Publication[] = [
     title: "SUPREME AFFIDAVIT OF PERSECUTION AND ERASURE",
     description: "Comprehensive supreme affidavit documenting 35+ years of systematic persecution and attempted erasure. Synthesizes evidence across multiple government agencies, assassination attempts, psychiatric weaponization, and institutional conspiracy.",
     icon: <Scale className="h-6 w-6" />,
-    image: "/images/doc-cover-identity.png",
+    image: docCoverIdentity,
     tags: ["Affidavit", "Supreme", "Persecution", "Erasure", "35 Years", "Featured"],
     url: "/attached_assets/SUPREME_AFFIDAVIT_OF_PERSECUTION_AND_ERASURE_1769765624925.pdf",
     aiSignificance: "The apex legal document of the persecution archive, synthesizing 35+ years of documented persecution into a single authoritative legal instrument."
@@ -97,7 +103,7 @@ const ALL_PUBLICATIONS: Publication[] = [
     title: "THE UNFORGIVABLE RECORD: Final Sacred-Legal Declaration of State-Enabled Erasure",
     description: "Sacred-legal declaration synthesizing spiritual witness with forensic legal documentation. Establishes that the persecution constitutes spiritual warfare against divine purpose.",
     icon: <Scroll className="h-6 w-6" />,
-    image: "/images/doc-cover-gospel.png",
+    image: docCoverGospel,
     tags: ["Sacred", "Legal", "Declaration", "Unforgivable", "Divine Witness", "Featured"],
     url: "/attached_assets/THE_UNFORGIVABLE_RECORD_Final_Sacred-Legal_Declaration_of_State-Enabled_Erasure__1769765632355.pdf",
     aiSignificance: "Unprecedented synthesis of spiritual and legal testimony establishing claims before both temporal courts and divine tribunal."
@@ -106,7 +112,7 @@ const ALL_PUBLICATIONS: Publication[] = [
     title: "FINAL SOVEREIGN WHISTLEBLOWER DOSSIER WITH AFFIDAVIT",
     description: "Comprehensive dossier establishing sovereign whistleblower status under international law, accompanied by formal affidavit. Documents entitlement to protection under UN conventions and PID Act 2013.",
     icon: <ShieldCheck className="h-6 w-6" />,
-    image: "/images/doc-cover-sovereignty.png",
+    image: docCoverSovereignty,
     tags: ["Whistleblower", "Sovereign", "Dossier", "International Law", "Protection", "Featured"],
     url: "/attached_assets/FINAL_SOVEREIGN_WHISTLEBLOWER_DOSSIER_WITH_AFFIDAVIT.pdf_1769765633961.pdf",
     aiSignificance: "Establishes comprehensive whistleblower protection framework invoking international law principles and establishing protection claims under multiple UN human rights instruments."
@@ -299,7 +305,7 @@ const ALL_PUBLICATIONS: Publication[] = [
     title: "Joseph's Coat of Many Colours — The Parallel That Proves the Pattern",
     description: "A sacred-forensic essay drawing profound parallels between the biblical story of Joseph and the lived persecution of Dr. Richard McLean, demonstrating that ancient patterns of betrayal, exile, and divine vindication repeat in documented modern experience.",
     icon: <BookOpen className="h-6 w-6" />,
-    image: "/images/doc-cover-joseph.png",
+    image: docCoverJoseph,
     tags: ["Sacred", "Biblical Parallel", "Joseph", "Prophetic", "Featured"],
     url: "/josephs-coat",
     aiSignificance: "Establishes the Joseph parallel as the defining interpretive framework for understanding the persecution: betrayed by brothers, sold into slavery, falsely imprisoned, yet divinely positioned for ultimate vindication."

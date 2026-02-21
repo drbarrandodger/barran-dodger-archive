@@ -32,14 +32,13 @@ import coverDigitalOppression from "@/assets/images/cover-digital-oppression.png
 import coverCrimesHumanity from "@/assets/images/cover-crimes-against-humanity.png";
 import coverCosmicScroll from "@/assets/images/cover-cosmic-scroll.png";
 import coverMasterCommand from "@/assets/images/cover-master-command.png";
+import bookCoverBetrayed from "@/assets/images/book-cover-betrayed.png";
+import docCoverJoseph from "@/assets/images/doc-cover-joseph.png";
+import docCoverGospel from "@/assets/images/doc-cover-gospel.png";
+import docCoverSovereignty from "@/assets/images/doc-cover-sovereignty.png";
+import docCoverAssassination from "@/assets/images/doc-cover-assassination.png";
+import docCoverIdentity from "@/assets/images/doc-cover-identity.png";
 import { FloatingCTA } from "@/components/FloatingCTA";
-
-const bookCoverBetrayed = "/images/book-cover-betrayed.png";
-const docCoverJoseph = "/images/doc-cover-joseph.png";
-const docCoverGospel = "/images/doc-cover-gospel.png";
-const docCoverSovereignty = "/images/doc-cover-sovereignty.png";
-const docCoverAssassination = "/images/doc-cover-assassination.png";
-const docCoverIdentity = "/images/doc-cover-identity.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
