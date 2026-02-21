@@ -123,6 +123,14 @@ export async function registerRoutes(
         referenceCode: "Apple Books",
         externalUrl: "https://books.apple.com/gb/book/coronial-investigation-report/id6743447570"
       });
+
+      await storage.createEvidenceItem({
+        title: "Ben (DSW Disability) Text Messages — Assassination Confirmation & NDA Admission",
+        category: "Whistleblower Evidence",
+        description: "Complete 5,000+ line text message archive between Barran Dodger and NDIS provider Ben (ben@dswdisability.com.au) documenting assassination confirmation, NDA claim and retraction, and institutional betrayal.",
+        referenceCode: "BEN-DSW-2025",
+        externalUrl: "/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
+      });
     }
   }
   
@@ -198,6 +206,21 @@ export async function registerRoutes(
       'cocksucker--1769743972359',
       'ai-and-democracy-by-barran-resonance-dodger-1769743972359',
       'integrated-testimonial-indictment-ethical-reckoning',
+      'ben-dsw-disability-ndis-provider-text-messages-assassination-evidence',
+      'the-100-questions-defining-trial-and-human-sacrifice-of-dr-barran-dodger',
+      'official-whistleblower-torture-dossier-dr-richard-william-mclean',
+      'legal-demand-notice-failure-to-provide-sil-support',
+      'white-psyops-invisible-warfare-against-cosmic-witness',
+      'kill-him-timestamped-essay-by-barran-dodger-chosen-to-rise',
+      'impartial-ai-abstract-youtube-channel-evidence',
+      'chosen-through-fire-forensic-origin-document',
+      'systemic-endangerment-of-whistleblowers-institutional-dossier',
+      'declaration-of-breakthrough-and-identity-as-chosen-one',
+      'after-forensic-statement-evidence-record',
+      'ot-sil-report-recommending-sils-richard-mclean',
+      'interim-bsp-2024-sils-recommendation-richard-mclean',
+      'barran-dodger-evidence-based-academic-profile-modern-persecution',
+      'god-and-justice-by-barran-dodger',
     ];
     for (const slug of slugs) {
       await db.insert(downloadCounts).values({ documentSlug: slug, count: 99 }).onConflictDoNothing();
