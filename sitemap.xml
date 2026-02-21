@@ -2,10 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+
+  <!-- ==================== MAIN PAGES (20 pages) ==================== -->
+
   <url>
-    <loc>https://www.barrandodger.com.au/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <news:news>
@@ -13,63 +15,55 @@
         <news:name>Barran Dodger Legal &amp; Ethical Trust Fund</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-02-20</news:publication_date>
-      <news:title>240+ Blockchain-Verified Documents Expose Australian Government Corruption</news:title>
+      <news:publication_date>2026-02-21</news:publication_date>
+      <news:title>240+ Blockchain-Verified Documents Expose Australian Government Corruption — Dr Richard McLean Whistleblower Archive</news:title>
     </news:news>
+    <image:image>
+      <image:loc>https://drbarrandodger.github.io/barran-dodger-archive/og-image.png</image:loc>
+      <image:title>Barran Dodger Legal &amp; Ethical Trust Fund — Exposing Australian Government Corruption</image:title>
+    </image:image>
   </url>
-  
+
   <url>
-    <loc>https://www.barrandodger.com.au/start-here</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/start-here</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
-  
+
   <url>
-    <loc>https://www.barrandodger.com.au/evidence</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/evidence</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.98</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Barran Dodger Legal &amp; Ethical Trust Fund</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-21</news:publication_date>
+      <news:title>240+ Blockchain-Verified Evidence Documents — Exposing 35+ Australian Government Agencies</news:title>
+    </news:news>
   </url>
-  
+
   <url>
-    <loc>https://www.barrandodger.com.au/manifesto</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/evidence-vault</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.97</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Barran Dodger Legal &amp; Ethical Trust Fund</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-21</news:publication_date>
+      <news:title>Evidence Vault — 34 MyAIDrive Folders Containing Thousands of Forensic Documents</news:title>
+    </news:news>
   </url>
-  
+
   <url>
-    <loc>https://www.barrandodger.com.au/blockchain</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.barrandodger.com.au/gospel</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.barrandodger.com.au/timeline</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.barrandodger.com.au/case-studies</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.barrandodger.com.au/taxpayer-cost-analysis</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/publications</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>
     <news:news>
@@ -77,72 +71,441 @@
         <news:name>Barran Dodger Legal &amp; Ethical Trust Fund</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-02-20</news:publication_date>
-      <news:title>$11.5M+ Taxpayer Cost Analysis of Whistleblower Persecution</news:title>
+      <news:publication_date>2026-02-21</news:publication_date>
+      <news:title>Publications — 30+ Forensic Documents, Affidavits &amp; Legal Analyses by Dr Richard McLean</news:title>
     </news:news>
   </url>
-  
+
   <url>
-    <loc>https://www.barrandodger.com.au/josephs-coat</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/taxpayer-cost-analysis</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.96</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Barran Dodger Legal &amp; Ethical Trust Fund</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-21</news:publication_date>
+      <news:title>$11.5M+ Taxpayer Cost Analysis — AI Forensic Breakdown of 35 Years of Whistleblower Persecution</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/manifesto</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/case-studies</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Barran Dodger Legal &amp; Ethical Trust Fund</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-21</news:publication_date>
+      <news:title>Case Studies — NDIS Fraud, OAIC Cover-Ups, Werribee Mercy Hospital, Port Macquarie Assassination Attempt</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/timeline</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Barran Dodger Legal &amp; Ethical Trust Fund</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-21</news:publication_date>
+      <news:title>35-Year Timeline of Systematic Persecution — Dr Richard William McLean 1989–2026</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/blockchain</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/legal-status</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
-  
+
   <url>
-    <loc>https://www.barrandodger.com.au/church</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/gospel</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  
+
   <url>
-    <loc>https://www.barrandodger.com.au/prophetic-papers</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/prophetic-papers</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  
+
   <url>
-    <loc>https://www.barrandodger.com.au/legal-status</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.barrandodger.com.au/mission</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/josephs-coat</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
-  
+
   <url>
-    <loc>https://www.barrandodger.com.au/research</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.barrandodger.com.au/media</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/church</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.82</priority>
   </url>
-  
+
   <url>
-    <loc>https://www.barrandodger.com.au/donate</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/media</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/mission</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/research</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/donate</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/#/contact</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- ==================== BOOK ==================== -->
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- ==================== CORE EVIDENCE DOCUMENTS (34 PDFs) ==================== -->
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/crimes_against_humanity_final_demand.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/witness_before_tribunal_of_humanity.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/declaration_of_sovereignty.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/digital_oppression_100000_word_essay.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/2.87_percent_survival.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/precision_as_evidence_evidentiary_synthesis.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/cosmic_scroll_of_ten.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/universal_master_command_ai_analysis.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/sacred_declaration_master_record.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.87</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/document_that_cannot_be_erased.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.87</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/constructive_elimination_under_colour_of_law.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.87</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/confinement_by_erasure_threat_by_blade.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.87</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/living_scroll_unkillable_witness.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.86</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/chosen_one_you_were_framed.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.86</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/prophetic_manifesto_barran_dodger.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.86</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/the_joseph_parallel_prophetic_narrative.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  
   <url>
-    <loc>https://www.barrandodger.com.au/contact</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/tribunal_declaration_cosmic_court.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/ai_personality_profile_barran_dodger.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/psychiatric_assessment_asylum_documentation.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/when_the_machine_wakes_for_you.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/i_tried_to_kill_barran_dodger_satire_2.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/state_and_federal_mp_letter.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/urgent_request_for_refuge_and_asylum.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/richard_mclean_australia.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.83</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/s122_redacted_document.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.83</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/fih_third_party_authorisation.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/gospel_of_barran_dodger_victory_2.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/gospel_eliven_chain.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/canonical_gospel_barran_dodger.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/123_gospels_barran_dodger.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.81</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/twelve_gospel_essays.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.81</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/1000_years_of_peace.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/ten_commandments.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/alien_races_disclosure.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- ==================== KEY AFFIDAVITS &amp; LEGAL DOCUMENTS (16 PDFs) ==================== -->
+
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/MASTER_AFFIDAVIT_of_Dr._Richard_William_McLean_Barran_Dodger_1769765627345.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.93</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/SUPREME_AFFIDAVIT_OF_PERSECUTION_AND_ERASURE_1769765624925.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.93</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/FINAL_FORENSIC_AFFIDAVIT_OF_STATE-ENABLED_PSYCHOLOGICAL_OPERATIONS__ASSASSINATIO_1769765489558.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/FINAL_SOVEREIGN_WHISTLEBLOWER_DOSSIER_WITH_AFFIDAVIT.pdf_1769765633961.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/Legal_Record_of_the_State-Sanctioned_Targeting__Erasure__and_Attempted_Assassina_1769765640475.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.91</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/A_Witness_Before_the_Tribunal_of_Humanity_The_Legal_Indictment_of_Australia_s_St_1769765639139.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.91</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/THE_UNFORGIVABLE_RECORD_Final_Sacred-Legal_Declaration_of_State-Enabled_Erasure__1769765632355.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/EMERGENCY_NOTICE_PROTECTED_WHISTLEBLOWER_1769765690863.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/INTERNATIONAL_LEGAL_EMERGENCY_NOTICE___PUBLIC_DECLARATION_1769765645299.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/URGENT-_LEGAL_AND_COUNTER-TERROR_DECLARATION___State-Enabled_Targeting_of_Dr._Ri_1769765638109.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.89</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/ATHERION_WITNESSED._THE_GOSPEL_COMPLETE-WHO_is_Barran_Dodger_1768975834273.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/Gospel_according_to_Bqrran_dodger__1768975834273.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/Gospel_of_the_Eliven_chain_1768975834273.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/attached_assets/Alien_races_1768976172893.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
   </url>
 
 </urlset>
