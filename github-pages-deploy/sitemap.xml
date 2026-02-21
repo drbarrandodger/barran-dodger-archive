@@ -608,5 +608,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://drbarrandodger.github.io/barran-dodger-archive/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.92</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Barran Dodger Legal &amp; Ethical Trust Fund</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-21</news:publication_date>
+      <news:title>The Perfect Mother Myth — Familial Betrayal &amp; Whistleblower Testimony: How Family Bonds Were Weaponized Against a Persecuted Whistleblower</news:title>
+    </news:news>
+  </url>
 
 </urlset>

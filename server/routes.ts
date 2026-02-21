@@ -221,6 +221,7 @@ export async function registerRoutes(
       'interim-bsp-2024-sils-recommendation-richard-mclean',
       'barran-dodger-evidence-based-academic-profile-modern-persecution',
       'god-and-justice-by-barran-dodger',
+      'the-perfect-mother-myth-familial-betrayal-whistleblower-testimony',
     ];
     for (const slug of slugs) {
       await db.insert(downloadCounts).values({ documentSlug: slug, count: 99 }).onConflictDoNothing();
