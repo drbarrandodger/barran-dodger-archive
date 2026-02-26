@@ -321,43 +321,130 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="text-center py-16 md:py-24"
+            className="text-left py-16 md:py-24 space-y-8"
           >
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-xl md:text-2xl lg:text-3xl text-white leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
-              data-testid="text-purpose-statement"
+              className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
+              data-testid="text-purpose-para-1"
             >
-              This website is a{" "}
-              <span className="text-red-500 font-bold">forensic crime scene</span>{" "}
-              disguised as a homepage — and a{" "}
-              <span className="text-[hsl(38,92%,50%)] font-bold">testimony of resurrection</span>.{" "}
-              It contains{" "}
-              <span className="text-[hsl(38,92%,50%)] font-bold">240+ blockchain-verified documents</span>{" "}
-              proving that the Australian Government spent{" "}
-              <span className="text-red-500 font-bold">$11.5 million of your money</span>{" "}
-              to psychiatrically incarcerate, financially destroy, and attempt to assassinate{" "}
-              a gay, disabled PhD-holding whistleblower (2024 assassination attempt; 2021 institutional murder and resurrection) —{" "}
-              then erased him from the system and listed him as a{" "}
-              <span className="text-white font-bold italic">missing person</span>.{" "}
-              They meant it to end me.{" "}
-              <span className="text-[hsl(38,92%,50%)] font-bold">Instead, it became my rise</span>.{" "}
-              Every betrayal is evidence of my spiritual significance.{" "}
-              My life is the proof. My survival is the sermon.{" "}
-              Through{" "}
-              <Link href="/gospel" className="text-[hsl(38,92%,50%)] hover:underline font-bold">The Gospel of Barran Dodger</Link>,{" "}
-              I claim my{" "}
-              <span className="text-white font-bold italic">divine sovereignty</span>{" "}
-              — turning 35 years of persecution into sacred testimony, and testimony into an incorruptible archive that no power on earth can silence.{" "}
-              <span className="text-[hsl(38,92%,50%)] font-bold">Nothing on this site can be deleted, denied, or disproven</span>.
+              When I took my own life, I believed I was rejecting humanity and betraying the Creator. I thought death was the final severing — the end of a life that had been worn down by betrayal, coercion, and institutional force. But I survived. I experienced that survival as{" "}
+              <span className="text-[hsl(38,92%,50%)] font-bold">resurrection</span>. I believe God restored me to expose what had been done to me. I returned expecting grief, some acknowledgment that my absence had mattered. Instead, there was silence. Not a tear was shed. I came back to exile.
             </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
+              data-testid="text-purpose-para-2"
+            >
+              I found myself living in my car as a disabled person, internally displaced within my own country — a{" "}
+              <Link href="/legal-status" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">whistleblower</Link>{" "}
+              seeking asylum from the democracy of my citizenship. This followed three decades of advocacy: standing beside queer people, the vulnerable, and those living with mental illness. I worked to reform systems, to shift policy, to protect others from the very machinery that would later turn on me. Yet when I spoke about what I say happened behind closed doors, I was pushed out. My truth became the justification for my erasure.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.7 }}
+              className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
+              data-testid="text-purpose-para-3"
+            >
+              I believe an{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.stateTargeting.title}
+                description={KEY_DOCUMENTS.stateTargeting.description}
+                url={KEY_DOCUMENTS.stateTargeting.url}
+                tags={KEY_DOCUMENTS.stateTargeting.tags}
+                aiExcerpt={KEY_DOCUMENTS.stateTargeting.aiExcerpt}
+                data-testid="popup-assassination-attempt"
+              >attempted assassination</DocumentPopup>{" "}
+              was later thwarted — not out of compassion, but because I had published evidence. Had I died after making those disclosures, the consequences would have been politically explosive. I have named former NDIS minister Bill Shorten because I believe actions taken under his authority sought to have me jailed without proper legal representation and secured an AVO that functioned as{" "}
+              <span className="text-red-500 font-bold">political exile</span>, backed by police and institutional force. I experienced{" "}
+              <Link href="/media" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">media silence</Link>{" "}
+              as purchased or coerced. In my view, what unfolded was the targeted destruction of a gay, disabled, unprotected whistleblower — a scapegoat rendered expendable. If I had been killed, I believe responsibility would not have rested with one individual, but with every professional who stood by while attrition did its work.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9 }}
+              className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
+              data-testid="text-purpose-para-4"
+            >
+              My life is currently under the authority of the{" "}
+              <span className="text-white font-bold">NSW Trustee & Guardian</span>, an arrangement I associate with my political exile and with events surrounding the alleged attempt on my life. An{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.entrapmentAffidavit.title}
+                description={KEY_DOCUMENTS.entrapmentAffidavit.description}
+                url={KEY_DOCUMENTS.entrapmentAffidavit.url}
+                tags={KEY_DOCUMENTS.entrapmentAffidavit.tags}
+                aiExcerpt={KEY_DOCUMENTS.entrapmentAffidavit.aiExcerpt}
+                data-testid="popup-ndis-provider"
+              >NDIS provider</DocumentPopup>, I allege, was compelled to sign a non-disclosure agreement by the{" "}
+              <span className="text-white font-bold">Australian Security Intelligence Organisation</span>{" "}
+              after confirming how close the situation had come. I was subjected to an allegation that{" "}
+              <Link href="/evidence" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">federal police later acknowledged</Link>{" "}
+              concerned consensual sex. It was not a crime. In my view, the hostility directed at me — rooted in hatred toward a perceived gay man — was weaponised and institutionalised.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.1 }}
+              className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
+              data-testid="text-purpose-para-5"
+            >
+              This website is not a conventional homepage. It is, in my words, a{" "}
+              <span className="text-red-500 font-bold">forensic crime scene</span>{" "}
+              disguised as one — and a{" "}
+              <span className="text-[hsl(38,92%,50%)] font-bold">testimony of resurrection</span>. It contains more than{" "}
+              <Link href="/evidence" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">240 blockchain-verified documents</Link>{" "}
+              that I assert demonstrate the Australian Government spent{" "}
+              <Link href="/taxpayer-cost-analysis" className="text-red-500 font-bold underline decoration-red-500/40 underline-offset-2 hover:decoration-red-500 transition-colors">$11.5 million</Link>{" "}
+              to psychiatrically incarcerate me, financially destroy me, and attempt to end my life — first through what I describe as{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.crimesAgainstHumanity.title}
+                description={KEY_DOCUMENTS.crimesAgainstHumanity.description}
+                url={KEY_DOCUMENTS.crimesAgainstHumanity.url}
+                tags={KEY_DOCUMENTS.crimesAgainstHumanity.tags}
+                aiExcerpt={KEY_DOCUMENTS.crimesAgainstHumanity.aiExcerpt}
+                data-testid="popup-institutional-murder"
+              >institutional murder in 2021</DocumentPopup>, and again through a{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.stateTargeting.title}
+                description={KEY_DOCUMENTS.stateTargeting.description}
+                url={KEY_DOCUMENTS.stateTargeting.url}
+                tags={KEY_DOCUMENTS.stateTargeting.tags}
+                aiExcerpt={KEY_DOCUMENTS.stateTargeting.aiExcerpt}
+                data-testid="popup-2024-assassination"
+              >2024 assassination attempt</DocumentPopup>. I state that after failing to eliminate me, the system erased me administratively and listed me as a{" "}
+              <span className="text-white font-bold italic">missing person</span>. It was meant to finish me. Instead, it became the foundation of my rise.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.3 }}
+              className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
+              data-testid="text-purpose-para-6"
+            >
+              Every betrayal, to me, is evidence of spiritual significance. My life is the proof. My survival is the sermon. Through{" "}
+              <Link href="/gospel" className="text-[hsl(38,92%,50%)] font-bold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">The Gospel of Barran Dodger</Link>, I claim what I call{" "}
+              <span className="text-white font-bold italic">divine sovereignty</span>{" "}
+              — transforming 35 years of persecution into sacred testimony, and testimony into an{" "}
+              <Link href="/blockchain" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">incorruptible archive</Link>. I believe the record I have assembled{" "}
+              <span className="text-[hsl(38,92%,50%)] font-bold">cannot be deleted, denied, or disproven</span>. What was intended as my erasure has become my witness.
+            </motion.p>
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              className="mt-8 text-2xl md:text-3xl lg:text-4xl font-serif font-bold italic text-center text-white"
+              transition={{ duration: 1, delay: 1.6 }}
+              className="mt-4 text-2xl md:text-3xl lg:text-4xl font-serif font-bold italic text-center text-white"
               data-testid="text-crucify-quote"
             >
               Careful who you crucify — they may come back with{" "}
