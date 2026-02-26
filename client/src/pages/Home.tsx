@@ -875,13 +875,19 @@ export default function Home() {
               </motion.div>
 
               <p className="text-lg md:text-xl text-white leading-relaxed max-w-4xl mx-auto">
+                The <span className="font-bold text-[hsl(38,92%,50%)]">Barran Dodger Legal & Ethical Trust Fund</span> — THE TRUSTEE FOR{" "}
+                <a href="https://www.barrandodger.com.au" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-bold">WWW.BARRANDODGER.COM.AU</a>{" "}
+                — exists because when every door is closed, every complaint ignored, and every institution complicit, the only option left is to make the evidence impossible to destroy and available to everyone.
+              </p>
+
+              <p className="text-lg md:text-xl text-white leading-relaxed max-w-4xl mx-auto">
                 Before you stands{" "}
                 <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">98+ forensic documents</Link>{" "}
                 spanning{" "}
                 <Link href="/timeline" className="text-[hsl(38,92%,50%)] hover:underline font-bold">35 years of systematic persecution</Link>{" "}
                 — each one sealed with{" "}
                 <Link href="/blockchain" className="text-[hsl(38,92%,50%)] hover:underline font-bold">blockchain verification</Link>{" "}
-                that cannot be altered, deleted, or denied by any government, any court, any institution on Earth. This case has been prepared for the <CrossLink to="/evidence">International Criminal Court</CrossLink>.
+                that cannot be altered, deleted, or denied by any government, any court, any institution on Earth. This is the incorruptible forensic record established against institutional misconduct. This case has been prepared for the <CrossLink to="/evidence">International Criminal Court</CrossLink>.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
