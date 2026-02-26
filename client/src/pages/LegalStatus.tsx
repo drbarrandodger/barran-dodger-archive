@@ -277,7 +277,7 @@ export default function LegalStatus() {
                   <Badge variant="destructive" className="font-bold">FREE PDF</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Historical Legal Notice & Final Demand for Justice addressed to the Prime Minister, Attorney-General, NDIS, AFP, NACC, AHRC, and ASIO. Documents 2021 state-sanctioned murder at Werribee Mercy Hospital, financial entombment, 2024 assassination attempt in Port Macquarie, and V2K psychological warfare. Establishes 14-day deadline for acknowledgment, restitution ($42.5M–$123M), and criminal investigation.
+                  Historical Legal Notice & Final Demand for Justice addressed to the Prime Minister, Attorney-General, <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>NDIS</DocumentPopup>, AFP, NACC, AHRC, and ASIO. Documents 2021 state-sanctioned murder at Werribee Mercy Hospital, financial entombment, 2024 <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination attempt</DocumentPopup> in Port Macquarie, and <CrossLink to="/prophetic-essay">V2K</CrossLink> psychological warfare. Establishes 14-day deadline for acknowledgment, restitution ($42.5M–$123M), and criminal investigation.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button variant="destructive" className="gap-2" asChild data-testid="button-download-legal-demand">

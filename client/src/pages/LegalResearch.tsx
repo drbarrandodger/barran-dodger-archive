@@ -41,7 +41,7 @@ export default function LegalResearch() {
           >
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Legal Research & Transparency</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Empowering the public with direct access to Australasian legal databases, legislation, and case law to support accountability and justice. Explore our <CrossLink to="/evidence">evidence archive</CrossLink> or review <CrossLink to="/legal-status">legal status findings</CrossLink>.
+              Empowering the public with direct access to Australasian legal databases, legislation, and case law to support accountability and justice in documented <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Crimes Against Humanity</DocumentPopup>. Explore our <CrossLink to="/evidence">evidence archive</CrossLink> or review <CrossLink to="/legal-status">legal status findings</CrossLink>.
             </p>
           </motion.div>
 

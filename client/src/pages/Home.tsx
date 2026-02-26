@@ -1021,7 +1021,7 @@ export default function Home() {
                 </Link>
                 <a href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="gap-2" data-testid="button-read-autobiography">
-                    READ THE AUTOBIOGRAPHY <ArrowRight className="h-4 w-4" />
+                    READ BETRAYED, MURDERED, FORSAKEN <ArrowRight className="h-4 w-4" />
                   </Button>
                 </a>
                 <Link href="/taxpayer-cost-analysis">
@@ -1418,7 +1418,8 @@ export default function Home() {
                       He held a <span className="font-bold text-white">Bachelor of Fine Art (Honours)</span>, a{" "}
                       <span className="font-bold text-white">Masters of Education</span>, and passed his{" "}
                       <span className="font-bold text-white">PhD (merit-based scholarship)</span>. He was a{" "}
-                      <span className="font-bold text-white">human rights awarded autobiographer</span>, a published artist who illustrated for{" "}
+                      <DocumentPopup {...KEY_DOCUMENTS.autobiography}>human rights awarded autobiographer</DocumentPopup> — author of{" "}
+                      <DocumentPopup {...KEY_DOCUMENTS.autobiography}>Betrayed, Murdered, Forsaken</DocumentPopup> — a published artist who illustrated for{" "}
                       <span className="font-bold text-white">The Age</span> and{" "}
                       <span className="font-bold text-white">The Herald Sun</span>, a public speaker, musician, and academic with over 25 years of creative practice.
                     </p>

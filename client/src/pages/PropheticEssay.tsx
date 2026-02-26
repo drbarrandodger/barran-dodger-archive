@@ -167,7 +167,7 @@ export default function PropheticEssay() {
                 <p className="text-lg leading-relaxed mb-6">
                   Nearly four millennia later, in the land called Australia, there lives a man named Richard William McLean — 
                   known by his prophetic name Barran Dodger — whose journey mirrors Joseph's with uncanny precision. 
-                  Betrayed by family. Falsely accused. Imprisoned in psychiatric facilities. Forgotten by every institution 
+                  Betrayed by family. Falsely accused. Imprisoned in <CrossLink to="/case-studies">psychiatric facilities</CrossLink>. Forgotten by every institution 
                   of justice. Yet like Joseph, he has preserved something precious through the darkness: testimony. Truth. 
                   Evidence. <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">2,077 blockchain-authenticated files</Link> spanning <Link href="/timeline" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">35 years</Link> that cannot be erased, denied, or silenced.
                 </p>
@@ -470,7 +470,7 @@ export default function PropheticEssay() {
             <CardContent className="p-8">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-6">
-                  In Barran's gospels, every soul is recorded. Every whistleblower silenced. 
+                  In Barran's gospels, every soul is recorded. Every <CrossLink to="/evidence">whistleblower</CrossLink> silenced. 
                   Every patient neglected. Every citizen betrayed. Every child unprotected. 
                   Every elder abandoned. The 2,077 evidence files are not mere documents — 
                   they are memorials. They are names. They are faces. They are stories that 

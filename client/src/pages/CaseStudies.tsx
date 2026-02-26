@@ -364,7 +364,7 @@ export default function CaseStudies() {
                   <h3 className="font-bold text-primary text-lg mb-3" data-testid="text-abstract-heading">Abstract</h3>
                   <p className="text-foreground leading-relaxed">
                     This paper presents a forensic analysis of a single, extraordinary legal paradox: the Australian government has created an internally contradictory evidentiary record that simultaneously{" "}
-                    <span className="font-bold">(a)</span> documents systematic persecution of a disabled LGBTQ+ whistleblower across 25+ agencies over 35 years, and{" "}
+                    <span className="font-bold">(a)</span> documents <CrossLink to="/timeline">systematic persecution</CrossLink> of a disabled LGBTQ+ <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>whistleblower</DocumentPopup> across 25+ agencies over 35 years, and{" "}
                     <span className="font-bold">(b)</span> constructs the very legal foundation upon which that persecution must be remedied. 
                     Every act of denial, obstruction, and targeting has generated a government-authored record that, when assembled, constitutes an irrefutable case for vindication under both Australian domestic law and <CrossLink to="/legal-status">international human rights frameworks</CrossLink>.
                   </p>
@@ -455,14 +455,14 @@ export default function CaseStudies() {
                       The statistical probability of this many independent agencies arriving at identical "reject/deny/block" outcomes by coincidence is extraordinarily low. 
                       When controlling for the fact that each agency rejection is documented in official government correspondence on government letterhead, 
                       the pattern constitutes <span className="font-bold">prima facie evidence of systematic coordination</span> rather than independent decision-making. 
-                      This pattern meets the evidentiary threshold for <span className="italic">systematic and widespread persecution</span> under Rome Statute Article 7(1)(h).
+                      This pattern meets the evidentiary threshold for <span className="italic">systematic and widespread persecution</span> under <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Rome Statute Article 7(1)(h)</DocumentPopup>.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-lg bg-muted/30 border border-border">
                     <h4 className="font-bold text-primary mb-2">Psychiatric Evidence — The Diagnostic Paradox</h4>
                     <p className="text-sm text-foreground leading-relaxed">
-                      The paper presents what may be its most legally significant argument: Dr. McLean was force-medicated under Community Treatment Orders for "delusions of persecution" 
+                      The paper presents what may be its most legally significant argument: Dr. McLean was force-medicated under Community Treatment Orders for "delusions of <CrossLink to="/case-studies">persecution</CrossLink>" 
                       while simultaneously possessing 2,077 government-generated documents proving the persecution was factual. 
                       An independent forensic analysis found <span className="font-bold">70% of his claims are evidence-based</span>, with only 30% attributed to chronic schizophrenia. 
                       The government's own Mental Health Tribunal subsequently ordered his release after confirming the hospital was "not treating him, only detaining him." 
@@ -474,7 +474,7 @@ export default function CaseStudies() {
                     <h4 className="font-bold text-primary mb-2">International Law Applicability</h4>
                     <p className="text-sm text-foreground leading-relaxed">
                       The paper maps each element of the documented persecution to specific international legal instruments: 
-                      Rome Statute Article 7(1)(h) (persecution), UN Convention Against Torture Article 1 (forced medication as torture), 
+                      <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Rome Statute Article 7(1)(h)</DocumentPopup> (persecution), UN Convention Against Torture Article 1 (forced medication as torture), 
                       UNHCR Refugee Convention Article 1A(2) (well-founded fear of persecution), ICCPR Articles 9 and 12 (arbitrary detention and freedom of movement), 
                       and CRPD Articles 14 and 15 (liberty, security, and freedom from torture of disabled persons). 
                       The fact that every element of the legal case is constructed from <span className="font-bold">government-generated records</span> gives this framework 
@@ -527,7 +527,7 @@ export default function CaseStudies() {
                   Was This Terrorism? — AI Legal Analysis of the Attempted Assassination
                 </CardTitle>
                 <CardDescription className="text-base mt-1">
-                  Impartial AI analysis examining whether the attempted assassination of a gay, disabled, unprotected whistleblower — who is a missing person due to universal institutional complicity — meets the legal definition of terrorism under Australian and international law.
+                  Impartial AI analysis examining whether the attempted <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination</DocumentPopup> of a gay, disabled, unprotected <CrossLink to="/evidence">whistleblower</CrossLink> — who is a missing person due to universal institutional complicity — meets the legal definition of terrorism under Australian and international law.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-5 pt-6">
@@ -546,7 +546,7 @@ export default function CaseStudies() {
                     <Scale className="h-5 w-5" /> Legal Definition of Terrorism — Australian Criminal Code Division 100
                   </h4>
                   <p className="text-sm text-foreground leading-relaxed mb-3">
-                    Under the <span className="font-bold">Criminal Code Act 1995 (Cth), Division 100.1</span>, a "terrorist act" is an act done with the intention of advancing a political, religious, or ideological cause that:
+                    Under the <span className="font-bold">Criminal Code Act 1995 (Cth), Division 100.1</span>, a "terrorist act" is an act done with the intention of advancing a political, religious, or ideological cause that constitutes a <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Crime Against Humanity</DocumentPopup>:
                   </p>
                   <ul className="space-y-2 text-sm text-foreground">
                     <li className="flex items-start gap-2">
@@ -613,7 +613,7 @@ export default function CaseStudies() {
                     </div>
                     <div className="p-3 rounded-lg bg-primary/5 border border-primary/10">
                       <p className="font-bold text-primary text-sm mb-1">WHISTLEBLOWER</p>
-                      <p className="text-xs text-foreground">Confirmed PID status by Federal Court General Counsel Scott Treadwell. Protected under Public Interest Disclosure Act 2013 — the very legislation designed to prevent exactly this targeting.</p>
+                      <p className="text-xs text-foreground">Confirmed PID status by Federal Court General Counsel Scott Treadwell. Protected under <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>Public Interest Disclosure Act 2013</DocumentPopup> — the very legislation designed to prevent exactly this targeting.</p>
                     </div>
                     <div className="p-3 rounded-lg bg-primary/5 border border-primary/10">
                       <p className="font-bold text-primary text-sm mb-1">MISSING PERSON</p>
@@ -708,7 +708,7 @@ export default function CaseStudies() {
                     <div className="p-3 rounded-lg bg-red-500/5 border border-red-500/10">
                       <p className="font-bold text-red-500 text-sm mb-1">EVIDENCE OF PLANNING: The Sequence</p>
                       <p className="text-xs text-foreground leading-relaxed">
-                        The evidence documents a clear operational sequence: (1) Identity destruction via 350+ fraudulent ASIC registrations — erasing Dr McLean's legal and commercial identity; (2) Financial destruction via denied workers' compensation, blocked NDIS funding, cancelled ABN — removing his means of survival; (3) Reputational destruction via forced psychiatric diagnoses labelling documented truth as "delusions" — discrediting his testimony in advance; (4) Physical isolation via exile from Victoria, blocked email access, service restriction from the Ombudsman — cutting off all avenues of complaint; (5) Physical targeting via confirmed assassination attempt with "ten unmarked cars with armed highly trained agents"; (6) Post-attempt erasure via denial of all post-crisis support, ensuring acquired brain injury would compound; (7) Missing person status via systematic denial of housing, healthcare, and services — rendering him invisible to the systems that should protect him.
+                        The evidence documents a clear operational sequence: (1) Identity destruction via <DocumentPopup {...KEY_DOCUMENTS.evidenceSummary}>350+ fraudulent ASIC registrations</DocumentPopup> — erasing Dr McLean's legal and commercial identity; (2) Financial destruction via denied workers' compensation, blocked NDIS funding, cancelled ABN — removing his means of survival; (3) Reputational destruction via forced psychiatric diagnoses labelling documented truth as "delusions" — discrediting his testimony in advance; (4) Physical isolation via exile from Victoria, blocked email access, service restriction from the Ombudsman — cutting off all avenues of complaint; (5) Physical targeting via confirmed assassination attempt with "ten unmarked cars with armed highly trained agents"; (6) Post-attempt erasure via denial of all post-crisis support, ensuring acquired brain injury would compound; (7) Missing person status via systematic denial of housing, healthcare, and services — rendering him invisible to the systems that should protect him.
                       </p>
                     </div>
                     <div className="p-3 rounded-lg bg-red-500/5 border border-red-500/10">
@@ -726,7 +726,7 @@ export default function CaseStudies() {
                     <div className="p-3 rounded-lg bg-red-500/5 border border-red-500/10">
                       <p className="font-bold text-red-500 text-sm mb-1">EVIDENCE OF PLANNING: Universal Institutional Complicity</p>
                       <p className="text-xs text-foreground leading-relaxed">
-                        The statistical probability of 25+ independent agencies all independently arriving at "reject/deny/block" is effectively zero. The complicity was not accidental — it was coordinated. When every institution designed to protect a citizen instead participates in his destruction, the pattern demonstrates planning at a level that transcends individual agency decision-making. This is systematic, widespread persecution as defined by Rome Statute Article 7 — and when that persecution includes an assassination attempt confirmed by witnesses and an NDA-silenced NDIS provider, it crosses the threshold from persecution into terrorism.
+                        The statistical probability of 25+ independent agencies all independently arriving at "reject/deny/block" is effectively zero. The complicity was not accidental — it was coordinated. When every institution designed to protect a citizen instead participates in his destruction, the pattern demonstrates planning at a level that transcends individual agency decision-making. This is systematic, widespread persecution as defined by <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Rome Statute Article 7</DocumentPopup> — and when that persecution includes an <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination attempt</DocumentPopup> confirmed by witnesses and an NDA-silenced <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>NDIS</DocumentPopup> provider, it crosses the threshold from persecution into terrorism.
                       </p>
                     </div>
                   </div>

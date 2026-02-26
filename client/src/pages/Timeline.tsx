@@ -296,13 +296,19 @@ export default function Timeline() {
                             {event.title.includes("NDIS Entrapment") ? (
                               <>National Disability Insurance Scheme used as mechanism for financial control and coercion. Documented as systematic <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment</DocumentPopup>.</>
                             ) : event.title.includes("ICC & UNHCR") ? (
-                              <>International Criminal Court and UN Human Rights Council submissions formally filed. Evidence <CrossLink to="/blockchain">blockchain</CrossLink>-verified. <CrossLink to="/legal-status">Crimes Against Humanity</CrossLink> analysis completed.</>
+                              <>International Criminal Court and UN Human Rights Council submissions formally filed. Evidence <CrossLink to="/blockchain">blockchain</CrossLink>-verified. <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Crimes Against Humanity</DocumentPopup> analysis completed.</>
                             ) : event.title.includes("Tony Ridley") ? (
-                              <>NDIA Manager <CrossLink to="/evidence">Tony Ridley</CrossLink> (Ex-SAS) issues <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination</DocumentPopup> threat: 'You will be sacrificed.'</>
+                              <>NDIA Manager <CrossLink to="/evidence">Tony Ridley</CrossLink> (Ex-SAS) issues <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination</DocumentPopup> threat: 'You will be sacrificed.' <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Rome Statute</DocumentPopup> Article 7 threshold met.</>
                             ) : event.title.includes("Blockchain Archive") ? (
                               <><CrossLink to="/evidence">240+ evidence documents</CrossLink> <CrossLink to="/blockchain">blockchain</CrossLink>-verified and permanently timestamped.</>
                             ) : event.title.includes("Bill Shorten") ? (
                               <>Evidence of political coordination involving then-NDIS Minister <CrossLink to="/manifesto">Bill Shorten</CrossLink>.</>
+                            ) : event.title.includes("ASIC Identity") ? (
+                              <><DocumentPopup {...KEY_DOCUMENTS.evidenceSummary}>350+ fraudulent business registrations</DocumentPopup> in Dr McLean's name discovered on ASIC database.</>
+                            ) : event.title.includes("Port Macquarie") ? (
+                              <><DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>Assassination attempt</DocumentPopup> in Port Macquarie that remains unrefuted and unproven to have not occurred by any institution.</>
+                            ) : event.title.includes("Institutional Murder") ? (
+                              <>Dr McLean sacrificed and declared medically dead inside Werribee Mercy Hospital, but revived by God — documented as 'lethal' and 'fatal' event. Full account in the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup>.</>
                             ) : event.description}
                           </p>
                           {event.details && (

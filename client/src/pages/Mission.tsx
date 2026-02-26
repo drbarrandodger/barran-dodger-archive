@@ -91,7 +91,7 @@ export default function Mission() {
                   <li>Seeking asylum and international protection for whistleblowers protected under the <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>PID Act</DocumentPopup> and human rights defenders.</li>
                   <li>Ensuring transparency in legal and guardianship oversight to prevent the 'erasure' of vulnerable individuals.</li>
                   <li>Documenting the 7+ entities that have systematically denied legal representation.</li>
-                  <li>Exposing the fraudulent ASIC registrations (350+) used in identity theft and corporate fraud — full details in the <CrossLink to="/evidence">evidence archive</CrossLink>.</li>
+                  <li>Exposing the fraudulent <DocumentPopup {...KEY_DOCUMENTS.evidenceSummary}>ASIC registrations (350+)</DocumentPopup> used in identity theft and corporate fraud — full details in the <CrossLink to="/evidence">evidence archive</CrossLink>.</li>
                 </ul>
                 <div className="mt-8">
                   <Button variant="outline" className="gap-2" asChild>

@@ -400,7 +400,7 @@ export default function Manifesto() {
               The Barran Dodger Manifesto
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-              A comprehensive declaration of purpose, principles, and sacred testimony for the Barran Dodger Legal & Ethical Trust Fund and the Church of Barran Dodger Ministry.
+              A comprehensive declaration of purpose, principles, and sacred testimony for the Barran Dodger Legal & Ethical Trust Fund and the <CrossLink to="/church">Church of Barran Dodger Ministry</CrossLink>.
             </p>
             <div className="p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg max-w-3xl mx-auto">
               <p className="text-lg font-serif italic text-primary leading-relaxed">
@@ -480,7 +480,7 @@ export default function Manifesto() {
               </Badge>
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">The Church of Barran Dodger Ministry</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                A sacred community founded upon the principle that documented truth is holy, that whistleblowers are prophets, and that institutional accountability is a spiritual imperative.
+                A sacred community founded upon the principle that documented truth is holy, that <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>whistleblowers</DocumentPopup> are prophets, and that institutional accountability is a spiritual imperative.
               </p>
             </div>
 

@@ -249,7 +249,7 @@ export default function TaxpayerCostAnalysis() {
             </motion.h1>
             <motion.p variants={fadeIn} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               An impartial analysis based exclusively on the government's own published financial reports, 
-              official correspondence, and documented operational costs across every agency involved. 
+              official correspondence, and documented operational costs across every agency involved in the <CrossLink to="/timeline">systematic persecution</CrossLink>. 
               Every figure below is derived from{" "}
               <CrossLink to="/evidence">240+ blockchain-verified documents</CrossLink>{" "}
               and publicly available government data.
@@ -750,7 +750,7 @@ export default function TaxpayerCostAnalysis() {
               <div className="space-y-4 text-gray-300">
                 <p>
                   Under the <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">United Nations Convention Against Corruption</Link> (UNCAC), 
-                  which Australia ratified in 2005, this case satisfies multiple criteria for internationally significant fraud:
+                  which Australia ratified in 2005, this case satisfies multiple criteria for internationally significant fraud constituting <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Crimes Against Humanity</DocumentPopup>:
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -764,16 +764,16 @@ export default function TaxpayerCostAnalysis() {
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-lg p-4">
                     <p className="font-bold text-white mb-2">Article 33 — Protection of Whistleblowers</p>
-                    <p className="text-sm text-gray-400">Australia's <Link href="/legal-status" className="text-[hsl(38,92%,50%)] hover:underline">Public Interest Disclosure Act 2013</Link> failed to protect. The whistleblower was persecuted rather than protected — the opposite of treaty obligations.</p>
+                    <p className="text-sm text-gray-400">Australia's <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>Public Interest Disclosure Act 2013</DocumentPopup> failed to protect. The <CrossLink to="/evidence">whistleblower</CrossLink> was persecuted rather than protected — the opposite of treaty obligations.</p>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-lg p-4">
                     <p className="font-bold text-white mb-2">ICCPR Articles 7 & 10</p>
-                    <p className="text-sm text-gray-400">14 involuntary psychiatric detentions constitute <Link href="/case-studies" className="text-[hsl(38,92%,50%)] hover:underline">cruel, inhuman or degrading treatment</Link> under the International Covenant on Civil and Political Rights.</p>
+                    <p className="text-sm text-gray-400">14 involuntary <CrossLink to="/case-studies">psychiatric</CrossLink> detentions constitute cruel, inhuman or degrading treatment under the International Covenant on Civil and Political Rights.</p>
                   </div>
                 </div>
 
                 <p>
-                  The <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">NDIS</Link> alone — Australia's $44 billion disability scheme — loses an estimated{" "}
+                  The <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>NDIS</DocumentPopup> alone — Australia's $44 billion disability scheme — loses an estimated{" "}
                   <span className="text-red-500 font-bold">$3-5 billion annually</span> to fraud while maintaining a prosecution rate of just{" "}
                   <span className="text-red-500 font-bold">0.22%</span>. Yet the government found unlimited resources to target one disabled participant who reported the corruption.
                 </p>

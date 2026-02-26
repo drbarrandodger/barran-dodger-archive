@@ -372,7 +372,7 @@ export default function PropheticPapers() {
           >
             <h2 className="text-2xl font-serif font-bold text-primary mb-4">Formal Notice to the Minister</h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              A formal notice placing the Minister on notice of unlawful administration regarding workers' compensation and NDIS cost substitution.
+              A formal notice placing the Minister on notice of unlawful administration regarding workers' compensation and <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>NDIS cost substitution</DocumentPopup>.
             </p>
             <Button variant="secondary" className="bg-background hover:bg-background/90" asChild>
               <a href="mailto:jennifer.mcallister@aph.gov.au">

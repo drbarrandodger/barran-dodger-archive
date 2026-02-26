@@ -74,7 +74,7 @@ export default function Media() {
                 Media Resources
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Press releases, media contacts, and resources for journalists and researchers. Review the <CrossLink to="/evidence">evidence archive</CrossLink> or read the <CrossLink to="/manifesto">complete manifesto</CrossLink>.
+                Press releases, media contacts, and resources for journalists and researchers investigating the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup> and <CrossLink to="/timeline">systematic persecution</CrossLink>. Review the <CrossLink to="/evidence">evidence archive</CrossLink> or read the <CrossLink to="/manifesto">complete manifesto</CrossLink>.
               </p>
             </div>
 

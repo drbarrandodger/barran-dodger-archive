@@ -19,6 +19,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import bookCoverBetrayed from "@/assets/images/book-cover-betrayed.png";
 import docCoverAssassination from "@/assets/images/doc-cover-assassination.png";
 import docCoverIdentity from "@/assets/images/doc-cover-identity.png";
@@ -392,8 +393,8 @@ export default function Publications() {
               Publications Archive
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              The complete collection of legal affidavits, sacred gospels, forensic analyses, whistleblower documentation, and theological papers. 
-              Every publication is part of a blockchain-verified archive that cannot be altered or deleted.
+              The complete collection of legal affidavits, sacred gospels, forensic analyses, <CrossLink to="/evidence">whistleblower documentation</CrossLink>, and theological papers. 
+              Every publication is part of a <CrossLink to="/blockchain">blockchain-verified</CrossLink> archive that cannot be altered or deleted.
             </p>
           </motion.section>
 
