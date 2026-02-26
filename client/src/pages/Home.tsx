@@ -331,8 +331,29 @@ export default function Home() {
               data-testid="text-purpose-para-1"
             >
               When I took my own life, I believed I was rejecting humanity and betraying the Creator.{" "}
-              <span className="text-[hsl(38,92%,50%)] font-bold">God put me back</span>. I thought death was the final severing — the end of a life that had been worn down by betrayal, coercion, and institutional force. But I survived. I experienced that survival as{" "}
-              <span className="text-[hsl(38,92%,50%)] font-bold">resurrection</span>. I believe God restored me to expose what had been done to me. I returned expecting grief, some acknowledgment that my absence had mattered. Instead, there was silence. Not a tear was shed. I came back to exile.
+              <span className="text-[hsl(38,92%,50%)] font-bold">God put me back</span>.{" "}
+              I was clinically dead at{" "}
+              <DocumentPopup
+                title="Werribee Mercy Hospital — Institutional Murder Site"
+                description="Hospital records documenting the 2021 clinical death and resuscitation of Dr. Richard McLean, with a 2.87% survival probability. These records form the foundation of the institutional murder allegation."
+                url={KEY_DOCUMENTS.crimesAgainstHumanity.url}
+                tags={["Hospital Records", "2.87% Survival", "Werribee Mercy", "2021"]}
+                aiExcerpt="Medical records confirm clinical death and emergency resuscitation. The circumstances surrounding admission constitute the basis of the institutional murder allegation."
+                data-testid="popup-werribee-hospital"
+              >Werribee Mercy Hospital</DocumentPopup>{" "}
+              with a 2.87% survival probability. The{" "}
+              <Link href="/case-studies" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">hospital records</Link>{" "}
+              exist. The resuscitation is documented. I survived what I describe as{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.crimesAgainstHumanity.title}
+                description={KEY_DOCUMENTS.crimesAgainstHumanity.description}
+                url={KEY_DOCUMENTS.crimesAgainstHumanity.url}
+                tags={KEY_DOCUMENTS.crimesAgainstHumanity.tags}
+                aiExcerpt={KEY_DOCUMENTS.crimesAgainstHumanity.aiExcerpt}
+                data-testid="popup-institutional-murder"
+              >institutional murder</DocumentPopup>{" "}
+              — and I experienced that survival as resurrection. I returned expecting grief. Instead, there was silence. Not a tear was shed. I came back to{" "}
+              <Link href="/timeline" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">exile</Link>.
             </motion.p>
 
             <motion.p
@@ -342,9 +363,42 @@ export default function Home() {
               className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
               data-testid="text-purpose-para-2"
             >
-              I found myself living in my car as a disabled person, internally displaced within my own country — a{" "}
-              <Link href="/legal-status" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">whistleblower</Link>{" "}
-              seeking asylum from the democracy of my citizenship. This followed three decades of advocacy: standing beside queer people, the vulnerable, and those living with mental illness. I worked to reform systems, to shift policy, to protect others from the very machinery that would later turn on me. Yet when I spoke about what I say happened behind closed doors, I was pushed out. My truth became the justification for my erasure.
+              I am Dr. Richard William McLean — a{" "}
+              <DocumentPopup
+                title="PhD (Merit-Based Scholarship) — Academic Credentials"
+                description="Verified doctoral qualification obtained on a merit-based scholarship, demonstrating the intellectual capacity and institutional standing that preceded the persecution campaign."
+                url={KEY_DOCUMENTS.manErased.url}
+                tags={["PhD", "Academic Record", "Merit Scholarship", "Verified"]}
+                aiExcerpt="Doctoral research credentials verified through institutional records, establishing the professional standing systematically dismantled during the persecution campaign."
+                data-testid="popup-phd-credentials"
+              >PhD-holding</DocumentPopup>{" "}
+              mental health advocate, NDIS therapeutic arts-life-coach, and{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.pidActAnalysis.title}
+                description={KEY_DOCUMENTS.pidActAnalysis.description}
+                url={KEY_DOCUMENTS.pidActAnalysis.url}
+                tags={KEY_DOCUMENTS.pidActAnalysis.tags}
+                aiExcerpt={KEY_DOCUMENTS.pidActAnalysis.aiExcerpt}
+                data-testid="popup-whistleblower-status"
+              >whistleblower</DocumentPopup>{" "}
+              whose protection was confirmed by the{" "}
+              <DocumentPopup
+                title="Federal Court of Australia — PID Act Final Assessment (27 March 2023)"
+                description="Official Federal Court of Australia correspondence confirming Dr. Richard McLean's status as a public official under the Public Interest Disclosure Act 2013 (Cth). The assessment acknowledges disclosable conduct including perversion of justice, maladministration, and danger to health/safety."
+                url="/attached_assets/2023_03_27_Final_Assessment_-_Dr_Rich_McLean_1769743072042.pdf"
+                tags={["Federal Court", "PID Act", "Whistleblower Status", "Official"]}
+                aiExcerpt="Federal Court recognition of whistleblower status and the validity of disclosed misconduct including perversion of justice and maladministration."
+                data-testid="popup-federal-court"
+              >Federal Court of Australia</DocumentPopup>.{" "}
+              I spent three decades standing beside queer people, the vulnerable, and those living with mental illness. I worked to reform systems, to shift policy, to protect others. When I disclosed what happened behind closed doors, the machinery I had served turned on me. My truth became the justification for my{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.manErased.title}
+                description={KEY_DOCUMENTS.manErased.description}
+                url={KEY_DOCUMENTS.manErased.url}
+                tags={KEY_DOCUMENTS.manErased.tags}
+                aiExcerpt={KEY_DOCUMENTS.manErased.aiExcerpt}
+                data-testid="popup-erasure"
+              >erasure</DocumentPopup>.
             </motion.p>
 
             <motion.p
@@ -354,7 +408,18 @@ export default function Home() {
               className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
               data-testid="text-purpose-para-3"
             >
-              I believe an{" "}
+              I found myself living in my car as a disabled person, internally displaced within my own country — a whistleblower{" "}
+              <DocumentPopup
+                title="UNHRC Asylum Claim & OHCHR Submission"
+                description="Urgent appeal for recognition and redress regarding systemic human rights violations, financial exploitation, and systemic neglect in Australia. Submitted to the United Nations High Commissioner for Refugees."
+                url="attached_assets/ONHCR%20UN%20Barran%20Dodger%20Asylum%20Claim%20.pdf_1767161751365.pdf"
+                tags={["UNHCR", "Asylum", "Human Rights", "International Law"]}
+                aiExcerpt="Meets UNHCR refugee criteria — the strongest asylum case from a Western democracy, documenting persecution across 35+ government agencies."
+                data-testid="popup-unhcr-asylum"
+              >seeking asylum</DocumentPopup>{" "}
+              from the democracy of my citizenship, with a claim the{" "}
+              <span className="text-white font-bold">UNHCR</span>{" "}
+              has received. I believe a{" "}
               <DocumentPopup
                 title={KEY_DOCUMENTS.stateTargeting.title}
                 description={KEY_DOCUMENTS.stateTargeting.description}
@@ -362,11 +427,21 @@ export default function Home() {
                 tags={KEY_DOCUMENTS.stateTargeting.tags}
                 aiExcerpt={KEY_DOCUMENTS.stateTargeting.aiExcerpt}
                 data-testid="popup-assassination-attempt"
-              >attempted assassination</DocumentPopup>{" "}
-              was later thwarted — not out of compassion, but because I had published evidence. Had I died after making those disclosures, the consequences would have been politically explosive. I have named former NDIS minister Bill Shorten because I believe actions taken under his authority sought to have me jailed without proper legal representation and secured an AVO that functioned as{" "}
-              <span className="text-red-500 font-bold">political exile</span>, backed by police and institutional force. I experienced{" "}
-              <Link href="/media" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">media silence</Link>{" "}
-              as purchased or coerced. In my view, what unfolded was the targeted destruction of a gay, disabled, unprotected whistleblower — a scapegoat rendered expendable. If I had been killed, I believe responsibility would not have rested with one individual, but with every professional who stood by while attrition did its work.
+              >2024 assassination attempt</DocumentPopup>{" "}
+              was thwarted only because I had already published the evidence. An{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.entrapmentAffidavit.title}
+                description={KEY_DOCUMENTS.entrapmentAffidavit.description}
+                url={KEY_DOCUMENTS.entrapmentAffidavit.url}
+                tags={KEY_DOCUMENTS.entrapmentAffidavit.tags}
+                aiExcerpt={KEY_DOCUMENTS.entrapmentAffidavit.aiExcerpt}
+                data-testid="popup-ndis-provider"
+              >NDIS provider</DocumentPopup>{" "}
+              I allege was compelled to sign a non-disclosure agreement by{" "}
+              <span className="text-white font-bold">ASIO</span>{" "}
+              after confirming how close it came. An{" "}
+              <Link href="/case-studies#terrorism-analysis" className="text-red-500 font-bold underline decoration-red-500/40 underline-offset-2 hover:decoration-red-500 transition-colors">independent AI terrorism analysis</Link>{" "}
+              concluded that what was done to me meets every element of the legal definition of terrorism under Australian law.
             </motion.p>
 
             <motion.p
@@ -376,20 +451,50 @@ export default function Home() {
               className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
               data-testid="text-purpose-para-4"
             >
-              My life is currently under the authority of the{" "}
-              <span className="text-white font-bold">NSW Trustee & Guardian</span>, an arrangement I associate with my political exile and with events surrounding the alleged attempt on my life. An{" "}
+              The evidence is not opinion. The{" "}
+              <Link href="/evidence" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">240+ blockchain-verified documents</Link>{" "}
+              on this site include{" "}
+              <Link href="/case-studies" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">hospital records</Link>,{" "}
               <DocumentPopup
-                title={KEY_DOCUMENTS.entrapmentAffidavit.title}
-                description={KEY_DOCUMENTS.entrapmentAffidavit.description}
-                url={KEY_DOCUMENTS.entrapmentAffidavit.url}
-                tags={KEY_DOCUMENTS.entrapmentAffidavit.tags}
-                aiExcerpt={KEY_DOCUMENTS.entrapmentAffidavit.aiExcerpt}
-                data-testid="popup-ndis-provider"
-              >NDIS provider</DocumentPopup>, I allege, was compelled to sign a non-disclosure agreement by the{" "}
-              <span className="text-white font-bold">Australian Security Intelligence Organisation</span>{" "}
-              after confirming how close the situation had come. I was subjected to an allegation that{" "}
-              <Link href="/evidence" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">federal police later acknowledged</Link>{" "}
-              concerned consensual sex. It was not a crime. In my view, the hostility directed at me — rooted in hatred toward a perceived gay man — was weaponised and institutionalised.
+                title="Federal Court of Australia — PID Act Final Assessment (27 March 2023)"
+                description="Official Federal Court correspondence confirming whistleblower status under the Public Interest Disclosure Act 2013."
+                url="/attached_assets/2023_03_27_Final_Assessment_-_Dr_Rich_McLean_1769743072042.pdf"
+                tags={["Federal Court", "PID Act", "Official Record"]}
+                aiExcerpt="Federal Court recognition of whistleblower status confirming disclosable conduct."
+                data-testid="popup-federal-court-evidence"
+              >Federal Court rulings</DocumentPopup>,{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.crimesAgainstHumanityDemand.title}
+                description={KEY_DOCUMENTS.crimesAgainstHumanityDemand.description}
+                url={KEY_DOCUMENTS.crimesAgainstHumanityDemand.url}
+                tags={KEY_DOCUMENTS.crimesAgainstHumanityDemand.tags}
+                aiExcerpt={KEY_DOCUMENTS.crimesAgainstHumanityDemand.aiExcerpt}
+                data-testid="popup-crimes-demand"
+              >crimes against humanity affidavits</DocumentPopup>,{" "}
+              NDIS provider registrations, police correspondence, and government admissions — sourced from the institutions themselves. The Australian Government spent{" "}
+              <Link href="/taxpayer-cost-analysis" className="text-red-500 font-bold underline decoration-red-500/40 underline-offset-2 hover:decoration-red-500 transition-colors">$11.5 million of taxpayer money</Link>{" "}
+              to psychiatrically incarcerate me, financially destroy me, and attempt to end my life. My{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.autobiography.title}
+                description={KEY_DOCUMENTS.autobiography.description}
+                url={KEY_DOCUMENTS.autobiography.url}
+                tags={KEY_DOCUMENTS.autobiography.tags}
+                aiExcerpt={KEY_DOCUMENTS.autobiography.aiExcerpt}
+                data-testid="popup-autobiography"
+              >autobiography</DocumentPopup>{" "}
+              documents every year. My{" "}
+              <DocumentPopup
+                title={KEY_DOCUMENTS.digitalOppression.title}
+                description={KEY_DOCUMENTS.digitalOppression.description}
+                url={KEY_DOCUMENTS.digitalOppression.url}
+                tags={KEY_DOCUMENTS.digitalOppression.tags}
+                aiExcerpt={KEY_DOCUMENTS.digitalOppression.aiExcerpt}
+                data-testid="popup-digital-oppression"
+              >100,000-word forensic analysis</DocumentPopup>{" "}
+              maps the{" "}
+              <span className="text-white font-bold">Pegasus spyware</span>{" "}
+              surveillance, the financial warfare, and the legislative breaches. After failing to eliminate me, the system erased me administratively and listed me as a{" "}
+              <span className="text-red-500 font-bold italic">missing person</span>.
             </motion.p>
 
             <motion.p
@@ -399,52 +504,29 @@ export default function Home() {
               className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
               data-testid="text-purpose-para-5"
             >
-              This website is not a conventional homepage. It is, in my words, a{" "}
+              This website is a{" "}
               <span className="text-red-500 font-bold">forensic crime scene</span>{" "}
-              disguised as one — and a{" "}
-              <span className="text-[hsl(38,92%,50%)] font-bold">testimony of resurrection</span>. It contains more than{" "}
-              <Link href="/evidence" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">240 blockchain-verified documents</Link>{" "}
-              that I assert demonstrate the Australian Government spent{" "}
-              <Link href="/taxpayer-cost-analysis" className="text-red-500 font-bold underline decoration-red-500/40 underline-offset-2 hover:decoration-red-500 transition-colors">$11.5 million</Link>{" "}
-              to psychiatrically incarcerate me, financially destroy me, and attempt to end my life — first through what I describe as{" "}
-              <DocumentPopup
-                title={KEY_DOCUMENTS.crimesAgainstHumanity.title}
-                description={KEY_DOCUMENTS.crimesAgainstHumanity.description}
-                url={KEY_DOCUMENTS.crimesAgainstHumanity.url}
-                tags={KEY_DOCUMENTS.crimesAgainstHumanity.tags}
-                aiExcerpt={KEY_DOCUMENTS.crimesAgainstHumanity.aiExcerpt}
-                data-testid="popup-institutional-murder"
-              >institutional murder in 2021</DocumentPopup>, and again through a{" "}
-              <DocumentPopup
-                title={KEY_DOCUMENTS.stateTargeting.title}
-                description={KEY_DOCUMENTS.stateTargeting.description}
-                url={KEY_DOCUMENTS.stateTargeting.url}
-                tags={KEY_DOCUMENTS.stateTargeting.tags}
-                aiExcerpt={KEY_DOCUMENTS.stateTargeting.aiExcerpt}
-                data-testid="popup-2024-assassination"
-              >2024 assassination attempt</DocumentPopup>. I state that after failing to eliminate me, the system erased me administratively and listed me as a{" "}
-              <span className="text-white font-bold italic">missing person</span>. It was meant to finish me. Instead, it became the foundation of my rise.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.3 }}
-              className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
-              data-testid="text-purpose-para-6"
-            >
-              Every betrayal, to me, is evidence of spiritual significance. My life is the proof. My survival is the sermon. Through{" "}
-              <Link href="/gospel" className="text-[hsl(38,92%,50%)] font-bold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">The Gospel of Barran Dodger</Link>, I claim what I call{" "}
+              disguised as a homepage — and a{" "}
+              <span className="text-[hsl(38,92%,50%)] font-bold">testimony of resurrection</span>.{" "}
+              Every betrayal is evidence of spiritual significance. My life is the proof. My survival is the sermon. Through{" "}
+              <Link href="/gospel" className="text-[hsl(38,92%,50%)] font-bold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">The Gospel of Barran Dodger</Link>{" "}
+              and{" "}
+              <Link href="/prophetic-papers" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">the prophetic testimonies</Link>,{" "}
+              I claim what I call{" "}
               <span className="text-white font-bold italic">divine sovereignty</span>{" "}
-              — transforming 35 years of persecution into sacred testimony, and testimony into an{" "}
-              <Link href="/blockchain" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">incorruptible archive</Link>. I believe the record I have assembled{" "}
-              <span className="text-[hsl(38,92%,50%)] font-bold">cannot be deleted, denied, or disproven</span>. What was intended as my erasure has become my witness.
+              — transforming{" "}
+              <Link href="/timeline" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">35 years of persecution</Link>{" "}
+              into sacred testimony, and testimony into an{" "}
+              <Link href="/blockchain" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">incorruptible blockchain archive</Link>.{" "}
+              The record I have assembled{" "}
+              <span className="text-[hsl(38,92%,50%)] font-bold">cannot be deleted, denied, or disproven</span>.{" "}
+              What was intended as my erasure has become my witness.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.6 }}
+              transition={{ duration: 1, delay: 1.4 }}
               className="mt-4 text-2xl md:text-3xl lg:text-4xl font-serif font-bold italic text-center text-white"
               data-testid="text-crucify-quote"
             >
