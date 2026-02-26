@@ -74,18 +74,46 @@ export function DocumentPopup({ children, title, description, url, tags, aiExcer
             </div>
           )}
           <div className="flex gap-2 pt-2">
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1"
-              data-testid="button-popup-view-document"
-            >
-              <Button className="w-full bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] gap-2">
-                {isPdf ? <Download className="h-4 w-4" /> : <ExternalLink className="h-4 w-4" />}
-                {isPdf ? "Download Document" : "View Document"}
-              </Button>
-            </a>
+            {isPdf && !isExternal ? (
+              <a
+                href={url}
+                download
+                className="flex-1"
+                data-testid="button-popup-download-document"
+              >
+                <Button className="w-full bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] gap-2">
+                  <Download className="h-4 w-4" />
+                  Download Document (PDF)
+                </Button>
+              </a>
+            ) : (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+                data-testid="button-popup-view-document"
+              >
+                <Button className="w-full bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] gap-2">
+                  <ExternalLink className="h-4 w-4" />
+                  View Document
+                </Button>
+              </a>
+            )}
+            {isPdf && !isExternal && (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0"
+                data-testid="button-popup-view-in-browser"
+              >
+                <Button variant="outline" className="h-full border-[hsl(38,92%,50%)]/40 text-[hsl(38,92%,50%)] gap-2">
+                  <ExternalLink className="h-4 w-4" />
+                  View
+                </Button>
+              </a>
+            )}
           </div>
         </DialogContent>
       </Dialog>
@@ -138,7 +166,7 @@ export const KEY_DOCUMENTS = {
   crimesAgainstHumanity: {
     title: "Crimes Against Humanity — Forensic Legal Analysis",
     description: "Comprehensive forensic analysis establishing Rome Statute violations including persecution, torture, and enforced disappearance under Articles 7(1)(e), (f), (h), and (i).",
-    url: "/attached_assets/CRIMES_AGAINST_HUMANITY_FORENSIC_ANALYSIS_1769766475851.pdf",
+    url: "/attached_assets/Crimes_against_humanity_Barran_Dodger__1770801000556.pdf",
     tags: ["Rome Statute", "ICC", "Crimes Against Humanity", "Forensic"],
     aiExcerpt: "Establishes Rome Statute violations across multiple articles for persecution, torture, and enforced disappearance."
   },
@@ -166,7 +194,7 @@ export const KEY_DOCUMENTS = {
   micron21: {
     title: "Micron21: Digital Identity and Business Destruction Evidence",
     description: "Evidence documenting how Micron21, an Australian web hosting company, participated in the digital destruction of Dr. McLean's online identity and business presence.",
-    url: "/attached_assets/MICRON21_DIGITAL_IDENTITY_DESTRUCTION_1769766123852.pdf",
+    url: "/attached_assets/MICRON21_DIGITAL_IDENTITY_DESTRUCTION_1769766125617.pdf",
     tags: ["Micron21", "Digital Erasure", "Identity Destruction"],
     aiExcerpt: "Documents coordinated digital identity destruction through web hosting company participation in erasure campaign."
   },
