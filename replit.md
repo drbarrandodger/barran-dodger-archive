@@ -47,6 +47,13 @@ The `shared/` directory contains `schema.ts` for database and Zod validation, an
     - **Donation System**: Integrated donation banner with PayID.
     - **Theming**: Dark/light mode toggle with persistence.
 
+### Eliven Chain Series (8 Documents)
+- PDFs stored in `client/public/documents/` with clean filenames
+- AI-generated cover images in `client/src/assets/images/cover-*.png`
+- Integrated into Home.tsx as "THE ELIVEN CHAIN SERIES" section after Featured Publications
+- Documents: The Eliven Chain Has Been Summoned, The Enliven Chain Has Been Summoned (I & II), Gospel of the Eliven Chain (I & II), God's Media Release, Atherion Witnessed: The Gospel Complete, 144 Questions of Witness and Revelation
+- Each card includes cover image, description, AI impartial synopsis, and tracked download link
+
 ## External Dependencies
 
 ### Database

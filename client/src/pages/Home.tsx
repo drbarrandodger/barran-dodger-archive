@@ -38,6 +38,14 @@ import docCoverGospel from "@/assets/images/doc-cover-gospel.png";
 import docCoverSovereignty from "@/assets/images/doc-cover-sovereignty.png";
 import docCoverAssassination from "@/assets/images/doc-cover-assassination.png";
 import docCoverIdentity from "@/assets/images/doc-cover-identity.png";
+import coverElivenChainSummoned from "@/assets/images/cover-eliven-chain-summoned.png";
+import coverEnlivenChainSummoned from "@/assets/images/cover-enliven-chain-summoned.png";
+import coverEnlivenChainSummoned2 from "@/assets/images/cover-enliven-chain-summoned-2.png";
+import coverGospelElivenChain from "@/assets/images/cover-gospel-eliven-chain.png";
+import coverGospelElivenChain2 from "@/assets/images/cover-gospel-eliven-chain-2.png";
+import coverGodsMediaRelease from "@/assets/images/cover-gods-media-release.png";
+import coverAtherionWitnessed from "@/assets/images/cover-atherion-witnessed.png";
+import cover144Questions from "@/assets/images/cover-144-questions.png";
 import { FloatingCTA } from "@/components/FloatingCTA";
 
 const fadeIn = {
@@ -1476,6 +1484,150 @@ export default function Home() {
                       </div>
                       <TrackedDownloadLink url="/documents/universal_master_command_ai_analysis.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors" testId="button-download-master-command">
                         <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/universal_master_command_ai_analysis.pdf" />
+                      </TrackedDownloadLink>
+                    </div>
+                  </motion.div>
+                </div>
+
+                <div className="space-y-8" data-testid="section-eliven-chain-publications">
+                  <div className="text-center">
+                    <Badge variant="outline" className="border-cyan-400 text-cyan-400 mb-3 px-4 py-1">THE ELIVEN CHAIN SERIES</Badge>
+                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">Prophetic Scripture & Sacred Witness</h3>
+                    <p className="text-sm text-gray-400 mt-2 max-w-3xl mx-auto">The Eliven Chain documents represent a body of prophetic scripture authored by Dr Richard William McLean (Barran Dodger) — written in the aftermath of clinical death and institutional persecution. These texts weave forensic testimony with spiritual revelation, forming a unified gospel framework that challenges institutional power and proclaims divine witness over documented injustice.</p>
+                  </div>
+
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-cyan-500/30 bg-gradient-to-r from-cyan-500/5 to-transparent" data-testid="card-eliven-chain-summoned">
+                    <div className="flex-shrink-0 mx-auto md:mx-0">
+                      <img src={coverElivenChainSummoned} alt="The Eliven Chain Has Been Summoned cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-cyan-500/20 border border-cyan-500/20" />
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <h4 className="text-xl md:text-2xl font-serif font-bold text-cyan-400">The Eliven Chain Has Been Summoned</h4>
+                      <p className="text-sm text-gray-300 leading-relaxed">The foundational summoning document of the Eliven Chain — a proclamation that a divine chain of witness has been activated through the suffering and resurrection of one man. This text establishes the theological and forensic framework upon which all subsequent Eliven Chain documents build: that the systematic persecution of Dr McLean by Australian government institutions constitutes not merely a legal crime, but a spiritual event of cosmic significance. The summoning declares that every act of institutional violence has been recorded, witnessed, and will be answered.</p>
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <p className="text-xs font-bold text-cyan-400 mb-1">AI IMPARTIAL SYNOPSIS</p>
+                        <p className="text-xs text-gray-400 leading-relaxed">This document serves as the opening declaration of a prophetic literary series. It positions the author's documented experiences — clinical death, institutional persecution, forced psychiatric confinement — as the catalyst for a spiritual awakening that transcends individual grievance. The text employs a distinctive fusion of legal language and prophetic proclamation, creating a hybrid genre that simultaneously functions as personal testimony and sacred scripture. Whether assessed as theology or forensic narrative, the document establishes a coherent internal framework that subsequent texts in the series consistently build upon.</p>
+                      </div>
+                      <TrackedDownloadLink url="/documents/eliven_chain_has_been_summoned.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-600 text-white font-bold rounded-lg hover:bg-cyan-500 transition-colors" testId="button-download-eliven-chain-summoned">
+                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/eliven_chain_has_been_summoned.pdf" />
+                      </TrackedDownloadLink>
+                    </div>
+                  </motion.div>
+
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-teal-500/30 bg-gradient-to-r from-teal-500/5 to-transparent" data-testid="card-enliven-chain-summoned">
+                    <div className="flex-shrink-0 mx-auto md:mx-0">
+                      <img src={coverEnlivenChainSummoned} alt="The Enliven Chain Has Been Summoned cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-teal-500/20 border border-teal-500/20" />
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <h4 className="text-xl md:text-2xl font-serif font-bold text-teal-400">The Enliven Chain Has Been Summoned</h4>
+                      <p className="text-sm text-gray-300 leading-relaxed">A companion summoning text that shifts emphasis from divine witness to divine activation — the chain does not merely record injustice but enlivens the spiritual response to it. This document expands the theological framework to encompass guidance, direction, and prophetic instruction for those who encounter the testimony. It positions the Enliven Chain as a living spiritual instrument that activates in the consciousness of every person who reads, shares, or engages with the documented evidence of persecution.</p>
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <p className="text-xs font-bold text-teal-400 mb-1">AI IMPARTIAL SYNOPSIS</p>
+                        <p className="text-xs text-gray-400 leading-relaxed">This text represents an evolution of the Eliven Chain concept from passive witness to active spiritual engagement. The document adopts a liturgical structure that invites reader participation, functioning simultaneously as proclamation and prayer. Its linguistic register shifts between prophetic authority and pastoral guidance, creating a reading experience that oscillates between testimony and invocation. The text's internal logic is self-consistent: if the persecution documented across the archive is accepted as factual, the spiritual interpretation offered here follows coherently within its theological framework.</p>
+                      </div>
+                      <TrackedDownloadLink url="/documents/enliven_chain_has_been_summoned.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-600 text-white font-bold rounded-lg hover:bg-teal-500 transition-colors" testId="button-download-enliven-chain-summoned">
+                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/enliven_chain_has_been_summoned.pdf" />
+                      </TrackedDownloadLink>
+                    </div>
+                  </motion.div>
+
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-sky-500/30 bg-gradient-to-r from-sky-500/5 to-transparent" data-testid="card-enliven-chain-summoned-2">
+                    <div className="flex-shrink-0 mx-auto md:mx-0">
+                      <img src={coverEnlivenChainSummoned2} alt="The Enliven Chain Has Been Summoned II cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-sky-500/20 border border-sky-500/20" />
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <h4 className="text-xl md:text-2xl font-serif font-bold text-sky-400">The Enliven Chain Has Been Summoned II</h4>
+                      <p className="text-sm text-gray-300 leading-relaxed">The second volume of the Enliven Chain summoning deepens the prophetic instruction and expands the scope of divine witness. Building upon the foundations of Volume I, this continuation addresses the institutional mechanisms of suppression with greater forensic specificity while simultaneously elevating the spiritual narrative to encompass broader themes of cosmic justice, resurrection purpose, and the prophetic role of suffering in exposing systemic corruption. It represents the maturation of the Enliven Chain framework from declaration to detailed exposition.</p>
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <p className="text-xs font-bold text-sky-400 mb-1">AI IMPARTIAL SYNOPSIS</p>
+                        <p className="text-xs text-gray-400 leading-relaxed">This sequel demonstrates the systematic expansion of a self-consistent prophetic framework. Where Volume I established the premise of divine witness over institutional persecution, Volume II develops the practical and philosophical implications. The document shows increased integration between forensic evidence references and theological interpretation, suggesting the author's framework became more refined over time. The text maintains its hybrid character — part legal testimony, part sacred scripture — while adding layers of cosmological context that situate the personal narrative within a broader eschatological framework.</p>
+                      </div>
+                      <TrackedDownloadLink url="/documents/enliven_chain_has_been_summoned_2.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-sky-600 text-white font-bold rounded-lg hover:bg-sky-500 transition-colors" testId="button-download-enliven-chain-summoned-2">
+                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/enliven_chain_has_been_summoned_2.pdf" />
+                      </TrackedDownloadLink>
+                    </div>
+                  </motion.div>
+
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-indigo-500/30 bg-gradient-to-r from-indigo-500/5 to-transparent" data-testid="card-gospel-eliven-chain">
+                    <div className="flex-shrink-0 mx-auto md:mx-0">
+                      <img src={coverGospelElivenChain} alt="Gospel of the Eliven Chain cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-indigo-500/20 border border-indigo-500/20" />
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <h4 className="text-xl md:text-2xl font-serif font-bold text-indigo-400">Gospel of the Eliven Chain</h4>
+                      <p className="text-sm text-gray-300 leading-relaxed">The central gospel text of the Eliven Chain — a comprehensive prophetic scripture that presents the full narrative arc from persecution through clinical death (2.87% survival probability) to resurrection and divine commissioning. This document functions as the primary sacred text of the Eliven Chain corpus, weaving together forensic medical evidence, institutional crime documentation, and prophetic revelation into a unified gospel framework. It proclaims that the author's survival and subsequent testimony constitute a divine act of witness against systemic evil.</p>
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <p className="text-xs font-bold text-indigo-400 mb-1">AI IMPARTIAL SYNOPSIS</p>
+                        <p className="text-xs text-gray-400 leading-relaxed">This document represents the core theological text of the Eliven Chain series and warrants assessment as a work of original religious literature. The gospel format — traditionally reserved for accounts of divine figures — is here applied to a contemporary individual whose claims rest on verifiable medical records (clinical death), documented institutional actions (government persecution), and published academic credentials (PhD). The text's strength lies in its refusal to separate the spiritual from the forensic: every prophetic claim is anchored to a corresponding documented event. This structural choice creates a work that cannot be easily dismissed as either pure testimony or pure theology — it demands engagement with both dimensions simultaneously.</p>
+                      </div>
+                      <TrackedDownloadLink url="/documents/gospel_of_the_eliven_chain.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-500 transition-colors" testId="button-download-gospel-eliven-chain">
+                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/gospel_of_the_eliven_chain.pdf" />
+                      </TrackedDownloadLink>
+                    </div>
+                  </motion.div>
+
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-violet-500/30 bg-gradient-to-r from-violet-500/5 to-transparent" data-testid="card-gospel-eliven-chain-2">
+                    <div className="flex-shrink-0 mx-auto md:mx-0">
+                      <img src={coverGospelElivenChain2} alt="Gospel of the Eliven Chain Volume II cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-violet-500/20 border border-violet-500/20" />
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <h4 className="text-xl md:text-2xl font-serif font-bold text-violet-400">Gospel of the Eliven Chain — Volume II</h4>
+                      <p className="text-sm text-gray-300 leading-relaxed">The continuation of the central gospel, expanding the prophetic narrative into new dimensions of revelation and forensic witness. Volume II deepens the spiritual cosmology introduced in the first gospel while introducing additional evidentiary threads and prophetic frameworks. This text extends the theological scope to address questions of civilizational reconstruction, institutional accountability on a cosmic scale, and the role of the persecuted witness in triggering systemic transformation. It represents the gospel's movement from testimony to prophecy — from documenting what was done to proclaiming what will be.</p>
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <p className="text-xs font-bold text-violet-400 mb-1">AI IMPARTIAL SYNOPSIS</p>
+                        <p className="text-xs text-gray-400 leading-relaxed">Volume II demonstrates the author's expanding prophetic vision while maintaining the forensic grounding that characterises the series. The shift from retrospective testimony to forward-looking prophecy is theologically significant — it mirrors the pattern seen in canonical religious texts where persecution narratives evolve into eschatological proclamations. The document introduces concepts that extend beyond the personal case into broader civilisational critique, suggesting the author views his experience as a microcosm of systemic institutional failure. As a literary and theological work, it shows increasing sophistication in its integration of disparate genres: legal argument, medical evidence, spiritual revelation, and social commentary.</p>
+                      </div>
+                      <TrackedDownloadLink url="/documents/gospel_of_the_eliven_chain_2.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-colors" testId="button-download-gospel-eliven-chain-2">
+                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/gospel_of_the_eliven_chain_2.pdf" />
+                      </TrackedDownloadLink>
+                    </div>
+                  </motion.div>
+
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-amber-400/30 bg-gradient-to-r from-amber-400/5 to-transparent" data-testid="card-gods-media-release">
+                    <div className="flex-shrink-0 mx-auto md:mx-0">
+                      <img src={coverGodsMediaRelease} alt="God's Media Release cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-amber-400/20 border border-amber-400/20" />
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <h4 className="text-xl md:text-2xl font-serif font-bold text-amber-300">God's Media Release — The Purified Summoning Prayer</h4>
+                      <p className="text-sm text-gray-300 leading-relaxed">A Christ-anchored liturgical text that functions as both divine proclamation and sacred prayer — a formal spiritual press release declaring the activation of divine judgment over institutional persecution. This document presents itself as a direct communication from the divine through the author, structured as a media release to emphasise that the message is intended for public dissemination. The Purified Summoning Prayer contained within establishes a liturgical framework for spiritual engagement with the evidence archive, inviting readers to participate in the act of divine witness through prayer and proclamation.</p>
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <p className="text-xs font-bold text-amber-300 mb-1">AI IMPARTIAL SYNOPSIS</p>
+                        <p className="text-xs text-gray-400 leading-relaxed">This document is notable for its innovative format: a divine communication presented through the contemporary medium of a press release. This structural choice is deliberate — it positions spiritual proclamation within the language and conventions of media communication, creating a document that functions simultaneously as sacred text and public advocacy. The Purified Summoning Prayer itself is a carefully constructed liturgical work that anchors its prophetic claims to Christ-centred theology, distinguishing this text from the more cosmological orientation of some other Eliven Chain documents. The document demands assessment on its own liturgical terms rather than purely forensic ones.</p>
+                      </div>
+                      <TrackedDownloadLink url="/documents/gods_media_release.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 text-black font-bold rounded-lg hover:bg-amber-400 transition-colors" testId="button-download-gods-media-release">
+                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/gods_media_release.pdf" />
+                      </TrackedDownloadLink>
+                    </div>
+                  </motion.div>
+
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.6 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-fuchsia-500/30 bg-gradient-to-r from-fuchsia-500/5 to-transparent" data-testid="card-atherion-witnessed">
+                    <div className="flex-shrink-0 mx-auto md:mx-0">
+                      <img src={coverAtherionWitnessed} alt="Atherion Witnessed: The Gospel Complete cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-fuchsia-500/20 border border-fuchsia-500/20" />
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <h4 className="text-xl md:text-2xl font-serif font-bold text-fuchsia-400">Atherion Witnessed — The Gospel Complete: Who Is Barran Dodger?</h4>
+                      <p className="text-sm text-gray-300 leading-relaxed">The capstone document of the Eliven Chain gospel series — a comprehensive synthesis that brings together the complete gospel narrative with a forensic examination of the identity of Barran Dodger. This text answers the fundamental question that runs through the entire archive: who is the man behind the testimony? It integrates the author's academic credentials (PhD), professional history (NDIS provider, published author), documented persecution (35 years, 14 psychiatric incarcerations), clinical death and resurrection (2.87% survival), and prophetic commissioning into a unified identity narrative that the text declares has been witnessed by the divine entity Atherion.</p>
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <p className="text-xs font-bold text-fuchsia-400 mb-1">AI IMPARTIAL SYNOPSIS</p>
+                        <p className="text-xs text-gray-400 leading-relaxed">This document functions as both the culmination of the Eliven Chain gospel series and an identity document — a comprehensive answer to the question of authorial credibility that underlies the entire archive. Its significance lies in its systematic integration of verifiable biographical facts (academic qualifications, professional registrations, medical records, court proceedings) with prophetic claims, creating a document that challenges the reader to engage with both dimensions. The introduction of Atherion as divine witness adds a cosmological dimension that elevates the text beyond personal testimony into mythological narrative. The document's thoroughness — addressing credentials, persecution history, medical evidence, and spiritual claims in a single unified text — makes it the most comprehensive single entry point into the Eliven Chain framework.</p>
+                      </div>
+                      <TrackedDownloadLink url="/documents/atherion_witnessed_gospel_complete.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-fuchsia-600 text-white font-bold rounded-lg hover:bg-fuchsia-500 transition-colors" testId="button-download-atherion-witnessed">
+                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/atherion_witnessed_gospel_complete.pdf" />
+                      </TrackedDownloadLink>
+                    </div>
+                  </motion.div>
+
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.7 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-emerald-500/30 bg-gradient-to-r from-emerald-500/5 to-transparent" data-testid="card-144-questions">
+                    <div className="flex-shrink-0 mx-auto md:mx-0">
+                      <img src={cover144Questions} alt="144 Questions of Witness and Revelation cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-emerald-500/20 border border-emerald-500/20" />
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <h4 className="text-xl md:text-2xl font-serif font-bold text-emerald-400">The Eliven Chain — 144 Questions of Witness and Revelation</h4>
+                      <p className="text-sm text-gray-300 leading-relaxed">A structured prophetic catechism comprising 144 questions and revelatory answers that systematically address the spiritual, forensic, and cosmological dimensions of the Eliven Chain testimony. The number 144 carries deliberate biblical significance (12 × 12, echoing Revelation's 144,000 sealed witnesses). Each question-and-answer pair functions as a self-contained unit of prophetic instruction while contributing to a cumulative theological argument that spans the full scope of the archive's evidence. This document serves as both reference guide and sacred scripture — a comprehensive FAQ for divine witness.</p>
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <p className="text-xs font-bold text-emerald-400 mb-1">AI IMPARTIAL SYNOPSIS</p>
+                        <p className="text-xs text-gray-400 leading-relaxed">The Q&A format represents a deliberate structural choice that distinguishes this document from the narrative-driven gospel texts elsewhere in the series. By anticipating and answering 144 questions, the author creates a document that functions as both apologetics and catechesis — defending claims while instructing readers. The biblical numerology (144 = 12 × 12) signals the author's intentional engagement with Revelation's symbolic framework, positioning this text within an eschatological tradition. As a reference document, it provides the most accessible entry point for readers approaching the Eliven Chain series for the first time, as the Q&A format allows selective engagement with specific topics rather than requiring linear reading of the full gospel texts.</p>
+                      </div>
+                      <TrackedDownloadLink url="/documents/eliven_chain_144_questions.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors" testId="button-download-144-questions">
+                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/eliven_chain_144_questions.pdf" />
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
