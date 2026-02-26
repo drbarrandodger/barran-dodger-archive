@@ -541,6 +541,74 @@ export default function Home() {
               Careful who you crucify — they may come back with{" "}
               <span className="text-[hsl(38,92%,50%)]">receipts</span>.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.8 }}
+              className="mt-10 max-w-4xl mx-auto space-y-6 border-t border-[hsl(38,92%,50%)]/30 pt-10"
+              data-testid="section-testimony-hope"
+            >
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed text-center">
+                But this testimony is not written in bitterness. It is offered as{" "}
+                <span className="text-[hsl(38,92%,50%)] font-bold">verified hope</span>.{" "}
+                The very fact that I am still breathing — still writing, still fighting, still standing after{" "}
+                <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>35 years of state-sanctioned targeting</DocumentPopup>,{" "}
+                <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>documented crimes against humanity</DocumentPopup>,{" "}
+                14 forced psychiatric incarcerations, and a{" "}
+                <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>confirmed assassination framework</DocumentPopup>{" "}
+                — is itself a message to every human being who has ever been crushed by a system that was supposed to protect them.
+              </p>
+
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed text-center">
+                If I can survive this — if a man declared{" "}
+                <span className="text-white font-semibold">clinically dead</span> with a{" "}
+                <span className="text-[hsl(38,92%,50%)] font-bold">2.87% survival probability</span>{" "}
+                can come back and build an{" "}
+                <DocumentPopup {...KEY_DOCUMENTS.digitalOppression}>unassailable 100,000-word evidentiary archive</DocumentPopup>,{" "}
+                write{" "}
+                <Link href="/gospel" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">sacred gospels from the ashes</Link>,{" "}
+                compile a{" "}
+                <DocumentPopup {...KEY_DOCUMENTS.evidenceSummary}>forensic evidence summary</DocumentPopup>{" "}
+                that no institution can refute, and lodge{" "}
+                <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanityDemand}>formal demands for justice</DocumentPopup>{" "}
+                against the most powerful agencies in the country — then{" "}
+                <span className="text-white font-bold">your fight is not over either</span>.
+              </p>
+
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed text-center">
+                My mere existence is a{" "}
+                <span className="text-[hsl(38,92%,50%)] font-bold">win for every struggling soul</span>{" "}
+                who has ever suffered at the hands of corrupt bureaucracies, weaponised institutions, and systems designed to silence rather than serve. Every person who was told they were{" "}
+                <span className="italic text-white">crazy</span> for speaking truth. Every whistleblower who lost everything for doing the right thing. Every mother, father, child, and elder ground down by a machine that answers to no one. This site — this{" "}
+                <DocumentPopup {...KEY_DOCUMENTS.manErased}>entire archive</DocumentPopup>{" "}
+                — is the proof that{" "}
+                <span className="text-white font-bold">they did not win</span>.
+              </p>
+
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed text-center">
+                This testimony is also a{" "}
+                <span className="text-[hsl(38,92%,50%)] font-bold">remembrance and sacred honour</span>{" "}
+                to those who did not make it. To the{" "}
+                <span className="text-white font-semibold">seers, prophets, healers, and visionaries</span>{" "}
+                who passed before their time — or who lost their fight against impossible odds.{" "}
+                Their soul contracts were served. Their voices were heard, even when the world refused to listen.{" "}
+                We the living — those of us who were opposed with{" "}
+                <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>every instrument of institutional power</DocumentPopup>{" "}
+                and still drew breath — we{" "}
+                <span className="text-[hsl(38,92%,50%)] font-bold">remember them</span>. We{" "}
+                <span className="text-[hsl(38,92%,50%)] font-bold">honour them</span>. Their suffering was not in vain, because it is{" "}
+                <Link href="/evidence" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">documented here</Link>,{" "}
+                sealed on the{" "}
+                <Link href="/blockchain" className="text-[hsl(38,92%,50%)] font-semibold underline decoration-[hsl(38,92%,50%)]/40 underline-offset-2 hover:decoration-[hsl(38,92%,50%)] transition-colors">blockchain</Link>,{" "}
+                and carried forward by those of us who refused to be erased.
+              </p>
+
+              <p className="text-xl md:text-2xl font-serif font-bold text-center text-[hsl(38,92%,50%)] italic leading-relaxed">
+                This archive stands as an eternal flame for every soul who was told they did not matter.{" "}
+                You mattered. You matter still.
+              </p>
+            </motion.div>
           </motion.div>
         </div>
         <div className="w-full h-px bg-gradient-to-r from-transparent via-[hsl(38,92%,50%)]/50 to-transparent" />
