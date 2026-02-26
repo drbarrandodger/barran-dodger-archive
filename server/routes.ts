@@ -166,6 +166,7 @@ export async function registerRoutes(
   async function seedDownloadCounts() {
     const slugs = [
       'joseph-parallel',
+      'the-joseph-parallel-prophetic-narrative',
       'digital-oppression-100000-word-essay',
       'crimes-against-humanity-final-demand',
       'cosmic-scroll-of-ten',

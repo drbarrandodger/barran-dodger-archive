@@ -16,7 +16,7 @@ function slugFromUrl(url: string): string {
 export function useDownloadCounter(url: string) {
   const slug = slugFromUrl(url);
 
-  const { data, refetch } = useQuery<{ count: number }>({
+  const { data } = useQuery<{ count: number }>({
     queryKey: ['/api/downloads', slug],
     queryFn: () => fetch(`/api/downloads/${slug}`, { cache: 'no-store' }).then(r => r.json()),
     refetchInterval: 30000,
@@ -24,11 +24,12 @@ export function useDownloadCounter(url: string) {
   });
 
   const incrementMutation = useMutation({
-    mutationFn: () => apiRequest('POST', `/api/downloads/${slug}/increment`),
-    onSuccess: async (res) => {
-      const newData = await res.json();
+    mutationFn: async () => {
+      const res = await apiRequest('POST', `/api/downloads/${slug}/increment`);
+      return await res.json();
+    },
+    onSuccess: (newData: { count: number }) => {
       queryClient.setQueryData(['/api/downloads', slug], newData);
-      refetch();
     },
   });
 

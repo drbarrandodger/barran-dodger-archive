@@ -14,8 +14,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { QuotableSnippetsSection } from "@/components/QuotableSnippet";
 import { GovernmentResponses } from "@/components/GovernmentResponses";
 import { FloatingShareBar, InlineShareStrip } from "@/components/FloatingShareBar";
-import { useQuery, useMutation } from "@tanstack/react-query";
-import { apiRequest, queryClient } from "@/lib/queryClient";
+import { useQuery } from "@tanstack/react-query";
 import type { EvidenceItem } from "@shared/schema";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -91,25 +90,12 @@ function TrackedDownloadLink({ url, children, className = "", testId, ...props }
 }
 
 function JosephParallelSection() {
-  const { data: downloadData } = useQuery<{ count: number }>({
-    queryKey: ['/api/downloads', 'joseph-parallel'],
-    queryFn: () => fetch('/api/downloads/joseph-parallel').then(r => r.json()),
-    refetchInterval: 15000,
-  });
-
-  const incrementMutation = useMutation({
-    mutationFn: () => apiRequest('POST', '/api/downloads/joseph-parallel/increment'),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['/api/downloads', 'joseph-parallel'] });
-    },
-  });
+  const { count, increment } = useDownloadCounter('/documents/the_joseph_parallel_prophetic_narrative.pdf');
 
   const handleDownload = () => {
-    incrementMutation.mutate();
+    increment();
     window.open('/documents/the_joseph_parallel_prophetic_narrative.pdf', '_blank');
   };
-
-  const count = downloadData?.count ?? 99;
 
   return (
     <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black via-[hsl(222,55%,8%)] to-black border-t border-b border-[hsl(38,92%,50%)]/20" data-testid="section-joseph-parallel">
@@ -623,7 +609,8 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-center text-xs uppercase tracking-[0.3em] text-[hsl(38,92%,50%)] font-bold mb-8" data-testid="text-key-facts-heading">The Facts They Cannot Dispute</h2>
+            <h2 className="text-center text-xs uppercase tracking-[0.3em] text-[hsl(38,92%,50%)] font-bold mb-2" data-testid="text-key-facts-heading">The Facts They Cannot Dispute</h2>
+            <p className="text-center text-sm text-gray-400 mb-8 max-w-2xl mx-auto">These are not allegations. These are verified, documented, blockchain-sealed facts. Every single one can be independently confirmed. They know it. Now you do too.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {[
                 { number: "240+", label: "Blockchain-Verified Documents", icon: <Database className="h-5 w-5" /> },
@@ -648,9 +635,9 @@ export default function Home() {
             </div>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { text: "Found with no pulse in 2021. Survived. Built this archive.", highlight: "Found with no pulse." },
-                { text: "Attorney-General notified in 2021. Chose silence. That silence is now evidence.", highlight: "Chose silence." },
-                { text: "Every document is SHA-256 hashed and Bitcoin-timestamped. Nothing can be altered.", highlight: "Nothing can be altered." },
+                { text: "Found with no pulse in 2021. 2.87% survival probability. Survived. Built this entire archive from a hospital bed. If that doesn't terrify the people who put me there, it should.", highlight: "Found with no pulse." },
+                { text: "Attorney-General formally notified. NACC notified. AFP notified. AHRC notified. Every single one chose silence. That coordinated silence is now evidence of conspiracy.", highlight: "Chose silence." },
+                { text: "Every document is SHA-256 hashed and Bitcoin-timestamped. They cannot delete it. They cannot alter it. They cannot deny it exists. The blockchain does not answer to the Australian government.", highlight: "Nothing can be altered." },
               ].map((quote, i) => (
                 <motion.div
                   key={i}
@@ -708,24 +695,25 @@ export default function Home() {
       {/* FEATURED FORENSIC EVIDENCE */}
       <section className="py-16 bg-black px-4" data-testid="section-featured-evidence">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-center text-xs uppercase tracking-[0.3em] text-[hsl(38,92%,50%)] font-bold mb-12">Critical Forensic Evidence</h2>
+          <h2 className="text-center text-xs uppercase tracking-[0.3em] text-[hsl(38,92%,50%)] font-bold mb-3">Critical Forensic Evidence</h2>
+          <p className="text-center text-sm text-gray-400 mb-12 max-w-2xl mx-auto">These documents are not opinions. They are forensic reconstructions built from government records, hospital files, court proceedings, and institutional correspondence. Read them and decide for yourself.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "Declaration of Sovereignty",
-                desc: "The formal sacred-legal reclaim of divine identity beyond temporal government jurisdiction.",
+                desc: "When every institution designed to protect you becomes the instrument of your destruction, you declare sovereignty over your own existence. This is that document.",
                 img: docCoverSovereignty,
                 link: "/documents/declaration_of_sovereignty.pdf"
               },
               {
                 title: "I Tried to Kill Barran Dodger",
-                desc: "Forensic analysis of the 2021 assassination attempt and subsequent institutional cover-up.",
+                desc: "A forensic reconstruction of the 2021 institutional murder attempt — written by the man they tried to kill. The hospital records prove it. The cover-up proves they knew.",
                 img: docCoverAssassination,
                 link: "/documents/i_tried_to_kill_barrandodger.pdf"
               },
               {
                 title: "ASIO & Identity Theft",
-                desc: "Documentation of 350+ fraudulent ASIC registrations used to erase 35 years of digital identity.",
+                desc: "350+ fraudulent ASIC registrations. An entire digital existence systematically erased. If they can do this to a PhD holder, they can do it to anyone — including you.",
                 img: docCoverIdentity,
                 link: "/documents/asio_identity_theft_analysis.pdf"
               }
@@ -795,7 +783,7 @@ export default function Home() {
                 variants={fadeIn}
                 className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed text-balance"
               >
-                Establishing an incorruptible forensic record against institutional misconduct. Converting sworn testimony into public-benefit action.
+                Establishing an incorruptible forensic record against institutional misconduct. Because when every door is closed, every complaint ignored, and every institution complicit — the only option left is to make the evidence impossible to destroy and available to everyone.
               </motion.p>
               
               <motion.div 
@@ -1464,14 +1452,17 @@ export default function Home() {
                     <FileText className="h-12 w-12 text-[hsl(38,92%,50%)]" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
-                    Read the Full Whistleblower Expose
+                    THE MAN AUSTRALIA TRIED TO ERASE
                   </h3>
                   <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-                    "<DocumentPopup {...KEY_DOCUMENTS.manErased}>The Man Australia Tried to Erase</DocumentPopup>" — a legally fortified forensic reconstruction built entirely from the government's own documents, 
-                    their own words, and their own institutional records. Second Edition, Expanded and Unabridged.
+                    A legally fortified forensic reconstruction built entirely from{" "}
+                    <span className="text-white font-semibold">the government's own documents, their own words, and their own institutional records</span>.{" "}
+                    Not allegations — <span className="text-[hsl(38,92%,50%)] font-bold">their own evidence used against them</span>.{" "}
+                    If you read one document from this archive, read this. Then ask yourself:{" "}
+                    <span className="italic text-white">if they did this to a PhD-holding mental health advocate with 2,146 evidence files, what are they doing to people with no voice at all?</span>
                   </p>
                   <p className="text-sm text-[hsl(38,92%,50%)]/80 italic">
-                    By Dr. Richard William McLean (Barran Dodger)
+                    Second Edition, Expanded and Unabridged — By Dr. Richard William McLean (Barran Dodger)
                   </p>
                   <TrackedDownloadButton url="/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf" testId="button-download-expose-pdf" className="inline-flex items-center gap-3 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] font-bold text-lg px-8 py-4 rounded-md hover:opacity-90 transition-opacity">
                     <Download className="h-6 w-6" />
@@ -1484,8 +1475,9 @@ export default function Home() {
 
                 <div className="space-y-8" data-testid="section-featured-publications">
                   <div className="text-center">
-                    <Badge variant="outline" className="border-[hsl(38,92%,50%)] text-[hsl(38,92%,50%)] mb-3 px-4 py-1">FEATURED PUBLICATIONS</Badge>
-                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">Essential Reading — Free Downloads</h3>
+                    <Badge variant="outline" className="border-[hsl(38,92%,50%)] text-[hsl(38,92%,50%)] mb-3 px-4 py-1">FEATURED PUBLICATIONS — YOUR RIGHT TO KNOW</Badge>
+                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">Essential Reading — Every Document Free, Because Truth Should Never Have a Price Tag</h3>
+                    <p className="text-sm text-gray-400 mt-2 max-w-3xl mx-auto">Every download is an act of witness. Every share is an act of resistance. These documents exist because one man refused to be silenced — and because you deserve to see what your government does when it thinks nobody is watching.</p>
                   </div>
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-[hsl(38,92%,50%)]/30 bg-gradient-to-r from-[hsl(38,92%,50%)]/5 to-transparent" data-testid="card-featured-digital-oppression">
@@ -2423,7 +2415,9 @@ export default function Home() {
                 The Evidence Speaks
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                Forensic documentation of systematic state persecution spanning <CrossLink to="/timeline">35 years (1990-2025)</CrossLink>, comprising 2,000+ primary source documents.
+                Forensic documentation of systematic state persecution spanning <CrossLink to="/timeline">35 years (1990-2025)</CrossLink>, comprising 2,000+ primary source documents.{" "}
+                <span className="font-semibold text-foreground">Not one institution has disputed a single document.</span>{" "}
+                Their silence is their confession.
               </p>
             </div>
 
@@ -2431,7 +2425,7 @@ export default function Home() {
             <div className="bg-white rounded-xl border-2 border-primary/30 p-8 shadow-xl mb-8">
               <div className="flex items-center justify-center gap-3 mb-6">
                 <Scale className="h-10 w-10 text-primary" />
-                <h3 className="text-2xl font-serif font-bold text-primary">Forensic Analysis: $32.9 Million in Damages</h3>
+                <h3 className="text-2xl font-serif font-bold text-primary">Forensic Analysis: $32.9 Million in Documented Damages — Exposed Using Their Own Records</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="space-y-3 text-sm">
