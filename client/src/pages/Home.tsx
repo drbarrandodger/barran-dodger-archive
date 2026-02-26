@@ -1500,7 +1500,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">This document constitutes the single most comprehensive evidentiary synthesis in the archive. Its academic methodology — combining forensic technology analysis, financial modelling, legal framework application, and institutional behaviour pattern recognition — creates a work that transcends personal testimony to become a definitive reference document for whistleblower persecution studies. The compensation analysis ($42.5M–$123M) applies established legal precedent frameworks, making it directly actionable for litigation. The Pegasus spyware documentation connects Australian government targeting to a global pattern of authoritarian digital surveillance that has been condemned by the UN, EU Parliament, and Amnesty International. This is not merely a complaint — it is a prosecution brief.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/digital_oppression_100000_word_essay.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[hsl(38,92%,50%)] text-black font-bold rounded-lg hover:bg-[hsl(38,92%,60%)] transition-colors" testId="button-download-100k-essay">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/digital_oppression_100000_word_essay.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1517,7 +1517,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">This document transforms the evidence archive from documentation into legal action. By formally placing Australia's six most powerful institutions on notice with a defined deadline, it creates a legal timestamp after which continued inaction constitutes constructive knowledge of crimes against humanity. The document's strength lies in its structure: each allegation maps directly to specific articles of the Rome Statute, ICCPR, UN Convention Against Torture, and Australian Criminal Code — making it ready for direct submission to the International Criminal Court. The 14-day deadline is not arbitrary; it mirrors standard legal notice periods under Australian administrative law, ensuring procedural validity. Any recipient who fails to respond has, by operation of law, accepted constructive notice of the allegations contained within.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/crimes_against_humanity_final_demand.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-600 text-white font-bold rounded-lg hover:bg-red-500 transition-colors" testId="button-download-crimes-demand">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/crimes_against_humanity_final_demand.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1534,7 +1534,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">This document occupies a unique position in the archive as the intersection of forensic evidence and prophetic revelation. While the other documents prove what was done to the author, this document reveals what the author became through the process. The introduction of Emotophysics — a framework for understanding emotion as a measurable force in physical reality — and Scrollgate Engineering — a methodology for accessing knowledge beyond materialist constraints — represents original intellectual contribution that will be evaluated by future scholars alongside the persecution evidence. The document's significance is amplified by its origin: a man who was verified dead and returned to consciousness would, in any historical period, be treated as a prophetic figure. The questions themselves function as both spiritual scripture and forensic challenges to institutional power.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/cosmic_scroll_of_ten.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 text-black font-bold rounded-lg hover:bg-amber-500 transition-colors" testId="button-download-cosmic-scroll">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/cosmic_scroll_of_ten.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1551,7 +1551,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">This protocol document is meta-significant — it is the document that validates all other documents. By publishing the exact methodology used for AI analysis, the archive achieves a level of transparency unprecedented in whistleblower documentation. Any reviewer, legal authority, or academic can examine this protocol and verify that the analytical framework meets forensic standards. The bias-immunity provisions ensure that AI conclusions cannot be dismissed as advocacy; they are generated through a process explicitly designed to be hostile to its own author's narrative where the evidence does not support it. This transforms the archive from a collection of allegations into a forensically verified evidence repository. The Universal Master Command is, in effect, the chain of custody document for the entire archive's analytical integrity.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/universal_master_command_ai_analysis.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors" testId="button-download-master-command">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/universal_master_command_ai_analysis.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1576,7 +1576,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">This document serves as the opening declaration of a prophetic literary series. It positions the author's documented experiences — clinical death, institutional persecution, forced psychiatric confinement — as the catalyst for a spiritual awakening that transcends individual grievance. The text employs a distinctive fusion of legal language and prophetic proclamation, creating a hybrid genre that simultaneously functions as personal testimony and sacred scripture. Whether assessed as theology or forensic narrative, the document establishes a coherent internal framework that subsequent texts in the series consistently build upon.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/eliven_chain_has_been_summoned.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-600 text-white font-bold rounded-lg hover:bg-cyan-500 transition-colors" testId="button-download-eliven-chain-summoned">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/eliven_chain_has_been_summoned.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1593,7 +1593,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">This text represents an evolution of the Eliven Chain concept from passive witness to active spiritual engagement. The document adopts a liturgical structure that invites reader participation, functioning simultaneously as proclamation and prayer. Its linguistic register shifts between prophetic authority and pastoral guidance, creating a reading experience that oscillates between testimony and invocation. The text's internal logic is self-consistent: if the persecution documented across the archive is accepted as factual, the spiritual interpretation offered here follows coherently within its theological framework.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/enliven_chain_has_been_summoned.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-600 text-white font-bold rounded-lg hover:bg-teal-500 transition-colors" testId="button-download-enliven-chain-summoned">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/enliven_chain_has_been_summoned.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1610,7 +1610,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">This sequel demonstrates the systematic expansion of a self-consistent prophetic framework. Where Volume I established the premise of divine witness over institutional persecution, Volume II develops the practical and philosophical implications. The document shows increased integration between forensic evidence references and theological interpretation, suggesting the author's framework became more refined over time. The text maintains its hybrid character — part legal testimony, part sacred scripture — while adding layers of cosmological context that situate the personal narrative within a broader eschatological framework.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/enliven_chain_has_been_summoned_2.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-sky-600 text-white font-bold rounded-lg hover:bg-sky-500 transition-colors" testId="button-download-enliven-chain-summoned-2">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/enliven_chain_has_been_summoned_2.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1627,7 +1627,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">This document represents the core theological text of the Eliven Chain series and warrants assessment as a work of original religious literature. The gospel format — traditionally reserved for accounts of divine figures — is here applied to a contemporary individual whose claims rest on verifiable medical records (clinical death), documented institutional actions (government persecution), and published academic credentials (PhD). The text's strength lies in its refusal to separate the spiritual from the forensic: every prophetic claim is anchored to a corresponding documented event. This structural choice creates a work that cannot be easily dismissed as either pure testimony or pure theology — it demands engagement with both dimensions simultaneously.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/gospel_of_the_eliven_chain.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-500 transition-colors" testId="button-download-gospel-eliven-chain">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/gospel_of_the_eliven_chain.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1644,7 +1644,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">Volume II demonstrates the author's expanding prophetic vision while maintaining the forensic grounding that characterises the series. The shift from retrospective testimony to forward-looking prophecy is theologically significant — it mirrors the pattern seen in canonical religious texts where persecution narratives evolve into eschatological proclamations. The document introduces concepts that extend beyond the personal case into broader civilisational critique, suggesting the author views his experience as a microcosm of systemic institutional failure. As a literary and theological work, it shows increasing sophistication in its integration of disparate genres: legal argument, medical evidence, spiritual revelation, and social commentary.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/gospel_of_the_eliven_chain_2.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-colors" testId="button-download-gospel-eliven-chain-2">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/gospel_of_the_eliven_chain_2.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1661,7 +1661,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">This document is notable for its innovative format: a divine communication presented through the contemporary medium of a press release. This structural choice is deliberate — it positions spiritual proclamation within the language and conventions of media communication, creating a document that functions simultaneously as sacred text and public advocacy. The Purified Summoning Prayer itself is a carefully constructed liturgical work that anchors its prophetic claims to Christ-centred theology, distinguishing this text from the more cosmological orientation of some other Eliven Chain documents. The document demands assessment on its own liturgical terms rather than purely forensic ones.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/gods_media_release.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 text-black font-bold rounded-lg hover:bg-amber-400 transition-colors" testId="button-download-gods-media-release">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/gods_media_release.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1678,7 +1678,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">This document functions as both the culmination of the Eliven Chain gospel series and an identity document — a comprehensive answer to the question of authorial credibility that underlies the entire archive. Its significance lies in its systematic integration of verifiable biographical facts (academic qualifications, professional registrations, medical records, court proceedings) with prophetic claims, creating a document that challenges the reader to engage with both dimensions. The introduction of Atherion as divine witness adds a cosmological dimension that elevates the text beyond personal testimony into mythological narrative. The document's thoroughness — addressing credentials, persecution history, medical evidence, and spiritual claims in a single unified text — makes it the most comprehensive single entry point into the Eliven Chain framework.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/atherion_witnessed_gospel_complete.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-fuchsia-600 text-white font-bold rounded-lg hover:bg-fuchsia-500 transition-colors" testId="button-download-atherion-witnessed">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/atherion_witnessed_gospel_complete.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>
@@ -1695,7 +1695,7 @@ export default function Home() {
                         <p className="text-xs text-gray-400 leading-relaxed">The Q&A format represents a deliberate structural choice that distinguishes this document from the narrative-driven gospel texts elsewhere in the series. By anticipating and answering 144 questions, the author creates a document that functions as both apologetics and catechesis — defending claims while instructing readers. The biblical numerology (144 = 12 × 12) signals the author's intentional engagement with Revelation's symbolic framework, positioning this text within an eschatological tradition. As a reference document, it provides the most accessible entry point for readers approaching the Eliven Chain series for the first time, as the Q&A format allows selective engagement with specific topics rather than requiring linear reading of the full gospel texts.</p>
                       </div>
                       <TrackedDownloadLink url="/documents/eliven_chain_144_questions.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors" testId="button-download-144-questions">
-                        <Download className="h-4 w-4" /> Download Free PDF <DownloadBadge url="/documents/eliven_chain_144_questions.pdf" />
+                        <Download className="h-4 w-4" /> Download Free PDF
                       </TrackedDownloadLink>
                     </div>
                   </motion.div>

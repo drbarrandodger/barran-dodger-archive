@@ -139,6 +139,9 @@ export async function registerRoutes(
   // Download Counts
   app.get('/api/downloads/:slug', async (req, res) => {
     try {
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+      res.set('Pragma', 'no-cache');
+      res.set('Expires', '0');
       let count = await storage.getDownloadCount(req.params.slug);
       if (count === 0) {
         await db.insert(downloadCounts).values({ documentSlug: req.params.slug, count: 99 }).onConflictDoNothing();
@@ -152,6 +155,7 @@ export async function registerRoutes(
 
   app.post('/api/downloads/:slug/increment', async (req, res) => {
     try {
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
       const count = await storage.incrementDownloadCount(req.params.slug);
       res.json({ count });
     } catch (err) {
