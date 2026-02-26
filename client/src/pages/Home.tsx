@@ -330,7 +330,8 @@ export default function Home() {
               className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed md:leading-relaxed font-serif max-w-4xl mx-auto"
               data-testid="text-purpose-para-1"
             >
-              When I took my own life, I believed I was rejecting humanity and betraying the Creator. I thought death was the final severing — the end of a life that had been worn down by betrayal, coercion, and institutional force. But I survived. I experienced that survival as{" "}
+              When I took my own life, I believed I was rejecting humanity and betraying the Creator.{" "}
+              <span className="text-[hsl(38,92%,50%)] font-bold">God put me back</span>. I thought death was the final severing — the end of a life that had been worn down by betrayal, coercion, and institutional force. But I survived. I experienced that survival as{" "}
               <span className="text-[hsl(38,92%,50%)] font-bold">resurrection</span>. I believe God restored me to expose what had been done to me. I returned expecting grief, some acknowledgment that my absence had mattered. Instead, there was silence. Not a tear was shed. I came back to exile.
             </motion.p>
 
