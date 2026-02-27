@@ -644,7 +644,7 @@ export default function CaseStudies() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Shield className="h-3.5 w-3.5 mt-1 text-[hsl(38,92%,50%)] flex-shrink-0" />
-                      <span><span className="font-bold">Post-revival:</span> Nine further psychiatric hospitalisations — detention, not treatment (confirmed by Mental Health Tribunal)</span>
+                      <span><span className="font-bold">Post-revival:</span> Nine further <CrossLink to="/case-studies">psychiatric hospitalisations</CrossLink> — detention, not treatment (confirmed by Mental Health Tribunal)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Shield className="h-3.5 w-3.5 mt-1 text-[hsl(38,92%,50%)] flex-shrink-0" />

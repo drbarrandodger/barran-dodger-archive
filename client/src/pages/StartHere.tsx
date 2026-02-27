@@ -326,7 +326,13 @@ export default function StartHere() {
                                 <Badge variant="outline" className="text-[10px] shrink-0">{doc.tag}</Badge>
                                 <p className="font-medium text-foreground text-sm">{doc.title}</p>
                               </div>
-                              <p className="text-xs text-muted-foreground">{doc.description}</p>
+                              <p className="text-xs text-muted-foreground">
+                                {doc.title === "Betrayed, Murdered, Forsaken" && doc.description.includes("autobiography") ? (
+                                  <>{doc.description.split("autobiography")[0]}<DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup>{doc.description.split("autobiography")[1]}</>
+                                ) : doc.description.includes("Rome Statute") ? (
+                                  <>{doc.description.split("Rome Statute")[0]}<DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Rome Statute</DocumentPopup>{doc.description.split("Rome Statute")[1]}</>
+                                ) : doc.description}
+                              </p>
                             </div>
                             <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-[hsl(38,92%,50%)] shrink-0 transition-colors" />
                             <DownloadBadge url={doc.link} />
@@ -340,7 +346,11 @@ export default function StartHere() {
                                 <Badge variant="outline" className="text-[10px] shrink-0">{doc.tag}</Badge>
                                 <p className="font-medium text-foreground text-sm">{doc.title}</p>
                               </div>
-                              <p className="text-xs text-muted-foreground">{doc.description}</p>
+                              <p className="text-xs text-muted-foreground">
+                                {doc.description.includes("blockchain-verified") ? (
+                                  <>{doc.description.split("blockchain-verified")[0]}<CrossLink to="/blockchain">blockchain-verified</CrossLink>{doc.description.split("blockchain-verified")[1]}</>
+                                ) : doc.description}
+                              </p>
                             </div>
                             <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[hsl(38,92%,50%)] shrink-0 transition-colors" />
                           </div>

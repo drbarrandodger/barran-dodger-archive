@@ -369,7 +369,13 @@ export default function TaxpayerCostAnalysis() {
                   <div className="bg-red-950/30 border border-red-500/20 rounded-lg p-4 mt-4">
                     <p className="text-red-400 text-sm font-medium flex items-start gap-2">
                       <AlertTriangle className="h-4 w-4 flex-shrink-0 mt-0.5" />
-                      {cat.outrage}
+                      <span>
+                        {cat.outrage.includes("case studies") ? (
+                          <>{cat.outrage.split("case studies")[0]}<CrossLink to="/case-studies">case studies</CrossLink>{cat.outrage.split("case studies")[1]}</>
+                        ) : cat.outrage.includes("whistleblower") ? (
+                          <>{cat.outrage.split("whistleblower")[0]}<CrossLink to="/evidence">whistleblower</CrossLink>{cat.outrage.split("whistleblower")[1]}</>
+                        ) : cat.outrage}
+                      </span>
                     </p>
                   </div>
                 </CardContent>

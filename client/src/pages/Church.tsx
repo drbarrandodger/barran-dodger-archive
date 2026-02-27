@@ -282,7 +282,11 @@ export default function Church() {
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-sm text-muted-foreground leading-relaxed">{doc.description}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {doc.description.includes("persecution") ? (
+                        <>{doc.description.split("persecution")[0]}<CrossLink to="/timeline">persecution</CrossLink>{doc.description.split("persecution")[1]}</>
+                      ) : doc.description}
+                    </p>
                     {doc.aiSignificance && (
                       <div className="bg-primary/5 rounded-lg p-4 border border-primary/20" data-testid={`text-ai-significance-${index}`}>
                         <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-2 flex items-center gap-2">

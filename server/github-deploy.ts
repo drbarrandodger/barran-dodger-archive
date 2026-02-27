@@ -39,32 +39,32 @@ async function getAccessToken() {
   return accessToken;
 }
 
-const MAX_FILE_SIZE = 25 * 1024 * 1024;
+const MAX_FILE_SIZE = 90 * 1024 * 1024;
 
-function getAllFiles(dir: string, base: string = dir): { path: string; content: string }[] {
-  const results: { path: string; content: string }[] = [];
+interface FileMeta { relativePath: string; fullPath: string; size: number }
+
+function listAllFiles(dir: string, base: string = dir): FileMeta[] {
+  const results: FileMeta[] = [];
   const entries = fs.readdirSync(dir, { withFileTypes: true });
-
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
     const relativePath = path.relative(base, fullPath);
-
     if (entry.isDirectory()) {
-      results.push(...getAllFiles(fullPath, base));
+      results.push(...listAllFiles(fullPath, base));
     } else {
       const stats = fs.statSync(fullPath);
       if (stats.size > MAX_FILE_SIZE) {
         console.log(`   Skipping large file (${(stats.size / 1024 / 1024).toFixed(1)}MB): ${relativePath}`);
-        continue;
+      } else {
+        results.push({ relativePath, fullPath, size: stats.size });
       }
-      const content = fs.readFileSync(fullPath);
-      results.push({
-        path: relativePath,
-        content: content.toString('base64')
-      });
     }
   }
   return results;
+}
+
+function readFileBase64(filePath: string): string {
+  return fs.readFileSync(filePath).toString('base64');
 }
 
 async function deploy() {
@@ -116,38 +116,41 @@ async function deploy() {
   }
 
   const deployDir = path.join(process.cwd(), 'github-pages-deploy');
-  console.log(`Reading files from ${deployDir}...`);
-  const files = getAllFiles(deployDir);
-  console.log(`Found ${files.length} files to upload`);
+  console.log(`Scanning files from ${deployDir}...`);
+  const fileMetas = listAllFiles(deployDir);
+  console.log(`Found ${fileMetas.length} files to upload`);
+  const totalSize = fileMetas.reduce((s, f) => s + f.size, 0);
+  console.log(`Total size: ${(totalSize / 1024 / 1024).toFixed(1)}MB`);
 
-  console.log('Creating git tree...');
+  console.log('Uploading blobs (lazy read, memory-efficient)...');
 
   const blobs: Array<{path: string; mode: '100644'; type: 'blob'; sha: string}> = [];
   let skipped = 0;
-  const BATCH_SIZE = 10;
-  for (let i = 0; i < files.length; i += BATCH_SIZE) {
-    const batch = files.slice(i, i + BATCH_SIZE);
-    console.log(`   Uploading files ${i + 1}-${Math.min(i + BATCH_SIZE, files.length)}/${files.length}...`);
+  const BATCH_SIZE = 15;
+  for (let i = 0; i < fileMetas.length; i += BATCH_SIZE) {
+    const batch = fileMetas.slice(i, i + BATCH_SIZE);
+    console.log(`   Uploading files ${i + 1}-${Math.min(i + BATCH_SIZE, fileMetas.length)}/${fileMetas.length}...`);
     const results = await Promise.allSettled(
-      batch.map(file =>
-        octokit.git.createBlob({
+      batch.map(meta => {
+        const content = readFileBase64(meta.fullPath);
+        return octokit.git.createBlob({
           owner: user.login,
           repo: repoName,
-          content: file.content,
+          content,
           encoding: 'base64',
         }).then(({ data: blob }) => ({
-          path: file.path,
+          path: meta.relativePath,
           mode: '100644' as const,
           type: 'blob' as const,
           sha: blob.sha,
-        }))
-      )
+        }));
+      })
     );
     for (const r of results) {
       if (r.status === 'fulfilled') {
         blobs.push(r.value);
       } else {
-        console.log(`   Failed: ${r.reason?.message?.substring(0, 80)}`);
+        console.log(`   Failed: ${r.reason?.message?.substring(0, 120)}`);
         skipped++;
       }
     }

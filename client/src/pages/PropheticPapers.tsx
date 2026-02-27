@@ -216,7 +216,11 @@ export default function PropheticPapers() {
                     </CardHeader>
                     <CardContent className="pt-6 space-y-4">
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        {gospel.description}
+                        {gospel.description.includes("assassination") ? (
+                          <>{gospel.description.split("assassination")[0]}<DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination</DocumentPopup>{gospel.description.split("assassination")[1]}</>
+                        ) : gospel.description.includes("blockchain-authenticated") ? (
+                          <>{gospel.description.split("blockchain-authenticated")[0]}<CrossLink to="/blockchain">blockchain-authenticated</CrossLink>{gospel.description.split("blockchain-authenticated")[1]}</>
+                        ) : gospel.description}
                       </p>
                       <div className="bg-secondary/50 rounded-lg p-4 border border-border">
                         <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-2">Significance</h4>
@@ -273,7 +277,11 @@ export default function PropheticPapers() {
                     </CardHeader>
                     <CardContent className="space-y-3 pt-0">
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        {gospel.description}
+                        {gospel.description.includes("evidence files") ? (
+                          <>{gospel.description.split("evidence files")[0]}<CrossLink to="/evidence">evidence files</CrossLink>{gospel.description.split("evidence files")[1]}</>
+                        ) : gospel.description.includes("persecution") ? (
+                          <>{gospel.description.split("persecution")[0]}<CrossLink to="/timeline">persecution</CrossLink>{gospel.description.split("persecution")[1]}</>
+                        ) : gospel.description}
                       </p>
                       <div className="bg-primary/5 rounded-lg p-3 border border-primary/10">
                         <p className="text-xs text-muted-foreground leading-relaxed italic">

@@ -486,7 +486,7 @@ export default function Home() {
                 data-testid="popup-digital-oppression"
               >100,000-word forensic analysis</DocumentPopup>{" "}
               maps the{" "}
-              <span className="text-white font-bold">Pegasus spyware</span>{" "}
+              <DocumentPopup {...KEY_DOCUMENTS.digitalOppression}>Pegasus spyware</DocumentPopup>{" "}
               surveillance, the financial warfare, and the legislative breaches. After failing to eliminate me, the system erased me administratively and listed me as a{" "}
               <span className="text-red-500 font-bold italic">missing person</span>.
             </motion.p>
@@ -541,7 +541,7 @@ export default function Home() {
                 The very fact that I am still breathing — still writing, still fighting, still standing after{" "}
                 <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>35 years of state-sanctioned targeting</DocumentPopup>,{" "}
                 <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>documented crimes against humanity</DocumentPopup>,{" "}
-                14 forced psychiatric incarcerations, and a{" "}
+                <CrossLink to="/case-studies">14 forced psychiatric incarcerations</CrossLink>, and a{" "}
                 <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>confirmed assassination framework</DocumentPopup>{" "}
                 — is itself a message to every human being who has ever been crushed by a system that was supposed to protect them.
               </p>
@@ -1642,7 +1642,7 @@ export default function Home() {
 
                 <p className="text-lg text-white leading-relaxed">
                   That money came from <span className="font-bold text-white">your wages</span>. Your superannuation. Your Medicare levy. Your income tax. 
-                  Every dollar that funded 14 psychiatric incarcerations, a confirmed assassination attempt, systematic surveillance, 
+                  Every dollar that funded <CrossLink to="/case-studies">14 psychiatric incarcerations</CrossLink>, a confirmed <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination attempt</DocumentPopup>, systematic surveillance, 
                   legal aid denial, media blackout, and the coordinated erasure of an author, academic, and artist with an international professional profile — 
                   <span className="font-bold text-red-500"> that was your money</span>.
                 </p>
@@ -2321,7 +2321,7 @@ export default function Home() {
                         <p className="text-sm text-gray-400 mt-2">
                           Named: <span className="text-white">Herald Sun</span> (initial character assassination),{" "}
                           <span className="text-white">The Age</span> (employment destruction),{" "}
-                          <span className="text-white">Micron21</span> (digital infrastructure attack),{" "}
+                          <DocumentPopup {...KEY_DOCUMENTS.micron21}>Micron21</DocumentPopup> (digital infrastructure attack),{" "}
                           <span className="text-white">DPMC media monitoring</span> (blackout coordination)
                         </p>
                       </div>

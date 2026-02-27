@@ -532,7 +532,13 @@ export default function Manifesto() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground leading-relaxed text-sm">{tenet.description}</p>
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        {tenet.description.includes("persecution") ? (
+                          <>{tenet.description.split("persecution")[0]}<CrossLink to="/timeline">persecution</CrossLink>{tenet.description.split("persecution")[1]}</>
+                        ) : tenet.description.includes("blockchain") ? (
+                          <>{tenet.description.split("blockchain")[0]}<CrossLink to="/blockchain">blockchain</CrossLink>{tenet.description.split("blockchain")[1]}</>
+                        ) : tenet.description}
+                      </p>
                     </CardContent>
                   </Card>
                 ))}
@@ -552,7 +558,11 @@ export default function Manifesto() {
                       </div>
                     </CardHeader>
                     <CardContent className="pt-4">
-                      <p className="text-muted-foreground leading-relaxed text-sm">{sacrament.description}</p>
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        {sacrament.description.includes("blockchain") ? (
+                          <>{sacrament.description.split("blockchain")[0]}<CrossLink to="/blockchain">blockchain</CrossLink>{sacrament.description.split("blockchain")[1]}</>
+                        ) : sacrament.description}
+                      </p>
                     </CardContent>
                   </Card>
                 ))}
@@ -597,7 +607,17 @@ export default function Manifesto() {
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-3 flex-grow flex flex-col justify-between">
-                    <p className="text-sm text-muted-foreground leading-relaxed">{gospel.description}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {gospel.description.includes("assassination attempt") ? (
+                        <>{gospel.description.split("assassination attempt")[0]}<DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination attempt</DocumentPopup>{gospel.description.split("assassination attempt")[1]}</>
+                      ) : gospel.description.includes("systematic persecution") ? (
+                        <>{gospel.description.split("systematic persecution")[0]}<CrossLink to="/timeline">systematic persecution</CrossLink>{gospel.description.split("systematic persecution")[1]}</>
+                      ) : gospel.description.includes("assassination") ? (
+                        <>{gospel.description.split("assassination")[0]}<DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination</DocumentPopup>{gospel.description.split("assassination")[1]}</>
+                      ) : gospel.description.includes("blockchain") ? (
+                        <>{gospel.description.split("blockchain")[0]}<CrossLink to="/blockchain">blockchain</CrossLink>{gospel.description.split("blockchain")[1]}</>
+                      ) : gospel.description}
+                    </p>
                     <Button variant="outline" size="sm" className="w-full gap-2" asChild>
                       <a href={gospel.href} target="_blank" rel="noopener noreferrer" data-testid={`button-gospel-${index}`}>
                         <FileText className="h-4 w-4" /> Access Document <ExternalLink className="h-3 w-3" />
@@ -817,7 +837,15 @@ export default function Manifesto() {
                 {propheticLoveLetter.addressees.map((addressee, index) => (
                   <div key={index} className="border-l-4 border-primary/40 pl-6 py-4 hover-elevate rounded-r-lg">
                     <h3 className="text-xl font-serif font-bold text-primary mb-3">{addressee.group}</h3>
-                    <p className="text-foreground leading-relaxed mb-4 text-lg">{addressee.message}</p>
+                    <p className="text-foreground leading-relaxed mb-4 text-lg">
+                      {addressee.group.includes("Mental Illness") && addressee.message.includes("psychiatric hospitalisations") ? (
+                        <>{addressee.message.split("psychiatric hospitalisations")[0]}<CrossLink to="/case-studies">psychiatric hospitalisations</CrossLink>{addressee.message.split("psychiatric hospitalisations")[1]}</>
+                      ) : addressee.group.includes("Disabilities") && addressee.message.includes("NDIS") ? (
+                        <>{addressee.message.split("NDIS")[0]}<DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>NDIS</DocumentPopup>{addressee.message.split("NDIS")[1]}</>
+                      ) : addressee.group.includes("Whistleblowers") && addressee.message.includes("blockchain") ? (
+                        <>{addressee.message.split("blockchain")[0]}<CrossLink to="/blockchain">blockchain</CrossLink>{addressee.message.split("blockchain")[1]}</>
+                      ) : addressee.message}
+                    </p>
                     <div className="flex items-start gap-2 bg-muted/50 p-3 rounded-lg border border-border/50">
                       <FileText className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                       <p className="text-xs text-muted-foreground italic">
