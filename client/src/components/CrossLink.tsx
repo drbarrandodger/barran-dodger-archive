@@ -1,8 +1,8 @@
 import { Link } from "wouter";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { FileText, ExternalLink, Download, X } from "lucide-react";
+import { FileText, ExternalLink, Download, X, Loader2 } from "lucide-react";
 
 interface CrossLinkProps {
   children: React.ReactNode;
@@ -34,9 +34,48 @@ interface DocumentPopupProps {
 
 export function DocumentPopup({ children, title, description, url, tags, aiExcerpt, "data-testid": testId }: DocumentPopupProps) {
   const [open, setOpen] = useState(false);
+  const [downloading, setDownloading] = useState(false);
 
   const isExternal = url?.startsWith("http");
   const isPdf = url?.endsWith(".pdf");
+
+  const filename = url?.split("/").pop() || "document.pdf";
+
+  const handleDownload = useCallback(async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (downloading) return;
+
+    if (isExternal) {
+      window.open(url, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    setDownloading(true);
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error("Download failed");
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+    } catch {
+      window.open(url, "_blank", "noopener,noreferrer");
+    } finally {
+      setDownloading(false);
+    }
+  }, [url, isExternal, downloading, filename]);
+
+  const handleView = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.open(url, "_blank", "noopener,noreferrer");
+  }, [url]);
 
   return (
     <>
@@ -75,44 +114,35 @@ export function DocumentPopup({ children, title, description, url, tags, aiExcer
           )}
           <div className="flex gap-2 pt-2">
             {isPdf && !isExternal ? (
-              <a
-                href={url}
-                download
-                className="flex-1"
-                data-testid="button-popup-download-document"
-              >
-                <Button className="w-full bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] gap-2">
-                  <Download className="h-4 w-4" />
-                  Download Document (PDF)
+              <>
+                <Button
+                  className="flex-1 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] gap-2"
+                  onClick={handleDownload}
+                  disabled={downloading}
+                  data-testid="button-popup-download-document"
+                >
+                  {downloading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
+                  {downloading ? "Downloading..." : "Download PDF"}
                 </Button>
-              </a>
+                <Button
+                  variant="outline"
+                  className="border-[hsl(38,92%,50%)]/40 text-[hsl(38,92%,50%)] gap-2"
+                  onClick={handleView}
+                  data-testid="button-popup-view-in-browser"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Open
+                </Button>
+              </>
             ) : (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1"
+              <Button
+                className="flex-1 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] gap-2"
+                onClick={handleView}
                 data-testid="button-popup-view-document"
               >
-                <Button className="w-full bg-[hsl(38,92%,50%)] text-[hsl(222,55%,10%)] gap-2">
-                  <ExternalLink className="h-4 w-4" />
-                  View Document
-                </Button>
-              </a>
-            )}
-            {isPdf && !isExternal && (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-                data-testid="button-popup-view-in-browser"
-              >
-                <Button variant="outline" className="h-full border-[hsl(38,92%,50%)]/40 text-[hsl(38,92%,50%)] gap-2">
-                  <ExternalLink className="h-4 w-4" />
-                  View
-                </Button>
-              </a>
+                <ExternalLink className="h-4 w-4" />
+                View Document
+              </Button>
             )}
           </div>
         </DialogContent>
