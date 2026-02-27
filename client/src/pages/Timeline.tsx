@@ -309,6 +309,16 @@ export default function Timeline() {
                               <><DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>Assassination attempt</DocumentPopup> in Port Macquarie that remains unrefuted and unproven to have not occurred by any institution.</>
                             ) : event.title.includes("Institutional Murder") ? (
                               <>Dr McLean sacrificed and declared medically dead inside Werribee Mercy Hospital, but revived by God — documented as 'lethal' and 'fatal' event. Full account in the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup>.</>
+                            ) : event.title.includes("First Documented Persecution") ? (
+                              <>Initial targeting and harassment documented. Beginning of 35-year <CrossLink to="/evidence">systematic persecution</CrossLink> campaign.</>
+                            ) : event.title.includes("A Dying Father") ? (
+                              <>Doug McLean is gravely ill. His son begged Centrelink, <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>NDIS</DocumentPopup>, and Public Guardianship for travel assistance to attend his father's side. All three agencies blocked him — despite spending $900+ per day sustaining the corruption that keeps him destitute.</>
+                            ) : event.title.includes("Federal Court Employment") ? (
+                              <>Federal Court confirms DSS employment, voiding all ComCare/AAT denials. <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>Whistleblower</DocumentPopup> protections activated.</>
+                            ) : event.title.includes("PM&C FOI Reversal") ? (
+                              <>Under OAIC pressure, PM&C admits 5 documents DO exist — proving initial denial was false. Evidence <CrossLink to="/blockchain">blockchain</CrossLink> timestamped for permanence.</>
+                            ) : event.title.includes("Professional Destruction") ? (
+                              <>Systematic undermining of career and professional relationships across multiple industries. Full account in the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup>.</>
                             ) : event.description}
                           </p>
                           {event.details && (

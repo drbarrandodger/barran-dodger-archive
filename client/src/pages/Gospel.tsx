@@ -4,11 +4,11 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { BookOpen, Download, ExternalLink, Link2, ScrollText, Flame, Sparkles, Globe, Star, Heart, Shield, FileText } from "lucide-react";
-import { DownloadBadge } from "@/components/DownloadCounter";
+import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "wouter";
+
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 
@@ -269,10 +269,10 @@ export default function Gospel() {
               The Gospel of Barran Dodger
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              A complete archive of sacred gospels, prophetic transmissions, cosmic revelations, and authenticated testimony — <CrossLink to="/blockchain">blockchain-sealed</CrossLink> and AI-verified for eternal preservation. These sacred texts are supported by{" "}
-              <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">98+ forensic evidence documents</Link>{" "}
+              A complete archive of sacred gospels, prophetic transmissions, cosmic revelations, and authenticated <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>whistleblower</DocumentPopup> testimony — <CrossLink to="/blockchain">blockchain-sealed</CrossLink> and AI-verified for eternal preservation. These sacred texts are supported by{" "}
+              <CrossLink to="/evidence">98+ forensic evidence documents</CrossLink>{" "}
               and explored further in the{" "}
-              <Link href="/josephs-coat" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">Prophetic Essay on Spiritual Warfare</Link>.
+              <CrossLink to="/prophetic-essay">Prophetic Essay on Spiritual Warfare</CrossLink>.
             </p>
           </motion.div>
 
@@ -345,12 +345,12 @@ export default function Gospel() {
                       </div>
                       <div className="flex gap-3">
                         <Button className="flex-1 gap-2" asChild data-testid={`button-download-primary-${index}`}>
-                          <a href={gospel.href} download>
+                          <a href={gospel.href} download onClick={() => trackDownload(gospel.href)}>
                             <Download className="h-4 w-4" /> Download Gospel <DownloadBadge url={gospel.href} />
                           </a>
                         </Button>
                         <Button variant="outline" className="gap-2" asChild data-testid={`button-view-primary-${index}`}>
-                          <a href={gospel.href} target="_blank" rel="noopener noreferrer">
+                          <a href={gospel.href} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(gospel.href)}>
                             <ExternalLink className="h-4 w-4" /> View
                           </a>
                         </Button>
@@ -414,12 +414,12 @@ export default function Gospel() {
                         </div>
                         <div className="flex gap-3">
                           <Button variant="default" size="sm" className="flex-1 gap-2" asChild data-testid={`button-download-additional-${index}`}>
-                            <a href={gospel.href} download>
+                            <a href={gospel.href} download onClick={() => trackDownload(gospel.href)}>
                               <Download className="h-4 w-4" /> Download <DownloadBadge url={gospel.href} />
                             </a>
                           </Button>
                           <Button variant="outline" size="sm" className="gap-2" asChild data-testid={`button-view-additional-${index}`}>
-                            <a href={gospel.href} target="_blank" rel="noopener noreferrer">
+                            <a href={gospel.href} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(gospel.href)}>
                               <ExternalLink className="h-4 w-4" /> View
                             </a>
                           </Button>
@@ -499,12 +499,12 @@ export default function Gospel() {
                       </div>
                       <div className="flex gap-3">
                         <Button className="flex-1 gap-2" asChild data-testid={`button-download-cosmic-${index}`}>
-                          <a href={gospel.href} download>
+                          <a href={gospel.href} download onClick={() => trackDownload(gospel.href)}>
                             <Download className="h-4 w-4" /> Download Revelation <DownloadBadge url={gospel.href} />
                           </a>
                         </Button>
                         <Button variant="outline" className="gap-2" asChild data-testid={`button-view-cosmic-${index}`}>
-                          <a href={gospel.href} target="_blank" rel="noopener noreferrer">
+                          <a href={gospel.href} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(gospel.href)}>
                             <ExternalLink className="h-4 w-4" /> View
                           </a>
                         </Button>
@@ -531,7 +531,7 @@ export default function Gospel() {
                   <Badge variant="outline" className="border-amber-500 text-amber-600 font-bold">NEW — FREE PDF</Badge>
                 </div>
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  The Final Questions That Will Reconstruct Humanity — a transdimensional epistemology and resonance disclosure introducing Emotophysics, Scrollgate Engineering, Chronoemotive Field Alignment, and Psychoharmonic Cartography. Ten paradigm-breaking questions that challenge every discipline on Earth — law, psychiatry, science, theology, and physics — and propose an entirely new post-materialist knowledge framework.
+                  The Final Questions That Will Reconstruct Humanity — a transdimensional epistemology and resonance disclosure introducing Emotophysics, Scrollgate Engineering, Chronoemotive Field Alignment, and Psychoharmonic Cartography. Ten paradigm-breaking questions that challenge every discipline on Earth — law, psychiatry, science, theology, and physics — and propose an entirely new post-materialist knowledge framework. Read the full <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup> for the complete context of <CrossLink to="/timeline">systematic persecution</CrossLink> behind these revelations.
                 </p>
                 <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
                   <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-2 flex items-center gap-2">
@@ -543,12 +543,12 @@ export default function Gospel() {
                 </div>
                 <div className="flex gap-3">
                   <Button variant="default" size="lg" className="gap-2" asChild data-testid="button-download-cosmic-scroll">
-                    <a href="/documents/cosmic_scroll_of_ten.pdf" download>
+                    <a href="/documents/cosmic_scroll_of_ten.pdf" download onClick={() => trackDownload("/documents/cosmic_scroll_of_ten.pdf")}>
                       <Download className="h-5 w-5" /> Download The Cosmic Scroll of Ten (Free PDF) <DownloadBadge url="/documents/cosmic_scroll_of_ten.pdf" />
                     </a>
                   </Button>
                   <Button variant="outline" size="lg" className="gap-2" asChild>
-                    <a href="/documents/cosmic_scroll_of_ten.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="/documents/cosmic_scroll_of_ten.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/documents/cosmic_scroll_of_ten.pdf")}>
                       <ExternalLink className="h-5 w-5" /> View
                     </a>
                   </Button>
@@ -600,12 +600,12 @@ export default function Gospel() {
                     )}
                     <div className="flex gap-3">
                       <Button variant="default" size="sm" className="flex-1 gap-2" asChild data-testid={`button-download-testimonial-${index}`}>
-                        <a href={gospel.href} download>
+                        <a href={gospel.href} download onClick={() => trackDownload(gospel.href)}>
                           <Download className="h-3 w-3" /> Download <DownloadBadge url={gospel.href} />
                         </a>
                       </Button>
                       <Button variant="outline" size="sm" className="gap-2" asChild data-testid={`button-view-testimonial-${index}`}>
-                        <a href={gospel.href} target="_blank" rel="noopener noreferrer">
+                        <a href={gospel.href} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(gospel.href)}>
                           <ExternalLink className="h-3 w-3" /> View
                         </a>
                       </Button>
@@ -626,7 +626,7 @@ export default function Gospel() {
             <BookOpen className="h-12 w-12 mx-auto mb-6 opacity-80" />
             <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">The Living Word Continues</h2>
             <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-              These gospels are not historical artifacts but living documents — continuously authenticated, <CrossLink to="/blockchain">blockchain-sealed</CrossLink>, and awaiting those with eyes to see and ears to hear.
+              These gospels are not historical artifacts but living documents — continuously authenticated, <CrossLink to="/blockchain">blockchain-sealed</CrossLink>, and awaiting those with eyes to see and ears to hear. They document <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>crimes against humanity</DocumentPopup> and stand as eternal witness.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="secondary" size="lg" className="gap-2" asChild data-testid="button-church">

@@ -128,7 +128,7 @@ export default function Church() {
             </p>
             <div className="p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg max-w-2xl mx-auto">
               <p className="text-lg font-serif italic text-primary leading-relaxed">
-                "The Enliven Chain has been summoned. An incorruptible archive of lived trauma and whistleblower testimony, sealed in the immutable substrate of blockchain to dismantle the 'Humiliation Machine'."
+                "The Enliven Chain has been summoned. An incorruptible archive of lived trauma and whistleblower testimony, sealed in the immutable substrate of <CrossLink to="/blockchain">blockchain</CrossLink> to dismantle the 'Humiliation Machine'."
               </p>
               <p className="text-xs uppercase tracking-widest font-bold text-muted-foreground mt-4">
                 — The First Link Transmission

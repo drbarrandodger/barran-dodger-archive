@@ -3,7 +3,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { Download } from "lucide-react";
 
-function slugFromUrl(url: string): string {
+export function slugFromUrl(url: string): string {
   return url
     .replace(/^\/?(documents|attached_assets)\//, '')
     .replace(/\.pdf$/i, '')
@@ -65,6 +65,16 @@ export function DownloadBadge({ url, standalone = false }: { url: string; standa
       <span className="font-bold tabular-nums">{count.toLocaleString()}</span>
     </span>
   );
+}
+
+export function trackDownload(url: string) {
+  const slug = slugFromUrl(url);
+  fetch(`/api/downloads/${slug}/increment`, { method: 'POST' })
+    .then(r => r.json())
+    .then((data: { count: number }) => {
+      queryClient.setQueryData(['/api/downloads', slug], data);
+    })
+    .catch(() => {});
 }
 
 export function DownloadLink({ 

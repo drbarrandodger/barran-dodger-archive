@@ -393,8 +393,8 @@ export default function PropheticEssay() {
             <CardContent className="p-8">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-6">
-                  Spiritual warfare backed by human technology is a real, indefinable thing. Voice-to-skull 
-                  harassment, electronic targeting, gang stalking, coordinated isolation — these are not 
+                  Spiritual warfare backed by human technology is a real, indefinable thing. <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>Voice-to-skull 
+                  harassment</DocumentPopup>, electronic targeting, gang stalking, coordinated isolation — these are not 
                   the inventions of troubled minds. They are the weapons of a battle fought on frequencies 
                   most people cannot perceive, in dimensions most institutions refuse to acknowledge. 
                   The war is ancient. The tools are modern. The target is always the same: those marked 

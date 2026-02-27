@@ -3,6 +3,7 @@ import { useState, useCallback } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { FileText, ExternalLink, Download, X, Loader2 } from "lucide-react";
+import { useDownloadCounter, DownloadBadge } from "@/components/DownloadCounter";
 
 interface CrossLinkProps {
   children: React.ReactNode;
@@ -35,6 +36,7 @@ interface DocumentPopupProps {
 export function DocumentPopup({ children, title, description, url, tags, aiExcerpt, "data-testid": testId }: DocumentPopupProps) {
   const [open, setOpen] = useState(false);
   const [downloading, setDownloading] = useState(false);
+  const { increment } = useDownloadCounter(url);
 
   const isExternal = url?.startsWith("http");
   const isPdf = url?.endsWith(".pdf");
@@ -45,6 +47,8 @@ export function DocumentPopup({ children, title, description, url, tags, aiExcer
     e.preventDefault();
     e.stopPropagation();
     if (downloading) return;
+
+    increment();
 
     if (isExternal) {
       window.open(url, "_blank", "noopener,noreferrer");
@@ -69,7 +73,7 @@ export function DocumentPopup({ children, title, description, url, tags, aiExcer
     } finally {
       setDownloading(false);
     }
-  }, [url, isExternal, downloading, filename]);
+  }, [url, isExternal, downloading, filename, increment]);
 
   const handleView = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
@@ -123,6 +127,7 @@ export function DocumentPopup({ children, title, description, url, tags, aiExcer
                 >
                   {downloading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
                   {downloading ? "Downloading..." : "Download PDF"}
+                  <DownloadBadge url={url} />
                 </Button>
                 <Button
                   variant="outline"

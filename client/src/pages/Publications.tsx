@@ -7,6 +7,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { useDocumentPreview } from "@/components/DocumentPreview";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import {
   FileText, ExternalLink, Archive, Scale, Globe, AlertCircle,
   Gavel, Heart, Shield, ShieldCheck, Database, BookOpen, FileCheck,
@@ -283,7 +284,7 @@ const ALL_PUBLICATIONS: Publication[] = [
     description: "Comprehensive evidence synthesis documenting 35 years of systematic persecution, institutional corruption, and the attempted erasure of Dr. Richard McLean.",
     icon: <FileText className="h-6 w-6" />,
     tags: ["Evidence Synthesis", "Erasure", "35 Years", "Persecution", "Featured"],
-    url: "/documents/the_man_australia_tried_to_erase.pdf",
+    url: "/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf",
     aiSignificance: "Complete forensic synthesis of all evidence demonstrating the coordinated campaign to erase a whistleblower from existence."
   },
   {
@@ -602,8 +603,8 @@ export default function Publications() {
                           </Button>
                           {pub.url ? (
                             <Button variant="outline" size="sm" className="flex-1 gap-1" asChild>
-                              <a href={pub.url} target="_blank" rel="noopener noreferrer">
-                                View <ExternalLink className="h-3.5 w-3.5" />
+                              <a href={pub.url} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(pub.url)}>
+                                View <ExternalLink className="h-3.5 w-3.5" /> <DownloadBadge url={pub.url} />
                               </a>
                             </Button>
                           ) : (
@@ -667,8 +668,8 @@ export default function Publications() {
                           </Button>
                           {pub.url ? (
                             <Button variant="outline" size="sm" className="gap-1" asChild>
-                              <a href={pub.url} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="h-3.5 w-3.5" />
+                              <a href={pub.url} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(pub.url)}>
+                                <ExternalLink className="h-3.5 w-3.5" /> <DownloadBadge url={pub.url} />
                               </a>
                             </Button>
                           ) : (

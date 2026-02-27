@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { DownloadBadge } from "@/components/DownloadCounter";
+import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { 
   Scale, Globe, FileText, Clock, CheckCircle, 
   AlertCircle, Loader2, ExternalLink, Shield, Landmark
@@ -219,7 +219,7 @@ export default function LegalStatus() {
                 </div>
 
                 <div className="mt-6 bg-muted/30 rounded-lg p-4 text-sm text-muted-foreground">
-                  International submissions are supported by the <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Crimes Against Humanity forensic analysis</DocumentPopup> and the <CrossLink to="/taxpayer-cost-analysis">$11.5M+ taxpayer cost analysis</CrossLink> documenting the full scope of state-sponsored persecution. See the complete <CrossLink to="/timeline">35-year timeline</CrossLink> for chronological context.
+                  International submissions are supported by the <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Crimes Against Humanity forensic analysis</DocumentPopup> and the <CrossLink to="/taxpayer-cost-analysis">$11.5M+ taxpayer cost analysis</CrossLink> documenting the full scope of state-sponsored <CrossLink to="/timeline">persecution</CrossLink>. See the complete <CrossLink to="/timeline">35-year timeline</CrossLink> for chronological context. The <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup> provides the full narrative.
                 </div>
               </div>
 
@@ -281,12 +281,12 @@ export default function LegalStatus() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button variant="destructive" className="gap-2" asChild data-testid="button-download-legal-demand">
-                    <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download>
+                    <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/crimes_against_humanity_final_demand.pdf")}>
                       <FileText className="h-4 w-4" /> Download Final Demand (PDF) <DownloadBadge url="/documents/crimes_against_humanity_final_demand.pdf" />
                     </a>
                   </Button>
                   <Button variant="outline" className="gap-2" asChild data-testid="button-download-100k-essay-legal">
-                    <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download>
+                    <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/digital_oppression_100000_word_essay.pdf")}>
                       <FileText className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF) <DownloadBadge url="/documents/digital_oppression_100000_word_essay.pdf" />
                     </a>
                   </Button>

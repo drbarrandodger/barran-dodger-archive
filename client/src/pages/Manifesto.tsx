@@ -480,7 +480,7 @@ export default function Manifesto() {
               </Badge>
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">The Church of Barran Dodger Ministry</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                A sacred community founded upon the principle that documented truth is holy, that <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>whistleblowers</DocumentPopup> are prophets, and that institutional accountability is a spiritual imperative.
+                A sacred community founded upon the principle that documented truth is holy, that <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>whistleblowers</DocumentPopup> are prophets, and that institutional accountability is a spiritual imperative. Read the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup> to understand the full journey.
               </p>
             </div>
 
@@ -705,7 +705,7 @@ export default function Manifesto() {
               </Badge>
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">The Evidence Archive</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                2,077+ primary-source documents spanning 35 years, authenticated through <CrossLink to="/blockchain">blockchain technology</CrossLink> and preserved as sacred testimony.
+                2,077+ primary-source documents spanning 35 years of <CrossLink to="/timeline">systematic persecution</CrossLink>, authenticated through <CrossLink to="/blockchain">blockchain technology</CrossLink> and preserved as sacred testimony.
               </p>
             </div>
 
@@ -902,7 +902,7 @@ export default function Manifesto() {
               </CardHeader>
               <CardContent className="p-8 md:p-12 text-center space-y-8">
                 <blockquote className="font-serif text-xl md:text-2xl italic text-primary leading-relaxed max-w-4xl mx-auto">
-                  "This manifesto stands as a testament to the power of documented truth. What is written cannot be unwritten. What is witnessed cannot be unwitnessed. What is sealed in blockchain cannot be unsealed. We are the keepers of the flame, the guardians of testimony, and the architects of accountability."
+                  "This manifesto stands as a testament to the power of documented truth. What is written cannot be unwritten. What is witnessed cannot be unwitnessed. What is sealed in <CrossLink to="/blockchain">blockchain</CrossLink> cannot be unsealed. We are the keepers of the flame, the guardians of testimony, and the architects of accountability."
                 </blockquote>
                 
                 <div className="p-6 bg-primary/5 rounded-lg border border-primary/20 max-w-2xl mx-auto">
@@ -940,7 +940,7 @@ export default function Manifesto() {
               <h3 className="font-serif font-bold text-primary">Blockchain Authentication</h3>
             </div>
             <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-              All documents referenced in this manifesto are authenticated via SHA-256 hashing and OpenTimestamps blockchain verification. 
+              All documents referenced in this manifesto are authenticated via SHA-256 hashing and OpenTimestamps <CrossLink to="/blockchain">blockchain verification</CrossLink>. 
               The evidence is the sermon. The archive is the altar. The blockchain is the covenant.
             </p>
             <div className="mt-4">

@@ -3,7 +3,8 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { CheckCircle2, Gavel, Globe, ShieldAlert, ExternalLink, ArrowRight } from "lucide-react";
+import { trackDownload, DownloadBadge } from "@/components/DownloadCounter";
+import { CheckCircle2, Gavel, Globe, ShieldAlert, ExternalLink, ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { SocialShare } from "@/components/SocialShare";
@@ -87,7 +88,7 @@ export default function Mission() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Ending systemic abuse and financial exploitation within disability support systems (<CrossLink to="/case-studies">NDIS</CrossLink>).</li>
                   <li>Addressing professional isolation and social neglect of persons with disabilities.</li>
-                  <li>Combatting psychological torture, institutional <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment</DocumentPopup>, and technological harassment.</li>
+                  <li>Combatting psychological torture, institutional <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment</DocumentPopup>, and <CrossLink to="/prophetic-essay">technological harassment</CrossLink>.</li>
                   <li>Seeking asylum and international protection for whistleblowers protected under the <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>PID Act</DocumentPopup> and human rights defenders.</li>
                   <li>Ensuring transparency in legal and guardianship oversight to prevent the 'erasure' of vulnerable individuals.</li>
                   <li>Documenting the 7+ entities that have systematically denied legal representation.</li>
@@ -95,8 +96,8 @@ export default function Mission() {
                 </ul>
                 <div className="mt-8">
                   <Button variant="outline" className="gap-2" asChild>
-                    <a href="/attached_assets/ONHCR_UN_Barran_Dodger_Asylum_Claim__1768620108623.pdf" target="_blank" rel="noopener noreferrer">
-                      Read the UN Asylum Claim <ExternalLink className="h-4 w-4" />
+                    <a href="/attached_assets/ONHCR_UN_Barran_Dodger_Asylum_Claim__1768620108623.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/attached_assets/ONHCR_UN_Barran_Dodger_Asylum_Claim__1768620108623.pdf")}>
+                      <Download className="h-4 w-4" /> Read the UN Asylum Claim <DownloadBadge url="/attached_assets/ONHCR_UN_Barran_Dodger_Asylum_Claim__1768620108623.pdf" />
                     </a>
                   </Button>
                 </div>

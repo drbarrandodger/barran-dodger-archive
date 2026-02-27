@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { DownloadBadge } from "@/components/DownloadCounter";
+import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { 
   Newspaper, Mail, Download, ExternalLink, FileText, 
   Camera, Video, Mic, Globe, Clock, Share2
@@ -100,7 +100,7 @@ export default function Media() {
                           <p className="text-sm text-muted-foreground">{release.description}</p>
                         </div>
                         <div className="flex flex-col gap-2">
-                          <a href={release.url} target="_blank" rel="noopener noreferrer">
+                          <a href={release.url} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(release.url)}>
                             <Button size="sm" variant="outline" className="gap-1">
                               <Download className="h-4 w-4" /> PDF <DownloadBadge url={release.url} />
                             </Button>

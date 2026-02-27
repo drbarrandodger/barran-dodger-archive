@@ -9,7 +9,7 @@ import { EvidenceCounter } from "@/components/EvidenceCounter";
 import { ProgressTracker, useDocumentProgress } from "@/components/ProgressTracker";
 import { useDocumentPreview } from "@/components/DocumentPreview";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { DownloadBadge } from "@/components/DownloadCounter";
+import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye, Search, Brain, MessageCircle, Flame, Star, Skull } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -2728,7 +2728,7 @@ export default function Evidence() {
 
                     <div className="flex justify-center pt-2">
                       <Button variant="default" className="bg-red-600 hover:bg-red-700 text-white" asChild data-testid="link-download-weaponised-email">
-                        <a href="/attached_assets/I_am_planning_a_terrorist_attack_at_36_Aston_Martin_drive_Goul_1770764660293.pdf" target="_blank" rel="noopener noreferrer">
+                        <a href="/attached_assets/I_am_planning_a_terrorist_attack_at_36_Aston_Martin_drive_Goul_1770764660293.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/attached_assets/I_am_planning_a_terrorist_attack_at_36_Aston_Martin_drive_Goul_1770764660293.pdf")}>
                           <Download className="mr-2 h-4 w-4" />
                           Download Complete Document (PDF) <DownloadBadge url="/attached_assets/I_am_planning_a_terrorist_attack_at_36_Aston_Martin_drive_Goul_1770764660293.pdf" />
                         </a>
@@ -3197,12 +3197,12 @@ export default function Evidence() {
                           <Eye className="h-4 w-4" /> Preview
                         </Button>
                         <Button variant="outline" className="flex-1 gap-2" asChild>
-                          <a href={doc.url} target="_blank" rel="noopener noreferrer">
+                          <a href={doc.url} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(doc.url)}>
                             View <ExternalLink className="h-4 w-4" />
                           </a>
                         </Button>
                         <Button variant="ghost" size="icon" asChild>
-                          <a href={doc.url} download>
+                          <a href={doc.url} download onClick={() => trackDownload(doc.url)}>
                             <Download className="h-4 w-4" />
                             <DownloadBadge url={doc.url} />
                           </a>

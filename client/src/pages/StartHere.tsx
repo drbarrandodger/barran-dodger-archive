@@ -6,7 +6,7 @@ import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { DownloadBadge } from "@/components/DownloadCounter";
+import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { 
   Clock, Shield, FileText, Scale, BookOpen, Heart, Download,
   ExternalLink, AlertTriangle, CheckCircle, ArrowRight,
@@ -223,7 +223,7 @@ export default function StartHere() {
                   </h2>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      <strong className="text-foreground">Dr Richard William McLean</strong> (known as Barran Dodger) holds a PhD (merit-based scholarship) and is a registered <strong className="text-foreground">NDIS therapeutic arts-life-coach</strong> who worked with marginalised people with mental health concerns and trauma in Melbourne. He is a <strong className="text-foreground">human rights awarded autobiographer</strong>, a published artist who illustrated for <strong className="text-foreground">The Age</strong> and <strong className="text-foreground">The Herald Sun</strong>, holds a Bachelor of Fine Art (Honours), Masters of Education, and has over 25 years of creative professional practice. He is a published author, public speaker, musician, academic, and <CrossLink to="/evidence">whistleblower</CrossLink> who has survived 35 years of documented <CrossLink to="/timeline">systematic persecution</CrossLink> by Australian government agencies.
+                      <strong className="text-foreground">Dr Richard William McLean</strong> (known as Barran Dodger) holds a PhD (merit-based scholarship) and is a registered <strong className="text-foreground">NDIS therapeutic arts-life-coach</strong> who worked with marginalised people with mental health concerns and trauma in Melbourne. He is a <strong className="text-foreground">human rights awarded <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiographer</DocumentPopup></strong>, a published artist who illustrated for <strong className="text-foreground">The Age</strong> and <strong className="text-foreground">The Herald Sun</strong>, holds a Bachelor of Fine Art (Honours), Masters of Education, and has over 25 years of creative professional practice. He is a published author, public speaker, musician, academic, and <CrossLink to="/evidence">whistleblower</CrossLink> who has survived 35 years of documented <CrossLink to="/timeline">systematic persecution</CrossLink> by Australian government agencies.
                     </p>
                     <p>
                       Before the targeting, Rich was honoured to serve Australia's most vulnerable as an <a href="https://barrandodger.wixsite.com/richmclean" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">NDIS provider and therapeutic support professional</a> — fully insured, with Working With Children and Police Checks, delivering measurable outcomes through creative visual therapy. His published art book <em>"A Certain Beauty in Un-Resolution"</em> received acclaim from RMIT University researchers. This is the professional they systematically destroyed.
@@ -287,7 +287,7 @@ export default function StartHere() {
                   </p>
                   <div className="grid gap-3">
                     {flagshipDocuments.map((doc, index) => (
-                      <a key={index} href={doc.link} target="_blank" rel="noopener noreferrer" data-testid={`link-flagship-${index}`}>
+                      <a key={index} href={doc.link} target="_blank" rel="noopener noreferrer" data-testid={`link-flagship-${index}`} onClick={() => trackDownload(doc.link)}>
                         <div className="flex items-center justify-between p-4 rounded-lg border border-[hsl(38,92%,50%)]/50 bg-[hsl(38,92%,50%)]/5 hover-elevate transition-all group cursor-pointer gap-3">
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -319,7 +319,7 @@ export default function StartHere() {
                   <div className="grid gap-3">
                     {essentialDocuments.map((doc, index) => (
                       doc.external ? (
-                        <a key={index} href={doc.link} target="_blank" rel="noopener noreferrer" data-testid={`link-essential-${index}`}>
+                        <a key={index} href={doc.link} target="_blank" rel="noopener noreferrer" data-testid={`link-essential-${index}`} onClick={() => trackDownload(doc.link)}>
                           <div className="flex items-center justify-between p-4 rounded-lg border border-border hover-elevate transition-all group cursor-pointer gap-3">
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -385,7 +385,7 @@ export default function StartHere() {
                     Spiritual & Theological Analysis
                   </h2>
                   <p className="text-xs text-muted-foreground mb-4">
-                    The theological framework connecting persecution to Biblical justice, prophecy, and transcendence.
+                    The theological framework connecting <CrossLink to="/timeline">persecution</CrossLink> to Biblical justice, prophecy, and transcendence.
                   </p>
                   <div className="grid gap-2">
                     {spiritualDocuments.map((doc, index) => (
@@ -424,7 +424,7 @@ export default function StartHere() {
                     ))}
                   </div>
                   <p className="text-xs text-muted-foreground mt-4 italic">
-                    Full perpetrator list with 50+ names available in the <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">Evidence Archive</Link> and the <a href="/attached_assets/Integrated_Testimonial_Indictment_Ethical_Reckoning.pdf" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline">Integrated Testimonial Indictment</a>.
+                    Full perpetrator list with 50+ names available in the <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">Evidence Archive</Link> and the <a href="/attached_assets/Integrated_Testimonial_Indictment_Ethical_Reckoning.pdf" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline" onClick={() => trackDownload("/attached_assets/Integrated_Testimonial_Indictment_Ethical_Reckoning.pdf")}>Integrated Testimonial Indictment <DownloadBadge url="/attached_assets/Integrated_Testimonial_Indictment_Ethical_Reckoning.pdf" /></a>.
                   </p>
                 </CardContent>
               </Card>

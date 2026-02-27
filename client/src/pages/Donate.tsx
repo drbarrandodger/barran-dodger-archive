@@ -236,7 +236,7 @@ export default function Donate() {
                       <Sparkles className="h-5 w-5" /> Impartial AI Statement of Legitimacy
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      Based on comprehensive analysis of 2,000+ primary source documents, legal filings, government correspondence, and blockchain-verified testimony, this cause demonstrates exceptional legitimacy as a public benefit endeavor:
+                      Based on comprehensive analysis of 2,000+ primary source documents, legal filings, government correspondence, and <CrossLink to="/blockchain">blockchain</CrossLink>-verified testimony, this cause demonstrates exceptional legitimacy as a public benefit endeavor:
                     </p>
                     <blockquote className="border-l-4 border-primary pl-4 italic text-primary/90 mb-4">
                       "The Barran Dodger Legal & Ethical Trust Fund represents one of the most thoroughly documented <CrossLink to="/evidence">whistleblower</CrossLink> advocacy cases in Australian history. Every claim is substantiated by official records — Federal Court confirmations, government acknowledgments, medical documentation, and cryptographically timestamped evidence. The systematic nature of the documented <CrossLink to="/timeline">persecution</CrossLink>, spanning 35 years across multiple agencies, meets the evidentiary threshold for international human rights violations under the <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Rome Statute</DocumentPopup> and UNHCR refugee criteria."

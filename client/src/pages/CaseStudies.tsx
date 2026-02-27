@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { DownloadBadge, useDownloadCounter } from "@/components/DownloadCounter";
+import { DownloadBadge, useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
 import { 
   FileText, 
   Building2, 
@@ -351,7 +351,7 @@ export default function CaseStudies() {
                   THE PARADOX OF PERSECUTION
                 </CardTitle>
                 <CardDescription className="text-lg md:text-xl mt-3 text-foreground/80">
-                  How the Australian Government's Own Records Simultaneously Prove Systematic Targeting and Guarantee Legal Vindication
+                  How the Australian Government's Own Records Simultaneously Prove <CrossLink to="/timeline">Systematic Targeting</CrossLink> and Guarantee Legal Vindication
                 </CardDescription>
                 <div className="mt-4 flex flex-wrap gap-3 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1.5"><BookOpen className="h-4 w-4" /> Dr. Richard William McLean, Ph.D. (Victoria University, 2020)</span>
@@ -379,6 +379,7 @@ export default function CaseStudies() {
                   rel="noopener noreferrer"
                   className="block"
                   data-testid="link-download-paradox-pdf"
+                  onClick={() => trackDownload("/attached_assets/THE_PARADOX_OF_PERSECUTION-How_the_Australian_Government's_Own_1770757189035.pdf")}
                 >
                   <Button variant="default" className="w-full gap-2 text-lg py-6">
                     <Download className="h-5 w-5" /> Download Full Academic Paper (PDF) <DownloadBadge url="/attached_assets/THE_PARADOX_OF_PERSECUTION-How_the_Australian_Government's_Own_1770757189035.pdf" />
@@ -582,7 +583,7 @@ export default function CaseStudies() {
                     <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
                       <p className="font-bold text-red-500 text-sm mb-2">2. POLITICAL, IDEOLOGICAL, OR COERCIVE PURPOSE — SATISFIED</p>
                       <p className="text-sm text-foreground leading-relaxed">
-                        Dr McLean was targeted for whistleblowing — exposing $6 billion in NDIS fraud, government corruption across 35+ agencies, and identity theft via 350+ fraudulent ASIC registrations. The targeting advanced a clear political purpose: the silencing of a Public Interest Disclosure (PID) that exposed systemic corruption within Commonwealth agencies. Scott Treadwell, Federal Court General Counsel, confirmed Dr McLean satisfied PID Act criteria — specifically that disclosed conduct "perverts, or is engaged in for the purpose of perverting, the course of justice" and "constitutes maladministration." The government's response to this confirmed whistleblowing was not investigation of the corruption — it was elimination of the whistleblower. That is definitionally political violence.
+                        Dr McLean was targeted for whistleblowing — exposing $6 billion in <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>NDIS</DocumentPopup> fraud, government corruption across 35+ agencies, and identity theft via <DocumentPopup {...KEY_DOCUMENTS.evidenceSummary}>350+ fraudulent ASIC registrations</DocumentPopup>. The targeting advanced a clear political purpose: the silencing of a Public Interest Disclosure (PID) that exposed systemic corruption within Commonwealth agencies. Scott Treadwell, Federal Court General Counsel, confirmed Dr McLean satisfied PID Act criteria — specifically that disclosed conduct "perverts, or is engaged in for the purpose of perverting, the course of justice" and "constitutes maladministration." The government's response to this confirmed whistleblowing was not investigation of the corruption — it was elimination of the whistleblower. That is definitionally political violence.
                       </p>
                     </div>
 
@@ -762,7 +763,7 @@ export default function CaseStudies() {
                       The evidence supports a deduction that the erasure — including murder — was planned. The sequence of identity destruction, financial strangulation, psychiatric discrediting, physical isolation, assassination attempt, denial of post-crisis support, and reduction to "missing person" status follows an operational logic that cannot be attributed to coincidence, negligence, or bureaucratic failure across 25+ agencies over 35 years.
                     </p>
                     <p className="font-bold text-red-500 mt-2">
-                      Dr McLean was revived from death. He survived. He documented everything. And now the evidence — written in the government's own hand, confirmed by the Federal Court's own General Counsel, witnessed by named individuals, and sealed on the Bitcoin blockchain — cannot be erased, denied, or silenced.
+                      Dr McLean was revived from death. He survived. He documented everything. And now the evidence — written in the government's own hand, confirmed by the Federal Court's own General Counsel, witnessed by named individuals, and sealed on the Bitcoin <CrossLink to="/blockchain">blockchain</CrossLink> — cannot be erased, denied, or silenced.
                     </p>
                     <p className="font-bold italic text-[hsl(38,92%,50%)] mt-2 text-center text-lg">
                       "They planned the murder. God planned the resurrection. The record stands."
@@ -785,6 +786,7 @@ export default function CaseStudies() {
                     download
                     className="flex items-center gap-3 p-3 rounded-lg bg-background/50 hover:bg-background/80 transition-colors border border-border/50 group"
                     data-testid="link-download-ben-text-messages"
+                    onClick={() => trackDownload("/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf")}
                   >
                     <FileText className="h-5 w-5 text-primary flex-shrink-0" />
                     <div className="flex-1 min-w-0">
@@ -973,12 +975,12 @@ export default function CaseStudies() {
                       <Download className="h-4 w-4" /> Download Full Paper (PDF) <DownloadBadge url="/attached_assets/THE_PARADOX_OF_PERSECUTION-How_the_Australian_Government's_Own_1770757189035.pdf" />
                     </Button>
                   </a>
-                  <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download>
+                  <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/digital_oppression_100000_word_essay.pdf")}>
                     <Button variant="default" className="gap-2 w-full sm:w-auto" data-testid="link-download-100k-essay-casestudies">
                       <Download className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF) <DownloadBadge url="/documents/digital_oppression_100000_word_essay.pdf" />
                     </Button>
                   </a>
-                  <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download>
+                  <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/crimes_against_humanity_final_demand.pdf")}>
                     <Button variant="destructive" className="gap-2 w-full sm:w-auto" data-testid="link-download-crimes-demand-casestudies">
                       <Download className="h-4 w-4" /> Crimes Against Humanity: Final Demand (PDF) <DownloadBadge url="/documents/crimes_against_humanity_final_demand.pdf" />
                     </Button>

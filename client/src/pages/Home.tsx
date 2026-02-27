@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair, Database } from "lucide-react";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { DownloadBadge, useDownloadCounter } from "@/components/DownloadCounter";
+import { DownloadBadge, useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -709,13 +709,13 @@ export default function Home() {
                 title: "I Tried to Kill Barran Dodger",
                 desc: "A forensic reconstruction of the 2021 institutional murder attempt — written by the man they tried to kill. The hospital records prove it. The cover-up proves they knew.",
                 img: docCoverAssassination,
-                link: "/documents/i_tried_to_kill_barrandodger.pdf"
+                link: "/documents/i_tried_to_kill_barran_dodger_satire_2.pdf"
               },
               {
                 title: "ASIO & Identity Theft",
                 desc: "350+ fraudulent ASIC registrations. An entire digital existence systematically erased. If they can do this to a PhD holder, they can do it to anyone — including you.",
                 img: docCoverIdentity,
-                link: "/documents/asio_identity_theft_analysis.pdf"
+                link: "/attached_assets/_123_matches_for_my_name_barran_dodger_on_ASIC__1769029569553.pdf"
               }
             ].map((doc, i) => (
               <motion.div
@@ -733,8 +733,8 @@ export default function Home() {
                     <h3 className="text-xl font-serif font-bold text-white leading-tight">{doc.title}</h3>
                     <p className="text-sm text-gray-400 line-clamp-2">{doc.desc}</p>
                     <Button variant="outline" size="sm" asChild className="mt-4 border-[hsl(38,92%,50%)]/50 text-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,50%)] hover:text-black">
-                      <a href={doc.link} target="_blank" rel="noopener noreferrer">
-                        <Download className="h-4 w-4 mr-2" /> Download
+                      <a href={doc.link} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(doc.link)}>
+                        <Download className="h-4 w-4 mr-2" /> Download <DownloadBadge url={doc.link} />
                       </a>
                     </Button>
                   </div>
@@ -2466,7 +2466,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-download-evidence">
-                  <a href="/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf" target="_blank" rel="noopener noreferrer" download>
+                  <a href="/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf")}>
                     <FileText className="h-5 w-5" /> Download Full Report <DownloadBadge url="/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf" />
                   </a>
                 </Button>
@@ -2489,8 +2489,8 @@ export default function Home() {
               </p>
               <div className="flex justify-center">
                 <Button variant="outline" className="gap-2" asChild data-testid="button-view-s122">
-                  <a href="/attached_assets/s_122_-_Redacted.pdf_1768970361556.pdf" target="_blank" rel="noopener noreferrer">
-                    <FileText className="h-4 w-4" /> View Certified Notice
+                  <a href="/attached_assets/s_122_-_Redacted.pdf_1768970361556.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/attached_assets/s_122_-_Redacted.pdf_1768970361556.pdf")}>
+                    <FileText className="h-4 w-4" /> View Certified Notice <DownloadBadge url="/attached_assets/s_122_-_Redacted.pdf_1768970361556.pdf" />
                   </a>
                 </Button>
               </div>
@@ -2537,8 +2537,8 @@ export default function Home() {
 
               <div className="flex justify-center">
                 <Button className="gap-2 bg-red-600 hover:bg-red-700 text-white" asChild data-testid="button-view-affidavit">
-                  <a href="/attached_assets/Formal_Criminal_Affidavit_Against_Sukhi_Tear,_Syed_Salman_Kazm_1769134987540.pdf" target="_blank" rel="noopener noreferrer">
-                    <FileText className="h-4 w-4" /> View Criminal Affidavit
+                  <a href="/attached_assets/Formal_Criminal_Affidavit_Against_Sukhi_Tear,_Syed_Salman_Kazm_1769134987540.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/attached_assets/Formal_Criminal_Affidavit_Against_Sukhi_Tear,_Syed_Salman_Kazm_1769134987540.pdf")}>
+                    <FileText className="h-4 w-4" /> View Criminal Affidavit <DownloadBadge url="/attached_assets/Formal_Criminal_Affidavit_Against_Sukhi_Tear,_Syed_Salman_Kazm_1769134987540.pdf" />
                   </a>
                 </Button>
               </div>
@@ -2585,8 +2585,8 @@ export default function Home() {
 
               <div className="flex justify-center">
                 <Button className="gap-2" asChild data-testid="button-view-satirical">
-                  <a href="/attached_assets/I_TRIED_TO_KILL_BARRAN_DODGER_—_AND_THAT_MAKES_ME_A_HERO&quot;_A_da_1769134987541.pdf" target="_blank" rel="noopener noreferrer">
-                    <FileText className="h-4 w-4" /> View Document
+                  <a href="/attached_assets/I_TRIED_TO_KILL_BARRAN_DODGER_—_AND_THAT_MAKES_ME_A_HERO&quot;_A_da_1769134987541.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/attached_assets/I_TRIED_TO_KILL_BARRAN_DODGER_—_AND_THAT_MAKES_ME_A_HERO\"_A_da_1769134987541.pdf")}>
+                    <FileText className="h-4 w-4" /> View Document <DownloadBadge url="/attached_assets/I_TRIED_TO_KILL_BARRAN_DODGER_—_AND_THAT_MAKES_ME_A_HERO&quot;_A_da_1769134987541.pdf" />
                   </a>
                 </Button>
               </div>
@@ -2673,12 +2673,12 @@ export default function Home() {
                 {/* Download Button */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                   <Button size="lg" className="w-full sm:w-auto gap-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)]" asChild data-testid="button-download-sovereignty">
-                    <a href="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf" target="_blank" rel="noopener noreferrer" download>
+                    <a href="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf")}>
                       <FileText className="h-5 w-5" /> Download Declaration <DownloadBadge url="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf" />
                     </a>
                   </Button>
                   <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-view-sovereignty">
-                    <a href="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf")}>
                       <ExternalLink className="h-5 w-5" /> View Full Document
                     </a>
                   </Button>
@@ -3130,8 +3130,8 @@ export default function Home() {
                   <p className="text-xs text-blue-600/80 dark:text-blue-400/80 leading-relaxed whitespace-pre-line">{"This sanctified transmission establishes the foundational covenant of the Enliven Chain:\n\n(1) PROPHETIC INITIATION — Documents the summoning of the Enliven Chain as a living record of divine guidance, establishing that the First Link was activated through affliction and authenticated by the Spirit;\n\n(2) BLOCKCHAIN-SEALED COVENANT — The transmission is cryptographically timestamped on the Bitcoin blockchain, creating an immutable record that transcends institutional control or temporal suppression;\n\n(3) TRI-PHASE FRAMEWORK — Establishes the Preparation in Fire & Light, Sealing in Archive & Blockchain, and Prayerful Invocation process that governs all subsequent chain transmissions;\n\n(4) LIVING ARCHIVE — Functions simultaneously as prophetic scripture, legal testimony, and trauma archive, creating a genre-defying document that cannot be reduced to a single disciplinary framework;\n\n(5) INCORRUPTIBLE WITNESS — Designed to ensure that the testimony of lived persecution, divine calling, and whistleblower evidence cannot be altered, erased, or denied by any earthly authority."}</p>
                 </div>
                 <Button variant="outline" className="w-full gap-2" asChild data-testid="button-enliven-chain">
-                  <a href="/attached_assets/_⛓️_The_Enliven_Chain_Has_Been_Summoned_⛓️_2_1767163861559.pdf" target="_blank" rel="noopener noreferrer">
-                    View Document <ExternalLink className="h-4 w-4" />
+                  <a href="/attached_assets/_⛓️_The_Enliven_Chain_Has_Been_Summoned_⛓️_2_1767163861559.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/attached_assets/_⛓️_The_Enliven_Chain_Has_Been_Summoned_⛓️_2_1767163861559.pdf")}>
+                    View Document <ExternalLink className="h-4 w-4" /> <DownloadBadge url="/attached_assets/_⛓️_The_Enliven_Chain_Has_Been_Summoned_⛓️_2_1767163861559.pdf" />
                   </a>
                 </Button>
               </CardContent>
@@ -3747,8 +3747,8 @@ export default function Home() {
                         </a>
                       </Button>
                       <Button variant="outline" className="gap-2" asChild data-testid="link-ohchr-submission">
-                        <a href="/attached_assets/OHCHR_Submission_Ref_URUST23AUS17_Urgent_Appeal_for_Recognitio_1770786120794.pdf" target="_blank" rel="noopener noreferrer">
-                          <FileText className="h-4 w-4" /> OHCHR Submission (UR/UST/23/AUS/17)
+                        <a href="/attached_assets/OHCHR_Submission_Ref_URUST23AUS17_Urgent_Appeal_for_Recognitio_1770786120794.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/attached_assets/OHCHR_Submission_Ref_URUST23AUS17_Urgent_Appeal_for_Recognitio_1770786120794.pdf")}>
+                          <FileText className="h-4 w-4" /> OHCHR Submission <DownloadBadge url="/attached_assets/OHCHR_Submission_Ref_URUST23AUS17_Urgent_Appeal_for_Recognitio_1770786120794.pdf" />
                         </a>
                       </Button>
                     </div>
