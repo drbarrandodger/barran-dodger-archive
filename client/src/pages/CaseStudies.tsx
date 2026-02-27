@@ -564,7 +564,7 @@ export default function CaseStudies() {
                     </li>
                   </ul>
                   <p className="text-sm text-foreground leading-relaxed mt-3">
-                    Under <span className="font-bold">international law</span>, terrorism encompasses "criminal acts intended or calculated to provoke a state of terror in the general public, a group of persons, or particular persons for political purposes" (UN General Assembly Resolution 49/60, 1994). The Rome Statute, Article 7(1)(a) and (k), classifies systematic murder and "other inhumane acts intentionally causing great suffering" as crimes against humanity when part of a widespread or systematic attack directed against a civilian population.
+                    Under <span className="font-bold">international law</span>, terrorism encompasses "criminal acts intended or calculated to provoke a state of terror in the general public, a group of persons, or particular persons for political purposes" (UN General Assembly Resolution 49/60, 1994). The <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Rome Statute</DocumentPopup>, Article 7(1)(a) and (k), classifies systematic murder and "other inhumane acts intentionally causing great suffering" as crimes against humanity when part of a widespread or systematic attack directed against a civilian population.
                   </p>
                 </div>
 
@@ -685,7 +685,7 @@ export default function CaseStudies() {
                     <div className="p-3 rounded-lg bg-[hsl(38,92%,50%)]/5 border border-[hsl(38,92%,50%)]/20">
                       <p className="font-bold text-[hsl(38,92%,50%)] text-sm mb-1">ADMISSION 3: Maladministration Confirmed</p>
                       <p className="text-xs text-foreground italic">Treadwell confirmed the conduct "constitutes maladministration"</p>
-                      <p className="text-xs text-foreground mt-1">Maladministration by 25+ agencies across 35 years is not isolated misconduct — it is systematic, widespread, and coordinated. Under the Rome Statute, systematic maladministration targeting a specific individual based on protected characteristics constitutes persecution.</p>
+                      <p className="text-xs text-foreground mt-1">Maladministration by 25+ agencies across 35 years is not isolated misconduct — it is systematic, widespread, and coordinated. Under the <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Rome Statute</DocumentPopup>, systematic maladministration targeting a specific individual based on protected characteristics constitutes <CrossLink to="/timeline">persecution</CrossLink>.</p>
                     </div>
                     <div className="p-3 rounded-lg bg-[hsl(38,92%,50%)]/5 border border-[hsl(38,92%,50%)]/20">
                       <p className="font-bold text-[hsl(38,92%,50%)] text-sm mb-1">ADMISSION 4: Danger to Health and Safety</p>

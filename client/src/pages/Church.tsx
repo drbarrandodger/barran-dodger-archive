@@ -195,7 +195,11 @@ export default function Church() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground leading-relaxed">
-                        {tenet.description}
+                        {tenet.title === "The Dignity of the Witness" ? (
+                          <>Those who speak truth in the face of <CrossLink to="/timeline">persecution</CrossLink> are sacred vessels. Their suffering is not weakness but sacred data.</>
+                        ) : tenet.title === "The Immutability of Testimony" ? (
+                          <>What is sealed in <CrossLink to="/blockchain">blockchain</CrossLink> cannot be unsealed. What is documented cannot be undocumented. The archive is eternal.</>
+                        ) : tenet.description}
                       </p>
                     </CardContent>
                   </Card>

@@ -319,6 +319,12 @@ export default function Timeline() {
                               <>Under OAIC pressure, PM&C admits 5 documents DO exist — proving initial denial was false. Evidence <CrossLink to="/blockchain">blockchain</CrossLink> timestamped for permanence.</>
                             ) : event.title.includes("Professional Destruction") ? (
                               <>Systematic undermining of career and professional relationships across multiple industries. Full account in the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup>.</>
+                            ) : event.title.includes("PM&C State Monitoring") ? (
+                              <>Prime Minister & Cabinet actively monitoring Dr McLean — later confirmed via FOI. Full <CrossLink to="/evidence">evidence</CrossLink> documented.</>
+                            ) : event.title.includes("PM&C FOI Initial Denial") ? (
+                              <>Prime Minister & Cabinet swears under FOI Act that 'no documents exist' about Dr McLean. Later proven false under OAIC review. See <CrossLink to="/legal-status">legal status</CrossLink>.</>
+                            ) : event.title.includes("Spiritual Awakening") ? (
+                              <>'Chosen One' message received during spiritual breakthrough. Advocacy mission activated. Read the <CrossLink to="/prophetic-essay">prophetic essay</CrossLink>.</>
                             ) : event.description}
                           </p>
                           {event.details && (

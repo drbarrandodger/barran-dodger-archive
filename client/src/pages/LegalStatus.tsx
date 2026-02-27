@@ -191,7 +191,13 @@ export default function LegalStatus() {
                         
                         <Progress value={getProgressValue(submission.status)} className="h-2 mb-4" />
                         
-                        <p className="text-sm text-foreground mb-3">{submission.description}</p>
+                        <p className="text-sm text-foreground mb-3">
+                          {submission.body === "ICC" ? (
+                            <><DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Rome Statute</DocumentPopup> Article 7 <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>crimes against humanity</DocumentPopup> submission documenting <CrossLink to="/timeline">systematic persecution</CrossLink>, torture, and attempted murder by Australian state actors. Based on <CrossLink to="/evidence">240+ blockchain-verified documents</CrossLink>.</>
+                          ) : submission.body === "UNHCR" ? (
+                            <>Asylum claim for refugee status within own democracy based on well-founded fear of <CrossLink to="/timeline">persecution</CrossLink> by state actors. Full account in the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup>.</>
+                          ) : submission.description}
+                        </p>
                         
                         {submission.reference && (
                           <p className="text-xs font-mono text-muted-foreground mb-2">
@@ -248,7 +254,15 @@ export default function LegalStatus() {
                         
                         <Progress value={getProgressValue(submission.status)} className="h-2 mb-4" />
                         
-                        <p className="text-sm text-foreground mb-3">{submission.description}</p>
+                        <p className="text-sm text-foreground mb-3">
+                          {submission.body === "NDIS Commission" ? (
+                            <>Formal misconduct complaint against Sukhi Tear and Diversitas WA for illegal cease and desist, fund obstruction. See <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment affidavit</DocumentPopup>.</>
+                          ) : submission.body === "Federal Court" ? (
+                            <>Employment status certification confirming DSS worker status, voiding ComCare/AAT denials. <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>Whistleblower</DocumentPopup> protections established.</>
+                          ) : submission.body === "Ombudsman" ? (
+                            <>Systemic complaint regarding multi-agency coordination in <CrossLink to="/timeline">persecution</CrossLink> campaign.</>
+                          ) : submission.description}
+                        </p>
                         
                         {submission.reference && (
                           <p className="text-xs font-mono text-muted-foreground mb-2">

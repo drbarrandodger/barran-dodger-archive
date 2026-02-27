@@ -394,7 +394,7 @@ export default function Publications() {
               Publications Archive
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              The complete collection of legal affidavits, sacred gospels, forensic analyses, <CrossLink to="/evidence">whistleblower documentation</CrossLink>, and theological papers. 
+              The complete collection of legal affidavits, sacred gospels, forensic analyses, <CrossLink to="/evidence">whistleblower documentation</CrossLink>, and theological papers documenting <CrossLink to="/timeline">systematic persecution</CrossLink>. 
               Every publication is part of a <CrossLink to="/blockchain">blockchain-verified</CrossLink> archive that cannot be altered or deleted.
             </p>
           </motion.section>

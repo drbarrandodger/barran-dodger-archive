@@ -300,7 +300,13 @@ export default function Donate() {
                         {point.icon}
                       </div>
                       <h3 className="font-bold text-primary mb-2">{point.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{point.description}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {point.title === "Blockchain-Sealed Testimony" ? (
+                          <>All evidence is cryptographically timestamped using OpenTimestamps on the Bitcoin <CrossLink to="/blockchain">blockchain</CrossLink>, ensuring immutability and permanent verification. View all verified documents.</>
+                        ) : point.title === "International Human Rights Recognition" ? (
+                          <>Formal submissions to UN Special Rapporteurs, UNHCR, and ICC demonstrate the case meets international standards for <CrossLink to="/timeline">systematic persecution</CrossLink>.</>
+                        ) : point.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>

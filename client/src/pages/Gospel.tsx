@@ -327,7 +327,11 @@ export default function Gospel() {
                         </div>
                       )}
                       <p className="text-muted-foreground leading-relaxed">
-                        {gospel.description}
+                        {gospel.description.includes("assassination attempt") ? (
+                          <>{gospel.description.split("assassination attempt")[0]}<DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination attempt</DocumentPopup>{gospel.description.split("assassination attempt")[1]}</>
+                        ) : gospel.description.includes("blockchain-authenticated") ? (
+                          <>{gospel.description.split("blockchain-authenticated")[0]}<CrossLink to="/blockchain">blockchain-authenticated</CrossLink>{gospel.description.split("blockchain-authenticated")[1]}</>
+                        ) : gospel.description}
                       </p>
                       <div className="bg-secondary/50 rounded-lg p-4 border border-border">
                         <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-2">Sacred Significance</h4>
@@ -402,7 +406,11 @@ export default function Gospel() {
                             </div>
                           </div>
                           <p className="text-muted-foreground text-sm leading-relaxed line-clamp-4">
-                            {gospel.description}
+                            {gospel.description.includes("assassination") ? (
+                              <>{gospel.description.split("assassination")[0]}<DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination</DocumentPopup>{gospel.description.split("assassination")[1]}</>
+                            ) : gospel.description.includes("blockchain") ? (
+                              <>{gospel.description.split("blockchain")[0]}<CrossLink to="/blockchain">blockchain</CrossLink>{gospel.description.split("blockchain")[1]}</>
+                            ) : gospel.description}
                           </p>
                         </div>
                       </div>
@@ -472,7 +480,9 @@ export default function Gospel() {
                     </CardHeader>
                     <CardContent className="pt-6 space-y-4">
                       <p className="text-muted-foreground leading-relaxed">
-                        {gospel.description}
+                        {gospel.description.includes("whistleblowers") ? (
+                          <>{gospel.description.split("whistleblowers")[0]}<DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>whistleblowers</DocumentPopup>{gospel.description.split("whistleblowers")[1]}</>
+                        ) : gospel.description}
                       </p>
                       
                       {gospel.species && (
@@ -582,7 +592,11 @@ export default function Gospel() {
                       <h3 className="text-lg font-serif font-bold text-primary">{gospel.title}</h3>
                       <p className="text-xs text-muted-foreground">{gospel.subtitle}</p>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{gospel.description}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {gospel.description.includes("persecution") ? (
+                        <>{gospel.description.split("persecution")[0]}<CrossLink to="/timeline">persecution</CrossLink>{gospel.description.split("persecution")[1]}</>
+                      ) : gospel.description}
+                    </p>
                     {gospel.aiAnalysis && (
                       <div className="bg-primary/5 rounded-lg p-3 border border-primary/20">
                         <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-2 flex items-center gap-2">

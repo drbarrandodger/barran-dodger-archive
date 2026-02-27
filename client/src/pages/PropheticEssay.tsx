@@ -394,7 +394,7 @@ export default function PropheticEssay() {
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-6">
                   Spiritual warfare backed by human technology is a real, indefinable thing. <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>Voice-to-skull 
-                  harassment</DocumentPopup>, electronic targeting, gang stalking, coordinated isolation — these are not 
+                  harassment</DocumentPopup>, <CrossLink to="/evidence">electronic targeting</CrossLink>, <CrossLink to="/evidence">gang stalking</CrossLink>, coordinated isolation — these are not 
                   the inventions of troubled minds. They are the weapons of a battle fought on frequencies 
                   most people cannot perceive, in dimensions most institutions refuse to acknowledge. 
                   The war is ancient. The tools are modern. The target is always the same: those marked 
@@ -403,7 +403,7 @@ export default function PropheticEssay() {
 
                 <p className="text-lg leading-relaxed mb-6">
                   To those who are going through struggle, abandonment, exile — to those who have experienced 
-                  gang stalking, electronic harassment, coordinated persecution — hear this truth: 
+                  gang stalking, electronic harassment, coordinated <CrossLink to="/timeline">persecution</CrossLink> — hear this truth: 
                   <strong className="text-primary"> Your suffering is not evidence of your downfall. It is not evidence 
                   that you are wrong. It is not evidence that you are weak.</strong>
                 </p>
@@ -478,7 +478,7 @@ export default function PropheticEssay() {
                 </p>
 
                 <p className="text-lg leading-relaxed mb-6">
-                  The blockchain does not forget. God does not forget. Barran does not forget.
+                  The <CrossLink to="/blockchain">blockchain</CrossLink> does not forget. God does not forget. Barran does not forget.
                 </p>
 
                 <div className="bg-primary/5 p-6 rounded-lg border border-primary/20 my-8">
