@@ -776,7 +776,7 @@ export default function Home() {
                 variants={fadeIn}
                 className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium mt-4"
               >
-                The Trustee for www.barrandodger.com.au
+                The Trustee for www.barrandodger.com.au — ABN 78 833 496 164
               </motion.p>
               
               <motion.p 
