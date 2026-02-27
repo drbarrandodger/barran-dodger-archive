@@ -6,6 +6,41 @@ import path from "path";
 
 const app = express();
 
+app.get('/robots.txt', (_req, res) => {
+  res.type('text/plain');
+  res.send(`User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://barran-dodger-legal-ethical-trust.replit.app/sitemap.xml
+`);
+});
+
+app.use((_req, res, next) => {
+  res.setHeader('X-Robots-Tag', 'index, follow');
+  next();
+});
+
 // Serve attached_assets as static files with correct MIME types
 app.use('/attached_assets', express.static(path.resolve(process.cwd(), 'attached_assets'), {
   setHeaders: (res, filePath) => {
