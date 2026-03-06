@@ -45,6 +45,7 @@ import coverGospelElivenChain2 from "@/assets/images/cover-gospel-eliven-chain-2
 import coverGodsMediaRelease from "@/assets/images/cover-gods-media-release.png";
 import coverAtherionWitnessed from "@/assets/images/cover-atherion-witnessed.png";
 import cover144Questions from "@/assets/images/cover-144-questions.png";
+import coverAdminAnnihilation from "@/assets/images/cover-admin-annihilation.png";
 import { FloatingCTA } from "@/components/FloatingCTA";
 
 const fadeIn = {
@@ -361,12 +362,21 @@ export default function Home() {
               </div>
 
               <div className="lg:col-span-4 bg-[hsl(38,92%,50%)]/5 p-8 flex flex-col justify-center items-center text-center space-y-4">
-                <div className="w-32 h-40 border-2 border-[hsl(38,92%,50%)] shadow-[0_0_30px_rgba(233,160,10,0.2)] bg-black/40 flex items-center justify-center relative group overflow-hidden rounded">
-                  <FileText className="h-16 w-16 text-[hsl(38,92%,50%)] opacity-40" />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60">
-                    <Eye className="h-8 w-8 text-white" />
+                <DocumentPopup {...KEY_DOCUMENTS.administrativeAnnihilation}>
+                  <div className="w-full aspect-[3/4] border-2 border-[hsl(38,92%,50%)] shadow-[0_0_30px_rgba(233,160,10,0.2)] bg-black/40 flex items-center justify-center relative group overflow-hidden rounded cursor-pointer">
+                    <img 
+                      src={coverAdminAnnihilation} 
+                      alt="The Architecture of Administrative Annihilation Cover" 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60">
+                      <div className="flex flex-col items-center gap-2">
+                        <Eye className="h-10 w-10 text-[hsl(38,92%,50%)]" />
+                        <span className="text-white font-bold text-sm uppercase tracking-widest">View & Download</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </DocumentPopup>
                 <div>
                   <p className="text-white font-serif font-bold italic">"When institutions destroy, they leave a trail of their own contradictions."</p>
                   <p className="text-[hsl(38,92%,50%)] text-xs uppercase tracking-widest mt-2 font-bold">— Dr. Richard McLean, 2026</p>
