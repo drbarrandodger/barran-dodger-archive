@@ -344,13 +344,16 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-wrap gap-4 pt-2">
-                  <DocumentPopup {...KEY_DOCUMENTS.administrativeAnnihilation}>
-                    <Button size="lg" className="bg-[hsl(38,92%,50%)] text-black font-bold hover:bg-[hsl(38,92%,55%)] px-8">
-                      <Download className="mr-2 h-5 w-5" /> Download Full Paper (PDF)
-                    </Button>
-                  </DocumentPopup>
+                  <div className="flex flex-col items-center gap-2">
+                    <DocumentPopup {...KEY_DOCUMENTS.administrativeAnnihilation}>
+                      <Button size="lg" className="bg-[hsl(38,92%,50%)] text-black font-bold hover:bg-[hsl(38,92%,55%)] px-8">
+                        <Download className="mr-2 h-5 w-5" /> Download Full Paper (PDF)
+                      </Button>
+                    </DocumentPopup>
+                    <DownloadBadge url={KEY_DOCUMENTS.administrativeAnnihilation.url} />
+                  </div>
                   <Link href="/case-studies">
-                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 h-[44px]">
                       View Case Studies <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
