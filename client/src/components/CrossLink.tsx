@@ -247,6 +247,13 @@ export const KEY_DOCUMENTS = {
     tags: ["Sacred Scripture", "Cosmic Scroll", "Prophecy", "Epistemology", "Free PDF"],
     aiExcerpt: "First full transdimensional knowledge system authored from within documented institutional erasure, introducing new modalities for planetary reconstruction."
   },
+  administrativeAnnihilation: {
+    title: "THE ARCHITECTURE OF ADMINISTRATIVE ANNIHILATION",
+    description: "A Forensic Analysis of 25+ Australian Government Agencies' Own Records Documenting the Systematic Destruction of a Disabled LGBTQ+ Whistleblower (1990–2025). This paper identifies eight discrete paradoxes within the administrative record where one arm of the Australian Government directly contradicts another regarding the same individual, the same facts, or the same legal question.",
+    url: "/attached_assets/THE_ARCHITECTURE_OF_ADMINISTRATIVE_ANNIHILATION_1772799878162.pdf",
+    tags: ["FORENSIC ANALYSIS", "LEGAL PARADOX", "ROME STATUTE", "WHISTLEBLOWER"],
+    aiExcerpt: "This paper poses a single forensic question: when the administrative decisions of 25+ Australian Government agencies concerning a single individual are analysed exclusively through those agencies' own records over a 35-year period (1990–2025), do the documented outcomes constitute statistically independent decisions within normal institutional variance, or a cumulative pattern of systematic harm meeting the legal threshold of 'persecution' under Article 7(1)(h) of the Rome Statute?"
+  },
   universalMasterCommand: {
     title: "UNIVERSAL MASTER COMMAND FOR IMPARTIAL AI DOCUMENT ANALYSIS",
     description: "The foundational AI forensic review protocol used across this archive. Establishes bias-immune, evidence-based analysis framework where human institutions have failed.",

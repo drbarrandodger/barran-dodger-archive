@@ -307,6 +307,73 @@ export default function Home() {
       />
       <Navigation />
       
+      {/* NEW: THE ARCHITECTURE OF ADMINISTRATIVE ANNIHILATION - Top Priority Document */}
+      <section className="pt-32 pb-8 px-4 bg-black relative overflow-hidden" data-testid="section-admin-annihilation">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(233,160,10,0.1)_0%,_transparent_70%)] pointer-events-none" />
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="border-2 border-[hsl(38,92%,50%)] rounded-2xl overflow-hidden bg-gradient-to-br from-[hsl(222,55%,8%)] to-black"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+              <div className="lg:col-span-8 p-8 md:p-10 space-y-6 border-b lg:border-b-0 lg:border-r border-[hsl(38,92%,50%)]/20">
+                <div className="space-y-2">
+                  <Badge variant="outline" className="border-[hsl(38,92%,50%)] text-[hsl(38,92%,50%)] uppercase tracking-tighter px-3 font-bold">
+                    CRITICAL FORENSIC ANALYSIS (MARCH 2026)
+                  </Badge>
+                  <h2 className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
+                    THE ARCHITECTURE OF ADMINISTRATIVE ANNIHILATION
+                  </h2>
+                </div>
+
+                <div className="bg-white/[0.03] border border-white/5 rounded-xl p-6 space-y-4">
+                  <div className="flex items-center gap-2 text-[hsl(38,92%,50%)]">
+                    <Sparkles className="h-5 w-5" />
+                    <h3 className="font-bold uppercase tracking-wider text-sm">Impartial AI Significance Analysis</h3>
+                  </div>
+                  <div className="text-gray-300 text-sm leading-relaxed space-y-3">
+                    <p>
+                      This forensic paper identifies a <span className="text-white font-bold">statistically impossible pattern</span> of institutional harm. By analyzing 2,077 primary source documents—authored by the government itself—it exposes eight discrete paradoxes where different arms of the Australian state directly contradict one another to the detriment of a single citizen.
+                    </p>
+                    <p>
+                      The analysis demonstrates that the cumulative effect of these cascading adverse decisions meets the <span className="text-[hsl(38,92%,50%)] font-bold">legal threshold for persecution under Article 7(1)(h) of the Rome Statute</span>. It proves that the government's own records constitute both the evidence of systematic harm and the irrefutable basis for legal vindication.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-4 pt-2">
+                  <DocumentPopup {...KEY_DOCUMENTS.administrativeAnnihilation}>
+                    <Button size="lg" className="bg-[hsl(38,92%,50%)] text-black font-bold hover:bg-[hsl(38,92%,55%)] px-8">
+                      <Download className="mr-2 h-5 w-5" /> Download Full Paper (PDF)
+                    </Button>
+                  </DocumentPopup>
+                  <Link href="/case-studies">
+                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                      View Case Studies <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 bg-[hsl(38,92%,50%)]/5 p-8 flex flex-col justify-center items-center text-center space-y-4">
+                <div className="w-32 h-40 border-2 border-[hsl(38,92%,50%)] shadow-[0_0_30px_rgba(233,160,10,0.2)] bg-black/40 flex items-center justify-center relative group overflow-hidden rounded">
+                  <FileText className="h-16 w-16 text-[hsl(38,92%,50%)] opacity-40" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60">
+                    <Eye className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-white font-serif font-bold italic">"When institutions destroy, they leave a trail of their own contradictions."</p>
+                  <p className="text-[hsl(38,92%,50%)] text-xs uppercase tracking-widest mt-2 font-bold">— Dr. Richard McLean, 2026</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* PURPOSE STATEMENT - The Opening Strike */}
       <section className="relative pt-32 pb-0 md:pt-40 md:pb-0 px-4 bg-black overflow-hidden" data-testid="section-purpose-statement">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(233,160,10,0.08)_0%,_transparent_70%)] pointer-events-none" />
