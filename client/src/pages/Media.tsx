@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { CommentSection } from "@/components/CommentSection";
 import { 
   Newspaper, Mail, Download, ExternalLink, FileText, 
   Camera, Video, Mic, Globe, Clock, Share2
@@ -221,6 +222,9 @@ export default function Media() {
               url="https://www.barrandodger.com.au/media"
             />
           </motion.section>
+        </div>
+        <div className="container mx-auto max-w-4xl px-4">
+          <CommentSection pageSlug="media" title="Media Discussion" />
         </div>
       </main>
       

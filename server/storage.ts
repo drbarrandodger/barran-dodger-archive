@@ -1,17 +1,20 @@
 import { db } from "./db";
-import { eq, sql } from "drizzle-orm";
+import { eq, sql, desc } from "drizzle-orm";
 import {
   subscribers,
   inquiries,
   evidenceItems,
   downloadCounts,
+  comments,
   type InsertSubscriber,
   type InsertInquiry,
   type InsertEvidence,
+  type InsertComment,
   type Subscriber,
   type Inquiry,
   type EvidenceItem,
-  type DownloadCount
+  type DownloadCount,
+  type Comment
 } from "@shared/schema";
 
 export interface IStorage {
@@ -21,6 +24,8 @@ export interface IStorage {
   createEvidenceItem(evidence: InsertEvidence): Promise<EvidenceItem>;
   getDownloadCount(slug: string): Promise<number>;
   incrementDownloadCount(slug: string): Promise<number>;
+  getComments(pageSlug: string): Promise<Comment[]>;
+  createComment(comment: InsertComment): Promise<Comment>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -70,6 +75,21 @@ export class DatabaseStorage implements IStorage {
       })
       .returning();
     return row.count;
+  }
+  async getComments(pageSlug: string): Promise<Comment[]> {
+    return await db
+      .select()
+      .from(comments)
+      .where(eq(comments.pageSlug, pageSlug))
+      .orderBy(desc(comments.createdAt));
+  }
+
+  async createComment(insertComment: InsertComment): Promise<Comment> {
+    const [comment] = await db
+      .insert(comments)
+      .values(insertComment)
+      .returning();
+    return comment;
   }
 }
 

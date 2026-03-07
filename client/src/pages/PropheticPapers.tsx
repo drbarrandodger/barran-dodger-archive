@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { CommentSection } from "@/components/CommentSection";
 import { BookOpen, FileText, Shield, Sparkles, Scale, ExternalLink, Download, ScrollText, Flame, Link2, Globe } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -402,6 +403,9 @@ export default function PropheticPapers() {
               url="https://www.barrandodger.com.au/prophetic-papers"
             />
           </motion.section>
+        </div>
+        <div className="container mx-auto max-w-4xl px-4">
+          <CommentSection pageSlug="prophetic-papers" title="Prophetic Papers Discussion" />
         </div>
       </main>
 

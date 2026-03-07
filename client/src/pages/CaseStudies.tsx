@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
+import { CommentSection } from "@/components/CommentSection";
 import { 
   FileText, 
   Building2, 
@@ -1122,6 +1123,9 @@ export default function CaseStudies() {
               url="https://www.barrandodger.com.au/case-studies"
             />
           </motion.section>
+        </div>
+        <div className="container mx-auto max-w-4xl px-4">
+          <CommentSection pageSlug="case-studies" title="Case Studies Discussion" />
         </div>
       </main>
 

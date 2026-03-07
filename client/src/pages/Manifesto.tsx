@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge } from "@/components/DownloadCounter";
+import { CommentSection } from "@/components/CommentSection";
 import { 
   BookOpen, 
   Scale, 
@@ -1008,6 +1009,9 @@ export default function Manifesto() {
               url="https://www.barrandodger.com.au/manifesto"
             />
           </motion.section>
+        </div>
+        <div className="container mx-auto max-w-4xl px-4">
+          <CommentSection pageSlug="manifesto" title="Manifesto Discussion" />
         </div>
       </main>
 

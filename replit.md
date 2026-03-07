@@ -27,7 +27,7 @@ Preferred communication style: Simple, everyday language.
 - **Database**: PostgreSQL via Drizzle ORM
 - **Schema Location**: `shared/schema.ts`
 - **Migrations**: Drizzle Kit
-- **Tables**: subscribers, inquiries, evidence_items
+- **Tables**: subscribers, inquiries, evidence_items, download_counts, comments
 
 ### Shared Code
 The `shared/` directory contains `schema.ts` for database and Zod validation, and `routes.ts` for type-safe API route definitions.
@@ -46,6 +46,8 @@ The `shared/` directory contains `schema.ts` for database and Zod validation, an
     - **Contact Form**: Collects inquiries and stores them in the database.
     - **Donation System**: Integrated donation banner with PayID.
     - **Theming**: Dark/light mode toggle with persistence.
+    - **Comment Sections**: User discussion on document pages (Evidence, Gospel, Prophetic Papers, Manifesto, Case Studies, Media). CommentSection component in `client/src/components/CommentSection.tsx`. Rate-limited to 5 comments per minute per IP.
+    - **Download Counters**: Real-time download tracking with DownloadBadge and trackDownload across all document download links. Baselines seeded from Analytics data.
 
 ### Eliven Chain Series (8 Documents)
 - PDFs stored in `client/public/documents/` with clean filenames

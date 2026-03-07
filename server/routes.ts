@@ -3,7 +3,7 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
-import { downloadCounts } from "@shared/schema";
+import { downloadCounts, insertCommentSchema } from "@shared/schema";
 import { api } from "@shared/routes";
 import { z } from "zod";
 import { listDriveFiles, downloadDriveFile, searchDriveForEvidence, DriveFile } from "./googleDrive";
@@ -242,6 +242,53 @@ export async function registerRoutes(
     }
   }
   seedDownloadCounts().catch(console.error);
+
+  // Comments - rate limiting
+  const commentRateLimit = new Map<string, number[]>();
+  function isRateLimited(ip: string): boolean {
+    const now = Date.now();
+    const window = 60000;
+    const maxPerWindow = 5;
+    const timestamps = (commentRateLimit.get(ip) || []).filter(t => now - t < window);
+    if (timestamps.length >= maxPerWindow) return true;
+    timestamps.push(now);
+    commentRateLimit.set(ip, timestamps);
+    return false;
+  }
+
+  app.get('/api/comments/:pageSlug', async (req, res) => {
+    try {
+      const comments = await storage.getComments(req.params.pageSlug);
+      res.json(comments);
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  app.post('/api/comments', async (req, res) => {
+    try {
+      const clientIp = req.ip || req.socket.remoteAddress || "unknown";
+      if (isRateLimited(clientIp)) {
+        return res.status(429).json({ message: "Too many comments. Please wait a moment before posting again." });
+      }
+      const parsed = insertCommentSchema.safeParse(req.body);
+      if (!parsed.success) {
+        return res.status(400).json({ message: "Invalid comment data", errors: parsed.error.flatten() });
+      }
+      const sanitized = {
+        ...parsed.data,
+        displayName: parsed.data.displayName.trim().slice(0, 50),
+        message: parsed.data.message.trim().slice(0, 2000),
+      };
+      if (!sanitized.displayName || !sanitized.message) {
+        return res.status(400).json({ message: "Name and message are required" });
+      }
+      const comment = await storage.createComment(sanitized);
+      res.status(201).json(comment);
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
 
   // Google Drive Integration - Scan and import documents
   app.get('/api/drive/list', async (req, res) => {

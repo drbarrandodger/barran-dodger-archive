@@ -10,6 +10,7 @@ import { ProgressTracker, useDocumentProgress } from "@/components/ProgressTrack
 import { useDocumentPreview } from "@/components/DocumentPreview";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { CommentSection } from "@/components/CommentSection";
 import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye, Search, Brain, MessageCircle, Flame, Star, Skull } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -3271,6 +3272,9 @@ export default function Evidence() {
               url="https://www.barrandodger.com.au/evidence"
             />
           </motion.section>
+        </div>
+        <div className="container mx-auto max-w-4xl px-4">
+          <CommentSection pageSlug="evidence" title="Evidence Discussion" />
         </div>
       </main>
 

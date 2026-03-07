@@ -62,3 +62,19 @@ export const downloadCounts = pgTable("download_counts", {
 });
 
 export type DownloadCount = typeof downloadCounts.$inferSelect;
+
+export const comments = pgTable("comments", {
+  id: serial("id").primaryKey(),
+  pageSlug: text("page_slug").notNull(),
+  displayName: text("display_name").notNull(),
+  message: text("message").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const insertCommentSchema = createInsertSchema(comments).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type Comment = typeof comments.$inferSelect;
+export type InsertComment = z.infer<typeof insertCommentSchema>;

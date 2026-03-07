@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { BookOpen, Download, ExternalLink, Link2, ScrollText, Flame, Sparkles, Globe, Star, Heart, Shield, FileText } from "lucide-react";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { CommentSection } from "@/components/CommentSection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -669,6 +670,9 @@ export default function Gospel() {
               url="https://www.barrandodger.com.au/gospel"
             />
           </motion.section>
+        </div>
+        <div className="container mx-auto max-w-4xl px-4">
+          <CommentSection pageSlug="gospel" title="Gospel Discussion" />
         </div>
       </main>
 
