@@ -46,7 +46,8 @@ function Router() {
     <>
       <ScrollToTop />
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path="/" component={ViralLanding} />
+        <Route path="/archive" component={Home} />
         <Route path="/start-here" component={StartHere} />
         <Route path="/mission" component={Mission} />
         <Route path="/research" component={LegalResearch} />
@@ -68,7 +69,7 @@ function Router() {
         <Route path="/evidence-vault" component={EvidenceVault} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
-        <Route component={Home} />
+        <Route component={ViralLanding} />
       </Switch>
     </>
   );

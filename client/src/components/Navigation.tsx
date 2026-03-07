@@ -43,7 +43,7 @@ export function Navigation() {
 
   const navLinks = [
     { href: "/start-here", label: "Start Here", highlight: true },
-    { href: "/", label: "Home" },
+    { href: "/archive", label: "Full Archive" },
     { href: "/manifesto", label: "Manifesto" },
     { href: "/josephs-coat", label: "Joseph's Coat" },
     { href: "/gospel", label: "Gospel" },
@@ -52,7 +52,6 @@ export function Navigation() {
     { href: "/evidence-vault", label: "Evidence Vault" },
     { href: "/taxpayer-cost-analysis", label: "Cost Analysis" },
     { href: "/blockchain", label: "Timestamps" },
-    { href: "/the-truth", label: "The Truth" },
     { href: "/store", label: "Store" },
     { href: "/contact", label: "Contact" },
   ];

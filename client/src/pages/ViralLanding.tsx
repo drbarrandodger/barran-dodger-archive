@@ -93,14 +93,14 @@ export default function ViralLanding() {
         title="The Documents Australia Doesn't Want You to See"
         description="240+ blockchain-verified documents expose 35 years of Australian government persecution. Download the evidence. Share the truth. They can't erase what's already been seen."
         keywords="viral evidence, banned documents Australia, whistleblower documents, government cover up, blockchain evidence, free download"
-        path="/the-truth"
+        path="/"
         type="article"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           "name": "The Documents Australia Doesn't Want You to See",
           "description": "Top 10 most critical blockchain-verified documents exposing Australian government corruption",
-          "url": "https://www.barrandodger.com.au/the-truth",
+          "url": "https://www.barrandodger.com.au/",
           "publisher": {
             "@type": "Organization",
             "name": "Barran Dodger Legal & Ethical Trust Fund",
@@ -255,7 +255,12 @@ export default function ViralLanding() {
             description="240+ blockchain-verified documents exposing 35 years of Australian government persecution against Dr Richard McLean (Barran Dodger). Free downloads."
             url={shareUrl}
           />
-          <div className="pt-6">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/archive">
+              <Button size="lg" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold gap-2" data-testid="button-viral-explore-archive">
+                <Eye className="h-4 w-4" /> Explore the Full Archive
+              </Button>
+            </Link>
             <Link href="/donate">
               <Button variant="outline" size="lg" className="border-[hsl(38,92%,50%)]/40 text-[hsl(38,92%,50%)] gap-2" data-testid="button-viral-donate">
                 <ArrowRight className="h-4 w-4" /> Support This Cause

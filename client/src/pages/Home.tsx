@@ -252,7 +252,7 @@ export default function Home() {
         title="240+ Blockchain-Verified Documents Expose Australian Government Corruption"
         description="They spent $11.5M to silence one whistleblower. 14 forced psychiatric detentions. An assassination attempt in 2024. Institutional murder in 2021 where I was revived by God. 35 years of persecution documented in 240+ blockchain-sealed forensic records. I DARE YOU TO PROVE ME WRONG."
         keywords="Australian government corruption exposed, whistleblower persecution Australia, Dr Richard McLean, Barran Dodger, psychiatric abuse Australia, NDIS fraud, forced psychiatric detention, assassination attempt whistleblower, blockchain verified evidence, government cover up Australia 2025"
-        path="/"
+        path="/archive"
         jsonLd={{
           "@context": "https://schema.org",
           "@graph": [
