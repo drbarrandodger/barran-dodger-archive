@@ -970,6 +970,7 @@ export default function CaseStudies() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     data-testid="link-download-paradox-pdf-bottom"
+                    onClick={() => trackDownload("/attached_assets/THE_PARADOX_OF_PERSECUTION-How_the_Australian_Government's_Own_1770757189035.pdf")}
                   >
                     <Button variant="default" className="gap-2 w-full sm:w-auto">
                       <Download className="h-4 w-4" /> Download Full Paper (PDF) <DownloadBadge url="/attached_assets/THE_PARADOX_OF_PERSECUTION-How_the_Australian_Government's_Own_1770757189035.pdf" />

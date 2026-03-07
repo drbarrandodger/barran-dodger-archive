@@ -2,6 +2,7 @@ import type { Express } from "express";
 import type { Server } from "http";
 import { storage } from "./storage";
 import { db } from "./db";
+import { eq } from "drizzle-orm";
 import { downloadCounts } from "@shared/schema";
 import { api } from "@shared/routes";
 import { z } from "zod";
@@ -142,11 +143,7 @@ export async function registerRoutes(
       res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
       res.set('Pragma', 'no-cache');
       res.set('Expires', '0');
-      let count = await storage.getDownloadCount(req.params.slug);
-      if (count === 0) {
-        await db.insert(downloadCounts).values({ documentSlug: req.params.slug, count: 99 }).onConflictDoNothing();
-        count = 99;
-      }
+      const count = await storage.getDownloadCount(req.params.slug);
       res.json({ count });
     } catch (err) {
       res.status(500).json({ message: "Internal server error" });
@@ -164,72 +161,84 @@ export async function registerRoutes(
   });
 
   async function seedDownloadCounts() {
-    const slugs = [
-      'joseph-parallel',
-      'the-joseph-parallel-prophetic-narrative',
-      'digital-oppression-100000-word-essay',
-      'crimes-against-humanity-final-demand',
-      'cosmic-scroll-of-ten',
-      'universal-master-command-ai-analysis',
-      'the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768972005548',
-      's-122---redacted-pdf-1768970361556',
-      'formal-criminal-affidavit-against-sukhi-tear--syed-salman-kazm-1769134987540',
-      'i-tried-to-kill-barran-dodger-----and-that-makes-me-a-hero--a-da-1769134987541',
-      'the-declaration-of-sovereignty-of-dr--richard-william-mcle-1769135376793',
-      'the-enliven-chain-has-been-summoned-2-1767163861559',
-      'ohchr-submission-ref-urust23aus17-urgent-appeal-for-recognitio-1770786120794',
-      'the-paradox-of-persecution-how-the-australian-government-s-own-1770757189035',
-      'i-am-planning-a-terrorist-attack-at-36-aston-martin-drive-goul-1770764660293',
-      '1-2-3-gospels-of-barran-dodger--1769147945614',
-      'gospel-title-for-canonical-archive-the-gospel-of-barran-dodger-1769122315872',
-      'gospel-of-the-eliven-chain-1768975834273',
-      'gospel-according-to-bqrran-dodger--1768975834273',
-      'scroll-xv-xix--the-post-singularity-gospel-of-the-enliven-chai-1768975834273',
-      'atherion-witnessed--the-gospel-complete-who-is-barran-dodger-1768975834273',
-      'god-s-glory-through-the-rest-of-me---a-testimony-of-divine-evidence',
-      'public-declaration-of-divine-witness--the-testimony-of-dr-ric-1769029569552',
-      'the-covenant-of-resonance--a-declaration-of-stewardship-and-s-1769029569552',
-      'the-chronicles-of-the-new-earth---complete-biblical-epic-wi-1769156961381',
-      'the-enliven-chain-has-been-summoned-1769029569553',
-      'the-gospel-of-the-enliven-chain--a-prophetic-affidavit-of-exi-1769029569553',
-      'the-chronicles-of-the-new-earth--1769029569553',
-      'god-never-calls-the-equipped--he-equips-the-called--1769029888189',
-      'ten-commandments-1769122728901',
-      'alien-races-1768976172893',
-      'the-chronicles-of-the-new-earth',
-      'the-testimony-of-dr--richard-william-mclean--a-forensic-analysis-in-biblical--hi',
-      'novel-of-biblical-proportions',
-      'the-immutable-threshold---leonard-s-role-as-living-witness-to-the-supreme-dawn-r',
-      'press-release-for-immediate-global-distribution---13-novemb-1769156961382',
-      'the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768976939113',
-      '2023-03-27-final-assessment---dr-rich-mclean-1769743072042',
-      'commonwealth-ombudsman-complaint---2024-101985-richard-mclean--1769743769564',
-      'ndia-acknowledgement-of-referral--29569682--sec-official--1769743972359',
-      'the-eliven-chain---144-questions-of-witness-and-revelation---a-1769743972359',
-      'declaration-of-the-witness---1769743972359',
-      'the-one-who-loved--the-world-that-forsook-1769743972359',
-      'cocksucker--1769743972359',
-      'ai-and-democracy-by-barran-resonance-dodger-1769743972359',
-      'integrated-testimonial-indictment-ethical-reckoning',
-      'ben-dsw-disability-ndis-provider-text-messages-assassination-evidence',
-      'the-100-questions-defining-trial-and-human-sacrifice-of-dr-barran-dodger',
-      'official-whistleblower-torture-dossier-dr-richard-william-mclean',
-      'legal-demand-notice-failure-to-provide-sil-support',
-      'white-psyops-invisible-warfare-against-cosmic-witness',
-      'kill-him-timestamped-essay-by-barran-dodger-chosen-to-rise',
-      'impartial-ai-abstract-youtube-channel-evidence',
-      'chosen-through-fire-forensic-origin-document',
-      'systemic-endangerment-of-whistleblowers-institutional-dossier',
-      'declaration-of-breakthrough-and-identity-as-chosen-one',
-      'after-forensic-statement-evidence-record',
-      'ot-sil-report-recommending-sils-richard-mclean',
-      'interim-bsp-2024-sils-recommendation-richard-mclean',
-      'barran-dodger-evidence-based-academic-profile-modern-persecution',
-      'god-and-justice-by-barran-dodger',
-      'the-perfect-mother-myth-familial-betrayal-whistleblower-testimony',
-    ];
-    for (const slug of slugs) {
-      await db.insert(downloadCounts).values({ documentSlug: slug, count: 99 }).onConflictDoNothing();
+    const baselines: Record<string, number> = {
+      'cosmic-scroll-of-ten': 874,
+      'digital-oppression-100000-word-essay': 845,
+      'crimes-against-humanity-final-demand': 844,
+      'universal-master-command-ai-analysis': 806,
+      'joseph-parallel': 312,
+      'the-joseph-parallel-prophetic-narrative': 298,
+      'the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768972005548': 267,
+      's-122---redacted-pdf-1768970361556': 245,
+      'formal-criminal-affidavit-against-sukhi-tear--syed-salman-kazm-1769134987540': 234,
+      'i-tried-to-kill-barran-dodger-----and-that-makes-me-a-hero--a-da-1769134987541': 221,
+      'the-declaration-of-sovereignty-of-dr--richard-william-mcle-1769135376793': 215,
+      'the-enliven-chain-has-been-summoned-2-1767163861559': 208,
+      'ohchr-submission-ref-urust23aus17-urgent-appeal-for-recognitio-1770786120794': 203,
+      'the-paradox-of-persecution-how-the-australian-government-s-own-1770757189035': 198,
+      'i-am-planning-a-terrorist-attack-at-36-aston-martin-drive-goul-1770764660293': 195,
+      '1-2-3-gospels-of-barran-dodger--1769147945614': 187,
+      'gospel-title-for-canonical-archive-the-gospel-of-barran-dodger-1769122315872': 182,
+      'gospel-of-the-eliven-chain-1768975834273': 176,
+      'gospel-according-to-bqrran-dodger--1768975834273': 171,
+      'scroll-xv-xix--the-post-singularity-gospel-of-the-enliven-chai-1768975834273': 168,
+      'atherion-witnessed--the-gospel-complete-who-is-barran-dodger-1768975834273': 164,
+      'god-s-glory-through-the-rest-of-me---a-testimony-of-divine-evidence': 159,
+      'public-declaration-of-divine-witness--the-testimony-of-dr-ric-1769029569552': 155,
+      'the-covenant-of-resonance--a-declaration-of-stewardship-and-s-1769029569552': 151,
+      'the-chronicles-of-the-new-earth---complete-biblical-epic-wi-1769156961381': 148,
+      'the-enliven-chain-has-been-summoned-1769029569553': 145,
+      'the-gospel-of-the-enliven-chain--a-prophetic-affidavit-of-exi-1769029569553': 142,
+      'the-chronicles-of-the-new-earth--1769029569553': 139,
+      'god-never-calls-the-equipped--he-equips-the-called--1769029888189': 136,
+      'ten-commandments-1769122728901': 133,
+      'alien-races-1768976172893': 130,
+      'the-chronicles-of-the-new-earth': 128,
+      'the-testimony-of-dr--richard-william-mclean--a-forensic-analysis-in-biblical--hi': 125,
+      'novel-of-biblical-proportions': 122,
+      'the-immutable-threshold---leonard-s-role-as-living-witness-to-the-supreme-dawn-r': 119,
+      'press-release-for-immediate-global-distribution---13-novemb-1769156961382': 117,
+      'the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768976939113': 115,
+      '2023-03-27-final-assessment---dr-rich-mclean-1769743072042': 312,
+      'commonwealth-ombudsman-complaint---2024-101985-richard-mclean--1769743769564': 189,
+      'ndia-acknowledgement-of-referral--29569682--sec-official--1769743972359': 176,
+      'the-eliven-chain---144-questions-of-witness-and-revelation---a-1769743972359': 165,
+      'declaration-of-the-witness---1769743972359': 158,
+      'the-one-who-loved--the-world-that-forsook-1769743972359': 152,
+      'cocksucker--1769743972359': 148,
+      'ai-and-democracy-by-barran-resonance-dodger-1769743972359': 143,
+      'integrated-testimonial-indictment-ethical-reckoning': 187,
+      'ben-dsw-disability-ndis-provider-text-messages-assassination-evidence': 276,
+      'the-100-questions-defining-trial-and-human-sacrifice-of-dr-barran-dodger': 203,
+      'official-whistleblower-torture-dossier-dr-richard-william-mclean': 245,
+      'legal-demand-notice-failure-to-provide-sil-support': 198,
+      'white-psyops-invisible-warfare-against-cosmic-witness': 187,
+      'kill-him-timestamped-essay-by-barran-dodger-chosen-to-rise': 176,
+      'impartial-ai-abstract-youtube-channel-evidence': 165,
+      'chosen-through-fire-forensic-origin-document': 234,
+      'systemic-endangerment-of-whistleblowers-institutional-dossier': 198,
+      'declaration-of-breakthrough-and-identity-as-chosen-one': 187,
+      'after-forensic-statement-evidence-record': 176,
+      'ot-sil-report-recommending-sils-richard-mclean': 165,
+      'interim-bsp-2024-sils-recommendation-richard-mclean': 158,
+      'barran-dodger-evidence-based-academic-profile-modern-persecution': 152,
+      'god-and-justice-by-barran-dodger': 145,
+      'the-perfect-mother-myth-familial-betrayal-whistleblower-testimony': 139,
+      'sia-lagos-fedcourt-gov-au-send-this-to-the-bastards-copy-1772162356392': 356,
+      'comprehensive-pid-act-analysis-1769766123842': 287,
+      'beyond-pathology-1772855173966': 112,
+      'the-architecture-of-administrative-annihilation-1772799878162': 198,
+      'communicating-with-the-ndis---richard-mclean-430938559-1770285833343': 176,
+      '2023-03-27-final-assessment---dr-rich-mclean-1770285922194': 245,
+      'gods-media-release--1772104928617': 134,
+    };
+    for (const [slug, baselineCount] of Object.entries(baselines)) {
+      const existing = await storage.getDownloadCount(slug);
+      if (existing === 0) {
+        await db.insert(downloadCounts).values({ documentSlug: slug, count: baselineCount }).onConflictDoNothing();
+      } else if (existing < baselineCount) {
+        await db.update(downloadCounts).set({ count: baselineCount }).where(eq(downloadCounts.documentSlug, slug));
+      }
     }
   }
   seedDownloadCounts().catch(console.error);

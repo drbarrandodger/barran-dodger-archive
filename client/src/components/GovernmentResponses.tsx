@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { trackDownload, DownloadBadge } from "@/components/DownloadCounter";
 
 import agLetterImg from "@assets/IMG_3189_1770285738511.png";
 
@@ -259,10 +260,14 @@ export function GovernmentResponses() {
             <a 
               href="/attached_assets/Communicating_with_the_NDIS_-_Richard_McLean_430938559_1770285833343.pdf" 
               target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackDownload("/attached_assets/Communicating_with_the_NDIS_-_Richard_McLean_430938559_1770285833343.pdf")}
+              data-testid="link-download-ndia-letter"
             >
               <Button variant="default" className="w-full">
                 <FileText className="w-4 h-4 mr-2" />
                 View Full NDIA Letter (PDF)
+                <DownloadBadge url="/attached_assets/Communicating_with_the_NDIS_-_Richard_McLean_430938559_1770285833343.pdf" />
               </Button>
             </a>
           </div>
@@ -312,10 +317,14 @@ export function GovernmentResponses() {
             <a 
               href="/attached_assets/2023_03_27_Final_Assessment_-_Dr_Rich_McLean_1770285922194.pdf" 
               target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackDownload("/attached_assets/2023_03_27_Final_Assessment_-_Dr_Rich_McLean_1770285922194.pdf")}
+              data-testid="link-download-federal-court-letter"
             >
               <Button variant="default" className="w-full">
                 <FileText className="w-4 h-4 mr-2" />
                 View Full Federal Court Letter (PDF)
+                <DownloadBadge url="/attached_assets/2023_03_27_Final_Assessment_-_Dr_Rich_McLean_1770285922194.pdf" />
               </Button>
             </a>
           </div>
