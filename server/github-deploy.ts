@@ -1,6 +1,3 @@
-// GitHub deployment script - pushes site to GitHub Pages
-// Uses the Replit GitHub connector for authentication
-// Supports resumable uploads via progress file
 import { Octokit } from '@octokit/rest';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -45,7 +42,13 @@ const PROGRESS_FILE = path.join(process.cwd(), 'deploy-progress.json');
 
 interface FileMeta { relativePath: string; fullPath: string; size: number }
 interface BlobEntry { path: string; mode: '100644'; type: 'blob'; sha: string }
-interface Progress { blobs: BlobEntry[]; uploadedPaths: string[]; phase: string }
+interface SubtreeEntry { path: string; mode: '040000'; type: 'tree'; sha: string }
+interface Progress {
+  blobs: BlobEntry[];
+  uploadedPaths: string[];
+  phase: string;
+  subtrees?: Record<string, string>;
+}
 
 function loadProgress(): Progress {
   try {
@@ -53,7 +56,7 @@ function loadProgress(): Progress {
       return JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf-8'));
     }
   } catch {}
-  return { blobs: [], uploadedPaths: [], phase: 'upload' };
+  return { blobs: [], uploadedPaths: [], phase: 'upload', subtrees: {} };
 }
 
 function saveProgress(progress: Progress) {
@@ -82,6 +85,25 @@ function listAllFiles(dir: string, base: string = dir): FileMeta[] {
 
 function readFileBase64(filePath: string): string {
   return fs.readFileSync(filePath).toString('base64');
+}
+
+async function retryCreateTree(octokit: Octokit, owner: string, repo: string, tree: any[], maxRetries = 3): Promise<string> {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const { data } = await octokit.git.createTree({ owner, repo, tree });
+      return data.sha;
+    } catch (err: any) {
+      console.log(`   Tree creation attempt ${attempt}/${maxRetries} failed: ${err.status || ''} ${err.message?.substring(0, 80)}`);
+      if (attempt < maxRetries) {
+        const delay = attempt * 5000;
+        console.log(`   Retrying in ${delay / 1000}s...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      } else {
+        throw err;
+      }
+    }
+  }
+  throw new Error('Tree creation failed after all retries');
 }
 
 async function deploy() {
@@ -140,12 +162,14 @@ async function deploy() {
   console.log(`Total size: ${(totalSize / 1024 / 1024).toFixed(1)}MB`);
 
   const progress = loadProgress();
+  if (!progress.subtrees) progress.subtrees = {};
 
   if (progress.phase === 'done') {
     console.log('Previous deployment completed. Clearing progress for fresh deploy...');
     progress.blobs = [];
     progress.uploadedPaths = [];
     progress.phase = 'upload';
+    progress.subtrees = {};
   }
 
   if (progress.phase === 'upload') {
@@ -199,17 +223,133 @@ async function deploy() {
       console.log(`   Skipped ${skipped} files due to upload errors.`);
     }
     console.log(`Upload phase complete: ${progress.blobs.length} blobs ready.`);
-    progress.phase = 'commit';
+    progress.phase = 'subtrees';
     saveProgress(progress);
   }
 
   if (progress.phase === 'commit') {
-    console.log(`Building tree from ${progress.blobs.length} blobs...`);
-    const { data: tree } = await octokit.git.createTree({
-      owner: user.login,
-      repo: repoName,
-      tree: progress.blobs,
-    });
+    progress.phase = 'subtrees';
+    progress.subtrees = {};
+    saveProgress(progress);
+  }
+
+  if (progress.phase === 'subtrees') {
+    console.log(`Building hierarchical trees from ${progress.blobs.length} blobs...`);
+
+    const rootBlobs: BlobEntry[] = [];
+    const dirBlobs: Record<string, { path: string; mode: '100644'; type: 'blob'; sha: string }[]> = {};
+
+    for (const blob of progress.blobs) {
+      const slashIdx = blob.path.indexOf('/');
+      if (slashIdx === -1) {
+        rootBlobs.push(blob);
+      } else {
+        const dir = blob.path.substring(0, slashIdx);
+        const fileName = blob.path.substring(slashIdx + 1);
+        if (!dirBlobs[dir]) dirBlobs[dir] = [];
+        dirBlobs[dir].push({ ...blob, path: fileName });
+      }
+    }
+
+    const dirs = Object.keys(dirBlobs).sort();
+    console.log(`   Root files: ${rootBlobs.length}`);
+    for (const dir of dirs) {
+      const alreadyDone = progress.subtrees![dir];
+      console.log(`   ${dir}/: ${dirBlobs[dir].length} files${alreadyDone ? ' (already done)' : ''}`);
+    }
+
+    for (const dir of dirs) {
+      if (progress.subtrees![dir]) continue;
+
+      const entries = dirBlobs[dir];
+      const BATCH_SIZE = 200;
+
+      if (entries.length <= BATCH_SIZE) {
+        console.log(`   Creating subtree for ${dir}/ (${entries.length} entries)...`);
+        const sha = await retryCreateTree(octokit, user.login, repoName, entries);
+        progress.subtrees![dir] = sha;
+        console.log(`   ✓ ${dir}/ subtree created: ${sha.substring(0, 8)}`);
+      } else {
+        console.log(`   Creating batched subtrees for ${dir}/ (${entries.length} entries in batches of ${BATCH_SIZE})...`);
+        const batchTreeEntries: { path: string; mode: '040000'; type: 'tree'; sha: string }[] = [];
+
+        for (let b = 0; b < entries.length; b += BATCH_SIZE) {
+          const batch = entries.slice(b, b + BATCH_SIZE);
+          const batchName = `_batch_${Math.floor(b / BATCH_SIZE)}`;
+          console.log(`      Batch ${Math.floor(b / BATCH_SIZE)}: ${batch.length} entries...`);
+          const batchSha = await retryCreateTree(octokit, user.login, repoName, batch);
+          batchTreeEntries.push({ path: batchName, mode: '040000', type: 'tree', sha: batchSha });
+          console.log(`      ✓ Batch done: ${batchSha.substring(0, 8)}`);
+        }
+
+        console.log(`   Merging ${batchTreeEntries.length} batches into final ${dir}/ subtree...`);
+
+        const flatEntries: { path: string; mode: '100644'; type: 'blob'; sha: string }[] = [];
+        for (const batchTree of batchTreeEntries) {
+          const { data: treeData } = await octokit.git.getTree({
+            owner: user.login,
+            repo: repoName,
+            tree_sha: batchTree.sha,
+            recursive: 'false',
+          });
+          for (const item of treeData.tree) {
+            if (item.type === 'blob' && item.sha && item.mode) {
+              flatEntries.push({
+                path: item.path!,
+                mode: item.mode as '100644',
+                type: 'blob',
+                sha: item.sha,
+              });
+            }
+          }
+        }
+
+        if (flatEntries.length <= 500) {
+          const sha = await retryCreateTree(octokit, user.login, repoName, flatEntries);
+          progress.subtrees![dir] = sha;
+          console.log(`   ✓ ${dir}/ merged subtree created: ${sha.substring(0, 8)}`);
+        } else {
+          const halfSize = Math.ceil(flatEntries.length / 2);
+          const firstHalf = flatEntries.slice(0, halfSize);
+          const secondHalf = flatEntries.slice(halfSize);
+
+          console.log(`   Creating two half-trees (${firstHalf.length} + ${secondHalf.length})...`);
+          const firstSha = await retryCreateTree(octokit, user.login, repoName, firstHalf);
+          const secondSha = await retryCreateTree(octokit, user.login, repoName, secondHalf);
+
+          const { data: firstTree } = await octokit.git.getTree({ owner: user.login, repo: repoName, tree_sha: firstSha, recursive: 'false' });
+          const { data: secondTree } = await octokit.git.getTree({ owner: user.login, repo: repoName, tree_sha: secondSha, recursive: 'false' });
+
+          const combined = [...firstTree.tree, ...secondTree.tree].map(item => ({
+            path: item.path!,
+            mode: item.mode as '100644',
+            type: 'blob' as const,
+            sha: item.sha!,
+          }));
+
+          const sha = await retryCreateTree(octokit, user.login, repoName, combined);
+          progress.subtrees![dir] = sha;
+          console.log(`   ✓ ${dir}/ combined subtree created: ${sha.substring(0, 8)}`);
+        }
+      }
+
+      saveProgress(progress);
+    }
+
+    console.log('   Creating root tree...');
+    const rootTreeEntries: (BlobEntry | SubtreeEntry)[] = [...rootBlobs];
+    for (const dir of dirs) {
+      rootTreeEntries.push({
+        path: dir,
+        mode: '040000',
+        type: 'tree',
+        sha: progress.subtrees![dir],
+      });
+    }
+
+    console.log(`   Root tree: ${rootTreeEntries.length} entries (${rootBlobs.length} files + ${dirs.length} dirs)`);
+    const rootTreeSha = await retryCreateTree(octokit, user.login, repoName, rootTreeEntries);
+    console.log(`   ✓ Root tree created: ${rootTreeSha.substring(0, 8)}`);
 
     let parentSha: string | undefined;
     try {
@@ -226,7 +366,7 @@ async function deploy() {
       owner: user.login,
       repo: repoName,
       message: 'Deploy Barran Dodger Legal & Ethical Trust Fund — Complete Public Archive\n\nThis archive contains 2,077+ blockchain-verified documents.\nFork it. Download it. Share it. The truth cannot be erased.',
-      tree: tree.sha,
+      tree: rootTreeSha,
       parents: parentSha ? [parentSha] : [],
     });
 

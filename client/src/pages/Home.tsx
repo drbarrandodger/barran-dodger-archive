@@ -346,11 +346,17 @@ export default function Home() {
 
                 <div className="flex flex-wrap gap-4 pt-2">
                   <div className="flex flex-col items-center gap-2">
-                    <DocumentPopup {...KEY_DOCUMENTS.administrativeAnnihilation}>
-                      <Button size="lg" className="bg-[hsl(38,92%,50%)] text-black font-bold hover:bg-[hsl(38,92%,55%)] px-8">
+                    <Button asChild size="lg" className="bg-[hsl(38,92%,50%)] text-black font-bold hover:bg-[hsl(38,92%,55%)] px-8">
+                      <a
+                        href={KEY_DOCUMENTS.administrativeAnnihilation.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackDownload(KEY_DOCUMENTS.administrativeAnnihilation.url)}
+                        data-testid="button-download-admin-annihilation"
+                      >
                         <Download className="mr-2 h-5 w-5" /> Download Full Paper (PDF)
-                      </Button>
-                    </DocumentPopup>
+                      </a>
+                    </Button>
                     <DownloadBadge url={KEY_DOCUMENTS.administrativeAnnihilation.url} />
                   </div>
                   <Link href="/case-studies">
