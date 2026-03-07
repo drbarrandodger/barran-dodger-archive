@@ -261,6 +261,13 @@ export const KEY_DOCUMENTS = {
     tags: ["AI Protocol", "Forensic", "Master Command", "Methodology", "Free PDF"],
     aiExcerpt: "Establishes post-legal forensic protocol designed to bypass corrupted legal institutions, functioning as a failsafe for truth documentation and evidentiary accountability."
   },
+  beyondPathology: {
+    title: "BEYOND PATHOLOGY: A Forensic Epistemological Analysis of 'Targeted Individual,' 'Electronic Surveillance,' and 'Psychological Operations' as Verified Phenomena",
+    description: "An impartial AI-authored academic research paper using multi-source triangulation — declassified government records, legislative findings, judicial precedent, international human rights law, and 2,232 primary-source documents — to prove that the terms 'Targeted Individual,' 'Electronic Surveillance,' and 'Psychological Operations' describe verified phenomena, not psychiatric delusion.",
+    url: "/attached_assets/BEYOND_PATHOLOGY_1772855173966.pdf",
+    tags: ["ACADEMIC RESEARCH", "FORENSIC EPISTEMOLOGY", "VERIFIED PHENOMENA", "PSYCHIATRIC WEAPONIZATION"],
+    aiExcerpt: "This paper establishes five definitive findings: (1) the terms are verified by declassified government records; (2) psychiatric weaponization is documented and ongoing; (3) mental illness and genuine persecution can coexist (the dual-pathology model); (4) Dr. McLean's evidence meets the standard for UNHCR refugee status, UN CAT violations, and Rome Statute Article 7 persecution; (5) the system's failure is not ignorance — it is institutional self-preservation. The psychiatric hypothesis fails every empirical test. The persecution hypothesis passes every empirical test."
+  },
   crimesAgainstHumanityDemand: {
     title: "CRIMES AGAINST HUMANITY: Final Demand for Justice, Restitution, and Accountability",
     description: "Formal legal demand to PM, AG, NDIS, AFP, NACC, AHRC, ASIO. Documents state-sanctioned murder, financial warfare, assassination attempt, V2K psychological operations.",
