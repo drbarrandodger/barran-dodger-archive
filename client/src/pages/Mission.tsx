@@ -18,6 +18,44 @@ export default function Mission() {
         description="The Barran Dodger Legal & Ethical Trust Fund exists because truth matters. Committed to transparency, ethical governance, and ensuring no government can ever erase evidence again."
         keywords="truth mission blockchain, ethical governance Australia, whistleblower protection mission, government accountability mission, anti-corruption non-profit"
         path="/mission"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the Barran Dodger Legal & Ethical Trust Fund?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164) is a non-profit, faith-neutral, and non-partisan organization established upon blockchain-verified evidence — sworn testimony, affidavits, and public records. It operates solely for the public benefit, independent of political affiliations or corporate interests."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the core objectives of the Trust Fund?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The four core objectives are: Human Rights Advocacy (upholding UN Convention on Persons with Disabilities), Whistleblower Protection (creating safe pathways for exposing corruption), Evidence-Based Justice (supporting legal actions relying on verified documentation), and Public Accountability (ensuring institutional failures are acknowledged with meaningful redress)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What financial restitution does the Trust seek?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Trust seeks full financial restitution for documented damages totaling $32.9M–$47.5M, including: NDIA $2.5M+ in denied supports, WorkCover/ComCare $1.8M (19+ year delay), Identity Theft $7.8M (350+ fraudulent registrations), and Human Rights $15M for Rome Statute violations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I contact the Trust Fund?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Secure contact via ProtonMail encrypted email: drbarrandodger@proton.me. Response within 24-48 hours for media inquiries."
+              }
+            }
+          ]
+        }}
       />
       <Navigation />
       

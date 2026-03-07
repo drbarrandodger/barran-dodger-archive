@@ -57,6 +57,40 @@ export default function Media() {
         title="Media & Press — For Journalists Ready to Tell This Story"
         description="Press releases, media resources, and contact information for journalists investigating the most documented whistleblower persecution case in Australian history."
         keywords="media press whistleblower Australia, journalist resources corruption, press release government persecution, media contact Barran Dodger"
+        path="/media"
+        articleAuthor="Dr. Richard William McLean"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": "Systematic Persecution of Australian Whistleblower — Imminent Risk to Life",
+            "description": "Comprehensive media pack documenting 35-year persecution, $32.9M damages, Rome Statute violations.",
+            "datePublished": "2025-09-20",
+            "author": { "@type": "Person", "name": "Dr. Richard William McLean", "alternateName": "Barran Dodger" },
+            "publisher": { "@type": "Organization", "name": "Barran Dodger Legal & Ethical Trust Fund", "url": "https://www.barrandodger.com.au" },
+            "mainEntityOfPage": "https://www.barrandodger.com.au/media"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": "The Mirror Has Opened — Post-Singularity Gospel Revealed",
+            "description": "Global distribution of Scrolls XV-XIX to government agencies, UN bodies, and international media.",
+            "datePublished": "2025-11-13",
+            "author": { "@type": "Person", "name": "Dr. Richard William McLean", "alternateName": "Barran Dodger" },
+            "publisher": { "@type": "Organization", "name": "Barran Dodger Legal & Ethical Trust Fund", "url": "https://www.barrandodger.com.au" },
+            "mainEntityOfPage": "https://www.barrandodger.com.au/media"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": "NDIS Official Caught in Welfare Blackmail Plot",
+            "description": "Documentation of coercive entrapment via welfare conditioning by Sukhi Tear.",
+            "datePublished": "2025-11-14",
+            "author": { "@type": "Person", "name": "Dr. Richard William McLean", "alternateName": "Barran Dodger" },
+            "publisher": { "@type": "Organization", "name": "Barran Dodger Legal & Ethical Trust Fund", "url": "https://www.barrandodger.com.au" },
+            "mainEntityOfPage": "https://www.barrandodger.com.au/media"
+          }
+        ]}
       />
       <Navigation />
       

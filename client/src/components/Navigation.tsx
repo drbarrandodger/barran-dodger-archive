@@ -52,6 +52,8 @@ export function Navigation() {
     { href: "/evidence-vault", label: "Evidence Vault" },
     { href: "/taxpayer-cost-analysis", label: "Cost Analysis" },
     { href: "/blockchain", label: "Timestamps" },
+    { href: "/the-truth", label: "The Truth" },
+    { href: "/store", label: "Store" },
     { href: "/contact", label: "Contact" },
   ];
 

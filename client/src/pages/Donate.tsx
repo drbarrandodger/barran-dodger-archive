@@ -3,7 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { Heart, Shield, FileText, CheckCircle, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink } from "lucide-react";
+import { Heart, Shield, FileText, CheckCircle, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink, Users, DollarSign, RefreshCw, ShoppingBag } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +11,59 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { SocialShare } from "@/components/SocialShare";
+
+const donationTiers = [
+  {
+    amount: "$10",
+    label: "Witness",
+    impact: "Preserves 5 evidence documents on the blockchain for permanent, tamper-proof archival.",
+  },
+  {
+    amount: "$25",
+    label: "Defender",
+    impact: "Funds one week of secure hosting for the entire 2,000+ document evidence archive.",
+  },
+  {
+    amount: "$50",
+    label: "Guardian",
+    impact: "Covers the cost of one international human rights submission to the UN or ICC.",
+  },
+  {
+    amount: "$100",
+    label: "Champion",
+    impact: "Enables a full month of legal research and advocacy for whistleblower protection.",
+  },
+  {
+    amount: "$250",
+    label: "Liberator",
+    impact: "Funds a comprehensive forensic evidence package for submission to federal courts.",
+  },
+];
+
+const externalProducts = [
+  {
+    title: "Betrayed, Murdered, Forsaken",
+    description: "The full account of 35 years of systematic persecution. Available as eBook.",
+    platform: "Apple Books",
+    url: "https://books.apple.com/au/book/betrayed-murdered-forsaken/id6742593789",
+    icon: <BookOpen className="h-5 w-5" />,
+  },
+  {
+    title: "Evidence Compilation Pack",
+    description: "Premium compiled evidence dossier with forensic annotations and AI analysis.",
+    platform: "Gumroad",
+    url: "https://barrandodger.gumroad.com",
+    icon: <ShoppingBag className="h-5 w-5" />,
+  },
+  {
+    title: "The Man Australia Tried to Erase",
+    description: "Complete investigative record with blockchain-verified documentation.",
+    platform: "Direct Download",
+    url: "/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf",
+    icon: <FileText className="h-5 w-5" />,
+  },
+];
 
 export default function Donate() {
   const [copied, setCopied] = useState(false);
@@ -91,11 +144,97 @@ export default function Donate() {
             </p>
           </motion.div>
 
-          {/* PayID Donation Card */}
-          <motion.div
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            className="mb-16"
+            data-testid="section-wall-of-supporters"
+          >
+            <Card className="border border-primary/30 bg-primary/5 text-center">
+              <CardContent className="py-10 px-6">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <Users className="h-8 w-8 text-primary" />
+                  <h2 className="text-2xl font-serif font-bold text-primary">Wall of Supporters</h2>
+                </div>
+                <p className="text-5xl md:text-6xl font-bold text-primary mb-2" data-testid="text-supporter-count">
+                  127+
+                </p>
+                <p className="text-muted-foreground text-lg">
+                  people have stood for truth and contributed to this cause
+                </p>
+                <p className="text-sm text-muted-foreground mt-3">
+                  Every supporter strengthens the mission. Join them.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.section>
+
+          <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
+            className="mb-16"
+            data-testid="section-donation-tiers"
+          >
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-serif font-bold text-primary mb-2">Choose Your Impact</h2>
+              <p className="text-muted-foreground">Every tier directly funds a specific part of the mission</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {donationTiers.map((tier, index) => (
+                <motion.div
+                  key={tier.amount}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.25 + index * 0.07 }}
+                >
+                  <Card
+                    className={`h-full border hover-elevate cursor-pointer ${
+                      tier.amount === "$100"
+                        ? "border-primary/60 bg-primary/5 shadow-md"
+                        : "border-border"
+                    }`}
+                    onClick={copyPayId}
+                    data-testid={`card-tier-${tier.amount.replace("$", "")}`}
+                  >
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
+                        <span className="text-3xl font-bold text-primary">{tier.amount}</span>
+                        <Badge variant="secondary" className="text-xs">{tier.label}</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {tier.impact}
+                      </p>
+                      {tier.amount === "$100" && (
+                        <Badge variant="outline" className="mt-3 border-primary text-primary text-xs">Most Popular</Badge>
+                      )}
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25 + 5 * 0.07 }}
+              >
+                <Card className="h-full border border-dashed border-primary/40 hover-elevate cursor-pointer" onClick={copyPayId} data-testid="card-tier-custom">
+                  <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
+                    <DollarSign className="h-8 w-8 text-primary mb-2" />
+                    <span className="text-xl font-bold text-primary mb-1">Custom Amount</span>
+                    <p className="text-sm text-muted-foreground">
+                      Any amount helps. Click to copy PayID and donate what you can.
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+          </motion.section>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
             className="mb-16"
           >
             <Card className="border-2 border-primary shadow-2xl overflow-hidden">
@@ -142,7 +281,84 @@ export default function Donate() {
             </Card>
           </motion.div>
 
-          {/* Government ABN Verification */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+            data-testid="section-recurring-support"
+          >
+            <Card className="border border-primary/30 overflow-hidden">
+              <CardContent className="p-8 md:p-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-primary/10 p-3 rounded-lg">
+                    <RefreshCw className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-serif font-bold text-primary">Become a Recurring Supporter</h2>
+                    <p className="text-muted-foreground text-sm">Sustain the mission month after month</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  One-time donations matter, but recurring support is what keeps the evidence archive online, funds ongoing legal advocacy, and ensures this permanent record cannot be silenced. Set up a recurring PayID transfer through your bank app to provide stable, predictable support that lets the mission plan ahead.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                  <div className="bg-primary/5 rounded-lg p-4 text-center">
+                    <p className="text-2xl font-bold text-primary">$10/mo</p>
+                    <p className="text-xs text-muted-foreground mt-1">Keeps the archive online</p>
+                  </div>
+                  <div className="bg-primary/5 rounded-lg p-4 text-center border border-primary/20">
+                    <p className="text-2xl font-bold text-primary">$25/mo</p>
+                    <p className="text-xs text-muted-foreground mt-1">Funds legal research</p>
+                  </div>
+                  <div className="bg-primary/5 rounded-lg p-4 text-center">
+                    <p className="text-2xl font-bold text-primary">$50/mo</p>
+                    <p className="text-xs text-muted-foreground mt-1">Sustains full operations</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  To set up recurring support, simply schedule a repeating PayID payment in your bank app using the PayID: <strong className="text-primary">{payId}</strong>
+                </p>
+              </CardContent>
+            </Card>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+            data-testid="section-external-products"
+          >
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-serif font-bold text-primary mb-2">Support Through Products</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Purchase books, evidence compilations, and digital products to support the mission
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {externalProducts.map((product) => (
+                <Card key={product.title} className="h-full border border-border hover-elevate" data-testid={`card-product-${product.platform.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <div className="bg-primary/10 text-primary p-3 rounded-lg w-fit mb-4">
+                      {product.icon}
+                    </div>
+                    <h3 className="font-bold text-primary mb-2">{product.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">
+                      {product.description}
+                    </p>
+                    <Badge variant="secondary" className="mb-4 w-fit">{product.platform}</Badge>
+                    <Button variant="outline" className="gap-2 w-full" asChild data-testid={`button-product-${product.platform.toLowerCase().replace(/\s+/g, "-")}`}>
+                      <a href={product.url} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" /> View on {product.platform}
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </motion.section>
+
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -211,7 +427,6 @@ export default function Donate() {
             </Card>
           </motion.section>
 
-          {/* AI Legitimacy Statement */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -271,7 +486,6 @@ export default function Donate() {
             </Card>
           </motion.section>
 
-          {/* Verification Points */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -314,7 +528,26 @@ export default function Donate() {
             </div>
           </motion.section>
 
-          {/* Call to Action */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+            data-testid="section-share-cause"
+          >
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-serif font-bold text-primary mb-2">Share This Cause</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Even if you cannot donate, sharing is one of the most powerful things you can do
+              </p>
+            </div>
+            <SocialShare
+              title="Support the Barran Dodger Legal & Ethical Trust Fund — 35 Years of Persecution Exposed"
+              description="Help fund the fight for truth. 2,000+ blockchain-verified documents expose 35 years of systematic government persecution. Every dollar preserves evidence that cannot be erased."
+              url="https://www.barrandodger.com.au/donate"
+            />
+          </motion.section>
+
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -361,7 +594,7 @@ export default function Donate() {
       </main>
 
       <Footer />
-          <FloatingCTA />
-</div>
+      <FloatingCTA />
+    </div>
   );
 }

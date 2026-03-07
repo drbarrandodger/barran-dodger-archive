@@ -122,6 +122,45 @@ export default function LegalStatus() {
         title="Legal Status — Active Proceedings & Formal Demands for Justice"
         description="Current legal proceedings, formal demands sent to the Prime Minister, Attorney-General, AFP, ASIO, and AHRC. 14-day deadlines. No response. The silence is the evidence."
         keywords="legal proceedings whistleblower Australia, formal demand justice, Attorney General silence, Prime Minister Albanese corruption, active legal case Australia"
+        path="/legal-status"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What legal bodies have received submissions in this case?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Submissions have been filed with the International Criminal Court (ICC), UN High Commissioner for Refugees (UNHCR), Office of the Australian Information Commissioner (OAIC), Federal Court of Australia, NDIS Quality and Safeguards Commission, and Commonwealth Ombudsman."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the ICC submission about?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The ICC submission documents Rome Statute Article 7 crimes against humanity — systematic persecution, torture, and attempted murder by Australian state actors, supported by 240+ blockchain-verified documents."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the total documented financial damage?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Documented damages total $42.5M–$123M, including workers' compensation denied by ComCare/AAT, AHRC ruling, identity theft brand dilution via 350+ fraudulent ASIC registrations, and NDIS entitlements denied."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are the legal submissions blockchain-verified?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. All submissions are blockchain-verified using SHA-256 hash verification and Bitcoin blockchain timestamps via OpenTimestamps, ensuring tamper-proof authenticity."
+              }
+            }
+          ]
+        }}
       />
       <Navigation />
       

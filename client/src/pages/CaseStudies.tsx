@@ -323,6 +323,31 @@ export default function CaseStudies() {
         description="How Australia's own bureaucratic records simultaneously document systematic targeting AND guarantee legal vindication. Fact-checked academic analysis backed by 2,077 primary-source documents spanning 35 years."
         keywords="government persecution case study, whistleblower vindication, paradox of persecution, Australian bureaucracy corruption, systematic targeting evidence, academic analysis government corruption"
         path="/case-studies"
+        type="article"
+        articlePublishedTime="2026-02-01T00:00:00Z"
+        articleAuthor="Dr. Richard William McLean"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "The Paradox of Persecution — How the Australian Government's Own Records Prove Everything",
+          "description": "How Australia's own bureaucratic records simultaneously document systematic targeting AND guarantee legal vindication. Fact-checked academic analysis backed by 2,077 primary-source documents spanning 35 years.",
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Richard William McLean",
+            "alternateName": "Barran Dodger",
+            "url": "https://www.barrandodger.com.au"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Barran Dodger Legal & Ethical Trust Fund",
+            "url": "https://www.barrandodger.com.au"
+          },
+          "datePublished": "2026-02-01",
+          "url": "https://www.barrandodger.com.au/case-studies",
+          "mainEntityOfPage": "https://www.barrandodger.com.au/case-studies",
+          "articleSection": "Legal-Academic Analysis",
+          "keywords": ["government persecution", "whistleblower vindication", "paradox of persecution", "Australian bureaucracy corruption", "systematic targeting evidence"]
+        }}
       />
       <Navigation />
       

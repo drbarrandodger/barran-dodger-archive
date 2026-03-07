@@ -2362,6 +2362,43 @@ export default function Evidence() {
         description="Browse 240+ forensic documents with SHA-256 hash verification and Bitcoin blockchain timestamps. Legal affidavits, tribunal records, medical reports, and AI-verified analysis. Every document is tamper-proof."
         keywords="blockchain evidence archive, forensic documentation Australia, SHA-256 verified documents, whistleblower evidence, government corruption proof, immutable legal records, Bitcoin timestamp evidence"
         path="/evidence"
+        articleAuthor="Dr. Richard William McLean"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LegalCase",
+            "name": "Dr. Richard William McLean (Barran Dodger) — Systematic Persecution Case",
+            "description": "240+ blockchain-verified documents exposing 35 years of systematic government persecution across 25+ Australian agencies.",
+            "url": "https://www.barrandodger.com.au/evidence",
+            "plaintiff": {
+              "@type": "Person",
+              "name": "Dr. Richard William McLean",
+              "alternateName": "Barran Dodger"
+            },
+            "court": [
+              { "@type": "Organization", "name": "International Criminal Court" },
+              { "@type": "Organization", "name": "Federal Court of Australia" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Blockchain-Verified Evidence Archive",
+            "description": "Complete forensic evidence archive with SHA-256 hash verification and Bitcoin blockchain timestamps",
+            "url": "https://www.barrandodger.com.au/evidence",
+            "numberOfItems": 240,
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Criminal Affidavit Against Sukhi Tear & Syed Salman Kazmi", "url": "https://www.barrandodger.com.au/evidence#criminal-affidavit" },
+              { "@type": "ListItem", "position": 2, "name": "Final Forensic Affidavit of State-Enabled Psychological Operations", "url": "https://www.barrandodger.com.au/evidence#forensic-affidavit" },
+              { "@type": "ListItem", "position": 3, "name": "Master Affidavit of Dr. Richard William McLean", "url": "https://www.barrandodger.com.au/evidence#master-affidavit" },
+              { "@type": "ListItem", "position": 4, "name": "Supreme Affidavit of Persecution and Erasure", "url": "https://www.barrandodger.com.au/evidence#supreme-affidavit" },
+              { "@type": "ListItem", "position": 5, "name": "Sovereign Whistleblower Dossier with Affidavit", "url": "https://www.barrandodger.com.au/evidence#sovereign-dossier" },
+              { "@type": "ListItem", "position": 6, "name": "PID Act Comprehensive Analysis", "url": "https://www.barrandodger.com.au/evidence#pid-analysis" },
+              { "@type": "ListItem", "position": 7, "name": "Crimes Against Humanity Final Demand", "url": "https://www.barrandodger.com.au/evidence#crimes-demand" },
+              { "@type": "ListItem", "position": 8, "name": "100,000-Word Digital Oppression Essay", "url": "https://www.barrandodger.com.au/evidence#digital-oppression" }
+            ]
+          }
+        ]}
       />
       <Navigation />
       

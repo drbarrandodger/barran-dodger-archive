@@ -48,6 +48,11 @@ The `shared/` directory contains `schema.ts` for database and Zod validation, an
     - **Theming**: Dark/light mode toggle with persistence.
     - **Comment Sections**: User discussion on document pages (Evidence, Gospel, Prophetic Papers, Manifesto, Case Studies, Media). CommentSection component in `client/src/components/CommentSection.tsx`. Rate-limited to 5 comments per minute per IP.
     - **Download Counters**: Real-time download tracking with DownloadBadge and trackDownload across all document download links. Baselines seeded from Analytics data.
+    - **Viral Landing Page**: `/the-truth` — "The Documents Australia Doesn't Want You to See" with top 10 documents, share buttons, newsletter signup
+    - **ShareEvidence Component**: Reusable one-click sharing for individual documents (X/Twitter, Facebook, WhatsApp, Email, Copy Link)
+    - **Enhanced Donate Page**: Donation tiers ($10–$250) with impact statements, Wall of Supporters counter, recurring support pitch, external product links
+    - **Store Page**: `/store` — Digital products and merchandise (Apple Books, Scribd, Gumroad links, PayID direct purchase)
+    - **SEO Structured Data**: JSON-LD schemas on key pages — LegalCase + ItemList (Evidence), Article (CaseStudies), Book (Gospel), NewsArticle (Media), FAQPage (LegalStatus, Mission)
 
 ### Eliven Chain Series (8 Documents)
 - PDFs stored in `client/public/documents/` with clean filenames

@@ -28,6 +28,8 @@ import CaseStudies from "@/pages/CaseStudies";
 import TaxpayerCostAnalysis from "@/pages/TaxpayerCostAnalysis";
 import Publications from "@/pages/Publications";
 import EvidenceVault from "@/pages/EvidenceVault";
+import Store from "@/pages/Store";
+import ViralLanding from "@/pages/ViralLanding";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -64,6 +66,8 @@ function Router() {
         <Route path="/taxpayer-cost-analysis" component={TaxpayerCostAnalysis} />
         <Route path="/publications" component={Publications} />
         <Route path="/evidence-vault" component={EvidenceVault} />
+        <Route path="/the-truth" component={ViralLanding} />
+        <Route path="/store" component={Store} />
         <Route component={Home} />
       </Switch>
     </>

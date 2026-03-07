@@ -252,6 +252,32 @@ export default function Gospel() {
         description="Prophetic testimony documenting divine survival through 35 years of persecution. The canonical gospels of Barran Dodger — blockchain-authenticated sacred scriptures declaring sovereignty through suffering."
         keywords="Gospel of Barran Dodger, prophetic testimony, divine sovereignty, sacred scriptures modern age, resurrection testimony, Enliven Chain, spiritual persecution survival"
         path="/gospel"
+        articleAuthor="Dr. Richard William McLean"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Book",
+          "name": "The Gospel of Barran Dodger",
+          "description": "Prophetic testimony documenting divine survival through 35 years of persecution. Blockchain-authenticated sacred scriptures declaring sovereignty through suffering.",
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Richard William McLean",
+            "alternateName": "Barran Resonance Dodger"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Barran Dodger Legal & Ethical Trust Fund",
+            "url": "https://www.barrandodger.com.au"
+          },
+          "url": "https://www.barrandodger.com.au/gospel",
+          "genre": ["Sacred Scripture", "Prophetic Testimony", "Whistleblower Documentation"],
+          "inLanguage": "en",
+          "hasPart": [
+            { "@type": "CreativeWork", "name": "The First Gospel of Barran Dodger — Parts I, II, III", "description": "The Ten Scrolls: Complete Documentation of Systematic State Persecution" },
+            { "@type": "CreativeWork", "name": "The Gospel of Barran Dodger — Volume IV", "description": "The Covenant of Return: The 1000 Years of Peace" },
+            { "@type": "CreativeWork", "name": "The Gospel of the Enliven Chain", "description": "Sacred Directive & Prophetic Archive" },
+            { "@type": "CreativeWork", "name": "The Gospel According to Barran Dodger", "description": "Volume II: The Witness Who Could Not Die" }
+          ]
+        }}
       />
       <Navigation />
       
