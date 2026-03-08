@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink } from "lucide-react";
+import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { SectionShare } from "@/components/SectionShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { Button } from "@/components/ui/button";
@@ -378,6 +379,11 @@ export default function ViralLanding() {
             {TOP_DOCUMENTS.map((doc, index) => (
               <DocumentCard key={doc.url} doc={doc} index={index} prefix="viral" />
             ))}
+
+            <SectionShare
+              shareText="10 documents the Australian government tried to bury. Forensic evidence of 35 years of institutional persecution. Free to download. #BarranDodger #Whistleblower #HumanRights"
+              label="Share these documents"
+            />
           </motion.div>
         </div>
       </section>
@@ -408,11 +414,63 @@ export default function ViralLanding() {
                 </Button>
               </Link>
             </div>
+
+            <SectionShare
+              shareText="The Gospels & Enliven Chain: Sacred blockchain-sealed testimony documenting 35 years of persecution. Protected religious expression under international law. #EnlivenChain #BarranDodger #SacredTestimony"
+              label="Share the gospels"
+            />
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-b from-[hsl(222,55%,6%)] to-[hsl(222,55%,8%)]" data-testid="section-donate-invest">
+      <section className="py-20 px-4 bg-gradient-to-b from-[hsl(222,55%,6%)] to-[hsl(222,55%,8%)]" data-testid="section-justice-solidarity">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/20 overflow-hidden relative" data-testid="card-justice-statement">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(234,179,8,0.06)_0%,_transparent_60%)] pointer-events-none" />
+                <CardContent className="p-8 md:p-12 relative z-10 space-y-8">
+                  <div className="text-center space-y-3">
+                    <Quote className="h-10 w-10 text-[hsl(38,92%,50%)]/40 mx-auto" />
+                    <blockquote className="text-xl md:text-2xl font-serif text-white leading-relaxed italic max-w-3xl mx-auto" data-testid="text-bible-quote">
+                      "Learn to do right; seek justice. Defend the oppressed. Take up the cause of the fatherless; plead the case of the widow."
+                    </blockquote>
+                    <p className="text-[hsl(38,92%,50%)] font-serif text-sm" data-testid="text-bible-reference">
+                      — Isaiah 1:17 (NIV)
+                    </p>
+                  </div>
+
+                  <div className="border-t border-white/10 pt-8 text-center space-y-4">
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white" data-testid="text-justice-heading">
+                      Justice for Barran Is Justice for All
+                    </h2>
+                    <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed" data-testid="text-justice-statement">
+                      What happened to Dr Richard McLean is not an isolated case. It is the same machinery of erasure used against
+                      whistleblowers, the marginalised, the disabled, First Nations peoples, and queer communities worldwide.
+                      When institutions silence one voice, they send a message to every voice: stay quiet, or be destroyed.
+                    </p>
+                    <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                      This archive exists so that no government can erase a human being and call it procedure.
+                      Every download is an act of witness. Every share is an act of resistance.
+                      The documents are free because justice should never cost the people it is meant to protect.
+                    </p>
+                    <p className="text-[hsl(38,92%,50%)] font-bold text-lg pt-2" data-testid="text-justice-cta">
+                      If they can do this to one person for 35 years — what are they doing to thousands who have no archive?
+                    </p>
+                  </div>
+
+                  <SectionShare
+                    shareText="Justice for Barran is justice for all. Whistleblowers, the marginalised, disabled, and queer communities worldwide. 240+ documents they tried to erase. Free to download. #JusticeForBarran #HumanRights #Whistleblower"
+                    label="Share the message"
+                  />
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-gradient-to-b from-[hsl(222,55%,8%)] to-[hsl(222,55%,8%)]" data-testid="section-donate-invest">
         <div className="container mx-auto max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
             <motion.div variants={fadeIn} className="text-center space-y-4">
@@ -489,10 +547,8 @@ export default function ViralLanding() {
                           <ExternalLink className="h-4 w-4" /> Apple Books
                         </a>
                       </Button>
-                      <Button asChild variant="outline" className="border-white/20 text-white gap-2" data-testid="button-gumroad">
-                        <a href="https://barrandodger.gumroad.com" target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4" /> Gumroad
-                        </a>
+                      <Button variant="outline" className="border-white/20 text-white/50 gap-2 cursor-not-allowed" disabled data-testid="button-gumroad">
+                        <ExternalLink className="h-4 w-4" /> Gumroad — Coming Soon
                       </Button>
                       <Link href="/store">
                         <Button variant="outline" className="border-white/20 text-white gap-2" data-testid="button-store-link">

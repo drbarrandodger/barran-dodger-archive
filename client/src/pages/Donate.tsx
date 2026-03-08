@@ -52,8 +52,8 @@ const externalProducts = [
   {
     title: "Evidence Compilation Pack",
     description: "Premium compiled evidence dossier with forensic annotations and AI analysis.",
-    platform: "Gumroad",
-    url: "https://barrandodger.gumroad.com",
+    platform: "Gumroad (Coming Soon)",
+    url: "",
     icon: <ShoppingBag className="h-5 w-5" />,
   },
   {
@@ -348,11 +348,17 @@ export default function Donate() {
                       {product.description}
                     </p>
                     <Badge variant="secondary" className="mb-4 w-fit">{product.platform}</Badge>
-                    <Button variant="outline" className="gap-2 w-full" asChild data-testid={`button-product-${product.platform.toLowerCase().replace(/\s+/g, "-")}`}>
-                      <a href={product.url} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4" /> View on {product.platform}
-                      </a>
-                    </Button>
+                    {product.url ? (
+                      <Button variant="outline" className="gap-2 w-full" asChild data-testid={`button-product-${product.platform.toLowerCase().replace(/\s+/g, "-")}`}>
+                        <a href={product.url} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" /> View on {product.platform}
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button variant="outline" className="gap-2 w-full opacity-50 cursor-not-allowed" disabled data-testid={`button-product-${product.platform.toLowerCase().replace(/\s+/g, "-")}`}>
+                        <ExternalLink className="h-4 w-4" /> {product.platform}
+                      </Button>
+                    )}
                   </CardContent>
                 </Card>
               ))}

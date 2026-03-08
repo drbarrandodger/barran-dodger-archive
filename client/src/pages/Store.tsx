@@ -38,7 +38,7 @@ export default function Store() {
       links: [
         { label: "Apple Books", url: "https://books.apple.com/au/book/betrayed-murdered-forsaken/id6744437043", icon: Smartphone },
         { label: "Scribd", url: "https://www.scribd.com/book/846811550/Betrayed-Murdered-Forsaken-The-Harrowing-Life-of-Barran-Dodger", icon: BookOpen },
-        { label: "Gumroad", url: "https://bazdod.gumroad.com/", icon: Globe },
+        { label: "Gumroad (Coming Soon)", url: "", icon: Globe },
       ]
     },
     {
@@ -162,19 +162,32 @@ export default function Store() {
                         </p>
                         <div className="flex flex-wrap gap-3">
                           {book.links.map((link) => (
-                            <Button
-                              key={link.label}
-                              variant="outline"
-                              className="gap-2"
-                              asChild
-                              data-testid={`button-buy-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
-                            >
-                              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                            link.url ? (
+                              <Button
+                                key={link.label}
+                                variant="outline"
+                                className="gap-2"
+                                asChild
+                                data-testid={`button-buy-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
+                              >
+                                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                                  <link.icon className="h-4 w-4" />
+                                  {link.label}
+                                  <ExternalLink className="h-3 w-3 opacity-50" />
+                                </a>
+                              </Button>
+                            ) : (
+                              <Button
+                                key={link.label}
+                                variant="outline"
+                                className="gap-2 opacity-50 cursor-not-allowed"
+                                disabled
+                                data-testid={`button-buy-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
+                              >
                                 <link.icon className="h-4 w-4" />
                                 {link.label}
-                                <ExternalLink className="h-3 w-3 opacity-50" />
-                              </a>
-                            </Button>
+                              </Button>
+                            )
                           ))}
                         </div>
                       </div>
@@ -223,11 +236,10 @@ export default function Store() {
                       asChild
                       data-testid={`button-download-${product.title.toLowerCase().replace(/\s+/g, '-')}`}
                     >
-                      <a href="https://bazdod.gumroad.com/" target="_blank" rel="noopener noreferrer">
+                      <span className="cursor-not-allowed opacity-60">
                         <ShoppingBag className="h-4 w-4" />
-                        View on Gumroad
-                        <ExternalLink className="h-3 w-3 opacity-50" />
-                      </a>
+                        Gumroad — Coming Soon
+                      </span>
                     </Button>
                   </CardContent>
                 </Card>
