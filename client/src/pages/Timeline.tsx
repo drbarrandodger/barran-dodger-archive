@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { CommentSection } from "@/components/CommentSection";
 
 interface TimelineEvent {
   year: string;
@@ -381,6 +382,12 @@ export default function Timeline() {
         </div>
       </main>
       
+      <section className="py-12 px-4 bg-[hsl(222,55%,8%)]">
+        <div className="container mx-auto max-w-3xl">
+          <CommentSection pageSlug="timeline" title="Timeline Discussion" />
+        </div>
+      </section>
+
       <Footer />
           <FloatingCTA />
 </>

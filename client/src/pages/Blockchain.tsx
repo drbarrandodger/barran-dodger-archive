@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { CommentSection } from "@/components/CommentSection";
 
 export default function Blockchain() {
   const blockchainDocuments = [
@@ -554,6 +555,12 @@ export default function Blockchain() {
           </motion.section>
         </div>
       </main>
+
+      <section className="py-12 px-4 bg-[hsl(222,55%,8%)]">
+        <div className="container mx-auto max-w-3xl">
+          <CommentSection pageSlug="blockchain" title="Blockchain Verification Discussion" />
+        </div>
+      </section>
 
       <Footer />
           <FloatingCTA />

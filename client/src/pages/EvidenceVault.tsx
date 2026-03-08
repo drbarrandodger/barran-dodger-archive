@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { CommentSection } from "@/components/CommentSection";
 import {
   ExternalLink, Search, X, Shield, Lock, FolderOpen, Archive,
   Scale, FileText, AlertTriangle, Globe, Heart, Brain, BookOpen,
@@ -623,6 +624,12 @@ export default function EvidenceVault() {
           </motion.section>
         </div>
       </main>
+
+      <section className="py-12 px-4 bg-[hsl(222,55%,8%)]">
+        <div className="container mx-auto max-w-3xl">
+          <CommentSection pageSlug="evidence-vault" title="Evidence Vault Discussion" />
+        </div>
+      </section>
 
       <Footer />
       <FloatingCTA />

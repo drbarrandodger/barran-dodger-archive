@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { CommentSection } from "@/components/CommentSection";
 
 interface LegalSubmission {
   body: string;
@@ -375,6 +376,12 @@ export default function LegalStatus() {
         </div>
       </main>
       
+      <section className="py-12 px-4 bg-[hsl(222,55%,8%)]">
+        <div className="container mx-auto max-w-3xl">
+          <CommentSection pageSlug="legal-status" title="Legal Status Discussion" />
+        </div>
+      </section>
+
       <Footer />
           <FloatingCTA />
 </>

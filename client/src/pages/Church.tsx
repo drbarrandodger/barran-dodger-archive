@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { CommentSection } from "@/components/CommentSection";
 
 export default function Church() {
   const tenets = [
@@ -404,6 +405,12 @@ export default function Church() {
           </motion.section>
         </div>
       </main>
+
+      <section className="py-12 px-4 bg-[hsl(222,55%,8%)]">
+        <div className="container mx-auto max-w-3xl">
+          <CommentSection pageSlug="church" title="Church Discussion" />
+        </div>
+      </section>
 
       <Footer />
           <FloatingCTA />

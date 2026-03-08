@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
+import { CommentSection } from "@/components/CommentSection";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { trackDownload, DownloadBadge } from "@/components/DownloadCounter";
@@ -865,6 +866,12 @@ export default function TaxpayerCostAnalysis() {
               </p>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 bg-[hsl(222,55%,8%)]">
+        <div className="container mx-auto max-w-3xl">
+          <CommentSection pageSlug="taxpayer-cost" title="Cost Analysis Discussion" />
         </div>
       </section>
 

@@ -14,6 +14,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { QuotableSnippetsSection } from "@/components/QuotableSnippet";
 import { GovernmentResponses } from "@/components/GovernmentResponses";
 import { FloatingShareBar, InlineShareStrip } from "@/components/FloatingShareBar";
+import { CommentSection } from "@/components/CommentSection";
 import { useQuery } from "@tanstack/react-query";
 import type { EvidenceItem } from "@shared/schema";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -4364,6 +4365,12 @@ export default function Home() {
           <p className="text-sm text-gray-500 italic pt-4">
             "The archive's strength lies not in persuasion but in preservation — creating an indelible record that exists independently of institutional acknowledgment."
           </p>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 bg-[hsl(222,55%,8%)]">
+        <div className="container mx-auto max-w-3xl">
+          <CommentSection pageSlug="home" title="Community Discussion" />
         </div>
       </section>
 

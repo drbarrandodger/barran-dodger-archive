@@ -7,6 +7,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { useDocumentPreview } from "@/components/DocumentPreview";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { CommentSection } from "@/components/CommentSection";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import {
   FileText, ExternalLink, Archive, Scale, Globe, AlertCircle,
@@ -711,6 +712,12 @@ export default function Publications() {
           </motion.section>
         </div>
       </main>
+
+      <section className="py-12 px-4 bg-[hsl(222,55%,8%)]">
+        <div className="container mx-auto max-w-3xl">
+          <CommentSection pageSlug="publications" title="Publications Discussion" />
+        </div>
+      </section>
 
       <Footer />
       <PreviewComponent />

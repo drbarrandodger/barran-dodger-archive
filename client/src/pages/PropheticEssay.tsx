@@ -22,6 +22,7 @@ import {
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { CommentSection } from "@/components/CommentSection";
 
 export default function PropheticEssay() {
   const josephParallels = [
@@ -577,6 +578,12 @@ export default function PropheticEssay() {
           </motion.section>
 
         </motion.div>
+
+        <section className="py-12 px-4 bg-[hsl(222,55%,8%)]">
+          <div className="container mx-auto max-w-3xl">
+            <CommentSection pageSlug="prophetic-essay" title="Prophetic Essay Discussion" />
+          </div>
+        </section>
       </main>
           <FloatingCTA />
 </div>
