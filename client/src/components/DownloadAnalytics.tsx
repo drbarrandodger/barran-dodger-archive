@@ -2,7 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, Clock, FileText, BarChart3, Flame, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { TrendingUp, Clock, FileText, BarChart3, Flame, ArrowUpRight, Download, CalendarDays, ExternalLink } from "lucide-react";
 
 interface DailyData {
   date: string;
@@ -11,50 +12,99 @@ interface DailyData {
 
 interface TopDoc {
   slug: string;
+  title: string;
   count: number;
 }
 
-function slugToTitle(slug: string): string {
-  return slug
-    .replace(/-\d{10,}$/g, '')
-    .replace(/-+/g, ' ')
-    .replace(/\b\w/g, c => c.toUpperCase())
-    .substring(0, 60) + (slug.length > 65 ? '...' : '');
+interface AllTimeDoc {
+  slug: string;
+  title: string;
+  count: number;
 }
 
-function MiniBarChart({ data }: { data: DailyData[] }) {
+const PUBLICATION_DATE = '1 February 2026';
+
+function slugToDownloadUrl(slug: string): string {
+  return `/api/downloads/${slug}`;
+}
+
+function slugToDocumentUrl(slug: string): string {
+  const cleanSlug = slug.replace(/-\d{10,}$/g, '');
+  return `/documents/${slug}.pdf`;
+}
+
+function LineGraph({ data }: { data: DailyData[] }) {
   if (!data.length) return null;
   const max = Math.max(...data.map(d => d.count), 1);
+  const min = Math.min(...data.map(d => d.count));
+  const padding = 30;
+  const width = 800;
+  const height = 200;
+  const graphW = width - padding * 2;
+  const graphH = height - padding * 2;
+  const range = max - min || 1;
+
+  const points = data.map((d, i) => ({
+    x: padding + (i / (data.length - 1 || 1)) * graphW,
+    y: padding + graphH - ((d.count - min) / range) * graphH,
+    ...d,
+  }));
+
+  const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
+  const areaPath = `${linePath} L ${points[points.length - 1].x} ${padding + graphH} L ${points[0].x} ${padding + graphH} Z`;
+
+  const yTicks = 5;
+  const yLabels = Array.from({ length: yTicks + 1 }, (_, i) => Math.round(min + (range * i) / yTicks));
 
   return (
-    <div className="flex items-end gap-[3px] h-32 w-full" data-testid="chart-daily-downloads">
-      {data.map((d, i) => {
-        const height = Math.max((d.count / max) * 100, 2);
-        const isRecent = i >= data.length - 3;
-        const isToday = i === data.length - 1;
-        return (
-          <div key={d.date} className="flex-1 flex flex-col items-center gap-1 group relative">
-            <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-black/90 text-white text-xs px-2 py-1 rounded whitespace-nowrap pointer-events-none z-10">
-              {new Date(d.date + 'T12:00:00').toLocaleDateString('en-AU', { month: 'short', day: 'numeric' })}: {d.count}
-            </div>
-            <motion.div
-              initial={{ height: 0 }}
-              animate={{ height: `${height}%` }}
-              transition={{ duration: 0.5, delay: i * 0.02 }}
-              className={`w-full rounded-t-sm ${
-                isToday ? 'bg-[hsl(38,92%,50%)]' :
-                isRecent ? 'bg-[hsl(38,92%,50%)]/70' :
-                'bg-white/20'
-              }`}
-            />
-            {(i === 0 || isToday || i === Math.floor(data.length / 2)) && (
-              <span className="text-[9px] text-gray-500 mt-1 hidden md:block">
-                {new Date(d.date + 'T12:00:00').toLocaleDateString('en-AU', { month: 'short', day: 'numeric' })}
-              </span>
+    <div className="relative w-full" data-testid="chart-line-graph">
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="hsl(38,92%,50%)" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="hsl(38,92%,50%)" stopOpacity="0.02" />
+          </linearGradient>
+        </defs>
+
+        {yLabels.map((val, i) => {
+          const y = padding + graphH - ((val - min) / range) * graphH;
+          return (
+            <g key={i}>
+              <line x1={padding} y1={y} x2={padding + graphW} y2={y} stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+              <text x={padding - 5} y={y + 4} textAnchor="end" fill="rgba(255,255,255,0.3)" fontSize="10" fontFamily="monospace">
+                {val}
+              </text>
+            </g>
+          );
+        })}
+
+        <path d={areaPath} fill="url(#lineGrad)" />
+        <path d={linePath} fill="none" stroke="hsl(38,92%,50%)" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+
+        {points.map((p, i) => (
+          <g key={i}>
+            <circle cx={p.x} cy={p.y} r="3" fill="hsl(38,92%,50%)" opacity={i === points.length - 1 ? 1 : 0.5} />
+            {(i === 0 || i === points.length - 1 || i === Math.floor(points.length / 2) || i % 7 === 0) && (
+              <text x={p.x} y={padding + graphH + 15} textAnchor="middle" fill="rgba(255,255,255,0.3)" fontSize="9" fontFamily="monospace">
+                {new Date(p.date + 'T12:00:00').toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })}
+              </text>
             )}
-          </div>
-        );
-      })}
+          </g>
+        ))}
+
+        {points.length > 0 && (
+          <circle cx={points[points.length - 1].x} cy={points[points.length - 1].y} r="5" fill="hsl(38,92%,50%)" stroke="rgba(255,255,255,0.5)" strokeWidth="2">
+            <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite" />
+          </circle>
+        )}
+      </svg>
+
+      <div className="flex justify-between mt-2 text-[10px] text-gray-500 px-1">
+        <span>{data.length > 0 ? new Date(data[0].date + 'T12:00:00').toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) : ''}</span>
+        <span className="text-[hsl(38,92%,50%)] font-bold">LIVE</span>
+        <span>{data.length > 0 ? new Date(data[data.length - 1].date + 'T12:00:00').toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) : ''}</span>
+      </div>
     </div>
   );
 }
@@ -69,7 +119,14 @@ export function DownloadAnalytics() {
 
   const { data: topDocs } = useQuery<{ data: TopDoc[] }>({
     queryKey: ['/api/analytics/top-documents', 7],
-    queryFn: () => fetch('/api/analytics/top-documents?days=7&limit=5', { cache: 'no-store' }).then(r => r.json()),
+    queryFn: () => fetch('/api/analytics/top-documents?days=7&limit=10', { cache: 'no-store' }).then(r => r.json()),
+    refetchInterval: 30000,
+    staleTime: 0,
+  });
+
+  const { data: allTimeDocs } = useQuery<{ data: AllTimeDoc[]; since: string }>({
+    queryKey: ['/api/analytics/top-all-time'],
+    queryFn: () => fetch('/api/analytics/top-all-time?limit=15', { cache: 'no-store' }).then(r => r.json()),
     refetchInterval: 30000,
     staleTime: 0,
   });
@@ -91,7 +148,8 @@ export function DownloadAnalytics() {
   const daily = dailyData?.data ?? [];
   const last24 = recentData?.count ?? 0;
   const last72 = recent72?.count ?? 0;
-  const top = topDocs?.data ?? [];
+  const topWeekly = topDocs?.data ?? [];
+  const allTime = allTimeDocs?.data ?? [];
 
   const todayCount = daily.length > 0 ? daily[daily.length - 1]?.count ?? 0 : 0;
   const yesterdayCount = daily.length > 1 ? daily[daily.length - 2]?.count ?? 0 : 0;
@@ -118,7 +176,12 @@ export function DownloadAnalytics() {
             The Evidence Is Spreading
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-sm">
-            Real-time tracking of document downloads. Every number is a person choosing to witness.
+            Real-time tracking of document downloads since publication on {PUBLICATION_DATE}.
+            Every number represents a person choosing to witness the evidence.
+          </p>
+          <p className="text-gray-500 text-xs flex items-center justify-center gap-1">
+            <CalendarDays className="h-3 w-3" />
+            Tracking since {PUBLICATION_DATE}
           </p>
         </motion.div>
 
@@ -170,42 +233,110 @@ export function DownloadAnalytics() {
         </div>
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
-          <Card className="bg-white/[0.03] border-white/10" data-testid="card-chart">
+          <Card className="bg-white/[0.03] border-white/10" data-testid="card-line-chart">
             <CardContent className="p-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <h3 className="font-serif font-bold text-white text-lg">Daily Downloads — Last 30 Days</h3>
-                <span className="text-xs text-gray-500">Hover bars for detail</span>
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <h3 className="font-serif font-bold text-white text-lg">Website Activity — Last 30 Days</h3>
+                <span className="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-mono animate-pulse">LIVE</span>
               </div>
-              <MiniBarChart data={daily} />
+              <LineGraph data={daily} />
             </CardContent>
           </Card>
         </motion.div>
 
-        {top.length > 0 && (
+        {allTime.length > 0 && (
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }}>
-            <Card className="bg-white/[0.03] border-white/10" data-testid="card-top-docs">
+            <Card className="bg-white/[0.03] border-white/10" data-testid="card-all-time-docs">
               <CardContent className="p-6 space-y-4">
-                <h3 className="font-serif font-bold text-white text-lg flex items-center gap-2">
-                  <FileText className="h-5 w-5 text-[hsl(38,92%,50%)]" />
-                  Most Downloaded This Week
-                </h3>
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <h3 className="font-serif font-bold text-white text-lg flex items-center gap-2">
+                    <FileText className="h-5 w-5 text-[hsl(38,92%,50%)]" />
+                    All-Time Most Downloaded
+                  </h3>
+                  <span className="text-xs text-gray-500">
+                    Since {PUBLICATION_DATE}
+                  </span>
+                </div>
                 <div className="space-y-3">
-                  {top.map((doc, i) => {
-                    const maxCount = top[0]?.count ?? 1;
+                  {allTime.map((doc, i) => {
+                    const maxCount = allTime[0]?.count ?? 1;
                     const barWidth = Math.max((doc.count / maxCount) * 100, 5);
+                    const downloadUrl = slugToDocumentUrl(doc.slug);
                     return (
-                      <div key={doc.slug} className="space-y-1" data-testid={`top-doc-${i}`}>
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-300 truncate max-w-[70%]">{slugToTitle(doc.slug)}</span>
-                          <span className="text-white font-mono font-bold tabular-nums">{doc.count}</span>
+                      <div key={doc.slug} className="space-y-1.5" data-testid={`all-time-doc-${i}`}>
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex items-center gap-2 min-w-0 flex-1">
+                            <span className="text-xs font-mono text-gray-500 w-5 flex-shrink-0 text-right">#{i + 1}</span>
+                            <span className="text-gray-200 text-sm truncate">{doc.title}</span>
+                          </div>
+                          <div className="flex items-center gap-3 flex-shrink-0">
+                            <span className="text-white font-mono font-bold tabular-nums text-sm">{doc.count.toLocaleString()}</span>
+                            <Button asChild size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold h-7 px-2.5 text-xs">
+                              <a href={downloadUrl} target="_blank" rel="noopener noreferrer" download data-testid={`download-btn-${i}`}>
+                                <Download className="h-3 w-3 mr-1" />
+                                PDF
+                              </a>
+                            </Button>
+                          </div>
                         </div>
-                        <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                        <div className="h-1 bg-white/5 rounded-full overflow-hidden ml-7">
                           <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: `${barWidth}%` }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: i * 0.1 }}
+                            transition={{ duration: 0.6, delay: i * 0.05 }}
                             className={`h-full rounded-full ${i === 0 ? 'bg-[hsl(38,92%,50%)]' : i <= 2 ? 'bg-[hsl(38,92%,50%)]/60' : 'bg-white/20'}`}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+
+        {topWeekly.length > 0 && (
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.6 }}>
+            <Card className="bg-white/[0.03] border-white/10" data-testid="card-top-docs-weekly">
+              <CardContent className="p-6 space-y-4">
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <h3 className="font-serif font-bold text-white text-lg flex items-center gap-2">
+                    <Flame className="h-5 w-5 text-orange-400" />
+                    Trending This Week
+                  </h3>
+                  <span className="text-xs text-gray-500">Last 7 days</span>
+                </div>
+                <div className="space-y-3">
+                  {topWeekly.map((doc, i) => {
+                    const maxCount = topWeekly[0]?.count ?? 1;
+                    const barWidth = Math.max((doc.count / maxCount) * 100, 5);
+                    const downloadUrl = slugToDocumentUrl(doc.slug);
+                    return (
+                      <div key={doc.slug} className="space-y-1.5" data-testid={`weekly-doc-${i}`}>
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex items-center gap-2 min-w-0 flex-1">
+                            <span className="text-xs font-mono text-gray-500 w-5 flex-shrink-0 text-right">#{i + 1}</span>
+                            <span className="text-gray-200 text-sm truncate">{doc.title}</span>
+                          </div>
+                          <div className="flex items-center gap-3 flex-shrink-0">
+                            <span className="text-white font-mono font-bold tabular-nums text-sm">{doc.count.toLocaleString()}</span>
+                            <Button asChild size="sm" className="bg-white/10 hover:bg-white/20 text-white font-bold h-7 px-2.5 text-xs border border-white/10">
+                              <a href={downloadUrl} target="_blank" rel="noopener noreferrer" download data-testid={`weekly-download-btn-${i}`}>
+                                <Download className="h-3 w-3 mr-1" />
+                                PDF
+                              </a>
+                            </Button>
+                          </div>
+                        </div>
+                        <div className="h-1 bg-white/5 rounded-full overflow-hidden ml-7">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${barWidth}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: i * 0.05 }}
+                            className={`h-full rounded-full ${i === 0 ? 'bg-orange-400' : i <= 2 ? 'bg-orange-400/60' : 'bg-white/15'}`}
                           />
                         </div>
                       </div>

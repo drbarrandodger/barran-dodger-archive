@@ -294,7 +294,7 @@ function TotalDownloadsSection() {
                   {total > 0 ? total.toLocaleString() : "---"}
                 </div>
                 <p className="text-gray-400 text-sm">
-                  total downloads across all documents — updating every 15 seconds
+                  total downloads across all documents since 1 February 2026 — live, updating every 15 seconds
                 </p>
               </div>
               <div className="max-w-2xl mx-auto space-y-4">
