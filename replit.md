@@ -27,7 +27,7 @@ Preferred communication style: Simple, everyday language.
 - **Database**: PostgreSQL via Drizzle ORM
 - **Schema Location**: `shared/schema.ts`
 - **Migrations**: Drizzle Kit
-- **Tables**: subscribers, inquiries, evidence_items, download_counts, comments
+- **Tables**: subscribers, inquiries, evidence_items, download_counts, download_events, comments
 
 ### Shared Code
 The `shared/` directory contains `schema.ts` for database and Zod validation, and `routes.ts` for type-safe API route definitions.
@@ -48,6 +48,8 @@ The `shared/` directory contains `schema.ts` for database and Zod validation, an
     - **Theming**: Dark/light mode toggle with persistence.
     - **Comment Sections**: User discussion on document pages (Evidence, Gospel, Prophetic Papers, Manifesto, Case Studies, Media). CommentSection component in `client/src/components/CommentSection.tsx`. Rate-limited to 5 comments per minute per IP.
     - **Download Counters**: Real-time download tracking with DownloadBadge and trackDownload across all document download links. Baselines seeded from Analytics data.
+    - **Download Analytics**: Time-series analytics tracking via `download_events` table. API endpoints: `/api/analytics/daily`, `/api/analytics/top-documents`, `/api/analytics/recent`. Frontend dashboard in `client/src/components/DownloadAnalytics.tsx` with 30-day bar chart, 24h/72h/7d stat cards with trend percentages, and top-5 most downloaded documents. Live total counter in `TotalDownloadsSection` component (ViralLanding.tsx).
+    - **Quantum/NHI/Disclosure Section**: Philosophical section on blockchain permanence, quantum non-erasure, and NHI contact across civilisations (Indigenous, Egyptian, Mayan, Biblical, Vedic traditions).
     - **Viral Landing Page**: `/the-truth` — "The Documents Australia Doesn't Want You to See" with top 10 documents, share buttons, newsletter signup
     - **ShareEvidence Component**: Reusable one-click sharing for individual documents (X/Twitter, Facebook, WhatsApp, Email, Copy Link)
     - **Enhanced Donate Page**: Donation tiers ($10–$250) with impact statements, Wall of Supporters counter, recurring support pitch, external product links

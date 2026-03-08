@@ -10,6 +10,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { SectionShare } from "@/components/SectionShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { DownloadAnalytics } from "@/components/DownloadAnalytics";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -735,6 +736,8 @@ export default function ViralLanding() {
           </div>
         </div>
       </section>
+
+      <DownloadAnalytics />
 
       <TotalDownloadsSection />
 

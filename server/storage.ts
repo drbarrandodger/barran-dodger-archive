@@ -5,6 +5,7 @@ import {
   inquiries,
   evidenceItems,
   downloadCounts,
+  downloadEvents,
   comments,
   type InsertSubscriber,
   type InsertInquiry,
@@ -14,6 +15,7 @@ import {
   type Inquiry,
   type EvidenceItem,
   type DownloadCount,
+  type DownloadEvent,
   type Comment
 } from "@shared/schema";
 
@@ -25,6 +27,10 @@ export interface IStorage {
   getDownloadCount(slug: string): Promise<number>;
   getTotalDownloadCount(): Promise<number>;
   incrementDownloadCount(slug: string): Promise<number>;
+  recordDownloadEvent(slug: string): Promise<void>;
+  getDownloadAnalytics(days: number): Promise<{ date: string; count: number }[]>;
+  getTopDocuments(days: number, limit: number): Promise<{ slug: string; count: number }[]>;
+  getRecentDownloadCount(hours: number): Promise<number>;
   getComments(pageSlug: string): Promise<Comment[]>;
   createComment(comment: InsertComment): Promise<Comment>;
 }
@@ -82,8 +88,47 @@ export class DatabaseStorage implements IStorage {
         set: { count: sql`${downloadCounts.count} + 1` },
       })
       .returning();
+    this.recordDownloadEvent(slug).catch(() => {});
     return row.count;
   }
+
+  async recordDownloadEvent(slug: string): Promise<void> {
+    await db.insert(downloadEvents).values({ documentSlug: slug });
+  }
+
+  async getDownloadAnalytics(days: number): Promise<{ date: string; count: number }[]> {
+    const rows = await db.execute(sql`
+      SELECT DATE(downloaded_at) as date, COUNT(*)::int as count
+      FROM download_events
+      WHERE downloaded_at >= NOW() - INTERVAL '1 day' * ${days}
+      GROUP BY DATE(downloaded_at)
+      ORDER BY date ASC
+    `);
+    return (rows.rows as any[]).map(r => ({ date: String(r.date), count: Number(r.count) }));
+  }
+
+  async getTopDocuments(days: number, limit: number): Promise<{ slug: string; count: number }[]> {
+    const rows = await db.execute(sql`
+      SELECT document_slug as slug, COUNT(*)::int as count
+      FROM download_events
+      WHERE downloaded_at >= NOW() - INTERVAL '1 day' * ${days}
+      GROUP BY document_slug
+      ORDER BY count DESC
+      LIMIT ${limit}
+    `);
+    return (rows.rows as any[]).map(r => ({ slug: String(r.slug), count: Number(r.count) }));
+  }
+
+  async getRecentDownloadCount(hours: number): Promise<number> {
+    const result = await db.execute(sql`
+      SELECT COUNT(*)::int as count
+      FROM download_events
+      WHERE downloaded_at >= NOW() - INTERVAL '1 hour' * ${hours}
+    `);
+    const row = result.rows[0] as any;
+    return row ? Number(row.count) : 0;
+  }
+
   async getComments(pageSlug: string): Promise<Comment[]> {
     return await db
       .select()

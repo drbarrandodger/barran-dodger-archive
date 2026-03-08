@@ -63,6 +63,14 @@ export const downloadCounts = pgTable("download_counts", {
 
 export type DownloadCount = typeof downloadCounts.$inferSelect;
 
+export const downloadEvents = pgTable("download_events", {
+  id: serial("id").primaryKey(),
+  documentSlug: text("document_slug").notNull(),
+  downloadedAt: timestamp("downloaded_at").defaultNow(),
+});
+
+export type DownloadEvent = typeof downloadEvents.$inferSelect;
+
 export const comments = pgTable("comments", {
   id: serial("id").primaryKey(),
   pageSlug: text("page_slug").notNull(),
