@@ -23,6 +23,7 @@ export interface IStorage {
   getEvidenceItems(): Promise<EvidenceItem[]>;
   createEvidenceItem(evidence: InsertEvidence): Promise<EvidenceItem>;
   getDownloadCount(slug: string): Promise<number>;
+  getTotalDownloadCount(): Promise<number>;
   incrementDownloadCount(slug: string): Promise<number>;
   getComments(pageSlug: string): Promise<Comment[]>;
   createComment(comment: InsertComment): Promise<Comment>;
@@ -63,6 +64,13 @@ export class DatabaseStorage implements IStorage {
       .from(downloadCounts)
       .where(eq(downloadCounts.documentSlug, slug));
     return row ? row.count : 0;
+  }
+
+  async getTotalDownloadCount(): Promise<number> {
+    const [row] = await db
+      .select({ total: sql<number>`COALESCE(SUM(${downloadCounts.count}), 0)` })
+      .from(downloadCounts);
+    return row ? Number(row.total) : 0;
   }
 
   async incrementDownloadCount(slug: string): Promise<number> {

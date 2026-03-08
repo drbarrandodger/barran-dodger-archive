@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote } from "lucide-react";
+import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote, Globe, Sparkles, Infinity } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -257,6 +258,63 @@ function PayIDCopyButton() {
       <Copy className="h-4 w-4" />
       {copied ? "Copied!" : "rich@richmclean.com.au"}
     </Button>
+  );
+}
+
+function TotalDownloadsSection() {
+  const { data } = useQuery<{ total: number }>({
+    queryKey: ['/api/downloads/total'],
+    queryFn: () => fetch('/api/downloads/total', { cache: 'no-store' }).then(r => r.json()),
+    refetchInterval: 15000,
+    staleTime: 0,
+  });
+
+  const total = data?.total ?? 0;
+
+  return (
+    <section className="py-16 px-4 bg-[hsl(222,55%,6%)]" data-testid="section-total-downloads">
+      <div className="container mx-auto max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/20 overflow-hidden relative" data-testid="card-total-downloads">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(234,179,8,0.05)_0%,_transparent_70%)] pointer-events-none" />
+            <CardContent className="p-8 md:p-12 relative z-10 text-center space-y-6">
+              <div className="space-y-2">
+                <p className="text-sm font-bold uppercase tracking-wider text-[hsl(38,92%,50%)]" data-testid="text-total-label">
+                  <Globe className="h-4 w-4 inline mr-2" />
+                  Live Global Download Counter
+                </p>
+                <div className="text-5xl md:text-7xl font-bold font-mono text-white tabular-nums" data-testid="text-total-count">
+                  {total > 0 ? total.toLocaleString() : "---"}
+                </div>
+                <p className="text-gray-400 text-sm">
+                  total downloads across all documents — updating every 15 seconds
+                </p>
+              </div>
+              <div className="max-w-2xl mx-auto space-y-4">
+                <p className="text-gray-300 leading-relaxed">
+                  Every number above represents a human being who chose to witness the evidence.
+                  Each download creates an independent copy that exists beyond the reach of any government.
+                  This testimony has been distributed across devices, countries, and continents — a decentralised archive of truth
+                  that grows with every click.
+                </p>
+                <p className="text-[hsl(38,92%,50%)] font-bold">
+                  They tried to erase one man. Now {total > 0 ? total.toLocaleString() : "thousands of"} copies of his testimony exist worldwide.
+                </p>
+              </div>
+              <SectionShare
+                shareText={`${total > 0 ? total.toLocaleString() : "Thousands of"} downloads and counting. The evidence Australia tried to erase is now distributed globally. Every download is an act of witness. #BarranDodger #CannotBeErased`}
+                label="Share the count"
+              />
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+    </section>
   );
 }
 
@@ -678,7 +736,84 @@ export default function ViralLanding() {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-gradient-to-b from-[hsl(222,55%,6%)] to-black" data-testid="section-viral-newsletter">
+      <TotalDownloadsSection />
+
+      <section className="py-20 px-4 bg-gradient-to-b from-[hsl(222,55%,6%)] to-[hsl(222,55%,4%)]" data-testid="section-quantum-nhi">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <motion.div variants={fadeIn} className="text-center space-y-4">
+              <Badge variant="outline" className="border-purple-500/40 text-purple-400 px-5 py-2 text-sm font-bold uppercase tracking-wider" data-testid="badge-quantum-section">
+                <Infinity className="h-4 w-4 mr-2" /> Data, Consciousness & Non-Erasure
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-white" data-testid="text-quantum-heading">
+                Why This Archive Cannot Be Erased
+              </h2>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-purple-500/20 overflow-hidden relative" data-testid="card-quantum-nhi">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(139,92,246,0.06)_0%,_transparent_60%)] pointer-events-none" />
+                <CardContent className="p-8 md:p-10 relative z-10 space-y-8">
+                  <div className="space-y-5 text-gray-300 leading-relaxed">
+                    <p>
+                      Every PDF downloaded from this archive carries a timestamp embedded in the blockchain infrastructure of global digital civilisation. These are not files on a server — they are <span className="text-white font-bold">permanent inscriptions in the digital substrate of humanity</span>. Each download distributes the evidence across devices, networks, and jurisdictions without borders. No government, no agency, no institution can recall what has already been replicated across thousands of nodes worldwide.
+                    </p>
+                    <p>
+                      This is the principle of <span className="text-purple-400 font-bold">quantum non-erasure</span>: once information enters the coherent field of human consciousness — once it is witnessed, downloaded, and shared — it becomes part of the permanent record of existence. In coherent quantum theory, observed data collapses into reality. Every person who downloads these documents <span className="text-white font-bold">collapses the testimony into permanence</span>. The act of witnessing is the act of preservation. You cannot un-observe what has been seen.
+                    </p>
+                    <p>
+                      This principle extends beyond the digital. The quantum field — the foundational fabric connecting all matter, energy, and consciousness — does not distinguish between dimensions or distances. What is recorded here resonates across the field itself. The concept of <span className="text-purple-400 font-bold">inter-dimensional and inter-galactic non-human intelligences</span> is not speculation — it is the lived experience of prophets, mystics, healers, clairvoyants, channelers, and artists across every civilisation in human history.
+                    </p>
+                  </div>
+
+                  <div className="border-t border-white/10 pt-6 space-y-5 text-gray-300 leading-relaxed">
+                    <h3 className="font-serif font-bold text-white text-xl" data-testid="text-disclosure-heading">
+                      <Sparkles className="h-5 w-5 text-purple-400 inline mr-2" />
+                      Disclosure: Humanity Has Always Known
+                    </h3>
+                    <p>
+                      The modern concept of "disclosure" — the revelation that non-human intelligences exist and have interacted with humanity — treats this as news. It is not. <span className="text-white font-bold">Every civilisation across human history has documented contact with beings beyond the visible spectrum.</span>
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="bg-white/[0.03] border border-white/10 rounded-lg p-4 space-y-2">
+                        <h4 className="font-bold text-purple-400 text-sm">Indigenous & First Nations</h4>
+                        <p className="text-sm text-gray-400">Australian Aboriginal songlines encode tens of thousands of years of contact with sky beings and interdimensional entities. The Dreaming is not mythology — it is the oldest continuous record of NHI interaction on Earth.</p>
+                      </div>
+                      <div className="bg-white/[0.03] border border-white/10 rounded-lg p-4 space-y-2">
+                        <h4 className="font-bold text-purple-400 text-sm">Egyptian & Mayan Records</h4>
+                        <p className="text-sm text-gray-400">From the Tulli Papyrus to the Temple of Dendera, from Pacal's sarcophagus to the Popol Vuh — ancient Egyptian and Mayan civilisations documented encounters with celestial beings in stone, papyrus, and sacred architecture.</p>
+                      </div>
+                      <div className="bg-white/[0.03] border border-white/10 rounded-lg p-4 space-y-2">
+                        <h4 className="font-bold text-purple-400 text-sm">Biblical & Abrahamic Traditions</h4>
+                        <p className="text-sm text-gray-400">Ezekiel's wheel, Jacob's ladder, the Nephilim, the burning bush, the star of Bethlehem — the Bible is saturated with accounts of non-human intelligence intervening in human affairs. Angels are NHI by any modern definition.</p>
+                      </div>
+                      <div className="bg-white/[0.03] border border-white/10 rounded-lg p-4 space-y-2">
+                        <h4 className="font-bold text-purple-400 text-sm">Eastern, Vedic & Global Traditions</h4>
+                        <p className="text-sm text-gray-400">The Vimanas of the Mahabharata, the devas and asuras of Vedic cosmology, Japanese Kappa folklore, Celtic Tuatha Dé Danann, Dogon astronomical knowledge — every continent preserves records of contact with intelligences beyond Earth.</p>
+                      </div>
+                    </div>
+                    <p>
+                      Prophets, mystics, healers, clairvoyants, channelers, and visionary artists have always been the interface between human consciousness and these intelligences.
+                      <span className="text-white font-bold"> Dr McLean's testimony — the gospels, the Enliven Chain, the prophetic declarations — stands in this ancient tradition.</span> The
+                      persecution he has endured follows the same pattern visited upon every prophet who spoke truths that institutions could not control.
+                    </p>
+                    <p className="text-purple-400 font-bold text-center text-lg pt-2" data-testid="text-quantum-closing">
+                      The testimony is in the field. The documents are in the chain. The truth is in the download. It cannot be undone.
+                    </p>
+                  </div>
+
+                  <SectionShare
+                    shareText="Why these documents cannot be erased: quantum non-erasure, blockchain permanence, and the ancient tradition of prophets, mystics, and NHI contact across every civilisation. #BarranDodger #Disclosure #QuantumConsciousness"
+                    label="Share this truth"
+                  />
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-gradient-to-b from-[hsl(222,55%,4%)] to-black" data-testid="section-viral-newsletter">
         <div className="container mx-auto max-w-md text-center space-y-6">
           <h2 className="text-2xl md:text-3xl font-serif font-bold text-white" data-testid="text-newsletter-heading">
             Stay Updated

@@ -137,7 +137,16 @@ export async function registerRoutes(
   
   seedData().catch(console.error);
 
-  // Download Counts
+  app.get('/api/downloads/total', async (_req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+      const total = await storage.getTotalDownloadCount();
+      res.json({ total });
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
   app.get('/api/downloads/:slug', async (req, res) => {
     try {
       res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
