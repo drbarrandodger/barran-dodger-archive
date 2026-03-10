@@ -15,7 +15,17 @@ export function DonationBanner() {
   const payId = "rich@richmclean.com.au";
 
   useEffect(() => {
-    document.documentElement.style.setProperty("--banner-height", dismissed ? "0px" : "40px");
+    const updateHeight = () => {
+      const wbHeight = getComputedStyle(document.documentElement).getPropertyValue("--whistleblower-banner-height").trim() || "0px";
+      const donationHeight = dismissed ? "0px" : "40px";
+      const totalHeight = `calc(${wbHeight} + ${donationHeight})`;
+      document.documentElement.style.setProperty("--banner-height", totalHeight);
+      document.documentElement.style.setProperty("--donation-banner-height", donationHeight);
+    };
+    updateHeight();
+    const observer = new MutationObserver(updateHeight);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["style"] });
+    return () => observer.disconnect();
   }, [dismissed]);
 
   const copyPayId = () => {
@@ -28,7 +38,7 @@ export function DonationBanner() {
   if (dismissed) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] py-2 px-4 z-[60]" data-testid="donation-banner">
+    <div className="fixed left-0 right-0 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] py-2 px-4 z-[60]" style={{ top: "var(--whistleblower-banner-height, 0px)" }} data-testid="donation-banner">
       <div className="container mx-auto flex items-center justify-center gap-3 flex-wrap text-sm font-medium">
         <Heart className="h-4 w-4 flex-shrink-0" />
         <span className="text-center">

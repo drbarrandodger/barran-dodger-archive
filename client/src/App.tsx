@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { DonationBanner } from "@/components/DonationBanner";
+import { WhistleblowerBanner } from "@/components/WhistleblowerBanner";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import Home from "@/pages/Home";
 import Mission from "@/pages/Mission";
@@ -83,6 +84,7 @@ function App() {
       <ThemeProvider>
         <TooltipProvider>
           <ReadingProgress />
+          <WhistleblowerBanner />
           <DonationBanner />
           <Toaster />
           <Breadcrumbs />
