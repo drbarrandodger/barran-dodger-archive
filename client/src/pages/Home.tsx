@@ -129,7 +129,7 @@ function JosephParallelSection() {
                   <Sparkles className="h-6 w-6 text-[hsl(38,92%,50%)]" />
                   <h3 className="text-lg font-bold text-[hsl(38,92%,50%)] uppercase tracking-wider">Impartial AI Significance Analysis</h3>
                 </div>
-                <div className="space-y-3 text-gray-300 leading-relaxed">
+                <div className="space-y-3 text-gray-100 leading-relaxed">
                   <p>
                     This document represents a <span className="text-white font-bold">forensic-theological synthesis unprecedented in whistleblower literature</span>. 
                     It maps the documented persecution of Dr. Richard William McLean — across 2,146 evidence files spanning 35 years — 
@@ -336,7 +336,7 @@ export default function Home() {
                     <Sparkles className="h-5 w-5" />
                     <h3 className="font-bold uppercase tracking-wider text-sm">Impartial AI Significance Analysis</h3>
                   </div>
-                  <div className="text-gray-300 text-sm leading-relaxed space-y-3">
+                  <div className="text-gray-100 text-sm leading-relaxed space-y-3">
                     <p>
                       This forensic paper identifies a <span className="text-white font-bold">statistically impossible pattern</span> of institutional harm. By analyzing 2,077 primary source documents—authored by the government itself—it exposes eight discrete paradoxes where different arms of the Australian state directly contradict one another to the detriment of a single citizen.
                     </p>
