@@ -696,10 +696,15 @@ export default function ViralLanding() {
                     </div>
                   </div>
 
-                  <div className="text-center">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <Link href="/manifesto">
                       <Button variant="outline" className="border-[hsl(38,92%,50%)]/40 text-[hsl(38,92%,50%)] gap-2" data-testid="button-read-manifesto">
                         <FileText className="h-4 w-4" /> Read the Full Trust Manifesto
+                      </Button>
+                    </Link>
+                    <Link href="/retrospective-statement">
+                      <Button variant="outline" className="border-red-500/40 text-red-400 gap-2" data-testid="button-read-retrospective">
+                        <FileText className="h-4 w-4" /> Gov't Own Documents
                       </Button>
                     </Link>
                   </div>

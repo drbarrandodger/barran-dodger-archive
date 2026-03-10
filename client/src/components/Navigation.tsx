@@ -44,6 +44,7 @@ export function Navigation() {
   const navLinks = [
     { href: "/start-here", label: "Start Here", highlight: true },
     { href: "/administrative-annihilation", label: "The Paper", highlight: true },
+    { href: "/retrospective-statement", label: "Gov't Own Documents" },
     { href: "/archive", label: "Full Archive" },
     { href: "/manifesto", label: "Manifesto" },
     { href: "/josephs-coat", label: "Joseph's Coat" },

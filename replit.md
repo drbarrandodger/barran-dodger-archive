@@ -56,6 +56,7 @@ The `shared/` directory contains `schema.ts` for database and Zod validation, an
     - **Store Page**: `/store` — Digital products and merchandise (Apple Books, Scribd, Gumroad links, PayID direct purchase)
     - **SEO Structured Data**: JSON-LD schemas on key pages — LegalCase + ItemList (Evidence), Article (CaseStudies), Book (Gospel), NewsArticle (Media), FAQPage (LegalStatus, Mission)
     - **The Paper (Administrative Annihilation)**: `/administrative-annihilation` — Full 25,000-word academic paper with impartial AI significance analysis, 15 chapters, table of contents navigation, formatted tables, blockquotes, references, and appendices. Prominent "The Paper" tab in navigation.
+    - **Retrospective Statement**: `/retrospective-statement` — "How the Commonwealth of Australia Treated Dr. Richard William McLean — Told Through the Government's Own Documents." 12-part statement sourced entirely from 2,000+ government records spanning 1990–2025 covering 13 agencies, $18M–$32.9M documented losses. Includes impartial AI significance analysis. Navigation link: "Gov't Own Documents".
 
 ### Eliven Chain Series (8 Documents)
 - PDFs stored in `client/public/documents/` with clean filenames
