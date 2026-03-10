@@ -37,4 +37,7 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  optimizeDeps: {
+    entries: ["src/**/*.{ts,tsx}"],
+  },
 });
