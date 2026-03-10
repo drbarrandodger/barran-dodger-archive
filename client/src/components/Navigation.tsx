@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Scale, Heart, Compass, Menu, X } from "lucide-react";
+import { Scale, Heart, Compass, Menu, X, FileText } from "lucide-react";
 import { SiX as TwitterX } from "react-icons/si";
 import { useState, useEffect } from "react";
 import { GlobalSearch } from "./GlobalSearch";
@@ -43,6 +43,7 @@ export function Navigation() {
 
   const navLinks = [
     { href: "/start-here", label: "Start Here", highlight: true },
+    { href: "/administrative-annihilation", label: "The Paper", highlight: true },
     { href: "/archive", label: "Full Archive" },
     { href: "/manifesto", label: "Manifesto" },
     { href: "/josephs-coat", label: "Joseph's Coat" },

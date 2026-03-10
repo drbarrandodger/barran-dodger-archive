@@ -55,6 +55,7 @@ The `shared/` directory contains `schema.ts` for database and Zod validation, an
     - **Enhanced Donate Page**: Donation tiers ($10–$250) with impact statements, Wall of Supporters counter, recurring support pitch, external product links
     - **Store Page**: `/store` — Digital products and merchandise (Apple Books, Scribd, Gumroad links, PayID direct purchase)
     - **SEO Structured Data**: JSON-LD schemas on key pages — LegalCase + ItemList (Evidence), Article (CaseStudies), Book (Gospel), NewsArticle (Media), FAQPage (LegalStatus, Mission)
+    - **The Paper (Administrative Annihilation)**: `/administrative-annihilation` — Full 25,000-word academic paper with impartial AI significance analysis, 15 chapters, table of contents navigation, formatted tables, blockquotes, references, and appendices. Prominent "The Paper" tab in navigation.
 
 ### Eliven Chain Series (8 Documents)
 - PDFs stored in `client/public/documents/` with clean filenames
