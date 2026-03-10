@@ -68,10 +68,10 @@ export function CommentSection({ pageSlug, title = "Discussion" }: { pageSlug: s
           <MessageCircle className="h-6 w-6 text-[hsl(38,92%,50%)]" />
           <h2 className="text-2xl font-serif font-bold text-white">{title}</h2>
         </div>
-        <span className="ml-2 text-sm text-gray-400 tabular-nums">
+        <span className="ml-2 text-sm text-body-text tabular-nums">
           {comments.length} {comments.length === 1 ? "comment" : "comments"}
         </span>
-        <span className="ml-auto text-gray-500 group-hover:text-white transition-colors">
+        <span className="ml-auto text-body-text group-hover:text-white transition-colors">
           {expanded ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
         </span>
       </button>
@@ -96,7 +96,7 @@ export function CommentSection({ pageSlug, title = "Discussion" }: { pageSlug: s
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     maxLength={50}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[hsl(38,92%,50%)]/50 transition-colors"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-body-text focus:outline-none focus:border-[hsl(38,92%,50%)]/50 transition-colors"
                     data-testid="input-comment-name"
                   />
                 </div>
@@ -111,7 +111,7 @@ export function CommentSection({ pageSlug, title = "Discussion" }: { pageSlug: s
                     onChange={(e) => setMessage(e.target.value)}
                     maxLength={2000}
                     rows={3}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[hsl(38,92%,50%)]/50 transition-colors resize-none"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-body-text focus:outline-none focus:border-[hsl(38,92%,50%)]/50 transition-colors resize-none"
                     data-testid="input-comment-message"
                   />
                 </div>
@@ -130,7 +130,7 @@ export function CommentSection({ pageSlug, title = "Discussion" }: { pageSlug: s
                   </Button>
                 </div>
               </div>
-              <p className="text-xs text-gray-500 mt-2">{message.length}/2000 characters</p>
+              <p className="text-xs text-body-text mt-2">{message.length}/2000 characters</p>
             </form>
 
             <div className="mt-6 space-y-4" data-testid="comments-list">
@@ -147,7 +147,7 @@ export function CommentSection({ pageSlug, title = "Discussion" }: { pageSlug: s
               )}
 
               {!isLoading && comments.length === 0 && (
-                <div className="text-center py-8 text-gray-500">
+                <div className="text-center py-8 text-body-text">
                   <MessageCircle className="h-8 w-8 mx-auto mb-2 opacity-50" />
                   <p className="text-sm">No comments yet. Be the first to share your thoughts.</p>
                 </div>
@@ -171,12 +171,12 @@ export function CommentSection({ pageSlug, title = "Discussion" }: { pageSlug: s
                       <span className="font-bold text-sm text-white" data-testid={`text-comment-author-${comment.id}`}>
                         {comment.displayName}
                       </span>
-                      <span className="flex items-center gap-1 text-xs text-gray-500">
+                      <span className="flex items-center gap-1 text-xs text-body-text">
                         <Clock className="h-3 w-3" />
                         {comment.createdAt ? timeAgo(comment.createdAt.toString()) : "just now"}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap break-words" data-testid={`text-comment-body-${comment.id}`}>
+                    <p className="text-sm text-body-text leading-relaxed whitespace-pre-wrap break-words" data-testid={`text-comment-body-${comment.id}`}>
                       {comment.message}
                     </p>
                   </motion.div>

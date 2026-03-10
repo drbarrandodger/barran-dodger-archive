@@ -57,10 +57,10 @@ export function WhistleblowerBanner() {
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-white/10">
-                  <p className="text-gray-300 text-sm leading-relaxed italic">
+                  <p className="text-body-text text-sm leading-relaxed italic">
                     A PhD holder. An internationally celebrated author. An award-winning human rights advocate. A writer, artist, journalist, NDIS provider. A man who dedicated his life to serving others — erased by the government he served. His job denied. His identity stolen. His body broken in their custody. Forcibly medicated for telling the truth. Driven from his home. Stripped of everything. Now a UNHCR-verified asylum seeker trapped inside his own country — the country that calls itself a democracy.
                   </p>
-                  <p className="text-gray-300 text-sm leading-relaxed italic mt-2">
+                  <p className="text-body-text text-sm leading-relaxed italic mt-2">
                     He showed them their own records proving every word. They looked away. Every single one of them.
                   </p>
                   <p className="text-[hsl(38,92%,50%)] text-sm md:text-base font-bold mt-3">

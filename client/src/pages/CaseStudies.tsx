@@ -376,7 +376,7 @@ export default function CaseStudies() {
                 <CardTitle className="text-3xl md:text-4xl lg:text-5xl font-serif text-primary leading-tight" data-testid="text-paradox-title">
                   THE PARADOX OF PERSECUTION
                 </CardTitle>
-                <CardDescription className="text-lg md:text-xl mt-3 text-foreground/80">
+                <CardDescription className="text-lg md:text-xl mt-3 text-body-text">
                   How the Australian Government's Own Records Simultaneously Prove <CrossLink to="/timeline">Systematic Targeting</CrossLink> and Guarantee Legal Vindication
                 </CardDescription>
                 <div className="mt-4 flex flex-wrap gap-3 text-sm text-muted-foreground">

@@ -35,6 +35,7 @@
   --gold-light: 42 100% 70%;
   --navy-dark: 222 55% 12%;
   --navy-light: 222 40% 25%;
+  --body-text: 210 70% 75%;
 }
 
 @layer base {

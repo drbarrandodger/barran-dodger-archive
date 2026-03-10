@@ -100,7 +100,7 @@ function LineGraph({ data }: { data: DailyData[] }) {
         )}
       </svg>
 
-      <div className="flex justify-between mt-2 text-[10px] text-gray-500 px-1">
+      <div className="flex justify-between mt-2 text-[10px] text-body-text px-1">
         <span>{data.length > 0 ? new Date(data[0].date + 'T12:00:00').toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) : ''}</span>
         <span className="text-[hsl(38,92%,50%)] font-bold">LIVE</span>
         <span>{data.length > 0 ? new Date(data[data.length - 1].date + 'T12:00:00').toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) : ''}</span>
@@ -175,11 +175,11 @@ export function DownloadAnalytics() {
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-white" data-testid="text-analytics-heading">
             The Evidence Is Spreading
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto text-sm">
+          <p className="text-body-text max-w-xl mx-auto text-sm">
             Real-time tracking of document downloads since publication on {PUBLICATION_DATE}.
             Every number represents a person choosing to witness the evidence.
           </p>
-          <p className="text-gray-500 text-xs flex items-center justify-center gap-1">
+          <p className="text-body-text text-xs flex items-center justify-center gap-1">
             <CalendarDays className="h-3 w-3" />
             Tracking since {PUBLICATION_DATE}
           </p>
@@ -190,7 +190,7 @@ export function DownloadAnalytics() {
             <Card className="bg-white/[0.03] border-white/10 h-full" data-testid="card-stat-24h">
               <CardContent className="p-6 text-center space-y-2">
                 <Clock className="h-5 w-5 text-[hsl(38,92%,50%)] mx-auto" />
-                <p className="text-xs text-gray-400 uppercase tracking-wider">Last 24 Hours</p>
+                <p className="text-xs text-body-text uppercase tracking-wider">Last 24 Hours</p>
                 <p className="text-3xl font-bold font-mono text-white tabular-nums" data-testid="text-count-24h">{last24.toLocaleString()}</p>
                 {dayChange !== 0 && (
                   <p className={`text-sm font-bold flex items-center justify-center gap-1 ${dayChange > 0 ? 'text-green-400' : 'text-red-400'}`} data-testid="text-change-daily">
@@ -206,7 +206,7 @@ export function DownloadAnalytics() {
             <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/30 h-full" data-testid="card-stat-72h">
               <CardContent className="p-6 text-center space-y-2">
                 <Flame className="h-5 w-5 text-orange-400 mx-auto" />
-                <p className="text-xs text-gray-400 uppercase tracking-wider">Last 72 Hours</p>
+                <p className="text-xs text-body-text uppercase tracking-wider">Last 72 Hours</p>
                 <p className="text-3xl font-bold font-mono text-white tabular-nums" data-testid="text-count-72h">{last72.toLocaleString()}</p>
                 <p className="text-sm text-[hsl(38,92%,50%)] font-bold" data-testid="text-spike-label">
                   {last72 > 500 ? 'Surging' : last72 > 300 ? 'High Activity' : 'Active'}
@@ -219,7 +219,7 @@ export function DownloadAnalytics() {
             <Card className="bg-white/[0.03] border-white/10 h-full" data-testid="card-stat-week">
               <CardContent className="p-6 text-center space-y-2">
                 <TrendingUp className="h-5 w-5 text-purple-400 mx-auto" />
-                <p className="text-xs text-gray-400 uppercase tracking-wider">7-Day Trend</p>
+                <p className="text-xs text-body-text uppercase tracking-wider">7-Day Trend</p>
                 <p className="text-3xl font-bold font-mono text-white tabular-nums" data-testid="text-count-week">{last7Total.toLocaleString()}</p>
                 {weekChange !== 0 && (
                   <p className={`text-sm font-bold flex items-center justify-center gap-1 ${weekChange > 0 ? 'text-green-400' : 'text-red-400'}`} data-testid="text-change-weekly">
@@ -253,7 +253,7 @@ export function DownloadAnalytics() {
                     <FileText className="h-5 w-5 text-[hsl(38,92%,50%)]" />
                     All-Time Most Downloaded
                   </h3>
-                  <span className="text-xs text-gray-500">
+                  <span className="text-xs text-body-text">
                     Since {PUBLICATION_DATE}
                   </span>
                 </div>
@@ -266,7 +266,7 @@ export function DownloadAnalytics() {
                       <div key={doc.slug} className="space-y-1.5" data-testid={`all-time-doc-${i}`}>
                         <div className="flex items-center justify-between gap-2">
                           <div className="flex items-center gap-2 min-w-0 flex-1">
-                            <span className="text-xs font-mono text-gray-500 w-5 flex-shrink-0 text-right">#{i + 1}</span>
+                            <span className="text-xs font-mono text-body-text w-5 flex-shrink-0 text-right">#{i + 1}</span>
                             <span className="text-gray-200 text-sm truncate">{doc.title}</span>
                           </div>
                           <div className="flex items-center gap-3 flex-shrink-0">
@@ -306,7 +306,7 @@ export function DownloadAnalytics() {
                     <Flame className="h-5 w-5 text-orange-400" />
                     Trending This Week
                   </h3>
-                  <span className="text-xs text-gray-500">Last 7 days</span>
+                  <span className="text-xs text-body-text">Last 7 days</span>
                 </div>
                 <div className="space-y-3">
                   {topWeekly.map((doc, i) => {
@@ -317,7 +317,7 @@ export function DownloadAnalytics() {
                       <div key={doc.slug} className="space-y-1.5" data-testid={`weekly-doc-${i}`}>
                         <div className="flex items-center justify-between gap-2">
                           <div className="flex items-center gap-2 min-w-0 flex-1">
-                            <span className="text-xs font-mono text-gray-500 w-5 flex-shrink-0 text-right">#{i + 1}</span>
+                            <span className="text-xs font-mono text-body-text w-5 flex-shrink-0 text-right">#{i + 1}</span>
                             <span className="text-gray-200 text-sm truncate">{doc.title}</span>
                           </div>
                           <div className="flex items-center gap-3 flex-shrink-0">

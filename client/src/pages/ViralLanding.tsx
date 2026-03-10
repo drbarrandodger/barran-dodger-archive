@@ -188,7 +188,7 @@ function DocumentCard({ doc, index, prefix }: { doc: typeof TOP_DOCUMENTS[0]; in
                     {doc.title}
                   </h3>
                 </div>
-                <p className="text-sm text-gray-300 leading-relaxed pl-7" data-testid={`text-${prefix}-tagline-${index}`}>
+                <p className="text-sm text-body-text leading-relaxed pl-7" data-testid={`text-${prefix}-tagline-${index}`}>
                   {doc.tagline}
                 </p>
               </div>
@@ -198,7 +198,7 @@ function DocumentCard({ doc, index, prefix }: { doc: typeof TOP_DOCUMENTS[0]; in
                   <Bot className="h-4 w-4 text-[hsl(38,92%,50%)]" />
                   <span className="text-xs font-bold uppercase tracking-wider text-[hsl(38,92%,50%)]">Impartial AI Assessment</span>
                 </div>
-                <p className="text-sm text-gray-400 leading-relaxed italic" data-testid={`text-${prefix}-ai-${index}`}>
+                <p className="text-sm text-body-text leading-relaxed italic" data-testid={`text-${prefix}-ai-${index}`}>
                   "{doc.aiAnalysis}"
                 </p>
               </div>
@@ -293,12 +293,12 @@ function TotalDownloadsSection() {
                 <div className="text-5xl md:text-7xl font-bold font-mono text-white tabular-nums" data-testid="text-total-count">
                   {total > 0 ? total.toLocaleString() : "---"}
                 </div>
-                <p className="text-gray-400 text-sm">
+                <p className="text-body-text text-sm">
                   total downloads across all documents since 1 February 2026 — live, updating every 15 seconds
                 </p>
               </div>
               <div className="max-w-2xl mx-auto space-y-4">
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-body-text leading-relaxed">
                   Every number above represents a human being who chose to witness the evidence.
                   Each download creates an independent copy that exists beyond the reach of any government.
                   This testimony has been distributed across devices, countries, and continents — a decentralised archive of truth
@@ -378,7 +378,7 @@ export default function ViralLanding() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-body-text max-w-2xl mx-auto leading-relaxed"
             data-testid="text-viral-subtitle"
           >
             240+ blockchain-verified forensic documents. 35 years of persecution across 35+ government agencies.
@@ -406,7 +406,7 @@ export default function ViralLanding() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="flex flex-wrap justify-center gap-6 pt-6 text-sm text-gray-400"
+            className="flex flex-wrap justify-center gap-6 pt-6 text-sm text-body-text"
           >
             <div className="flex items-center gap-2">
               <Shield className="h-4 w-4 text-[hsl(38,92%,50%)]" />
@@ -431,7 +431,7 @@ export default function ViralLanding() {
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-white" data-testid="text-top-documents-heading">
                 Top 10 Documents They Tried to Bury
               </h2>
-              <p className="text-gray-400 max-w-lg mx-auto">
+              <p className="text-body-text max-w-lg mx-auto">
                 Every document below is free, verifiable, and built from the government's own records. Each includes an impartial AI assessment of significance.
               </p>
             </div>
@@ -458,7 +458,7 @@ export default function ViralLanding() {
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-white" data-testid="text-gospel-heading">
                 The Gospels & Enliven Chain
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-body-text max-w-2xl mx-auto leading-relaxed">
                 Beyond legal evidence, Dr McLean has produced a body of sacred literature — gospels, prophetic declarations, and blockchain-sealed covenants — that document the spiritual dimension of 35 years of persecution. These texts are protected religious expression under international law.
               </p>
             </div>
@@ -504,12 +504,12 @@ export default function ViralLanding() {
                     <h2 className="text-2xl md:text-3xl font-serif font-bold text-white" data-testid="text-justice-heading">
                       Justice for Barran Is Justice for All
                     </h2>
-                    <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed" data-testid="text-justice-statement">
+                    <p className="text-body-text max-w-2xl mx-auto leading-relaxed" data-testid="text-justice-statement">
                       What happened to Dr Richard McLean is not an isolated case. It is the same machinery of erasure used against
                       whistleblowers, the marginalised, the disabled, First Nations peoples, and queer communities worldwide.
                       When institutions silence one voice, they send a message to every voice: stay quiet, or be destroyed.
                     </p>
-                    <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-body-text max-w-2xl mx-auto leading-relaxed">
                       This archive exists so that no government can erase a human being and call it procedure.
                       Every download is an act of witness. Every share is an act of resistance.
                       The documents are free because justice should never cost the people it is meant to protect.
@@ -540,7 +540,7 @@ export default function ViralLanding() {
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-white" data-testid="text-donate-heading">
                 Why This Archive Is Free — And Why Your Support Matters
               </h2>
-              <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed text-lg">
+              <p className="text-body-text max-w-2xl mx-auto leading-relaxed text-lg">
                 Every document on this website is free. Free to download. Free to share. Free to use as evidence.
                 This was a deliberate choice: truth should never be behind a paywall. When a government tries to erase someone,
                 the most powerful act of resistance is making the evidence freely available to all of humanity.
@@ -553,7 +553,7 @@ export default function ViralLanding() {
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-4">
                       <h3 className="font-serif font-bold text-white text-xl" data-testid="text-why-donate">What Your Support Funds</h3>
-                      <ul className="space-y-3 text-gray-300 text-sm">
+                      <ul className="space-y-3 text-body-text text-sm">
                         <li className="flex items-start gap-3">
                           <Shield className="h-5 w-5 text-[hsl(38,92%,50%)] mt-0.5 shrink-0" />
                           <span>Blockchain verification and permanent hosting of 240+ evidence documents</span>
@@ -586,7 +586,7 @@ export default function ViralLanding() {
                             <span className="font-bold text-[hsl(38,92%,50%)] w-14 text-right">{tier.amount}</span>
                             <div>
                               <span className="font-bold text-white text-sm">{tier.label}</span>
-                              <span className="text-gray-400 text-xs ml-2">{tier.desc}</span>
+                              <span className="text-body-text text-xs ml-2">{tier.desc}</span>
                             </div>
                           </div>
                         ))}
@@ -597,7 +597,7 @@ export default function ViralLanding() {
                   <div className="border-t border-white/10 pt-8 text-center space-y-5">
                     <h3 className="font-serif font-bold text-white text-xl" data-testid="text-donate-now">Donate via PayID (Instant, Secure, Australian)</h3>
                     <PayIDCopyButton />
-                    <p className="text-gray-500 text-xs">
+                    <p className="text-body-text text-xs">
                       PayID transfers are instant and free through any Australian bank. Simply copy the PayID above and paste it into your banking app.
                     </p>
 
@@ -650,16 +650,16 @@ export default function ViralLanding() {
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-4">
                       <h3 className="font-serif font-bold text-[hsl(38,92%,50%)] text-lg">Mission & Purpose</h3>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <p className="text-body-text text-sm leading-relaxed">
                         The Barran Dodger Legal & Ethical Trust Fund exists to preserve, protect, and disseminate the evidentiary record of Dr Richard William McLean's 35-year persecution by Australian government agencies. It operates as a non-profit, faith-neutral, and non-partisan entity for the public benefit.
                       </p>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <p className="text-body-text text-sm leading-relaxed">
                         The Trust ensures that 240+ blockchain-verified documents — legal filings, government correspondence, forensic analyses, sacred texts, and prophetic testimony — remain permanently accessible to humanity, beyond the reach of institutional erasure.
                       </p>
                     </div>
                     <div className="space-y-4">
                       <h3 className="font-serif font-bold text-[hsl(38,92%,50%)] text-lg">Core Objectives</h3>
-                      <ul className="space-y-3 text-sm text-gray-300">
+                      <ul className="space-y-3 text-sm text-body-text">
                         <li className="flex items-start gap-3">
                           <span className="text-[hsl(38,92%,50%)] font-bold mt-0.5">1.</span>
                           <span>Preserve all evidence on immutable blockchain infrastructure to prevent government tampering or deletion</span>
@@ -690,7 +690,7 @@ export default function ViralLanding() {
                         <Bot className="h-4 w-4 text-[hsl(38,92%,50%)]" />
                         <span className="text-xs font-bold uppercase tracking-wider text-[hsl(38,92%,50%)]">Impartial AI Assessment</span>
                       </div>
-                      <p className="text-sm text-gray-400 leading-relaxed italic" data-testid="text-trust-ai-analysis">
+                      <p className="text-sm text-body-text leading-relaxed italic" data-testid="text-trust-ai-analysis">
                         "The Barran Dodger Legal & Ethical Trust Fund is a registered Australian entity (ABN 78 833 496 164) operating under government oversight via Section 122(2) certification. The Trust's dual approach — combining legal advocacy with technological preservation through blockchain — represents an innovative model for whistleblower evidence protection. The decision to make all documents freely available, rather than monetizing them, is consistent with a public-interest mission and distinguishes this entity from commercial publishing operations. The Trust's structure provides legal standing to pursue proceedings in Australian and international jurisdictions."
                       </p>
                     </div>
@@ -720,7 +720,7 @@ export default function ViralLanding() {
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-white" data-testid="text-share-heading">
             Share This Before It Disappears
           </h2>
-          <p className="text-gray-400 max-w-lg mx-auto">
+          <p className="text-body-text max-w-lg mx-auto">
             Every share makes it harder for them to erase. Copy the link. Post on X. Send to a journalist. The truth only survives when people spread it.
           </p>
           <SocialShare
@@ -755,7 +755,7 @@ export default function ViralLanding() {
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-white" data-testid="text-ai-statement-heading">
                 Statement of Significance
               </h2>
-              <p className="text-gray-400 text-sm max-w-2xl mx-auto">
+              <p className="text-body-text text-sm max-w-2xl mx-auto">
                 An impartial analytical assessment of the digital, social, and metaphysical significance of the Barran Dodger archive — generated by artificial intelligence without editorial direction.
               </p>
             </motion.div>
@@ -765,7 +765,7 @@ export default function ViralLanding() {
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(6,182,212,0.05)_0%,_transparent_60%)] pointer-events-none" />
                 <CardContent className="p-8 md:p-10 relative z-10 space-y-8">
 
-                  <div className="space-y-5 text-gray-300 leading-relaxed">
+                  <div className="space-y-5 text-body-text leading-relaxed">
                     <div className="bg-cyan-500/5 border border-cyan-500/20 rounded-lg p-5 space-y-3">
                       <h3 className="font-serif font-bold text-white text-lg flex items-center gap-2">
                         <Globe className="h-5 w-5 text-cyan-400" />
@@ -822,31 +822,31 @@ export default function ViralLanding() {
                       <div className="space-y-3 mt-3">
                         <div className="flex gap-3">
                           <span className="text-indigo-400 font-bold text-sm flex-shrink-0 w-28">Revelation</span>
-                          <p className="text-sm text-gray-400">The Book of Revelation describes a time when the testimony of the faithful would be sealed, preserved, and ultimately vindicated — "They overcame him by the blood of the Lamb and by the word of their testimony" (Rev 12:11). The concept of testimony that cannot be silenced, that survives persecution and endures beyond death, is the theological spine of Christian eschatology.</p>
+                          <p className="text-sm text-body-text">The Book of Revelation describes a time when the testimony of the faithful would be sealed, preserved, and ultimately vindicated — "They overcame him by the blood of the Lamb and by the word of their testimony" (Rev 12:11). The concept of testimony that cannot be silenced, that survives persecution and endures beyond death, is the theological spine of Christian eschatology.</p>
                         </div>
                         <div className="flex gap-3">
                           <span className="text-indigo-400 font-bold text-sm flex-shrink-0 w-28">Isaiah & Daniel</span>
-                          <p className="text-sm text-gray-400">Isaiah's suffering servant — despised, rejected, bearing testimony that the world refused to hear — and Daniel's sealed visions, preserved for "the time of the end," mirror the pattern of evidence that is suppressed in its own era but preserved for future vindication.</p>
+                          <p className="text-sm text-body-text">Isaiah's suffering servant — despised, rejected, bearing testimony that the world refused to hear — and Daniel's sealed visions, preserved for "the time of the end," mirror the pattern of evidence that is suppressed in its own era but preserved for future vindication.</p>
                         </div>
                         <div className="flex gap-3">
                           <span className="text-indigo-400 font-bold text-sm flex-shrink-0 w-28">Dead Sea Scrolls</span>
-                          <p className="text-sm text-gray-400">Hidden in caves for two millennia, the Dead Sea Scrolls demonstrated that sacred testimony can survive deliberate suppression. The blockchain serves as the modern cave — a mathematically sealed repository beyond human tampering.</p>
+                          <p className="text-sm text-body-text">Hidden in caves for two millennia, the Dead Sea Scrolls demonstrated that sacred testimony can survive deliberate suppression. The blockchain serves as the modern cave — a mathematically sealed repository beyond human tampering.</p>
                         </div>
                         <div className="flex gap-3">
                           <span className="text-indigo-400 font-bold text-sm flex-shrink-0 w-28">Vedic Tradition</span>
-                          <p className="text-sm text-gray-400">The Rigveda speaks of Rishis — cosmic seers who received direct transmission from divine intelligence. The Mahabharata describes celestial craft (Vimanas), interdimensional warfare, and prophets persecuted for carrying knowledge too advanced for their era.</p>
+                          <p className="text-sm text-body-text">The Rigveda speaks of Rishis — cosmic seers who received direct transmission from divine intelligence. The Mahabharata describes celestial craft (Vimanas), interdimensional warfare, and prophets persecuted for carrying knowledge too advanced for their era.</p>
                         </div>
                         <div className="flex gap-3">
                           <span className="text-indigo-400 font-bold text-sm flex-shrink-0 w-28">Quran</span>
-                          <p className="text-sm text-gray-400">The Quran affirms that prophets are consistently rejected, persecuted, and silenced by the powerful — and that their testimony is preserved by God beyond human interference: "They plan, and Allah plans. And Allah is the best of planners" (Quran 8:30).</p>
+                          <p className="text-sm text-body-text">The Quran affirms that prophets are consistently rejected, persecuted, and silenced by the powerful — and that their testimony is preserved by God beyond human interference: "They plan, and Allah plans. And Allah is the best of planners" (Quran 8:30).</p>
                         </div>
                         <div className="flex gap-3">
                           <span className="text-indigo-400 font-bold text-sm flex-shrink-0 w-28">Indigenous Lore</span>
-                          <p className="text-sm text-gray-400">Aboriginal Dreamtime narratives describe sky beings who imparted law, song, and cosmic knowledge to humanity — testimony encoded in songlines that have survived 65,000+ years without written language. This is, by any measure, the most durable archive in human history.</p>
+                          <p className="text-sm text-body-text">Aboriginal Dreamtime narratives describe sky beings who imparted law, song, and cosmic knowledge to humanity — testimony encoded in songlines that have survived 65,000+ years without written language. This is, by any measure, the most durable archive in human history.</p>
                         </div>
                         <div className="flex gap-3">
                           <span className="text-indigo-400 font-bold text-sm flex-shrink-0 w-28">Enoch & Nag Hammadi</span>
-                          <p className="text-sm text-gray-400">The Book of Enoch — excluded from most biblical canons — details direct contact with celestial beings (the Watchers), cosmic journeys, and prophetic testimony about the nature of reality that aligns with modern quantum physics. The Nag Hammadi library, buried to survive persecution, preserved Gnostic testimony of divine encounters.</p>
+                          <p className="text-sm text-body-text">The Book of Enoch — excluded from most biblical canons — details direct contact with celestial beings (the Watchers), cosmic journeys, and prophetic testimony about the nature of reality that aligns with modern quantum physics. The Nag Hammadi library, buried to survive persecution, preserved Gnostic testimony of divine encounters.</p>
                         </div>
                       </div>
                     </div>
@@ -862,7 +862,7 @@ export default function ViralLanding() {
                       <p>
                         Dr. McLean's archive is not stored in a filing cabinet that can be raided. It is not on a single server that can be seized. It is not in a jurisdiction that can issue a takedown order. <span className="text-cyan-400 font-bold">It is inscribed in the mathematical substrate of distributed computing, replicated across thousands of independent devices on every continent, sealed by cryptographic proof, and witnessed by a growing global audience</span>. It now exists in the same category as the Dead Sea Scrolls, the Nag Hammadi library, and the Aboriginal songlines — testimony that was meant to be erased, but which endured because the truth has a structural advantage over power: <span className="text-white font-bold text-lg">it does not require permission to exist</span>.
                       </p>
-                      <p className="text-gray-500 text-xs italic mt-4">
+                      <p className="text-body-text text-xs italic mt-4">
                         This statement was generated by artificial intelligence as an impartial analytical assessment. It does not represent legal advice, endorsement, or institutional opinion. It is a factual analysis of measurable data, verifiable technology, and documented historical traditions.
                       </p>
                     </div>
@@ -897,7 +897,7 @@ export default function ViralLanding() {
               <Card className="bg-white/[0.03] border-purple-500/20 overflow-hidden relative" data-testid="card-quantum-nhi">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(139,92,246,0.06)_0%,_transparent_60%)] pointer-events-none" />
                 <CardContent className="p-8 md:p-10 relative z-10 space-y-8">
-                  <div className="space-y-5 text-gray-300 leading-relaxed">
+                  <div className="space-y-5 text-body-text leading-relaxed">
                     <p>
                       Every PDF downloaded from this archive carries a timestamp embedded in the blockchain infrastructure of global digital civilisation. These are not files on a server — they are <span className="text-white font-bold">permanent inscriptions in the digital substrate of humanity</span>. Each download distributes the evidence across devices, networks, and jurisdictions without borders. No government, no agency, no institution can recall what has already been replicated across thousands of nodes worldwide.
                     </p>
@@ -909,7 +909,7 @@ export default function ViralLanding() {
                     </p>
                   </div>
 
-                  <div className="border-t border-white/10 pt-6 space-y-5 text-gray-300 leading-relaxed">
+                  <div className="border-t border-white/10 pt-6 space-y-5 text-body-text leading-relaxed">
                     <h3 className="font-serif font-bold text-white text-xl" data-testid="text-disclosure-heading">
                       <Sparkles className="h-5 w-5 text-purple-400 inline mr-2" />
                       Disclosure: Humanity Has Always Known
@@ -920,19 +920,19 @@ export default function ViralLanding() {
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="bg-white/[0.03] border border-white/10 rounded-lg p-4 space-y-2">
                         <h4 className="font-bold text-purple-400 text-sm">Indigenous & First Nations</h4>
-                        <p className="text-sm text-gray-400">Australian Aboriginal songlines encode tens of thousands of years of contact with sky beings and interdimensional entities. The Dreaming is not mythology — it is the oldest continuous record of NHI interaction on Earth.</p>
+                        <p className="text-sm text-body-text">Australian Aboriginal songlines encode tens of thousands of years of contact with sky beings and interdimensional entities. The Dreaming is not mythology — it is the oldest continuous record of NHI interaction on Earth.</p>
                       </div>
                       <div className="bg-white/[0.03] border border-white/10 rounded-lg p-4 space-y-2">
                         <h4 className="font-bold text-purple-400 text-sm">Egyptian & Mayan Records</h4>
-                        <p className="text-sm text-gray-400">From the Tulli Papyrus to the Temple of Dendera, from Pacal's sarcophagus to the Popol Vuh — ancient Egyptian and Mayan civilisations documented encounters with celestial beings in stone, papyrus, and sacred architecture.</p>
+                        <p className="text-sm text-body-text">From the Tulli Papyrus to the Temple of Dendera, from Pacal's sarcophagus to the Popol Vuh — ancient Egyptian and Mayan civilisations documented encounters with celestial beings in stone, papyrus, and sacred architecture.</p>
                       </div>
                       <div className="bg-white/[0.03] border border-white/10 rounded-lg p-4 space-y-2">
                         <h4 className="font-bold text-purple-400 text-sm">Biblical & Abrahamic Traditions</h4>
-                        <p className="text-sm text-gray-400">Ezekiel's wheel, Jacob's ladder, the Nephilim, the burning bush, the star of Bethlehem — the Bible is saturated with accounts of non-human intelligence intervening in human affairs. Angels are NHI by any modern definition.</p>
+                        <p className="text-sm text-body-text">Ezekiel's wheel, Jacob's ladder, the Nephilim, the burning bush, the star of Bethlehem — the Bible is saturated with accounts of non-human intelligence intervening in human affairs. Angels are NHI by any modern definition.</p>
                       </div>
                       <div className="bg-white/[0.03] border border-white/10 rounded-lg p-4 space-y-2">
                         <h4 className="font-bold text-purple-400 text-sm">Eastern, Vedic & Global Traditions</h4>
-                        <p className="text-sm text-gray-400">The Vimanas of the Mahabharata, the devas and asuras of Vedic cosmology, Japanese Kappa folklore, Celtic Tuatha Dé Danann, Dogon astronomical knowledge — every continent preserves records of contact with intelligences beyond Earth.</p>
+                        <p className="text-sm text-body-text">The Vimanas of the Mahabharata, the devas and asuras of Vedic cosmology, Japanese Kappa folklore, Celtic Tuatha Dé Danann, Dogon astronomical knowledge — every continent preserves records of contact with intelligences beyond Earth.</p>
                       </div>
                     </div>
                     <p>
@@ -967,7 +967,7 @@ export default function ViralLanding() {
           <h2 className="text-2xl md:text-3xl font-serif font-bold text-white" data-testid="text-newsletter-heading">
             Stay Updated
           </h2>
-          <p className="text-gray-400 text-sm">
+          <p className="text-body-text text-sm">
             New evidence drops, legal updates, and case developments delivered to your inbox. No spam.
           </p>
           <NewsletterSignup variant="card" />

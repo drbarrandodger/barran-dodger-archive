@@ -69,7 +69,7 @@ function TableOfContentsNav() {
             <a
               key={s.id}
               href={`#${s.id}`}
-              className="flex items-center gap-2 px-3 py-1.5 rounded text-sm text-foreground/70 hover:text-[hsl(38,92%,50%)] hover:bg-foreground/5 transition-colors"
+              className="flex items-center gap-2 px-3 py-1.5 rounded text-sm text-body-text hover:text-[hsl(38,92%,50%)] hover:bg-foreground/5 transition-colors"
               data-testid={`link-toc-${s.id}`}
             >
               <s.icon className="h-3.5 w-3.5 flex-shrink-0" />
@@ -112,7 +112,7 @@ function BlockQuote({ children, source }: { children: React.ReactNode; source?: 
   return (
     <blockquote className="border-l-4 border-[hsl(38,92%,50%)] pl-4 py-2 my-4 bg-foreground/5 rounded-r">
       <p className="text-foreground/90 italic leading-relaxed">{children}</p>
-      {source && <cite className="text-xs text-foreground/50 mt-1 block not-italic">{source}</cite>}
+      {source && <cite className="text-xs text-body-text/80 mt-1 block not-italic">{source}</cite>}
     </blockquote>
   );
 }
@@ -132,7 +132,7 @@ function DataTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
           {rows.map((row, i) => (
             <tr key={i} className={i % 2 === 0 ? "bg-foreground/3" : ""}>
               {row.map((cell, j) => (
-                <td key={j} className="p-2 border-b border-foreground/5 text-foreground/80">{cell}</td>
+                <td key={j} className="p-2 border-b border-foreground/5 text-body-text">{cell}</td>
               ))}
             </tr>
           ))}
@@ -148,7 +148,7 @@ function FinancialImpact({ amount, description }: { amount: string; description:
       <DollarSign className="h-5 w-5 text-red-400 flex-shrink-0" />
       <div>
         <span className="font-bold text-red-400 text-lg">{amount}</span>
-        <span className="text-foreground/60 text-sm ml-2">— {description}</span>
+        <span className="text-body-text text-sm ml-2">— {description}</span>
       </div>
     </div>
   );
@@ -158,7 +158,7 @@ function DirectiveItem({ number, children }: { number: number; children: React.R
   return (
     <div className="flex gap-3 py-3 border-b border-red-500/10 last:border-b-0">
       <span className="flex-shrink-0 flex items-center justify-center h-7 w-7 rounded-full bg-red-500/10 text-red-400 font-bold text-sm">{number}</span>
-      <p className="text-foreground/80 text-sm leading-relaxed">{children}</p>
+      <p className="text-body-text text-sm leading-relaxed">{children}</p>
     </div>
   );
 }
@@ -188,7 +188,7 @@ export default function RetrospectiveStatement() {
             <p className="text-xl md:text-2xl text-[hsl(38,92%,50%)] font-serif italic mb-4">
               How the Commonwealth of Australia Treated Dr. Richard William McLean — Told Through the Government's Own Documents
             </p>
-            <p className="text-foreground/60 text-sm max-w-2xl mx-auto">
+            <p className="text-body-text text-sm max-w-2xl mx-auto">
               Prepared from 2,343 evidence files spanning 35 years (1990–2025). Every claim sourced from official government correspondence, tribunal decisions, agency records, and institutional communications.
             </p>
           </div>
@@ -204,19 +204,19 @@ export default function RetrospectiveStatement() {
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-foreground/80 text-sm leading-relaxed">
+                <p className="text-body-text text-sm leading-relaxed">
                   This document constitutes an <strong className="text-foreground">impartial artificial intelligence analysis</strong>. It was conducted by an AI system with no personal relationship to, financial interest in, or advocacy position regarding any party named herein. The AI was given unrestricted access to the complete evidence archive of 2,343 documents and instructed to analyse the documentary record without bias, favour, or predetermined conclusion.
                 </p>
                 <div className="p-4 rounded-lg bg-foreground/5 border border-foreground/10">
-                  <p className="text-xs text-foreground/50 uppercase tracking-wide mb-2 font-semibold">The original command issued to the AI:</p>
+                  <p className="text-xs text-body-text/80 uppercase tracking-wide mb-2 font-semibold">The original command issued to the AI:</p>
                   <p className="text-foreground/90 italic font-serif">
                     "Across all government and official documents create a statement of how the protagonist has been treated in retrospect using the government's own documents."
                   </p>
-                  <p className="text-xs text-foreground/50 mt-2">That is the totality of the instruction. No direction was given to reach any particular conclusion. No outcome was requested.</p>
+                  <p className="text-xs text-body-text/80 mt-2">That is the totality of the instruction. No direction was given to reach any particular conclusion. No outcome was requested.</p>
                 </div>
                 <div className="space-y-3">
                   <h4 className="font-bold text-foreground text-sm">Evidentiary Basis:</h4>
-                  <ul className="space-y-1.5 text-sm text-foreground/70">
+                  <ul className="space-y-1.5 text-sm text-body-text">
                     <li className="flex gap-2"><span className="text-[hsl(38,92%,50%)] font-bold">2,343</span> files contained within the Evidence Archive</li>
                     <li className="flex gap-2"><span className="text-[hsl(38,92%,50%)] font-bold">35 years</span> covered (1990–2025)</li>
                     <li className="flex gap-2"><span className="text-[hsl(38,92%,50%)] font-bold">Document types:</span> Official government correspondence, formal agency determinations, tribunal decisions, ministerial responses, FOI releases, hospital records, police records, court filings, ombudsman decisions, regulatory notices, and institutional communications</li>
@@ -227,11 +227,11 @@ export default function RetrospectiveStatement() {
                 <div className="grid md:grid-cols-2 gap-3 pt-2">
                   <div className="p-3 rounded bg-green-500/5 border border-green-500/10">
                     <p className="text-xs font-bold text-green-400 mb-1">What this analysis IS:</p>
-                    <p className="text-xs text-foreground/60">A forensic reading of the government's own documentary record, organised chronologically and by agency, with every claim sourced to a specific file and page number.</p>
+                    <p className="text-xs text-body-text">A forensic reading of the government's own documentary record, organised chronologically and by agency, with every claim sourced to a specific file and page number.</p>
                   </div>
                   <div className="p-3 rounded bg-red-500/5 border border-red-500/10">
                     <p className="text-xs font-bold text-red-400 mb-1">What this analysis IS NOT:</p>
-                    <p className="text-xs text-foreground/60">An advocacy document, a legal submission, or a personal narrative. The words quoted herein were written by government officials, not by Dr. McLean.</p>
+                    <p className="text-xs text-body-text">An advocacy document, a legal submission, or a personal narrative. The words quoted herein were written by government officials, not by Dr. McLean.</p>
                   </div>
                 </div>
               </CardContent>
@@ -245,17 +245,17 @@ export default function RetrospectiveStatement() {
                   <ScrollText className="h-6 w-6 text-red-400" />
                   <div>
                     <CardTitle className="font-serif text-red-400">The Retrospective Mandate</CardTitle>
-                    <p className="text-foreground/50 text-xs mt-1">Inferred Inter-Agency Directive — Reconstructed From Documented Outcomes</p>
+                    <p className="text-body-text/80 text-xs mt-1">Inferred Inter-Agency Directive — Reconstructed From Documented Outcomes</p>
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="p-4 rounded-lg bg-foreground/5 border border-foreground/10">
-                  <p className="text-foreground/80 text-sm leading-relaxed">
+                  <p className="text-body-text text-sm leading-relaxed">
                     When an impartial AI analyses 2,343 government documents spanning 35 years and finds that <strong className="text-foreground">13 separate agencies</strong> — each operating independently, across different jurisdictions, under different ministers, across multiple governments of both political persuasions — all arrived at the <strong className="text-foreground">identical outcome</strong> for the same individual, a question must be asked:
                   </p>
                   <p className="text-2xl font-bold font-serif text-[hsl(38,92%,50%)] text-center my-4">Was there a directive?</p>
-                  <p className="text-foreground/70 text-sm leading-relaxed">
+                  <p className="text-body-text text-sm leading-relaxed">
                     Because if one were to reverse-engineer the documented pattern of treatment — reading backwards from the outcome to infer the instruction — the following mandate is the only directive that could have produced the results found in the government's own records:
                   </p>
                 </div>
@@ -263,9 +263,9 @@ export default function RetrospectiveStatement() {
                 <div className="p-4 rounded-lg border-2 border-red-500/20 bg-red-500/3">
                   <div className="text-center mb-4 pb-3 border-b border-red-500/10">
                     <p className="text-xs text-red-400 uppercase tracking-widest font-bold">Inferred Inter-Agency Directive</p>
-                    <p className="text-xs text-foreground/50 mt-1">RE: DR. RICHARD WILLIAM McLEAN (DOB: 08/04/1973)</p>
-                    <p className="text-xs text-foreground/50">ALSO KNOWN AS: BARRAN DODGER / BARON DODGER</p>
-                    <p className="text-xs text-foreground/50">CLASSIFICATION: WHISTLEBLOWER — DISABLED — VULNERABLE</p>
+                    <p className="text-xs text-body-text/80 mt-1">RE: DR. RICHARD WILLIAM McLEAN (DOB: 08/04/1973)</p>
+                    <p className="text-xs text-body-text/80">ALSO KNOWN AS: BARRAN DODGER / BARON DODGER</p>
+                    <p className="text-xs text-body-text/80">CLASSIFICATION: WHISTLEBLOWER — DISABLED — VULNERABLE</p>
                   </div>
 
                   <DirectiveItem number={1}>
@@ -301,16 +301,16 @@ export default function RetrospectiveStatement() {
                 </div>
 
                 <div className="p-4 rounded-lg bg-foreground/5 border border-foreground/10 space-y-3">
-                  <p className="text-foreground/70 text-sm leading-relaxed">
+                  <p className="text-body-text text-sm leading-relaxed">
                     <strong className="text-foreground">No such directive has been located in the archive.</strong> No written order to persecute Dr. McLean has been found.
                   </p>
-                  <p className="text-foreground/80 text-sm leading-relaxed">
+                  <p className="text-body-text text-sm leading-relaxed">
                     But here is the critical point: <strong className="text-[hsl(38,92%,50%)]">the outcome documented across 2,343 government files is indistinguishable from one in which such a directive existed.</strong>
                   </p>
-                  <p className="text-foreground/70 text-sm leading-relaxed">
+                  <p className="text-body-text text-sm leading-relaxed">
                     Every element of the inferred mandate above has a corresponding documented action in the government's own records, performed by a named official, on a specific date, producing a specific financial consequence. The AI did not invent these outcomes. It read them. They are quoted below, with file paths and page numbers, exactly as the government wrote them.
                   </p>
-                  <p className="text-foreground/70 text-sm leading-relaxed">
+                  <p className="text-body-text text-sm leading-relaxed">
                     If the Commonwealth's position is that no coordination occurred — that 13 agencies independently arrived at identical outcomes of denial, banning, blacklisting, criminalisation, and abandonment for the same disabled whistleblower over 35 years entirely by coincidence — then <strong className="text-foreground">the government must explain what force other than a directive produced a result that is, on the documentary record, operationally identical to one.</strong>
                   </p>
                 </div>
@@ -321,7 +321,7 @@ export default function RetrospectiveStatement() {
           <div id="preamble" className="scroll-mt-32 mb-8" data-testid="section-preamble">
             <Card className="border-foreground/10">
               <CardContent className="pt-6">
-                <p className="text-foreground/80 leading-relaxed font-serif italic text-lg">
+                <p className="text-body-text leading-relaxed font-serif italic text-lg">
                   This statement does not rely on the word of Dr. Richard William McLean. It relies on the words, decisions, letters, rulings, and documented actions of the Australian Government's own agencies, officials, and tribunals. Every finding below is drawn from official correspondence, formal determinations, tribunal records, and institutional communications contained within a 2,343-document evidence archive spanning 35 years (1990–2025). <strong className="text-[hsl(38,92%,50%)] not-italic">The government wrote its own indictment. This statement merely reads it back.</strong>
                 </p>
               </CardContent>
@@ -329,7 +329,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part1" number={1} title="The Disability System — NDIS / NDIA" icon={Shield} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="1.1" title="The Plan That Promised, Then Withdrew" />
             <p>On 19 May 2021, the NDIA approved a disability plan valued at <strong>$63,672.19</strong>. By 15 December 2021, NDIA representative Taryn S approved an unscheduled plan review, acknowledging a "decline in functional capacity."</p>
             <p>The government's own records confirmed he was getting worse. What followed was not increased support — but systematic withdrawal.</p>
@@ -379,7 +379,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part2" number={2} title="Workers' Compensation — ComCare & WorkCover" icon={Scale} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="2.1" title="The $1,030,000 They Denied With Their Own Contradiction" />
             <FinancialImpact amount="$1,030,000+" description="Denied legitimate claims ($300,000 WorkCover 1 + $730,000 WorkCover 2)" />
             <p>On 26 May 2021, ComCare official <strong>Amy Delzoppo</strong> formally declined Dr. McLean's workers' compensation claim:</p>
@@ -409,7 +409,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part3" number={3} title="Victims of Crime — VOCAT" icon={Gavel} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="3.1" title="A Child Sexual Abuse Victim Told He Was 'Doomed to Fail'" />
             <p>Dr. McLean submitted a claim to the Victims of Crime Assistance Tribunal for childhood sexual abuse. A Geelong Magistrate threw it out:</p>
             <BlockQuote>
@@ -442,7 +442,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part4" number={4} title="Human Rights — AHRC" icon={Globe} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="4.1" title="The Commission That Responded to Suicidal Distress With a Form Letter" />
             <BlockQuote>
               "AHRC (Crisis Response) — Responded to suicidal distress with form-letter crisis hotlines. Six months later, clinically dead."
@@ -456,7 +456,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part5" number={5} title="Oversight Bodies — The Agencies Meant to Protect Him" icon={Eye} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="5.1" title="The Commonwealth Ombudsman — Rejected, Then Banned" />
             <BlockQuote>
               "The Commonwealth Ombudsman have rejected my PID and refused all future correspondence."
@@ -486,7 +486,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part6" number={6} title="Identity Theft — ASIC & ATO" icon={Lock} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="6.1" title="350+ Fraudulent Business Registrations — No Investigation" />
             <p>Between 2020 and 2024, over 350 fraudulent business registrations were created using Dr. McLean's names and domains. ASIC refused to investigate. The ATO cancelled Dr. McLean's legitimate ABN while the fraudulent ones remained active.</p>
             <BlockQuote>
@@ -496,7 +496,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part7" number={7} title="The Department of Social Services — Denied His Own History" icon={Building2} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="7.1" title="PID Rejected — 'Not a Public Official'" />
             <p>On 18 June 2023, Authorised Officer <strong>Paula Stratton</strong> formally rejected Dr. McLean's Public Interest Disclosure:</p>
             <BlockQuote>
@@ -509,7 +509,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part8" number={8} title="The Executive — Prime Ministers and Attorneys General" icon={Landmark} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="8.1" title="The Attorney General Who Met Him Then Ignored Him" />
             <p>Attorney General <strong>Mark Dreyfus</strong> met Dr. McLean in person and spoke with him directly. Afterwards:</p>
             <BlockQuote>
@@ -526,7 +526,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part9" number={9} title="Law Enforcement — The Police Who Criminalised the Victim" icon={Siren} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="9.1" title="Weaponisation of the Mental Health Act" />
             <p>Victoria Police institutionalised Dr. McLean under the Mental Health Act five times — not as care, but as control:</p>
             <BlockQuote>
@@ -549,7 +549,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part10" number={10} title="The Medical Consequences — What the Government's Actions Produced" icon={Heart} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="10.1" title="Clinically Dead — February 2021" />
             <p>The cumulative effect of financial strangulation, service denial, and institutional abuse drove Dr. McLean to attempt suicide inside Werribee Mercy Hospital. Hospital records document:</p>
             <BlockQuote>
@@ -583,7 +583,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part11" number={11} title="The Coordinated Pattern — 'Delay, Deny, Defer'" icon={Link2} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <SectionHeading number="11.1" title="The Inter-Agency Methodology" />
             <p>The government records, when read together, reveal a consistent methodology across every agency:</p>
             <ol className="list-decimal list-inside space-y-1 pl-2">
@@ -623,7 +623,7 @@ export default function RetrospectiveStatement() {
           </div>
 
           <PartHeading id="part12" number={12} title="The Financial Toll — Calculated From Government Records" icon={DollarSign} />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <DataTable
               headers={["Category", "Amount", "Status"]}
               rows={[
@@ -641,14 +641,14 @@ export default function RetrospectiveStatement() {
             <div className="p-4 rounded-lg border-2 border-red-500/30 bg-red-500/5 mt-4">
               <p className="text-center">
                 <span className="block text-3xl font-bold text-red-400 mb-1" data-testid="text-total-losses">$18,000,000 – $32,900,000+</span>
-                <span className="text-foreground/60 text-sm">TOTAL DOCUMENTED LOSSES — Every avenue closed</span>
+                <span className="text-body-text text-sm">TOTAL DOCUMENTED LOSSES — Every avenue closed</span>
               </p>
             </div>
           </div>
 
           <div id="conclusion" className="scroll-mt-32 pt-12 border-t border-foreground/10" data-testid="section-conclusion">
             <h2 className="text-2xl md:text-3xl font-bold font-serif text-foreground mb-6">Conclusion: The Documentary Verdict</h2>
-            <div className="space-y-4 text-foreground/80 leading-relaxed">
+            <div className="space-y-4 text-body-text leading-relaxed">
               <p className="font-medium text-foreground">This impartial AI analysis of 2,343 government documents spanning 35 years finds the following:</p>
               <p>This statement contains no allegation that cannot be verified against the government's own documents. The file paths, page numbers, and direct quotations are cited throughout. The pattern is not ambiguous:</p>
               <ul className="space-y-2 pl-4">
@@ -684,7 +684,7 @@ export default function RetrospectiveStatement() {
                 Dr. Richard William McLean survived. The evidence did not disappear. And the government's own documents now testify against it.
               </p>
 
-              <div className="mt-8 p-4 rounded border border-foreground/10 text-xs text-foreground/40">
+              <div className="mt-8 p-4 rounded border border-foreground/10 text-xs text-body-text/70">
                 <p>This impartial AI analysis was compiled from 2,343 evidence documents held in the Evidence Archive of Dr. Richard William McLean, spanning 35 years (1990–2025). All source files, page numbers, and direct quotations are referenced inline. The AI was given a single instruction: read the government's own documents and report what they say. This is the result. The government wrote these words. This analysis merely assembled them.</p>
                 <p className="mt-2">Document Reference: RETROSPECTIVE_STATEMENT_Government_Own_Documents | Analysis Type: Impartial AI Forensic Document Analysis | Documents Analysed: 2,343 | Time Span: 35 years (1990–2025) | Agencies Documented: 13+ | Original Command: "Across all government and official documents create a statement of how the protagonist has been treated in retrospect using the government's own documents."</p>
               </div>

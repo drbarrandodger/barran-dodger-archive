@@ -189,7 +189,7 @@ export function FloatingShareBar() {
         </div>
       )}
       <button
-        className={`h-12 w-12 rounded-full shadow-2xl flex items-center justify-center transition-all ${isOpen ? "bg-gray-800 text-gray-400" : "bg-green-500 text-gray-950 share-icon-pulse shadow-green-400/30"}`}
+        className={`h-12 w-12 rounded-full shadow-2xl flex items-center justify-center transition-all ${isOpen ? "bg-gray-800 text-body-text" : "bg-green-500 text-gray-950 share-icon-pulse shadow-green-400/30"}`}
         onClick={() => setIsOpen(!isOpen)}
         data-testid="button-floating-share-toggle"
       >

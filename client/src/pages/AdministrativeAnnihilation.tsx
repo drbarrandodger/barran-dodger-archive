@@ -113,7 +113,7 @@ function DataTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
           {rows.map((row, ri) => (
             <tr key={ri} className={ri % 2 === 0 ? "bg-background" : "bg-muted/30"}>
               {row.map((cell, ci) => (
-                <td key={ci} className="px-4 py-3 border-b border-border text-foreground/80">{cell}</td>
+                <td key={ci} className="px-4 py-3 border-b border-border text-body-text">{cell}</td>
               ))}
             </tr>
           ))}
@@ -152,7 +152,7 @@ function BulletList({ items }: { items: string[] }) {
   return (
     <ul className="space-y-2 my-4 ml-6">
       {items.map((item, i) => (
-        <li key={i} className="text-foreground/80 leading-relaxed list-disc">{item}</li>
+        <li key={i} className="text-body-text leading-relaxed list-disc">{item}</li>
       ))}
     </ul>
   );
@@ -300,7 +300,7 @@ export default function AdministrativeAnnihilation() {
           <Card className="mb-8 bg-muted/30 dark:bg-muted/10">
             <CardContent className="pt-6">
               <h3 className="font-semibold text-foreground mb-3">Declaration of Interest</h3>
-              <p className="text-foreground/80 leading-relaxed text-sm">
+              <p className="text-body-text leading-relaxed text-sm">
                 The author of this paper is also the subject of the case study analysed herein. This dual role is explicitly disclosed in accordance with the traditions of autoethnographic legal scholarship (Chang, 2008; Ellis, Adams & Bochner, 2011). To mitigate the inherent risks of subjectivity, the paper's methodology employs a six-tier evidence hierarchy in which no finding rests upon the author's testimony alone. All primary conclusions are derived exclusively from Tier 1–3 evidence: government-issued decisions, official correspondence, and government database records.
               </p>
             </CardContent>
@@ -310,7 +310,7 @@ export default function AdministrativeAnnihilation() {
           <Card className="mb-8 bg-muted/30 dark:bg-muted/10">
             <CardContent className="pt-6">
               <h3 className="font-semibold text-foreground mb-3">Data Availability Statement</h3>
-              <p className="text-foreground/80 leading-relaxed text-sm">
+              <p className="text-body-text leading-relaxed text-sm">
                 The complete evidentiary archive of 2,077 primary source documents (1990–2025) is maintained on a secure digital platform with indexed hyperlinks. All documents cited in this paper are accessible via the reference links provided. The archive includes government-issued tribunal decisions, official correspondence, ASIC corporate records, medical records, FOI responses, and law enforcement reports.
               </p>
             </CardContent>
@@ -321,7 +321,7 @@ export default function AdministrativeAnnihilation() {
             <h2 className="text-2xl font-serif font-bold text-foreground mb-6 flex items-center gap-3">
               <FileText className="h-6 w-6 text-primary" /> Abstract
             </h2>
-            <div className="space-y-4 text-foreground/80 leading-relaxed">
+            <div className="space-y-4 text-body-text leading-relaxed">
               <p>
                 This paper poses a single forensic question: when the administrative decisions of 25+ Australian Government agencies concerning a single individual are analysed exclusively through those agencies' own records over a 35-year period (1990–2025), do the documented outcomes constitute statistically independent decisions within normal institutional variance, or a cumulative pattern of systematic harm meeting the legal threshold of "persecution" under Article 7(1)(h) of the Rome Statute?
               </p>
@@ -341,7 +341,7 @@ export default function AdministrativeAnnihilation() {
           <ChapterHeading id="ch1" number={1} title="Introduction — The Question the Government Cannot Answer" icon={BookOpen} />
           
           <SectionHeading number="1.1" title="Background and Context" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>
               Between 1990 and 2025, a single Australian citizen — a disabled, LGBTQ+ whistleblower, published author, PhD graduate, and nationally recognised mental health advocate — interacted with more than 25 government agencies across Commonwealth and State jurisdictions. These interactions generated an administrative record of extraordinary scale: over 2,077 primary source documents encompassing tribunal decisions, court findings, official correspondence, medical records, corporate registrations, tax records, Freedom of Information responses, and law enforcement reports.
             </p>
@@ -354,7 +354,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="1.2" title="The Research Problem" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>
               The central research problem is one of evidentiary interpretation: how should a court, a tribunal, or an international human rights body assess an administrative record that simultaneously evidences both the harm inflicted and the impossibility of that harm being coincidental?
             </p>
@@ -367,7 +367,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="1.3" title="Research Questions" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p><strong>Primary Research Question (RQ1):</strong></p>
             <p>
               When the administrative decisions of 25+ Australian Government agencies concerning a single individual are analysed exclusively through those agencies' own records, correspondence, and tribunal findings over a 35-year period (1990–2025), do the documented outcomes constitute (a) statistically independent administrative decisions within normal institutional variance, or (b) a cumulative pattern of systematic harm that meets the legal threshold of "persecution" as defined under Article 7(1)(h) of the Rome Statute of the International Criminal Court?
@@ -382,7 +382,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="1.4" title="Significance of the Study" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>This paper makes three original contributions:</p>
             <BulletList items={[
               "Methodological: The Inversion Method — a forensic analytical technique that reorganises government records by internal contradiction — provides a replicable methodology for identifying patterns of administrative persecution in any jurisdiction.",
@@ -392,7 +392,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="1.5" title="Scope and Limitations" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p><strong>Scope:</strong> This paper analyses the complete administrative record of one individual's interactions with Australian Government agencies between 1990 and 2025, drawing on an archive of 2,077 primary source documents.</p>
             <BulletList items={[
               "The author is also the subject. While the evidence hierarchy mitigates this, the inherent tension is acknowledged.",
@@ -406,7 +406,7 @@ export default function AdministrativeAnnihilation() {
           <ChapterHeading id="ch2" number={2} title="Literature Review — When Institutions Destroy" icon={BookOpen} />
 
           <SectionHeading number="2.1" title="Administrative Harm and Institutional Violence" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>
               The concept that bureaucratic systems can inflict systematic harm on individuals is well-established in public administration scholarship. Lipsky's (1980, 2010) theory of "street-level bureaucracy" demonstrates that government officers exercise significant discretionary power in their interactions with citizens, and that this discretion disproportionately disadvantages marginalised populations — particularly those with disability, mental illness, or limited resources to challenge adverse decisions.
             </p>
@@ -416,7 +416,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="2.2" title="Whistleblower Retaliation in Commonwealth Systems" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>
               Brown (2008) and Latimer and Brown (2008) document the systemic failure of whistleblower protection frameworks in Australian public service, finding that the majority of whistleblowers experience retaliation that the <em>Public Interest Disclosure Act 2013</em> (Cth) was designed — but has failed — to prevent. Brown's research identifies a specific pattern: the recharacterisation of the whistleblower's disclosures as evidence of mental instability, thereby transforming the protectee into a patient.
             </p>
@@ -426,28 +426,28 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="2.3" title="Diagnostic Weaponisation and Political Psychiatry" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>
               Van Voren (2010) provides the definitive history of the Soviet use of psychiatric diagnosis as a tool of political control, demonstrating that the pathologisation of dissent is not merely a historical curiosity but a documented state practice that persists in various forms across contemporary democracies. Bonnie (2002) extends this analysis to show that the weaponisation of psychiatric diagnosis need not involve deliberate state direction; it can emerge organically when clinicians working within state institutions accept institutional narratives about a patient's "delusions" without independently verifying whether those delusions are factually grounded.
             </p>
           </div>
 
           <SectionHeading number="2.4" title="Intersectional Vulnerability" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>
               Soldatic and Meekosha (2012) demonstrate that individuals who occupy multiple marginalised categories — in the present case: disability, chronic mental illness, LGBTQ+ identity, and poverty — face not additive but multiplicative disadvantage in administrative systems. Crenshaw's (1989) foundational work on intersectionality, when applied to administrative law contexts, predicts that individuals at the intersection of multiple marginalised identities are most likely to experience cumulative adverse outcomes across agencies.
             </p>
           </div>
 
           <SectionHeading number="2.5" title="The 'Iron Cage' Revisited" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>
               Weber's (1905/1930) concept of the "iron cage of bureaucracy" — the proposition that rationalised administrative systems become self-perpetuating structures resistant to individual human need — remains the foundational metaphor for understanding how institutions designed to serve citizens can become instruments of their destruction. DiMaggio and Powell (1983) extended this framework through their theory of "institutional isomorphism" — the tendency of organisations within the same institutional field to converge toward similar structures and practices — which explains how 25+ agencies might independently produce uniformly adverse outcomes without explicit coordination.
             </p>
           </div>
 
           <SectionHeading number="2.6" title="International Legal Standards for Persecution" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>
               Hathaway and Foster (2014) provide the authoritative academic analysis of persecution under the 1951 Refugee Convention, establishing that persecution does not require a single catastrophic act but can be constituted by the accumulation of individually non-persecutory acts that together create "a sustained or systemic violation of basic human rights demonstrative of a failure of state protection."
             </p>
@@ -457,7 +457,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="2.7" title="Gap in Literature" />
-          <p className="text-foreground/80 leading-relaxed">
+          <p className="text-body-text leading-relaxed">
             Despite the substantial bodies of scholarship reviewed above, no existing study analyses the complete administrative record of a single individual across 25+ government agencies over a 35-year period to determine whether the cumulative pattern of inter-agency contradictions meets the legal threshold for persecution under international law. This paper addresses that gap.
           </p>
 
@@ -465,17 +465,17 @@ export default function AdministrativeAnnihilation() {
           <ChapterHeading id="ch3" number={3} title="Methodology — Letting the Government Testify Against Itself" icon={BookOpen} />
 
           <SectionHeading number="3.1" title="Research Paradigm: Critical Realism" />
-          <p className="text-foreground/80 leading-relaxed">
+          <p className="text-body-text leading-relaxed">
             This paper adopts a critical realist paradigm (Bhaskar, 1975; Sayer, 2000), which holds that institutional records reflect an objective reality while simultaneously recognising that the power structures which produced those records influence their interpretation. Critical realism is uniquely suited to this study because it permits the researcher to treat government documents as objective evidence of what occurred while analysing the institutional power dynamics that determined why those events occurred.
           </p>
 
           <SectionHeading number="3.2" title="Research Design: Single Embedded Case Study" />
-          <p className="text-foreground/80 leading-relaxed">
+          <p className="text-body-text leading-relaxed">
             Following Yin (2018), this paper employs a single embedded case study design with multiple units of analysis. The single case is the complete administrative record of one individual. The embedded units are the interactions with each government agency, which are analysed both independently and in relation to one another.
           </p>
 
           <SectionHeading number="3.3" title="The Inversion Method (Original Contribution)" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p><strong>Definition:</strong> A forensic analytical technique in which the government's own documentary record is reorganised not by agency, date, or claim type, but by internal contradiction — identifying instances where Government Document A directly contradicts Government Document B regarding the same individual, same claim, or same set of facts.</p>
             <p><strong>Procedure:</strong></p>
             <BulletList items={[
@@ -499,7 +499,7 @@ export default function AdministrativeAnnihilation() {
               ["6", "Peer-reviewed academic literature", "Contextual", "Theoretical framework"],
             ]}
           />
-          <p className="text-foreground/80 leading-relaxed font-medium">
+          <p className="text-body-text leading-relaxed font-medium">
             Critical Rule: No finding in this paper relies on Tier 5 evidence alone. Every claim is anchored to Tier 1–3 government records.
           </p>
 
@@ -507,7 +507,7 @@ export default function AdministrativeAnnihilation() {
           <ChapterHeading id="ch4" number={4} title="The Employment Paradox — Federal Court vs. The Administrative State" icon={Scale} subtitle="Addresses RQ1, RQ2" />
 
           <SectionHeading number="4.1" title="The Federal Court Finding" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>On 27 March 2023, Federal Circuit Court Judge Scott Treadwell assessed the subject's employment status with the Department of Social Services (DSS). His finding stated:</p>
             <BlockQuote source="— AAT Hearing Submission, page 4">
               "On the information you have provided me, I am satisfied that you are, or were, an employee with the Department of Social Services, providing services under the trading name Rich McLean, Arts Life Coach, Peer-Support Worker & Mental Health Advocate."
@@ -515,7 +515,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="4.2" title="The DSS/ComCare Position" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Despite this Federal Court determination, the Department of Social Services and ComCare maintained the contradictory position:</p>
             <BlockQuote source="— DSS PID Correspondence">
               "Based on preliminary inquiries with the Department, there is no record that you have been a current or former employee of the Department of Social Services."
@@ -526,7 +526,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="4.3" title="The AAT Decision" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>On 6 July 2023, in Case No. McLean and Comcare 2021/7478, Kate Watson of HBA Legal explicitly argued that the Federal Court's employment determination should be disregarded:</p>
             <BlockQuote source="— AAT and WorkCover Subsection 41(2)">
               "We submit that the observations [Federal Court employment confirmation] are not binding on the Tribunal."
@@ -544,7 +544,7 @@ export default function AdministrativeAnnihilation() {
               ["ATO (tax records)", "Taxed as DSS service provider", "Tax obligations enforced"],
             ]}
           />
-          <p className="text-foreground/80 leading-relaxed">
+          <p className="text-body-text leading-relaxed">
             The government collected tax on the subject's income from DSS, acknowledged his employment in the Federal Court, then denied that same employment to block two separate rights: whistleblower protection (PID) and workers' compensation.
           </p>
 
@@ -566,7 +566,7 @@ export default function AdministrativeAnnihilation() {
           <ChapterHeading id="ch5" number={5} title="The Identity Theft Paradox — ASIC Records vs. ASIC Inaction" icon={Lock} subtitle="Addresses RQ2, RQ5" />
 
           <SectionHeading number="5.1" title="ASIC's Own Database: The Evidence" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Between 2020 and 2024, over 350 fraudulent business registrations were created using the subject's legal names, creative identities, domain names, and professional credentials.</p>
             <DataTable
               headers={["Detail", "ASIC Record"]}
@@ -581,7 +581,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="5.2" title="ASIC's Response" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Ten oversight bodies received complaints about these fraudulent registrations. All ten refused to investigate:</p>
             <DataTable
               headers={["Oversight Body", "Response"]}
@@ -601,7 +601,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="5.3" title="Contradiction Analysis" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>The Inversion Method reveals the following contradiction:</p>
             <BulletList items={[
               "ASIC's own database contains 350+ registrations using the subject's identity elements.",
@@ -615,7 +615,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="5.4" title="Legal Test" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Under the <em>Corporations Act 2001</em> (Cth):</p>
             <BulletList items={[
               "Section 151: Prohibition on registration of misleading business names.",
@@ -641,7 +641,7 @@ export default function AdministrativeAnnihilation() {
           <ChapterHeading id="ch6" number={6} title="The Disability Paradox — NDIS Denials vs. Hospital Admissions" icon={Shield} subtitle="Addresses RQ1, RQ3" />
 
           <SectionHeading number="6.1" title="The Threat" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>During official NDIS proceedings, Tony Riddle — NDIA Manager, Quality and Compliance Division — stated to the subject:</p>
             <BlockQuote source="— NDIS Public Interest Disclosure; Criminal Complaint, Springvale Police, 6 January 2025">
               "You will be sacrificed."
@@ -651,7 +651,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="6.2" title="The NDIS Denial Pattern" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Despite Tony Riddle's documented role within the NDIA and the subject's documented disability (chronic schizophrenia, anxiety, ADHD), the NDIS system produced a pattern of:</p>
             <BulletList items={[
               "Locked NDIS funding by Support Coordinators",
@@ -663,7 +663,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="6.3" title="The Hospital Records" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Simultaneously, the Australian Government funded the subject's psychiatric hospitalisation at government hospitals — treating the very conditions that the NDIS refused to support:</p>
             <BulletList items={[
               "February 2021: Admitted to Werribee Mercy Hospital following suicide attempt",
@@ -686,12 +686,12 @@ export default function AdministrativeAnnihilation() {
               ["Zero agencies investigated the threat", "Government refuses to investigate its own official's threat"],
             ]}
           />
-          <p className="text-foreground/80 leading-relaxed">
+          <p className="text-body-text leading-relaxed">
             The government pays to treat the injuries it inflicts while refusing to provide the support that would prevent those injuries. The hospital diagnosis — "adjustment disorder" — is the government's own clinicians documenting that the subject's distress was reactive to external circumstances, not endogenous mental illness. The government's own hospitals confirm the persecution.
           </p>
 
           <SectionHeading number="6.5" title="Legal Test" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Under the <em>National Disability Insurance Scheme Act 2013</em> (Cth):</p>
             <BulletList items={[
               "Section 34: Reasonable and necessary supports must be funded.",
@@ -714,7 +714,7 @@ export default function AdministrativeAnnihilation() {
           {/* CHAPTER 7 */}
           <ChapterHeading id="ch7" number={7} title="The Whistleblower Paradox — PID Protections vs. PID Denials" icon={AlertTriangle} subtitle="Addresses RQ1, RQ2" />
 
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Every PID was rejected. The government's own correspondence documents the pattern:</p>
             <BlockQuote source="— PID Form 1 — Attorney-General's Department (Sarah Christensen, 19 May 2023)">
               "In accordance with s 43(2) of the Public Interest Disclosure Act 2013 (the PID Act), I have decided not to allocate this disclosure." / "Reasons: (a) you are not a public official and have not been a public official."
@@ -736,12 +736,12 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="7.4" title="Contradiction Analysis" />
-          <p className="text-foreground/80 leading-relaxed">
+          <p className="text-body-text leading-relaxed">
             The <em>Public Interest Disclosure Act 2013</em> was enacted to protect whistleblowers. The government's own Act promises protection. The government's own agencies uniformly denied that protection. The stated reason for denial — non-employment — is contradicted by the government's own Federal Court.
           </p>
 
           <SectionHeading number="7.5" title="Legal Test" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Under the <em>Public Interest Disclosure Act 2013</em> (Cth):</p>
             <BulletList items={[
               "Section 10: Definition of internal disclosure — satisfied by the subject's documented employment.",
@@ -758,7 +758,7 @@ export default function AdministrativeAnnihilation() {
           {/* CHAPTER 8 */}
           <ChapterHeading id="ch8" number={8} title="The Psychiatric Paradox — Forced Treatment for 'Delusions' the Records Prove Are Real" icon={Brain} subtitle="Addresses RQ3" />
 
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>The subject was psychiatrically detained and forcibly medicated for "persecutory delusions" — the clinical assertion that his beliefs about government misconduct were symptoms of mental illness. The government's own records independently verify those "delusions" as facts:</p>
             <DataTable
               headers={["\"Delusion\" Pathologised by Clinicians", "Government Record Confirming It as Fact"]}
@@ -774,7 +774,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="8.4" title="The Diagnostic Weaponisation Trap" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>This creates what this paper terms the <strong>Diagnostic Weaponisation Trap</strong> — a Catch-22:</p>
             <BulletList items={[
               "The subject experiences government persecution (documented by government records)",
@@ -788,7 +788,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="8.5" title="The Victorian Ombudsman's Acknowledgement" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>The Victorian Ombudsman's own investigation officer, Ben Calder, acknowledged the hospital's failures:</p>
             <BlockQuote>
               "I acknowledged that the hospital failed to properly search you when you returned from your hospital ground leave on 24 February 2021."
@@ -801,7 +801,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="8.6" title="Legal Test" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Under the <em>Mental Health Act 2014</em> (Vic):</p>
             <BulletList items={[
               "Section 5: Treatment principles — treatment must promote recovery and be the least restrictive available.",
@@ -823,7 +823,7 @@ export default function AdministrativeAnnihilation() {
           {/* CHAPTER 9 */}
           <ChapterHeading id="ch9" number={9} title="The Exile Paradox — Constitutional Freedom vs. Administrative Banishment" icon={Globe} subtitle="Addresses RQ1" />
 
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Section 92 of the Australian Constitution guarantees freedom of interstate movement. Article 12 of the ICCPR provides that "everyone lawfully within the territory of a State shall, within that territory, have the right to liberty of movement and freedom to choose his residence."</p>
             <p>The documentary record establishes that the subject was effectively exiled from his home state of Victoria through the coordinated actions of a Federal Minister and state police. During a mental health crisis, the subject sent a desperate plea for help to the office of Bill Shorten, then NDIS Minister. The email was deliberately recharacterised as a "death threat" against the Minister.</p>
             <DataTable
@@ -842,7 +842,7 @@ export default function AdministrativeAnnihilation() {
           {/* CHAPTER 10 */}
           <ChapterHeading id="ch10" number={10} title="The FOI Paradox — 'Voluminous' Then 'Non-Existent'" icon={Eye} subtitle="Addresses RQ2" />
 
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>The subject filed an FOI request with the Office of the Prime Minister and Cabinet (PM&C). The OAIC acknowledged the request and described the responsive documents as "voluminous" and "complex." PM&C subsequently denied the request on the grounds that the requested documents "did not exist."</p>
             <p>Documents cannot be simultaneously "voluminous and complex" and "non-existent." The government's own responses constitute either:</p>
             <BulletList items={[
@@ -870,10 +870,10 @@ export default function AdministrativeAnnihilation() {
               ["Identity theft", "Brand/IP destruction", "$7.8 million", "ASIC records"],
             ]}
           />
-          <p className="text-foreground/80 leading-relaxed font-semibold">
+          <p className="text-body-text leading-relaxed font-semibold">
             Total documented denied claims: $6.5 million+ (conservative; excluding identity theft). Total with identity theft damages: $14.3 million+.
           </p>
-          <p className="text-foreground/80 leading-relaxed mt-4">
+          <p className="text-body-text leading-relaxed mt-4">
             The government spent substantial resources denying these claims while the subject lived on approximately $40 per week. The documented government expenditure on preventing the subject from receiving support exceeds the cost of simply providing the support. This is the financial signature of persecution rather than administration.
           </p>
 
@@ -895,7 +895,7 @@ export default function AdministrativeAnnihilation() {
           />
 
           <SectionHeading number="12.4" title="Statistical Test" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p><strong>Null Hypothesis (H₀):</strong> Each agency made its decision independently, based on the merits of the subject's specific case.</p>
             <p><strong>Alternative Hypothesis (H₁):</strong> The pattern of uniformly adverse outcomes is statistically incompatible with independent decision-making.</p>
             <Card className="bg-muted/50 dark:bg-muted/20 p-4 my-4">
@@ -917,7 +917,7 @@ export default function AdministrativeAnnihilation() {
           ]} />
 
           <SectionHeading number="12.6" title="Results and Interpretation" />
-          <p className="text-foreground/80 leading-relaxed">
+          <p className="text-body-text leading-relaxed">
             The probability of 25+ independent agencies all producing adverse outcomes against the same individual, when published approval rates predict approximately 12–15 favourable outcomes, is <strong>p &lt; 0.0001</strong> — far below the threshold for statistical significance in any social science discipline, and well below the "beyond reasonable doubt" standard applied in criminal proceedings. The government's own published approval rates demonstrate that the observed pattern is mathematically incompatible with independent decision-making.
           </p>
 
@@ -945,12 +945,12 @@ export default function AdministrativeAnnihilation() {
           />
 
           <SectionHeading number="13.2" title="The 1951 Refugee Convention" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>The exhaustion of domestic remedies is itself the strongest evidence for the Refugee Convention claim: the subject has sought protection from every available domestic mechanism, and every mechanism has failed.</p>
           </div>
 
           <SectionHeading number="13.3" title="UN Convention Against Torture (CAT)" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>Applied to the present case: "Severe pain or suffering" — a suicide attempt classified as "fatal" and "lethal" by government hospital records, resulting in permanent acquired brain injury. Four years of homelessness. Forced psychiatric detention. Forced medication. Complete destruction of financial, social, and legal existence.</p>
           </div>
 
@@ -958,7 +958,7 @@ export default function AdministrativeAnnihilation() {
           <ChapterHeading id="ch14" number={14} title="Discussion — The Institutional Cascade Proven" icon={Users} />
 
           <SectionHeading number="14.1" title="Summary of Findings" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>This paper identified eight discrete paradoxes within the Australian Government's own documentary record:</p>
             <BulletList items={[
               "The Employment Paradox: Federal Court confirms employment; DSS and ComCare deny it.",
@@ -974,7 +974,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="14.2" title="The Institutional Cascade: Confirmed" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <BulletList items={[
               "Stage 1 — Initial Adverse Decision: ComCare's denial of employment status (contradicting the Federal Court).",
               "Stage 2 — Institutional Contamination: DSS relied on ComCare's position to reject the PID.",
@@ -987,7 +987,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="14.3" title="Implications for Australian Administrative Law" />
-          <p className="text-foreground/80 leading-relaxed">
+          <p className="text-body-text leading-relaxed">
             The case reveals a structural gap in Australian administrative law: while the ADJR Act 1977 provides for judicial review of individual agency decisions, no mechanism exists for reviewing the cumulative effect of decisions across multiple agencies. This paper recommends the creation of a <strong>Cross-Agency Administrative Review Mechanism</strong> empowered to assess cumulative patterns.
           </p>
 
@@ -995,7 +995,7 @@ export default function AdministrativeAnnihilation() {
           <ChapterHeading id="ch15" number={15} title="Conclusion — The Government's Own Records Demand Justice" icon={CheckCircle2} />
 
           <SectionHeading number="15.1" title="The Research Questions Answered" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <BulletList items={[
               "RQ1: The documented outcomes constitute a cumulative pattern of systematic harm meeting the legal threshold of persecution under Article 7(1)(h) of the Rome Statute. Statistical analysis: p < 0.0001.",
               "RQ2: The inter-agency contradictions constitute prima facie evidence of administrative bad faith under sections 5 and 6 of the ADJR Act 1977 (Cth).",
@@ -1006,7 +1006,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="15.2" title="The Paradox Resolved" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p>The central paradox of this case is that the government created its own prosecution file. Every document cited in this paper was authored by the government itself. To challenge this paper's findings, the government would be required to challenge the validity of its own records.</p>
             <BlockQuote>
               The government built the evidence. This paper merely organised it.
@@ -1014,7 +1014,7 @@ export default function AdministrativeAnnihilation() {
           </div>
 
           <SectionHeading number="15.3" title="Recommended Actions" />
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-body-text leading-relaxed">
             <p><strong>Immediate — Emergency Interim Measures:</strong></p>
             <BulletList items={[
               "UN Special Rapporteur on Torture: Request for urgent communication regarding forced psychiatric treatment and exile.",
@@ -1044,7 +1044,7 @@ export default function AdministrativeAnnihilation() {
             </h2>
 
             <h3 className="text-lg font-semibold text-foreground mt-6 mb-3">Part A: Legislation</h3>
-            <div className="text-sm text-foreground/70 space-y-1 leading-relaxed">
+            <div className="text-sm text-body-text space-y-1 leading-relaxed">
               <p className="font-medium mt-4">Commonwealth of Australia</p>
               <BulletList items={[
                 "Administrative Decisions (Judicial Review) Act 1977 (Cth), ss. 5, 6",
@@ -1083,7 +1083,7 @@ export default function AdministrativeAnnihilation() {
             </div>
 
             <h3 className="text-lg font-semibold text-foreground mt-8 mb-3">Part B: International Law Instruments</h3>
-            <div className="text-sm text-foreground/70 space-y-1 leading-relaxed">
+            <div className="text-sm text-body-text space-y-1 leading-relaxed">
               <BulletList items={[
                 "Basic Principles on the Role of Lawyers (1990), Principles 1, 2",
                 "Convention on the Rights of Persons with Disabilities (2006), Arts. 12, 14, 15, 19, 28",
@@ -1101,7 +1101,7 @@ export default function AdministrativeAnnihilation() {
             </div>
 
             <h3 className="text-lg font-semibold text-foreground mt-8 mb-3">Part C: Academic References</h3>
-            <div className="text-sm text-foreground/70 space-y-2 leading-relaxed">
+            <div className="text-sm text-body-text space-y-2 leading-relaxed">
               <p>Agamben, G. (2005). <em>State of Exception</em>. University of Chicago Press.</p>
               <p>Bauman, Z. (1989). <em>Modernity and the Holocaust</em>. Cornell University Press.</p>
               <p>Bhaskar, R. (1975). <em>A Realist Theory of Science</em>. Leeds Books.</p>
@@ -1139,7 +1139,7 @@ export default function AdministrativeAnnihilation() {
             </h2>
 
             <h3 className="text-xl font-serif font-semibold text-foreground mt-6 mb-4">Appendix A: The Institutional Cascade — Visual Model</h3>
-            <div className="bg-muted/50 dark:bg-muted/20 rounded-lg p-6 font-mono text-xs md:text-sm overflow-x-auto space-y-2 text-foreground/80">
+            <div className="bg-muted/50 dark:bg-muted/20 rounded-lg p-6 font-mono text-xs md:text-sm overflow-x-auto space-y-2 text-body-text">
               <div className="border border-border rounded p-3 text-center">
                 <p className="font-bold">STAGE 1: INITIAL ADVERSE DECISION</p>
                 <p>ComCare denies employment status (contradicting Federal Court)</p>
@@ -1193,7 +1193,7 @@ export default function AdministrativeAnnihilation() {
           {/* COLOPHON */}
           <div className="mt-16 pt-8 border-t border-border">
             <Card className="bg-muted/30 dark:bg-muted/10">
-              <CardContent className="pt-6 text-sm text-foreground/70 space-y-3">
+              <CardContent className="pt-6 text-sm text-body-text space-y-3">
                 <p>
                   This paper was researched and written by Dr. Richard William McLean, Ph.D. (Victoria University, 2020), drawing on a personal evidence archive of 2,077 primary source documents accumulated over 35 years of interaction with Australian Government agencies. The paper employs original conceptual frameworks (The Institutional Cascade Model) and original methodology (The Inversion Method) applied to the government's own documentary record.
                 </p>

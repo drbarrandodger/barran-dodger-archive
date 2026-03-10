@@ -51,7 +51,7 @@ export function SectionShare({
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-2 pt-2" data-testid="section-share-buttons">
-      <span className="text-xs text-gray-500 uppercase tracking-wider font-bold flex items-center gap-1.5 mr-1">
+      <span className="text-xs text-body-text uppercase tracking-wider font-bold flex items-center gap-1.5 mr-1">
         <Share2 className="h-3 w-3" /> {label}
       </span>
       {platforms.map((p) => (
@@ -60,7 +60,7 @@ export function SectionShare({
           href={p.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/[0.06] border border-white/10 text-gray-400 transition-colors"
+          className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/[0.06] border border-white/10 text-body-text transition-colors"
           title={`Share on ${p.name}`}
           data-testid={`button-section-share-${p.name.toLowerCase()}`}
         >
@@ -69,7 +69,7 @@ export function SectionShare({
       ))}
       <button
         onClick={handleCopy}
-        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/[0.06] border border-white/10 text-gray-400 transition-colors cursor-pointer"
+        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/[0.06] border border-white/10 text-body-text transition-colors cursor-pointer"
         title="Copy share text"
         data-testid="button-section-share-copy"
       >

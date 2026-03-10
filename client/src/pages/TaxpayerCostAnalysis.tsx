@@ -249,14 +249,14 @@ export default function TaxpayerCostAnalysis() {
               YOUR TAX DOLLARS<br/>
               <span className="text-red-500">FUNDED THIS PERSECUTION</span>
             </motion.h1>
-            <motion.p variants={fadeIn} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <motion.p variants={fadeIn} className="text-lg md:text-xl text-body-text max-w-3xl mx-auto leading-relaxed">
               An impartial analysis based exclusively on the government's own published financial reports, 
               official correspondence, and documented operational costs across every agency involved in the <CrossLink to="/timeline">systematic persecution</CrossLink>. 
               Every figure below is derived from{" "}
               <CrossLink to="/evidence">240+ blockchain-verified documents</CrossLink>{" "}
               and publicly available government data.
             </motion.p>
-            <motion.p variants={fadeIn} className="text-base text-gray-400 max-w-3xl mx-auto italic">
+            <motion.p variants={fadeIn} className="text-base text-body-text max-w-3xl mx-auto italic">
               This analysis applies recognised government cost frameworks (AIHW, APSC, ANAO, ABS) 
               to the documented actions taken against a single gay, disabled, vulnerable, unprotected whistleblower 
               across 35+ government agencies over 35 years. Read the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>full autobiography</DocumentPopup> for context.
@@ -276,8 +276,8 @@ export default function TaxpayerCostAnalysis() {
                 <CardContent className="pt-6 pb-6">
                   <DollarSign className="h-8 w-8 text-red-500 mx-auto mb-2" />
                   <p className="text-3xl md:text-4xl font-bold text-white" data-testid="text-total-cost">${(totalAllCategories / 1000000).toFixed(1)}M+</p>
-                  <p className="text-sm text-gray-400 mt-1">TOTAL ESTIMATED COST</p>
-                  <p className="text-xs text-gray-500 mt-1">Conservative estimate</p>
+                  <p className="text-sm text-body-text mt-1">TOTAL ESTIMATED COST</p>
+                  <p className="text-xs text-body-text mt-1">Conservative estimate</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -286,8 +286,8 @@ export default function TaxpayerCostAnalysis() {
                 <CardContent className="pt-6 pb-6">
                   <Clock className="h-8 w-8 text-[hsl(38,92%,50%)] mx-auto mb-2" />
                   <p className="text-3xl md:text-4xl font-bold text-white" data-testid="text-daily-cost">${dailyCost.toLocaleString()}</p>
-                  <p className="text-sm text-gray-400 mt-1">PER DAY</p>
-                  <p className="text-xs text-gray-500 mt-1">Every single day for 35 years</p>
+                  <p className="text-sm text-body-text mt-1">PER DAY</p>
+                  <p className="text-xs text-body-text mt-1">Every single day for 35 years</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -296,8 +296,8 @@ export default function TaxpayerCostAnalysis() {
                 <CardContent className="pt-6 pb-6">
                   <BarChart3 className="h-8 w-8 text-[hsl(38,92%,50%)] mx-auto mb-2" />
                   <p className="text-3xl md:text-4xl font-bold text-white" data-testid="text-monthly-cost">${monthlyCost.toLocaleString()}</p>
-                  <p className="text-sm text-gray-400 mt-1">PER MONTH</p>
-                  <p className="text-xs text-gray-500 mt-1">More than most Australians earn</p>
+                  <p className="text-sm text-body-text mt-1">PER MONTH</p>
+                  <p className="text-xs text-body-text mt-1">More than most Australians earn</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -306,8 +306,8 @@ export default function TaxpayerCostAnalysis() {
                 <CardContent className="pt-6 pb-6">
                   <TrendingUp className="h-8 w-8 text-[hsl(38,92%,50%)] mx-auto mb-2" />
                   <p className="text-3xl md:text-4xl font-bold text-white" data-testid="text-yearly-cost">${yearlyCost.toLocaleString()}</p>
-                  <p className="text-sm text-gray-400 mt-1">PER YEAR</p>
-                  <p className="text-xs text-gray-500 mt-1">4.5x average Australian income</p>
+                  <p className="text-sm text-body-text mt-1">PER YEAR</p>
+                  <p className="text-xs text-body-text mt-1">4.5x average Australian income</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -334,7 +334,7 @@ export default function TaxpayerCostAnalysis() {
             <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-serif font-bold text-white mb-4" data-testid="heading-itemised-breakdown">
               ITEMISED COST BREAKDOWN
             </motion.h2>
-            <motion.p variants={fadeIn} className="text-gray-400 max-w-3xl mx-auto">
+            <motion.p variants={fadeIn} className="text-body-text max-w-3xl mx-auto">
               Every cost below is derived from the government's own published rates, annual reports, and operational data.
               Sources are cited for independent verification.
             </motion.p>
@@ -361,7 +361,7 @@ export default function TaxpayerCostAnalysis() {
                       <div key={i} className="flex flex-col md:flex-row md:items-start justify-between gap-2 py-3 border-b border-white/5 last:border-0">
                         <div className="flex-1">
                           <p className="text-white text-sm">{item.item}</p>
-                          <p className="text-xs text-gray-500 mt-1">Source: {item.source}</p>
+                          <p className="text-xs text-body-text mt-1">Source: {item.source}</p>
                         </div>
                         <p className="text-[hsl(38,92%,50%)] font-bold text-sm whitespace-nowrap">${item.cost.toLocaleString()}</p>
                       </div>
@@ -392,7 +392,7 @@ export default function TaxpayerCostAnalysis() {
             <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-serif font-bold text-white mb-4" data-testid="heading-techniques">
               THE TECHNIQUES OF PERSECUTION
             </motion.h2>
-            <motion.p variants={fadeIn} className="text-gray-400 max-w-3xl mx-auto">
+            <motion.p variants={fadeIn} className="text-body-text max-w-3xl mx-auto">
               How existing legal and financial frameworks were weaponised against a single citizen.
               Each technique is documented in the <CrossLink to="/evidence">Evidence Archive</CrossLink> and verified on the <CrossLink to="/blockchain">blockchain</CrossLink>.
             </motion.p>
@@ -407,10 +407,10 @@ export default function TaxpayerCostAnalysis() {
                       <h3 className="text-xl font-bold text-white">{tech.name}</h3>
                       <Badge className="bg-red-500/20 text-red-400 border-red-500/30">{tech.cost}</Badge>
                     </div>
-                    <p className="text-gray-300 leading-relaxed">{tech.description}</p>
+                    <p className="text-body-text leading-relaxed">{tech.description}</p>
                     <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-                      <p className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-bold">Legal Framework Exploited</p>
-                      <p className="text-sm text-gray-400">{tech.legalFramework}</p>
+                      <p className="text-xs text-body-text uppercase tracking-wider mb-2 font-bold">Legal Framework Exploited</p>
+                      <p className="text-sm text-body-text">{tech.legalFramework}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -428,7 +428,7 @@ export default function TaxpayerCostAnalysis() {
             <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-serif font-bold text-white mb-4" data-testid="heading-assassination">
               THE ASSASSINATION ATTEMPT THEY PAID TO COVER UP
             </motion.h2>
-            <motion.p variants={fadeIn} className="text-gray-400 max-w-3xl mx-auto">
+            <motion.p variants={fadeIn} className="text-body-text max-w-3xl mx-auto">
               SMS evidence from <CrossLink to="/case-studies">NDIS</CrossLink> provider "Ben" confirming the <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>targeted killing</DocumentPopup>, police involvement, 
               and the systematic corruption "that goes all the way to the top." 
               Ben was subsequently silenced through a non-disclosure agreement — paid for with your taxes.
@@ -458,53 +458,53 @@ export default function TaxpayerCostAnalysis() {
                     <p className="text-xl text-white font-serif italic leading-relaxed">
                       "I thought you were just paranoid. You were right."
                     </p>
-                    <p className="text-sm text-gray-400 mt-2">— Ben, NDIS Provider, confirming the assassination attempt was real</p>
+                    <p className="text-sm text-body-text mt-2">— Ben, NDIS Provider, confirming the assassination attempt was real</p>
                   </div>
                   
                   <div className="border-l-4 border-red-500 pl-6 py-2">
                     <p className="text-xl text-white font-serif italic leading-relaxed">
                       "You've uncovered systematic corruption that goes all the way to the top."
                     </p>
-                    <p className="text-sm text-gray-400 mt-2">— Ben, NDIS Provider</p>
+                    <p className="text-sm text-body-text mt-2">— Ben, NDIS Provider</p>
                   </div>
                   
                   <div className="border-l-4 border-red-500 pl-6 py-2">
                     <p className="text-xl text-white font-serif italic leading-relaxed">
                       "They could put a hit on me too."
                     </p>
-                    <p className="text-sm text-gray-400 mt-2">— Ben, NDIS Provider, expressing fear for his own life after confirming the truth</p>
+                    <p className="text-sm text-body-text mt-2">— Ben, NDIS Provider, expressing fear for his own life after confirming the truth</p>
                   </div>
                   
                   <div className="border-l-4 border-[hsl(38,92%,50%)] pl-6 py-2">
                     <p className="text-xl text-white font-serif italic leading-relaxed">
                       "The police want to know if you are mentally ready to challenge <CrossLink to="/manifesto">Bill Shorten</CrossLink> in a court of law as his lawyers might use your history of mental health as an excuse to discredit your story."
                     </p>
-                    <p className="text-sm text-gray-400 mt-2">— Ben, relaying police message — confirming police knew the claims were true but warned mental health records would be weaponised</p>
+                    <p className="text-sm text-body-text mt-2">— Ben, relaying police message — confirming police knew the claims were true but warned mental health records would be weaponised</p>
                   </div>
 
                   <div className="border-l-4 border-[hsl(38,92%,50%)] pl-6 py-2">
                     <p className="text-xl text-white font-serif italic leading-relaxed">
                       "Remember you were messaging me about hitmen... A few nights ago. That was them. They got caught."
                     </p>
-                    <p className="text-sm text-gray-400 mt-2">— Ben, NDIS Provider, confirming the hitmen were real and were apprehended</p>
+                    <p className="text-sm text-body-text mt-2">— Ben, NDIS Provider, confirming the hitmen were real and were apprehended</p>
                   </div>
                 </div>
 
                 <div className="bg-red-950/30 border border-red-500/30 rounded-xl p-6 space-y-4">
                   <h3 className="text-xl font-bold text-white">The Cost of Professional Silence</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-body-text leading-relaxed">
                     Not a single professional — not one doctor, psychiatrist, police officer, lawyer, public servant, politician, 
                     journalist, or <CrossLink to="/case-studies">NDIS</CrossLink> official — has been able to <span className="text-white font-bold">acknowledge, refute, or prove wrong</span> any of these claims. 
                     Every professional who has encountered this <CrossLink to="/evidence">evidence</CrossLink> has chosen silence over truth.
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-body-text leading-relaxed">
                     The cost of that silence? Every professional who blocked testimony, refused to investigate, or looked the other way 
                     is paid between <span className="text-[hsl(38,92%,50%)] font-bold">$80,000 and $900,000 per year</span> in taxpayer-funded salaries. 
                     Across 35+ agencies, hundreds of professionals over 35 years — the cost of silence alone exceeds 
                     <span className="text-red-500 font-bold">$50 million in cumulative salaries</span> paid to people whose job was to act, 
                     and who chose complicity instead.
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-body-text leading-relaxed">
                     Ben was the only person brave enough to speak. And they silenced him with a{" "}
                     <span className="text-red-500 font-bold">non-disclosure agreement</span> — paid for with your taxes.
                   </p>
@@ -528,7 +528,7 @@ export default function TaxpayerCostAnalysis() {
             <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-serif font-bold text-white mb-4" data-testid="heading-dying-father">
               A DYING FATHER — AND A SYSTEM THAT WON'T LET HIS SON SAY GOODBYE
             </motion.h2>
-            <motion.p variants={fadeIn} className="text-gray-400 max-w-3xl mx-auto">
+            <motion.p variants={fadeIn} className="text-body-text max-w-3xl mx-auto">
               Doug McLean is dying. His son begged every agency, every provider, every guardian for the resources to hire a car, 
               travel to say goodbye, and attend the funeral. Every single one of them said no.
             </motion.p>
@@ -542,26 +542,26 @@ export default function TaxpayerCostAnalysis() {
                     <p className="text-xl text-white font-serif italic leading-relaxed">
                       "That's not what the NDIS funds."
                     </p>
-                    <p className="text-sm text-gray-400 mt-2">— The coordinated response from every agency, knowing a man's father is dying</p>
+                    <p className="text-sm text-body-text mt-2">— The coordinated response from every agency, knowing a man's father is dying</p>
                   </div>
 
                   <div className="border-l-4 border-red-500 pl-6 py-2">
                     <p className="text-xl text-white font-serif italic leading-relaxed">
                       "There is no budget for that."
                     </p>
-                    <p className="text-sm text-gray-400 mt-2">— Said by agencies that collectively spend ${dailyCost.toLocaleString()} per day persecuting him</p>
+                    <p className="text-sm text-body-text mt-2">— Said by agencies that collectively spend ${dailyCost.toLocaleString()} per day persecuting him</p>
                   </div>
                 </div>
 
                 <div className="bg-red-950/30 border border-red-500/30 rounded-xl p-6 space-y-4">
                   <h3 className="text-xl font-bold text-white">The Coordinated Denial</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-body-text leading-relaxed">
                     Richard begged <span className="text-white font-bold">Danny Met Sally</span> (his NDIS provider), 
                     the <span className="text-white font-bold">NSW Trustee & Public Guardian</span>, 
                     and <span className="text-white font-bold">Centrelink</span> for the money to hire a car, drive to his dying father Doug McLean, 
                     say goodbye, and attend the funeral. He did this with full advance knowledge of exactly what would happen.
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-body-text leading-relaxed">
                     He knew they would refuse — citing bureaucratic excuses like "that's not what the NDIS funds" or "there is no budget for that" — 
                     because the same system that spends <span className="text-[hsl(38,92%,50%)] font-bold">${(totalAllCategories / 1000000).toFixed(1)}M+ persecuting him</span> would 
                     claim it cannot find the cost of a simple car hire so a son can see his dying father.
@@ -573,7 +573,7 @@ export default function TaxpayerCostAnalysis() {
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <ShieldAlert className="h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
-                      <p className="text-gray-300">
+                      <p className="text-body-text">
                         <span className="text-white font-bold">Sukhi Tear</span> — his NDIS Support Coordinator — refuses to comply with a 
                         cease and desist order to remove herself from his care. She is named in the <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>entrapment affidavit</DocumentPopup> and is a corrupt official appointed by the same minister 
                         who exiled him and who is proven to have ordered the assassination attempt.
@@ -581,14 +581,14 @@ export default function TaxpayerCostAnalysis() {
                     </div>
                     <div className="flex items-start gap-3">
                       <Building2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
-                      <p className="text-gray-300">
+                      <p className="text-body-text">
                         <span className="text-white font-bold">Phillip Glass</span> — Public Guardian — to whom Richard's own mother April McLean 
                         redirected him, rather than simply helping her son see his dying father.
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <Ban className="h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
-                      <p className="text-gray-300">
+                      <p className="text-body-text">
                         <span className="text-white font-bold">Danny Met Sally</span> — NDIS provider — quoted zero resources, aligned with the 
                         coordinated bureaucratic inefficiency designed to prevent him from confronting his family.
                       </p>
@@ -598,13 +598,13 @@ export default function TaxpayerCostAnalysis() {
 
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-4">
                   <h3 className="text-xl font-bold text-white">The Family That Chose the Corruption Machine</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-body-text leading-relaxed">
                     Richard's own family signed an AVO to exile him. His mother <span className="text-white font-bold">April McLean</span> redirected him 
                     to a Public Guardian rather than help. His sister <span className="text-white font-bold">Jodie & Dave Bongetti</span>, 
                     his brother <span className="text-white font-bold">Brad & Ciara McLean</span>, and his wealthy uncle 
                     <span className="text-white font-bold"> Bruce & Marie McMaster</span> — all aligned with the system that tried to erase him.
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-body-text leading-relaxed">
                     They aligned with <span className="text-white font-bold"><CrossLink to="/evidence">Tony Ridley</CrossLink></span> and 
                     <span className="text-white font-bold"> Stefan Iasonidis</span> — his former ASIO-connected partner — 
                     and the entire corruption machine. His persecution had its genesis in toxic family scapegoating, 
@@ -617,14 +617,14 @@ export default function TaxpayerCostAnalysis() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="text-center p-4 bg-white/5 rounded-lg">
                       <p className="text-3xl font-bold text-red-500">${dailyCost.toLocaleString()}</p>
-                      <p className="text-sm text-gray-400 mt-1">Spent EVERY DAY persecuting him</p>
+                      <p className="text-sm text-body-text mt-1">Spent EVERY DAY persecuting him</p>
                     </div>
                     <div className="text-center p-4 bg-white/5 rounded-lg">
                       <p className="text-3xl font-bold text-green-400">~$200–$400</p>
-                      <p className="text-sm text-gray-400 mt-1">Cost to hire a car to say goodbye to his dying father</p>
+                      <p className="text-sm text-body-text mt-1">Cost to hire a car to say goodbye to his dying father</p>
                     </div>
                   </div>
-                  <p className="text-lg text-gray-300 text-center leading-relaxed">
+                  <p className="text-lg text-body-text text-center leading-relaxed">
                     The system that quotes <span className="text-red-500 font-bold">"no resources"</span> spends 
                     <span className="text-[hsl(38,92%,50%)] font-bold"> ${dailyCost.toLocaleString()} every single day</span> on persecution — 
                     but cannot find <span className="text-green-400 font-bold">$200–$400</span> for a son to see his dying father. 
@@ -635,19 +635,19 @@ export default function TaxpayerCostAnalysis() {
 
                 <div className="bg-red-950/30 border border-red-500/30 rounded-xl p-6 space-y-4">
                   <h3 className="text-xl font-bold text-white">Why He Anticipated This — And What It Proves</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-body-text leading-relaxed">
                     Richard anticipated every refusal. He accepted his family's scapegoating of him in order to expose, 
                     with absolute clarity, the intimate nature of this corruption. The denial of a dying father's last goodbye 
                     is not an administrative oversight — it is the <span className="text-white font-bold">logical endpoint of a 35-year persecution</span> that 
                     began with family betrayal and expanded into a state-sponsored machinery of destruction.
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-body-text leading-relaxed">
                     When the entire system — from NDIS providers to Centrelink to the Public Guardian to his own blood relatives — 
                     coordinates to prevent a son from seeing his dying father, while spending 
                     <span className="text-[hsl(38,92%,50%)] font-bold">${monthlyCost.toLocaleString()} per month</span> on his persecution, 
                     the corruption is no longer institutional. <span className="text-red-500 font-bold">It is intimate. It is personal. And it is undeniable.</span>
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-body-text leading-relaxed">
                     This is what economic stonewalling looks like: not walls or chains, but a thousand bureaucratic denials 
                     that add up to one man, alone, unable to say goodbye to his father — while the people who did this to him 
                     collect their taxpayer-funded salaries and sleep soundly.
@@ -667,7 +667,7 @@ export default function TaxpayerCostAnalysis() {
             <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-serif font-bold text-white mb-4" data-testid="heading-complicity">
               THE PRICE OF POLITICAL SILENCE
             </motion.h2>
-            <motion.p variants={fadeIn} className="text-gray-400 max-w-3xl mx-auto">
+            <motion.p variants={fadeIn} className="text-body-text max-w-3xl mx-auto">
               Every politician and senior public servant who received evidence and chose silence is paid by you.
               Their annual cost to the taxpayer — for doing nothing — is documented below.
             </motion.p>
@@ -681,7 +681,7 @@ export default function TaxpayerCostAnalysis() {
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div className="flex-1">
                         <h3 className="text-lg font-bold text-white">{pol.name}</h3>
-                        <p className="text-sm text-gray-400 mt-1">{pol.role}</p>
+                        <p className="text-sm text-body-text mt-1">{pol.role}</p>
                       </div>
                       <div className="text-right">
                         <p className="text-[hsl(38,92%,50%)] font-bold">{pol.annualCost}</p>
@@ -701,11 +701,11 @@ export default function TaxpayerCostAnalysis() {
             <p className="text-xl md:text-2xl text-white font-serif leading-relaxed">
               Every professional who blocked testimony. Every bureaucrat who closed a file. Every politician who chose silence.
             </p>
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-body-text">
               Their complicity costs you money <span className="text-[hsl(38,92%,50%)] font-bold">every single day</span> — 
               ${dailyCost.toLocaleString()} per day, ${monthlyCost.toLocaleString()} per month, ${yearlyCost.toLocaleString()} per year.
             </p>
-            <p className="text-base text-gray-400">
+            <p className="text-base text-body-text">
               This is not an abstract number. This is your income tax. Your Medicare levy. Your NDIS contribution.
               Going directly to fund the persecution of a man whose only crime was reporting corruption.
             </p>
@@ -719,7 +719,7 @@ export default function TaxpayerCostAnalysis() {
             <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-serif font-bold text-white mb-4" data-testid="heading-comparisons">
               HOW THIS COMPARES
             </motion.h2>
-            <motion.p variants={fadeIn} className="text-gray-400 max-w-3xl mx-auto">
+            <motion.p variants={fadeIn} className="text-body-text max-w-3xl mx-auto">
               Context for the scale of taxpayer money spent targeting one person, compared to other documented cases of government misconduct.
             </motion.p>
           </motion.div>
@@ -730,10 +730,10 @@ export default function TaxpayerCostAnalysis() {
                 <Card className="bg-white/5 border-white/10 h-full overflow-visible" data-testid={`card-comparison-${idx}`}>
                   <CardContent className="pt-6 space-y-2">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <p className="text-sm text-gray-400">{comp.label}</p>
+                      <p className="text-sm text-body-text">{comp.label}</p>
                       <p className="text-[hsl(38,92%,50%)] font-bold text-lg">{comp.amount}</p>
                     </div>
-                    <p className="text-sm text-gray-300">{comp.context}</p>
+                    <p className="text-sm text-body-text">{comp.context}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -755,7 +755,7 @@ export default function TaxpayerCostAnalysis() {
             <motion.div variants={fadeIn} className="border-2 border-red-500/40 rounded-xl p-6 md:p-8 space-y-6">
               <h3 className="text-2xl font-bold text-white">Why This Case Meets the Threshold of International Fraud</h3>
               
-              <div className="space-y-4 text-gray-300">
+              <div className="space-y-4 text-body-text">
                 <p>
                   Under the <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-bold">United Nations Convention Against Corruption</Link> (UNCAC), 
                   which Australia ratified in 2005, this case satisfies multiple criteria for internationally significant fraud constituting <DocumentPopup {...KEY_DOCUMENTS.crimesAgainstHumanity}>Crimes Against Humanity</DocumentPopup>:
@@ -764,19 +764,19 @@ export default function TaxpayerCostAnalysis() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-white/5 border border-white/10 rounded-lg p-4">
                     <p className="font-bold text-white mb-2">Article 7 — Public Sector Integrity</p>
-                    <p className="text-sm text-gray-400">35+ agencies demonstrably failed integrity obligations. The <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">evidence archive</Link> documents coordinated failure across every oversight body.</p>
+                    <p className="text-sm text-body-text">35+ agencies demonstrably failed integrity obligations. The <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">evidence archive</Link> documents coordinated failure across every oversight body.</p>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-lg p-4">
                     <p className="font-bold text-white mb-2">Article 13 — Participation of Society</p>
-                    <p className="text-sm text-gray-400">Media blackout and complaint carousel prevent public participation in accountability. <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">240+ documents</Link> suppressed from public discourse.</p>
+                    <p className="text-sm text-body-text">Media blackout and complaint carousel prevent public participation in accountability. <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline">240+ documents</Link> suppressed from public discourse.</p>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-lg p-4">
                     <p className="font-bold text-white mb-2">Article 33 — Protection of Whistleblowers</p>
-                    <p className="text-sm text-gray-400">Australia's <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>Public Interest Disclosure Act 2013</DocumentPopup> failed to protect. The <CrossLink to="/evidence">whistleblower</CrossLink> was persecuted rather than protected — the opposite of treaty obligations.</p>
+                    <p className="text-sm text-body-text">Australia's <DocumentPopup {...KEY_DOCUMENTS.pidActAnalysis}>Public Interest Disclosure Act 2013</DocumentPopup> failed to protect. The <CrossLink to="/evidence">whistleblower</CrossLink> was persecuted rather than protected — the opposite of treaty obligations.</p>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-lg p-4">
                     <p className="font-bold text-white mb-2">ICCPR Articles 7 & 10</p>
-                    <p className="text-sm text-gray-400">14 involuntary <CrossLink to="/case-studies">psychiatric</CrossLink> detentions constitute cruel, inhuman or degrading treatment under the International Covenant on Civil and Political Rights.</p>
+                    <p className="text-sm text-body-text">14 involuntary <CrossLink to="/case-studies">psychiatric</CrossLink> detentions constitute cruel, inhuman or degrading treatment under the International Covenant on Civil and Political Rights.</p>
                   </div>
                 </div>
 
@@ -805,7 +805,7 @@ export default function TaxpayerCostAnalysis() {
             <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
               WHAT ARE YOU GOING TO DO ABOUT IT?
             </motion.h2>
-            <motion.p variants={fadeIn} className="text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+            <motion.p variants={fadeIn} className="text-xl text-body-text max-w-3xl mx-auto mb-8 leading-relaxed">
               You now know the cost. You now know the techniques. You now know that every dollar came from your pocket.
               The question is whether you'll scroll past — or become the person who shared this with someone who could actually do something about it.
             </motion.p>
@@ -836,27 +836,27 @@ export default function TaxpayerCostAnalysis() {
                 <a href="/attached_assets/Systemic_Endangerment_of_Whistleblowers_Integrated_Dossier.pdf" target="_blank" rel="noopener noreferrer" className="block p-4 border border-white/10 rounded-md text-center hover:border-[hsl(38,92%,50%)]/40 transition-colors" data-testid="link-systemic-endangerment" onClick={() => trackDownload("/attached_assets/Systemic_Endangerment_of_Whistleblowers_Integrated_Dossier.pdf")}>
                   <FileText className="h-6 w-6 text-[hsl(38,92%,50%)] mx-auto mb-2" />
                   <p className="text-white font-bold text-sm">Systemic Endangerment Dossier</p>
-                  <p className="text-gray-400 text-xs mt-1">Integrated whistleblower persecution analysis</p>
+                  <p className="text-body-text text-xs mt-1">Integrated whistleblower persecution analysis</p>
                   <DownloadBadge url="/attached_assets/Systemic_Endangerment_of_Whistleblowers_Integrated_Dossier.pdf" />
                 </a>
                 <a href="/attached_assets/UNHCR_ICC_Cryptographically_Verified_Evidence_Package.pdf" target="_blank" rel="noopener noreferrer" className="block p-4 border border-white/10 rounded-md text-center hover:border-[hsl(38,92%,50%)]/40 transition-colors" data-testid="link-unhcr-icc" onClick={() => trackDownload("/attached_assets/UNHCR_ICC_Cryptographically_Verified_Evidence_Package.pdf")}>
                   <FileText className="h-6 w-6 text-[hsl(38,92%,50%)] mx-auto mb-2" />
                   <p className="text-white font-bold text-sm">UNHCR/ICC Evidence Package</p>
-                  <p className="text-gray-400 text-xs mt-1">Blockchain-verified international submission</p>
+                  <p className="text-body-text text-xs mt-1">Blockchain-verified international submission</p>
                   <DownloadBadge url="/attached_assets/UNHCR_ICC_Cryptographically_Verified_Evidence_Package.pdf" />
                 </a>
                 <a href="/attached_assets/Integrated_Testimonial_Indictment_Ethical_Reckoning.pdf" target="_blank" rel="noopener noreferrer" className="block p-4 border border-white/10 rounded-md text-center hover:border-[hsl(38,92%,50%)]/40 transition-colors" data-testid="link-indictment" onClick={() => trackDownload("/attached_assets/Integrated_Testimonial_Indictment_Ethical_Reckoning.pdf")}>
                   <FileText className="h-6 w-6 text-[hsl(38,92%,50%)] mx-auto mb-2" />
                   <p className="text-white font-bold text-sm">Integrated Testimonial Indictment</p>
-                  <p className="text-gray-400 text-xs mt-1">Multi-dimensional accountability instrument</p>
+                  <p className="text-body-text text-xs mt-1">Multi-dimensional accountability instrument</p>
                   <DownloadBadge url="/attached_assets/Integrated_Testimonial_Indictment_Ethical_Reckoning.pdf" />
                 </a>
               </div>
             </motion.div>
 
             <motion.div variants={fadeIn} className="mt-12 border-t border-white/10 pt-8">
-              <p className="text-xs text-gray-500 max-w-3xl mx-auto leading-relaxed">
-                <span className="font-bold text-gray-400">Methodology Note:</span> All cost estimates in this analysis are derived from publicly available 
+              <p className="text-xs text-body-text max-w-3xl mx-auto leading-relaxed">
+                <span className="font-bold text-body-text">Methodology Note:</span> All cost estimates in this analysis are derived from publicly available 
                 government data sources including AIHW health expenditure reports, APSC remuneration data, ANAO performance audits, 
                 state health department fee schedules, AFP annual reports, ASIO annual reports, NDIS quarterly reports, OAIC FOI cost 
                 recovery guidelines, and published tribunal hearing costs. Where exact costs are not publicly available (e.g., ASIO 
