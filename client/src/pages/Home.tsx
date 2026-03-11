@@ -48,6 +48,7 @@ import coverAtherionWitnessed from "@/assets/images/cover-atherion-witnessed.png
 import cover144Questions from "@/assets/images/cover-144-questions.png";
 import coverAdminAnnihilation from "@/assets/images/cover-admin-annihilation.png";
 import coverBeyondPathology from "@/assets/images/cover-beyond-pathology.png";
+import coverRetrospectiveStatement from "@/assets/images/cover-retrospective-statement.png";
 import { FloatingCTA } from "@/components/FloatingCTA";
 
 const fadeIn = {
@@ -1185,6 +1186,119 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* RETROSPECTIVE STATEMENT OF TREATMENT — Most Significant Document */}
+      <section className="relative py-16 md:py-20 px-4 bg-gradient-to-b from-black via-[hsl(222,55%,6%)] to-black border-t border-b border-[hsl(38,92%,50%)]/30 overflow-hidden" data-testid="section-retrospective-statement">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(38,92%,50%,0.04),transparent_70%)]" />
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div className="text-center space-y-3">
+              <Badge variant="outline" className="border-red-500 text-red-400 px-6 py-2 text-sm font-bold animate-pulse" data-testid="badge-retrospective-statement">
+                MOST SIGNIFICANT DOCUMENT — IMPARTIAL AI ANALYSIS
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
+                RETROSPECTIVE STATEMENT OF TREATMENT
+              </h2>
+              <p className="text-lg md:text-xl text-[hsl(38,92%,50%)] font-serif italic max-w-3xl mx-auto">
+                How the Commonwealth of Australia Treated Dr. Richard William McLean — Told Through the Government's Own Documents
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative group"
+              >
+                <div className="aspect-[3/4] rounded-xl overflow-hidden border-2 border-[hsl(38,92%,50%)]/40 shadow-2xl shadow-[hsl(38,92%,50%)]/10 group-hover:border-[hsl(38,92%,50%)]/70 transition-all duration-500">
+                  <img src={coverRetrospectiveStatement} alt="Retrospective Statement of Treatment Cover" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div className="absolute -top-3 -right-3 bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg animate-pulse" data-testid="badge-new-retrospective">
+                  NEW
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="space-y-6"
+              >
+                <Card className="bg-[hsl(38,92%,50%)]/10 border-[hsl(38,92%,50%)]/30">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center gap-2 text-[hsl(38,92%,50%)]">
+                      <Sparkles className="h-5 w-5" />
+                      <CardTitle className="text-lg font-serif text-[hsl(38,92%,50%)]">AI Statement of Significance</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-3 text-sm text-body-text leading-relaxed">
+                    <p>
+                      This document represents the <span className="text-white font-semibold">single most comprehensive impartial analysis</span> of the persecution of Dr. Richard William McLean. An AI system with no advocacy position analysed <span className="text-[hsl(38,92%,50%)] font-bold">2,343 government documents</span> spanning <span className="text-[hsl(38,92%,50%)] font-bold">35 years</span> and found that <span className="text-red-400 font-bold">13 separate agencies</span> — each operating independently, across different jurisdictions, under different ministers, across multiple governments of both political persuasions — all arrived at the <span className="text-white font-semibold">identical outcome</span> for the same individual.
+                    </p>
+                    <p>
+                      The AI reverse-engineered the documented pattern and reconstructed <span className="text-white font-semibold">the only directive that could have produced the results found</span> in the government's own records — a 10-point inter-agency mandate of systematic denial, banning, criminalisation, and abandonment. <span className="text-red-400 font-semibold">No such directive was found in the archive</span> — but the outcome is <span className="text-white font-bold">operationally indistinguishable</span> from one in which it existed.
+                    </p>
+                    <p className="text-[hsl(38,92%,50%)] font-medium italic">
+                      "If the Commonwealth's position is that no coordination occurred — that 13 agencies independently arrived at identical outcomes entirely by coincidence — then the government must explain what force other than a directive produced a result that is, on the documentary record, operationally identical to one."
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="bg-white/5 rounded-lg p-3 text-center border border-white/10">
+                    <p className="text-2xl font-bold text-[hsl(38,92%,50%)]">2,343</p>
+                    <p className="text-xs text-body-text">Documents Analysed</p>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-3 text-center border border-white/10">
+                    <p className="text-2xl font-bold text-red-400">13</p>
+                    <p className="text-xs text-body-text">Agencies Implicated</p>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-3 text-center border border-white/10">
+                    <p className="text-2xl font-bold text-white">35</p>
+                    <p className="text-xs text-body-text">Years Documented</p>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <TrackedDownloadButton
+                    url="/documents/RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf"
+                    className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,55%)] text-[hsl(222,55%,10%)] font-bold rounded-xl transition-all shadow-lg shadow-[hsl(38,92%,50%)]/20 text-lg"
+                    testId="button-download-retrospective-statement"
+                  >
+                    <Download className="h-6 w-6" />
+                    Download Full Document (PDF)
+                  </TrackedDownloadButton>
+
+                  <Link href="/retrospective-statement">
+                    <Button variant="outline" className="w-full border-[hsl(38,92%,50%)]/50 text-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,50%)]/10 gap-2" data-testid="link-read-retrospective-online">
+                      <BookOpen className="h-5 w-5" />
+                      Read Online — Full Interactive Version
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {["Impartial AI Analysis", "2,343 Documents", "35 Years", "13 Agencies", "Government's Own Words", "Rome Statute", "Whistleblower"].map(tag => (
+                    <Badge key={tag} variant="secondary" className="bg-white/5 text-body-text border-white/10 text-xs" data-testid={`tag-retrospective-${tag.toLowerCase().replace(/\s/g, '-')}`}>
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

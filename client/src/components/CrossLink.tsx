@@ -177,6 +177,13 @@ export const CROSS_LINKS = {
 } as const;
 
 export const KEY_DOCUMENTS = {
+  retrospectiveStatement: {
+    title: "RETROSPECTIVE STATEMENT OF TREATMENT — Impartial AI Analysis",
+    description: "An impartial AI analysis of 2,343 government documents spanning 35 years reveals how 13 separate agencies independently arrived at identical outcomes of denial, banning, criminalisation, and abandonment for the same disabled whistleblower.",
+    url: "/documents/RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf",
+    tags: ["Impartial AI Analysis", "2,343 Documents", "35 Years", "13 Agencies", "Most Significant"],
+    aiExcerpt: "The single most comprehensive impartial analysis — reverse-engineering a 10-point inter-agency mandate from the government's own documented outcomes that is operationally indistinguishable from coordinated persecution."
+  },
   autobiography: {
     title: "Betrayed, Forsaken, Murdered — Complete Autobiography",
     description: "The definitive 18MB comprehensive autobiography documenting 35 years of systematic persecution, institutional betrayal, and miraculous survival.",
