@@ -50,11 +50,59 @@ function categorizeDocument(doc: { title: string; tags: string[]; description: s
   return "uncategorized";
 }
 
+const AGENCIES = [
+  { id: "all", label: "All Agencies" },
+  { id: "ndis-ndia", label: "NDIS / NDIA", keywords: ["ndis", "ndia", "disability", "sil ", "sils", "sukhi tear", "tony ridley", "ben ndis", "ben dsw"] },
+  { id: "oaic", label: "OAIC", keywords: ["oaic", "information commissioner", "foi", "freedom of information", "privacy complaint"] },
+  { id: "ombudsman", label: "Commonwealth Ombudsman", keywords: ["ombudsman", "service restriction", "pid", "public interest disclosure"] },
+  { id: "attorney-general", label: "Attorney-General's Dept", keywords: ["attorney-general", "attorney general", "dreyfus", "mark dreyfus", "mc23-028244"] },
+  { id: "federal-court", label: "Federal Court", keywords: ["federal court", "fedcourt", "court of australia"] },
+  { id: "afp-asio", label: "AFP / ASIO", keywords: ["afp", "asio", "australian federal police", "intelligence", "iasonidis", "david irvine"] },
+  { id: "apra", label: "APRA", keywords: ["apra", "peter dunstan", "prudential"] },
+  { id: "vcat-aat", label: "VCAT / AAT", keywords: ["vcat", "aat", "tribunal", "administrative appeals"] },
+  { id: "ahrc", label: "AHRC", keywords: ["ahrc", "human rights commission"] },
+  { id: "nacc", label: "NACC", keywords: ["nacc", "national anti-corruption"] },
+  { id: "health", label: "Health / Medical", keywords: ["mercy hospital", "mercy health", "werribee", "psychiatric", "hospital", "medical", "salt water clinic", "health complaints"] },
+  { id: "micron21", label: "Micron21", keywords: ["micron21", "micron 21", "asic", "identity destruction", "business registration"] },
+  { id: "unhcr-icc", label: "UNHCR / ICC / OHCHR", keywords: ["unhcr", "icc", "ohchr", "united nations", "un ", "international criminal", "rome statute", "asylum", "refugee"] },
+  { id: "workcover", label: "WorkCover / ComCare", keywords: ["workcover", "comcare", "workers compensation", "vocat"] },
+];
+
+const DATE_PERIODS = [
+  { id: "all", label: "All Dates" },
+  { id: "1990s", label: "1990–1999", keywords: ["1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999"] },
+  { id: "2000s", label: "2000–2009", keywords: ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009"] },
+  { id: "2010s", label: "2010–2019", keywords: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"] },
+  { id: "2020-2022", label: "2020–2022", keywords: ["2020", "2021", "2022"] },
+  { id: "2023", label: "2023", keywords: ["2023"] },
+  { id: "2024", label: "2024", keywords: ["2024"] },
+  { id: "2025-2026", label: "2025–2026", keywords: ["2025", "2026"] },
+];
+
+function matchesAgency(doc: { title: string; tags: string[]; description: string; aiSignificance?: string }, agencyId: string): boolean {
+  if (agencyId === "all") return true;
+  const agency = AGENCIES.find(a => a.id === agencyId);
+  if (!agency?.keywords) return false;
+  const searchText = `${doc.title} ${doc.tags.join(" ")} ${doc.description} ${doc.aiSignificance || ""}`.toLowerCase();
+  return agency.keywords.some(kw => searchText.includes(kw.toLowerCase()));
+}
+
+function matchesDatePeriod(doc: { title: string; tags: string[]; description: string; url: string; aiSignificance?: string }, periodId: string): boolean {
+  if (periodId === "all") return true;
+  const period = DATE_PERIODS.find(p => p.id === periodId);
+  if (!period?.keywords) return false;
+  const searchText = `${doc.title} ${doc.tags.join(" ")} ${doc.description} ${doc.url} ${doc.aiSignificance || ""}`.toLowerCase();
+  return period.keywords.some(kw => searchText.includes(kw));
+}
+
 export default function Evidence() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxOpen2, setLightboxOpen2] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedAgency, setSelectedAgency] = useState("all");
+  const [selectedDatePeriod, setSelectedDatePeriod] = useState("all");
+  const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
   const { openPreview, PreviewComponent } = useDocumentPreview();
   const { markViewed, hasViewed } = useDocumentProgress();
   const documents = [
@@ -3136,6 +3184,106 @@ export default function Evidence() {
                 </Button>
               )}
             </div>
+
+            <div className="flex items-center gap-3 mt-3">
+              <Button
+                variant={showAdvancedFilters ? "secondary" : "outline"}
+                size="sm"
+                className="gap-2"
+                onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
+                data-testid="button-toggle-advanced-filters"
+              >
+                <Filter className="h-4 w-4" />
+                {showAdvancedFilters ? "Hide Filters" : "Filter by Agency & Date"}
+              </Button>
+              {(selectedAgency !== "all" || selectedDatePeriod !== "all") && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="gap-1 text-muted-foreground"
+                  onClick={() => { setSelectedAgency("all"); setSelectedDatePeriod("all"); }}
+                  data-testid="button-clear-all-filters"
+                >
+                  <X className="h-3 w-3" /> Clear Filters
+                </Button>
+              )}
+              {selectedAgency !== "all" && (
+                <Badge variant="secondary" className="gap-1" data-testid="badge-active-agency-filter">
+                  <Building className="h-3 w-3" />
+                  {AGENCIES.find(a => a.id === selectedAgency)?.label}
+                  <X className="h-3 w-3 cursor-pointer ml-1" onClick={() => setSelectedAgency("all")} />
+                </Badge>
+              )}
+              {selectedDatePeriod !== "all" && (
+                <Badge variant="secondary" className="gap-1" data-testid="badge-active-date-filter">
+                  {DATE_PERIODS.find(p => p.id === selectedDatePeriod)?.label}
+                  <X className="h-3 w-3 cursor-pointer ml-1" onClick={() => setSelectedDatePeriod("all")} />
+                </Badge>
+              )}
+            </div>
+
+            {showAdvancedFilters && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="mt-4 p-4 rounded-xl border border-border bg-card/50 space-y-4"
+                data-testid="panel-advanced-filters"
+              >
+                <div>
+                  <p className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
+                    <Building className="h-4 w-4 text-primary" /> Filter by Government Agency
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {AGENCIES.map(agency => {
+                      const count = agency.id === "all"
+                        ? documents.length
+                        : documents.filter(doc => matchesAgency(doc, agency.id)).length;
+                      return (
+                        <Button
+                          key={agency.id}
+                          variant={selectedAgency === agency.id ? "default" : "outline"}
+                          size="sm"
+                          className="gap-1 text-xs"
+                          onClick={() => setSelectedAgency(agency.id)}
+                          data-testid={`button-agency-${agency.id}`}
+                        >
+                          {agency.label}
+                          <Badge variant="secondary" className="ml-1 text-[10px] px-1.5 py-0">{count}</Badge>
+                        </Button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
+                    <Landmark className="h-4 w-4 text-primary" /> Filter by Date Period
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {DATE_PERIODS.map(period => {
+                      const count = period.id === "all"
+                        ? documents.length
+                        : documents.filter(doc => matchesDatePeriod(doc, period.id)).length;
+                      return (
+                        <Button
+                          key={period.id}
+                          variant={selectedDatePeriod === period.id ? "default" : "outline"}
+                          size="sm"
+                          className="gap-1 text-xs"
+                          onClick={() => setSelectedDatePeriod(period.id)}
+                          data-testid={`button-date-${period.id}`}
+                        >
+                          {period.label}
+                          <Badge variant="secondary" className="ml-1 text-[10px] px-1.5 py-0">{count}</Badge>
+                        </Button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </motion.section>
 
           {/* Evidence Documents Grid */}
@@ -3157,6 +3305,14 @@ export default function Evidence() {
                 });
               }
 
+              if (selectedAgency !== "all") {
+                filteredDocs = filteredDocs.filter(doc => matchesAgency(doc, selectedAgency));
+              }
+
+              if (selectedDatePeriod !== "all") {
+                filteredDocs = filteredDocs.filter(doc => matchesDatePeriod(doc, selectedDatePeriod));
+              }
+
               const currentCategory = CATEGORIES.find(c => c.id === selectedCategory);
               const CategoryIcon = currentCategory?.icon || Archive;
               
@@ -3171,12 +3327,11 @@ export default function Evidence() {
                         <h2 className="text-2xl font-serif font-bold text-primary">
                           {searchQuery ? `Search Results for "${searchQuery}"` : selectedCategory === "all" ? "All Evidence Documents" : currentCategory?.label}
                         </h2>
-                        {selectedCategory !== "all" && !searchQuery && (
-                          <p className="text-sm text-muted-foreground">Filtered by category</p>
-                        )}
-                        {searchQuery && (
+                        {(selectedCategory !== "all" || selectedAgency !== "all" || selectedDatePeriod !== "all" || searchQuery) && (
                           <p className="text-sm text-muted-foreground">
                             {filteredDocs.length === 0 ? "No documents found" : `Showing ${filteredDocs.length} matching document${filteredDocs.length !== 1 ? "s" : ""}`}
+                            {selectedAgency !== "all" && ` · ${AGENCIES.find(a => a.id === selectedAgency)?.label}`}
+                            {selectedDatePeriod !== "all" && ` · ${DATE_PERIODS.find(p => p.id === selectedDatePeriod)?.label}`}
                           </p>
                         )}
                       </div>
