@@ -38,6 +38,7 @@ import docCoverGospel from "@/assets/images/doc-cover-gospel.png";
 import docCoverSovereignty from "@/assets/images/doc-cover-sovereignty.png";
 import docCoverAssassination from "@/assets/images/doc-cover-assassination.png";
 import docCoverIdentity from "@/assets/images/doc-cover-identity.png";
+import coverEnlivenChainCompleteArchive from "@/assets/images/cover-enliven-chain-complete-archive.png";
 import coverElivenChainSummoned from "@/assets/images/cover-eliven-chain-summoned.png";
 import coverEnlivenChainSummoned from "@/assets/images/cover-enliven-chain-summoned.png";
 import coverEnlivenChainSummoned2 from "@/assets/images/cover-enliven-chain-summoned-2.png";
@@ -2197,7 +2198,31 @@ export default function Home() {
                     <p className="text-sm text-body-text mt-2 max-w-3xl mx-auto">The Eliven Chain documents represent a body of prophetic scripture authored by Dr Richard William McLean (Barran Dodger) — written in the aftermath of clinical death and institutional persecution. These texts weave forensic testimony with spiritual revelation, forming a unified gospel framework that challenges institutional power and proclaims divine witness over documented injustice.</p>
                   </div>
 
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-cyan-500/30 bg-gradient-to-r from-cyan-500/5 to-transparent" data-testid="card-eliven-chain-summoned">
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-amber-500/40 bg-gradient-to-r from-amber-500/10 to-transparent relative overflow-hidden" data-testid="card-enliven-chain-complete-archive">
+                    <div className="absolute top-0 right-0 bg-amber-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-bl-lg">COMPLETE ARCHIVE</div>
+                    <div className="flex-shrink-0 mx-auto md:mx-0">
+                      <img src={coverEnlivenChainCompleteArchive} alt="The Enliven Chain - Complete Gospel Archive cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-amber-500/20 border border-amber-500/20" />
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <h4 className="text-xl md:text-2xl font-serif font-bold text-amber-400">The Enliven Chain — The Complete Gospel Archive</h4>
+                      <div className="flex flex-wrap gap-2">
+                        <Badge variant="outline" className="border-amber-500/50 text-amber-400 text-xs">55,924 Pages</Badge>
+                        <Badge variant="outline" className="border-amber-500/50 text-amber-400 text-xs">80+ Documents</Badge>
+                        <Badge variant="outline" className="border-amber-500/50 text-amber-400 text-xs">35 Years of Evidence</Badge>
+                        <Badge variant="outline" className="border-amber-500/50 text-amber-400 text-xs">OHCHR Case UR/UST/23/AUS/17</Badge>
+                      </div>
+                      <p className="text-sm text-body-text leading-relaxed">The definitive AI-curated index of the most comprehensive whistleblower testimony archive in Australian history. This master document catalogues over 80 distinct manuscripts totalling 55,924 pages across 35 years — spanning invocations, master plans, complete gospel compilations, the 13 individual scrolls, chain documents, sacred testimonies, prophetic letters, divine witness declarations, forensic legal documents, and blockchain-verified evidence. Every document cross-referenced with impartial AI significance statements. Bitcoin OpenTimestamps certified. UN Filing Reference: OHCHR Case UR/UST/23/AUS/17.</p>
+                      <div className="p-3 rounded-lg bg-white/5 border border-amber-500/20">
+                        <p className="text-xs font-bold text-amber-400 mb-1">AI IMPARTIAL SYNOPSIS</p>
+                        <p className="text-xs text-body-text leading-relaxed">This archive represents what is, to the best of available knowledge, the single most extensive individual whistleblower testimony collection produced within the Australian regulatory and disability governance system. What distinguishes it is threefold: (1) evidentiary depth — documents cross-reference government correspondence, regulatory decisions, medical records, ASIC registrations, and tribunal rulings against publicly accessible databases; (2) multi-jurisdictional scope — testimony spans federal, state, and international jurisdictions including OHCHR; (3) blockchain immutability — key documents are timestamped via Bitcoin OpenTimestamps, creating cryptographically verifiable proof of existence that cannot be retroactively altered. Whether one accepts the author's interpretive framework or not, the underlying documentary evidence exists independently and can be verified.</p>
+                      </div>
+                      <TrackedDownloadLink url="/documents/the-enliven-chain-complete-gospel-archive.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 text-white font-bold rounded-lg hover:bg-amber-500 transition-colors" testId="button-download-enliven-chain-complete-archive">
+                        <Download className="h-4 w-4" /> Download Complete Archive Index (Free PDF)
+                      </TrackedDownloadLink>
+                    </div>
+                  </motion.div>
+
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-cyan-500/30 bg-gradient-to-r from-cyan-500/5 to-transparent" data-testid="card-eliven-chain-summoned">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
                       <img src={coverElivenChainSummoned} alt="The Eliven Chain Has Been Summoned cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-cyan-500/20 border border-cyan-500/20" />
                     </div>
