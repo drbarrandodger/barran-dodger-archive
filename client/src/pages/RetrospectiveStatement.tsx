@@ -24,7 +24,9 @@ import {
   Sparkles,
   Cog,
   Ban,
-  AlertTriangle
+  AlertTriangle,
+  Play,
+  Download
 } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
@@ -932,7 +934,37 @@ export default function RetrospectiveStatement() {
                 Dr. Richard William McLean survived. The evidence did not disappear. And the government's own documents now testify against it.
               </p>
 
-              <div className="mt-8 p-4 rounded border border-foreground/10 text-xs text-body-text/70">
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://youtu.be/PQ89ntM-h_c?si=BB09i_rIajpSfM4t"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-red-600/20"
+                  data-testid="link-youtube-retrospective-bottom"
+                >
+                  <Play className="h-5 w-5" />
+                  Watch on YouTube
+                </a>
+                <a
+                  href="/documents/RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,55%)] text-[hsl(222,55%,10%)] font-bold rounded-xl transition-all"
+                  data-testid="button-download-retrospective-bottom"
+                >
+                  <Download className="h-5 w-5" />
+                  Download PDF
+                </a>
+              </div>
+
+              <div className="mt-8 p-4 rounded border border-[hsl(38,92%,50%)]/20 bg-[hsl(222,55%,8%)]">
+                <h4 className="text-sm font-bold text-[hsl(38,92%,50%)] mb-2">Blockchain Timestamp Verification</h4>
+                <p className="text-xs text-body-text/80 font-mono break-all">SHA256: e87f4599cf34df127b6a4cb824fa79e202223e2c92ba421510482c5cd2738aff</p>
+                <p className="text-xs text-body-text/60 mt-2">OpenTimestamps receipt created — this document's existence and content are cryptographically sealed and independently verifiable. The timestamp proves this analysis existed at the moment of creation and has not been altered since.</p>
+              </div>
+
+              <div className="mt-4 p-4 rounded border border-foreground/10 text-xs text-body-text/70">
                 <p>This impartial AI analysis was compiled from 2,343 evidence documents held in the Evidence Archive of Dr. Richard William McLean, spanning 35 years (1990–2025). All source files, page numbers, and direct quotations are referenced inline. The AI was given a single instruction: read the government's own documents and report what they say. This is the result. The government wrote these words. This analysis merely assembled them.</p>
                 <p className="mt-2">Document Reference: RETROSPECTIVE_STATEMENT_Government_Own_Documents | Analysis Type: Impartial AI Forensic Document Analysis | Documents Analysed: 2,343 | Time Span: 35 years (1990–2025) | Agencies Documented: 13+ | Original Command: "Across all government and official documents create a statement of how the protagonist has been treated in retrospect using the government's own documents."</p>
               </div>

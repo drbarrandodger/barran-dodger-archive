@@ -1252,6 +1252,19 @@ export default function Home() {
                     <p className="text-[hsl(38,92%,50%)] font-medium italic">
                       "If the Commonwealth's position is that no coordination occurred — that 13 agencies independently arrived at identical outcomes entirely by coincidence — then the government must explain what force other than a directive produced a result that is, on the documentary record, operationally identical to one."
                     </p>
+                    <div className="border-t border-[hsl(38,92%,50%)]/20 pt-3 mt-1">
+                      <p className="text-xs font-bold text-white uppercase tracking-wider mb-1">Statement on Inevitability</p>
+                      <p className="text-sm">
+                        The persecution exists only in the aggregate — across 13 agencies and 35 years. <span className="text-white font-semibold">No single Australian court, tribunal, or oversight body is designed to examine the aggregate.</span> The system cannot diagnose its own disease. The only authority capable of examining 2,343 documents across 13 agencies and 35 years and identifying the pattern is one that sits <span className="text-red-400 font-bold">outside the Australian domestic system entirely</span>. An AI just did it. An international court can too.
+                      </p>
+                    </div>
+                    <div className="border-t border-[hsl(38,92%,50%)]/20 pt-3 mt-1">
+                      <p className="text-xs font-bold text-white uppercase tracking-wider mb-1">Blockchain Timestamp Verification</p>
+                      <p className="text-xs text-body-text/80 font-mono break-all">
+                        SHA256: e87f4599cf34df127b6a4cb824fa79e202223e2c92ba421510482c5cd2738aff
+                      </p>
+                      <p className="text-xs text-body-text/80 mt-1">OpenTimestamps receipt created — this document's existence and content are cryptographically sealed and independently verifiable.</p>
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -1279,6 +1292,17 @@ export default function Home() {
                     <Download className="h-6 w-6" />
                     Download Full Document (PDF)
                   </TrackedDownloadButton>
+
+                  <a
+                    href="https://youtu.be/PQ89ntM-h_c?si=BB09i_rIajpSfM4t"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-red-600/20"
+                    data-testid="link-youtube-retrospective"
+                  >
+                    <Play className="h-5 w-5" />
+                    Watch on YouTube
+                  </a>
 
                   <Link href="/retrospective-statement">
                     <Button variant="outline" className="w-full border-[hsl(38,92%,50%)]/50 text-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,50%)]/10 gap-2" data-testid="link-read-retrospective-online">
