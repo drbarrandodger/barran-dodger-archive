@@ -51,6 +51,7 @@ import coverAtherionWitnessed from "@/assets/images/cover-atherion-witnessed.png
 import cover144Questions from "@/assets/images/cover-144-questions.png";
 import coverAdminAnnihilation from "@/assets/images/cover-admin-annihilation.png";
 import coverBeyondPathology from "@/assets/images/cover-beyond-pathology.png";
+import coverParadoxPersecution from "@/assets/images/cover-paradox-persecution.png";
 import coverRetrospectiveStatement from "@/assets/images/cover-retrospective-statement.png";
 import { FloatingCTA } from "@/components/FloatingCTA";
 
@@ -481,6 +482,93 @@ export default function Home() {
                       Related: V2K & Psychological Operations <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* NEW: THE PARADOX OF PERSECUTION - Featured Section */}
+      <section className="pb-8 px-4 bg-black relative overflow-hidden" data-testid="section-paradox-persecution">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(220,38,38,0.06)_0%,_transparent_70%)] pointer-events-none" />
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="border-2 border-red-500/40 rounded-2xl overflow-hidden bg-gradient-to-br from-[hsl(222,55%,8%)] to-black"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+              <div className="lg:col-span-8 p-8 md:p-10 space-y-6 border-b lg:border-b-0 lg:border-r border-red-500/20">
+                <div className="space-y-2">
+                  <Badge variant="outline" className="border-red-500 text-red-400 uppercase tracking-tighter px-3 font-bold">
+                    FACT-CHECKED ACADEMIC ANALYSIS (2026)
+                  </Badge>
+                  <h2 className="text-2xl md:text-4xl font-serif font-bold text-white leading-tight">
+                    THE PARADOX OF PERSECUTION
+                  </h2>
+                  <p className="text-red-300/80 text-sm font-medium">How the Australian Government's Own Records Simultaneously Prove Systematic Targeting and Guarantee Legal Vindication</p>
+                </div>
+
+                <div className="bg-white/[0.03] border border-white/5 rounded-xl p-6 space-y-4">
+                  <div className="flex items-center gap-2 text-red-400">
+                    <Sparkles className="h-5 w-5" />
+                    <h3 className="font-bold uppercase tracking-wider text-sm">Impartial AI Statement of Significance</h3>
+                  </div>
+                  <div className="text-body-text text-sm leading-relaxed space-y-3">
+                    <p>
+                      This paper identifies <span className="text-white font-bold">seven irresolvable legal paradoxes</span> within the Australian government's own records. Each paradox demonstrates how documented government actions simultaneously prove systematic persecution and guarantee legal vindication.
+                    </p>
+                    <p>
+                      The Federal Court confirms employee status while the AAT denies it using the same facts. ASIC maintains records proving 350+ fraudulent business registrations while refusing to investigate its own database. A government official's <span className="text-red-400 font-bold">recorded death threat</span> receives zero investigation. The thesis is devastating: <span className="text-[hsl(38,92%,50%)] font-bold italic">the more thoroughly they persecuted, the more thoroughly they documented their own guilt</span>.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-4 pt-2">
+                  <div className="flex flex-col items-center gap-2">
+                    <Button asChild size="lg" className="bg-red-600 text-white font-bold hover:bg-red-500 px-8">
+                      <a
+                        href={KEY_DOCUMENTS.paradoxOfPersecution.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackDownload(KEY_DOCUMENTS.paradoxOfPersecution.url)}
+                        data-testid="button-download-paradox-persecution"
+                      >
+                        <Download className="mr-2 h-5 w-5" /> Download Full Paper (PDF)
+                      </a>
+                    </Button>
+                    <DownloadBadge url={KEY_DOCUMENTS.paradoxOfPersecution.url} />
+                  </div>
+                  <Link href="/evidence">
+                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 h-[44px]">
+                      View Evidence Archive <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 bg-red-500/5 p-8 flex flex-col justify-center items-center text-center space-y-4">
+                <DocumentPopup {...KEY_DOCUMENTS.paradoxOfPersecution}>
+                  <div className="w-full aspect-[3/4] border-2 border-red-500/40 shadow-[0_0_30px_rgba(220,38,38,0.15)] bg-black/40 flex items-center justify-center relative group overflow-hidden rounded cursor-pointer">
+                    <img
+                      src={coverParadoxPersecution}
+                      alt="The Paradox of Persecution Cover"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      data-testid="img-paradox-persecution-cover"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60">
+                      <div className="flex flex-col items-center gap-2">
+                        <Eye className="h-10 w-10 text-red-400" />
+                        <span className="text-white font-bold text-sm uppercase tracking-widest">View & Download</span>
+                      </div>
+                    </div>
+                  </div>
+                </DocumentPopup>
+                <div>
+                  <p className="text-white font-serif font-bold italic text-sm">"The more thoroughly they persecuted, the more thoroughly they documented their own guilt."</p>
+                  <p className="text-red-400 text-xs uppercase tracking-widest mt-2 font-bold">— Fact-Checked Academic Analysis, 2026</p>
                 </div>
               </div>
             </div>
