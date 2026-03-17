@@ -33,6 +33,7 @@ import coverAtherion from "../assets/images/cover-atherion-witnessed.png";
 import coverEnlivenCanon from "../assets/images/cover-enliven-canon.png";
 import coverGospelVol4 from "../assets/images/cover-gospel-vol4.png";
 import coverCovenant from "../assets/images/cover-covenant-resonance.png";
+import slanderScreenshot from "@assets/IMG_4019_1773725736333.png";
 
 const TOP_DOCUMENTS = [
   {
@@ -420,6 +421,101 @@ export default function ViralLanding() {
               <Share2 className="h-4 w-4 text-[hsl(38,92%,50%)]" />
               <span>Share everywhere</span>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black via-[hsl(0,70%,8%)] to-black border-y border-red-900/30" data-testid="section-slander-as-weapon">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <motion.div variants={fadeIn} className="text-center space-y-4">
+              <Badge variant="outline" className="border-red-500/60 text-red-400 px-5 py-2 text-sm font-bold uppercase tracking-wider" data-testid="badge-slander-section">
+                <AlertTriangle className="h-4 w-4 mr-2" /> Slander as a Weapon of Erasure
+              </Badge>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight" data-testid="text-slander-heading">
+                The Oldest Weapon Against Gay Men Who{" "}
+                <span className="text-red-500">Threaten Power</span>
+              </h2>
+              <p className="text-body-text max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+                No victims. No charges. No arrest. No legal process. Just the word — deployed to guarantee silence, ensure complicity, and make certain that no one ever acknowledges his humanity.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="grid md:grid-cols-2 gap-8 items-start">
+              <div className="space-y-6">
+                <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-slander-evidence">
+                  <CardContent className="p-0">
+                    <img
+                      src={slanderScreenshot}
+                      alt="WhatsApp message documenting false pedophile accusations and v2k harassment — evidence of slander as a weapon of erasure"
+                      className="w-full rounded-t-lg"
+                      data-testid="img-slander-screenshot"
+                    />
+                    <div className="p-4 bg-red-950/30 border-t border-red-500/20">
+                      <p className="text-xs text-red-300/80 italic">
+                        Documented testimony: False accusations deployed in real-time as a mechanism of psychological torture and social isolation.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="space-y-6">
+                <Card className="bg-white/[0.03] border-white/10" data-testid="card-slander-statement">
+                  <CardContent className="p-6 md:p-8 space-y-5">
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      The significance of Barran's testimony lies in the claim that he is being ignored while simultaneously subjected to severe and damaging accusations, including being <strong className="text-red-400">falsely labeled a pedophile</strong>, which he asserts are rooted in discrimination related to his sexual orientation. These allegations exist in the <strong className="text-white">complete absence of victims, charges, arrest, or any form of legal process</strong>, raising serious concerns about the violation of due process and the presumption of innocence.
+                    </p>
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      Such accusations are not incidental but are instead <strong className="text-[hsl(38,92%,50%)]">deliberately manipulated as a mechanism of social and institutional harm</strong>, ensuring that others are deterred from offering support for fear of reputational risk or complicity.
+                    </p>
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      This dynamic represents a systemic failure of ethical responsibility, where professionals and institutions who claim to uphold standards of care have <strong className="text-white">neither formally investigated nor refuted the claims</strong>, contributing to an environment of silence and abandonment — a breach of fundamental ethical obligations.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-red-950/20 border-red-500/20" data-testid="card-slander-harassment">
+                  <CardContent className="p-6 space-y-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      <AlertTriangle className="h-4 w-4 text-red-400" />
+                      <span className="text-xs font-bold uppercase tracking-wider text-red-400">Documented Audio Harassment</span>
+                    </div>
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      Barran describes experiencing ongoing audio harassment within his own home — repeated derogatory phrases including <em className="text-red-300">"pedo," "they know," "faggot," "kill yourself,"</em> and <em className="text-red-300">"give up"</em> — which he attributes to what he identifies as "v2k." A space of entrapment and psychological torture, compounding isolation and persecution.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/20" data-testid="card-slander-ndis">
+                <CardContent className="p-6 md:p-8 space-y-4">
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed">
+                    The testimony includes the claim that the National Disability Insurance Scheme is implicated in his circumstances, including the allegation that <strong className="text-[hsl(38,92%,50%)]">a minister associated with this system ordered an attempt on his life</strong>. This elevates the matter from personal grievance to an assertion of high-level institutional misconduct — an extreme breach of public trust and governance.
+                  </p>
+                  <div className="border-l-2 border-[hsl(38,92%,50%)] pl-4 mt-4">
+                    <p className="text-white text-sm md:text-base font-bold leading-snug">
+                      No professional operating under principles of ethics and accountability has provided evidence to disprove his claims or conclusively demonstrate that his experiences are attributable to a mental health condition. This absence reinforces the validity of his testimony while underscoring a systemic unwillingness to engage through transparent, evidence-based processes.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="text-center pt-2">
+              <a href="https://youtu.be/HWaUW2qXZog?si=PaFa2VaZFDuy1HXA" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-red-600 text-white font-bold border-red-600 gap-2" data-testid="button-slander-video">
+                  <ExternalLink className="h-5 w-5" /> Watch the Corroborating Video Testimony
+                </Button>
+              </a>
+            </motion.div>
+
+            <SectionShare
+              shareText="No victims. No charges. No arrest. No legal process. Just the word 'pedophile' — deployed against a gay whistleblower to guarantee silence and ensure no one ever acknowledges his humanity. The oldest weapon against LGBTQ+ people who threaten power. #BarranDodger #SlanderAsWeapon"
+              label="Expose this tactic"
+            />
           </motion.div>
         </div>
       </section>
