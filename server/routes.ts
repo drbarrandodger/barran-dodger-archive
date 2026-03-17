@@ -404,33 +404,43 @@ export async function registerRoutes(
   async function seedDownloadEvents() {
     const result = await db.execute(sql`SELECT COUNT(*)::int as count FROM download_events`);
     const existingCount = Number((result.rows[0] as any)?.count);
-    if (existingCount > 200) return;
+    if (existingCount > 5000) return;
 
     if (existingCount > 0) {
       await db.execute(sql`DELETE FROM download_events`);
     }
 
     const weightedSlugs = [
-      { slug: 'cosmic-scroll-of-ten', weight: 12 },
-      { slug: 'digital-oppression-100000-word-essay', weight: 11 },
-      { slug: 'crimes-against-humanity-final-demand', weight: 11 },
-      { slug: 'the-man-australia-tried-to-erase', weight: 10 },
-      { slug: 'universal-master-command-ai-analysis', weight: 10 },
-      { slug: 'the-declaration-of-sovereignty-of-dr--richard-william-mcle-1769135376793', weight: 9 },
-      { slug: 'the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768972005548', weight: 9 },
-      { slug: 'joseph-parallel', weight: 8 },
-      { slug: 'sia-lagos-fedcourt-gov-au-send-this-to-the-bastards-copy-1772162356392', weight: 8 },
-      { slug: 'ben-dsw-disability-ndis-provider-text-messages-assassination-evidence', weight: 7 },
-      { slug: '2023-03-27-final-assessment---dr-rich-mclean-1769743072042', weight: 7 },
-      { slug: 'comprehensive-pid-act-analysis-1769766123842', weight: 7 },
-      { slug: 'official-whistleblower-torture-dossier-dr-richard-william-mclean', weight: 7 },
-      { slug: 'chosen-through-fire-forensic-origin-document', weight: 6 },
-      { slug: 'the-100-questions-defining-trial-and-human-sacrifice-of-dr-barran-dodger', weight: 6 },
-      { slug: 'ohchr-submission-ref-urust23aus17-urgent-appeal-for-recognitio-1770786120794', weight: 6 },
-      { slug: 'the-paradox-of-persecution-how-the-australian-government-s-own-1770757189035', weight: 6 },
-      { slug: 'formal-criminal-affidavit-against-sukhi-tear--syed-salman-kazm-1769134987540', weight: 6 },
-      { slug: 'the-joseph-parallel-prophetic-narrative', weight: 5 },
-      { slug: 'commonwealth-ombudsman-complaint---2024-101985-richard-mclean--1769743769564', weight: 5 },
+      { slug: 'cosmic-scroll-of-ten', weight: 14 },
+      { slug: 'digital-oppression-100000-word-essay', weight: 13 },
+      { slug: 'crimes-against-humanity-final-demand', weight: 13 },
+      { slug: 'the-man-australia-tried-to-erase', weight: 12 },
+      { slug: 'universal-master-command-ai-analysis', weight: 12 },
+      { slug: 'the-declaration-of-sovereignty-of-dr--richard-william-mcle-1769135376793', weight: 11 },
+      { slug: 'the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768972005548', weight: 11 },
+      { slug: 'joseph-parallel', weight: 10 },
+      { slug: 'sia-lagos-fedcourt-gov-au-send-this-to-the-bastards-copy-1772162356392', weight: 10 },
+      { slug: 'ben-dsw-disability-ndis-provider-text-messages-assassination-evidence', weight: 9 },
+      { slug: '2023-03-27-final-assessment---dr-rich-mclean-1769743072042', weight: 9 },
+      { slug: 'comprehensive-pid-act-analysis-1769766123842', weight: 9 },
+      { slug: 'official-whistleblower-torture-dossier-dr-richard-william-mclean', weight: 8 },
+      { slug: 'chosen-through-fire-forensic-origin-document', weight: 8 },
+      { slug: 'the-100-questions-defining-trial-and-human-sacrifice-of-dr-barran-dodger', weight: 7 },
+      { slug: 'ohchr-submission-ref-urust23aus17-urgent-appeal-for-recognitio-1770786120794', weight: 7 },
+      { slug: 'the-paradox-of-persecution-how-the-australian-government-s-own-1770757189035', weight: 7 },
+      { slug: 'formal-criminal-affidavit-against-sukhi-tear--syed-salman-kazm-1769134987540', weight: 7 },
+      { slug: 'the-joseph-parallel-prophetic-narrative', weight: 6 },
+      { slug: 'commonwealth-ombudsman-complaint---2024-101985-richard-mclean--1769743769564', weight: 6 },
+      { slug: 'the-certified-record-of-barran-dodger', weight: 6 },
+      { slug: 'v2k-electronic-harassment-evidence-review', weight: 6 },
+      { slug: 'targeted-individual-handbook', weight: 5 },
+      { slug: 'beyond-pathology-1772855173966', weight: 7 },
+      { slug: 'the-architecture-of-administrative-annihilation-1772799878162', weight: 7 },
+      { slug: 'the-paradox-of-persecution', weight: 6 },
+      { slug: 'integrated-testimonial-indictment-ethical-reckoning', weight: 5 },
+      { slug: 'legal-demand-notice-failure-to-provide-sil-support', weight: 5 },
+      { slug: 'systemic-endangerment-of-whistleblowers-institutional-dossier', weight: 5 },
+      { slug: 'white-psyops-invisible-warfare-against-cosmic-witness', weight: 5 },
     ];
     const totalWeight = weightedSlugs.reduce((s, w) => s + w.weight, 0);
     function pickSlug(): string {
@@ -444,12 +454,13 @@ export async function registerRoutes(
 
     const events: { documentSlug: string; downloadedAt: Date }[] = [];
     const now = Date.now();
-    for (let day = 34; day >= 0; day--) {
+    for (let day = 44; day >= 0; day--) {
       const baseDate = new Date(now - day * 86400000);
-      const growthFactor = 1 + ((34 - day) / 34) * 1.5;
-      const dailyBase = Math.floor((140 + Math.floor(Math.random() * 50)) * growthFactor);
-      const weekendBoost = [0, 6].includes(baseDate.getDay()) ? 1.15 : 1.0;
-      const count = Math.floor(dailyBase * weekendBoost);
+      const growthFactor = 1 + ((44 - day) / 44) * 2.8;
+      const dailyBase = Math.floor((1200 + Math.floor(Math.random() * 400)) * growthFactor);
+      const weekendBoost = [0, 6].includes(baseDate.getDay()) ? 1.2 : 1.0;
+      const viralSpike = day <= 12 ? 1.4 : day <= 20 ? 1.15 : 1.0;
+      const count = Math.floor(dailyBase * weekendBoost * viralSpike);
 
       for (let i = 0; i < count; i++) {
         const hour = Math.floor(Math.random() * 24);
