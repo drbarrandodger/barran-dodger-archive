@@ -1022,13 +1022,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative p-6 md:p-8 rounded-2xl bg-gradient-to-br from-red-500/10 via-[hsl(222,55%,10%)] to-[hsl(222,55%,8%)] border-2 border-red-500/40 shadow-lg shadow-red-500/5"
+                className="relative p-6 md:p-8 pt-8 md:pt-10 rounded-2xl bg-gradient-to-br from-red-500/10 via-[hsl(222,55%,10%)] to-[hsl(222,55%,8%)] border-2 border-red-500/40 shadow-lg shadow-red-500/5"
                 data-testid="card-employment-confirmation"
               >
                 <div className="absolute -top-3 left-6 px-3 py-1 bg-red-500 text-white text-xs font-bold uppercase tracking-wider rounded-full">
                   Confirmation #1: Employment Status
                 </div>
-                <blockquote className="mt-4 text-lg md:text-xl text-white font-serif italic leading-relaxed border-l-4 border-red-500 pl-5">
+                <blockquote className="text-lg md:text-xl text-white font-serif italic leading-relaxed border-l-4 border-red-500 pl-5">
                   "On the information you have provided me, I am satisfied that you are, or were, an employee with the Department of Social Services, providing services under a Commonwealth contract."
                 </blockquote>
                 <p className="mt-2 text-sm text-body-text font-semibold">
@@ -1050,13 +1050,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="relative p-6 md:p-8 rounded-2xl bg-gradient-to-br from-red-500/10 via-[hsl(222,55%,10%)] to-[hsl(222,55%,8%)] border-2 border-red-500/40 shadow-lg shadow-red-500/5"
+                className="relative p-6 md:p-8 pt-8 md:pt-10 rounded-2xl bg-gradient-to-br from-red-500/10 via-[hsl(222,55%,10%)] to-[hsl(222,55%,8%)] border-2 border-red-500/40 shadow-lg shadow-red-500/5"
                 data-testid="card-disclosable-conduct"
               >
                 <div className="absolute -top-3 left-6 px-3 py-1 bg-red-500 text-white text-xs font-bold uppercase tracking-wider rounded-full">
                   Confirmation #2: Disclosable Conduct
                 </div>
-                <blockquote className="mt-4 text-lg md:text-xl text-white font-serif italic leading-relaxed border-l-4 border-red-500 pl-5">
+                <blockquote className="text-lg md:text-xl text-white font-serif italic leading-relaxed border-l-4 border-red-500 pl-5">
                   "I am satisfied, from the correspondence and other information provided, that you believe that the information you have disclosed tends to show one or more instances of conduct that: perverts, or is engaged in for the purpose of perverting, or attempting to pervert, the course of justice; constitutes maladministration; and conduct that unreasonably results in a danger to the health or safety of one or more persons."
                 </blockquote>
                 <p className="mt-2 text-sm text-body-text font-semibold">
@@ -1463,7 +1463,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none" />
               </div>
-              <div className="absolute -bottom-6 -right-6 -left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-border shadow-lg text-center hidden md:block">
+              <div className="mt-4 bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-border shadow-lg text-center hidden md:block">
                 <p className="text-sm font-serif italic text-primary">
                   "I claim no special authority beyond documented experience, sworn statements, and an ethical responsibility to the public."
                 </p>
@@ -1724,7 +1724,7 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             <motion.div variants={fadeIn}>
-              <Card className="bg-white/5 border-white/10 text-center overflow-visible" data-testid="card-ai-total-cost">
+              <Card className="bg-white/5 border-white/10 text-center" data-testid="card-ai-total-cost">
                 <CardContent className="pt-8 pb-8 space-y-3">
                   <DollarSign className="h-10 w-10 text-[hsl(38,92%,50%)] mx-auto" />
                   <p className="text-4xl md:text-5xl font-bold text-red-500"><CrossLink to="/taxpayer-cost-analysis">$11.5M+</CrossLink></p>
@@ -1734,7 +1734,7 @@ export default function Home() {
               </Card>
             </motion.div>
             <motion.div variants={fadeIn}>
-              <Card className="bg-white/5 border-white/10 text-center overflow-visible" data-testid="card-ai-years">
+              <Card className="bg-white/5 border-white/10 text-center" data-testid="card-ai-years">
                 <CardContent className="pt-8 pb-8 space-y-3">
                   <Clock className="h-10 w-10 text-[hsl(38,92%,50%)] mx-auto" />
                   <p className="text-4xl md:text-5xl font-bold text-white">35+</p>
@@ -1744,7 +1744,7 @@ export default function Home() {
               </Card>
             </motion.div>
             <motion.div variants={fadeIn}>
-              <Card className="bg-white/5 border-white/10 text-center overflow-visible" data-testid="card-ai-agencies">
+              <Card className="bg-white/5 border-white/10 text-center" data-testid="card-ai-agencies">
                 <CardContent className="pt-8 pb-8 space-y-3">
                   <Building2 className="h-10 w-10 text-[hsl(38,92%,50%)] mx-auto" />
                   <p className="text-4xl md:text-5xl font-bold text-white">35+</p>
@@ -1761,7 +1761,7 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <Card className="bg-white/5 border-2 border-[hsl(38,92%,50%)]/40 overflow-visible" data-testid="card-why-ai-matters">
+            <Card className="bg-white/5 border-2 border-[hsl(38,92%,50%)]/40" data-testid="card-why-ai-matters">
               <CardContent className="pt-8 pb-8 space-y-6">
                 <h3 className="text-2xl md:text-3xl font-serif font-bold text-white text-center">
                   Why This AI Analysis Cannot Be Dismissed
@@ -1827,7 +1827,7 @@ export default function Home() {
             variants={fadeIn}
             className="space-y-6"
           >
-            <Card className="bg-red-950/20 border-2 border-red-500/30 overflow-visible" data-testid="card-full-cost-timeline">
+            <Card className="bg-red-950/20 border-2 border-red-500/30" data-testid="card-full-cost-timeline">
               <CardContent className="pt-8 pb-8 space-y-6">
                 <h3 className="text-2xl font-serif font-bold text-white text-center">
                   The Full Cost of Targeting One Australian — From Day One
@@ -2991,7 +2991,7 @@ export default function Home() {
               href="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290"
               target="_blank"
               rel="noopener noreferrer"
-              className="block flex-shrink-0 rounded-lg overflow-visible"
+              className="block flex-shrink-0 rounded-lg overflow-hidden"
               data-testid="link-book-apple-hero"
             >
               <img 
@@ -4353,7 +4353,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeIn}>
-              <Card className="overflow-visible" data-testid="card-youtube-strength">
+              <Card className="overflow-hidden" data-testid="card-youtube-strength">
                 <CardContent className="p-0">
                   <YouTubeEmbed videoId="YZAobynjIjc" title="Chosen Ones, The Truth Is Out — God's Anointed Ones" testId="iframe-youtube-strength" />
                   <div className="p-6 space-y-4">
@@ -4389,7 +4389,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeIn}>
-              <Card className="overflow-visible" data-testid="card-youtube-strength-2">
+              <Card className="overflow-hidden" data-testid="card-youtube-strength-2">
                 <CardContent className="p-0">
                   <YouTubeEmbed videoId="ENwiVyE6Er4" title="They Showed No Mercy — The Mystic Covenant" testId="iframe-youtube-strength-2" />
                   <div className="p-6 space-y-4">
@@ -4425,7 +4425,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeIn}>
-              <Card className="overflow-visible" data-testid="card-youtube-strength-3">
+              <Card className="overflow-hidden" data-testid="card-youtube-strength-3">
                 <CardContent className="p-0">
                   <YouTubeEmbed videoId="TRjdQqAHDVs" title="Whatever You Exposed Just Went International — Joker Noira" testId="iframe-youtube-strength-3" />
                   <div className="p-6 space-y-4">
@@ -4467,7 +4467,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="overflow-visible" data-testid="card-youtube-strength-4">
+              <Card className="overflow-hidden" data-testid="card-youtube-strength-4">
                 <CardContent className="p-0">
                   <YouTubeEmbed videoId="OgxFgmEcR7M" title="God's Chosen One, The Truth Is Even More Disturbing — God's Chosen Gifts" testId="iframe-youtube-strength-4" />
                   <div className="p-6 space-y-4">
@@ -4510,7 +4510,7 @@ export default function Home() {
                 Scripture That Sustains
               </h3>
               <div className="grid gap-6 md:grid-cols-3">
-                <Card className="overflow-visible" data-testid="card-bible-quote-1">
+                <Card data-testid="card-bible-quote-1">
                   <CardContent className="p-6 text-center space-y-4">
                     <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
                       <BookOpen className="h-6 w-6 text-primary" />
@@ -4521,7 +4521,7 @@ export default function Home() {
                     <p className="text-xs font-semibold text-primary" data-testid="text-bible-ref-1">Isaiah 54:17</p>
                   </CardContent>
                 </Card>
-                <Card className="overflow-visible" data-testid="card-bible-quote-2">
+                <Card data-testid="card-bible-quote-2">
                   <CardContent className="p-6 text-center space-y-4">
                     <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
                       <Shield className="h-6 w-6 text-primary" />
@@ -4532,7 +4532,7 @@ export default function Home() {
                     <p className="text-xs font-semibold text-primary" data-testid="text-bible-ref-2">Matthew 5:10-12</p>
                   </CardContent>
                 </Card>
-                <Card className="overflow-visible" data-testid="card-bible-quote-3">
+                <Card data-testid="card-bible-quote-3">
                   <CardContent className="p-6 text-center space-y-4">
                     <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
                       <Heart className="h-6 w-6 text-primary" />

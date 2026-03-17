@@ -157,7 +157,7 @@ export function FloatingShareBar() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2" data-testid="floating-share-bar">
+    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start gap-2" data-testid="floating-share-bar">
       {isOpen && (
         <div className="bg-gray-950 border border-green-400/30 shadow-2xl shadow-green-400/10 rounded-xl p-3 space-y-2 animate-in slide-in-from-bottom-2">
           <p className="text-xs font-bold text-green-400 uppercase tracking-wider text-center px-2">
