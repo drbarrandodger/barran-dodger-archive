@@ -1,6 +1,6 @@
 import { Link } from "wouter";
-import { Scale, Mail, Heart } from "lucide-react";
-import { SiX } from "react-icons/si";
+import { Scale, Mail, Heart, Globe, Shield } from "lucide-react";
+import { SiX, SiGithub } from "react-icons/si";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertSubscriberSchema } from "@shared/schema";
@@ -125,6 +125,51 @@ export function Footer() {
             >
               <Heart className="h-4 w-4" /> Donate Now
             </Link>
+          </div>
+        </div>
+
+        {/* Official Mirror & Donation Appeal */}
+        <div className="py-6 border-t border-white/10">
+          <div className="bg-gradient-to-r from-white/5 to-white/[0.02] rounded-lg p-5 space-y-4">
+            <div className="flex items-start gap-3">
+              <Shield className="h-5 w-5 text-[hsl(38,92%,50%)] mt-0.5 shrink-0" />
+              <div>
+                <h4 className="text-sm font-semibold text-[hsl(38,92%,50%)] uppercase tracking-wider mb-2">Official Mirror Site</h4>
+                <p className="text-xs text-white/70 leading-relaxed mb-3">
+                  An independently published permanent online archive exists as an official mirror of this site with reduced capability. It is secured behind Barran's personal 2FA authentication on GitHub, ensuring the evidence remains publicly accessible should any political silencing or further financial sabotage ever lead to the deletion of this primary site.
+                </p>
+                <a
+                  href="https://drbarrandodger.github.io/barran-dodger-archive/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-[hsl(38,92%,50%)] hover:text-[hsl(38,92%,60%)] transition-colors font-medium"
+                  data-testid="link-github-mirror"
+                >
+                  <SiGithub className="h-4 w-4" />
+                  <span>drbarrandodger.github.io/barran-dodger-archive</span>
+                  <Globe className="h-3 w-3 opacity-60" />
+                </a>
+              </div>
+            </div>
+
+            <div className="border-t border-white/10 pt-4">
+              <div className="flex items-start gap-3">
+                <Heart className="h-5 w-5 text-red-400 mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-xs text-white/80 leading-relaxed mb-2">
+                    Barran is in political exile, desperately needing donations to keep this online testimony live and public. In obedience to the Creator and as a vessel for His glory — if any person has prosperity to spare, please consider donating. A win for Barran is a win for human justice, for all vulnerable people, and for every victim of corruption.
+                  </p>
+                  <Link
+                    href="/donate"
+                    className="inline-flex items-center gap-2 text-sm text-[hsl(38,92%,50%)] hover:text-[hsl(38,92%,60%)] transition-colors font-semibold"
+                    data-testid="link-donate-footer-appeal"
+                  >
+                    <Heart className="h-4 w-4" />
+                    <span>Please Donate — Keep the Truth Alive</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
