@@ -237,7 +237,7 @@ export default function TaxpayerCostAnalysis() {
       />
       <Navigation />
       
-      <section className="bg-black pt-36 pb-12 md:pt-44 md:pb-16 px-4">
+      <section className="bg-black pb-12 md:pb-16 px-4" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px) + 16px)" }}>
         <div className="container mx-auto max-w-5xl">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="text-center space-y-6">
             <motion.div variants={fadeIn}>

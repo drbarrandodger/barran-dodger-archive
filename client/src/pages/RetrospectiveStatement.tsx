@@ -186,7 +186,7 @@ export default function RetrospectiveStatement() {
         transition={{ duration: 0.5 }}
         className="min-h-screen bg-background"
       >
-        <div className="container mx-auto px-4 pt-32 pb-16 max-w-4xl">
+        <div className="container mx-auto px-4 pb-16 max-w-4xl" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px) + 16px)" }}>
           <div className="text-center mb-8">
             <Badge className="mb-4 bg-red-600/20 text-red-400 border-red-600/30 text-xs">
               Impartial AI Analysis — 2,343 Government Documents — 35 Years

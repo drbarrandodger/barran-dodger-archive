@@ -321,7 +321,7 @@ export default function EvidenceVault() {
       />
       <Navigation />
 
-      <main className="flex-1 pt-32 pb-20">
+      <main className="flex-1 pb-20" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px) + 16px)" }}>
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
 
           <motion.section

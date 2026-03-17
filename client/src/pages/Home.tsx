@@ -315,7 +315,7 @@ export default function Home() {
       <Navigation />
       
       {/* NEW: THE ARCHITECTURE OF ADMINISTRATIVE ANNIHILATION - Top Priority Document */}
-      <section className="pt-32 pb-8 px-4 bg-black relative overflow-hidden" data-testid="section-admin-annihilation">
+      <section className="pb-8 px-4 bg-black relative overflow-hidden" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px) + 16px)" }} data-testid="section-admin-annihilation">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(233,160,10,0.1)_0%,_transparent_70%)] pointer-events-none" />
         <div className="container mx-auto max-w-5xl relative z-10">
           <motion.div

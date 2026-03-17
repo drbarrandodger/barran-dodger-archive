@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Scale, Heart, Compass, Menu, X, FileText } from "lucide-react";
 import { SiX as TwitterX } from "react-icons/si";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { GlobalSearch } from "./GlobalSearch";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -13,6 +13,7 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hideNav, setHideNav] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +42,18 @@ export function Navigation() {
     setMobileMenuOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    const updateNavHeight = () => {
+      if (navRef.current) {
+        document.documentElement.style.setProperty("--nav-height", `${navRef.current.offsetHeight}px`);
+      }
+    };
+    updateNavHeight();
+    const observer = new ResizeObserver(updateNavHeight);
+    if (navRef.current) observer.observe(navRef.current);
+    return () => observer.disconnect();
+  }, [scrolled]);
+
   const navLinks = [
     { href: "/start-here", label: "Start Here", highlight: true },
     { href: "/administrative-annihilation", label: "The Paper", highlight: true },
@@ -59,7 +72,7 @@ export function Navigation() {
   ];
 
   return (
-    <nav className={cn(
+    <nav ref={navRef} className={cn(
       "fixed top-[var(--banner-height,40px)] w-full z-50 transition-all duration-300 border-b border-transparent",
       scrolled ? "bg-background/95 backdrop-blur-sm border-border py-3 shadow-sm" : "bg-transparent py-6",
       hideNav && !mobileMenuOpen && "opacity-0 pointer-events-none -translate-y-2"

@@ -355,7 +355,7 @@ export default function ViralLanding() {
       />
       <Navigation />
 
-      <section className="pt-32 pb-16 px-4 relative overflow-hidden" data-testid="section-viral-hero">
+      <section className="pb-16 px-4 relative overflow-hidden" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px) + 16px)" }} data-testid="section-viral-hero">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(220,38,38,0.12)_0%,_transparent_70%)] pointer-events-none" />
         <div className="container mx-auto max-w-4xl relative z-10 text-center space-y-6">
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>

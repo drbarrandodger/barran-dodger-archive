@@ -175,7 +175,8 @@ export default function AdministrativeAnnihilation() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="relative bg-gradient-to-b from-primary/5 via-background to-background pt-32 pb-16"
+          className="relative bg-gradient-to-b from-primary/5 via-background to-background pb-16"
+          style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px) + 16px)" }}
         >
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <div className="text-center space-y-6">
