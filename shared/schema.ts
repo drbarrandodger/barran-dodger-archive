@@ -86,3 +86,5 @@ export const insertCommentSchema = createInsertSchema(comments).omit({
 
 export type Comment = typeof comments.$inferSelect;
 export type InsertComment = z.infer<typeof insertCommentSchema>;
+
+export * from "./models/chat";

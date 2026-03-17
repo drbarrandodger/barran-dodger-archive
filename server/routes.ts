@@ -7,6 +7,7 @@ import { downloadCounts, downloadEvents, insertCommentSchema } from "@shared/sch
 import { api } from "@shared/routes";
 import { z } from "zod";
 import { listDriveFiles, downloadDriveFile, searchDriveForEvidence, DriveFile } from "./googleDrive";
+import { registerChatRoutes } from "./replit_integrations/chat";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -538,6 +539,8 @@ export async function registerRoutes(
       res.status(500).json({ message: 'Failed to import file from Google Drive', error: String(error) });
     }
   });
+
+  registerChatRoutes(app);
 
   return httpServer;
 }

@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { DonationBanner } from "@/components/DonationBanner";
 import { WhistleblowerBanner } from "@/components/WhistleblowerBanner";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { Chatbot } from "@/components/Chatbot";
 import Home from "@/pages/Home";
 import Mission from "@/pages/Mission";
 import Contact from "@/pages/Contact";
@@ -91,6 +92,7 @@ function App() {
           <Toaster />
           <Breadcrumbs />
           <Router />
+          <Chatbot />
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>

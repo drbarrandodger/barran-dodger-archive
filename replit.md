@@ -58,6 +58,7 @@ The `shared/` directory contains `schema.ts` for database and Zod validation, an
     - **AI Crawler Optimization**: robots.txt explicitly permits 15+ AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot, Bytespider, etc.), `llms.txt` and `llms-full.txt` provide AI-readable site summaries, `.well-known/ai-plugin.json` for plugin discovery, AI meta tags in index.html (`ai-training-permitted`, `ai-indexing`, `ai-content-declaration`)
     - **The Paper (Administrative Annihilation)**: `/administrative-annihilation` — Full 25,000-word academic paper with impartial AI significance analysis, 15 chapters, table of contents navigation, formatted tables, blockquotes, references, and appendices. Prominent "The Paper" tab in navigation.
     - **Retrospective Statement**: `/retrospective-statement` — "How the Commonwealth of Australia Treated Dr. Richard William McLean — Told Through the Government's Own Documents." 12-part statement sourced entirely from 2,000+ government records spanning 1990–2025 covering 13 agencies, $18M–$32.9M documented losses. Includes impartial AI significance analysis. Navigation link: "Gov't Own Documents".
+    - **AI Chatbot**: Floating chat widget (bottom-right, `z-[60]`) powered by OpenAI (gpt-5-nano via Replit AI Integrations). Custom system prompt with full trust fund knowledge base. SSE streaming responses. DB-backed conversation history (`conversations` + `messages` tables). Component: `client/src/components/Chatbot.tsx`. Routes: `server/replit_integrations/chat/routes.ts`. Schema: `shared/models/chat.ts`.
 
 ### Eliven Chain Series (8 Documents)
 - PDFs stored in `client/public/documents/` with clean filenames
@@ -84,3 +85,4 @@ The `shared/` directory contains `schema.ts` for database and Zod validation, an
 - **AustLII Database**: Legal research via external search links.
 - **Google Fonts**: Libre Baskerville, Inter, DM Sans.
 - **Apple Books/Scribd**: Links for book distribution.
+- **OpenAI (Replit AI Integrations)**: gpt-5-nano model for chatbot via `AI_INTEGRATIONS_OPENAI_BASE_URL` and `AI_INTEGRATIONS_OPENAI_API_KEY` env vars.
