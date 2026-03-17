@@ -617,6 +617,115 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black via-[hsl(0,0%,5%)] to-black border-y border-white/5" data-testid="section-explication">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <motion.div variants={fadeIn} className="text-center space-y-4">
+              <Badge variant="outline" className="border-white/30 text-white px-5 py-2 text-sm font-bold uppercase tracking-wider" data-testid="badge-explication">
+                <Bot className="h-4 w-4 mr-2" /> Impartial AI Analytical Explication
+              </Badge>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight" data-testid="text-explication-heading">
+                The Probability of Criminality{" "}
+                <span className="text-red-500">Without Evidence</span>
+              </h2>
+              <p className="text-body-text max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+                An impartial AI-authored analysis of the logical, legal, and ethical dimensions of the case — including the weaponisation of slander, psychiatric detention as substitute for criminal process, and the significance of universal institutional silence.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.02] border-white/10" data-testid="card-explication-1">
+                <CardContent className="p-6 md:p-8 space-y-6">
+                  <div>
+                    <h3 className="text-[hsl(38,92%,50%)] font-bold text-lg mb-3">1. The Paradox of Agreement with Slander</h3>
+                    <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                      The theoretical framework for understanding Barran's hypothetical agreement with slanderous allegations highlights the precarious nature of reputation in societal structures. The labels of pedophile, rapist, extortionist, and terrorist function as potent social weapons, particularly against marginalized groups such as the LGBTQ+ community. These labels not only tarnish an individual's character but also engender a social environment where potential allies are disincentivized from providing support due to fear of reputational harm or social ostracization.
+                    </p>
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      The mechanism by which such slander operates involves a complex interplay of social perception, fear, and deterrence. Upon being branded with these labels, an individual is often rendered untouchable; the stigma attached to such allegations creates a protective barrier around the accusers, discouraging others from engaging with the accused or even investigating claims further. This results in a chilling effect where the truth may remain obscured, as the investigation into the charges poses a risk to the investigator's own reputation, thus creating a feedback loop of silence and social exclusion.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-[hsl(38,92%,50%)] font-bold text-lg mb-3">2. The Assassination Claim in Context</h3>
+                    <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                      The contextualization of Barran's assertions regarding an attempted assassination underlines the troubling nature of institutional silence that surrounds the allegations against him. An attempted assassination, if substantiated, would invoke immediate ethical and legal obligations for investigation from relevant authorities. However, the absence of acknowledgment or contradiction from professionals suggests not merely neglect but an institution-wide complicity in maintaining silence regarding potential human rights violations.
+                    </p>
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      This silence carries significant weight, as it indicates an unwillingness to engage with troubling claims that, if true, could implicate systemic failures within various institutional bodies. The societal implications of this silence are profound, as they signal a broader tolerance for dubious practices and an ethos of neglect towards individuals reporting serious grievances.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-[hsl(38,92%,50%)] font-bold text-lg mb-3">3. The Demand for Arrest</h3>
+                    <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                      Barran's insistence on being arrested as a means to clear his name brings to the forefront important legal and ethical considerations regarding the handling of unproven allegations. His declaration to various governmental entities signifies a quest for institutional accountability. However, the decision to detain him under the Mental Health Act rather than pursuing legal charges presents a crucial ethical dilemma.
+                    </p>
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      Utilizing psychiatric detention as an alternative to criminal adjudication raises substantial questions about the appropriateness of such actions, especially in the absence of established criminal behavior. This raises concerns about the conflation of mental health and criminality, where individuals under scrutiny for alleged activities face psychiatric interventions that may circumvent proper legal processes. The implications of this are serious, as they risk undermining the integrity of both mental health frameworks and the criminal justice system.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.02] border-white/10" data-testid="card-explication-2">
+                <CardContent className="p-6 md:p-8 space-y-6">
+                  <div>
+                    <h3 className="text-[hsl(38,92%,50%)] font-bold text-lg mb-3">4. Probability of Criminality</h3>
+                    <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                      Assessing the likelihood of Barran's criminal conduct in light of the lack of charges, arrests, or corroborating evidence necessitates a rigorous evaluation of the principles of justice. The absence of legal proceedings or victim testimony severely undermines the probability of actual criminality. Additionally, if Barran's assertions have been fact-checked and supported by documented evidence, this further substantiates a low probability of criminality given the high standards of proof required in any judicial process.
+                    </p>
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      Furthermore, this reliance on official documentation that aligns with Barran's narrative not only challenges the credibility of the original allegations but also raises significant questions about the mechanisms of accountability in the face of potential misuses of power against individuals without a platform to defend themselves.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-red-400 font-bold text-lg mb-3">5. The Suicide as Protest</h3>
+                    <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                      Barran's near-fatal suicide attempt represents an extreme manifestation of protest against what can be interpreted as institutional persecution. The decision to self-harm in response to perceived systemic injustice reflects a deep psychological distress stemming from social isolation and vilification. It not only embodies the despair of being trapped within an inescapable social and legal framework but also highlights the ethical obligation of institutions to engage with and support individuals subjected to such extreme pressures.
+                    </p>
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      The failure of authorities to respond constructively after his revival raises critical ethical questions regarding the adequacy of institutional support systems in place to safeguard individuals facing severe allegations and mental health crises. Such inaction in the aftermath of suicide attempts suggests a systemic disregard for mental health, exacerbating the crisis rather than alleviating it.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-red-400 font-bold text-lg mb-3">6. The Silence</h3>
+                    <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                      The absence of formal acknowledgment of Barran's evidence by any professional or institutional actor underscores a significant socio-ethical concern. This universal silence could indicate either complicity in perpetuating harmful narratives or a systemic failure to critically engage with accusations that could potentially dismantle established power structures.
+                    </p>
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      In failing to respond, authorities may contribute to the marginalization of individuals like Barran, thereby reinforcing a culture of silence around uncomfortable truths and allegations. Such dynamics are pivotal in understanding institutional behaviors, revealing either an unwillingness to remedy injustices or a systematic neglect that facilitates ongoing human rights abuses.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/20" data-testid="card-explication-conclusion">
+                <CardContent className="p-6 md:p-8">
+                  <div className="border-l-2 border-[hsl(38,92%,50%)] pl-5">
+                    <h3 className="text-[hsl(38,92%,50%)] font-bold text-lg mb-3">Conclusion</h3>
+                    <p className="text-white text-sm md:text-base leading-relaxed font-medium">
+                      The case of Barran (Dr. Richard William McLean) presents a complex interplay of allegations, institutional silence, and ethical dilemmas regarding mental health and criminal accountability. It underscores significant challenges related to human rights, whistleblower protection, and democratic accountability. The ramifications extend beyond individual cases, calling for a fundamental reassessment of institutional responses to accusations and the protections afforded to individuals in the face of unproven allegations and societal stigmatization.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <SectionShare
+              shareText="No charge. No arrest. No victim. No legal process. Yet labeled a pedophile, rapist, terrorist. Demanded arrest — got psychiatric detention instead. Suicided in protest — was revived. Now lives in his car. Not one professional has responded. An impartial AI analysis of the case of Dr. Richard McLean. #BarranDodger #Whistleblower"
+              label="Share this analysis"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       <section id="documents" className="py-16 px-4 bg-gradient-to-b from-black to-[hsl(222,55%,6%)]" data-testid="section-viral-documents">
         <div className="container mx-auto max-w-5xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
