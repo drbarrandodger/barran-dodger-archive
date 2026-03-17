@@ -34,6 +34,12 @@ import coverEnlivenCanon from "../assets/images/cover-enliven-canon.png";
 import coverGospelVol4 from "../assets/images/cover-gospel-vol4.png";
 import coverCovenant from "../assets/images/cover-covenant-resonance.png";
 import slanderScreenshot from "@assets/IMG_4019_1773725736333.png";
+import benNdisExtinguish from "@assets/IMG_1573_1773729295462.png";
+import benNdisPoliceChallenge from "@assets/IMG_3289_1773729295462.png";
+import benNdisMurderConspiracy from "@assets/IMG_1004_1773729319589.png";
+import benNdisCloseCall from "@assets/IMG_1003_1773729319589.png";
+import benNdisHitmen from "@assets/27A51392-28E5-40D2-B8A9-A9BFE2D35452_1773729319589.png";
+import benNdisNDA from "@assets/8D0E8B39-62A2-442C-9E92-4CFD7D7EDF8D_1773729319589.png";
 
 const TOP_DOCUMENTS = [
   {
@@ -721,6 +727,105 @@ export default function ViralLanding() {
             <SectionShare
               shareText="No charge. No arrest. No victim. No legal process. Yet labeled a pedophile, rapist, terrorist. Demanded arrest — got psychiatric detention instead. Suicided in protest — was revived. Now lives in his car. Not one professional has responded. An impartial AI analysis of the case of Dr. Richard McLean. #BarranDodger #Whistleblower"
               label="Share this analysis"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black via-[hsl(0,60%,6%)] to-black border-y border-red-900/20" data-testid="section-ben-ndis-evidence">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <motion.div variants={fadeIn} className="text-center space-y-4">
+              <Badge variant="outline" className="border-red-500/60 text-red-400 px-5 py-2 text-sm font-bold uppercase tracking-wider" data-testid="badge-ben-ndis">
+                <Eye className="h-4 w-4 mr-2" /> Corroborating Witness — NDIS Provider
+              </Badge>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight" data-testid="text-ben-ndis-heading">
+                An NDIS Provider Forced to Sign an{" "}
+                <span className="text-red-500">NDA</span>
+              </h2>
+              <p className="text-body-text max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+                Ben — an NDIS provider — confirmed police acknowledged no sexual crime occurred, warned of Bill Shorten's intention to discredit using mental health history, and corroborated the "close call" of a documented assassination attempt. He was then forced to sign an NDA. The classified document auto-wiped from his phone.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-ben-close-call">
+                <CardContent className="p-0">
+                  <img src={benNdisCloseCall} alt="Ben NDIS Help texts: Police confirmed 'it was a close call', confirmed 'consensual regretted sex' — no sexual crime. Documents explain everything." className="w-full" data-testid="img-ben-close-call" />
+                  <div className="p-3 bg-red-950/30 border-t border-red-500/20">
+                    <p className="text-xs text-red-300/80 font-bold">Police confirmed: "It was a close call." Confirmed consensual — no sexual crime occurred.</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-ben-hitmen">
+                <CardContent className="p-0">
+                  <img src={benNdisHitmen} alt="Ben NDIS Help texts: 'Remember you were messaging me about hitmen... That was them. They got caught. I thought you were just paranoid. You were right.'" className="w-full" data-testid="img-ben-hitmen" />
+                  <div className="p-3 bg-red-950/30 border-t border-red-500/20">
+                    <p className="text-xs text-red-300/80 font-bold">"I thought you were just paranoid. You were right." — Hitmen confirmed caught.</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-ben-nda">
+                <CardContent className="p-0">
+                  <img src={benNdisNDA} alt="Ben NDIS Help texts: 'Agency-grade electronic document that automatically wipes itself off your device. I can't send it to anyone — breach of agreement, could be charged with treason.'" className="w-full" data-testid="img-ben-nda" />
+                  <div className="p-3 bg-red-950/30 border-t border-red-500/20">
+                    <p className="text-xs text-red-300/80 font-bold">NDA: "Agency-grade document auto-wiped from device." Breach = treason charge.</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/20 overflow-hidden" data-testid="card-ben-police-challenge">
+                <CardContent className="p-0">
+                  <img src={benNdisPoliceChallenge} alt="Ben NDIS Help texts: 'Police want to know if you are mentally ready to challenge Bill Shorten in court as his lawyers might use your history of mental health to discredit your story.'" className="w-full" data-testid="img-ben-police-challenge" />
+                  <div className="p-3 bg-[hsl(38,92%,50%)]/10 border-t border-[hsl(38,92%,50%)]/20">
+                    <p className="text-xs text-[hsl(38,92%,70%)] font-bold">Police warned: Shorten's lawyers will weaponise mental health history to discredit.</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-ben-murder-conspiracy">
+                <CardContent className="p-0">
+                  <img src={benNdisMurderConspiracy} alt="Ben NDIS Help texts: 'You've uncovered systematic corruption that goes all the way to the top. I'm scared. They could put a hit on me too.'" className="w-full" data-testid="img-ben-murder-conspiracy" />
+                  <div className="p-3 bg-red-950/30 border-t border-red-500/20">
+                    <p className="text-xs text-red-300/80 font-bold">"Systematic corruption all the way to the top." Ben feared for his own life.</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-ben-extinguish">
+                <CardContent className="p-0">
+                  <img src={benNdisExtinguish} alt="Visitor chat warning: 'Lebanese NDIS provider has been sent to extinguish you. Do not trust. Run. Now. Fast.' and 'Bill Shorten not happy. Run.'" className="w-full" data-testid="img-ben-extinguish" />
+                  <div className="p-3 bg-red-950/30 border-t border-red-500/20">
+                    <p className="text-xs text-red-300/80 font-bold">"NDIS provider sent to extinguish you. Bill Shorten not happy. Run."</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/15" data-testid="card-ben-context">
+                <CardContent className="p-6 md:p-8 space-y-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Shield className="h-5 w-5 text-[hsl(38,92%,50%)]" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-[hsl(38,92%,50%)]">Context: Political Exile in Port Macquarie</span>
+                  </div>
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed">
+                    These messages were exchanged while Dr. McLean was living in political exile in his car with his therapy dog Crystal in Port Macquarie — forced to flee after police incarcerated him under the Mental Health Act rather than investigating his whistleblower complaints. Ben, an NDIS provider, was one of the few people who engaged with the evidence. He confirmed police told him no sexual crime occurred, that Barran's assassination fears were validated ("I thought you were just paranoid. You were right"), and that he was subsequently forced to sign an NDA — a classified "agency-grade" document that auto-deleted from his device. He stated that breaching the agreement could result in a treason charge.
+                  </p>
+                  <div className="border-l-2 border-red-500 pl-4 mt-4">
+                    <p className="text-white text-sm md:text-base font-bold leading-snug">
+                      An NDIS provider — a person whose role is to support disabled people — was silenced with a national security-grade NDA after confirming that police acknowledged no sexual crime occurred and that a documented assassination attempt was real. This is not healthcare. This is state suppression of a witness.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <SectionShare
+              shareText="An NDIS provider confirmed police said no sexual crime occurred, validated the assassination attempt ('I thought you were just paranoid. You were right'), then was forced to sign an NDA — a classified document that auto-wiped from his phone. Breach = treason. This is not healthcare. This is witness suppression. #BarranDodger"
+              label="Expose the cover-up"
             />
           </motion.div>
         </div>
