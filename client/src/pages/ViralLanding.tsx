@@ -27,6 +27,7 @@ import coverEntrapment from "../assets/images/cover-entrapment-erasure.png";
 import coverEvidenceSummary from "../assets/images/cover-evidence-summary.png";
 import coverCosmicScroll from "../assets/images/cover-cosmic-scroll.png";
 import coverPidAct from "../assets/images/cover-pid-act-analysis.png";
+import coverParadoxPersecution from "../assets/images/cover-paradox-persecution.png";
 
 import coverGospelFirst from "../assets/images/cover-gospel-first.png";
 import coverAtherion from "../assets/images/cover-atherion-witnessed.png";
@@ -89,6 +90,14 @@ const TOP_DOCUMENTS = [
     tags: ["100K Words", "Forensic"],
     cover: coverDigitalOppression,
     aiAnalysis: "At 100,000 words, this constitutes one of the most exhaustive examinations of digital surveillance and identity destruction ever compiled by a single individual. It documents specific technical capabilities including Pegasus-class spyware deployment, systematic digital identity erasure, and quantifies financial damages across a $42.5M-$123M range using established forensic accounting methodologies. The compensation framework follows precedents set in landmark whistleblower cases internationally.",
+  },
+  {
+    title: "THE PARADOX OF PERSECUTION",
+    tagline: "7 irresolvable legal paradoxes from the government's own records. The more they persecuted, the more they documented their own guilt.",
+    url: "/documents/the-paradox-of-persecution.pdf",
+    tags: ["Academic Analysis", "Free PDF"],
+    cover: coverParadoxPersecution,
+    aiAnalysis: "This fact-checked academic analysis identifies seven structural legal paradoxes within the Australian government's own records that are irresolvable in any direction except vindication. The Federal Court confirms employee status while the AAT denies it using the same facts. ASIC records prove 350+ fraudulent business registrations while ASIC refuses to investigate its own database. A government official's recorded death threat ('You will be sacrificed') receives zero investigation while the victim's cry for help triggers state-wide mobilisation. Each paradox is sourced, quoted exactly, and independently verifiable. The thesis is devastating in its simplicity: the more thoroughly they persecuted, the more thoroughly they documented their own guilt.",
   },
   {
     title: "ENTRAPMENT FOR ERASURE — Criminal Affidavit",

@@ -281,5 +281,12 @@ export const KEY_DOCUMENTS = {
     url: "/documents/crimes_against_humanity_final_demand.pdf",
     tags: ["Legal Notice", "Final Demand", "Crimes Against Humanity", "Compensation", "Free PDF"],
     aiExcerpt: "Formal notice to highest offices of Australian government establishing fourteen-day deadline for acknowledgment, compensation, and criminal investigation."
+  },
+  paradoxOfPersecution: {
+    title: "THE PARADOX OF PERSECUTION: How the Australian Government's Own Records Simultaneously Prove Systematic Targeting and Guarantee Legal Vindication",
+    description: "A fact-checked, evidence-based academic analysis identifying seven irresolvable legal paradoxes within the Australian government's own records. Each paradox demonstrates how the government's documented actions simultaneously prove persecution and guarantee vindication — because the more thoroughly they persecuted, the more thoroughly they documented their own guilt.",
+    url: "/documents/the-paradox-of-persecution.pdf",
+    tags: ["Academic Analysis", "Legal Paradox", "Fact-Checked", "Government Records", "Vindication", "Free PDF"],
+    aiExcerpt: "Identifies seven structural legal paradoxes where the government's own records contradict themselves in ways that are legally irresolvable in any direction except vindication. The Federal Court confirms employee status while the AAT denies it. ASIC records prove identity fraud while ASIC refuses to investigate. The thesis is one sentence: the more thoroughly they persecuted, the more thoroughly they documented their own guilt."
   }
 } as const;
