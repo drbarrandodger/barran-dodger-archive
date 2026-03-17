@@ -520,6 +520,103 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black via-[hsl(222,55%,8%)] to-black" data-testid="section-ndis-pids">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <motion.div variants={fadeIn} className="text-center space-y-4">
+              <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] px-5 py-2 text-sm font-bold uppercase tracking-wider" data-testid="badge-ndis-pids">
+                <Scale className="h-4 w-4 mr-2" /> Public Interest Disclosures — NDIS
+              </Badge>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight" data-testid="text-ndis-pids-heading">
+                Formal Whistleblower Disclosures to the{" "}
+                <span className="text-[hsl(38,92%,50%)]">NDIA</span>
+              </h2>
+              <p className="text-body-text max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+                Filed under the Public Interest Disclosure Act 2013. Acknowledged. Processed. Reference: PID 2023/Krypton. Never resolved.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="grid md:grid-cols-2 gap-6">
+              <Card className="bg-white/[0.03] border-white/10 hover:border-[hsl(38,92%,50%)]/30 transition-colors" data-testid="card-pid-letter">
+                <CardContent className="p-6 md:p-8 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="h-12 w-12 rounded-lg bg-red-500/10 flex items-center justify-center">
+                      <FileText className="h-6 w-6 text-red-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-lg leading-tight">NDIS PID — Political Prisoner Statement</h3>
+                      <p className="text-gray-400 text-xs mt-1">Dr. Richard McLean's disclosure to the NDIA</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    The original Public Interest Disclosure filed by Dr. McLean documenting 21+ formal allegations including threats by NDIA staff, conspiracy to pervert the course of justice, systematic denial of legal representation, and institutional fraud — all corroborated by the Federal Court's acknowledgment of his status as a public official.
+                  </p>
+                  <a href="/documents/ndis-pid-political-prisoner-dr-rich-mclean.pdf" download>
+                    <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold gap-2 mt-2" data-testid="button-download-pid-letter">
+                      <Download className="h-4 w-4" /> Download PID Statement (PDF)
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/[0.03] border-white/10 hover:border-[hsl(38,92%,50%)]/30 transition-colors" data-testid="card-pid-response">
+                <CardContent className="p-6 md:p-8 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="h-12 w-12 rounded-lg bg-[hsl(38,92%,50%)]/10 flex items-center justify-center">
+                      <Shield className="h-6 w-6 text-[hsl(38,92%,50%)]" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-lg leading-tight">NDIA Official PID Response</h3>
+                      <p className="text-gray-400 text-xs mt-1">Ref: PID 2023/Krypton — Debbie Mitchell, Authorised Officer</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    The NDIA's formal acknowledgment and processing of Dr. McLean's disclosure under the PID Act. Confirms receipt, outlines the legal framework, details the 21+ allegations in Attachment A, and requests further information — institutional proof the disclosure was real, formal, and taken seriously.
+                  </p>
+                  <a href="/documents/ndis-pid-official-response.pdf" download>
+                    <Button className="w-full bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,60%)] text-black font-bold gap-2 mt-2" data-testid="button-download-pid-response">
+                      <Download className="h-4 w-4" /> Download NDIA Response (PDF)
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/15" data-testid="card-ai-statement">
+                <CardContent className="p-6 md:p-8 space-y-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Bot className="h-5 w-5 text-[hsl(38,92%,50%)]" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-[hsl(38,92%,50%)]">Impartial AI-Generated Statement of Significance</span>
+                  </div>
+
+                  <p className="text-gray-200 text-sm leading-relaxed">
+                    The filing of Public Interest Disclosures (PIDs) by Dr. Richard William McLean under the Public Interest Disclosure Act 2013 carries significant legal implications. The Federal Court's confirmation of Dr. McLean's status as a public official provides a critical foundation for the disclosures, as it establishes the necessary legal framework for pursuing allegations of misconduct and maladministration against public officials and institutions. The acknowledgement by the NDIA's PID officer further indicates that the procedural requirements for initiating such disclosures have been met, potentially enabling an investigation into the allegations made, which include serious claims such as threats, fraud, and systemic denial of legal rights.
+                  </p>
+
+                  <p className="text-gray-200 text-sm leading-relaxed">
+                    Institutionally, the disclosures highlight various points of acknowledgment that can impact the behavior and practices of government institutions. The recognition of disclosable conduct by the Federal Court underscores the necessity for agencies like the NDIA to confront and respond to allegations of maladministration within their ranks. The formal processing of Dr. McLean's allegations categorically illustrates that allegations of this nature are receiving institutional attention, thereby necessitating a response from the accused parties. Additionally, the involvement of a PID officer indicates a commitment from the NDIA to adhere to its responsibilities under the PID Act, potentially setting a precedent for how similar allegations may be handled in the future.
+                  </p>
+
+                  <p className="text-gray-200 text-sm leading-relaxed">
+                    From a human rights perspective, the allegations documented within the PIDs raise significant concerns regarding the treatment of individuals with disabilities, particularly those advocating for enhanced mental health support. The claims of forced psychiatric treatment, systematic denial of legal representation, and targeting based on sexual orientation intersect with fundamental human rights principles, including the right to due process and access to justice. The potential violation of these rights in the context of Dr. McLean's experiences emphasizes the necessity of safeguarding against discrimination and protecting individuals who disclose sensitive information, particularly those from marginalized communities.
+                  </p>
+
+                  <p className="text-gray-200 text-sm leading-relaxed">
+                    Lastly, these documents serve a crucial role in promoting public accountability. By formally lodging PIDs that disclose serious allegations against public officials, Dr. McLean contributes to the broader discourse on government accountability and transparency, thereby highlighting the need for robust mechanisms to address and rectify instances of improper conduct. The outcome of these disclosures may not only influence Dr. McLean's access to legal remedies and services but also impact the public's trust in institutions like the NDIA and their capacity to safeguard the rights of vulnerable populations. Thus, the significance of Dr. McLean's PIDs extends beyond his individual case, reflecting broader systemic issues that warrant examination and action within Australian public governance.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <SectionShare
+              shareText="Dr. Richard McLean filed formal Public Interest Disclosures with the NDIA under the PID Act 2013 — 21+ allegations of threats, fraud, conspiracy, and institutional failure. The Federal Court confirmed his status. The NDIA acknowledged receipt. Nothing was done. #BarranDodger #Whistleblower #NDIS"
+              label="Share these disclosures"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       <section id="documents" className="py-16 px-4 bg-gradient-to-b from-black to-[hsl(222,55%,6%)]" data-testid="section-viral-documents">
         <div className="container mx-auto max-w-5xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
