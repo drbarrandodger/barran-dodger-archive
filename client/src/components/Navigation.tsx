@@ -74,7 +74,7 @@ export function Navigation() {
   return (
     <nav ref={navRef} className={cn(
       "fixed top-[var(--banner-height,40px)] w-full z-50 transition-all duration-300 border-b border-transparent",
-      scrolled ? "bg-background/95 backdrop-blur-sm border-border py-3 shadow-sm" : "bg-transparent py-6",
+      scrolled ? "bg-background/95 backdrop-blur-sm border-border py-2 md:py-3 shadow-sm" : "bg-transparent py-3 md:py-6",
       hideNav && !mobileMenuOpen && "opacity-0 pointer-events-none -translate-y-2"
     )}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -83,10 +83,10 @@ export function Navigation() {
             <Scale className="h-5 w-5" />
           </div>
           <div className="flex flex-col">
-            <span className="font-serif font-bold text-lg md:text-xl text-primary tracking-tight leading-none">
+            <span className="font-serif font-bold text-sm md:text-xl text-primary tracking-tight leading-none">
               Barran Dodger Legal & Ethical Trust Fund
             </span>
-            <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium mt-1">
+            <span className="hidden md:block text-[10px] uppercase tracking-widest text-muted-foreground font-medium mt-1">
               The Trustee for www.barrandodger.com.au — ABN 78 833 496 164
             </span>
           </div>
