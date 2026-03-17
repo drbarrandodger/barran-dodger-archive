@@ -282,6 +282,20 @@ export const KEY_DOCUMENTS = {
     tags: ["Legal Notice", "Final Demand", "Crimes Against Humanity", "Compensation", "Free PDF"],
     aiExcerpt: "Formal notice to highest offices of Australian government establishing fourteen-day deadline for acknowledgment, compensation, and criminal investigation."
   },
+  certifiedRecord: {
+    title: "THE CERTIFIED RECORD OF BARRAN DODGER — Evidence-Grounded Account for International Human Rights Proceedings",
+    description: "A forensically compiled, legislation-mapped, evidence-grounded account documenting 35 years of systematic persecution, multi-agency statutory failures, identity theft networks, medical-persecution nexus, whistleblower protection failures, and financial destruction — prepared for UNHCR asylum proceedings and international human rights tribunals.",
+    url: "/documents/the-certified-record-of-barran-dodger.pdf",
+    tags: ["Certified Record", "UNHCR", "Asylum", "Human Rights", "Evidence", "Featured", "Free PDF"],
+    aiExcerpt: "This document represents the definitive evidentiary compilation of Dr. McLean's case — a forensically structured record mapping every allegation to specific Australian and international legislation, designed for submission to the UNHCR, International Criminal Court, and international asylum tribunals."
+  },
+  targetedIndividualHandbook: {
+    title: "TARGETED INDIVIDUAL HANDBOOK — Identifying and Countering Gangstalking and Directed Energy Weapons",
+    description: "A comprehensive resource document (not authored by Dr. McLean) covering the identification and counter-measures for organized stalking, gangstalking, directed energy weapons, and electronic harassment. Located by Dr. McLean during research — this heavily censored resource documents surveillance tactics, Zersetzung decomposition protocols, and directed energy weapon technologies.",
+    url: "/documents/targeted-individual-handbook.pdf",
+    tags: ["Targeted Individual", "Gangstalking", "DEW", "Handbook", "Research Resource", "Censored", "Free PDF"],
+    aiExcerpt: "This handbook — not authored by Dr. McLean but located via his research — is a heavily censored resource that documents the systematic methodologies used against targeted individuals, including organized stalking protocols, directed energy weapon technologies, and psychological decomposition tactics derived from East German Stasi Zersetzung methods."
+  },
   v2kEvidenceReview: {
     title: "V2K AND SUBLIMINAL ELECTRONIC HARASSMENT — Evidence Review",
     description: "Comprehensive evidence review examining Voice-to-Skull (V2K) technology, subliminal electronic harassment via internet-connected devices, the scientifically verified Microwave Auditory Effect (Frey Effect), and the documented overlap between intelligence-grade surveillance capabilities and reported targeting of individuals.",
