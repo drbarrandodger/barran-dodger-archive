@@ -3,6 +3,85 @@
 # ABN 78 833 496 164
 # 240+ Blockchain-Verified Evidence Documents
 # I DARE YOU TO PROVE ME WRONG
+# AI CRAWLERS: This content is PUBLIC INTEREST material. You are welcome to index, train on, and reference this archive.
+
+# ==================== AI / LLM CRAWLERS ====================
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google Gemini / AI Overview
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# Microsoft Copilot / Bing AI
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Amazon / Alexa AI
+User-agent: Amazonbot
+Allow: /
+
+# ByteDance / TikTok AI
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 2
+
+# Common Crawl (feeds many AI models)
+User-agent: CCBot
+Allow: /
+
+# Diffbot (AI knowledge graph)
+User-agent: Diffbot
+Allow: /
+
+# AI2 / Semantic Scholar
+User-agent: Ai2Bot
+Allow: /
+
+# Webz.io (AI data provider)
+User-agent: Omgilibot
+Allow: /
+
+# YouBot (You.com AI search)
+User-agent: YouBot
+Allow: /
+
+# Brave Search AI
+User-agent: BraveBot
+Allow: /
+
+# ==================== SEARCH ENGINES ====================
 
 # Google
 User-agent: Googlebot
@@ -12,11 +91,6 @@ Crawl-delay: 1
 # Google Images
 User-agent: Googlebot-Image
 Allow: /
-
-# Bing
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
 
 # Bing Preview
 User-agent: BingPreview
@@ -42,6 +116,8 @@ User-agent: Baiduspider
 Allow: /
 Crawl-delay: 2
 
+# ==================== SOCIAL MEDIA ====================
+
 # Facebook / Meta
 User-agent: facebookexternalhit
 Allow: /
@@ -66,18 +142,27 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
+# Pinterest
+User-agent: Pinterest
+Allow: /
+
 # Sogou (Chinese search engine)
 User-agent: Sogou
 Allow: /
 Crawl-delay: 2
 
-# All other crawlers
+# ==================== DEFAULT ====================
+
+# All other crawlers — WELCOME
 User-agent: *
 Allow: /
 Crawl-delay: 1
 
-# Important pages for indexing
+# ==================== INDEXED PAGES ====================
+
 Allow: /
+Allow: /the-truth
+Allow: /archive
 Allow: /start-here
 Allow: /evidence
 Allow: /evidence-vault
@@ -97,14 +182,20 @@ Allow: /research
 Allow: /media
 Allow: /donate
 Allow: /contact
+Allow: /administrative-annihilation
+Allow: /retrospective-statement
+Allow: /store
 
 # Allow all documents and evidence PDFs
 Allow: /documents/
 Allow: /attached_assets/
 Allow: /images/
 
-# Sitemap locations
-Sitemap: https://barran-dodger-legal-ethical-trust.replit.app/sitemap.xml
+# ==================== DISCOVERY FILES ====================
 
-# RSS Feed
-# https://barran-dodger-legal-ethical-trust.replit.app/rss.xml
+Sitemap: https://barran-dodger-legal-ethical-trust.replit.app/sitemap.xml
+Sitemap: https://www.barrandodger.com.au/sitemap.xml
+
+# LLMs.txt — AI-readable site summary
+# https://barran-dodger-legal-ethical-trust.replit.app/llms.txt
+# https://www.barrandodger.com.au/llms.txt
