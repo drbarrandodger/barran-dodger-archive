@@ -54,34 +54,35 @@ export function DonationBanner() {
   return (
     <div
       ref={bannerRef}
-      className="fixed left-0 right-0 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] py-2 px-4 pr-10 z-[60]"
+      className="fixed left-0 right-0 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] py-1.5 md:py-2 px-4 pr-8 md:pr-10 z-[60]"
       style={{ top: "var(--whistleblower-banner-height, 0px)" }}
       data-testid="donation-banner"
     >
-      <div className="container mx-auto flex items-center justify-center gap-2 md:gap-3 flex-wrap text-sm font-medium">
-        <Heart className="h-4 w-4 flex-shrink-0 fill-[hsl(222,55%,12%)]" />
-        <span className="text-center text-xs md:text-sm">
-          <strong>He survived. They won't stop.</strong> Help keep this fight alive — PayID: <strong className="font-mono">{payId}</strong>
+      <div className="container mx-auto flex items-center justify-center gap-1.5 md:gap-3 flex-wrap text-sm font-medium">
+        <Heart className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0 fill-[hsl(222,55%,12%)]" />
+        <span className="text-center text-[10px] md:text-sm leading-tight">
+          <strong className="hidden md:inline">He survived. They won't stop.</strong> <span className="hidden md:inline">Help keep this fight alive —</span> PayID: <strong className="font-mono text-[10px] md:text-sm">{payId}</strong>
         </span>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 md:gap-2">
           <Button
             variant="outline"
             size="sm"
-            className="bg-[hsl(222,55%,12%)] text-white border-[hsl(222,55%,12%)] gap-1 h-7 text-xs"
+            className="bg-[hsl(222,55%,12%)] text-white border-[hsl(222,55%,12%)] gap-1 h-6 md:h-7 text-[10px] md:text-xs px-2 md:px-3"
             onClick={copyPayId}
             data-testid="button-banner-copy-payid"
           >
-            {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-            {copied ? "Copied!" : "Copy PayID"}
+            {copied ? <Check className="h-2.5 w-2.5 md:h-3 md:w-3" /> : <Copy className="h-2.5 w-2.5 md:h-3 md:w-3" />}
+            <span className="hidden md:inline">{copied ? "Copied!" : "Copy PayID"}</span>
+            <span className="md:hidden">{copied ? "Copied!" : "Copy"}</span>
           </Button>
           <Link href="/donate">
             <Button
               variant="outline"
               size="sm"
-              className="bg-[hsl(222,55%,12%)] text-white border-[hsl(222,55%,12%)] gap-1 h-7 text-xs"
+              className="bg-[hsl(222,55%,12%)] text-white border-[hsl(222,55%,12%)] gap-1 h-6 md:h-7 text-[10px] md:text-xs px-2 md:px-3"
               data-testid="button-banner-donate"
             >
-              <Heart className="h-3 w-3" />
+              <Heart className="h-2.5 w-2.5 md:h-3 md:w-3" />
               Donate
             </Button>
           </Link>
@@ -89,11 +90,11 @@ export function DonationBanner() {
       </div>
       <button
         onClick={() => setDismissed(true)}
-        className="absolute right-2 top-1/2 -translate-y-1/2 p-1 opacity-60 hover:opacity-100 transition-opacity"
+        className="absolute right-1.5 md:right-2 top-1/2 -translate-y-1/2 p-1 opacity-60 hover:opacity-100 transition-opacity"
         aria-label="Dismiss donation banner"
         data-testid="button-dismiss-banner"
       >
-        <X className="h-3.5 w-3.5" />
+        <X className="h-3 w-3 md:h-3.5 md:w-3.5" />
       </button>
     </div>
   );
