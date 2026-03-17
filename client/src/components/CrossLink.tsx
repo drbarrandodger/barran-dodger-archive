@@ -282,6 +282,13 @@ export const KEY_DOCUMENTS = {
     tags: ["Legal Notice", "Final Demand", "Crimes Against Humanity", "Compensation", "Free PDF"],
     aiExcerpt: "Formal notice to highest offices of Australian government establishing fourteen-day deadline for acknowledgment, compensation, and criminal investigation."
   },
+  v2kEvidenceReview: {
+    title: "V2K AND SUBLIMINAL ELECTRONIC HARASSMENT — Evidence Review",
+    description: "Comprehensive evidence review examining Voice-to-Skull (V2K) technology, subliminal electronic harassment via internet-connected devices, the scientifically verified Microwave Auditory Effect (Frey Effect), and the documented overlap between intelligence-grade surveillance capabilities and reported targeting of individuals.",
+    url: "/documents/v2k-electronic-harassment-evidence-review.pdf",
+    tags: ["V2K", "Electronic Harassment", "Surveillance", "Evidence Review", "Free PDF"],
+    aiExcerpt: "This review examines the scientific basis for V2K claims including the verified Microwave Auditory Effect, documented psychotronic research programs, and technical pathways for subliminal harassment via hijacked internet-connected devices. It establishes that while individual claims are difficult to verify, the underlying technologies are scientifically documented and the pattern of reported experiences across thousands of unconnected individuals worldwide constitutes a phenomenon requiring serious investigation rather than psychiatric dismissal."
+  },
   paradoxOfPersecution: {
     title: "THE PARADOX OF PERSECUTION: How the Australian Government's Own Records Simultaneously Prove Systematic Targeting and Guarantee Legal Vindication",
     description: "A fact-checked, evidence-based academic analysis identifying seven irresolvable legal paradoxes within the Australian government's own records. Each paradox demonstrates how the government's documented actions simultaneously prove persecution and guarantee vindication — because the more thoroughly they persecuted, the more thoroughly they documented their own guilt.",
