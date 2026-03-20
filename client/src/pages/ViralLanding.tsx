@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote, Globe, Sparkles, Infinity } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -346,6 +347,7 @@ const stagger = {
 };
 
 export default function ViralLanding() {
+  const { t } = useTranslation();
   const shareText = "The documents Australia doesn't want you to see. 240+ blockchain-verified files expose 35 years of government persecution. Read them before they disappear. @bazdod";
   const shareUrl = "https://www.barrandodger.com.au";
 

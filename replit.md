@@ -17,6 +17,12 @@ Preferred communication style: Simple, everyday language.
 - **Form Handling**: React Hook Form with Zod validation
 - **Typography**: Libre Baskerville (serif headings) + Inter (body text)
 - **Color Scheme**: Deep Navy (#1a2744) + Warm Gold/Amber (#e9a00a)
+- **Internationalization**: i18next + react-i18next (11 languages: EN, ES, FR, DE, PT, RU, ZH, JA, KO, AR, HI)
+  - Config: `client/src/lib/i18n.ts`
+  - Language switcher: `client/src/components/LanguageSwitcher.tsx`
+  - Translates nav, banners, section badges/titles/subtitles, common UI labels
+  - Auto-detects browser language, persists selection to localStorage
+  - RTL support for Arabic
 
 ### Backend
 - **Runtime**: Node.js with TypeScript (tsx for development)

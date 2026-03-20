@@ -3,12 +3,15 @@ import { cn } from "@/lib/utils";
 import { Scale, Heart, Compass, Menu, X, FileText } from "lucide-react";
 import { SiX as TwitterX } from "react-icons/si";
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { GlobalSearch } from "./GlobalSearch";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Navigation() {
   const [location] = useLocation();
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hideNav, setHideNav] = useState(false);
@@ -55,20 +58,20 @@ export function Navigation() {
   }, [scrolled]);
 
   const navLinks = [
-    { href: "/start-here", label: "Start Here", highlight: true },
-    { href: "/administrative-annihilation", label: "The Paper", highlight: true },
-    { href: "/retrospective-statement", label: "Gov't Own Documents", highlight: true },
-    { href: "/archive", label: "Full Archive" },
-    { href: "/manifesto", label: "Manifesto" },
-    { href: "/josephs-coat", label: "Joseph's Coat" },
-    { href: "/gospel", label: "Gospel" },
-    { href: "/evidence", label: "Evidence" },
-    { href: "/publications", label: "Publications" },
-    { href: "/evidence-vault", label: "Evidence Vault" },
-    { href: "/taxpayer-cost-analysis", label: "Cost Analysis" },
-    { href: "/blockchain", label: "Timestamps" },
-    { href: "/store", label: "Store" },
-    { href: "/contact", label: "Contact" },
+    { href: "/start-here", label: t("nav.startHere"), highlight: true },
+    { href: "/administrative-annihilation", label: t("nav.thePaper"), highlight: true },
+    { href: "/retrospective-statement", label: t("nav.govDocs"), highlight: true },
+    { href: "/archive", label: t("nav.fullArchive") },
+    { href: "/manifesto", label: t("nav.manifesto") },
+    { href: "/josephs-coat", label: t("nav.josephsCoat") },
+    { href: "/gospel", label: t("nav.gospel") },
+    { href: "/evidence", label: t("nav.evidence") },
+    { href: "/publications", label: t("nav.publications") },
+    { href: "/evidence-vault", label: t("nav.evidenceVault") },
+    { href: "/taxpayer-cost-analysis", label: t("nav.costAnalysis") },
+    { href: "/blockchain", label: t("nav.timestamps") },
+    { href: "/store", label: t("nav.store") },
+    { href: "/contact", label: t("nav.contact") },
   ];
 
   return (
@@ -112,6 +115,7 @@ export function Navigation() {
             </Link>
           ))}
           <GlobalSearch />
+          <LanguageSwitcher />
           <ThemeToggle />
           <a 
             href="https://x.com/bazdod" 
@@ -166,6 +170,7 @@ export function Navigation() {
             ))}
             <div className="pt-4 border-t border-border flex items-center justify-between">
               <div className="flex items-center gap-3">
+                <LanguageSwitcher />
                 <ThemeToggle />
                 <a 
                   href="https://x.com/bazdod" 

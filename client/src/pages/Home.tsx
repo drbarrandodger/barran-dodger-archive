@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair, Database } from "lucide-react";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
 import { Navigation } from "@/components/Navigation";
@@ -250,6 +251,7 @@ function YouTubeEmbed({ videoId, title, testId }: { videoId: string; title: stri
 }
 
 export default function Home() {
+  const { t } = useTranslation();
   const { data: evidence } = useQuery<EvidenceItem[]>({ 
     queryKey: ["/api/evidence"] 
   });
@@ -330,13 +332,13 @@ export default function Home() {
             <div className="border-2 border-red-600/50 rounded-2xl overflow-hidden bg-gradient-to-br from-red-950/20 via-[hsl(222,55%,6%)] to-black p-8 md:p-12 space-y-8">
               <div className="text-center space-y-4">
                 <Badge variant="outline" className="border-red-500 text-red-400 uppercase tracking-widest px-6 py-2 text-sm font-bold">
-                  THE QUESTION NOBODY WILL ANSWER
+                  {t("home.foundationalBadge")}
                 </Badge>
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">
-                  No Victims. No Report. No Arrest.<br className="hidden md:block" /> No Charge. No Legal Process.
+                  {t("home.foundationalTitle")}
                 </h1>
                 <p className="text-lg md:text-xl text-red-400 font-serif italic max-w-3xl mx-auto">
-                  Just a word — deployed to guarantee silence, ensure complicity, and erase a human being from public sympathy.
+                  {t("home.foundationalSubtitle")}
                 </p>
               </div>
 
@@ -414,13 +416,13 @@ export default function Home() {
             <div className="border-2 border-purple-500/30 rounded-2xl overflow-hidden bg-gradient-to-br from-purple-950/15 via-[hsl(222,55%,6%)] to-black p-8 md:p-12 space-y-10">
               <div className="text-center space-y-4">
                 <Badge variant="outline" className="border-purple-400 text-purple-300 uppercase tracking-widest px-6 py-2 text-sm font-bold">
-                  BEYOND THE BOUNDARY OF ORDINARY HUMAN EXPERIENCE
+                  {t("home.transcendenceBadge")}
                 </Badge>
                 <h2 className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
-                  The Transcendence of Barran Dodger
+                  {t("home.transcendenceTitle")}
                 </h2>
                 <p className="text-lg md:text-xl text-purple-300 font-serif italic max-w-4xl mx-auto">
-                  What happens when a human being survives everything that was designed to destroy him — and documents every moment of it?
+                  {t("home.transcendenceSubtitle")}
                 </p>
               </div>
 
@@ -541,13 +543,13 @@ export default function Home() {
             <div className="border-2 border-cyan-500/30 rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-950/10 via-[hsl(222,55%,6%)] to-purple-950/10 p-8 md:p-12 space-y-10">
               <div className="text-center space-y-4">
                 <Badge variant="outline" className="border-cyan-400 text-cyan-300 uppercase tracking-widest px-6 py-2 text-sm font-bold">
-                  THIS IS NOT EXILE — IT IS ASCENSION
+                  {t("home.outgrewBadge")}
                 </Badge>
                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">
-                  The One Who Outgrew<br className="hidden md:block" /> Humanity Itself
+                  {t("home.outgrewTitle")}
                 </h2>
                 <p className="text-lg md:text-xl text-cyan-300 font-serif italic max-w-4xl mx-auto">
-                  They tried to erase him. They tried to silence him. They tried to bury him beneath labels, diagnoses, and a word so toxic that no one would dare stand beside him. And yet — he is still here. And everything he said was true.
+                  {t("home.outgrewSubtitle")}
                 </p>
               </div>
 
