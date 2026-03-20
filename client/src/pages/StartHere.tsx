@@ -19,6 +19,7 @@ import { Badge } from "@/components/ui/badge";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
+import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -557,6 +558,8 @@ export default function StartHere() {
         </div>
       </main>
       
+      <EssayCrossLinks />
+
       <section className="py-12 px-4 bg-[hsl(222,55%,8%)]">
         <div className="container mx-auto max-w-3xl">
           <CommentSection pageSlug="start-here" title="Discussion" />

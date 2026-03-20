@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { Link2, Lock, ExternalLink, Shield, FileText, Download } from "lucide-react";
 import { SocialShare } from "@/components/SocialShare";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
+import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -561,6 +562,8 @@ export default function Blockchain() {
           <CommentSection pageSlug="blockchain" title="Blockchain Verification Discussion" />
         </div>
       </section>
+
+      <EssayCrossLinks />
 
       <Footer />
           <FloatingCTA />

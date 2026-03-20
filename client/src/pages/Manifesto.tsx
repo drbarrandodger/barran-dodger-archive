@@ -6,6 +6,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge } from "@/components/DownloadCounter";
 import { CommentSection } from "@/components/CommentSection";
+import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { 
   BookOpen, 
   Scale, 
@@ -1014,6 +1015,8 @@ export default function Manifesto() {
           <CommentSection pageSlug="manifesto" title="Manifesto Discussion" />
         </div>
       </main>
+
+      <EssayCrossLinks />
 
       <Footer />
           <FloatingCTA />

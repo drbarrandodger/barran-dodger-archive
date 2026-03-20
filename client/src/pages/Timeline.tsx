@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
+import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { Link } from "wouter";
 import { 
   Clock, AlertTriangle, FileText, Shield, Heart, 
@@ -387,6 +388,8 @@ export default function Timeline() {
           <CommentSection pageSlug="timeline" title="Timeline Discussion" />
         </div>
       </section>
+
+      <EssayCrossLinks />
 
       <Footer />
           <FloatingCTA />

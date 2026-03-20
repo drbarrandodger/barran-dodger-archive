@@ -11,6 +11,7 @@ import { useDocumentPreview } from "@/components/DocumentPreview";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { CommentSection } from "@/components/CommentSection";
+import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye, Search, Brain, MessageCircle, Flame, Star, Skull, Target } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -3519,6 +3520,8 @@ export default function Evidence() {
           <CommentSection pageSlug="evidence" title="Evidence Discussion" />
         </div>
       </main>
+
+      <EssayCrossLinks />
 
       <Footer />
 

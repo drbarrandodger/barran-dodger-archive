@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { CommentSection } from "@/components/CommentSection";
+import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { trackDownload, DownloadBadge } from "@/components/DownloadCounter";
@@ -874,6 +875,8 @@ export default function TaxpayerCostAnalysis() {
           <CommentSection pageSlug="taxpayer-cost" title="Cost Analysis Discussion" />
         </div>
       </section>
+
+      <EssayCrossLinks />
 
       <Footer />
           <FloatingCTA />

@@ -13,6 +13,7 @@ import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { DownloadAnalytics } from "@/components/DownloadAnalytics";
 import { CommentSection } from "@/components/CommentSection";
+import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -1373,6 +1374,8 @@ export default function ViralLanding() {
           </motion.div>
         </div>
       </section>
+
+      <EssayCrossLinks />
 
       <section className="py-12 px-4 bg-[hsl(222,55%,5%)]" data-testid="section-viral-comments">
         <div className="container mx-auto max-w-3xl">

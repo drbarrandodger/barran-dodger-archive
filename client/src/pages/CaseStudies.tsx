@@ -6,6 +6,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
 import { CommentSection } from "@/components/CommentSection";
+import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { 
   FileText, 
   Building2, 
@@ -1153,6 +1154,8 @@ export default function CaseStudies() {
           <CommentSection pageSlug="case-studies" title="Case Studies Discussion" />
         </div>
       </main>
+
+      <EssayCrossLinks />
 
       <Footer />
           <FloatingCTA />
