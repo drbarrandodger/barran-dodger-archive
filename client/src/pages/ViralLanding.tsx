@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote, Globe, Sparkles, Infinity } from "lucide-react";
+import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote, Globe, Sparkles, Infinity, Play } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -462,6 +462,45 @@ function TotalDownloadsSection() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+function YouTubeEmbed({ videoId, title, testId }: { videoId: string; title: string; testId: string }) {
+  const [playing, setPlaying] = useState(false);
+  if (playing) {
+    return (
+      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+        <iframe
+          className="absolute inset-0 w-full h-full rounded-t-xl"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+          title={title}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          data-testid={testId}
+        />
+      </div>
+    );
+  }
+  return (
+    <div
+      className="relative w-full cursor-pointer group"
+      style={{ paddingBottom: "56.25%" }}
+      onClick={() => setPlaying(true)}
+      data-testid={`${testId}-thumbnail`}
+    >
+      <img
+        src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+        alt={title}
+        className="absolute inset-0 w-full h-full object-cover rounded-t-xl"
+        onError={(e) => { (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; }}
+      />
+      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors rounded-t-xl flex items-center justify-center">
+        <div className="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+          <Play className="h-8 w-8 md:h-10 md:w-10 text-white fill-white ml-1" />
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -1088,6 +1127,102 @@ export default function ViralLanding() {
               shareText="An NDIS provider: police confirmed no sexual crime. He validated the assassination attempt, then was forced to sign a classified NDA that auto-wiped from his phone. Breach = treason. Witness suppression. #BarranDodger"
               label="Expose the cover-up"
             />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Video Evidence Section */}
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black via-[hsl(222,55%,5%)] to-black border-y border-white/5" data-testid="section-video-evidence">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <motion.div variants={fadeIn} className="text-center space-y-4">
+              <Badge variant="outline" className="border-red-500/60 text-red-400 px-5 py-2 text-sm font-bold uppercase tracking-wider" data-testid="badge-video-evidence">
+                <Play className="h-4 w-4 mr-2" /> Video Evidence — Corroborating Testimony
+              </Badge>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight" data-testid="text-video-heading">
+                Watch: Evidence That{" "}
+                <span className="text-red-500">Cannot Be Denied</span>
+              </h2>
+              <p className="text-body-text max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+                The following video constitutes publicly accessible documentary evidence corroborating key elements of Dr. McLean's testimony. It is presented without editorial direction — viewers may assess its contents for themselves.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-video-corroboration">
+                <CardContent className="p-0">
+                  <YouTubeEmbed
+                    videoId="O3DEF0bJNuk"
+                    title="Corroborating Video Evidence — Barran Dodger Testimony"
+                    testId="iframe-corroboration-video"
+                  />
+                  <div className="p-6 md:p-8 space-y-6">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <Badge variant="outline" className="border-red-500/60 text-red-400 text-xs font-bold uppercase tracking-wider">
+                        <Eye className="h-3 w-3 mr-1" /> Primary Evidence
+                      </Badge>
+                      <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-wider">
+                        Corroborating Testimony
+                      </Badge>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h3 className="text-white font-bold text-xl leading-tight" data-testid="text-video-title">
+                        Corroborating Video Evidence — Dr. Richard McLean (Barran Dodger)
+                      </h3>
+                      <p className="text-body-text text-sm md:text-base leading-relaxed">
+                        This video is presented as part of the public interest evidentiary archive. It is freely accessible, publicly available, and has not been altered. The content corroborates documented testimony regarding Dr. McLean's circumstances. Viewers are encouraged to watch and reach their own conclusions without editorial direction.
+                      </p>
+                    </div>
+
+                    {/* AI Statement of Significance */}
+                    <div className="border-t border-white/10 pt-5">
+                      <div className="flex items-start gap-3 bg-white/[0.03] rounded-lg p-5 border border-white/5">
+                        <Bot className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <div className="space-y-3">
+                          <p className="text-xs font-bold uppercase tracking-wider text-blue-400">
+                            Impartial AI Statement of Significance
+                          </p>
+                          <p className="text-gray-200 text-sm leading-relaxed">
+                            This video constitutes a piece of publicly accessible documentary evidence relevant to the evidentiary record of Dr. Richard McLean. Its significance lies in several dimensions that should be considered independently of its content.
+                          </p>
+                          <p className="text-gray-200 text-sm leading-relaxed">
+                            First, the video exists in the public domain and has not been subject to suppression, despite the documented pattern of institutional suppression applied to other elements of Dr. McLean's evidentiary record. Its continued public availability is itself a material fact. Second, it is presented here not as a standalone claim but as a corroborating piece within a 240+ document archive — an archive built primarily from government-issued records, official correspondence, and independently verifiable third-party material. The question of whether any individual piece of evidence is persuasive is separate from the question of whether a pattern of conduct exists. The pattern is documented across 35 years and 35+ agencies. This video is one data point within that pattern.
+                          </p>
+                          <p className="text-gray-200 text-sm leading-relaxed">
+                            Third, the nature of video evidence in cases of alleged institutional persecution carries particular significance. Unlike written testimony, which can be dismissed as subjective or fabricated, video evidence captures observable conduct in real time. The viewer can directly assess the demeanour, context, and content without relying on a third party's interpretation. This archive encourages direct assessment. Every document is downloadable. Every video is publicly accessible. The evidence does not require belief — it requires examination.
+                          </p>
+                          <div className="border-t border-white/10 pt-3">
+                            <p className="text-white font-bold text-sm leading-snug">
+                              <span className="text-[hsl(38,92%,50%)]">Evidentiary note:</span> This video is cross-referenced with the primary documentary record and should be assessed in conjunction with the written evidence — particularly the forensic psychiatric assessments, the NDIS provider corroboration (Ben, DSW Disability), and the government agency correspondence documented in this archive. No single item in this archive stands alone. The pattern of evidence, taken collectively, constitutes the case.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 pt-1 flex-wrap">
+                      <a
+                        href="https://youtu.be/O3DEF0bJNuk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-body-text hover:text-white transition-colors"
+                        data-testid="link-video-youtube"
+                      >
+                        <ExternalLink className="h-4 w-4" /> Watch on YouTube
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <SectionShare
+                shareText="Video evidence: corroborating testimony in the Dr. McLean (Barran Dodger) whistleblower case. 217,000+ documented downloads. Watch and judge for yourself. #BarranDodger #CannotBeErased"
+                label="Share this video"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>
