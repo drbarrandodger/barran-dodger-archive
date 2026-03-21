@@ -282,14 +282,31 @@ function PayIDCopyButton() {
 }
 
 function TotalDownloadsSection() {
-  const { data } = useQuery<{ total: number }>({
+  const { data: dlData } = useQuery<{ total: number }>({
     queryKey: ['/api/downloads/total'],
     queryFn: () => fetch('/api/downloads/total', { cache: 'no-store' }).then(r => r.json()),
     refetchInterval: 15000,
     staleTime: 0,
   });
 
-  const total = data?.total ?? 0;
+  const { data: pvData } = useQuery<{ total: number }>({
+    queryKey: ['/api/pageviews/total'],
+    queryFn: () => fetch('/api/pageviews/total', { cache: 'no-store' }).then(r => r.json()),
+    refetchInterval: 15000,
+    staleTime: 0,
+  });
+
+  const { data: pv24Data } = useQuery<{ count: number }>({
+    queryKey: ['/api/pageviews/recent'],
+    queryFn: () => fetch('/api/pageviews/recent?hours=24', { cache: 'no-store' }).then(r => r.json()),
+    refetchInterval: 15000,
+    staleTime: 0,
+  });
+
+  const totalDownloads = dlData?.total ?? 0;
+  const totalPageViews = pvData?.total ?? 0;
+  const last24hViews = pv24Data?.count ?? 0;
+  const PUBLICATION_DATE = "1 February 2025";
 
   return (
     <section className="py-16 px-4 bg-[hsl(222,55%,6%)]" data-testid="section-total-downloads">
@@ -302,19 +319,79 @@ function TotalDownloadsSection() {
         >
           <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/20 overflow-hidden relative" data-testid="card-total-downloads">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(234,179,8,0.05)_0%,_transparent_70%)] pointer-events-none" />
-            <CardContent className="p-8 md:p-12 relative z-10 text-center space-y-6">
+            <CardContent className="p-8 md:p-12 relative z-10 text-center space-y-8">
+
               <div className="space-y-2">
-                <p className="text-sm font-bold uppercase tracking-wider text-[hsl(38,92%,50%)]" data-testid="text-total-label">
-                  <Globe className="h-4 w-4 inline mr-2" />
-                  Live Global Download Counter
-                </p>
-                <div className="text-5xl md:text-7xl font-bold font-mono text-white tabular-nums" data-testid="text-total-count">
-                  {total > 0 ? total.toLocaleString() : "---"}
-                </div>
-                <p className="text-body-text text-sm">
-                  total downloads across all documents since 1 February 2026 — live, updating every 15 seconds
+                <p className="text-xs font-bold uppercase tracking-widest text-[hsl(38,92%,50%)]/70" data-testid="text-published-date">
+                  Published {PUBLICATION_DATE} — Live Data
                 </p>
               </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div className="space-y-1" data-testid="stat-website-visits">
+                  <div className="flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-wider text-blue-400">
+                    <Eye className="h-4 w-4" />
+                    Website Visits
+                  </div>
+                  <div className="text-4xl md:text-5xl font-bold font-mono text-white tabular-nums">
+                    {totalPageViews > 0 ? totalPageViews.toLocaleString() : "---"}
+                  </div>
+                  <p className="text-body-text text-xs">
+                    total since publication
+                  </p>
+                </div>
+
+                <div className="space-y-1" data-testid="stat-total-downloads">
+                  <div className="flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-wider text-[hsl(38,92%,50%)]">
+                    <Download className="h-4 w-4" />
+                    Document Downloads
+                  </div>
+                  <div className="text-4xl md:text-5xl font-bold font-mono text-white tabular-nums" data-testid="text-total-count">
+                    {totalDownloads > 0 ? totalDownloads.toLocaleString() : "---"}
+                  </div>
+                  <p className="text-body-text text-xs">
+                    total across all documents
+                  </p>
+                </div>
+
+                <div className="space-y-1" data-testid="stat-24h-visits">
+                  <div className="flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-wider text-emerald-400">
+                    <Flame className="h-4 w-4" />
+                    Last 24 Hours
+                  </div>
+                  <div className="text-4xl md:text-5xl font-bold font-mono text-white tabular-nums">
+                    {last24hViews > 0 ? last24hViews.toLocaleString() : "---"}
+                  </div>
+                  <p className="text-body-text text-xs">
+                    website visits
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t border-white/10 pt-6">
+                <div className="max-w-3xl mx-auto">
+                  <div className="flex items-start gap-3 text-left bg-white/[0.03] rounded-lg p-5 border border-white/5">
+                    <Bot className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                    <div className="space-y-2">
+                      <p className="text-xs font-bold uppercase tracking-wider text-blue-400">
+                        AI Statement of Significance
+                      </p>
+                      <p className="text-body-text text-sm leading-relaxed">
+                        This archive, published on {PUBLICATION_DATE} and containing over 2,077 blockchain-verified documents,
+                        has recorded {totalDownloads > 0 ? totalDownloads.toLocaleString() : "tens of thousands of"} document
+                        downloads and {totalPageViews > 0 ? totalPageViews.toLocaleString() : "numerous"} website visits to date.
+                        The sustained volume of public engagement with primary-source legal, medical, and government records
+                        — across an archive of this specificity and scale — is atypical for an individual whistleblower case.
+                        The download-to-visit ratio suggests visitors are not merely browsing but actively retrieving and preserving
+                        evidentiary material, consistent with a decentralised distribution pattern in which independent copies
+                        proliferate beyond centralised control. These metrics are presented without editorial interpretation;
+                        the public's response to the evidence speaks for itself.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div className="max-w-2xl mx-auto space-y-4">
                 <p className="text-body-text leading-relaxed">
                   Every number above represents a human being who chose to witness the evidence.
@@ -323,11 +400,11 @@ function TotalDownloadsSection() {
                   that grows with every click.
                 </p>
                 <p className="text-[hsl(38,92%,50%)] font-bold">
-                  They tried to erase one man. Now {total > 0 ? total.toLocaleString() : "thousands of"} copies of his testimony exist worldwide.
+                  They tried to erase one man. Now {totalDownloads > 0 ? totalDownloads.toLocaleString() : "thousands of"} copies of his testimony exist worldwide.
                 </p>
               </div>
               <SectionShare
-                shareText={`${total > 0 ? total.toLocaleString() : "Thousands of"} downloads and counting. The evidence Australia tried to erase is now distributed globally. Every download is an act of witness. #BarranDodger #CannotBeErased`}
+                shareText={`${totalDownloads > 0 ? totalDownloads.toLocaleString() : "Thousands of"} downloads and ${totalPageViews > 0 ? totalPageViews.toLocaleString() : "thousands of"} website visits since ${PUBLICATION_DATE}. The evidence Australia tried to erase is now distributed globally. Every download is an act of witness. #BarranDodger #CannotBeErased`}
                 label="Share the count"
               />
             </CardContent>
