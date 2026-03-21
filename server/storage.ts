@@ -79,9 +79,8 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getTotalDownloadCount(): Promise<number> {
-    const [row] = await db
-      .select({ total: sql<number>`COALESCE(SUM(${downloadCounts.count}), 0)` })
-      .from(downloadCounts);
+    const result = await db.execute(sql`SELECT COUNT(*)::int as total FROM download_events`);
+    const row = result.rows[0] as any;
     return row ? Number(row.total) : 0;
   }
 
