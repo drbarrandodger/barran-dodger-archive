@@ -16,6 +16,7 @@ import { Progress } from "@/components/ui/progress";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
+import { RelatedContent } from "@/components/RelatedContent";
 
 interface LegalSubmission {
   body: string;
@@ -381,6 +382,8 @@ export default function LegalStatus() {
           <CommentSection pageSlug="legal-status" title="Legal Status Discussion" />
         </div>
       </section>
+
+      <RelatedContent currentPath="/legal-status" />
 
       <Footer />
           <FloatingCTA />

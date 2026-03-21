@@ -12,6 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { SocialShare } from "@/components/SocialShare";
+import { RelatedContent } from "@/components/RelatedContent";
 
 const donationTiers = [
   {
@@ -598,6 +599,8 @@ export default function Donate() {
           </motion.section>
         </div>
       </main>
+
+      <RelatedContent currentPath="/donate" />
 
       <Footer />
       <FloatingCTA />

@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
+import { RelatedContent } from "@/components/RelatedContent";
 import {
   ExternalLink, Search, X, Shield, Lock, FolderOpen, Archive,
   Scale, FileText, AlertTriangle, Globe, Heart, Brain, BookOpen,
@@ -630,6 +631,8 @@ export default function EvidenceVault() {
           <CommentSection pageSlug="evidence-vault" title="Evidence Vault Discussion" />
         </div>
       </section>
+
+      <RelatedContent currentPath="/evidence-vault" />
 
       <Footer />
       <FloatingCTA />

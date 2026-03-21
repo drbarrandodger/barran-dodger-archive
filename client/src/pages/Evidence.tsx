@@ -13,6 +13,7 @@ import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { ShareEvidence } from "@/components/ShareEvidence";
 import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
+import { RelatedContent } from "@/components/RelatedContent";
 import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye, Search, Brain, MessageCircle, Flame, Star, Skull, Target } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -3526,6 +3527,8 @@ export default function Evidence() {
       </main>
 
       <EssayCrossLinks />
+
+      <RelatedContent currentPath="/evidence" />
 
       <Footer />
 

@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { RelatedContent } from "@/components/RelatedContent";
 
 export default function PropheticPapers() {
   const gospels = [
@@ -408,6 +409,8 @@ export default function PropheticPapers() {
           <CommentSection pageSlug="prophetic-papers" title="Prophetic Papers Discussion" />
         </div>
       </main>
+
+      <RelatedContent currentPath="/prophetic-papers" />
 
       <Footer />
           <FloatingCTA />

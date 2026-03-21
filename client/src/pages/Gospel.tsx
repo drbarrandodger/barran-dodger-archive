@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { RelatedContent } from "@/components/RelatedContent";
 
 import coverGospelFirst from "@/assets/images/cover-gospel-first.png";
 import coverGospelVol4 from "@/assets/images/cover-gospel-vol4.png";
@@ -701,6 +702,8 @@ export default function Gospel() {
           <CommentSection pageSlug="gospel" title="Gospel Discussion" />
         </div>
       </main>
+
+      <RelatedContent currentPath="/gospel" />
 
       <Footer />
           <FloatingCTA />

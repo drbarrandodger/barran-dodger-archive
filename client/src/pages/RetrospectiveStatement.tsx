@@ -32,6 +32,7 @@ import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
+import { RelatedContent } from "@/components/RelatedContent";
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 
@@ -982,6 +983,8 @@ export default function RetrospectiveStatement() {
             <CommentSection pageSlug="retrospective-statement" />
           </div>
         </div>
+        <RelatedContent currentPath="/retrospective-statement" />
+
         <FloatingCTA />
       </motion.div>
     </>

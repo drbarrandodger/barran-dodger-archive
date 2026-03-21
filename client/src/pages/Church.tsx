@@ -11,6 +11,7 @@ import { Link } from "wouter";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
+import { RelatedContent } from "@/components/RelatedContent";
 
 export default function Church() {
   const tenets = [
@@ -411,6 +412,8 @@ export default function Church() {
           <CommentSection pageSlug="church" title="Church Discussion" />
         </div>
       </section>
+
+      <RelatedContent currentPath="/church" />
 
       <Footer />
           <FloatingCTA />

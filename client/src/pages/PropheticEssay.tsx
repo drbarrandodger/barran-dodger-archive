@@ -23,6 +23,7 @@ import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
+import { RelatedContent } from "@/components/RelatedContent";
 
 export default function PropheticEssay() {
   const josephParallels = [
@@ -585,6 +586,9 @@ export default function PropheticEssay() {
           </div>
         </section>
       </main>
+
+      <RelatedContent currentPath="/josephs-coat" />
+
           <FloatingCTA />
 </div>
   );

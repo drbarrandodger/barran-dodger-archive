@@ -6,6 +6,7 @@ import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { CommentSection } from "@/components/CommentSection";
+import { RelatedContent } from "@/components/RelatedContent";
 import { 
   Newspaper, Mail, Download, ExternalLink, FileText, 
   Camera, Video, Mic, Globe, Clock, Share2
@@ -262,6 +263,8 @@ export default function Media() {
         </div>
       </main>
       
+      <RelatedContent currentPath="/media" />
+
       <Footer />
           <FloatingCTA />
 </>

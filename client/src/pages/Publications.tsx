@@ -8,6 +8,7 @@ import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { useDocumentPreview } from "@/components/DocumentPreview";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
+import { RelatedContent } from "@/components/RelatedContent";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import {
   FileText, ExternalLink, Archive, Scale, Globe, AlertCircle,
@@ -750,6 +751,8 @@ export default function Publications() {
           <CommentSection pageSlug="publications" title="Publications Discussion" />
         </div>
       </section>
+
+      <RelatedContent currentPath="/publications" />
 
       <Footer />
       <PreviewComponent />

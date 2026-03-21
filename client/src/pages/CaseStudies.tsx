@@ -7,6 +7,7 @@ import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink"
 import { DownloadBadge, useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
 import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
+import { RelatedContent } from "@/components/RelatedContent";
 import { 
   FileText, 
   Building2, 
@@ -1156,6 +1157,8 @@ export default function CaseStudies() {
       </main>
 
       <EssayCrossLinks />
+
+      <RelatedContent currentPath="/case-studies" />
 
       <Footer />
           <FloatingCTA />

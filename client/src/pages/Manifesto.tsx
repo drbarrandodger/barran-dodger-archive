@@ -7,6 +7,7 @@ import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink"
 import { DownloadBadge } from "@/components/DownloadCounter";
 import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
+import { RelatedContent } from "@/components/RelatedContent";
 import { 
   BookOpen, 
   Scale, 
@@ -1017,6 +1018,8 @@ export default function Manifesto() {
       </main>
 
       <EssayCrossLinks />
+
+      <RelatedContent currentPath="/manifesto" />
 
       <Footer />
           <FloatingCTA />

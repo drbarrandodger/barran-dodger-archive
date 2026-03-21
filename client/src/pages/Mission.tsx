@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { RelatedContent } from "@/components/RelatedContent";
 
 export default function Mission() {
   return (
@@ -209,6 +210,8 @@ export default function Mission() {
           </motion.section>
         </div>
       </main>
+
+      <RelatedContent currentPath="/mission" />
 
       <Footer />
           <FloatingCTA />

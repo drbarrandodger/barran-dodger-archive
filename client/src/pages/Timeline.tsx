@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
+import { RelatedContent } from "@/components/RelatedContent";
 import { Link } from "wouter";
 import { 
   Clock, AlertTriangle, FileText, Shield, Heart, 
@@ -390,6 +391,8 @@ export default function Timeline() {
       </section>
 
       <EssayCrossLinks />
+
+      <RelatedContent currentPath="/timeline" />
 
       <Footer />
           <FloatingCTA />

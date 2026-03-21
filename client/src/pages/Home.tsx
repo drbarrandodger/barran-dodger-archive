@@ -9,6 +9,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { RelatedContent } from "@/components/RelatedContent";
 import { StatsDashboard } from "@/components/StatsDashboard";
 import { EvidenceExplorer } from "@/components/EvidenceExplorer";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
@@ -5691,6 +5692,8 @@ export default function Home() {
           <CommentSection pageSlug="home" title="Community Discussion" />
         </div>
       </section>
+
+      <RelatedContent currentPath="/archive" />
 
       <Footer />
 
