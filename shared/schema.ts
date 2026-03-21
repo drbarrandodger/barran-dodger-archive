@@ -87,4 +87,12 @@ export const insertCommentSchema = createInsertSchema(comments).omit({
 export type Comment = typeof comments.$inferSelect;
 export type InsertComment = z.infer<typeof insertCommentSchema>;
 
+export const pageViews = pgTable("page_views", {
+  id: serial("id").primaryKey(),
+  path: text("path").notNull(),
+  viewedAt: timestamp("viewed_at").defaultNow(),
+});
+
+export type PageView = typeof pageViews.$inferSelect;
+
 export * from "./models/chat";

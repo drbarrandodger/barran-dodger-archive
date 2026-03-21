@@ -7,6 +7,7 @@ import {
   downloadCounts,
   downloadEvents,
   comments,
+  pageViews,
   type InsertSubscriber,
   type InsertInquiry,
   type InsertEvidence,
@@ -33,6 +34,11 @@ export interface IStorage {
   getRecentDownloadCount(hours: number): Promise<number>;
   getComments(pageSlug: string): Promise<Comment[]>;
   createComment(comment: InsertComment): Promise<Comment>;
+  recordPageView(path: string): Promise<void>;
+  getPageViewStats(days: number): Promise<{ date: string; count: number }[]>;
+  getTopPages(days: number, limit: number): Promise<{ path: string; count: number }[]>;
+  getRecentPageViewCount(hours: number): Promise<number>;
+  getTotalPageViews(): Promise<number>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -143,6 +149,51 @@ export class DatabaseStorage implements IStorage {
       .values(insertComment)
       .returning();
     return comment;
+  }
+
+  async recordPageView(path: string): Promise<void> {
+    await db.insert(pageViews).values({ path });
+  }
+
+  async getPageViewStats(days: number): Promise<{ date: string; count: number }[]> {
+    const rows = await db.execute(sql`
+      SELECT DATE(viewed_at) as date, COUNT(*)::int as count
+      FROM page_views
+      WHERE viewed_at >= NOW() - INTERVAL '1 day' * ${days}
+      GROUP BY DATE(viewed_at)
+      ORDER BY date ASC
+    `);
+    return (rows.rows as any[]).map(r => ({ date: String(r.date), count: Number(r.count) }));
+  }
+
+  async getTopPages(days: number, limit: number): Promise<{ path: string; count: number }[]> {
+    const rows = await db.execute(sql`
+      SELECT path, COUNT(*)::int as count
+      FROM page_views
+      WHERE viewed_at >= NOW() - INTERVAL '1 day' * ${days}
+      GROUP BY path
+      ORDER BY count DESC
+      LIMIT ${limit}
+    `);
+    return (rows.rows as any[]).map(r => ({ path: String(r.path), count: Number(r.count) }));
+  }
+
+  async getRecentPageViewCount(hours: number): Promise<number> {
+    const result = await db.execute(sql`
+      SELECT COUNT(*)::int as count
+      FROM page_views
+      WHERE viewed_at >= NOW() - INTERVAL '1 hour' * ${hours}
+    `);
+    const row = result.rows[0] as any;
+    return row ? Number(row.count) : 0;
+  }
+
+  async getTotalPageViews(): Promise<number> {
+    const result = await db.execute(sql`
+      SELECT COUNT(*)::int as count FROM page_views
+    `);
+    const row = result.rows[0] as any;
+    return row ? Number(row.count) : 0;
   }
 }
 

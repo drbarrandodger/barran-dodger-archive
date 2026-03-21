@@ -40,6 +40,11 @@ function ScrollToTop() {
   
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetch('/api/pageviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ path: location }),
+    }).catch(() => {});
   }, [location]);
   
   return null;

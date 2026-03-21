@@ -225,6 +225,60 @@ export async function registerRoutes(
     }
   });
 
+  app.post('/api/pageviews', async (req, res) => {
+    try {
+      const path = String(req.body.path || '/');
+      await storage.recordPageView(path);
+      res.json({ ok: true });
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  app.get('/api/pageviews/total', async (_req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+      const total = await storage.getTotalPageViews();
+      res.json({ total });
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  app.get('/api/pageviews/recent', async (req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+      const hours = Math.min(Number(req.query.hours) || 24, 168);
+      const count = await storage.getRecentPageViewCount(hours);
+      res.json({ count });
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  app.get('/api/pageviews/daily', async (req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+      const days = Math.min(Number(req.query.days) || 30, 365);
+      const data = await storage.getPageViewStats(days);
+      res.json({ data });
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  app.get('/api/pageviews/top-pages', async (req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+      const days = Math.min(Number(req.query.days) || 7, 365);
+      const limit = Math.min(Number(req.query.limit) || 10, 50);
+      const data = await storage.getTopPages(days, limit);
+      res.json({ data });
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
   const SLUG_TITLE_MAP: Record<string, string> = {
     'cosmic-scroll-of-ten': 'The Cosmic Scroll of Ten',
     'digital-oppression-100000-word-essay': 'Digital Oppression — 100,000 Word Essay',
