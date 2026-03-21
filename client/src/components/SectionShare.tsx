@@ -16,14 +16,18 @@ export function SectionShare({
 }: SectionShareProps) {
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
+  // Twitter limit: 280 chars total. &url= adds ~24 chars (23 for t.co link + 1 space).
+  // So tweet text must be ≤ 256 chars.
+  const twitterText = shareText.length > 256 ? shareText.substring(0, 253) + "..." : shareText;
   const encodedText = encodeURIComponent(shareText);
+  const encodedTwitterText = encodeURIComponent(twitterText);
   const encodedUrl = encodeURIComponent(url);
 
   const platforms = [
     {
       name: "X",
       icon: SiX,
-      href: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}&via=bazdod`,
+      href: `https://twitter.com/intent/tweet?text=${encodedTwitterText}&url=${encodedUrl}&via=bazdod`,
     },
     {
       name: "Facebook",

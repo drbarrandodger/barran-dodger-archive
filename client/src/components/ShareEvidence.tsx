@@ -24,7 +24,8 @@ export function ShareEvidence({
       : `${siteBase}${documentUrl.startsWith("/") ? "" : "/"}${documentUrl}`
     : siteBase;
 
-  const tweetText = `${documentTitle} — The evidence Australia doesn't want you to see. @bazdod #BarranDodger #Whistleblower`;
+  const tweetTitle = documentTitle.length > 160 ? documentTitle.substring(0, 157) + '...' : documentTitle;
+  const tweetText = `${tweetTitle} — Evidence Australia tried to suppress. #BarranDodger #Whistleblower`;
   const emailSubject = `Evidence: ${documentTitle}`;
   const emailBody = `I wanted to share this important document with you:\n\n${documentTitle}\n\nThis is part of the Barran Dodger Legal & Ethical Trust Fund evidence archive — 240+ forensic documents with blockchain verification documenting systematic persecution by the Australian government.\n\nView the document: ${fullUrl}\n\nVisit the full archive: ${siteBase}`;
   const whatsAppText = `${documentTitle} — Evidence from the Barran Dodger archive. The documents Australia doesn't want you to see. ${fullUrl}`;

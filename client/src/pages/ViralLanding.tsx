@@ -616,7 +616,7 @@ export default function ViralLanding() {
             </motion.div>
 
             <SectionShare
-              shareText="No journalist, lawyer, judge, or human rights body has formally assessed Dr. Richard McLean's 240+ blockchain-verified documents. So an impartial AI did. Read what it found. The evidence is public. The documents are free. The reader may now judge. #BarranDodger #AIWitness"
+              shareText="No journalist, judge, or rights body has assessed Dr. McLean's 240+ blockchain-verified docs. An impartial AI did instead. Evidence is public. Docs are free. Judge for yourself. #BarranDodger #AIWitness"
               label="Share this AI declaration"
             />
           </motion.div>
@@ -711,7 +711,7 @@ export default function ViralLanding() {
             </motion.div>
 
             <SectionShare
-              shareText="No victims. No charges. No arrest. No legal process. Just the word 'pedophile' — deployed against a gay whistleblower to guarantee silence and ensure no one ever acknowledges his humanity. The oldest weapon against LGBTQ+ people who threaten power. #BarranDodger #SlanderAsWeapon"
+              shareText="No victims. No charges. No arrest. No legal process. Just the word 'pedophile' — deployed against a gay whistleblower to silence him. The oldest weapon against LGBTQ+ people who threaten power. #BarranDodger #SlanderAsWeapon"
               label="Expose this tactic"
             />
           </motion.div>
@@ -808,7 +808,7 @@ export default function ViralLanding() {
             </motion.div>
 
             <SectionShare
-              shareText="Dr. Richard McLean filed formal Public Interest Disclosures with the NDIA under the PID Act 2013 — 21+ allegations of threats, fraud, conspiracy, and institutional failure. The Federal Court confirmed his status. The NDIA acknowledged receipt. Nothing was done. #BarranDodger #Whistleblower #NDIS"
+              shareText="Dr. McLean filed formal PIDs with the NDIA — 21+ allegations of fraud, conspiracy & failure. Federal Court confirmed his status. NDIA acknowledged receipt. Nothing was done. #BarranDodger #Whistleblower #NDIS"
               label="Share these disclosures"
             />
           </motion.div>
@@ -917,7 +917,7 @@ export default function ViralLanding() {
             </motion.div>
 
             <SectionShare
-              shareText="No charge. No arrest. No victim. No legal process. Yet labeled a pedophile, rapist, terrorist. Demanded arrest — got psychiatric detention instead. Suicided in protest — was revived. Now lives in his car. Not one professional has responded. An impartial AI analysis of the case of Dr. Richard McLean. #BarranDodger #Whistleblower"
+              shareText="No charge. No arrest. No victim. Yet labeled pedophile, rapist, terrorist. Got psychiatric detention instead of arrest. Suicided in protest — was revived. Lives in his car. No institution has responded. #BarranDodger #Whistleblower"
               label="Share this analysis"
             />
           </motion.div>
@@ -1016,7 +1016,7 @@ export default function ViralLanding() {
             </motion.div>
 
             <SectionShare
-              shareText="An NDIS provider confirmed police said no sexual crime occurred, validated the assassination attempt ('I thought you were just paranoid. You were right'), then was forced to sign an NDA — a classified document that auto-wiped from his phone. Breach = treason. This is not healthcare. This is witness suppression. #BarranDodger"
+              shareText="An NDIS provider: police confirmed no sexual crime. He validated the assassination attempt, then was forced to sign a classified NDA that auto-wiped from his phone. Breach = treason. Witness suppression. #BarranDodger"
               label="Expose the cover-up"
             />
           </motion.div>

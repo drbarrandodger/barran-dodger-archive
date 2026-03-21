@@ -59,7 +59,14 @@ export function QuotableSnippet({ quote, source, date, documentUrl }: QuotableSn
   };
   
   const shareToTwitter = () => {
-    const text = encodeURIComponent(`${shareText}\n\n#Whistleblower #HumanRights #Australia`);
+    const hashtags = "\n\n#Whistleblower #HumanRights #Australia";
+    // Twitter limit: 280 chars. URL (via &url=) counts as 23 chars + 1 space = 24.
+    // So tweet text must be ≤ 256 chars.
+    const maxLen = 256 - hashtags.length;
+    const truncated = shareText.length > maxLen
+      ? shareText.substring(0, maxLen - 3) + "..."
+      : shareText;
+    const text = encodeURIComponent(`${truncated}${hashtags}`);
     window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(shareUrl)}`, "_blank");
   };
 
