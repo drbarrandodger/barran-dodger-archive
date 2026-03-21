@@ -10,6 +10,7 @@ import { ProgressTracker, useDocumentProgress } from "@/components/ProgressTrack
 import { useDocumentPreview } from "@/components/DocumentPreview";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { ShareEvidence } from "@/components/ShareEvidence";
 import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye, Search, Brain, MessageCircle, Flame, Star, Skull, Target } from "lucide-react";
@@ -3452,8 +3453,11 @@ export default function Evidence() {
                           </a>
                         </Button>
                       </div>
+                      <div className="mt-3">
+                        <ShareEvidence documentTitle={doc.title} documentUrl={doc.url} compact />
+                      </div>
                       {hasViewed(doc.title) && (
-                        <Badge variant="secondary" className="mt-3 text-xs">
+                        <Badge variant="secondary" className="mt-2 text-xs">
                           <Eye className="h-3 w-3 mr-1" /> Viewed
                         </Badge>
                       )}

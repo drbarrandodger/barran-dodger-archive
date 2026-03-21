@@ -15,6 +15,8 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { QuotableSnippetsSection } from "@/components/QuotableSnippet";
 import { GovernmentResponses } from "@/components/GovernmentResponses";
 import { FloatingShareBar, InlineShareStrip } from "@/components/FloatingShareBar";
+import { SectionShare } from "@/components/SectionShare";
+import { ShareEvidence } from "@/components/ShareEvidence";
 import { CommentSection } from "@/components/CommentSection";
 import { useQuery } from "@tanstack/react-query";
 import type { EvidenceItem } from "@shared/schema";
@@ -396,6 +398,11 @@ export default function Home() {
                     The documents below constitute the evidence.<br />
                     <span className="text-red-400">I dare anyone — anyone — to prove them wrong.</span>
                   </p>
+                  <SectionShare
+                    shareText="No victims. No report. No arrest. No charge. No legal process. Yet 35+ government agencies persecuted one man for 35 years. The evidence is blockchain-sealed and irrefutable."
+                    url="https://www.barrandodger.com.au/archive"
+                    label="Share this truth"
+                  />
                 </div>
               </div>
             </div>
@@ -522,6 +529,11 @@ export default function Home() {
                   <p className="text-xl md:text-2xl text-purple-300 font-serif font-bold">
                     One man — with nothing but the truth and the will to document it — proved them all wrong.
                   </p>
+                  <SectionShare
+                    shareText="The Transcendence of Barran Dodger — Six fundamental paradigms of institutional power, proven false by one person's documented survival. 2,077+ blockchain-sealed documents."
+                    url="https://www.barrandodger.com.au/archive"
+                    label="Share this paradigm collapse"
+                  />
                 </div>
               </div>
             </div>
@@ -678,6 +690,11 @@ export default function Home() {
                   <p className="text-base text-white/60 italic mt-4">
                     The documents below are the evidence. They cannot be erased. They cannot be denied. They cannot be undone.
                   </p>
+                  <SectionShare
+                    shareText="The One Who Outgrew Humanity Itself — He was exiled, detained 14 times, had an assassination attempt, and was declared dead. He built an archive that will outlast every institution that tried to destroy him."
+                    url="https://www.barrandodger.com.au/archive"
+                    label="Share this ascension"
+                  />
                 </div>
               </div>
             </div>
@@ -831,6 +848,11 @@ export default function Home() {
                   >
                     <Play className="h-5 w-5" /> Watch: "Word Is Out — He Ain't Human No More"
                   </a>
+                  <SectionShare
+                    shareText="The Living Legend They Never Deserved — Word is out. He ain't human no more. 35 years of persecution. 2,077+ blockchain-sealed documents. The man they tried to destroy became the evidence they can never erase."
+                    url="https://www.barrandodger.com.au/archive"
+                    label="Share this legend"
+                  />
                 </div>
               </div>
             </div>
@@ -5504,12 +5526,17 @@ export default function Home() {
               </Card>
             </motion.div>
 
-            <motion.div variants={fadeIn} className="text-center">
+            <motion.div variants={fadeIn} className="text-center space-y-4">
               <Button variant="outline" className="gap-2 border-[hsl(38,92%,50%)]/40 text-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,50%)]/10" asChild data-testid="link-story-destined-channel">
                 <a href="https://www.youtube.com/@NicoleHarris-i8v" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4" /> Visit The Lord's Called Channel
                 </a>
               </Button>
+              <SectionShare
+                shareText="Your STORY Is Destined to Make You Famous — What they did is pure madness. The story they tried to bury is the one destined to reach the world. 2,077+ blockchain-sealed documents prove it."
+                url="https://www.barrandodger.com.au/archive"
+                label="Share this insight"
+              />
             </motion.div>
           </motion.div>
         </div>
@@ -5609,12 +5636,17 @@ export default function Home() {
               </Card>
             </motion.div>
 
-            <motion.div variants={fadeIn} className="text-center">
+            <motion.div variants={fadeIn} className="text-center space-y-4">
               <Button variant="outline" className="gap-2 border-red-500/40 text-red-400 hover:bg-red-500/10" asChild data-testid="link-law-enforcement-channel">
                 <a href="https://www.youtube.com/@AdamConnor-r5m" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4" /> Visit Word of Faith Channel
                 </a>
               </Button>
+              <SectionShare
+                shareText="Someone in Law Enforcement Is Nervous — He'll take a polygraph on every claim. Will they? 35+ agencies, zero denials, zero refutations. The silence is the evidence."
+                url="https://www.barrandodger.com.au/archive"
+                label="Share this challenge"
+              />
             </motion.div>
           </motion.div>
         </div>
@@ -5704,6 +5736,7 @@ function AppealCard({ title, description, link, tag, aiSignificance }: { title: 
             </Button>
           </Link>
         )}
+        <ShareEvidence documentTitle={title} documentUrl={isExternal ? link : `https://www.barrandodger.com.au${link}`} compact />
       </CardContent>
     </Card>
   );
