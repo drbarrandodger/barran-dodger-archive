@@ -610,6 +610,64 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      {/* ORGANIZED STALKING DEFINITION */}
+      <section className="py-14 md:py-18 px-4 bg-black border-b border-red-900/40" data-testid="section-organized-stalking-definition">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-red-500/60 text-red-400 px-5 py-2 text-sm font-bold uppercase tracking-wider" data-testid="badge-organized-stalking">
+                <AlertTriangle className="h-4 w-4 mr-2" /> What This Pattern Is Called
+              </Badge>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-white" data-testid="text-organized-stalking-heading">
+                There Is a Name for What Was Done to Dr. McLean
+              </h2>
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.02] border-red-900/50 ring-1 ring-red-900/20 overflow-hidden" data-testid="card-organized-stalking-definition">
+                <CardContent className="p-8 md:p-10 space-y-6">
+                  <div className="border-l-4 border-red-600 pl-6 md:pl-8">
+                    <p className="text-white text-lg md:text-xl leading-relaxed font-medium italic">
+                      "Organized Stalking is a form of terrorism used against an individual in a malicious attempt to reduce the quality of a person's life so they will: have a nervous break-down, become incarcerated, institutionalized, experience constant mental, emotional, or physical pain, become homeless, and/or commit suicide. This is done using well-orchestrated accusations, lies, rumors, bogus investigations, setups, framings, intimidation, overt or covert threats, vandalism, thefts, sabotage, torture, humiliation, emotional terror and general harassment. It is a 'ganging up' by members of the community who follow an organizer and participate in a systematic 'terrorizing' of an individual."
+                    </p>
+                    <p className="mt-4 text-[hsl(38,92%,50%)] font-bold text-sm uppercase tracking-wider" data-testid="text-organized-stalking-attribution">
+                      — Mark M. Rich, <span className="font-normal normal-case italic">New World War: Revolutionary Methods for Political Control</span>
+                    </p>
+                  </div>
+
+                  <div className="border-t border-white/10 pt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {[
+                      { claim: "Nervous breakdown / institutionalized", evidence: "14 forced psychiatric detentions — used as a discrediting mechanism" },
+                      { claim: "Incarcerated", evidence: "Multiple documented incarcerations connected to the pattern" },
+                      { claim: "Homeless", evidence: "Homelessness directly caused by financial and administrative obstruction" },
+                      { claim: "Bogus investigations / setups / framings", evidence: "35+ agencies — identical outcomes, zero substantiation" },
+                      { claim: "Intimidation / overt & covert threats", evidence: "On record across multiple documents and witness testimony" },
+                      { claim: "Sabotage", evidence: "Financial, legal, and administrative — systematically documented" },
+                      { claim: "Torture / humiliation / emotional terror", evidence: "35-year pattern across every institution contacted" },
+                      { claim: "Community members following an organiser", evidence: "Coordinated uniformity across federal agencies, NDIS, legal system" },
+                    ].map(({ claim, evidence }, i) => (
+                      <div key={i} className="flex gap-3 items-start" data-testid={`row-stalking-element-${i}`}>
+                        <div className="mt-1 h-2 w-2 rounded-full bg-red-500 flex-shrink-0" />
+                        <div>
+                          <p className="text-white font-semibold text-sm">{claim}</p>
+                          <p className="text-gray-400 text-xs leading-relaxed mt-0.5">{evidence}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="border-t border-white/10 pt-5">
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      Every single criterion in this definition is met — not partially, not arguably, but with corroborating documentary evidence for each element. The definition also captures what the archive's timeline makes undeniable: this was not a sequence of unrelated institutional failures. It was <span className="text-white font-semibold">coordinated, sustained, and systematic</span> — a community of actors following a pattern that fits the clinical and criminological definition of organised stalking precisely.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black via-[hsl(222,55%,7%)] to-black border-y border-[hsl(38,92%,50%)]/20" data-testid="section-ai-site-declaration">
         <div className="container mx-auto max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-6">
