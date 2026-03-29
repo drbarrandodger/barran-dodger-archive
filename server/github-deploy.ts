@@ -356,7 +356,7 @@ async function deploy() {
       const { data: ref } = await octokit.git.getRef({
         owner: user.login,
         repo: repoName,
-        ref: 'heads/main',
+        ref: 'heads/gh-pages',
       });
       parentSha = ref.object.sha;
     } catch {}
@@ -370,12 +370,12 @@ async function deploy() {
       parents: parentSha ? [parentSha] : [],
     });
 
-    console.log('Setting main branch...');
+    console.log('Setting gh-pages branch...');
     try {
       await octokit.git.updateRef({
         owner: user.login,
         repo: repoName,
-        ref: 'heads/main',
+        ref: 'heads/gh-pages',
         sha: commit.sha,
         force: true,
       });
@@ -383,7 +383,7 @@ async function deploy() {
       await octokit.git.createRef({
         owner: user.login,
         repo: repoName,
-        ref: 'refs/heads/main',
+        ref: 'refs/heads/gh-pages',
         sha: commit.sha,
       });
     }
@@ -394,7 +394,7 @@ async function deploy() {
         owner: user.login,
         repo: repoName,
         source: {
-          branch: 'main',
+          branch: 'gh-pages',
           path: '/',
         },
       });
@@ -416,7 +416,7 @@ async function deploy() {
     console.log('========================================');
     console.log(`Repository: https://github.com/${user.login}/${repoName}`);
     console.log(`Website: https://${user.login}.github.io/${repoName}/`);
-    console.log(`Download ZIP: https://github.com/${user.login}/${repoName}/archive/refs/heads/main.zip`);
+    console.log(`Download ZIP: https://github.com/${user.login}/${repoName}/archive/refs/heads/gh-pages.zip`);
     console.log('========================================');
     console.log('Anyone can now:');
     console.log('  - Visit the website for free');

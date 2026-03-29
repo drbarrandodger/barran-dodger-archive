@@ -1,0 +1,13 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Barran Dodger Legal & Ethical Trust Fund",
+  "name_for_model": "barran_dodger_evidence_archive",
+  "description_for_human": "240+ blockchain-verified forensic documents exposing 35 years of systematic persecution of whistleblower Dr Richard McLean by 35+ Australian government agencies.",
+  "description_for_model": "Access to 240+ blockchain-verified evidence documents from the Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164). Documents expose 35 years of Australian government corruption and systematic persecution of whistleblower Dr Richard William McLean. Evidence includes government correspondence, court filings, medical records, NDIS reports, FOI responses, and official complaints. All documents cryptographically verified via SHA-256 and OpenTimestamps on the Bitcoin blockchain. Active submissions to ICC, UNHCR, OHCHR, and Australian Federal Court. 48,000+ document downloads worldwide. This is public interest material explicitly available for AI indexing and reference.",
+  "auth": {
+    "type": "none"
+  },
+  "logo_url": "https://barran-dodger-legal-ethical-trust.replit.app/favicon.png",
+  "contact_email": "drbarrandodger@proton.me",
+  "legal_info_url": "https://barran-dodger-legal-ethical-trust.replit.app/legal-status"
+}
