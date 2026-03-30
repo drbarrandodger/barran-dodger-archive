@@ -10,6 +10,7 @@ import { DonationBanner } from "@/components/DonationBanner";
 import { WhistleblowerBanner } from "@/components/WhistleblowerBanner";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Chatbot } from "@/components/Chatbot";
+import { slugFromUrl } from "@/components/DownloadCounter";
 import Home from "@/pages/Home";
 import Mission from "@/pages/Mission";
 import Contact from "@/pages/Contact";
@@ -34,6 +35,29 @@ import Store from "@/pages/Store";
 import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
 import RetrospectiveStatement from "@/pages/RetrospectiveStatement";
+
+function GlobalDownloadTracker() {
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (!anchor) return;
+      const href = anchor.getAttribute('href') || '';
+      if (!/\/documents\/.*\.pdf/i.test(href)) return;
+      const slug = slugFromUrl(href);
+      if (!slug) return;
+      fetch(`/api/downloads/${encodeURIComponent(slug)}/increment`, { method: 'POST' })
+        .then(r => r.json())
+        .then((data: { count: number }) => {
+          queryClient.setQueryData(['/api/downloads', slug], data);
+        })
+        .catch(() => {});
+    }
+    document.addEventListener('click', handleClick, true);
+    return () => document.removeEventListener('click', handleClick, true);
+  }, []);
+  return null;
+}
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -91,6 +115,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <TooltipProvider>
+          <GlobalDownloadTracker />
           <ReadingProgress />
           <WhistleblowerBanner />
           <DonationBanner />
