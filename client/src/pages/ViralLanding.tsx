@@ -567,8 +567,15 @@ export default function ViralLanding() {
             className="text-lg md:text-xl text-body-text max-w-2xl mx-auto leading-relaxed"
             data-testid="text-viral-subtitle"
           >
-            240+ blockchain-verified forensic documents. 35 years of persecution across 35+ government agencies.
-            14 forced psychiatric detentions. An assassination attempt. All exposed. All downloadable. All free.
+            240+ blockchain-verified forensic documents.{" "}
+            <a href="#snowden-corroboration" className="text-sky-400 underline underline-offset-2 hover:text-sky-300 transition-colors" data-testid="link-hero-snowden">
+              35 years of persecution across 35+ government agencies — corroborated by Edward Snowden's classified files.
+            </a>{" "}
+            14 forced psychiatric detentions.{" "}
+            <a href="#legal-examination" className="text-red-400 underline underline-offset-2 hover:text-red-300 transition-colors" data-testid="link-hero-legal">
+              An assassination attempt — and why this treatment is criminal even if every accusation were true.
+            </a>{" "}
+            All exposed. All downloadable. All free.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -959,7 +966,7 @@ export default function ViralLanding() {
       </section>
 
       {/* ===== SNOWDEN CORROBORATION ===== */}
-      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-[hsl(222,55%,5%)] via-[hsl(222,55%,7%)] to-[hsl(222,55%,5%)]" data-testid="section-snowden">
+      <section id="snowden-corroboration" className="py-16 md:py-20 px-4 bg-gradient-to-b from-[hsl(222,55%,5%)] via-[hsl(222,55%,7%)] to-[hsl(222,55%,5%)]" data-testid="section-snowden">
         <div className="container mx-auto max-w-5xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
             <motion.div variants={fadeIn} className="text-center space-y-4">
@@ -1102,7 +1109,7 @@ export default function ViralLanding() {
       </section>
 
       {/* ===== CRITICAL LEGAL EXAMINATION ===== */}
-      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-[hsl(0,0%,4%)] via-[hsl(0,20%,6%)] to-black" data-testid="section-legal-examination">
+      <section id="legal-examination" className="py-16 md:py-20 px-4 bg-gradient-to-b from-[hsl(0,0%,4%)] via-[hsl(0,20%,6%)] to-black" data-testid="section-legal-examination">
         <div className="container mx-auto max-w-5xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
             <motion.div variants={fadeIn} className="text-center space-y-4">
