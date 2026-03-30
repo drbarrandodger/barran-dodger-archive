@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { docUrl } from "@/lib/docUrl";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -581,12 +582,12 @@ export default function Gospel() {
                 </div>
                 <div className="flex gap-3">
                   <Button variant="default" size="lg" className="gap-2" asChild data-testid="button-download-cosmic-scroll">
-                    <a href="/documents/cosmic_scroll_of_ten.pdf" download onClick={() => trackDownload("/documents/cosmic_scroll_of_ten.pdf")}>
+                    <a href={docUrl("/documents/cosmic_scroll_of_ten.pdf")} download onClick={() => trackDownload("/documents/cosmic_scroll_of_ten.pdf")}>
                       <Download className="h-5 w-5" /> Download The Cosmic Scroll of Ten (Free PDF) <DownloadBadge url="/documents/cosmic_scroll_of_ten.pdf" />
                     </a>
                   </Button>
                   <Button variant="outline" size="lg" className="gap-2" asChild>
-                    <a href="/documents/cosmic_scroll_of_ten.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/documents/cosmic_scroll_of_ten.pdf")}>
+                    <a href={docUrl("/documents/cosmic_scroll_of_ten.pdf")} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/documents/cosmic_scroll_of_ten.pdf")}>
                       <ExternalLink className="h-5 w-5" /> View
                     </a>
                   </Button>

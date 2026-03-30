@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { docUrl } from "@/lib/docUrl";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -3555,12 +3556,12 @@ export default function Evidence() {
                           <Eye className="h-4 w-4" /> Preview
                         </Button>
                         <Button variant="outline" className="flex-1 gap-2" asChild>
-                          <a href={doc.url} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(doc.url)}>
+                          <a href={docUrl(doc.url)} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(doc.url)}>
                             View <ExternalLink className="h-4 w-4" />
                           </a>
                         </Button>
                         <Button variant="ghost" size="icon" asChild>
-                          <a href={doc.url} download onClick={() => trackDownload(doc.url)}>
+                          <a href={docUrl(doc.url)} download onClick={() => trackDownload(doc.url)}>
                             <Download className="h-4 w-4" />
                             <DownloadBadge url={doc.url} />
                           </a>

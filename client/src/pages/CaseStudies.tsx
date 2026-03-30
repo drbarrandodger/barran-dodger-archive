@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { docUrl } from "@/lib/docUrl";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -808,7 +809,7 @@ export default function CaseStudies() {
                     <Download className="h-4 w-4" /> Primary Source Document
                   </h4>
                   <a
-                    href="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
+                    href={docUrl("/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf")}
                     target="_blank"
                     rel="noopener noreferrer"
                     download
@@ -1004,12 +1005,12 @@ export default function CaseStudies() {
                       <Download className="h-4 w-4" /> Download Full Paper (PDF) <DownloadBadge url="/attached_assets/THE_PARADOX_OF_PERSECUTION-How_the_Australian_Government's_Own_1770757189035.pdf" />
                     </Button>
                   </a>
-                  <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/digital_oppression_100000_word_essay.pdf")}>
+                  <a href={docUrl("/documents/digital_oppression_100000_word_essay.pdf")} target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/digital_oppression_100000_word_essay.pdf")}>
                     <Button variant="default" className="gap-2 w-full sm:w-auto" data-testid="link-download-100k-essay-casestudies">
                       <Download className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF) <DownloadBadge url="/documents/digital_oppression_100000_word_essay.pdf" />
                     </Button>
                   </a>
-                  <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/crimes_against_humanity_final_demand.pdf")}>
+                  <a href={docUrl("/documents/crimes_against_humanity_final_demand.pdf")} target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/crimes_against_humanity_final_demand.pdf")}>
                     <Button variant="destructive" className="gap-2 w-full sm:w-auto" data-testid="link-download-crimes-demand-casestudies">
                       <Download className="h-4 w-4" /> Crimes Against Humanity: Final Demand (PDF) <DownloadBadge url="/documents/crimes_against_humanity_final_demand.pdf" />
                     </Button>

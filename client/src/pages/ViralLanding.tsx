@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { docUrl } from "@/lib/docUrl";
 import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote, Globe, Sparkles, Infinity, Play, Radio, Gavel } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
@@ -240,7 +241,7 @@ function DocumentCard({ doc, index, prefix }: { doc: typeof TOP_DOCUMENTS[0]; in
                     data-testid={`button-download-${prefix}-${index}`}
                   >
                     <a
-                      href={doc.url}
+                      href={docUrl(doc.url)}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackDownload(doc.url)}
@@ -1407,7 +1408,7 @@ export default function ViralLanding() {
                   <p className="text-gray-300 text-sm leading-relaxed">
                     The original Public Interest Disclosure filed by Dr. McLean documenting 21+ formal allegations including threats by NDIA staff, conspiracy to pervert the course of justice, systematic denial of legal representation, and institutional fraud — all corroborated by the Federal Court's acknowledgment of his status as a public official.
                   </p>
-                  <a href="/documents/ndis-pid-political-prisoner-dr-rich-mclean.pdf" download>
+                  <a href={docUrl("/documents/ndis-pid-political-prisoner-dr-rich-mclean.pdf")} download>
                     <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold gap-2 mt-2" data-testid="button-download-pid-letter">
                       <Download className="h-4 w-4" /> Download PID Statement (PDF)
                     </Button>
@@ -1429,7 +1430,7 @@ export default function ViralLanding() {
                   <p className="text-gray-300 text-sm leading-relaxed">
                     The NDIA's formal acknowledgment and processing of Dr. McLean's disclosure under the PID Act. Confirms receipt, outlines the legal framework, details the 21+ allegations in Attachment A, and requests further information — institutional proof the disclosure was real, formal, and taken seriously.
                   </p>
-                  <a href="/documents/ndis-pid-official-response.pdf" download>
+                  <a href={docUrl("/documents/ndis-pid-official-response.pdf")} download>
                     <Button className="w-full bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,60%)] text-black font-bold gap-2 mt-2" data-testid="button-download-pid-response">
                       <Download className="h-4 w-4" /> Download NDIA Response (PDF)
                     </Button>
@@ -1750,7 +1751,7 @@ export default function ViralLanding() {
                       </p>
                     </div>
                     <a
-                      href="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
+                      href={docUrl("/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf")}
                       download="Ben-DSW-Disability-NDIS-Text-Messages-Assassination-Evidence.pdf"
                       onClick={() => trackDownload('/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf')}
                       className="flex-shrink-0 inline-flex items-center gap-2 bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,42%)] text-black font-bold px-6 py-3 rounded-lg transition-colors text-sm whitespace-nowrap"

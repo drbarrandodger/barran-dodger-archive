@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { docUrl } from "@/lib/docUrl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -947,7 +948,7 @@ export default function RetrospectiveStatement() {
                   Watch on YouTube
                 </a>
                 <a
-                  href="/documents/RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf"
+                  href={docUrl("/documents/RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf")}
                   target="_blank"
                   rel="noopener noreferrer"
                   download

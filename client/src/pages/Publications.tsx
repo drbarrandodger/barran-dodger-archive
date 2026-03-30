@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { docUrl } from "@/lib/docUrl";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -637,7 +638,7 @@ export default function Publications() {
                           </Button>
                           {pub.url ? (
                             <Button variant="outline" size="sm" className="flex-1 gap-1" asChild>
-                              <a href={pub.url} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(pub.url)}>
+                              <a href={docUrl(pub.url)} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(pub.url)}>
                                 View <ExternalLink className="h-3.5 w-3.5" /> <DownloadBadge url={pub.url} />
                               </a>
                             </Button>
@@ -702,7 +703,7 @@ export default function Publications() {
                           </Button>
                           {pub.url ? (
                             <Button variant="outline" size="sm" className="gap-1" asChild>
-                              <a href={pub.url} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(pub.url)}>
+                              <a href={docUrl(pub.url)} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(pub.url)}>
                                 <ExternalLink className="h-3.5 w-3.5" /> <DownloadBadge url={pub.url} />
                               </a>
                             </Button>

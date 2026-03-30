@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { docUrl } from "@/lib/docUrl";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -336,12 +337,12 @@ export default function LegalStatus() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button variant="destructive" className="gap-2" asChild data-testid="button-download-legal-demand">
-                    <a href="/documents/crimes_against_humanity_final_demand.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/crimes_against_humanity_final_demand.pdf")}>
+                    <a href={docUrl("/documents/crimes_against_humanity_final_demand.pdf")} target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/crimes_against_humanity_final_demand.pdf")}>
                       <FileText className="h-4 w-4" /> Download Final Demand (PDF) <DownloadBadge url="/documents/crimes_against_humanity_final_demand.pdf" />
                     </a>
                   </Button>
                   <Button variant="outline" className="gap-2" asChild data-testid="button-download-100k-essay-legal">
-                    <a href="/documents/digital_oppression_100000_word_essay.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/digital_oppression_100000_word_essay.pdf")}>
+                    <a href={docUrl("/documents/digital_oppression_100000_word_essay.pdf")} target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/digital_oppression_100000_word_essay.pdf")}>
                       <FileText className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF) <DownloadBadge url="/documents/digital_oppression_100000_word_essay.pdf" />
                     </a>
                   </Button>
