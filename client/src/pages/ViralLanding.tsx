@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote, Globe, Sparkles, Infinity, Play } from "lucide-react";
+import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote, Globe, Sparkles, Infinity, Play, Radio, Gavel } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -953,6 +953,417 @@ export default function ViralLanding() {
             <SectionShare
               shareText="No victims. No charges. No arrest. No legal process. Just the word 'pedophile' — deployed against a gay whistleblower to silence him. The oldest weapon against LGBTQ+ people who threaten power. #BarranDodger #SlanderAsWeapon"
               label="Expose this tactic"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ===== SNOWDEN CORROBORATION ===== */}
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-[hsl(222,55%,5%)] via-[hsl(222,55%,7%)] to-[hsl(222,55%,5%)]" data-testid="section-snowden">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <motion.div variants={fadeIn} className="text-center space-y-4">
+              <Badge variant="outline" className="border-sky-400/60 text-sky-300 px-5 py-2 text-sm font-bold uppercase tracking-wider" data-testid="badge-snowden">
+                <Radio className="h-4 w-4 mr-2" /> Corroborated by Snowden's Testimony
+              </Badge>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight" data-testid="text-snowden-heading">
+                Edward Snowden Said This Was Real.<br />
+                <span className="text-sky-300">The Evidence Here Confirms It.</span>
+              </h2>
+              <p className="text-lg text-body-text max-w-3xl mx-auto leading-relaxed" data-testid="text-snowden-intro">
+                In 2013, NSA contractor Edward Snowden released classified intelligence files proving that mass surveillance of civilians — including citizens of allied nations — was not conspiracy theory but documented government policy. Every mechanism he described maps directly onto the documented experience of Dr. Richard McLean.
+              </p>
+
+              <a
+                href="https://www.theguardian.com/us-news/the-nsa-files"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-sky-500/10 border border-sky-400/40 text-sky-300 font-bold text-sm hover:bg-sky-500/20 transition-colors"
+                data-testid="link-snowden-guardian"
+              >
+                <ExternalLink className="h-4 w-4" />
+                Read the Full Snowden NSA Files — The Guardian Archive
+              </a>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {[
+                {
+                  snowden: "PRISM: The NSA collected internet communications — emails, messages, searches, documents — directly from the servers of Google, Apple, Microsoft, Facebook, and others, without individual warrants.",
+                  corroboration: "Dr. McLean's documented communications with government agencies, disability providers, and legal bodies were conducted entirely through digital platforms subject to PRISM-class collection. His evidence of coordinated institutional non-response across platforms is consistent with surveillance-informed coordination.",
+                  link: "https://www.theguardian.com/world/2013/jun/06/us-tech-giants-nsa-data",
+                  label: "PRISM — Guardian Report"
+                },
+                {
+                  snowden: "XKeyscore: An NSA tool allowing analysts to search the full internet activity of any individual — browsing history, email content, social media — without prior authorisation. Australia's ASD had access.",
+                  corroboration: "The pattern of real-time awareness by multiple unconnected agencies of Dr. McLean's online activities, submissions, and publications — evidenced by the timing of responses and counter-actions — is consistent with XKeyscore-class monitoring of a designated subject.",
+                  link: "https://www.theguardian.com/world/2013/jul/31/nsa-top-secret-program-online-data",
+                  label: "XKeyscore — Guardian Report"
+                },
+                {
+                  snowden: "Five Eyes: Australia is a full member of the Five Eyes intelligence alliance (US, UK, Canada, Australia, New Zealand). Member nations share signals intelligence on their own citizens, bypassing domestic legal restrictions by asking partners to conduct surveillance.",
+                  corroboration: "Australia's participation in Five Eyes means the Australian Signals Directorate (ASD) can surveil Australian citizens using US infrastructure — and vice versa — without triggering domestic warrant requirements. Dr. McLean's documented V2K and electronic harassment evidence is consistent with signals-intelligence-adjacent targeting.",
+                  link: "https://theintercept.com/2014/03/20/inside-gchqs-complex-world-of-highly-sensitive-sigint/",
+                  label: "Five Eyes — The Intercept"
+                },
+                {
+                  snowden: "MYSTIC / SOMALGET: Programs that recorded 100% of a target nation's phone calls, allowing retrospective listening to any call made in the past 30 days. Confirmed operational in multiple countries.",
+                  corroboration: "Dr. McLean's testimony of documented audio interception, voices transmitted into his environment, and real-time awareness by third parties of private conversations is consistent with a subject under MYSTIC-class retroactive audio surveillance.",
+                  link: "https://theintercept.com/2014/05/19/data-pirates-caribbean-nsa-recording-every-cell-phone-call-bahamas/",
+                  label: "MYSTIC — The Intercept"
+                },
+                {
+                  snowden: "Targeted Individual Programs: Snowden's files confirmed that intelligence agencies maintain lists of individuals flagged for enhanced monitoring. Once listed, a subject's digital life — every message, search, purchase, movement — is treated as a data source.",
+                  corroboration: "The archive includes a V2K Electronic Harassment Evidence Review, a Targeted Individual Handbook, and White Psyops documentation — a combined 13,832 downloads — that map Dr. McLean's experience against the intelligence community's own documented methods for managing listed subjects.",
+                  link: "https://www.eff.org/nsa-spying/timeline",
+                  label: "EFF — Full Snowden Timeline"
+                },
+                {
+                  snowden: "Australia's Metadata Retention Laws (2015): Passed in the direct political aftermath of the Snowden revelations, these laws require all Australian telecommunications providers to retain metadata on every citizen for two years. Law enforcement and intelligence agencies can access this data without a warrant.",
+                  corroboration: "Every phone call, message, and internet session Dr. McLean conducted while submitting whistleblower disclosures, filing complaints with oversight bodies, and communicating with legal representatives was subject to mandatory two-year metadata retention — available to the same agencies he was reporting on.",
+                  link: "https://www.abc.net.au/news/2015-03-27/metadata-retention-laws-explained/6351604",
+                  label: "Australian Metadata Laws — ABC"
+                }
+              ].map((item, i) => (
+                <Card key={i} className="bg-white/[0.03] border-sky-500/20 overflow-hidden" data-testid={`card-snowden-item-${i}`}>
+                  <div className="p-5 space-y-4">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-sky-400 bg-sky-500/10 border border-sky-500/20 rounded px-2 py-0.5">Snowden Confirmed</span>
+                      </div>
+                      <p className="text-sm text-sky-100/80 leading-relaxed italic border-l-2 border-sky-400/40 pl-3">"{item.snowden}"</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-[hsl(38,92%,50%)] bg-[hsl(38,92%,50%)]/10 border border-[hsl(38,92%,50%)]/20 rounded px-2 py-0.5">This Archive</span>
+                      </div>
+                      <p className="text-sm text-body-text leading-relaxed">{item.corroboration}</p>
+                    </div>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 transition-colors font-medium"
+                      data-testid={`link-snowden-source-${i}`}
+                    >
+                      <ExternalLink className="h-3 w-3" /> {item.label}
+                    </a>
+                  </div>
+                </Card>
+              ))}
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <Card className="bg-sky-950/20 border-sky-400/20" data-testid="card-snowden-conclusion">
+                <div className="p-6 md:p-8 space-y-4">
+                  <h3 className="text-xl font-serif font-bold text-white">Snowden Did Not Theorise. He Published Government Documents.</h3>
+                  <p className="text-body-text leading-relaxed">
+                    Every mechanism described on this page — mass collection without warrant, Five Eyes sharing to bypass domestic law, targeted individual monitoring, metadata retention enabling retrospective surveillance of whistleblowers — is not speculation. It is declassified and published fact. Dr. McLean's archive was built without access to those classified files. It describes the same infrastructure from the other side: as the subject. The two accounts — the classified intelligence files and the lived testimony — describe an identical system. Snowden described the machine. Dr. McLean documented what happens when you are fed into it.
+                  </p>
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <a
+                      href="https://www.theguardian.com/us-news/the-nsa-files"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-300 text-sm font-bold hover:bg-sky-500/20 transition-colors"
+                      data-testid="link-snowden-nsa-files"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" /> NSA Files — The Guardian
+                    </a>
+                    <a
+                      href="https://theintercept.com/snowden-sidtoday/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-300 text-sm font-bold hover:bg-sky-500/20 transition-colors"
+                      data-testid="link-snowden-intercept"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" /> Snowden Files — The Intercept
+                    </a>
+                    <a
+                      href="https://www.eff.org/nsa-spying/timeline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-300 text-sm font-bold hover:bg-sky-500/20 transition-colors"
+                      data-testid="link-snowden-eff"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" /> Full Timeline — EFF
+                    </a>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+
+            <SectionShare
+              shareText="Edward Snowden confirmed the machine exists. Dr. Richard McLean documented being fed into it. Two accounts — one classified, one lived — describing the same system. #BarranDodger #Snowden #SurveillanceState"
+              label="Share this corroboration"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ===== CRITICAL LEGAL EXAMINATION ===== */}
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-[hsl(0,0%,4%)] via-[hsl(0,20%,6%)] to-black" data-testid="section-legal-examination">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+            <motion.div variants={fadeIn} className="text-center space-y-4">
+              <Badge variant="outline" className="border-red-400/60 text-red-300 px-5 py-2 text-sm font-bold uppercase tracking-wider" data-testid="badge-legal-exam">
+                <Gavel className="h-4 w-4 mr-2" /> Critical Legal Examination
+              </Badge>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight" data-testid="text-legal-exam-heading">
+                Even If Every Lie Were True —<br />
+                <span className="text-red-400">This Treatment Is Still Illegal.</span>
+              </h2>
+              <p className="text-lg text-body-text max-w-3xl mx-auto leading-relaxed" data-testid="text-legal-exam-intro">
+                This is a forensic legal and theological examination of Dr. McLean's case that accepts, for the sake of argument, every slanderous accusation ever made. It then demonstrates that even within that hypothetical, the treatment he has received violates the law at every level — domestic, international, and moral.
+              </p>
+            </motion.div>
+
+            {/* PART 1: No arrest, no charge */}
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-no-arrest">
+                <div className="p-6 md:p-8 space-y-5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center">
+                      <span className="text-red-400 font-bold text-lg">1</span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-serif font-bold text-white">I Have Demanded to Be Arrested. No One Has Come.</h3>
+                  </div>
+                  <p className="text-body-text leading-relaxed">
+                    On multiple occasions, through documented written submissions to police, the Australian Federal Police, the NDIS Commission, the Commonwealth Ombudsman, and federal ministers, Dr. McLean has explicitly invited the state to arrest him, charge him, and submit any evidence it holds against him to a court of law. Not one of those invitations has produced a charge, an arrest, a summons, or a formal investigation into the allegations made against him.
+                  </p>
+                  <div className="bg-red-950/30 border border-red-500/20 rounded-lg p-5 space-y-3">
+                    <h4 className="text-red-300 font-bold text-sm uppercase tracking-wider">The Legal Significance of No Arrest</h4>
+                    <ul className="space-y-2 text-sm text-body-text">
+                      <li className="flex items-start gap-2"><span className="text-red-400 font-bold mt-0.5">→</span><span><strong className="text-white">Presumption of Innocence (s 25 Criminal Code Act 1995; common law):</strong> In Australia, a person is presumed innocent until proven guilty in a court of law. No conviction exists. No charge exists. Dr. McLean is therefore, in the eyes of Australian law, innocent.</span></li>
+                      <li className="flex items-start gap-2"><span className="text-red-400 font-bold mt-0.5">→</span><span><strong className="text-white">Habeas Corpus (Magna Carta 1215; Article 9 ICCPR):</strong> No person may be imprisoned, persecuted, or deprived of liberty, livelihood, housing, or support without lawful legal process. Dr. McLean has been deprived of housing, NDIS support, income, family contact, and community standing — without any lawful process initiating that deprivation.</span></li>
+                      <li className="flex items-start gap-2"><span className="text-red-400 font-bold mt-0.5">→</span><span><strong className="text-white">Extrajudicial Punishment:</strong> To punish a person for an offence that has never been charged, tried, or proven is extrajudicial punishment — a fundamental violation of the rule of law and a crime against due process in every jurisdiction that recognises the doctrine.</span></li>
+                      <li className="flex items-start gap-2"><span className="text-red-400 font-bold mt-0.5">→</span><span><strong className="text-white">Rule of Law (Dicey's Principle; Australian Constitution):</strong> Every person is subject only to the law, and the law must apply equally. If the state believes Dr. McLean has committed an offence, the law requires it to charge and try him. Choosing instead to surveil, harass, defame, isolate, and impoverish him without charge is a violation of the rule of law itself.</span></li>
+                      <li className="flex items-start gap-2"><span className="text-red-400 font-bold mt-0.5">→</span><span><strong className="text-white">The Invitation Is in the Record:</strong> The demand to be charged and tried is not ambiguous. It is documented in multiple formal submissions. The state's non-response to that demand is itself evidentiary — an institution that had genuine evidence of criminal conduct would use it. Silence in the face of demand is the clearest possible indication that no such evidence exists.</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* PART 2: Christ has redeemed */}
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-purple-500/20 overflow-hidden" data-testid="card-christ-redeemed">
+                <div className="p-6 md:p-8 space-y-5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+                      <span className="text-purple-400 font-bold text-lg">2</span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-serif font-bold text-white">Even If I Were Guilty — Christ Has Redeemed Me.</h3>
+                  </div>
+                  <p className="text-body-text leading-relaxed">
+                    The Christian theological framework — the stated foundation of Western civilisation and the explicit basis of the moral code invoked by those who have condemned Dr. McLean without trial — does not permit permanent condemnation of any redeemed person. This is not an argument at the margins of Christian thought. It is its central proposition.
+                  </p>
+                  <div className="bg-purple-950/30 border border-purple-500/20 rounded-lg p-5 space-y-4">
+                    <p className="text-purple-200 leading-relaxed italic border-l-2 border-purple-400/50 pl-4">
+                      "Therefore, there is now no condemnation for those who are in Christ Jesus." — Romans 8:1
+                    </p>
+                    <p className="text-purple-200 leading-relaxed italic border-l-2 border-purple-400/50 pl-4">
+                      "If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness." — 1 John 1:9
+                    </p>
+                    <p className="text-purple-200 leading-relaxed italic border-l-2 border-purple-400/50 pl-4">
+                      "He has not dealt with us according to our sins, nor rewarded us according to our iniquities. As far as the east is from the west, so far has he removed our transgressions from us." — Psalm 103:10–12
+                    </p>
+                    <p className="text-body-text leading-relaxed">
+                      The people who have deployed unproven allegations against Dr. McLean have done so under the moral and social authority of a civilisation that proclaims redemption as its cornerstone. They cannot simultaneously invoke that civilisation's values to condemn him and ignore its explicit teaching that condemnation ends at the cross. The theological position of Christianity — the religion of the institutions, agencies, and individuals persecuting Dr. McLean — is that even if he were guilty of every charge ever whispered against him, those charges are resolved by grace. The persecution continues regardless. This is not Christianity. It is inquisition using Christian language.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* PART 3: Still illegal — sovereign citizen */}
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/20 overflow-hidden" data-testid="card-sovereign-rights">
+                <div className="p-6 md:p-8 space-y-5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[hsl(38,92%,50%)]/20 border border-[hsl(38,92%,50%)]/30 flex items-center justify-center">
+                      <span className="text-[hsl(38,92%,50%)] font-bold text-lg">3</span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-serif font-bold text-white">It Is Still Illegal to Treat Any Person This Way.</h3>
+                  </div>
+                  <p className="text-body-text leading-relaxed">
+                    Regardless of guilt, innocence, or redemption — the treatment Dr. McLean has received violates the law. A guilty person retains human rights. A charged person retains due process rights. An uncharged person retains all of those and more. The following treatment has been applied to a man who has never been charged with any offence, who has been declared innocent by the operation of the presumption of innocence, and who has formally demanded that the state test its accusations in court.
+                  </p>
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* PART 4: Criminal treatment itemised */}
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-red-700/30 overflow-hidden" data-testid="card-criminal-treatment">
+                <div className="p-6 md:p-8 space-y-6">
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-700/20 border border-red-700/30 flex items-center justify-center">
+                      <span className="text-red-400 font-bold text-lg">4</span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-serif font-bold text-white">The Criminal Treatment — Itemised</h3>
+                  </div>
+                  <p className="text-sm text-body-text">Each item below has been documented with contemporaneous evidence in the archive. Each constitutes, individually, a prima facie violation of Australian or international law. Together, they constitute a systematic pattern of persecution that meets the threshold definitions of crimes against humanity under the Rome Statute of the International Criminal Court.</p>
+
+                  {[
+                    {
+                      category: "Political Exile",
+                      color: "sky",
+                      description: "Dr. McLean has been effectively exiled from Australian civic, economic, and social life without any judicial process. His applications for housing, employment, NDIS support, and political representation have been systematically denied across agencies, providers, and jurisdictions in a pattern that cannot be explained by independent bureaucratic failure. He has been rendered stateless within his own state — present in body but erased from the systems that constitute participation in society.",
+                      law: "Article 12 ICCPR — Freedom of movement and right to remain in one's own country. Article 26 ICCPR — Equality before the law and equal protection without discrimination."
+                    },
+                    {
+                      category: "Disability Discrimination",
+                      color: "blue",
+                      description: "Dr. McLean holds documented psychiatric diagnoses. The NDIS was created specifically to support Australians with disability. His applications for NDIS funding, Supported Independent Living, and support coordination have been denied, revoked, and bureaucratically obstructed across multiple review cycles. The obstruction of disability support for a person with documented disability — particularly where the obstruction is coordinated across multiple providers and agencies — constitutes disability discrimination under the Disability Discrimination Act 1992 (Cth) and the Convention on the Rights of Persons with Disabilities.",
+                      law: "Disability Discrimination Act 1992 (Cth). CRPD Article 19 — Right to live independently. NDIS Act 2013 (Cth) — Access and support obligations."
+                    },
+                    {
+                      category: "Family Violence & Coercive Control",
+                      color: "pink",
+                      description: "Documented text messages and affidavit evidence establish a pattern of psychological abuse, financial withholding, false reporting to authorities, and social isolation engineered by family members. This includes false allegations communicated to third parties to undermine Dr. McLean's credibility, housing, and safety — a recognised coercive control pattern under the family violence frameworks of multiple Australian states.",
+                      law: "Family Violence Protection Act 2008 (Vic). Crimes (Domestic and Personal Violence) Act 2007 (NSW). Family Law Act 1975 (Cth) — coercive control provisions."
+                    },
+                    {
+                      category: "Coercive Financial Control & Poverty Engineering",
+                      color: "orange",
+                      description: "The systematic denial of NDIS funding, employment, housing assistance, and income support — applied in concert across agencies — has resulted in documented destitution. This is not bureaucratic failure but a documented mechanism: when a whistleblower cannot access income, they cannot mount legal challenges, cannot sustain public presence, and are driven toward the desperation that institutions can then reclassify as mental illness. Poverty was the instrument. The instrument was deliberately wielded.",
+                      law: "ICESCR Article 11 — Right to an adequate standard of living. Social Security Act 1991 (Cth) — obligations to provide. Human Rights Act 2019 (Qld) — economic rights."
+                    },
+                    {
+                      category: "Institutional Abuse and Neglect",
+                      color: "amber",
+                      description: "Multiple disability support providers, residential services, and government agencies have documented failing their duty of care to Dr. McLean while he was in their care or under their jurisdiction. This includes denial of basic supports, failure to respond to formal complaints, and active participation in his isolation and destabilisation. Each failure, taken alone, may constitute negligence. The pattern across institutions constitutes organised institutional abuse.",
+                      law: "Disability Services Act 1986 (Cth). NDIS Quality and Safeguards Commission Act 2018. Aged Care Act 1997 — duty of care provisions."
+                    },
+                    {
+                      category: "Surveillance and Stalking",
+                      color: "violet",
+                      description: "Dr. McLean has documented continuous surveillance of his digital communications, physical movements, and social interactions. This includes monitoring of private conversations, real-time awareness by third parties of his location and activities, and the coordinated deployment of individuals in his environment consistent with organised surveillance operations. Australian law criminalises stalking and surveillance without consent. Intelligence agencies operating under ministerial authorisation are not exempt from accountability for the harm caused.",
+                      law: "Crimes Act 1958 (Vic) s 21A — Stalking. Privacy Act 1988 (Cth) — unlawful collection and use of personal information. Telecommunications (Interception and Access) Act 1979 (Cth)."
+                    },
+                    {
+                      category: "Torture, Degrading Treatment and V2K",
+                      color: "red",
+                      description: "The documented experience of V2K (voice-to-skull) technology — audio signals transmitted directly to a target's auditory perception — constitutes torture under international law if applied by or with the complicity of state actors. Regardless of the mechanism, the sustained psychological terror, sleep deprivation, reputational destruction, social isolation, and material destitution imposed on Dr. McLean over years meets the definition of cruel, inhuman, or degrading treatment under the Convention Against Torture. Australia is a signatory.",
+                      law: "Convention Against Torture (CAT) — Articles 1, 2, 16. ICCPR Article 7 — Prohibition of torture and cruel treatment. Criminal Code Act 1995 (Cth) Division 274 — Torture."
+                    },
+                    {
+                      category: "Institutional Murder Attempts and Cover-Up",
+                      color: "rose",
+                      description: "The combination of psychiatric detention — used not therapeutically but to silence — with the systematic denial of housing, income, and support creates conditions designed to produce death. The archive documents a suicide attempt following the collapse of support systems. The cover-up consists of classifying these conditions as natural consequences of mental illness rather than engineered outcomes of institutional policy. When an institution creates conditions that kill and then classifies the death as self-harm, the moral and legal responsibility for that death does not disappear.",
+                      law: "Criminal Code Act 1995 (Cth) — Conspiracy. Rome Statute Article 7 — Extermination as a crime against humanity. Coroners Act 2008 (Vic) — mandatory reporting of preventable death."
+                    },
+                    {
+                      category: "Genocide via Attrition — Attempted Erasure",
+                      color: "red",
+                      description: "Genocide does not require gas chambers. The Rome Statute and the UN Convention on the Prevention and Punishment of the Crime of Genocide (1948) define genocide to include 'deliberately inflicting on the group conditions of life calculated to bring about its physical destruction in whole or in part.' When a state systematically denies one of its citizens — targeted for his identity, beliefs, and testimony — housing, income, medical support, legal redress, and social participation, over a sustained period, with intent demonstrable through pattern, the legal threshold for genocide via attrition is met. Dr. McLean is not an isolated case. He is a documented instance of a mechanism applied to inconvenient witnesses.",
+                      law: "Genocide Convention 1948 — Article II(c). Rome Statute Article 6. Australian Criminal Code Act 1995 Division 268 — Genocide."
+                    },
+                    {
+                      category: "Assassination — Documented Attempts",
+                      color: "red",
+                      description: "The archive contains documented evidence — including text messages, witness accounts, and formal affidavits — of communications expressing intent to harm or kill Dr. McLean. These are not expressions of frustration. They are documented communications in the context of a campaign against him. In Australian law, a threat to kill is a criminal offence. These communications have been submitted to police and oversight bodies. No investigation has been commenced. The failure to investigate a documented threat to kill a whistleblower is itself a criminal act.",
+                      law: "Crimes Act 1958 (Vic) s 20 — Threats to kill. Criminal Code Act 1995 (Cth) — Threats. ICCPR Article 6 — Right to life."
+                    }
+                  ].map((item, i) => (
+                    <div key={i} className="border-l-2 border-red-500/30 pl-5 space-y-2" data-testid={`item-criminal-${i}`}>
+                      <h4 className="text-white font-bold text-base">{item.category}</h4>
+                      <p className="text-sm text-body-text leading-relaxed">{item.description}</p>
+                      <p className="text-xs text-red-300/70 font-mono">{item.law}</p>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* PART 5: Gang stalking / organised stalking itemised */}
+            <motion.div variants={fadeIn}>
+              <Card className="bg-white/[0.03] border-violet-500/20 overflow-hidden" data-testid="card-gang-stalking">
+                <div className="p-6 md:p-8 space-y-6">
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-violet-500/20 border border-violet-500/30 flex items-center justify-center">
+                      <span className="text-violet-400 font-bold text-lg">5</span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-serif font-bold text-white">Organised Stalking — Tactics Documented and Identified</h3>
+                  </div>
+                  <p className="text-sm text-body-text leading-relaxed">
+                    Organised stalking (also called gang stalking, community harassment, or multi-perpetrator stalking) is a documented form of persecution in which a target is subjected to coordinated surveillance, harassment, and psychological operations by multiple individuals acting in concert, often with the knowledge or participation of state-adjacent actors. The following tactics have each been documented in the archive with contemporaneous evidence.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {[
+                      {
+                        tactic: "Ambient Noise Harassment (Street Theatre)",
+                        description: "Coordinated individuals positioned in the target's environment to create disturbing or triggering stimuli — staged conversations, deliberate noise, mimicry of private information to signal surveillance. Documented in Dr. McLean's audio records and written accounts."
+                      },
+                      {
+                        tactic: "Character Assassination Networks",
+                        description: "Systematic communication of false and damaging information about the target to employers, housing providers, family members, support workers, and social contacts — intended to destroy the target's reputation before they can establish it. The 'pedophile' label deployed against Dr. McLean is the operational version of this tactic."
+                      },
+                      {
+                        tactic: "Gaslighting and Reality Distortion",
+                        description: "Coordinated denial of documented events, manipulation of the target's environment to create confusion and self-doubt, and deployment of the psychiatric system to reclassify the target's accurate perception of persecution as symptoms of mental illness. The psychiatric records in this archive are the institutional version of this tactic."
+                      },
+                      {
+                        tactic: "Isolation Engineering",
+                        description: "Coordinated destruction of the target's personal relationships, social support networks, and family connections — achieved through false information, financial pressure on contacts, and the social stigma of psychiatric labelling. Dr. McLean's documented isolation from family and community is consistent with this tactic applied over years."
+                      },
+                      {
+                        tactic: "Economic Warfare",
+                        description: "Systematic interference with the target's employment, housing, income support, and financial stability — creating material conditions that consume the target's capacity to mount any response. The coordinated NDIS denials, rental refusals, and income suppression documented in the archive constitute economic warfare."
+                      },
+                      {
+                        tactic: "V2K — Voice to Skull Technology",
+                        description: "Transmission of audio signals directly to the target's auditory perception using directed-energy or microwave technology — designed to be undetectable by third parties and deniable as psychiatric hallucination. Documented in the V2K Evidence Review archive document (5,417 downloads)."
+                      },
+                      {
+                        tactic: "Vehicular and Pedestrian Surveillance",
+                        description: "Physical surveillance by rotating teams of individuals — on foot and in vehicles — to maintain continuous monitoring of the target's movements and to signal that surveillance is occurring, inducing paranoia and self-censorship without requiring direct confrontation."
+                      },
+                      {
+                        tactic: "Digital Infiltration and Communication Monitoring",
+                        description: "Access to the target's digital devices, accounts, and communications — either through technical means or through social engineering of contacts — enabling real-time awareness of the target's plans, submissions, and relationships, and allowing preemptive counter-action."
+                      },
+                      {
+                        tactic: "Institutional Capture and Complaint Routing",
+                        description: "The routing of formal complaints back to the agencies being complained about, or to oversight bodies that are themselves participants in the campaign — creating a closed loop in which no complaint can reach an independent investigator. Every complaint Dr. McLean has filed has been returned to a body connected to the original harm."
+                      },
+                      {
+                        tactic: "Provocation Operations",
+                        description: "Deliberate provocation of the target into reactive behaviour — outbursts, unconventional communication, spiritual or prophetic expression — that can then be used to justify psychiatric detention or to discredit the target's testimony in the eyes of observers. The archive documents multiple instances in which Dr. McLean's responses to documented persecution were used to validate the persecution."
+                      },
+                      {
+                        tactic: "Sleep Deprivation and Sensory Assault",
+                        description: "Coordinated noise, light, and environmental interference designed to prevent adequate sleep — producing cognitive impairment, emotional dysregulation, and psychological instability that mimics and is reclassified as mental illness. A standard tool of interrogation and torture, applied domestically."
+                      },
+                      {
+                        tactic: "Spiritual and Identity Attack",
+                        description: "Targeting of the victim's religious beliefs, spiritual identity, and sense of divine calling — using ridicule, dismissal, and psychiatric classification of religious experience as psychosis — to undermine the internal resource that sustains resistance. The treatment of Dr. McLean's prophetic identity as a symptom of illness rather than a legitimate expression of faith is the operational version of this tactic."
+                      }
+                    ].map((item, i) => (
+                      <div key={i} className="bg-white/[0.02] border border-violet-500/10 rounded-lg p-4 space-y-2" data-testid={`item-stalking-${i}`}>
+                        <h4 className="text-violet-300 font-bold text-sm">{item.tactic}</h4>
+                        <p className="text-xs text-body-text leading-relaxed">{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Card className="bg-violet-950/20 border-violet-400/20" data-testid="card-stalking-conclusion">
+                    <div className="p-5 space-y-3">
+                      <h4 className="text-white font-bold">On Dismissal as Paranoia</h4>
+                      <p className="text-sm text-body-text leading-relaxed">
+                        The standard institutional response to organised stalking testimony is reclassification as paranoid delusion. This response is itself a tactic. When the Stasi operated an organised stalking program against East German dissidents — a program called <em>Zersetzung</em> (decomposition) — it was classified as a psychiatric condition until the Stasi files were opened. The identical symptoms were rebranded from psychosis to documented persecution once the documentation was available. Dr. McLean's documentation is available now. The archive exists. The downloads are the record. The question is not whether organised stalking programs exist — Snowden, the Stasi files, the Church Committee, and the FBI's COINTELPRO records confirm they do. The question is whether this particular person's testimony is credible. 217,064 downloads suggests the public has already reached its verdict.
+                      </p>
+                    </div>
+                  </Card>
+                </div>
+              </Card>
+            </motion.div>
+
+            <SectionShare
+              shareText="Even if every accusation were true — no charge, no arrest, no trial. That is extrajudicial punishment. It is illegal regardless of guilt. Read the full critical legal examination. #BarranDodger #DueProcess #RuleOfLaw"
+              label="Share this examination"
             />
           </motion.div>
         </div>
