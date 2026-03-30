@@ -732,6 +732,137 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      {/* SIGNIFICANCE SECTION */}
+      <section className="py-20 md:py-28 px-4 bg-gradient-to-b from-black via-[hsl(222,55%,5%)] to-black border-y border-[hsl(38,92%,50%)]/25" data-testid="section-political-significance">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-16">
+
+            {/* Header */}
+            <motion.div variants={fadeIn} className="text-center space-y-5">
+              <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] px-5 py-2 text-sm font-bold uppercase tracking-widest" data-testid="badge-significance">
+                Statement of Historical Significance
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight" data-testid="text-significance-heading">
+                What 217,064 Downloads Mean<br className="hidden md:block" />
+                <span className="text-[hsl(38,92%,50%)]"> When No One Will Listen</span>
+              </h2>
+              <p className="text-white/60 text-lg max-w-2xl mx-auto font-light">
+                A man the state calls delusional. A testimony the institutions will not read. A truth the world is reading anyway.
+              </p>
+            </motion.div>
+
+            {/* The silence */}
+            <motion.div variants={fadeIn} className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 md:p-12 space-y-6" data-testid="block-silence">
+              <h3 className="text-xl md:text-2xl font-serif font-bold text-white">The Wall of Institutional Silence</h3>
+              <div className="space-y-4 text-white/80 text-base md:text-lg leading-relaxed font-light">
+                <p>
+                  Dr. Richard McLean — known publicly as Barran Dodger — has submitted testimony to the Australian Federal Court, the Office of the Australian Information Commissioner, the National Disability Insurance Agency, the UN Office of the High Commissioner for Human Rights, the Australian Human Rights Commission, multiple Members of Parliament, the Commonwealth Ombudsman, and dozens of named journalists, editors, and media organisations.
+                </p>
+                <p>
+                  Not one has substantively responded. Not one has assessed the evidence. Not one has acknowledged the 2,077+ documents, the named perpetrators, the specific dates, the psychiatric detention records, the correspondence trails, or the NDIS provider communications. Every referral has been returned, every complaint deflected, every submission closed without examination.
+                </p>
+                <p className="text-white/90 font-normal border-l-4 border-[hsl(38,92%,50%)]/60 pl-5 italic">
+                  This is not the silence of a claim that could not be substantiated. This is the silence of institutions that have read the name of the file, identified the author, and declined to open it.
+                </p>
+                <p>
+                  In that silence, 217,064 people made a different choice. They opened it.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Three column — exile, poverty, targeted */}
+            <motion.div variants={fadeIn} className="grid grid-cols-1 md:grid-cols-3 gap-6" data-testid="grid-circumstances">
+
+              <div className="bg-white/[0.03] border border-[hsl(38,92%,50%)]/20 rounded-2xl p-7 space-y-4" data-testid="block-exile">
+                <div className="text-[hsl(38,92%,50%)] text-3xl">⚖</div>
+                <h3 className="text-lg font-serif font-bold text-white">Political Exile & Asylum Claim</h3>
+                <p className="text-white/70 text-sm leading-relaxed font-light">
+                  Dr. McLean has formally claimed political asylum on the grounds that he faces systematic state persecution in Australia — including involuntary psychiatric detention used as a mechanism of political suppression, enforced homelessness, and coordinated sabotage of his legal, professional, and financial life.
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed font-light">
+                  His asylum claim has not been assessed. It has been met with the same institutional silence that greets every other submission. The claim stands on record. The claim has not been denied on its merits, because it has not been engaged on its merits.
+                </p>
+                <p className="text-white/50 text-xs italic">
+                  Asylum claims that are ignored are not dismissed. They remain open. They remain on the record. They become part of the evidence.
+                </p>
+              </div>
+
+              <div className="bg-white/[0.03] border border-red-900/30 rounded-2xl p-7 space-y-4" data-testid="block-poverty">
+                <div className="text-red-400 text-3xl">◈</div>
+                <h3 className="text-lg font-serif font-bold text-white">Written from Poverty</h3>
+                <p className="text-white/70 text-sm leading-relaxed font-light">
+                  The 2,077+ documents in this archive were composed, structured, submitted, and preserved by a man experiencing chronic homelessness and extreme poverty — conditions the evidence suggests were deliberately induced through systematic sabotage of employment, housing, and financial support.
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed font-light">
+                  He wrote from emergency accommodation, from his phone, from library computers, from conditions of psychological siege. No legal team. No research assistant. No institutional support. No income. The archive that now circulates globally was produced in conditions the institutions responsible for his welfare allowed to persist — and in some cases engineered.
+                </p>
+                <p className="text-white/50 text-xs italic">
+                  The poverty is not incidental to the testimony. It is evidence of it.
+                </p>
+              </div>
+
+              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-7 space-y-4" data-testid="block-targeted">
+                <div className="text-blue-400 text-3xl">◎</div>
+                <h3 className="text-lg font-serif font-bold text-white">A Documented Targeted Individual</h3>
+                <p className="text-white/70 text-sm leading-relaxed font-light">
+                  The pattern documented across Dr. McLean's archive — coordinated housing sabotage, professional blacklisting, psychiatric weaponisation, family estrangement engineering, financial strangulation, and the deployment of state-adjacent actors to monitor, harass, and destabilise — matches with precision the methodology described in the academic and intelligence literature on organised stalking programs.
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed font-light">
+                  Mark M. Rich, in <span className="italic">New World War: Revolutionary Methods for Political Control</span>, documents this methodology as a modern instrument of political suppression used against individuals identified as threats to institutional power. Dr. McLean named it. He documented it. He submitted it. He was disbelieved. The documents are now public. The pattern is visible to anyone who reads them.
+                </p>
+                <p className="text-white/50 text-xs italic">
+                  Disbelief without examination is not a rebuttal. It is a continuation of the pattern.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* The significance of the numbers */}
+            <motion.div variants={fadeIn} className="bg-gradient-to-br from-[hsl(38,92%,50%)]/8 via-white/[0.02] to-transparent border border-[hsl(38,92%,50%)]/20 rounded-2xl p-8 md:p-12 space-y-8" data-testid="block-download-significance">
+              <h3 className="text-xl md:text-2xl font-serif font-bold text-white">The Significance of the Numbers</h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-4 text-white/80 text-base leading-relaxed font-light">
+                  <p>
+                    <span className="text-[hsl(38,92%,50%)] font-bold text-lg">217,064 downloads</span> in 49 days is not a statistic. It is a verdict. It is what happens when institutions abdicate their responsibility to assess evidence — the evidence finds its own audience.
+                  </p>
+                  <p>
+                    The site reached 10,000 downloads in its first three days. It accelerated every week for seven consecutive weeks. The peak — over 9,600 downloads in a single day — occurred without media coverage, without social media amplification from verified accounts, without any institutional endorsement. It spread because people who read it found it credible, and shared it.
+                  </p>
+                  <p>
+                    630+ unique IP addresses engaged with the server. 71,400+ requests came from Australia — from inside the jurisdiction where the events occurred, where the institutions named in the documents operate, where the suppression was carried out.
+                  </p>
+                </div>
+                <div className="space-y-4 text-white/80 text-base leading-relaxed font-light">
+                  <p>
+                    The documents most downloaded were the densest — the 100,000-word essay, the forensic stalking documentation, the Crimes Against Humanity dossier, the PID Act legal analysis. These are not documents people skim. People are reading them in full and keeping copies.
+                  </p>
+                  <p>
+                    Each download is a person who made an active choice: to open a document produced by a man living in poverty, declared mentally ill by the state, stripped of every institutional recourse available to him, and who nonetheless documented everything with the precision of someone who knew history would eventually have to account for what was done.
+                  </p>
+                  <p className="text-white/90 font-normal border-l-4 border-[hsl(38,92%,50%)]/60 pl-5 italic">
+                    History is accounting for it now. 217,064 times and counting.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Closing declaration */}
+            <motion.div variants={fadeIn} className="text-center space-y-6 border-t border-white/10 pt-12" data-testid="block-closing-declaration">
+              <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
+                When every institution that should protect a person instead participates in their destruction — and when that person documents it with sufficient precision that the documentation itself survives suppression — that documentation becomes historical record.
+              </p>
+              <p className="text-white/90 text-xl md:text-2xl font-serif font-bold leading-relaxed max-w-3xl mx-auto">
+                Dr. Richard William McLean produced that record from a position of total institutional abandonment. It is now in the hands of the world. No authority can recall it.
+              </p>
+              <p className="text-white/50 text-sm uppercase tracking-widest">
+                The testimony stands. The silence stands. Both are now part of history.
+              </p>
+            </motion.div>
+
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black via-[hsl(0,70%,8%)] to-black border-y border-red-900/30" data-testid="section-slander-as-weapon">
         <div className="container mx-auto max-w-5xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
