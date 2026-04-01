@@ -53,6 +53,26 @@ app.use('/attached_assets', express.static(path.resolve(process.cwd(), 'attached
     }
   }
 }));
+
+// Serve all 82 PDFs and site assets from the deploy folder
+const deployDir = path.resolve(process.cwd(), 'github-pages-deploy');
+app.use('/documents', express.static(path.join(deployDir, 'documents'), {
+  setHeaders: (res) => {
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', 'inline');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+  }
+}));
+app.use('/assets', express.static(path.join(deployDir, 'assets'), {
+  setHeaders: (res) => {
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+  }
+}));
+app.use('/images', express.static(path.join(deployDir, 'images'), {
+  setHeaders: (res) => {
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+  }
+}));
 const httpServer = createServer(app);
 
 declare module "http" {
