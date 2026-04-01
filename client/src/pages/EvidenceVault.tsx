@@ -620,7 +620,7 @@ export default function EvidenceVault() {
             <SocialShare
               title="Evidence Vault — Immutable Public Archive"
               description="Access 2,077+ blockchain-verified documents exposing 35 years of Australian government corruption and whistleblower persecution."
-              url="https://www.barrandodger.com.au/evidence-vault"
+              url="https://www.barrandodger.com/evidence-vault"
             />
           </motion.section>
         </div>

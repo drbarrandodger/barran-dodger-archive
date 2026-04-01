@@ -11,7 +11,7 @@ interface SectionShareProps {
 
 export function SectionShare({
   shareText,
-  url = "https://www.barrandodger.com.au",
+  url = "https://www.barrandodger.com",
   label = "Share this section",
 }: SectionShareProps) {
   const { toast } = useToast();

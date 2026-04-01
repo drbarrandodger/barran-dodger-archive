@@ -84,7 +84,7 @@ export default function Store() {
     "@type": "Store",
     "name": "Barran Dodger Store",
     "description": "Digital products, eBooks, and merchandise from the Barran Dodger Legal & Ethical Trust Fund",
-    "url": "https://www.barrandodger.com.au/store",
+    "url": "https://www.barrandodger.com/store",
   };
 
   return (

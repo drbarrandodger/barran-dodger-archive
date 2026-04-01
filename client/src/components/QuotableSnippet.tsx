@@ -44,7 +44,7 @@ export function QuotableSnippet({ quote, source, date, documentUrl }: QuotableSn
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
   
-  const shareUrl = documentUrl || "https://www.barrandodger.com.au/evidence";
+  const shareUrl = documentUrl || "https://www.barrandodger.com/evidence";
   const shareText = `"${quote}" — ${source}`;
   
   const copyQuote = async () => {

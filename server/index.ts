@@ -32,7 +32,7 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-Sitemap: https://barran-dodger-legal-ethical-trust.replit.app/sitemap.xml
+Sitemap: https://www.barrandodger.com/sitemap.xml
 `);
 });
 

@@ -208,7 +208,7 @@ export default function AdministrativeAnnihilation() {
                 <SocialShare
                   title="The Architecture of Administrative Annihilation — Academic Paper"
                   description="25,000-word forensic analysis of 25+ Australian Government agencies' own records documenting systematic persecution over 35 years."
-                  url="https://www.barrandodger.com.au/administrative-annihilation"
+                  url="https://www.barrandodger.com/administrative-annihilation"
                 />
               </div>
               <a href="#ai-analysis" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mt-4" data-testid="link-scroll-to-analysis">
@@ -574,7 +574,7 @@ export default function AdministrativeAnnihilation() {
               headers={["Detail", "ASIC Record"]}
               rows={[
                 ["ABN", "78 833 496 164"],
-                ["Registered Name", "\"The Trustee for www.barrandodger.com.au\""],
+                ["Registered Name", "\"The Trustee for www.barrandodger.com\""],
                 ["Registration Date", "7 August 2022"],
                 ["Status", "Active (as of 2025)"],
                 ["Entity Type", "Fixed Unit Trust"],
@@ -635,7 +635,7 @@ export default function AdministrativeAnnihilation() {
           <SectionHeading number="5.5" title="Financial Impact" />
           <BulletList items={[
             "Brand dilution: $7.8 million (estimated commercial value of stolen professional identity)",
-            "Domain hijacking: $100,000+ annually (www.barrandodger.com.au)",
+            "Domain hijacking: $100,000+ annually (www.barrandodger.com)",
             "ATO consequences: Cancelled legitimate ABN; tax compliance disruption",
           ]} />
 
@@ -1213,7 +1213,7 @@ export default function AdministrativeAnnihilation() {
             <SocialShare
               title="The Architecture of Administrative Annihilation"
               description="25,000-word forensic analysis of 25+ Australian Government agencies' own records documenting systematic persecution."
-              url="https://www.barrandodger.com.au/administrative-annihilation"
+              url="https://www.barrandodger.com/administrative-annihilation"
             />
           </div>
 

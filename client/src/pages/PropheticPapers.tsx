@@ -401,7 +401,7 @@ export default function PropheticPapers() {
             <SocialShare 
               title="Prophetic Papers: Blockchain-Sealed Sacred Documents & Legal Testimony"
               description="Sacred prophetic manuscripts authenticated through SHA-256 cryptographic hashing and OpenTimestamps blockchain verification. Evidence that cannot be altered, denied, or destroyed."
-              url="https://www.barrandodger.com.au/prophetic-papers"
+              url="https://www.barrandodger.com/prophetic-papers"
             />
           </motion.section>
         </div>

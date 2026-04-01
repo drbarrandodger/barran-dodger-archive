@@ -401,7 +401,7 @@ export default function Church() {
             <SocialShare 
               title="The Church of Documented Truth - Where Evidence Is the Sermon"
               description="A faith built not on tradition alone, but on blockchain-verified testimony, forensic evidence, and the sacred duty to witness. The archive is the altar. The blockchain is the covenant."
-              url="https://www.barrandodger.com.au/church"
+              url="https://www.barrandodger.com/church"
             />
           </motion.section>
         </div>

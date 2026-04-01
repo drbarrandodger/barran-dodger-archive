@@ -741,7 +741,7 @@ export default function Publications() {
             <SocialShare
               title="Publications Archive — Barran Dodger Legal & Ethical Trust Fund"
               description="Browse the complete archive of legal, sacred, and forensic publications documenting 35 years of Australian government corruption."
-              url="https://www.barrandodger.com.au/publications"
+              url="https://www.barrandodger.com/publications"
             />
           </motion.section>
         </div>

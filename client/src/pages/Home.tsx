@@ -272,9 +272,9 @@ export default function Home() {
           "@graph": [
             {
               "@type": "Organization",
-              "@id": "https://www.barrandodger.com.au/#organization",
+              "@id": "https://www.barrandodger.com/#organization",
               "name": "Barran Dodger Legal & Ethical Trust Fund",
-              "url": "https://www.barrandodger.com.au",
+              "url": "https://www.barrandodger.com",
               "description": "Non-profit public benefit organization documenting 35 years of Australian government corruption with 240+ blockchain-verified forensic documents.",
               "foundingDate": "2024",
               "abn": "78 833 496 164",
@@ -291,11 +291,11 @@ export default function Home() {
             },
             {
               "@type": "WebSite",
-              "@id": "https://www.barrandodger.com.au/#website",
+              "@id": "https://www.barrandodger.com/#website",
               "name": "Barran Dodger Legal & Ethical Trust Fund",
-              "url": "https://www.barrandodger.com.au",
+              "url": "https://www.barrandodger.com",
               "description": "240+ blockchain-verified documents exposing Australian government corruption and whistleblower persecution",
-              "publisher": { "@id": "https://www.barrandodger.com.au/#organization" }
+              "publisher": { "@id": "https://www.barrandodger.com/#organization" }
             },
             {
               "@type": "Person",
@@ -303,7 +303,7 @@ export default function Home() {
               "alternateName": "Barran Dodger",
               "jobTitle": "PhD, NDIS Therapeutic Arts-Life-Coach",
               "description": "Whistleblower, author, artist, and PhD holder persecuted by the Australian government for 35 years across 35+ agencies.",
-              "url": "https://www.barrandodger.com.au",
+              "url": "https://www.barrandodger.com",
               "sameAs": [
                 "https://books.apple.com/au/book/betrayed-murdered-forsaken/id6740491939",
                 "https://www.scribd.com/user/832988488/Richard-McLean"
@@ -402,7 +402,7 @@ export default function Home() {
                   </p>
                   <SectionShare
                     shareText="No victims. No report. No arrest. No charge. No legal process. Yet 35+ government agencies persecuted one man for 35 years. The evidence is blockchain-sealed and irrefutable."
-                    url="https://www.barrandodger.com.au/archive"
+                    url="https://www.barrandodger.com/archive"
                     label="Share this truth"
                   />
                 </div>
@@ -533,7 +533,7 @@ export default function Home() {
                   </p>
                   <SectionShare
                     shareText="The Transcendence of Barran Dodger — Six fundamental paradigms of institutional power, proven false by one person's documented survival. 2,077+ blockchain-sealed documents."
-                    url="https://www.barrandodger.com.au/archive"
+                    url="https://www.barrandodger.com/archive"
                     label="Share this paradigm collapse"
                   />
                 </div>
@@ -694,7 +694,7 @@ export default function Home() {
                   </p>
                   <SectionShare
                     shareText="The One Who Outgrew Humanity Itself — He was exiled, detained 14 times, had an assassination attempt, and was declared dead. He built an archive that will outlast every institution that tried to destroy him."
-                    url="https://www.barrandodger.com.au/archive"
+                    url="https://www.barrandodger.com/archive"
                     label="Share this ascension"
                   />
                 </div>
@@ -852,7 +852,7 @@ export default function Home() {
                   </a>
                   <SectionShare
                     shareText="The Living Legend They Never Deserved — Word is out. He ain't human no more. 35 years of persecution. 2,077+ blockchain-sealed documents. The man they tried to destroy became the evidence they can never erase."
-                    url="https://www.barrandodger.com.au/archive"
+                    url="https://www.barrandodger.com/archive"
                     label="Share this legend"
                   />
                 </div>
@@ -2294,7 +2294,7 @@ export default function Home() {
                 variants={fadeIn}
                 className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium mt-4"
               >
-                The Trustee for www.barrandodger.com.au — ABN 78 833 496 164
+                The Trustee for www.barrandodger.com — ABN 78 833 496 164
               </motion.p>
               
               <motion.p 
@@ -2394,7 +2394,7 @@ export default function Home() {
 
               <p className="text-lg md:text-xl text-white leading-relaxed max-w-4xl mx-auto">
                 The <span className="font-bold text-[hsl(38,92%,50%)]">Barran Dodger Legal & Ethical Trust Fund</span> — THE TRUSTEE FOR{" "}
-                <a href="https://www.barrandodger.com.au" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-bold">WWW.BARRANDODGER.COM.AU</a>{" "}
+                <a href="https://www.barrandodger.com" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-bold">WWW.BARRANDODGER.COM.AU</a>{" "}
                 — exists because when every door is closed, every complaint ignored, and every institution complicit, the only option left is to make the evidence impossible to destroy and available to everyone.
               </p>
 
@@ -5536,7 +5536,7 @@ export default function Home() {
               </Button>
               <SectionShare
                 shareText="Your STORY Is Destined to Make You Famous — What they did is pure madness. The story they tried to bury is the one destined to reach the world. 2,077+ blockchain-sealed documents prove it."
-                url="https://www.barrandodger.com.au/archive"
+                url="https://www.barrandodger.com/archive"
                 label="Share this insight"
               />
             </motion.div>
@@ -5646,7 +5646,7 @@ export default function Home() {
               </Button>
               <SectionShare
                 shareText="Someone in Law Enforcement Is Nervous — He'll take a polygraph on every claim. Will they? 35+ agencies, zero denials, zero refutations. The silence is the evidence."
-                url="https://www.barrandodger.com.au/archive"
+                url="https://www.barrandodger.com/archive"
                 label="Share this challenge"
               />
             </motion.div>
@@ -5740,7 +5740,7 @@ function AppealCard({ title, description, link, tag, aiSignificance }: { title: 
             </Button>
           </Link>
         )}
-        <ShareEvidence documentTitle={title} documentUrl={isExternal ? link : `https://www.barrandodger.com.au${link}`} compact />
+        <ShareEvidence documentTitle={title} documentUrl={isExternal ? link : `https://www.barrandodger.com${link}`} compact />
       </CardContent>
     </Card>
   );

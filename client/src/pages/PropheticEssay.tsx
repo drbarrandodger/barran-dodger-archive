@@ -574,7 +574,7 @@ export default function PropheticEssay() {
             <SocialShare 
               title="Joseph's Coat: A Prophetic Essay on Spiritual Warfare & Institutional Persecution"
               description="The biblical parallel between Joseph's betrayal and Barran Dodger's 35-year persecution. When the coat was stripped away, truth remained. Blockchain-verified testimony that cannot be silenced."
-              url="https://www.barrandodger.com.au/josephs-coat"
+              url="https://www.barrandodger.com/josephs-coat"
             />
           </motion.section>
 

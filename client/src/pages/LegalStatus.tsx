@@ -371,7 +371,7 @@ export default function LegalStatus() {
               <SocialShare 
                 title="Active Legal Proceedings: ICC, UNHCR & Federal Court Submissions"
                 description="Track the status of legal submissions to the International Criminal Court, UN Human Rights Council, and Australian Federal Court. Every submission is blockchain-verified and publicly documented."
-                url="https://www.barrandodger.com.au/legal-status"
+                url="https://www.barrandodger.com/legal-status"
               />
             </motion.section>
           </motion.div>

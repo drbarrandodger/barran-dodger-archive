@@ -551,7 +551,7 @@ export default function Donate() {
             <SocialShare
               title="Support the Barran Dodger Legal & Ethical Trust Fund — 35 Years of Persecution Exposed"
               description="Help fund the fight for truth. 2,000+ blockchain-verified documents expose 35 years of systematic government persecution. Every dollar preserves evidence that cannot be erased."
-              url="https://www.barrandodger.com.au/donate"
+              url="https://www.barrandodger.com/donate"
             />
           </motion.section>
 

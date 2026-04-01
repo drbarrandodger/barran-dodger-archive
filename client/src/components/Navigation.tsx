@@ -91,7 +91,7 @@ export function Navigation() {
               Barran Dodger Legal & Ethical Trust Fund
             </span>
             <span className="hidden md:block text-[10px] uppercase tracking-widest text-muted-foreground font-medium mt-1">
-              The Trustee for www.barrandodger.com.au — ABN 78 833 496 164
+              The Trustee for www.barrandodger.com — ABN 78 833 496 164
             </span>
           </div>
         </Link>

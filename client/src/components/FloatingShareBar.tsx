@@ -3,7 +3,7 @@ import { Share2, Link2, Check, X } from "lucide-react";
 import { SiX, SiFacebook, SiLinkedin, SiReddit, SiWhatsapp, SiTelegram } from "react-icons/si";
 import { useToast } from "@/hooks/use-toast";
 
-const url = "https://www.barrandodger.com.au";
+const url = "https://www.barrandodger.com";
 const encodedUrl = encodeURIComponent(url);
 
 export type ShareContext =

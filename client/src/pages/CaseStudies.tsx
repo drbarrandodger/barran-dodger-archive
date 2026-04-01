@@ -163,7 +163,7 @@ const paradoxParts = [
     keyQuote: "Anyone \u2014 any journalist, any court, any UN investigator \u2014 can type ABN 78 833 496 164 into the Australian Business Register and verify the fraud in 30 seconds.",
     facts: [
       "350+ fraudulent business registrations created using Dr. McLean's identity between 2020-2024",
-      "ABN 78 833 496 164 registered as \"The Trustee for www.barrandodger.com.au\" on 7 August 2022 — remains active",
+      "ABN 78 833 496 164 registered as \"The Trustee for www.barrandodger.com\" on 7 August 2022 — remains active",
       "Stolen elements include: legal names, creative identities, domain names, professional credentials, awards",
       "ATO cancelled victim's legitimate ABN while fraudulent registrations remain active",
       "10+ oversight bodies refused to investigate publicly verifiable fraud"
@@ -338,16 +338,16 @@ export default function CaseStudies() {
             "@type": "Person",
             "name": "Dr. Richard William McLean",
             "alternateName": "Barran Dodger",
-            "url": "https://www.barrandodger.com.au"
+            "url": "https://www.barrandodger.com"
           },
           "publisher": {
             "@type": "Organization",
             "name": "Barran Dodger Legal & Ethical Trust Fund",
-            "url": "https://www.barrandodger.com.au"
+            "url": "https://www.barrandodger.com"
           },
           "datePublished": "2026-02-01",
-          "url": "https://www.barrandodger.com.au/case-studies",
-          "mainEntityOfPage": "https://www.barrandodger.com.au/case-studies",
+          "url": "https://www.barrandodger.com/case-studies",
+          "mainEntityOfPage": "https://www.barrandodger.com/case-studies",
           "articleSection": "Legal-Academic Analysis",
           "keywords": ["government persecution", "whistleblower vindication", "paradox of persecution", "Australian bureaucracy corruption", "systematic targeting evidence"]
         }}
@@ -1148,7 +1148,7 @@ export default function CaseStudies() {
             <SocialShare 
               title="The Paradox of Persecution — Barran Dodger Evidence Archive"
               description="How the Australian Government's own records simultaneously prove systematic targeting and guarantee legal vindication. 2,077 primary-source documents spanning 35 years."
-              url="https://www.barrandodger.com.au/case-studies"
+              url="https://www.barrandodger.com/case-studies"
             />
           </motion.section>
         </div>

@@ -13,7 +13,7 @@ import {
   SiX, SiFacebook, SiWhatsapp, SiTelegram, SiReddit, SiLinkedin
 } from "react-icons/si";
 
-const SITE_URL = "https://www.barrandodger.com.au";
+const SITE_URL = "https://www.barrandodger.com";
 
 function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) {
   const [copied, setCopied] = useState(false);
@@ -167,7 +167,7 @@ const EMBED_CODE = `<iframe
   loading="lazy"
 ></iframe>
 <p style="font-size:12px;margin-top:4px;">
-  Source: <a href="${SITE_URL}" target="_blank">barrandodger.com.au</a> — 2,077 blockchain-verified documents
+  Source: <a href="${SITE_URL}" target="_blank">barrandodger.com</a> — 2,077 blockchain-verified documents
 </p>`;
 
 export default function SpreadTheTruth() {

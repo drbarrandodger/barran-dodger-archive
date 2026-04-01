@@ -552,7 +552,7 @@ export default function Blockchain() {
             <SocialShare 
               title="Blockchain-Verified Evidence: 2,077+ Documents Cryptographically Sealed"
               description="Every document in the Barran Dodger archive is SHA-256 hashed and OpenTimestamps verified. This evidence cannot be altered, deleted, or denied. Verify it yourself."
-              url="https://www.barrandodger.com.au/blockchain"
+              url="https://www.barrandodger.com/blockchain"
             />
           </motion.section>
         </div>

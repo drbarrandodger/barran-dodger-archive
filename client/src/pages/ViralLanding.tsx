@@ -518,7 +518,7 @@ const stagger = {
 export default function ViralLanding() {
   const { t } = useTranslation();
   const shareText = "The documents Australia doesn't want you to see. 240+ blockchain-verified files expose 35 years of government persecution. Read them before they disappear. @bazdod";
-  const shareUrl = "https://www.barrandodger.com.au";
+  const shareUrl = "https://www.barrandodger.com";
 
   return (
     <div className="min-h-screen bg-black flex flex-col">
@@ -533,7 +533,7 @@ export default function ViralLanding() {
           "@type": "CollectionPage",
           "name": "The Documents Australia Doesn't Want You to See",
           "description": "Top 10 most critical blockchain-verified documents exposing Australian government corruption",
-          "url": "https://www.barrandodger.com.au/",
+          "url": "https://www.barrandodger.com/",
           "publisher": {
             "@type": "Organization",
             "name": "Barran Dodger Legal & Ethical Trust Fund",
@@ -2116,7 +2116,7 @@ export default function ViralLanding() {
                 The Barran Dodger Legal & Ethical Trust Fund
               </h2>
               <p className="text-[hsl(38,92%,50%)] font-mono text-sm" data-testid="text-trust-abn">
-                ABN: 78 833 496 164 — The Trustee for www.barrandodger.com.au
+                ABN: 78 833 496 164 — The Trustee for www.barrandodger.com
               </p>
             </motion.div>
 

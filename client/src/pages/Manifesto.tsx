@@ -432,7 +432,7 @@ export default function Manifesto() {
             <Card className="border-2 border-primary/20 shadow-xl mb-8">
               <CardHeader className="bg-primary text-primary-foreground text-center pb-6">
                 <CardTitle className="text-2xl font-serif">Barran Dodger Legal & Ethical Trust Fund</CardTitle>
-                <CardDescription className="text-primary-foreground/80">ABN 78 833 496 164 | The Trustee for www.barrandodger.com.au</CardDescription>
+                <CardDescription className="text-primary-foreground/80">ABN 78 833 496 164 | The Trustee for www.barrandodger.com</CardDescription>
               </CardHeader>
               <CardContent className="p-8 space-y-6">
                 <div className="space-y-4">
@@ -1008,7 +1008,7 @@ export default function Manifesto() {
             <SocialShare 
               title="The Manifesto of Barran Dodger - Truth, Justice & Redemption"
               description="240+ blockchain-verified documents exposing institutional persecution. Join the movement for accountability and justice."
-              url="https://www.barrandodger.com.au/manifesto"
+              url="https://www.barrandodger.com/manifesto"
             />
           </motion.section>
         </div>

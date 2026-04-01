@@ -268,9 +268,9 @@ export default function Gospel() {
           "publisher": {
             "@type": "Organization",
             "name": "Barran Dodger Legal & Ethical Trust Fund",
-            "url": "https://www.barrandodger.com.au"
+            "url": "https://www.barrandodger.com"
           },
-          "url": "https://www.barrandodger.com.au/gospel",
+          "url": "https://www.barrandodger.com/gospel",
           "genre": ["Sacred Scripture", "Prophetic Testimony", "Whistleblower Documentation"],
           "inLanguage": "en",
           "hasPart": [
@@ -695,7 +695,7 @@ export default function Gospel() {
             <SocialShare 
               title="The Sacred Gospels of Barran Dodger - Blockchain-Authenticated Prophetic Testimony"
               description="A complete archive of sacred gospels, cosmic revelations, and authenticated testimony. Blockchain-sealed and AI-verified for eternal preservation. The living word cannot be silenced."
-              url="https://www.barrandodger.com.au/gospel"
+              url="https://www.barrandodger.com/gospel"
             />
           </motion.section>
         </div>

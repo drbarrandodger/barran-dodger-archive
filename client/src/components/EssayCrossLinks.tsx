@@ -122,7 +122,7 @@ export function EssayCrossLinks({ excludeId }: { excludeId?: string }) {
                       </div>
                       <div className="flex items-center gap-1" onClick={(e) => e.preventDefault()}>
                         <a
-                          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(essay.title + " — " + essay.aiAnalysis.substring(0, 120) + "...")}&url=${encodeURIComponent("https://www.barrandodger.com.au/archive")}&via=bazdod`}
+                          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(essay.title + " — " + essay.aiAnalysis.substring(0, 120) + "...")}&url=${encodeURIComponent("https://www.barrandodger.com/archive")}&via=bazdod`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center justify-center h-6 w-6 rounded bg-white/[0.06] border border-white/10 text-white/40 hover:text-white/80 transition-colors"
@@ -132,7 +132,7 @@ export function EssayCrossLinks({ excludeId }: { excludeId?: string }) {
                           <SiX className="h-2.5 w-2.5" />
                         </a>
                         <a
-                          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.barrandodger.com.au/archive")}&quote=${encodeURIComponent(essay.title)}`}
+                          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.barrandodger.com/archive")}&quote=${encodeURIComponent(essay.title)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center justify-center h-6 w-6 rounded bg-white/[0.06] border border-white/10 text-white/40 hover:text-white/80 transition-colors"
@@ -142,7 +142,7 @@ export function EssayCrossLinks({ excludeId }: { excludeId?: string }) {
                           <SiFacebook className="h-2.5 w-2.5" />
                         </a>
                         <a
-                          href={`https://wa.me/?text=${encodeURIComponent(essay.title + " — The evidence Australia doesn't want you to see. https://www.barrandodger.com.au/archive")}`}
+                          href={`https://wa.me/?text=${encodeURIComponent(essay.title + " — The evidence Australia doesn't want you to see. https://www.barrandodger.com/archive")}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center justify-center h-6 w-6 rounded bg-white/[0.06] border border-white/10 text-white/40 hover:text-white/80 transition-colors"

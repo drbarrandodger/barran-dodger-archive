@@ -121,7 +121,7 @@ export default function LegalResearch() {
             <SocialShare 
               title="Australian Legal Research Tools - Public Access to Case Law & Legislation"
               description="Search AustLII, Federal Court judgments, and UN human rights treaties. Empowering citizens with direct access to the legal databases that hold institutions accountable."
-              url="https://www.barrandodger.com.au/legal-research"
+              url="https://www.barrandodger.com/legal-research"
             />
           </motion.section>
         </div>

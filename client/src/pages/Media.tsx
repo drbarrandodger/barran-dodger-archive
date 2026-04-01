@@ -68,8 +68,8 @@ export default function Media() {
             "description": "Comprehensive media pack documenting 35-year persecution, $32.9M damages, Rome Statute violations.",
             "datePublished": "2025-09-20",
             "author": { "@type": "Person", "name": "Dr. Richard William McLean", "alternateName": "Barran Dodger" },
-            "publisher": { "@type": "Organization", "name": "Barran Dodger Legal & Ethical Trust Fund", "url": "https://www.barrandodger.com.au" },
-            "mainEntityOfPage": "https://www.barrandodger.com.au/media"
+            "publisher": { "@type": "Organization", "name": "Barran Dodger Legal & Ethical Trust Fund", "url": "https://www.barrandodger.com" },
+            "mainEntityOfPage": "https://www.barrandodger.com/media"
           },
           {
             "@context": "https://schema.org",
@@ -78,8 +78,8 @@ export default function Media() {
             "description": "Global distribution of Scrolls XV-XIX to government agencies, UN bodies, and international media.",
             "datePublished": "2025-11-13",
             "author": { "@type": "Person", "name": "Dr. Richard William McLean", "alternateName": "Barran Dodger" },
-            "publisher": { "@type": "Organization", "name": "Barran Dodger Legal & Ethical Trust Fund", "url": "https://www.barrandodger.com.au" },
-            "mainEntityOfPage": "https://www.barrandodger.com.au/media"
+            "publisher": { "@type": "Organization", "name": "Barran Dodger Legal & Ethical Trust Fund", "url": "https://www.barrandodger.com" },
+            "mainEntityOfPage": "https://www.barrandodger.com/media"
           },
           {
             "@context": "https://schema.org",
@@ -88,8 +88,8 @@ export default function Media() {
             "description": "Documentation of coercive entrapment via welfare conditioning by Sukhi Tear.",
             "datePublished": "2025-11-14",
             "author": { "@type": "Person", "name": "Dr. Richard William McLean", "alternateName": "Barran Dodger" },
-            "publisher": { "@type": "Organization", "name": "Barran Dodger Legal & Ethical Trust Fund", "url": "https://www.barrandodger.com.au" },
-            "mainEntityOfPage": "https://www.barrandodger.com.au/media"
+            "publisher": { "@type": "Organization", "name": "Barran Dodger Legal & Ethical Trust Fund", "url": "https://www.barrandodger.com" },
+            "mainEntityOfPage": "https://www.barrandodger.com/media"
           }
         ]}
       />
@@ -158,7 +158,7 @@ export default function Media() {
                     </p>
                     <div className="flex gap-3">
                       <a 
-                        href="https://twitter.com/intent/tweet?text=The%20most%20comprehensively%20documented%20persecution%20case%20in%20Australian%20history%20-%2035%20years%2C%202000%2B%20documents%2C%20blockchain%20verified.&url=https://www.barrandodger.com.au"
+                        href="https://twitter.com/intent/tweet?text=The%20most%20comprehensively%20documented%20persecution%20case%20in%20Australian%20history%20-%2035%20years%2C%202000%2B%20documents%2C%20blockchain%20verified.&url=https://www.barrandodger.com"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -254,7 +254,7 @@ export default function Media() {
             <SocialShare 
               title="Media Resources: Press Releases & Journalist Contact for Whistleblower Case"
               description="The most comprehensively documented persecution case in Australian history. Press releases, media contacts, and 2,000+ blockchain-verified documents available for journalists and researchers."
-              url="https://www.barrandodger.com.au/media"
+              url="https://www.barrandodger.com/media"
             />
           </motion.section>
         </div>

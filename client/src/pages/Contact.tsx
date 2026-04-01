@@ -184,7 +184,7 @@ export default function Contact() {
             <SocialShare 
               title="Contact the Barran Dodger Legal & Ethical Trust Fund"
               description="Reach out for whistleblower support, legal inquiries, media requests, or to contribute to the fight for truth and accountability. Secure communications via ProtonMail."
-              url="https://www.barrandodger.com.au/contact"
+              url="https://www.barrandodger.com/contact"
             />
           </motion.section>
         </div>

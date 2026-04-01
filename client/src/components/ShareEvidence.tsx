@@ -17,7 +17,7 @@ export function ShareEvidence({
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
 
-  const siteBase = "https://www.barrandodger.com.au";
+  const siteBase = "https://www.barrandodger.com";
   const fullUrl = documentUrl
     ? documentUrl.startsWith("http")
       ? documentUrl
