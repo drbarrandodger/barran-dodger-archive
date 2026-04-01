@@ -594,6 +594,11 @@ export default function ViralLanding() {
                 <FileText className="mr-2 h-5 w-5" /> Full Archive (240+)
               </Button>
             </Link>
+            <Link href="/spread-the-truth">
+              <Button variant="outline" size="lg" className="border-amber-400 text-amber-400 hover:bg-amber-400/10 font-bold animate-pulse" data-testid="button-spread-the-truth-hero">
+                <Share2 className="mr-2 h-5 w-5" /> Make It Viral
+              </Button>
+            </Link>
           </motion.div>
 
           <motion.div

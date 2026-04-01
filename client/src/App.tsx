@@ -36,6 +36,7 @@ import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
 import RetrospectiveStatement from "@/pages/RetrospectiveStatement";
 import VisitorStats from "@/pages/VisitorStats";
+import SpreadTheTruth from "@/pages/SpreadTheTruth";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -104,6 +105,7 @@ function Router() {
         <Route path="/administrative-annihilation" component={AdministrativeAnnihilation} />
         <Route path="/retrospective-statement" component={RetrospectiveStatement} />
         <Route path="/visitors" component={VisitorStats} />
+        <Route path="/spread-the-truth" component={SpreadTheTruth} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />
