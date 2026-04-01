@@ -3664,9 +3664,12 @@ export default function Evidence() {
                             View <ExternalLink className="h-4 w-4" />
                           </a>
                         </Button>
-                        <Button variant="ghost" size="icon" asChild>
+                      </div>
+                      <div className="mt-2">
+                        <Button variant="default" className="w-full gap-2 bg-amber-600 hover:bg-amber-700 text-white" asChild data-testid={`button-download-doc-${index}`}>
                           <a href={docUrl(doc.url)} download onClick={() => trackDownload(doc.url)}>
                             <Download className="h-4 w-4" />
+                            Download PDF
                             <DownloadBadge url={doc.url} />
                           </a>
                         </Button>
