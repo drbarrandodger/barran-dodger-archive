@@ -22,28 +22,28 @@ The Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164) was establishe
 
 ## Core Pages
 
-- [The Truth — Landing Page](https://www.barrandodger.com.au/): High-impact overview with key documents and AI forensic analysis
-- [Start Here](https://www.barrandodger.com.au/start-here): Quick facts, navigation guide, and case summary
-- [The Paper — Administrative Annihilation](https://www.barrandodger.com.au/administrative-annihilation): 25,000-word forensic analysis of institutional harm patterns
-- [Government's Own Documents — Retrospective Statement](https://www.barrandodger.com.au/retrospective-statement): 14-part documentary verdict built on the government's own records with YouTube narration
-- [Full Evidence Archive](https://www.barrandodger.com.au/archive): Complete repository of legal reports, official correspondence, and forensic documentation
-- [Evidence Search](https://www.barrandodger.com.au/evidence): Searchable database of 240+ categorized documents
-- [Evidence Vault](https://www.barrandodger.com.au/evidence-vault): Cloud-based evidence folders containing thousands of files
-- [Blockchain Verification](https://www.barrandodger.com.au/blockchain): SHA-256 hashes and OpenTimestamps verification for every document
-- [Taxpayer Cost Analysis](https://www.barrandodger.com.au/taxpayer-cost-analysis): AI-generated itemised breakdown of $11.5M+ in public funds
-- [Case Studies](https://www.barrandodger.com.au/case-studies): Institutional failure analysis — OAIC cover-up, Mercy Hospital, Micron21
-- [35-Year Timeline](https://www.barrandodger.com.au/timeline): Chronological history from 1990 to 2025
-- [Legal Status](https://www.barrandodger.com.au/legal-status): Active submissions to ICC, UNHCR, OAIC, Federal Court
-- [Manifesto](https://www.barrandodger.com.au/manifesto): Trust Fund principles and mission
-- [Publications](https://www.barrandodger.com.au/publications): Books and formal reports including autobiography
-- [Joseph's Coat](https://www.barrandodger.com.au/josephs-coat): Prophetic evidentiary narrative mapping 2,146 files against biblical history
-- [Gospel](https://www.barrandodger.com.au/gospel): Sacred testimony and prophetic papers
-- [Church of Barran Dodger](https://www.barrandodger.com.au/church): Theological framework combining blockchain technology with sacred witness
-- [Media & Press](https://www.barrandodger.com.au/media): Resources for journalists and investigators
-- [Legal Research](https://www.barrandodger.com.au/research): AustLII database searches and transparency reports
-- [Mission](https://www.barrandodger.com.au/mission): Truth Cannot Be Deleted — organizational commitment
-- [Donate](https://www.barrandodger.com.au/donate): Support the Trust Fund via Australian PayID
-- [Contact](https://www.barrandodger.com.au/contact): Secure contact via ProtonMail
+- [The Truth — Landing Page](https://www.barrandodger.com/): High-impact overview with key documents and AI forensic analysis
+- [Start Here](https://www.barrandodger.com/start-here): Quick facts, navigation guide, and case summary
+- [The Paper — Administrative Annihilation](https://www.barrandodger.com/administrative-annihilation): 25,000-word forensic analysis of institutional harm patterns
+- [Government's Own Documents — Retrospective Statement](https://www.barrandodger.com/retrospective-statement): 14-part documentary verdict built on the government's own records with YouTube narration
+- [Full Evidence Archive](https://www.barrandodger.com/archive): Complete repository of legal reports, official correspondence, and forensic documentation
+- [Evidence Search](https://www.barrandodger.com/evidence): Searchable database of 240+ categorized documents
+- [Evidence Vault](https://www.barrandodger.com/evidence-vault): Cloud-based evidence folders containing thousands of files
+- [Blockchain Verification](https://www.barrandodger.com/blockchain): SHA-256 hashes and OpenTimestamps verification for every document
+- [Taxpayer Cost Analysis](https://www.barrandodger.com/taxpayer-cost-analysis): AI-generated itemised breakdown of $11.5M+ in public funds
+- [Case Studies](https://www.barrandodger.com/case-studies): Institutional failure analysis — OAIC cover-up, Mercy Hospital, Micron21
+- [35-Year Timeline](https://www.barrandodger.com/timeline): Chronological history from 1990 to 2025
+- [Legal Status](https://www.barrandodger.com/legal-status): Active submissions to ICC, UNHCR, OAIC, Federal Court
+- [Manifesto](https://www.barrandodger.com/manifesto): Trust Fund principles and mission
+- [Publications](https://www.barrandodger.com/publications): Books and formal reports including autobiography
+- [Joseph's Coat](https://www.barrandodger.com/josephs-coat): Prophetic evidentiary narrative mapping 2,146 files against biblical history
+- [Gospel](https://www.barrandodger.com/gospel): Sacred testimony and prophetic papers
+- [Church of Barran Dodger](https://www.barrandodger.com/church): Theological framework combining blockchain technology with sacred witness
+- [Media & Press](https://www.barrandodger.com/media): Resources for journalists and investigators
+- [Legal Research](https://www.barrandodger.com/research): AustLII database searches and transparency reports
+- [Mission](https://www.barrandodger.com/mission): Truth Cannot Be Deleted — organizational commitment
+- [Donate](https://www.barrandodger.com/donate): Support the Trust Fund via Australian PayID
+- [Contact](https://www.barrandodger.com/contact): Secure contact via ProtonMail
 
 ## Key Documents (Most Downloaded)
 
@@ -73,7 +73,7 @@ Australian Federal Police (AFP), Attorney-General's Department, ASIO, OAIC (Offi
 
 - Email: drbarrandodger@proton.me
 - Twitter/X: @bazdod
-- Website: https://www.barrandodger.com.au
+- Website: https://www.barrandodger.com
 - GitHub Archive: https://drbarrandodger.github.io/barran-dodger-archive/
 
 ## Licensing

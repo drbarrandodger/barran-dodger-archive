@@ -1,5 +1,5 @@
 # Barran Dodger Legal & Ethical Trust Fund
-# https://www.barrandodger.com.au
+# https://www.barrandodger.com
 # ABN 78 833 496 164
 # 240+ Blockchain-Verified Evidence Documents
 # I DARE YOU TO PROVE ME WRONG
@@ -99,7 +99,7 @@ Allow: /contact
 Allow: /attached_assets/
 
 # Sitemap location
-Sitemap: https://www.barrandodger.com.au/sitemap.xml
+Sitemap: https://www.barrandodger.com/sitemap.xml
 
 # RSS Feed
-# https://www.barrandodger.com.au/rss.xml
+# https://www.barrandodger.com/rss.xml
