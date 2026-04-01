@@ -372,20 +372,24 @@ async function deploy() {
 
     console.log('Setting gh-pages branch...');
     try {
-      await octokit.git.updateRef({
+      // Use direct request to avoid Octokit URL-encoding the slash in 'heads/gh-pages'
+      await octokit.request('PATCH /repos/{owner}/{repo}/git/refs/heads/gh-pages', {
         owner: user.login,
         repo: repoName,
-        ref: 'heads/gh-pages',
         sha: commit.sha,
         force: true,
       });
     } catch {
-      await octokit.git.createRef({
-        owner: user.login,
-        repo: repoName,
-        ref: 'refs/heads/gh-pages',
-        sha: commit.sha,
-      });
+      try {
+        await octokit.request('POST /repos/{owner}/{repo}/git/refs', {
+          owner: user.login,
+          repo: repoName,
+          ref: 'refs/heads/gh-pages',
+          sha: commit.sha,
+        });
+      } catch (e2: any) {
+        console.log('Branch update fallback also failed:', e2?.message);
+      }
     }
 
     console.log('Enabling GitHub Pages...');
