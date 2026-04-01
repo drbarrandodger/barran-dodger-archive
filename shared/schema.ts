@@ -91,6 +91,9 @@ export const pageViews = pgTable("page_views", {
   id: serial("id").primaryKey(),
   path: text("path").notNull(),
   viewedAt: timestamp("viewed_at").defaultNow(),
+  ipHash: text("ip_hash"),
+  userAgent: text("user_agent"),
+  country: text("country"),
 });
 
 export type PageView = typeof pageViews.$inferSelect;

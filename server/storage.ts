@@ -34,11 +34,19 @@ export interface IStorage {
   getRecentDownloadCount(hours: number): Promise<number>;
   getComments(pageSlug: string): Promise<Comment[]>;
   createComment(comment: InsertComment): Promise<Comment>;
-  recordPageView(path: string): Promise<void>;
+  recordPageView(path: string, ipHash?: string, userAgent?: string): Promise<void>;
   getPageViewStats(days: number): Promise<{ date: string; count: number }[]>;
   getTopPages(days: number, limit: number): Promise<{ path: string; count: number }[]>;
   getRecentPageViewCount(hours: number): Promise<number>;
   getTotalPageViews(): Promise<number>;
+  getUniqueVisitorStats(): Promise<{
+    allTime: number;
+    last30Days: number;
+    last7Days: number;
+    last24Hours: number;
+    byDay: { date: string; unique: number; total: number }[];
+    topPages: { path: string; unique: number; total: number }[];
+  }>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -150,8 +158,44 @@ export class DatabaseStorage implements IStorage {
     return comment;
   }
 
-  async recordPageView(path: string): Promise<void> {
-    await db.insert(pageViews).values({ path });
+  async recordPageView(path: string, ipHash?: string, userAgent?: string): Promise<void> {
+    await db.insert(pageViews).values({ path, ipHash, userAgent });
+  }
+
+  async getUniqueVisitorStats() {
+    const [allTime, last30, last7, last24, byDay, topPages] = await Promise.all([
+      db.execute(sql`SELECT COUNT(DISTINCT ip_hash)::int as count FROM page_views WHERE ip_hash IS NOT NULL`),
+      db.execute(sql`SELECT COUNT(DISTINCT ip_hash)::int as count FROM page_views WHERE ip_hash IS NOT NULL AND viewed_at >= NOW() - INTERVAL '30 days'`),
+      db.execute(sql`SELECT COUNT(DISTINCT ip_hash)::int as count FROM page_views WHERE ip_hash IS NOT NULL AND viewed_at >= NOW() - INTERVAL '7 days'`),
+      db.execute(sql`SELECT COUNT(DISTINCT ip_hash)::int as count FROM page_views WHERE ip_hash IS NOT NULL AND viewed_at >= NOW() - INTERVAL '24 hours'`),
+      db.execute(sql`
+        SELECT DATE(viewed_at) as date,
+               COUNT(DISTINCT ip_hash)::int as unique_count,
+               COUNT(*)::int as total
+        FROM page_views
+        WHERE viewed_at >= NOW() - INTERVAL '30 days'
+        GROUP BY DATE(viewed_at)
+        ORDER BY date ASC
+      `),
+      db.execute(sql`
+        SELECT path,
+               COUNT(DISTINCT ip_hash)::int as unique_count,
+               COUNT(*)::int as total
+        FROM page_views
+        WHERE viewed_at >= NOW() - INTERVAL '30 days'
+        GROUP BY path
+        ORDER BY unique_count DESC
+        LIMIT 10
+      `),
+    ]);
+    return {
+      allTime: Number((allTime.rows[0] as any)?.count ?? 0),
+      last30Days: Number((last30.rows[0] as any)?.count ?? 0),
+      last7Days: Number((last7.rows[0] as any)?.count ?? 0),
+      last24Hours: Number((last24.rows[0] as any)?.count ?? 0),
+      byDay: (byDay.rows as any[]).map(r => ({ date: String(r.date), unique: Number(r.unique_count), total: Number(r.total) })),
+      topPages: (topPages.rows as any[]).map(r => ({ path: String(r.path), unique: Number(r.unique_count), total: Number(r.total) })),
+    };
   }
 
   async getPageViewStats(days: number): Promise<{ date: string; count: number }[]> {

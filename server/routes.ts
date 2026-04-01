@@ -1,11 +1,24 @@
 import type { Express } from "express";
 import type { Server } from "http";
+import { createHash } from "crypto";
 import { storage } from "./storage";
 import { db } from "./db";
 import { eq, sql } from "drizzle-orm";
 import { downloadCounts, downloadEvents, insertCommentSchema } from "@shared/schema";
 import { api } from "@shared/routes";
 import { z } from "zod";
+
+function hashIp(ip: string): string {
+  return createHash('sha256').update(ip + 'barran-dodger-salt-2026').digest('hex').slice(0, 16);
+}
+
+function getRealIp(req: any): string {
+  const forwarded = req.headers['x-forwarded-for'];
+  if (forwarded) {
+    return String(forwarded).split(',')[0].trim();
+  }
+  return req.socket?.remoteAddress || req.ip || 'unknown';
+}
 import { listDriveFiles, downloadDriveFile, searchDriveForEvidence, DriveFile } from "./googleDrive";
 import { registerChatRoutes } from "./replit_integrations/chat";
 
@@ -228,8 +241,21 @@ export async function registerRoutes(
   app.post('/api/pageviews', async (req, res) => {
     try {
       const path = String(req.body.path || '/');
-      await storage.recordPageView(path);
+      const ip = getRealIp(req);
+      const ipHash = ip !== 'unknown' ? hashIp(ip) : undefined;
+      const userAgent = String(req.headers['user-agent'] || '').slice(0, 200) || undefined;
+      await storage.recordPageView(path, ipHash, userAgent);
       res.json({ ok: true });
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  app.get('/api/visitors/stats', async (_req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+      const stats = await storage.getUniqueVisitorStats();
+      res.json(stats);
     } catch (err) {
       res.status(500).json({ message: "Internal server error" });
     }

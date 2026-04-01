@@ -35,6 +35,7 @@ import Store from "@/pages/Store";
 import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
 import RetrospectiveStatement from "@/pages/RetrospectiveStatement";
+import VisitorStats from "@/pages/VisitorStats";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -102,6 +103,7 @@ function Router() {
         <Route path="/evidence-vault" component={EvidenceVault} />
         <Route path="/administrative-annihilation" component={AdministrativeAnnihilation} />
         <Route path="/retrospective-statement" component={RetrospectiveStatement} />
+        <Route path="/visitors" component={VisitorStats} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />
