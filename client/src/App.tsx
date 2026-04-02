@@ -45,6 +45,7 @@ import TestimonyWentGlobal from "@/pages/TestimonyWentGlobal";
 import ParadoxOfPersecution from "@/pages/ParadoxOfPersecution";
 import ForensicMeltdownReport from "@/pages/ForensicMeltdownReport";
 import TheyBoughtOffJudges from "@/pages/TheyBoughtOffJudges";
+import LawTheyOverlooked from "@/pages/LawTheyOverlooked";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -122,6 +123,7 @@ function Router() {
         <Route path="/paradox-of-persecution" component={ParadoxOfPersecution} />
         <Route path="/forensic-meltdown-report" component={ForensicMeltdownReport} />
         <Route path="/they-bought-off-judges" component={TheyBoughtOffJudges} />
+        <Route path="/the-law-they-overlooked" component={LawTheyOverlooked} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />
