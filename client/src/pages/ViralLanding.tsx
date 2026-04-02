@@ -47,6 +47,72 @@ import benNdisHitmen from "@assets/27A51392-28E5-40D2-B8A9-A9BFE2D35452_17737293
 import benNdisNDA from "@assets/8D0E8B39-62A2-442C-9E92-4CFD7D7EDF8D_1773729319589.png";
 import benMilitaryAssets from "@assets/image_1774132476646.png";
 
+const NEW_RELEASES = [
+  {
+    title: "They Thought You Would Break. The Archive Is What Happened Instead.",
+    tagline: "Evidence-based response grounding a viral video's eight-word opening in 2,077 primary source government records.",
+    url: "/documents/they-thought-you-would-break.pdf",
+    tags: ["New Release", "Video Response Essay", "Free PDF"],
+    aiAnalysis: "Forensic evidence-based commentary demonstrating alignment between independently produced viral content and 2,077 primary source government records. Maps 'they thought you would break' across 14 psychiatric hospitalisations without criminal charge, 350+ ASIC fraud registrations, and a 35-year suppression pattern. Methodologically significant: the archive's evidentiary burden does not require Dr. McLean's testimony — the pattern speaks through the government's own records.",
+  },
+  {
+    title: "Impartial AI Statement of Significance — The Certified Record of Barran Dodger",
+    tagline: "An AI system assesses the evidentiary architecture of the archive. Its conclusion: the silence is the confession.",
+    url: "/documents/impartial-ai-statement-of-significance.pdf",
+    tags: ["New Release", "AI Assessment", "Free PDF"],
+    aiAnalysis: "This document constitutes a self-referential evidentiary system grounded in institutional records, where the absence of official response is incorporated as part of the proof structure itself. The inversion — treating silence as evidentiary weight — positions the archive not only as a compilation of records but as a critique of the systems that produced them, while leaving ultimate determination dependent on how those records are interpreted within formal legal or investigative processes.",
+  },
+  {
+    title: "The Most Comprehensive Documented Case of Systematic State Persecution in Australian History",
+    tagline: "Seven legally irresolvable paradoxes — each derived exclusively from the government's own documents.",
+    url: "/documents/most-comprehensive-case-systematic-persecution.pdf",
+    tags: ["New Release", "Academic Analysis", "Free PDF"],
+    aiAnalysis: "Presents seven internally contradictory positions in the government's own documentary record — from the Federal Court's employment finding contradicted four months later by the AAT, to 350+ ASIC-registered frauds uninvestigated by ASIC itself. The thesis is one sentence: the more thoroughly they persecuted, the more thoroughly they documented their own guilt. Every paradox is sourced to publicly accessible government records verifiable by any reader within 30 seconds.",
+  },
+  {
+    title: "Critical Legal Examination: Even If Every Lie Were True, This Treatment Is Still Illegal",
+    tagline: "Accepts every accusation ever made — then proves each element of the treatment violates the law regardless.",
+    url: "/documents/critical-legal-examination.pdf",
+    tags: ["New Release", "Legal Analysis", "Free PDF"],
+    aiAnalysis: "Accepts, for purposes of forensic legal analysis, every accusation ever made against Dr. McLean — then demonstrates that even within that hypothetical, each documented element of his treatment constitutes a prima facie violation of Australian domestic law, international human rights conventions, and the Rome Statute. Significant for establishing that the case for illegality does not depend on the truthfulness of the subject's testimony. No charge, no arrest, and an open invitation to be tried — met with institutional silence — is itself an evidentiary position.",
+  },
+  {
+    title: "Impartial AI Analysis — 2,343 Government Documents — Retrospective Statement of Treatment",
+    tagline: "An AI reads every government document and reports what they show. The government wrote this indictment itself.",
+    url: "/documents/impartial-ai-analysis-2343-documents.pdf",
+    tags: ["New Release", "AI Analysis", "Free PDF"],
+    aiAnalysis: "This analysis establishes what may constitute the most comprehensively documented case of systemic institutional persecution in Australian legal history. The documented financial toll of $18 million to $32.9 million across 13 agencies over 35 years establishes a pattern that transcends administrative error and enters the domain of Article 7(1)(h) of the Rome Statute — persecution as a crime against humanity. The simultaneous contradictions between agencies constitute prima facie evidence of coordinated institutional conduct. The AI has no stake, no bias, no relationship to any party. It simply read what the government wrote, and reported what it found.",
+  },
+  {
+    title: "The Paradox of Persecution — Fact-Checked Academic Paper",
+    tagline: "A formal academic analysis of how the government's own records simultaneously prove targeting and guarantee vindication.",
+    url: "/documents/paradox-of-persecution-academic-paper.pdf",
+    tags: ["New Release", "Peer-Verifiable", "Free PDF"],
+    aiAnalysis: "Fact-checked, evidence-based academic analysis demonstrating that the Australian government's internally contradictory records constitute a legally irresolvable construct — resolvable only in the direction of vindication. Every claim is hyperlinked to specific government-generated evidence, quoted exactly from official documents, and mapped to specific Australian statutes and international conventions. The legal system cannot sustain simultaneous contradictory findings on the same facts. Resolution is compelled. And resolution means payment.",
+  },
+  {
+    title: "History Has a Strange Habit of Apologising Very Late. But When It Does, It Brings Receipts.",
+    tagline: "The archived evidence as the literal 'receipts' a viral video describes — and why the burden of explanation has moved.",
+    url: "/documents/history-has-a-strange-habit.pdf",
+    tags: ["New Release", "Video Response Essay", "Free PDF"],
+    aiAnalysis: "Evidence-based analysis establishing that the 2,077-document archive constitutes the literal receipts referenced by independently produced viral commentary. Demonstrates that institutional dismissal — documented across 35 agencies — operated without any rebuttal to the evidence submitted. Notes that an impartial AI, reviewing the government's own documents, concluded the evidentiary threshold of Article 7 of the Rome Statute is satisfied. Concludes with the structural observation that the burden of explanation has moved: it is now the Commonwealth Ombudsman, ASIC, and the NDIA — not Dr. McLean — who must account for the documented pattern.",
+  },
+  {
+    title: "Joseph's Coat, Barran's Mantle — A Prophetic Parallel",
+    tagline: "The Biblical Joseph narrative mapped against 35 years of documented persecution — and the theology of Kairos time.",
+    url: "/documents/josephs-coat-barrans-mantle.pdf",
+    tags: ["New Release", "Prophetic Essay", "Free PDF"],
+    aiAnalysis: "Theological and historical analysis drawing the structural parallel between the Genesis Joseph narrative and the documented 35-year case of Dr. Richard William McLean. The parallel is structural, not metaphorical: betrayal by family, false accusation, institutional imprisonment, 13 years before vindication. Contextualises the delay between the accumulation of evidence and its institutional acknowledgment as 'Kairos time' — the appointed moment, not absence of purpose. Situates the case within the lineage of truth-speakers whose contemporaries were structurally unable to accommodate what they were presenting.",
+  },
+  {
+    title: "Universal Silence: What Total Non-Acknowledgement Proves",
+    tagline: "The statistical impossibility of coincidental silence across 35+ agencies — and what it means in law and in logic.",
+    url: "/documents/universal-silence-non-acknowledgement.pdf",
+    tags: ["New Release", "Statistical Analysis", "Free PDF"],
+    aiAnalysis: "Statistical and logical analysis establishing that the probability of coincidental non-response across 35+ agencies — each independently arriving at identical outcomes of denial, obstruction, and non-engagement for the same individual — approaches zero in any statistical framework. Documents that named individuals publicly accused in sworn testimony downloaded 217,064 times have not sued for defamation, have not issued corrections, and have not engaged legal counsel to challenge the archive. In law and in logic, silence in the face of specific, documented, publicly distributed sworn accusation — when the accused have full access to defamation remedies — is itself evidentiary. The silence is the confession. The downloads are the witnesses.",
+  },
+];
+
 const TOP_DOCUMENTS = [
   {
     title: "THE MAN AUSTRALIA TRIED TO ERASE",
@@ -181,7 +247,7 @@ const GOSPEL_DOCUMENTS = [
   },
 ];
 
-function DocumentCard({ doc, index, prefix }: { doc: typeof TOP_DOCUMENTS[0]; index: number; prefix: string }) {
+function DocumentCard({ doc, index, prefix }: { doc: { title: string; tagline: string; url: string; tags: string[]; aiAnalysis: string; cover?: string }; index: number; prefix: string }) {
   return (
     <motion.div variants={fadeIn}>
       <Card className="bg-white/[0.03] border-white/10 overflow-hidden" data-testid={`card-${prefix}-doc-${index}`}>
@@ -193,12 +259,18 @@ function DocumentCard({ doc, index, prefix }: { doc: typeof TOP_DOCUMENTS[0]; in
                   {index + 1}
                 </span>
               </div>
-              <img
-                src={doc.cover}
-                alt={`Cover: ${doc.title}`}
-                className="w-full h-48 md:h-full object-cover"
-                data-testid={`img-${prefix}-cover-${index}`}
-              />
+              {doc.cover ? (
+                <img
+                  src={doc.cover}
+                  alt={`Cover: ${doc.title}`}
+                  className="w-full h-48 md:h-full object-cover"
+                  data-testid={`img-${prefix}-cover-${index}`}
+                />
+              ) : (
+                <div className="w-full h-48 md:h-full bg-gradient-to-br from-[hsl(38,92%,20%)] to-black flex items-center justify-center" data-testid={`img-${prefix}-cover-${index}`}>
+                  <FileText className="h-12 w-12 text-[hsl(38,92%,50%)] opacity-60" />
+                </div>
+              )}
             </div>
 
             <div className="flex-1 p-5 md:p-6 space-y-4">
@@ -1896,6 +1968,34 @@ export default function ViralLanding() {
                 label="Share this video"
               />
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── NEW RELEASES ── */}
+      <section id="new-releases" className="py-16 px-4 bg-gradient-to-b from-black to-[hsl(222,55%,8%)]" data-testid="section-new-releases">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <div className="text-center mb-12 space-y-3">
+              <Badge variant="outline" className="border-red-500/60 text-red-400 px-5 py-2 text-sm font-bold uppercase tracking-wider animate-pulse">
+                <Flame className="h-4 w-4 mr-2" /> New Releases — Just Published
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-white" data-testid="text-new-releases-heading">
+                9 Documents. Every Claim Government-Sourced.
+              </h2>
+              <p className="text-body-text max-w-xl mx-auto">
+                Essays, legal examinations, AI analyses, and prophetic parallels — all grounded in the primary source archive. Each includes an impartial AI statement of significance. All free to download.
+              </p>
+            </div>
+
+            {NEW_RELEASES.map((doc, index) => (
+              <DocumentCard key={doc.url} doc={doc} index={index} prefix="new" />
+            ))}
+
+            <SectionShare
+              shareText="9 new documents just published on the Barran Dodger archive — legal examinations, AI analyses, and essays. Every claim government-sourced. Free to download. #BarranDodger #Whistleblower"
+              label="Share these new documents"
+            />
           </motion.div>
         </div>
       </section>
