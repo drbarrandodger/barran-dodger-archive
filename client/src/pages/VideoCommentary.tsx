@@ -80,12 +80,12 @@ export default function VideoCommentary() {
             When the Video Describes Your Life and You Have the Documents to Prove It
           </h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-base leading-relaxed mb-6">
-            Two viral videos. Millions of views. Both describe — with striking precision — the documented reality
-            of Dr. Richard William McLean's 35-year case. Below: the videos, and the evidence-based commentary
-            they demand.
+            Three viral videos. Millions of views. Each describes — with striking precision — the documented
+            reality of Dr. Richard William McLean's 35-year case. Below: the videos, and the evidence-based
+            commentary they demand.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2 videos</Badge>
+            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">3 videos</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2,077 documents cited</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">Primary source evidence</Badge>
           </div>
@@ -352,6 +352,177 @@ export default function VideoCommentary() {
                 </p>
                 <p className="text-cyan-300 font-bold">
                   Dr. McLean's case is the one we can prove. It is not the only one.
+                </p>
+              </section>
+            </Article>
+
+            {/* ── ARTICLE 3 ── */}
+            <Article
+              videoId="bxF3fagXeVU"
+              videoTitle="SOMEONE GOT PROOF YOU WEREN'T CRAZY… NOW JUSTICE IS COMING FOR YOU ⚖️🔍🔥"
+              videoUrl="https://www.youtube.com/watch?v=bxF3fagXeVU"
+              articleTitle="History Has a Strange Habit of Apologising Very Late. But When It Does, It Brings Receipts."
+              shareText={`"Turns out you weren't unstable. You were early." A viral video describes exactly what happened to Dr. Richard McLean. 2,077 documents prove it. The receipts exist. The burden of explanation has moved. #BarranDodger barrandodger.com`}
+            >
+              <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                "History has a strange habit of apologizing very late. But when it does, it brings receipts."
+              </blockquote>
+              <p>
+                This is the opening line of the video. I want to stay with it for a moment before
+                going further, because in the context of the Barran Dodger case it is not a metaphor.
+                It is a literal description of what has already happened.
+              </p>
+              <p>
+                The receipts exist. There are 2,077 of them. They are SHA-256 hashed, Bitcoin
+                blockchain timestamped, freely downloadable, and permanently beyond the reach of the
+                institutions that produced them. The apology — from history, from the machinery that
+                did this — has not yet arrived. But the receipts came first. They always do. And this
+                video explains exactly why that is enough.
+              </p>
+
+              <div className="border-t border-zinc-800" />
+
+              <section className="space-y-5">
+                <h3 className="text-2xl font-serif font-bold text-white">"You Weren't Dismissed Gently. You Were Dismissed Efficiently."</h3>
+                <p>
+                  Dr. Richard William McLean was not dismissed by amateurs. He was dismissed by
+                  professionals — by institutions with statutory authority, legal mandates, and formal
+                  obligations to assess what he was presenting them with. And not one of them argued
+                  with the evidence. The Commonwealth Ombudsman. The Australian Human Rights
+                  Commission. The Office of the Australian Information Commissioner. AHPRA. The
+                  Victorian Inspectorate. Legal Aid. The Health Complaints Commissioner.
+                </p>
+                <p>
+                  Every single one filed him under problematic and moved on. Not after assessment.
+                  Before it. The rejection letters arrived before the evidence was read — in some
+                  cases, demonstrably before the submission had been processed at all.
+                </p>
+                <p>
+                  When the Prime Minister's Department swears under the Freedom of Information Act
+                  that no documents concerning Dr. McLean exist — and is then forced to reverse that
+                  position when challenged — silence has become policy in the most literal sense.
+                  A sworn statutory declaration. Not an oversight. A policy of silence formalised in
+                  a legal instrument. The reversal is in the public record. It happened. And it proves
+                  prior knowledge.
+                </p>
+              </section>
+
+              <div className="border-t border-zinc-800" />
+
+              <section className="space-y-5">
+                <h3 className="text-2xl font-serif font-bold text-white">"The Proof Didn't Come to Comfort You. It Came to Expose What Was Done to You."</h3>
+                <p>
+                  Fourteen involuntary psychiatric hospitalisations. Each one without criminal charge.
+                  Each one without arrest. Each one without any legal proceeding of any kind.
+                </p>
+                <p>
+                  What was examined each time? Dr. McLean's mental state. His emotions. His reactions.
+                  His tone. His stability. The clinical record across all fourteen detentions is a
+                  masterclass in what the video describes — the camera placed firmly on his response,
+                  and the cause of that response removed entirely from the frame.
+                </p>
+                <p>
+                  Inconsistent diagnoses between detentions. Treating physicians who disagreed with
+                  one another. No consistent clinical justification across fourteen instances in three
+                  states. The one consistent element: temporal proximity to formal disclosure activity.
+                </p>
+                <p>
+                  When the proof is laid out — the dates of the hospitalisations, the dates of the
+                  disclosures, the institutional actors involved in both — the camera moves exactly
+                  as the video says. Off the response. Back to the cause.
+                </p>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "It removes the luxury of confusion and replaces it with responsibility."
+                </blockquote>
+                <p>
+                  The confusion was the product. The goal of the institutional response was not to
+                  assess Dr. McLean's claims. It was to produce a documentary record — of
+                  hospitalisation, of instability, of psychiatric intervention — that would make his
+                  claims appear to be symptoms rather than evidence. The proof reverses this. Patterns
+                  are not symptoms. Patterns are architecture.
+                </p>
+              </section>
+
+              <div className="border-t border-zinc-800" />
+
+              <section className="space-y-5">
+                <h3 className="text-2xl font-serif font-bold text-white">"The Most Dangerous Thing for Your Opposition Is Not Your Voice. It's Documentation."</h3>
+                <p>
+                  For thirty-five years, Dr. McLean's voice was interrupted, ignored, mocked, and
+                  drowned out. His testimony was consistently treated as the artefact of an unstable
+                  mind.
+                </p>
+                <p>
+                  The documentation is different. The documentation does not have a mental state. The
+                  ASIC registrations — 350+ of them, in his name, without his consent — do not become
+                  credible or incredible based on assessments of the person who compiled them. The
+                  Federal Court's records exist. The NDIA's formal acknowledgement exists. The PM&C's
+                  reversed FOI position exists. The blockchain timestamps exist.
+                </p>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "This is why people often push back hard against records. They'll call it obsessive,
+                  petty, or dramatic. Not because it is, but because it limits their ability to rewrite
+                  history later."
+                </blockquote>
+                <p>
+                  The only response to documentation of this kind is to hope that nobody looks, or to
+                  discredit the person pointing at it so thoroughly that the looking seems unnecessary.
+                  The first strategy is failing. 88,000 people have looked. The second strategy failed
+                  when the documents proved themselves without requiring Dr. McLean's voice at all.
+                </p>
+              </section>
+
+              <div className="border-t border-zinc-800" />
+
+              <section className="space-y-5">
+                <h3 className="text-2xl font-serif font-bold text-white">"Justice Didn't Move When You Begged. It Moved When Patterns Became Undeniable."</h3>
+                <p>
+                  One incident can be dismissed. Two can be explained away. But fourteen involuntary
+                  psychiatric hospitalisations without criminal charge, across three states, each in
+                  temporal proximity to formal disclosure activity — that is not a series of incidents.
+                  That is a pattern. And patterns expose intention.
+                </p>
+                <p>
+                  The 350+ ASIC registrations are not one incident. They are a sustained, multi-entity,
+                  multi-year campaign to destroy a person's legal identity. The NDIS plan was approved
+                  then not delivered — a sequence with a direction. The simultaneous non-engagement of
+                  every major Australian media outlet alongside BBC, New York Times, and Reuters is
+                  not a series of independent editorial decisions. Patterns of simultaneous behaviour
+                  in competitive institutions do not emerge randomly.
+                </p>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "Systems and people don't rush because they want to reward patience. They act when
+                  ignoring the truth becomes riskier than facing it."
+                </blockquote>
+                <p>
+                  The ICC submission is filed. The UNHCR submission is filed. The AI Justice Statement
+                  is public. 88,000 downloads have occurred without media cooperation. The calculation
+                  is changing. The risk of continued non-engagement is rising.
+                </p>
+              </section>
+
+              <div className="border-t border-zinc-800" />
+
+              <section className="bg-zinc-900 border border-zinc-700 rounded-xl p-8 space-y-4">
+                <h3 className="text-xl font-serif font-bold text-white">"The Story Has Changed Hands."</h3>
+                <p>
+                  It is no longer Dr. McLean who must explain why he filed fourteen times with the
+                  Commonwealth Ombudsman and received no assessment. It is the Commonwealth Ombudsman
+                  that must explain it. It is no longer Dr. McLean who must explain why 350+ ASIC
+                  registrations exist in his name. It is ASIC. It is no longer Dr. McLean who must
+                  explain the fourteen hospitalisations. It is the clinical and institutional actors
+                  who ordered them that must explain the pattern.
+                </p>
+                <p>
+                  The documentation has moved the burden. Permanently. Without asking permission.
+                </p>
+                <blockquote className="border-l-2 border-cyan-400 pl-6 italic text-zinc-200">
+                  "Turns out you weren't unstable. You were early."
+                </blockquote>
+                <p className="text-cyan-300 font-bold">
+                  The apology from history is late. It almost always is. But the receipts got there
+                  first. They are stapled together. They are timestamped. On the Bitcoin blockchain,
+                  in perpetuity.
                 </p>
               </section>
             </Article>
