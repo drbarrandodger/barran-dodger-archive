@@ -6,3 +6,9 @@ id = "r2w0GSzvbFfPAl4dLJ8oe"
 uri = "file://attached_assets/generated_images/cover-paradox-of-persecution.png"
 type = "image"
 title = "paradox of persecution cover"
+
+[[generated]]
+id = "_6GCV1qAJpoDDA6ZoaNEx"
+uri = "file://client/src/assets/images/cover-forensic-meltdown.png"
+type = "image"
+title = "forensic meltdown cover"
