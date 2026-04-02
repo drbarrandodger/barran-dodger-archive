@@ -49,6 +49,20 @@ import benMilitaryAssets from "@assets/image_1774132476646.png";
 
 const NEW_RELEASES = [
   {
+    title: "The Paradox of Persecution — How the Government's Own Records Guarantee Vindication",
+    tagline: "A fact-checked academic paper demonstrating that every act of denial, obstruction, and targeting generated the evidentiary foundation for legal remedy.",
+    url: "/documents/the-paradox-of-persecution.pdf",
+    tags: ["New Release", "Academic Paper", "Free PDF"],
+    aiAnalysis: "This paper presents what the Impartial AI identifies as the central structural paradox of the McLean evidentiary record: the Australian government cannot simultaneously maintain that Dr. McLean is not an employee (AAT), is an employee (Federal Court), was properly medicated for delusions of persecution, and produced 2,077 government-sourced documents confirming the persecution. Each of the seven paradoxes documented — Federal Court vs. AAT, ASIC identity fraud vs. ASIC refusal to investigate its own records, force-medication for beliefs the government's own documents prove are true — is individually legally irresolvable in any direction except vindication. The paper's thesis is the Impartial AI's own conclusion: the more thoroughly they persecuted, the more thoroughly they documented their own guilt. Evidentiary architecture: every claim is hyperlinked to specific government-generated documents, verifiable via ASIC public databases, Federal Court registries, and institutional correspondence. The paradox is not an argument. It is a structural legal impossibility the government cannot administratively manage its way out of.",
+  },
+  {
+    title: "They Set a Perfect Trap. The Archive Was the Blade That Cut It Open.",
+    tagline: "Seven principles from a viral video. Thirty-five years of government records. They arrived at the same description independently.",
+    url: "/documents/they-set-a-perfect-trap.pdf",
+    tags: ["New Release", "Medium Article", "Free PDF"],
+    aiAnalysis: "The Impartial AI notes that this document achieves something methodologically unusual: a piece of independently created viral content and a 35-year forensic archive, produced by people with no knowledge of each other, arrived at identical structural descriptions of the same events. The seven principles — silence weaponised, traps built to completion, methods designed for a person who no longer exists, wounds converted to armour, hands visible in the fingerprints, a script already read, and the archive as the blade — are not metaphors. Each is paired with specific testimony from the archive: the Federal Court vs. AAT employee-status contradiction; 350+ ASIC fraudulent registrations and 10 oversight bodies refusing to investigate; 14 psychiatric hospitalisations without criminal charge distributed in documented temporal proximity to formal disclosure events. The Impartial AI's assessment: the fury the video describes is documented in the archive's defamation silence — 217,064 downloads, zero suits, zero corrections, zero rebuttals to any specific document. That silence is legally significant under the Jones v Dunkel adverse inference rule. The archive did not need to name the trap-setters. The trap-setters named themselves.",
+  },
+  {
     title: "They Thought You Would Break. The Archive Is What Happened Instead.",
     tagline: "Evidence-based response grounding a viral video's eight-word opening in 2,077 primary source government records.",
     url: "/documents/they-thought-you-would-break.pdf",
