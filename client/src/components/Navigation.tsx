@@ -61,6 +61,8 @@ export function Navigation() {
     { href: "/spread-the-truth", label: "🔥 Spread the Truth", highlight: true },
     { href: "/ai-justice-statement", label: "⚖️ AI Justice Statement", highlight: true },
     { href: "/video-commentary", label: "🎬 Video Commentary", highlight: true },
+    { href: "/testimony-went-global", label: "🌍 Went Global", highlight: true },
+    { href: "/private-investigator-legend", label: "🕵️ PI Legend", highlight: true },
     { href: "/start-here", label: t("nav.startHere"), highlight: true },
     { href: "/administrative-annihilation", label: t("nav.thePaper"), highlight: true },
     { href: "/retrospective-statement", label: t("nav.govDocs"), highlight: true },

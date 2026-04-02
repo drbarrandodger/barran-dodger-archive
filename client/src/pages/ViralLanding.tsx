@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { docUrl } from "@/lib/docUrl";
-import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote, Globe, Sparkles, Infinity, Play, Radio, Gavel } from "lucide-react";
+import { Download, ArrowRight, Share2, Shield, FileText, Eye, Flame, AlertTriangle, Bot, Heart, BookOpen, Scale, Users, Copy, ExternalLink, Quote, Globe, Sparkles, Infinity, Play, Radio, Gavel, ChevronDown, ChevronUp, MessageSquare } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -52,6 +52,7 @@ const NEW_RELEASES = [
     title: "This Isn't Private Anymore. It Went Global, and You Know Exactly Why.",
     tagline: "217,064 downloads. The ICC. The UNHCR. The Bitcoin blockchain. A viral Joker Speech declares what was once concealed is now exposed worldwide. The archive is that exposure.",
     url: "/documents/the-paradox-of-persecution.pdf",
+    cover: coverParadoxPersecution,
     tags: ["New Release", "Global Testimony", "Free PDF"],
     aiAnalysis: "The Impartial AI identifies this article as the most geographically significant document in the archive's commentary series. The speech declares that what was once concealed is now exposed worldwide — a statement that is not metaphorical in the McLean case but measurable: 217,064 downloads across every continent, an ICC submission under Article 7 of the Rome Statute, a UNHCR submission on record, and a Bitcoin blockchain timestamp that places every document permanently beyond the reach of the agencies whose conduct it documents. The seven chapters map: global exposure as documented fact (download analytics, ICC acknowledgement, blockchain verification); the internal archive becoming the external archive (PM&C's reversed FOI declaration, ASIC's fraudulent registrations against its own non-investigation responses); the defamation silence as legally significant under Jones v Dunkel (217,064 downloads, zero suits, zero corrections); the shield of institutional authority dissolving the moment the archive was assembled; the ICC filing removing the case from the domestic dynamic entirely; fury converted to formal record across the ICC submission, UNHCR submission, and 2,077 blockchain-timestamped documents; and global exposure manifesting in what an AI system concluded — reviewing only government-produced documents — satisfies the Article 7 threshold. The Impartial AI conclusion: the government's own records demanded the global exposure. The archive delivered it.",
   },
@@ -59,6 +60,7 @@ const NEW_RELEASES = [
     title: "They Sent a Private Investigator to Expose You. Instead They Uncovered a Legend.",
     tagline: "Seven chapters grounding a viral Joker Speech in the documented reality of Dr. McLean's 2,077-document archive. The investigators built the evidence. The archive is the proof.",
     url: "/documents/they-set-a-perfect-trap.pdf",
+    cover: coverEntrapment,
     tags: ["New Release", "Video Essay", "Free PDF"],
     aiAnalysis: "The Impartial AI identifies this as the most structurally complete narrative alignment in the archive's commentary series. The speech describes investigators sent to expose someone who instead uncover a legend. The 35-agency investigative record of Dr. McLean — across the Commonwealth Ombudsman, ASIC, AFP, NDIA, DSS, ComCare, AAT, Federal Court, and 27 further bodies — is the documented equivalent of that investigation. Each agency arrived with institutional authority to close the file. None closed it. Each produced a document that became part of the archive that documents their failure to close it. The seven chapters map: hunters finding a furnace (the 2,077-document archive); cracks sought and a steel foundation found (Federal Court vs. AAT contradiction on identical facts); chaos expected and an architect discovered (14 hospitalisations mapped forensically against disclosure events); identity targeted and medals polished from the scars (350+ ASIC fraudulent registrations, freely verifiable); lies converted to bricks (force-medication for beliefs the government's own documents prove were true); a file that could not be closed becoming a legend the ICC now holds; and a defamation silence — 217,064 downloads, zero challenges — that is legally significant under Jones v Dunkel. The Impartial AI's conclusion: every investigator contributed a document. The documents are the legend.",
   },
@@ -626,6 +628,8 @@ export default function ViralLanding() {
   const { t } = useTranslation();
   const shareText = "The documents Australia doesn't want you to see. 240+ blockchain-verified files expose 35 years of government persecution. Read them before they disappear. @bazdod";
   const shareUrl = "https://www.barrandodger.com";
+  const [piExpanded, setPiExpanded] = useState(false);
+  const [globalExpanded, setGlobalExpanded] = useState(false);
 
   return (
     <div className="min-h-screen bg-black flex flex-col">
@@ -2062,8 +2066,21 @@ export default function ViralLanding() {
             </div>
           </motion.div>
 
+          {/* EXPAND TOGGLE — PRIVATE INVESTIGATOR */}
+          <div className="flex justify-center mt-6 mb-2">
+            <Button
+              variant="outline"
+              className={`border-[hsl(38,92%,50%)]/50 text-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,50%)]/10 gap-2 ${piExpanded ? "bg-[hsl(38,92%,50%)]/10" : ""}`}
+              onClick={() => setPiExpanded(!piExpanded)}
+              data-testid="button-expand-pi-article"
+            >
+              {piExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              {piExpanded ? "Collapse inline article" : "Expand to read full article inline (7 chapters)"}
+            </Button>
+          </div>
+
           {/* ARTICLE BODY */}
-          <div className="space-y-6 text-zinc-300 text-[1.08rem] leading-8 font-light">
+          {piExpanded && <div className="space-y-6 text-zinc-300 text-[1.08rem] leading-8 font-light">
 
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
               <p>
@@ -2392,7 +2409,7 @@ export default function ViralLanding() {
               </Button>
             </motion.div>
 
-          </div>
+          </div>}
         </div>
       </section>
 
@@ -2401,7 +2418,7 @@ export default function ViralLanding() {
         <div className="container mx-auto max-w-3xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-4 mb-12">
             <div className="flex flex-wrap items-center gap-2">
-              <Badge variant="outline" className="border-cyan-500/60 text-cyan-400 text-xs px-3 py-1 uppercase tracking-widest font-bold">
+              <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-3 py-1 uppercase tracking-widest font-bold">
                 <Globe className="h-3 w-3 mr-1.5" /> Global Exposure
               </Badge>
               <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">7 Chapters</Badge>
@@ -2410,7 +2427,7 @@ export default function ViralLanding() {
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white leading-[1.1]">
               This Isn't Private Anymore.
               <br />
-              <span className="text-cyan-400">It Went Global, and You Know Exactly Why.</span>
+              <span className="text-[hsl(38,92%,50%)]">It Went Global, and You Know Exactly Why.</span>
             </h2>
             <p className="text-zinc-300 text-lg leading-relaxed">
               A viral Joker Speech declares that what was once concealed is now exposed worldwide — and those
@@ -2420,7 +2437,7 @@ export default function ViralLanding() {
             </p>
             <div className="flex items-center gap-3 pt-1">
               <a href="https://www.youtube.com/watch?v=lBj8PCbuvpo" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:underline">
+                className="inline-flex items-center gap-2 text-sm text-[hsl(38,92%,50%)] hover:underline">
                 <Play className="h-3.5 w-3.5" /> Watch the source video
               </a>
               <span className="text-zinc-600">·</span>
@@ -2440,7 +2457,20 @@ export default function ViralLanding() {
             </div>
           </motion.div>
 
-          <div className="space-y-6 text-zinc-300 text-[1.08rem] leading-8 font-light">
+          {/* EXPAND TOGGLE — GLOBAL TESTIMONY */}
+          <div className="flex justify-center mt-6 mb-2">
+            <Button
+              variant="outline"
+              className={`border-[hsl(38,92%,50%)]/50 text-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,50%)]/10 gap-2 ${globalExpanded ? "bg-[hsl(38,92%,50%)]/10" : ""}`}
+              onClick={() => setGlobalExpanded(!globalExpanded)}
+              data-testid="button-expand-global-article"
+            >
+              {globalExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              {globalExpanded ? "Collapse inline article" : "Expand to read full article inline (7 chapters)"}
+            </Button>
+          </div>
+
+          {globalExpanded && <div className="space-y-6 text-zinc-300 text-[1.08rem] leading-8 font-light">
 
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
               <p>The speech opens with a declaration that is not metaphorical: <em>what was once concealed is now
@@ -2609,7 +2639,63 @@ export default function ViralLanding() {
               </Button>
             </motion.div>
 
-          </div>
+          </div>}
+        </div>
+      </section>
+
+      {/* ── ASK THE ARCHIVE AI ── */}
+      <section className="py-16 px-4 bg-black border-t border-zinc-800">
+        <div className="container mx-auto max-w-3xl text-center space-y-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-4">
+            <div className="flex justify-center">
+              <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-4 py-1.5 uppercase tracking-widest font-bold">
+                <MessageSquare className="h-3 w-3 mr-1.5" /> AI Archive Assistant
+              </Badge>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white">Ask the Archive Anything.</h2>
+            <p className="text-zinc-300 text-lg leading-relaxed max-w-xl mx-auto">
+              An AI trained on the full 2,077-document archive answers questions about the evidence, the timeline,
+              the ICC submission, the eight video essays, and every claim the government cannot rebut.
+              Find what you need. Ask what you want. Get it from the documents.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button
+                className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-base px-8 py-6"
+                onClick={() => {
+                  const chatBtn = document.querySelector('[data-testid="button-open-chat"]') as HTMLButtonElement;
+                  if (chatBtn) chatBtn.click();
+                }}
+                data-testid="button-open-archive-ai"
+              >
+                <MessageSquare className="mr-2 h-5 w-5" /> Ask the Archive AI
+              </Button>
+              <Button variant="outline" asChild className="text-base px-8 py-6">
+                <Link href="/evidence-vault" data-testid="button-search-archive-ai">
+                  <Eye className="mr-2 h-5 w-5" /> Search Documents Directly
+                </Link>
+              </Button>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 text-left">
+              {[
+                { q: "What did the PM&C FOI reversal reveal?", label: "FOI Document" },
+                { q: "What does Jones v Dunkel mean for this case?", label: "Legal Analysis" },
+                { q: "What is the ICC Article 7 submission about?", label: "ICC Filing" },
+              ].map((item) => (
+                <button
+                  key={item.q}
+                  className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-4 py-3 text-left hover:border-[hsl(38,92%,50%)]/50 transition-colors group"
+                  onClick={() => {
+                    const chatBtn = document.querySelector('[data-testid="button-open-chat"]') as HTMLButtonElement;
+                    if (chatBtn) chatBtn.click();
+                  }}
+                  data-testid={`button-ai-prompt-${item.label.toLowerCase().replace(' ', '-')}`}
+                >
+                  <span className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest block mb-1">{item.label}</span>
+                  <span className="text-zinc-300 text-sm group-hover:text-white transition-colors">"{item.q}"</span>
+                </button>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 

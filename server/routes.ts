@@ -641,6 +641,32 @@ export async function registerRoutes(
     }
   });
 
+  app.get('/sitemap.xml', (_req, res) => {
+    const pages = [
+      '/', '/start-here', '/administrative-annihilation', '/retrospective-statement',
+      '/evidence', '/evidence-vault', '/publications', '/taxpayer-cost-analysis',
+      '/blockchain', '/timeline', '/manifesto', '/josephs-coat', '/gospel',
+      '/spread-the-truth', '/ai-justice-statement', '/video-commentary',
+      '/chosen-ones-perfect-trap', '/private-investigator-legend', '/testimony-went-global',
+      '/donate', '/store', '/contact', '/media',
+    ];
+    const urls = pages.map(p => `
+  <url>
+    <loc>https://www.barrandodger.com${p}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>${p === '/' ? '1.0' : '0.8'}</priority>
+  </url>`).join('');
+    res.set('Content-Type', 'application/xml');
+    res.send(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}
+</urlset>`);
+  });
+
+  app.get('/robots.txt', (_req, res) => {
+    res.set('Content-Type', 'text/plain');
+    res.send(`User-agent: *\nAllow: /\nSitemap: https://www.barrandodger.com/sitemap.xml\n`);
+  });
+
   registerChatRoutes(app);
 
   return httpServer;

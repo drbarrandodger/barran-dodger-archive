@@ -8,6 +8,7 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ReadingProgress } from "@/components/ReadingProgress";
 import {
   Play,
   FileText,
@@ -82,6 +83,7 @@ export default function ChosenOnesPerfectTrap() {
         description="Seven principles from a viral video, each independently describing the documented 35-year institutional persecution of Dr. Richard William McLean. Every claim government-sourced. Every document downloadable."
         path="/chosen-ones-perfect-trap"
       />
+      <ReadingProgress />
       <Navigation />
       <FloatingCTA />
 
@@ -93,6 +95,9 @@ export default function ChosenOnesPerfectTrap() {
             <motion.div initial="hidden" animate="visible" variants={fadeIn} className="space-y-6">
 
               <div className="flex flex-wrap items-center gap-2">
+                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">
+                  25 min read
+                </Badge>
                 <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-3 py-1">
                   <Flame className="h-3 w-3 mr-1.5" /> Long Read
                 </Badge>

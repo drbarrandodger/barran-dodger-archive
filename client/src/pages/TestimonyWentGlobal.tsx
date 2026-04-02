@@ -8,6 +8,7 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ReadingProgress } from "@/components/ReadingProgress";
 import {
   Play,
   FileText,
@@ -83,6 +84,7 @@ export default function TestimonyWentGlobal() {
         description="A viral Joker Speech declares: what was once concealed is now exposed worldwide. The 2,077-document archive of Dr. Richard William McLean — with the ICC, the UNHCR, downloaded 217,064 times across every continent — is that exposure. Seven chapters. Every claim government-sourced."
         path="/testimony-went-global"
       />
+      <ReadingProgress />
       <Navigation />
       <FloatingCTA />
 
@@ -102,6 +104,9 @@ export default function TestimonyWentGlobal() {
                 </Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">
                   ICC Submission
+                </Badge>
+                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">
+                  22 min read
                 </Badge>
               </div>
 
