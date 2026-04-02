@@ -647,7 +647,7 @@ export async function registerRoutes(
       '/evidence', '/evidence-vault', '/publications', '/taxpayer-cost-analysis',
       '/blockchain', '/timeline', '/manifesto', '/josephs-coat', '/gospel',
       '/spread-the-truth', '/ai-justice-statement', '/video-commentary',
-      '/chosen-ones-perfect-trap', '/private-investigator-legend', '/testimony-went-global',
+      '/chosen-ones-perfect-trap', '/private-investigator-legend', '/testimony-went-global', '/paradox-of-persecution',
       '/donate', '/store', '/contact', '/media',
     ];
     const urls = pages.map(p => `

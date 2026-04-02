@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -11,12 +12,13 @@ import {
   ExternalLink, Search, X, Shield, Lock, FolderOpen, Archive,
   Scale, FileText, AlertTriangle, Globe, Heart, Brain, BookOpen,
   Landmark, Database, Clock, Gavel, ShieldCheck, Eye, Flame,
-  LayoutGrid, List, ChevronRight, Info
+  LayoutGrid, List, ChevronRight, Info, Download
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import coverParadox from "../assets/images/cover-paradox-persecution.png";
 
 interface VaultFolder {
   name: string;
@@ -365,6 +367,49 @@ export default function EvidenceVault() {
                   <ExternalLink className="h-4 w-4" /> Browse Full MyAIDrive Archive
                 </a>
               </Button>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: PARADOX OF PERSECUTION ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="mb-10"
+          >
+            <div className="bg-zinc-900/60 border border-[hsl(38,92%,50%)]/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverParadox} alt="The Paradox of Persecution cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <FileText className="h-3 w-3 mr-1" /> Featured Publication
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Academic Paper</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2,077 Sources</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    The Paradox of Persecution
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Seven legally irresolvable paradoxes derived exclusively from the Australian government's own records. The Federal Court confirms employment; the AAT denies it using the same facts. ASIC records prove 350+ fraudulent registrations; ASIC refuses to investigate its own database. Every paradox is government-authored, publicly verifiable in under 30 seconds.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/paradox-of-persecution" data-testid="button-vault-paradox-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/the-paradox-of-persecution.pdf" download="The-Paradox-of-Persecution-McLean.pdf" data-testid="button-vault-paradox-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.section>
 
