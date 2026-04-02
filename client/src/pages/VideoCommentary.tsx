@@ -850,9 +850,15 @@ export default function VideoCommentary() {
               shareText={`"They set a perfect trap. You saw through it. Now they're mad." A viral video. The 2,077-document Barran Dodger archive is the complete answer. Every trap they set became evidence they built themselves. #BarranDodger barrandodger.com/video-commentary`}
             >
               <p>
-                What follows is not a summary of the video above. It is a direct pairing — the video's exact words on the left
-                of the ledger, the documented testimony on the right. They were produced independently. They describe the same events.
-                Read them together. That is the point.
+                The video's seven principles independently describe, with structural precision, what 35 years of
+                government-sourced documentary evidence shows about the treatment of Dr. Richard William McLean.
+                Each principle is paired below with the specific testimony it describes. They were produced independently.
+                They arrived at the same description.
+              </p>
+              <p>
+                <Link href="/chosen-ones-perfect-trap" className="inline-flex items-center gap-1.5 text-cyan-400 hover:underline font-medium" data-testid="link-full-medium-article">
+                  <ExternalLink className="h-3.5 w-3.5" /> Read the full Medium-style article at <span className="font-bold">/chosen-ones-perfect-trap</span>
+                </Link>
               </p>
 
               <section>
