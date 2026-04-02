@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import coverParadox from "../assets/images/cover-paradox-persecution.png";
 import coverMeltdown from "../assets/images/cover-forensic-meltdown.png";
+import coverJudges from "../assets/images/cover-they-bought-off-judges.png";
 
 interface VaultFolder {
   name: string;
@@ -368,6 +369,49 @@ export default function EvidenceVault() {
                   <ExternalLink className="h-4 w-4" /> Browse Full MyAIDrive Archive
                 </a>
               </Button>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: THEY BOUGHT OFF JUDGES ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.01 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-amber-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverJudges} alt="They Bought Off Judges cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Flame className="h-3 w-3 mr-1" /> New — April 2026
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">9 Named Perpetrators</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">60-Second ASIC Proof</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    They Bought Off Judges, Cops & Media… But You Unlocked the One Law They Overlooked
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Nine named perpetrators. 350+ fraudulent ASIC registrations verifiable in 60 seconds. A magistrate who signed an arrest warrant at a Minister's request. An ASIO officer issuing death threats with institutional protection. The law of consequence lives in databases they forgot they couldn't erase.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/they-bought-off-judges" data-testid="button-vault-judges-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/they-bought-off-judges.pdf" download="They-Bought-Off-Judges-McLean.pdf" data-testid="button-vault-judges-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.section>
 
