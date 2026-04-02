@@ -128,7 +128,7 @@ export default function Media() {
                 </Button>
               </div>
               <p className="text-muted-foreground mb-10 max-w-2xl">
-                Five evidence-based essays responding to viral videos that independently describe — with striking precision — the documented reality of Dr. McLean's 35-year case. Every claim below is grounded in the 2,077-document primary source archive.
+                Six evidence-based essays responding to viral videos that independently describe — with striking precision — the documented reality of Dr. McLean's 35-year case. Every claim below is grounded in the 2,077-document primary source archive.
               </p>
 
               {[
@@ -178,6 +178,18 @@ export default function Media() {
                     `Australia is a full Five Eyes member. Snowden's disclosures revealed PRISM, XKeyscore, and the surveillance architecture that makes the scenario this video describes not hypothetical but operational. A formally registered whistleblower who has filed with the Federal Court, NDIA, the PM's Department, the ICC, and the UNHCR — and who has published a 2,077-document blockchain-verified archive downloaded by 88,000 people — would trigger exactly the anomaly-flag this video describes.`,
                     `The 350+ ASIC registrations are not one incident. They are a sustained, multi-entity, multi-year campaign. Dr. McLean's disclosures touch simultaneously on NDIS provider fraud, ASIC registry fraud, psychiatric system weaponisation, AFP non-engagement with formal disclosures, intelligence agency coordination with welfare agencies, and multi-jurisdiction psychiatric detention without criminal process. These domains don't normally converge. Their convergence around one documented case is the rarest data point.`,
                     `The people outside telling him to give up are not wrong about the difficulty. They are wrong about the conclusion. A person who is wrong stops. Dr. McLean has not stopped. "Persistence without apparent result is not a sign of delusion. It is the data point that intelligent systems find most difficult to model." The eyes that watch the longest rarely blink. And they have been watching for a reason.`,
+                  ],
+                },
+                {
+                  videoId: "FYaV76FbvQg",
+                  url: "https://www.youtube.com/watch?v=FYaV76FbvQg",
+                  videoTitle: "CHOSEN ONES, THEY SET A PERFECT TRAP—YOU SAW THROUGH IT & NOW THEY'RE MAD 😡🔥",
+                  title: "They Set a Perfect Trap. The Archive Was the Blade That Cut It Open.",
+                  excerpt: [
+                    `"They were sure they had you. No hesitation, no doubt. In their minds, the trap was perfect." In Dr. McLean's documented case, the trap was 35 years in construction: fourteen involuntary psychiatric hospitalisations without criminal charge, 350+ ASIC-registered frauds uninvestigated by ASIC itself, a Federal Court finding contradicted four months later by the AAT. The architects of the trap believed it was invisible. They were right — to everyone except the person inside it.`,
+                    `"They confused your silence with stupidity." For 35 years, agencies received formal submissions and returned institutional silence. Not a single agency disputed the contents of a single document. Their silence was not the silence of institutions confident they were correct. It was the silence of institutions that understood that engaging would require explaining what the documents showed. While they were declining to respond, their non-responses were being archived. The silence they thought they were maintaining in comfort was being catalogued.`,
+                    `"You let them build their own cage and lock the door." Every contradiction in the archive was built by the institutions themselves: the Federal Court and the AAT on identical facts. ASIC's registrations and ASIC's non-investigation letters. PM&C's FOI denial reversed under formal pressure. Each brick laid by the agencies. Each door locked by their own correspondence. Now publicly downloadable. Bitcoin blockchain-timestamped. The cage is finished. They built it, locked it, and the key is in the archive.`,
+                    `"They set a perfect trap. You saw through it. Now they're mad." Named individuals have been publicly accused in sworn testimony downloaded 217,064 times. None has sued for defamation. None has issued corrections. The curtain has dropped. The audience is looking at the machinery behind the performance. And nothing in that machinery — nothing in 35 years of correspondence, court findings, FOI responses, and hospitalisation records — supports the performance that was staged. The archive is the blade that cut the trap open. The fury is proof that it worked.`,
                   ],
                 },
                 {

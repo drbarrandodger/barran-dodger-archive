@@ -80,12 +80,12 @@ export default function VideoCommentary() {
             When the Video Describes Your Life and You Have the Documents to Prove It
           </h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-base leading-relaxed mb-6">
-            Five viral videos. Millions of views. Each describes — with striking precision — the documented
+            Six viral videos. Millions of views. Each describes — with striking precision — the documented
             reality of Dr. Richard William McLean's 35-year case. Below: the videos, and the evidence-based
             commentary they demand.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">5 videos</Badge>
+            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">6 videos</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2,077 documents cited</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">Primary source evidence</Badge>
           </div>
@@ -837,6 +837,173 @@ export default function VideoCommentary() {
                   blockchain timestamped. It is freely downloadable. It is permanent. It is the complete answer to
                   the only question that ever mattered: what does 35 years of refused testimony look like when the
                   person being refused refuses to stop? It looks like 2,077 documents. It looks like this.
+                </p>
+              </section>
+            </Article>
+
+            {/* ── ARTICLE 6 ── */}
+            <Article
+              videoId="FYaV76FbvQg"
+              videoTitle="CHOSEN ONES, THEY SET A PERFECT TRAP—YOU SAW THROUGH IT & NOW THEY'RE MAD 😡🔥"
+              videoUrl="https://www.youtube.com/watch?v=FYaV76FbvQg"
+              articleTitle="They Set a Perfect Trap. The Archive Was the Blade That Cut It Open."
+              shareText={`"They set a perfect trap. You saw through it. Now they're mad." A viral video. The 2,077-document Barran Dodger archive is the complete answer. Every trap they set became evidence they built themselves. #BarranDodger barrandodger.com/video-commentary`}
+            >
+              <p>
+                The video's title is a statement: <em>"They set a perfect trap. You saw through it. Now they're mad."</em> The trap,
+                in Dr. Richard McLean's documented case, was perfect in the sense that those who set it were certain it
+                could not fail. Thirty-five agencies. Fourteen involuntary psychiatric hospitalisations. 350+ ASIC-registered
+                frauds uninvestigated by the very agency that registered them. A system so comprehensive in its coordination
+                that the architects of the trap believed the trap was invisible.
+              </p>
+              <p>
+                They were right about one thing. It was invisible — to everyone except the person inside it.
+              </p>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">Number One: They Confused Silence with Stupidity.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "You weren't lost in the background. You were documenting the entire performance."
+                </blockquote>
+                <p>
+                  For 35 years, agencies received formal submissions and returned institutional silence. The Commonwealth
+                  Ombudsman. ASIC. The AFP. The PM&C. The UNHCR at domestic level. Each institution watched, waited,
+                  declined to engage, and concluded that the quiet at the other end was the quiet of someone who had
+                  accepted defeat.
+                </p>
+                <p>
+                  Not a single agency that received a submission from Dr. McLean disputed the contents of a single
+                  document. Not ASIC, which registered the frauds. Not the AFP, which received formal disclosures.
+                  Not the Ombudsman, which received jurisdiction requests. Their silence was not the silence of
+                  institutions confident they were correct. It was the silence of institutions that understood that
+                  engaging would require explaining what the documents showed.
+                </p>
+                <p>
+                  While they were declining to respond, their non-responses were being archived. The silence they
+                  thought they were maintaining in comfort was being catalogued. Every non-reply letter. Every referral
+                  to another agency that also did not reply. Every acknowledgement of receipt that acknowledged nothing
+                  else. They mistook patience for passivity. They mistook documentation for defeat. They were wrong
+                  about both.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">Number Two: You Let Them Build Their Own Cage and Lock the Door.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "Exposure requires completion. A half-built lie can still be hidden, but a finished trap reveals its maker."
+                </blockquote>
+                <p>
+                  The Federal Court found that Dr. McLean was an employee of the respondent. Four months later, the
+                  Administrative Appeals Tribunal found the contrary. Both findings are in the archive. Neither
+                  institution has explained how two co-equal judicial bodies produced irreconcilable decisions on
+                  identical facts. ASIC registered 350+ fraudulent businesses using Dr. McLean's residential address.
+                  ASIC then declined, repeatedly and formally, to investigate the entities it had itself registered.
+                  Both the registrations and the non-investigation letters are in the archive.
+                </p>
+                <p>
+                  These are not allegations. These are the completed cage — built brick by brick by the agencies
+                  themselves, locked with their own correspondence, now publicly available and Bitcoin
+                  blockchain-timestamped. Had Dr. McLean confronted each contradiction early, he would have been
+                  described as paranoid, unstable, conspiracy-minded. He did not confront. He compiled. And now
+                  the contradictions are downloadable. Every journalist, lawyer, researcher, or interested reader
+                  can download the Federal Court finding and the AAT finding and hold them side by side. The cage
+                  is finished. They locked it themselves.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">Number Three: They Built a Trap for a Ghost.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "They designed their scheme for a version of you that doesn't even exist anymore. They studied your history, not your growth."
+                </blockquote>
+                <p>
+                  The early hospitalisations appear, in the documentary record, to have functioned as effective
+                  suppression mechanisms. Formal output decreased. The institutions updated their expectation:
+                  this method works. What they did not model was that the method was also producing data. Every
+                  hospitalisation without criminal charge was a hospitalisation that occurred in the absence of
+                  any legal predicate.
+                </p>
+                <p>
+                  The man who survived hospitalisation 1 had the memory of one detention without justification.
+                  By hospitalisation 14, he had a 35-year forensic archive with a temporal map of every detention
+                  and its proximity to formal disclosure activity. They designed the trap for the person who had
+                  experienced none of this. They arrived to find the person who had experienced all of it. The
+                  lock they brought had been changed years before they reached the door.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">Number Four: They Tried to Turn the Wounds Into Weapons. The Wounds Became Armour.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "They dug through your past looking for bullets, not realizing you already melted those bullets down and forged armor out of them."
+                </blockquote>
+                <p>
+                  The psychiatric record was designed as a weapon — a mechanism for converting documentation
+                  activity into a label that would function as pre-emptive discrediting. If any future investigator
+                  encountered the archive, the existence of fourteen hospitalisations was intended to provide
+                  an off-ramp: <em>this is the work of someone with a psychiatric history.</em>
+                </p>
+                <p>
+                  The off-ramp was closed the moment the archive documented the hospitalisations as proximity
+                  events correlated with disclosure activity. The Impartial AI Analysis reviewed 2,343 government
+                  documents and drew no distinction between the psychiatric records and the legal records. Both
+                  were government-generated sources. Both were analysed. Each hospitalisation, intended to silence,
+                  is now catalogued, timestamped, and mapped against the formal submissions that preceded it.
+                  The weapons became exhibits. The wounds became the armour.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">Number Five: You Exposed the Hands Pulling the Strings.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "Most people fight the knife. You looked past the blade and stared into the hand holding it."
+                </blockquote>
+                <p>
+                  The video describes the moment of clarity when you stop engaging with individual actors and
+                  trace the pattern to its source. In the documented record, the pattern is the evidence.
+                  Thirty-five agencies across three decades did not independently arrive at identical responses
+                  to identical submissions. The probability of coincidental coordination approaches zero in any
+                  statistical framework.
+                </p>
+                <p>
+                  The archive does not need to name an architect. It documents the pattern and leaves the
+                  identification to any investigator willing to trace the strings. The ICC submission under
+                  Article 7 of the Rome Statute submits the pattern — coordinated, sustained, across multiple
+                  state authorities — as evidence of persecution as a crime against humanity. The submission does
+                  not allege conspiracy. It submits a documented pattern and invites the court to apply the
+                  standard. Once the strings are revealed, the game is over.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">They Put On a Show. The Archive Had Already Read the Script.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "The deadliest audience member is the one who already knows the ending."
+                </blockquote>
+                <p>
+                  Every institutional response in the archive performs the same role: the performance of due
+                  process. Correspondence acknowledging receipt. Form letters confirming referral. Ministerial
+                  replies noting that the matter has been considered. Each document performs the function of
+                  institutional engagement while simultaneously declining to engage with the substance of what
+                  was submitted. The performance was polished. What the performers did not know was that the
+                  archive was preserving every element of it.
+                </p>
+                <p>
+                  Named individuals have been publicly accused in sworn testimony downloaded 217,064 times.
+                  None has sued for defamation. None has issued corrections. None has engaged legal counsel to
+                  challenge the archive. The curtain has dropped. The audience is not gasping at the trick.
+                  It is looking at the machinery behind it. And nothing in the machinery — nothing in 35 years
+                  of correspondence, hospitalisation records, court findings, FOI responses, and agency letters
+                  — supports the performance that was staged.
+                </p>
+                <p className="text-cyan-300 font-bold leading-snug">
+                  The video is titled: <em>They set a perfect trap. You saw through it. Now they're mad.</em> The
+                  archive makes a simpler observation: their trap required cooperation, and Dr. McLean documented
+                  instead. 2,077 documents. SHA-256 hashed. Bitcoin blockchain timestamped. With the ICC. With
+                  the UNHCR. Freely downloadable. Permanently established across independent verification systems
+                  that cannot be amended or suppressed by any of the agencies whose conduct they document. The
+                  trap was perfect. The archive was the blade that cut it open. They're furious because the chosen
+                  one didn't stumble where they expected. He built the archive instead.
                 </p>
               </section>
             </Article>

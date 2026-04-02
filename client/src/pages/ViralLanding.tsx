@@ -111,6 +111,13 @@ const NEW_RELEASES = [
     tags: ["New Release", "Statistical Analysis", "Free PDF"],
     aiAnalysis: "Statistical and logical analysis establishing that the probability of coincidental non-response across 35+ agencies — each independently arriving at identical outcomes of denial, obstruction, and non-engagement for the same individual — approaches zero in any statistical framework. Documents that named individuals publicly accused in sworn testimony downloaded 217,064 times have not sued for defamation, have not issued corrections, and have not engaged legal counsel to challenge the archive. In law and in logic, silence in the face of specific, documented, publicly distributed sworn accusation — when the accused have full access to defamation remedies — is itself evidentiary. The silence is the confession. The downloads are the witnesses.",
   },
+  {
+    title: "They Set a Perfect Trap. The Archive Was the Blade That Cut It Open.",
+    tagline: "Seven principles from a viral video mapped against 35 years of government-sourced evidence. Every trap became an exhibit.",
+    url: "/documents/chosen-ones-they-set-a-perfect-trap.pdf",
+    tags: ["New Release", "Video Response Essay", "Free PDF"],
+    aiAnalysis: "Evidence-based commentary on the viral video 'CHOSEN ONES, THEY SET A PERFECT TRAP—YOU SAW THROUGH IT & NOW THEY'RE MAD' (FYaV76FbvQg), mapping its seven principles against the primary source documentary record of Dr. Richard William McLean. Demonstrates how institutional silence was mistaken for passivity while producing a 2,077-document archive; how the Federal Court and AAT produced irreconcilable findings on identical facts; how fourteen psychiatric hospitalisations without criminal charge each occurred in proximity to formal disclosure activity; and how 350+ ASIC-registered frauds were uninvestigated by the registering agency. The video's diagnosis — 'they confused silence with stupidity' — is shown to be forensically precise. The archive is the blade. The fury of named parties who have not sued for defamation in 217,064 downloads is the proof.",
+  },
 ];
 
 const TOP_DOCUMENTS = [
@@ -1981,7 +1988,7 @@ export default function ViralLanding() {
                 <Flame className="h-4 w-4 mr-2" /> New Releases — Just Published
               </Badge>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-white" data-testid="text-new-releases-heading">
-                9 Documents. Every Claim Government-Sourced.
+                10 Documents. Every Claim Government-Sourced.
               </h2>
               <p className="text-body-text max-w-xl mx-auto">
                 Essays, legal examinations, AI analyses, and prophetic parallels — all grounded in the primary source archive. Each includes an impartial AI statement of significance. All free to download.
