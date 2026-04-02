@@ -9,7 +9,7 @@ import { CommentSection } from "@/components/CommentSection";
 import { RelatedContent } from "@/components/RelatedContent";
 import { 
   Newspaper, Mail, Download, ExternalLink, FileText, 
-  Camera, Video, Mic, Globe, Clock, Share2
+  Camera, Video, Mic, Globe, Clock, Share2, Play, ChevronRight
 } from "lucide-react";
 import { SiX } from "react-icons/si";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -112,6 +112,125 @@ export default function Media() {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Press releases, media contacts, and resources for journalists and researchers investigating the <DocumentPopup {...KEY_DOCUMENTS.autobiography}>autobiography</DocumentPopup> and <CrossLink to="/timeline">systematic persecution</CrossLink>. Review the <CrossLink to="/evidence">evidence archive</CrossLink> or read the <CrossLink to="/manifesto">complete manifesto</CrossLink>.
               </p>
+            </div>
+
+            {/* ── VIDEO ESSAYS ── */}
+            <div className="max-w-6xl mx-auto mb-20">
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="font-serif text-3xl font-bold text-primary flex items-center gap-3">
+                  <Play className="h-7 w-7 text-[hsl(38,92%,50%)]" />
+                  Video Essays — Independent Commentary
+                </h2>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/video-commentary">
+                    View all <ChevronRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+              <p className="text-muted-foreground mb-10 max-w-2xl">
+                Four evidence-based essays responding to viral videos that independently describe — with striking precision — the documented reality of Dr. McLean's 35-year case. Every claim below is grounded in the 2,077-document primary source archive.
+              </p>
+
+              {[
+                {
+                  videoId: "fyInNDy0bJU",
+                  url: "https://www.youtube.com/watch?v=fyInNDy0bJU",
+                  videoTitle: "I'M SICK… WHAT THEY DID TO YOU IS DISGUSTING 😡 THEY TARGETED YOU ON PURPOSE",
+                  title: "They Called It Treatment. The Documents Call It Something Else.",
+                  excerpt: [
+                    `"The most effective way to destroy a person is to convince them that what happened to them never really happened." This is the opening line of a video circulating with millions of views. By the time it ends, it has described — with forensic precision — fourteen involuntary psychiatric hospitalisations without criminal charge, 350+ fraudulent ASIC registrations, NDIS support formally approved and then withheld, and a medical event with a 2.87% survival probability.`,
+                    `The difference between Dr. McLean and every other person who has experienced institutional gaslighting at scale is this: he kept the receipts. And the receipts are government-issued. The video's language for what happened is clear: "They were trying to locate your breaking point, the moment you'd finally hand over your inner authority and just go along." The documents show they never found it.`,
+                    `Fourteen psychiatric detentions. Each without criminal charge. Each in temporal proximity to formal disclosure activity. Inconsistent diagnoses between detentions. Treating physicians who disagreed. The one consistent element across all fourteen: proximity to moments when his testimony posed the greatest institutional risk. Psychiatric detention without criminal process, applied repeatedly to a person who has never been charged with any crime, is not medicine. It is suppression wearing medicine's clothes.`,
+                    `"What looked like chaos starts looking coordinated. What felt personal starts looking structural." The ASIC registrations — 350 of them, in his name, without his consent — are in the public registry. No investigation announced. No charges laid. The scale of this fraud is not consistent with opportunistic criminal activity. It is consistent with a coordinated campaign to destroy a person's legal and financial identity so comprehensively that no institution would engage with him.`,
+                  ],
+                },
+                {
+                  videoId: "jMH2Dngbw8I",
+                  url: "https://youtu.be/jMH2Dngbw8I?si=Ajgy0ZXFOClZrwf_",
+                  videoTitle: "GRAB YOUR SUIT 🕴️ YOU'RE MAKING HEADLINES 📺 CASE WON — THEY'RE FACING JUSTICE ⚖️",
+                  title: "They Aimed to Silence You. You Built an Archive Instead.",
+                  excerpt: [
+                    `"They aimed to wear you weary in bureaucracy designed to crush the vocal and shield the sleek." A declaration of arrival — a coronation speech for someone who survived long enough to watch the machinery that tried to destroy them turn its gears on empty air. He didn't shatter. He filed.`,
+                    `2,077 documents. SHA-256 hashed. Bitcoin blockchain timestamped. Permanently beyond the reach of the agencies that produced them. The text messages from an NDIS provider who corroborated the assassination attempt, then claimed a national security NDA, then retracted — that progression is in the record. The PM&C reversing their sworn FOI declaration that no documents existed — that reversal is in the public record. Every one of these documents was produced by the state.`,
+                    `"Every humiliation they inflicted — exhibit." A submission has been lodged with the ICC under Article 7 of the Rome Statute. A parallel submission with the UNHCR. The evidence package is built from the same primary source documents the Australian state produced. The ICC's Office of the Prosecutor has a mandate to assess submissions that meet the definitional threshold. This submission meets it.`,
+                    `The estimated cost to Australian taxpayers of the documented multi-agency campaign exceeds $11.5 million. The cost of the archive was borne by one person, in conditions of destitution, during a medical event from which he had a 2.87% chance of surviving. The asymmetry is notable. So is its outcome. "While they assumed you'd vanish, you etched permanence."`,
+                  ],
+                },
+                {
+                  videoId: "bxF3fagXeVU",
+                  url: "https://www.youtube.com/watch?v=bxF3fagXeVU",
+                  videoTitle: "SOMEONE GOT PROOF YOU WEREN'T CRAZY… NOW JUSTICE IS COMING FOR YOU ⚖️🔍🔥",
+                  title: "History Has a Strange Habit of Apologising Very Late. But When It Does, It Brings Receipts.",
+                  excerpt: [
+                    `"History has a strange habit of apologizing very late. But when it does, it brings receipts." In the context of the Barran Dodger case, this is not a metaphor. It is a literal description of what has already happened. The receipts exist. There are 2,077 of them. They are SHA-256 hashed, Bitcoin blockchain timestamped, freely downloadable, and permanently beyond the reach of the institutions that produced them.`,
+                    `Dr. McLean was not dismissed by amateurs. He was dismissed by professionals — institutions with statutory authority, legal mandates, and formal obligations to assess what he was presenting them with. And not one of them argued with the evidence. The Commonwealth Ombudsman. The AHRC. OAIC. AFP. AHPRA. Legal Aid. Every single one filed him under problematic and moved on. Not after assessment. Before it.`,
+                    `"The most dangerous thing for your opposition is not your voice. It's documentation." For 35 years, Dr. McLean's voice was interrupted, ignored, mocked, and drowned out. The documentation is different. The ASIC registrations do not become credible or incredible based on assessments of the person who compiled them. The blockchain timestamps exist regardless of what any institution concludes about Dr. McLean's emotional state.`,
+                    `"The story has changed hands." It is no longer Dr. McLean who must explain why he filed fourteen times with the Commonwealth Ombudsman and received no assessment. It is the Commonwealth Ombudsman that must explain it. The documentation has moved the burden. Permanently. Without asking permission. "Turns out you weren't unstable. You were early."`,
+                  ],
+                },
+                {
+                  videoId: "gl6oyBnH7ZM",
+                  url: "https://www.youtube.com/watch?v=gl6oyBnH7ZM",
+                  videoTitle: "Chosen Ones, AFTER MONTHS WATCHING… THE FEDS WANT A PRIVATE MEETING 👁️🔥",
+                  title: "They've Been Watching for Months. Now They Want a Private Meeting. You Already Know Why.",
+                  excerpt: [
+                    `"The eyes that watch you the longest rarely blink." There are people outside telling him to give up. That detail matters more than anything in this video. Because the entire architecture of what it describes — the watching, the silence, the recognition that something cannot be explained away — presupposes that the person being watched stayed. The archive is what happens when someone doesn't give up.`,
+                    `Australia is a full Five Eyes member. Snowden's disclosures revealed PRISM, XKeyscore, and the surveillance architecture that makes the scenario this video describes not hypothetical but operational. A formally registered whistleblower who has filed with the Federal Court, NDIA, the PM's Department, the ICC, and the UNHCR — and who has published a 2,077-document blockchain-verified archive downloaded by 88,000 people — would trigger exactly the anomaly-flag this video describes.`,
+                    `The 350+ ASIC registrations are not one incident. They are a sustained, multi-entity, multi-year campaign. Dr. McLean's disclosures touch simultaneously on NDIS provider fraud, ASIC registry fraud, psychiatric system weaponisation, AFP non-engagement with formal disclosures, intelligence agency coordination with welfare agencies, and multi-jurisdiction psychiatric detention without criminal process. These domains don't normally converge. Their convergence around one documented case is the rarest data point.`,
+                    `The people outside telling him to give up are not wrong about the difficulty. They are wrong about the conclusion. A person who is wrong stops. Dr. McLean has not stopped. "Persistence without apparent result is not a sign of delusion. It is the data point that intelligent systems find most difficult to model." The eyes that watch the longest rarely blink. And they have been watching for a reason.`,
+                  ],
+                },
+              ].map((essay, idx) => (
+                <div key={idx} className="mb-16 last:mb-0">
+                  <Card className="overflow-hidden border-[hsl(38,92%,50%)]/20 hover:border-[hsl(38,92%,50%)]/50 transition-colors">
+                    <CardContent className="p-0">
+                      {/* Video embed */}
+                      <div className="relative w-full bg-black" style={{ paddingTop: "42%" }}>
+                        <iframe
+                          className="absolute inset-0 w-full h-full"
+                          src={`https://www.youtube-nocookie.com/embed/${essay.videoId}`}
+                          title={essay.videoTitle}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+
+                      <div className="p-6 md:p-8">
+                        {/* Video title */}
+                        <div className="flex items-start gap-2 mb-4">
+                          <Play className="h-4 w-4 text-[hsl(38,92%,50%)] shrink-0 mt-0.5" />
+                          <a href={essay.url} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary transition-colors leading-relaxed">
+                            {essay.videoTitle}
+                          </a>
+                        </div>
+
+                        {/* Essay */}
+                        <h3 className="font-serif text-2xl font-bold text-primary mb-6 leading-tight">
+                          {essay.title}
+                        </h3>
+
+                        <div className="space-y-4 text-muted-foreground leading-7">
+                          {essay.excerpt.map((para, i) => (
+                            <p key={i}>{para}</p>
+                          ))}
+                        </div>
+
+                        <div className="mt-6 pt-6 border-t border-border flex items-center justify-between flex-wrap gap-3">
+                          <Badge variant="outline" className="border-[hsl(38,92%,50%)]/40 text-[hsl(38,92%,50%)] text-xs">
+                            Evidence-based commentary
+                          </Badge>
+                          <Button variant="outline" size="sm" asChild>
+                            <Link href="/video-commentary">
+                              Read full essay <ChevronRight className="ml-1 h-4 w-4" />
+                            </Link>
+                          </Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
