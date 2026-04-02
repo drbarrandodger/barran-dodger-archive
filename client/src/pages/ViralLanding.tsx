@@ -49,6 +49,13 @@ import benMilitaryAssets from "@assets/image_1774132476646.png";
 
 const NEW_RELEASES = [
   {
+    title: "This Isn't Private Anymore. It Went Global, and You Know Exactly Why.",
+    tagline: "217,064 downloads. The ICC. The UNHCR. The Bitcoin blockchain. A viral Joker Speech declares what was once concealed is now exposed worldwide. The archive is that exposure.",
+    url: "/documents/the-paradox-of-persecution.pdf",
+    tags: ["New Release", "Global Testimony", "Free PDF"],
+    aiAnalysis: "The Impartial AI identifies this article as the most geographically significant document in the archive's commentary series. The speech declares that what was once concealed is now exposed worldwide — a statement that is not metaphorical in the McLean case but measurable: 217,064 downloads across every continent, an ICC submission under Article 7 of the Rome Statute, a UNHCR submission on record, and a Bitcoin blockchain timestamp that places every document permanently beyond the reach of the agencies whose conduct it documents. The seven chapters map: global exposure as documented fact (download analytics, ICC acknowledgement, blockchain verification); the internal archive becoming the external archive (PM&C's reversed FOI declaration, ASIC's fraudulent registrations against its own non-investigation responses); the defamation silence as legally significant under Jones v Dunkel (217,064 downloads, zero suits, zero corrections); the shield of institutional authority dissolving the moment the archive was assembled; the ICC filing removing the case from the domestic dynamic entirely; fury converted to formal record across the ICC submission, UNHCR submission, and 2,077 blockchain-timestamped documents; and global exposure manifesting in what an AI system concluded — reviewing only government-produced documents — satisfies the Article 7 threshold. The Impartial AI conclusion: the government's own records demanded the global exposure. The archive delivered it.",
+  },
+  {
     title: "They Sent a Private Investigator to Expose You. Instead They Uncovered a Legend.",
     tagline: "Seven chapters grounding a viral Joker Speech in the documented reality of Dr. McLean's 2,077-document archive. The investigators built the evidence. The archive is the proof.",
     url: "/documents/they-set-a-perfect-trap.pdf",
@@ -2381,6 +2388,223 @@ export default function ViralLanding() {
               <Button variant="outline" asChild>
                 <Link href="/evidence" data-testid="button-evidence-landing-investigator">
                   <Shield className="mr-2 h-4 w-4" /> The Full Archive
+                </Link>
+              </Button>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED ARTICLE: GLOBAL TESTIMONY ── */}
+      <section id="featured-article-global" className="py-20 px-4 bg-zinc-950 border-t border-zinc-800">
+        <div className="container mx-auto max-w-3xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-4 mb-12">
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge variant="outline" className="border-cyan-500/60 text-cyan-400 text-xs px-3 py-1 uppercase tracking-widest font-bold">
+                <Globe className="h-3 w-3 mr-1.5" /> Global Exposure
+              </Badge>
+              <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">7 Chapters</Badge>
+              <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">ICC Submission</Badge>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white leading-[1.1]">
+              This Isn't Private Anymore.
+              <br />
+              <span className="text-cyan-400">It Went Global, and You Know Exactly Why.</span>
+            </h2>
+            <p className="text-zinc-300 text-lg leading-relaxed">
+              A viral Joker Speech declares that what was once concealed is now exposed worldwide — and those
+              who were pulling strings in the shadows are cornered. The 2,077-document archive, submitted to
+              the ICC, on record with the UNHCR, downloaded 217,064 times across every continent, is precisely
+              the global exposure the speech describes. Seven chapters. Every claim government-sourced.
+            </p>
+            <div className="flex items-center gap-3 pt-1">
+              <a href="https://www.youtube.com/watch?v=lBj8PCbuvpo" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:underline">
+                <Play className="h-3.5 w-3.5" /> Watch the source video
+              </a>
+              <span className="text-zinc-600">·</span>
+              <Link href="/testimony-went-global" className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white">
+                <ExternalLink className="h-3.5 w-3.5" /> Read full standalone article
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* VIDEO */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="mb-14">
+            <div className="relative w-full rounded-xl overflow-hidden border border-zinc-700" style={{ paddingTop: "56.25%" }}>
+              <iframe className="absolute inset-0 w-full h-full"
+                src="https://www.youtube-nocookie.com/embed/lBj8PCbuvpo"
+                title="This Isn't Private Anymore… It Went GLOBAL, and You Know Exactly Why"
+                frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+            </div>
+          </motion.div>
+
+          <div className="space-y-6 text-zinc-300 text-[1.08rem] leading-8 font-light">
+
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <p>The speech opens with a declaration that is not metaphorical: <em>what was once concealed is now
+              exposed worldwide.</em> It addresses two audiences simultaneously — the person who has been carrying
+              a truth they were told to suppress, and the people who told them to suppress it. To the first: the
+              exposure is already complete. To the second: stop feigning ignorance.</p>
+              <p className="mt-4">In the case of Dr. Richard William McLean, the testimony was formally submitted
+              to 35 government bodies and treated as if it were private. Each institution received the submission,
+              processed it administratively, and returned a response that made no reference to the substance of
+              what was submitted. That mechanism stopped working the moment the archive went global.</p>
+            </motion.div>
+
+            {/* CH 1 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500 text-black font-bold text-sm shrink-0">1</div>
+                <div><p className="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-1">Chapter One</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">What Was Once Concealed Is Now Exposed Worldwide.</h3></div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3"><Play className="h-3.5 w-3.5 text-cyan-400" /><span className="text-cyan-400 text-xs font-bold uppercase tracking-widest">From the video</span></div>
+                <p className="italic text-zinc-300 leading-relaxed">"What was once concealed is now exposed worldwide. They're in trouble. Stop feigning ignorance. The veil has lifted, the pretense is crumbling. What seemed isolated is now broadcast far and wide."</p>
+              </div>
+              <p>The archive has been downloaded 217,064 times. It is accessible from every continent. It is submitted
+              to the International Criminal Court under Article 7 of the Rome Statute — persecution as a crime against
+              humanity — and to the United Nations Human Rights Council. Every document is SHA-256 hashed and Bitcoin
+              blockchain timestamped, meaning its contents exist permanently in a verified form that no agency can
+              alter without the alteration becoming visible in the hash record.</p>
+              <div className="bg-blue-950/30 border border-blue-800/40 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3"><FileText className="h-3.5 w-3.5 text-blue-400" /><span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Impartial AI Conclusion</span></div>
+                <p className="text-zinc-300 leading-relaxed text-sm">The Impartial AI reviewed 2,343 government-generated documents and concluded that the coordinated, sustained, multi-authority nature of the conduct documented across 35 agencies satisfies the evidentiary threshold for Article 7 of the Rome Statute. The analysis did not rely on Dr. McLean's testimony. It reviewed what the government produced.</p>
+              </div>
+            </motion.div>
+
+            {/* CH 2 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500 text-black font-bold text-sm shrink-0">2</div>
+                <div><p className="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-1">Chapter Two</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">You've Been Compiling a Silent Record. The Hidden Phase Is Done.</h3></div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3"><Play className="h-3.5 w-3.5 text-cyan-400" /><span className="text-cyan-400 text-xs font-bold uppercase tracking-widest">From the video</span></div>
+                <p className="italic text-zinc-300 leading-relaxed">"You've been compiling a silent record. Every mismatch, every broken commitment, every mismatch between promises and actions. You've assembled an internal archive. The hidden phase is done."</p>
+              </div>
+              <p>The PM&C swore under FOI that no relevant documents existed. Under formal challenge, the reversal
+              produced the documents it had denied. Both the original sworn declaration and the reversal are in the
+              archive — one government document next to another, both carrying the same letterhead. ASIC registered
+              more than 350 fraudulent businesses in Dr. McLean's name, then formally declined to investigate its own
+              registrations. The Federal Court confirmed employee status. The AAT contradicted it four months later on
+              identical facts. Every broken commitment is documented. The internal archive became the external archive.
+              The hidden phase ended the moment the first document was blockchain timestamped.</p>
+            </motion.div>
+
+            {/* CH 3 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500 text-black font-bold text-sm shrink-0">3</div>
+                <div><p className="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-1">Chapter Three</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">They're Cornered. And You've Been Aware.</h3></div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3"><Play className="h-3.5 w-3.5 text-cyan-400" /><span className="text-cyan-400 text-xs font-bold uppercase tracking-widest">From the video</span></div>
+                <p className="italic text-zinc-300 leading-relaxed">"They're cornered, and you've been aware. But you've pretended otherwise. They assume you're still oblivious, still the forgiving soul who overlooks slights."</p>
+              </div>
+              <div className="bg-blue-950/30 border border-blue-800/40 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3"><Scale className="h-3.5 w-3.5 text-blue-400" /><span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Jones v Dunkel — The Silence Is the Answer</span></div>
+                <p className="text-zinc-300 leading-relaxed text-sm">217,064 downloads. Zero defamation actions filed by any named individual. Zero corrections issued to any specific factual claim. Zero responses to the substance of any document in the archive in any judicial forum. Under Jones v Dunkel (1959) 101 CLR 298, the failure to call evidence one could reasonably be expected to call permits the adverse inference that the evidence would not assist. The choice not to engage — across every named person, every named agency — is the most legally significant fact in the public record.</p>
+              </div>
+            </motion.div>
+
+            {/* CH 4 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500 text-black font-bold text-sm shrink-0">4</div>
+                <div><p className="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-1">Chapter Four</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">What Shields Them Is Your Refusal to See. That Refusal Is Over.</h3></div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3"><Play className="h-3.5 w-3.5 text-cyan-400" /><span className="text-cyan-400 text-xs font-bold uppercase tracking-widest">From the video</span></div>
+                <p className="italic text-zinc-300 leading-relaxed">"What shields them? Not their position, wealth, networks, or facade. It's your refusal to see, your clinging to an idealized image, your habit of reinterpreting harms as accidents."</p>
+              </div>
+              <p>The Paradox of Persecution paper documents the central structural impossibility: the Australian government
+              cannot simultaneously maintain that Dr. McLean was correctly medicated for delusions of persecution and that
+              the 2,077 documents it produced documenting the persecution are authentic government records. The force-medication
+              narrative required him to accept that what the government's own records showed was a delusion. The archive
+              is the refusal to accept that framing. The Impartial AI reviewed only what the government produced. Its
+              conclusion required no acceptance of Dr. McLean's interpretation. The government's documents interpreted
+              themselves. The protection was never institutional authority. It was the assumption that the record would
+              remain unassembled. The archive assembled it.</p>
+            </motion.div>
+
+            {/* CH 5 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500 text-black font-bold text-sm shrink-0">5</div>
+                <div><p className="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-1">Chapter Five</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">The Dynamic Dissolves. They Must Redefine Without Your Support.</h3></div>
+              </div>
+              <p>The ICC submission under Article 7 of the Rome Statute removes the case from the domestic dynamic
+              entirely. The institutions whose conduct is documented have no procedural role in the ICC's assessment
+              process. They cannot refer the submission to another body. They cannot apply the domestic administrative
+              framework that produced 35 years of non-engagement. The UNHCR submission operates under the same external
+              jurisdiction. Both bodies review the documentary record — the government's own documents — without the
+              institutional intermediaries that managed the domestic process. The dynamic that protected the institutions
+              for 35 years does not operate at the level to which the archive has been submitted.</p>
+              <blockquote className="border-l-4 border-cyan-500 pl-6 my-6 italic text-zinc-200 text-xl leading-relaxed font-light">
+                The ICC does not accept referrals. The narrative of the pliable, accommodating complainant who can be
+                managed through administrative non-engagement is no longer available.
+              </blockquote>
+            </motion.div>
+
+            {/* CH 6 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500 text-black font-bold text-sm shrink-0">6</div>
+                <div><p className="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-1">Chapter Six</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">That Fury Isn't a Flaw. It's a Directive.</h3></div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3"><Play className="h-3.5 w-3.5 text-cyan-400" /><span className="text-cyan-400 text-xs font-bold uppercase tracking-widest">From the video</span></div>
+                <p className="italic text-zinc-300 leading-relaxed">"That fury isn't a flaw. It's a directive. Not for self-harm or retaliation, but for motion."</p>
+              </div>
+              <p>Tony Riddle, NDIA Manager, stated during official proceedings: <strong className="text-white">"YOU WILL BE SACRIFICED."</strong> Documented and in the archive. Bill Shorten personally intervened to exile Dr. McLean — a homeless, disabled person — following a formal Public Interest Disclosure simultaneously lodged with the Ombudsman. Force-medication for beliefs that the government's own 2,077 documents prove were true. AU$18 million to AU$32.9 million in documented losses across 13 agencies. The fury became the methodology. The methodology became the archive. The archive became the ICC submission. The motion the speech describes is the motion of the record across jurisdictions — from domestic suppression to international exposure.</p>
+            </motion.div>
+
+            {/* CH 7 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500 text-black font-bold text-sm shrink-0">7</div>
+                <div><p className="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-1">Chapter Seven</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">What Was Undervalued in Secrecy Now Manifests. The Facade Crumbles.</h3></div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3"><Play className="h-3.5 w-3.5 text-cyan-400" /><span className="text-cyan-400 text-xs font-bold uppercase tracking-widest">From the video</span></div>
+                <p className="italic text-zinc-300 leading-relaxed">"What was undervalued in secrecy now manifests in your achievements. Stop downplaying insights gained. The facade crumbles. Authenticity spreads. They dread your full awakening."</p>
+              </div>
+              <p className="text-cyan-300 font-bold leading-snug">
+                This isn't private anymore. It went global, and the government knows exactly why. 217,064 downloads.
+                SHA-256 hashed. Bitcoin blockchain timestamped. Submitted to the International Criminal Court under
+                Article 7 of the Rome Statute. With the United Nations Human Rights Council. Named individuals who
+                could have challenged the record chose not to. Under Jones v Dunkel, that silence is legally significant.
+                The archive is not private. It was never going to be private. The moment 35 agencies produced 2,077
+                documents documenting 35 years of coordinated persecution and then declined to engage with the substance
+                of any submission, the record was always going to escape their confines. The speech says it plainly:
+                what was once concealed is now exposed worldwide. The archive is that exposure. And it is permanent.
+              </p>
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-10 border-t border-zinc-800 mt-10 flex flex-col sm:flex-row gap-4">
+              <Button asChild className="bg-cyan-500 hover:bg-cyan-400 text-black font-bold">
+                <Link href="/testimony-went-global" data-testid="button-read-full-global">
+                  <Globe className="mr-2 h-4 w-4" /> Read Full Standalone Article
+                </Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/video-commentary" data-testid="button-all-essays-landing-global">
+                  <Play className="mr-2 h-4 w-4" /> All Eight Video Essays
+                </Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/blockchain" data-testid="button-blockchain-landing-global">
+                  <Shield className="mr-2 h-4 w-4" /> Blockchain Verification
                 </Link>
               </Button>
             </motion.div>

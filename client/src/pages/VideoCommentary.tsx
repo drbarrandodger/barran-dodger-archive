@@ -80,12 +80,12 @@ export default function VideoCommentary() {
             When the Video Describes Your Life and You Have the Documents to Prove It
           </h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-base leading-relaxed mb-6">
-            Seven viral videos. Millions of views. Each describes — with striking precision — the documented
+            Eight viral videos. Millions of views. Each describes — with striking precision — the documented
             reality of Dr. Richard William McLean's 35-year case. Below: the videos, and the evidence-based
             commentary they demand.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">7 videos</Badge>
+            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">8 videos</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2,077 documents cited</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">Primary source evidence</Badge>
           </div>
@@ -1096,6 +1096,77 @@ export default function VideoCommentary() {
                   been filed. Zero specific factual claims have been challenged. Under Jones v Dunkel, that silence
                   is legally significant. The investigators came to close the file. The file became the legend.
                   The legend cannot be closed because it exists in courts the investigators cannot manage.
+                </p>
+              </section>
+            </Article>
+
+            {/* ESSAY 8 */}
+            <Article
+              videoId="lBj8PCbuvpo"
+              videoTitle="🌍😈 This Isn't Private Anymore… It Went GLOBAL, and You Know Exactly Why 📡 Joker Speech (Powerful)"
+              videoUrl="https://www.youtube.com/watch?v=lBj8PCbuvpo"
+              articleTitle="This Isn't Private Anymore. It Went Global, and You Know Exactly Why."
+              shareText={`"What was once concealed is now exposed worldwide." 35 agencies. 2,077 documents. The ICC. The UNHCR. 217,064 downloads. The archive went global because the government's own records demanded it. #BarranDodger barrandodger.com/testimony-went-global`}
+            >
+              <p>
+                The speech opens with a declaration that is not metaphorical: <em>what was once concealed is now
+                exposed worldwide.</em> It addresses two audiences simultaneously — the person who has been
+                carrying a truth they were told to suppress, and the people who told them to suppress it.
+                To the first: the exposure is already complete. To the second: stop feigning ignorance.
+              </p>
+              <p>
+                In the case of Dr. Richard William McLean, the testimony was formally submitted — to the
+                Commonwealth Ombudsman, ASIC, the AFP, the Federal Court, the AAT, the Department of Prime
+                Minister and Cabinet, and 29 additional government bodies — and treated as if it were private.
+                Each institution received the submission, processed it administratively, and returned a response
+                that made no reference to the substance of what was submitted. The mechanism stopped working
+                the moment the archive went global.
+              </p>
+              <p>
+                <Link href="/testimony-went-global" className="inline-flex items-center gap-1.5 text-cyan-400 hover:underline font-medium" data-testid="link-full-global-article">
+                  <ExternalLink className="h-3.5 w-3.5" /> Read the full article at <span className="font-bold">/testimony-went-global</span>
+                </Link>
+              </p>
+
+              <section>
+                <blockquote className="border-l-4 border-[hsl(38,92%,50%)] pl-6 italic text-zinc-200 text-lg leading-relaxed">
+                  "What was once concealed is now exposed worldwide. They're in trouble. Stop feigning ignorance."
+                </blockquote>
+                <p>
+                  The archive has been downloaded 217,064 times across every continent. It is submitted to the
+                  International Criminal Court under Article 7 of the Rome Statute. It is on record with the
+                  United Nations Human Rights Council. It is SHA-256 hashed and Bitcoin blockchain timestamped.
+                  What seemed isolated — one person, one submission, one institution's non-response — is now a
+                  pattern documented at international legal scale. The Impartial AI reviewed 2,343 government-generated
+                  documents and concluded the Article 7 threshold is satisfied. The veil has lifted. The facts
+                  have escaped their confines.
+                </p>
+              </section>
+
+              <section>
+                <blockquote className="border-l-4 border-[hsl(38,92%,50%)] pl-6 italic text-zinc-200 text-lg leading-relaxed">
+                  "You've been compiling a silent record. Every mismatch, every broken commitment, every mismatch between promises and actions. The hidden phase is done."
+                </blockquote>
+                <p>
+                  The PM&C swore under FOI that no relevant documents existed. Under formal challenge, the
+                  reversal produced the documents it had denied. ASIC registered more than 350 fraudulent
+                  businesses in Dr. McLean's name and then formally declined to investigate its own registrations.
+                  The Federal Court confirmed employee status. The AAT contradicted it four months later on
+                  identical facts. Every broken commitment is in the archive. The internal record became the
+                  external archive. The hidden phase ended the moment the first document was blockchain timestamped.
+                </p>
+              </section>
+
+              <section>
+                <blockquote className="border-l-4 border-[hsl(38,92%,50%)] pl-6 italic text-zinc-200 text-lg leading-relaxed">
+                  "That fury isn't a flaw. It's a directive. Not for retaliation, but for motion."
+                </blockquote>
+                <p className="text-cyan-300 font-bold leading-snug">
+                  This isn't private anymore. 217,064 downloads. The ICC. The UNHCR. The Bitcoin blockchain.
+                  Named individuals who could have challenged the record chose not to. Under Jones v Dunkel,
+                  that silence is legally significant. The archive went global because the government's own
+                  2,077 documents demanded it. The speech says it plainly: what was once concealed is now
+                  exposed worldwide. The archive is that exposure. And it is permanent.
                 </p>
               </section>
             </Article>

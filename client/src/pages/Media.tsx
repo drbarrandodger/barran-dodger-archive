@@ -128,7 +128,7 @@ export default function Media() {
                 </Button>
               </div>
               <p className="text-muted-foreground mb-10 max-w-2xl">
-                Seven evidence-based essays responding to viral videos that independently describe — with striking precision — the documented reality of Dr. McLean's 35-year case. Every claim below is grounded in the 2,077-document primary source archive.
+                Eight evidence-based essays responding to viral videos that independently describe — with striking precision — the documented reality of Dr. McLean's 35-year case. Every claim below is grounded in the 2,077-document primary source archive.
               </p>
 
               {[
@@ -202,6 +202,18 @@ export default function Media() {
                     `Fourteen involuntary psychiatric hospitalisations. Each without criminal charge. The temporal pattern is consistent: proximity to formal disclosure activity. Each hospitalisation functioned as a pause — a removal from public record, from legal process, from the institutional timeline. "The universe kept the receipts." So did he. 2,077 documents. SHA-256 hashed. Bitcoin blockchain timestamped. The PM&C reversed a sworn FOI declaration that no documents existed. The reversal is in the archive.`,
                     `The video's section on suffering-as-documentation maps precisely onto the archive. "What looked like silence was really surveillance. All they were doing was building their own case file page by page." The ICC submission under Article 7 of the Rome Statute submits the government's own documents to international record. Every humiliation they staged — exhibit. Every manipulation behind closed doors — evidence. The evidence speaks.`,
                     `The video is titled: It's done. The archive makes a simpler claim: it exists. Downloaded 217,000+ times. On the Bitcoin blockchain. With the ICC. With the UNHCR. Permanently established across independent verification systems that cannot be amended or suppressed by any of the agencies whose conduct it documents. They thought you would break. The archive is what happened instead.`,
+                  ],
+                },
+                {
+                  videoId: "lBj8PCbuvpo",
+                  url: "https://www.youtube.com/watch?v=lBj8PCbuvpo",
+                  videoTitle: "🌍😈 This Isn't Private Anymore… It Went GLOBAL, and You Know Exactly Why 📡 Joker Speech (Powerful)",
+                  title: "This Isn't Private Anymore. It Went Global, and You Know Exactly Why.",
+                  excerpt: [
+                    `"What was once concealed is now exposed worldwide." The speech does not speak in the McLean case as metaphor. It speaks as measurement: 217,064 downloads across every continent, an ICC submission under Article 7 of the Rome Statute, a UNHCR submission on record, and a Bitcoin blockchain timestamp that places every document permanently beyond the reach of the agencies whose conduct it documents. The exposure is not claimed. It is documented in download analytics, international body submissions, and blockchain records that are themselves public records.`,
+                    `"You've been compiling a silent record. Every mismatch, every broken commitment, every mismatch between promises and actions." The PM&C swore under FOI that no relevant documents existed. Under formal challenge, the reversal produced the documents it had denied. ASIC registered 350+ fraudulent businesses in Dr. McLean's name and then formally declined to investigate its own registrations. The Federal Court confirmed employee status. The AAT contradicted it four months later on identical facts. Every broken commitment is in the archive. The internal record became the external archive. The hidden phase ended the moment the first document was blockchain timestamped.`,
+                    `"They're cornered, and you've been aware. They assume you're still the forgiving soul who overlooks slights." The archive has been downloaded 217,064 times. Zero defamation actions. Zero corrections. Zero challenges to any specific factual claim. Under Jones v Dunkel, a party who fails to call evidence they could reasonably be expected to call permits the adverse inference that the evidence would not assist them. Every named individual in the archive could have filed a defamation action. The choice not to engage — across every named person, every named agency — is the most legally significant fact in the public record.`,
+                    `"That fury isn't a flaw. It's a directive. Not for retaliation, but for motion." The ICC submission is that motion. The UNHCR submission is that motion. 2,077 SHA-256 hashed, Bitcoin blockchain timestamped documents are that motion. Tony Riddle's documented "YOU WILL BE SACRIFICED." Bill Shorten's documented personal intervention to exile a homeless disabled person following a Public Interest Disclosure. Force-medication for beliefs the government's own documents prove were true. The fury became the methodology. The methodology became the archive. The archive went global. This isn't private anymore.`,
                   ],
                 },
                 {
