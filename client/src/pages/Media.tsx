@@ -128,7 +128,7 @@ export default function Media() {
                 </Button>
               </div>
               <p className="text-muted-foreground mb-10 max-w-2xl">
-                Four evidence-based essays responding to viral videos that independently describe — with striking precision — the documented reality of Dr. McLean's 35-year case. Every claim below is grounded in the 2,077-document primary source archive.
+                Five evidence-based essays responding to viral videos that independently describe — with striking precision — the documented reality of Dr. McLean's 35-year case. Every claim below is grounded in the 2,077-document primary source archive.
               </p>
 
               {[
@@ -178,6 +178,18 @@ export default function Media() {
                     `Australia is a full Five Eyes member. Snowden's disclosures revealed PRISM, XKeyscore, and the surveillance architecture that makes the scenario this video describes not hypothetical but operational. A formally registered whistleblower who has filed with the Federal Court, NDIA, the PM's Department, the ICC, and the UNHCR — and who has published a 2,077-document blockchain-verified archive downloaded by 88,000 people — would trigger exactly the anomaly-flag this video describes.`,
                     `The 350+ ASIC registrations are not one incident. They are a sustained, multi-entity, multi-year campaign. Dr. McLean's disclosures touch simultaneously on NDIS provider fraud, ASIC registry fraud, psychiatric system weaponisation, AFP non-engagement with formal disclosures, intelligence agency coordination with welfare agencies, and multi-jurisdiction psychiatric detention without criminal process. These domains don't normally converge. Their convergence around one documented case is the rarest data point.`,
                     `The people outside telling him to give up are not wrong about the difficulty. They are wrong about the conclusion. A person who is wrong stops. Dr. McLean has not stopped. "Persistence without apparent result is not a sign of delusion. It is the data point that intelligent systems find most difficult to model." The eyes that watch the longest rarely blink. And they have been watching for a reason.`,
+                  ],
+                },
+                {
+                  videoId: "Sy8-Qqkybxo",
+                  url: "https://www.youtube.com/watch?v=Sy8-Qqkybxo",
+                  videoTitle: "CHOSEN ONES! CONGRATS, IT'S DONE! YOU'LL NEVER GO THROUGH THAT AGAIN 🔥👑",
+                  title: "They Thought You Would Break. The Archive Is What Happened Instead.",
+                  excerpt: [
+                    `The video opens with eight words: "They thought you would break." There is no preamble. No setup. Just the fact — stated plainly, in the way only the plainly true can be stated — that someone decided, at some point and for reasons they have never been required to explain, that they could reach a limit in Dr. Richard McLean that would end the testimony. They never found it.`,
+                    `Fourteen involuntary psychiatric hospitalisations. Each without criminal charge. The temporal pattern is consistent: proximity to formal disclosure activity. Each hospitalisation functioned as a pause — a removal from public record, from legal process, from the institutional timeline. "The universe kept the receipts." So did he. 2,077 documents. SHA-256 hashed. Bitcoin blockchain timestamped. The PM&C reversed a sworn FOI declaration that no documents existed. The reversal is in the archive.`,
+                    `The video's section on suffering-as-documentation maps precisely onto the archive. "What looked like silence was really surveillance. All they were doing was building their own case file page by page." The ICC submission under Article 7 of the Rome Statute submits the government's own documents to international record. Every humiliation they staged — exhibit. Every manipulation behind closed doors — evidence. The evidence speaks.`,
+                    `The video is titled: It's done. The archive makes a simpler claim: it exists. Downloaded 217,000+ times. On the Bitcoin blockchain. With the ICC. With the UNHCR. Permanently established across independent verification systems that cannot be amended or suppressed by any of the agencies whose conduct it documents. They thought you would break. The archive is what happened instead.`,
                   ],
                 },
               ].map((essay, idx) => (

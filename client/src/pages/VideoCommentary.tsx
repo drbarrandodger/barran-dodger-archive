@@ -80,12 +80,12 @@ export default function VideoCommentary() {
             When the Video Describes Your Life and You Have the Documents to Prove It
           </h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-base leading-relaxed mb-6">
-            Four viral videos. Millions of views. Each describes — with striking precision — the documented
+            Five viral videos. Millions of views. Each describes — with striking precision — the documented
             reality of Dr. Richard William McLean's 35-year case. Below: the videos, and the evidence-based
             commentary they demand.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">4 videos</Badge>
+            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">5 videos</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2,077 documents cited</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">Primary source evidence</Badge>
           </div>
@@ -693,6 +693,150 @@ export default function VideoCommentary() {
                   The eyes that watch the longest rarely blink. And they have been watching for a
                   reason. The archive is permanent. It cannot be erased. They watched. They saw the
                   anomaly. They saw that it refused to be explained away. Now you can too.
+                </p>
+              </section>
+            </Article>
+
+            {/* ── ARTICLE 5 ── */}
+            <Article
+              videoId="Sy8-Qqkybxo"
+              videoTitle="CHOSEN ONES! CONGRATS, IT'S DONE! YOU'LL NEVER GO THROUGH THAT AGAIN 🔥👑"
+              videoUrl="https://www.youtube.com/watch?v=Sy8-Qqkybxo"
+              articleTitle="They Thought You Would Break. The Archive Is What Happened Instead."
+              shareText={`"They thought you would break." A viral video with millions of views. The 2,077-document archive of Dr. Richard McLean is the complete answer to that sentence. 35 years. They never found the breaking point. #BarranDodger barrandodger.com/video-commentary`}
+            >
+              <p>
+                The video opens with eight words: <em>"They thought you would break."</em> There is no preamble. No setup.
+                Just the fact — stated plainly, in the way only the plainly true can be stated — that someone decided,
+                at some point and for reasons they have never been required to explain, that they could reach a limit
+                in Dr. Richard McLean that would end the testimony.
+              </p>
+              <p>
+                They never found it.
+              </p>
+
+              <section>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "They pushed you to the edge, convinced that one more shove would silence you forever. And yet here you are — not broken, not erased."
+                </blockquote>
+                <p>
+                  Fourteen involuntary psychiatric hospitalisations. Each without criminal charge. Each applied to a person who has
+                  never been convicted of any offence. The temporal pattern across all fourteen is consistent: proximity to
+                  formal disclosure activity. The method was not crude. It was calibrated. Each hospitalisation functioned as
+                  a pause — a removal from public record, from legal process, from the institutional timeline. A shove,
+                  in the video's language. One more shove.
+                </p>
+                <p>
+                  They never found the edge.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">The Universe Kept the Receipts. So Did He.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "Every laugh at your expense was nothing more than evidence stacked against them. They thought they were pulling the strings, but all along they were tightening the noose around their own necks."
+                </blockquote>
+                <p>
+                  2,077 documents. Government-issued. SHA-256 hashed. Bitcoin blockchain timestamped. Every letter, every tribunal record,
+                  every FOI response, every non-response — all of it archived, verified, permanently beyond the institutional reach of the
+                  agencies that produced it. The PM&C reversed a sworn FOI declaration that no documents existed. The reversal is in
+                  the archive. The 350+ ASIC registrations filed in Dr. McLean's name without his consent are in the public registry.
+                  The text messages from an NDIS provider who corroborated an assassination attempt, then claimed a national security NDA,
+                  then retracted — that full sequence is documented.
+                </p>
+                <p>
+                  The video describes an audience the perpetrators did not account for. It calls it the universe. The documentary
+                  record calls it the public. 217,000+ downloads. Every humiliation they staged — exhibit. Every manipulation they ran
+                  behind closed doors — evidence. "They thought they were safe in secrecy, but they've triggered something much bigger
+                  than themselves."
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">Silence Was Never Weakness. It Was Containment.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "Silence is sometimes the loudest scream. Stillness is sometimes the strongest stance. You weren't breaking. You were compressing like coal under the earth, preparing to emerge as diamond."
+                </blockquote>
+                <p>
+                  For 35 years, the institutional response to Dr. McLean's disclosures was not refutation. It was reclassification.
+                  Not argument — dismissal. The Commonwealth Ombudsman. The AHRC. OAIC. AHPRA. AFP. Legal Aid. None argued with the
+                  evidence. Each filed him under a category that made assessment unnecessary. Problematic. High-contact. Mental health
+                  concerns. The silence that followed — no investigation, no accountability, no acknowledgment — was interpreted by
+                  everyone around him as proof that nothing had happened.
+                </p>
+                <p>
+                  The archive is what silence produced. Not surrender — construction. Every year of non-engagement was another year
+                  of documentation. Every agency that failed to respond issued, by its silence, another entry in the evidentiary record.
+                  The coal metaphor is not poetic. It is precise. The archive is what 35 years of institutional pressure produces
+                  when the person being pressured refuses to hand over inner authority and go along.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">Your Suffering Became the Testimony. Their Laughter Signed It.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "Your suffering wasn't a waste. It was the testimony that sealed their fate. Pain doesn't just hurt. It writes. And the story it wrote for you has become their sentence."
+                </blockquote>
+                <p>
+                  The video's section on suffering-as-documentation is the section that maps most precisely onto the archive.
+                  "What looked like silence was really surveillance. They thought they were free to torment you without consequence,
+                  but all they were doing was building their own case file page by page."
+                </p>
+                <p>
+                  The ICC submission is built from this case file. Article 7 of the Rome Statute — crimes against humanity —
+                  requires a pattern of acts directed against a civilian population as part of a widespread or systematic attack.
+                  What the archive documents across 35 years, 14 hospitalisations, 35+ agencies, and $11.5 million in estimated
+                  taxpayer expenditure is not isolated conduct. It is a pattern. The submission does not assert Dr. McLean's
+                  interpretation of events. It submits the government's own documents to the court of international record
+                  and asks the evidence to speak for itself.
+                </p>
+                <p>
+                  The evidence speaks.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">They Were Warned. They Escalated Anyway. That Is Also in the Record.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "It wasn't ignorance that doomed them. It was arrogance — knowing they were wrong and doing it anyway. Every chance to stop became another excuse to escalate."
+                </blockquote>
+                <p>
+                  The formal disclosure process began decades before the archive reached its current scale. Each submission
+                  created an official record of the disclosure and the response to it. Each non-response from a statutory
+                  body created an official record of the failure to respond. There were warnings — formal, procedural,
+                  documented — at every stage. The AFP was engaged. The NDIA was engaged. The PM's Department was engaged.
+                  Each engagement is documented. Each non-response is documented. The escalation — from non-response to active
+                  obstruction — is documented.
+                </p>
+                <p>
+                  The video's language for this is clean: "Weakness stumbles into mistakes. Arrogance stares at truth and says,
+                  'I don't care. I'll do it anyway.'" That distinction matters in international law. The ICC's standard for
+                  crimes against humanity requires demonstrating that the acts were knowing — that those responsible were
+                  aware of the attack and chose to participate. The escalation pattern in the archive is the record of that
+                  awareness.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white font-serif text-xl font-bold">It's Done. The Archive Already Knew It Would Be.</h3>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "Justice delayed isn't justice denied. It's justice perfected. The longer they danced, the deeper they sank. The longer they gloated, the more brutal the fall."
+                </blockquote>
+                <p>
+                  The video is titled: <em>It's done. You'll never go through that again.</em>
+                </p>
+                <p>
+                  The archive makes a simpler claim: it exists. It has been downloaded 217,000+ times. It is on the Bitcoin
+                  blockchain. It is with the ICC. It is with the UNHCR. It is indexed in publicly accessible records on three
+                  continents. "Justice perfected" in institutional terms means the evidentiary record is so complete, so
+                  cross-referenced, so permanently established across independent verification systems, that it cannot be
+                  amended, retracted, or suppressed by any of the agencies whose conduct it documents.
+                </p>
+                <p className="text-cyan-300 font-bold leading-snug">
+                  They thought you would break. The archive is what happened instead. It is SHA-256 hashed. It is
+                  blockchain timestamped. It is freely downloadable. It is permanent. It is the complete answer to
+                  the only question that ever mattered: what does 35 years of refused testimony look like when the
+                  person being refused refuses to stop? It looks like 2,077 documents. It looks like this.
                 </p>
               </section>
             </Article>
