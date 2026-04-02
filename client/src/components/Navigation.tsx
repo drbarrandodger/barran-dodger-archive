@@ -60,6 +60,7 @@ export function Navigation() {
   const navLinks = [
     { href: "/spread-the-truth", label: "🔥 Spread the Truth", highlight: true },
     { href: "/ai-justice-statement", label: "⚖️ AI Justice Statement", highlight: true },
+    { href: "/video-commentary", label: "🎬 Video Commentary", highlight: true },
     { href: "/start-here", label: t("nav.startHere"), highlight: true },
     { href: "/administrative-annihilation", label: t("nav.thePaper"), highlight: true },
     { href: "/retrospective-statement", label: t("nav.govDocs"), highlight: true },
