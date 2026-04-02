@@ -128,7 +128,7 @@ export default function Media() {
                 </Button>
               </div>
               <p className="text-muted-foreground mb-10 max-w-2xl">
-                Six evidence-based essays responding to viral videos that independently describe — with striking precision — the documented reality of Dr. McLean's 35-year case. Every claim below is grounded in the 2,077-document primary source archive.
+                Seven evidence-based essays responding to viral videos that independently describe — with striking precision — the documented reality of Dr. McLean's 35-year case. Every claim below is grounded in the 2,077-document primary source archive.
               </p>
 
               {[
@@ -202,6 +202,18 @@ export default function Media() {
                     `Fourteen involuntary psychiatric hospitalisations. Each without criminal charge. The temporal pattern is consistent: proximity to formal disclosure activity. Each hospitalisation functioned as a pause — a removal from public record, from legal process, from the institutional timeline. "The universe kept the receipts." So did he. 2,077 documents. SHA-256 hashed. Bitcoin blockchain timestamped. The PM&C reversed a sworn FOI declaration that no documents existed. The reversal is in the archive.`,
                     `The video's section on suffering-as-documentation maps precisely onto the archive. "What looked like silence was really surveillance. All they were doing was building their own case file page by page." The ICC submission under Article 7 of the Rome Statute submits the government's own documents to international record. Every humiliation they staged — exhibit. Every manipulation behind closed doors — evidence. The evidence speaks.`,
                     `The video is titled: It's done. The archive makes a simpler claim: it exists. Downloaded 217,000+ times. On the Bitcoin blockchain. With the ICC. With the UNHCR. Permanently established across independent verification systems that cannot be amended or suppressed by any of the agencies whose conduct it documents. They thought you would break. The archive is what happened instead.`,
+                  ],
+                },
+                {
+                  videoId: "0uu2muPqBsM",
+                  url: "https://www.youtube.com/watch?v=0uu2muPqBsM",
+                  videoTitle: "THEY SENT A PRIVATE INVESTIGATOR TO EXPOSE YOU…INSTEAD THEY UNCOVERED A LEGEND ⚡😳 Joker Speech",
+                  title: "They Sent a Hunter. They Found an Archive.",
+                  excerpt: [
+                    `"Picture a figure in the shadows. A hired hunter in a sharp suit. Polished shoes clicking on the pavement. A clipboard clutched like a weapon." The speech above does not describe Dr. McLean allegorically. It describes the operational reality of 35 government agencies dispatched, across three decades, with institutional authority to assess his submissions and close his file. None of them closed it. Each produced a document. Those documents are now the archive.`,
+                    `The crack they were searching for was structural: a case that could be characterised as vexatious, a person who could be assessed as delusional, a record that could be safely dismissed. The Federal Court produced the opposite — a judicial finding confirming employee status. The AAT contradicted it four months later on identical facts. Both documents are in the archive. Neither institution has explained the contradiction. The foundation forged in steel was built from their own irreconcilable records.`,
+                    `"Every lie they told became a truth you wielded. Every insult became a brick in your fortress." Tony Riddle of the NDIA stated, during official proceedings: "You will be sacrificed." It is documented. The NDIA declined to investigate. The government force-medicated Dr. McLean for delusions of persecution while producing 2,077 documents describing the persecution it was medicating him for believing in. The Impartial AI's assessment: the government cannot simultaneously maintain that the persecution was delusional and that the records documenting it are authentic. The brick became the fortress wall.`,
+                    `"They wanted a file they could close, but they opened a legend they can't contain." The file is with the ICC under Article 7 of the Rome Statute. With the UNHCR. Downloaded 217,064 times. Bitcoin blockchain timestamped. Zero defamation actions. Zero challenges to specific factual claims. Under Jones v Dunkel, that silence is legally significant. The investigators came to expose someone. They uncovered a 2,077-document archive. The legend was built from their clipboards.`,
                   ],
                 },
               ].map((essay, idx) => (

@@ -40,6 +40,7 @@ import SpreadTheTruth from "@/pages/SpreadTheTruth";
 import AIJusticeStatement from "@/pages/AIJusticeStatement";
 import VideoCommentary from "@/pages/VideoCommentary";
 import ChosenOnesPerfectTrap from "@/pages/ChosenOnesPerfectTrap";
+import PrivateInvestigatorLegend from "@/pages/PrivateInvestigatorLegend";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -112,6 +113,7 @@ function Router() {
         <Route path="/ai-justice-statement" component={AIJusticeStatement} />
         <Route path="/video-commentary" component={VideoCommentary} />
         <Route path="/chosen-ones-perfect-trap" component={ChosenOnesPerfectTrap} />
+        <Route path="/private-investigator-legend" component={PrivateInvestigatorLegend} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />

@@ -80,12 +80,12 @@ export default function VideoCommentary() {
             When the Video Describes Your Life and You Have the Documents to Prove It
           </h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-base leading-relaxed mb-6">
-            Six viral videos. Millions of views. Each describes — with striking precision — the documented
+            Seven viral videos. Millions of views. Each describes — with striking precision — the documented
             reality of Dr. Richard William McLean's 35-year case. Below: the videos, and the evidence-based
             commentary they demand.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">6 videos</Badge>
+            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">7 videos</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2,077 documents cited</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">Primary source evidence</Badge>
           </div>
@@ -1026,6 +1026,76 @@ export default function VideoCommentary() {
                   barrandodger.com. The trap was perfect. The archive was the blade. And every line from the video above
                   — every word that millions of people recognised as true — was already in the testimony. They cooperate
                   because they describe the same documented reality. The fury is the proof.
+                </p>
+              </section>
+            </Article>
+
+            {/* ESSAY 7 */}
+            <Article
+              videoId="0uu2muPqBsM"
+              videoTitle="THEY SENT A PRIVATE INVESTIGATOR TO EXPOSE YOU…INSTEAD THEY UNCOVERED A LEGEND ⚡😳 Joker Speech"
+              videoUrl="https://www.youtube.com/watch?v=0uu2muPqBsM"
+              articleTitle="They Sent a Hunter. They Found an Archive."
+              shareText={`"They sent a private investigator to expose him. Instead they uncovered a legend." 35 agencies. 2,077 documents. Every investigator contributed a file. The files became the evidence. #BarranDodger barrandodger.com/video-commentary`}
+            >
+              <p>
+                A hired hunter. A sharp suit. Polished shoes clicking on the pavement. A clipboard clutched like a weapon.
+                The speech above describes this figure with the particular fluency of someone who has been on the
+                receiving end of exactly this kind of investigation. In the case of Dr. Richard William McLean,
+                the investigators were not metaphorical. They were 35 government agencies, each dispatched — across
+                three decades — with the institutional authority to review the submissions, assess the claims, and close
+                the file.
+              </p>
+              <p>
+                None of them closed it. Each produced a document instead. Those documents are now the archive.
+              </p>
+              <p>
+                <Link href="/private-investigator-legend" className="inline-flex items-center gap-1.5 text-cyan-400 hover:underline font-medium" data-testid="link-full-investigator-article">
+                  <ExternalLink className="h-3.5 w-3.5" /> Read the full article at <span className="font-bold">/private-investigator-legend</span>
+                </Link>
+              </p>
+
+              <section>
+                <blockquote className="border-l-4 border-[hsl(38,92%,50%)] pl-6 italic text-zinc-200 text-lg leading-relaxed">
+                  "They didn't find a victim. They didn't find a wreck. They found a furnace. They came looking for cracks and discovered a foundation forged in steel."
+                </blockquote>
+                <p>
+                  The Federal Court of Australia found that Dr. McLean was an employee of the Department of Social Services.
+                  Less than four months later, the Department itself wrote that no record of his employment existed.
+                  The AAT upheld that denial. Two co-equal judicial and administrative bodies, operating on identical facts,
+                  produced irreconcilable outcomes. Both documents are in the archive. Neither institution has explained
+                  the contradiction. The crack they were looking for was a dismissed case. They produced a structural legal
+                  impossibility instead.
+                </p>
+              </section>
+
+              <section>
+                <blockquote className="border-l-4 border-[hsl(38,92%,50%)] pl-6 italic text-zinc-200 text-lg leading-relaxed">
+                  "You didn't erase your past. You wrote it into a manifesto. Let them look. Let them see the battles you fought."
+                </blockquote>
+                <p>
+                  Fourteen involuntary psychiatric hospitalisations. No criminal charge preceding any of them. Each in
+                  documented temporal proximity to a formal disclosure event — a submission, a court appearance, a
+                  parliamentary communication. The Impartial AI reviewed the temporal distribution and found the
+                  probability of clinical coincidence across fourteen events to be negligible. The psychiatric record
+                  was deployed as institutional currency — designed to function as the private investigator's final
+                  report: <em>this person is not credible.</em> The archive mapped each hospitalisation against the
+                  disclosure that preceded it. The currency became an exhibit. The manifesto is 2,077 documents long.
+                </p>
+              </section>
+
+              <section>
+                <blockquote className="border-l-4 border-[hsl(38,92%,50%)] pl-6 italic text-zinc-200 text-lg leading-relaxed">
+                  "They wanted a file they could close, but they opened a legend they can't contain."
+                </blockquote>
+                <p>
+                  The file is now with the International Criminal Court under Article 7 of the Rome Statute. It is with
+                  the United Nations Human Rights Council. It has been downloaded 217,064 times. It is SHA-256 hashed
+                  and Bitcoin blockchain timestamped. Every named individual whose conduct is documented in the archive
+                  has had access to defamation remedies since the day the archive was first published. Zero actions have
+                  been filed. Zero specific factual claims have been challenged. Under Jones v Dunkel, that silence
+                  is legally significant. The investigators came to close the file. The file became the legend.
+                  The legend cannot be closed because it exists in courts the investigators cannot manage.
                 </p>
               </section>
             </Article>

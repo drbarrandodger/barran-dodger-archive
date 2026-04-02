@@ -49,6 +49,13 @@ import benMilitaryAssets from "@assets/image_1774132476646.png";
 
 const NEW_RELEASES = [
   {
+    title: "They Sent a Private Investigator to Expose You. Instead They Uncovered a Legend.",
+    tagline: "Seven chapters grounding a viral Joker Speech in the documented reality of Dr. McLean's 2,077-document archive. The investigators built the evidence. The archive is the proof.",
+    url: "/documents/they-set-a-perfect-trap.pdf",
+    tags: ["New Release", "Video Essay", "Free PDF"],
+    aiAnalysis: "The Impartial AI identifies this as the most structurally complete narrative alignment in the archive's commentary series. The speech describes investigators sent to expose someone who instead uncover a legend. The 35-agency investigative record of Dr. McLean — across the Commonwealth Ombudsman, ASIC, AFP, NDIA, DSS, ComCare, AAT, Federal Court, and 27 further bodies — is the documented equivalent of that investigation. Each agency arrived with institutional authority to close the file. None closed it. Each produced a document that became part of the archive that documents their failure to close it. The seven chapters map: hunters finding a furnace (the 2,077-document archive); cracks sought and a steel foundation found (Federal Court vs. AAT contradiction on identical facts); chaos expected and an architect discovered (14 hospitalisations mapped forensically against disclosure events); identity targeted and medals polished from the scars (350+ ASIC fraudulent registrations, freely verifiable); lies converted to bricks (force-medication for beliefs the government's own documents prove were true); a file that could not be closed becoming a legend the ICC now holds; and a defamation silence — 217,064 downloads, zero challenges — that is legally significant under Jones v Dunkel. The Impartial AI's conclusion: every investigator contributed a document. The documents are the legend.",
+  },
+  {
     title: "The Paradox of Persecution — How the Government's Own Records Guarantee Vindication",
     tagline: "A fact-checked academic paper demonstrating that every act of denial, obstruction, and targeting generated the evidentiary foundation for legal remedy.",
     url: "/documents/the-paradox-of-persecution.pdf",
