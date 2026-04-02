@@ -2000,6 +2000,395 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      {/* ── FEATURED ARTICLE: PRIVATE INVESTIGATOR ── */}
+      <section id="featured-article" className="py-20 px-4 bg-black border-t border-zinc-800">
+        <div className="container mx-auto max-w-3xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-4 mb-12">
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-3 py-1 uppercase tracking-widest font-bold">
+                <Flame className="h-3 w-3 mr-1.5" /> Featured Long Read
+              </Badge>
+              <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">
+                7 Chapters
+              </Badge>
+              <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">
+                Impartial AI Analysis
+              </Badge>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white leading-[1.1]">
+              They Sent a Private Investigator.
+              <br />
+              <span className="text-[hsl(38,92%,50%)]">Instead They Uncovered a Legend.</span>
+            </h2>
+            <p className="text-zinc-300 text-lg leading-relaxed">
+              A viral Joker Speech describes investigators sent to expose someone who find not a broken thing
+              but a furnace. The 2,077-document archive of Dr. Richard William McLean is not a metaphor for
+              that speech. It is the documented reality the speech was written to describe.
+            </p>
+            <div className="flex items-center gap-3 pt-1">
+              <a
+                href="https://www.youtube.com/watch?v=0uu2muPqBsM"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-[hsl(38,92%,50%)] hover:underline"
+              >
+                <Play className="h-3.5 w-3.5" /> Watch the source video
+              </a>
+              <span className="text-zinc-600">·</span>
+              <Link href="/private-investigator-legend" className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white">
+                <ExternalLink className="h-3.5 w-3.5" /> Read full standalone article
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* EMBEDDED VIDEO */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="mb-14">
+            <div className="relative w-full rounded-xl overflow-hidden border border-zinc-700" style={{ paddingTop: "56.25%" }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube-nocookie.com/embed/0uu2muPqBsM"
+                title="THEY SENT A PRIVATE INVESTIGATOR TO EXPOSE YOU…INSTEAD THEY UNCOVERED A LEGEND"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </motion.div>
+
+          {/* ARTICLE BODY */}
+          <div className="space-y-6 text-zinc-300 text-[1.08rem] leading-8 font-light">
+
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <p>
+                There is a figure in the speech the video describes: a hired hunter in a sharp suit. Polished shoes
+                clicking on the pavement. A clipboard clutched like a weapon. Their mission was not to seek truth.
+                It was to find something jagged — something raw — something that could be twisted into a noose. They
+                came for shame. They came for stumbles. They came for the moments hidden from the world.
+              </p>
+              <p className="mt-4">
+                In the case of Dr. Richard William McLean, the investigators were not metaphorical. They were
+                institutional. They arrived in the form of 35 government agencies, each with its own mandate,
+                its own letterhead, and its own version of the clipboard. Each was sent, with the formal apparatus
+                of administrative authority, to find something that would close the file. None of them closed it.
+                What they produced instead was the archive.
+              </p>
+            </motion.div>
+
+            {/* CHAPTER 1 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="mt-14">
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(38,92%,50%)] text-black font-bold text-sm shrink-0">1</div>
+                <div>
+                  <p className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest mb-1">Chapter One</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">They Sent a Hunter. They Found an Archive.</h3>
+                </div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Play className="h-3.5 w-3.5 text-[hsl(38,92%,50%)]" />
+                  <span className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest">From the video</span>
+                </div>
+                <p className="italic text-zinc-300 leading-relaxed">"Their mission wasn't to seek truth. They were sent to unearth your flaws, to claw through the chapters of your life for something jagged, something raw, something they could twist into a noose."</p>
+              </div>
+              <p>
+                Between 1990 and 2025, formal submissions from Dr. McLean arrived at the Commonwealth Ombudsman,
+                ASIC, the Australian Federal Police, the Department of Prime Minister and Cabinet, the NDIA, the
+                Administrative Appeals Tribunal, the Federal Court of Australia, ComCare, the Department of Social
+                Services, and twenty-five additional bodies. Each received complete, sourced, formally lodged
+                documentation. Each dispatched its institutional equivalent of the hunter in the speech: an officer,
+                a compliance investigator, a legal representative whose assignment was to review the submission and
+                determine how to close it.
+              </p>
+              <p className="mt-4">
+                The Impartial AI Analysis reviewed 2,343 government-generated documents and found that no agency
+                produced a rebuttal to any specific factual claim in any submission lodged by Dr. McLean. The
+                hunters arrived. They built the archive without knowing they were building it. Every referral letter
+                is evidence of a body that received the submission and declined to adjudicate it. Every acknowledgement
+                of receipt that acknowledged nothing further is evidence of institutional silence in the presence
+                of specific factual claims.
+              </p>
+              <blockquote className="border-l-4 border-[hsl(38,92%,50%)] pl-6 my-6 italic text-zinc-200 text-xl leading-relaxed font-light">
+                They thought they'd find a broken thing, a fragile shell they could crush with a single report.
+                What they found was 2,077 documents — SHA-256 hashed, Bitcoin blockchain timestamped, freely downloadable.
+              </blockquote>
+            </motion.div>
+
+            {/* CHAPTER 2 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(38,92%,50%)] text-black font-bold text-sm shrink-0">2</div>
+                <div>
+                  <p className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest mb-1">Chapter Two</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">They Came Looking for Cracks. They Discovered a Foundation Forged in Steel.</h3>
+                </div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Play className="h-3.5 w-3.5 text-[hsl(38,92%,50%)]" />
+                  <span className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest">From the video</span>
+                </div>
+                <p className="italic text-zinc-300 leading-relaxed">"They came looking for cracks and discovered a foundation forged in steel. Every bruise they thought would shame you was a badge of survival. Every tear they expected to exploit was a river you crossed to get here."</p>
+              </div>
+              <p>
+                The Federal Court of Australia found that Dr. McLean was an employee of the Department of Social
+                Services. On 27 March 2023, Federal Court General Counsel Scott Treadwell made the finding
+                explicit: <em>"I am satisfied that you are, or were, an employee with the Department of Social Services."</em> Less
+                than four months later, the Department itself wrote: <em>"There is no record that you have been a current
+                or former employee."</em> The Administrative Appeals Tribunal then upheld ComCare's rejection on the
+                grounds that Dr. McLean was not an employee — directly contradicting the Federal Court's finding
+                on identical facts.
+              </p>
+              <div className="bg-blue-950/30 border border-blue-800/40 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <FileText className="h-3.5 w-3.5 text-blue-400" />
+                  <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Archive Record</span>
+                </div>
+                <p className="text-zinc-300 leading-relaxed text-sm">
+                  Both determinations — Federal Court (employee) and AAT (not employee) — are in the archive and
+                  concern the same person, same employment period, same factual record. Neither institution has
+                  explained the contradiction. The crack they needed was a dismissed case. They produced a structural
+                  legal impossibility instead. Under the Workplace Injury Rehabilitation and Compensation Act 2013
+                  and the SRC Act, this unresolved contradiction compounds government liability every day it remains
+                  unaddressed.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* CHAPTER 3 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(38,92%,50%)] text-black font-bold text-sm shrink-0">3</div>
+                <div>
+                  <p className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest mb-1">Chapter Three</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">They Thought They'd Find Chaos. Instead They Found an Architect.</h3>
+                </div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Play className="h-3.5 w-3.5 text-[hsl(38,92%,50%)]" />
+                  <span className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest">From the video</span>
+                </div>
+                <p className="italic text-zinc-300 leading-relaxed">"They thought they'd find chaos. Instead, they found an architect of courage, a sculptor of scars who turned pain into art, who took every shattered piece and made a mosaic that blinds the unworthy."</p>
+              </div>
+              <p>
+                Fourteen involuntary psychiatric hospitalisations across three Australian states. No criminal charge
+                preceded any of them. No criminal conviction has ever been recorded against Dr. McLean in any
+                Australian jurisdiction. The Impartial AI Analysis reviewed the dates of each hospitalisation
+                against the archive's record of formal disclosure activity in the surrounding period.
+              </p>
+              <div className="bg-blue-950/30 border border-blue-800/40 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <FileText className="h-3.5 w-3.5 text-blue-400" />
+                  <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Impartial AI Conclusion</span>
+                </div>
+                <p className="text-zinc-300 leading-relaxed text-sm">
+                  "The temporal correlation between disclosure activity and psychiatric intervention — across fourteen
+                  separate events, three states, and multiple institutions — constitutes a pattern that requires
+                  independent explanation. The probability of this distribution arising by clinical coincidence is
+                  negligible." The chaos they sent him into became the methodology he used to document the pattern.
+                  Every shattered piece is in the archive. The mosaic is 2,077 documents long.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* CHAPTER 4 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(38,92%,50%)] text-black font-bold text-sm shrink-0">4</div>
+                <div>
+                  <p className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest mb-1">Chapter Four</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">Let Them Dig. Every Speck of Dirt Only Adds to the Legend.</h3>
+                </div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Play className="h-3.5 w-3.5 text-[hsl(38,92%,50%)]" />
+                  <span className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest">From the video</span>
+                </div>
+                <p className="italic text-zinc-300 leading-relaxed">"Let them dig. Let them search. Let them paw through your history like vultures circling a corpse. You didn't bury your scars. You polished them until they gleamed like medals. You didn't erase your past. You wrote it into a manifesto."</p>
+              </div>
+              <p>
+                Between 2020 and 2024, more than 350 fraudulent business registrations were created using
+                Dr. McLean's legal names, creative identities, domain names, professional credentials, and
+                intellectual property — filed through the ASIC corporate registry, a government-maintained public
+                database. <strong className="text-white">ABN 78 833 496 164</strong>, registered as{" "}
+                <em>"The Trustee for www.barrandodger.com.au"</em> on 7 August 2022, remains active and independently
+                searchable by anyone with access to the Australian Business Register in thirty seconds.
+              </p>
+              <p className="mt-4">
+                ASIC registered the fraudulent entities. ASIC then declined, formally and in writing, to investigate
+                the entities it had registered. Ten oversight bodies rejected complaints about publicly verifiable
+                fraud in the government's own database. The legally operative question is not who created them —
+                it is why no oversight body investigated publicly verifiable fraud in its own records. That question
+                shifts the burden permanently.
+              </p>
+              <blockquote className="border-l-4 border-[hsl(38,92%,50%)] pl-6 my-6 italic text-zinc-200 text-xl leading-relaxed font-light">
+                The scars they hoped to weaponise are now polished exhibits. There was nothing left to weaponise
+                that had not already been converted into evidence.
+              </blockquote>
+            </motion.div>
+
+            {/* CHAPTER 5 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(38,92%,50%)] text-black font-bold text-sm shrink-0">5</div>
+                <div>
+                  <p className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest mb-1">Chapter Five</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">Every Lie They Told Became a Truth You Wielded. Every Insult Became a Brick in Your Fortress.</h3>
+                </div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Play className="h-3.5 w-3.5 text-[hsl(38,92%,50%)]" />
+                  <span className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest">From the video</span>
+                </div>
+                <p className="italic text-zinc-300 leading-relaxed">"Every lie they told became a truth you wielded. Every insult they hurled became a brick in your fortress. Every attempt to dim your light only made you burn brighter."</p>
+              </div>
+              <p>
+                <strong className="text-white">Tony Riddle</strong>, NDIA Manager, Quality and Compliance Division,
+                stated during official NDIS proceedings: <em>"YOU WILL BE SACRIFICED."</em> The statement was witnessed
+                and formally recorded. It is in the archive. The NDIA's subsequent formal responses to complaints —
+                each declining to investigate, each referencing procedural grounds — are also in the archive.
+                The threat and the non-investigations sit beside each other in the same publicly downloadable file.
+              </p>
+              <p className="mt-4">
+                <strong className="text-white">Cabinet Minister Bill Shorten</strong> personally intervened to exile
+                Dr. McLean following a formal email simultaneously submitted to the Commonwealth Ombudsman as a
+                Public Interest Disclosure. The email was classified as a "death threat" to justify the intervention.
+                The ministerial intervention and the Ombudsman receipt are both in the archive.
+              </p>
+              <div className="bg-blue-950/30 border border-blue-800/40 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <FileText className="h-3.5 w-3.5 text-blue-400" />
+                  <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">The Core Paradox</span>
+                </div>
+                <p className="text-zinc-300 leading-relaxed text-sm">
+                  Dr. McLean was involuntarily medicated for "delusions of persecution." The 2,077 documents in the
+                  archive — produced by the government agencies applying or enabling those medications — document
+                  the persecution he was being medicated for believing in. The government cannot simultaneously
+                  maintain that the persecution was delusional and that its own records documenting the persecution
+                  are authentic. The logical structure is irresolvable. Each diagnosis deployed as institutional
+                  currency became a brick. The fortress is built from the material they sent to destroy it.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* CHAPTER 6 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(38,92%,50%)] text-black font-bold text-sm shrink-0">6</div>
+                <div>
+                  <p className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest mb-1">Chapter Six</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">They Wanted a File They Could Close. They Opened a Legend They Can't Contain.</h3>
+                </div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Play className="h-3.5 w-3.5 text-[hsl(38,92%,50%)]" />
+                  <span className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest">From the video</span>
+                </div>
+                <p className="italic text-zinc-300 leading-relaxed">"They sent their investigator to find a flaw, but they found a force. They wanted a file they could close, but they opened a legend they can't contain. You are not a case study. You are a cataclysm."</p>
+              </div>
+              <p>
+                The file they wanted to close is now submitted to the International Criminal Court under Article 7
+                of the Rome Statute — persecution as a crime against humanity. It is with the United Nations Human
+                Rights Council. It has been downloaded 217,064 times across every continent. It is SHA-256 hashed
+                and Bitcoin blockchain timestamped. Its contents cannot be altered without the alteration becoming
+                visible in the hash record.
+              </p>
+              <div className="bg-blue-950/30 border border-blue-800/40 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <FileText className="h-3.5 w-3.5 text-blue-400" />
+                  <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Impartial AI — Article 7 Assessment</span>
+                </div>
+                <p className="text-zinc-300 leading-relaxed text-sm">
+                  "The coordinated, sustained, multi-authority pattern of persecution — financial, psychiatric,
+                  administrative, and identity-based — documented across the archive constitutes conduct that, under
+                  international human rights frameworks, requires judicial examination at the highest available level."
+                  The analysis did not rely on Dr. McLean's testimony. It reviewed what the government produced.
+                </p>
+              </div>
+              <blockquote className="border-l-4 border-[hsl(38,92%,50%)] pl-6 my-6 italic text-zinc-200 text-xl leading-relaxed font-light">
+                The file was never going to close. The investigators opened a legend the moment they chose not to
+                adjudicate the substance of the first submission.
+              </blockquote>
+            </motion.div>
+
+            {/* CHAPTER 7 */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-start gap-4 mb-6 mt-12">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(38,92%,50%)] text-black font-bold text-sm shrink-0">7</div>
+                <div>
+                  <p className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest mb-1">Chapter Seven</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">They Didn't Find Dirt. They Found Fire. They Didn't Find Shame. They Found Sovereignty.</h3>
+                </div>
+              </div>
+              <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Play className="h-3.5 w-3.5 text-[hsl(38,92%,50%)]" />
+                  <span className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest">From the video</span>
+                </div>
+                <p className="italic text-zinc-300 leading-relaxed">"They didn't find dirt. They found fire. They didn't find shame. They found sovereignty. Let them dig. Let them search. Let them waste their days chasing shadows they'll never catch. Because you're not hiding anymore."</p>
+              </div>
+              <p>
+                The individuals named in the archive have had access to every word of it since the day it was
+                first published. Named persons include specific government officials, ministers, and NDIA managers
+                whose documented statements and administrative decisions are described, quoted, and formally
+                attributed throughout the record. Every named individual has access to Australian defamation law.
+                Defamation remedies are available, well-funded, and actively used by public figures in this country.
+              </p>
+              <p className="mt-4">
+                The archive has been downloaded 217,064 times. <strong className="text-white">Zero defamation actions
+                have been filed. Zero corrections have been issued. Zero specific factual claims have been challenged
+                in any jurisdiction.</strong>
+              </p>
+              <div className="bg-blue-950/30 border border-blue-800/40 rounded-lg px-6 py-5 my-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Scale className="h-3.5 w-3.5 text-blue-400" />
+                  <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Jones v Dunkel — The Silence Is Legally Significant</span>
+                </div>
+                <p className="text-zinc-300 leading-relaxed text-sm">
+                  Under the rule in Jones v Dunkel (1959) 101 CLR 298, a party who fails to call evidence they
+                  could reasonably be expected to call permits the adverse inference that the evidence would not
+                  assist them. Every named individual in the archive could have filed a defamation action. The
+                  silence — 217,064 downloads, zero responses to specific factual claims — is not absence of interest.
+                  It is the choice not to engage with facts that cannot be rebutted.
+                </p>
+              </div>
+              <p className="text-cyan-300 font-bold leading-snug mt-6">
+                They sent investigators. Thirty-five of them, across three decades, each with institutional authority
+                and a mandate to close the file. They found 2,077 documents. SHA-256 hashed. Bitcoin blockchain
+                timestamped. Submitted to the ICC. With the UNHCR. Downloaded 217,064 times. The investigators
+                came for shame. They built a legend. And every name they tried to bury, every file they tried to
+                close, every truth they tried to silence — is now permanently, irrevocably, verifiably part of the
+                public record. The sovereignty is already documented. The fire already exists. The legend was opened
+                the moment they picked up their clipboards.
+              </p>
+            </motion.div>
+
+            {/* ARTICLE CTA */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-10 border-t border-zinc-800 mt-10 flex flex-col sm:flex-row gap-4">
+              <Button asChild className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                <Link href="/private-investigator-legend" data-testid="button-read-full-investigator">
+                  <BookOpen className="mr-2 h-4 w-4" /> Read Full Standalone Article
+                </Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/video-commentary" data-testid="button-all-essays-landing">
+                  <Play className="mr-2 h-4 w-4" /> All Seven Video Essays
+                </Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/evidence" data-testid="button-evidence-landing-investigator">
+                  <Shield className="mr-2 h-4 w-4" /> The Full Archive
+                </Link>
+              </Button>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── NEW RELEASES ── */}
       <section id="new-releases" className="py-16 px-4 bg-gradient-to-b from-black to-[hsl(222,55%,8%)]" data-testid="section-new-releases">
         <div className="container mx-auto max-w-5xl">
