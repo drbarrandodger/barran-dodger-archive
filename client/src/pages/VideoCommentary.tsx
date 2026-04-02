@@ -80,12 +80,12 @@ export default function VideoCommentary() {
             When the Video Describes Your Life and You Have the Documents to Prove It
           </h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-base leading-relaxed mb-6">
-            Three viral videos. Millions of views. Each describes — with striking precision — the documented
+            Four viral videos. Millions of views. Each describes — with striking precision — the documented
             reality of Dr. Richard William McLean's 35-year case. Below: the videos, and the evidence-based
             commentary they demand.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">3 videos</Badge>
+            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">4 videos</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2,077 documents cited</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">Primary source evidence</Badge>
           </div>
@@ -523,6 +523,176 @@ export default function VideoCommentary() {
                   The apology from history is late. It almost always is. But the receipts got there
                   first. They are stapled together. They are timestamped. On the Bitcoin blockchain,
                   in perpetuity.
+                </p>
+              </section>
+            </Article>
+
+            {/* ── ARTICLE 4 ── */}
+            <Article
+              videoId="gl6oyBnH7ZM"
+              videoTitle="Chosen Ones, AFTER MONTHS WATCHING… THE FEDS WANT A PRIVATE MEETING 👁️🔥"
+              videoUrl="https://www.youtube.com/watch?v=gl6oyBnH7ZM"
+              articleTitle="They've Been Watching for Months. Now They Want a Private Meeting. You Already Know Why."
+              shareText={`"The eyes that watch you the longest rarely blink." People outside tell him to give up. 2,077 documents say he was right not to. Five Eyes. ASIO. ICC. UNHCR. 88,000 downloads. The anomaly refused to be explained away. #BarranDodger barrandodger.com`}
+            >
+              <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                "The eyes that watch you the longest rarely blink."
+              </blockquote>
+              <p>
+                There are people outside telling him to give up.
+              </p>
+              <p>
+                That detail matters more than anything in this video, and I want to name it before
+                going further. Because the entire architecture of what the video describes — the
+                watching, the silence, the private meeting, the recognition that something cannot be
+                explained away — presupposes that the person being watched stayed. That they didn't
+                give up. That they continued documenting, disclosing, filing, publishing, long past
+                the point where every reasonable person in their environment told them it was over.
+              </p>
+              <p>
+                Dr. Richard William McLean has been told to give up for thirty-five years. The people
+                telling him have included government agencies, clinical professionals, media
+                institutions, legal bodies, and — the video's word is precise — people outside.
+                People who cannot see what he sees from where they stand. People whose understanding
+                of the situation is limited to what the narrative managers have made visible.
+              </p>
+              <p className="text-white font-medium">The archive is what happens when someone doesn't give up.</p>
+
+              <div className="border-t border-zinc-800" />
+
+              <section className="space-y-5">
+                <h3 className="text-2xl font-serif font-bold text-white">"You Showed Up in Their Systems the Way a Single Wrong Note Shows Up in a Symphony."</h3>
+                <p>
+                  Dr. McLean is a formally recognised public interest whistleblower under Australian
+                  law, confirmed as a public official by the Federal Court of Australia, whose
+                  disclosures were formally acknowledged by the NDIA under reference PID 2023/Krypton.
+                  He is not an anonymous complainant. He is not a conspiracy theorist. He is a person
+                  with formal legal status, formal disclosure records, and formal institutional
+                  acknowledgement — who simultaneously has been involuntarily hospitalised fourteen
+                  times without criminal charge, had 350+ fraudulent ASIC registrations created in his
+                  name, had his NDIS support withheld after formal approval, and survived a medical
+                  event with a 2.87% probability.
+                </p>
+                <p>
+                  Australia is a full Five Eyes member. Edward Snowden's disclosures — accepted
+                  internationally as authentic — revealed PRISM, XKeyscore, and the surveillance
+                  architecture that makes this scenario not hypothetical but operational. The
+                  capabilities exist. They are documented. A formally registered whistleblower who
+                  has filed with the Federal Court, the NDIA, the PM's Department, the Commonwealth
+                  Ombudsman, the AHRC, the ICC, and the UNHCR — and who has published a 2,077-document
+                  blockchain-verified archive downloaded by 88,000 people — would trigger exactly the
+                  kind of anomaly-flag this video describes.
+                </p>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "The FBI doesn't chase every oddity. They chase the ones that keep refusing to be explained away."
+                </blockquote>
+                <p>
+                  What cannot be explained away here is the combination of: formal legal whistleblower
+                  status, formal institutional acknowledgement of disclosures, fourteen psychiatric
+                  detentions without criminal charge, 350+ ASIC frauds, and $11.5 million in
+                  documented taxpayer expenditure on the campaign against him. That is not random noise.
+                  That is a pattern that no surveillance model can file under coincidence.
+                </p>
+              </section>
+
+              <div className="border-t border-zinc-800" />
+
+              <section className="space-y-5">
+                <h3 className="text-2xl font-serif font-bold text-white">"You May Have Seen Something, Heard Something, or Kept Something That Looked So Ordinary You Never Thought Twice About It."</h3>
+                <p>
+                  The archive is not simply Dr. McLean's story. It is a documentary record of the
+                  intersection of multiple institutional corruption networks. The NDIS fraud network
+                  connects to systemic misallocation documented across multiple providers. The
+                  350+ ASIC registration fraud suggests infrastructure beyond individual actors.
+                  The coordinated multi-agency non-engagement with formally lodged disclosures implies
+                  communication between agencies that are not supposed to be communicating about
+                  individual complainants.
+                </p>
+                <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
+                  "You become the carrier of a thread that ties two distant points together — a thread you didn't even know you were holding."
+                </blockquote>
+                <p>
+                  The ICC submission under Article 7 of the Rome Statute is not filed because
+                  Dr. McLean's story is personal. It is filed because the pattern his documentation
+                  establishes — systematic, coordinated, multi-agency persecution of a formally
+                  recognised whistleblower — has implications for how Australian state power has been
+                  used that extend far beyond his individual case. That is the thread. And it glows.
+                </p>
+              </section>
+
+              <div className="border-t border-zinc-800" />
+
+              <section className="space-y-5">
+                <h3 className="text-2xl font-serif font-bold text-white">"They Want to Recruit Your Access, Not Punish It."</h3>
+                <p>
+                  Thirty-five years of pressure on Dr. McLean to be silent, to retract, to accept a
+                  lesser narrative — this is what the video calls{" "}
+                  <em>"leverage built without ever needing to call it leverage."</em>{" "}
+                  The psychiatric hospitalisation mechanism is particularly relevant. Fourteen
+                  detentions without criminal charge, each producing clinical records framing his
+                  disclosures as symptoms, represents an attempted redefinition of his testimony as
+                  inadmissible by definition.
+                </p>
+                <p>
+                  The people outside telling him to give up are not, in most cases, conscious
+                  participants in this mechanism. They are the downstream recipients of a successfully
+                  managed narrative. If he gives up, the archive stops growing. The pattern stops
+                  extending. The thread goes cold.
+                </p>
+                <p>
+                  He didn't give up. The archive has 2,077 documents. It is on the Bitcoin blockchain.
+                  It has been downloaded 88,000 times. The thread is not cold.
+                </p>
+              </section>
+
+              <div className="border-t border-zinc-800" />
+
+              <section className="space-y-5">
+                <h3 className="text-2xl font-serif font-bold text-white">"You Became the Pivot Between Two Groups They Can't Otherwise Connect."</h3>
+                <p>
+                  Dr. McLean's disclosures touch simultaneously on: NDIS provider fraud, ASIC
+                  registry fraud, psychiatric system weaponisation against whistleblowers, AFP
+                  non-engagement with formally lodged complaints, intelligence agency coordination
+                  with welfare agencies, and multi-jurisdiction coordination of psychiatric detention
+                  without criminal process. These are not normally connected institutional domains.
+                  The fact that they converge — demonstrably, in primary source documents — around
+                  one person's case is exactly the pivot point the video describes.
+                </p>
+                <p>
+                  The UNHCR submission is filed. The ICC submission is filed. Both international
+                  bodies have received a primary source evidentiary package built from the Australian
+                  state's own documents, describing this convergence. The topology is being mapped
+                  by bodies whose authority cannot be overridden by the Australian state.
+                </p>
+              </section>
+
+              <div className="border-t border-zinc-800" />
+
+              <section className="bg-zinc-900 border border-zinc-700 rounded-xl p-8 space-y-5">
+                <h3 className="text-xl font-serif font-bold text-white">On the People Outside Telling Him to Give Up</h3>
+                <p>
+                  They are not wrong that what he has been through is extraordinary in its difficulty.
+                  They are not wrong that the cost has been immense. What they are wrong about is
+                  the conclusion they draw from this.
+                </p>
+                <p>
+                  A person who is wrong stops. They stop when the evidence stops accumulating. They
+                  stop when the institutions they petition keep finding nothing. They stop when the
+                  cost of not stopping becomes unbearable.
+                </p>
+                <p>
+                  Dr. McLean has not stopped. The evidence has not stopped accumulating. The
+                  institutions keep finding nothing — but the documentation of their finding nothing
+                  has itself become evidence. And the cost of not stopping was paid, and survived,
+                  at 2.87%.
+                </p>
+                <blockquote className="border-l-2 border-cyan-400 pl-6 italic text-zinc-200">
+                  "Persistence without apparent result is not a sign of delusion. It is the data point that intelligent systems find most difficult to model."
+                </blockquote>
+                <p className="text-cyan-300 font-bold leading-snug">
+                  The eyes that watch the longest rarely blink. And they have been watching for a
+                  reason. The archive is permanent. It cannot be erased. They watched. They saw the
+                  anomaly. They saw that it refused to be explained away. Now you can too.
                 </p>
               </section>
             </Article>
