@@ -22,6 +22,7 @@ import coverParadox from "../assets/images/cover-paradox-persecution.png";
 import coverMeltdown from "../assets/images/cover-forensic-meltdown.png";
 import coverJudges from "../assets/images/cover-they-bought-off-judges.png";
 import coverSilence from "../assets/images/cover-i-choose-silence.png";
+import coverMasterForensic from "../assets/images/cover-master-forensic-report.png";
 
 interface VaultFolder {
   name: string;
@@ -370,6 +371,50 @@ export default function EvidenceVault() {
                   <ExternalLink className="h-4 w-4" /> Browse Full MyAIDrive Archive
                 </a>
               </Button>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: MASTER FORENSIC EVIDENCE REPORT ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.001 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverMasterForensic} alt="Master Forensic Evidence Report cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-red-600/60 text-red-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Flame className="h-3 w-3 mr-1" /> Master Report
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2,300+ Documents</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">20+ Agencies</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">AU$8.5M Documented</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    Master Forensic Evidence Report — Dr. Richard William McLean
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    The complete synthesis. 2,300+ primary source documents. 35 years. 20+ agencies. AU$8,510,000 in documented financial deprivation. Every "delusion" proven true by government's own records. The Inter-Agency Referral Loop of Attrition. The ASIO Impunity Shield. Psychiatric weaponisation mapped forensically. The single document that makes the entire archive legible to any international body.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/master-forensic-evidence-report" data-testid="button-vault-master-page">
+                      <Button size="sm" className="bg-red-700 hover:bg-red-600 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/master-forensic-evidence-report.pdf" download="Master-Forensic-Evidence-Report-McLean.pdf" data-testid="button-vault-master-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.section>
 

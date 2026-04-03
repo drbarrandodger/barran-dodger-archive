@@ -24,3 +24,9 @@ id = "jDBu-nbC8MfjH7HnHqCC2"
 uri = "file://client/src/assets/images/cover-i-choose-silence.png"
 type = "image"
 title = "I Choose Silence cover"
+
+[[generated]]
+id = "ISVVBWuiPhJG2vTdsfxeZ"
+uri = "file://client/src/assets/images/cover-master-forensic-report.png"
+type = "image"
+title = "Master Forensic Evidence Report cover"

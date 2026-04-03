@@ -47,6 +47,7 @@ import ForensicMeltdownReport from "@/pages/ForensicMeltdownReport";
 import TheyBoughtOffJudges from "@/pages/TheyBoughtOffJudges";
 import LawTheyOverlooked from "@/pages/LawTheyOverlooked";
 import IChooseSilence from "@/pages/IChooseSilence";
+import MasterForensicEvidenceReport from "@/pages/MasterForensicEvidenceReport";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -125,6 +126,7 @@ function Router() {
         <Route path="/forensic-meltdown-report" component={ForensicMeltdownReport} />
         <Route path="/they-bought-off-judges" component={TheyBoughtOffJudges} />
         <Route path="/i-choose-silence" component={IChooseSilence} />
+        <Route path="/master-forensic-evidence-report" component={MasterForensicEvidenceReport} />
         <Route path="/the-law-they-overlooked" component={LawTheyOverlooked} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
