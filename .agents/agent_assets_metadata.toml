@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "r2w0GSzvbFfPAl4dLJ8oe"
@@ -42,3 +41,9 @@ id = "2YCkVkRFVok1aYpRcpGL4"
 uri = "file://client/src/assets/images/cover-government-called-delusional.png"
 type = "image"
 title = "Government Called Him Delusional cover"
+
+[[outputs]]
+id = "9dlFHPL3WWcRwbr0U0BIj"
+uri = "file://medium-article-draft.md"
+type = "text"
+title = "Medium Article Draft — The Gossip Is That I'm Scary Smart"
