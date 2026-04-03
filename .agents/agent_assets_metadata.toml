@@ -36,3 +36,9 @@ id = "TwfjA7mMBiDAfeblC77NU"
 uri = "file://client/src/assets/images/cover-sleeper-agent-of-truth.png"
 type = "image"
 title = "The Sleeper Agent of Truth cover"
+
+[[generated]]
+id = "2YCkVkRFVok1aYpRcpGL4"
+uri = "file://client/src/assets/images/cover-government-called-delusional.png"
+type = "image"
+title = "Government Called Him Delusional cover"

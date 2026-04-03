@@ -24,6 +24,7 @@ import coverJudges from "../assets/images/cover-they-bought-off-judges.png";
 import coverSilence from "../assets/images/cover-i-choose-silence.png";
 import coverMasterForensic from "../assets/images/cover-master-forensic-report.png";
 import coverSleeperAgent from "../assets/images/cover-sleeper-agent-of-truth.png";
+import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
 
 interface VaultFolder {
   name: string;
@@ -372,6 +373,49 @@ export default function EvidenceVault() {
                   <ExternalLink className="h-4 w-4" /> Browse Full MyAIDrive Archive
                 </a>
               </Button>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: GOVERNMENT CALLED HIM DELUSIONAL ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.0 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverGovDelusional} alt="Government Called Him Delusional cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-red-600/60 text-red-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Flame className="h-3 w-3 mr-1" /> Forensic Summary
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">46 Officials Named</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Every Fact Sourced</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    The Australian Government Called Him Delusional. Their Own Documents Prove He Was Right.
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    One page. Every line backed by their own paperwork. The "What He Said vs. What Their Documents Prove" table. 46 officials named. $8.5M documented. 1,178 files found then erased. And the sentence no one can walk past: "This is not a conspiracy theory. This is a conspiracy proven by the conspirators' own documents."
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <a href="/#section-gov-delusional-featured" data-testid="button-vault-gov-delusional-page">
+                      <Button size="sm" className="bg-red-700 hover:bg-red-600 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read on Front Page
+                      </Button>
+                    </a>
+                    <a href="/documents/government-called-him-delusional.pdf" download="Australian-Government-Called-Him-Delusional-McLean.pdf" data-testid="button-vault-gov-delusional-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.section>
 
