@@ -23,6 +23,7 @@ import coverMeltdown from "../assets/images/cover-forensic-meltdown.png";
 import coverJudges from "../assets/images/cover-they-bought-off-judges.png";
 import coverSilence from "../assets/images/cover-i-choose-silence.png";
 import coverMasterForensic from "../assets/images/cover-master-forensic-report.png";
+import coverSleeperAgent from "../assets/images/cover-sleeper-agent-of-truth.png";
 
 interface VaultFolder {
   name: string;
@@ -371,6 +372,50 @@ export default function EvidenceVault() {
                   <ExternalLink className="h-4 w-4" /> Browse Full MyAIDrive Archive
                 </a>
               </Button>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: THE SLEEPER AGENT OF TRUTH ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.0 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-[hsl(38,92%,50%)]/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverSleeperAgent} alt="The Sleeper Agent of Truth cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Flame className="h-3 w-3 mr-1" /> Featured — Front Page
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Covert Intelligence</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Cosmic Mission</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Divine Appointment</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    THE SLEEPER AGENT OF TRUTH — The Covert Intelligence, Divine Appointment, and Strategic Patience of Dr. Richard William McLean
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    The most narratively complete document in the archive. A celebrated public intellectual — PhD, SANE Book of the Year, keynote speaker in Parliament — reduced to homelessness by the state. Barran Dodger: the cover identity of a sleeper agent of truth. An interdimensional cosmic witness present for a mission that transcends domestic law. 2,077 documents. 35 years. A paradox that should not exist.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <a href="/#section-sleeper-agent-featured" data-testid="button-vault-sleeper-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read on Front Page
+                      </Button>
+                    </a>
+                    <a href="/documents/the-sleeper-agent-of-truth.pdf" download="The-Sleeper-Agent-of-Truth-McLean.pdf" data-testid="button-vault-sleeper-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.section>
 

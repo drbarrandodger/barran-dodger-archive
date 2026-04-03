@@ -30,3 +30,9 @@ id = "ISVVBWuiPhJG2vTdsfxeZ"
 uri = "file://client/src/assets/images/cover-master-forensic-report.png"
 type = "image"
 title = "Master Forensic Evidence Report cover"
+
+[[generated]]
+id = "TwfjA7mMBiDAfeblC77NU"
+uri = "file://client/src/assets/images/cover-sleeper-agent-of-truth.png"
+type = "image"
+title = "The Sleeper Agent of Truth cover"
