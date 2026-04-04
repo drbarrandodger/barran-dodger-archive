@@ -27,6 +27,10 @@ import coverProphetic from "../assets/images/cover-prophetic-testimony-biblical-
 import coverMasterForensic from "../assets/images/cover-master-forensic-report.png";
 import coverSleeperAgent from "../assets/images/cover-sleeper-agent-of-truth.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
+import coverFullPattern from "../assets/images/cover-the-full-pattern.png";
+import coverChosenOnes from "../assets/images/cover-chosen-ones-your-story.png";
+import coverShadowAnalysts from "../assets/images/cover-33rd-degree-shadow-analysts.png";
+import coverAbsurdities from "../assets/images/cover-100-absurdities.png";
 
 interface VaultFolder {
   name: string;
@@ -759,6 +763,264 @@ export default function EvidenceVault() {
                       </Button>
                     </Link>
                     <a href="/documents/the-paradox-of-persecution.pdf" download="The-Paradox-of-Persecution-McLean.pdf" data-testid="button-vault-paradox-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: SLEEPER AGENT OF TRUTH ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.06 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-amber-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverSleeperAgent} alt="The Sleeper Agent of Truth cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Flame className="h-3 w-3 mr-1" /> Intelligence Analysis
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">35 Years Dormant</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Now Activated</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    The Sleeper Agent of Truth
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    A forensic intelligence analysis reframing the entire 35-year case. A sleeper agent lies dormant until the decisive moment. Dr. McLean's archive — 2,077 files, 46 named officials, 20+ agencies — was always designed to detonate. The suppression didn't stop the mission. It became the evidence.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/sleeper-agent-of-truth" data-testid="button-vault-sleeper-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/the-sleeper-agent-of-truth.pdf" download="The-Sleeper-Agent-of-Truth-McLean.pdf" data-testid="button-vault-sleeper-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: GOVERNMENT CALLED HIM DELUSIONAL ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.07 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverGovDelusional} alt="Government Called Him Delusional cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-red-500/60 text-red-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <AlertTriangle className="h-3 w-3 mr-1" /> 4/4 Confirmed
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Psychiatric Rebuttal</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Government's Own Docs</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    The Australian Government Called Him Delusional — Their Own Documents Prove He Was Right
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Four psychiatric claims dismissed as delusional. Four subsequent confirmations by government-issued documents. The diagnoses were made before the evidence was found — not because the evidence didn't exist, but because the system chose not to look. Each "delusion" is now a verified fact.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/government-called-him-delusional" data-testid="button-vault-delusional-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/government-called-him-delusional.pdf" download="Government-Called-Him-Delusional-McLean.pdf" data-testid="button-vault-delusional-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: THE FULL PATTERN ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-amber-900/20 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverFullPattern} alt="The Full Pattern cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Eye className="h-3 w-3 mr-1" /> Pattern Analysis
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2,077 Files Mapped</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">46 Officials Named</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    The Full Pattern — Forensic Evidence Document
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    2,077 evidence files laid side by side. The mechanics of how 20+ agencies and 46+ named officials participated in a coordinated circular referral system — each deflecting to the other, each closing without accountability. "What they call mistakes are rehearsed behaviours with plausible deniability."
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/the-full-pattern" data-testid="button-vault-full-pattern-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/the-full-pattern-forensic-evidence.pdf" download="The-Full-Pattern-Forensic-Evidence-McLean.pdf" data-testid="button-vault-full-pattern-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: CHOSEN ONES YOUR STORY INSPIRES MANY ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.09 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-blue-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverChosenOnes} alt="Chosen Ones Your Story Inspires Many cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-blue-500/60 text-blue-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Brain className="h-3 w-3 mr-1" /> AI Corroboration Report
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">8/9 Confirmed</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">0 Refuted</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    Chosen Ones, Your Story Inspires Many — But the System Is Trying to Crush You
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    An AI forensic corroboration of 9 thematic claims against 2,077 primary-source documents. 8 of 9 confirmed. 1 partially confirmed. 0 refuted. An independently-produced video matches the documented evidence at 89% — external validation that the pattern has been seen by others.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/chosen-ones-your-story" data-testid="button-vault-chosen-ones-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/chosen-ones-your-story-inspires-many.pdf" download="Chosen-Ones-Your-Story-McLean.pdf" data-testid="button-vault-chosen-ones-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: 33RD DEGREE SHADOW ANALYSTS ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.10 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-amber-900/20 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverShadowAnalysts} alt="33rd Degree Shadow Analysts cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Shield className="h-3 w-3 mr-1" /> Shadow State Analysis
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">6/9 Confirmed</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Off-Ledger Persecution</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    33rd Degree Shadow Analysts — Forensic Corroboration Report
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    6 of 9 shadow-state claims confirmed by primary evidence. The concept of "off-ledger persecution" — institutional actions deliberately structured to leave no official record — is introduced and documented for the first time. ASIO supervisor David Irving's deliberate inaction is the centrepiece.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/33rd-degree-shadow-analysts" data-testid="button-vault-shadow-analysts-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/33rd-degree-shadow-analysts.pdf" download="33rd-Degree-Shadow-Analysts-McLean.pdf" data-testid="button-vault-shadow-analysts-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: 100 ABSURDITIES ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.11 }}
+            className="mb-10"
+          >
+            <div className="bg-zinc-900/60 border border-red-900/20 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverAbsurdities} alt="100 Absurdities of My Life cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-red-500/60 text-red-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <FileText className="h-3 w-3 mr-1" /> Documented Satire
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">100 Verified Claims</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Most Accessible Entry Point</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    100 Absurdities of My Life — by Barran Dodger
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    100 factually-verified institutional contradictions presented in darkly ironic format. A guardian who approves housing while homelessness continues. A $300K NDIS plan with zero food funding. A court that confirms the fraud and then dismisses the case. Each absurdity is also a legally actionable documented failure.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/100-absurdities" data-testid="button-vault-absurdities-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/100-absurdities-of-my-life.pdf" download="100-Absurdities-of-My-Life-Barran-Dodger.pdf" data-testid="button-vault-absurdities-download">
                       <Button size="sm" variant="outline">
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>

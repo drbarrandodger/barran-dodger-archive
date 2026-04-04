@@ -56,6 +56,12 @@ import PushedTooFarArticle from "@/pages/articles/PushedTooFarArticle";
 import CopiedBlueprintArticle from "@/pages/articles/CopiedBlueprintArticle";
 import TheTestimony from "@/pages/TheTestimony";
 import PropheticTestimonyBiblical from "@/pages/PropheticTestimonyBiblical";
+import SleeperAgentOfTruth from "@/pages/SleeperAgentOfTruth";
+import GovernmentCalledHimDelusional from "@/pages/GovernmentCalledHimDelusional";
+import TheFullPattern from "@/pages/TheFullPattern";
+import ChosenOnesYourStory from "@/pages/ChosenOnesYourStory";
+import ShadowAnalysts from "@/pages/ShadowAnalysts";
+import HundredAbsurdities from "@/pages/HundredAbsurdities";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -144,6 +150,12 @@ function Router() {
         <Route path="/they-copied-my-blueprint" component={CopiedBlueprintArticle} />
         <Route path="/the-testimony" component={TheTestimony} />
         <Route path="/testimony-that-was-already-written" component={PropheticTestimonyBiblical} />
+        <Route path="/sleeper-agent-of-truth" component={SleeperAgentOfTruth} />
+        <Route path="/government-called-him-delusional" component={GovernmentCalledHimDelusional} />
+        <Route path="/the-full-pattern" component={TheFullPattern} />
+        <Route path="/chosen-ones-your-story" component={ChosenOnesYourStory} />
+        <Route path="/33rd-degree-shadow-analysts" component={ShadowAnalysts} />
+        <Route path="/100-absurdities" component={HundredAbsurdities} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />

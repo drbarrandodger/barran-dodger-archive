@@ -54,6 +54,30 @@ uri = "file://client/src/assets/images/cover-prophetic-testimony-biblical-correl
 type = "image"
 title = "prophetic testimony biblical forensic cover"
 
+[[generated]]
+id = "A3MguLQRqAmynChWS10iK"
+uri = "file://client/src/assets/images/cover-the-full-pattern.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Cp0QkcN1uM3wz79dZG4JO"
+uri = "file://client/src/assets/images/cover-chosen-ones-your-story.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "2NfTpRu80Tqn3PDftb-fF"
+uri = "file://client/src/assets/images/cover-33rd-degree-shadow-analysts.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Xu2ViqmLeoryoKZJU7-vd"
+uri = "file://client/src/assets/images/cover-100-absurdities.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
