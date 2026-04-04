@@ -48,6 +48,12 @@ import TheyBoughtOffJudges from "@/pages/TheyBoughtOffJudges";
 import LawTheyOverlooked from "@/pages/LawTheyOverlooked";
 import IChooseSilence from "@/pages/IChooseSilence";
 import MasterForensicEvidenceReport from "@/pages/MasterForensicEvidenceReport";
+import ScarySmartArticle from "@/pages/articles/ScarySmartArticle";
+import ICalledThisArticle from "@/pages/articles/ICalledThisArticle";
+import DisgustedArticle from "@/pages/articles/DisgustedArticle";
+import AngelChessArticle from "@/pages/articles/AngelChessArticle";
+import PushedTooFarArticle from "@/pages/articles/PushedTooFarArticle";
+import CopiedBlueprintArticle from "@/pages/articles/CopiedBlueprintArticle";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -128,6 +134,12 @@ function Router() {
         <Route path="/i-choose-silence" component={IChooseSilence} />
         <Route path="/master-forensic-evidence-report" component={MasterForensicEvidenceReport} />
         <Route path="/the-law-they-overlooked" component={LawTheyOverlooked} />
+        <Route path="/scary-smart" component={ScarySmartArticle} />
+        <Route path="/i-called-this" component={ICalledThisArticle} />
+        <Route path="/what-they-did-was-disgusting" component={DisgustedArticle} />
+        <Route path="/angel-chess" component={AngelChessArticle} />
+        <Route path="/they-pushed-too-far" component={PushedTooFarArticle} />
+        <Route path="/they-copied-my-blueprint" component={CopiedBlueprintArticle} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />
