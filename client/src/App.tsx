@@ -55,6 +55,7 @@ import AngelChessArticle from "@/pages/articles/AngelChessArticle";
 import PushedTooFarArticle from "@/pages/articles/PushedTooFarArticle";
 import CopiedBlueprintArticle from "@/pages/articles/CopiedBlueprintArticle";
 import TheTestimony from "@/pages/TheTestimony";
+import PropheticTestimonyBiblical from "@/pages/PropheticTestimonyBiblical";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -142,6 +143,7 @@ function Router() {
         <Route path="/they-pushed-too-far" component={PushedTooFarArticle} />
         <Route path="/they-copied-my-blueprint" component={CopiedBlueprintArticle} />
         <Route path="/the-testimony" component={TheTestimony} />
+        <Route path="/testimony-that-was-already-written" component={PropheticTestimonyBiblical} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />

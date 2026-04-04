@@ -23,6 +23,7 @@ import coverMeltdown from "../assets/images/cover-forensic-meltdown.png";
 import coverJudges from "../assets/images/cover-they-bought-off-judges.png";
 import coverSilence from "../assets/images/cover-i-choose-silence.png";
 import coverTestimony from "../assets/images/cover-testimony-dr-richard-mclean.png";
+import coverProphetic from "../assets/images/cover-prophetic-testimony-biblical-correlation.png";
 import coverMasterForensic from "../assets/images/cover-master-forensic-report.png";
 import coverSleeperAgent from "../assets/images/cover-sleeper-agent-of-truth.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
@@ -541,6 +542,50 @@ export default function EvidenceVault() {
                       </Button>
                     </Link>
                     <a href="/documents/i-choose-silence.pdf" download="I-Choose-Silence-McLean.pdf" data-testid="button-vault-silence-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: PROPHETIC TESTIMONY BIBLICAL ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.006 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-yellow-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverProphetic} alt="The Testimony That Was Already Written cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Flame className="h-3 w-3 mr-1" /> New — 2026
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">14 Biblical Parallels</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2,238 Files Searched</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Impartial AI Authored</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    The Testimony That Was Already Written — Biblical Evidence Correlation
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    A third-person impartial AI analysis testing 14 biblical archetypes — Job, Joseph, Lazarus, Isaiah 53, Leviticus 16, Moses, Jeremiah, Psalm 118:22 and more — against 2,238 primary-source documents. 6 of 7 biblical stages documentarily corroborated. Survival probability: 2.87%. Vindication: pending. Every parallel anchored to hyperlinked evidence. Every limitation honestly documented.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/testimony-that-was-already-written" data-testid="button-vault-prophetic-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/prophetic-testimony-biblical-evidence-correlation.pdf" download="Prophetic-Testimony-Biblical-Evidence-Correlation.pdf" data-testid="button-vault-prophetic-download">
                       <Button size="sm" variant="outline">
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>

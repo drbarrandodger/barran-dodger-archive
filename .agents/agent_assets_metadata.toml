@@ -48,6 +48,12 @@ uri = "file://client/src/assets/images/cover-testimony-dr-richard-mclean.png"
 type = "image"
 title = "testimony cover classified files"
 
+[[generated]]
+id = "uAqNOiBXkpnG87KGFvPQu"
+uri = "file://client/src/assets/images/cover-prophetic-testimony-biblical-correlation.png"
+type = "image"
+title = "prophetic testimony biblical forensic cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
