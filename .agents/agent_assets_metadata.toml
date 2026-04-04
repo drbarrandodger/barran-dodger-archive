@@ -42,6 +42,12 @@ uri = "file://client/src/assets/images/cover-government-called-delusional.png"
 type = "image"
 title = "Government Called Him Delusional cover"
 
+[[generated]]
+id = "_y2dNgPNBldVd7WjSYbbh"
+uri = "file://client/src/assets/images/cover-testimony-dr-richard-mclean.png"
+type = "image"
+title = "testimony cover classified files"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

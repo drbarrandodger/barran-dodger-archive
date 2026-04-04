@@ -22,6 +22,7 @@ import coverParadox from "../assets/images/cover-paradox-persecution.png";
 import coverMeltdown from "../assets/images/cover-forensic-meltdown.png";
 import coverJudges from "../assets/images/cover-they-bought-off-judges.png";
 import coverSilence from "../assets/images/cover-i-choose-silence.png";
+import coverTestimony from "../assets/images/cover-testimony-dr-richard-mclean.png";
 import coverMasterForensic from "../assets/images/cover-master-forensic-report.png";
 import coverSleeperAgent from "../assets/images/cover-sleeper-agent-of-truth.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
@@ -540,6 +541,50 @@ export default function EvidenceVault() {
                       </Button>
                     </Link>
                     <a href="/documents/i-choose-silence.pdf" download="I-Choose-Silence-McLean.pdf" data-testid="button-vault-silence-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: THE TESTIMONY ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.007 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-yellow-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverTestimony} alt="The Testimony of Dr. Richard William McLean cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Flame className="h-3 w-3 mr-1" /> New — 2026
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2,301 Documents</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">35 Years</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Blockchain Verified</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    The Testimony of Dr. Richard William McLean — Secret Files Leaked
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    A comprehensive evidenced narrative testimony drawn from 2,301 primary-source documents spanning 35 years. Each chapter of the "chosen ones" video framework turns out to be documentably literal: 350+ fraudulent ASIC registrations, 1,178 PM&C files declared non-existent, $6B NDIS fraud disclosed, clinical death survived. The official delusional narrative forensically demolished by the government's own paperwork.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/the-testimony" data-testid="button-vault-testimony-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/the-testimony-of-dr-richard-william-mclean.pdf" download="The-Testimony-of-Dr-Richard-William-McLean.pdf" data-testid="button-vault-testimony-download">
                       <Button size="sm" variant="outline">
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>
