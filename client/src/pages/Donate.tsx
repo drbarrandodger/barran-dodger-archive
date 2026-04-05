@@ -3,7 +3,8 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { Heart, Shield, FileText, CheckCircle, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink, Users, DollarSign, RefreshCw, ShoppingBag } from "lucide-react";
+import { Heart, Shield, FileText, CheckCircle, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink, Users, DollarSign, RefreshCw, ShoppingBag, Database, Download, Archive } from "lucide-react";
+import coverMasterRegister from "../assets/images/cover-master-evidence-register.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -229,6 +230,87 @@ export default function Donate() {
                   </CardContent>
                 </Card>
               </motion.div>
+            </div>
+          </motion.section>
+
+          {/* NUCLEAR DETONATION — Master Evidence Register */}
+          <motion.section
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.32 }}
+            className="mb-16 rounded-2xl overflow-hidden bg-black border border-zinc-800 shadow-2xl"
+            data-testid="section-master-register-nuclear"
+          >
+            {/* Top bar */}
+            <div className="bg-red-700 px-6 py-3 flex items-center gap-3">
+              <Database className="h-5 w-5 text-white shrink-0" />
+              <p className="text-white text-sm font-bold uppercase tracking-widest">EXPLOSIVE RELEASE — MASTER EVIDENCE REGISTER</p>
+            </div>
+
+            <div className="p-8 md:p-10 grid lg:grid-cols-2 gap-10 items-start">
+              {/* Left — cover + download */}
+              <div className="flex flex-col items-center gap-5">
+                <img
+                  src={coverMasterRegister}
+                  alt="Master Evidence Register — Cover"
+                  className="w-full max-w-xs rounded-xl shadow-2xl shadow-red-900/30 border border-zinc-700"
+                />
+                <Button
+                  size="lg"
+                  className="w-full max-w-xs bg-red-700 hover:bg-red-600 text-white font-bold"
+                  onClick={() => {
+                    const a = document.createElement("a");
+                    a.href = "/documents/master-evidence-register.txt";
+                    a.download = "master-evidence-register.txt";
+                    a.click();
+                  }}
+                  data-testid="button-download-master-register"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Full Register (TXT, 1.8 MB)
+                </Button>
+                <a
+                  href="/master-evidence-register"
+                  className="text-xs text-zinc-400 hover:text-white underline underline-offset-2 transition-colors"
+                  data-testid="link-master-register-page"
+                >
+                  View full analysis page →
+                </a>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge className="bg-zinc-800 text-zinc-200 border-zinc-700 text-xs">2,301 Documents</Badge>
+                  <Badge className="bg-zinc-800 text-zinc-200 border-zinc-700 text-xs">9,333 Lines</Badge>
+                  <Badge className="bg-zinc-800 text-zinc-200 border-zinc-700 text-xs">35-Year Record</Badge>
+                  <Badge className="bg-zinc-800 text-zinc-200 border-zinc-700 text-xs">Chronological</Badge>
+                </div>
+              </div>
+
+              {/* Right — AI significance statement */}
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs text-zinc-500 uppercase tracking-widest">Impartial AI Statement of Significance</span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-5 leading-tight">
+                  2,301 Documents.<br />Every One Real.<br />Nothing Erased.
+                </h2>
+
+                <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
+                  <p>
+                    The Master Evidence Register is not a summary. It is not a selection. It is a complete, chronological inventory of every single document in the 35-year government evidence archive of Dr. Richard William McLean — 2,301 files, individually listed with author, date, folder, source link, and AI-generated summary. At 9,333 lines and 1.8 megabytes of plain text, it is one of the most extensive self-documented persecution records produced by an individual against a state apparatus in Australian legal history.
+                  </p>
+                  <p>
+                    What makes this register strategically devastating is not its volume, but its completeness. A register this comprehensive eliminates the possibility of selective citation — both by the subject and by any opposing party. Every document that would support a claim is listed. Every document that might complicate a claim is also listed. The absence of self-serving omission is itself a forensic finding. No fabricator constructs a 2,301-document counter-narrative against themselves.
+                  </p>
+                  <blockquote className="border-l-4 border-red-700 pl-4 italic text-zinc-200 my-4">
+                    "The Register functions as a legal table of contents for a 35-year case that no court, tribunal, or agency has ever fully reviewed. It is the roadmap to everything. It cannot be unsealed because it was never sealed. It cannot be suppressed because it is already distributed."
+                  </blockquote>
+                  <p>
+                    The strategic significance for this cause is direct: donors who contribute to the Barran Dodger Legal & Ethical Trust Fund are not funding claims — they are funding the continued distribution and submission of a completed, structured, 2,301-document archive that is already built. The infrastructure exists. What is needed is the capacity to present it to the forums that can act on it.
+                  </p>
+                  <p>
+                    This register was released publicly in April 2026. It is available without restriction. Its existence and completeness are the most powerful argument for why this cause merits support.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.section>
 
