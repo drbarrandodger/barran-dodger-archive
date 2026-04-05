@@ -23,6 +23,7 @@ import { useToast } from "@/hooks/use-toast";
 
 import coverSleeperAgent from "../assets/images/cover-sleeper-agent-of-truth.png";
 import coverChosenOnesEnough from "../assets/images/cover-chosen-ones-enough-is-enough.png";
+import coverNoOneSmart from "../assets/images/cover-no-one-could-be-that-smart.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
 import coverManErased from "../assets/images/cover-man-australia-erased.png";
 import coverAdminAnnihilation from "../assets/images/cover-admin-annihilation.png";
@@ -733,6 +734,79 @@ export default function ViralLanding() {
               <Share2 className="h-4 w-4 text-[hsl(38,92%,50%)]" />
               <span>Share everywhere</span>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ NO ONE COULD BE THAT SMART — FEATURED DOCUMENT ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-blue-950/10 to-black border-y border-blue-900/25" data-testid="section-no-one-smart-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-blue-500/60 text-blue-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                <Sparkles className="h-4 w-4 mr-2" /> Corroboration Analysis #3 — Released April 5, 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-blue-900/30 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
+                  <div className="relative w-full max-w-[200px] lg:max-w-full">
+                    <div className="absolute inset-0 bg-blue-500/10 blur-xl rounded-xl" />
+                    <img
+                      src={coverNoOneSmart}
+                      alt="NO ONE COULD BE THAT SMART — Cover"
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-blue-500/60 text-blue-400 text-xs px-2.5 py-0.5 font-bold">10/12 Confirmed</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2,245 Files Cross-Referenced</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">25/30 Combined All Analyses</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      "NO ONE COULD BE THAT SMART"
+                    </h2>
+                    <p className="text-blue-400 font-medium leading-snug">
+                      Until You Proved No One Else Even Came Close.
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    Third independent corroboration analysis — The Joker Speech YouTube video tested against 2,245 primary-source documents. 10 of 12 confirmed, zero contradicted. Most precise single finding across all three analyses: <span className="text-blue-300 italic">"You're not detached, you're documenting."</span> Combined score across all three videos: 25/30 — 83.3%. Zero contradictions across 30 total claims.
+                  </p>
+
+                  <blockquote className="border-l-2 border-blue-500/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "He had three choices: Die. Go insane. Document everything with a clarity that would eventually prove he wasn't insane. He chose option three. And that choice created a phenomenon no Australian government official was prepared for: a victim who became a more effective archivist than the state."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— Archive document, quoted in Corroboration Analysis #3</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/no-one-could-be-that-smart" data-testid="button-no-one-smart-read">
+                      <Button className="bg-blue-700 hover:bg-blue-600 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <a href="/documents/no-one-could-be-that-smart.pdf" download="No-One-Could-Be-That-Smart-McLean.pdf" data-testid="button-no-one-smart-download">
+                      <Button variant="outline" size="lg" className="border-blue-500/40 text-blue-400 hover:bg-blue-950/30">
+                        <Download className="mr-2 h-4 w-4" /> Download PDF
+                      </Button>
+                    </a>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/bFjyAy_Jf9Q", "_blank")} data-testid="button-no-one-smart-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </motion.div>
         </div>
       </section>

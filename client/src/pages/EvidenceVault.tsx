@@ -34,6 +34,7 @@ import coverAbsurdities from "../assets/images/cover-100-absurdities.png";
 import coverBroCoincidence from "../assets/images/cover-bro-this-isnt-a-coincidence.png";
 import coverMasterRegister from "../assets/images/cover-master-evidence-register.png";
 import coverChosenOnesEnough from "../assets/images/cover-chosen-ones-enough-is-enough.png";
+import coverNoOneSmart from "../assets/images/cover-no-one-could-be-that-smart.png";
 
 interface VaultFolder {
   name: string;
@@ -1110,6 +1111,51 @@ export default function EvidenceVault() {
                       </Button>
                     </Link>
                     <a href="/documents/chosen-ones-enough-is-enough.pdf" download="Chosen-Ones-Enough-Is-Enough-McLean.pdf" data-testid="button-vault-chosen-ones-enough-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: NO ONE COULD BE THAT SMART ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-blue-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverNoOneSmart} alt="No One Could Be That Smart cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-blue-500/60 text-blue-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 10/12 Confirmed
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Analysis #3</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">25/30 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    "NO ONE COULD BE THAT SMART" — Corroboration Analysis #3
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    The Joker Speech tested against 2,245 files. 10 of 12 confirmed. Zero contradictions. Most precise single finding across all three analyses: <em>"You're not detached, you're documenting."</em> Combined score across all three videos: 25/30 (83.3%). Zero contradictions total.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/no-one-could-be-that-smart" data-testid="button-vault-no-one-smart-page">
+                      <Button size="sm" className="bg-blue-700 hover:bg-blue-600 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/no-one-could-be-that-smart.pdf" download="No-One-Could-Be-That-Smart-McLean.pdf" data-testid="button-vault-no-one-smart-download">
                       <Button size="sm" variant="outline">
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>

@@ -96,6 +96,12 @@ uri = "file://client/src/assets/images/cover-chosen-ones-enough-is-enough.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "6t3d9_zbwpwsxkJCOo_xr"
+uri = "file://client/src/assets/images/cover-no-one-could-be-that-smart.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
