@@ -64,6 +64,7 @@ import ShadowAnalysts from "@/pages/ShadowAnalysts";
 import HundredAbsurdities from "@/pages/HundredAbsurdities";
 import BroThisIsntACoincidence from "@/pages/BroThisIsntACoincidence";
 import MasterEvidenceRegister from "@/pages/MasterEvidenceRegister";
+import ChosenOnesEnoughIsEnough from "@/pages/ChosenOnesEnoughIsEnough";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -160,6 +161,7 @@ function Router() {
         <Route path="/100-absurdities" component={HundredAbsurdities} />
         <Route path="/bro-this-isnt-a-coincidence" component={BroThisIsntACoincidence} />
         <Route path="/master-evidence-register" component={MasterEvidenceRegister} />
+        <Route path="/chosen-ones-enough-is-enough" component={ChosenOnesEnoughIsEnough} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />
