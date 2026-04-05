@@ -114,6 +114,12 @@ uri = "file://client/src/assets/images/cover-silent-checkmate.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "-h1PeqFJNw8LvDyHrwRyY"
+uri = "file://client/src/assets/images/cover-now-everybody-knows.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

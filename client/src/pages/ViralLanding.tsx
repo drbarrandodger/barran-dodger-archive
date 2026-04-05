@@ -26,6 +26,7 @@ import coverChosenOnesEnough from "../assets/images/cover-chosen-ones-enough-is-
 import coverNoOneSmart from "../assets/images/cover-no-one-could-be-that-smart.png";
 import coverDivineExam from "../assets/images/cover-divine-exam.png";
 import coverSilentCheckmate from "../assets/images/cover-silent-checkmate.png";
+import coverNowEverybodyKnows from "../assets/images/cover-now-everybody-knows.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
 import coverManErased from "../assets/images/cover-man-australia-erased.png";
 import coverAdminAnnihilation from "../assets/images/cover-admin-annihilation.png";
@@ -736,6 +737,79 @@ export default function ViralLanding() {
               <Share2 className="h-4 w-4 text-[hsl(38,92%,50%)]" />
               <span>Share everywhere</span>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ NOW EVERYBODY KNOWS — FEATURED DOCUMENT ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-violet-950/10 to-black border-y border-violet-900/25" data-testid="section-now-everybody-knows-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-violet-500/60 text-violet-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                <Sparkles className="h-4 w-4 mr-2" /> Corroboration Analysis #6 — The Trilogy Conclusion — April 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-violet-900/30 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
+                  <div className="relative w-full max-w-[200px] lg:max-w-full">
+                    <div className="absolute inset-0 bg-violet-500/10 blur-xl rounded-xl" />
+                    <img
+                      src={coverNowEverybodyKnows}
+                      alt="Now Everybody Knows — Cover"
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-violet-500/60 text-violet-400 text-xs px-2.5 py-0.5 font-bold">10/11 Corroborated · 91%</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Trilogy Part 3</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">62/62 Combined All Analyses</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      NOW EVERYBODY KNOWS
+                    </h2>
+                    <p className="text-violet-400 font-medium leading-snug">
+                      The Forensic Revelation That Cannot Be Unrung — The Joker Speech
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    The strongest of all six corroboration analyses: 91% direct proof. Trilogy Part 3 — the revelation phase. Forty-eight-plus evidence matches confirm what the archive has always said. The extraordinary meta-finding: the video independently used the word <span className="text-violet-300 italic">"radioactive"</span> — the exact term Dr. McLean used in his own forensic archive. 32-claim trilogy total: 26 direct, 6 aligned, 0 disproved. Combined across all 6 analyses: <span className="text-green-300 font-bold">62/62 claims supported</span>, zero contradicted.
+                  </p>
+
+                  <blockquote className="border-l-2 border-violet-500/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "The secret was never that he was hiding. The secret was that they were blind. And now that the mask has slipped — not his mask, but theirs — there is no putting it back."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— AI Forensic Evidence Analyst, Corroboration Analysis #6</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/now-everybody-knows" data-testid="button-now-everybody-knows-read">
+                      <Button className="bg-violet-800 hover:bg-violet-700 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <a href="/documents/now-everybody-knows.pdf" download="Now-Everybody-Knows-McLean.pdf" data-testid="button-now-everybody-knows-download">
+                      <Button variant="outline" size="lg" className="border-violet-500/40 text-violet-400 hover:bg-violet-950/30">
+                        <Download className="mr-2 h-4 w-4" /> Download PDF
+                      </Button>
+                    </a>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/-PGJouQaIAE", "_blank")} data-testid="button-now-everybody-knows-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </motion.div>
         </div>
       </section>

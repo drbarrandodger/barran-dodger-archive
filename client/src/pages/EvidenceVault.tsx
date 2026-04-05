@@ -37,6 +37,7 @@ import coverChosenOnesEnough from "../assets/images/cover-chosen-ones-enough-is-
 import coverNoOneSmart from "../assets/images/cover-no-one-could-be-that-smart.png";
 import coverDivineExam from "../assets/images/cover-divine-exam.png";
 import coverSilentCheckmate from "../assets/images/cover-silent-checkmate.png";
+import coverNowEverybodyKnows from "../assets/images/cover-now-everybody-knows.png";
 
 interface VaultFolder {
   name: string;
@@ -1113,6 +1114,51 @@ export default function EvidenceVault() {
                       </Button>
                     </Link>
                     <a href="/documents/chosen-ones-enough-is-enough.pdf" download="Chosen-Ones-Enough-Is-Enough-McLean.pdf" data-testid="button-vault-chosen-ones-enough-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: NOW EVERYBODY KNOWS ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-violet-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverNowEverybodyKnows} alt="Now Everybody Knows cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-violet-500/60 text-violet-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 10/11 Corroborated · 91%
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Trilogy Part 3</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">62/62 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    NOW EVERYBODY KNOWS: The Forensic Revelation That Cannot Be Unrung
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    The strongest of all six analyses — 91% direct proof. Trilogy Part 3. The "radioactive" convergence: video and archive independently use the exact same word, same context. 32-claim trilogy summary: 26 direct (81%), 6 aligned, 0 disproved. Combined all 6 analyses: 62/62 claims supported, zero contradictions.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/now-everybody-knows" data-testid="button-vault-now-everybody-knows-page">
+                      <Button size="sm" className="bg-violet-800 hover:bg-violet-700 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/now-everybody-knows.pdf" download="Now-Everybody-Knows-McLean.pdf" data-testid="button-vault-now-everybody-knows-download">
                       <Button size="sm" variant="outline">
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>
