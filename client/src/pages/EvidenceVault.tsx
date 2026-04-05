@@ -31,6 +31,7 @@ import coverFullPattern from "../assets/images/cover-the-full-pattern.png";
 import coverChosenOnes from "../assets/images/cover-chosen-ones-your-story.png";
 import coverShadowAnalysts from "../assets/images/cover-33rd-degree-shadow-analysts.png";
 import coverAbsurdities from "../assets/images/cover-100-absurdities.png";
+import coverBroCoincidence from "../assets/images/cover-bro-this-isnt-a-coincidence.png";
 
 interface VaultFolder {
   name: string;
@@ -1021,6 +1022,49 @@ export default function EvidenceVault() {
                       </Button>
                     </Link>
                     <a href="/documents/100-absurdities-of-my-life.pdf" download="100-Absurdities-of-My-Life-Barran-Dodger.pdf" data-testid="button-vault-absurdities-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: BRO THIS ISN'T A COINCIDENCE ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.11 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverBroCoincidence} alt="Bro This Isn't A Coincidence cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-yellow-500/60 text-yellow-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <AlertTriangle className="h-3 w-3 mr-1" /> 85.7% Confirmed
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">External Corroboration</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Blockchain Verified</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    BRO… THIS ISN'T A COINCIDENCE — Forensic Corroboration Analysis
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    A YouTube video created with no knowledge of Dr. McLean achieves 85.7% confirmed thematic alignment across 7 independent forensic axes and 35 named primary sources. Every major theme — ignored warnings, psychiatric weaponisation, exile, systematic documentation, threats to life, financial destruction — is confirmed. This is not coincidence in the trivial sense. It is pattern recognition at scale.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/bro-this-isnt-a-coincidence" data-testid="button-vault-bro-coincidence-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/bro-this-isnt-a-coincidence.pdf" download="Bro-This-Isnt-A-Coincidence-McLean.pdf" data-testid="button-vault-bro-coincidence-download">
                       <Button size="sm" variant="outline">
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>
