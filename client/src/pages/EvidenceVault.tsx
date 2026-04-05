@@ -35,6 +35,7 @@ import coverBroCoincidence from "../assets/images/cover-bro-this-isnt-a-coincide
 import coverMasterRegister from "../assets/images/cover-master-evidence-register.png";
 import coverChosenOnesEnough from "../assets/images/cover-chosen-ones-enough-is-enough.png";
 import coverNoOneSmart from "../assets/images/cover-no-one-could-be-that-smart.png";
+import coverDivineExam from "../assets/images/cover-divine-exam.png";
 
 interface VaultFolder {
   name: string;
@@ -1111,6 +1112,51 @@ export default function EvidenceVault() {
                       </Button>
                     </Link>
                     <a href="/documents/chosen-ones-enough-is-enough.pdf" download="Chosen-Ones-Enough-Is-Enough-McLean.pdf" data-testid="button-vault-chosen-ones-enough-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: THE DIVINE EXAM ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-amber-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverDivineExam} alt="The Divine Exam cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-amber-500/60 text-amber-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 7/10 Corroborated
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Analysis #4</Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">32/40 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    THE DIVINE EXAM YOU DIDN'T KNOW YOU WERE TAKING
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Fourth corroboration analysis: 10/10 propositions of a mass-audience spiritual video find evidentiary support across 2,077 files. 7 directly corroborated, 3 strongly aligned. Zero contradictions. Cumulative: 32 of 40 claims confirmed across all four analyses.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/the-divine-exam" data-testid="button-vault-divine-exam-page">
+                      <Button size="sm" className="bg-amber-700 hover:bg-amber-600 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/divine-exam.pdf" download="The-Divine-Exam-McLean.pdf" data-testid="button-vault-divine-exam-download">
                       <Button size="sm" variant="outline">
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>

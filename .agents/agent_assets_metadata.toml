@@ -102,6 +102,12 @@ uri = "file://client/src/assets/images/cover-no-one-could-be-that-smart.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "zsHhM7VQhRzitNKR-ndzY"
+uri = "file://client/src/assets/images/cover-divine-exam.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

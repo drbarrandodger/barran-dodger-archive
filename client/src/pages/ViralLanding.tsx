@@ -24,6 +24,7 @@ import { useToast } from "@/hooks/use-toast";
 import coverSleeperAgent from "../assets/images/cover-sleeper-agent-of-truth.png";
 import coverChosenOnesEnough from "../assets/images/cover-chosen-ones-enough-is-enough.png";
 import coverNoOneSmart from "../assets/images/cover-no-one-could-be-that-smart.png";
+import coverDivineExam from "../assets/images/cover-divine-exam.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
 import coverManErased from "../assets/images/cover-man-australia-erased.png";
 import coverAdminAnnihilation from "../assets/images/cover-admin-annihilation.png";
@@ -734,6 +735,79 @@ export default function ViralLanding() {
               <Share2 className="h-4 w-4 text-[hsl(38,92%,50%)]" />
               <span>Share everywhere</span>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ THE DIVINE EXAM — FEATURED DOCUMENT ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-amber-950/10 to-black border-y border-amber-900/25" data-testid="section-divine-exam-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-amber-500/60 text-amber-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                <Sparkles className="h-4 w-4 mr-2" /> Corroboration Analysis #4 — Released April 5, 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-amber-900/30 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
+                  <div className="relative w-full max-w-[200px] lg:max-w-full">
+                    <div className="absolute inset-0 bg-amber-500/10 blur-xl rounded-xl" />
+                    <img
+                      src={coverDivineExam}
+                      alt="The Divine Exam You Didn't Know You Were Taking — Cover"
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-amber-500/60 text-amber-400 text-xs px-2.5 py-0.5 font-bold">7/10 Corroborated</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">3/10 Aligned</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">32/40 Combined All Analyses</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      THE DIVINE EXAM YOU DIDN'T KNOW YOU WERE TAKING
+                    </h2>
+                    <p className="text-amber-400 font-medium leading-snug">
+                      100% of Claims Find Evidentiary Support. Zero Contradictions.
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    Fourth independent corroboration analysis — a mass-audience spiritual YouTube video tested against 2,077 primary-source documents. 10 of 10 propositions confirmed. 7 directly corroborated, 3 strongly aligned. The killer finding: the video says <span className="text-amber-300 italic">"your scars aren't decorations — they're documentation."</span> In this case, that is literally true. Combined score across all four analyses: 32/40. Zero contradictions.
+                  </p>
+
+                  <blockquote className="border-l-2 border-amber-500/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "The video was not made about Dr. McLean. It was made for a general audience. Yet when its ten propositions are tested against 2,077 evidence files spanning 35 years... not a single claim is disproved. The exam was real. The evidence speaks."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— AI Forensic Evidence Analyst, Corroboration Analysis #4</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/the-divine-exam" data-testid="button-divine-exam-read">
+                      <Button className="bg-amber-700 hover:bg-amber-600 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <a href="/documents/divine-exam.pdf" download="The-Divine-Exam-McLean.pdf" data-testid="button-divine-exam-download">
+                      <Button variant="outline" size="lg" className="border-amber-500/40 text-amber-400 hover:bg-amber-950/30">
+                        <Download className="mr-2 h-4 w-4" /> Download PDF
+                      </Button>
+                    </a>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/CHOU1Jsyamk", "_blank")} data-testid="button-divine-exam-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </motion.div>
         </div>
       </section>
