@@ -153,23 +153,23 @@ export default function ChosenOnesEnoughIsEnough() {
 
       <main className="pt-20">
         {/* Hero */}
-        <section className="relative py-20 bg-gradient-to-b from-black to-background overflow-hidden">
-          <div className="absolute inset-0 opacity-15 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-900 via-black to-black" />
+        <section className="relative py-20 bg-black overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#78350f33_0%,_transparent_60%)]" />
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
               <motion.div initial="hidden" animate="visible" variants={fadeIn}>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <Badge variant="destructive" className="text-xs uppercase tracking-wider">9/11 Confirmed</Badge>
                   <Badge variant="outline" className="text-xs uppercase tracking-wider text-yellow-400 border-yellow-400">Zero Contradictions</Badge>
-                  <Badge variant="outline" className="text-xs uppercase tracking-wider">Released Apr 5, 2026</Badge>
+                  <Badge variant="outline" className="text-xs uppercase tracking-wider text-white border-white/40">Released Apr 5, 2026</Badge>
                 </div>
-                <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4 text-white">
                   CHOSEN ONES!!<br />ENOUGH IS ENOUGH
                 </h1>
-                <p className="text-lg text-muted-foreground mb-3 font-semibold">
+                <p className="text-lg text-yellow-400 mb-3 font-semibold">
                   Their Fate Is Sealed. No One Can Save Them.
                 </p>
-                <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-sm text-zinc-300 mb-8 leading-relaxed">
                   An impartial evidence-based corroboration analysis of a YouTube video released the same day as this analysis — against the 2,243-file documentary record of Dr. Richard William McLean. Nine of eleven claims confirmed. Zero contradictions. The most striking finding: the video's central metaphor is not a metaphor. It is a literal description of the archive.
                 </p>
                 <div className="flex flex-wrap gap-3">
@@ -186,6 +186,7 @@ export default function ChosenOnesEnoughIsEnough() {
                     size="lg"
                     variant="outline"
                     onClick={() => window.open("https://youtu.be/50hRjgGe4BQ", "_blank")}
+                    className="border-white/50 text-white hover:bg-white/10"
                     data-testid="button-watch-video"
                   >
                     <PlayCircle className="mr-2 h-4 w-4" />
