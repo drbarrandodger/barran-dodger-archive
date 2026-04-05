@@ -32,6 +32,7 @@ import coverChosenOnes from "../assets/images/cover-chosen-ones-your-story.png";
 import coverShadowAnalysts from "../assets/images/cover-33rd-degree-shadow-analysts.png";
 import coverAbsurdities from "../assets/images/cover-100-absurdities.png";
 import coverBroCoincidence from "../assets/images/cover-bro-this-isnt-a-coincidence.png";
+import coverMasterRegister from "../assets/images/cover-master-evidence-register.png";
 
 interface VaultFolder {
   name: string;
@@ -380,6 +381,49 @@ export default function EvidenceVault() {
                   <ExternalLink className="h-4 w-4" /> Browse Full MyAIDrive Archive
                 </a>
               </Button>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: MASTER EVIDENCE REGISTER ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.0 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-blue-900/40 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverMasterRegister} alt="Master Evidence Register cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-blue-500/60 text-blue-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <Archive className="h-3 w-3 mr-1" /> 2,301 Documents
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Master Index</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Legal / Asylum Use</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    Master Evidence Register — Complete 2,301-Document Index
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    The definitive chronological index of all 2,301 government evidence files spanning 35 years — every document linked, summarised, and classified across 20+ institutions. Prepared for legal submissions, asylum applications, and ICC/UNHCR correspondence. 9,333 lines. A single file containing the entire architecture of a 35-year persecution.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/master-evidence-register" data-testid="button-vault-master-register-page">
+                      <Button size="sm" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/master-evidence-register.txt" download="Master-Evidence-Register-2301-Barran-Dodger.txt" data-testid="button-vault-master-register-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct Download (.txt)
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.section>
 

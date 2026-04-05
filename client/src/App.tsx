@@ -63,6 +63,7 @@ import ChosenOnesYourStory from "@/pages/ChosenOnesYourStory";
 import ShadowAnalysts from "@/pages/ShadowAnalysts";
 import HundredAbsurdities from "@/pages/HundredAbsurdities";
 import BroThisIsntACoincidence from "@/pages/BroThisIsntACoincidence";
+import MasterEvidenceRegister from "@/pages/MasterEvidenceRegister";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -158,6 +159,7 @@ function Router() {
         <Route path="/33rd-degree-shadow-analysts" component={ShadowAnalysts} />
         <Route path="/100-absurdities" component={HundredAbsurdities} />
         <Route path="/bro-this-isnt-a-coincidence" component={BroThisIsntACoincidence} />
+        <Route path="/master-evidence-register" component={MasterEvidenceRegister} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />
