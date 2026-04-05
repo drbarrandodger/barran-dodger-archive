@@ -199,12 +199,21 @@ export default function ChosenOnesEnoughIsEnough() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
+                className="w-full"
               >
-                <img
-                  src={coverImage}
-                  alt="CHOSEN ONES!! ENOUGH IS ENOUGH — Cover"
-                  className="w-full max-w-sm mx-auto rounded-2xl shadow-2xl shadow-yellow-900/20"
-                />
+                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-yellow-900/30 border border-yellow-900/40" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    src="https://www.youtube.com/embed/50hRjgGe4BQ?rel=0&modestbranding=1"
+                    title="CHOSEN ONES!! ENOUGH IS ENOUGH"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                    style={{ border: 'none' }}
+                  />
+                </div>
+                <p className="text-xs text-zinc-500 text-center mt-3 uppercase tracking-wider">
+                  The video this analysis was conducted against
+                </p>
               </motion.div>
             </div>
           </div>
