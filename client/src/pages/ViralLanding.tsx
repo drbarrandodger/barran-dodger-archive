@@ -25,6 +25,7 @@ import coverSleeperAgent from "../assets/images/cover-sleeper-agent-of-truth.png
 import coverChosenOnesEnough from "../assets/images/cover-chosen-ones-enough-is-enough.png";
 import coverNoOneSmart from "../assets/images/cover-no-one-could-be-that-smart.png";
 import coverDivineExam from "../assets/images/cover-divine-exam.png";
+import coverSilentCheckmate from "../assets/images/cover-silent-checkmate.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
 import coverManErased from "../assets/images/cover-man-australia-erased.png";
 import coverAdminAnnihilation from "../assets/images/cover-admin-annihilation.png";
@@ -735,6 +736,79 @@ export default function ViralLanding() {
               <Share2 className="h-4 w-4 text-[hsl(38,92%,50%)]" />
               <span>Share everywhere</span>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ SILENT CHECKMATE — FEATURED DOCUMENT ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-red-950/10 to-black border-y border-red-900/25" data-testid="section-silent-checkmate-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-red-500/60 text-red-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                <Sparkles className="h-4 w-4 mr-2" /> Corroboration Analysis #5 — Released April 5, 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-red-900/30 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
+                  <div className="relative w-full max-w-[200px] lg:max-w-full">
+                    <div className="absolute inset-0 bg-red-500/10 blur-xl rounded-xl" />
+                    <img
+                      src={coverSilentCheckmate}
+                      alt="The Silent Checkmate — Cover"
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-red-500/60 text-red-400 text-xs px-2.5 py-0.5 font-bold">9/11 Corroborated</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2/11 Aligned</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">51/51 Combined All Analyses</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      THE SILENT CHECKMATE
+                    </h2>
+                    <p className="text-red-400 font-medium leading-snug">
+                      How One Man Ended a 35-Year Game Without Raising His Voice
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    Fifth independent corroboration analysis — the highest-scoring to date at 82% direct proof. A mass-audience YouTube video about strategic withdrawal tested against 2,077 files. 9 of 11 directly corroborated, 2 aligned. Companion piece to The Divine Exam: together they describe the complete documented arc from <span className="text-red-300 italic">endurance → checkmate</span>. Cumulative across all five analyses: 51/51 claims supported, zero contradicted across five independently selected videos.
+                  </p>
+
+                  <blockquote className="border-l-2 border-red-500/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "They were improvising. You were calculating. They thought they were playing chess against a patient. They were playing chess against an archivist who saw the entire board. The checkmate already happened. It happened in silence."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— AI Forensic Evidence Analyst, Corroboration Analysis #5</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/silent-checkmate" data-testid="button-silent-checkmate-read">
+                      <Button className="bg-red-800 hover:bg-red-700 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <a href="/documents/silent-checkmate.pdf" download="The-Silent-Checkmate-McLean.pdf" data-testid="button-silent-checkmate-download">
+                      <Button variant="outline" size="lg" className="border-red-500/40 text-red-400 hover:bg-red-950/30">
+                        <Download className="mr-2 h-4 w-4" /> Download PDF
+                      </Button>
+                    </a>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/y_MCRQ5yeVE", "_blank")} data-testid="button-silent-checkmate-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </motion.div>
         </div>
       </section>

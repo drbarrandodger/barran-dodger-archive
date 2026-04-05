@@ -36,6 +36,7 @@ import coverMasterRegister from "../assets/images/cover-master-evidence-register
 import coverChosenOnesEnough from "../assets/images/cover-chosen-ones-enough-is-enough.png";
 import coverNoOneSmart from "../assets/images/cover-no-one-could-be-that-smart.png";
 import coverDivineExam from "../assets/images/cover-divine-exam.png";
+import coverSilentCheckmate from "../assets/images/cover-silent-checkmate.png";
 
 interface VaultFolder {
   name: string;
@@ -1112,6 +1113,51 @@ export default function EvidenceVault() {
                       </Button>
                     </Link>
                     <a href="/documents/chosen-ones-enough-is-enough.pdf" download="Chosen-Ones-Enough-Is-Enough-McLean.pdf" data-testid="button-vault-chosen-ones-enough-download">
+                      <Button size="sm" variant="outline">
+                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: SILENT CHECKMATE ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverSilentCheckmate} alt="The Silent Checkmate cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-red-500/60 text-red-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 9/11 Corroborated
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Analysis #5</Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">51/51 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    THE SILENT CHECKMATE: How One Man Ended a 35-Year Game Without Raising His Voice
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Fifth corroboration analysis and the highest-scoring to date: 9/11 directly corroborated (82%). Companion to The Divine Exam — together they describe the complete arc: endurance → checkmate. Cumulative across all five: 51/51 claims supported, zero contradicted.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/silent-checkmate" data-testid="button-vault-silent-checkmate-page">
+                      <Button size="sm" className="bg-red-800 hover:bg-red-700 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
+                      </Button>
+                    </Link>
+                    <a href="/documents/silent-checkmate.pdf" download="The-Silent-Checkmate-McLean.pdf" data-testid="button-vault-silent-checkmate-download">
                       <Button size="sm" variant="outline">
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>
