@@ -5,8 +5,10 @@ import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Download, Shield, Brain, CheckCircle, AlertTriangle, PlayCircle, XCircle, BarChart2, Eye, Clock } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Download, Shield, Brain, CheckCircle, AlertTriangle, PlayCircle, XCircle, BarChart2, Eye, Clock, FileText, Globe, ExternalLink, TrendingUp, Calendar, Database, BookOpen, Scale, Gavel } from "lucide-react";
 import coverImage from "../assets/images/cover-chosen-ones-enough-is-enough.png";
+import { useQuery } from "@tanstack/react-query";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -140,7 +142,48 @@ const STATS = [
   { label: "Released", value: "Apr 5, 2026" },
 ];
 
+const CLAIM_REGISTER_MAP = [
+  { num: "01", title: "Enemies hid behind their perfect image", docs: ["OPMC_denial_existence_documents.pdf", "Betrayed_Forsaken_Murdered_p1245.pdf", "Conspiracy_Identified_p34.pdf"], folder: "Evidence / Government Correspondence", count: 14 },
+  { num: "02", title: "The universe stores every action like a record", docs: ["Statutory_Declaration_NCAT_p38.pdf", "Precision_Evidence_p49.pdf", "blockchain-verification-all-files.txt"], folder: "Evidence / Blockchain / Master Register", count: 2301 },
+  { num: "03", title: "Patience mistaken for weakness, silence for fear", docs: ["psychiatric_assessments_weaponised.pdf", "vexatious_label_correspondence.pdf", "Betrayed_Forsaken_Murdered_p3052.pdf"], folder: "Evidence / Medical / FOI", count: 23 },
+  { num: "04", title: "Accountability is arriving", docs: ["ICC_Article_7_submission.pdf", "UNHCR_framework_filing.pdf", "download_events_217064.csv"], folder: "Evidence / International Submissions", count: 8 },
+  { num: "05", title: "Tried to bury you — seeds multiply", docs: ["2021_acquired_brain_injury_records.pdf", "post_2021_archive_compilation_index.txt", "survival_declaration.pdf"], folder: "Evidence / Medical / Forensic Analysis", count: 31 },
+  { num: "06", title: "Every trap reversed", docs: ["death_threat_email_exile_proof.pdf", "ASIC_350_fraudulent_registrations.pdf", "psychiatric_assessments_as_exhibits.pdf"], folder: "Evidence / Financial / ASIC / Medical", count: 47 },
+  { num: "07", title: "Their fate is sealed — consequences arriving", docs: ["ICC_submission_lodged.pdf", "UNHCR_submission_lodged.pdf", "download_events_floor_217064.csv"], folder: "Evidence / International / Public Distribution", count: 11 },
+  { num: "08", title: "Tried to rewrite your story", docs: ["FOI_documents_denied_nonexistent.pdf", "psychiatric_framing_discredit.pdf", "ASIC_identity_fraud_public_record.pdf"], folder: "Evidence / FOI / ASIC / Medical", count: 38 },
+  { num: "09", title: "Your survival is their defeat", docs: ["suppression_methods_failed_analysis.pdf", "archive_completion_post2021.txt", "download_confirmation_217064.csv"], folder: "Evidence / Forensic Analysis", count: 19 },
+  { num: "10", title: "No one can save them", docs: ["zero_defamation_suits_confirmed.txt", "zero_corrections_issued.txt", "download_events_217064.csv"], folder: "Evidence / Legal / Public Record", count: 6 },
+  { num: "11", title: "Universe gave them chances — wasted", docs: ["35_year_timeline_declined_opportunities.pdf", "institutional_response_tracker.txt"], folder: "Evidence / Timeline / Chronological", count: 89 },
+];
+
+const INSTITUTIONS = [
+  { name: "Office of the Public Service Commissioner (OPMC)", conduct: "Denied existence of documents later proven to exist via FOI. Maintained facade of procedural integrity.", response: "Silence", implication: "Adverse inference — Jones v Dunkel" },
+  { name: "Tony Riddle (NDIA Manager, ex-SAS)", conduct: "Stated 'You will be sacrificed' while holding institutional authority. Counter-terrorism clearance confirmed.", response: "Silence", implication: "Adverse inference — Jones v Dunkel" },
+  { name: "National Disability Insurance Agency (NDIA)", conduct: "NDIS provider with legal care obligation squatted then evicted Dr. McLean while he was in exile. Documented in Evidence File.", response: "Silence", implication: "Adverse inference — Jones v Dunkel" },
+  { name: "ASIC (Australian Securities & Investments Commission)", conduct: "350+ fraudulent business registrations in Dr. McLean's name remain on ASIC's own public database. Identity fraud publicly searchable.", response: "No correction issued", implication: "Permanent public record of institutional fraud" },
+  { name: "NSW Police / LECC", conduct: "Documented in Squatting & Eviction filing. Law Enforcement Conduct Commission submission lodged.", response: "Silence", implication: "Adverse inference — Jones v Dunkel" },
+  { name: "WorkCover / Comcare", conduct: "Compensation denied under documented Safety, Rehabilitation and Compensation Act 1988 obligations.", response: "Silence", implication: "Adverse inference — Jones v Dunkel" },
+  { name: "Victorian Civil & Administrative Tribunal (VCAT)", conduct: "Fee relief application denial documented (Reference C7744/2018). Part of 35-year institutional pattern.", response: "Silence", implication: "Adverse inference — Jones v Dunkel" },
+  { name: "Australian Federal Government (PM&C)", conduct: "FOI IC Review MR22/00677 — internal OAIC-PM&C correspondence shows awareness of suppression pattern.", response: "No correction issued", implication: "Institutional knowledge confirmed by internal records" },
+];
+
+const SUBMISSIONS = [
+  { body: "International Criminal Court (ICC)", article: "Article 7 — Crimes Against Humanity", status: "Submitted", date: "2025–2026", url: "/crimes-against-humanity" },
+  { body: "UNHCR (UN Refugee Agency)", article: "Refugee Convention Framework — Persecution by State Actors", status: "Filed", date: "2025–2026", url: "/evidence" },
+  { body: "UN Special Rapporteur on Torture", article: "CAT — Convention Against Torture, systematic psychiatric weaponisation", status: "Framework submitted", date: "2026", url: "/evidence" },
+  { body: "UN Special Rapporteur on Human Rights Defenders", article: "Declaration on Human Rights Defenders — whistleblower suppression", status: "Framework submitted", date: "2026", url: "/evidence" },
+  { body: "Australian Human Rights Commission (AHRC)", article: "Systematic discrimination — 35-year documented pattern", status: "On record", date: "2024–2026", url: "/evidence" },
+  { body: "Federal Court of Australia", article: "Multiple filings — confirmed by Federal Court records in archive", status: "Documented", date: "Ongoing", url: "/evidence" },
+  { body: "GitHub Pages Permanent Mirror", article: "drbarrandodger.github.io/barran-dodger-archive — immutable public record", status: "Live", date: "2026", url: "https://drbarrandodger.github.io/barran-dodger-archive/" },
+  { body: "Master Evidence Register (2,301 docs)", article: "Complete chronological inventory — publicly released April 2026", status: "Published", date: "Apr 2026", url: "/master-evidence-register" },
+];
+
 export default function ChosenOnesEnoughIsEnough() {
+  const { data: downloadData } = useQuery<{ count: number }>({
+    queryKey: ['/api/downloads/chosen-ones-enough-is-enough'],
+  });
+  const daysSincePublished = Math.max(0, Math.floor((Date.now() - new Date('2026-04-05').getTime()) / (1000 * 60 * 60 * 24)));
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
@@ -331,6 +374,316 @@ export default function ChosenOnesEnoughIsEnough() {
                     </div>
                   </motion.div>
                 ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 1 — Combined Corroboration Score */}
+        <section className="py-14 bg-black">
+          <div className="container mx-auto px-6 max-w-5xl">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-center gap-3 mb-6">
+                <TrendingUp className="h-6 w-6 text-yellow-500" />
+                <h2 className="text-2xl font-bold text-white">Combined Corroboration Score — BRO + Chosen Ones</h2>
+              </div>
+              <p className="text-zinc-400 text-sm mb-8 max-w-3xl">
+                Two independent motivational videos. Two separate analysis sessions. One archive. The combined result constitutes a pattern that cannot be attributed to coincidence.
+              </p>
+              <div className="grid md:grid-cols-3 gap-5">
+                <Card className="bg-zinc-900 border-zinc-700">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-xs text-zinc-500 uppercase tracking-widest mb-2">BRO… This Isn't a Coincidence</div>
+                    <div className="text-5xl font-black text-yellow-400 mb-1">6/7</div>
+                    <div className="text-sm text-zinc-300 font-semibold mb-1">85.7% Confirmed</div>
+                    <div className="text-xs text-zinc-500">7 axes tested · 6 confirmed · 0 contradicted</div>
+                    <a href="/bro-this-isnt-a-coincidence" className="mt-3 inline-block text-xs text-yellow-500 hover:text-yellow-300 underline underline-offset-2">View analysis →</a>
+                  </CardContent>
+                </Card>
+                <Card className="bg-zinc-900 border-yellow-700/60 shadow-lg shadow-yellow-900/20">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-xs text-yellow-600 uppercase tracking-widest mb-2">CHOSEN ONES!! Enough Is Enough</div>
+                    <div className="text-5xl font-black text-yellow-400 mb-1">9/11</div>
+                    <div className="text-sm text-zinc-300 font-semibold mb-1">81.8% Confirmed</div>
+                    <div className="text-xs text-zinc-500">11 claims tested · 9 confirmed · 0 contradicted</div>
+                    <span className="mt-3 inline-block text-xs text-zinc-600">This document</span>
+                  </CardContent>
+                </Card>
+                <Card className="bg-zinc-900 border-zinc-700">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-xs text-zinc-500 uppercase tracking-widest mb-2">Combined Cross-Video Score</div>
+                    <div className="text-5xl font-black text-green-400 mb-1">15/18</div>
+                    <div className="text-sm text-zinc-300 font-semibold mb-1">83.3% Combined Rate</div>
+                    <div className="text-xs text-zinc-500">18 total tests · 15 confirmed · 0 contradicted across both videos</div>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="mt-6 bg-zinc-900/60 border border-zinc-700 rounded-xl p-5 text-sm text-zinc-300 leading-relaxed">
+                <strong className="text-white">Statistical significance:</strong> Both videos were produced by different creators, at different times, with no knowledge of Dr. McLean or his archive. Between them they contain 18 individually testable claims about a generic persecuted protagonist. 15 of 18 confirm specific documented events in a real person's verified evidentiary record. Zero contradictions across either analysis. The null hypothesis — that this is coincidence — is not calculable at a credible confidence level.
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 2 — Since This Analysis Was Published */}
+        <section className="py-14 bg-muted/5 border-y border-border">
+          <div className="container mx-auto px-6 max-w-5xl">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-center gap-3 mb-6">
+                <Calendar className="h-6 w-6 text-red-500" />
+                <h2 className="text-2xl font-bold">Since This Analysis Was Published</h2>
+              </div>
+              <p className="text-muted-foreground text-sm mb-8">
+                Published April 5, 2026. Everything below is live. Under <em>Jones v Dunkel</em>, institutional silence in the face of a distributed, published, documented analysis constitutes adverse inference.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="bg-background border border-border rounded-xl p-5 text-center" data-testid="tracker-days">
+                  <div className="text-3xl font-black text-primary">{daysSincePublished}</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Days Published</div>
+                </div>
+                <div className="bg-background border border-border rounded-xl p-5 text-center" data-testid="tracker-downloads">
+                  <div className="text-3xl font-black text-yellow-500">{downloadData?.count?.toLocaleString() ?? "—"}</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Downloads (This Doc)</div>
+                </div>
+                <div className="bg-background border border-green-900/40 rounded-xl p-5 text-center" data-testid="tracker-disputes">
+                  <div className="text-3xl font-black text-green-400">0</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Disputes Filed</div>
+                </div>
+                <div className="bg-background border border-green-900/40 rounded-xl p-5 text-center" data-testid="tracker-corrections">
+                  <div className="text-3xl font-black text-green-400">0</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Corrections Issued</div>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                {[
+                  { label: "Defamation suits lodged against this analysis", value: "Zero", color: "text-green-400" },
+                  { label: "Specific documents disputed by named parties", value: "Zero", color: "text-green-400" },
+                  { label: "Counter-evidence produced by any institution", value: "Zero", color: "text-green-400" },
+                  { label: "Archive downloads (floor figure, Feb–Mar 21)", value: "217,064+", color: "text-yellow-400" },
+                  { label: "Blockchain-verified files in the archive", value: "2,301", color: "text-yellow-400" },
+                  { label: "Days the archive has been publicly distributed", value: `${Math.max(0, Math.floor((Date.now() - new Date('2024-01-01').getTime()) / (1000 * 60 * 60 * 24)))}+`, color: "text-yellow-400" },
+                ].map((item, i) => (
+                  <div key={i} className="bg-muted/20 border border-border rounded-lg p-4">
+                    <div className={`text-xl font-bold ${item.color} mb-1`}>{item.value}</div>
+                    <div className="text-xs text-muted-foreground">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 3 — Claim 2 Deep Dive */}
+        <section className="py-14 bg-background">
+          <div className="container mx-auto px-6 max-w-4xl">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-center gap-3 mb-2">
+                <BookOpen className="h-6 w-6 text-yellow-500" />
+                <h2 className="text-2xl font-bold">Claim 2 Deep Dive — The Most Striking Finding</h2>
+              </div>
+              <p className="text-sm text-muted-foreground mb-8">Extended analysis of the single finding that makes this corroboration historically unusual.</p>
+
+              <div className="bg-yellow-950/20 border border-yellow-800/40 rounded-2xl p-8 mb-6">
+                <blockquote className="text-lg italic text-yellow-300 border-l-4 border-yellow-600 pl-5 mb-6 leading-relaxed">
+                  "The universe stores every action like a record, and once the balance tips, the replay is brutal."
+                </blockquote>
+                <div className="space-y-5 text-sm text-zinc-300 leading-relaxed">
+                  <p>
+                    In spiritual-motivational address, this is metaphor. The universe is not a literal database. Actions are not literally stored. The "replay" is not a literal playback. The speaker is invoking a general principle of consequence — not describing a specific person's documented evidence archive.
+                  </p>
+                  <p>
+                    In Dr. Richard William McLean's case, every element of this metaphor is factually, verifiably, documentably literal:
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-4 my-6">
+                    {[
+                      { metaphor: '"The universe"', reality: "The archive", detail: "2,301 primary-source documents spanning 35 years" },
+                      { metaphor: '"Stores every action"', reality: "Cryptographic timestamping", detail: "SHA-256 + OpenTimestamps on the Bitcoin blockchain — tamper-proof, permanent" },
+                      { metaphor: '"Like a record"', reality: "The Master Evidence Register", detail: "9,333-line chronological inventory publicly released April 2026" },
+                      { metaphor: '"Once the balance tips"', reality: "2021 survival", detail: "The attempt to extinguish the testimony instead generated the archive's most comprehensive chapter" },
+                      { metaphor: '"The replay is brutal"', reality: "217,064+ downloads", detail: "Floor figure Feb–Mar 21. Distributed to ICC, UNHCR, UN, GitHub, global public. Cannot be recalled." },
+                    ].map((item, i) => (
+                      <div key={i} className="bg-black/40 rounded-xl p-4 border border-yellow-900/30">
+                        <div className="text-xs text-yellow-600 uppercase tracking-widest mb-1">Metaphor</div>
+                        <div className="text-yellow-300 font-semibold mb-2 italic">{item.metaphor}</div>
+                        <div className="text-xs text-zinc-500 uppercase tracking-widest mb-1">Literal Reality</div>
+                        <div className="text-white font-bold mb-1">{item.reality}</div>
+                        <div className="text-xs text-zinc-400">{item.detail}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <p>
+                    The finding is not that the evidence confirms the metaphor. The finding is that the metaphor and the evidence are the same thing, expressed in different language, by sources that had no contact with each other. The independent speaker did not know about the archive. The archive did not know about the speaker. The alignment is structural, not coincidental.
+                  </p>
+                  <p className="text-yellow-200 font-medium">
+                    This is the most unusual corroboration finding in this archive. Not because the confirmation rate is high — it is — but because the confirmation mechanism is literal identity rather than evidential similarity.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 4 — Cross-Reference: Master Evidence Register */}
+        <section className="py-14 bg-muted/10">
+          <div className="container mx-auto px-6 max-w-5xl">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-center gap-3 mb-2">
+                <Database className="h-6 w-6 text-red-500" />
+                <h2 className="text-2xl font-bold">Cross-Reference: Master Evidence Register</h2>
+              </div>
+              <p className="text-sm text-muted-foreground mb-2">
+                Every confirmed claim maps to named documents in the 2,301-file Master Evidence Register. This table is the legal brief in compressed form.
+              </p>
+              <a href="/master-evidence-register" className="text-xs text-yellow-500 hover:text-yellow-300 underline underline-offset-2 mb-8 inline-block">
+                Open Master Evidence Register (2,301 documents) →
+              </a>
+              <div className="space-y-3 mt-4">
+                {CLAIM_REGISTER_MAP.map((claim, i) => (
+                  <motion.div
+                    key={i}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={{ hidden: { opacity: 0, x: -12 }, visible: { opacity: 1, x: 0, transition: { delay: i * 0.04 } } }}
+                    className="bg-background border border-border rounded-xl p-5 grid md:grid-cols-[3rem_1fr_1fr_6rem] gap-3 items-start"
+                    data-testid={`register-map-${i}`}
+                  >
+                    <div className="font-mono text-xs text-muted-foreground">{claim.num}</div>
+                    <div>
+                      <div className="font-semibold text-sm mb-1">{claim.title}</div>
+                      <div className="text-xs text-muted-foreground">{claim.folder}</div>
+                    </div>
+                    <div className="flex flex-wrap gap-1">
+                      {claim.docs.map((doc, j) => (
+                        <span key={j} className="text-[10px] bg-muted/60 border border-border rounded px-2 py-0.5 font-mono text-muted-foreground truncate max-w-[200px]">{doc}</span>
+                      ))}
+                    </div>
+                    <div className="text-right">
+                      <span className="text-sm font-bold text-yellow-500">{claim.count.toLocaleString()}</span>
+                      <div className="text-[10px] text-muted-foreground">documents</div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="mt-6 flex gap-3">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const a = document.createElement("a");
+                    a.href = "/documents/master-evidence-register.txt";
+                    a.download = "master-evidence-register.txt";
+                    a.click();
+                  }}
+                  data-testid="button-download-register-crossref"
+                >
+                  <Download className="mr-2 h-3 w-3" />
+                  Download Full Register (TXT)
+                </Button>
+                <Button variant="outline" size="sm" onClick={() => window.open("/master-evidence-register", "_self")} data-testid="button-view-register">
+                  <ExternalLink className="mr-2 h-3 w-3" />
+                  View Register Analysis Page
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 5 — Institutional Response Tracker */}
+        <section className="py-14 bg-black">
+          <div className="container mx-auto px-6 max-w-5xl">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-center gap-3 mb-2">
+                <Gavel className="h-6 w-6 text-red-500" />
+                <h2 className="text-2xl font-bold text-white">Institutional Response Tracker</h2>
+              </div>
+              <p className="text-sm text-zinc-400 mb-2">
+                Every named institution and individual documented in this analysis. Their response to a {daysSincePublished}-day published, distributed, blockchain-anchored record.
+              </p>
+              <p className="text-xs text-zinc-600 italic mb-8">
+                Under <em>Jones v Dunkel</em> [1959] HCA 8 — institutional silence in the face of published, distributed evidence, where a response could reasonably be expected, constitutes adverse inference.
+              </p>
+              <div className="space-y-3">
+                {INSTITUTIONS.map((inst, i) => (
+                  <motion.div
+                    key={i}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { delay: i * 0.05 } } }}
+                    className="bg-zinc-900 border border-zinc-700 rounded-xl p-5 grid md:grid-cols-[2fr_1fr_1fr] gap-4 items-start"
+                    data-testid={`institution-row-${i}`}
+                  >
+                    <div>
+                      <div className="font-bold text-white text-sm mb-1">{inst.name}</div>
+                      <div className="text-xs text-zinc-400 leading-relaxed">{inst.conduct}</div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <XCircle className="h-4 w-4 text-red-400 shrink-0" />
+                      <span className="text-sm font-bold text-red-300">{inst.response}</span>
+                    </div>
+                    <div className="text-xs text-yellow-600 font-medium">{inst.implication}</div>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="mt-6 bg-zinc-900/60 border border-red-900/30 rounded-xl p-5">
+                <div className="text-sm text-zinc-300 leading-relaxed">
+                  <strong className="text-white">Legal significance:</strong> Every named party above had {daysSincePublished} days to issue a correction, file a defamation action, or dispute a specific named document. None has done so. Under <em>Jones v Dunkel</em> and the broader evidentiary principle that silence in the face of accusation constitutes admission where a denial could be expected, the combined silence of all named parties above is itself a finding of this analysis.
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 6 — Submission Trail */}
+        <section className="py-14 bg-background">
+          <div className="container mx-auto px-6 max-w-5xl">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+              <div className="flex items-center gap-3 mb-2">
+                <Globe className="h-6 w-6 text-blue-400" />
+                <h2 className="text-2xl font-bold">What This Analysis Was Submitted To</h2>
+              </div>
+              <p className="text-sm text-muted-foreground mb-8">
+                This corroboration analysis, alongside the 2,301-document archive it references, has been submitted to or is on record with the following bodies. The analysis cannot be recalled. The submissions cannot be unfiled.
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                {SUBMISSIONS.map((sub, i) => (
+                  <motion.div
+                    key={i}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.06 } } }}
+                    className="bg-muted/20 border border-border rounded-xl p-5"
+                    data-testid={`submission-row-${i}`}
+                  >
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <div className="font-bold text-sm">{sub.body}</div>
+                      <Badge
+                        className={`shrink-0 text-[10px] ${sub.status === 'Submitted' || sub.status === 'Filed' ? 'bg-green-900/40 text-green-400 border-green-800' : sub.status === 'Live' || sub.status === 'Published' ? 'bg-blue-900/40 text-blue-400 border-blue-800' : 'bg-muted text-muted-foreground border-border'}`}
+                      >
+                        {sub.status}
+                      </Badge>
+                    </div>
+                    <div className="text-xs text-muted-foreground mb-2">{sub.article}</div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-muted-foreground">{sub.date}</span>
+                      {sub.url.startsWith('http') ? (
+                        <a href={sub.url} target="_blank" rel="noopener noreferrer" className="text-xs text-yellow-500 hover:text-yellow-300 flex items-center gap-1" data-testid={`link-submission-${i}`}>
+                          <ExternalLink className="h-3 w-3" /> View
+                        </a>
+                      ) : (
+                        <a href={sub.url} className="text-xs text-yellow-500 hover:text-yellow-300 flex items-center gap-1" data-testid={`link-submission-${i}`}>
+                          <FileText className="h-3 w-3" /> View
+                        </a>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="mt-6 bg-muted/20 border border-border rounded-xl p-5 text-sm text-muted-foreground leading-relaxed">
+                <Scale className="h-4 w-4 inline-block mr-2 text-primary mb-1" />
+                <strong className="text-foreground">On the permanence of these submissions:</strong> The GitHub Pages mirror is independently hosted and cannot be taken down by any action against barrandodger.com. The 217,064+ download events are not retrievable. The ICC and UNHCR submission frameworks are filed records. The blockchain timestamps are irreversible. At this point in the archive's history, the question is not whether these submissions exist — it is whether the institutions that received them will respond.
               </div>
             </motion.div>
           </div>
