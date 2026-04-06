@@ -74,6 +74,7 @@ import SomeoneSlippedUp from "@/pages/SomeoneSlippedUp";
 import TheyFumbledYou from "@/pages/TheyFumbledYou";
 import FBIPrecision from "@/pages/FBIPrecision";
 import ClockStrikesBack from "@/pages/ClockStrikesBack";
+import UntouchableAgents from "@/pages/UntouchableAgents";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -180,6 +181,7 @@ function Router() {
         <Route path="/they-fumbled-you" component={TheyFumbledYou} />
         <Route path="/fbi-precision" component={FBIPrecision} />
         <Route path="/clock-strikes-back" component={ClockStrikesBack} />
+        <Route path="/untouchable" component={UntouchableAgents} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />
