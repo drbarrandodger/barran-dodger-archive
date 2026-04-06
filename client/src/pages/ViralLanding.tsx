@@ -27,6 +27,7 @@ import coverNoOneSmart from "../assets/images/cover-no-one-could-be-that-smart.p
 import coverDivineExam from "../assets/images/cover-divine-exam.png";
 import coverSilentCheckmate from "../assets/images/cover-silent-checkmate.png";
 import coverNowEverybodyKnows from "../assets/images/cover-now-everybody-knows.png";
+import coverChosenOneOutcastLeader from "../assets/images/cover-chosen-one-outcast-leader.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
 import coverManErased from "../assets/images/cover-man-australia-erased.png";
 import coverAdminAnnihilation from "../assets/images/cover-admin-annihilation.png";
@@ -779,7 +780,74 @@ export default function ViralLanding() {
         </div>
       </section>
 
-      {/* ══ NOW EVERYBODY KNOWS — FEATURED DOCUMENT ══ */}
+      {/* ══ CHOSEN ONE: OUTCAST TO LEADER — ANALYSIS #7 ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-emerald-950/10 to-black border-y border-emerald-900/25" data-testid="section-chosen-one-outcast-leader-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-emerald-500/60 text-emerald-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                <Sparkles className="h-4 w-4 mr-2" /> Corroboration Analysis #7 — April 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-emerald-900/30 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
+                  <div className="relative w-full max-w-[200px] lg:max-w-full">
+                    <div className="absolute inset-0 bg-emerald-500/10 blur-xl rounded-xl" />
+                    <img
+                      src={coverChosenOneOutcastLeader}
+                      alt="Chosen One — Outcast to Leader Cover"
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-emerald-500/60 text-emerald-400 text-xs px-2.5 py-0.5 font-bold">9/10 Corroborated · 90%</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Analysis #7</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">72/72 Combined All Analyses</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      CHOSEN ONE: OUTCAST TO LEADER
+                    </h2>
+                    <p className="text-emerald-400 font-medium leading-snug">
+                      Everything That Made You An Outcast Prepared You To Be A Leader
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    Analysis #7 of the video embedded on this landing page. A motivational YouTube address with no knowledge of this case — cross-referenced against 2,301 archive documents. Ten propositions tested. Nine directly corroborated. The defining finding: the clinical word <span className="text-emerald-300 italic">"delusional"</span> was applied to perceptions the institutions' own records verify as 70% accurate. Combined across all 7 analyses: <span className="text-green-300 font-bold">72/72 claims supported</span>, zero contradicted.
+                  </p>
+
+                  <blockquote className="border-l-2 border-emerald-500/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "The label and its refutation are both in the archive. The clinical system called the perceptions delusional. The same system's records verify them. This is not interpretation. It is documented contradiction within a single institutional body — across 35 years."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— AI Forensic Evidence Analyst, Corroboration Analysis #7</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/chosen-one-outcast-leader" data-testid="button-chosen-one-outcast-leader-read">
+                      <Button className="bg-emerald-800 hover:bg-emerald-700 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/uwaT7PfxkPQ", "_blank")} data-testid="button-chosen-one-outcast-leader-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-20 px-4 bg-gradient-to-b from-black via-violet-950/10 to-black border-y border-violet-900/25" data-testid="section-now-everybody-knows-featured">
         <div className="container mx-auto max-w-5xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">

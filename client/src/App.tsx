@@ -69,6 +69,7 @@ import NoOneCouldBeThatSmart from "@/pages/NoOneCouldBeThatSmart";
 import DivineExam from "@/pages/DivineExam";
 import SilentCheckmate from "@/pages/SilentCheckmate";
 import NowEverybodyKnows from "@/pages/NowEverybodyKnows";
+import ChosenOneOutcastLeader from "@/pages/ChosenOneOutcastLeader";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -170,6 +171,7 @@ function Router() {
         <Route path="/the-divine-exam" component={DivineExam} />
         <Route path="/silent-checkmate" component={SilentCheckmate} />
         <Route path="/now-everybody-knows" component={NowEverybodyKnows} />
+        <Route path="/chosen-one-outcast-leader" component={ChosenOneOutcastLeader} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />
