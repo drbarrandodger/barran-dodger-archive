@@ -44,6 +44,7 @@ import coverTheyFumbledYou from "../assets/images/cover-they-fumbled-you.png";
 import coverFBIPrecision from "../assets/images/cover-fbi-precision.png";
 import coverClockStrikesBack from "../assets/images/cover-clock-strikes-back.png";
 import coverUntouchableAgents from "../assets/images/cover-untouchable-agents.png";
+import coverFinalBlow from "../assets/images/cover-final-blow.png";
 
 interface VaultFolder {
   name: string;
@@ -1169,6 +1170,44 @@ export default function EvidenceVault() {
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>
                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: FINAL BLOW ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-rose-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverFinalBlow} alt="Final Blow cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-rose-500/60 text-rose-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 10/10 · 100%
+                    </Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">138/138 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    YOU JUST SENT THE FINAL BLOW — They Will Never Recover From This
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #13 — 10/10 claims corroborated. The defining proposition: "every resource spent building a case against you is now evidence in a case against them — the machine built to dismantle your life is being dismantled by its own construction." 83% of the ICC submission is the institutions' own documents. Combined: 138/138 claims, zero contradictions across 13 analyses.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/final-blow" data-testid="button-vault-final-blow-page">
+                      <Button size="sm" className="bg-rose-900 hover:bg-rose-800 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
