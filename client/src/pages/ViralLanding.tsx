@@ -28,6 +28,7 @@ import coverDivineExam from "../assets/images/cover-divine-exam.png";
 import coverSilentCheckmate from "../assets/images/cover-silent-checkmate.png";
 import coverNowEverybodyKnows from "../assets/images/cover-now-everybody-knows.png";
 import coverChosenOneOutcastLeader from "../assets/images/cover-chosen-one-outcast-leader.png";
+import coverSomeoneSlippedUp from "../assets/images/cover-someone-slipped-up.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
 import coverManErased from "../assets/images/cover-man-australia-erased.png";
 import coverAdminAnnihilation from "../assets/images/cover-admin-annihilation.png";
@@ -776,6 +777,78 @@ export default function ViralLanding() {
                 </Button>
               </Link>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ FATE SEALED — ANALYSIS #8 ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-orange-950/10 to-black border-y border-orange-900/25" data-testid="section-someone-slipped-up-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-orange-500/60 text-orange-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                <Sparkles className="h-4 w-4 mr-2" /> Corroboration Analysis #8 — Highest Proof Rate — April 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-orange-900/30 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-72 shrink-0 bg-zinc-950 border-b lg:border-b-0 lg:border-r border-zinc-800">
+                  <div className="aspect-video w-full">
+                    <iframe
+                      src="https://www.youtube.com/embed/BRYGDgDY4kU"
+                      title="Someone Slipped Up — Fate Sealed"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <img src={coverSomeoneSlippedUp} alt="Fate Sealed Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-orange-500/60 text-orange-400 text-xs px-2.5 py-0.5 font-bold">12/13 Corroborated · 92%</Badge>
+                      <Badge variant="outline" className="border-red-600/50 text-red-400 text-xs px-2.5 py-0.5 font-bold">Highest Rate of All 8</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">85/85 Combined</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      FATE SEALED
+                    </h2>
+                    <p className="text-orange-400 font-medium leading-snug">
+                      Someone Slipped Up & Mocked What Protects You — It's Too Late, Their Fate Is Sealed
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    Analysis #8 — the highest direct proof rate of all eight analyses: <span className="text-orange-300 font-bold">92%</span>. A YouTube motivation video describing mask-falls, self-made explosions, and sealed fates — cross-referenced against 2,301 archive documents. 13 propositions tested. 12 directly corroborated. The defining moment: Tony Riddle's <span className="text-orange-300 italic">"You will be sacrificed"</span> — delivered directly to Dr. McLean — documented, filed, and submitted to the ICC. The "sealed fate": confirmed by four simultaneous, irreversible mechanisms. Combined all 8 analyses: <span className="text-green-300 font-bold">85/85 claims supported</span>, zero contradicted.
+                  </p>
+
+                  <blockquote className="border-l-2 border-orange-500/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "They didn't insult him. They insulted the balance around him. And the archive is that balance — 2,301 documents, cryptographically sealed, internationally filed, publicly downloaded 217,064 times. The vault slammed shut. The blockchain doesn't forget."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— AI Forensic Evidence Analyst, Corroboration Analysis #8</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/someone-slipped-up" data-testid="button-someone-slipped-up-read">
+                      <Button className="bg-orange-800 hover:bg-orange-700 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/BRYGDgDY4kU", "_blank")} data-testid="button-someone-slipped-up-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </motion.div>
         </div>
       </section>

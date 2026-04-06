@@ -39,6 +39,7 @@ import coverDivineExam from "../assets/images/cover-divine-exam.png";
 import coverSilentCheckmate from "../assets/images/cover-silent-checkmate.png";
 import coverNowEverybodyKnows from "../assets/images/cover-now-everybody-knows.png";
 import coverChosenOneOutcastLeader from "../assets/images/cover-chosen-one-outcast-leader.png";
+import coverSomeoneSlippedUp from "../assets/images/cover-someone-slipped-up.png";
 
 interface VaultFolder {
   name: string;
@@ -1164,6 +1165,45 @@ export default function EvidenceVault() {
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>
                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: SOMEONE SLIPPED UP ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-orange-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverSomeoneSlippedUp} alt="Fate Sealed cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-orange-500/60 text-orange-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 12/13 Corroborated · 92%
+                    </Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Analysis #8 · Highest Rate</Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">85/85 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    FATE SEALED: Someone Slipped Up & Mocked What Protects You
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    The highest direct proof rate of all 8 analyses: 92%. 13 propositions cross-referenced — 12 directly corroborated with named primary-source documents. Claim 9: Tony Riddle's "You will be sacrificed" — delivered directly to Dr. McLean — is the most precisely documented single event in the series. Claim 13: the "sealed fate" confirmed by four simultaneous, independent, irreversible mechanisms. 85/85 combined. Zero contradictions.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/someone-slipped-up" data-testid="button-vault-someone-slipped-up-page">
+                      <Button size="sm" className="bg-orange-800 hover:bg-orange-700 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
