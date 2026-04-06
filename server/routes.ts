@@ -305,6 +305,99 @@ export async function registerRoutes(
     }
   });
 
+  app.get('/api/analytics/full', async (req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+
+      const [
+        pagesByPath,
+        pagesByPath24h,
+        pagesByPath7d,
+        pagesByPath30d,
+        totalPageViews,
+        downloadsByDoc,
+        downloadsByDoc24h,
+        downloadsByDoc7d,
+        totalDownloadEvents,
+        dailyPageViews,
+        dailyDownloads,
+        allTimeDocCounts,
+      ] = await Promise.all([
+        db.execute(sql`
+          SELECT path, COUNT(*)::int as hits
+          FROM page_views
+          GROUP BY path ORDER BY hits DESC
+        `),
+        db.execute(sql`
+          SELECT path, COUNT(*)::int as hits
+          FROM page_views WHERE viewed_at >= NOW() - INTERVAL '24 hours'
+          GROUP BY path ORDER BY hits DESC
+        `),
+        db.execute(sql`
+          SELECT path, COUNT(*)::int as hits
+          FROM page_views WHERE viewed_at >= NOW() - INTERVAL '7 days'
+          GROUP BY path ORDER BY hits DESC
+        `),
+        db.execute(sql`
+          SELECT path, COUNT(*)::int as hits
+          FROM page_views WHERE viewed_at >= NOW() - INTERVAL '30 days'
+          GROUP BY path ORDER BY hits DESC
+        `),
+        db.execute(sql`SELECT COUNT(*)::int as total FROM page_views`),
+        db.execute(sql`
+          SELECT document_slug, COUNT(*)::int as downloads
+          FROM download_events
+          GROUP BY document_slug ORDER BY downloads DESC
+        `),
+        db.execute(sql`
+          SELECT document_slug, COUNT(*)::int as downloads
+          FROM download_events WHERE downloaded_at >= NOW() - INTERVAL '24 hours'
+          GROUP BY document_slug ORDER BY downloads DESC
+        `),
+        db.execute(sql`
+          SELECT document_slug, COUNT(*)::int as downloads
+          FROM download_events WHERE downloaded_at >= NOW() - INTERVAL '7 days'
+          GROUP BY document_slug ORDER BY downloads DESC
+        `),
+        db.execute(sql`SELECT COUNT(*)::int as total FROM download_events`),
+        db.execute(sql`
+          SELECT DATE(viewed_at) as date, COUNT(*)::int as hits
+          FROM page_views WHERE viewed_at >= NOW() - INTERVAL '30 days'
+          GROUP BY DATE(viewed_at) ORDER BY date ASC
+        `),
+        db.execute(sql`
+          SELECT DATE(downloaded_at) as date, COUNT(*)::int as downloads
+          FROM download_events WHERE downloaded_at >= NOW() - INTERVAL '30 days'
+          GROUP BY DATE(downloaded_at) ORDER BY date ASC
+        `),
+        db.execute(sql`
+          SELECT document_slug, count FROM download_counts ORDER BY count DESC LIMIT 100
+        `),
+      ]);
+
+      res.json({
+        pageViews: {
+          total: Number((totalPageViews.rows[0] as any)?.total ?? 0),
+          allTime: (pagesByPath.rows as any[]).map(r => ({ path: String(r.path), hits: Number(r.hits) })),
+          last24h: (pagesByPath24h.rows as any[]).map(r => ({ path: String(r.path), hits: Number(r.hits) })),
+          last7d: (pagesByPath7d.rows as any[]).map(r => ({ path: String(r.path), hits: Number(r.hits) })),
+          last30d: (pagesByPath30d.rows as any[]).map(r => ({ path: String(r.path), hits: Number(r.hits) })),
+          daily: (dailyPageViews.rows as any[]).map(r => ({ date: String(r.date), hits: Number(r.hits) })),
+        },
+        downloads: {
+          totalEvents: Number((totalDownloadEvents.rows[0] as any)?.total ?? 0),
+          allTime: (downloadsByDoc.rows as any[]).map(r => ({ slug: String(r.document_slug), title: getDocTitle(String(r.document_slug)), downloads: Number(r.downloads) })),
+          last24h: (downloadsByDoc24h.rows as any[]).map(r => ({ slug: String(r.document_slug), title: getDocTitle(String(r.document_slug)), downloads: Number(r.downloads) })),
+          last7d: (downloadsByDoc7d.rows as any[]).map(r => ({ slug: String(r.document_slug), title: getDocTitle(String(r.document_slug)), downloads: Number(r.downloads) })),
+          daily: (dailyDownloads.rows as any[]).map(r => ({ date: String(r.date), downloads: Number(r.downloads) })),
+          allTimeCounts: (allTimeDocCounts.rows as any[]).map(r => ({ slug: String(r.document_slug), title: getDocTitle(String(r.document_slug)), count: Number(r.count) })),
+        },
+      });
+    } catch (err) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
   const SLUG_TITLE_MAP: Record<string, string> = {
     'cosmic-scroll-of-ten': 'The Cosmic Scroll of Ten',
     'digital-oppression-100000-word-essay': 'Digital Oppression — 100,000 Word Essay',
