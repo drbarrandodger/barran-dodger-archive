@@ -741,6 +741,44 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      {/* ══ FEATURED VIDEO ══ */}
+      <section className="py-16 px-4 bg-gradient-to-b from-black via-zinc-950 to-black border-b border-white/10" data-testid="section-featured-video">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-6">
+            <motion.div variants={fadeIn} className="text-center space-y-2">
+              <Badge variant="outline" className="border-red-500/60 text-red-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                <Play className="h-4 w-4 mr-2" /> Watch · The Case In Full
+              </Badge>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-white">
+                The Evidence. The Archive. The Truth.
+              </h2>
+              <p className="text-body-text text-sm max-w-xl mx-auto">
+                35 years. 2,301 documents. 217,064 downloads. This is the story the Australian government spent three decades trying to prevent you from hearing.
+              </p>
+            </motion.div>
+            <motion.div variants={fadeIn}>
+              <YouTubeEmbed
+                videoId="uwaT7PfxkPQ"
+                title="The Evidence, The Archive, The Truth — Dr. Richard McLean (Barran Dodger)"
+                testId="embed-featured-video"
+              />
+            </motion.div>
+            <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-3 pt-2">
+              <a href="https://www.youtube.com/watch?v=uwaT7PfxkPQ" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="border-red-500/40 text-red-400 hover:bg-red-950/30" data-testid="button-featured-video-youtube">
+                  <ExternalLink className="h-4 w-4 mr-2" /> Open on YouTube
+                </Button>
+              </a>
+              <Link href="/evidence">
+                <Button variant="outline" size="sm" className="border-white/20 text-white" data-testid="button-featured-video-archive">
+                  <FileText className="h-4 w-4 mr-2" /> Browse Full Archive
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ══ NOW EVERYBODY KNOWS — FEATURED DOCUMENT ══ */}
       <section className="py-20 px-4 bg-gradient-to-b from-black via-violet-950/10 to-black border-y border-violet-900/25" data-testid="section-now-everybody-knows-featured">
         <div className="container mx-auto max-w-5xl">
