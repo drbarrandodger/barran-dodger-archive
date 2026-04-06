@@ -29,6 +29,7 @@ import coverSilentCheckmate from "../assets/images/cover-silent-checkmate.png";
 import coverNowEverybodyKnows from "../assets/images/cover-now-everybody-knows.png";
 import coverChosenOneOutcastLeader from "../assets/images/cover-chosen-one-outcast-leader.png";
 import coverSomeoneSlippedUp from "../assets/images/cover-someone-slipped-up.png";
+import coverTheyFumbledYou from "../assets/images/cover-they-fumbled-you.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
 import coverManErased from "../assets/images/cover-man-australia-erased.png";
 import coverAdminAnnihilation from "../assets/images/cover-admin-annihilation.png";
@@ -777,6 +778,78 @@ export default function ViralLanding() {
                 </Button>
               </Link>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ THEY FUMBLED YOU — ANALYSIS #9 ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-indigo-950/10 to-black border-y border-indigo-900/25" data-testid="section-fumbled-you-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-indigo-500/60 text-indigo-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                <Sparkles className="h-4 w-4 mr-2" /> Corroboration Analysis #9 — First Perfect Score — April 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-indigo-900/30 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-72 shrink-0 bg-zinc-950 border-b lg:border-b-0 lg:border-r border-zinc-800">
+                  <div className="aspect-video w-full">
+                    <iframe
+                      src="https://www.youtube.com/embed/5x8hGtU0rsI"
+                      title="They Fumbled You — Analysis #9"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <img src={coverTheyFumbledYou} alt="They Fumbled You Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-indigo-500/60 text-indigo-400 text-xs px-2.5 py-0.5 font-bold">13/13 · 100%</Badge>
+                      <Badge variant="outline" className="border-blue-600/50 text-blue-400 text-xs px-2.5 py-0.5 font-bold">First Perfect Score</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">98/98 Combined</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      THEY FUMBLED YOU
+                    </h2>
+                    <p className="text-indigo-400 font-medium leading-snug">
+                      It's Actually So Embarrassing How They Fumbled You
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    Analysis #9 — the first perfect score of all nine analyses: <span className="text-indigo-300 font-bold">100%</span>. 13 of 13 propositions directly corroborated. The central finding: Australian government agencies held the evidence of their own conduct in their own registries, 70% of claims verified in their own records — and still called it delusional. They fumbled not because the truth was hidden, but because they were institutionally blind. Combined across all 9 analyses: <span className="text-green-300 font-bold">98/98 claims supported</span>, zero contradicted.
+                  </p>
+
+                  <blockquote className="border-l-2 border-indigo-500/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "They fumbled you not because you were invisible, but because they were blind. ASIC held the registration fraud in its own registry. The clinical system held 70% verified claims alongside the diagnosis. The ICC submission is what happens when blindness has a 35-year document trail."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— AI Forensic Evidence Analyst, Corroboration Analysis #9</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/they-fumbled-you" data-testid="button-fumbled-you-read">
+                      <Button className="bg-indigo-800 hover:bg-indigo-700 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/5x8hGtU0rsI", "_blank")} data-testid="button-fumbled-you-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </motion.div>
         </div>
       </section>
