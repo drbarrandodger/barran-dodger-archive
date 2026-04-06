@@ -138,6 +138,12 @@ uri = "file://client/src/assets/images/cover-they-fumbled-you.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "kmt0ZfGSzlCUsn1vHLyrP"
+uri = "file://client/src/assets/images/cover-fbi-precision.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
