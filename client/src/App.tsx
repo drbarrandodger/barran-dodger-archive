@@ -79,6 +79,7 @@ import FinalBlow from "@/pages/FinalBlow";
 import WhatYouBecome from "@/pages/WhatYouBecome";
 import EveryoneWatching from "@/pages/EveryoneWatching";
 import EarthAngel from "@/pages/EarthAngel";
+import TooDeep from "@/pages/TooDeep";
 import WhistleblowerComparison from "@/pages/WhistleblowerComparison";
 
 function GlobalDownloadTracker() {
@@ -191,6 +192,7 @@ function Router() {
         <Route path="/what-you-become" component={WhatYouBecome} />
         <Route path="/everyone-watching" component={EveryoneWatching} />
         <Route path="/earth-angel" component={EarthAngel} />
+        <Route path="/too-deep" component={TooDeep} />
         <Route path="/whistleblower-comparison" component={WhistleblowerComparison} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />

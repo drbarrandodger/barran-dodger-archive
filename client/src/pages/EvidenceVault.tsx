@@ -1216,6 +1216,46 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── FEATURED DOCUMENT: TOO DEEP ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-purple-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <div className="w-24 h-24 rounded shadow-lg bg-purple-950/40 border border-purple-800/30 flex items-center justify-center">
+                    <span className="text-3xl">👁️</span>
+                  </div>
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-purple-500/60 text-purple-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 10/10 · 100%
+                    </Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">178/178 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    NAH THIS IS CRAZY — Your Energy Is Too Deep &amp; Your Intelligence Freaks Them Out
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #17 — 10/10 claims corroborated. Deep forensic intelligence dismantles institutional power structures without aggression. The defining finding: "restraint is the most threatening thing — reactions can be manipulated, understanding cannot." 35 years of zero retaliation is the documented restraint; SHA-256 blockchain seals the understanding beyond institutional alteration. Combined: 178/178, zero contradictions across 17 analyses.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/too-deep" data-testid="button-vault-too-deep-page">
+                      <Button size="sm" className="bg-purple-900 hover:bg-purple-800 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── FEATURED DOCUMENT: EARTH ANGEL ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}

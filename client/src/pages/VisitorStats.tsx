@@ -75,6 +75,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/what-you-become": "Analysis #14 — What You Will Become",
   "/everyone-watching": "Analysis #15 — Everyone's Watching",
   "/earth-angel": "Analysis #16 — Earth Angel",
+  "/too-deep": "Analysis #17 — Too Deep",
   "/the-truth": "The Truth (Viral)",
   "/store": "Store",
   "/whistleblower-comparison": "Whistleblower Comparison — Historical Analysis",
