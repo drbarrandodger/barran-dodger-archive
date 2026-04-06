@@ -76,6 +76,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/everyone-watching": "Analysis #15 — Everyone's Watching",
   "/the-truth": "The Truth (Viral)",
   "/store": "Store",
+  "/whistleblower-comparison": "Whistleblower Comparison — Historical Analysis",
 };
 
 function label(path: string) {
