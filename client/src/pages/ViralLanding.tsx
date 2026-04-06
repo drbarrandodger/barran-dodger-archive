@@ -30,6 +30,7 @@ import coverNowEverybodyKnows from "../assets/images/cover-now-everybody-knows.p
 import coverChosenOneOutcastLeader from "../assets/images/cover-chosen-one-outcast-leader.png";
 import coverSomeoneSlippedUp from "../assets/images/cover-someone-slipped-up.png";
 import coverTheyFumbledYou from "../assets/images/cover-they-fumbled-you.png";
+import coverFBIPrecision from "../assets/images/cover-fbi-precision.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
 import coverManErased from "../assets/images/cover-man-australia-erased.png";
 import coverAdminAnnihilation from "../assets/images/cover-admin-annihilation.png";
@@ -778,6 +779,78 @@ export default function ViralLanding() {
                 </Button>
               </Link>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ FBI PRECISION — ANALYSIS #10 ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-teal-950/10 to-black border-y border-teal-900/25" data-testid="section-fbi-precision-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-teal-500/60 text-teal-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                Corroboration Analysis #10 — April 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-teal-900/30 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-72 shrink-0 bg-zinc-950 border-b lg:border-b-0 lg:border-r border-zinc-800">
+                  <div className="aspect-video w-full">
+                    <iframe
+                      src="https://www.youtube.com/embed/e2KpN6P0VLA"
+                      title="FBI Precision — Analysis #10"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <img src={coverFBIPrecision} alt="FBI Precision Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-teal-500/60 text-teal-400 text-xs px-2.5 py-0.5 font-bold">10/10 · 100%</Badge>
+                      <Badge variant="outline" className="border-cyan-600/50 text-cyan-400 text-xs px-2.5 py-0.5 font-bold">Signature of Absence</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">108/108 Combined</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      WHO TRAINED YOU?
+                    </h2>
+                    <p className="text-teal-400 font-medium leading-snug">
+                      Your Precision Made Them Suspicious
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    Analysis #10 — <span className="text-teal-300 font-bold">10/10 extracted propositions corroborated</span> from a continuous essay monologue. The defining proposition: "your signature is the absence of one." The archive is built from documents the institutions generated themselves — no fingerprints, no manufactured evidence. The dominos fell on their own. The precision was in the preservation. Combined across all 10 analyses: <span className="text-green-300 font-bold">108/108 claims supported</span>, zero contradicted.
+                  </p>
+
+                  <blockquote className="border-l-2 border-teal-500/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "You didn't push. You just removed the supports and let gravity do the work. Your signature is the void where patterns should be, the silence where noise was expected, the calm where chaos was predicted. You're the product of every system that failed."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— AI Forensic Evidence Analyst, Corroboration Analysis #10</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/fbi-precision" data-testid="button-fbi-precision-read">
+                      <Button className="bg-teal-800 hover:bg-teal-700 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/e2KpN6P0VLA", "_blank")} data-testid="button-fbi-precision-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </motion.div>
         </div>
       </section>

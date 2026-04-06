@@ -41,6 +41,7 @@ import coverNowEverybodyKnows from "../assets/images/cover-now-everybody-knows.p
 import coverChosenOneOutcastLeader from "../assets/images/cover-chosen-one-outcast-leader.png";
 import coverSomeoneSlippedUp from "../assets/images/cover-someone-slipped-up.png";
 import coverTheyFumbledYou from "../assets/images/cover-they-fumbled-you.png";
+import coverFBIPrecision from "../assets/images/cover-fbi-precision.png";
 
 interface VaultFolder {
   name: string;
@@ -1166,6 +1167,44 @@ export default function EvidenceVault() {
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>
                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: FBI PRECISION ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-teal-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverFBIPrecision} alt="FBI Precision cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-teal-500/60 text-teal-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 10/10 · 100%
+                    </Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">108/108 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    WHO TRAINED YOU? Your Precision Made Them Suspicious
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #10 — 10/10 propositions corroborated from a continuous monologue. The defining proposition: "your signature is the absence of one." The archive is built from documents the institutions generated. No fingerprints. No manufactured evidence. The dominos fell on their own. Combined across all 10 analyses: 108/108 claims supported, zero contradictions.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/fbi-precision" data-testid="button-vault-fbi-precision-page">
+                      <Button size="sm" className="bg-teal-800 hover:bg-teal-700 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
