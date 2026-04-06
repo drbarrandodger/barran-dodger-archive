@@ -76,6 +76,7 @@ import FBIPrecision from "@/pages/FBIPrecision";
 import ClockStrikesBack from "@/pages/ClockStrikesBack";
 import UntouchableAgents from "@/pages/UntouchableAgents";
 import FinalBlow from "@/pages/FinalBlow";
+import WhatYouBecome from "@/pages/WhatYouBecome";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -184,6 +185,7 @@ function Router() {
         <Route path="/clock-strikes-back" component={ClockStrikesBack} />
         <Route path="/untouchable" component={UntouchableAgents} />
         <Route path="/final-blow" component={FinalBlow} />
+        <Route path="/what-you-become" component={WhatYouBecome} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />
