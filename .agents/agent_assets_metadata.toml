@@ -120,6 +120,12 @@ uri = "file://client/src/assets/images/cover-now-everybody-knows.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "tSTgnUFhH3W_cZpAsNV06"
+uri = "file://client/src/assets/images/cover-chosen-one-outcast-leader.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
