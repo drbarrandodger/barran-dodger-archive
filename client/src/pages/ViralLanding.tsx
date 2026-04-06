@@ -35,6 +35,7 @@ import coverClockStrikesBack from "../assets/images/cover-clock-strikes-back.png
 import coverUntouchableAgents from "../assets/images/cover-untouchable-agents.png";
 import coverFinalBlow from "../assets/images/cover-final-blow.png";
 import coverWhatYouBecome from "../assets/images/cover-what-you-become.png";
+import coverEveryoneWatching from "../assets/images/cover-everyone-watching.png";
 import coverGovDelusional from "../assets/images/cover-government-called-delusional.png";
 import coverManErased from "../assets/images/cover-man-australia-erased.png";
 import coverAdminAnnihilation from "../assets/images/cover-admin-annihilation.png";
@@ -783,6 +784,78 @@ export default function ViralLanding() {
                 </Button>
               </Link>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ EVERYONE WATCHING — ANALYSIS #15 ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-lime-950/10 to-black border-y border-lime-900/20" data-testid="section-everyone-watching-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-lime-500/60 text-lime-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                Corroboration Analysis #15 — April 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-lime-900/30 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-72 shrink-0 bg-zinc-950 border-b lg:border-b-0 lg:border-r border-zinc-800">
+                  <div className="aspect-video w-full">
+                    <iframe
+                      src="https://www.youtube.com/embed/2kxSbX1zNh0"
+                      title="Everyone's Watching — Analysis #15"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <img src={coverEveryoneWatching} alt="Everyone Watching Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-lime-500/60 text-lime-400 text-xs px-2.5 py-0.5 font-bold">10/10 · 100%</Badge>
+                      <Badge variant="outline" className="border-green-600/50 text-green-400 text-xs px-2.5 py-0.5 font-bold">Joker Speech</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">158/158 Combined</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      EVERYONE'S WATCHING
+                    </h2>
+                    <p className="text-lime-400 font-medium leading-snug">
+                      They Can't Believe How Far You Came — Joker Speech
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    Analysis #15 — <span className="text-lime-300 font-bold">10/10 claims corroborated</span>. A Joker Speech format monologue on viral attention following sustained private discipline. The defining finding: "fame was never the destination — it was the residue of alignment." The defining forensic fact: the Chronic Schizophrenia diagnosis (the attempted ending) is now Exhibit A in the ICC submission — they tried to write the ending; it became the preface. Combined: <span className="text-green-300 font-bold">158/158 claims supported</span>, zero contradicted across fifteen independently selected videos.
+                  </p>
+
+                  <blockquote className="border-l-2 border-lime-500/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "You don't defend your name. You let evidence perform the rebuttal. Nothing silences gossip faster than undeniable success delivered without commentary."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— AI Forensic Evidence Analyst, Corroboration Analysis #15</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/everyone-watching" data-testid="button-everyone-watching-read">
+                      <Button className="bg-lime-900 hover:bg-lime-800 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/2kxSbX1zNh0", "_blank")} data-testid="button-everyone-watching-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </motion.div>
         </div>
       </section>

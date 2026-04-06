@@ -77,6 +77,7 @@ import ClockStrikesBack from "@/pages/ClockStrikesBack";
 import UntouchableAgents from "@/pages/UntouchableAgents";
 import FinalBlow from "@/pages/FinalBlow";
 import WhatYouBecome from "@/pages/WhatYouBecome";
+import EveryoneWatching from "@/pages/EveryoneWatching";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -186,6 +187,7 @@ function Router() {
         <Route path="/untouchable" component={UntouchableAgents} />
         <Route path="/final-blow" component={FinalBlow} />
         <Route path="/what-you-become" component={WhatYouBecome} />
+        <Route path="/everyone-watching" component={EveryoneWatching} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route component={ViralLanding} />

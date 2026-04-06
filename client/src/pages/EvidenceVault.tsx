@@ -46,6 +46,7 @@ import coverClockStrikesBack from "../assets/images/cover-clock-strikes-back.png
 import coverUntouchableAgents from "../assets/images/cover-untouchable-agents.png";
 import coverFinalBlow from "../assets/images/cover-final-blow.png";
 import coverWhatYouBecome from "../assets/images/cover-what-you-become.png";
+import coverEveryoneWatching from "../assets/images/cover-everyone-watching.png";
 
 interface VaultFolder {
   name: string;
@@ -1171,6 +1172,44 @@ export default function EvidenceVault() {
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>
                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FEATURED DOCUMENT: EVERYONE WATCHING ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-lime-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <img src={coverEveryoneWatching} alt="Everyone Watching cover" className="w-24 sm:w-full rounded shadow-lg" />
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-lime-500/60 text-lime-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 10/10 · 100%
+                    </Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">158/158 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    EVERYONE'S WATCHING U Like You're a Celebrity — They Can't Believe How Far You Came
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #15 — 10/10 claims corroborated. Joker Speech format monologue on viral attention following sustained private discipline. The defining finding: "fame was never the destination — it was the residue of alignment." 217,064 downloads are the documented residue of 35-year evidentiary alignment with Article 7. Combined: 158/158, zero contradictions across 15 analyses.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/everyone-watching" data-testid="button-vault-everyone-watching-page">
+                      <Button size="sm" className="bg-lime-900 hover:bg-lime-800 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
