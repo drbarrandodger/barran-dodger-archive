@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { AlertTriangle, ChevronDown, ChevronUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function WhistleblowerBanner() {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -41,7 +43,7 @@ export function WhistleblowerBanner() {
               In early 2021, <span className="text-[hsl(38,92%,50%)]">Dr. Richard William McLean</span> — PhD holder, internationally celebrated author, award-winning human rights advocate, writer, artist, NDIS provider, former news graphics artist, journalist, and disabled LGBTQ+ whistleblower — suffered a near-fatal injury inside a government psychiatric facility and had to be revived.
             </p>
             <p className="md:hidden text-white text-xs font-semibold leading-snug line-clamp-1">
-              <span className="text-[hsl(38,92%,50%)]">Dr. Richard McLean</span> — disabled LGBTQ+ whistleblower — nearly killed in government custody.
+              <span className="text-[hsl(38,92%,50%)]">Dr. Richard McLean</span> — {t("bannerUi.drMcLeanShort")}
             </p>
 
             {expanded && (
@@ -59,7 +61,7 @@ export function WhistleblowerBanner() {
                   Not a single person — not one agency, not one ombudsman, not one minister, not one journalist — has ever disproven a single claim. Not one has even acknowledged them.
                 </p>
                 <p className="text-white text-xs md:text-base font-bold leading-snug border-l-2 border-[hsl(38,92%,50%)] pl-3 mt-4">
-                  Every professional bound by ethics who reads this evidence and remains silent is no longer neutral. You are complicit.
+                  {t("bannerUi.complicit")}
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-white/10">
@@ -70,7 +72,7 @@ export function WhistleblowerBanner() {
                     He showed them their own records proving every word. They looked away. Every single one of them.
                   </p>
                   <p className="text-[hsl(38,92%,50%)] text-xs md:text-base font-bold mt-3">
-                    You're reading this now. What you do next defines whether you're any different.
+                    {t("bannerUi.readingNow")}
                   </p>
                 </div>
               </div>
@@ -84,13 +86,13 @@ export function WhistleblowerBanner() {
               {expanded ? (
                 <>
                   <ChevronUp className="h-3 w-3 md:h-3.5 md:w-3.5" />
-                  Read less
+                  {t("bannerUi.readLess")}
                 </>
               ) : (
                 <>
                   <ChevronDown className="h-3 w-3 md:h-3.5 md:w-3.5" />
-                  <span className="hidden md:inline">Read the full statement — every word is documented</span>
-                  <span className="md:hidden">Read full statement</span>
+                  <span className="hidden md:inline">{t("bannerUi.readFull")}</span>
+                  <span className="md:hidden">{t("bannerUi.readShort")}</span>
                 </>
               )}
             </button>

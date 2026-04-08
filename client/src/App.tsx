@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { DonationBanner } from "@/components/DonationBanner";
 import { WhistleblowerBanner } from "@/components/WhistleblowerBanner";
+import { LanguageDetectionBanner } from "@/components/LanguageDetectionBanner";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Chatbot } from "@/components/Chatbot";
 import { slugFromUrl } from "@/components/DownloadCounter";
@@ -231,6 +232,7 @@ function App() {
           <ReadingProgress />
           <WhistleblowerBanner />
           <DonationBanner />
+          <LanguageDetectionBanner />
           <Toaster />
           <Breadcrumbs />
           <Router />

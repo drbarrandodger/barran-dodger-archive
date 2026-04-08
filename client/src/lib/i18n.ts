@@ -4,6 +4,20 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
+      langDetect: {
+        prompt: "This site is available in {lang}",
+        switchBtn: "Switch to {lang}",
+        dismiss: "Stay in English",
+        translatePage: "Translate this page",
+      },
+      bannerUi: {
+        readFull: "Read the full statement — every word is documented",
+        readShort: "Read full statement",
+        readLess: "Read less",
+        complicit: "Every professional bound by ethics who reads this evidence and remains silent is no longer neutral. You are complicit.",
+        readingNow: "You're reading this now. What you do next defines whether you're any different.",
+        drMcLeanShort: "Dr. Richard McLean — disabled LGBTQ+ whistleblower — nearly killed in government custody.",
+      },
       nav: {
         startHere: "Start Here",
         thePaper: "The Paper",
@@ -89,6 +103,20 @@ const resources = {
   },
   es: {
     translation: {
+      langDetect: {
+        prompt: "Este sitio está disponible en {lang}",
+        switchBtn: "Cambiar a {lang}",
+        dismiss: "Continuar en inglés",
+        translatePage: "Traducir esta página",
+      },
+      bannerUi: {
+        readFull: "Leer la declaración completa — cada palabra está documentada",
+        readShort: "Leer declaración completa",
+        readLess: "Leer menos",
+        complicit: "Todo profesional con obligaciones éticas que lea estas pruebas y permanezca en silencio ya no es neutral. Eres cómplice.",
+        readingNow: "Estás leyendo esto ahora. Lo que hagas a continuación define si eres diferente.",
+        drMcLeanShort: "denunciante LGBTQ+ con discapacidad — casi asesinado bajo custodia gubernamental.",
+      },
       nav: {
         startHere: "Empezar Aquí",
         thePaper: "El Documento",
@@ -174,6 +202,20 @@ const resources = {
   },
   fr: {
     translation: {
+      langDetect: {
+        prompt: "Ce site est disponible en {lang}",
+        switchBtn: "Passer en {lang}",
+        dismiss: "Rester en anglais",
+        translatePage: "Traduire cette page",
+      },
+      bannerUi: {
+        readFull: "Lire la déclaration complète — chaque mot est documenté",
+        readShort: "Lire la déclaration complète",
+        readLess: "Lire moins",
+        complicit: "Tout professionnel lié par l'éthique qui lit ces preuves et reste silencieux n'est plus neutre. Vous êtes complice.",
+        readingNow: "Vous lisez ceci maintenant. Ce que vous faites ensuite définit si vous êtes différent.",
+        drMcLeanShort: "lanceur d'alerte LGBTQ+ handicapé — presque tué sous garde gouvernementale.",
+      },
       nav: {
         startHere: "Commencer Ici",
         thePaper: "Le Document",
@@ -259,6 +301,20 @@ const resources = {
   },
   zh: {
     translation: {
+      langDetect: {
+        prompt: "本站提供{lang}版本",
+        switchBtn: "切换至{lang}",
+        dismiss: "继续使用英语",
+        translatePage: "翻译此页",
+      },
+      bannerUi: {
+        readFull: "阅读完整声明——每一个字都有记录",
+        readShort: "阅读完整声明",
+        readLess: "收起",
+        complicit: "每一位有道德义务的专业人士阅读这些证据后仍保持沉默，即不再中立。你是共犯。",
+        readingNow: "你现在正在阅读这篇文章。你接下来做什么决定了你是否与众不同。",
+        drMcLeanShort: "残疾LGBTQ+举报人——在政府拘留期间几乎被杀害。",
+      },
       nav: {
         startHere: "从这里开始",
         thePaper: "文件",
@@ -344,6 +400,20 @@ const resources = {
   },
   ar: {
     translation: {
+      langDetect: {
+        prompt: "هذا الموقع متاح بـ{lang}",
+        switchBtn: "التحويل إلى {lang}",
+        dismiss: "الاستمرار بالإنجليزية",
+        translatePage: "ترجمة هذه الصفحة",
+      },
+      bannerUi: {
+        readFull: "اقرأ البيان الكامل — كل كلمة موثقة",
+        readShort: "اقرأ البيان الكامل",
+        readLess: "قراءة أقل",
+        complicit: "كل متخصص ملزم بالأخلاقيات يقرأ هذه الأدلة ويبقى صامتاً لم يعد محايداً. أنت متواطئ.",
+        readingNow: "أنت تقرأ هذا الآن. ما تفعله بعد ذلك يحدد ما إذا كنت مختلفاً.",
+        drMcLeanShort: "مُبلِّغ عن مخالفات من مجتمع LGBTQ+ ذوي الإعاقة — كاد يُقتل أثناء احتجاز حكومي.",
+      },
       nav: {
         startHere: "ابدأ هنا",
         thePaper: "الوثيقة",
@@ -429,6 +499,20 @@ const resources = {
   },
   hi: {
     translation: {
+      langDetect: {
+        prompt: "यह साइट {lang} में उपलब्ध है",
+        switchBtn: "{lang} में स्विच करें",
+        dismiss: "अंग्रेजी में रहें",
+        translatePage: "इस पृष्ठ का अनुवाद करें",
+      },
+      bannerUi: {
+        readFull: "पूरा बयान पढ़ें — हर शब्द दस्तावेज़ीकृत है",
+        readShort: "पूरा बयान पढ़ें",
+        readLess: "कम पढ़ें",
+        complicit: "नैतिकता से बंधा हर पेशेवर जो यह साक्ष्य पढ़कर चुप रहता है, वह तटस्थ नहीं रहा। आप मिलीभगत में हैं।",
+        readingNow: "आप अभी यह पढ़ रहे हैं। आप आगे क्या करते हैं, यह तय करता है कि आप अलग हैं या नहीं।",
+        drMcLeanShort: "विकलांग LGBTQ+ व्हिसलब्लोअर — सरकारी हिरासत में लगभग मारे गए।",
+      },
       nav: {
         startHere: "यहाँ शुरू करें",
         thePaper: "दस्तावेज़",
@@ -501,6 +585,20 @@ const resources = {
   },
   pt: {
     translation: {
+      langDetect: {
+        prompt: "Este site está disponível em {lang}",
+        switchBtn: "Mudar para {lang}",
+        dismiss: "Continuar em inglês",
+        translatePage: "Traduzir esta página",
+      },
+      bannerUi: {
+        readFull: "Ler a declaração completa — cada palavra está documentada",
+        readShort: "Ler a declaração completa",
+        readLess: "Ler menos",
+        complicit: "Todo profissional vinculado pela ética que lê estas provas e permanece em silêncio não é mais neutro. Você é cúmplice.",
+        readingNow: "Você está lendo isso agora. O que você faz a seguir define se você é diferente.",
+        drMcLeanShort: "denunciante LGBTQ+ com deficiência — quase morto sob custódia governamental.",
+      },
       nav: {
         startHere: "Comece Aqui",
         thePaper: "O Documento",
@@ -565,6 +663,20 @@ const resources = {
   },
   ru: {
     translation: {
+      langDetect: {
+        prompt: "Этот сайт доступен на {lang}",
+        switchBtn: "Переключиться на {lang}",
+        dismiss: "Остаться на английском",
+        translatePage: "Перевести эту страницу",
+      },
+      bannerUi: {
+        readFull: "Прочитать полное заявление — каждое слово задокументировано",
+        readShort: "Прочитать полное заявление",
+        readLess: "Свернуть",
+        complicit: "Каждый профессионал, связанный этическими обязательствами, кто читает эти доказательства и молчит, больше не нейтрален. Вы соучастник.",
+        readingNow: "Вы читаете это сейчас. То, что вы сделаете дальше, определяет, отличаетесь ли вы.",
+        drMcLeanShort: "информатор с инвалидностью из ЛГБТК+-сообщества — чуть не погиб под стражей правительства.",
+      },
       nav: {
         startHere: "Начните Здесь",
         thePaper: "Документ",
@@ -628,6 +740,20 @@ const resources = {
   },
   ja: {
     translation: {
+      langDetect: {
+        prompt: "このサイトは{lang}でご利用いただけます",
+        switchBtn: "{lang}に切り替え",
+        dismiss: "英語のまま続ける",
+        translatePage: "このページを翻訳",
+      },
+      bannerUi: {
+        readFull: "全文を読む — すべての言葉は文書化されています",
+        readShort: "全文を読む",
+        readLess: "折りたたむ",
+        complicit: "倫理的義務を負うすべての専門家がこの証拠を読んで沈黙し続けることは、中立ではありません。あなたは共犯者です。",
+        readingNow: "あなたは今これを読んでいます。次にあなたが何をするかが、あなたが違うかどうかを定義します。",
+        drMcLeanShort: "障害を持つLGBTQ+内部告発者 — 政府の拘束下で死にかけた。",
+      },
       nav: {
         startHere: "ここから始める",
         thePaper: "文書",
@@ -691,6 +817,20 @@ const resources = {
   },
   de: {
     translation: {
+      langDetect: {
+        prompt: "Diese Website ist auf {lang} verfügbar",
+        switchBtn: "Zu {lang} wechseln",
+        dismiss: "Auf Englisch bleiben",
+        translatePage: "Diese Seite übersetzen",
+      },
+      bannerUi: {
+        readFull: "Die vollständige Erklärung lesen — jedes Wort ist dokumentiert",
+        readShort: "Vollständige Erklärung lesen",
+        readLess: "Weniger lesen",
+        complicit: "Jeder Fachmann, der durch Ethik gebunden ist, der diese Beweise liest und schweigt, ist nicht mehr neutral. Sie sind mitschuldig.",
+        readingNow: "Sie lesen dies jetzt. Was Sie als nächstes tun, definiert, ob Sie anders sind.",
+        drMcLeanShort: "behinderter LGBTQ+-Whistleblower — fast in Regierungshaft getötet.",
+      },
       nav: {
         startHere: "Hier Beginnen",
         thePaper: "Das Dokument",
@@ -754,6 +894,20 @@ const resources = {
   },
   ko: {
     translation: {
+      langDetect: {
+        prompt: "이 사이트는 {lang}으로 이용 가능합니다",
+        switchBtn: "{lang}로 전환",
+        dismiss: "영어로 계속",
+        translatePage: "이 페이지 번역",
+      },
+      bannerUi: {
+        readFull: "전체 성명서 읽기 — 모든 말이 문서화되어 있습니다",
+        readShort: "전체 성명서 읽기",
+        readLess: "접기",
+        complicit: "이 증거를 읽고도 침묵하는 윤리적으로 구속된 모든 전문가는 더 이상 중립이 아닙니다. 당신은 공범입니다.",
+        readingNow: "당신은 지금 이것을 읽고 있습니다. 다음에 당신이 하는 것이 당신이 다른지를 정의합니다.",
+        drMcLeanShort: "장애인 LGBTQ+ 내부고발자 — 정부 구금 중 거의 사망.",
+      },
       nav: {
         startHere: "여기서 시작",
         thePaper: "문서",
