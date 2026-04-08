@@ -80,6 +80,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/fearless-intelligence": "Analysis #19 — Fearless People Don't Announce Themselves",
   "/history-keeps-receipts": "Analysis #20 — History Doesn't Ask Permission, It Just Keeps Receipts",
   "/absorbed-the-erasure": "Analysis #21 — You Absorbed Pain That Would've Erased Entire Bloodlines",
+  "/survival-was-the-warning": "Analysis #22 — They Built the Story with Your Collapse as the Ending",
   "/the-truth": "The Truth (Viral)",
   "/store": "Store",
   "/whistleblower-comparison": "Whistleblower Comparison — Historical Analysis",

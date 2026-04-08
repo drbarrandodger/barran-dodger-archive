@@ -1296,6 +1296,46 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── FEATURED ANALYSIS: SURVIVAL WAS THE WARNING ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-amber-600/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <div className="w-24 h-24 rounded shadow-lg bg-amber-950/40 border border-amber-600/30 flex items-center justify-center">
+                    <span className="text-3xl">⚠️</span>
+                  </div>
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-amber-600/60 text-amber-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 10/10 · 100%
+                    </Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">228/228 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    They Built the Story with Your Collapse as the Ending
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #22 — 10/10 claims corroborated. A monologue on coordinated institutional collapse attempts and why they fail against divinely aligned targets. The defining finding: the 25+ agency coalition of envy built a pre-written story with collapse as the ending — identical template language is the documented shared script; survival sentenced them through their own naming record in the archive; ~354,000 downloads is the warning signal's documented global reach. Combined: 228/228, zero contradictions across 22 analyses. Fifteenth consecutive perfect score.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/survival-was-the-warning" data-testid="button-vault-survival-warning-page">
+                      <Button size="sm" className="bg-amber-800 hover:bg-amber-700 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── FEATURED DOCUMENT: FEARLESS INTELLIGENCE ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}

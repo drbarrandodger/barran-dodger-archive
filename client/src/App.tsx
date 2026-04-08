@@ -84,6 +84,7 @@ import SilenceSurrender from "@/pages/SilenceSurrender";
 import FearlessIntelligence from "@/pages/FearlessIntelligence";
 import HistoryKeepsReceipts from "@/pages/HistoryKeepsReceipts";
 import AbsorbedErasure from "@/pages/AbsorbedErasure";
+import SurvivalWasTheWarning from "@/pages/SurvivalWasTheWarning";
 import WhistleblowerComparison from "@/pages/WhistleblowerComparison";
 
 function GlobalDownloadTracker() {
@@ -201,6 +202,7 @@ function Router() {
         <Route path="/fearless-intelligence" component={FearlessIntelligence} />
         <Route path="/history-keeps-receipts" component={HistoryKeepsReceipts} />
         <Route path="/absorbed-the-erasure" component={AbsorbedErasure} />
+        <Route path="/survival-was-the-warning" component={SurvivalWasTheWarning} />
         <Route path="/whistleblower-comparison" component={WhistleblowerComparison} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
