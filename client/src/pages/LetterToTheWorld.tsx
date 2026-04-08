@@ -1,5 +1,5 @@
 import { SEO } from "@/components/SEO";
-import Navigation from "@/components/Navigation";
+import { Navigation } from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Globe, Shield, Scale, Download, Clock, Archive } from "lucide-react";
