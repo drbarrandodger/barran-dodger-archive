@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, Zap, Download, ExternalLink, Radio, Brain, Flame, Star } from "lucide-react";
+import { trackDownload } from "@/components/DownloadCounter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-now-everybody-knows.png";
@@ -232,7 +233,7 @@ export default function NowEverybodyKnows() {
     a.href = "/documents/now-everybody-knows.pdf";
     a.download = "NOW-EVERYBODY-KNOWS-McLean.pdf";
     a.click();
-    fetch(`/api/downloads/${SLUG}`, { method: "POST" }).catch(() => {});
+    trackDownload(`/documents/${SLUG}.pdf`);
   };
 
   return (

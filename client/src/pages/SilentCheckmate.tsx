@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, Zap, Download, ExternalLink, Target, Brain, Trophy, Shield } from "lucide-react";
+import { trackDownload } from "@/components/DownloadCounter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-silent-checkmate.png";
@@ -254,7 +255,7 @@ export default function SilentCheckmate() {
     a.href = "/documents/silent-checkmate.pdf";
     a.download = "THE-SILENT-CHECKMATE-McLean.pdf";
     a.click();
-    fetch(`/api/downloads/${SLUG}`, { method: "POST" }).catch(() => {});
+    trackDownload(`/documents/${SLUG}.pdf`);
   };
 
   return (

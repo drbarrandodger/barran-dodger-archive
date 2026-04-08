@@ -1,12 +1,12 @@
-import { useRef, useCallback } from "react";
-import { useQuery, useMutation } from "@tanstack/react-query";
-import { apiRequest, queryClient } from "@/lib/queryClient";
+import { useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { queryClient } from "@/lib/queryClient";
 import { Download } from "lucide-react";
 
 export function slugFromUrl(url: string): string {
   return url
     .replace(/^\/?(documents|attached_assets)\//, '')
-    .replace(/\.pdf$/i, '')
+    .replace(/\.(pdf|txt|docx?)$/i, '')
     .replace(/[^a-zA-Z0-9]+/g, '-')
     .replace(/^-|-$/g, '')
     .toLowerCase()
@@ -19,45 +19,35 @@ export function useDownloadCounter(url: string) {
   const { data } = useQuery<{ count: number }>({
     queryKey: ['/api/downloads', slug],
     queryFn: () => fetch(`/api/downloads/${slug}`, { cache: 'no-store' }).then(r => r.json()),
-    refetchInterval: 30000,
+    refetchInterval: 15000,
     staleTime: 0,
   });
 
-  const incrementMutation = useMutation({
-    mutationFn: async () => {
-      const res = await apiRequest('POST', `/api/downloads/${slug}/increment`);
-      return await res.json();
-    },
-    onSuccess: (newData: { count: number }) => {
-      queryClient.setQueryData(['/api/downloads', slug], newData);
-    },
-  });
-
-  const increment = useCallback(() => {
-    if (!incrementMutation.isPending) {
-      incrementMutation.mutate();
-    }
-  }, [incrementMutation]);
+  // Invalidate the query after a short delay so the badge refreshes after a download
+  const scheduleRefresh = () => {
+    setTimeout(() => {
+      queryClient.invalidateQueries({ queryKey: ['/api/downloads', slug] });
+    }, 2000);
+  };
 
   return {
     count: data?.count ?? 0,
-    increment,
+    scheduleRefresh,
+    increment: scheduleRefresh,
     slug,
   };
 }
 
 export function DownloadBadge({ url, standalone = false }: { url: string; standalone?: boolean }) {
-  const { count, increment } = useDownloadCounter(url);
+  const { count, scheduleRefresh } = useDownloadCounter(url);
   const ref = useRef<HTMLSpanElement>(null);
-
-  const handleClick = standalone ? () => increment() : undefined;
 
   if (count === 0) return null;
 
   return (
     <span
       ref={ref}
-      onClick={handleClick}
+      onClick={standalone ? scheduleRefresh : undefined}
       className="inline-flex items-center gap-1 bg-white/10 dark:bg-white/10 rounded-full px-2.5 py-0.5 text-xs cursor-pointer"
       data-testid={`counter-downloads-${slugFromUrl(url).slice(0, 30)}`}
     >
@@ -67,37 +57,42 @@ export function DownloadBadge({ url, standalone = false }: { url: string; standa
   );
 }
 
+/**
+ * trackDownload — call this when a user initiates a download via the UI.
+ * The server-side middleware (/documents route) is the authoritative counter;
+ * this function schedules a query invalidation so the DownloadBadge refreshes
+ * after the server has recorded the event. It does NOT call the API increment
+ * endpoint to avoid double-counting with the server middleware.
+ */
 export function trackDownload(url: string) {
   const slug = slugFromUrl(url);
-  fetch(`/api/downloads/${slug}/increment`, { method: 'POST' })
-    .then(r => r.json())
-    .then((data: { count: number }) => {
-      queryClient.setQueryData(['/api/downloads', slug], data);
-    })
-    .catch(() => {});
+  // Schedule a badge refresh after the server has had time to record the event
+  setTimeout(() => {
+    queryClient.invalidateQueries({ queryKey: ['/api/downloads', slug] });
+  }, 2500);
 }
 
-export function DownloadLink({ 
-  url, 
-  children, 
+export function DownloadLink({
+  url,
+  children,
   className = "",
   ...props
-}: { 
-  url: string; 
-  children: React.ReactNode; 
+}: {
+  url: string;
+  children: React.ReactNode;
   className?: string;
   [key: string]: any;
 }) {
-  const { increment } = useDownloadCounter(url);
+  const { scheduleRefresh } = useDownloadCounter(url);
 
   return (
-    <a 
-      href={url} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      download 
-      className={className} 
-      onClick={() => increment()}
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      download
+      className={className}
+      onClick={scheduleRefresh}
       {...props}
     >
       {children}

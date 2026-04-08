@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, Zap, Download, ExternalLink, Star, BookOpen, Scale, Brain } from "lucide-react";
+import { trackDownload } from "@/components/DownloadCounter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-divine-exam.png";
@@ -224,7 +225,7 @@ export default function DivineExam() {
     a.href = "/documents/divine-exam.pdf";
     a.download = "THE-DIVINE-EXAM-YOU-DIDNT-KNOW-YOU-WERE-TAKING.pdf";
     a.click();
-    fetch(`/api/downloads/${SLUG}`, { method: "POST" }).catch(() => {});
+    trackDownload(`/documents/${SLUG}.pdf`);
   };
 
   return (

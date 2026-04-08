@@ -55,25 +55,38 @@ app.use('/attached_assets', express.static(path.resolve(process.cwd(), 'attached
   }
 }));
 
-// Serve all PDFs from the deploy folder with server-side download tracking
+// Serve all documents from the deploy folder with server-side download tracking
 const deployDir = path.resolve(process.cwd(), 'github-pages-deploy');
 const documentsDir = path.join(deployDir, 'documents');
+
+const TRACKED_EXTENSIONS: Record<string, string> = {
+  '.pdf': 'application/pdf',
+  '.txt': 'text/plain; charset=utf-8',
+  '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  '.doc': 'application/msword',
+};
+
 app.use('/documents', (req: Request, res: Response, next: NextFunction) => {
-  if (!req.path.toLowerCase().endsWith('.pdf')) return next();
-  // Derive slug from filename (strip .pdf extension)
-  const slug = path.basename(req.path, '.pdf').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const lowerPath = req.path.toLowerCase();
+  const ext = Object.keys(TRACKED_EXTENSIONS).find(e => lowerPath.endsWith(e));
+  if (!ext) return next();
+
+  // Derive slug from filename (strip extension, normalise to hyphens)
+  const slug = path.basename(req.path, ext).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
   // Fire-and-forget: track the download without blocking the response
   storage.incrementDownloadCount(slug).catch(() => {});
+
   // Serve the file
   const filePath = path.join(documentsDir, path.basename(req.path));
-  res.setHeader('Content-Type', 'application/pdf');
-  res.setHeader('Content-Disposition', 'inline');
+  res.setHeader('Content-Type', TRACKED_EXTENSIONS[ext]);
+  res.setHeader('Content-Disposition', ext === '.pdf' ? 'inline' : 'attachment');
   res.setHeader('Cache-Control', 'public, max-age=86400');
   res.sendFile(filePath, (err) => {
     if (err) next();
   });
 });
-// Fallback static for any non-PDF in documents folder
+// Fallback static for any untracked file type in documents folder
 app.use('/documents', express.static(documentsDir));
 app.use('/assets', express.static(path.join(deployDir, 'assets'), {
   setHeaders: (res) => {
