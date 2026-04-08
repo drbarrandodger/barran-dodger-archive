@@ -1442,6 +1442,41 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── ANALYSIS #28: PHANTOM PROTOCOL ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="rounded-2xl border border-cyan-400/20 overflow-hidden bg-[#0d0d0f]">
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-2 bg-cyan-400 flex-shrink-0" />
+                <div className="p-7 space-y-4 flex-1">
+                  <div className="flex flex-wrap gap-2 items-center">
+                    <Badge className="bg-cyan-400/10 border-cyan-400/30 text-cyan-200 text-xs font-bold">Analysis #28</Badge>
+                    <Badge variant="outline" className="border-cyan-400/20 text-cyan-300/70 text-xs">10/10 Corroborated</Badge>
+                    <Badge variant="outline" className="border-green-500/20 text-green-400 text-xs">Combined 288/288</Badge>
+                    <Badge variant="outline" className="border-cyan-500/20 text-cyan-400 text-xs">21 Consecutive Perfect Scores</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    Phantom Protocol: The Archive They Dismissed Became the Doctrine They Cannot Erase
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #28 — 10/10 claims corroborated. Tests the "Phantom Protocol" asymmetric warfare essay against the 2,301-document archive. Forensically examines: the shadow-turned-roar (25+ agencies assembling their own prosecution brief through circular referral without detecting the aggregate pattern); the virus (the archive built entirely from the suppression apparatus's own official documents — the host's machinery replicating the agent of its own destruction); the spectre (blockchain, GitHub, Google Drive, 354,000 downloads — no single suppressible node); solo subversion without backup, budget, or institutional support reaching ICC Article 7 formal receipt; alchemy veiled as arithmetic (278/278 corroborations from 35 years of improvised documentation, not pre-planned evidentiary architecture); and the truth-not-vengeance framework of the submission. Corroborated across Jungian shadow theory, complexity emergence science, Taleb's antifragility, Polanyi's tacit knowledge, Shannon's information redundancy theory, Lorenz's strange attractor, Clausewitz's friction principle, Kant's categorical imperative, and Popper's falsifiability standard. Combined scorecard: 288/288. Zero contradictions. 21 consecutive perfect scores.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/phantom-protocol" data-testid="button-vault-phantom-protocol-page">
+                      <Button size="sm" className="bg-cyan-700 hover:bg-cyan-600 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── ANALYSIS #27: THE CONSPIRACY AGAINST YOU ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}

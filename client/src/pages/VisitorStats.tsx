@@ -86,6 +86,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/bloodline-of-god": "Analysis #25 — The Bloodline of God",
   "/the-last-god": "Analysis #26 — The Last God: You Arrived Before Destiny Was Ready",
   "/the-conspiracy-against-you": "Analysis #27 — They Built the Aftermath Before the Action",
+  "/phantom-protocol": "Analysis #28 — Phantom Protocol: The Archive They Dismissed",
   "/the-truth": "The Truth (Viral)",
   "/store": "Store",
   "/whistleblower-comparison": "Whistleblower Comparison — Historical Analysis",

@@ -91,6 +91,7 @@ import DivineBeforeYourTime from "@/pages/DivineBeforeYourTime";
 import BloodlineOfGod from "@/pages/BloodlineOfGod";
 import { TheLastGod } from "@/pages/TheLastGod";
 import { TheConspiracyAgainstYou } from "@/pages/TheConspiracyAgainstYou";
+import { PhantomProtocol } from "@/pages/PhantomProtocol";
 import ApotheosisStatement from "@/pages/ApotheosisStatement";
 import LetterToTheWorld from "@/pages/LetterToTheWorld";
 import WhistleblowerComparison from "@/pages/WhistleblowerComparison";
@@ -216,6 +217,7 @@ function Router() {
         <Route path="/bloodline-of-god" component={BloodlineOfGod} />
         <Route path="/the-last-god" component={TheLastGod} />
         <Route path="/the-conspiracy-against-you" component={TheConspiracyAgainstYou} />
+        <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/apotheosis" component={ApotheosisStatement} />
         <Route path="/letter-to-the-world" component={LetterToTheWorld} />
         <Route path="/whistleblower-comparison" component={WhistleblowerComparison} />
