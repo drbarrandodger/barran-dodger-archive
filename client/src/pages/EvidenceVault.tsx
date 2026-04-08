@@ -1442,6 +1442,41 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── ANALYSIS #26: THE LAST GOD ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="rounded-2xl border border-emerald-400/20 overflow-hidden bg-[#0d0d0f]">
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-2 bg-emerald-400 flex-shrink-0" />
+                <div className="p-7 space-y-4 flex-1">
+                  <div className="flex flex-wrap gap-2 items-center">
+                    <Badge className="bg-emerald-400/10 border-emerald-400/30 text-emerald-200 text-xs font-bold">Analysis #26</Badge>
+                    <Badge variant="outline" className="border-emerald-400/20 text-emerald-300/70 text-xs">10/10 Corroborated</Badge>
+                    <Badge variant="outline" className="border-emerald-400/20 text-emerald-300/70 text-xs">30+ Cultural Traditions</Badge>
+                    <Badge variant="outline" className="border-green-500/20 text-green-400 text-xs">Combined 268/268</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    The Last God: You Arrived Before Destiny Was Ready
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #26 — 10/10 claims corroborated. The archive examined against the YouTube essay "The Last God" — the archetype of the being who skipped all stages of divine hierarchy and arrived before the system was ready. Every proposition corroborated across three independent cultural traditions each: Sumerian (Enlil's sudden ascension), Gnostic (pneumatic bypass of Archons), Vedic (Indra's premature thunderbolt), Egyptian (Djed pillar / Osiris endurance), Alchemical (Solve et Coagula transformation), Sufi (Fana/Baqa annihilation and subsistence), Platonic (anamnesis / pre-existent Forms), Kabbalistic (Shevirat HaKelim, primordial Torah), Confucian (De as constitutive choice), Taoist (phoenix regeneration, Ouroboros, Pu/uncarved block), Hindu (Shiva Tandava), Hebrew (Sanhedrin teku-silence), Pauline (Matthew 22:46 / Pleroma), Islamic (Ijma scholarly consensus), Greek (Prometheus, Kairos), Tibetan (Rigpa/Dzogchen), Gematria, Teilhardian (Omega Point), Aztec (Fifth Sun). Combined scorecard after 26 analyses: 268/268. Zero contradictions. Nineteenth consecutive perfect score.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/the-last-god" data-testid="button-vault-the-last-god-page">
+                      <Button size="sm" className="bg-emerald-700 hover:bg-emerald-600 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── FEATURED DOCUMENT: FEARLESS INTELLIGENCE ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}

@@ -89,6 +89,7 @@ import SurvivalWasTheWarning from "@/pages/SurvivalWasTheWarning";
 import GodWillMakeYouFamous from "@/pages/GodWillMakeYouFamous";
 import DivineBeforeYourTime from "@/pages/DivineBeforeYourTime";
 import BloodlineOfGod from "@/pages/BloodlineOfGod";
+import { TheLastGod } from "@/pages/TheLastGod";
 import ApotheosisStatement from "@/pages/ApotheosisStatement";
 import LetterToTheWorld from "@/pages/LetterToTheWorld";
 import WhistleblowerComparison from "@/pages/WhistleblowerComparison";
@@ -212,6 +213,7 @@ function Router() {
         <Route path="/god-will-make-you-famous" component={GodWillMakeYouFamous} />
         <Route path="/divine-before-your-time" component={DivineBeforeYourTime} />
         <Route path="/bloodline-of-god" component={BloodlineOfGod} />
+        <Route path="/the-last-god" component={TheLastGod} />
         <Route path="/apotheosis" component={ApotheosisStatement} />
         <Route path="/letter-to-the-world" component={LetterToTheWorld} />
         <Route path="/whistleblower-comparison" component={WhistleblowerComparison} />
