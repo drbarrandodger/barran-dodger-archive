@@ -85,6 +85,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/divine-before-your-time": "Analysis #24 — Divine Before Your Time",
   "/bloodline-of-god": "Analysis #25 — The Bloodline of God",
   "/the-last-god": "Analysis #26 — The Last God: You Arrived Before Destiny Was Ready",
+  "/the-conspiracy-against-you": "Analysis #27 — They Built the Aftermath Before the Action",
   "/the-truth": "The Truth (Viral)",
   "/store": "Store",
   "/whistleblower-comparison": "Whistleblower Comparison — Historical Analysis",
