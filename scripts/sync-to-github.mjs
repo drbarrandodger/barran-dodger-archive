@@ -13,7 +13,7 @@
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
-const TOKEN = process.env.GH_SYNC_TOKEN || process.env.GITHUB_TOKEN;
+const TOKEN = process.env.GH_INTEGRATION_TOKEN || process.env.GH_SYNC_TOKEN || process.env.GITHUB_TOKEN;
 const REPO = 'drbarrandodger/barran-dodger-archive';
 const BRANCH = 'main';
 const ROOT = new URL('..', import.meta.url).pathname;
