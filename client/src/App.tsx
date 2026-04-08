@@ -12,6 +12,7 @@ import { LanguageDetectionBanner } from "@/components/LanguageDetectionBanner";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Chatbot } from "@/components/Chatbot";
 import { slugFromUrl } from "@/components/DownloadCounter";
+import { AnalysisPDFButton } from "@/components/AnalysisPDFButton";
 import Home from "@/pages/Home";
 import Mission from "@/pages/Mission";
 import Contact from "@/pages/Contact";
@@ -242,6 +243,7 @@ function App() {
           <Toaster />
           <Breadcrumbs />
           <Router />
+          <AnalysisPDFButton />
           <Chatbot />
         </TooltipProvider>
       </ThemeProvider>
