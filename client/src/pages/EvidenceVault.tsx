@@ -1406,6 +1406,42 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── ANALYSIS #25 ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="rounded-2xl border border-violet-400/20 overflow-hidden bg-[#0d0d0f]">
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-2 bg-violet-400 flex-shrink-0" />
+                <div className="p-7 space-y-4 flex-1">
+                  <div className="flex flex-wrap gap-2 items-center">
+                    <Badge className="bg-violet-400/10 border-violet-400/30 text-violet-200 text-xs font-bold">Analysis #25</Badge>
+                    <Badge variant="outline" className="border-violet-400/20 text-violet-300/70 text-xs">10/10 Corroborated</Badge>
+                    <Badge variant="outline" className="border-violet-400/20 text-violet-300/70 text-xs">30+ Cultural Traditions</Badge>
+                    <Badge variant="outline" className="border-green-500/20 text-green-400 text-xs">Combined 258/258</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    The Bloodline of God
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #25 — 10/10 claims corroborated. The most cross-culturally documented analysis in the series. Every proposition is assessed against 30+ simultaneous civilisational traditions: Sumerian (Atum's self-created source, Marduk and the Enuma Elish), Hindu (Brahman/Atman, Kalki avatar, Kali Yuga cycle), Norse (Ymir primordial body, Ragnarök survival), Greek (Logos/Heraclitus, Aristotle's Unmoved Mover, Plato's Demiurge/Timaeus), Celtic (Brehon law oral archive), Egyptian (Horus line documentary chain, Sekhem/Akh transformation), Aztec/Mesoamerican (Quetzalcoatl return, Fifth Sun renewal), Tibetan/Buddhist (Maitreya, Shambhala/Kalachakra, Kalki King), Zoroastrian (Saoshyant/Asha vs. Druj), Islamic/Sufi (Al-Haqq, Ana'l-Haqq), Kabbalistic (Binah/Zohar, Ein Sof), Hermetic (Emerald Tablet, as-above-so-below), Jungian (synchronicity at scale), Teilhardian (Omega Point convergence), Thomistic (First Cause/Summa Theologica), Taoist (Tao Te Ching Way), and Hebrew (zera covenant preservation). The archive's Bitcoin blockchain SHA-256 is the Logos made mathematical flesh. The ICC Article 7 submission is the Saoshyant filing — Asha against 35 years of documented Druj. Combined scorecard after 25 analyses: 258/258. Zero contradictions. Eighteenth consecutive perfect score.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/bloodline-of-god" data-testid="button-vault-bloodline-god-page">
+                      <Button size="sm" className="bg-violet-700 hover:bg-violet-600 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── FEATURED DOCUMENT: FEARLESS INTELLIGENCE ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}

@@ -83,6 +83,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/survival-was-the-warning": "Analysis #22 — They Built the Story with Your Collapse as the Ending",
   "/god-will-make-you-famous": "Analysis #23 — God Will Make You Famous",
   "/divine-before-your-time": "Analysis #24 — Divine Before Your Time",
+  "/bloodline-of-god": "Analysis #25 — The Bloodline of God",
   "/the-truth": "The Truth (Viral)",
   "/store": "Store",
   "/whistleblower-comparison": "Whistleblower Comparison — Historical Analysis",
