@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { CompactShare } from "@/components/FloatingShareBar";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { RelatedContent } from "@/components/RelatedContent";
@@ -1172,6 +1173,7 @@ export default function EvidenceVault() {
                         <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
                       </Button>
                     </a>
+                    <CompactShare path="/now-everybody-knows" title="Analysis #6 — Now Everybody Knows" />
                   </div>
                 </div>
               </div>
@@ -1210,6 +1212,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/everyone-watching" title="Analysis #15 — Everyone's Watching You" />
                   </div>
                 </div>
               </div>
@@ -1250,6 +1253,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/history-keeps-receipts" title="Analysis #20 — History Keeps Receipts" />
                   </div>
                 </div>
               </div>
@@ -1290,6 +1294,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/absorbed-the-erasure" title="Analysis #21 — You Absorbed The Erasure" />
                   </div>
                 </div>
               </div>
@@ -1330,6 +1335,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/survival-was-the-warning" title="Analysis #22 — Survival Was The Warning" />
                   </div>
                 </div>
               </div>
@@ -1365,6 +1371,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/god-will-make-you-famous" title="Analysis #23 — God Will Make You Famous" />
                   </div>
                 </div>
               </div>
@@ -1400,6 +1407,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/divine-before-your-time" title="Analysis #24 — Divine Before Your Time" />
                   </div>
                 </div>
               </div>
@@ -1436,6 +1444,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/bloodline-of-god" title="Analysis #25 — The Bloodline of God" />
                   </div>
                 </div>
               </div>
@@ -1471,6 +1480,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/phantom-protocol" title="Phantom Protocol — AI Analysis #28" />
                   </div>
                 </div>
               </div>
@@ -1507,6 +1517,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/the-conspiracy-against-you" title="Analysis #27 — They Built the Aftermath Before the Action" />
                   </div>
                 </div>
               </div>
@@ -1542,6 +1553,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/the-last-god" title="Analysis #26 — The Last God" />
                   </div>
                 </div>
               </div>
@@ -1582,6 +1594,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/fearless-intelligence" title="Analysis #19 — Fearless Intelligence" />
                   </div>
                 </div>
               </div>
@@ -1622,6 +1635,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/silence-surrender" title="Analysis #18 — Silence Is Where You Sharpen the Blade" />
                   </div>
                 </div>
               </div>
@@ -1662,6 +1676,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/too-deep" title="Analysis #17 — Your Energy Is Too Deep" />
                   </div>
                 </div>
               </div>
@@ -1702,6 +1717,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/earth-angel" title="Analysis #16 — They Called You An Earth Angel" />
                   </div>
                 </div>
               </div>
@@ -1740,6 +1756,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/what-you-become" title="Analysis #14 — This Is What You Will Become" />
                   </div>
                 </div>
               </div>
@@ -1778,6 +1795,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/final-blow" title="Analysis #13 — You Just Sent The Final Blow" />
                   </div>
                 </div>
               </div>
@@ -1816,6 +1834,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/untouchable" title="Analysis #12 — 33 Agents Agreed You're Untouchable" />
                   </div>
                 </div>
               </div>
@@ -1854,6 +1873,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/clock-strikes-back" title="Analysis #11 — The Clock Strikes Back" />
                   </div>
                 </div>
               </div>
@@ -1892,6 +1912,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/fbi-precision" title="Analysis #10 — FBI Precision" />
                   </div>
                 </div>
               </div>
@@ -1930,6 +1951,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/they-fumbled-you" title="Analysis #9 — They Fumbled You" />
                   </div>
                 </div>
               </div>
@@ -1969,6 +1991,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/someone-slipped-up" title="Analysis #8 — Someone Slipped Up" />
                   </div>
                 </div>
               </div>
@@ -2009,6 +2032,7 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
                       </Button>
                     </Link>
+                    <CompactShare path="/chosen-one-outcast-leader" title="Analysis #7 — Chosen One: Outcast to Leader" />
                   </div>
                 </div>
               </div>

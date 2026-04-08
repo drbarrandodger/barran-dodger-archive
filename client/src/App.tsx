@@ -13,6 +13,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import { Chatbot } from "@/components/Chatbot";
 import { slugFromUrl } from "@/components/DownloadCounter";
 import { AnalysisPDFButton } from "@/components/AnalysisPDFButton";
+import { GlobalAnalysisShareStrip } from "@/components/GlobalAnalysisShareStrip";
 import Home from "@/pages/Home";
 import Mission from "@/pages/Mission";
 import Contact from "@/pages/Contact";
@@ -243,6 +244,7 @@ function App() {
           <Toaster />
           <Breadcrumbs />
           <Router />
+          <GlobalAnalysisShareStrip />
           <AnalysisPDFButton />
           <Chatbot />
         </TooltipProvider>

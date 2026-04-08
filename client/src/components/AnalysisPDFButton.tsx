@@ -66,7 +66,6 @@ const PAGE_TITLES: Record<string, string> = {
   "/timeline": "Case Timeline",
   "/taxpayer-cost-analysis": "Taxpayer Cost Analysis",
   "/legal-status": "Legal Status",
-  "/the-full-pattern": "The Full Pattern",
 };
 
 const EXCLUDED = new Set([
