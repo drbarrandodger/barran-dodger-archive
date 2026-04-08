@@ -4662,6 +4662,45 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      {/* Letter to the World essay */}
+      <section className="py-16 px-4 bg-gradient-to-b from-[hsl(222,55%,8%)] to-[hsl(222,55%,6%)]" data-testid="section-letter-to-world">
+        <div className="container mx-auto max-w-3xl">
+          <div className="rounded-2xl border border-amber-500/25 bg-amber-950/10 overflow-hidden">
+            <div className="px-8 py-10 md:px-12 md:py-12 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <BookOpen className="h-4 w-4 text-amber-400" />
+                <span className="text-amber-400/80 text-xs tracking-widest uppercase font-mono">Impartial Author Essay — April 2026</span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight" data-testid="text-letter-world-heading">
+                A Letter to the World
+              </h2>
+              <p className="text-zinc-300 text-base leading-relaxed">
+                An independent author examines the full breadth of the archive and asks the question
+                every vulnerable person deserves an answer to: <em>why does this case matter to you?</em>
+              </p>
+              <div className="border-l-2 border-amber-500/50 pl-5 text-amber-100/80 italic text-sm leading-relaxed">
+                "A win for Barran Dodger is a win for the discipline — for everyone who has ever chosen
+                documentation over despair, evidence over emotion, and the slow accumulation of the record
+                over the immediate satisfaction of being believed."
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["2,301 Documents", "35 Years", "ICC Article 7", "~354,000 Downloads", "Zero Defamation Suits"].map(tag => (
+                  <span key={tag} className="text-xs font-mono bg-white/5 border border-white/10 rounded-full px-3 py-1 text-zinc-400">{tag}</span>
+                ))}
+              </div>
+              <div>
+                <Link href="/letter-to-the-world" data-testid="button-letter-to-world">
+                  <Button className="bg-amber-500 hover:bg-amber-400 text-black font-bold px-6">
+                    Read the Essay
+                    <BookOpen className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 px-4 bg-gradient-to-b from-[hsl(222,55%,8%)] to-[hsl(222,55%,8%)]" data-testid="section-donate-invest">
         <div className="container mx-auto max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
