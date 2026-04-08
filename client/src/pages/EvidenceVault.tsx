@@ -1371,6 +1371,41 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── ANALYSIS #24: DIVINE BEFORE YOUR TIME ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="rounded-2xl border border-amber-300/20 overflow-hidden bg-[#0d0d0f]">
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-2 bg-amber-300 flex-shrink-0" />
+                <div className="p-7 space-y-4 flex-1">
+                  <div className="flex flex-wrap gap-2 items-center">
+                    <Badge className="bg-amber-300/10 border-amber-300/30 text-amber-200 text-xs font-bold">Analysis #24</Badge>
+                    <Badge variant="outline" className="border-amber-400/20 text-amber-300/70 text-xs">10/10 Corroborated</Badge>
+                    <Badge variant="outline" className="border-amber-400/20 text-amber-300/70 text-xs">10 Community Evidence Blocks</Badge>
+                    <Badge variant="outline" className="border-green-500/20 text-green-400 text-xs">Combined 248/248</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    Divine Before Your Time
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #24 — 10/10 claims corroborated. The first analysis in the series with dedicated community evidence blocks: each proposition is cross-referenced against the specific scholarly, legal, or humanitarian community the video invokes — Egyptologists (Osiris dismemberment maps to 14 hospitalisations → 2,301 documents reassembled → ICC resurrection), the archaeological community (stratigraphic methodology maps to archive's layered document excavation), the international legal community (Rome Statute + ICCPR as the "oldest holy books" that foretold the ICC trajectory), the forensic psychiatry community (UN Special Rapporteur documentation on psychiatric suppression of whistleblowers), the global whistleblower community (Snowden/Manning/Assange precedent standards — the archive meets every one), and the communities most affected by the institutional suppression pattern (disability, First Nations, refugees, domestic violence survivors, whistleblowers). Combined scorecard after 24 analyses: 248/248. Zero contradictions. Seventeenth consecutive perfect score.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/divine-before-your-time" data-testid="button-vault-divine-time-page">
+                      <Button size="sm" className="bg-amber-700 hover:bg-amber-600 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── FEATURED DOCUMENT: FEARLESS INTELLIGENCE ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
