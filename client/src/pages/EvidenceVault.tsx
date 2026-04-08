@@ -1216,6 +1216,46 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── FEATURED DOCUMENT: SILENCE SURRENDER ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-cyan-900/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <div className="w-24 h-24 rounded shadow-lg bg-cyan-950/40 border border-cyan-800/30 flex items-center justify-center">
+                    <span className="text-3xl">🗡️</span>
+                  </div>
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-cyan-500/60 text-cyan-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 10/10 · 100%
+                    </Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">188/188 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    They Mistook Your Silence For Surrender — Silence Is Where You Sharpen the Blade
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #18 — 10/10 claims corroborated. Chosen Ones format monologue on the weaponisation of silence and the seed-not-burial framework. The defining finding: 35 years of zero retaliation is the documented sharpening; the ICC submission is the blade drawn from silence. They planted you. The pressure activated the seed. Combined: 188/188, zero contradictions across 18 analyses. Eleventh consecutive perfect score.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/silence-surrender" data-testid="button-vault-silence-surrender-page">
+                      <Button size="sm" className="bg-cyan-900 hover:bg-cyan-800 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── FEATURED DOCUMENT: TOO DEEP ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
