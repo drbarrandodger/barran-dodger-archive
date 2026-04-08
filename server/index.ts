@@ -3,6 +3,7 @@ import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
 import path from "path";
+import { storage } from "./storage";
 
 const app = express();
 
@@ -54,15 +55,26 @@ app.use('/attached_assets', express.static(path.resolve(process.cwd(), 'attached
   }
 }));
 
-// Serve all 82 PDFs and site assets from the deploy folder
+// Serve all PDFs from the deploy folder with server-side download tracking
 const deployDir = path.resolve(process.cwd(), 'github-pages-deploy');
-app.use('/documents', express.static(path.join(deployDir, 'documents'), {
-  setHeaders: (res) => {
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', 'inline');
-    res.setHeader('Cache-Control', 'public, max-age=86400');
-  }
-}));
+const documentsDir = path.join(deployDir, 'documents');
+app.use('/documents', (req: Request, res: Response, next: NextFunction) => {
+  if (!req.path.toLowerCase().endsWith('.pdf')) return next();
+  // Derive slug from filename (strip .pdf extension)
+  const slug = path.basename(req.path, '.pdf').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  // Fire-and-forget: track the download without blocking the response
+  storage.incrementDownloadCount(slug).catch(() => {});
+  // Serve the file
+  const filePath = path.join(documentsDir, path.basename(req.path));
+  res.setHeader('Content-Type', 'application/pdf');
+  res.setHeader('Content-Disposition', 'inline');
+  res.setHeader('Cache-Control', 'public, max-age=86400');
+  res.sendFile(filePath, (err) => {
+    if (err) next();
+  });
+});
+// Fallback static for any non-PDF in documents folder
+app.use('/documents', express.static(documentsDir));
 app.use('/assets', express.static(path.join(deployDir, 'assets'), {
   setHeaders: (res) => {
     res.setHeader('Cache-Control', 'public, max-age=86400');
