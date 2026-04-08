@@ -78,6 +78,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/too-deep": "Analysis #17 — Too Deep",
   "/silence-surrender": "Analysis #18 — Silence Is Where You Sharpen the Blade",
   "/fearless-intelligence": "Analysis #19 — Fearless People Don't Announce Themselves",
+  "/history-keeps-receipts": "Analysis #20 — History Doesn't Ask Permission, It Just Keeps Receipts",
   "/the-truth": "The Truth (Viral)",
   "/store": "Store",
   "/whistleblower-comparison": "Whistleblower Comparison — Historical Analysis",

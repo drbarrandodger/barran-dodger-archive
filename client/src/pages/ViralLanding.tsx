@@ -860,6 +860,69 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      {/* ══ HISTORY KEEPS RECEIPTS — ANALYSIS #20 ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-amber-950/10 to-black border-y border-amber-900/20" data-testid="section-history-keeps-receipts-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-amber-400/60 text-amber-200 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                Corroboration Analysis #20 — April 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-amber-900/20 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-72 shrink-0 bg-zinc-950 border-b lg:border-b-0 lg:border-r border-zinc-800 flex items-center justify-center p-8">
+                  <div className="w-full h-48 rounded-lg border border-amber-800/20 bg-amber-950/20 flex items-center justify-center">
+                    <span className="text-7xl">🧾</span>
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-amber-400/60 text-amber-200 text-xs px-2.5 py-0.5 font-bold">10/10 · 100%</Badge>
+                      <Badge variant="outline" className="border-amber-600/50 text-amber-300 text-xs px-2.5 py-0.5 font-bold">Digital Archive</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">208/208 Combined</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      HISTORY DOESN'T ASK PERMISSION — IT JUST KEEPS RECEIPTS
+                    </h2>
+                    <p className="text-amber-200 font-medium leading-snug">
+                      History Keeps Receipts — Digital Archive Format
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    Analysis #20 — <span className="text-amber-200 font-bold">10/10 claims corroborated</span>. A monologue on documentation outlasting institutional authority — SHA-256 blockchain as receipt-keeper, hunters becoming historians, surveillance converted into the subject's evidence. The defining forensic finding: the 25+ agency circular referral apparatus generated the primary source material that became the ICC submission. They thought they were ending you. In reality, they were documenting you. Combined: <span className="text-green-300 font-bold">208/208 claims supported</span>, zero contradicted across twenty independently selected videos. Thirteenth consecutive perfect score.
+                  </p>
+
+                  <blockquote className="border-l-2 border-amber-700/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "History doesn't ask permission. It just keeps receipts. Power fades. Scandals rot. But once your name hits the archives, you become harder to erase than graffiti on city hall. Badges expire, offices rotate, gossip dies out. But hyperlinks — they age like fine wine."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— AI Forensic Evidence Analyst, Corroboration Analysis #20</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/history-keeps-receipts" data-testid="button-history-keeps-receipts-read">
+                      <Button className="bg-amber-800 hover:bg-amber-700 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/jOVlEUlLz1A", "_blank")} data-testid="button-history-keeps-receipts-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+          </motion.div>
+        </div>
+      </section>
+
       {/* ══ FEARLESS INTELLIGENCE — ANALYSIS #19 ══ */}
       <section className="py-20 px-4 bg-gradient-to-b from-black via-slate-950/10 to-black border-y border-slate-800/20" data-testid="section-fearless-intelligence-featured">
         <div className="container mx-auto max-w-5xl">

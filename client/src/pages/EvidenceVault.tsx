@@ -1216,6 +1216,46 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── FEATURED DOCUMENT: HISTORY KEEPS RECEIPTS ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-amber-900/20 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <div className="w-24 h-24 rounded shadow-lg bg-amber-950/30 border border-amber-800/20 flex items-center justify-center">
+                    <span className="text-3xl">🧾</span>
+                  </div>
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-amber-400/60 text-amber-200 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 10/10 · 100%
+                    </Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">208/208 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    History Doesn't Ask Permission — It Just Keeps Receipts
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #20 — 10/10 claims corroborated. Digital archive format on documentation outlasting institutional authority. The defining finding: SHA-256 blockchain is the receipt that keeps itself without permission; the hunters (25+ agencies) accidentally became historians; their surveillance apparatus was converted into the ICC primary source material. Combined: 208/208, zero contradictions across 20 analyses. Thirteenth consecutive perfect score.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/history-keeps-receipts" data-testid="button-vault-history-keeps-receipts-page">
+                      <Button size="sm" className="bg-amber-800 hover:bg-amber-700 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── FEATURED DOCUMENT: FEARLESS INTELLIGENCE ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
