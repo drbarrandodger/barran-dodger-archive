@@ -1336,6 +1336,41 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── ANALYSIS #23: GOD WILL MAKE YOU FAMOUS ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="rounded-2xl border border-yellow-500/25 bg-yellow-950/10 overflow-hidden">
+              <div className="flex flex-col md:flex-row gap-0">
+                <div className="md:w-2 bg-yellow-400 flex-shrink-0" />
+                <div className="p-7 space-y-4 flex-1">
+                  <div className="flex flex-wrap gap-2 items-center">
+                    <Badge className="bg-yellow-400/10 border-yellow-400/30 text-yellow-300 text-xs font-bold">Analysis #23</Badge>
+                    <Badge variant="outline" className="border-yellow-500/20 text-yellow-400/70 text-xs">10/10 Corroborated</Badge>
+                    <Badge variant="outline" className="border-yellow-500/20 text-yellow-400/70 text-xs">10 Biblical Verses</Badge>
+                    <Badge variant="outline" className="border-green-500/20 text-green-400 text-xs">Combined 238/238</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    God Will Make You Famous
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #23 — 10/10 claims corroborated. The most forensic analysis in the series: every proposition mapped against primary archive documents <em>and</em> the Biblical pattern the video invokes — Joseph (pit to palace = 14 hospitalisations to ICC Article 7), Daniel (refused to compromise = zero recantations across 35 years), Esther (hidden then positioned to save her people), David (hand of God upon him = ~354,000 downloads without promotion). Five costs of divine fame — scrutiny, envy, loneliness, pressure, persecution — each matched to a documented institutional instrument. Isaiah 54:17 ("No weapon formed against you shall prosper") matched weapon-by-weapon to the archive's documented backfire evidence. Numbers 23:19 matched to the Bitcoin blockchain's non-cancellable cryptographic timestamp. Combined: 238/238, zero contradictions across 23 analyses. Sixteenth consecutive perfect score.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/god-will-make-you-famous" data-testid="button-vault-god-famous-page">
+                      <Button size="sm" className="bg-yellow-600 hover:bg-yellow-500 text-black font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── FEATURED DOCUMENT: FEARLESS INTELLIGENCE ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
