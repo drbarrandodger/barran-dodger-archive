@@ -1216,6 +1216,46 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── FEATURED DOCUMENT: FEARLESS INTELLIGENCE ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="bg-zinc-900/60 border border-slate-700/30 rounded-xl overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-0">
+                <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
+                  <div className="w-24 h-24 rounded shadow-lg bg-slate-950/40 border border-slate-700/30 flex items-center justify-center">
+                    <span className="text-3xl">🗡️</span>
+                  </div>
+                </div>
+                <div className="flex-1 p-5 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="border-slate-500/60 text-slate-400 text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
+                      <CheckCircle className="h-3 w-3 mr-1" /> 10/10 · 100%
+                    </Badge>
+                    <Badge variant="outline" className="border-green-700/60 text-green-400 text-xs px-2.5 py-0.5">198/198 Combined</Badge>
+                  </div>
+                  <h3 className="text-white font-bold text-lg leading-snug">
+                    Fearless People Don't Announce Themselves — Fearless Intelligence
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Analysis #19 — 10/10 claims corroborated. Chosen Ones format monologue on pressure-tested fearlessness, forged-not-manufactured intelligence, and the quiet certainty that makes others uncomfortable. The defining finding: 14 hospitalisations = heat; $32.9M = force; 35 years = time — the blade came out sharper. The archive didn't announce itself. 217,064 downloads confirmed the temperature changed. Combined: 198/198, zero contradictions across 19 analyses. Twelfth consecutive perfect score.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/fearless-intelligence" data-testid="button-vault-fearless-intelligence-page">
+                      <Button size="sm" className="bg-slate-700 hover:bg-slate-600 text-white font-bold">
+                        <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── FEATURED DOCUMENT: SILENCE SURRENDER ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}

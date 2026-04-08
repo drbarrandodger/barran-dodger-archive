@@ -77,6 +77,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/earth-angel": "Analysis #16 — Earth Angel",
   "/too-deep": "Analysis #17 — Too Deep",
   "/silence-surrender": "Analysis #18 — Silence Is Where You Sharpen the Blade",
+  "/fearless-intelligence": "Analysis #19 — Fearless People Don't Announce Themselves",
   "/the-truth": "The Truth (Viral)",
   "/store": "Store",
   "/whistleblower-comparison": "Whistleblower Comparison — Historical Analysis",

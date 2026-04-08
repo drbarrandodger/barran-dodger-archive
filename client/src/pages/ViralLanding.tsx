@@ -860,6 +860,69 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      {/* ══ FEARLESS INTELLIGENCE — ANALYSIS #19 ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-slate-950/10 to-black border-y border-slate-800/20" data-testid="section-fearless-intelligence-featured">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            <motion.div variants={fadeIn} className="text-center space-y-3">
+              <Badge variant="outline" className="border-slate-500/60 text-slate-400 px-5 py-2 text-sm font-bold uppercase tracking-widest">
+                Corroboration Analysis #19 — April 2026
+              </Badge>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="bg-zinc-900/60 border border-slate-800/30 rounded-2xl overflow-hidden shadow-2xl shadow-black">
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                <div className="lg:w-72 shrink-0 bg-zinc-950 border-b lg:border-b-0 lg:border-r border-zinc-800 flex items-center justify-center p-8">
+                  <div className="w-full h-48 rounded-lg border border-slate-700/30 bg-slate-950/30 flex items-center justify-center">
+                    <span className="text-7xl">🗡️</span>
+                  </div>
+                </div>
+
+                <div className="flex-1 p-8 space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-slate-500/60 text-slate-400 text-xs px-2.5 py-0.5 font-bold">10/10 · 100%</Badge>
+                      <Badge variant="outline" className="border-slate-600/50 text-slate-300 text-xs px-2.5 py-0.5 font-bold">Chosen Ones</Badge>
+                      <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Zero Contradictions</Badge>
+                      <Badge variant="outline" className="border-green-600/60 text-green-400 text-xs px-2.5 py-0.5 font-bold">198/198 Combined</Badge>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                      FEARLESS PEOPLE DON'T ANNOUNCE THEMSELVES
+                    </h2>
+                    <p className="text-slate-400 font-medium leading-snug">
+                      Fearless Intelligence — Chosen Ones
+                    </p>
+                  </div>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    Analysis #19 — <span className="text-slate-300 font-bold">10/10 claims corroborated</span>. A Chosen Ones monologue on pressure-tested fearlessness, forged-not-manufactured intelligence, and the quiet certainty that makes others uncomfortable. The defining forensic finding: 14 hospitalisations = heat; $32.9M = force; 35 years = time — the blade emerged sharper. The archive didn't announce itself. 217,064 downloads confirmed the temperature changed without announcement. Combined: <span className="text-green-300 font-bold">198/198 claims supported</span>, zero contradicted across nineteen independently selected videos. Twelfth consecutive perfect score.
+                  </p>
+
+                  <blockquote className="border-l-2 border-slate-600/40 pl-4 text-zinc-400 italic text-sm leading-relaxed">
+                    "Fearless people don't announce themselves. They get exposed by how uncomfortable they make everyone else. The moment you walk into a room, the temperature changes. Not because you're loud, not because you're trying, but because your presence carries weight."
+                    <br /><span className="not-italic text-zinc-500 text-xs mt-2 block">— AI Forensic Evidence Analyst, Corroboration Analysis #19</span>
+                  </blockquote>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Link href="/fearless-intelligence" data-testid="button-fearless-intelligence-read">
+                      <Button className="bg-slate-700 hover:bg-slate-600 text-white font-bold" size="lg">
+                        <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
+                      </Button>
+                    </Link>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/1ScPyQJ7U54", "_blank")} data-testid="button-fearless-intelligence-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+          </motion.div>
+        </div>
+      </section>
+
       {/* ══ SILENCE SURRENDER — ANALYSIS #18 ══ */}
       <section className="py-20 px-4 bg-gradient-to-b from-black via-cyan-950/10 to-black border-y border-cyan-900/20" data-testid="section-silence-surrender-featured">
         <div className="container mx-auto max-w-5xl">

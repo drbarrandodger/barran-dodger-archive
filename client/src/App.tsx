@@ -81,6 +81,7 @@ import EveryoneWatching from "@/pages/EveryoneWatching";
 import EarthAngel from "@/pages/EarthAngel";
 import TooDeep from "@/pages/TooDeep";
 import SilenceSurrender from "@/pages/SilenceSurrender";
+import FearlessIntelligence from "@/pages/FearlessIntelligence";
 import WhistleblowerComparison from "@/pages/WhistleblowerComparison";
 
 function GlobalDownloadTracker() {
@@ -195,6 +196,7 @@ function Router() {
         <Route path="/earth-angel" component={EarthAngel} />
         <Route path="/too-deep" component={TooDeep} />
         <Route path="/silence-surrender" component={SilenceSurrender} />
+        <Route path="/fearless-intelligence" component={FearlessIntelligence} />
         <Route path="/whistleblower-comparison" component={WhistleblowerComparison} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
