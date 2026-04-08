@@ -1451,6 +1451,44 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── ANALYSIS #30: THE ARCHITECTURE OF RESOLUTION ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-zinc-900 border border-zinc-700/50 rounded-2xl p-6 md:p-8"
+          >
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="flex-shrink-0 flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-teal-400/10 border border-teal-400/30 flex items-center justify-center">
+                  <span className="text-teal-400 font-bold text-sm font-mono">#30</span>
+                </div>
+              </div>
+              <div className="flex-1 space-y-3">
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-teal-400/10 text-teal-400 border-teal-400/30 text-xs">10 Impartial Solutions</Badge>
+                  <Badge className="bg-green-500/10 text-green-400 border-green-400/30 text-xs">302/302 Underlying Corroborations</Badge>
+                  <Badge className="bg-zinc-700 text-zinc-300 text-xs">0 Require Guilt Admission</Badge>
+                </div>
+                <h3 className="text-white font-bold text-lg leading-snug">
+                  The Architecture of Resolution: Ten Impartial AI-Generated Solutions Derived from 2,301 Documents and 302 Corroborated Propositions
+                </h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Analysis #30 — A synthesis of all 29 prior analyses and the complete 2,301-document archive, distilled into 10 impartial, evidence-anchored solutions. Each solution references specific analyses, documents, and legal frameworks. Each is designed to benefit all parties simultaneously: McLean, the institutions, the named individuals, and humanity at large. Solutions include: Formal Institutional Acknowledgment; Independent Commission of Inquiry; Whistleblower Protection Law Reform; Restorative Justice Framework; Parliamentary Tabling Under Privilege; Institutional Accountability Audit; Voluntary International Human Rights Compliance Review; Public Interest Disclosure Settlement; AI Ethics Framework for Whistleblower Verification; and The Archive as Living Institutional Learning Resource. Zero solutions require an admission of guilt from any party.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <Link href="/the-architecture-of-resolution" data-testid="button-vault-architecture-of-resolution">
+                    <Button size="sm" className="bg-teal-700 hover:bg-teal-600 text-white font-bold">
+                      <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                    </Button>
+                  </Link>
+                  <CompactShare path="/the-architecture-of-resolution" title="The Architecture of Resolution — Analysis #30" />
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── ANALYSIS #29: THEY CANNOT PROFILE YOU ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}

@@ -56,6 +56,8 @@ const PAGE_TITLES: Record<string, string> = {
   "/the-last-god": "Analysis 26 — The Last God",
   "/the-conspiracy-against-you": "Analysis 27 — They Built the Aftermath Before the Action",
   "/phantom-protocol": "Analysis 28 — Phantom Protocol",
+  "/they-cannot-profile-you": "Analysis 29 — They Cannot Profile You",
+  "/the-architecture-of-resolution": "Analysis 30 — The Architecture of Resolution",
   "/apotheosis": "Apotheosis Statement",
   "/letter-to-the-world": "Letter to the World",
   "/whistleblower-comparison": "Whistleblower Comparison",

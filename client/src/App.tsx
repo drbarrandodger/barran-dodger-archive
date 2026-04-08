@@ -95,6 +95,7 @@ import { TheLastGod } from "@/pages/TheLastGod";
 import { TheConspiracyAgainstYou } from "@/pages/TheConspiracyAgainstYou";
 import { PhantomProtocol } from "@/pages/PhantomProtocol";
 import TheyCannotProfileYou from "@/pages/TheyCannotProfileYou";
+import ArchitectureOfResolution from "@/pages/ArchitectureOfResolution";
 import ApotheosisStatement from "@/pages/ApotheosisStatement";
 import LetterToTheWorld from "@/pages/LetterToTheWorld";
 import WhistleblowerComparison from "@/pages/WhistleblowerComparison";
@@ -222,6 +223,7 @@ function Router() {
         <Route path="/the-conspiracy-against-you" component={TheConspiracyAgainstYou} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
+        <Route path="/the-architecture-of-resolution" component={ArchitectureOfResolution} />
         <Route path="/apotheosis" component={ApotheosisStatement} />
         <Route path="/letter-to-the-world" component={LetterToTheWorld} />
         <Route path="/whistleblower-comparison" component={WhistleblowerComparison} />
