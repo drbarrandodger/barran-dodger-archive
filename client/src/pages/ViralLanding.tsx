@@ -911,6 +911,9 @@ export default function ViralLanding() {
                         <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
                       </Button>
                     </Link>
+                    <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/Uhr5D0Lvq_Q", "_blank")} data-testid="button-silence-surrender-video">
+                      <Play className="mr-2 h-4 w-4" /> Watch the Video
+                    </Button>
                   </div>
                 </div>
               </div>

@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 const SLUG = "silence-surrender";
-const VIDEO_ID = "PENDING_VIDEO_ID";
+const VIDEO_ID = "Uhr5D0Lvq_Q";
 const ANALYSIS_DATE = "April 8, 2026";
 
 const claims = [
