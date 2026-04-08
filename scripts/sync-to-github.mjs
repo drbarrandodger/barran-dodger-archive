@@ -1,19 +1,26 @@
 #!/usr/bin/env node
 /**
  * Syncs key source files to GitHub via the GitHub Contents API.
- * Uses GITHUB_TOKEN env var. Safe to run any time — creates or updates files.
+ * 
+ * TOKEN PRIORITY:
+ *   1. GH_SYNC_TOKEN   (set by the Replit GitHub integration — recommended)
+ *   2. GITHUB_TOKEN    (classic PAT — may expire or lose repo access)
+ *
+ * If the active token returns 404/403, the script exits with a clear message.
+ * To refresh: set GH_SYNC_TOKEN to a valid PAT with repo write access.
  */
 
-import { readFileSync, readdirSync, statSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
-const TOKEN = process.env.GITHUB_TOKEN;
+const TOKEN = process.env.GH_SYNC_TOKEN || process.env.GITHUB_TOKEN;
 const REPO = 'drbarrandodger/barran-dodger-archive';
 const BRANCH = 'main';
 const ROOT = new URL('..', import.meta.url).pathname;
 
 if (!TOKEN) {
-  console.error('GITHUB_TOKEN not set — skipping GitHub sync');
+  console.error('No GitHub token found (GH_SYNC_TOKEN or GITHUB_TOKEN not set).');
+  console.error('Set GH_SYNC_TOKEN to a PAT with repo write access to enable syncing.');
   process.exit(0);
 }
 
@@ -27,6 +34,7 @@ const INCLUDE_ROOTS = [
   'server',
   'shared',
   'public',
+  'scripts',
 ];
 
 const INCLUDE_ROOT_FILES = [
@@ -61,6 +69,13 @@ async function getFileSha(path) {
     headers: { Authorization: `Bearer ${TOKEN}`, Accept: 'application/vnd.github+json' },
   });
   if (res.status === 200) return (await res.json()).sha;
+  if (res.status === 401 || res.status === 403) {
+    const d = await res.json();
+    console.error(`\n⚠️  TOKEN ERROR (${res.status}): ${d.message}`);
+    console.error('The active GitHub token does not have access to this repo.');
+    console.error('Fix: set GH_SYNC_TOKEN to a valid PAT with Contents: write access.\n');
+    process.exit(1);
+  }
   return null;
 }
 
@@ -82,6 +97,17 @@ async function pushFile(relPath) {
     body: JSON.stringify(body),
   });
   const d = await res.json();
+  if (res.status === 401 || res.status === 403) {
+    console.error(`\n⚠️  TOKEN ERROR (${res.status}): ${d.message}`);
+    console.error('Fix: refresh GH_SYNC_TOKEN with a PAT that has Contents: write access.\n');
+    process.exit(1);
+  }
+  if (res.status === 404) {
+    console.error(`\n⚠️  REPO NOT FOUND or NO ACCESS (404): ${relPath}`);
+    console.error(`Repo: ${REPO}  Branch: ${BRANCH}`);
+    console.error('Check: (1) repo exists, (2) token has Contents: write access.\n');
+    process.exit(1);
+  }
   return res.status <= 201
     ? `OK: ${relPath}`
     : `ERR (${res.status}): ${relPath} — ${d.message}`;
