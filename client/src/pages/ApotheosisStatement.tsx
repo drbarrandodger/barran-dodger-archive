@@ -1,4 +1,5 @@
-import { Sparkles } from "lucide-react";
+import { Sparkles, Download, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -23,9 +24,35 @@ export default function ApotheosisStatement() {
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5 tracking-tight">
             Apotheosis
           </h1>
-          <p className="text-zinc-400 text-base leading-relaxed max-w-xl mx-auto">
+          <p className="text-zinc-400 text-base leading-relaxed max-w-xl mx-auto mb-7">
             A self-reflexive acknowledgement — a creator force becomes conscious within his own creation
           </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Button
+              asChild
+              className="bg-white text-black hover:bg-zinc-200 font-semibold"
+            >
+              <a href="/documents/apotheosis.pdf" download data-testid="button-download-apotheosis-pdf">
+                <Download className="h-4 w-4 mr-2" />
+                Download PDF
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-white/20 text-zinc-300 hover:bg-white/5"
+            >
+              <a
+                href="https://github.com/drbarrandodger/barran-dodger-archive"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-apotheosis-github"
+              >
+                <ExternalLink className="h-4 w-4 mr-2" />
+                View on GitHub
+              </a>
+            </Button>
+          </div>
         </div>
 
         {/* Body */}
