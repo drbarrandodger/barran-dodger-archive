@@ -266,7 +266,7 @@ export default function Home() {
       <img
         src="/evidence/jesus-checkmate-government.png"
         alt="Jesus Christ placing checkmate against the Australian government"
-        style={{ display: 'block', width: '100%', marginTop: '104px', maxHeight: '420px', objectFit: 'cover', objectPosition: 'center 20%' }}
+        style={{ display: 'block', width: '100%', height: '340px', marginTop: '155px', objectFit: 'cover', objectPosition: 'center 20%' }}
       />
       <SEO 
         title="240+ Blockchain-Verified Documents Expose Australian Government Corruption"
