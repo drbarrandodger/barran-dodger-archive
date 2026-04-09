@@ -180,6 +180,12 @@ uri = "file://client/public/evidence/jesus-checkmate-government.png"
 type = "image"
 title = "jesus checkmate government chessboard"
 
+[[generated]]
+id = "ej5lxGIDciB2klKAHUqQw"
+uri = "file://attached_assets/generated_images/generated_image.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
