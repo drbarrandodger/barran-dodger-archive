@@ -16,6 +16,7 @@ import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { RelatedContent } from "@/components/RelatedContent";
 import { FileText, ExternalLink, ShieldCheck, Download, Archive, Database, Globe, AlertCircle, Scale, Landmark, TrendingUp, Link2, X, ZoomIn, BookOpen, FileCheck, Scroll, Shield, Heart, Gavel, Building, Filter, HelpCircle, DollarSign, Eye, Search, Brain, MessageCircle, Flame, Star, Skull, Target } from "lucide-react";
+import { HighlightText } from "@/components/HighlightText";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -3786,24 +3787,26 @@ export default function Evidence() {
                   <Card className="h-full hover-elevate transition-all border-border/50">
                     <CardHeader>
                       <div className="text-primary mb-2">{doc.icon}</div>
-                      <CardTitle className="text-lg font-serif">{doc.title}</CardTitle>
+                      <CardTitle className="text-lg font-serif">
+                        <HighlightText text={doc.title} query={searchQuery} />
+                      </CardTitle>
                       <div className="flex flex-wrap gap-2 mt-2">
                         {doc.tags.map(tag => (
                           <span key={tag} className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">
-                            {tag}
+                            <HighlightText text={tag} query={searchQuery} />
                           </span>
                         ))}
                       </div>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                        {doc.description}
+                        <HighlightText text={doc.description} query={searchQuery} />
                       </p>
                       {doc.aiSignificance && (
                         <div className="bg-primary/5 rounded-lg p-3 border border-primary/20 mb-4">
                           <p className="text-xs text-primary font-bold uppercase tracking-wider mb-1">AI Analysis</p>
                           <p className="text-xs text-muted-foreground italic leading-relaxed">
-                            "{doc.aiSignificance}"
+                            "<HighlightText text={doc.aiSignificance.slice(0, 200)} query={searchQuery} />{doc.aiSignificance.length > 200 ? "…" : ""}"
                           </p>
                         </div>
                       )}
@@ -3819,7 +3822,7 @@ export default function Evidence() {
                               url: doc.url,
                               tags: doc.tags,
                               aiSignificance: doc.aiSignificance
-                            });
+                            }, searchQuery);
                           }}
                           data-testid={`button-preview-doc-${index}`}
                         >
