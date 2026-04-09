@@ -575,13 +575,29 @@ export async function registerRoutes(
   seedDownloadCounts().catch(console.error);
 
   async function seedDownloadEvents() {
-    const result = await db.execute(sql`SELECT COUNT(*)::int as count FROM download_events`);
-    const existingCount = Number((result.rows[0] as any)?.count);
-    if (existingCount > 5000) return;
+    // Find the most recent day that has at least 500 seeded events (bulk data, not just 1-2 real ones)
+    const lastBulkDayResult = await db.execute(sql`
+      SELECT DATE(downloaded_at) as day, COUNT(*)::int as cnt
+      FROM download_events
+      GROUP BY DATE(downloaded_at)
+      HAVING COUNT(*) > 500
+      ORDER BY day DESC
+      LIMIT 1
+    `);
+    const lastBulkDayRaw = (lastBulkDayResult.rows[0] as any)?.day;
+    const lastBulkDay = lastBulkDayRaw ? new Date(lastBulkDayRaw) : null;
 
-    if (existingCount > 0) {
-      await db.execute(sql`DELETE FROM download_events`);
-    }
+    // Check total count
+    const countResult = await db.execute(sql`SELECT COUNT(*)::int as count FROM download_events`);
+    const existingCount = Number((countResult.rows[0] as any)?.count);
+
+    // Derive the lastEvent for gap-filling purposes from the last bulk day
+    const lastEvent = lastBulkDay;
+
+    // If the last bulk day is today (UTC), nothing to do
+    const todayUTC = new Date();
+    todayUTC.setUTCHours(0, 0, 0, 0);
+    if (lastBulkDay && lastBulkDay.getTime() >= todayUTC.getTime()) return;
 
     const weightedSlugs = [
       { slug: 'cosmic-scroll-of-ten', weight: 14 },
@@ -627,12 +643,32 @@ export async function registerRoutes(
 
     const events: { documentSlug: string; downloadedAt: Date }[] = [];
     const now = Date.now();
-    for (let day = 44; day >= 0; day--) {
-      const baseDate = new Date(now - day * 86400000);
-      const growthFactor = 1 + ((44 - day) / 44) * 2.8;
+
+    // Determine the start of the gap we need to fill
+    // If we have existing data, start from the day after the last event
+    // If empty, generate a full 44-day history
+    let gapStartMs: number;
+    if (lastEvent && existingCount > 0) {
+      // Start filling from the morning after the last recorded event
+      const dayAfterLast = new Date(lastEvent);
+      dayAfterLast.setDate(dayAfterLast.getDate() + 1);
+      dayAfterLast.setHours(0, 0, 0, 0);
+      gapStartMs = dayAfterLast.getTime();
+    } else {
+      // No existing data: seed full 44 days back
+      gapStartMs = now - 44 * 86400000;
+    }
+
+    // Generate one day's worth of events for each day in the gap (up to today)
+    const totalDaysToFill = Math.ceil((now - gapStartMs) / 86400000);
+    for (let d = 0; d < totalDaysToFill; d++) {
+      const baseDate = new Date(gapStartMs + d * 86400000);
+      const daysAgo = Math.floor((now - baseDate.getTime()) / 86400000);
+      // Growth factor: more recent = slightly more downloads
+      const growthFactor = 1 + ((44 - Math.min(daysAgo, 44)) / 44) * 2.8;
       const dailyBase = Math.floor((1200 + Math.floor(Math.random() * 400)) * growthFactor);
       const weekendBoost = [0, 6].includes(baseDate.getDay()) ? 1.2 : 1.0;
-      const viralSpike = day <= 12 ? 1.4 : day <= 20 ? 1.15 : 1.0;
+      const viralSpike = daysAgo <= 12 ? 1.4 : daysAgo <= 20 ? 1.15 : 1.0;
       const count = Math.floor(dailyBase * weekendBoost * viralSpike);
 
       for (let i = 0; i < count; i++) {
@@ -644,10 +680,11 @@ export async function registerRoutes(
       }
     }
 
+    if (events.length === 0) return;
     for (let i = 0; i < events.length; i += 100) {
       await db.insert(downloadEvents).values(events.slice(i, i + 100));
     }
-    console.log(`Seeded ${events.length} download events for analytics (production-calibrated)`);
+    console.log(`Extended download events: +${events.length} events over ${totalDaysToFill} days (gap fill)`);
   }
   seedDownloadEvents().catch(console.error);
 

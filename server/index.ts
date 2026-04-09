@@ -3,6 +3,7 @@ import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
 import path from "path";
+import fs from "fs";
 import { storage } from "./storage";
 
 const app = express();
@@ -55,15 +56,22 @@ app.use('/attached_assets', express.static(path.resolve(process.cwd(), 'attached
   }
 }));
 
-// Serve all documents from the deploy folder with server-side download tracking
+// Serve all documents with server-side download tracking
+// Checks github-pages-deploy/documents first, then client/public/documents as fallback
 const deployDir = path.resolve(process.cwd(), 'github-pages-deploy');
 const documentsDir = path.join(deployDir, 'documents');
+const publicDocumentsDir = path.resolve(process.cwd(), 'client/public/documents');
 
 const TRACKED_EXTENSIONS: Record<string, string> = {
   '.pdf': 'application/pdf',
   '.txt': 'text/plain; charset=utf-8',
   '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
   '.doc': 'application/msword',
+  '.mp3': 'audio/mpeg',
+  '.mp4': 'video/mp4',
+  '.jpeg': 'image/jpeg',
+  '.jpg': 'image/jpeg',
+  '.png': 'image/png',
 };
 
 app.use('/documents', (req: Request, res: Response, next: NextFunction) => {
@@ -71,16 +79,23 @@ app.use('/documents', (req: Request, res: Response, next: NextFunction) => {
   const ext = Object.keys(TRACKED_EXTENSIONS).find(e => lowerPath.endsWith(e));
   if (!ext) return next();
 
+  const basename = path.basename(req.path);
+
   // Derive slug from filename (strip extension, normalise to hyphens)
   const slug = path.basename(req.path, ext).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  // Find the file — check both document directories
+  const primaryPath = path.join(documentsDir, basename);
+  const fallbackPath = path.join(publicDocumentsDir, basename);
+  const filePath = fs.existsSync(primaryPath) ? primaryPath : fs.existsSync(fallbackPath) ? fallbackPath : null;
+
+  if (!filePath) return next();
 
   // Fire-and-forget: track the download without blocking the response
   storage.incrementDownloadCount(slug).catch(() => {});
 
-  // Serve the file
-  const filePath = path.join(documentsDir, path.basename(req.path));
   res.setHeader('Content-Type', TRACKED_EXTENSIONS[ext]);
-  res.setHeader('Content-Disposition', ext === '.pdf' ? 'inline' : 'attachment');
+  res.setHeader('Content-Disposition', ['.pdf', '.mp3', '.mp4', '.jpeg', '.jpg', '.png'].includes(ext) ? 'inline' : 'attachment');
   res.setHeader('Cache-Control', 'public, max-age=86400');
   res.sendFile(filePath, (err) => {
     if (err) next();
@@ -88,6 +103,7 @@ app.use('/documents', (req: Request, res: Response, next: NextFunction) => {
 });
 // Fallback static for any untracked file type in documents folder
 app.use('/documents', express.static(documentsDir));
+app.use('/documents', express.static(publicDocumentsDir));
 app.use('/assets', express.static(path.join(deployDir, 'assets'), {
   setHeaders: (res) => {
     res.setHeader('Cache-Control', 'public, max-age=86400');
