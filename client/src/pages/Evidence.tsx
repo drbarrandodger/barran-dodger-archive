@@ -100,13 +100,15 @@ function matchesDatePeriod(doc: { title: string; tags: string[]; description: st
   return period.keywords.some(kw => searchText.includes(kw));
 }
 
-function ScreenshotExhibit({ src, label, title, caption, color, badgeColor }: {
+function ScreenshotExhibit({ src, label, title, caption, color, badgeColor, link, linkLabel }: {
   src: string;
   label: string;
   title: string;
   caption: string;
   color: string;
   badgeColor: string;
+  link?: string;
+  linkLabel?: string;
 }) {
   const [open, setOpen] = useState(false);
   return (
@@ -131,14 +133,40 @@ function ScreenshotExhibit({ src, label, title, caption, color, badgeColor }: {
             <ZoomIn className="h-10 w-10 text-white drop-shadow-lg" />
           </div>
         </div>
-        <div className="px-4 py-3">
+        <div className="px-4 py-3 space-y-2">
           <p className="text-xs text-muted-foreground leading-relaxed">{caption}</p>
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 underline underline-offset-2 transition-colors"
+              data-testid={`exhibit-link-${label.toLowerCase().replace(/\s/g, "-")}`}
+            >
+              <ExternalLink className="h-3 w-3 flex-shrink-0" />
+              {linkLabel || "View Full Document"}
+            </a>
+          )}
         </div>
       </div>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-2xl p-2 bg-black border-zinc-700">
           <img src={src} alt={title} className="w-full rounded-lg object-contain max-h-[85vh]" />
-          <p className="text-xs text-zinc-400 text-center pt-1 pb-2">{label} — {title}</p>
+          <div className="text-center pt-1 pb-2 space-y-1">
+            <p className="text-xs text-zinc-400">{label} — {title}</p>
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 underline underline-offset-2 transition-colors"
+              >
+                <ExternalLink className="h-3 w-3" />
+                {linkLabel || "View Full Document"}
+              </a>
+            )}
+          </div>
         </DialogContent>
       </Dialog>
     </>
@@ -2874,10 +2902,12 @@ export default function Evidence() {
                 {
                   src: "/evidence/screenshot-tony-ridley-linkedin.png",
                   label: "EXHIBIT H",
-                  title: "Tony Ridley — NDIA Official Who Threatened 'You Will Be Sacrificed'",
-                  caption: "LinkedIn profile of Tony Ridley (MSc CSyP FSyl) — NDIA Manager and security professional at VicTrack, formerly Charles Sturt University. Ridley is the documented official who stated \"You will be sacrificed\" to Dr. McLean during NDIA proceedings. His background in Risk, Security, Resilience and Safety Sciences provides operational context for the assassination threat.",
+                  title: "Tony Ridley — NDIA Official: Sexual Exploitation Then Cross-State Death Threats",
+                  caption: "LinkedIn profile of Tony Ridley (MSc CSyP FSyl) — NDIA Manager, VicTrack, Charles Sturt University. Ridley engaged in a sexual relationship with Dr. McLean (Barran) while fully aware of his status as an NDIS whistleblower. When the truth emerged, Ridley issued death threats across three states. He subsequently told Dr. McLean: \"You will be sacrificed.\" Full documentation on Google Drive.",
                   color: "border-blue-500/60",
                   badgeColor: "bg-blue-900/80 text-blue-200",
+                  link: "https://drive.google.com/file/d/1oSNRzOnwCQIQM4ZuNcRnQrpybvcx86KD/view?usp=drivesdk",
+                  linkLabel: "View Full Evidence Document (Google Drive)",
                 },
               ].map((exhibit, i) => (
                 <ScreenshotExhibit key={i} {...exhibit} />
