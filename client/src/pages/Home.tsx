@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import { docUrl } from "@/lib/docUrl";
 import { motion } from "framer-motion";
 import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair, Database, Bot } from "lucide-react";
@@ -260,6 +260,22 @@ export default function Home() {
   const { data: evidence } = useQuery<EvidenceItem[]>({ 
     queryKey: ["/api/evidence"] 
   });
+  const [topOffset, setTopOffset] = useState(210);
+
+  useLayoutEffect(() => {
+    const measure = () => {
+      const nav = document.querySelector('nav');
+      if (nav) {
+        const bottom = nav.getBoundingClientRect().bottom;
+        if (bottom > 30) setTopOffset(Math.ceil(bottom));
+      }
+    };
+    measure();
+    const t1 = setTimeout(measure, 100);
+    const t2 = setTimeout(measure, 500);
+    window.addEventListener('resize', measure);
+    return () => { clearTimeout(t1); clearTimeout(t2); window.removeEventListener('resize', measure); };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -273,7 +289,7 @@ export default function Home() {
           objectFit: 'cover',
           objectPosition: 'center 30%',
           flexShrink: 0,
-          marginTop: 'calc(var(--banner-height, 100px) + var(--nav-height, 64px))'
+          marginTop: `${topOffset}px`
         }}
       />
       <SEO 
