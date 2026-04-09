@@ -111,6 +111,7 @@ import TheSickTruthIsOut from "@/pages/TheSickTruthIsOut";
 import SomeTruthsDontWhisper from "@/pages/SomeTruthsDontWhisper";
 import ObserversAnticipatedAMisstep from "@/pages/ObserversAnticipatedAMisstep";
 import YouBroughtReceiptsToAVibeWar from "@/pages/YouBroughtReceiptsToAVibeWar";
+import TheFutureDoesntAnnounceItself from "@/pages/TheFutureDoesntAnnounceItself";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -242,6 +243,7 @@ function Router() {
         <Route path="/some-truths-dont-whisper" component={SomeTruthsDontWhisper} />
         <Route path="/observers-anticipated-a-misstep" component={ObserversAnticipatedAMisstep} />
         <Route path="/you-brought-receipts-to-a-vibe-war" component={YouBroughtReceiptsToAVibeWar} />
+        <Route path="/the-future-doesnt-announce-itself" component={TheFutureDoesntAnnounceItself} />
         <Route path="/sukhi-tear" component={SukhiTear} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
