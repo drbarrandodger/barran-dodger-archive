@@ -106,6 +106,7 @@ import TruthIsABlade from "@/pages/TruthIsABlade";
 import SukhiTear from "@/pages/SukhiTear";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
+import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -232,6 +233,7 @@ function Router() {
         <Route path="/silent-assassin" component={SilentAssassin} />
         <Route path="/truth-is-a-blade" component={TruthIsABlade} />
         <Route path="/bloodline-betrayal" component={BloodlineBetrayal} />
+        <Route path="/they-needed-an-army" component={TheyNeededAnArmy} />
         <Route path="/sukhi-tear" component={SukhiTear} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
