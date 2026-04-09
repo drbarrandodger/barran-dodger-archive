@@ -191,3 +191,9 @@ id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
 type = "text"
 title = "Medium Article Draft — The Gossip Is That I'm Scary Smart"
+
+[[outputs]]
+id = "EVk7Znf0PuE4PXNGnn0op"
+uri = "file://client/public/evidence/jesus-checkmate-government.png"
+type = "image"
+title = "Jesus Checkmate — Australian Government"
