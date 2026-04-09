@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { CompactShare } from "@/components/FloatingShareBar";
+import { DownloadSocialProofBanner } from "@/components/ViralDownloadButton";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { RelatedContent } from "@/components/RelatedContent";
@@ -390,13 +391,16 @@ export default function EvidenceVault() {
               </div>
             </motion.div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-6">
               <Button variant="outline" size="lg" className="gap-2" asChild>
                 <a href="https://myaidrive.com/home" target="_blank" rel="noopener noreferrer" data-testid="link-myaidrive-home">
                   <ExternalLink className="h-4 w-4" /> Browse Full MyAIDrive Archive
                 </a>
               </Button>
             </div>
+
+            <DownloadSocialProofBanner totalDownloads={88810} className="max-w-3xl mx-auto" />
+
           </motion.section>
 
           {/* ── FEATURED DOCUMENT: MASTER EVIDENCE REGISTER ── */}

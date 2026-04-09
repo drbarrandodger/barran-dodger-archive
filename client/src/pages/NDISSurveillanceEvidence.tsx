@@ -398,7 +398,6 @@ export default function NDISSurveillanceEvidence() {
         </div>
 
         <InlineShareStrip message="These exhibits cannot be suppressed — share them everywhere" />
-        </div>
 
       </div>
     </div>

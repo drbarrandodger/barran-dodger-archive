@@ -11,6 +11,7 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { RelatedContent } from "@/components/RelatedContent";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { DownloadSocialProofBanner } from "@/components/ViralDownloadButton";
 import {
   FileText, ExternalLink, Archive, Scale, Globe, AlertCircle,
   Gavel, Heart, Shield, ShieldCheck, Database, BookOpen, FileCheck,
@@ -542,6 +543,8 @@ export default function Publications() {
               </motion.div>
             )}
           </motion.section>
+
+          <DownloadSocialProofBanner totalDownloads={88810} className="mb-4" />
 
           <motion.section
             initial={{ opacity: 0, y: 20 }}
