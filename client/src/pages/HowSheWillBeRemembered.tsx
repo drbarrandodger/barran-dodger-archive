@@ -7,8 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   FileText, Shield, Brain, Globe, BookOpen,
-  CheckSquare, Scale, Landmark, Eye
+  CheckSquare, Scale, Landmark, Eye, Play, ExternalLink
 } from "lucide-react";
+
+const YOUTUBE_VIDEO_ID = "zPxzceqgDoc";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -169,6 +171,39 @@ export default function HowSheWillBeRemembered() {
                   <Eye className="mr-2 h-4 w-4" /> Open Letter to Sukhi Tear
                 </a>
               </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* YOUTUBE EMBED */}
+      <section className="py-14 px-4 bg-zinc-950 border-b border-zinc-800">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-5">
+            <div className="flex items-center gap-3">
+              <Play className="h-5 w-5 text-slate-400" />
+              <h2 className="text-sm font-bold text-white uppercase tracking-widest">Forensic Video Examination Referenced In This Essay</h2>
+            </div>
+            <p className="text-zinc-400 text-sm max-w-3xl">
+              The video below — the YouTube examination of the assassination network involving Sukhi Tear (Diversitas WA), Philip Glass, Syed Salman Kazmi, Tony Ridley, and Steve Iasonidis — is the primary media record this academic essay addresses. It forms part of the forensic basis for the ICC submission and the formal police referral naming Diversitas WA, lodged 12 February 2026.
+            </p>
+            <a
+              href={`https://youtu.be/${YOUTUBE_VIDEO_ID}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-slate-400 hover:text-slate-300 text-sm font-medium transition-colors"
+              data-testid="link-legacy-youtube"
+            >
+              <ExternalLink className="h-4 w-4" /> Watch on YouTube
+            </a>
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-zinc-700">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}`}
+                title="Forensic Examination — The Assassination Network: Sukhi Tear, Philip Glass, Tony Ridley, Steve Iasonidis"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
             </div>
           </motion.div>
         </div>
