@@ -2903,11 +2903,11 @@ export default function Evidence() {
                   src: "/evidence/screenshot-tony-ridley-linkedin.png",
                   label: "EXHIBIT H",
                   title: "Tony Ridley — NDIA Official: Sexual Exploitation Then Cross-State Death Threats",
-                  caption: "LinkedIn profile of Tony Ridley (MSc CSyP FSyl) — NDIA Manager, VicTrack, Charles Sturt University. Ridley engaged in a sexual relationship with Dr. McLean (Barran) while fully aware of his status as an NDIS whistleblower. When the truth emerged, Ridley issued death threats across three states. He subsequently told Dr. McLean: \"You will be sacrificed.\" Full documentation on Google Drive.",
+                  caption: "LinkedIn profile of Tony Ridley (MSc CSyP FSyl) — NDIA Manager, VicTrack, Charles Sturt University. Ridley engaged in a sexual relationship with Dr. McLean (Barran) while fully aware of his status as an NDIS whistleblower. A sex recording documenting this relationship exists as primary evidence. When the truth of his infiltration role emerged, Ridley issued death threats across three states and stated directly: \"You will be sacrificed.\" The recording and full documentation are on Google Drive.",
                   color: "border-blue-500/60",
                   badgeColor: "bg-blue-900/80 text-blue-200",
                   link: "https://drive.google.com/file/d/1oSNRzOnwCQIQM4ZuNcRnQrpybvcx86KD/view?usp=drivesdk",
-                  linkLabel: "View Full Evidence Document (Google Drive)",
+                  linkLabel: "View Sex Recording & Full Evidence (Google Drive)",
                 },
               ].map((exhibit, i) => (
                 <ScreenshotExhibit key={i} {...exhibit} />

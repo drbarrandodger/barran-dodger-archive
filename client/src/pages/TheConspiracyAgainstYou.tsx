@@ -305,23 +305,29 @@ export function TheConspiracyAgainstYou() {
             <div className="flex-1 p-6 flex flex-col justify-between gap-4">
               <div>
                 <h3 className="text-white font-bold text-lg mb-2">Tony Ridley (MSc CSyP FSyl) — NDIA Manager, VicTrack</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                  LinkedIn profile of Tony Ridley — NDIA Manager, security professional at VicTrack and Charles Sturt University. Ridley entered into a sexual relationship with Dr. McLean (Barran) while <strong className="text-white">fully aware of his status as an NDIS whistleblower</strong>. When the truth of his role in the suppression operation emerged, Ridley issued death threats across <strong className="text-white">three states</strong>. He subsequently stated directly to Dr. McLean: <em className="text-rose-300">"You will be sacrificed."</em>
+                <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                  LinkedIn profile of Tony Ridley — NDIA Manager, security professional at VicTrack and Charles Sturt University. Ridley entered into a sexual relationship with Dr. McLean (Barran) while <strong className="text-white">fully aware of his status as an NDIS whistleblower</strong>. A <strong className="text-amber-300">sex recording documenting this relationship exists as primary evidence</strong> and is preserved on Google Drive. The recording establishes beyond any reasonable doubt that intimate access was deliberately obtained while Ridley was embedded in the suppression operation.
                 </p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Ridley's documented background in Risk, Security, Resilience and Safety Sciences — combined with his NDIA managerial position — provides direct operational context for the intelligence-gathering and threat-delivery role identified in this analysis as <strong className="text-white">The Infiltrator</strong>.
+                <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                  When the truth of his infiltration role emerged, Ridley issued death threats across <strong className="text-white">three states</strong> and stated directly to Dr. McLean: <em className="text-rose-300">"You will be sacrificed."</em> The escalation from sexual infiltration to cross-state death threats is the documented arc of an intelligence operative whose cover was blown.
                 </p>
+                <div className="bg-amber-950/30 border border-amber-700/40 rounded-lg px-4 py-3 mb-1">
+                  <p className="text-xs font-semibold text-amber-300 mb-1 uppercase tracking-wider">Evidentiary Significance of the Recording</p>
+                  <p className="text-xs text-gray-400 leading-relaxed">
+                    A sex recording obtained during an infiltration operation carries exceptional evidentiary weight. It proves: (1) deliberate physical proximity was established and maintained; (2) Ridley had unguarded access to Dr. McLean during his most vulnerable period as a whistleblower; (3) the relationship was not incidental — it was the mechanism of intelligence collection. Combined with Ridley's SAS background, NDIA position, and subsequent multi-state death threats, the recording constitutes primary evidence of a honeytrap-style infiltration operation conducted against an NDIS whistleblower by a state-connected security professional.
+                  </p>
+                </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="https://drive.google.com/file/d/1oSNRzOnwCQIQM4ZuNcRnQrpybvcx86KD/view?usp=drivesdk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 underline underline-offset-2 transition-colors"
-                  data-testid="link-tony-ridley-evidence-doc"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-amber-300 underline underline-offset-2 transition-colors"
+                  data-testid="link-tony-ridley-sex-recording"
                 >
                   <ExternalLink className="h-4 w-4 flex-shrink-0" />
-                  View Full Evidence Document (Google Drive)
+                  View Sex Recording & Full Evidence (Google Drive)
                 </a>
                 <a
                   href="/evidence"
@@ -379,8 +385,8 @@ export function TheConspiracyAgainstYou() {
                 color: "text-blue-400",
                 badgeBg: "bg-blue-950/40 border-blue-800/40",
                 role: "Intimate Infiltration, Psychological Pressure & Threat Delivery",
-                detail: "Ridley's background as a returned SAS soldier — Special Air Service Regiment, Australia's most elite special forces unit — is operationally significant beyond his civilian credentials. SAS training encompasses psychological operations, counter-intelligence, surveillance detection, and the precise calibration of threat delivery. A returned SAS soldier who enters a sexual relationship with a target while that target is a documented government whistleblower is not a coincidence — it is a penetration operation. Ridley knew Dr. McLean's whistleblower status. He maintained intimate access. When the operation's exposure became imminent, he executed the threat-delivery phase across three states — culminating in the documented statement: 'You will be sacrificed.' This is not civilian intimidation. This is the language of a trained special forces operative delivering a terminal warning.",
-                conjunction: "Ridley's military operational skillset complemented Iasonidis's intelligence collection by providing the coercive and psychological pressure layer. Where Iasonidis gathered intelligence, Ridley applied it — using intimate access to destabilise, and his special forces background to issue credible physical threats across jurisdictions.",
+                detail: "Ridley's background as a returned SAS soldier — Special Air Service Regiment, Australia's most elite special forces unit — is operationally significant beyond his civilian credentials. SAS training encompasses psychological operations, counter-intelligence, surveillance detection, and the precise calibration of threat delivery. A returned SAS soldier who enters a sexual relationship with a target while that target is a documented government whistleblower is not a coincidence — it is a honeytrap infiltration operation. A sex recording documenting this relationship exists as primary evidence, preserved on Google Drive, and establishes that intimate physical access was deliberately obtained while Ridley was embedded in the suppression network. Ridley knew Dr. McLean's whistleblower status throughout. When the operation's exposure became imminent, he executed the threat-delivery phase across three states — culminating in the documented statement: 'You will be sacrificed.' The arc from sexual infiltration to cross-state death threats is the documented signature of an intelligence operative whose cover was blown. This is not civilian intimidation. This is a trained special forces operative executing the final stage of a compromised penetration operation.",
+                conjunction: "Ridley's sex-recording evidence directly corroborates Iasonidis's intelligence-collection role: both operatives used intimate proximity as their primary access mechanism. Where Iasonidis gathered intelligence through the trust network, Ridley obtained it through a sexual relationship — with a recording that now constitutes primary evidence of the deliberate infiltration. His SAS-trained threat delivery then applied what the combined intelligence had gathered, issuing credible physical threats across three jurisdictions.",
               },
               {
                 actor: "Sukhi Tear",
