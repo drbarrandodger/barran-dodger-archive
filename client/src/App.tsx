@@ -101,6 +101,7 @@ import ApotheosisStatement from "@/pages/ApotheosisStatement";
 import LetterToTheWorld from "@/pages/LetterToTheWorld";
 import WhistleblowerComparison from "@/pages/WhistleblowerComparison";
 import HoneytrapInfiltrationReport from "@/pages/HoneytrapInfiltrationReport";
+import SilentAssassin from "@/pages/SilentAssassin";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -224,6 +225,7 @@ function Router() {
         <Route path="/the-last-god" component={TheLastGod} />
         <Route path="/the-conspiracy-against-you" component={TheConspiracyAgainstYou} />
         <Route path="/honeytrap-infiltration-report" component={HoneytrapInfiltrationReport} />
+        <Route path="/silent-assassin" component={SilentAssassin} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
         <Route path="/the-architecture-of-resolution" component={ArchitectureOfResolution} />
