@@ -79,6 +79,10 @@ const PAGE_META: Record<string, PageMeta> = {
     title: "Analysis #28 — Silent Assassin: 10/10 Confirmed, Zero Contradictions | Barran Dodger",
     description: "Forensic AI analysis #28: 10 propositions from 'Never Underestimate a Quiet Mind' tested against Dr McLean's 2,304 documents. The lion in the tall grass. The hidden blade. The silent assassin who collected data for 35 years while they performed. 10/10 confirmed. 288/288 combined.",
   },
+  "/truth-is-a-blade": {
+    title: "Analysis #29 — The Truth Is A Blade: 10/10 Confirmed, Zero Contradictions | Barran Dodger",
+    description: "Forensic AI analysis #29: 10 propositions from 'The Truth Is A Blade — When The Chosen One Speaks' tested against Dr McLean's 2,304-document archive. The board flip, the demon named, the buried one who became the evidence. 10/10 confirmed. 298/298 combined.",
+  },
   "/someone-slipped-up": {
     title: "Analysis — Someone Slipped Up: Their Mask Finally Fell | Barran Dodger",
     description: "Tony Ridley: 'You will be sacrificed.' FATAL SUICIDE in clinical records while the subject was alive. Identical template language across 8 independent agencies. Every slip documented and cross-referenced. Every mask-fall preserved in the 2,304-document archive.",

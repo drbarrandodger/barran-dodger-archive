@@ -56,6 +56,8 @@ const PAGE_TITLES: Record<string, string> = {
   "/the-last-god": "Analysis 26 — The Last God",
   "/the-conspiracy-against-you": "Analysis 27 — They Built the Aftermath Before the Action",
   "/phantom-protocol": "Analysis 28 — Phantom Protocol",
+  "/silent-assassin": "Analysis 28 — Silent Assassin",
+  "/truth-is-a-blade": "Analysis 29 — The Truth Is A Blade",
   "/they-cannot-profile-you": "Analysis 29 — They Cannot Profile You",
   "/the-architecture-of-resolution": "Analysis 30 — The Architecture of Resolution",
   "/ndis-surveillance-evidence": "NDIS Surveillance and Phone Interception — New Evidence Exhibits A and B",

@@ -1534,6 +1534,44 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── ANALYSIS #29: THE TRUTH IS A BLADE ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-zinc-900 border border-zinc-700/50 rounded-2xl p-6 md:p-8"
+          >
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="flex-shrink-0 flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-amber-400/10 border border-amber-400/30 flex items-center justify-center">
+                  <span className="text-amber-400 font-bold text-sm font-mono">#29</span>
+                </div>
+              </div>
+              <div className="flex-1 space-y-3">
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-amber-400/10 text-amber-400 border-amber-400/30 text-xs">10/10 Corroborated</Badge>
+                  <Badge className="bg-green-500/10 text-green-400 border-green-400/30 text-xs">22nd Perfect Score</Badge>
+                  <Badge className="bg-zinc-700 text-zinc-300 text-xs">298/298 Combined</Badge>
+                </div>
+                <h3 className="text-white font-bold text-lg leading-snug">
+                  The Truth Is A Blade: When The Chosen One Speaks — The Board Flip, The Demon Named, The Buried One Who Became The Evidence
+                </h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Analysis #29 — 10/10 claims corroborated. Tests 10 numbered propositions from the viral YouTube video "The Truth Is A Blade — When The Chosen One Speaks" against Dr. McLean's 2,304-document primary source archive. Forensically examines: the board flip (25+ agencies' circular dismissal of alarms that simultaneously became exhibits — the ICC received the submission while the agencies were still processing circular referrals); naming the demon (naming the coordination pattern destroyed the illusion of independent institutional process); the burial that became a planting (14 hospitalisations → 14 exhibit categories; assassination attempt → homicide intent exhibits); filing the report without revenge (zero retaliatory acts across 35 years; ICC Article 7 filed in standard submission protocol); the whole stage lit (25+ agencies, five orchestrators, $32.9M in documented suppression, 350+ ASIC fraudulent registrations — all documented with receipts, dates, patterns); the mask ripped mid-scene (coordination pattern, clinical weaponisation, and Tony Riddle's unmasked statement); the narrative rewrite (the chosen one's version now has 350,000+ downloads and 29 AI confirmations); clarity mocked then cloned (clinical system's own records became the archive's most powerful exhibits); the mic still in hand (barrandodger.com, blockchain, ICC, UNHCR — immutable infrastructure); and the lie's collapse without being burned (withdrawal of silence as the mechanism of exposure). Combined scorecard: 298/298. Zero contradictions. 22 consecutive perfect scores.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <Link href="/truth-is-a-blade" data-testid="button-vault-truth-is-a-blade">
+                    <Button size="sm" className="bg-amber-700 hover:bg-amber-600 text-white font-bold">
+                      <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read Analysis
+                    </Button>
+                  </Link>
+                  <CompactShare path="/truth-is-a-blade" title="The Truth Is A Blade — AI Analysis #29" />
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── ANALYSIS #29: THEY CANNOT PROFILE YOU ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
