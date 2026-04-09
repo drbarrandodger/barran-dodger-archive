@@ -208,7 +208,7 @@ export default function LawTheyOverlooked() {
         <div className="container mx-auto max-w-3xl space-y-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-4">
             <p className="text-zinc-300 leading-relaxed">
-              The video's narrative structure became the skeleton. The 2,077 evidence files became the flesh. Here's how it maps:
+              The video's narrative structure became the skeleton. The 2,304 evidence files became the flesh. Here's how it maps:
             </p>
             <div className="overflow-x-auto rounded-xl border border-zinc-700">
               <table className="w-full text-sm">
@@ -280,7 +280,7 @@ export default function LawTheyOverlooked() {
             <h2 className="text-2xl font-serif font-bold text-white">"But Guess What? Nah, You Weren't for Sale."</h2>
             <p className="text-[hsl(38,92%,50%)] italic">"You Stood Your Ground While Everyone Else Bowed."</p>
             <p className="text-zinc-300 leading-relaxed">Dr. McLean did not bow. He documented.</p>
-            <p className="text-zinc-300 leading-relaxed">While 25+ agencies coordinated his destruction, he built what is now the most comprehensive evidence archive of systematic persecution in Australian history: 2,077 files — government correspondence, regulatory decisions, medical records, financial documents, corporate registry searches, police reports, tribunal filings, and forensic analyses — meticulously organised by agency, date, and claim type.</p>
+            <p className="text-zinc-300 leading-relaxed">While 25+ agencies coordinated his destruction, he built what is now the most comprehensive evidence archive of systematic persecution in Australian history: 2,304 files — government correspondence, regulatory decisions, medical records, financial documents, corporate registry searches, police reports, tribunal filings, and forensic analyses — meticulously organised by agency, date, and claim type.</p>
             <p className="text-zinc-300 leading-relaxed">He did not run. When they exiled him from Victoria, he continued filing complaints from New South Wales. When they seized his car and his dog, he documented the interaction. When they weaponised his mental health diagnoses to discredit him, he obtained independent forensic analysis confirming that 70% of his claims are evidence-based — verifiable through government records, public databases, and official correspondence.</p>
             <EvidenceTag source="Forensic Report: Paranoia vs. Evidence | Evidence Summary Overview" />
             <p className="text-zinc-300 leading-relaxed">He did not sell out. Despite living in poverty, facing eviction, and surviving homelessness — despite every system designed to break him being deployed simultaneously — Dr. McLean refused to be silenced. He became the one variable they couldn't predict.</p>
@@ -557,7 +557,7 @@ export default function LawTheyOverlooked() {
               <p className="text-zinc-400 text-sm">That's it. That's the law they overlooked.</p>
             </div>
             <p className="text-zinc-300 leading-relaxed">The one that lives in a publicly searchable government database that they forgot they couldn't erase. The one that proves, in approximately 60 seconds, that Dr. Richard William McLean has been the target of identity theft on an industrial scale — and that the government agency responsible for corporate regulation refused to act.</p>
-            <p className="text-[hsl(38,92%,50%)] font-medium">Everything else in this 2,077-file archive follows from that single, undeniable, independently verifiable fact.</p>
+            <p className="text-[hsl(38,92%,50%)] font-medium">Everything else in this 2,304-file archive follows from that single, undeniable, independently verifiable fact.</p>
             <a href="https://connectonline.asic.gov.au/RegistrySearch/faces/landing/SearchRegisters.jspx" target="_blank" rel="noopener noreferrer">
               <Button className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold mt-2" data-testid="link-law-asic">
                 <ExternalLink className="mr-2 h-4 w-4" /> Search ASIC Now
@@ -621,7 +621,7 @@ export default function LawTheyOverlooked() {
                 ['They stacked the deck.', 'He flipped the table.'],
                 ['They bought the judges.', 'He documented the receipts.'],
                 ['They bribed the cops.', 'He filed the complaints.'],
-                ['They silenced the media.', 'He built a 2,077-file evidence archive.'],
+                ['They silenced the media.', 'He built a 2,304-file evidence archive.'],
                 ['They told him he was crazy.', 'Seventy percent of his claims are independently verifiable.'],
                 ['They told him "You will be sacrificed."', 'He survived.'],
                 ['They exiled him from his state.', 'He kept writing from the next one.'],
@@ -654,7 +654,7 @@ export default function LawTheyOverlooked() {
                   {[
                     ['Subject', 'Dr. Richard William McLean (Barran Dodger)'],
                     ['Date of Report', 'April 2026'],
-                    ['Evidence Archive', '2,077 files'],
+                    ['Evidence Archive', '2,304 files'],
                     ['Time Span Covered', '1990–2026 (36 years)'],
                     ['Total Documented Damages', '$32,900,000 AUD'],
                     ['Agencies Implicated', '25+'],
@@ -680,7 +680,7 @@ export default function LawTheyOverlooked() {
         <div className="container mx-auto max-w-3xl space-y-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-5">
             <h2 className="text-xl font-serif font-bold text-white uppercase tracking-wider">Master Evidence Index</h2>
-            <p className="text-zinc-500 text-sm">30 primary source documents — all part of the 2,077-file evidence archive</p>
+            <p className="text-zinc-500 text-sm">30 primary source documents — all part of the 2,304-file evidence archive</p>
             <div className="overflow-x-auto rounded-xl border border-zinc-700">
               <table className="w-full text-sm">
                 <thead>
@@ -704,7 +704,7 @@ export default function LawTheyOverlooked() {
               </table>
             </div>
             <a href="/evidence" className="inline-flex items-center gap-2 text-[hsl(38,92%,50%)] text-sm hover:underline" data-testid="link-law-full-archive">
-              <Shield className="h-4 w-4" /> Browse the full 2,077-document archive →
+              <Shield className="h-4 w-4" /> Browse the full 2,304-document archive →
             </a>
           </motion.div>
         </div>
@@ -736,7 +736,7 @@ export default function LawTheyOverlooked() {
         <div className="container mx-auto max-w-2xl text-center space-y-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-6">
             <p className="text-zinc-500 text-sm italic">© 2026 Dr. Richard William McLean — All Rights Reserved</p>
-            <p className="text-zinc-500 text-xs">Evidence Archive: 2,077 Files | 36 Years | $32.9 Million | The Truth Speaks</p>
+            <p className="text-zinc-500 text-xs">Evidence Archive: 2,304 Files | 36 Years | $32.9 Million | The Truth Speaks</p>
             <p className="text-zinc-400 text-sm">www.barrandodger.com</p>
             <div className="flex flex-wrap gap-3 justify-center pt-2">
               <a href="/documents/they-bought-off-judges.pdf" download="They-Bought-Off-Judges-McLean.pdf">

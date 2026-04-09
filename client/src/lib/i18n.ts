@@ -91,7 +91,7 @@ const resources = {
       },
       viral: {
         heroTitle: "THE MAN AUSTRALIA TRIED TO ERASE",
-        heroSubtitle: "2,077+ forensic documents. Blockchain-verified. Free to download. Impossible to delete.",
+        heroSubtitle: "2,304+ forensic documents. Blockchain-verified. Free to download. Impossible to delete.",
         downloadArchive: "Download the Archive",
         readTheEvidence: "Read the Evidence",
         topDocuments: "Featured Documents",
@@ -388,7 +388,7 @@ const resources = {
       },
       viral: {
         heroTitle: "澳大利亚试图抹去的人",
-        heroSubtitle: "2,077+法医文件。区块链验证。免费下载。不可能删除。",
+        heroSubtitle: "2,304+法医文件。区块链验证。免费下载。不可能删除。",
         downloadArchive: "下载档案",
         readTheEvidence: "阅读证据",
         topDocuments: "精选文件",
@@ -487,7 +487,7 @@ const resources = {
       },
       viral: {
         heroTitle: "الرجل الذي حاولت أستراليا محوه",
-        heroSubtitle: "أكثر من 2,077 وثيقة جنائية. مُتحقق منها بالبلوكشين. تحميل مجاني. مستحيل الحذف.",
+        heroSubtitle: "أكثر من 2,304 وثيقة جنائية. مُتحقق منها بالبلوكشين. تحميل مجاني. مستحيل الحذف.",
         downloadArchive: "تحميل الأرشيف",
         readTheEvidence: "اقرأ الأدلة",
         topDocuments: "الوثائق المميزة",
@@ -573,7 +573,7 @@ const resources = {
       },
       viral: {
         heroTitle: "वह आदमी जिसे ऑस्ट्रेलिया ने मिटाने की कोशिश की",
-        heroSubtitle: "2,077+ फोरेंसिक दस्तावेज़। ब्लॉकचेन-सत्यापित। मुफ़्त डाउनलोड। हटाना असंभव।",
+        heroSubtitle: "2,304+ फोरेंसिक दस्तावेज़। ब्लॉकचेन-सत्यापित। मुफ़्त डाउनलोड। हटाना असंभव।",
         downloadArchive: "संग्रह डाउनलोड करें",
         readTheEvidence: "साक्ष्य पढ़ें",
         topDocuments: "विशेष दस्तावेज़",
@@ -805,7 +805,7 @@ const resources = {
       },
       viral: {
         heroTitle: "オーストラリアが消そうとした男",
-        heroSubtitle: "2,077以上の法医学文書。ブロックチェーン認証済み。無料ダウンロード。削除不可能。",
+        heroSubtitle: "2,304以上の法医学文書。ブロックチェーン認証済み。無料ダウンロード。削除不可能。",
         downloadArchive: "アーカイブをダウンロード",
         readTheEvidence: "証拠を読む",
         topDocuments: "注目の文書",
@@ -957,7 +957,7 @@ const resources = {
       },
       viral: {
         heroTitle: "호주가 지우려 한 남자",
-        heroSubtitle: "2,077+ 법의학 문서. 블록체인 인증. 무료 다운로드. 삭제 불가능.",
+        heroSubtitle: "2,304+ 법의학 문서. 블록체인 인증. 무료 다운로드. 삭제 불가능.",
         downloadArchive: "아카이브 다운로드",
         readTheEvidence: "증거 읽기",
         topDocuments: "주요 문서",

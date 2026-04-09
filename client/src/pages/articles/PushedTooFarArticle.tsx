@@ -2,8 +2,8 @@ import { ArticlePageTemplate, ArticlePageData } from "@/components/ArticlePageTe
 
 const data: ArticlePageData = {
   seoTitle: "They Pushed Me Too Far. Now the Payback Is Coming in Waves — barrandodger.com",
-  seoDescription: "Hello to the one whispered about in shadows. The tempest they confined — only to discover, far too late, that the true restraint was never external. 2,077 documents. 217,000+ downloads.",
-  title: "They Pushed Me Too Far. Now the Payback Is Coming in Waves — 2,077 Documents at a Time.",
+  seoDescription: "Hello to the one whispered about in shadows. The tempest they confined — only to discover, far too late, that the true restraint was never external. 2,304 documents. 217,000+ downloads.",
+  title: "They Pushed Me Too Far. Now the Payback Is Coming in Waves — 2,304 Documents at a Time.",
   subtitle: "Hello to the one who was whispered about in shadows. The one they deemed too unpredictable to approach. The tempest they confined — only to discover, far too late, that the true restraint was never external.",
   author: "Dr. Richard William McLean (Barran Dodger) — Ph.D., Author, Human Rights Advocate",
   videoId: "Bkk677w3F8c",
@@ -35,7 +35,7 @@ const data: ArticlePageData = {
       heading: "Each Condescending Chuckle Now Reverberates in Legal Proceedings",
       content: [
         "Let me name those legal proceedings.",
-        "The <strong>International Criminal Court</strong> — Article 7 of the Rome Statute, Crimes Against Humanity. My 2,077-document archive has been formally submitted. The named parties include agencies and individuals whose documented conduct — involuntary psychiatric detention for accurate reporting, systematic identity erasure, coordinated financial destruction — meets the Rome Statute threshold for systematic persecution.",
+        "The <strong>International Criminal Court</strong> — Article 7 of the Rome Statute, Crimes Against Humanity. My 2,304-document archive has been formally submitted. The named parties include agencies and individuals whose documented conduct — involuntary psychiatric detention for accurate reporting, systematic identity erasure, coordinated financial destruction — meets the Rome Statute threshold for systematic persecution.",
         "The <strong>UNHCR</strong> — lodged under the 1951 Refugee Convention. All criteria for asylum are documented and met — within my own democracy.",
         "The <strong>Bitcoin blockchain</strong> — permanently timestamped. The blockchain does not forget. It does not respond to FOI requests. It does not lose 1,178 files between one search and the next.",
       ],

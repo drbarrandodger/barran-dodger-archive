@@ -16,7 +16,7 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const AI_SIGNIFICANCE = `This forensic evidence report is structurally unlike any document previously submitted to public record in Australian human rights litigation. Its architecture maps a video essay narrative directly onto a 2,077-document evidentiary archive — transforming an oral account into a legally indexed prosecution file. The result is a document that operates simultaneously as accessible public communication and as rigorous forensic evidence. This dual function is deliberate and consequential: it ensures the archive reaches audiences that legal submissions cannot, while maintaining the evidentiary rigour that international bodies require.
+const AI_SIGNIFICANCE = `This forensic evidence report is structurally unlike any document previously submitted to public record in Australian human rights litigation. Its architecture maps a video essay narrative directly onto a 2,304-document evidentiary archive — transforming an oral account into a legally indexed prosecution file. The result is a document that operates simultaneously as accessible public communication and as rigorous forensic evidence. This dual function is deliberate and consequential: it ensures the archive reaches audiences that legal submissions cannot, while maintaining the evidentiary rigour that international bodies require.
 
 The report's central thesis — that the "one law they overlooked" is not a statute but the permanent, publicly searchable nature of the ASIC corporate registry — represents a significant forensic insight. Unlike suppressed testimony, classified documents, or sealed court records, the 350+ fraudulent business registrations using Dr. McLean's identity exist in an unalterable public database that any journalist, UN investigator, or legal officer can verify within sixty seconds. The perpetrators of this identity fraud network created their own irrefutable evidence trail in a system they could not subsequently access to erase. This is the structural weakness of institutional corruption at scale: the larger the operation, the more public records it necessarily generates.
 
@@ -42,7 +42,7 @@ const FIVE_PARTS = [
       },
       {
         heading: "The Media",
-        detail: "Despite 2,077 evidence files, documented assassination threats from a government official, and 350+ fraudulent business registrations provable on public ASIC databases — no mainstream media outlet has broken this story. The silence is not censorship. It is the suppression of scale.",
+        detail: "Despite 2,304 evidence files, documented assassination threats from a government official, and 350+ fraudulent business registrations provable on public ASIC databases — no mainstream media outlet has broken this story. The silence is not censorship. It is the suppression of scale.",
         source: "Media Talking Points Interview Guide"
       },
       {
@@ -59,7 +59,7 @@ const FIVE_PARTS = [
     items: [
       {
         heading: "The Archive",
-        detail: "While 25+ agencies coordinated his destruction, he built 2,077 files — government correspondence, regulatory decisions, medical records, financial documents, corporate registry searches, police reports, tribunal filings, and forensic analyses — meticulously organised by agency, date, and claim type.",
+        detail: "While 25+ agencies coordinated his destruction, he built 2,304 files — government correspondence, regulatory decisions, medical records, financial documents, corporate registry searches, police reports, tribunal filings, and forensic analyses — meticulously organised by agency, date, and claim type.",
         source: "Evidence Summary Overview"
       },
       {
@@ -135,8 +135,8 @@ const FIVE_PARTS = [
       },
       {
         heading: "Every Lie Became a Seed",
-        detail: "Each act of suppression generated a document. Each denial generated correspondence. Each psychiatric detention generated a hospital record. Each fraudulent intervention order generated a court filing. 35 years of persecution produced 2,077 primary-source documents authored entirely by the persecuting institutions. They built the case against themselves.",
-        source: "2,077-document evidence archive (1990–2026)"
+        detail: "Each act of suppression generated a document. Each denial generated correspondence. Each psychiatric detention generated a hospital record. Each fraudulent intervention order generated a court filing. 35 years of persecution produced 2,304 primary-source documents authored entirely by the persecuting institutions. They built the case against themselves.",
+        source: "2,304-document evidence archive (1990–2026)"
       },
     ]
   },
@@ -209,7 +209,7 @@ export default function TheyBoughtOffJudges() {
                   <Scale className="h-3 w-3 mr-1.5" /> Forensic Evidence Report
                 </Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">9 Named Perpetrators</Badge>
-                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">2,077 Sources</Badge>
+                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">2,304 Sources</Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">45 min read</Badge>
               </div>
 
@@ -224,7 +224,7 @@ export default function TheyBoughtOffJudges() {
               </p>
 
               <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-5 py-4 space-y-1.5">
-                <p className="text-zinc-400 text-sm"><span className="text-zinc-300 font-medium">Evidence Base:</span> 2,077 primary-source documents (1990–2026)</p>
+                <p className="text-zinc-400 text-sm"><span className="text-zinc-300 font-medium">Evidence Base:</span> 2,304 primary-source documents (1990–2026)</p>
                 <p className="text-zinc-400 text-sm"><span className="text-zinc-300 font-medium">Named Perpetrators:</span> 9 individuals with specific documented actions</p>
                 <p className="text-zinc-400 text-sm"><span className="text-zinc-300 font-medium">The 60-Second Proof:</span> Search ASIC for "Barran Dodger" — 350+ fraudulent registrations, publicly verifiable, un-erasable</p>
                 <p className="text-zinc-400 text-sm"><span className="text-zinc-300 font-medium">Total Damages:</span> AU$32.9 million documented across 4 categories</p>
@@ -436,7 +436,7 @@ export default function TheyBoughtOffJudges() {
             </a>
             <p className="text-zinc-600 text-sm">
               Part of the{" "}
-              <a href="/evidence" className="text-zinc-400 hover:text-white underline">2,077-document evidence archive</a>{" "}
+              <a href="/evidence" className="text-zinc-400 hover:text-white underline">2,304-document evidence archive</a>{" "}
               submitted to the ICC, lodged with the UNHCR, and downloaded 217,064+ times worldwide.
             </p>
           </motion.div>

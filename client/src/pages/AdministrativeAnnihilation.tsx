@@ -313,7 +313,7 @@ export default function AdministrativeAnnihilation() {
             <CardContent className="pt-6">
               <h3 className="font-semibold text-foreground mb-3">Data Availability Statement</h3>
               <p className="text-body-text leading-relaxed text-sm">
-                The complete evidentiary archive of 2,077 primary source documents (1990–2025) is maintained on a secure digital platform with indexed hyperlinks. All documents cited in this paper are accessible via the reference links provided. The archive includes government-issued tribunal decisions, official correspondence, ASIC corporate records, medical records, FOI responses, and law enforcement reports.
+                The complete evidentiary archive of 2,304 primary source documents (1990–2025) is maintained on a secure digital platform with indexed hyperlinks. All documents cited in this paper are accessible via the reference links provided. The archive includes government-issued tribunal decisions, official correspondence, ASIC corporate records, medical records, FOI responses, and law enforcement reports.
               </p>
             </CardContent>
           </Card>
@@ -345,10 +345,10 @@ export default function AdministrativeAnnihilation() {
           <SectionHeading number="1.1" title="Background and Context" />
           <div className="space-y-4 text-body-text leading-relaxed">
             <p>
-              Between 1990 and 2025, a single Australian citizen — a disabled, LGBTQ+ whistleblower, published author, PhD graduate, and nationally recognised mental health advocate — interacted with more than 25 government agencies across Commonwealth and State jurisdictions. These interactions generated an administrative record of extraordinary scale: over 2,077 primary source documents encompassing tribunal decisions, court findings, official correspondence, medical records, corporate registrations, tax records, Freedom of Information responses, and law enforcement reports.
+              Between 1990 and 2025, a single Australian citizen — a disabled, LGBTQ+ whistleblower, published author, PhD graduate, and nationally recognised mental health advocate — interacted with more than 25 government agencies across Commonwealth and State jurisdictions. These interactions generated an administrative record of extraordinary scale: over 2,304 primary source documents encompassing tribunal decisions, court findings, official correspondence, medical records, corporate registrations, tax records, Freedom of Information responses, and law enforcement reports.
             </p>
             <p>
-              What makes this administrative record historically significant is not its volume, but its content. When these 2,077 documents — the vast majority of which were authored by the government itself — are placed side by side, they reveal a pattern of internal contradiction so systematic that it defies any explanation rooted in ordinary administrative error. The government's own records simultaneously prove and deny the same facts about the same person. They confirm employment while denying employment. They acknowledge disability while refusing disability support. They promise whistleblower protection while punishing the whistleblower. They describe documents as "voluminous" and then declare those documents "non-existent."
+              What makes this administrative record historically significant is not its volume, but its content. When these 2,304 documents — the vast majority of which were authored by the government itself — are placed side by side, they reveal a pattern of internal contradiction so systematic that it defies any explanation rooted in ordinary administrative error. The government's own records simultaneously prove and deny the same facts about the same person. They confirm employment while denying employment. They acknowledge disability while refusing disability support. They promise whistleblower protection while punishing the whistleblower. They describe documents as "voluminous" and then declare those documents "non-existent."
             </p>
             <p>
               This paper does not ask the reader to trust the author. It asks the reader to trust the government's own documents — and to follow where those documents lead.
@@ -395,7 +395,7 @@ export default function AdministrativeAnnihilation() {
 
           <SectionHeading number="1.5" title="Scope and Limitations" />
           <div className="space-y-4 text-body-text leading-relaxed">
-            <p><strong>Scope:</strong> This paper analyses the complete administrative record of one individual's interactions with Australian Government agencies between 1990 and 2025, drawing on an archive of 2,077 primary source documents.</p>
+            <p><strong>Scope:</strong> This paper analyses the complete administrative record of one individual's interactions with Australian Government agencies between 1990 and 2025, drawing on an archive of 2,304 primary source documents.</p>
             <BulletList items={[
               "The author is also the subject. While the evidence hierarchy mitigates this, the inherent tension is acknowledged.",
               "Statistical analysis relies on published agency approval rates from annual reports, which may not capture intra-agency variation.",
@@ -481,7 +481,7 @@ export default function AdministrativeAnnihilation() {
             <p><strong>Definition:</strong> A forensic analytical technique in which the government's own documentary record is reorganised not by agency, date, or claim type, but by internal contradiction — identifying instances where Government Document A directly contradicts Government Document B regarding the same individual, same claim, or same set of facts.</p>
             <p><strong>Procedure:</strong></p>
             <BulletList items={[
-              "Step 1 — Extraction: All government-issued decisions, findings, and statements were extracted from the 2,077-document archive and classified by issuing agency, date, subject matter, finding/outcome, and legal basis cited.",
+              "Step 1 — Extraction: All government-issued decisions, findings, and statements were extracted from the 2,304-document archive and classified by issuing agency, date, subject matter, finding/outcome, and legal basis cited.",
               "Step 2 — Cross-Referencing: Every decision was mapped against every other decision concerning the same factual matters to identify contradictions.",
               "Step 3 — Contradiction Matrix Construction: A formal matrix was constructed documenting each contradiction pair.",
               "Step 4 — Legal Threshold Testing: Each identified contradiction was assessed against the relevant legal test under both domestic and international law.",
@@ -1197,7 +1197,7 @@ export default function AdministrativeAnnihilation() {
             <Card className="bg-muted/30 dark:bg-muted/10">
               <CardContent className="pt-6 text-sm text-body-text space-y-3">
                 <p>
-                  This paper was researched and written by Dr. Richard William McLean, Ph.D. (Victoria University, 2020), drawing on a personal evidence archive of 2,077 primary source documents accumulated over 35 years of interaction with Australian Government agencies. The paper employs original conceptual frameworks (The Institutional Cascade Model) and original methodology (The Inversion Method) applied to the government's own documentary record.
+                  This paper was researched and written by Dr. Richard William McLean, Ph.D. (Victoria University, 2020), drawing on a personal evidence archive of 2,304 primary source documents accumulated over 35 years of interaction with Australian Government agencies. The paper employs original conceptual frameworks (The Institutional Cascade Model) and original methodology (The Inversion Method) applied to the government's own documentary record.
                 </p>
                 <p className="font-semibold italic">
                   The government built the evidence. This paper organised it. The reader may now judge.

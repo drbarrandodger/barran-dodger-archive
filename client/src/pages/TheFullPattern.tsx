@@ -12,7 +12,7 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const AI_SIGNIFICANCE = `This document represents the most comprehensive pattern-of-conduct analysis within the 2,077-file evidence archive. Unlike individual case documents that catalogue specific incidents, The Full Pattern performs a structural mapping — identifying the mechanics by which 20+ agencies and 46+ named officials participated in what the document characterises as a coordinated circular referral system. The significance to legal scholars and human rights investigators lies not in any single incident documented herein, but in the architecture revealed when all incidents are mapped simultaneously.
+const AI_SIGNIFICANCE = `This document represents the most comprehensive pattern-of-conduct analysis within the 2,304-file evidence archive. Unlike individual case documents that catalogue specific incidents, The Full Pattern performs a structural mapping — identifying the mechanics by which 20+ agencies and 46+ named officials participated in what the document characterises as a coordinated circular referral system. The significance to legal scholars and human rights investigators lies not in any single incident documented herein, but in the architecture revealed when all incidents are mapped simultaneously.
 
 The Impartial AI draws particular attention to the document's central analytical contribution: the distinction between "mistakes" and "rehearsed behaviours with plausible deniability." This is forensically critical. Individual incidents of institutional failure are legally defensible as administrative error. When the same failure pattern — referral to an agency with no jurisdiction, followed by that agency referring back to the original body, followed by a file closure citing "no jurisdiction" — occurs across 20+ distinct agencies over 35 years, the statistical probability of coincidence approaches zero. This document is the first in the archive to perform this cumulative probability analysis explicitly.
 
@@ -50,7 +50,7 @@ const SECTIONS = [
       "\"What they call mistakes are rehearsed behaviours with plausible deniability\"",
       "The pattern is too consistent to be coincidental — it is operational",
       "No single smoking-gun order — distributed accountability by design",
-      "2,077 evidence files mapped side-by-side to expose the full structure",
+      "2,304 evidence files mapped side-by-side to expose the full structure",
     ]
   },
   {
@@ -66,7 +66,7 @@ const SECTIONS = [
 ];
 
 const STATS = [
-  { label: "Evidence Files Mapped", value: "2,077+" },
+  { label: "Evidence Files Mapped", value: "2,304+" },
   { label: "Agencies Implicated", value: "20+" },
   { label: "Named Officials", value: "46+" },
   { label: "Years of Pattern", value: "35" },
@@ -77,7 +77,7 @@ export default function TheFullPattern() {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="The Full Pattern — Forensic Evidence Document | Dr. Richard McLean Archive"
-        description="2,077 evidence files mapped side by side. The structural mechanics of how 20+ agencies and 46+ officials coordinated a 35-year circular referral system."
+        description="2,304 evidence files mapped side by side. The structural mechanics of how 20+ agencies and 46+ officials coordinated a 35-year circular referral system."
         keywords="full pattern forensic evidence, Dr Richard McLean, circular referral system, Australian institutional corruption, named officials, pattern of conduct"
       />
       <ReadingProgress />
@@ -94,7 +94,7 @@ export default function TheFullPattern() {
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
             <div className="flex flex-wrap gap-2 mb-4">
               <Badge className="bg-slate-700/90 text-white border-0">Pattern Analysis</Badge>
-              <Badge variant="outline" className="border-amber-500/50 text-amber-400">2,077 Files Mapped</Badge>
+              <Badge variant="outline" className="border-amber-500/50 text-amber-400">2,304 Files Mapped</Badge>
               <Badge variant="outline" className="border-red-500/50 text-red-400">46+ Officials Named</Badge>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -199,7 +199,7 @@ export default function TheFullPattern() {
           <Network className="h-10 w-10 text-amber-400 mx-auto mb-4" />
           <h2 className="text-2xl font-bold mb-4">The Pattern Is Now Permanent</h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            2,077 files mapped. 46 officials named. 35 years documented. The circular referral architecture is now globally accessible and cannot be erased.
+            2,304 files mapped. 46 officials named. 35 years documented. The circular referral architecture is now globally accessible and cannot be erased.
           </p>
           <a
             href="/documents/the-full-pattern-forensic-evidence.pdf"

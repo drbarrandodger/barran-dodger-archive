@@ -11,7 +11,7 @@ interface EvidenceCounterProps {
 
 export function EvidenceCounter({ variant = "full", showLink = true }: EvidenceCounterProps) {
   const [count, setCount] = useState(0);
-  const targetCount = 240;
+  const targetCount = 2304;
 
   useEffect(() => {
     const duration = 2000;

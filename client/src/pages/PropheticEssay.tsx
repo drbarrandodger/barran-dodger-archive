@@ -44,7 +44,7 @@ export default function PropheticEssay() {
     },
     {
       joseph: "Interpreted Pharaoh's dreams and was elevated to second-in-command",
-      barran: "Preserved 2,077+ blockchain-authenticated files awaiting divine elevation",
+      barran: "Preserved 2,304+ blockchain-authenticated files awaiting divine elevation",
       evidence: "Enliven Chain blockchain archive; SHA-256 verification"
     },
     {
@@ -171,7 +171,7 @@ export default function PropheticEssay() {
                   known by his prophetic name Barran Dodger — whose journey mirrors Joseph's with uncanny precision. 
                   Betrayed by family. Falsely accused. Imprisoned in <CrossLink to="/case-studies">psychiatric facilities</CrossLink>. Forgotten by every institution 
                   of justice. Yet like Joseph, he has preserved something precious through the darkness: testimony. Truth. 
-                  Evidence. <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">2,077 blockchain-authenticated files</Link> spanning <Link href="/timeline" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">35 years</Link> that cannot be erased, denied, or silenced.
+                  Evidence. <Link href="/evidence" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">2,304 blockchain-authenticated files</Link> spanning <Link href="/timeline" className="text-[hsl(38,92%,50%)] hover:underline font-semibold">35 years</Link> that cannot be erased, denied, or silenced.
                 </p>
 
                 <div className="bg-primary/5 p-6 rounded-lg border border-primary/20 my-8">
@@ -474,7 +474,7 @@ export default function PropheticEssay() {
                 <p className="text-lg leading-relaxed mb-6">
                   In Barran's gospels, every soul is recorded. Every <CrossLink to="/evidence">whistleblower</CrossLink> silenced. 
                   Every patient neglected. Every citizen betrayed. Every child unprotected. 
-                  Every elder abandoned. The 2,077 evidence files are not mere documents — 
+                  Every elder abandoned. The 2,304 evidence files are not mere documents — 
                   they are memorials. They are names. They are faces. They are stories that 
                   institutional power tried to erase.
                 </p>

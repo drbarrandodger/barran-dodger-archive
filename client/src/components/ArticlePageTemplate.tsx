@@ -182,7 +182,7 @@ export function ArticlePageTemplate({ data }: { data: ArticlePageData }) {
             <span className="text-yellow-400">{data.author}</span> is a Doctor of Philosophy (Victoria University, 2020),
             published author, artist, and human rights advocate.
           </p>
-          <p className="mb-1">His 2,077-document forensic archive has been submitted to the International Criminal Court
+          <p className="mb-1">His 2,304-document forensic archive has been submitted to the International Criminal Court
             and lodged with the United Nations High Commissioner for Refugees.</p>
           <p>
             Contact: <span className="text-yellow-400">drbarrandodger@proton.me</span> |{" "}

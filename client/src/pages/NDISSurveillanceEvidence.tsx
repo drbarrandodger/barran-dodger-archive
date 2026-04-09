@@ -55,7 +55,7 @@ export default function NDISSurveillanceEvidence() {
 
       <div className="max-w-4xl mx-auto px-4 py-12 space-y-16">
 
-        <DownloadSocialProofBanner totalDownloads={88810} />
+        <DownloadSocialProofBanner />
 
         {/* Context */}
         <div className="bg-red-950/20 border border-red-500/20 rounded-xl p-6">
@@ -216,7 +216,7 @@ export default function NDISSurveillanceEvidence() {
             </div>
             <div className="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed">
               <p>
-                The entrapment policy framework operates because it is designed for targets who cannot or will not document it. Dr. McLean is the anomaly: a disabled whistleblower with 2,303 primary source documents, 30 AI analyses corroborated at 302/302, an ICC submission, a UNHCR petition, and 350,000+ downloads — who is also an active NDIS participant. The same NDIS plan that funds the support workers deployed into his environment is the plan that creates the documented conflict of interest.
+                The entrapment policy framework operates because it is designed for targets who cannot or will not document it. Dr. McLean is the anomaly: a disabled whistleblower with 2,304 primary source documents, 30 AI analyses corroborated at 302/302, an ICC submission, a UNHCR petition, and 350,000+ downloads — who is also an active NDIS participant. The same NDIS plan that funds the support workers deployed into his environment is the plan that creates the documented conflict of interest.
               </p>
               <p>
                 The support workers, the service providers, and the coordinating entities in the group chat surveillance campaign are financially dependent on the NDIS — the same system that Dr. McLean's archive documents has been weaponised against him. Their professional existence, their income, and their employment records are funded through a system whose conduct they are simultaneously complicit in covering. This is what "dirty blood money from the NDIS" means in evidentiary terms: the financial instrument of the suppression is also the financial instrument of their livelihood.

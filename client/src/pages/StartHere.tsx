@@ -551,7 +551,7 @@ export default function StartHere() {
               <InlineShareStrip 
                 id="start-here-share" 
                 context="default" 
-                message="You are now a witness. 35 years of persecution. 2,077+ blockchain-verified documents. 35+ government agencies exposed. Share this and let the world decide." 
+                message="You are now a witness. 35 years of persecution. 2,304+ blockchain-verified documents. 35+ government agencies exposed. Share this and let the world decide." 
               />
             </motion.div>
 

@@ -334,7 +334,7 @@ export default function VisitorStats() {
                   </p>
 
                   <p>
-                    The archive has been formally submitted to the International Criminal Court under Article 7 of the Rome Statute, to the UNHCR, and has been timestamped to the Bitcoin blockchain across 2,077 documents. The download record detailed here is therefore not simply a measure of web traffic — it is a documented, timestamped record of the number of times evidence in an active international human rights matter has been independently retrieved and reviewed by members of the public, researchers, journalists, and legal professionals worldwide.
+                    The archive has been formally submitted to the International Criminal Court under Article 7 of the Rome Statute, to the UNHCR, and has been timestamped to the Bitcoin blockchain across 2,304 documents. The download record detailed here is therefore not simply a measure of web traffic — it is a documented, timestamped record of the number of times evidence in an active international human rights matter has been independently retrieved and reviewed by members of the public, researchers, journalists, and legal professionals worldwide.
                   </p>
 
                   <p>

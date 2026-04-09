@@ -2,7 +2,7 @@ import { ArticlePageTemplate, ArticlePageData } from "@/components/ArticlePageTe
 
 const data: ArticlePageData = {
   seoTitle: "They Copied My Blueprint. Registered 350 Businesses in My Name. They Missed One Thing — barrandodger.com",
-  seoDescription: "They took the visible architecture — my identity, my ABN, my career, my intellectual property. They couldn't touch what was forged inside it. A prophetic narrative in 2,077 documents.",
+  seoDescription: "They took the visible architecture — my identity, my ABN, my career, my intellectual property. They couldn't touch what was forged inside it. A prophetic narrative in 2,304 documents.",
   title: "They Copied My Whole Blueprint. Registered 350 Businesses in My Name. Stole My Identity, My ABN, My Career. They Missed One Thing.",
   subtitle: "They took the visible architecture. They couldn't touch what was forged inside it. And without that, everything they built from my stolen materials is — in the precise language of what follows — a beautiful corpse.",
   author: "Dr. Richard William McLean (Barran Dodger) — Ph.D., Author, Human Rights Advocate",
@@ -74,7 +74,7 @@ const data: ArticlePageData = {
         "Every psychiatric report that declared me delusional while citing the exact things the documents prove as accurate was a signpost.",
         "Every referral loop. Every lost FOI file. Every contradictory employment denial. Every Russell Ball letter. Every Monash Health injection. Every AHRC silence.",
         "Each hollow institutional version was pointing, involuntarily, toward the real thing.",
-        "And the real thing is 2,077 documents, 217,000 downloads, zero legal challenges, zero defamation suits, zero specific documents disputed, submitted to the ICC, lodged with the UNHCR, timestamped on the Bitcoin blockchain.",
+        "And the real thing is 2,304 documents, 217,000 downloads, zero legal challenges, zero defamation suits, zero specific documents disputed, submitted to the ICC, lodged with the UNHCR, timestamped on the Bitcoin blockchain.",
         "<strong>217,000 downloads. Zero legal challenges. Zero corrections issued. Zero specific documents disputed.</strong>",
         "Under <em>Jones v Dunkel</em>, the silence of every named party is evidence. The silence is the confession.",
       ],

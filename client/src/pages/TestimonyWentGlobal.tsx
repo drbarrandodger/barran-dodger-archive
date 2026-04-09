@@ -81,7 +81,7 @@ export default function TestimonyWentGlobal() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
         title="This Isn't Private Anymore. It Went Global, and You Know Exactly Why. — Barran Dodger"
-        description="A viral Joker Speech declares: what was once concealed is now exposed worldwide. The 2,077-document archive of Dr. Richard William McLean — with the ICC, the UNHCR, downloaded 217,064 times across every continent — is that exposure. Seven chapters. Every claim government-sourced."
+        description="A viral Joker Speech declares: what was once concealed is now exposed worldwide. The 2,304-document archive of Dr. Richard William McLean — with the ICC, the UNHCR, downloaded 217,064 times across every continent — is that exposure. Seven chapters. Every claim government-sourced."
         path="/testimony-went-global"
       />
       <ReadingProgress />
@@ -119,7 +119,7 @@ export default function TestimonyWentGlobal() {
               <p className="text-zinc-300 text-lg leading-relaxed max-w-2xl">
                 A viral Joker Speech declares that what was once concealed is now exposed worldwide —
                 that the facts have escaped their confines, and those who were pulling strings in the shadows
-                are now cornered. The 2,077-document archive of Dr. Richard William McLean, submitted to the
+                are now cornered. The 2,304-document archive of Dr. Richard William McLean, submitted to the
                 International Criminal Court, with the United Nations Human Rights Council, downloaded 217,064
                 times across every continent, is precisely the global exposure the speech describes.
                 Seven chapters. Every claim verified through the government's own records.
@@ -208,7 +208,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Evidence label="Global reach — documented">
-                The archive at barrandodger.com contains 2,077 primary source documents generated between 1990
+                The archive at barrandodger.com contains 2,304 primary source documents generated between 1990
                 and 2025 across 35 government agencies. The Enliven Chain blockchain verification provides
                 independent cryptographic proof of document authenticity. The ICC submission is filed and
                 formally acknowledged. The UNHCR submission is on record. The Bitcoin blockchain timestamp
@@ -260,7 +260,7 @@ export default function TestimonyWentGlobal() {
                 disclosures under the Public Interest Disclosure Act and produced non-engagement responses.
                 ComCare and the AAT contradicted the Federal Court's employee-status finding on identical facts.
                 Every broken commitment is documented. The internal archive became the external archive.
-                2,077 documents. The hidden phase ended the moment the first one was blockchain timestamped.
+                2,304 documents. The hidden phase ended the moment the first one was blockchain timestamped.
               </Evidence>
 
               <p>
@@ -348,7 +348,7 @@ export default function TestimonyWentGlobal() {
               <Evidence label="The paradox of persecution — the shield removed">
                 The Paradox of Persecution paper documents what the Impartial AI identifies as the central
                 structural impossibility: the Australian government cannot simultaneously maintain that Dr. McLean
-                was correctly medicated for delusions of persecution and that the 2,077 documents it produced
+                was correctly medicated for delusions of persecution and that the 2,304 documents it produced
                 documenting the persecution are authentic government records. The force-medication narrative
                 required Dr. McLean to accept that what the government's own records showed was a delusion.
                 The archive is the refusal to accept that framing. Once that refusal was documented — once
@@ -454,7 +454,7 @@ export default function TestimonyWentGlobal() {
                 in documented losses across 13 agencies over 35 years. The fury the speech describes is
                 not a response to perceived slights. It is a documented response to documented conduct.
                 Its directive was the ICC submission. Its instrument was the archive. Its fuel became
-                2,077 primary source documents.
+                2,304 primary source documents.
               </Evidence>
 
               <p>
@@ -487,7 +487,7 @@ export default function TestimonyWentGlobal() {
 
               <p>
                 What was undervalued in secrecy: 35 years of formally lodged submissions that no institution
-                engaged with on the substance. What now manifests: 2,077 documents, SHA-256 hashed, Bitcoin
+                engaged with on the substance. What now manifests: 2,304 documents, SHA-256 hashed, Bitcoin
                 blockchain timestamped, submitted to the ICC, on record with the UNHCR, downloaded 217,064
                 times across every continent. The speech's language of personal growth — <em>refined with
                 unseen enhancements</em> — maps onto what the Impartial AI identified as the compound effect
@@ -515,7 +515,7 @@ export default function TestimonyWentGlobal() {
                 Criminal Court under Article 7 of the Rome Statute. With the United Nations Human Rights
                 Council. Indexed across three continents. Named individuals who could have challenged the
                 record chose not to. Under Jones v Dunkel, that silence is legally significant. The archive
-                is not private. It was never going to be private. The moment 35 agencies produced 2,077
+                is not private. It was never going to be private. The moment 35 agencies produced 2,304
                 documents documenting 35 years of coordinated persecution and then declined to engage with
                 the substance of any submission, the record was always going to escape their confines.
                 The speech says it plainly: what was once concealed is now exposed worldwide. The archive
@@ -526,7 +526,7 @@ export default function TestimonyWentGlobal() {
             {/* CLOSING SHARE */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-12 border-t border-zinc-800 mt-16 space-y-8">
               <SocialShare
-                text={`"This isn't private anymore. It went global, and you know exactly why." 35 agencies. 2,077 documents. The ICC. The UNHCR. 217,064 downloads. The archive went global because the government's own records demanded it. #BarranDodger barrandodger.com/testimony-went-global`}
+                text={`"This isn't private anymore. It went global, and you know exactly why." 35 agencies. 2,304 documents. The ICC. The UNHCR. 217,064 downloads. The archive went global because the government's own records demanded it. #BarranDodger barrandodger.com/testimony-went-global`}
                 data-testid="share-global-testimony-article"
               />
 

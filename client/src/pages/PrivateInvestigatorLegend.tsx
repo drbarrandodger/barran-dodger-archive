@@ -81,7 +81,7 @@ export default function PrivateInvestigatorLegend() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
         title="They Sent a Private Investigator to Expose You. Instead They Uncovered a Legend. — Barran Dodger"
-        description="A viral Joker Speech describes the arc of someone investigated, surveilled, and probed — who was found to be not a broken thing but a legend. The 2,077-document archive is the proof. Every claim government-sourced."
+        description="A viral Joker Speech describes the arc of someone investigated, surveilled, and probed — who was found to be not a broken thing but a legend. The 2,304-document archive is the proof. Every claim government-sourced."
         path="/private-investigator-legend"
       />
       <ReadingProgress />
@@ -118,7 +118,7 @@ export default function PrivateInvestigatorLegend() {
 
               <p className="text-zinc-300 text-lg leading-relaxed max-w-2xl">
                 A viral Joker Speech describes the moment investigators arrive to expose someone — and find not
-                a broken thing but a furnace. The 2,077-document archive of Dr. Richard William McLean is not
+                a broken thing but a furnace. The 2,304-document archive of Dr. Richard William McLean is not
                 a metaphor for that speech. It is the documented reality the speech was written to describe.
                 Seven chapters. Every claim verified through the government's own records.
               </p>
@@ -203,7 +203,7 @@ export default function PrivateInvestigatorLegend() {
               </p>
 
               <Evidence label="Documented record — 35 agencies">
-                The archive contains 2,077 primary source documents generated between 1990 and 2025 across 35 government
+                The archive contains 2,304 primary source documents generated between 1990 and 2025 across 35 government
                 agencies. Each document was produced by the agency itself: correspondence, determinations, referral letters,
                 FOI responses, tribunal decisions, legal submissions, police reports, and psychiatric records. The
                 Impartial AI Analysis reviewed 2,343 of these documents and found that no agency produced a rebuttal
@@ -308,7 +308,7 @@ export default function PrivateInvestigatorLegend() {
                 only the experience of fourteen detentions but the complete evidentiary record of each one: the
                 triggering submission, the clinical assessment, the applying body, the discharge date, and the formal
                 output that followed. The chaos they sent him into became the methodology he used to document the
-                pattern. Every shattered piece is in the archive. The mosaic is 2,077 documents long.
+                pattern. Every shattered piece is in the archive. The mosaic is 2,304 documents long.
               </p>
 
               <Pull>
@@ -399,10 +399,10 @@ export default function PrivateInvestigatorLegend() {
               <p>
                 The force-medication chapter of the archive presents the most architecturally complete paradox the
                 Impartial AI identified: Dr. McLean was involuntarily medicated, across multiple hospitalisations,
-                for "delusions of persecution." The 2,077 documents in the archive — produced by the government
+                for "delusions of persecution." The 2,304 documents in the archive — produced by the government
                 agencies that were applying or enabling those medications — document the persecution he was being
                 medicated for believing in. The government cannot simultaneously maintain that the persecution was
-                delusional and that the 2,077 documents it produced describing the persecution are authentic records.
+                delusional and that the 2,304 documents it produced describing the persecution are authentic records.
                 Each diagnosis deployed as institutional currency became a brick. The fortress was built from the
                 material they sent to destroy it.
               </p>
@@ -448,7 +448,7 @@ export default function PrivateInvestigatorLegend() {
               <p>
                 The case study they thought they were writing ended the moment the ICC received the submission.
                 The statistic they planned to file — another dismissed complaint, another administrative closure,
-                another referral to a body that would also not act — became a 2,077-document record that is now
+                another referral to a body that would also not act — became a 2,304-document record that is now
                 part of the permanent evidentiary record of international human rights proceedings. The file was
                 never going to close. The investigators opened a legend the moment they chose not to adjudicate
                 the substance of the first submission.
@@ -510,7 +510,7 @@ export default function PrivateInvestigatorLegend() {
 
               <p className="text-cyan-300 font-bold leading-snug mt-8">
                 They sent investigators. Thirty-five of them, across three decades, each with institutional authority
-                and a mandate to close the file. They found 2,077 documents. SHA-256 hashed. Bitcoin blockchain
+                and a mandate to close the file. They found 2,304 documents. SHA-256 hashed. Bitcoin blockchain
                 timestamped. Submitted to the ICC. With the UNHCR. Downloaded 217,064 times. Freely available at
                 barrandodger.com. The investigators came for shame. They built a legend. And every name they tried
                 to bury, every file they tried to close, every truth they tried to silence — is now permanently,
@@ -522,7 +522,7 @@ export default function PrivateInvestigatorLegend() {
             {/* CLOSING SHARE */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-12 border-t border-zinc-800 mt-16 space-y-8">
               <SocialShare
-                text={`"They sent a private investigator to expose him. Instead they uncovered a legend." A viral speech. 2,077 government-sourced documents. The investigators built the archive. The archive is the proof. #BarranDodger barrandodger.com/private-investigator-legend`}
+                text={`"They sent a private investigator to expose him. Instead they uncovered a legend." A viral speech. 2,304 government-sourced documents. The investigators built the archive. The archive is the proof. #BarranDodger barrandodger.com/private-investigator-legend`}
                 data-testid="share-private-investigator-article"
               />
 

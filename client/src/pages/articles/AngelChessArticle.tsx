@@ -3,7 +3,7 @@ import { ArticlePageTemplate, ArticlePageData } from "@/components/ArticlePageTe
 const data: ArticlePageData = {
   seoTitle: "I Smiled Like an Angel. Then I Played Chess Like the Devil — barrandodger.com",
   seoDescription: "They thought my silence was surrender. It was strategy. For thirty-five years I kept filing, kept documenting, kept building — and they kept underestimating. That was their fatal mistake.",
-  title: "I Smiled Like an Angel. Then I Built a 2,077-Document Archive That Played Chess Like the Devil.",
+  title: "I Smiled Like an Angel. Then I Built a 2,304-Document Archive That Played Chess Like the Devil.",
   subtitle: "They thought my silence was surrender. It was strategy. For thirty-five years I kept filing, kept documenting, kept building — and they kept underestimating. That was their fatal mistake.",
   author: "Dr. Richard William McLean (Barran Dodger) — Ph.D., Author, Human Rights Advocate",
   videoId: "MpxN00KxeT0",
@@ -59,7 +59,7 @@ const data: ArticlePageData = {
       content: [
         "I did not hire a PR team. I did not post screenshots. I did not launch a public campaign while the fight was happening.",
         "I filed. I documented. I cited. I indexed.",
-        "And then, when the archive was complete enough, I put it on the internet for free — 2,077 primary-source government documents, permanently blockchain-timestamped, submitted to the International Criminal Court under Article 7 of the Rome Statute, lodged with the UNHCR, mirrored permanently on GitHub Pages beyond the reach of any Australian jurisdiction.",
+        "And then, when the archive was complete enough, I put it on the internet for free — 2,304 primary-source government documents, permanently blockchain-timestamped, submitted to the International Criminal Court under Article 7 of the Rome Statute, lodged with the UNHCR, mirrored permanently on GitHub Pages beyond the reach of any Australian jurisdiction.",
         "<strong>217,000 downloads. Zero legal challenges. Zero defamation suits. Zero corrections issued. Zero specific documents disputed.</strong>",
         "Russell Ball, David Irving, the AHRC, the NDIA, DSS, ComCare, Monash Health, ASIC, IBAC, Victoria Police — every named party has had full access to Australian defamation law and government legal counsel.",
         "Not one of them has disputed a single document.",

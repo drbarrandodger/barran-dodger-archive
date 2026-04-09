@@ -105,7 +105,7 @@ export default function ChosenOnesPerfectTrap() {
                   Primary Source Evidence
                 </Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">
-                  2,077 Documents
+                  2,304 Documents
                 </Badge>
               </div>
 
@@ -216,7 +216,7 @@ export default function ChosenOnesPerfectTrap() {
 
               <p>
                 The video's metaphor is precise: collecting proof while enemies are dancing in the light. The
-                archive is that collection — 2,077 documents, SHA-256 hashed, Bitcoin blockchain timestamped,
+                archive is that collection — 2,304 documents, SHA-256 hashed, Bitcoin blockchain timestamped,
                 freely downloadable. Every non-reply letter is in it. Every referral to another agency that also
                 did not reply is in it. Every acknowledgement of receipt that acknowledged nothing further is in it.
                 The silence was the documentation.
@@ -483,7 +483,7 @@ export default function ChosenOnesPerfectTrap() {
 
               <p>
                 The archive is the reckoning. It did not arrive shouting. It arrived as a downloadable file —
-                2,077 documents, each SHA-256 hashed, each Bitcoin blockchain timestamped, each verifiable by
+                2,304 documents, each SHA-256 hashed, each Bitcoin blockchain timestamped, each verifiable by
                 any reader in thirty seconds by contacting the issuing agency directly. The Enliven Chain
                 blockchain verification means no document in the archive can be altered, removed, or denied
                 without the alteration itself becoming visible in the hash record.

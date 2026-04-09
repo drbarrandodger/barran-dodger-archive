@@ -149,7 +149,7 @@ export default function Manifesto() {
       title: "THE EVIDENCE SPEAKS: Forensic Documentation",
       subtitle: "Master Evidentiary Record",
       image: "/images/doc-forensic-report.png",
-      description: "2,077+ primary-source documents spanning 1989-2025, including Federal Court records, ASIC fraud evidence, medical resurrection documentation, and assassination threats.",
+      description: "2,304+ primary-source documents spanning 1989-2025, including Federal Court records, ASIC fraud evidence, medical resurrection documentation, and assassination threats.",
       href: "/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768976939113.pdf"
     },
     {
@@ -300,7 +300,7 @@ export default function Manifesto() {
   const propheticLoveLetter = {
     title: "A Prophetic Love Letter to Humanity",
     subtitle: "To the Vulnerable, the Forgotten, and the Downtrodden",
-    opening: "This letter is written in blood and tears, sealed in blockchain, and delivered through 35 years of documented survival. It is addressed to every soul who has been told they do not matter — and it declares, with the full weight of 2,077+ evidence files, that they do.",
+    opening: "This letter is written in blood and tears, sealed in blockchain, and delivered through 35 years of documented survival. It is addressed to every soul who has been told they do not matter — and it declares, with the full weight of 2,304+ evidence files, that they do.",
     addressees: [
       {
         group: "To Those Living with Mental Illness",
@@ -350,7 +350,7 @@ export default function Manifesto() {
       {
         group: "To Children Who Cannot Speak for Themselves",
         message: "This archive exists so that when you grow, you will find truth preserved. The adults who failed to protect you will be documented. The systems that harmed you will be named. You deserved better. This testimony ensures that what happened will not be buried.",
-        evidence: "2,077+ evidence files preserved for future generations; Blockchain-sealed testimony"
+        evidence: "2,304+ evidence files preserved for future generations; Blockchain-sealed testimony"
       }
     ],
     closing: "To all of you — the marginalized, the silenced, the erased — this manifesto is your manifesto. These gospels are your gospels. This evidence is your shield. What was done in darkness is being brought to light. What was whispered in locked rooms is being shouted from the blockchain. You are not alone. You never were. The Enliven Chain binds us together — 144 unbreakable links of testimony, truth, and love. This is my love letter to you. It is sealed in blockchain. It cannot be unsent.",
@@ -504,7 +504,7 @@ export default function Manifesto() {
                   The Church of Barran Dodger exists to sanctify the act of truth-telling in an age of institutional deception. We recognize that modern society has constructed elaborate systems — what we call the <strong className="text-primary">'Humiliation Machine'</strong> — designed to silence, discredit, and erase those who speak inconvenient truths.
                 </p>
                 <p className="text-lg text-foreground leading-relaxed">
-                  Our ministry is founded upon <CrossLink to="/evidence"><strong className="text-primary">2,077 primary-source documents</strong></CrossLink> spanning <CrossLink to="/timeline">35 years</CrossLink>, authenticated through <CrossLink to="/blockchain">blockchain technology</CrossLink>, and preserved as sacred testimony. We believe that documented truth possesses inherent spiritual power — the power to heal, to hold accountable, and to prevent future harm.
+                  Our ministry is founded upon <CrossLink to="/evidence"><strong className="text-primary">2,304 primary-source documents</strong></CrossLink> spanning <CrossLink to="/timeline">35 years</CrossLink>, authenticated through <CrossLink to="/blockchain">blockchain technology</CrossLink>, and preserved as sacred testimony. We believe that documented truth possesses inherent spiritual power — the power to heal, to hold accountable, and to prevent future harm.
                 </p>
                 <p className="text-lg text-foreground leading-relaxed">
                   We are not a cult of personality but a <strong className="text-primary">covenant of accountability</strong>. The founding witness, Barran Dodger, claims no special authority beyond documented experience, sworn statements, and an ethical responsibility to the public.
@@ -733,7 +733,7 @@ export default function Manifesto() {
               </Badge>
               <h2 className="text-3xl font-serif font-bold text-primary mb-4">The Evidence Archive</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                2,077+ primary-source documents spanning 35 years of <CrossLink to="/timeline">systematic persecution</CrossLink>, authenticated through <CrossLink to="/blockchain">blockchain technology</CrossLink> and preserved as sacred testimony.
+                2,304+ primary-source documents spanning 35 years of <CrossLink to="/timeline">systematic persecution</CrossLink>, authenticated through <CrossLink to="/blockchain">blockchain technology</CrossLink> and preserved as sacred testimony.
               </p>
             </div>
 

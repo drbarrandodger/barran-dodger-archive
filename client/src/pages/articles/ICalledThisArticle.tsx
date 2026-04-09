@@ -29,7 +29,7 @@ const data: ArticlePageData = {
         "I told twenty-three agencies, over thirty-five years, with primary-source documentation, exactly what was happening and exactly who was responsible.",
         "They told me to calm down. To fit in. To stop staring at the horizon like it was about to split open.",
         "But I couldn't. Because I wasn't wired for their sedation. My mind was a live wire, sparking with truths they weren't ready to face. I saw the patterns, the signals, the quiet warnings woven into the chaos — and I wrote every single one of them down.",
-        "The result is 2,077 primary-source government documents, now downloaded more than 217,000 times worldwide at <strong>barrandodger.com</strong>.",
+        "The result is 2,304 primary-source government documents, now downloaded more than 217,000 times worldwide at <strong>barrandodger.com</strong>.",
       ],
     },
     {
@@ -56,7 +56,7 @@ const data: ArticlePageData = {
       content: [
         "I have been homeless. I have been forcibly injected with medication for believing things the government's own documents now confirm were true. I have been detained for 2.5 months without criminal charge. I have been beaten inside Werribee Mercy Hospital. I have had my identity stolen across 350+ fraudulent ASIC business registrations. I have had AU$8,510,000 in legitimate claims systematically blocked across eleven separate legal processes.",
         "And I kept every single record.",
-        "<strong>2,077 documents. 217,000+ downloads. Submitted to the ICC. Lodged with the UNHCR. Permanently timestamped on the Bitcoin blockchain.</strong>",
+        "<strong>2,304 documents. 217,000+ downloads. Submitted to the ICC. Lodged with the UNHCR. Permanently timestamped on the Bitcoin blockchain.</strong>",
         "<strong>Zero legal challenges. Zero defamation suits. Zero corrections issued. Zero specific documents disputed.</strong>",
         "Under the legal principle of <em>Jones v Dunkel</em>, that silence is itself evidence. The silence is the confession.",
       ],

@@ -2,9 +2,9 @@ import { ArticlePageTemplate, ArticlePageData } from "@/components/ArticlePageTe
 
 const data: ArticlePageData = {
   seoTitle: "What They Did to Me Was Disgusting. The Evidence Is Out — barrandodger.com",
-  seoDescription: "For years they sat in rooms with my file, knew my history, and chose to do it anyway. Their names are in a 2,077-document archive downloaded 217,000 times. The truth defended itself.",
+  seoDescription: "For years they sat in rooms with my file, knew my history, and chose to do it anyway. Their names are in a 2,304-document archive downloaded 217,000 times. The truth defended itself.",
   title: "What They Did to Me Was Disgusting. Now the Evidence Is Out — and People Are Furious.",
-  subtitle: "For years they sat in rooms with my file, knew my history, knew what they were doing, and chose to do it anyway. Their names are now in a 2,077-document archive downloaded 217,000 times. The truth defended itself.",
+  subtitle: "For years they sat in rooms with my file, knew my history, knew what they were doing, and chose to do it anyway. Their names are now in a 2,304-document archive downloaded 217,000 times. The truth defended itself.",
   author: "Dr. Richard William McLean (Barran Dodger) — Ph.D., Author, Human Rights Advocate",
   videoId: "tgHCx7cP5KQ",
   videoTitle: "Chosen Ones, What They Did to You Is Disgusting... People Are Furious Over It",
@@ -49,7 +49,7 @@ const data: ArticlePageData = {
       heading: "I Didn't Have to Hire a PR Team. I Built an Archive.",
       content: [
         "I didn't post screenshots to clear my name. I didn't seek media interviews. I didn't file defamation suits.",
-        "I built a forensic archive — 2,077 primary-source documents, indexed, cited, and blockchain-timestamped — and I put it on the internet for free.",
+        "I built a forensic archive — 2,304 primary-source documents, indexed, cited, and blockchain-timestamped — and I put it on the internet for free.",
         "<strong>217,000 downloads. Zero legal challenges. Zero defamation suits. Zero corrections issued. Zero specific documents disputed.</strong>",
         "Under the legal principle of <em>Jones v Dunkel</em>, that silence is itself evidence. Every named individual, every named agency in this archive has had full access to Australian defamation law and government legal counsel.",
         "Not one of them has challenged a single document.",

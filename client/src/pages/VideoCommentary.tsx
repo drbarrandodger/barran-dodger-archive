@@ -62,7 +62,7 @@ export default function VideoCommentary() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
         title="Video Commentary — Barran Dodger Archive"
-        description="Medium-style commentary responding to viral videos about institutional targeting and persecution, grounded in the 2,077-document primary source archive of Dr. Richard William McLean."
+        description="Medium-style commentary responding to viral videos about institutional targeting and persecution, grounded in the 2,304-document primary source archive of Dr. Richard William McLean."
         path="/video-commentary"
       />
       <Navigation />
@@ -86,7 +86,7 @@ export default function VideoCommentary() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">8 videos</Badge>
-            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2,077 documents cited</Badge>
+            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2,304 documents cited</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">Primary source evidence</Badge>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function VideoCommentary() {
               videoTitle="I'M SICK… WHAT THEY DID TO YOU IS DISGUSTING 😡 THEY TARGETED YOU ON PURPOSE"
               videoUrl="https://www.youtube.com/watch?v=fyInNDy0bJU"
               articleTitle="They Called It Treatment. The Documents Call It Something Else."
-              shareText={`"The most effective way to destroy a person is to convince them that what happened to them never really happened." A video describes this. 2,077 documents prove it happened to Dr. Richard McLean. 14 psychiatric detentions. 350+ ASIC frauds. 2.87% survival. #BarranDodger barrandodger.com`}
+              shareText={`"The most effective way to destroy a person is to convince them that what happened to them never really happened." A video describes this. 2,304 documents prove it happened to Dr. Richard McLean. 14 psychiatric detentions. 350+ ASIC frauds. 2.87% survival. #BarranDodger barrandodger.com`}
             >
               <p>
                 There is a video circulating that opens with a sentence so precise it stops you mid-scroll.
@@ -111,7 +111,7 @@ export default function VideoCommentary() {
               </blockquote>
               <p>
                 I watched it thinking about psychology. By the end, I was thinking about a man named
-                Dr. Richard William McLean — known publicly as Barran Dodger — and the 2,077 documents
+                Dr. Richard William McLean — known publicly as Barran Dodger — and the 2,304 documents
                 he has blockchain-sealed onto the Bitcoin ledger as proof that what happened to him did,
                 in fact, happen.
               </p>
@@ -211,7 +211,7 @@ export default function VideoCommentary() {
                   <a href="https://barrandodger.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
                     barrandodger.com
                   </a>
-                  . 2,077 documents. Freely downloadable. Every document SHA-256 hashed and Bitcoin
+                  . 2,304 documents. Freely downloadable. Every document SHA-256 hashed and Bitcoin
                   blockchain timestamped. Read them. Draw your own conclusions.
                 </p>
                 <p className="text-cyan-300 font-bold">
@@ -227,7 +227,7 @@ export default function VideoCommentary() {
               videoTitle="GRAB YOUR SUIT 🕴️ YOU'RE MAKING HEADLINES 📺 CASE WON — THEY'RE FACING JUSTICE ⚖️ Joker Speech"
               videoUrl="https://youtu.be/jMH2Dngbw8I?si=Ajgy0ZXFOClZrwf_"
               articleTitle="They Aimed to Silence You. You Built an Archive Instead."
-              shareText={`"While they assumed you'd vanish, you etched permanence." 2,077 documents. Bitcoin blockchain. ICC filing. UNHCR submission. 88,000 downloads. No media coverage. No institutional endorsement. Truth's inevitable gravity. #BarranDodger barrandodger.com`}
+              shareText={`"While they assumed you'd vanish, you etched permanence." 2,304 documents. Bitcoin blockchain. ICC filing. UNHCR submission. 350,000+ downloads. No media coverage. No institutional endorsement. Truth's inevitable gravity. #BarranDodger barrandodger.com`}
             >
               <p>
                 There is a second video. Same channel. Different register entirely.
@@ -242,7 +242,7 @@ export default function VideoCommentary() {
                 "They aimed to wear you weary in bureaucracy designed to crush the vocal and shield the sleek."
               </blockquote>
               <p>
-                I read that line and thought immediately of 2,077 documents on the Bitcoin blockchain.
+                I read that line and thought immediately of 2,304 documents on the Bitcoin blockchain.
                 I thought of a man left homeless, without income, without the disability supports his
                 own government confirmed he was owed — and who, in the silence between institutional
                 cruelties, kept documenting.
@@ -263,7 +263,7 @@ export default function VideoCommentary() {
                 </p>
                 <p>And yet.</p>
                 <p>
-                  2,077 documents. SHA-256 hashed. Bitcoin blockchain timestamped. Permanently beyond
+                  2,304 documents. SHA-256 hashed. Bitcoin blockchain timestamped. Permanently beyond
                   the reach of the agencies that produced them.
                 </p>
                 <p>
@@ -335,7 +335,7 @@ export default function VideoCommentary() {
                 <h3 className="text-xl font-serif font-bold text-white">"Documents Smoulder Softly. Visuals Endure Eternally."</h3>
                 <p>
                   The claims are lodged. The ICC submission is filed. The UNHCR submission is filed.
-                  The blockchain timestamps are permanent. 88,000 people have downloaded the archive —
+                  The blockchain timestamps are permanent. 350,000+ people have downloaded the archive —
                   without media coverage, without institutional endorsement, person to person, the way
                   truth moves when institutions have failed.
                 </p>
@@ -362,7 +362,7 @@ export default function VideoCommentary() {
               videoTitle="SOMEONE GOT PROOF YOU WEREN'T CRAZY… NOW JUSTICE IS COMING FOR YOU ⚖️🔍🔥"
               videoUrl="https://www.youtube.com/watch?v=bxF3fagXeVU"
               articleTitle="History Has a Strange Habit of Apologising Very Late. But When It Does, It Brings Receipts."
-              shareText={`"Turns out you weren't unstable. You were early." A viral video describes exactly what happened to Dr. Richard McLean. 2,077 documents prove it. The receipts exist. The burden of explanation has moved. #BarranDodger barrandodger.com`}
+              shareText={`"Turns out you weren't unstable. You were early." A viral video describes exactly what happened to Dr. Richard McLean. 2,304 documents prove it. The receipts exist. The burden of explanation has moved. #BarranDodger barrandodger.com`}
             >
               <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
                 "History has a strange habit of apologizing very late. But when it does, it brings receipts."
@@ -373,7 +373,7 @@ export default function VideoCommentary() {
                 It is a literal description of what has already happened.
               </p>
               <p>
-                The receipts exist. There are 2,077 of them. They are SHA-256 hashed, Bitcoin
+                The receipts exist. There are 2,304 of them. They are SHA-256 hashed, Bitcoin
                 blockchain timestamped, freely downloadable, and permanently beyond the reach of the
                 institutions that produced them. The apology — from history, from the machinery that
                 did this — has not yet arrived. But the receipts came first. They always do. And this
@@ -467,7 +467,7 @@ export default function VideoCommentary() {
                 <p>
                   The only response to documentation of this kind is to hope that nobody looks, or to
                   discredit the person pointing at it so thoroughly that the looking seems unnecessary.
-                  The first strategy is failing. 88,000 people have looked. The second strategy failed
+                  The first strategy is failing. 350,000+ people have looked. The second strategy failed
                   when the documents proved themselves without requiring Dr. McLean's voice at all.
                 </p>
               </section>
@@ -496,7 +496,7 @@ export default function VideoCommentary() {
                 </blockquote>
                 <p>
                   The ICC submission is filed. The UNHCR submission is filed. The AI Justice Statement
-                  is public. 88,000 downloads have occurred without media cooperation. The calculation
+                  is public. 350,000+ downloads have occurred without media cooperation. The calculation
                   is changing. The risk of continued non-engagement is rising.
                 </p>
               </section>
@@ -533,7 +533,7 @@ export default function VideoCommentary() {
               videoTitle="Chosen Ones, AFTER MONTHS WATCHING… THE FEDS WANT A PRIVATE MEETING 👁️🔥"
               videoUrl="https://www.youtube.com/watch?v=gl6oyBnH7ZM"
               articleTitle="They've Been Watching for Months. Now They Want a Private Meeting. You Already Know Why."
-              shareText={`"The eyes that watch you the longest rarely blink." People outside tell him to give up. 2,077 documents say he was right not to. Five Eyes. ASIO. ICC. UNHCR. 88,000 downloads. The anomaly refused to be explained away. #BarranDodger barrandodger.com`}
+              shareText={`"The eyes that watch you the longest rarely blink." People outside tell him to give up. 2,304 documents say he was right not to. Five Eyes. ASIO. ICC. UNHCR. 350,000+ downloads. The anomaly refused to be explained away. #BarranDodger barrandodger.com`}
             >
               <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
                 "The eyes that watch you the longest rarely blink."
@@ -579,8 +579,8 @@ export default function VideoCommentary() {
                   architecture that makes this scenario not hypothetical but operational. The
                   capabilities exist. They are documented. A formally registered whistleblower who
                   has filed with the Federal Court, the NDIA, the PM's Department, the Commonwealth
-                  Ombudsman, the AHRC, the ICC, and the UNHCR — and who has published a 2,077-document
-                  blockchain-verified archive downloaded by 88,000 people — would trigger exactly the
+                  Ombudsman, the AHRC, the ICC, and the UNHCR — and who has published a 2,304-document
+                  blockchain-verified archive downloaded by 350,000+ people — would trigger exactly the
                   kind of anomaly-flag this video describes.
                 </p>
                 <blockquote className="border-l-2 border-cyan-600 pl-6 italic text-zinc-300">
@@ -640,8 +640,8 @@ export default function VideoCommentary() {
                   extending. The thread goes cold.
                 </p>
                 <p>
-                  He didn't give up. The archive has 2,077 documents. It is on the Bitcoin blockchain.
-                  It has been downloaded 88,000 times. The thread is not cold.
+                  He didn't give up. The archive has 2,304 documents. It is on the Bitcoin blockchain.
+                  It has been downloaded 350,000+ times. The thread is not cold.
                 </p>
               </section>
 
@@ -703,7 +703,7 @@ export default function VideoCommentary() {
               videoTitle="CHOSEN ONES! CONGRATS, IT'S DONE! YOU'LL NEVER GO THROUGH THAT AGAIN 🔥👑"
               videoUrl="https://www.youtube.com/watch?v=Sy8-Qqkybxo"
               articleTitle="They Thought You Would Break. The Archive Is What Happened Instead."
-              shareText={`"They thought you would break." A viral video with millions of views. The 2,077-document archive of Dr. Richard McLean is the complete answer to that sentence. 35 years. They never found the breaking point. #BarranDodger barrandodger.com/video-commentary`}
+              shareText={`"They thought you would break." A viral video with millions of views. The 2,304-document archive of Dr. Richard McLean is the complete answer to that sentence. 35 years. They never found the breaking point. #BarranDodger barrandodger.com/video-commentary`}
             >
               <p>
                 The video opens with eight words: <em>"They thought you would break."</em> There is no preamble. No setup.
@@ -737,7 +737,7 @@ export default function VideoCommentary() {
                   "Every laugh at your expense was nothing more than evidence stacked against them. They thought they were pulling the strings, but all along they were tightening the noose around their own necks."
                 </blockquote>
                 <p>
-                  2,077 documents. Government-issued. SHA-256 hashed. Bitcoin blockchain timestamped. Every letter, every tribunal record,
+                  2,304 documents. Government-issued. SHA-256 hashed. Bitcoin blockchain timestamped. Every letter, every tribunal record,
                   every FOI response, every non-response — all of it archived, verified, permanently beyond the institutional reach of the
                   agencies that produced it. The PM&C reversed a sworn FOI declaration that no documents existed. The reversal is in
                   the archive. The 350+ ASIC registrations filed in Dr. McLean's name without his consent are in the public registry.
@@ -836,7 +836,7 @@ export default function VideoCommentary() {
                   They thought you would break. The archive is what happened instead. It is SHA-256 hashed. It is
                   blockchain timestamped. It is freely downloadable. It is permanent. It is the complete answer to
                   the only question that ever mattered: what does 35 years of refused testimony look like when the
-                  person being refused refuses to stop? It looks like 2,077 documents. It looks like this.
+                  person being refused refuses to stop? It looks like 2,304 documents. It looks like this.
                 </p>
               </section>
             </Article>
@@ -847,7 +847,7 @@ export default function VideoCommentary() {
               videoTitle="CHOSEN ONES, THEY SET A PERFECT TRAP—YOU SAW THROUGH IT & NOW THEY'RE MAD 😡🔥"
               videoUrl="https://www.youtube.com/watch?v=FYaV76FbvQg"
               articleTitle="They Set a Perfect Trap. The Archive Was the Blade That Cut It Open."
-              shareText={`"They set a perfect trap. You saw through it. Now they're mad." A viral video. The 2,077-document Barran Dodger archive is the complete answer. Every trap they set became evidence they built themselves. #BarranDodger barrandodger.com/video-commentary`}
+              shareText={`"They set a perfect trap. You saw through it. Now they're mad." A viral video. The 2,304-document Barran Dodger archive is the complete answer. Every trap they set became evidence they built themselves. #BarranDodger barrandodger.com/video-commentary`}
             >
               <p>
                 The video's seven principles independently describe, with structural precision, what 35 years of
@@ -1021,7 +1021,7 @@ export default function VideoCommentary() {
                 </p>
                 <p className="text-cyan-300 font-bold leading-snug">
                   "They set a perfect trap. You saw through it. Now they're mad." The archive makes no claim about the
-                  future. It makes a single claim about the present: it exists. 2,077 documents. SHA-256 hashed. Bitcoin
+                  future. It makes a single claim about the present: it exists. 2,304 documents. SHA-256 hashed. Bitcoin
                   blockchain timestamped. With the ICC. With the UNHCR. Downloaded 217,064 times. Freely available at
                   barrandodger.com. The trap was perfect. The archive was the blade. And every line from the video above
                   — every word that millions of people recognised as true — was already in the testimony. They cooperate
@@ -1036,7 +1036,7 @@ export default function VideoCommentary() {
               videoTitle="THEY SENT A PRIVATE INVESTIGATOR TO EXPOSE YOU…INSTEAD THEY UNCOVERED A LEGEND ⚡😳 Joker Speech"
               videoUrl="https://www.youtube.com/watch?v=0uu2muPqBsM"
               articleTitle="They Sent a Hunter. They Found an Archive."
-              shareText={`"They sent a private investigator to expose him. Instead they uncovered a legend." 35 agencies. 2,077 documents. Every investigator contributed a file. The files became the evidence. #BarranDodger barrandodger.com/video-commentary`}
+              shareText={`"They sent a private investigator to expose him. Instead they uncovered a legend." 35 agencies. 2,304 documents. Every investigator contributed a file. The files became the evidence. #BarranDodger barrandodger.com/video-commentary`}
             >
               <p>
                 A hired hunter. A sharp suit. Polished shoes clicking on the pavement. A clipboard clutched like a weapon.
@@ -1080,7 +1080,7 @@ export default function VideoCommentary() {
                   probability of clinical coincidence across fourteen events to be negligible. The psychiatric record
                   was deployed as institutional currency — designed to function as the private investigator's final
                   report: <em>this person is not credible.</em> The archive mapped each hospitalisation against the
-                  disclosure that preceded it. The currency became an exhibit. The manifesto is 2,077 documents long.
+                  disclosure that preceded it. The currency became an exhibit. The manifesto is 2,304 documents long.
                 </p>
               </section>
 
@@ -1106,7 +1106,7 @@ export default function VideoCommentary() {
               videoTitle="🌍😈 This Isn't Private Anymore… It Went GLOBAL, and You Know Exactly Why 📡 Joker Speech (Powerful)"
               videoUrl="https://www.youtube.com/watch?v=lBj8PCbuvpo"
               articleTitle="This Isn't Private Anymore. It Went Global, and You Know Exactly Why."
-              shareText={`"What was once concealed is now exposed worldwide." 35 agencies. 2,077 documents. The ICC. The UNHCR. 217,064 downloads. The archive went global because the government's own records demanded it. #BarranDodger barrandodger.com/testimony-went-global`}
+              shareText={`"What was once concealed is now exposed worldwide." 35 agencies. 2,304 documents. The ICC. The UNHCR. 350,000+ downloads. The archive went global because the government's own records demanded it. #BarranDodger barrandodger.com/testimony-went-global`}
             >
               <p>
                 The speech opens with a declaration that is not metaphorical: <em>what was once concealed is now
@@ -1165,7 +1165,7 @@ export default function VideoCommentary() {
                   This isn't private anymore. 217,064 downloads. The ICC. The UNHCR. The Bitcoin blockchain.
                   Named individuals who could have challenged the record chose not to. Under Jones v Dunkel,
                   that silence is legally significant. The archive went global because the government's own
-                  2,077 documents demanded it. The speech says it plainly: what was once concealed is now
+                  2,304 documents demanded it. The speech says it plainly: what was once concealed is now
                   exposed worldwide. The archive is that exposure. And it is permanent.
                 </p>
               </section>

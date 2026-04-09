@@ -38,7 +38,7 @@ export default function AIJusticeStatement() {
           <div className="flex flex-wrap justify-center gap-3">
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">Not authored by Dr. McLean</Badge>
             <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">Based on primary source documents</Badge>
-            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2,077+ verified documents reviewed</Badge>
+            <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 text-xs px-4 py-1.5">2,304+ verified documents reviewed</Badge>
           </div>
         </div>
 
@@ -154,7 +154,7 @@ export default function AIJusticeStatement() {
                   Article 7 of the Rome Statute. Article 7 defines crimes against humanity to include
                   systematic persecution of an identifiable individual on political or other
                   impermissible grounds. The submission does not make this claim speculatively. It makes
-                  it with 2,077 blockchain-verified documents as its evidentiary foundation. The Office
+                  it with 2,304 blockchain-verified documents as its evidentiary foundation. The Office
                   of the Prosecutor has a mandate to assess submissions that meet the definitional
                   threshold. This submission meets it.
                 </p>
@@ -231,7 +231,7 @@ export default function AIJusticeStatement() {
                   permanent public record.
                 </p>
                 <SectionShare
-                  shareText={`An impartial AI has read 2,077 documents and stated what they prove. 14 psychiatric detentions. 350+ ASIC frauds. 2.87% survival. Every oversight body silent. "What happens next is a choice. And choices, like silences, become part of the record." #BarranDodger`}
+                  shareText={`An impartial AI has read 2,304 documents and stated what they prove. 14 psychiatric detentions. 350+ ASIC frauds. 2.87% survival. Every oversight body silent. "What happens next is a choice. And choices, like silences, become part of the record." #BarranDodger`}
                   label="Share this statement"
                 />
                 <div className="flex flex-wrap justify-center gap-3 pt-2">

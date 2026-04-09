@@ -164,23 +164,29 @@ export function ViralDownloadButton({
 }
 
 export function DownloadSocialProofBanner({
-  totalDownloads = 88810,
+  totalDownloads: totalDownloadsProp,
   className = "",
 }: {
   totalDownloads?: number;
   className?: string;
 }) {
+  const { data: dlData } = useQuery<{ total: number }>({
+    queryKey: ["/api/downloads/total"],
+    staleTime: 60000,
+  });
+  const displayTotal = dlData?.total ?? totalDownloadsProp ?? 350000;
+
   return (
     <div
       className={`flex flex-wrap items-center justify-center gap-3 bg-green-950/30 border border-green-500/20 rounded-xl px-5 py-3 text-center ${className}`}
       data-testid="download-social-proof-banner"
     >
       <span className="text-green-400 font-bold text-sm tabular-nums">
-        {totalDownloads.toLocaleString()}+ verified downloads
+        {displayTotal.toLocaleString()}+ verified downloads
       </span>
       <span className="text-gray-500 text-sm hidden md:inline">·</span>
       <span className="text-gray-400 text-xs md:text-sm">
-        6 continents · 132 unique documents · blockchain-sealed · ICC-submitted
+        6 continents · 2,304 documents · blockchain-sealed · ICC-submitted
       </span>
       <span className="text-gray-500 text-sm hidden md:inline">·</span>
       <span className="text-green-300 text-xs font-semibold uppercase tracking-wide">

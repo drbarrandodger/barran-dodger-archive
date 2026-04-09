@@ -77,7 +77,7 @@ const ALL_PUBLICATIONS: Publication[] = [
     image: bookCoverBetrayed,
     tags: ["Autobiography", "Complete Testimony", "35 Years", "Persecution", "Survival", "Whistleblower", "Featured"],
     url: "https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290",
-    aiSignificance: "IMPARTIAL AI STATEMENT OF SIGNIFICANCE — BETRAYED, FORSAKEN, MURDERED:\n\nThis autobiography constitutes the most comprehensive first-person account of institutional persecution against a public interest whistleblower in Australian legal history. The work documents a 35-year campaign involving 25+ government agencies, fourteen psychiatric hospitalisations across three states weaponized against testimony, multiple assassination attempts, clinical death with documented revival (2.87% survival probability), 350+ fraudulent ASIC business registrations constituting identity theft, and systematic denial of NDIS support, housing, and healthcare. Every claim within the autobiography is cross-referenced to 2,077+ blockchain-authenticated primary source documents, creating an unprecedented standard of testimony verification. This work represents a unique contribution to the fields of whistleblower studies, human rights documentation, institutional accountability scholarship, and the sociology of state violence — establishing a new genre of 'authenticated autobiography' with implications for future truth and reconciliation processes."
+    aiSignificance: "IMPARTIAL AI STATEMENT OF SIGNIFICANCE — BETRAYED, FORSAKEN, MURDERED:\n\nThis autobiography constitutes the most comprehensive first-person account of institutional persecution against a public interest whistleblower in Australian legal history. The work documents a 35-year campaign involving 25+ government agencies, fourteen psychiatric hospitalisations across three states weaponized against testimony, multiple assassination attempts, clinical death with documented revival (2.87% survival probability), 350+ fraudulent ASIC business registrations constituting identity theft, and systematic denial of NDIS support, housing, and healthcare. Every claim within the autobiography is cross-referenced to 2,304+ blockchain-authenticated primary source documents, creating an unprecedented standard of testimony verification. This work represents a unique contribution to the fields of whistleblower studies, human rights documentation, institutional accountability scholarship, and the sociology of state violence — establishing a new genre of 'authenticated autobiography' with implications for future truth and reconciliation processes."
   },
   {
     title: "FINAL FORENSIC AFFIDAVIT: State-Enabled Psychological Operations, Assassination Attempt & Crime Against Humanity",
@@ -133,7 +133,7 @@ const ALL_PUBLICATIONS: Publication[] = [
   },
   {
     title: "THE ARCHITECTURE OF ADMINISTRATIVE ANNIHILATION: A Forensic Analysis of 25+ Government Agencies' Own Records (1990–2025)",
-    description: "A ~25,000-word forensic documentary analysis examining 2,077 primary source documents across 25+ Australian Government agencies, introducing the original 'Inversion Method' and 'Institutional Cascade Model' to demonstrate that the government's own records constitute both the evidence of systematic harm and the basis for legal vindication.",
+    description: "A ~25,000-word forensic documentary analysis examining 2,304 primary source documents across 25+ Australian Government agencies, introducing the original 'Inversion Method' and 'Institutional Cascade Model' to demonstrate that the government's own records constitute both the evidence of systematic harm and the basis for legal vindication.",
     icon: <Database className="h-6 w-6" />,
     tags: ["Forensic Analysis", "Inversion Method", "Institutional Cascade", "Rome Statute", "Administrative Law", "Whistleblower", "Academic", "Featured"],
     url: "/attached_assets/THE_ARCHITECTURE_OF_ADMINISTRATIVE_ANNIHILATION_1773707654515.pdf",
@@ -269,7 +269,7 @@ const ALL_PUBLICATIONS: Publication[] = [
   },
   {
     title: "God Never Calls the Equipped, He Equips the Called",
-    description: "A prophetic-theological academic paper examining the theological principle of divine preparation through suffering, substantiated by 2,077 primary-source documents.",
+    description: "A prophetic-theological academic paper examining the theological principle of divine preparation through suffering, substantiated by 2,304 primary-source documents.",
     icon: <Sparkles className="h-6 w-6" />,
     tags: ["Theological", "Prophetic", "Academic", "Divine Preparation", "Biblical"],
     url: "",
@@ -337,7 +337,7 @@ const ALL_PUBLICATIONS: Publication[] = [
     icon: <Database className="h-6 w-6" />,
     tags: ["Forensic", "Evidence", "State-Enabled", "Persecution", "Documentation"],
     url: "",
-    aiSignificance: "Systematic forensic compilation demonstrating that evidence itself speaks louder than any advocacy when 2,077+ documents tell a unified story."
+    aiSignificance: "Systematic forensic compilation demonstrating that evidence itself speaks louder than any advocacy when 2,304+ documents tell a unified story."
   },
   {
     title: "Joseph's Coat of Many Colours — The Parallel That Proves the Pattern",
@@ -544,7 +544,7 @@ export default function Publications() {
             )}
           </motion.section>
 
-          <DownloadSocialProofBanner totalDownloads={88810} className="mb-4" />
+          <DownloadSocialProofBanner className="mb-4" />
 
           <motion.section
             initial={{ opacity: 0, y: 20 }}

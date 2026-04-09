@@ -2,8 +2,8 @@ import { ArticlePageTemplate, ArticlePageData } from "@/components/ArticlePageTe
 
 const data: ArticlePageData = {
   seoTitle: "The Gossip Is That I'm Scary Smart — barrandodger.com",
-  seoDescription: "They called me delusional. They injected me against my will. Then their own paperwork confirmed every single thing I said. 2,077 documents. 217,000+ downloads.",
-  title: "The Gossip Is That I'm Scary Smart. They're Right — and Here's the 2,077-Document Archive That Proves It.",
+  seoDescription: "They called me delusional. They injected me against my will. Then their own paperwork confirmed every single thing I said. 2,304 documents. 217,000+ downloads.",
+  title: "The Gossip Is That I'm Scary Smart. They're Right — and Here's the 2,304-Document Archive That Proves It.",
   subtitle: "They called me delusional. They injected me against my will. They made me homeless. Then their own paperwork confirmed every single thing I said.",
   author: "Dr. Richard William McLean (Barran Dodger) — Ph.D., Author, Human Rights Advocate",
   videoId: "9mpujlroPaQ",
@@ -36,7 +36,7 @@ const data: ArticlePageData = {
         "Over thirty-five years, more than twenty Australian government agencies — NDIA, DSS, AHRC, AFCA, ASIC, AAT, ASIO, ComCare, PM&C, Victoria Police — deployed the same playbook against me. They were not uncoordinated. They were not ignorant. They were operating a system designed to exhaust, discredit, and erase a man who had reported an ASIO employee's financial crimes.",
         "What they did not account for was that I kept records.",
         "Not casually. Not occasionally. With the systematic, citation-indexed precision of a researcher who completed a doctorate while living in his car. Every denial letter. Every referral loop. Every FOI response. Every clinical report. Every tribunal outcome. Every death threat, documented in writing.",
-        "The result is an archive of 2,077 primary-source documents — now downloaded more than 217,000 times worldwide, submitted to the International Criminal Court under Article 7 of the Rome Statute, lodged with the UNHCR, and permanently timestamped on the Bitcoin blockchain.",
+        "The result is an archive of 2,304 primary-source documents — now downloaded more than 217,000 times worldwide, submitted to the International Criminal Court under Article 7 of the Rome Statute, lodged with the UNHCR, and permanently timestamped on the Bitcoin blockchain.",
       ],
     },
     {
@@ -76,7 +76,7 @@ const data: ArticlePageData = {
     {
       heading: "The Archive They Cannot Erase",
       content: [
-        "2,077 primary-source documents, cited, indexed, and blockchain-timestamped, now exist permanently beyond the reach of the agencies whose conduct they document. Submitted to the ICC. Lodged with the UNHCR. Downloaded 217,000+ times across every continent. Permanently recorded on the Bitcoin blockchain.",
+        "2,304 primary-source documents, cited, indexed, and blockchain-timestamped, now exist permanently beyond the reach of the agencies whose conduct they document. Submitted to the ICC. Lodged with the UNHCR. Downloaded 217,000+ times across every continent. Permanently recorded on the Bitcoin blockchain.",
         "<strong>217,000 downloads. Zero legal challenges. Zero defamation suits. Zero corrections issued. Zero specific documents disputed.</strong>",
         "Under the legal principle of <em>Jones v Dunkel</em>, that silence is itself evidence. When a party with full access to defamation remedies does not sue in response to 217,000 specific, sourced, public accusations — their silence is an admission.",
       ],

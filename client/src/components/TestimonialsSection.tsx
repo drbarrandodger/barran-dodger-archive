@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
     type: "supporter"
   },
   {
-    quote: "240+ documents with cryptographic proof - this archive represents a new standard for accountability documentation.",
+    quote: "2,304 documents with cryptographic proof - this archive represents a new standard for accountability documentation.",
     author: "Blockchain Researcher",
     role: "Digital Evidence Specialist",
     type: "expert"

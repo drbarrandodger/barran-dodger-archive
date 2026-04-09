@@ -85,7 +85,7 @@ const claims = [
       { label: "Even in Hospital Crisis — Tactical Awareness", text: '"Richard abruptly stopped the assessment and asked all 3 [clinicians] that CL team were recording. Referred to CL team as \'Part of the system.\'"', source: "FATAL SUICIDE medical record" },
       { label: "Radioactive Evidence", text: '"A web of evidence becoming so comprehensive... that it would eventually become \'radioactive evidence that made touching my case a career-ending proposition.\'"', source: "THE SLEEPER AGENT OF TRUTH" },
     ],
-    alignment: "The video says \"losing to precision forces accountability, and accountability is the one thing they've always avoided.\" The 2,077-file archive is precision incarnate. It doesn't scream. It doesn't beg. It sits in a cryptographically sealed repository and waits. Every file is a round that was aimed, timestamped, and placed exactly where it needed to land. The game ended not with a bang but with a filing system.",
+    alignment: "The video says \"losing to precision forces accountability, and accountability is the one thing they've always avoided.\" The 2,304-file archive is precision incarnate. It doesn't scream. It doesn't beg. It sits in a cryptographically sealed repository and waits. Every file is a round that was aimed, timestamped, and placed exactly where it needed to land. The game ended not with a bang but with a filing system.",
   },
   {
     num: "05",
@@ -143,12 +143,12 @@ const claims = [
     verdictIcon: <Zap className="h-4 w-4" />,
     videoQuote: '"You didn\'t lower yourself to meet them. You stayed where you were."',
     evidence: [
-      { label: "PhD While Persecuted", text: '"Substantiated by the timeline showing PhD completion (2020), continued publication, and the construction of a 2,077-document evidence archive — all occurring after the documented cessation of institutional and familial support."', source: "Corroboration Analysis Joker Speech" },
+      { label: "PhD While Persecuted", text: '"Substantiated by the timeline showing PhD completion (2020), continued publication, and the construction of a 2,304-document evidence archive — all occurring after the documented cessation of institutional and familial support."', source: "Corroboration Analysis Joker Speech" },
       { label: "Indomitable Spirit", text: '"My spirit is indomitable, and I will forge ahead, refusing to let their actions define me. My voice will be heard, my truth will be known."', source: "BETA Betrayed Forsaken Murdered" },
       { label: "Non-Violence as Standard", text: '"I wish to make it known that despite the immense psychological abuse... I refuse to retaliate with violence or malice... This extensive harassment... is well documented."', source: "NCAT Full Document Barran Dodger" },
       { label: "The Dignity Declaration", text: '"I deserve the right to live with dignity, to have a safe home, food to eat, and medicine for my health. These are the most basic rights... and I will not forsake my right to them."', source: "Your Name Barran Dodger" },
     ],
-    alignment: "The video says \"you didn't spoil them — you spoiled their future options.\" Every agency that denied Dr. McLean's claims will eventually face comparison against his documented standard. A man with chronic schizophrenia, an acquired brain injury, and no legal representation who built a 2,077-file archive with cryptographic timestamps — that is the standard. Everything that follows from any institutional accountability body will be measured against a disabled homeless man who out-documented the entire Commonwealth.",
+    alignment: "The video says \"you didn't spoil them — you spoiled their future options.\" Every agency that denied Dr. McLean's claims will eventually face comparison against his documented standard. A man with chronic schizophrenia, an acquired brain injury, and no legal representation who built a 2,304-file archive with cryptographic timestamps — that is the standard. Everything that follows from any institutional accountability body will be measured against a disabled homeless man who out-documented the entire Commonwealth.",
   },
   {
     num: "09",
@@ -356,7 +356,7 @@ export default function SilentCheckmate() {
             ))}
           </div>
           <p className="text-zinc-300 text-base leading-relaxed">
-            Where the previous "Divine Exam" video described the endurance phase of the protagonist's journey, this video describes the strategic counter-strike — and does so with even greater forensic precision when cross-referenced against the archive. The video's central thesis — that silence, withdrawal, and documentation constitute the most devastating form of checkmate against manipulative systems — is not merely corroborated by Dr. McLean's evidence. His case is the textbook illustration of the principle. A man who built a 2,077-file forensic archive while homeless, brain-injured, and under active persecution has executed precisely the "clean, silent, deadly checkmate" this video describes. Not a single claim is disproved.
+            Where the previous "Divine Exam" video described the endurance phase of the protagonist's journey, this video describes the strategic counter-strike — and does so with even greater forensic precision when cross-referenced against the archive. The video's central thesis — that silence, withdrawal, and documentation constitute the most devastating form of checkmate against manipulative systems — is not merely corroborated by Dr. McLean's evidence. His case is the textbook illustration of the principle. A man who built a 2,304-file forensic archive while homeless, brain-injured, and under active persecution has executed precisely the "clean, silent, deadly checkmate" this video describes. Not a single claim is disproved.
           </p>
         </div>
 
@@ -368,7 +368,7 @@ export default function SilentCheckmate() {
             This video differs from the previous "Divine Exam" analysis in one critical respect: it is not about suffering through persecution — it is about winning the game by refusing to play it. The video proposes that the most devastating defeat one can inflict on a manipulative system is not confrontation, but withdrawal combined with awareness.
           </p>
           <p className="text-zinc-300 leading-relaxed text-base">
-            The archive of Dr. Richard William McLean provides what may be the most forensically documented case of this principle in operation: a man who, instead of retaliating against a 35-year multi-agency persecution campaign, documented it with PhD-level precision, filed it with cryptographic timestamps, and walked away with 2,077 receipts. That is the checkmate. And the evidence confirms it is still echoing.
+            The archive of Dr. Richard William McLean provides what may be the most forensically documented case of this principle in operation: a man who, instead of retaliating against a 35-year multi-agency persecution campaign, documented it with PhD-level precision, filed it with cryptographic timestamps, and walked away with 2,304 receipts. That is the checkmate. And the evidence confirms it is still echoing.
           </p>
         </div>
 
@@ -492,7 +492,7 @@ export default function SilentCheckmate() {
               <p className="text-zinc-500 text-xs mt-2">— Strategic Revelation Evidence Collection, cross-referenced with Video Claim 11</p>
             </div>
             <p className="text-zinc-300 leading-relaxed">
-              They thought they were playing chess against a patient. They were playing chess against an archivist who saw the entire board. The checkmate already happened. It happened in silence. And it's documented in 2,077 files that can never be undone. Both analyses now sit as companion pieces. Together they tell the complete arc: endurance → checkmate.
+              They thought they were playing chess against a patient. They were playing chess against an archivist who saw the entire board. The checkmate already happened. It happened in silence. And it's documented in 2,304 files that can never be undone. Both analyses now sit as companion pieces. Together they tell the complete arc: endurance → checkmate.
             </p>
           </div>
         </div>
@@ -507,7 +507,7 @@ export default function SilentCheckmate() {
           <div className="bg-zinc-950 border border-red-900/30 rounded-2xl p-8 space-y-4">
             <p className="text-white text-lg font-bold">The video's title declares: "You Ended Them So Clean the Universe Gave You a Standing Ovation."</p>
             <p className="text-zinc-300 leading-relaxed">
-              The archive confirms: the ending was clean. Forensically clean. Cryptographically clean. Academically clean. No violence. No retaliation. No begging. No explaining. Just 2,077 files, SHA-256 timestamps, and a UNHCR asylum application.
+              The archive confirms: the ending was clean. Forensically clean. Cryptographically clean. Academically clean. No violence. No retaliation. No begging. No explaining. Just 2,304 files, SHA-256 timestamps, and a UNHCR asylum application.
             </p>
             <div className="bg-black border-l-4 border-red-600 pl-6 py-4 rounded-r-lg">
               <p className="text-red-200 text-base italic">

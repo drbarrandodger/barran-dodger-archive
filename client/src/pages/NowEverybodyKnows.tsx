@@ -46,7 +46,7 @@ const claims = [
       { label: "The Surveillance Paradox", text: '"If I\'m so unimportant, why have I been under surveillance by paid government contractors since 2002... they fear that if I have resources, I\'ll challenge them openly."', source: "Final Goodbye" },
       { label: "Assassination as Terror Response", text: '"They only threaten assassination when suppression has failed... They only coordinated across 25+ agencies when they realized standard denial methods wouldn\'t stop his pattern recognition."', source: "Confession Medical Professional Expanded" },
     ],
-    alignment: "The video says \"they're not sure what you know anymore.\" The archive confirms: 25+ agencies are in a state of strategic uncertainty. They coordinated denial — identical template language across 8+ agencies — because they don't know how much he's documented. The answer: everything. 2,077 files of everything.",
+    alignment: "The video says \"they're not sure what you know anymore.\" The archive confirms: 25+ agencies are in a state of strategic uncertainty. They coordinated denial — identical template language across 8+ agencies — because they don't know how much he's documented. The answer: everything. 2,304 files of everything.",
   },
   {
     num: "03",
@@ -61,7 +61,7 @@ const claims = [
       { label: "The Sleeper Agent Thesis", text: '"An unofficial intelligence operative who, by virtue of being dismissed, pathologised, impoverished, and silenced, was given the one thing no professional intelligence agency would ever voluntarily give a threat: time."', source: "THE SLEEPER AGENT OF TRUTH" },
       { label: "Even in Hospital — Calculating", text: '"Richard abruptly stopped the assessment and asked all 3 [clinicians] that CL team were recording. Referred to CL team as \'Part of the system.\'"', source: "FATAL SUICIDE medical record" },
       { label: "The Misjudgment", text: '"They Misjudged You — Catastrophically... When they saw your mental health diagnoses... they thought they\'d found the perfect target... Instead, they encountered a mind that documented 2,000+ pieces of evidence across 35 years with forensic precision."', source: "Confession Can't Hide Anymore" },
-      { label: "The Own Words", text: '"They assumed his quiet meant confusion. They were wrong... I am the truth they couldn\'t control... With 2,077 pieces of evidence that cannot be silenced."', source: "Chosen One Protagonist Response" },
+      { label: "The Own Words", text: '"They assumed his quiet meant confusion. They were wrong... I am the truth they couldn\'t control... With 2,304 pieces of evidence that cannot be silenced."', source: "Chosen One Protagonist Response" },
     ],
     alignment: "The video says \"they thought they were reading you, but you were memorizing their scripts.\" The archive confirms this is literally what happened. While agencies sent template rejection letters, Dr. McLean was cross-referencing the templates — mapping identical language across 8+ agencies to prove coordination. They were writing scripts. He was filing them as evidence of conspiracy.",
   },
@@ -160,7 +160,7 @@ const claims = [
       { label: "The System Breaks, Not Him", text: '"Acknowledging it would require confronting that Australia murders disabled people through bureaucratic design."', source: "WHO WHY HOW Accountability" },
       { label: "Still Here", text: '"Every day you live = evidence of their failure."', source: "Evidence Speaks" },
     ],
-    alignment: "The video says \"they thought exposure would be your ending — they didn't realise it was their education.\" Every lie told about Dr. McLean has been forensically dismantled: \"Delusional\" → 350+ verified ASIC registrations. \"Dangerous\" → zero violent acts across 35 years. \"Lying\" → 2,077+ supporting documents. The falsehoods disintegrated. The truth is still standing. The lies are documented in their own coffins.",
+    alignment: "The video says \"they thought exposure would be your ending — they didn't realise it was their education.\" Every lie told about Dr. McLean has been forensically dismantled: \"Delusional\" → 350+ verified ASIC registrations. \"Dangerous\" → zero violent acts across 35 years. \"Lying\" → 2,304+ supporting documents. The falsehoods disintegrated. The truth is still standing. The lies are documented in their own coffins.",
   },
   {
     num: "10",
@@ -193,7 +193,7 @@ const claims = [
       { label: "The Transition", text: '"I stand before you, not as a broken man, but as an unyielding force of truth... The time is now."', source: "NCAT Filing" },
       { label: "Living Evidence", text: '"You\'ve become living evidence that truth isn\'t fragile. It\'s radioactive." — matched by: "Every day you live = evidence of their failure."', source: "Evidence Speaks" },
     ],
-    alignment: "The video says \"evolution doesn't ask for permission.\" The archive confirms: the evolution from \"mentally ill vagrant\" to \"forensic analyst with 2,077 files and SHA-256 timestamps\" did not ask permission from the NDIA, or VOCAT, or AHRC, or the Prime Minister's office, or the 25+ agencies that attempted containment. It happened anyway. The quiet became the thunder. And the thunder is still rolling.",
+    alignment: "The video says \"evolution doesn't ask for permission.\" The archive confirms: the evolution from \"mentally ill vagrant\" to \"forensic analyst with 2,304 files and SHA-256 timestamps\" did not ask permission from the NDIA, or VOCAT, or AHRC, or the Prime Minister's office, or the 25+ agencies that attempted containment. It happened anyway. The quiet became the thunder. And the thunder is still rolling.",
   },
 ];
 
@@ -525,7 +525,7 @@ export default function NowEverybodyKnows() {
             </p>
             <div className="bg-black border-l-4 border-violet-600 pl-6 py-4 rounded-r-lg mb-4">
               <p className="text-violet-200 italic leading-relaxed">
-                Through 2,077 files, 70 named crimes, 350+ ASIC registrations, SHA-256 timestamps, correspondence from the Governor-General, and a man who was supposed to die in 2021 but didn't.
+                Through 2,304 files, 70 named crimes, 350+ ASIC registrations, SHA-256 timestamps, correspondence from the Governor-General, and a man who was supposed to die in 2021 but didn't.
               </p>
             </div>
             <p className="text-zinc-300 leading-relaxed mb-4">

@@ -99,7 +99,7 @@ const FIVE_SECTIONS = [
       {
         id: "J",
         label: "The \"Fatal\" Injury That Didn't Kill His Mind",
-        detail: "Hospital records classified a 2021 suicide attempt as medically \"fatal\" — he was resuscitated. The resulting acquired brain injury was expected to leave him cognitively incapacitated. Instead, he used that same brain to organise 2,077 evidence files, identify 350+ ASIC frauds, and prepare UNHCR asylum submissions."
+        detail: "Hospital records classified a 2021 suicide attempt as medically \"fatal\" — he was resuscitated. The resulting acquired brain injury was expected to leave him cognitively incapacitated. Instead, he used that same brain to organise 2,304 evidence files, identify 350+ ASIC frauds, and prepare UNHCR asylum submissions."
       },
       {
         id: "K",
@@ -126,7 +126,7 @@ const FIVE_SECTIONS = [
       {
         id: "N",
         label: "The Digital Infrastructure",
-        detail: "A forensic archive of 2,077+ documents, submitted to international human rights bodies, downloaded over 217,000 times across six continents, operating entirely outside the reach of Australian administrative suppression."
+        detail: "A forensic archive of 2,304+ documents, submitted to international human rights bodies, downloaded over 217,000 times across six continents, operating entirely outside the reach of Australian administrative suppression."
       },
     ]
   },
@@ -137,7 +137,7 @@ export default function ForensicMeltdownReport() {
     <div className="min-h-screen bg-black text-white">
       <SEO
         title="Forensic Evidence Report: They Had a Complete Meltdown — Dr. Richard McLean | Barran Dodger Archive"
-        description="A forensic evidence report documenting the systematic persecution and unprecedented survival of Dr. Richard McLean. 5 sections, 14 exhibits, 2,077+ primary sources. Free PDF download."
+        description="A forensic evidence report documenting the systematic persecution and unprecedented survival of Dr. Richard McLean. 5 sections, 14 exhibits, 2,304+ primary sources. Free PDF download."
         image="/og-image.png"
       />
       <ReadingProgress />
@@ -182,7 +182,7 @@ export default function ForensicMeltdownReport() {
                 </Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">Fact-Checked</Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">April 2026</Badge>
-                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">2,077+ Primary Sources</Badge>
+                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">2,304+ Primary Sources</Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">40 min read</Badge>
               </div>
 
@@ -197,7 +197,7 @@ export default function ForensicMeltdownReport() {
               </p>
 
               <div className="bg-zinc-900/60 border border-zinc-700 rounded-lg px-5 py-4 space-y-1.5">
-                <p className="text-zinc-400 text-sm"><span className="text-zinc-300 font-medium">Evidence Base:</span> 2,077+ primary-source documents (1990–2026)</p>
+                <p className="text-zinc-400 text-sm"><span className="text-zinc-300 font-medium">Evidence Base:</span> 2,304+ primary-source documents (1990–2026)</p>
                 <p className="text-zinc-400 text-sm"><span className="text-zinc-300 font-medium">Total Damages:</span> AU$32.9 Million+ documented</p>
                 <p className="text-zinc-400 text-sm"><span className="text-zinc-300 font-medium">Classification:</span> Forensic Narrative Analysis | Systematic Persecution | Survival Documentation</p>
                 <p className="text-zinc-400 text-sm"><span className="text-zinc-300 font-medium">Format:</span> 5 sections, 14 exhibits — every claim sourced to a primary document.</p>
@@ -257,7 +257,7 @@ export default function ForensicMeltdownReport() {
             <div className="text-zinc-300 leading-relaxed space-y-4 text-[1.05rem]">
               <p>This forensic evidence report documents the most comprehensive case of systematic state-sponsored persecution in Australian history — and the unprecedented survival, recovery, and counter-documentation by a single individual operating with chronic schizophrenia, acquired brain injury, and in conditions of absolute poverty.</p>
               <p>For 35 years, government agencies, institutions, and individuals operated under the confident assumption that Dr. Richard McLean could be silenced, discredited, controlled, and ultimately destroyed. They had a complete meltdown trying to explain how he pulled off his survival — because every tool they deployed against him became the raw material for the most forensically detailed human rights case ever assembled within a Western democracy.</p>
-              <p className="text-[hsl(38,92%,50%)] font-medium">They expected ruins. Instead, they're staring at 2,077 evidence files and counting.</p>
+              <p className="text-[hsl(38,92%,50%)] font-medium">They expected ruins. Instead, they're staring at 2,304 evidence files and counting.</p>
             </div>
           </motion.div>
         </div>
@@ -377,7 +377,7 @@ export default function ForensicMeltdownReport() {
             </a>
             <p className="text-zinc-600 text-sm">
               This document is part of the{" "}
-              <a href="/evidence" className="text-zinc-400 hover:text-white underline">2,077-document evidence archive</a>{" "}
+              <a href="/evidence" className="text-zinc-400 hover:text-white underline">2,304-document evidence archive</a>{" "}
               submitted to the ICC, lodged with the UNHCR, and downloaded 217,064+ times worldwide.
             </p>
           </motion.div>

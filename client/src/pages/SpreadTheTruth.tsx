@@ -39,11 +39,11 @@ function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) 
 const TWEETS = [
   {
     label: "The core fact",
-    text: `An Australian whistleblower has 2,077+ blockchain-sealed documents proving 35 years of systematic government persecution. Never arrested. Never charged. The evidence is free to download. Make it impossible to erase.\n\n${SITE_URL} #BarranDodger #CannotBeErased`
+    text: `An Australian whistleblower has 2,304 blockchain-sealed documents proving 35 years of systematic government persecution. Never arrested. Never charged. The evidence is free to download. Make it impossible to erase.\n\n${SITE_URL} #BarranDodger #CannotBeErased`
   },
   {
     label: "The survival stat",
-    text: `A doctor survived what medical records show was a 2.87% survival probability — then documented the state's role in putting him there. 88,000+ downloads. No media coverage. Read why.\n\n${SITE_URL} #BarranDodger`
+    text: `A doctor survived what medical records show was a 2.87% survival probability — then documented the state's role in putting him there. 350,000+ downloads. No media coverage. Read why.\n\n${SITE_URL} #BarranDodger`
   },
   {
     label: "The psychiatric angle",
@@ -74,11 +74,11 @@ const TWEETS = [
 const WHATSAPP_MESSAGES = [
   {
     label: "Short hit",
-    text: `An Australian whistleblower has documented 35 years of government persecution with 2,077+ blockchain-verified documents. 88,000+ downloads. No mainstream media. Please read and share: ${SITE_URL}`
+    text: `An Australian whistleblower has documented 35 years of government persecution with 2,304 blockchain-verified documents. 350,000+ downloads. No mainstream media. Please read and share: ${SITE_URL}`
   },
   {
     label: "Full story",
-    text: `You need to read this. An Australian doctor and government whistleblower (Dr. Richard McLean) has spent 35 years documenting systematic persecution by Australian agencies — 14 involuntary psychiatric hospitalisations used to silence him, 350+ fraudulent ASIC registrations in his name, NDIS support approved and then systematically withheld, and a medical event with a 2.87% survival probability. Over 2,077 documents are blockchain-sealed and freely downloadable. The ICC has been formally notified. No Australian journalist has reported on it. Please read and pass this on: ${SITE_URL}`
+    text: `You need to read this. An Australian doctor and government whistleblower (Dr. Richard McLean) has spent 35 years documenting systematic persecution by Australian agencies — 14 involuntary psychiatric hospitalisations used to silence him, 350+ fraudulent ASIC registrations in his name, NDIS support approved and then systematically withheld, and a medical event with a 2.87% survival probability. Over 2,304 documents are blockchain-sealed and freely downloadable. The ICC has been formally notified. No Australian journalist has reported on it. Please read and pass this on: ${SITE_URL}`
   },
   {
     label: "Group message",
@@ -89,17 +89,17 @@ const WHATSAPP_MESSAGES = [
 const REDDIT_POSTS = [
   {
     subreddit: "r/australia",
-    title: "An Australian whistleblower has 2,077 blockchain-sealed documents proving systematic government persecution — and zero media coverage",
-    body: `Dr. Richard McLean (Barran Dodger) has documented 35 years of alleged systematic persecution by Australian government agencies. The archive includes:\n\n- 14 involuntary psychiatric hospitalisations across 3 states, documented as being used for silencing rather than treatment\n- 350+ fraudulent ASIC business registrations in his name\n- NDIS support approved on paper but systematically withheld\n- A medical event with a 2.87% documented survival probability\n- Formal submissions to the ICC and UNHCR\n- Every document is SHA-256 hashed and Bitcoin blockchain timestamped\n\n88,000+ confirmed downloads. No Australian mainstream media coverage.\n\nThe archive is completely free: ${SITE_URL}\n\nDraw your own conclusions.`
+    title: "An Australian whistleblower has 2,304 blockchain-sealed documents proving systematic government persecution — and zero media coverage",
+    body: `Dr. Richard McLean (Barran Dodger) has documented 35 years of alleged systematic persecution by Australian government agencies. The archive includes:\n\n- 14 involuntary psychiatric hospitalisations across 3 states, documented as being used for silencing rather than treatment\n- 350+ fraudulent ASIC business registrations in his name\n- NDIS support approved on paper but systematically withheld\n- A medical event with a 2.87% documented survival probability\n- Formal submissions to the ICC and UNHCR\n- Every document is SHA-256 hashed and Bitcoin blockchain timestamped\n\n350,000+ confirmed downloads. No Australian mainstream media coverage.\n\nThe archive is completely free: ${SITE_URL}\n\nDraw your own conclusions.`
   },
   {
     subreddit: "r/auslaw",
-    title: "Australian whistleblower files with ICC — 2,077 blockchain-timestamped documents, no criminal charges, no arrests",
-    body: `Interested in legal opinions on this situation:\n\nDr. Richard McLean has compiled a 2,077-document archive alleging systematic persecution by Australian government agencies over 35 years. Key legal claims include:\n\n- Psychiatric hospitalisation weaponised against a public interest whistleblower\n- Systematic NDIS entitlement denial after formal plan approval\n- Identity fraud via ASIC registrations\n- Formal ICC submission under Rome Statute Article 7\n- McLean v Comcare proceedings documented\n- Every document is blockchain timestamped for evidentiary integrity\n\nThe man has never been arrested or charged with any crime.\n\nArchive is public and free: ${SITE_URL}/evidence\n\nWhat's the legal community's read on the ICC filing?`
+    title: "Australian whistleblower files with ICC — 2,304 blockchain-timestamped documents, no criminal charges, no arrests",
+    body: `Interested in legal opinions on this situation:\n\nDr. Richard McLean has compiled a 2,304-document archive alleging systematic persecution by Australian government agencies over 35 years. Key legal claims include:\n\n- Psychiatric hospitalisation weaponised against a public interest whistleblower\n- Systematic NDIS entitlement denial after formal plan approval\n- Identity fraud via ASIC registrations\n- Formal ICC submission under Rome Statute Article 7\n- McLean v Comcare proceedings documented\n- Every document is blockchain timestamped for evidentiary integrity\n\nThe man has never been arrested or charged with any crime.\n\nArchive is public and free: ${SITE_URL}/evidence\n\nWhat's the legal community's read on the ICC filing?`
   },
   {
     subreddit: "r/ABoringDystopia",
-    title: "35 years of documented Australian government persecution of a whistleblower. 2,077 verified documents. Zero media.",
+    title: "35 years of documented Australian government persecution of a whistleblower. 2,304 verified documents. Zero media.",
     body: `The archive: ${SITE_URL}\n\nEvery document is freely downloadable. Every claim is sourced from government records. The AI significance assessments are impartial. Form your own view.\n\nDownload. Share. The evidence cannot be erased once it has been seen.`
   },
 ];
@@ -108,32 +108,32 @@ const JOURNALIST_EMAILS = [
   {
     outlet: "ABC Investigations / Four Corners",
     email: "four.corners@abc.net.au",
-    subject: "Whistleblower Archive: 2,077 Blockchain-Verified Documents — No Media Coverage",
-    body: `Dear Four Corners,\n\nI am writing to bring to your attention a case which appears to represent the most extensively documented allegation of systematic institutional persecution in Australian history, and which has received no mainstream media assessment.\n\nDr. Richard William McLean (known publicly as Barran Dodger) has compiled a public archive of 2,077 documents — all SHA-256 hashed and Bitcoin blockchain timestamped — alleging systematic targeting by Australian government agencies over 35 years.\n\nKey documented allegations:\n• 14 involuntary psychiatric hospitalisations across three states alleged to have been deployed for silencing rather than treatment\n• 350+ fraudulent ASIC business registrations found in his name\n• NDIS plan approvals documented alongside systematic non-delivery\n• Formal submission to the ICC under Rome Statute Article 7\n• McLean v Comcare federal proceedings on record\n• AI significance assessments confirming documentary weight\n• 88,000+ confirmed document downloads with no media amplification\n\nThe complete archive is publicly accessible and freely downloadable:\n${SITE_URL}\n\nEvery document is independently verifiable. The archive includes government-issued records, tribunal decisions, medical assessments, and legal filings — primary sources rather than claims alone.\n\nI am requesting that Four Corners assign a researcher to assess this material. The public interest threshold appears clearly met.\n\nSincerely,\n[Your name]`
+    subject: "Whistleblower Archive: 2,304 Blockchain-Verified Documents — No Media Coverage",
+    body: `Dear Four Corners,\n\nI am writing to bring to your attention a case which appears to represent the most extensively documented allegation of systematic institutional persecution in Australian history, and which has received no mainstream media assessment.\n\nDr. Richard William McLean (known publicly as Barran Dodger) has compiled a public archive of 2,304 documents — all SHA-256 hashed and Bitcoin blockchain timestamped — alleging systematic targeting by Australian government agencies over 35 years.\n\nKey documented allegations:\n• 14 involuntary psychiatric hospitalisations across three states alleged to have been deployed for silencing rather than treatment\n• 350+ fraudulent ASIC business registrations found in his name\n• NDIS plan approvals documented alongside systematic non-delivery\n• Formal submission to the ICC under Rome Statute Article 7\n• McLean v Comcare federal proceedings on record\n• AI significance assessments confirming documentary weight\n• 350,000+ confirmed document downloads with no media amplification\n\nThe complete archive is publicly accessible and freely downloadable:\n${SITE_URL}\n\nEvery document is independently verifiable. The archive includes government-issued records, tribunal decisions, medical assessments, and legal filings — primary sources rather than claims alone.\n\nI am requesting that Four Corners assign a researcher to assess this material. The public interest threshold appears clearly met.\n\nSincerely,\n[Your name]`
   },
   {
     outlet: "The Guardian Australia",
     email: "australia.news@theguardian.com",
-    subject: "Tip: Undocumented whistleblower case — 2,077 blockchain-verified documents, ICC filing, no coverage",
-    body: `Dear Guardian Australia,\n\nA whistleblower archive that may constitute the most documented case of institutional persecution in Australian history has received no mainstream coverage despite 88,000+ public downloads.\n\nDr. Richard McLean's archive (${SITE_URL}) contains 2,077 blockchain-timestamped documents alleging:\n- Systematic NDIS support denial post-approval\n- 14 involuntary psychiatric hospitalisations documented as punitive\n- 350+ ASIC fraudulent business registrations\n- ICC submission under Rome Statute Article 7\n- Comcare federal proceedings\n\nAll documents are freely available, SHA-256 verified, and Bitcoin timestamped. Government-issued records form the evidentiary core.\n\nThe public interest case for independent assessment appears strong.\n\n${SITE_URL}/evidence\n\n[Your name]`
+    subject: "Tip: Undocumented whistleblower case — 2,304 blockchain-verified documents, ICC filing, no coverage",
+    body: `Dear Guardian Australia,\n\nA whistleblower archive that may constitute the most documented case of institutional persecution in Australian history has received no mainstream coverage despite 350,000+ public downloads.\n\nDr. Richard McLean's archive (${SITE_URL}) contains 2,304 blockchain-timestamped documents alleging:\n- Systematic NDIS support denial post-approval\n- 14 involuntary psychiatric hospitalisations documented as punitive\n- 350+ ASIC fraudulent business registrations\n- ICC submission under Rome Statute Article 7\n- Comcare federal proceedings\n\nAll documents are freely available, SHA-256 verified, and Bitcoin timestamped. Government-issued records form the evidentiary core.\n\nThe public interest case for independent assessment appears strong.\n\n${SITE_URL}/evidence\n\n[Your name]`
   },
   {
     outlet: "Sydney Morning Herald",
     email: "scoops@smh.com.au",
-    subject: "Exclusive tip: Australian whistleblower — 2,077 documents, no media, ICC filing",
-    body: `Hi,\n\nA whistleblower case with 2,077 blockchain-verified documents and an ICC submission has had zero mainstream media assessment despite 88,000+ downloads.\n\nDr. Richard McLean's archive alleges 35 years of systematic government persecution. Every document is freely available and cryptographically timestamped:\n\n${SITE_URL}\n\nKey claims: 14 involuntary psychiatric hospitalisations, 350+ ASIC identity fraud, systematic NDIS denial, Comcare proceedings. The archive is built on primary source government documents.\n\nWorth a look.\n[Your name]`
+    subject: "Exclusive tip: Australian whistleblower — 2,304 documents, no media, ICC filing",
+    body: `Hi,\n\nA whistleblower case with 2,304 blockchain-verified documents and an ICC submission has had zero mainstream media assessment despite 350,000+ downloads.\n\nDr. Richard McLean's archive alleges 35 years of systematic government persecution. Every document is freely available and cryptographically timestamped:\n\n${SITE_URL}\n\nKey claims: 14 involuntary psychiatric hospitalisations, 350+ ASIC identity fraud, systematic NDIS denial, Comcare proceedings. The archive is built on primary source government documents.\n\nWorth a look.\n[Your name]`
   },
   {
     outlet: "Crikey",
     email: "tips@crikey.com.au",
-    subject: "Tip: Government whistleblower archive — 2,077 verified docs, ICC submission, ignored",
-    body: `Hi Crikey,\n\nA story that seems tailor-made for your readership: an Australian whistleblower archive with 2,077 blockchain-timestamped documents alleging systematic government persecution has 88,000+ downloads and zero mainstream press.\n\nThe full archive is public and free: ${SITE_URL}\n\nCore claims: psychiatric hospitalisation used as state suppression tool, 350+ ASIC identity frauds, NDIS plan denial, ICC Rome Statute submission, Comcare proceedings. All primary-source documented.\n\nThe absence of coverage given the documented scale of the allegations is itself a story.\n\n[Your name]`
+    subject: "Tip: Government whistleblower archive — 2,304 verified docs, ICC submission, ignored",
+    body: `Hi Crikey,\n\nA story that seems tailor-made for your readership: an Australian whistleblower archive with 2,304 blockchain-timestamped documents alleging systematic government persecution has 350,000+ downloads and zero mainstream press.\n\nThe full archive is public and free: ${SITE_URL}\n\nCore claims: psychiatric hospitalisation used as state suppression tool, 350+ ASIC identity frauds, NDIS plan denial, ICC Rome Statute submission, Comcare proceedings. All primary-source documented.\n\nThe absence of coverage given the documented scale of the allegations is itself a story.\n\n[Your name]`
   },
   {
     outlet: "The Saturday Paper",
     email: "editorial@thesaturdaypaper.com.au",
     subject: "Pitch: The most documented whistleblower case in Australian history — and the silence around it",
-    body: `Dear Saturday Paper,\n\nI am bringing to your attention a case that appears to represent an extraordinary convergence of institutional failure, documentary evidence, and media silence.\n\nDr. Richard William McLean has published a 2,077-document archive (${SITE_URL}) alleging 35 years of systematic persecution by Australian government agencies. The archive is blockchain-verified, freely accessible, and built on primary source government records.\n\nThe story is not just the allegations — it is the complete absence of journalistic assessment despite the public archive reaching 88,000+ confirmed downloads.\n\nThe Saturday Paper's investigative capacity and readership seem well-suited to assess this material independently.\n\n${SITE_URL}/evidence\n\n[Your name]`
+    body: `Dear Saturday Paper,\n\nI am bringing to your attention a case that appears to represent an extraordinary convergence of institutional failure, documentary evidence, and media silence.\n\nDr. Richard William McLean has published a 2,304-document archive (${SITE_URL}) alleging 35 years of systematic persecution by Australian government agencies. The archive is blockchain-verified, freely accessible, and built on primary source government records.\n\nThe story is not just the allegations — it is the complete absence of journalistic assessment despite the public archive reaching 350,000+ confirmed downloads.\n\nThe Saturday Paper's investigative capacity and readership seem well-suited to assess this material independently.\n\n${SITE_URL}/evidence\n\n[Your name]`
   },
 ];
 
@@ -142,19 +142,19 @@ const POLITICIAN_EMAILS = [
     name: "David Pocock (ACT Independent Senator)",
     email: "senator.pocock@aph.gov.au",
     subject: "Constituent concern: Whistleblower case requiring Senate attention",
-    body: `Dear Senator Pocock,\n\nI am writing regarding a whistleblower case which may warrant Senate examination.\n\nDr. Richard William McLean has compiled a public archive of 2,077 blockchain-verified documents alleging systematic persecution by Australian government agencies over 35 years, including:\n\n• Documented NDIS support denial following formal plan approval\n• 14 involuntary psychiatric hospitalisations alleged to have been used punitively\n• 350+ fraudulent ASIC registrations in his name\n• A formal ICC submission under Rome Statute Article 7\n• Federal Comcare proceedings on record\n\nThe archive is publicly accessible at ${SITE_URL} and has received 88,000+ downloads with no mainstream media or governmental assessment.\n\nGiven your commitment to transparency and accountability, I respectfully request that your office assess this material and consider whether a Senate inquiry or whistleblower protection review is warranted.\n\nSincerely,\n[Your name]`
+    body: `Dear Senator Pocock,\n\nI am writing regarding a whistleblower case which may warrant Senate examination.\n\nDr. Richard William McLean has compiled a public archive of 2,304 blockchain-verified documents alleging systematic persecution by Australian government agencies over 35 years, including:\n\n• Documented NDIS support denial following formal plan approval\n• 14 involuntary psychiatric hospitalisations alleged to have been used punitively\n• 350+ fraudulent ASIC registrations in his name\n• A formal ICC submission under Rome Statute Article 7\n• Federal Comcare proceedings on record\n\nThe archive is publicly accessible at ${SITE_URL} and has received 350,000+ downloads with no mainstream media or governmental assessment.\n\nGiven your commitment to transparency and accountability, I respectfully request that your office assess this material and consider whether a Senate inquiry or whistleblower protection review is warranted.\n\nSincerely,\n[Your name]`
   },
   {
     name: "Lidia Thorpe (Independent Senator)",
     email: "senator.thorpe@aph.gov.au",
-    subject: "Human rights case requiring Senate attention — 2,077 verified documents",
-    body: `Dear Senator Thorpe,\n\nI am writing to bring to your attention a documented human rights case involving systematic institutional persecution of an Australian citizen.\n\nDr. Richard McLean's public archive (${SITE_URL}) contains 2,077 blockchain-verified documents alleging state-coordinated persecution including psychiatric weaponisation, NDIS denial, and identity fraud. An ICC submission has been filed.\n\nThe case has received 88,000+ downloads with no governmental or media response. Given your advocacy on human rights and institutional accountability, I am respectfully requesting that your office review this material.\n\nSincerely,\n[Your name]`
+    subject: "Human rights case requiring Senate attention — 2,304 verified documents",
+    body: `Dear Senator Thorpe,\n\nI am writing to bring to your attention a documented human rights case involving systematic institutional persecution of an Australian citizen.\n\nDr. Richard McLean's public archive (${SITE_URL}) contains 2,304 blockchain-verified documents alleging state-coordinated persecution including psychiatric weaponisation, NDIS denial, and identity fraud. An ICC submission has been filed.\n\nThe case has received 350,000+ downloads with no governmental or media response. Given your advocacy on human rights and institutional accountability, I am respectfully requesting that your office review this material.\n\nSincerely,\n[Your name]`
   },
   {
     name: "David Shoebridge (Greens Senator — Legal Affairs)",
     email: "senator.shoebridge@aph.gov.au",
-    subject: "Whistleblower protection failure — 2,077 blockchain-documented allegations, no response",
-    body: `Dear Senator Shoebridge,\n\nAs a member of the Senate Legal and Constitutional Affairs Committee, your office may be interested in a case involving alleged systematic whistleblower persecution with an extensive documentary record.\n\nDr. Richard McLean's archive (${SITE_URL}) contains 2,077 SHA-256 verified documents alleging 35 years of coordinated government persecution, including documented NDIS denial, Comcare proceedings, and a formal ICC submission.\n\nThe complete absence of institutional response to a publicly available, blockchain-verified archive of this scale raises serious questions about whistleblower protection adequacy in Australia.\n\nI respectfully request your office's assessment.\n\nSincerely,\n[Your name]`
+    subject: "Whistleblower protection failure — 2,304 blockchain-documented allegations, no response",
+    body: `Dear Senator Shoebridge,\n\nAs a member of the Senate Legal and Constitutional Affairs Committee, your office may be interested in a case involving alleged systematic whistleblower persecution with an extensive documentary record.\n\nDr. Richard McLean's archive (${SITE_URL}) contains 2,304 SHA-256 verified documents alleging 35 years of coordinated government persecution, including documented NDIS denial, Comcare proceedings, and a formal ICC submission.\n\nThe complete absence of institutional response to a publicly available, blockchain-verified archive of this scale raises serious questions about whistleblower protection adequacy in Australia.\n\nI respectfully request your office's assessment.\n\nSincerely,\n[Your name]`
   },
 ];
 
@@ -167,14 +167,14 @@ const EMBED_CODE = `<iframe
   loading="lazy"
 ></iframe>
 <p style="font-size:12px;margin-top:4px;">
-  Source: <a href="${SITE_URL}" target="_blank">barrandodger.com</a> — 2,077 blockchain-verified documents
+  Source: <a href="${SITE_URL}" target="_blank">barrandodger.com</a> — 2,304 blockchain-verified documents
 </p>`;
 
 export default function SpreadTheTruth() {
   const { toast } = useToast();
 
   const shareAll = async () => {
-    const text = `An Australian whistleblower has 2,077 blockchain-sealed documents proving 35 years of systematic government persecution. 88,000+ downloads. No media. Download the evidence: ${SITE_URL}`;
+    const text = `An Australian whistleblower has 2,304 blockchain-sealed documents proving 35 years of systematic government persecution. 350,000+ downloads. No media. Download the evidence: ${SITE_URL}`;
     try {
       if (navigator.share) {
         await navigator.share({ title: "Barran Dodger — Cannot Be Erased", text, url: SITE_URL });
@@ -336,27 +336,27 @@ export default function SpreadTheTruth() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               <Button className="gap-2 bg-blue-600 hover:bg-blue-700 text-white h-12" asChild>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${siteEnc}&quote=${encodeURIComponent("The most documented whistleblower persecution in Australian history. 2,077 blockchain-verified documents. Read them.")}`} target="_blank" rel="noopener noreferrer" data-testid="button-facebook-share">
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${siteEnc}&quote=${encodeURIComponent("The most documented whistleblower persecution in Australian history. 2,304 blockchain-verified documents. Read them.")}`} target="_blank" rel="noopener noreferrer" data-testid="button-facebook-share">
                   <SiFacebook className="h-4 w-4" /> Facebook
                 </a>
               </Button>
               <Button className="gap-2 bg-blue-400 hover:bg-blue-500 text-white h-12" asChild>
-                <a href={`https://t.me/share/url?url=${siteEnc}&text=${encodeURIComponent("2,077 blockchain-verified documents. The most documented persecution case in Australian history. Read and share.")}`} target="_blank" rel="noopener noreferrer" data-testid="button-telegram-share">
+                <a href={`https://t.me/share/url?url=${siteEnc}&text=${encodeURIComponent("2,304 blockchain-verified documents. The most documented persecution case in Australian history. Read and share.")}`} target="_blank" rel="noopener noreferrer" data-testid="button-telegram-share">
                   <SiTelegram className="h-4 w-4" /> Telegram
                 </a>
               </Button>
               <Button className="gap-2 bg-blue-700 hover:bg-blue-800 text-white h-12" asChild>
-                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${siteEnc}&summary=${encodeURIComponent("An Australian whistleblower has compiled 2,077 blockchain-verified documents alleging systematic government persecution. The archive is publicly available.")}`} target="_blank" rel="noopener noreferrer" data-testid="button-linkedin-share">
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${siteEnc}&summary=${encodeURIComponent("An Australian whistleblower has compiled 2,304 blockchain-verified documents alleging systematic government persecution. The archive is publicly available.")}`} target="_blank" rel="noopener noreferrer" data-testid="button-linkedin-share">
                   <SiLinkedin className="h-4 w-4" /> LinkedIn
                 </a>
               </Button>
               <Button className="gap-2 col-span-2 md:col-span-1 bg-zinc-800 hover:bg-zinc-700 text-white h-12" asChild>
-                <a href={`mailto:?subject=You need to see this — Australian whistleblower archive&body=An Australian whistleblower has compiled 2,077 blockchain-verified documents alleging 35 years of systematic government persecution. The archive is completely free and public:%0A%0A${SITE_URL}%0A%0ADownload the evidence. Share it. They cannot erase what has already been seen.`} data-testid="button-email-share">
+                <a href={`mailto:?subject=You need to see this — Australian whistleblower archive&body=An Australian whistleblower has compiled 2,304 blockchain-verified documents alleging 35 years of systematic government persecution. The archive is completely free and public:%0A%0A${SITE_URL}%0A%0ADownload the evidence. Share it. They cannot erase what has already been seen.`} data-testid="button-email-share">
                   <Mail className="h-4 w-4" /> Email a Friend
                 </a>
               </Button>
               <Button className="gap-2 h-12 border-amber-500 text-amber-400" variant="outline" asChild>
-                <a href={`sms:?body=You need to see this. An Australian whistleblower has 2,077 blockchain-verified documents proving government persecution. Free archive: ${SITE_URL}`} data-testid="button-sms-share">
+                <a href={`sms:?body=You need to see this. An Australian whistleblower has 2,304 blockchain-verified documents proving government persecution. Free archive: ${SITE_URL}`} data-testid="button-sms-share">
                   <MessageCircle className="h-4 w-4" /> SMS
                 </a>
               </Button>

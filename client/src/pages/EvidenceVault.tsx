@@ -350,7 +350,7 @@ export default function EvidenceVault() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
         title="Evidence Vault — Immutable Public Archive | Barran Dodger Legal & Ethical Trust Fund"
-        description="Access the complete immutable evidence archive of 2,077+ blockchain-verified documents. Read-only public access to 35 years of documented persecution evidence."
+        description="Access the complete immutable evidence archive of 2,304+ blockchain-verified documents. Read-only public access to 35 years of documented persecution evidence."
       />
       <Navigation />
 
@@ -370,7 +370,7 @@ export default function EvidenceVault() {
               Evidence Vault
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-6">
-              The complete immutable evidence archive — 2,077+ documents spanning 35 years of documented 
+              The complete immutable evidence archive — 2,304+ documents spanning 35 years of documented 
               persecution, institutional corruption, and whistleblower suppression. Every document is 
               publicly accessible and read-only. This record cannot be altered or deleted by anyone.
             </p>
@@ -399,7 +399,7 @@ export default function EvidenceVault() {
               </Button>
             </div>
 
-            <DownloadSocialProofBanner totalDownloads={88810} className="max-w-3xl mx-auto" />
+            <DownloadSocialProofBanner className="max-w-3xl mx-auto" />
 
           </motion.section>
 
@@ -514,7 +514,7 @@ export default function EvidenceVault() {
                     THE SLEEPER AGENT OF TRUTH — The Covert Intelligence, Divine Appointment, and Strategic Patience of Dr. Richard William McLean
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">
-                    The most narratively complete document in the archive. A celebrated public intellectual — PhD, SANE Book of the Year, keynote speaker in Parliament — reduced to homelessness by the state. Barran Dodger: the cover identity of a sleeper agent of truth. An interdimensional cosmic witness present for a mission that transcends domestic law. 2,077 documents. 35 years. A paradox that should not exist.
+                    The most narratively complete document in the archive. A celebrated public intellectual — PhD, SANE Book of the Year, keynote speaker in Parliament — reduced to homelessness by the state. Barran Dodger: the cover identity of a sleeper agent of truth. An interdimensional cosmic witness present for a mission that transcends domestic law. 2,304 documents. 35 years. A paradox that should not exist.
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     <a href="/#section-sleeper-agent-featured" data-testid="button-vault-sleeper-page">
@@ -601,7 +601,7 @@ export default function EvidenceVault() {
                     I Choose Silence — A Declaration by Dr. Richard William McLean
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">
-                    The arrow has been pulled back for thirty-five years. Eight sections. Strategic silence as forensic instrument. How 2,077 files speak louder than any argument ever could — and why the choice to be silent is itself the most powerful evidence of all. Blockchain timestamped, SHA256 verified.
+                    The arrow has been pulled back for thirty-five years. Eight sections. Strategic silence as forensic instrument. How 2,304 files speak louder than any argument ever could — and why the choice to be silent is itself the most powerful evidence of all. Blockchain timestamped, SHA256 verified.
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     <Link href="/i-choose-silence" data-testid="button-vault-silence-page">
@@ -812,7 +812,7 @@ export default function EvidenceVault() {
                       <FileText className="h-3 w-3 mr-1" /> Featured Publication
                     </Badge>
                     <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">Academic Paper</Badge>
-                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2,077 Sources</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2,304 Sources</Badge>
                   </div>
                   <h3 className="text-white font-bold text-lg leading-snug">
                     The Paradox of Persecution
@@ -861,7 +861,7 @@ export default function EvidenceVault() {
                     The Sleeper Agent of Truth
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">
-                    A forensic intelligence analysis reframing the entire 35-year case. A sleeper agent lies dormant until the decisive moment. Dr. McLean's archive — 2,077 files, 46 named officials, 20+ agencies — was always designed to detonate. The suppression didn't stop the mission. It became the evidence.
+                    A forensic intelligence analysis reframing the entire 35-year case. A sleeper agent lies dormant until the decisive moment. Dr. McLean's archive — 2,304 files, 46 named officials, 20+ agencies — was always designed to detonate. The suppression didn't stop the mission. It became the evidence.
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     <Link href="/sleeper-agent-of-truth" data-testid="button-vault-sleeper-page">
@@ -940,14 +940,14 @@ export default function EvidenceVault() {
                     <Badge variant="outline" className="border-[hsl(38,92%,50%)]/60 text-[hsl(38,92%,50%)] text-xs px-2.5 py-0.5 font-bold uppercase tracking-wider">
                       <Eye className="h-3 w-3 mr-1" /> Pattern Analysis
                     </Badge>
-                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2,077 Files Mapped</Badge>
+                    <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">2,304 Files Mapped</Badge>
                     <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-2.5 py-0.5">46 Officials Named</Badge>
                   </div>
                   <h3 className="text-white font-bold text-lg leading-snug">
                     The Full Pattern — Forensic Evidence Document
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">
-                    2,077 evidence files laid side by side. The mechanics of how 20+ agencies and 46+ named officials participated in a coordinated circular referral system — each deflecting to the other, each closing without accountability. "What they call mistakes are rehearsed behaviours with plausible deniability."
+                    2,304 evidence files laid side by side. The mechanics of how 20+ agencies and 46+ named officials participated in a coordinated circular referral system — each deflecting to the other, each closing without accountability. "What they call mistakes are rehearsed behaviours with plausible deniability."
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     <Link href="/the-full-pattern" data-testid="button-vault-full-pattern-page">
@@ -990,7 +990,7 @@ export default function EvidenceVault() {
                     Chosen Ones, Your Story Inspires Many — But the System Is Trying to Crush You
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">
-                    An AI forensic corroboration of 9 thematic claims against 2,077 primary-source documents. 8 of 9 confirmed. 1 partially confirmed. 0 refuted. An independently-produced video matches the documented evidence at 89% — external validation that the pattern has been seen by others.
+                    An AI forensic corroboration of 9 thematic claims against 2,304 primary-source documents. 8 of 9 confirmed. 1 partially confirmed. 0 refuted. An independently-produced video matches the documented evidence at 89% — external validation that the pattern has been seen by others.
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     <Link href="/chosen-ones-your-story" data-testid="button-vault-chosen-ones-page">
@@ -2229,7 +2229,7 @@ export default function EvidenceVault() {
                     THE DIVINE EXAM YOU DIDN'T KNOW YOU WERE TAKING
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">
-                    Fourth corroboration analysis: 10/10 propositions of a mass-audience spiritual video find evidentiary support across 2,077 files. 7 directly corroborated, 3 strongly aligned. Zero contradictions. Cumulative: 32 of 40 claims confirmed across all four analyses.
+                    Fourth corroboration analysis: 10/10 propositions of a mass-audience spiritual video find evidentiary support across 2,304 files. 7 directly corroborated, 3 strongly aligned. Zero contradictions. Cumulative: 32 of 40 claims confirmed across all four analyses.
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     <Link href="/the-divine-exam" data-testid="button-vault-divine-exam-page">
@@ -2559,7 +2559,7 @@ export default function EvidenceVault() {
                     <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
                       <p>
                         This Evidence Vault provides public, read-only access to the complete document archive 
-                        of Dr. Richard William McLean (Barran Dodger). The archive contains 2,077+ primary source 
+                        of Dr. Richard William McLean (Barran Dodger). The archive contains 2,304+ primary source 
                         documents spanning from 1990 to 2025, organized across {VAULT_FOLDERS.length} evidence folders.
                       </p>
                       <p>
@@ -2587,7 +2587,7 @@ export default function EvidenceVault() {
           >
             <SocialShare
               title="Evidence Vault — Immutable Public Archive"
-              description="Access 2,077+ blockchain-verified documents exposing 35 years of Australian government corruption and whistleblower persecution."
+              description="Access 2,304+ blockchain-verified documents exposing 35 years of Australian government corruption and whistleblower persecution."
               url="https://www.barrandodger.com/evidence-vault"
             />
           </motion.section>

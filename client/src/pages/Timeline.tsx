@@ -377,7 +377,7 @@ export default function Timeline() {
               <InlineShareStrip 
                 id="timeline-share" 
                 context="default" 
-                message="35 years of systematic persecution documented in a single timeline. 2,077+ blockchain-verified evidence files. 35+ government agencies. This is not conspiracy — this is evidence. Share the timeline." 
+                message="35 years of systematic persecution documented in a single timeline. 2,304+ blockchain-verified evidence files. 35+ government agencies. This is not conspiracy — this is evidence. Share the timeline." 
               />
             </motion.div>
           </motion.div>

@@ -218,7 +218,7 @@ const paradoxParts = [
     keyQuote: "The government medicated Dr. McLean for believing things that the government's own records prove are true. This is not psychiatric treatment \u2014 it is punishment for documentation.",
     facts: [
       "Diagnosed with chronic schizophrenia and force-medicated under Community Treatment Orders",
-      "Medicated for \"delusions of persecution\" while possessing 2,077 documents proving persecution was real",
+      "Medicated for \"delusions of persecution\" while possessing 2,304 documents proving persecution was real",
       "Dr. Veda Chang's psychiatric opinion (16 Dec 2022): \"you continue to have paranoid and grandiose delusions\"",
       "Forensic analysis found 70% of claims are evidence-based; only 30% attributed to schizophrenia",
       "Mental Health Tribunal ordered release after confirming hospital was NOT treating him, only detaining him",
@@ -323,7 +323,7 @@ export default function CaseStudies() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
         title="The Paradox of Persecution — The Government's Own Records Prove Everything"
-        description="How Australia's own bureaucratic records simultaneously document systematic targeting AND guarantee legal vindication. Fact-checked academic analysis backed by 2,077 primary-source documents spanning 35 years."
+        description="How Australia's own bureaucratic records simultaneously document systematic targeting AND guarantee legal vindication. Fact-checked academic analysis backed by 2,304 primary-source documents spanning 35 years."
         keywords="government persecution case study, whistleblower vindication, paradox of persecution, Australian bureaucracy corruption, systematic targeting evidence, academic analysis government corruption"
         path="/case-studies"
         type="article"
@@ -333,7 +333,7 @@ export default function CaseStudies() {
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": "The Paradox of Persecution — How the Australian Government's Own Records Prove Everything",
-          "description": "How Australia's own bureaucratic records simultaneously document systematic targeting AND guarantee legal vindication. Fact-checked academic analysis backed by 2,077 primary-source documents spanning 35 years.",
+          "description": "How Australia's own bureaucratic records simultaneously document systematic targeting AND guarantee legal vindication. Fact-checked academic analysis backed by 2,304 primary-source documents spanning 35 years.",
           "author": {
             "@type": "Person",
             "name": "Dr. Richard William McLean",
@@ -373,7 +373,7 @@ export default function CaseStudies() {
                     PEER-VERIFIED
                   </Badge>
                   <Badge variant="outline" className="border-primary text-primary font-bold" data-testid="badge-2077-sources">
-                    2,077 PRIMARY SOURCES
+                    2,304 PRIMARY SOURCES
                   </Badge>
                 </div>
                 <CardTitle className="text-3xl md:text-4xl lg:text-5xl font-serif text-primary leading-tight" data-testid="text-paradox-title">
@@ -493,7 +493,7 @@ export default function CaseStudies() {
                     <h4 className="font-bold text-primary mb-2">Psychiatric Evidence — The Diagnostic Paradox</h4>
                     <p className="text-sm text-foreground leading-relaxed">
                       The paper presents what may be its most legally significant argument: Dr. McLean was force-medicated under Community Treatment Orders for "delusions of <CrossLink to="/case-studies">persecution</CrossLink>" 
-                      while simultaneously possessing 2,077 government-generated documents proving the persecution was factual. 
+                      while simultaneously possessing 2,304 government-generated documents proving the persecution was factual. 
                       An independent forensic analysis found <span className="font-bold">70% of his claims are evidence-based</span>, with only 30% attributed to chronic schizophrenia. 
                       The government's own Mental Health Tribunal subsequently ordered his release after confirming the hospital was "not treating him, only detaining him." 
                       This creates an extraordinary legal situation where the government's own medical tribunal vindicated the very claims its psychiatrists diagnosed as delusional.
@@ -1147,7 +1147,7 @@ export default function CaseStudies() {
             </div>
             <SocialShare 
               title="The Paradox of Persecution — Barran Dodger Evidence Archive"
-              description="How the Australian Government's own records simultaneously prove systematic targeting and guarantee legal vindication. 2,077 primary-source documents spanning 35 years."
+              description="How the Australian Government's own records simultaneously prove systematic targeting and guarantee legal vindication. 2,304 primary-source documents spanning 35 years."
               url="https://www.barrandodger.com/case-studies"
             />
           </motion.section>
