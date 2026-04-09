@@ -2813,7 +2813,7 @@ export default function Evidence() {
             <p className="text-center text-sm text-muted-foreground mb-8 max-w-2xl mx-auto">
               Real-time message captures documenting surveillance disclosure, political targeting, and unlawful intelligence operations against a protected whistleblower. Click any image to enlarge.
             </p>
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 {
                   src: "/evidence/screenshot-ben-ndis-mental-health.png",
@@ -2838,6 +2838,14 @@ export default function Evidence() {
                   caption: "Third party warns: \"there's an app out on you and the drones have got you parked near train station\" and \"some shit saying you touch little kids\" — documenting the real-time smear campaign and aerial surveillance operation.",
                   color: "border-orange-500/60",
                   badgeColor: "bg-orange-900/80 text-orange-200",
+                },
+                {
+                  src: "/evidence/screenshot-ben-ndis-hitmen-caught.png",
+                  label: "EXHIBIT D",
+                  title: "Hitmen Caught — Agents Still Driving Around",
+                  caption: "Ben confirms: \"Remember you were messaging me about hitmen. A few nights ago. That was them. They got caught. I thought you were just paranoid. You were right. Just go for a walk. You'll see the agents driving around.\" — Real-time confirmation of assassination attempt and ongoing surveillance.",
+                  color: "border-purple-500/60",
+                  badgeColor: "bg-purple-900/80 text-purple-200",
                 },
               ].map((exhibit, i) => (
                 <ScreenshotExhibit key={i} {...exhibit} />
