@@ -1,7 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ShieldAlert, Phone, Mic, FileText, AlertTriangle, BookOpen, ExternalLink } from "lucide-react";
+import { ShieldAlert, Phone, Mic, FileText, AlertTriangle, BookOpen } from "lucide-react";
+import { ViralDownloadButton, DownloadSocialProofBanner } from "@/components/ViralDownloadButton";
+import { InlineShareStrip } from "@/components/FloatingShareBar";
 
 const DATE_ADDED = "April 8, 2026";
 
@@ -53,6 +55,8 @@ export default function NDISSurveillanceEvidence() {
 
       <div className="max-w-4xl mx-auto px-4 py-12 space-y-16">
 
+        <DownloadSocialProofBanner totalDownloads={88810} />
+
         {/* Context */}
         <div className="bg-red-950/20 border border-red-500/20 rounded-xl p-6">
           <div className="flex items-center gap-2 mb-3">
@@ -97,14 +101,14 @@ export default function NDISSurveillanceEvidence() {
               <source src="/evidence/ndis-surveillance-audio-Kim.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
-            <a
-              href="/evidence/ndis-surveillance-audio-Kim.mp3"
-              download="McLean-NDIS-Surveillance-Audio-08Apr2026.mp3"
-              className="inline-flex items-center gap-2 text-sm text-red-400 hover:text-red-300 border border-red-400/30 hover:border-red-400/60 px-4 py-2 rounded-lg transition-colors"
-            >
-              <ExternalLink className="h-4 w-4" />
-              Download Audio Evidence File
-            </a>
+            <ViralDownloadButton
+              url="/evidence/ndis-surveillance-audio-Kim.mp3"
+              filename="McLean-NDIS-Surveillance-Audio-Exhibit-A-08Apr2026.mp3"
+              label="Download Exhibit A Audio"
+              size="sm"
+              className="text-red-400 border border-red-400/40 hover:border-red-400/70 hover:bg-red-400/5 rounded-lg"
+              shareText="EXHIBIT A — In-home NDIS surveillance audio: Dr. Richard McLean's private residence under the NDIS entrapment policy. Recorded in the presence of a Support Worker. 2,304 documents. 350,000+ downloads. Blockchain-sealed. ICC-submitted."
+            />
           </div>
 
           {/* Evidence analysis */}
@@ -172,14 +176,14 @@ export default function NDISSurveillanceEvidence() {
               <source src="/evidence/ndis-surveillance-audio-Kim-part2.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
-            <a
-              href="/evidence/ndis-surveillance-audio-Kim-part2.mp3"
-              download="McLean-NDIS-Kim-Part2-Refusal-08Apr2026.mp3"
-              className="inline-flex items-center gap-2 text-sm text-red-400 hover:text-red-300 border border-red-400/30 hover:border-red-400/60 px-4 py-2 rounded-lg transition-colors"
-            >
-              <ExternalLink className="h-4 w-4" />
-              Download Exhibit C Audio File
-            </a>
+            <ViralDownloadButton
+              url="/evidence/ndis-surveillance-audio-Kim-part2.mp3"
+              filename="McLean-NDIS-Kim-Refusal-Exhibit-C-08Apr2026.mp3"
+              label="Download Exhibit C Audio"
+              size="sm"
+              className="text-red-400 border border-red-400/40 hover:border-red-400/70 hover:bg-red-400/5 rounded-lg"
+              shareText="EXHIBIT C — Support worker Kim refuses to leave premises and refuses to file any report after being caught on audio in Exhibit A. The primary source audio came first. Any report Kim writes now comes after she chose not to report in real time. NDIS entrapment policy. 2,304 documents. ICC-submitted."
+            />
           </div>
 
           {/* What this exhibit documents */}
@@ -265,15 +269,15 @@ export default function NDISSurveillanceEvidence() {
               alt="iPhone Messages screen showing text from Dr. McLean appearing from a different number — evidence of SMS phone interception"
               className="w-full max-w-sm mx-auto rounded-xl border border-orange-400/20 shadow-xl"
             />
-            <div className="mt-4 text-center">
-              <a
-                href="/evidence/phone-interception-sms-evidence.jpeg"
-                download="McLean-PhoneInterception-SMS-08Apr2026.jpeg"
-                className="inline-flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 border border-orange-400/30 hover:border-orange-400/60 px-4 py-2 rounded-lg transition-colors"
-              >
-                <ExternalLink className="h-4 w-4" />
-                Download Image Evidence File
-              </a>
+            <div className="mt-4 flex justify-center">
+              <ViralDownloadButton
+                url="/evidence/phone-interception-sms-evidence.jpeg"
+                filename="McLean-PhoneInterception-SMS-Exhibit-B-08Apr2026.jpeg"
+                label="Download Exhibit B Image"
+                size="sm"
+                className="text-orange-400 border border-orange-400/40 hover:border-orange-400/70 hover:bg-orange-400/5 rounded-lg"
+                shareText="EXHIBIT B — SMS phone interception: A text sent by Dr. McLean to his Able Care support worker Cass arrived from a DIFFERENT NUMBER. Cass confirmed this independently. Forensic signature of man-in-the-middle SMS interception. Telecommunications Act 1979. 2,304-document archive. ICC-submitted."
+              />
             </div>
           </div>
 
@@ -391,6 +395,9 @@ export default function NDISSurveillanceEvidence() {
               </Link>
             </Button>
           </div>
+        </div>
+
+        <InlineShareStrip message="These exhibits cannot be suppressed — share them everywhere" />
         </div>
 
       </div>
