@@ -20,7 +20,7 @@ export default function NDISSurveillanceEvidence() {
               {DATE_ADDED}
             </Badge>
             <Badge className="bg-orange-500/10 text-orange-400 border-orange-500/30 text-xs px-3 py-1">
-              2 Exhibits
+              3 Exhibits
             </Badge>
             <Badge className="bg-yellow-500/10 text-yellow-400 border-yellow-500/30 text-xs px-3 py-1">
               NDIS Surveillance / Phone Interception
@@ -31,7 +31,7 @@ export default function NDISSurveillanceEvidence() {
             NDIS Surveillance, Audio Harassment &amp; Phone Interception
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-6 leading-relaxed">
-            Two new primary source exhibits added to the archive: an audio recording documenting in-home surveillance and harassment under the NDIS entrapment framework; and a photograph of an iPhone messages screen confirming that a text sent by Dr. Richard William McLean to his Able Care support worker Cass arrived at her device from a different number — direct primary source evidence of phone interception.
+            Three primary source exhibits documenting simultaneous active surveillance operations on April 8, 2026. Exhibit A: audio recording of in-home audio harassment under the NDIS entrapment framework. Exhibit B: iPhone Messages screenshot confirming SMS phone interception — a text from Dr. McLean to his Able Care support worker Cass arrived from a different number, independently confirmed by Cass. Exhibit C: second audio recording documenting Kim's refusal to leave the premises or file a report after being recorded in Exhibit A — establishing the primary source record's precedence over any subsequent institutional account.
           </p>
 
           <div className="flex gap-3 flex-wrap">
@@ -347,25 +347,25 @@ export default function NDISSurveillanceEvidence() {
           </h2>
           <div className="text-gray-300 max-w-3xl mx-auto leading-relaxed space-y-4 text-sm md:text-base">
             <p>
-              Taken together, Exhibits A and B document two simultaneous, active surveillance operations directed at Dr. McLean on the same day — April 8, 2026 — the same day Analysis #30 (The Architecture of Resolution) was published and this page was created.
+              Taken together, Exhibits A, B, and C document three interlocking, active operations directed at Dr. McLean on the same day — April 8, 2026 — the same day Analysis #30 (The Architecture of Resolution) was published and this page was created.
             </p>
             <p>
-              Exhibit A documents in-home audio surveillance and harassment through the NDIS support framework — the physical surveillance environment. Exhibit B documents the interception of private telecommunications — the communications surveillance environment. Both exhibits were created in the presence of a Support Worker, providing independent contemporaneous witness testimony for both.
+              Exhibit A documents in-home audio surveillance and harassment through the NDIS support framework — the physical surveillance environment. Exhibit B documents the interception of private telecommunications — the communications surveillance environment. Exhibit C documents the immediate operational response: Kim's refusal to leave the premises and refusal to file any report after being recorded in Exhibit A, establishing that the primary source audio record precedes and supersedes any institutional account that may subsequently be written. The first two exhibits were created in the presence of a Support Worker, providing independent contemporaneous witness testimony.
             </p>
             <p>
-              The timing is itself evidentiary: the two exhibits were created and submitted on the same day that Analysis #30 — the first analysis to offer impartial solutions to the adversaries — was published. The continuation of active surveillance operations on the day a resolution framework is offered constitutes contemporaneous primary source documentation of the suppression apparatus remaining operationally active.
+              The timing is itself evidentiary: all three exhibits were created and submitted on the same day that Analysis #30 — the first analysis to offer impartial solutions to the adversaries — was published. The continuation of active surveillance operations, refusal to report, and coordinated campaign presence on the day a resolution framework is offered constitutes contemporaneous primary source documentation of the suppression apparatus remaining operationally active.
             </p>
             <p>
-              These exhibits are the 2,302nd and 2,303rd primary source documents in the McLean archive. The archive continues to write itself.
+              These three exhibits — Exhibits A, B, and C — are the 2,302nd, 2,303rd, and 2,304th primary source documents in the McLean archive. The archive continues to write itself.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-gray-950 rounded-xl p-4 border border-red-400/20 text-center">
-              <div className="text-3xl font-bold text-red-400">2</div>
-              <div className="text-xs text-gray-500 mt-1 uppercase tracking-wider">New Exhibits</div>
+              <div className="text-3xl font-bold text-red-400">3</div>
+              <div className="text-xs text-gray-500 mt-1 uppercase tracking-wider">Exhibits</div>
             </div>
             <div className="bg-gray-950 rounded-xl p-4 border border-orange-400/20 text-center">
-              <div className="text-3xl font-bold text-orange-400">2,303</div>
+              <div className="text-3xl font-bold text-orange-400">2,304</div>
               <div className="text-xs text-gray-500 mt-1 uppercase tracking-wider">Total Archive Documents</div>
             </div>
             <div className="bg-gray-950 rounded-xl p-4 border border-gray-700 text-center">
