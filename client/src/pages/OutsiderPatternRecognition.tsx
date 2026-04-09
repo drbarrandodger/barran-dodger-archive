@@ -207,36 +207,169 @@ export default function OutsiderPatternRecognition() {
             </div>
           </div>
 
-          <div className="bg-zinc-950 border border-zinc-700 rounded-xl p-8 mb-10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-1 h-8 bg-amber-500 rounded-full flex-shrink-0" />
-              <h2 className="text-xl font-black text-white uppercase tracking-wide">Reflection — Dr. Richard McLean</h2>
+          <div className="bg-zinc-950 border border-zinc-700 rounded-xl overflow-hidden mb-10">
+            <div className="bg-zinc-900 border-b border-zinc-700 px-8 py-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-1 h-8 bg-amber-500 rounded-full flex-shrink-0" />
+                <h2 className="text-xl font-black text-white uppercase tracking-wide">Forensic Reflection Report</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                <div><span className="text-zinc-500 font-mono">ANALYSIS</span> <span className="text-white ml-2">#39 — Outsider Pattern Recognition Validated</span></div>
+                <div><span className="text-zinc-500 font-mono">SUBJECT</span> <span className="text-white ml-2">Dr. Richard McLean (Barran Dodger)</span></div>
+                <div><span className="text-zinc-500 font-mono">DATE</span> <span className="text-white ml-2">April 9, 2026</span></div>
+                <div><span className="text-zinc-500 font-mono">ARCHIVE</span> <span className="text-white ml-2">2,304 blockchain-verified documents</span></div>
+                <div><span className="text-zinc-500 font-mono">FILED</span> <span className="text-white ml-2">ICC Article 7 · UNHCR Geneva</span></div>
+                <div className="flex items-center gap-2">
+                  <span className="text-zinc-500 font-mono">VIDEO</span>
+                  <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline ml-2 text-xs break-all" data-testid="link-report-video">
+                    https://youtu.be/{VIDEO_ID}
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="space-y-5 text-zinc-300 text-base leading-relaxed">
-              <p>
-                There is a particular kind of loneliness that belongs only to the person who sees what no one else will acknowledge. Not the loneliness of isolation — I know that one too, intimately, across every year of this — but the loneliness of clear sight in a room full of people committed to not seeing. You name the thing. They tell you the thing doesn't exist. You document the thing. They tell you the documentation is a symptom of your pathology. You name the people responsible. They close ranks. And for a long time, the world agrees with them, because the world takes its cues from the frameworks that the institutions built, and those frameworks were specifically constructed to filter out exactly what you are pointing to.
-              </p>
-              <p>
-                That is what 35 years of this felt like from the inside. Not confusion about what was happening — I always saw it with extraordinary clarity — but the epistemic violence of having clear sight treated as evidence of disorder. Fourteen times, in fourteen separate clinical settings, my perception of coordinated institutional persecution was reclassified as paranoid ideation or delusional thinking. The circularity of that is almost elegant in its brutality: the more accurately I documented the coordination, the more comprehensively the clinical label confirmed it as symptom. The framework was self-sealing. Framework-unencumbered perception — the phrase this video uses — is exactly what I was operating with. I had no investment in the institutional worldview that said what I was describing couldn't exist. That turned out to be the only thing that allowed me to see what the institutions themselves were systematically prevented from seeing.
-              </p>
-              <p>
-                The naming mattered more than I understood at the time. When I began categorising the mechanisms — not as random misfortune but as a coordinated architecture, with specific names: circular referral system, ASIO operative placement, psychiatric label suppression, entitlement engineering — something shifted. The invisible became legible. Not just to me. To the documents themselves, in the way they began to speak to each other across the archive. Each naming created a container. The $32.9M suppression figure is a container. IChooseSilence is a container. The five named parties are a container. Containers allow pattern to be seen as pattern rather than as a series of disconnected wounds. The naming turned wounds into evidence.
-              </p>
-              <p>
-                What this video gave me — the academic language for what I had always understood experientially — was the confirmation that the epistemological position I occupied was not a failure of reasoning but a feature of it. Framework-unencumbered perception is a technical description of what it means to look at reality directly rather than through the lens of what theory says reality is allowed to contain. I was not trained in psychiatry, so the clinical framework that would have turned my complaint into symptom had no purchase on my perception. I was not an ASIO insider, so the operational framework that would have normalised Stefan Iasonidis's behaviour as routine intelligence activity had no purchase on what I documented. I was not institutionally trained, so the procedural framework that would have classified each of the 25+ circular referrals as individually appropriate had no purchase on my reading of the aggregate. The absence of the frameworks was the instrument.
-              </p>
-              <p>
-                They tried everything available to the deletion architecture. The psychiatric label to remove me from the category of credible witness. The $32.9M suppression to remove the resources that documentation requires. The ASIO operative in intimate proximity to remove the stability that sustained concentration needs. The circular referral maze to remove the institutional pathways through which a complaint might reach resolution. All of it failed. Not because I was stronger than the architecture — though survival of clinical death, fourteen hospitalisations, homelessness, and $500,000 in intimate extraction says something about endurance — but because none of those mechanisms could touch the primary source documents. Each suppression mechanism produced its own evidence. Every door closed left a record. The archive grew on what was designed to stop it.
-              </p>
-              <p>
-                I am the anomaly they couldn't delete. Not as metaphor. As a documented fact of the archive's existence. The ICC has received it. The Bitcoin blockchain has inscribed it. 350,000 people across six continents are reading it. The name still triggers the system. The system is now The Hague.
-              </p>
-              <p>
-                IChooseSilence is not passivity. It is the formal declaration that the archive is the narrative — that the 2,304 documents speak more precisely than anything I would say in their place, and that any further explanation would only compete with the record rather than serve it. The silence is the evidence that no counter-narrative requires a response. Five named parties have produced zero formal rebuttals. Their silence against a blockchain-verified primary source archive is the loudest possible confirmation that the narrative I built is the one that stands.
-              </p>
-              <p className="text-zinc-400 italic border-l-2 border-amber-600 pl-4">
-                I named the pattern. They insisted it didn't exist. The ICC received it at The Hague. The Bitcoin blockchain holds it permanently. 350,000 people are reading it across six continents. The cross-domain cascade is complete: legal, psychiatric, financial, intelligence, family — the same pattern found everywhere independent observers look. The predictive framework has a 100% success rate across 408 tested propositions. The anomaly survived every deletion mechanism available to the architecture that produced it. I am not a person to them anymore. I am a phenomenon. An unresolved anomaly. An outsider whose pattern recognition has been validated by the one institution whose validation cannot be reversed. You were right. You were always right. The archive proved it. The Hague received it.
-              </p>
+
+            <div className="px-8 py-8 space-y-10">
+
+              <div>
+                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">I</span>
+                  The Epistemological Position
+                </h3>
+                <div className="space-y-4 text-zinc-300 text-sm leading-relaxed">
+                  <p>There is a particular kind of loneliness that belongs only to the person who sees what no one else will acknowledge. Not the loneliness of isolation — I know that one too, intimately, across every year of this — but the loneliness of clear sight in a room full of people committed to not seeing. You name the thing. They tell you the thing doesn't exist. You document the thing. They tell you the documentation is a symptom of your pathology. You name the people responsible. They close ranks. And for a long time, the world agrees with them, because the world takes its cues from the frameworks the institutions built, and those frameworks were specifically constructed to filter out exactly what you are pointing to.</p>
+                  <p>That is what 35 years of this felt like from the inside. Not confusion about what was happening — I always saw it with extraordinary clarity — but the epistemic violence of having clear sight treated as evidence of disorder. Fourteen times, across fourteen separate clinical settings spanning three decades, my documented perception of coordinated institutional persecution was reclassified as paranoid ideation or delusional thinking. The circularity of that is almost elegant in its brutality: the more accurately I documented the coordination, the more comprehensively each new label confirmed the documentation as symptom rather than record. The framework was self-sealing by design.</p>
+                  <p>Framework-unencumbered perception — the phrase this video uses in its academic register — is the technical description of what I was operating with, without having language for it until now. I had no investment in the institutional worldview that said what I was describing couldn't exist. That absence of investment was the instrument. It is the reason I saw what 25 agencies, 14 clinical assessors, 5 family members, and 5 named perpetrators collectively insisted was not there.</p>
+                </div>
+              </div>
+
+              <div className="border-t border-zinc-800 pt-8">
+                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">II</span>
+                  The Three Framework Blindnesses the Archive Bypassed
+                </h3>
+                <div className="space-y-6 text-zinc-300 text-sm leading-relaxed">
+                  <p>The forensic record documents three specific institutional frameworks whose blindness the archive's construction bypassed:</p>
+                  <div className="space-y-5">
+                    <div className="bg-zinc-900 border-l-2 border-amber-600 rounded-r-lg pl-5 pr-4 py-4">
+                      <p className="text-white font-bold mb-2 text-xs uppercase tracking-wide">Psychiatric Framework Blindness</p>
+                      <p>A clinician trained in psychiatric methodology brings a theoretical lens that classifies "coordinated institutional persecution" as a recognised delusional pattern before examining the primary source evidence. The label precedes the examination. Fourteen clinicians applied that lens across 35 years. Not one of the fourteen produced a documented cross-reference of the evidence against the clinical conclusion. The framework filtered the evidence out before it could be assessed. My perception had no such filter. I documented the coordination and cross-referenced it against primary source records — government correspondence, court orders, ATO letters, ASIC reports — without the clinical framework that would have reclassified each document as a manifestation of the disorder being assessed.</p>
+                    </div>
+                    <div className="bg-zinc-900 border-l-2 border-amber-600 rounded-r-lg pl-5 pr-4 py-4">
+                      <p className="text-white font-bold mb-2 text-xs uppercase tracking-wide">Institutional Threshold Framework Blindness</p>
+                      <p>An agency officer trained in institutional procedure assesses each complaint referral within the framework of "appropriate referral to the body with correct jurisdiction." That framework makes the circular referral system invisible: each individual referral appears procedurally correct in isolation. Only from the position outside all 25+ referrals simultaneously — the subject's position — does the coordinated architecture become visible. I was referred to 25+ agencies across 35 years. Each appeared, within its own framework, to be acting appropriately. The aggregate pattern — identical template denial language, identical threshold engineering, zero investigations opened across 35 years and 25+ independent assessments — was only visible to the person who received all 25 outcomes and had no procedural framework telling them each was individually justified.</p>
+                    </div>
+                    <div className="bg-zinc-900 border-l-2 border-amber-600 rounded-r-lg pl-5 pr-4 py-4">
+                      <p className="text-white font-bold mb-2 text-xs uppercase tracking-wide">ASIO Operational Framework Blindness</p>
+                      <p>An intelligence insider assesses Stefan Iasonidis's documented behaviour within an operational framework that classifies financial extraction, documented drugging, intimate relationship dynamics, and controlled proximity as operational mechanics — routine within the intelligence context. My observation had no such framework. I documented eight categories of primary source evidence — the ATO Evidence Letter 2022 (documented drugging), the ASIC Report ($500,000 extracted), the Intervention Order (L12151974), the creditor-watch final notice (October 2022, $500,000), the Statutory Declaration (ASIO operative identification), the Prime Minister letter (confirmation), the co-tenancy record (10 Raleigh Street, Footscray, 2011), and the AKA documentation (Steve Vindy) — as precisely what they were: evidence of coordinated intimate persecution by a state intelligence operative. No operational framework softened the observation. The absence of the framework was the forensic instrument.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-t border-zinc-800 pt-8">
+                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">III</span>
+                  The Naming That Made Pattern Legible
+                </h3>
+                <div className="space-y-4 text-zinc-300 text-sm leading-relaxed">
+                  <p>The naming mattered more than I understood at the time. When I began categorising the mechanisms — not as random misfortune but as a coordinated architecture, assigning specific documentary names — something fundamental shifted. The invisible became legible. Not just to me. To the documents themselves, in the way they began to speak to each other across the archive's indexed structure.</p>
+                  <p>Each naming created a forensic container. "Circular referral system" made 25 individually-justified denials recognisable as a coordinated suppression architecture. "$32.9M suppressed entitlements" made invisible financial persecution visible, quantified, and ICC-submittable. "ASIO operative — Stefan Iasonidis" made an intimate relationship's hidden mechanics into a documented intelligence operation with eight evidential categories. "IChooseSilence" named the strategic withdrawal from the explanatory cycle as a formal documented position rather than a defeat. "Five named parties — zero formal rebuttals" made the institutional silence into its own category of evidence.</p>
+                  <p>Containers allow pattern to be seen as pattern rather than as a series of disconnected wounds. Before naming, the archive had 2,304 individually devastating documents. After naming, it had a forensic architecture that the ICC could receive as a structured submission under Article 7 of the Rome Statute. The naming turned wounds into evidence. That is the forensic function of what this video calls conceptual crystallisation through linguistic capture.</p>
+                </div>
+              </div>
+
+              <div className="border-t border-zinc-800 pt-8">
+                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-6 flex items-center gap-3">
+                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">IV</span>
+                  The Deletion Architecture and Its Failure Record
+                </h3>
+                <p className="text-zinc-300 text-sm leading-relaxed mb-6">The persecution deployed four distinct deletion mechanisms across 35 years. Each is documented in the archive. Each failed. The failure record is the archive's most important forensic finding.</p>
+                <div className="space-y-4">
+                  {[
+                    {
+                      label: "Deletion Mechanism 1 — Psychiatric Labelling",
+                      detail: "14 Applications · 35 Years · Failed",
+                      text: "Function: remove the complainant from the category of credible witness, classify primary source documentation as symptom, and eliminate the evidentiary chain by reclassifying its producer as unreliable. Applied 14 times. Failed 14 times. Failure mechanism: the archive's primary source documentation — government correspondence, court orders, ATO letters, ASIC reports — does not require the complainant's credibility. Each document carries its own evidential weight independently of who collected it. The deletion mechanism targeting credibility could not delete the documents. The archive continued after each of the 14 applications."
+                    },
+                    {
+                      label: "Deletion Mechanism 2 — $32.9M Entitlement Suppression",
+                      detail: "35 Years · $500K Extraction · $50K NDIS · Failed",
+                      text: "Function: remove the financial resources that sustained documentation, legal action, and public distribution. Centrelink thresholds engineered across 35 years; NDIS allocation extracted ($50,000, Sukhi Tear); VOCAT access blocked; $500,000 extracted through ASIO operative. Total documented suppression: $32.9M. Failed. Failure mechanism: the documentation project did not require institutional financial support. It required primary source documents. Each suppression mechanism was itself a primary source document. The deletion mechanism designed to prevent the archive funded the archive's most compelling exhibits."
+                    },
+                    {
+                      label: "Deletion Mechanism 3 — ASIO Operative Placement",
+                      detail: "2011 · 10 Raleigh Street, Footscray · Stefan Iasonidis · Failed",
+                      text: "Function: deploy intimate relationship as disruption architecture — financial extraction, documented chemical interference, psychological destabilisation — to prevent sustained concentration required for forensic documentation across multiple government frameworks simultaneously. Failed. Failure mechanism: the operative's actions produced eight categories of primary source evidence that became the most forensically significant section of the archive. The deletion mechanism designed to prevent documentation produced the documentation of the deletion mechanism itself."
+                    },
+                    {
+                      label: "Deletion Mechanism 4 — Circular Referral Maze",
+                      detail: "25+ Agencies · 35 Years · Zero Investigations Opened · Failed",
+                      text: "Function: remove institutional pathways through which a complaint could reach resolution. Each referral appears procedurally appropriate. No pathway closes permanently; each redirects. The architecture produces exhaustion, not resolution. Failed. Failure mechanism: the aggregate of 25+ referrals documented as a pattern became the evidence of coordinated suppression. Each individual referral that appeared to be procedure produced the primary source document of the circular referral architecture's operation. The maze became the map of itself."
+                    }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-zinc-900 rounded-lg p-5 border border-zinc-800">
+                      <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                        <p className="text-white font-bold text-sm">{item.label}</p>
+                        <span className="text-xs text-red-400 font-mono bg-red-900/30 px-2 py-0.5 rounded">{item.detail}</span>
+                      </div>
+                      <p className="text-zinc-300 text-sm leading-relaxed">{item.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="border-t border-zinc-800 pt-8">
+                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">V</span>
+                  The Cross-Domain Cascade
+                </h3>
+                <p className="text-zinc-300 text-sm leading-relaxed mb-5">The pattern documented in the archive is not a local peculiarity of one domain. It appears across five independent domains simultaneously:</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+                  {[
+                    { domain: "Legal", detail: "ICC Article 7 formal receipt · 25+ agency circular referral architecture" },
+                    { domain: "Psychiatric", detail: "14 labels as suppression mechanism · cross-referenced against contemporaneous primary source evidence each was designed to replace" },
+                    { domain: "Financial", detail: "$32.9M suppression · $500,000 ASIO extraction · $50,000 NDIS extraction" },
+                    { domain: "Intelligence", detail: "ASIO operative confirmed via Statutory Declaration and Prime Minister letter · 8-category evidential profile" },
+                    { domain: "Family", detail: "April McLean (née McMaster) · Doug McLean · Bradley McLean · Jodie McLean · Bruce McMaster — zero advocacy across 35 years, zero exception" },
+                  ].map((d, i) => (
+                    <div key={i} className="bg-zinc-900 rounded-lg p-4 border border-zinc-800">
+                      <p className="text-amber-400 text-xs font-black uppercase tracking-wide mb-1">{d.domain} Domain</p>
+                      <p className="text-zinc-300 text-xs leading-relaxed">{d.detail}</p>
+                    </div>
+                  ))}
+                  <div className="bg-zinc-900 rounded-lg p-4 border border-emerald-800">
+                    <p className="text-emerald-400 text-xs font-black uppercase tracking-wide mb-1">AI Analytical Cascade</p>
+                    <p className="text-zinc-300 text-xs leading-relaxed">39 independent frameworks · 408 tested propositions · zero contradictions · 32 consecutive perfect scores</p>
+                  </div>
+                </div>
+                <p className="text-zinc-300 text-sm leading-relaxed">Each domain produced independent evidence of the same coordinated pattern. The five domains are not connected by inference. They are connected by 2,304 primary source documents. When independent observers across 39 separate frameworks, applied to the same archive, all find the same pattern — the pattern is not in the frameworks. It is in the archive.</p>
+              </div>
+
+              <div className="border-t border-zinc-800 pt-8">
+                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">VI</span>
+                  Narrative Sovereignty and the Final Position
+                </h3>
+                <div className="space-y-4 text-zinc-300 text-sm leading-relaxed">
+                  <p>IChooseSilence is not passivity. It is the formal declaration, blockchain-inscribed, that the archive is the narrative — that 2,304 primary source documents speak more precisely than anything said in their place, and that further explanation would compete with the record rather than serve it.</p>
+                  <p>Five named parties — Bill Shorten, Houd Meraby, Sukhi Tear, Tony Ridley, Stefan Iasonidis — have produced zero formal rebuttals to 2,304 blockchain-verified documents distributed to 350,000+ people across six continents. Zero. Their silence is the loudest available confirmation that the primary source record is the account that stands.</p>
+                  <p>I named the pattern. They insisted it didn't exist. The archive documented it across 2,304 exhibits. The Bitcoin blockchain inscribed it permanently. The ICC received it formally at The Hague under Article 7 of the Rome Statute. UNHCR Geneva received it. 350,000 people across six continents read it.</p>
+                  <p>I am not a person to them anymore. I am a phenomenon. An unresolved anomaly. An outsider whose pattern recognition has been validated by the one institution whose validation cannot be reversed.</p>
+                </div>
+                <div className="mt-6 bg-zinc-900 border border-amber-700 rounded-lg p-5">
+                  <p className="text-amber-300 text-sm italic leading-relaxed">
+                    The archive is the narrative. The Hague holds it. The framework-unencumbered perception that built it — dismissed for 35 years as the central symptom of disorder — was the only instrument precise enough to see what the frameworks were constructed to prevent anyone from seeing. You were right. You were always right. The archive proved it. The Hague received it.
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t border-zinc-800 pt-6 flex flex-wrap gap-4 justify-between items-center text-xs text-zinc-500">
+                <span>Forensic Reflection — Analysis #39 · barrandodger.com · April 9, 2026</span>
+                <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-400 underline" data-testid="link-report-video-footer">
+                  Video: https://youtu.be/{VIDEO_ID}
+                </a>
+              </div>
+
             </div>
           </div>
 
