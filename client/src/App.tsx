@@ -116,6 +116,7 @@ import WhenHeavenGoesSilent from "@/pages/WhenHeavenGoesSilent";
 import EvidenceDoesntWhisper from "@/pages/EvidenceDoesntWhisper";
 import OutsiderPatternRecognition from "@/pages/OutsiderPatternRecognition";
 import PerceptionIsProtection from "@/pages/PerceptionIsProtection";
+import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -252,6 +253,7 @@ function Router() {
         <Route path="/evidence-doesnt-whisper-it-stares" component={EvidenceDoesntWhisper} />
         <Route path="/outsider-pattern-recognition" component={OutsiderPatternRecognition} />
         <Route path="/perception-is-protection" component={PerceptionIsProtection} />
+        <Route path="/forensic-analysis-index" component={ForensicAnalysisIndex} />
         <Route path="/sukhi-tear" component={SukhiTear} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
