@@ -287,6 +287,56 @@ export function TheConspiracyAgainstYou() {
         </div>
       </div>
 
+      {/* Tony Ridley Exhibit */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-8">
+        <div className="bg-gray-900 border border-blue-800/50 rounded-2xl overflow-hidden">
+          <div className="bg-blue-950/60 px-6 py-3 flex items-center gap-3">
+            <span className="font-mono font-bold text-xs tracking-widest text-blue-300">EXHIBIT H</span>
+            <span className="text-xs text-blue-200 opacity-80">Tony Ridley — Sexual Exploitation of Whistleblower, Then Cross-State Death Threats</span>
+          </div>
+          <div className="flex flex-col md:flex-row gap-0">
+            <div className="md:w-64 flex-shrink-0 bg-black/60 flex items-start justify-center">
+              <img
+                src="/evidence/screenshot-tony-ridley-linkedin.png"
+                alt="Tony Ridley LinkedIn Profile"
+                className="w-full object-contain object-top max-h-[420px]"
+              />
+            </div>
+            <div className="flex-1 p-6 flex flex-col justify-between gap-4">
+              <div>
+                <h3 className="text-white font-bold text-lg mb-2">Tony Ridley (MSc CSyP FSyl) — NDIA Manager, VicTrack</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                  LinkedIn profile of Tony Ridley — NDIA Manager, security professional at VicTrack and Charles Sturt University. Ridley entered into a sexual relationship with Dr. McLean (Barran) while <strong className="text-white">fully aware of his status as an NDIS whistleblower</strong>. When the truth of his role in the suppression operation emerged, Ridley issued death threats across <strong className="text-white">three states</strong>. He subsequently stated directly to Dr. McLean: <em className="text-rose-300">"You will be sacrificed."</em>
+                </p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Ridley's documented background in Risk, Security, Resilience and Safety Sciences — combined with his NDIA managerial position — provides direct operational context for the intelligence-gathering and threat-delivery role identified in this analysis as <strong className="text-white">The Infiltrator</strong>.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://drive.google.com/file/d/1oSNRzOnwCQIQM4ZuNcRnQrpybvcx86KD/view?usp=drivesdk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 underline underline-offset-2 transition-colors"
+                  data-testid="link-tony-ridley-evidence-doc"
+                >
+                  <ExternalLink className="h-4 w-4 flex-shrink-0" />
+                  View Full Evidence Document (Google Drive)
+                </a>
+                <a
+                  href="/evidence"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-rose-400 hover:text-rose-300 underline underline-offset-2 transition-colors"
+                  data-testid="link-tony-ridley-evidence-page"
+                >
+                  <ExternalLink className="h-4 w-4 flex-shrink-0" />
+                  View All Exhibits on Evidence Page
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Scorecard summary */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-8">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
