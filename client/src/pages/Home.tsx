@@ -324,14 +324,13 @@ export default function Home() {
       />
       <Navigation />
       
-      {/* CHESS HERO IMAGE */}
-      <div style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px))" }}>
-        <ChessmateHero />
-      </div>
-
       {/* THE FOUNDATIONAL TRUTH - Declaration of Innocence & Assassination Evidence */}
-      <section className="px-4 pb-8 bg-black relative overflow-hidden pt-8" data-testid="section-foundational-truth">
+      <section className="px-4 pb-8 bg-black relative overflow-hidden" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px) + 24px)" }} data-testid="section-foundational-truth">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(220,38,38,0.08)_0%,_transparent_60%)] pointer-events-none" />
+        {/* CHESS HERO IMAGE - full width at top of first section */}
+        <div className="-mx-4 -mt-6 mb-6 relative z-10">
+          <ChessmateHero />
+        </div>
         <div className="container mx-auto max-w-5xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
