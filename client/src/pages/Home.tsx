@@ -263,11 +263,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <img
-        src="/evidence/jesus-checkmate-government.png"
-        alt="Jesus Christ placing checkmate against the Australian government"
-        style={{ display: 'block', width: '100%', height: '340px', marginTop: '155px', objectFit: 'cover', objectPosition: 'center 20%' }}
-      />
+      <div style={{ marginTop: '155px', width: '100%', height: '340px', flexShrink: 0 }}>
+        <img
+          src={"/evidence/jesus-checkmate-government.png?" + Date.now()}
+          alt="Jesus Christ placing checkmate against the Australian government"
+          style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }}
+        />
+      </div>
       <SEO 
         title="240+ Blockchain-Verified Documents Expose Australian Government Corruption"
         description="They spent $11.5M to silence one whistleblower. 14 forced psychiatric detentions. An assassination attempt in 2024. Institutional murder in 2021 where I was revived by God. 35 years of persecution documented in 240+ blockchain-sealed forensic records. I DARE YOU TO PROVE ME WRONG."
