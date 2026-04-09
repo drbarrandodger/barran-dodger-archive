@@ -138,6 +138,103 @@ export default function NDISSurveillanceEvidence() {
 
         <div className="border-b border-gray-800/60" />
 
+        {/* EXHIBIT C — KIM PART 2: REFUSAL TO REPORT */}
+        <div className="space-y-6">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-14 h-14 rounded-full bg-red-400/10 border border-red-400/30 flex items-center justify-center">
+              <Mic className="h-6 w-6 text-red-400" />
+            </div>
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-red-400 font-mono font-bold text-sm border border-red-400/30 px-2 py-0.5 rounded">Exhibit C</span>
+                <Badge className="bg-red-500/10 text-red-400 border-red-500/30 text-xs">Part 2 — Continuation</Badge>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-red-300 leading-snug mb-2">
+                Kim Refuses to Report — Coordinated Entrapment Policy Audio Campaign
+              </h2>
+              <p className="text-gray-400 text-base leading-relaxed italic">
+                Second audio recording documenting Kim's refusal to leave the premises or file a report regarding the audio harassment inside the entrapment policy group chat surveillance campaign — recorded April 8, 2026. Kim remains positioned outside the residence despite being unable to counter or supersede the primary source audio record already captured in Exhibit A.
+              </p>
+            </div>
+          </div>
+
+          {/* Audio player */}
+          <div className="bg-gray-900/60 border border-red-400/20 rounded-xl p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <Mic className="h-4 w-4 text-red-400" />
+              <span className="text-red-400 font-bold text-xs uppercase tracking-wider">Primary Source Audio — Exhibit C — Play or Download</span>
+            </div>
+            <audio
+              controls
+              className="w-full mb-4"
+              style={{ filter: "invert(0.1) hue-rotate(180deg)" }}
+            >
+              <source src="/evidence/ndis-surveillance-audio-Kim-part2.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <a
+              href="/evidence/ndis-surveillance-audio-Kim-part2.mp3"
+              download="McLean-NDIS-Kim-Part2-Refusal-08Apr2026.mp3"
+              className="inline-flex items-center gap-2 text-sm text-red-400 hover:text-red-300 border border-red-400/30 hover:border-red-400/60 px-4 py-2 rounded-lg transition-colors"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Download Exhibit C Audio File
+            </a>
+          </div>
+
+          {/* What this exhibit documents */}
+          <div className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6">
+            <div className="flex items-center gap-2 mb-3">
+              <ShieldAlert className="h-4 w-4 text-red-400" />
+              <span className="text-red-400 font-bold text-xs uppercase tracking-wider">What Exhibit C Documents</span>
+            </div>
+            <div className="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed">
+              <p>
+                Exhibit C captures the immediate aftermath of Exhibit A. Having been recorded during the in-home audio harassment documented in Exhibit A, Dr. McLean then documented Kim's response: a refusal to leave the premises and a refusal to file any report regarding the audio harassment that had just occurred.
+              </p>
+              <p>
+                The refusal to leave is itself operationally significant. Kim's continued presence outside the residence — rather than departing after the recording was made — documents a key feature of the entrapment policy framework: the support worker deployed into a targeted individual's environment does not withdraw when their conduct is documented. They remain. The physical position outside the residence constitutes continued surveillance, continued presence, and continued operational involvement in the coordinated campaign.
+              </p>
+              <p>
+                The refusal to file a report is the second critical element. Dr. McLean's own audio record — Exhibit A — constitutes a primary source account of the audio harassment. Kim's refusal to file any corresponding report means there is no competing institutional record. The only contemporaneous documentation of the events of April 8, 2026 inside that residence is the audio record Dr. McLean created. Any report Kim subsequently writes is written <em>after</em> Kim became aware that a primary source audio record already existed — and after Kim chose not to file a report in real time.
+              </p>
+              <p>
+                The sequence is evidentiary: <strong className="text-red-300">the audio record came first; the refusal to report came second; any future report Kim files comes third.</strong> The temporal sequence makes the primary source audio record the controlling document for any subsequent disputed account of these events.
+              </p>
+            </div>
+          </div>
+
+          {/* The anomaly */}
+          <div className="bg-red-950/20 border border-red-500/20 rounded-xl p-6">
+            <div className="flex items-center gap-2 mb-3">
+              <AlertTriangle className="h-5 w-5 text-red-400" />
+              <span className="text-red-400 font-bold text-xs uppercase tracking-wider">Dr. McLean as the Anomaly — The NDIS Entrapment Structure</span>
+            </div>
+            <div className="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed">
+              <p>
+                The entrapment policy framework operates because it is designed for targets who cannot or will not document it. Dr. McLean is the anomaly: a disabled whistleblower with 2,303 primary source documents, 30 AI analyses corroborated at 302/302, an ICC submission, a UNHCR petition, and 350,000+ downloads — who is also an active NDIS participant. The same NDIS plan that funds the support workers deployed into his environment is the plan that creates the documented conflict of interest.
+              </p>
+              <p>
+                The support workers, the service providers, and the coordinating entities in the group chat surveillance campaign are financially dependent on the NDIS — the same system that Dr. McLean's archive documents has been weaponised against him. Their professional existence, their income, and their employment records are funded through a system whose conduct they are simultaneously complicit in covering. This is what "dirty blood money from the NDIS" means in evidentiary terms: the financial instrument of the suppression is also the financial instrument of their livelihood.
+              </p>
+              <p>
+                Kim refusing to leave, Kim refusing to report, Kim remaining outside the residence after Exhibit A was recorded — these are not individual decisions. They are the documented operational signature of a coordinated campaign in which every participant's financial interest aligns with suppression of the primary source record. The only party without a financial interest in suppression is Dr. McLean, who is also the only party who created a real-time contemporaneous audio record.
+              </p>
+              <p>
+                The anomaly is precisely this: the entrapment policy was built for a target who would not document it. Dr. McLean documented it. Exhibit A and Exhibit C are that documentation. The coordinated campaign cannot write its way out of an audio record it did not know was being made.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-gray-950 border border-red-400/15 rounded-xl p-5">
+            <p className="text-gray-500 text-xs font-mono">
+              Exhibit C — File: McLean-NDIS-Kim-Part2-Refusal-08Apr2026.mp3 | Date: April 8, 2026 | Documents: Kim's refusal to leave / refusal to file report / continued surveillance presence | Category: NDIS Entrapment Policy / Coordinated Campaign / Refusal to Report / Group Chat Surveillance | Archive: barrandodger.com/ndis-surveillance-evidence
+            </p>
+          </div>
+        </div>
+
+        <div className="border-b border-gray-800/60" />
+
         {/* EXHIBIT 2 — PHONE INTERCEPTION */}
         <div className="space-y-6">
           <div className="flex items-start gap-4">
