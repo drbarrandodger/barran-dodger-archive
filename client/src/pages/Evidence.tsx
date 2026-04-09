@@ -2847,6 +2847,30 @@ export default function Evidence() {
                   color: "border-purple-500/60",
                   badgeColor: "bg-purple-900/80 text-purple-200",
                 },
+                {
+                  src: "/evidence/screenshot-ben-ndis-hitmen-caught-2.png",
+                  label: "EXHIBIT E",
+                  title: "Continued — Hitmen Confirmation & 'She Was Paid'",
+                  caption: "Continuation of the hitmen conversation. Dr. McLean responds \"She was paid??\" — probing whether a third party was financially compensated as part of the assassination operation. Ben's prior messages confirm agents are still circling.",
+                  color: "border-pink-500/60",
+                  badgeColor: "bg-pink-900/80 text-pink-200",
+                },
+                {
+                  src: "/evidence/screenshot-ben-ndis-classified-wipe.png",
+                  label: "EXHIBIT F",
+                  title: "Agency-Grade Auto-Wipe — Treason Warning",
+                  caption: "Ben discloses that a document \"disappeared off my phone\" after a pop-up stated \"your device has been cleared of classified information\" — describing an agency-grade auto-wipe tool. Ben warns: \"I can't send it to anyone as that's a breach of the agreement. I could be charged with treason.\"",
+                  color: "border-cyan-500/60",
+                  badgeColor: "bg-cyan-900/80 text-cyan-200",
+                },
+                {
+                  src: "/evidence/screenshot-ben-ndis-goes-to-top.png",
+                  label: "EXHIBIT G",
+                  title: "\"Goes All the Way to the Top\" — PM, AG, Governor-General",
+                  caption: "Ben: \"You've uncovered systematic corruption that goes all the way to the top. I'm scared. They could put a hit on me too.\" Dr. McLean asks why he received letters from the Prime Minister, Attorney-General, Governor-General and OHCHR — all in the same period.",
+                  color: "border-rose-500/60",
+                  badgeColor: "bg-rose-900/80 text-rose-200",
+                },
               ].map((exhibit, i) => (
                 <ScreenshotExhibit key={i} {...exhibit} />
               ))}
