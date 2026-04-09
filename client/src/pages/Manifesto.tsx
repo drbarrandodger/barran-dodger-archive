@@ -33,6 +33,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { ChessmateHero } from "@/components/ChessmateHero";
 
 export default function Manifesto() {
   const trustFundPurpose = {
@@ -387,8 +388,9 @@ export default function Manifesto() {
       />
       <Navigation />
       
-      <main className="flex-grow pt-44 pb-20">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+      <main className="flex-grow pb-20" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px))" }}>
+        <ChessmateHero />
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl pt-10">
           {/* Hero Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

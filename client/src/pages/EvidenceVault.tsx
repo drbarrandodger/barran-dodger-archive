@@ -49,6 +49,7 @@ import coverUntouchableAgents from "../assets/images/cover-untouchable-agents.pn
 import coverFinalBlow from "../assets/images/cover-final-blow.png";
 import coverWhatYouBecome from "../assets/images/cover-what-you-become.png";
 import coverEveryoneWatching from "../assets/images/cover-everyone-watching.png";
+import { ChessmateHero } from "@/components/ChessmateHero";
 
 interface VaultFolder {
   name: string;
@@ -354,8 +355,9 @@ export default function EvidenceVault() {
       />
       <Navigation />
 
-      <main className="flex-1 pb-20" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px) + 16px)" }}>
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+      <main className="flex-1 pb-20" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px))" }}>
+        <ChessmateHero />
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl pt-8">
 
           <motion.section
             initial={{ opacity: 0, y: 20 }}

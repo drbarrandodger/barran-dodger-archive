@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { generatePagePDF } from "@/lib/generatePDF";
+import { ChessmateHero } from "@/components/ChessmateHero";
 import {
   AlertTriangle, Shield, Eye, FileText, Download,
   ExternalLink, Scale, Users, Lock, Flame, Globe,
@@ -264,6 +265,10 @@ export default function HoneytrapInfiltrationReport() {
       <Navigation />
 
       <main id="pdf-content" className="flex-1 bg-zinc-950">
+
+        <div style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px))" }}>
+          <ChessmateHero />
+        </div>
 
         {/* ── HEADER ── */}
         <div className="bg-zinc-900 border-b-2 border-rose-700 py-14 px-4">

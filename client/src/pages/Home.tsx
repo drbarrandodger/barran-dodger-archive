@@ -61,6 +61,7 @@ import coverRetrospectiveStatement from "@/assets/images/cover-retrospective-sta
 import coverCertifiedRecord from "@/assets/images/cover-certified-record.png";
 import coverTargetedIndividualHandbook from "@/assets/images/cover-targeted-individual-handbook.png";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { ChessmateHero } from "@/components/ChessmateHero";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -323,8 +324,13 @@ export default function Home() {
       />
       <Navigation />
       
+      {/* CHESS HERO IMAGE */}
+      <div style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px))" }}>
+        <ChessmateHero />
+      </div>
+
       {/* THE FOUNDATIONAL TRUTH - Declaration of Innocence & Assassination Evidence */}
-      <section className="px-4 pb-8 bg-black relative overflow-hidden" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px) + 24px)" }} data-testid="section-foundational-truth">
+      <section className="px-4 pb-8 bg-black relative overflow-hidden pt-8" data-testid="section-foundational-truth">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(220,38,38,0.08)_0%,_transparent_60%)] pointer-events-none" />
         <div className="container mx-auto max-w-5xl relative z-10">
           <motion.div

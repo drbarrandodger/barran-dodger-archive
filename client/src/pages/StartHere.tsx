@@ -21,6 +21,7 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { RelatedContent } from "@/components/RelatedContent";
+import { ChessmateHero } from "@/components/ChessmateHero";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -180,8 +181,9 @@ export default function StartHere() {
       />
       <Navigation />
       
-      <main className="min-h-screen bg-background pt-44 pb-20">
-        <div className="container mx-auto px-4 md:px-6">
+      <main className="min-h-screen bg-background pb-20" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px))" }}>
+        <ChessmateHero />
+        <div className="container mx-auto px-4 md:px-6 pt-10">
           <motion.div
             initial="hidden"
             animate="visible"

@@ -11,6 +11,7 @@ import {
   CheckSquare, BookOpen, Globe, Scale, Eye
 } from "lucide-react";
 import coverImage from "../assets/images/cover-master-forensic-report.png";
+import { ChessmateHero } from "@/components/ChessmateHero";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -141,8 +142,12 @@ export default function MasterForensicEvidenceReport() {
       <ReadingProgress />
       <Navigation />
 
+      <div style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px))" }}>
+        <ChessmateHero />
+      </div>
+
       {/* HERO */}
-      <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-zinc-950 to-black">
+      <section className="pt-8 pb-16 px-4 bg-gradient-to-b from-zinc-950 to-black">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 items-start">
 

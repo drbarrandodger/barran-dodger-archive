@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { generatePagePDF } from "@/lib/generatePDF";
+import { ChessmateHero } from "@/components/ChessmateHero";
 
 const SLUG = "silent-assassin";
 const VIDEO_ID = "MHs8Lop4Xic";
@@ -186,6 +187,10 @@ export default function SilentAssassin() {
       <Navigation />
 
       <main id="pdf-content" className="flex-1 bg-zinc-950">
+
+        <div style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px))" }}>
+          <ChessmateHero />
+        </div>
 
         {/* HEADER */}
         <div className="bg-zinc-900 border-b-2 border-emerald-700 py-14 px-4">
