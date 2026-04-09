@@ -2871,6 +2871,14 @@ export default function Evidence() {
                   color: "border-rose-500/60",
                   badgeColor: "bg-rose-900/80 text-rose-200",
                 },
+                {
+                  src: "/evidence/screenshot-tony-ridley-linkedin.png",
+                  label: "EXHIBIT H",
+                  title: "Tony Ridley — NDIA Official Who Threatened 'You Will Be Sacrificed'",
+                  caption: "LinkedIn profile of Tony Ridley (MSc CSyP FSyl) — NDIA Manager and security professional at VicTrack, formerly Charles Sturt University. Ridley is the documented official who stated \"You will be sacrificed\" to Dr. McLean during NDIA proceedings. His background in Risk, Security, Resilience and Safety Sciences provides operational context for the assassination threat.",
+                  color: "border-blue-500/60",
+                  badgeColor: "bg-blue-900/80 text-blue-200",
+                },
               ].map((exhibit, i) => (
                 <ScreenshotExhibit key={i} {...exhibit} />
               ))}
