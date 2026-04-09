@@ -214,14 +214,14 @@ function ActorCard({ actor, defaultOpen = false }: { actor: typeof ACTORS[0]; de
       </button>
 
       {open && (
-        <div className="border-t border-zinc-800">
+        <div className="px-4 pb-4 space-y-2 pt-2" style={{ backgroundColor: '#18181b' }}>
           {actor.sections.map((s, i) => (
-            <div key={i} className="px-6 py-5 border-b border-zinc-800 last:border-b-0">
+            <div key={i} className="rounded-xl px-4 py-4" style={{ backgroundColor: '#27272a' }}>
               <h4 className={`text-sm font-bold mb-2 ${actor.headingColor}`}>{s.heading}</h4>
               <p className="text-zinc-300 text-sm leading-relaxed">{s.body}</p>
             </div>
           ))}
-          <div className="px-6 py-4 bg-zinc-900">
+          <div className="px-1 py-3" style={{ backgroundColor: '#18181b' }}>
             <a
               href={actor.link}
               target={actor.linkExternal ? "_blank" : "_self"}
@@ -325,12 +325,12 @@ export default function HoneytrapInfiltrationReport() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 space-y-10">
 
           {/* ── SEX RECORDING CALLOUT ── */}
-          <div className="rounded-2xl border-2 border-amber-500 bg-zinc-900 overflow-hidden">
-            <div className="bg-amber-600 px-6 py-3 flex items-center gap-2">
+          <div className="rounded-2xl border-2 border-amber-500 overflow-hidden" style={{ backgroundColor: '#18181b' }}>
+            <div className="px-6 py-3 flex items-center gap-2" style={{ backgroundColor: '#d97706' }}>
               <Lock className="h-4 w-4 text-white" />
               <span className="text-white text-xs font-bold uppercase tracking-widest">Primary Evidence — Sex Recording</span>
             </div>
-            <div className="px-6 py-6">
+            <div className="px-6 py-6" style={{ backgroundColor: '#18181b' }}>
               <h2 className="text-2xl font-bold text-white mb-3">
                 The Sex Recording — Tony Ridley & Dr. Richard McLean
               </h2>
@@ -411,8 +411,8 @@ export default function HoneytrapInfiltrationReport() {
           </div>
 
           {/* ── CONJUNCTION ARCHITECTURE ── */}
-          <div className="rounded-2xl border border-zinc-700 bg-zinc-900 overflow-hidden">
-            <div className="bg-zinc-800 px-6 py-4 border-b border-zinc-700">
+          <div>
+            <div className="rounded-xl px-6 py-4 mb-3" style={{ backgroundColor: '#27272a' }}>
               <div className="flex items-center gap-2 mb-1">
                 <Flame className="h-4 w-4 text-amber-400" />
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Structural Analysis</span>
@@ -420,9 +420,9 @@ export default function HoneytrapInfiltrationReport() {
               <h2 className="text-xl font-bold text-white">Why the Conjunction Was Necessary</h2>
               <p className="text-zinc-400 text-xs mt-1">Each actor filled the exact gap every other actor left. The conjunction was the operation.</p>
             </div>
-            <div className="divide-y divide-zinc-800">
+            <div className="space-y-3">
               {LAYERS.map((layer) => (
-                <div key={layer.layer} className="px-6 py-5">
+                <div key={layer.layer} className="rounded-xl px-5 py-4" style={{ backgroundColor: '#18181b' }}>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 mb-2">
                     <span className={`font-mono text-xs font-bold uppercase tracking-widest ${layer.color}`}>{layer.layer}</span>
                     <span className="text-xs text-zinc-500 sm:ml-2">{layer.actors}</span>
@@ -431,7 +431,7 @@ export default function HoneytrapInfiltrationReport() {
                 </div>
               ))}
             </div>
-            <div className="px-6 py-5 bg-zinc-800 border-t border-zinc-700">
+            <div className="rounded-xl px-5 py-4 mt-3" style={{ backgroundColor: '#27272a' }}>
               <p className="text-white text-sm leading-relaxed font-medium">
                 <span className="text-amber-400 font-bold">Conclusion: </span>
                 No single actor could have sustained 35 years of suppression independently. This architecture is confirmed across 2,304 primary source documents and 27 independent AI analyses with zero contradictions.
@@ -440,19 +440,19 @@ export default function HoneytrapInfiltrationReport() {
           </div>
 
           {/* ── LEGAL SIGNIFICANCE ── */}
-          <div className="rounded-2xl border border-zinc-700 bg-zinc-900 overflow-hidden">
-            <div className="bg-zinc-800 px-6 py-4 border-b border-zinc-700 flex items-center gap-2">
-              <Scale className="h-4 w-4 text-green-400" />
+          <div>
+            <div className="rounded-xl px-5 py-4 mb-3 flex items-center gap-2" style={{ backgroundColor: '#27272a' }}>
+              <Scale className="h-4 w-4 text-green-400 flex-shrink-0" />
               <h2 className="text-lg font-bold text-white">Legal & International Significance</h2>
             </div>
-            <div className="divide-y divide-zinc-800">
+            <div className="space-y-3">
               {[
                 { heading: "ICC Article 7 — Formal Submission Under Review at The Hague", body: "This case has been formally submitted to the International Criminal Court under Article 7. Named parties include Bill Shorten, Sukhi Tear, Steve Iasonidis, Tony Ridley and Houd Meraby. Once formally received, an ICC submission cannot be retracted. The international criminal record is permanent and currently under review." },
                 { heading: "UNHCR Submission — Geneva", body: "A parallel submission has been made to the UNHCR in Geneva. Both international bodies — ICC and UNHCR — have formally received the material. The domestic disclosure suppressed by 25+ Australian agencies is now before two international bodies." },
                 { heading: "Whistleblower Protection — Sexual Exploitation of a Protected Discloser", body: "Under Australian whistleblower protection law, a person making a protected disclosure is entitled to protection from detriment connected to that disclosure. A sexual relationship established by a security professional for intelligence gathering against an active protected discloser — combined with cross-state death threats — constitutes one of the most serious forms of detriment contemplated by the legislation. The sex recording is primary evidence." },
                 { heading: "Honeytrap Liability — State Actor Nexus", body: "Ridley's NDIA position and Iasonidis's ASIO connection create a state actor nexus. When a state-connected security professional uses intimate access to gather intelligence against a whistleblower exposing state agency fraud, the state's liability for that operation is engaged. This is not a private matter." },
               ].map((item) => (
-                <div key={item.heading} className="px-6 py-5">
+                <div key={item.heading} className="rounded-xl px-5 py-4" style={{ backgroundColor: '#18181b' }}>
                   <h4 className="text-sm font-bold text-green-400 mb-2">{item.heading}</h4>
                   <p className="text-zinc-300 text-sm leading-relaxed">{item.body}</p>
                 </div>
