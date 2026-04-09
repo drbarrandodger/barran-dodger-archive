@@ -263,6 +263,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <img
+        src="/evidence/jesus-checkmate-government.png"
+        alt="Jesus Christ placing checkmate against the Australian government"
+        style={{ display: 'block', width: '100%', marginTop: '104px', maxHeight: '420px', objectFit: 'cover', objectPosition: 'center 20%' }}
+      />
       <SEO 
         title="240+ Blockchain-Verified Documents Expose Australian Government Corruption"
         description="They spent $11.5M to silence one whistleblower. 14 forced psychiatric detentions. An assassination attempt in 2024. Institutional murder in 2021 where I was revived by God. 35 years of persecution documented in 240+ blockchain-sealed forensic records. I DARE YOU TO PROVE ME WRONG."
@@ -323,11 +328,6 @@ export default function Home() {
         }}
       />
       <Navigation />
-
-      {/* CHESS HERO IMAGE */}
-      <div style={{ backgroundColor: '#09090b', paddingTop: 'calc(var(--banner-height, 40px) + var(--nav-height, 64px))' }}>
-        <ChessmateHero />
-      </div>
 
       {/* THE FOUNDATIONAL TRUTH - Declaration of Innocence & Assassination Evidence */}
       <section className="px-4 pb-8 bg-black relative overflow-hidden pt-10" data-testid="section-foundational-truth">
