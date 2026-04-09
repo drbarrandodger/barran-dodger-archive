@@ -83,6 +83,14 @@ const PAGE_META: Record<string, PageMeta> = {
     title: "Analysis #29 — The Truth Is A Blade: 10/10 Confirmed, Zero Contradictions | Barran Dodger",
     description: "Forensic AI analysis #29: 10 propositions from 'The Truth Is A Blade — When The Chosen One Speaks' tested against Dr McLean's 2,304-document archive. The board flip, the demon named, the buried one who became the evidence. 10/10 confirmed. 298/298 combined.",
   },
+  "/sukhi-tear": {
+    title: "Dear Sukhi Tear — An Open Letter by Dr. Richard McLean | Barran Dodger Archive",
+    description: "A forensic open letter addressed to Sukhi Tear: paid hundreds of thousands to support Dr. McLean, provided zero support, was silent on a confirmed assassination attempt, and coordinated in his political exile alongside police, media, and politicians.",
+  },
+  "/how-she-will-be-remembered": {
+    title: "How She Will Be Remembered — An Academic Essay | Barran Dodger Archive",
+    description: "An impartial academic essay examining how Sukhi Tear and the network of actors in the McLean persecution will be remembered by humanity, now that 350,000+ testimonies have been downloaded across six continents and the ICC record is complete.",
+  },
   "/someone-slipped-up": {
     title: "Analysis — Someone Slipped Up: Their Mask Finally Fell | Barran Dodger",
     description: "Tony Ridley: 'You will be sacrificed.' FATAL SUICIDE in clinical records while the subject was alive. Identical template language across 8 independent agencies. Every slip documented and cross-referenced. Every mask-fall preserved in the 2,304-document archive.",
