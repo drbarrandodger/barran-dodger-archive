@@ -100,6 +100,51 @@ function matchesDatePeriod(doc: { title: string; tags: string[]; description: st
   return period.keywords.some(kw => searchText.includes(kw));
 }
 
+function ScreenshotExhibit({ src, label, title, caption, color, badgeColor }: {
+  src: string;
+  label: string;
+  title: string;
+  caption: string;
+  color: string;
+  badgeColor: string;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <div
+        className={`group relative bg-black/40 border-2 ${color} rounded-xl overflow-hidden cursor-zoom-in hover:scale-[1.02] transition-transform duration-200`}
+        onClick={() => setOpen(true)}
+        data-testid={`exhibit-${label.toLowerCase().replace(/\s/g, "-")}`}
+      >
+        <div className={`flex items-center gap-2 px-4 py-2 ${badgeColor}`}>
+          <span className="font-mono font-bold text-xs tracking-widest">{label}</span>
+          <span className="text-xs opacity-80 truncate">{title}</span>
+        </div>
+        <div className="relative overflow-hidden bg-black/60" style={{ maxHeight: "420px" }}>
+          <img
+            src={src}
+            alt={title}
+            className="w-full object-contain object-top"
+            style={{ maxHeight: "420px" }}
+          />
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+            <ZoomIn className="h-10 w-10 text-white drop-shadow-lg" />
+          </div>
+        </div>
+        <div className="px-4 py-3">
+          <p className="text-xs text-muted-foreground leading-relaxed">{caption}</p>
+        </div>
+      </div>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-2xl p-2 bg-black border-zinc-700">
+          <img src={src} alt={title} className="w-full rounded-lg object-contain max-h-[85vh]" />
+          <p className="text-xs text-zinc-400 text-center pt-1 pb-2">{label} — {title}</p>
+        </DialogContent>
+      </Dialog>
+    </>
+  );
+}
+
 export default function Evidence() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxOpen2, setLightboxOpen2] = useState(false);
@@ -2747,6 +2792,57 @@ export default function Evidence() {
               </a>{" "}
               <span className="text-xs">(ProtonMail encrypted)</span>
             </p>
+          </motion.div>
+
+          {/* KEY EVIDENCE SCREENSHOTS — prominent exhibit display */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.03 }}
+            className="mb-14"
+          >
+            <div className="flex items-center gap-3 mb-6 justify-center">
+              <div className="h-px flex-1 bg-red-500/30" />
+              <div className="flex items-center gap-2">
+                <AlertCircle className="h-5 w-5 text-red-400" />
+                <span className="text-red-400 font-bold text-sm uppercase tracking-widest">Primary Evidence Screenshots</span>
+                <AlertCircle className="h-5 w-5 text-red-400" />
+              </div>
+              <div className="h-px flex-1 bg-red-500/30" />
+            </div>
+            <p className="text-center text-sm text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Real-time message captures documenting surveillance disclosure, political targeting, and unlawful intelligence operations against a protected whistleblower. Click any image to enlarge.
+            </p>
+            <div className="grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  src: "/evidence/screenshot-ben-ndis-mental-health.png",
+                  label: "EXHIBIT A",
+                  title: "Police Intelligence Passed to NDIS Worker",
+                  caption: "Ben (NDIS Help) relays police inquiry: are you mentally ready to challenge Bill Shorten in court? Confirms police were briefed on psychiatric history and coordinating strategy to discredit the case.",
+                  color: "border-red-500/60",
+                  badgeColor: "bg-red-900/80 text-red-200",
+                },
+                {
+                  src: "/evidence/screenshot-ben-ndis-un-meeting.png",
+                  label: "EXHIBIT B",
+                  title: "UN Switzerland Meeting & Consensual Sex Disclosure",
+                  caption: "Ben discloses: \"They're going to call you to chair the UN meeting in Switzerland.\" Also reveals police shared private sexual history — \"The police told me about the consensual regretted sex\" — demonstrating unlawful intelligence sharing.",
+                  color: "border-amber-500/60",
+                  badgeColor: "bg-amber-900/80 text-amber-200",
+                },
+                {
+                  src: "/evidence/screenshot-squirt-surveillance.png",
+                  label: "EXHIBIT C",
+                  title: "Drone Surveillance & False Paedophilia Smear",
+                  caption: "Third party warns: \"there's an app out on you and the drones have got you parked near train station\" and \"some shit saying you touch little kids\" — documenting the real-time smear campaign and aerial surveillance operation.",
+                  color: "border-orange-500/60",
+                  badgeColor: "bg-orange-900/80 text-orange-200",
+                },
+              ].map((exhibit, i) => (
+                <ScreenshotExhibit key={i} {...exhibit} />
+              ))}
+            </div>
           </motion.div>
 
           {/* Progress Tracker and Evidence Counter */}
