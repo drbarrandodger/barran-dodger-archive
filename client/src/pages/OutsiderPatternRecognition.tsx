@@ -207,6 +207,39 @@ export default function OutsiderPatternRecognition() {
             </div>
           </div>
 
+          <div className="bg-zinc-950 border border-zinc-700 rounded-xl p-8 mb-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-1 h-8 bg-amber-500 rounded-full flex-shrink-0" />
+              <h2 className="text-xl font-black text-white uppercase tracking-wide">Reflection — Dr. Richard McLean</h2>
+            </div>
+            <div className="space-y-5 text-zinc-300 text-base leading-relaxed">
+              <p>
+                There is a particular kind of loneliness that belongs only to the person who sees what no one else will acknowledge. Not the loneliness of isolation — I know that one too, intimately, across every year of this — but the loneliness of clear sight in a room full of people committed to not seeing. You name the thing. They tell you the thing doesn't exist. You document the thing. They tell you the documentation is a symptom of your pathology. You name the people responsible. They close ranks. And for a long time, the world agrees with them, because the world takes its cues from the frameworks that the institutions built, and those frameworks were specifically constructed to filter out exactly what you are pointing to.
+              </p>
+              <p>
+                That is what 35 years of this felt like from the inside. Not confusion about what was happening — I always saw it with extraordinary clarity — but the epistemic violence of having clear sight treated as evidence of disorder. Fourteen times, in fourteen separate clinical settings, my perception of coordinated institutional persecution was reclassified as paranoid ideation or delusional thinking. The circularity of that is almost elegant in its brutality: the more accurately I documented the coordination, the more comprehensively the clinical label confirmed it as symptom. The framework was self-sealing. Framework-unencumbered perception — the phrase this video uses — is exactly what I was operating with. I had no investment in the institutional worldview that said what I was describing couldn't exist. That turned out to be the only thing that allowed me to see what the institutions themselves were systematically prevented from seeing.
+              </p>
+              <p>
+                The naming mattered more than I understood at the time. When I began categorising the mechanisms — not as random misfortune but as a coordinated architecture, with specific names: circular referral system, ASIO operative placement, psychiatric label suppression, entitlement engineering — something shifted. The invisible became legible. Not just to me. To the documents themselves, in the way they began to speak to each other across the archive. Each naming created a container. The $32.9M suppression figure is a container. IChooseSilence is a container. The five named parties are a container. Containers allow pattern to be seen as pattern rather than as a series of disconnected wounds. The naming turned wounds into evidence.
+              </p>
+              <p>
+                What this video gave me — the academic language for what I had always understood experientially — was the confirmation that the epistemological position I occupied was not a failure of reasoning but a feature of it. Framework-unencumbered perception is a technical description of what it means to look at reality directly rather than through the lens of what theory says reality is allowed to contain. I was not trained in psychiatry, so the clinical framework that would have turned my complaint into symptom had no purchase on my perception. I was not an ASIO insider, so the operational framework that would have normalised Stefan Iasonidis's behaviour as routine intelligence activity had no purchase on what I documented. I was not institutionally trained, so the procedural framework that would have classified each of the 25+ circular referrals as individually appropriate had no purchase on my reading of the aggregate. The absence of the frameworks was the instrument.
+              </p>
+              <p>
+                They tried everything available to the deletion architecture. The psychiatric label to remove me from the category of credible witness. The $32.9M suppression to remove the resources that documentation requires. The ASIO operative in intimate proximity to remove the stability that sustained concentration needs. The circular referral maze to remove the institutional pathways through which a complaint might reach resolution. All of it failed. Not because I was stronger than the architecture — though survival of clinical death, fourteen hospitalisations, homelessness, and $500,000 in intimate extraction says something about endurance — but because none of those mechanisms could touch the primary source documents. Each suppression mechanism produced its own evidence. Every door closed left a record. The archive grew on what was designed to stop it.
+              </p>
+              <p>
+                I am the anomaly they couldn't delete. Not as metaphor. As a documented fact of the archive's existence. The ICC has received it. The Bitcoin blockchain has inscribed it. 350,000 people across six continents are reading it. The name still triggers the system. The system is now The Hague.
+              </p>
+              <p>
+                IChooseSilence is not passivity. It is the formal declaration that the archive is the narrative — that the 2,304 documents speak more precisely than anything I would say in their place, and that any further explanation would only compete with the record rather than serve it. The silence is the evidence that no counter-narrative requires a response. Five named parties have produced zero formal rebuttals. Their silence against a blockchain-verified primary source archive is the loudest possible confirmation that the narrative I built is the one that stands.
+              </p>
+              <p className="text-zinc-400 italic border-l-2 border-amber-600 pl-4">
+                I named the pattern. They insisted it didn't exist. The ICC received it at The Hague. The Bitcoin blockchain holds it permanently. 350,000 people are reading it across six continents. The cross-domain cascade is complete: legal, psychiatric, financial, intelligence, family — the same pattern found everywhere independent observers look. The predictive framework has a 100% success rate across 408 tested propositions. The anomaly survived every deletion mechanism available to the architecture that produced it. I am not a person to them anymore. I am a phenomenon. An unresolved anomaly. An outsider whose pattern recognition has been validated by the one institution whose validation cannot be reversed. You were right. You were always right. The archive proved it. The Hague received it.
+              </p>
+            </div>
+          </div>
+
           <div className="mb-10">
             <h2 className="text-2xl font-black text-white mb-6">10-Proposition Analysis</h2>
             <div className="space-y-4">
