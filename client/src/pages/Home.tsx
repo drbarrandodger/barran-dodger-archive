@@ -325,7 +325,7 @@ export default function Home() {
       <Navigation />
 
       {/* CHESS HERO IMAGE */}
-      <div style={{ backgroundColor: '#09090b', paddingTop: 'calc(var(--banner-height, 0px) + var(--nav-height, 64px))' }}>
+      <div style={{ backgroundColor: '#09090b', paddingTop: 'calc(var(--banner-height, 40px) + var(--nav-height, 64px))' }}>
         <ChessmateHero />
       </div>
 
