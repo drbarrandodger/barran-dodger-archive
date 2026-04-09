@@ -58,6 +58,7 @@ const PAGE_TITLES: Record<string, string> = {
   "/phantom-protocol": "Analysis 28 — Phantom Protocol",
   "/they-cannot-profile-you": "Analysis 29 — They Cannot Profile You",
   "/the-architecture-of-resolution": "Analysis 30 — The Architecture of Resolution",
+  "/ndis-surveillance-evidence": "NDIS Surveillance and Phone Interception — New Evidence Exhibits A and B",
   "/apotheosis": "Apotheosis Statement",
   "/letter-to-the-world": "Letter to the World",
   "/whistleblower-comparison": "Whistleblower Comparison",

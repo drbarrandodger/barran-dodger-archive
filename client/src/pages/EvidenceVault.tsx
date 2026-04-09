@@ -1451,6 +1451,45 @@ export default function EvidenceVault() {
             </div>
           </motion.section>
 
+          {/* ── NEW EVIDENCE: NDIS SURVEILLANCE & PHONE INTERCEPTION ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-zinc-900 border border-red-500/40 rounded-2xl p-6 md:p-8"
+          >
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="flex-shrink-0 flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center">
+                  <span className="text-red-400 font-bold text-xs font-mono">NEW</span>
+                </div>
+              </div>
+              <div className="flex-1 space-y-3">
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-red-500/10 text-red-400 border-red-500/30 text-xs">2 New Exhibits — April 8, 2026</Badge>
+                  <Badge className="bg-orange-500/10 text-orange-400 border-orange-500/30 text-xs">SMS Phone Interception</Badge>
+                  <Badge className="bg-red-500/10 text-red-400 border-red-500/30 text-xs">In-Home Audio Surveillance</Badge>
+                  <Badge className="bg-zinc-700 text-zinc-300 text-xs">2,303 Total Archive Documents</Badge>
+                </div>
+                <h3 className="text-white font-bold text-lg leading-snug">
+                  NDIS Surveillance, Audio Harassment & Phone Interception — Exhibits A and B
+                </h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Two new primary source exhibits submitted April 8, 2026 in the presence of a Support Worker. Exhibit A: an audio recording documenting in-home surveillance and harassment within Dr. McLean's private residence under the NDIS entrapment policy framework. Exhibit B: a photograph of Dr. McLean's iPhone Messages screen confirming that a text sent to his Able Care support worker Cass arrived from a different number — independently confirmed by Cass herself — the primary source forensic signature of SMS interception under the Telecommunications (Interception and Access) Act 1979 (Cth). Both exhibits created on the same day as Analysis #30 (The Architecture of Resolution), documenting the suppression apparatus remaining operationally active as a resolution framework was being published. The archive now stands at 2,303 primary source documents.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <Link href="/ndis-surveillance-evidence" data-testid="button-vault-ndis-surveillance">
+                    <Button size="sm" className="bg-red-700 hover:bg-red-600 text-white font-bold">
+                      <BookOpen className="mr-1.5 h-3.5 w-3.5" /> View Evidence
+                    </Button>
+                  </Link>
+                  <CompactShare path="/ndis-surveillance-evidence" title="NDIS Surveillance & Phone Interception — New Evidence" />
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* ── ANALYSIS #30: THE ARCHITECTURE OF RESOLUTION ── */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
