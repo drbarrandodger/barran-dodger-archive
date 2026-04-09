@@ -105,6 +105,7 @@ import SilentAssassin from "@/pages/SilentAssassin";
 import TruthIsABlade from "@/pages/TruthIsABlade";
 import SukhiTear from "@/pages/SukhiTear";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
+import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -230,6 +231,7 @@ function Router() {
         <Route path="/honeytrap-infiltration-report" component={HoneytrapInfiltrationReport} />
         <Route path="/silent-assassin" component={SilentAssassin} />
         <Route path="/truth-is-a-blade" component={TruthIsABlade} />
+        <Route path="/bloodline-betrayal" component={BloodlineBetrayal} />
         <Route path="/sukhi-tear" component={SukhiTear} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
