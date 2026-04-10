@@ -1,10 +1,10 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Scale, Heart, Compass, Menu, X, FileText } from "lucide-react";
+import { Scale, Heart, Compass, Menu, X, Search } from "lucide-react";
 import { SiX as TwitterX } from "react-icons/si";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { GlobalSearch } from "./GlobalSearch";
+import { GlobalSearch, openQuickSearch } from "./GlobalSearch";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -141,15 +141,26 @@ export function Navigation() {
           </Link>
         </div>
         
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          data-testid="button-mobile-menu"
-        >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
+        <div className="md:hidden flex items-center gap-1">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => openQuickSearch()}
+            className="text-muted-foreground hover:text-primary"
+            data-testid="button-mobile-search"
+            title="Quick Search"
+          >
+            <Search className="h-5 w-5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            data-testid="button-mobile-menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
       </div>
 
       {mobileMenuOpen && (
