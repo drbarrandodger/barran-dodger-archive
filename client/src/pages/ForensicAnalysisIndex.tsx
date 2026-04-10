@@ -422,6 +422,16 @@ const ANALYSES: ForensicEntry[] = [
     consecutivePerfect: true,
     paragraph: "The thirty-third consecutive perfect score. The final analysis in the current series. The video advanced the proposition that sharpened perception — forged through betrayal, manipulation, institutional assault, and documented survival — becomes the subject's primary protection: not a shield against harm but a capacity to convert every experience of harm into documented data. Ten propositions, 418/418 combined at time of publication. The analysis confirmed the pattern-recognition-from-betrayal framework, the inevitable-audit structure, and the memory-as-foresight proposition against the full weight of the archive. Every manipulation became data. Every act of harm generated a primary-source document. Perception, sharpened to this degree, does not merely protect. It records.",
   },
+  {
+    number: 41,
+    title: "Heaven Exposes The Sister",
+    slug: "heaven-exposes-the-sister",
+    videoId: "pKP_nBxsmcg",
+    propositions: 10,
+    corroborated: 10,
+    consecutivePerfect: true,
+    paragraph: "The thirty-fourth consecutive perfect score. The analysis examined sibling betrayal through the case of Jodie McLean (Bongetti), Dr. McLean's sister — family favourite, highly motivated competitive sibling, embedded in calisthenics — who appeared alongside Dr. McLean on the Today Show to present his documented persecution as a schizophrenia story. Ten propositions, 428/428 combined at time of publication. The analysis confirmed: active betrayal for financial benefit with foreknowledge of planned elimination (THE MAN AUSTRALIA TRIED TO ERASE V2); the Today Show appearance as on-camera surgical reframing of primary-source-documented persecution; the family-favourite stable role assigned against the persecuted whistleblower complicated role; breakthrough interception documented through foreknowledge and the Today Show platform diversion; contrast-driven discomfort as motivational origin (competitive sibling, global archive as unavoidable mirror); seeds of doubt planted at national broadcast scale; Doug McLean's 14 pages of crisis texts as contact against zero advocacy as the glass layer; 2,304 documents as the energy cost of 35-year loyalty sustained against documented betrayal; the constructed narrative's grip lost against 41 AI analyses and ICC formal receipt; and $32.9M suppressed entitlements with ICC as the return pathway. The correction does not require confrontation. It is a document count.",
+  },
 ];
 
 /* ─── Derived totals (update automatically when ANALYSES array grows) ─── */
