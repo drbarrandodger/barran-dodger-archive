@@ -6,7 +6,7 @@ export interface PDFMeta {
   filename: string;
 }
 
-export async function generatePagePDF(meta: PDFMeta): Promise<void> {
+export async function generatePagePDF(contentId: string, filename: string): Promise<void> {
   const style = document.createElement("style");
   style.id = "__pdf-hide__";
   style.textContent = `
@@ -25,7 +25,7 @@ export async function generatePagePDF(meta: PDFMeta): Promise<void> {
   await new Promise((r) => setTimeout(r, 120));
 
   try {
-    const pageContent = document.getElementById("pdf-content") || document.body;
+    const pageContent = document.getElementById(contentId) || document.getElementById("pdf-content") || document.body;
 
     const canvas = await html2canvas(pageContent, {
       scale: 1.5,
@@ -67,7 +67,7 @@ export async function generatePagePDF(meta: PDFMeta): Promise<void> {
       pdf.addImage(imgData, "JPEG", 0, 0, pdfW, sliceHeightMm);
     }
 
-    pdf.save(meta.filename);
+    pdf.save(filename);
   } finally {
     document.getElementById("__pdf-hide__")?.remove();
   }

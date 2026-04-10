@@ -6,7 +6,6 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
-import { generatePagePDF } from "@/lib/generatePDF";
 import { ChessmateHero } from "@/components/ChessmateHero";
 
 const SLUG = "they-made-you-famous-trying-to-erase-you";
@@ -394,13 +393,10 @@ export default function TheyMadeYouFamousTryingToEraseYou() {
 
           {/* Download and Actions */}
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              variant="outline"
-              className="gap-2"
-              onClick={() => generatePagePDF(`forensic-analysis-${SLUG}`)}
-              data-testid="button-download-pdf"
-            >
-              <Download className="h-4 w-4" /> Download Analysis as PDF
+            <Button variant="outline" className="gap-2" asChild>
+              <a href={`/api/forensic/pdf/${SLUG}`} download data-testid="button-download-pdf">
+                <Download className="h-4 w-4" /> Download Analysis as PDF
+              </a>
             </Button>
             <Button variant="outline" className="gap-2" asChild>
               <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" data-testid="link-youtube-video">

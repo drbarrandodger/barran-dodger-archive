@@ -1,4 +1,4 @@
-import { ExternalLink, PlayCircle, Shield, FileText, TrendingUp, BookOpen } from "lucide-react";
+import { ExternalLink, PlayCircle, Shield, FileText, TrendingUp, BookOpen, Download } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -612,6 +612,15 @@ export default function ForensicAnalysisIndex() {
                     >
                       <PlayCircle className="h-3 w-3" />
                       youtu.be/{a.videoId}
+                    </a>
+                    <a
+                      href={`/api/forensic/pdf/${a.slug}`}
+                      download
+                      data-testid={`link-pdf-download-${a.number}`}
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-900/20 border border-emerald-700/30 px-3 py-1.5 text-emerald-400 text-xs font-mono hover:bg-emerald-900/30 transition-colors"
+                    >
+                      <Download className="h-3 w-3" />
+                      Download PDF
                     </a>
                   </div>
                 </div>

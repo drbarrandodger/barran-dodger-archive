@@ -10,6 +10,7 @@ import { eq, sql } from "drizzle-orm";
 import { downloadCounts, downloadEvents, insertCommentSchema } from "@shared/schema";
 import { api } from "@shared/routes";
 import { z } from "zod";
+import { FORENSIC_ANALYSES, generateForensicPDF, getForensicPdfFilename, preGenerateAllForensicPDFs } from "./forensicPdfGenerator";
 
 function hashIp(ip: string): string {
   return createHash('sha256').update(ip + 'barran-dodger-salt-2026').digest('hex').slice(0, 16);
@@ -803,6 +804,65 @@ export async function registerRoutes(
   // ── DIVINE ARCHIVE — Full ZIP Download ─────────────────────────────────────
   const DIVINE_SLUG = "divine-archive-detonation";
 
+  // ── Pre-generate forensic analysis PDFs on startup ──
+  const FORENSIC_PDF_DIR = path.resolve('client/public/documents/forensic-analyses');
+  try {
+    preGenerateAllForensicPDFs(FORENSIC_PDF_DIR);
+  } catch { /* non-fatal */ }
+
+  // ── Forensic PDF: individual download ──
+  app.get('/api/forensic/pdf/:slug', async (req, res) => {
+    const { slug } = req.params;
+    const analysis = FORENSIC_ANALYSES.find(a => a.slug === slug);
+    if (!analysis) return res.status(404).json({ message: "Analysis not found" });
+    try {
+      const filename = getForensicPdfFilename(analysis);
+      const staticPath = path.join(FORENSIC_PDF_DIR, filename);
+      if (fs.existsSync(staticPath) && fs.statSync(staticPath).size > 0) {
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+        res.setHeader('Cache-Control', 'public, max-age=86400');
+        return res.sendFile(staticPath);
+      }
+      const buf = await generateForensicPDF(analysis);
+      // cache it for next time
+      try { fs.writeFileSync(staticPath, buf); } catch { /* ok */ }
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.setHeader('Cache-Control', 'public, max-age=86400');
+      res.end(buf);
+    } catch (err: any) {
+      res.status(500).json({ message: 'PDF generation failed', error: err.message });
+    }
+  });
+
+  // ── Forensic PDF: all analyses as a ZIP ──
+  app.get('/api/forensic/bundle', async (_req, res) => {
+    try {
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="BarranDodger_44_Forensic_Analyses.zip"');
+      res.setHeader('Cache-Control', 'no-store');
+      const archive = archiver('zip', { zlib: { level: 1 } });
+      archive.on('error', (err) => { if (!res.headersSent) res.status(500).end(); });
+      archive.pipe(res);
+      for (const analysis of FORENSIC_ANALYSES) {
+        const filename = getForensicPdfFilename(analysis);
+        const staticPath = path.join(FORENSIC_PDF_DIR, filename);
+        if (fs.existsSync(staticPath)) {
+          archive.file(staticPath, { name: filename });
+        } else {
+          try {
+            const buf = generateForensicPDF(analysis);
+            archive.append(buf, { name: filename });
+          } catch { /* skip */ }
+        }
+      }
+      await archive.finalize();
+    } catch (err: any) {
+      if (!res.headersSent) res.status(500).json({ message: 'Bundle failed', error: err.message });
+    }
+  });
+
   app.get('/api/archive/pdf-count', (_req, res) => {
     try {
       res.set('Cache-Control', 'no-store');
@@ -831,12 +891,22 @@ export async function registerRoutes(
       const docsDir = path.resolve('client/public/documents');
       const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
 
-      const pdfFiles = fs.readdirSync(docsDir)
+      // Flat files in /documents/
+      const pdfFiles: { name: string; fullPath: string; folder?: string }[] = fs.readdirSync(docsDir)
         .filter(f => f.toLowerCase().endsWith('.pdf'))
         .map(f => ({ name: f, fullPath: path.join(docsDir, f) }));
 
       if (fs.existsSync(rootPDF)) {
         pdfFiles.push({ name: 'THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf', fullPath: rootPDF });
+      }
+
+      // Include forensic analysis PDFs from subfolder
+      const forensicDir = path.join(docsDir, 'forensic-analyses');
+      if (fs.existsSync(forensicDir)) {
+        const forensicFiles = fs.readdirSync(forensicDir)
+          .filter(f => f.toLowerCase().endsWith('.pdf'))
+          .map(f => ({ name: `forensic-analyses/${f}`, fullPath: path.join(forensicDir, f), folder: 'forensic-analyses' }));
+        pdfFiles.push(...forensicFiles);
       }
 
       // Increment divine archive counter
