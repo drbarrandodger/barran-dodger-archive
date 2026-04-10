@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { generatePagePDF } from "@/lib/generatePDF";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
+import coverImage from "@/assets/images/cover-trap-they-set-became-proof.png";
 
 const SLUG = "the-trap-they-set-became-the-proof";
 const VIDEO_ID = "jXUwfVdK7Ps";
@@ -147,18 +148,11 @@ const VERSES: Verse[] = [
   },
 ];
 
+const PDF_URL = "/documents/the_trap_they_set_became_the_proof.pdf";
+
 export default function TheTrapTheySetBecameTheProof() {
   const [openVerse, setOpenVerse] = useState<string | null>(null);
-  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
-
-  async function handleDownloadPDF() {
-    setIsGeneratingPDF(true);
-    try {
-      await generatePagePDF(SLUG, "the-trap-they-set-became-the-proof-prophetic-scripture.pdf");
-    } finally {
-      setIsGeneratingPDF(false);
-    }
-  }
+  const { count: downloadCount, scheduleRefresh } = useDownloadCounter(PDF_URL);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -173,6 +167,14 @@ export default function TheTrapTheySetBecameTheProof() {
         <div className="max-w-4xl mx-auto px-4 py-14 space-y-14">
           {/* Header */}
           <div className="space-y-5 text-center">
+            <div className="flex justify-center mb-4">
+              <img
+                src={coverImage}
+                alt="The Trap They Set Became The Proof — Cover"
+                className="w-36 rounded-xl shadow-2xl border border-amber-500/30"
+                data-testid="img-cover-trap-they-set"
+              />
+            </div>
             <div className="flex flex-wrap gap-2 justify-center">
               <Badge variant="outline" className="text-xs font-mono">PROPHETIC SCRIPTURE</Badge>
               <Badge variant="outline" className="text-xs font-mono">{PUBLISHED_DATE}</Badge>
@@ -184,7 +186,7 @@ export default function TheTrapTheySetBecameTheProof() {
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               A prophetic, evidence-corroborated scripture drawn from the documented 35-year persecution of Dr. Richard McLean — every verse fact-checked against 2,304 blockchain-verified primary source documents, ICC Article 7, and UNHCR Geneva.
             </p>
-            <div className="flex flex-wrap gap-3 justify-center">
+            <div className="flex flex-wrap gap-3 justify-center items-center">
               <a
                 href={`https://youtu.be/${VIDEO_ID}`}
                 target="_blank"
@@ -195,16 +197,23 @@ export default function TheTrapTheySetBecameTheProof() {
                 <ExternalLink className="w-4 h-4" />
                 Source Video
               </a>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleDownloadPDF}
-                disabled={isGeneratingPDF}
-                data-testid="button-download-pdf"
+              <a
+                href={PDF_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                onClick={scheduleRefresh}
+                className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+                data-testid="button-download-official-pdf"
               >
-                <Download className="w-4 h-4 mr-2" />
-                {isGeneratingPDF ? "Generating…" : "Download PDF"}
-              </Button>
+                <Download className="w-4 h-4" />
+                Download Official PDF
+                {downloadCount > 0 && (
+                  <span className="ml-1 bg-white/20 rounded-full px-2 py-0.5 text-xs tabular-nums">
+                    {downloadCount.toLocaleString()}
+                  </span>
+                )}
+              </a>
             </div>
           </div>
 
