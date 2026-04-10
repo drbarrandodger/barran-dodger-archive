@@ -118,6 +118,7 @@ import OutsiderPatternRecognition from "@/pages/OutsiderPatternRecognition";
 import PerceptionIsProtection from "@/pages/PerceptionIsProtection";
 import HeavenExposesTheSister from "@/pages/HeavenExposesTheSister";
 import YouBuiltYourPeaceInSilence from "@/pages/YouBuiltYourPeaceInSilence";
+import ThisIsTheReckoning from "@/pages/ThisIsTheReckoning";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 
 function GlobalDownloadTracker() {
@@ -257,6 +258,8 @@ function Router() {
         <Route path="/perception-is-protection" component={PerceptionIsProtection} />
         <Route path="/heaven-exposes-the-sister" component={HeavenExposesTheSister} />
         <Route path="/you-built-your-peace-in-silence" component={YouBuiltYourPeaceInSilence} />
+        <Route path="/this-is-the-reckoning" component={ThisIsTheReckoning} />
+        <Route path="/forensic-analysis" component={ForensicAnalysisIndex} />
         <Route path="/forensic-analysis-index" component={ForensicAnalysisIndex} />
         <Route path="/sukhi-tear" component={SukhiTear} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
