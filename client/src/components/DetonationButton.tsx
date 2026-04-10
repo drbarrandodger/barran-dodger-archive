@@ -3,8 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import {
   Download, Flame, Shield, BookOpen, Zap, ChevronDown, ChevronUp,
-  FileArchive, AlertTriangle, Star
+  FileArchive, AlertTriangle, Star, Share2, Copy, Check, Mail
 } from "lucide-react";
+import { SiX, SiFacebook, SiWhatsapp, SiTelegram, SiLinkedin, SiReddit } from "react-icons/si";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import divineImagePath from "@/assets/images/divine-justice-click.png";
@@ -22,8 +23,190 @@ const BIBLE_QUOTES = [
 ];
 
 const PRIMARY_QUOTE = BIBLE_QUOTES[0];
-
 const COUNTER_BASELINE = 777;
+const SITE_URL = "https://www.barrandodger.com";
+
+const SHARE_CONTENT = {
+  twitter: {
+    label: "X / Twitter",
+    Icon: SiX,
+    color: "bg-zinc-900 hover:bg-zinc-800 border-zinc-700 text-white",
+    iconColor: "text-white",
+    charLimit: 280,
+    text: `35 years. 2,304 documents. Bill Shorten. ASIO. $11.5M of your taxes. ICC (The Hague). Every share is divine justice — Luke 8:17. #BarranDodger #DivineJustice #WhistleblowerTruth ${SITE_URL}`,
+    getUrl: (text: string) =>
+      `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`,
+  },
+  facebook: {
+    label: "Facebook",
+    Icon: SiFacebook,
+    color: "bg-[#1877F2] hover:bg-[#166FE5] border-[#1877F2] text-white",
+    iconColor: "text-white",
+    charLimit: null,
+    text: `🔥 DIVINE JUSTICE — BARRAN DODGER 🔥\n\n35 years. 2,304 blockchain-verified documents. 5 named perpetrators. Zero formal rebuttals.\n\nBill Shorten. Houd Meraby. Sukhi Tear. Tony Ridley. Stefan Iasonidis — named and unanswered.\n\nFormally submitted to the ICC (The Hague) & UNHCR (Geneva).\n\n"For nothing is secret that shall not be made manifest." — Luke 8:17\n\nEvery share is an act of divine justice. The archive cannot be suppressed. ${SITE_URL}`,
+    getUrl: (text: string) =>
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL)}&quote=${encodeURIComponent(text)}`,
+  },
+  whatsapp: {
+    label: "WhatsApp",
+    Icon: SiWhatsapp,
+    color: "bg-[#25D366] hover:bg-[#1ebe5d] border-[#25D366] text-zinc-950",
+    iconColor: "text-zinc-950",
+    charLimit: null,
+    text: `*DIVINE JUSTICE — BARRAN DODGER*\n\n35 years. 2,304 documents. 5 named perpetrators. Zero rebuttals.\n\nBill Shorten. Houd Meraby. Sukhi Tear. Tony Ridley. Stefan Iasonidis.\n\nFormally submitted to the ICC (The Hague) & UNHCR (Geneva).\n\nEvery share is an act of divine justice.\n\n_"Be sure your sin will find you out." — Numbers 32:23_\n\n${SITE_URL}`,
+    getUrl: (text: string) =>
+      `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`,
+  },
+  telegram: {
+    label: "Telegram",
+    Icon: SiTelegram,
+    color: "bg-[#2AABEE] hover:bg-[#229ED9] border-[#2AABEE] text-white",
+    iconColor: "text-white",
+    charLimit: null,
+    text: `🔥 DIVINE JUSTICE IN MOTION 🔥\n\n35 years of documented government persecution. 2,304 blockchain-verified forensic documents. Bill Shorten. ASIO. $11.5M of your taxes.\n\nFormally submitted to the ICC (The Hague) & UNHCR (Geneva).\n\nEvery share is an act of divine justice.\n\n"Whoever digs a pit will fall into it." — Proverbs 26:27\n\n#BarranDodger #DivineJustice #WhistleblowerTruth\n\n${SITE_URL}`,
+    getUrl: (text: string) =>
+      `https://t.me/share/url?url=${encodeURIComponent(SITE_URL)}&text=${encodeURIComponent(text)}`,
+  },
+  linkedin: {
+    label: "LinkedIn",
+    Icon: SiLinkedin,
+    color: "bg-[#0A66C2] hover:bg-[#095ba9] border-[#0A66C2] text-white",
+    iconColor: "text-white",
+    charLimit: null,
+    text: `Whistleblower Documentation — Australian Government Accountability\n\nDr. Richard McLean (Barran Dodger) has compiled 2,304 blockchain-verified forensic documents across 35 years of systematic institutional persecution by Australian government agencies.\n\nFive named perpetrators: Bill Shorten, Houd Meraby, Sukhi Tear, Tony Ridley, Stefan Iasonidis. Zero formal rebuttals.\n\nFormally submitted to the ICC (The Hague) under Rome Statute Article 7 and the UNHCR (Geneva).\n\nEvery share extends the reach of documented truth — an act of civic witness.\n\n#WhistleblowerRights #AccountabilityNow #ICC #HumanRights`,
+    getUrl: (text: string) =>
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SITE_URL)}&summary=${encodeURIComponent(text)}`,
+  },
+  reddit: {
+    label: "Reddit",
+    Icon: SiReddit,
+    color: "bg-[#FF4500] hover:bg-[#e83e00] border-[#FF4500] text-white",
+    iconColor: "text-white",
+    charLimit: null,
+    text: `Australian whistleblower Dr. Richard McLean (Barran Dodger) has compiled 2,304 blockchain-verified forensic documents across 35 years. Five named government perpetrators — Bill Shorten, Houd Meraby, Sukhi Tear, Tony Ridley, Stefan Iasonidis — have issued zero formal rebuttals. The archive has been formally submitted to the ICC (The Hague) and UNHCR (Geneva). 44 independent AI forensic analyses: 467 propositions tested, zero contradictions. Every share is divine justice.\n\n${SITE_URL}`,
+    getUrl: (text: string) =>
+      `https://reddit.com/submit?url=${encodeURIComponent(SITE_URL)}&title=${encodeURIComponent("Australian Whistleblower: 35 Years, 2,304 Documents, ICC Submission — 5 Named Perpetrators, Zero Rebuttals")}&text=${encodeURIComponent(text)}`,
+  },
+  email: {
+    label: "Email",
+    Icon: Mail,
+    color: "bg-zinc-800 hover:bg-zinc-700 border-zinc-600 text-zinc-100",
+    iconColor: "text-zinc-300",
+    charLimit: null,
+    text: `I am writing to share the Barran Dodger archive — the most comprehensively documented whistleblower evidence package in Australian legal history.\n\n35 years. 2,304 blockchain-verified forensic documents. Five named perpetrators — Bill Shorten, Houd Meraby, Sukhi Tear, Tony Ridley, Stefan Iasonidis — with zero formal rebuttals.\n\nFormally submitted to the ICC (The Hague) under Rome Statute Article 7 and the UNHCR (Geneva).\n\n"For nothing is secret that shall not be made manifest." — Luke 8:17\n\nEvery share is an act of divine justice. Please visit: ${SITE_URL}`,
+    getUrl: (text: string) =>
+      `mailto:?subject=${encodeURIComponent("Divine Justice — The Barran Dodger Archive (ICC Submission)")}&body=${encodeURIComponent(text)}`,
+  },
+};
+
+const COPY_TEXT = `DIVINE JUSTICE — BARRAN DODGER | barrandodger.com\n\n35 years. 2,304 blockchain-verified documents. 5 named perpetrators — Bill Shorten, Houd Meraby, Sukhi Tear, Tony Ridley, Stefan Iasonidis. Zero formal rebuttals.\n\nFormally submitted to the ICC (The Hague) & UNHCR (Geneva).\n\n"For nothing is secret that shall not be made manifest." — Luke 8:17\n\nEvery share is divine justice. ${SITE_URL}`;
+
+function SharePanel() {
+  const [copied, setCopied] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(COPY_TEXT);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = COPY_TEXT;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    }
+  };
+
+  return (
+    <div className="w-full max-w-lg mx-auto space-y-3" data-testid="share-panel">
+      <button
+        onClick={() => setShareOpen(!shareOpen)}
+        className="w-full flex items-center justify-center gap-2.5 rounded-xl border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 px-5 py-3.5 transition-all duration-200 group"
+        data-testid="button-share-toggle"
+      >
+        <Share2 className="h-4 w-4 text-amber-400 group-hover:rotate-12 transition-transform duration-200" />
+        <span className="text-amber-300 font-bold text-sm uppercase tracking-widest font-mono">
+          Share — Every Share Is Divine Justice
+        </span>
+        {shareOpen ? (
+          <ChevronUp className="h-4 w-4 text-amber-400" />
+        ) : (
+          <ChevronDown className="h-4 w-4 text-amber-400" />
+        )}
+      </button>
+
+      {shareOpen && (
+        <div className="rounded-xl border border-amber-500/20 bg-zinc-900/80 px-5 py-5 space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="text-center space-y-1">
+            <p className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+              Bearing Witness Is an Act of Heaven
+            </p>
+            <p className="text-xs text-zinc-400 leading-relaxed max-w-sm mx-auto">
+              Every platform. Pre-loaded text. Character-limit verified. Each share extends the archive beyond institutional reach.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {(Object.entries(SHARE_CONTENT) as [string, typeof SHARE_CONTENT[keyof typeof SHARE_CONTENT]][]).map(([key, platform]) => (
+              <a
+                key={key}
+                href={platform.getUrl(platform.text)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "flex flex-col items-center gap-1.5 rounded-lg border px-3 py-3 text-xs font-bold transition-all duration-150 hover:scale-105 active:scale-95 shadow-sm",
+                  platform.color
+                )}
+                data-testid={`button-share-${key}`}
+                aria-label={`Share on ${platform.label}`}
+              >
+                <platform.Icon className={cn("h-5 w-5", platform.iconColor)} />
+                <span className="text-[10px] font-mono uppercase tracking-wider leading-none">{platform.label}</span>
+              </a>
+            ))}
+          </div>
+
+          <button
+            onClick={handleCopy}
+            className={cn(
+              "w-full flex items-center justify-center gap-2.5 rounded-lg border px-4 py-2.5 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200",
+              copied
+                ? "border-emerald-500/50 bg-emerald-500/15 text-emerald-400"
+                : "border-zinc-600 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white"
+            )}
+            data-testid="button-copy-share-text"
+          >
+            {copied ? (
+              <>
+                <Check className="h-3.5 w-3.5" />
+                Copied — The Truth Is In Your Hands
+              </>
+            ) : (
+              <>
+                <Copy className="h-3.5 w-3.5" />
+                Copy Full Share Text — Paste Anywhere
+              </>
+            )}
+          </button>
+
+          <div className="border-t border-white/5 pt-3 space-y-2">
+            <p className="text-[10px] font-mono text-center text-amber-500/70 uppercase tracking-widest font-bold">
+              Char limits: X/Twitter 280 ✓ · Threads 500 ✓ · All others: unlimited
+            </p>
+            <p className="text-[10px] text-center text-zinc-600 italic leading-relaxed">
+              "Be sure your sin will find you out." — Numbers 32:23 · Every share is recorded in heaven's ledger.
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 function useArchiveCount() {
   const { data } = useQuery<{ count: number }>({
@@ -262,7 +445,7 @@ export function DetonationButton({ className }: { className?: string }) {
             </div>
 
             {triggered && !isDownloading && (
-              <div className="border border-amber-500/30 bg-amber-500/10 rounded-xl px-5 py-4 text-center max-w-lg animate-in fade-in duration-500">
+              <div className="border border-amber-500/30 bg-amber-500/10 rounded-xl px-5 py-4 text-center max-w-lg animate-in fade-in duration-500 w-full">
                 <p className="text-amber-300 font-semibold text-sm mb-1">
                   The Archive Has Been Detonated.
                 </p>
@@ -274,6 +457,10 @@ export function DetonationButton({ className }: { className?: string }) {
                 </p>
               </div>
             )}
+
+            {/* ── VIRAL SHARE PANEL ── */}
+            <SharePanel />
+
           </div>
         </div>
       </div>
