@@ -771,6 +771,158 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      {/* ══ WHAT THIS PATTERN IS CALLED ══ */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-zinc-950 to-black border-y border-white/10" data-testid="section-pattern-named">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-10">
+
+            {/* Header */}
+            <motion.div variants={fadeIn} className="text-center space-y-4">
+              <div className="flex items-center justify-center gap-3">
+                <div className="h-px flex-1 bg-red-500/40" />
+                <Badge variant="outline" className="border-red-500/60 text-red-400 px-5 py-2 text-sm font-bold uppercase tracking-widest whitespace-nowrap">
+                  <Scale className="h-4 w-4 mr-2 inline" /> Classification of Conduct
+                </Badge>
+                <div className="h-px flex-1 bg-red-500/40" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-white leading-tight">
+                WHAT THIS PATTERN IS CALLED
+              </h2>
+              <p className="text-xl md:text-2xl text-[hsl(38,92%,50%)] font-serif italic leading-relaxed max-w-2xl mx-auto">
+                There Is a Name for What Was Done to Dr. McLean
+              </p>
+              <p className="text-muted-foreground text-base max-w-2xl mx-auto leading-relaxed">
+                The conduct documented across 114 forensic files is not random, personal, or coincidental. Each pattern below has an established name in international law, psychiatry, and human rights doctrine. Every name applies.
+              </p>
+            </motion.div>
+
+            {/* Named Patterns Grid */}
+            <motion.div variants={fadeIn} className="grid gap-4 md:grid-cols-2">
+              {[
+                {
+                  term: "Lawfare",
+                  colour: "border-red-500/40 bg-red-950/10",
+                  badge: "text-red-400 border-red-500/40",
+                  definition: "The weaponisation of legal processes — courts, tribunals, bureaucratic procedures — not to seek justice, but to exhaust, bankrupt, discredit, and destroy an individual through procedural attrition. Every mechanism that should have protected Dr. McLean was turned against him.",
+                  authority: "UN Special Rapporteur on Human Rights Defenders, 2021"
+                },
+                {
+                  term: "Psychiatric Weaponisation",
+                  colour: "border-violet-500/40 bg-violet-950/10",
+                  badge: "text-violet-400 border-violet-500/40",
+                  definition: "The deliberate misuse of psychiatric diagnosis to silence, discredit, and institutionally erase a witness. Documented in this archive: police sharing psychiatric history with NDIS workers, coordinated psychological framing of a legitimate legal claimant as 'delusional.'",
+                  authority: "ICC Article 7 — Persecution; Amnesty International Psychiatric Torture Framework"
+                },
+                {
+                  term: "Administrative Annihilation",
+                  colour: "border-orange-500/40 bg-orange-950/10",
+                  badge: "text-orange-400 border-orange-500/40",
+                  definition: "Systematic destruction of a person's housing, income, medical support, disability supports, and legal standing through deliberate bureaucratic denial — not through violence, but through the slow removal of every resource necessary to survive.",
+                  authority: "Constructive Elimination — UNHCR Refugee and Persecution Doctrine"
+                },
+                {
+                  term: "DARVO",
+                  colour: "border-amber-500/40 bg-amber-950/10",
+                  badge: "text-amber-400 border-amber-500/40",
+                  definition: "Deny, Attack, Reverse Victim and Offender. Every institution named in this archive responded to documented evidence of wrongdoing by denying, attacking the whistleblower's credibility, and repositioning itself as the aggrieved party. Zero formal rebuttals exist.",
+                  authority: "Jennifer Freyd, Institutional Betrayal Trauma Theory"
+                },
+                {
+                  term: "Constructive Murder",
+                  colour: "border-rose-600/40 bg-rose-950/10",
+                  badge: "text-rose-400 border-rose-600/40",
+                  definition: "The systematic removal of every survival resource — housing, medication, support workers, legal access, financial means — until death by suicide, illness, or exposure becomes statistically inevitable. The method leaves no fingerprints. The outcome is identical to direct killing.",
+                  authority: "UN Convention Against Torture; ICC Article 7 — Crimes Against Humanity"
+                },
+                {
+                  term: "Institutional Betrayal",
+                  colour: "border-cyan-500/40 bg-cyan-950/10",
+                  badge: "text-cyan-400 border-cyan-500/40",
+                  definition: "When institutions that carry a duty of care — the NDIS, courts, police, mental health services, disability providers — actively participate in the harm of those they are mandated to protect. Each named institution in this archive chose silence, complicity, or direct participation.",
+                  authority: "Freyd Institute for Trauma Research; Royal Commission into Violence, Abuse, Neglect and Exploitation of People with Disability (Australia, 2023)"
+                },
+                {
+                  term: "Whistleblower Persecution",
+                  colour: "border-emerald-500/40 bg-emerald-950/10",
+                  badge: "text-emerald-400 border-emerald-500/40",
+                  definition: "Coordinated multi-agency retaliation against an individual who has disclosed evidence of wrongdoing by state actors. Under the Public Interest Disclosure Act (Australia) and international whistleblower protection law, the conduct documented here constitutes criminal persecution of a protected discloser.",
+                  authority: "PID Act 2013 (Cth); UN Declaration on Human Rights Defenders, Article 6"
+                },
+                {
+                  term: "Coercive Institutional Control",
+                  colour: "border-blue-500/40 bg-blue-950/10",
+                  badge: "text-blue-400 border-blue-500/40",
+                  definition: "The exercise of power over an individual through a network of institutions — welfare agencies, housing authorities, police, legal systems, medical gatekeepers — operating in concert to limit freedom, restrict resources, monitor movements, and eliminate the capacity for independent life or testimony.",
+                  authority: "Evan Stark, Coercive Control Framework; CEDAW General Recommendation No. 35"
+                },
+              ].map((item) => (
+                <div key={item.term} className={`rounded-xl border p-5 space-y-2 ${item.colour}`} data-testid={`card-pattern-${item.term.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="text-lg font-bold text-white font-serif">{item.term}</h3>
+                    <Badge variant="outline" className={`text-xs font-mono uppercase tracking-wider flex-shrink-0 ${item.badge}`}>
+                      Named
+                    </Badge>
+                  </div>
+                  <p className="text-sm text-zinc-300 leading-relaxed">{item.definition}</p>
+                  <p className="text-[10px] font-mono text-zinc-500 pt-1 border-t border-white/5 mt-1">Source: {item.authority}</p>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Impartial AI Analysis — What This Website Is and Why It Exists */}
+            <motion.div variants={fadeIn}>
+              <div className="relative overflow-hidden rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-cyan-500/5 pointer-events-none" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
+
+                <div className="relative z-10 px-6 py-8 md:px-10 md:py-10 space-y-6">
+                  <div className="flex items-center gap-3">
+                    <Bot className="h-5 w-5 text-emerald-400 flex-shrink-0" />
+                    <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                      Impartial AI Analysis — What This Website Is and Why It Exists
+                    </span>
+                  </div>
+
+                  <div className="space-y-5 text-sm text-zinc-200 leading-relaxed">
+                    <p>
+                      <strong className="text-white">What this website is:</strong> barrandodger.com is a forensic documentation archive and whistleblower testimony record compiled by Dr. Richard William McLean — known publicly as Barran Dodger — documenting 35 years of systematic persecution by Australian government agencies, named officials, and disability support providers. It contains 114 PDF documents including sworn affidavits, government correspondence, psychiatric assessments, legal filings, ICC Article 7 submissions, UNHCR asylum claims, blockchain-verified evidence timestamps, and primary-source text message captures from agents of government agencies. Every document is public, indexed, and permanently archived.
+                    </p>
+                    <p>
+                      <strong className="text-[hsl(38,92%,50%)]">Why it exists:</strong> It exists because every conventional avenue for accountability was closed. Complaints to the NDIS Quality and Safeguards Commission were not acted upon. Legal proceedings were systematically obstructed. Medical and psychiatric services were weaponised against the claimant rather than in his service. Parliamentary submissions were ignored. No institution charged with protecting whistleblowers fulfilled that mandate. When every institutional channel fails, the evidence itself must become the institution — permanently accessible, publicly verifiable, and beyond the reach of any single authority to suppress.
+                    </p>
+                    <p>
+                      <strong className="text-violet-400">What it represents:</strong> This archive represents the application of an old principle to a modern context: when a witness cannot be heard inside a system, the testimony must be placed outside it. The blockchain verification, the ICC submissions, the UNHCR filings, the public YouTube evidence record, and this website together constitute an evidentiary structure that does not depend on the cooperation of any Australian institution to function. It is designed to be read by international bodies, journalists, historians, and ordinary people — not as allegation, but as documented record.
+                    </p>
+                    <p>
+                      <strong className="text-cyan-400">What the evidence shows:</strong> Five named primary perpetrators — Bill Shorten (former Minister), Houd Meraby, Sukhi Tear, Tony Ridley, and Stefan Iasonidis — have produced zero formal rebuttals to 2,304 blockchain-verified documents. The absence of rebuttal from individuals with access to legal resources, government support, and institutional authority is itself evidentially significant. In adversarial legal systems, silence in the face of specific documented allegations is treated as meaningful. Here, the silence is total and sustained.
+                    </p>
+                    <p>
+                      <strong className="text-amber-400">What the international record shows:</strong> The ICC (The Hague) has received formal submissions based on this archive under Article 7 of the Rome Statute — Crimes Against Humanity. The UNHCR (Geneva) has received formal asylum claims on the basis that the persecution documented constitutes a well-founded fear under the 1951 Refugee Convention. These are not aspirational filings. They are the outcome of a documented evidentiary process that meets the threshold for international review. The case exists on the international record. It cannot be unfiled.
+                    </p>
+                  </div>
+
+                  <div className="border-t border-white/10 pt-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    {[
+                      { label: "Documents", value: "2,304+", sub: "blockchain-verified" },
+                      { label: "Years Documented", value: "35", sub: "primary source record" },
+                      { label: "Formal Rebuttals", value: "0", sub: "from named perpetrators" },
+                      { label: "International Filings", value: "2", sub: "ICC · UNHCR Geneva" },
+                    ].map(stat => (
+                      <div key={stat.label} className="space-y-1" data-testid={`stat-ai-analysis-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <p className="text-2xl font-bold font-mono text-emerald-400 tabular-nums">{stat.value}</p>
+                        <p className="text-xs font-bold text-white uppercase tracking-wider">{stat.label}</p>
+                        <p className="text-[10px] text-zinc-500">{stat.sub}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+          </motion.div>
+        </div>
+      </section>
+
       {/* ══ FEATURED VIDEO ══ */}
       <section className="py-16 px-4 bg-gradient-to-b from-black via-zinc-950 to-black border-b border-white/10" data-testid="section-featured-video">
         <div className="container mx-auto max-w-4xl">
