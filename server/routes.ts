@@ -1,6 +1,9 @@
 import type { Express } from "express";
 import type { Server } from "http";
 import { createHash } from "crypto";
+import * as fs from "fs";
+import * as path from "path";
+import archiver from "archiver";
 import { storage } from "./storage";
 import { db } from "./db";
 import { eq, sql } from "drizzle-orm";
@@ -795,6 +798,101 @@ export async function registerRoutes(
   app.get('/robots.txt', (_req, res) => {
     res.set('Content-Type', 'text/plain');
     res.send(`User-agent: *\nAllow: /\nSitemap: https://www.barrandodger.com/sitemap.xml\n`);
+  });
+
+  // ── DIVINE ARCHIVE — Full ZIP Download ─────────────────────────────────────
+  const DIVINE_SLUG = "divine-archive-detonation";
+
+  app.get('/api/archive/count', async (_req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store');
+      const count = await storage.getDownloadCount(DIVINE_SLUG);
+      res.json({ count });
+    } catch {
+      res.status(500).json({ count: 0 });
+    }
+  });
+
+  app.get('/api/archive/divine-download', async (req, res) => {
+    try {
+      const docsDir = path.resolve('client/public/documents');
+      const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
+
+      const pdfFiles = fs.readdirSync(docsDir)
+        .filter(f => f.toLowerCase().endsWith('.pdf'))
+        .map(f => ({ name: f, fullPath: path.join(docsDir, f) }));
+
+      if (fs.existsSync(rootPDF)) {
+        pdfFiles.push({ name: 'THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf', fullPath: rootPDF });
+      }
+
+      // Increment divine archive counter
+      storage.incrementDownloadCount(DIVINE_SLUG).catch(() => {});
+
+      // Batch-increment each individual document's counter
+      for (const { name } of pdfFiles) {
+        const slug = name
+          .replace(/\.pdf$/i, '')
+          .replace(/[^a-zA-Z0-9]+/g, '-')
+          .replace(/^-|-$/g, '')
+          .toLowerCase()
+          .slice(0, 80);
+        storage.incrementDownloadCount(slug).catch(() => {});
+      }
+
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="BarranDodger_Divine_Justice_Archive.zip"');
+      res.setHeader('Cache-Control', 'no-store');
+
+      const archive = archiver('zip', { zlib: { level: 1 } });
+
+      archive.on('error', (err) => {
+        if (!res.headersSent) {
+          res.status(500).json({ message: 'Archive error', error: err.message });
+        }
+      });
+
+      archive.pipe(res);
+
+      for (const { name, fullPath } of pdfFiles) {
+        if (fs.existsSync(fullPath)) {
+          archive.file(fullPath, { name });
+        }
+      }
+
+      // Manifest file
+      const manifestLines = [
+        'BARRAN DODGER — DIVINE JUSTICE ARCHIVE',
+        '═══════════════════════════════════════',
+        '',
+        '"For nothing is secret that shall not be made manifest;',
+        'neither any thing hid, that shall not be known and come abroad."',
+        '— Luke 8:17',
+        '',
+        `Downloaded: ${new Date().toISOString()}`,
+        `Documents: ${pdfFiles.length} forensic PDF files`,
+        `Archive: blockchain-verified, ICC-submitted, UNHCR-lodged`,
+        '',
+        'WHAT THIS ARCHIVE CONTAINS:',
+        '───────────────────────────',
+        ...pdfFiles.map((f, i) => `${String(i + 1).padStart(3, ' ')}. ${f.name}`),
+        '',
+        'This archive was downloaded from www.barrandodger.com',
+        'Every document is blockchain-verified.',
+        'ICC Article 7 formal receipt confirmed.',
+        'UNHCR Geneva submission lodged.',
+        '',
+        '"The LORD will not leave the guilty unpunished."',
+        '— Nahum 1:3',
+      ];
+      archive.append(manifestLines.join('\n'), { name: 'MANIFEST.txt' });
+
+      await archive.finalize();
+    } catch (err: any) {
+      if (!res.headersSent) {
+        res.status(500).json({ message: 'Download failed', error: err.message });
+      }
+    }
   });
 
   registerChatRoutes(app);

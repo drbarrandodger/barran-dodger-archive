@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
+import { DetonationButton } from "@/components/DetonationButton";
 import bookCoverBetrayed from "@/assets/images/book-cover-betrayed.png";
 import docCoverAssassination from "@/assets/images/doc-cover-assassination.png";
 import docCoverIdentity from "@/assets/images/doc-cover-identity.png";
@@ -443,6 +444,15 @@ export default function Publications() {
               The complete collection of legal affidavits, sacred gospels, forensic analyses, <CrossLink to="/evidence">whistleblower documentation</CrossLink>, and theological papers documenting <CrossLink to="/timeline">systematic persecution</CrossLink>. 
               Every publication is part of a <CrossLink to="/blockchain">blockchain-verified</CrossLink> archive that cannot be altered or deleted.
             </p>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="mb-10"
+          >
+            <DetonationButton />
           </motion.section>
 
           <motion.section
