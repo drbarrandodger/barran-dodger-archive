@@ -192,6 +192,12 @@ uri = "file://client/src/assets/images/cover-trap-they-set-became-proof.png"
 type = "image"
 title = "trap they set became the proof cover"
 
+[[generated]]
+id = "yRTSRr4o3_xjH8a9rexks"
+uri = "file://client/src/assets/images/divine-justice-click.png"
+type = "image"
+title = "divine figure clicking for justice"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

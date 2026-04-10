@@ -11,6 +11,7 @@ import { ProgressTracker, useDocumentProgress } from "@/components/ProgressTrack
 import { useDocumentPreview } from "@/components/DocumentPreview";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { DetonationButton } from "@/components/DetonationButton";
 import { ShareEvidence } from "@/components/ShareEvidence";
 import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
@@ -2821,6 +2822,16 @@ export default function Evidence() {
               </a>{" "}
               <span className="text-xs">(ProtonMail encrypted)</span>
             </p>
+          </motion.div>
+
+          {/* DIVINE JUSTICE ARCHIVE DOWNLOAD */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="mb-12"
+          >
+            <DetonationButton />
           </motion.div>
 
           {/* KEY EVIDENCE SCREENSHOTS — prominent exhibit display */}

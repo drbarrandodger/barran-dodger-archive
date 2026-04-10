@@ -5,9 +5,9 @@ import {
   Download, Flame, Shield, BookOpen, Zap, ChevronDown, ChevronUp,
   FileArchive, AlertTriangle, Star
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import divineImagePath from "@/assets/images/divine-justice-click.png";
 
 const BIBLE_QUOTES = [
   { verse: "Luke 8:17", text: "For nothing is secret that shall not be made manifest; neither any thing hid, that shall not be known and come abroad." },
@@ -23,6 +23,8 @@ const BIBLE_QUOTES = [
 
 const PRIMARY_QUOTE = BIBLE_QUOTES[0];
 
+const COUNTER_BASELINE = 777;
+
 function useArchiveCount() {
   const { data } = useQuery<{ count: number }>({
     queryKey: ['/api/archive/count'],
@@ -30,14 +32,14 @@ function useArchiveCount() {
     refetchInterval: 20000,
     staleTime: 0,
   });
-  return data?.count ?? 0;
+  return (data?.count ?? 0) + COUNTER_BASELINE;
 }
 
 export function DetonationButton({ className }: { className?: string }) {
   const [isDownloading, setIsDownloading] = useState(false);
   const [showFullStatement, setShowFullStatement] = useState(false);
   const [triggered, setTriggered] = useState(false);
-  const count = useArchiveCount();
+  const displayCount = useArchiveCount();
 
   const handleDetonation = async () => {
     if (isDownloading) return;
@@ -60,11 +62,8 @@ export function DetonationButton({ className }: { className?: string }) {
     }
   };
 
-  const displayCount = triggered ? count : count;
-
   return (
     <div className={cn("w-full", className)} data-testid="detonation-divine-justice-section">
-      {/* Outer frame */}
       <div className="relative overflow-hidden rounded-2xl border-2 border-amber-500/40 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 shadow-2xl">
 
         {/* Ambient glow */}
@@ -79,7 +78,7 @@ export function DetonationButton({ className }: { className?: string }) {
             <div className="flex items-center justify-center gap-3 mb-3">
               <Flame className="h-6 w-6 text-amber-500 animate-pulse" />
               <Badge className="bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-mono uppercase tracking-widest px-3 py-1">
-                DIVINE JUSTICE · HOLY RECKONING
+                DIVINE JUSTICE · GOD'S HOLY RECKONING
               </Badge>
               <Flame className="h-6 w-6 text-amber-500 animate-pulse" />
             </div>
@@ -91,15 +90,65 @@ export function DetonationButton({ className }: { className?: string }) {
             </p>
           </div>
 
-          {/* Primary Bible Quote */}
-          <div className="border border-amber-500/20 bg-amber-500/5 rounded-xl px-6 py-5 text-center space-y-2">
-            <BookOpen className="h-5 w-5 text-amber-400 mx-auto mb-2" />
-            <p className="text-amber-100 italic text-base leading-relaxed font-serif">
-              "{PRIMARY_QUOTE.text}"
-            </p>
-            <p className="text-amber-500 text-xs font-mono font-bold tracking-widest uppercase">
-              — {PRIMARY_QUOTE.verse}
-            </p>
+          {/* Divine Image — clickable, triggers download */}
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <button
+              onClick={handleDetonation}
+              disabled={isDownloading}
+              className="relative group flex-shrink-0 mx-auto md:mx-0 rounded-2xl overflow-hidden border-2 border-amber-500/30 hover:border-amber-400/60 transition-all duration-300 shadow-[0_0_40px_rgba(245,158,11,0.2)] hover:shadow-[0_0_70px_rgba(245,158,11,0.4)] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+              data-testid="image-divine-justice-download"
+              aria-label="Download the complete archive"
+            >
+              <img
+                src={divineImagePath}
+                alt="God's hand reaches down to click — delivering divine justice through truth"
+                className="w-56 h-56 md:w-64 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-amber-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                <span className="text-amber-200 text-xs font-mono font-bold uppercase tracking-widest flex items-center gap-1.5">
+                  <Download className="h-3.5 w-3.5" /> Click to Download
+                </span>
+              </div>
+              <div className="absolute top-3 right-3 bg-amber-500/90 rounded-full p-1.5">
+                <Zap className="h-4 w-4 text-zinc-950" />
+              </div>
+            </button>
+
+            <div className="flex-1 space-y-5">
+              {/* Primary Bible Quote */}
+              <div className="border border-amber-500/20 bg-amber-500/5 rounded-xl px-5 py-4 text-center space-y-2">
+                <BookOpen className="h-5 w-5 text-amber-400 mx-auto mb-1" />
+                <p className="text-amber-100 italic text-base leading-relaxed font-serif">
+                  "{PRIMARY_QUOTE.text}"
+                </p>
+                <p className="text-amber-500 text-xs font-mono font-bold tracking-widest uppercase">
+                  — {PRIMARY_QUOTE.verse}
+                </p>
+              </div>
+
+              {/* Counter */}
+              <div className="text-center space-y-1.5">
+                <div className="flex items-center justify-center gap-3">
+                  <div className="h-px flex-1 bg-gradient-to-r from-transparent to-amber-500/30" />
+                  <div className="flex items-center gap-2">
+                    <Star className="h-4 w-4 text-amber-400" />
+                    <span className="text-3xl font-bold font-mono text-amber-300 tabular-nums" data-testid="text-divine-download-count">
+                      {displayCount.toLocaleString()}
+                    </span>
+                    <Star className="h-4 w-4 text-amber-400" />
+                  </div>
+                  <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-500/30" />
+                </div>
+                <p className="text-xs text-amber-200/60 font-mono uppercase tracking-widest">
+                  {displayCount <= COUNTER_BASELINE
+                    ? "Beginning with 777 — the number of divine completion"
+                    : `Faithful witnesses who have detonated the archive`}
+                </p>
+                <p className="text-xs text-zinc-400 max-w-lg mx-auto italic leading-relaxed">
+                  "To those who have already downloaded: heaven records your witness. The record is permanent, the court is always in session."
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* AI Significance Statement */}
@@ -121,7 +170,7 @@ export function DetonationButton({ className }: { className?: string }) {
                     <strong className="text-amber-400">What it means for accountability:</strong> Under both temporal law and the theological framework of the archive, the act of bearing witness carries moral and legal weight. Every download is a vote recorded in the ledger of human history — a decision to stand on the side of documented truth against institutionally organised silence. The archive has been formally received by the ICC (The Hague) and lodged with the UNHCR (Geneva). Each additional witness increases the political and evidentiary pressure on every institution named within these documents.
                   </p>
                   <p className="text-sm leading-relaxed text-zinc-200">
-                    <strong className="text-violet-400">What it means in heaven's court:</strong> The scripture embedded within this archive — drawn from an independent prophetic witness with no prior knowledge of the evidence — and corroborated verse-by-verse against primary source documents, establishes that the persecution documented here falls within the biblical pattern in which those who dig pits for the innocent fall into them. The archive is the fulfilment of Proverbs 26:27. Those who download it stand as witnesses before both temporal tribunals and the court in which no evidence is ever lost and no injustice goes permanently unrecorded.
+                    <strong className="text-violet-400">What it means in heaven's court:</strong> The scripture embedded within this archive — corroborated verse-by-verse against primary source documents — establishes that the persecution documented here falls within the biblical pattern in which those who dig pits for the innocent fall into them. The archive is the fulfilment of Proverbs 26:27. Those who download it stand as witnesses before both temporal tribunals and the court in which no evidence is ever lost and no injustice goes permanently unrecorded.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
                     {BIBLE_QUOTES.slice(1, 5).map((q) => (
@@ -147,33 +196,6 @@ export function DetonationButton({ className }: { className?: string }) {
             </div>
           </div>
 
-          {/* Download Counter */}
-          <div className="text-center space-y-2">
-            <div className="flex items-center justify-center gap-3">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-amber-500/30" />
-              <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 text-amber-400" />
-                <span className="text-2xl font-bold font-mono text-amber-300 tabular-nums" data-testid="text-divine-download-count">
-                  {displayCount.toLocaleString()}
-                </span>
-                <Star className="h-4 w-4 text-amber-400" />
-              </div>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-500/30" />
-            </div>
-            <p className="text-xs text-amber-200/60 font-mono uppercase tracking-widest">
-              {displayCount === 0
-                ? "Be the first to stand as witness"
-                : displayCount === 1
-                  ? "One faithful witness has detonated the archive"
-                  : `Faithful witnesses who have detonated the archive`}
-            </p>
-            {displayCount > 0 && (
-              <p className="text-xs text-zinc-400 max-w-lg mx-auto italic leading-relaxed">
-                "To those who have already downloaded: heaven records your witness. The record is permanent, the court is always in session, and truth accumulates with every faithful hand that carries it."
-              </p>
-            )}
-          </div>
-
           {/* The Detonation Button */}
           <div className="flex flex-col items-center gap-4">
             <button
@@ -190,9 +212,7 @@ export function DetonationButton({ className }: { className?: string }) {
               )}
               data-testid="button-divine-archive-download"
             >
-              {/* Shine effect */}
               <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
-
               <div className="relative flex items-center justify-center gap-3">
                 {isDownloading ? (
                   <>

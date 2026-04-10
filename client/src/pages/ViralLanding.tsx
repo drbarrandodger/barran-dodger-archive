@@ -12,6 +12,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { SectionShare } from "@/components/SectionShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { DetonationButton } from "@/components/DetonationButton";
 import { DownloadAnalytics } from "@/components/DownloadAnalytics";
 import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
@@ -757,6 +758,15 @@ export default function ViralLanding() {
               <Share2 className="h-4 w-4 text-[hsl(38,92%,50%)]" />
               <span>Share everywhere</span>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ DIVINE JUSTICE DETONATION ══ */}
+      <section className="py-16 px-4 bg-gradient-to-b from-black via-amber-950/5 to-black border-y border-amber-900/20" data-testid="section-divine-detonation">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <DetonationButton />
           </motion.div>
         </div>
       </section>
