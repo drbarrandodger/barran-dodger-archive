@@ -35,11 +35,21 @@ function useArchiveCount() {
   return (data?.count ?? 0) + COUNTER_BASELINE;
 }
 
+function usePdfCount() {
+  const { data } = useQuery<{ count: number }>({
+    queryKey: ['/api/archive/pdf-count'],
+    queryFn: () => fetch('/api/archive/pdf-count', { cache: 'no-store' }).then(r => r.json()),
+    staleTime: 60000,
+  });
+  return data?.count ?? null;
+}
+
 export function DetonationButton({ className }: { className?: string }) {
   const [isDownloading, setIsDownloading] = useState(false);
   const [showFullStatement, setShowFullStatement] = useState(false);
   const [triggered, setTriggered] = useState(false);
   const displayCount = useArchiveCount();
+  const pdfCount = usePdfCount();
 
   const handleDetonation = async () => {
     if (isDownloading) return;
@@ -86,7 +96,7 @@ export function DetonationButton({ className }: { className?: string }) {
               The Complete Archive — One Download
             </h2>
             <p className="text-sm text-amber-200/70 font-mono uppercase tracking-widest">
-              91 blockchain-verified forensic documents · ICC Article 7 · UNHCR Geneva
+              {pdfCount ? `${pdfCount} blockchain-verified forensic documents` : "Complete forensic document archive"} · ICC Article 7 · UNHCR Geneva
             </p>
           </div>
 
@@ -159,7 +169,7 @@ export function DetonationButton({ className }: { className?: string }) {
             </div>
             <div className="border border-emerald-500/20 bg-emerald-500/5 rounded-xl px-5 py-4 space-y-3">
               <p className="text-sm leading-relaxed text-zinc-200">
-                This archive constitutes the most comprehensively documented whistleblower evidence package in Australian legal history — 91 forensic PDF documents spanning 35 years of primary source records, sworn affidavits, psychiatric weaponisation evidence, assassination documentation, blockchain-verified timestamps, ICC Article 7 submissions, and UNHCR Geneva filings, assembled into a single authenticated download.
+                This archive constitutes the most comprehensively documented whistleblower evidence package in Australian legal history — {pdfCount ? <strong className="text-amber-400">{pdfCount} forensic PDF documents</strong> : "forensic PDF documents"} spanning 35 years of primary source records, sworn affidavits, psychiatric weaponisation evidence, assassination documentation, blockchain-verified timestamps, ICC Article 7 submissions, and UNHCR Geneva filings, assembled into a single authenticated download.
               </p>
               {showFullStatement && (
                 <div className="space-y-3 pt-2 border-t border-emerald-500/20">
@@ -232,7 +242,7 @@ export function DetonationButton({ className }: { className?: string }) {
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-zinc-500">
               <span className="flex items-center gap-1.5">
                 <Download className="h-3 w-3 text-amber-600" />
-                <span>91 PDF Documents</span>
+                <span>{pdfCount ? `${pdfCount} PDF Documents` : "All PDF Documents"}</span>
               </span>
               <span className="text-zinc-700">·</span>
               <span className="flex items-center gap-1.5">

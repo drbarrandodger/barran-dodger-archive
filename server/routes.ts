@@ -803,6 +803,19 @@ export async function registerRoutes(
   // ── DIVINE ARCHIVE — Full ZIP Download ─────────────────────────────────────
   const DIVINE_SLUG = "divine-archive-detonation";
 
+  app.get('/api/archive/pdf-count', (_req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store');
+      const docsDir = path.resolve('client/public/documents');
+      const docsCount = fs.readdirSync(docsDir).filter(f => f.toLowerCase().endsWith('.pdf')).length;
+      const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
+      const total = docsCount + (fs.existsSync(rootPDF) ? 1 : 0);
+      res.json({ count: total });
+    } catch {
+      res.json({ count: 0 });
+    }
+  });
+
   app.get('/api/archive/count', async (_req, res) => {
     try {
       res.set('Cache-Control', 'no-store');
