@@ -523,18 +523,19 @@ export default function ForensicAnalysisIndex() {
         </section>
 
         {/* ─── EDITORIAL IMAGE: BLOCKCHAIN ARCHIVE ─── */}
-        <div className="relative w-full overflow-hidden border-t border-zinc-800" style={{ maxHeight: "400px" }}>
-          <img
-            src={imgBlockchainArchive}
-            alt="Infinite blockchain archive — 2,304 forensic documents — barrandodger.com"
-            className="w-full object-cover"
-            style={{ maxHeight: "400px", objectPosition: "center center" }}
-            data-testid="img-editorial-blockchain-archive"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 px-6 py-6 text-center">
-            <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">2,304 Blockchain-Verified Documents</p>
-            <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+        <div className="w-full border-t border-zinc-800">
+          <div className="overflow-hidden" style={{ maxHeight: "400px" }}>
+            <img
+              src={imgBlockchainArchive}
+              alt="Infinite blockchain archive — 2,304 forensic documents — barrandodger.com"
+              className="w-full object-cover"
+              style={{ maxHeight: "400px", objectPosition: "center center" }}
+              data-testid="img-editorial-blockchain-archive"
+            />
+          </div>
+          <div className="px-6 py-4 bg-zinc-950 border-t-2 border-amber-500/30 text-center">
+            <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">2,304 Blockchain-Verified Documents</p>
+            <p className="text-white font-serif text-lg font-bold leading-snug max-w-2xl mx-auto">
               An archive assembled under conditions of maximum institutional pressure. {TOTAL_ANALYSES} analyses. {TOTAL_PROPOSITIONS} propositions. Zero contradictions.
             </p>
           </div>

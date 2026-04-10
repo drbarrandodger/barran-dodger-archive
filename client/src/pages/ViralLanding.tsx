@@ -769,18 +769,19 @@ export default function ViralLanding() {
       </section>
 
       {/* ─── EDITORIAL IMAGE: SURVEILLANCE STATE ─── */}
-      <div className="relative w-full overflow-hidden" style={{ maxHeight: "460px" }}>
-        <img
-          src={imgHeroSurveillance}
-          alt="Australian Parliament House — surveillance state — barrandodger.com"
-          className="w-full object-cover"
-          style={{ maxHeight: "460px", objectPosition: "center 30%" }}
-          data-testid="img-editorial-surveillance-hero"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 max-w-4xl mx-auto">
-          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">35 Years of Documented Surveillance</p>
-          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl drop-shadow-lg">
+      <div className="w-full">
+        <div className="overflow-hidden" style={{ maxHeight: "460px" }}>
+          <img
+            src={imgHeroSurveillance}
+            alt="Australian Parliament House — surveillance state — barrandodger.com"
+            className="w-full object-cover"
+            style={{ maxHeight: "460px", objectPosition: "center 30%" }}
+            data-testid="img-editorial-surveillance-hero"
+          />
+        </div>
+        <div className="px-6 py-4 bg-zinc-950 border-t-2 border-amber-500/30">
+          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">35 Years of Documented Surveillance</p>
+          <p className="text-white font-serif text-lg font-bold leading-snug max-w-3xl">
             A lone figure stands before the apparatus that tracked, suppressed, and ultimately documented itself into an ICC submission.
           </p>
         </div>
@@ -796,18 +797,19 @@ export default function ViralLanding() {
       </section>
 
       {/* ─── EDITORIAL IMAGE: DIVINE JUSTICE SCALES ─── */}
-      <div className="relative w-full overflow-hidden" style={{ maxHeight: "400px" }}>
-        <img
-          src={imgDivineScales}
-          alt="Divine scales of justice — ICC submission — barrandodger.com"
-          className="w-full object-cover"
-          style={{ maxHeight: "400px", objectPosition: "center center" }}
-          data-testid="img-editorial-divine-scales"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 max-w-4xl mx-auto">
-          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">ICC Article 7 — The Hague</p>
-          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl drop-shadow-lg">
+      <div className="w-full">
+        <div className="overflow-hidden" style={{ maxHeight: "400px" }}>
+          <img
+            src={imgDivineScales}
+            alt="Divine scales of justice — ICC submission — barrandodger.com"
+            className="w-full object-cover"
+            style={{ maxHeight: "400px", objectPosition: "center center" }}
+            data-testid="img-editorial-divine-scales"
+          />
+        </div>
+        <div className="px-6 py-4 bg-zinc-950 border-t-2 border-amber-500/30">
+          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">ICC Article 7 — The Hague</p>
+          <p className="text-white font-serif text-lg font-bold leading-snug max-w-3xl">
             2,304 documents on one scale. A 35-year suppression campaign on the other. The ICC holds both.
           </p>
         </div>
@@ -966,18 +968,19 @@ export default function ViralLanding() {
       </section>
 
       {/* ─── EDITORIAL IMAGE: CORRUPTION WEB ─── */}
-      <div className="relative w-full overflow-hidden" style={{ maxHeight: "420px" }}>
-        <img
-          src={imgCorruptionWeb}
-          alt="Corruption network exposed — five named perpetrators — barrandodger.com"
-          className="w-full object-cover"
-          style={{ maxHeight: "420px", objectPosition: "center center" }}
-          data-testid="img-editorial-corruption-web"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 max-w-4xl mx-auto">
-          <p className="text-red-400 font-mono text-xs uppercase tracking-widest mb-1.5">Five Named Perpetrators — Zero Formal Rebuttals</p>
-          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl drop-shadow-lg">
+      <div className="w-full">
+        <div className="overflow-hidden" style={{ maxHeight: "420px" }}>
+          <img
+            src={imgCorruptionWeb}
+            alt="Corruption network exposed — five named perpetrators — barrandodger.com"
+            className="w-full object-cover"
+            style={{ maxHeight: "420px", objectPosition: "center center" }}
+            data-testid="img-editorial-corruption-web"
+          />
+        </div>
+        <div className="px-6 py-4 bg-zinc-950 border-t-2 border-red-500/40">
+          <p className="text-red-400 font-mono text-xs uppercase tracking-widest mb-1">Five Named Perpetrators — Zero Formal Rebuttals</p>
+          <p className="text-white font-serif text-lg font-bold leading-snug max-w-3xl">
             Bill Shorten. Houd Meraby. Sukhi Tear. Tony Ridley. Stefan Iasonidis. Named. Documented. Unanswered.
           </p>
         </div>
@@ -1022,18 +1025,19 @@ export default function ViralLanding() {
       </section>
 
       {/* ─── EDITORIAL IMAGE: ASIO SURVEILLANCE ─── */}
-      <div className="relative w-full overflow-hidden" style={{ maxHeight: "420px" }}>
-        <img
-          src={imgAsioSurveillance}
-          alt="ASIO intelligence surveillance — Stefan Iasonidis — barrandodger.com"
-          className="w-full object-cover"
-          style={{ maxHeight: "420px", objectPosition: "center center" }}
-          data-testid="img-editorial-asio-surveillance"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 max-w-4xl mx-auto">
-          <p className="text-sky-400 font-mono text-xs uppercase tracking-widest mb-1.5">ASIO Operative — Stefan Iasonidis — 10 Raleigh St Footscray 2011</p>
-          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl drop-shadow-lg">
+      <div className="w-full">
+        <div className="overflow-hidden" style={{ maxHeight: "420px" }}>
+          <img
+            src={imgAsioSurveillance}
+            alt="ASIO intelligence surveillance — Stefan Iasonidis — barrandodger.com"
+            className="w-full object-cover"
+            style={{ maxHeight: "420px", objectPosition: "center center" }}
+            data-testid="img-editorial-asio-surveillance"
+          />
+        </div>
+        <div className="px-6 py-4 bg-zinc-950 border-t-2 border-sky-500/30">
+          <p className="text-sky-400 font-mono text-xs uppercase tracking-widest mb-1">ASIO Operative — Stefan Iasonidis — 10 Raleigh St Footscray 2011</p>
+          <p className="text-white font-serif text-lg font-bold leading-snug max-w-3xl">
             $500,000 extracted. ATO letter confirming drugging. Co-tenancy. Intervention Order L12151974. All documented.
           </p>
         </div>
@@ -1647,18 +1651,19 @@ export default function ViralLanding() {
       </section>
 
       {/* ─── EDITORIAL IMAGE: TRUTH PHOENIX RISING ─── */}
-      <div className="relative w-full overflow-hidden" style={{ maxHeight: "440px" }}>
-        <img
-          src={imgTruthPhoenix}
-          alt="Truth phoenix rising from suppression — 35 years documented — barrandodger.com"
-          className="w-full object-cover"
-          style={{ maxHeight: "440px", objectPosition: "center center" }}
-          data-testid="img-editorial-truth-phoenix"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 max-w-4xl mx-auto text-center">
-          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">44 Analyses · 467 Propositions · Zero Contradictions</p>
-          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+      <div className="w-full">
+        <div className="overflow-hidden" style={{ maxHeight: "440px" }}>
+          <img
+            src={imgTruthPhoenix}
+            alt="Truth phoenix rising from suppression — 35 years documented — barrandodger.com"
+            className="w-full object-cover"
+            style={{ maxHeight: "440px", objectPosition: "center center" }}
+            data-testid="img-editorial-truth-phoenix"
+          />
+        </div>
+        <div className="px-6 py-4 bg-zinc-950 border-t-2 border-amber-500/30 text-center">
+          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">44 Analyses · 467 Propositions · Zero Contradictions</p>
+          <p className="text-white font-serif text-lg font-bold leading-snug max-w-3xl mx-auto">
             Truth does not require rescue. It requires documentation. The archive is the fire. The fire does not go out.
           </p>
         </div>

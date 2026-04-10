@@ -1739,18 +1739,19 @@ export default function Home() {
       </section>
 
       {/* ─── EDITORIAL IMAGE: PSYCHIATRIC WEAPON STAMP ─── */}
-      <div className="relative w-full overflow-hidden" style={{ maxHeight: "400px" }}>
-        <img
-          src={imgPsychiatricWeapon}
-          alt="Psychiatric weapon — forced medication as institutional suppression — barrandodger.com"
-          className="w-full object-cover"
-          style={{ maxHeight: "400px", objectPosition: "center center" }}
-          data-testid="img-editorial-psychiatric-weapon"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 text-center">
-          <p className="text-red-400 font-mono text-xs uppercase tracking-widest mb-1.5">Psychiatric Weaponisation — The Beyond Pathology Analysis</p>
-          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+      <div className="w-full">
+        <div className="overflow-hidden" style={{ maxHeight: "400px" }}>
+          <img
+            src={imgPsychiatricWeapon}
+            alt="Psychiatric weapon — forced medication as institutional suppression — barrandodger.com"
+            className="w-full object-cover"
+            style={{ maxHeight: "400px", objectPosition: "center center" }}
+            data-testid="img-editorial-psychiatric-weapon"
+          />
+        </div>
+        <div className="px-6 py-4 bg-black border-t-2 border-red-500/40 text-center">
+          <p className="text-red-400 font-mono text-xs uppercase tracking-widest mb-1">Psychiatric Weaponisation — The Beyond Pathology Analysis</p>
+          <p className="text-white font-serif text-lg font-bold leading-snug max-w-2xl mx-auto">
             Every diagnosis deployed not as care but as containment. The persecution hypothesis passes every empirical test. The psychiatric hypothesis fails every one.
           </p>
         </div>
@@ -2076,18 +2077,19 @@ export default function Home() {
       </section>
 
       {/* ─── EDITORIAL IMAGE: ICC HAGUE TRIBUNAL ─── */}
-      <div className="relative w-full overflow-hidden" style={{ maxHeight: "420px" }}>
-        <img
-          src={imgIccHague}
-          alt="ICC The Hague tribunal — Rome Statute Article 7 — barrandodger.com"
-          className="w-full object-cover"
-          style={{ maxHeight: "420px", objectPosition: "center center" }}
-          data-testid="img-editorial-icc-hague"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 text-center">
-          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">Rome Statute Article 7(1)(h) — Crimes Against Humanity</p>
-          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+      <div className="w-full">
+        <div className="overflow-hidden" style={{ maxHeight: "420px" }}>
+          <img
+            src={imgIccHague}
+            alt="ICC The Hague tribunal — Rome Statute Article 7 — barrandodger.com"
+            className="w-full object-cover"
+            style={{ maxHeight: "420px", objectPosition: "center center" }}
+            data-testid="img-editorial-icc-hague"
+          />
+        </div>
+        <div className="px-6 py-4 bg-black border-t-2 border-amber-500/30 text-center">
+          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">Rome Statute Article 7(1)(h) — Crimes Against Humanity</p>
+          <p className="text-white font-serif text-lg font-bold leading-snug max-w-2xl mx-auto">
             When every domestic avenue is exhausted, the International Criminal Court holds the threshold. 2,304 documents meet it.
           </p>
         </div>
@@ -2320,18 +2322,19 @@ export default function Home() {
       <JosephParallelSection />
 
       {/* ─── EDITORIAL IMAGE: 35 YEARS ENDURANCE ─── */}
-      <div className="relative w-full overflow-hidden" style={{ maxHeight: "440px" }}>
-        <img
-          src={img35YearsEndurance}
-          alt="35 years of institutional assault — the archive endures — barrandodger.com"
-          className="w-full object-cover"
-          style={{ maxHeight: "440px", objectPosition: "center center" }}
-          data-testid="img-editorial-35-years"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 text-center">
-          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">35 Years — 35+ Government Agencies — Zero Successful Suppression</p>
-          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+      <div className="w-full">
+        <div className="overflow-hidden" style={{ maxHeight: "440px" }}>
+          <img
+            src={img35YearsEndurance}
+            alt="35 years of institutional assault — the archive endures — barrandodger.com"
+            className="w-full object-cover"
+            style={{ maxHeight: "440px", objectPosition: "center center" }}
+            data-testid="img-editorial-35-years"
+          />
+        </div>
+        <div className="px-6 py-4 bg-black border-t-2 border-amber-500/30 text-center">
+          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">35 Years — 35+ Government Agencies — Zero Successful Suppression</p>
+          <p className="text-white font-serif text-lg font-bold leading-snug max-w-2xl mx-auto">
             A single tree in a 35-year storm. Lightning strikes all around it. Its roots are made of documents. It does not fall.
           </p>
         </div>

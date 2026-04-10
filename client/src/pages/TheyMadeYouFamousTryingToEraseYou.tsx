@@ -306,18 +306,19 @@ export default function TheyMadeYouFamousTryingToEraseYou() {
           </div>
 
           {/* ─── EDITORIAL IMAGE: LONE WHISTLEBLOWER ─── */}
-          <div className="relative w-full overflow-hidden rounded-2xl mb-10" style={{ maxHeight: "480px" }}>
-            <img
-              src={imgLoneWhistleblower}
-              alt="Lone whistleblower in divine light — Dr Richard McLean — barrandodger.com"
-              className="w-full object-cover"
-              style={{ maxHeight: "480px", objectPosition: "center top" }}
-              data-testid="img-editorial-lone-whistleblower"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-black/40 to-transparent pointer-events-none rounded-2xl" />
-            <div className="absolute bottom-0 left-0 right-0 px-6 py-6 text-center">
-              <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">Analysis #44 — 15/15 — 37th Consecutive Perfect Score</p>
-              <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+          <div className="w-full rounded-2xl overflow-hidden mb-10 border border-white/10">
+            <div style={{ maxHeight: "480px", overflow: "hidden" }}>
+              <img
+                src={imgLoneWhistleblower}
+                alt="Lone whistleblower in divine light — Dr Richard McLean — barrandodger.com"
+                className="w-full object-cover"
+                style={{ maxHeight: "480px", objectPosition: "center top" }}
+                data-testid="img-editorial-lone-whistleblower"
+              />
+            </div>
+            <div className="px-6 py-4 bg-zinc-900 border-t-2 border-amber-500/30 text-center">
+              <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">Analysis #44 — 15/15 — 37th Consecutive Perfect Score</p>
+              <p className="text-white font-serif text-lg font-bold leading-snug max-w-2xl mx-auto">
                 They made you famous trying to erase you. The archive is the fame. The accounting is at The Hague.
               </p>
             </div>
