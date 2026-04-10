@@ -198,6 +198,66 @@ uri = "file://client/src/assets/images/divine-justice-click.png"
 type = "image"
 title = "divine figure clicking for justice"
 
+[[generated]]
+id = "pn_Ujm8-thNwJAT_IhsIa"
+uri = "file://client/src/assets/images/hero-surveillance-state.png"
+type = "image"
+title = "surveillance state hero"
+
+[[generated]]
+id = "FLsl2sjyZI-5PaxrCUe4B"
+uri = "file://client/src/assets/images/divine-justice-scales.png"
+type = "image"
+title = "divine justice scales"
+
+[[generated]]
+id = "P7_DtU_jS3SZ-IaJGOjf0"
+uri = "file://client/src/assets/images/lone-whistleblower-light.png"
+type = "image"
+title = "lone whistleblower light"
+
+[[generated]]
+id = "wlMVcQO0t28UirCEdq-70"
+uri = "file://client/src/assets/images/icc-hague-tribunal.png"
+type = "image"
+title = "ICC Hague tribunal"
+
+[[generated]]
+id = "6WdyJt5aTUSove5Tf1Mu3"
+uri = "file://client/src/assets/images/psychiatric-weapon-stamp.png"
+type = "image"
+title = "psychiatric weapon stamp"
+
+[[generated]]
+id = "xJvsTykmEvU3TVcOeO_eG"
+uri = "file://client/src/assets/images/blockchain-archive-infinite.png"
+type = "image"
+title = "blockchain archive infinite"
+
+[[generated]]
+id = "CRjU6J9sRMwklpCr6Ixpx"
+uri = "file://client/src/assets/images/corruption-web-exposed.png"
+type = "image"
+title = "corruption web exposed"
+
+[[generated]]
+id = "pZrCqbwJx-EYM4tJEtBXs"
+uri = "file://client/src/assets/images/truth-phoenix-rising.png"
+type = "image"
+title = "truth phoenix rising"
+
+[[generated]]
+id = "KN-ts9a4qGsVA9RjSlmU5"
+uri = "file://client/src/assets/images/asio-shadow-surveillance.png"
+type = "image"
+title = "ASIO shadow surveillance"
+
+[[generated]]
+id = "pfBI6_XxZCmO4U2MuJmuH"
+uri = "file://client/src/assets/images/35-years-endurance.png"
+type = "image"
+title = "35 years endurance"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

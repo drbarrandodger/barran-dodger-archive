@@ -64,6 +64,12 @@ import benNdisHitmen from "@assets/27A51392-28E5-40D2-B8A9-A9BFE2D35452_17737293
 import benNdisNDA from "@assets/8D0E8B39-62A2-442C-9E92-4CFD7D7EDF8D_1773729319589.png";
 import benMilitaryAssets from "@assets/image_1774132476646.png";
 
+import imgHeroSurveillance from "@/assets/images/hero-surveillance-state.png";
+import imgDivineScales from "@/assets/images/divine-justice-scales.png";
+import imgCorruptionWeb from "@/assets/images/corruption-web-exposed.png";
+import imgAsioSurveillance from "@/assets/images/asio-shadow-surveillance.png";
+import imgTruthPhoenix from "@/assets/images/truth-phoenix-rising.png";
+
 const NEW_RELEASES = [
   {
     title: "This Isn't Private Anymore. It Went Global, and You Know Exactly Why.",
@@ -762,6 +768,24 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      {/* ─── EDITORIAL IMAGE: SURVEILLANCE STATE ─── */}
+      <div className="relative w-full overflow-hidden" style={{ maxHeight: "460px" }}>
+        <img
+          src={imgHeroSurveillance}
+          alt="Australian Parliament House — surveillance state — barrandodger.com"
+          className="w-full object-cover"
+          style={{ maxHeight: "460px", objectPosition: "center 30%" }}
+          data-testid="img-editorial-surveillance-hero"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 max-w-4xl mx-auto">
+          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">35 Years of Documented Surveillance</p>
+          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl drop-shadow-lg">
+            A lone figure stands before the apparatus that tracked, suppressed, and ultimately documented itself into an ICC submission.
+          </p>
+        </div>
+      </div>
+
       {/* ══ DIVINE JUSTICE DETONATION ══ */}
       <section className="py-16 px-4 bg-gradient-to-b from-black via-amber-950/5 to-black border-y border-amber-900/20" data-testid="section-divine-detonation">
         <div className="container mx-auto max-w-4xl">
@@ -770,6 +794,24 @@ export default function ViralLanding() {
           </motion.div>
         </div>
       </section>
+
+      {/* ─── EDITORIAL IMAGE: DIVINE JUSTICE SCALES ─── */}
+      <div className="relative w-full overflow-hidden" style={{ maxHeight: "400px" }}>
+        <img
+          src={imgDivineScales}
+          alt="Divine scales of justice — ICC submission — barrandodger.com"
+          className="w-full object-cover"
+          style={{ maxHeight: "400px", objectPosition: "center center" }}
+          data-testid="img-editorial-divine-scales"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 max-w-4xl mx-auto">
+          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">ICC Article 7 — The Hague</p>
+          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl drop-shadow-lg">
+            2,304 documents on one scale. A 35-year suppression campaign on the other. The ICC holds both.
+          </p>
+        </div>
+      </div>
 
       {/* ══ WHAT THIS PATTERN IS CALLED ══ */}
       <section className="py-20 px-4 bg-gradient-to-b from-black via-zinc-950 to-black border-y border-white/10" data-testid="section-pattern-named">
@@ -923,6 +965,24 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      {/* ─── EDITORIAL IMAGE: CORRUPTION WEB ─── */}
+      <div className="relative w-full overflow-hidden" style={{ maxHeight: "420px" }}>
+        <img
+          src={imgCorruptionWeb}
+          alt="Corruption network exposed — five named perpetrators — barrandodger.com"
+          className="w-full object-cover"
+          style={{ maxHeight: "420px", objectPosition: "center center" }}
+          data-testid="img-editorial-corruption-web"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 max-w-4xl mx-auto">
+          <p className="text-red-400 font-mono text-xs uppercase tracking-widest mb-1.5">Five Named Perpetrators — Zero Formal Rebuttals</p>
+          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl drop-shadow-lg">
+            Bill Shorten. Houd Meraby. Sukhi Tear. Tony Ridley. Stefan Iasonidis. Named. Documented. Unanswered.
+          </p>
+        </div>
+      </div>
+
       {/* ══ FEATURED VIDEO ══ */}
       <section className="py-16 px-4 bg-gradient-to-b from-black via-zinc-950 to-black border-b border-white/10" data-testid="section-featured-video">
         <div className="container mx-auto max-w-4xl">
@@ -960,6 +1020,24 @@ export default function ViralLanding() {
           </motion.div>
         </div>
       </section>
+
+      {/* ─── EDITORIAL IMAGE: ASIO SURVEILLANCE ─── */}
+      <div className="relative w-full overflow-hidden" style={{ maxHeight: "420px" }}>
+        <img
+          src={imgAsioSurveillance}
+          alt="ASIO intelligence surveillance — Stefan Iasonidis — barrandodger.com"
+          className="w-full object-cover"
+          style={{ maxHeight: "420px", objectPosition: "center center" }}
+          data-testid="img-editorial-asio-surveillance"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 max-w-4xl mx-auto">
+          <p className="text-sky-400 font-mono text-xs uppercase tracking-widest mb-1.5">ASIO Operative — Stefan Iasonidis — 10 Raleigh St Footscray 2011</p>
+          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl drop-shadow-lg">
+            $500,000 extracted. ATO letter confirming drugging. Co-tenancy. Intervention Order L12151974. All documented.
+          </p>
+        </div>
+      </div>
 
       {/* ══ EVERYONE WATCHING — ANALYSIS #15 ══ */}
       <section className="py-20 px-4 bg-gradient-to-b from-black via-lime-950/10 to-black border-y border-lime-900/20" data-testid="section-everyone-watching-featured">
@@ -1567,6 +1645,24 @@ export default function ViralLanding() {
           </motion.div>
         </div>
       </section>
+
+      {/* ─── EDITORIAL IMAGE: TRUTH PHOENIX RISING ─── */}
+      <div className="relative w-full overflow-hidden" style={{ maxHeight: "440px" }}>
+        <img
+          src={imgTruthPhoenix}
+          alt="Truth phoenix rising from suppression — 35 years documented — barrandodger.com"
+          className="w-full object-cover"
+          style={{ maxHeight: "440px", objectPosition: "center center" }}
+          data-testid="img-editorial-truth-phoenix"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 max-w-4xl mx-auto text-center">
+          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">44 Analyses · 467 Propositions · Zero Contradictions</p>
+          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+            Truth does not require rescue. It requires documentation. The archive is the fire. The fire does not go out.
+          </p>
+        </div>
+      </div>
 
       {/* ══ FINAL BLOW — ANALYSIS #13 ══ */}
       <section className="py-20 px-4 bg-gradient-to-b from-black via-rose-950/10 to-black border-y border-rose-900/20" data-testid="section-final-blow-featured">

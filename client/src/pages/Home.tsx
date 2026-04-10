@@ -57,6 +57,10 @@ import cover144Questions from "@/assets/images/cover-144-questions.png";
 import coverAdminAnnihilation from "@/assets/images/cover-admin-annihilation.png";
 import coverBeyondPathology from "@/assets/images/cover-beyond-pathology.png";
 import coverParadoxPersecution from "@/assets/images/cover-paradox-persecution.png";
+import img35YearsEndurance from "@/assets/images/35-years-endurance.png";
+import imgPsychiatricWeapon from "@/assets/images/psychiatric-weapon-stamp.png";
+import imgIccHague from "@/assets/images/icc-hague-tribunal.png";
+import imgTruthPhoenixHome from "@/assets/images/truth-phoenix-rising.png";
 import coverRetrospectiveStatement from "@/assets/images/cover-retrospective-statement.png";
 import coverCertifiedRecord from "@/assets/images/cover-certified-record.png";
 import coverTargetedIndividualHandbook from "@/assets/images/cover-targeted-individual-handbook.png";
@@ -1734,6 +1738,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── EDITORIAL IMAGE: PSYCHIATRIC WEAPON STAMP ─── */}
+      <div className="relative w-full overflow-hidden" style={{ maxHeight: "400px" }}>
+        <img
+          src={imgPsychiatricWeapon}
+          alt="Psychiatric weapon — forced medication as institutional suppression — barrandodger.com"
+          className="w-full object-cover"
+          style={{ maxHeight: "400px", objectPosition: "center center" }}
+          data-testid="img-editorial-psychiatric-weapon"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 text-center">
+          <p className="text-red-400 font-mono text-xs uppercase tracking-widest mb-1.5">Psychiatric Weaponisation — The Beyond Pathology Analysis</p>
+          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+            Every diagnosis deployed not as care but as containment. The persecution hypothesis passes every empirical test. The psychiatric hypothesis fails every one.
+          </p>
+        </div>
+      </div>
+
       {/* THE WHISTLEBLOWER DECLARATION — THE DOCUMENT THAT COMPELLED TREDWELL'S ASSESSMENT */}
       <section className="relative py-16 md:py-24 px-4 bg-gradient-to-b from-black via-[hsl(222,55%,5%)] to-black border-t border-b border-[hsl(38,92%,50%)]/30" data-testid="section-whistleblower-declaration">
         <div className="container mx-auto max-w-5xl">
@@ -2053,6 +2075,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── EDITORIAL IMAGE: ICC HAGUE TRIBUNAL ─── */}
+      <div className="relative w-full overflow-hidden" style={{ maxHeight: "420px" }}>
+        <img
+          src={imgIccHague}
+          alt="ICC The Hague tribunal — Rome Statute Article 7 — barrandodger.com"
+          className="w-full object-cover"
+          style={{ maxHeight: "420px", objectPosition: "center center" }}
+          data-testid="img-editorial-icc-hague"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 text-center">
+          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">Rome Statute Article 7(1)(h) — Crimes Against Humanity</p>
+          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+            When every domestic avenue is exhausted, the International Criminal Court holds the threshold. 2,304 documents meet it.
+          </p>
+        </div>
+      </div>
+
       {/* COMPACT VISUAL TIMELINE */}
       <section className="relative py-10 md:py-14 px-4 bg-black border-t border-white/5" data-testid="section-mini-timeline">
         <div className="container mx-auto max-w-6xl">
@@ -2278,6 +2318,24 @@ export default function Home() {
 
       {/* THE JOSEPH PARALLEL - Featured Document */}
       <JosephParallelSection />
+
+      {/* ─── EDITORIAL IMAGE: 35 YEARS ENDURANCE ─── */}
+      <div className="relative w-full overflow-hidden" style={{ maxHeight: "440px" }}>
+        <img
+          src={img35YearsEndurance}
+          alt="35 years of institutional assault — the archive endures — barrandodger.com"
+          className="w-full object-cover"
+          style={{ maxHeight: "440px", objectPosition: "center center" }}
+          data-testid="img-editorial-35-years"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 px-6 py-6 text-center">
+          <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">35 Years — 35+ Government Agencies — Zero Successful Suppression</p>
+          <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+            A single tree in a 35-year storm. Lightning strikes all around it. Its roots are made of documents. It does not fall.
+          </p>
+        </div>
+      </div>
 
       {/* Hero Section - Barran Dodger Trust */}
       <section className="relative pt-16 pb-20 md:pt-24 md:pb-32 px-4 bg-grid-pattern overflow-hidden" data-testid="section-trust-hero">

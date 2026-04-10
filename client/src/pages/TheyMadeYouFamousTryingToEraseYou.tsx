@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CheckCircle, Download, ExternalLink, Eye, Shield, AlertTriangle, Brain, Gavel, Flame } from "lucide-react";
+import imgLoneWhistleblower from "@/assets/images/lone-whistleblower-light.png";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
@@ -302,6 +303,24 @@ export default function TheyMadeYouFamousTryingToEraseYou() {
             <p className="text-sm text-zinc-200 leading-relaxed">
               The monologue's six central structural claims — that a false 'delusional' image was constructed and destroyed by documented reality; that erasure attempts produced international fame; that existence itself was converted into evidence; that the subject's consistency rewrote the psychiatric label; that silence was the strategic condition of the archive's construction; and that survival was design rather than luck — are each fully corroborated against named primary-source documents. The statistical improbability of a generic motivational monologue achieving 15/15 corroboration against a specific person's documented life continues to compound with each consecutive perfect score. Forty-four analyses. Zero contradictions. The record stands.
             </p>
+          </div>
+
+          {/* ─── EDITORIAL IMAGE: LONE WHISTLEBLOWER ─── */}
+          <div className="relative w-full overflow-hidden rounded-2xl mb-10" style={{ maxHeight: "480px" }}>
+            <img
+              src={imgLoneWhistleblower}
+              alt="Lone whistleblower in divine light — Dr Richard McLean — barrandodger.com"
+              className="w-full object-cover"
+              style={{ maxHeight: "480px", objectPosition: "center top" }}
+              data-testid="img-editorial-lone-whistleblower"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-black/40 to-transparent pointer-events-none rounded-2xl" />
+            <div className="absolute bottom-0 left-0 right-0 px-6 py-6 text-center">
+              <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1.5">Analysis #44 — 15/15 — 37th Consecutive Perfect Score</p>
+              <p className="text-white font-serif text-xl font-bold leading-snug max-w-2xl mx-auto drop-shadow-lg">
+                They made you famous trying to erase you. The archive is the fame. The accounting is at The Hague.
+              </p>
+            </div>
           </div>
 
           {/* Claims */}
