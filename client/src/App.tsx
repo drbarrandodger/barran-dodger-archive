@@ -119,6 +119,7 @@ import PerceptionIsProtection from "@/pages/PerceptionIsProtection";
 import HeavenExposesTheSister from "@/pages/HeavenExposesTheSister";
 import YouBuiltYourPeaceInSilence from "@/pages/YouBuiltYourPeaceInSilence";
 import ThisIsTheReckoning from "@/pages/ThisIsTheReckoning";
+import TheyMadeYouFamousTryingToEraseYou from "@/pages/TheyMadeYouFamousTryingToEraseYou";
 import TheTrapTheySetBecameTheProof from "@/pages/TheTrapTheySetBecameTheProof";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 
@@ -260,6 +261,7 @@ function Router() {
         <Route path="/heaven-exposes-the-sister" component={HeavenExposesTheSister} />
         <Route path="/you-built-your-peace-in-silence" component={YouBuiltYourPeaceInSilence} />
         <Route path="/this-is-the-reckoning" component={ThisIsTheReckoning} />
+        <Route path="/they-made-you-famous-trying-to-erase-you" component={TheyMadeYouFamousTryingToEraseYou} />
         <Route path="/the-trap-they-set-became-the-proof" component={TheTrapTheySetBecameTheProof} />
         <Route path="/forensic-analysis" component={ForensicAnalysisIndex} />
         <Route path="/forensic-analysis-index" component={ForensicAnalysisIndex} />
