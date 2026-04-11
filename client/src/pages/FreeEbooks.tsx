@@ -103,6 +103,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 49, title: "They Dug For Dirt But Unearthed Diamonds Instead", slug: "they-dug-for-dirt-but-unearthed-diamonds", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 50, title: "The Confession They've Been Choking On", slug: "confession-theyve-been-choking-on", propositions: 12, corroborated: 12, consecutivePerfect: true },
   { number: 51, title: "The Loudest Hate Always Comes From the Weakest Link", slug: "loudest-hate-weakest-link", propositions: 10, corroborated: 10, consecutivePerfect: true },
+  { number: 52, title: "You Didn't Chase the Throne — You Became One", slug: "you-didnt-chase-the-throne-you-became-one", propositions: 14, corroborated: 14, consecutivePerfect: true },
 ];
 
 interface MajorPub {

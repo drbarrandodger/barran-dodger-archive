@@ -885,7 +885,7 @@ export async function registerRoutes(
   app.get('/api/forensic/bundle', async (_req, res) => {
     try {
       res.setHeader('Content-Type', 'application/zip');
-      res.setHeader('Content-Disposition', 'attachment; filename="BarranDodger_51_Forensic_Analyses.zip"');
+      res.setHeader('Content-Disposition', 'attachment; filename="BarranDodger_52_Forensic_Analyses.zip"');
       res.setHeader('Cache-Control', 'no-store');
       const archive = archiver('zip', { zlib: { level: 1 } });
       archive.on('error', (err) => { if (!res.headersSent) res.status(500).end(); });
