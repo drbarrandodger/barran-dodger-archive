@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Download, BookOpen, Share2, Globe, ChevronDown, ChevronUp, Loader2, Archive } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -142,12 +143,46 @@ const UPLOAD_PLATFORMS = [
   { name: "Kobo Writing Life", url: "https://www.kobo.com/writinglife", desc: "Millions of readers across 190+ countries" },
 ];
 
-function DownloadButton({ url, filename, label }: { url: string; filename: string; label: string }) {
+function LiveDownloadTotal() {
+  const { data } = useQuery<{ total: number }>({
+    queryKey: ["/api/downloads/total"],
+    refetchInterval: 15000,
+    staleTime: 0,
+  });
+  const total = data?.total ?? 0;
+
+  return (
+    <div
+      className="inline-flex flex-wrap items-center justify-center gap-3 bg-emerald-950/40 border border-emerald-500/20 rounded-xl px-5 py-3 text-center mb-2"
+      data-testid="live-download-total-ebooks"
+    >
+      <span className="text-emerald-400 font-bold text-sm tabular-nums">
+        {total > 0 ? `${total.toLocaleString()} verified downloads` : "Live download counter"}
+      </span>
+      <span className="text-zinc-600 text-sm hidden md:inline">·</span>
+      <span className="text-zinc-400 text-xs">Updates in real time across all {FORENSIC_ANALYSES.length + MAJOR_PUBLICATIONS.length} publications</span>
+      <span className="text-zinc-600 text-sm hidden md:inline">·</span>
+      <span className="text-emerald-300 text-xs font-semibold uppercase tracking-wide">ABN 78 833 496 164</span>
+    </div>
+  );
+}
+
+function DownloadButton({ url, filename, label, slug }: { url: string; filename: string; label: string; slug?: string }) {
   const [loading, setLoading] = useState(false);
+  const trackSlug = slug || filename.replace(/\.[^/.]+$/, "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+  const { data: countData, refetch } = useQuery<{ count: number }>({
+    queryKey: ["/api/downloads", trackSlug],
+    queryFn: () => fetch(`/api/downloads/${trackSlug}`, { cache: "no-store" }).then(r => r.json()),
+    refetchInterval: 30000,
+    staleTime: 0,
+  });
+  const count = countData?.count ?? 0;
 
   const handleDownload = async () => {
     setLoading(true);
     try {
+      await fetch(`/api/downloads/${trackSlug}/increment`, { method: "POST" });
       const res = await fetch(url);
       if (!res.ok) throw new Error("Download failed");
       const blob = await res.blob();
@@ -156,6 +191,7 @@ function DownloadButton({ url, filename, label }: { url: string; filename: strin
       link.download = filename;
       link.click();
       URL.revokeObjectURL(link.href);
+      setTimeout(() => refetch(), 1500);
     } catch (e) {
       console.error(e);
     } finally {
@@ -168,10 +204,15 @@ function DownloadButton({ url, filename, label }: { url: string; filename: strin
       onClick={handleDownload}
       disabled={loading}
       data-testid={`btn-epub-${filename}`}
-      className="flex items-center gap-2 bg-amber-600 hover:bg-amber-500 disabled:opacity-60 text-black font-semibold text-sm px-3 py-1.5 rounded transition-colors"
+      className="flex items-center gap-1.5 bg-amber-600 hover:bg-amber-500 disabled:opacity-60 text-black font-semibold text-sm px-3 py-1.5 rounded transition-colors"
     >
       {loading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Download className="w-3.5 h-3.5" />}
       {loading ? "Generating…" : label}
+      {count > 0 && (
+        <span className="bg-black/20 rounded-full px-1.5 py-0.5 text-[9px] font-bold tabular-nums">
+          {count.toLocaleString()}
+        </span>
+      )}
     </button>
   );
 }
@@ -216,6 +257,7 @@ function ForensicGrid({ showAll }: { showAll: boolean }) {
                 url={`/api/epub/forensic/${a.number}`}
                 filename={filename}
                 label="EPUB"
+                slug={a.slug}
               />
             </div>
           </div>
@@ -237,7 +279,7 @@ export default function FreeEbooks() {
       const blob = await res.blob();
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
-      link.download = "Barran-Dodger-All-46-Forensic-Analyses-EPUBs.zip";
+      link.download = `Barran-Dodger-All-${FORENSIC_ANALYSES.length}-Forensic-Analyses-EPUBs.zip`;
       link.click();
       URL.revokeObjectURL(link.href);
     } catch (e) {
@@ -251,7 +293,7 @@ export default function FreeEbooks() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
       <SEO
         title="Free eBooks — Barran Dodger | Upload & Share Freely"
-        description="Download 61 free EPUB eBooks documenting 35 years of Australian government corruption. Includes all 46 forensic AI analyses with AI-generated covers. Upload to Apple Books, Google Play, Scribd, Internet Archive. No restrictions."
+        description={`Download ${FORENSIC_ANALYSES.length + MAJOR_PUBLICATIONS.length} free EPUB eBooks documenting 35 years of Australian government corruption. Includes all ${FORENSIC_ANALYSES.length} forensic AI analyses with AI-generated covers. Upload to Apple Books, Google Play, Scribd, Internet Archive. No restrictions. © Barran Dodger Legal & Ethical Trust Fund ABN 78 833 496 164.`}
       />
       <Navigation />
 
@@ -263,7 +305,7 @@ export default function FreeEbooks() {
             <span className="text-amber-400 text-sm font-semibold tracking-wide uppercase">Free Gift to the World</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-amber-400 mb-4 leading-tight">
-            61 Free eBooks.<br />
+            {FORENSIC_ANALYSES.length + MAJOR_PUBLICATIONS.length} Free eBooks.<br />
             <span className="text-zinc-100">Upload Them Everywhere.</span>
           </h1>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
@@ -273,10 +315,11 @@ export default function FreeEbooks() {
             Google Play, Scribd, the Internet Archive. All rights reserved. The testimony of one person,
             freely shared by anyone, is the most powerful accountability mechanism in history.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-zinc-500">
-            <span className="flex items-center gap-1"><BookOpen className="w-4 h-4 text-amber-600" /> 46 Forensic Analysis EPUBs</span>
+          <LiveDownloadTotal />
+          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-zinc-500 mt-3">
+            <span className="flex items-center gap-1"><BookOpen className="w-4 h-4 text-amber-600" /> {FORENSIC_ANALYSES.length} Forensic Analysis EPUBs</span>
             <span className="text-zinc-700">·</span>
-            <span className="flex items-center gap-1"><BookOpen className="w-4 h-4 text-amber-600" /> 15 Major Publication EPUBs</span>
+            <span className="flex items-center gap-1"><BookOpen className="w-4 h-4 text-amber-600" /> {MAJOR_PUBLICATIONS.length} Major Publication EPUBs</span>
             <span className="text-zinc-700">·</span>
             <span className="flex items-center gap-1"><Globe className="w-4 h-4 text-amber-600" /> ICC + UNHCR Submitted</span>
             <span className="text-zinc-700">·</span>
@@ -374,7 +417,7 @@ export default function FreeEbooks() {
       <section className="py-12 px-4 border-b border-zinc-800">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-amber-400 mb-1">15 Major Publication EPUBs</h2>
+            <h2 className="text-2xl font-bold text-amber-400 mb-1">{MAJOR_PUBLICATIONS.length} Major Publication EPUBs</h2>
             <p className="text-zinc-400 text-sm max-w-xl">
               The foundational documents of the archive — forensic reports, legal affidavits, testimony, and
               evidence summaries. Each includes the AI-generated cover and a page encouraging free sharing.
@@ -413,6 +456,7 @@ export default function FreeEbooks() {
                         url={`/api/epub/publication/${pub.slug}`}
                         filename={filename}
                         label="Download EPUB"
+                        slug={pub.slug}
                       />
                     </div>
                   </div>
