@@ -121,6 +121,7 @@ import YouBuiltYourPeaceInSilence from "@/pages/YouBuiltYourPeaceInSilence";
 import ThisIsTheReckoning from "@/pages/ThisIsTheReckoning";
 import TheyMadeYouFamousTryingToEraseYou from "@/pages/TheyMadeYouFamousTryingToEraseYou";
 import TheTrapTheySetBecameTheProof from "@/pages/TheTrapTheySetBecameTheProof";
+import LoudestEnemiesLeastToSay from "@/pages/LoudestEnemiesLeastToSay";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 
 function GlobalDownloadTracker() {
@@ -263,6 +264,7 @@ function Router() {
         <Route path="/this-is-the-reckoning" component={ThisIsTheReckoning} />
         <Route path="/they-made-you-famous-trying-to-erase-you" component={TheyMadeYouFamousTryingToEraseYou} />
         <Route path="/the-trap-they-set-became-the-proof" component={TheTrapTheySetBecameTheProof} />
+        <Route path="/the-loudest-enemies" component={LoudestEnemiesLeastToSay} />
         <Route path="/forensic-analysis" component={ForensicAnalysisIndex} />
         <Route path="/forensic-analysis-index" component={ForensicAnalysisIndex} />
         <Route path="/sukhi-tear" component={SukhiTear} />
