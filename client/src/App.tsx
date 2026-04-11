@@ -133,6 +133,7 @@ import { LoudestHateWeakestLink } from "@/pages/LoudestHateWeakestLink";
 import YouDidntChaseTheThroneYouBecameOne from "@/pages/YouDidntChaseTheThroneYouBecameOne";
 import TheyDugForDirtButUnearthedDiamonds from "@/pages/TheyDugForDirtButUnearthedDiamonds";
 import ThePublicAdvocateTheySilenced from "@/pages/ThePublicAdvocateTheySilenced";
+import TonyRidleyFullDossier from "@/pages/TonyRidleyFullDossier";
 import WhatThisProves from "@/pages/WhatThisProves";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 
@@ -291,6 +292,8 @@ function Router() {
         <Route path="/forensic-analysis/they-dug-for-dirt-but-unearthed-diamonds" component={TheyDugForDirtButUnearthedDiamonds} />
         <Route path="/the-public-advocate-they-silenced" component={ThePublicAdvocateTheySilenced} />
         <Route path="/tony-ridley-confession" component={ThePublicAdvocateTheySilenced} />
+        <Route path="/tony-ridley-full-dossier" component={TonyRidleyFullDossier} />
+        <Route path="/tony-ridley-exposed" component={TonyRidleyFullDossier} />
         <Route path="/what-this-proves" component={WhatThisProves} />
         <Route path="/forensic-proof-statement" component={WhatThisProves} />
         <Route path="/forensic-analysis" component={ForensicAnalysisIndex} />
