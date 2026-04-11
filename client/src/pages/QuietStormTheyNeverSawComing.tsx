@@ -301,6 +301,17 @@ export default function QuietStormTheyNeverSawComing() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
               <Button
                 variant="outline"
+                className="gap-2 border-emerald-500/40 text-emerald-300 hover:bg-emerald-500/10"
+                asChild
+                data-testid="button-full-essay-pdf"
+              >
+                <a href="/forensic-analysis-48-quiet-storm-download">
+                  <Download className="h-4 w-4" />
+                  Full Essay PDF Download
+                </a>
+              </Button>
+              <Button
+                variant="outline"
                 className="gap-2 border-amber-500/40 text-amber-300 hover:bg-amber-500/10"
                 asChild
                 data-testid="button-download-pdf"

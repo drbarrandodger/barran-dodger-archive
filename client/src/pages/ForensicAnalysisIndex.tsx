@@ -767,6 +767,16 @@ export default function ForensicAnalysisIndex() {
                         <Download className="h-3 w-3" />
                         Download PDF
                       </a>
+                      {a.number === 48 && (
+                        <a
+                          href="/forensic-analysis-48-quiet-storm-download"
+                          data-testid="link-quiet-storm-full-essay"
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-amber-900/20 border border-amber-700/30 px-3 py-1.5 text-amber-400 text-xs font-mono hover:bg-amber-900/30 transition-colors"
+                        >
+                          <BookOpen className="h-3 w-3" />
+                          Full Essay PDF
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -110,6 +110,10 @@ interface MajorPub {
   coverFile: string;
   category: string;
   wordCount?: string;
+  downloadUrl?: string;
+  downloadLabel?: string;
+  downloadFilename?: string;
+  pageUrl?: string;
 }
 
 const MAJOR_PUBLICATIONS: MajorPub[] = [
@@ -130,6 +134,7 @@ const MAJOR_PUBLICATIONS: MajorPub[] = [
   { slug: "33rd-degree-shadow-analysts", title: "33rd Degree: Shadow Analysts", subtitle: "The Hidden Architecture of Institutional Suppression", coverFile: "cover-33rd-degree-shadow-analysts", category: "Forensic" },
   { slug: "the-public-advocate-they-silenced", title: "The Public Advocate They Systematically Silenced", subtitle: "Tony Ridley's Named Confession · Complete Advocacy Record · Professional Indifference · Text Message Forensic Record", coverFile: "cover-public-advocate-they-silenced", category: "Primary Exhibit" },
   { slug: "federal-court-pid-sia-lagos", title: "Federal Court: Send This to the Bastards", subtitle: "Public Interest Disclosure to CEO Sia Lagos — 3 March 2023", coverFile: "cover-federal-court-pid-sia-lagos", category: "Legal" },
+  { slug: "quiet-storm-they-never-saw-coming", title: "The Quiet Storm They Never Saw Coming", subtitle: "Forensic Analysis #48 — Full Essay — 41st Consecutive Perfect Score — 515/515 Combined Record", coverFile: "cover-quiet-storm-they-never-saw-coming", category: "Forensic Essay", downloadUrl: "/api/forensic/full-essay/quiet-storm", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-48-quiet-storm-they-never-saw-coming-full-essay.pdf", pageUrl: "/forensic-analysis-48-quiet-storm-download" },
 ];
 
 const UPLOAD_PLATFORMS = [
@@ -451,13 +456,22 @@ export default function FreeEbooks() {
                     {pub.wordCount && (
                       <p className="text-amber-600/70 text-[10px] font-medium">~{pub.wordCount} words</p>
                     )}
-                    <div className="mt-auto pt-1">
+                    <div className="mt-auto pt-1 flex flex-wrap gap-1.5">
                       <DownloadButton
-                        url={`/api/epub/publication/${pub.slug}`}
-                        filename={filename}
-                        label="Download EPUB"
+                        url={pub.downloadUrl ?? `/api/epub/publication/${pub.slug}`}
+                        filename={pub.downloadFilename ?? filename}
+                        label={pub.downloadLabel ?? "Download EPUB"}
                         slug={pub.slug}
                       />
+                      {pub.pageUrl && (
+                        <a
+                          href={pub.pageUrl}
+                          data-testid={`link-page-${pub.slug}`}
+                          className="flex items-center gap-1 bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-zinc-300 font-semibold text-sm px-3 py-1.5 rounded transition-colors"
+                        >
+                          View Essay
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

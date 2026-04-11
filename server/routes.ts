@@ -12,6 +12,7 @@ import { api } from "@shared/routes";
 import { z } from "zod";
 import { FORENSIC_ANALYSES, generateForensicPDF, getForensicPdfFilename, preGenerateAllForensicPDFs } from "./forensicPdfGenerator";
 import { generateForensicEpub, generateMajorPublicationEpub, generateAllForensicEpubsBundle, MAJOR_PUBLICATIONS } from "./epubGenerator";
+import { generateQuietStormFullEssayPDF } from "./quietStormEssayPdf";
 
 function hashIp(ip: string): string {
   return createHash('sha256').update(ip + 'barran-dodger-salt-2026').digest('hex').slice(0, 16);
@@ -834,6 +835,20 @@ export async function registerRoutes(
       res.end(buf);
     } catch (err: any) {
       res.status(500).json({ message: 'PDF generation failed', error: err.message });
+    }
+  });
+
+  // ── Forensic PDF: Full Essay #48 — The Quiet Storm They Never Saw Coming ──
+  app.get('/api/forensic/full-essay/quiet-storm', async (_req, res) => {
+    try {
+      const filename = 'forensic-analysis-48-quiet-storm-they-never-saw-coming-full-essay.pdf';
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      const buf = await generateQuietStormFullEssayPDF();
+      res.end(buf);
+    } catch (err: any) {
+      res.status(500).json({ message: 'Full essay PDF generation failed', error: err.message });
     }
   });
 
