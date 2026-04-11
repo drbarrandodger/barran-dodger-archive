@@ -128,6 +128,7 @@ import TheyBuiltTheirWorstNightmare from "@/pages/TheyBuiltTheirWorstNightmare";
 import QuietStormTheyNeverSawComing from "@/pages/QuietStormTheyNeverSawComing";
 import QuietStormDownload from "@/pages/QuietStormDownload";
 import TheyFumbledYouDownload from "@/pages/TheyFumbledYouDownload";
+import ConfessionChokedOnDownload from "@/pages/ConfessionChokedOnDownload";
 import TheyDugForDirtButUnearthedDiamonds from "@/pages/TheyDugForDirtButUnearthedDiamonds";
 import ThePublicAdvocateTheySilenced from "@/pages/ThePublicAdvocateTheySilenced";
 import WhatThisProves from "@/pages/WhatThisProves";
@@ -281,6 +282,7 @@ function Router() {
         <Route path="/forensic-analysis/quiet-storm-they-never-saw-coming" component={QuietStormTheyNeverSawComing} />
         <Route path="/forensic-analysis-48-quiet-storm-download" component={QuietStormDownload} />
         <Route path="/forensic-analysis-9-they-fumbled-you-download" component={TheyFumbledYouDownload} />
+        <Route path="/forensic-analysis-50-confession-theyve-been-choking-on-download" component={ConfessionChokedOnDownload} />
         <Route path="/they-dug-for-dirt-but-unearthed-diamonds" component={TheyDugForDirtButUnearthedDiamonds} />
         <Route path="/forensic-analysis/they-dug-for-dirt-but-unearthed-diamonds" component={TheyDugForDirtButUnearthedDiamonds} />
         <Route path="/the-public-advocate-they-silenced" component={ThePublicAdvocateTheySilenced} />

@@ -56,6 +56,7 @@ const COVER_MAP: Record<number, string> = {
   47: 'cover-they-built-their-worst-nightmare',
   48: 'cover-quiet-storm-they-never-saw-coming',
   49: 'cover-they-dug-for-dirt-but-unearthed-diamonds',
+  50: 'cover-confession-theyve-been-choking-on',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -570,6 +571,16 @@ const ANALYSES: ForensicEntry[] = [
     consecutivePerfect: true,
     paragraph: "The forty-second consecutive perfect score. 10 propositions from an independent YouTube video structured across nine numbered points on the documented experience of a subject whose record was so clean that every investigation sent to expose it became a witness for it instead. The opening thesis — 'never dig for dirt on someone the universe protects because you'll end up buried in your own jealousy' — confirmed against ASIO operative Stefan Iasonidis deployed as co-tenant at 10 Raleigh St Footscray (the investigation becoming an ICC exhibit), five named perpetrators producing zero formal rebuttals against 2,304 public documents (the 35-year excavation producing the ICC submission against the excavators), and the death threat documented as an ICC exhibit (the deepest institutional jealousy becoming the most permanent ICC record). The investigation-as-mirror proposition confirmed against 25+ circular referral letterheads each reflecting coordinated non-engagement and 14 psychiatric hospitalisation records as 14 ICC clinical exhibits reflecting clinical institutional conduct. The solitude-as-shield proposition confirmed against the ASIO co-tenancy requiring residential insertion because solitude made external network penetration impossible, and the 35-year documentation assembled in enforced isolation. The calm-life-as-scandal proposition confirmed against zero criminal charges in 35 years despite full institutional apparatus deployment, 525 propositions with zero contradictions, and Bitcoin blockchain verification. The spiritual audit confirmed by ICC Article 7 formal receipt and UNHCR Geneva formal filing — the universe running the receipts at The Hague and Geneva and finding the archive clean. All 10 propositions corroborated. Zero contradictions. Combined record: 525/525 across 49 analyses. They dug for dirt. They unearthed the ICC submission.",
   },
+  {
+    number: 50,
+    title: "The Confession They've Been Choking On",
+    slug: "confession-theyve-been-choking-on",
+    videoId: "4AGwy2fX-MY",
+    propositions: 12,
+    corroborated: 12,
+    consecutivePerfect: true,
+    paragraph: "The forty-third consecutive perfect score. 12 propositions from an independent YouTube video structured across twelve numbered points on guilt, confession, betrayal, and liberation — produced with no documented knowledge of or connection to Dr. McLean's archive. The mask-cracking proposition confirmed against zero formal rebuttals from five named perpetrators across 2,304 public documents, Stefan Iasonidis's intimate ASIO infiltration mask, and 14 psychiatric hospitalisations as masked retaliation. The stolen-treasure proposition confirmed against three documented financial extractions — Sukhi Tear $50,000, Stefan Iasonidis $500,000, $32.9M suppressed NDIS entitlements — none of which touched the archive: the real treasure Bitcoin blockchain-verified and ICC-filed. Divine-pressure-forcing-confession confirmed against ICC Article 7 formal receipt at The Hague and UNHCR Geneva filing — jurisdictions the domestic apparatus cannot outrun. Invisible-chains confirmed against 14 psychiatric labels applied as containment instruments and the ICC formal receipt as the documented chain-breaking event. Inner-circle-betrayal confirmed against Stefan Iasonidis intimate infiltration, five family members with zero advocacy across 35 years, and NDIS support services that became extraction mechanisms. Excuses-collapsing confirmed against 537 propositions with zero contradictions and zero formal rebuttals from five named perpetrators. Truth-finding-its-way confirmed against ICC The Hague, UNHCR Geneva, and 350,000+ downloads across six continents. Lies-tripping-over-themselves confirmed against the ATO letter on government letterhead documenting drugging, 350+ ASIC identity fraud registrations in the regulator's own registry, and 14 hospitalisation clinical exhibits. Redemption-without-re-entry confirmed against the IChooseSilence forensic boundary document formally removing five family members. Precision-not-chaos confirmed against zero retaliation across 35 years and the Tony Ridley death threat met with ICC filing not retaliation. Cosmic-omens confirmed against 43 consecutive perfect scores — the statistically improbable documentary confirmation pattern. Evolution-as-final-word confirmed against clinical death at 2.87% survival probability and 537/537 with zero contradictions as the documented evolution complete before any perpetrator confession. All 12 propositions corroborated. Zero contradictions. Combined record: 537/537 across 50 analyses. The confession was never required. The accounting is at The Hague.",
+  },
 ];
 
 
@@ -782,6 +793,16 @@ export default function ForensicAnalysisIndex() {
                           href="/forensic-analysis-9-they-fumbled-you-download"
                           data-testid="link-fumbled-you-full-essay"
                           className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-900/20 border border-indigo-700/30 px-3 py-1.5 text-indigo-400 text-xs font-mono hover:bg-indigo-900/30 transition-colors"
+                        >
+                          <BookOpen className="h-3 w-3" />
+                          Full Essay PDF
+                        </a>
+                      )}
+                      {a.number === 50 && (
+                        <a
+                          href="/forensic-analysis-50-confession-theyve-been-choking-on-download"
+                          data-testid="link-confession-choked-on-full-essay"
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-rose-900/20 border border-rose-700/30 px-3 py-1.5 text-rose-400 text-xs font-mono hover:bg-rose-900/30 transition-colors"
                         >
                           <BookOpen className="h-3 w-3" />
                           Full Essay PDF
