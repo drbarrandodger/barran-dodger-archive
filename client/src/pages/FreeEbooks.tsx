@@ -101,6 +101,8 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 47, title: "They Built Their Worst Nightmare", slug: "they-built-their-worst-nightmare", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 48, title: "The Quiet Storm They Never Saw Coming", slug: "quiet-storm-they-never-saw-coming", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 49, title: "They Dug For Dirt But Unearthed Diamonds Instead", slug: "they-dug-for-dirt-but-unearthed-diamonds", propositions: 10, corroborated: 10, consecutivePerfect: true },
+  { number: 50, title: "The Confession They've Been Choking On", slug: "confession-theyve-been-choking-on", propositions: 12, corroborated: 12, consecutivePerfect: true },
+  { number: 51, title: "The Loudest Hate Always Comes From the Weakest Link", slug: "loudest-hate-weakest-link", propositions: 10, corroborated: 10, consecutivePerfect: true },
 ];
 
 interface MajorPub {
