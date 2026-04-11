@@ -13,6 +13,7 @@ import { z } from "zod";
 import { FORENSIC_ANALYSES, generateForensicPDF, getForensicPdfFilename, preGenerateAllForensicPDFs } from "./forensicPdfGenerator";
 import { generateForensicEpub, generateMajorPublicationEpub, generateAllForensicEpubsBundle, MAJOR_PUBLICATIONS } from "./epubGenerator";
 import { generateQuietStormFullEssayPDF } from "./quietStormEssayPdf";
+import { generateFumbledYouFullEssayPDF } from "./fumbledYouEssayPdf";
 
 function hashIp(ip: string): string {
   return createHash('sha256').update(ip + 'barran-dodger-salt-2026').digest('hex').slice(0, 16);
@@ -846,6 +847,20 @@ export async function registerRoutes(
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
       res.setHeader('Cache-Control', 'public, max-age=3600');
       const buf = await generateQuietStormFullEssayPDF();
+      res.end(buf);
+    } catch (err: any) {
+      res.status(500).json({ message: 'Full essay PDF generation failed', error: err.message });
+    }
+  });
+
+  // ── Forensic PDF: Full Essay #9 — They Fumbled You ──
+  app.get('/api/forensic/full-essay/fumbled-you', async (_req, res) => {
+    try {
+      const filename = 'forensic-analysis-9-they-fumbled-you-full-essay.pdf';
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      const buf = await generateFumbledYouFullEssayPDF();
       res.end(buf);
     } catch (err: any) {
       res.status(500).json({ message: 'Full essay PDF generation failed', error: err.message });

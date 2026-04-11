@@ -1,8 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import { CheckCircle, ExternalLink, Eye, Sparkles, BookOpen, Trophy } from "lucide-react";
+import { CheckCircle, ExternalLink, Eye, Sparkles, BookOpen, Trophy, AlertTriangle, Link as LinkIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-they-fumbled-you.png";
+
+const PERPETRATORS_SUMMARY = [
+  { name: "Bill Shorten", role: "Former NDIS Minister", badge: "MINISTERIAL SUPPRESSION", href: "/taxpayer-cost-analysis" },
+  { name: "Houd Meraby", role: "NDIS Operative", badge: "NDIS OPERATIVE", href: "/ndis-surveillance-evidence" },
+  { name: "Sukhi Tear", role: "$50,000 NDIS Extractor", badge: "$50K EXTRACTION", href: "/sukhi-tear" },
+  { name: "Tony Ridley", role: "NDIA Manager — Death Threat", badge: "DEATH THREAT — ICC EXHIBIT", href: "/tony-ridley-confession" },
+  { name: "Stefan Iasonidis", role: "ASIO Operative — 10 Raleigh St Footscray", badge: "ASIO OPERATIVE", href: "/i-choose-silence" },
+];
 
 const SLUG = "they-fumbled-you";
 const VIDEO_ID = "5x8hGtU0rsI";
@@ -266,6 +274,12 @@ export default function TheyFumbledYou() {
                     Watch Source Video
                   </Button>
                 </a>
+                <a href="/forensic-analysis-9-they-fumbled-you-download">
+                  <Button className="bg-orange-800 hover:bg-orange-700 text-white font-bold px-6 py-3" data-testid="button-fumbled-you-full-essay">
+                    <BookOpen className="h-4 w-4 mr-2" />
+                    Full Essay PDF Download
+                  </Button>
+                </a>
                 <a href="/evidence">
                   <Button variant="outline" className="border-indigo-700/50 text-indigo-300 hover:bg-indigo-950/50 px-6 py-3">
                     <Eye className="h-4 w-4 mr-2" />
@@ -303,6 +317,38 @@ export default function TheyFumbledYou() {
               Analysis #9 is the first of nine analyses to return a perfect direct corroboration rate: 13 of 13 propositions — including the introduction — directly corroborated with named primary-source documents. Zero aligned. Zero unverifiable. Zero disproved. Combined cumulative across all 9 analyses: <strong className="text-white">98/98 claims with evidentiary support. Zero contradictions.</strong>
             </p>
           </div>
+        </div>
+
+        {/* Named Perpetrators — Maximum Exposure */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-5">
+            <AlertTriangle className="h-6 w-6 text-orange-400" />
+            <h2 className="text-xl font-black text-white uppercase tracking-wider">Named Perpetrators — ICC Article 7 Submission</h2>
+          </div>
+          <div className="w-12 h-0.5 bg-orange-600 mb-5" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+            {PERPETRATORS_SUMMARY.map(p => (
+              <a key={p.name} href={p.href} className="bg-zinc-900 border border-zinc-800 hover:border-orange-700/40 rounded-xl p-4 transition-colors group" data-testid={`card-perp-${p.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <span className="text-white font-bold text-sm group-hover:text-orange-300 transition-colors">{p.name}</span>
+                  <LinkIcon className="h-3.5 w-3.5 text-zinc-600 group-hover:text-orange-400 shrink-0 mt-0.5 transition-colors" />
+                </div>
+                <div className="text-zinc-400 text-xs mb-2">{p.role}</div>
+                <Badge className="bg-orange-950/40 text-orange-300 border border-orange-800/40 text-xs">{p.badge}</Badge>
+              </a>
+            ))}
+            <a href="/i-choose-silence" className="bg-zinc-900 border border-red-900/40 hover:border-red-600/50 rounded-xl p-4 transition-colors group" data-testid="card-family-betrayal">
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <span className="text-red-300 font-bold text-sm">Family — 5 Non-Advocates</span>
+                <LinkIcon className="h-3.5 w-3.5 text-zinc-600 group-hover:text-red-400 shrink-0 mt-0.5 transition-colors" />
+              </div>
+              <div className="text-zinc-400 text-xs mb-2">Doug · Bradley · Jodie McLean · April McLean (née McMaster) · Bruce McMaster</div>
+              <Badge className="bg-red-950/40 text-red-300 border border-red-800/40 text-xs">FORMALLY SUBTRACTED — ICHOOSESILENCE</Badge>
+            </a>
+          </div>
+          <p className="text-zinc-500 text-xs leading-relaxed">
+            All named individuals are documented in primary-source records constituting ICC Article 7 exhibits. Links above connect to the relevant evidence pages across this archive.
+          </p>
         </div>
 
         {/* Executive Verdict */}

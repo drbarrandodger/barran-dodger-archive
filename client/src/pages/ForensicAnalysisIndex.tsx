@@ -777,6 +777,16 @@ export default function ForensicAnalysisIndex() {
                           Full Essay PDF
                         </a>
                       )}
+                      {a.number === 9 && (
+                        <a
+                          href="/forensic-analysis-9-they-fumbled-you-download"
+                          data-testid="link-fumbled-you-full-essay"
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-900/20 border border-indigo-700/30 px-3 py-1.5 text-indigo-400 text-xs font-mono hover:bg-indigo-900/30 transition-colors"
+                        >
+                          <BookOpen className="h-3 w-3" />
+                          Full Essay PDF
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
