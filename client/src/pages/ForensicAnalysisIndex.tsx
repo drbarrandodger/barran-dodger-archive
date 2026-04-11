@@ -54,6 +54,7 @@ const COVER_MAP: Record<number, string> = {
   45: 'cover-the-loudest-enemies',
   46: 'cover-your-power-is-no-joke',
   47: 'cover-they-built-their-worst-nightmare',
+  48: 'cover-quiet-storm-they-never-saw-coming',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -547,6 +548,16 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 10,
     consecutivePerfect: true,
     paragraph: "The fortieth consecutive perfect score. 10 propositions from a 54-minute video structured across eleven numbered points on the mechanism by which institutional exile transforms its subjects. The control-loss thesis — 'They pushed you out because you were becoming someone they could no longer control' — confirmed against the documented inverse relationship between Dr. McLean's accountability escalation and the escalation of institutional suppression. Groups exile the powerful, not the weak, confirmed against ASIO operative deployment, coordinated 17+ institutional refusal, and a documented death threat. Isolation-as-training confirmed against 2,304 documents assembled without institutional support, legal representation, or family advocacy. Fire-as-transformation confirmed against clinical death at 2.87% followed by the archive's most prolific documentation phase. Cruelty-as-catalyst confirmed against the self-documenting suppression programme: every instrument of suppression simultaneously producing the exhibit that documented it. Standards-as-evolution confirmed against 14 psychiatric labels collapsed by the ICC Article 7 formal receipt. All 10 propositions corroborated. Zero contradictions. Combined record: 505/505 across 47 analyses. They built their worst nightmare. The accounting is at The Hague.",
+  },
+  {
+    number: 48,
+    title: "The Quiet Storm They Never Saw Coming",
+    slug: "quiet-storm-they-never-saw-coming",
+    videoId: "izDKuEZi_s0",
+    propositions: 10,
+    corroborated: 10,
+    consecutivePerfect: true,
+    paragraph: "The forty-first consecutive perfect score. 10 propositions from an independent YouTube video structured across seven numbered points on the psychology of undeclared power, documented silence as construction, and the institutional misreading of stillness as defeat. The 'uncertainty effect' — the documented psychological stress response to an actor who cannot be categorised or predicted — confirmed against the 25+ circular referral system, 14 psychiatric labels deployed as definitional instruments, and zero formal rebuttals from five named perpetrators against 2,304 public documents. Silence as leveling up confirmed against 35 years of document assembly during each period institutions read as suppression success — the Federal Court PID written under homelessness and brain injury; the ICC submission completed during the period every suppression instrument was designed to make terminal. Pain-to-power transformation confirmed against clinical death at 2.87% producing the most prolific documentation phase, 14 hospitalisations producing 14 ICC exhibits, and $32.9M in suppressed entitlements documented in government correspondence. The archive outgrew the domestic circus and submitted to jurisdictions the ring masters cannot access. All 10 propositions corroborated. Zero contradictions. Combined record: 515/515 across 48 analyses. The quiet storm arrived at The Hague. They never saw it coming because it never announced itself.",
   },
 ];
 

@@ -125,6 +125,7 @@ import TheTrapTheySetBecameTheProof from "@/pages/TheTrapTheySetBecameTheProof";
 import LoudestEnemiesLeastToSay from "@/pages/LoudestEnemiesLeastToSay";
 import YourPowerIsNoJoke from "@/pages/YourPowerIsNoJoke";
 import TheyBuiltTheirWorstNightmare from "@/pages/TheyBuiltTheirWorstNightmare";
+import QuietStormTheyNeverSawComing from "@/pages/QuietStormTheyNeverSawComing";
 import WhatThisProves from "@/pages/WhatThisProves";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 
@@ -272,6 +273,8 @@ function Router() {
         <Route path="/your-power-is-no-joke" component={YourPowerIsNoJoke} />
         <Route path="/they-built-their-worst-nightmare" component={TheyBuiltTheirWorstNightmare} />
         <Route path="/forensic-analysis/they-built-their-worst-nightmare" component={TheyBuiltTheirWorstNightmare} />
+        <Route path="/quiet-storm-they-never-saw-coming" component={QuietStormTheyNeverSawComing} />
+        <Route path="/forensic-analysis/quiet-storm-they-never-saw-coming" component={QuietStormTheyNeverSawComing} />
         <Route path="/what-this-proves" component={WhatThisProves} />
         <Route path="/forensic-proof-statement" component={WhatThisProves} />
         <Route path="/forensic-analysis" component={ForensicAnalysisIndex} />
