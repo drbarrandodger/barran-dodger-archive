@@ -5,6 +5,31 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 
+const _allCovers = import.meta.glob<{ default: string }>('../assets/images/cover-*.png', { eager: true });
+function _getCoverSrc(filename: string): string | undefined {
+  return _allCovers[`../assets/images/${filename}.png`]?.default;
+}
+const COVER_MAP_WTP: Record<number, string> = {
+  1:'cover-bro-this-isnt-a-coincidence', 2:'cover-chosen-ones-enough-is-enough',
+  3:'cover-no-one-could-be-that-smart', 4:'cover-divine-exam', 5:'cover-silent-checkmate',
+  6:'cover-now-everybody-knows', 7:'cover-chosen-one-outcast-leader', 8:'cover-someone-slipped-up',
+  9:'cover-they-fumbled-you', 10:'cover-fbi-precision', 11:'cover-clock-strikes-back',
+  12:'cover-untouchable', 13:'cover-final-blow', 14:'cover-what-you-become',
+  15:'cover-everyone-watching', 16:'cover-earth-angel', 17:'cover-too-deep',
+  18:'cover-silence-surrender', 19:'cover-fearless-intelligence', 20:'cover-history-keeps-receipts',
+  21:'cover-absorbed-erasure', 22:'cover-survival-was-the-warning', 23:'cover-god-will-make-you-famous',
+  24:'cover-divine-before-your-time', 25:'cover-bloodline-of-god', 26:'cover-the-last-god',
+  27:'cover-the-conspiracy-against-you', 28:'cover-silent-assassin', 29:'cover-truth-is-a-blade',
+  30:'cover-bloodline-betrayal', 31:'cover-they-needed-an-army', 32:'cover-the-sick-truth-is-out',
+  33:'cover-some-truths-dont-whisper', 34:'cover-observers-anticipated-misstep',
+  35:'cover-you-brought-receipts', 36:'cover-the-future-doesnt-announce',
+  37:'cover-when-heaven-goes-silent', 38:'cover-evidence-doesnt-whisper',
+  39:'cover-outsider-pattern-recognition', 40:'cover-perception-is-protection',
+  41:'cover-heaven-exposes-the-sister', 42:'cover-you-built-your-peace',
+  43:'cover-this-is-the-reckoning', 44:'cover-they-made-you-famous',
+  45:'cover-the-loudest-enemies', 46:'cover-your-power-is-no-joke',
+};
+
 const ANALYSES = [
   { number: 1, title: "Bro This Isn't A Coincidence", slug: "bro-this-isnt-a-coincidence", videoId: "J8KO7pTwnuY", propositions: 7, paragraph: "The inaugural analysis. An independent second-person motivational monologue — with no knowledge of the case — was tested across seven thematic axes. Zero contradictions. The analysis identified weaponised psychiatric diagnosis, systematic dismissal of documented warnings, forced exile, financial destruction, and vindication through documentation — all confirmed against named primary-source evidence. The statistical improbability of a generic video achieving this alignment by chance was formally noted." },
   { number: 2, title: "Chosen Ones Enough Is Enough", slug: "chosen-ones-enough-is-enough", videoId: "50hRjgGe4BQ", propositions: 11, paragraph: "The first zero-contradiction result across all tested claims. Released the same day the analysis was produced, with no knowledge of the archive. Eleven claims extracted and tested. The blockchain-timestamped archive was confirmed as the literal structure described by 'the universe stores every action like a record.' Survival from clinical death followed by the archive's most comprehensive documentation period confirmed the seed-not-burial proposition. The death threat email, 350+ ASIC identity fraud registrations, and psychiatric assessments confirmed the trap-reversal framework." },
@@ -180,28 +205,44 @@ export default function WhatThisProves() {
 
           {/* ── DIVIDER ── */}
           <div className="text-center mb-12 space-y-2">
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">All 45 Source Videos — Embedded Below</p>
+            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">All 46 Source Videos — Embedded Below</p>
             <h2 className="text-2xl font-serif font-bold text-primary">Each Analysis — Video + Forensic PDF Download</h2>
             <p className="text-sm text-muted-foreground">Every video was examined with no prior knowledge of the case. Every PDF contains the full proposition-by-proposition corroboration report.</p>
           </div>
 
-          {/* ── ALL 45 ANALYSES ── */}
+          {/* ── ALL 46 ANALYSES ── */}
           <div className="space-y-14">
-            {ANALYSES.map((a) => (
+            {ANALYSES.map((a) => {
+              const coverSrc = COVER_MAP_WTP[a.number] ? _getCoverSrc(COVER_MAP_WTP[a.number]) : undefined;
+              return (
               <div key={a.number} className="rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden" data-testid={`card-analysis-${a.number}`}>
 
-                {/* Header */}
-                <div className="px-6 pt-6 pb-4 space-y-3">
-                  <div className="flex items-center gap-3 flex-wrap">
-                    <Badge variant="outline" className="border-primary text-primary font-mono text-xs px-3 py-1">
-                      ANALYSIS #{a.number}
-                    </Badge>
-                    <Badge className="bg-emerald-500/15 text-emerald-400 border-emerald-500/30 text-xs font-mono">
-                      {a.propositions}/{a.propositions} CORROBORATED
-                    </Badge>
+                {/* Header with Cover */}
+                <div className="flex">
+                  {/* Book Cover Thumbnail */}
+                  {coverSrc && (
+                    <div className="shrink-0 w-28 sm:w-36 bg-zinc-950 overflow-hidden">
+                      <img
+                        src={coverSrc}
+                        alt={`Analysis #${a.number} — ${a.title}`}
+                        data-testid={`img-cover-wtp-${a.number}`}
+                        className="w-full h-full object-cover"
+                        style={{ minHeight: "100%", display: "block" }}
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0 px-6 pt-6 pb-4 space-y-3">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <Badge variant="outline" className="border-primary text-primary font-mono text-xs px-3 py-1">
+                        ANALYSIS #{a.number}
+                      </Badge>
+                      <Badge className="bg-emerald-500/15 text-emerald-400 border-emerald-500/30 text-xs font-mono">
+                        {a.propositions}/{a.propositions} CORROBORATED
+                      </Badge>
+                    </div>
+                    <h3 className="text-xl font-serif font-bold text-white leading-snug">{a.title}</h3>
+                    <p className="text-sm text-zinc-300 leading-relaxed">{a.paragraph}</p>
                   </div>
-                  <h3 className="text-xl font-serif font-bold text-white leading-snug">{a.title}</h3>
-                  <p className="text-sm text-zinc-300 leading-relaxed">{a.paragraph}</p>
                 </div>
 
                 {/* YouTube Embed */}
@@ -253,7 +294,8 @@ export default function WhatThisProves() {
                 </div>
 
               </div>
-            ))}
+            );
+            })}
           </div>
 
           {/* ── FINAL VERDICT ── */}
@@ -261,14 +303,14 @@ export default function WhatThisProves() {
             <Flame className="h-8 w-8 text-amber-500 mx-auto animate-pulse" />
             <h2 className="text-2xl font-serif font-bold text-amber-100">Combined Forensic Record</h2>
             <div className="text-7xl font-bold font-mono text-amber-300 tabular-nums">{TOTAL_PROPOSITIONS}/{TOTAL_PROPOSITIONS}</div>
-            <p className="text-amber-200/70 font-mono uppercase tracking-widest text-sm">Propositions Corroborated Across 45 Independent Analyses</p>
+            <p className="text-amber-200/70 font-mono uppercase tracking-widest text-sm">Propositions Corroborated Across 46 Independent Analyses</p>
             <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-4 text-center">
               <div>
-                <p className="text-2xl font-bold font-mono text-white">45</p>
+                <p className="text-2xl font-bold font-mono text-white">46</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Independent Analyses</p>
               </div>
               <div>
-                <p className="text-2xl font-bold font-mono text-emerald-400">38</p>
+                <p className="text-2xl font-bold font-mono text-emerald-400">39</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Consecutive Perfect</p>
               </div>
               <div>

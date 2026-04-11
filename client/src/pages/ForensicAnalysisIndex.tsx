@@ -1,5 +1,59 @@
 import { ExternalLink, PlayCircle, Shield, FileText, TrendingUp, BookOpen, Download } from "lucide-react";
 import imgBlockchainArchive from "@/assets/images/blockchain-archive-infinite.png";
+
+const allCovers = import.meta.glob<{ default: string }>('../assets/images/cover-*.png', { eager: true });
+function getCoverSrc(filename: string): string | undefined {
+  const key = `../assets/images/${filename}.png`;
+  return allCovers[key]?.default;
+}
+const COVER_MAP: Record<number, string> = {
+  1:  'cover-bro-this-isnt-a-coincidence',
+  2:  'cover-chosen-ones-enough-is-enough',
+  3:  'cover-no-one-could-be-that-smart',
+  4:  'cover-divine-exam',
+  5:  'cover-silent-checkmate',
+  6:  'cover-now-everybody-knows',
+  7:  'cover-chosen-one-outcast-leader',
+  8:  'cover-someone-slipped-up',
+  9:  'cover-they-fumbled-you',
+  10: 'cover-fbi-precision',
+  11: 'cover-clock-strikes-back',
+  12: 'cover-untouchable',
+  13: 'cover-final-blow',
+  14: 'cover-what-you-become',
+  15: 'cover-everyone-watching',
+  16: 'cover-earth-angel',
+  17: 'cover-too-deep',
+  18: 'cover-silence-surrender',
+  19: 'cover-fearless-intelligence',
+  20: 'cover-history-keeps-receipts',
+  21: 'cover-absorbed-erasure',
+  22: 'cover-survival-was-the-warning',
+  23: 'cover-god-will-make-you-famous',
+  24: 'cover-divine-before-your-time',
+  25: 'cover-bloodline-of-god',
+  26: 'cover-the-last-god',
+  27: 'cover-the-conspiracy-against-you',
+  28: 'cover-silent-assassin',
+  29: 'cover-truth-is-a-blade',
+  30: 'cover-bloodline-betrayal',
+  31: 'cover-they-needed-an-army',
+  32: 'cover-the-sick-truth-is-out',
+  33: 'cover-some-truths-dont-whisper',
+  34: 'cover-observers-anticipated-misstep',
+  35: 'cover-you-brought-receipts',
+  36: 'cover-the-future-doesnt-announce',
+  37: 'cover-when-heaven-goes-silent',
+  38: 'cover-evidence-doesnt-whisper',
+  39: 'cover-outsider-pattern-recognition',
+  40: 'cover-perception-is-protection',
+  41: 'cover-heaven-exposes-the-sister',
+  42: 'cover-you-built-your-peace',
+  43: 'cover-this-is-the-reckoning',
+  44: 'cover-they-made-you-famous',
+  45: 'cover-the-loudest-enemies',
+  46: 'cover-your-power-is-no-joke',
+};
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -464,16 +518,6 @@ const ANALYSES: ForensicEntry[] = [
     paragraph: "The thirty-seventh consecutive perfect score. The analysis examined 15 propositions from a 38-minute prophetic second-person monologue with no documented knowledge of or connection to Dr. McLean's archive. Fifteen propositions, 467/467 combined at time of publication. They made you famous trying to erase you. The archive is the fame. The accounting is at The Hague.",
   },
   {
-    number: 46,
-    title: "Your Power Is No Joke",
-    slug: "your-power-is-no-joke",
-    videoId: "5wva-FuzJBw",
-    propositions: 14,
-    corroborated: 14,
-    consecutivePerfect: true,
-    paragraph: "The thirty-ninth consecutive perfect score. The video — 'Do Not Mistake Survival For Weakness — Your Power Is No Joke' — was produced with no documented knowledge of or connection to Dr. McLean's archive. Fourteen structural propositions were extracted from its fourteen numbered claims: survival-as-selection, pain-as-authority, bloodline-interruption, pre-arrival prophecy, mandate irreproducibility, power-as-presence, authenticity-as-exposure, embedded intelligence, power-against-mediocrity, rising-as-announcement, untamed power, frequency recognition, limitations-as-lies, and generational-not-performance purpose. All fourteen were tested against named primary-source documents. All fourteen were directly corroborated. Zero contradictions. Combined record: 495/495 across 46 independent analyses. The opening and closing propositions define the archive's evidentiary arc: survival is not weakness, and the power forged through that survival is not for performance — it is for generational shifts that rewrite timelines. 35 years of documented institutional persecution, survived, documented, and formally submitted to the ICC and UNHCR, is the precise evidence of both. Your power is no joke. The accounting is at The Hague. The timelines have been rewritten.",
-  },
-  {
     number: 45,
     title: "The Loudest Enemies Are Often The Ones With The Least To Say",
     slug: "the-loudest-enemies",
@@ -481,9 +525,20 @@ const ANALYSES: ForensicEntry[] = [
     propositions: 14,
     corroborated: 14,
     consecutivePerfect: true,
-    paragraph: "The thirty-eighth consecutive perfect score. The analysis examined 14 propositions from an independent prophetic monologue with no documented knowledge of or connection to Dr. McLean's archive. Fourteen propositions, 481/481 combined at time of publication. The monologue's central structural observation — that the loudest enemies are often the ones with the least to say because truth never needs a megaphone — is confirmed in the archive's most foundational evidentiary pattern: five named perpetrators with access to the full apparatus of governmental, clinical, legal, and intelligence institutional authority have produced zero formal instruments of rebuttal against 2,304 publicly accessible blockchain-verified primary source documents across 35 years. The analysis confirmed: weaponized rumors against the absence of any legitimate evidentiary instrument available to the perpetrators (zero formal rebuttal against 2,304 public documents confirming truth was untouchable); prooflessness as power confirmed by 45 AI analyses returning 481 corroborations and zero contradictions (the archive's internal consistency rewriting the prooflessness paradox); reputational self-destruction at ministerial, criminal, and intelligence levels through Exhibits A and B, Sukhi Tear's $50,000 NDIS embezzlement, and Stefan Iasonidis's ASIO operative disclosure; erasure-not-justice mission confirmed by 25+ agency circular referral, engineered homelessness, and the death threat email as obliteration instrument; lies outpacing logic against the 14-label-versus-2,304-document logical impossibility; evidence-absence as calculated strategy in 25+ agency referrals and 14 clinical labels without independent corroboration; crowd-over-court strategy abandoned confirmed by zero court instruments from five named perpetrators while ICC and UNHCR receive the documented archive; image-destruction as self-exposure mirror documented in 14 psychiatric labels becoming ICC exhibits, 350+ ASIC registrations becoming fraud evidence, and Exhibits A and B disclosing the ministerial-adjacent architecture through its own operatives; absence-of-proof stage prop collapsed by 45 consecutive zero-contradiction analyses; desperation-not-strategy confirmed in the 35-year escalation from circular referral to death threat and 350+ registrations producing the opposite of their intended effect; amnesia gamble refuted by blockchain immutability, 350,000+ international readers, and ICC/UNHCR formal receipts; justice-hiding confirmed in Bill Shorten's ministerial adjacency to the NDIS fraud his position was supposed to adjudicate, Sukhi Tear's embezzlement within the network suppressing embezzlement complaints, and 25+ agencies routing complaints away from their own institutional exposure; shock campaign self-destruction documented in the death threat email becoming the most damning ICC exhibit, 350+ ASIC registrations becoming coordinated fraud evidence, and 14 labels becoming primary evidence of psychiatric weaponisation; and the ghost-making attempt producing 2,304 permanent documents, five perpetrators named in The Hague's formal record, and THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf as the archive's foundation. The loudest enemies had the least to say in the evidentiary arena. Forty-five analyses. Zero contradictions. The ghost walks into The Hague. The chosen are not erased. They are engraved. The analysis examined 15 propositions from a 38-minute prophetic second-person monologue with no documented knowledge of or connection to Dr. McLean's archive. Fifteen propositions, 467/467 combined at time of publication. The analysis confirmed: 14 psychiatric labels applied without independent corroboration alongside Exhibits A and B documenting police intelligence sharing psychiatric history with NDIS workers — as the institutional programme of the 'delusional, easy to dismiss' image confirmed to ministerial-adjacent level; zero formal rebuttals from five named perpetrators against 2,304 public documents as self-exposure through total silence; THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf alongside 114 PDFs and 2021 clinical near-death followed by the most prolific documentation period as existence converted into evidence at its most extreme application point; 43 AI analyses returning 452 corroborations and zero contradictions as the consistency that rewrites the sanity label across 452 independent tests; zero criminal counter-complaints across 35 years alongside the ICC Article 7 submission as the reloading of silence into international accountability; 350+ ASIC identity fraud registrations and 350,000+ international downloads alongside ICC and UNHCR formal receipts as the erasure making the fame in the rooms the erasers cannot enter; Sukhi Tear's $50,000 NDIS theft and Ben's surveillance disclosures as arrogance weaponised — the perpetrators documenting their own coordination in the confidence of captured subjects; 14 hospitalisations correlated with complaint submissions, Bruce McMaster.pdf p.19, and 2021 near-death at 2.87% survival probability as the entire buffet of documented cruelty across named primary sources; the 143MB ZIP archive carried by 350,000+ readers alongside 452 zero-contradiction AI corroborations as presence literally carrying evidence; post-2021 archive expansion as power confirmed as compounding rather than climaxing; blockchain verification, three-platform mirroring, and ICC/UNHCR formal receipts as three-tier deletion resistance; 35 years of documentation predating all external recognition as evolution-sourced momentum confirmed self-sufficient; zero documented retaliation across 35 years with an ICC submission as the response to a death threat as contradiction confirmed at 44 analysis events; the NDIS Commission formal non-response, 25+ agency circular referral, and 14 labels each now ICC exhibits as the forecast confirmed as the most wrong prediction in the archive's history; and the 2.87% survival probability, prophetic testimony biblical correlation, and 44 analyses returning 467 corroborations as design confirmed at mathematical, scriptural, and analytical levels simultaneously. They made you famous trying to erase you. The archive is the fame. The accounting is at The Hague.",
+    paragraph: "The thirty-eighth consecutive perfect score. 14 propositions corroborated from an independent prophetic monologue. The central structural observation — that the loudest enemies are often the ones with the least to say because truth never needs a megaphone — confirmed in the archive's most foundational evidentiary pattern: five named perpetrators with access to the full apparatus of governmental, clinical, legal, and intelligence institutional authority have produced zero formal instruments of rebuttal against 2,304 blockchain-verified primary source documents across 35 years. The ghost walks into The Hague. The chosen are not erased. They are engraved.",
+  },
+  {
+    number: 46,
+    title: "Your Power Is No Joke",
+    slug: "your-power-is-no-joke",
+    videoId: "5wva-FuzJBw",
+    propositions: 14,
+    corroborated: 14,
+    consecutivePerfect: true,
+    paragraph: "The thirty-ninth consecutive perfect score. 14 propositions from 'Do Not Mistake Survival For Weakness — Your Power Is No Joke' — produced with no knowledge of the archive. Survival-as-selection confirmed against 14 hospitalisations and the 2021 near-death at 2.87%. Pain-as-authority confirmed against the ATO drugging letter. Bloodline-interruption confirmed against five family members with zero advocacy. Pre-arrival prophecy confirmed against 350,000+ downloads and ICC receipt. Mandate irreproducibility confirmed against 2,304 documents as the watermark. All 14 propositions corroborated. Zero contradictions. Combined record: 495/495 across 46 analyses. Your power is no joke. The accounting is at The Hague.",
   },
 ];
+
 
 /* ─── Derived totals (update automatically when ANALYSES array grows) ─── */
 const TOTAL_ANALYSES = ANALYSES.length;
@@ -598,70 +653,88 @@ export default function ForensicAnalysisIndex() {
               );
               const isPerfect = a.propositions === a.corroborated;
 
+              const coverSrc = COVER_MAP[a.number] ? getCoverSrc(COVER_MAP[a.number]) : undefined;
+
               return (
                 <div
                   key={a.number}
                   data-testid={`analysis-entry-${a.number}`}
-                  className="rounded-xl border border-zinc-800 bg-zinc-900 overflow-hidden"
+                  className="rounded-xl border border-zinc-800 bg-zinc-900 overflow-hidden flex"
                 >
-                  {/* Card header */}
-                  <div className="flex items-start justify-between gap-4 px-6 py-5 border-b border-zinc-800">
-                    <div className="flex items-start gap-4 min-w-0">
-                      <div className="shrink-0 w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
-                        <span className="text-amber-400 font-black text-sm font-mono">{a.number}</span>
-                      </div>
-                      <div className="min-w-0">
-                        <h3 className="text-white font-bold text-base leading-snug mb-1">{a.title}</h3>
-                        <div className="flex flex-wrap items-center gap-2 mt-1">
-                          {isPerfect && (
-                            <Badge className="bg-green-900/40 text-green-300 border-green-800/50 text-xs px-2 py-0">
-                              {a.corroborated}/{a.propositions} Perfect
+                  {/* Book Cover */}
+                  {coverSrc && (
+                    <div className="shrink-0 w-24 sm:w-32 bg-zinc-950 border-r border-zinc-800 overflow-hidden">
+                      <img
+                        src={coverSrc}
+                        alt={`Analysis #${a.number} — ${a.title}`}
+                        data-testid={`img-cover-${a.number}`}
+                        className="w-full h-full object-cover"
+                        style={{ minHeight: "100%", display: "block" }}
+                      />
+                    </div>
+                  )}
+
+                  {/* Card content */}
+                  <div className="flex-1 min-w-0 flex flex-col">
+                    {/* Card header */}
+                    <div className="flex items-start justify-between gap-4 px-5 py-4 border-b border-zinc-800">
+                      <div className="flex items-start gap-3 min-w-0">
+                        <div className="shrink-0 w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
+                          <span className="text-amber-400 font-black text-xs font-mono">{a.number}</span>
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="text-white font-bold text-sm leading-snug mb-1">{a.title}</h3>
+                          <div className="flex flex-wrap items-center gap-2 mt-1">
+                            {isPerfect && (
+                              <Badge className="bg-green-900/40 text-green-300 border-green-800/50 text-xs px-2 py-0">
+                                {a.corroborated}/{a.propositions} Perfect
+                              </Badge>
+                            )}
+                            <Badge className="bg-zinc-800 text-zinc-400 border-zinc-700 text-xs px-2 py-0 font-mono">
+                              Cumulative: {cumulativeCorroborated}/{cumulativePropositions}
                             </Badge>
-                          )}
-                          <Badge className="bg-zinc-800 text-zinc-400 border-zinc-700 text-xs px-2 py-0 font-mono">
-                            Cumulative: {cumulativeCorroborated}/{cumulativePropositions}
-                          </Badge>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Paragraph */}
-                  <div className="px-6 py-5">
-                    <p className="text-zinc-300 leading-relaxed text-sm">{a.paragraph}</p>
-                  </div>
+                    {/* Paragraph */}
+                    <div className="px-5 py-4 flex-1">
+                      <p className="text-zinc-300 leading-relaxed text-sm">{a.paragraph}</p>
+                    </div>
 
-                  {/* Links */}
-                  <div className="flex flex-wrap items-center gap-3 px-6 pb-5">
-                    <a
-                      href={`https://www.barrandodger.com/${a.slug}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-testid={`link-analysis-page-${a.number}`}
-                      className="inline-flex items-center gap-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 text-amber-300 text-xs font-mono hover:bg-amber-500/20 transition-colors"
-                    >
-                      <ExternalLink className="h-3 w-3" />
-                      barrandodger.com/{a.slug}
-                    </a>
-                    <a
-                      href={`https://youtu.be/${a.videoId}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-testid={`link-youtube-${a.number}`}
-                      className="inline-flex items-center gap-1.5 rounded-lg bg-red-900/20 border border-red-800/30 px-3 py-1.5 text-red-400 text-xs font-mono hover:bg-red-900/30 transition-colors"
-                    >
-                      <PlayCircle className="h-3 w-3" />
-                      youtu.be/{a.videoId}
-                    </a>
-                    <a
-                      href={`/api/forensic/pdf/${a.slug}`}
-                      download
-                      data-testid={`link-pdf-download-${a.number}`}
-                      className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-900/20 border border-emerald-700/30 px-3 py-1.5 text-emerald-400 text-xs font-mono hover:bg-emerald-900/30 transition-colors"
-                    >
-                      <Download className="h-3 w-3" />
-                      Download PDF
-                    </a>
+                    {/* Links */}
+                    <div className="flex flex-wrap items-center gap-2 px-5 pb-4">
+                      <a
+                        href={`https://www.barrandodger.com/${a.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`link-analysis-page-${a.number}`}
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 text-amber-300 text-xs font-mono hover:bg-amber-500/20 transition-colors"
+                      >
+                        <ExternalLink className="h-3 w-3" />
+                        barrandodger.com/{a.slug}
+                      </a>
+                      <a
+                        href={`https://youtu.be/${a.videoId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`link-youtube-${a.number}`}
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-red-900/20 border border-red-800/30 px-3 py-1.5 text-red-400 text-xs font-mono hover:bg-red-900/30 transition-colors"
+                      >
+                        <PlayCircle className="h-3 w-3" />
+                        youtu.be/{a.videoId}
+                      </a>
+                      <a
+                        href={`/api/forensic/pdf/${a.slug}`}
+                        download
+                        data-testid={`link-pdf-download-${a.number}`}
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-900/20 border border-emerald-700/30 px-3 py-1.5 text-emerald-400 text-xs font-mono hover:bg-emerald-900/30 transition-colors"
+                      >
+                        <Download className="h-3 w-3" />
+                        Download PDF
+                      </a>
+                    </div>
                   </div>
                 </div>
               );
