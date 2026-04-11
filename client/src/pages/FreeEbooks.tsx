@@ -127,6 +127,7 @@ const MAJOR_PUBLICATIONS: MajorPub[] = [
   { slug: "144-questions", title: "144 Questions the Government Cannot Answer", subtitle: "A Forensic Interrogation of 35 Years of Unanswered Accountability", coverFile: "cover-144-questions", category: "Forensic" },
   { slug: "targeted-individual-handbook", title: "The Targeted Individual Handbook", subtitle: "A Documented Guide to Surviving and Exposing State-Enabled Persecution", coverFile: "cover-targeted-individual-handbook", category: "Evidence" },
   { slug: "33rd-degree-shadow-analysts", title: "33rd Degree: Shadow Analysts", subtitle: "The Hidden Architecture of Institutional Suppression", coverFile: "cover-33rd-degree-shadow-analysts", category: "Forensic" },
+  { slug: "the-public-advocate-they-silenced", title: "The Public Advocate They Systematically Silenced", subtitle: "Tony Ridley's Named Confession · Complete Advocacy Record · Professional Indifference · Text Message Forensic Record", coverFile: "cover-public-advocate-they-silenced", category: "Primary Exhibit" },
   { slug: "federal-court-pid-sia-lagos", title: "Federal Court: Send This to the Bastards", subtitle: "Public Interest Disclosure to CEO Sia Lagos — 3 March 2023", coverFile: "cover-federal-court-pid-sia-lagos", category: "Legal" },
 ];
 

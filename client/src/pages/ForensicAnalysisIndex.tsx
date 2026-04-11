@@ -1,4 +1,4 @@
-import { ExternalLink, PlayCircle, Shield, FileText, TrendingUp, BookOpen, Download } from "lucide-react";
+import { ExternalLink, PlayCircle, Shield, FileText, TrendingUp, BookOpen, Download, Mic, AlertTriangle } from "lucide-react";
 import imgBlockchainArchive from "@/assets/images/blockchain-archive-infinite.png";
 
 const allCovers = import.meta.glob<{ default: string }>('../assets/images/cover-*.png', { eager: true });
@@ -772,6 +772,69 @@ export default function ForensicAnalysisIndex() {
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        {/* ── PRIMARY FORENSIC EXHIBIT: ADVOCACY RECORD ── */}
+        <section className="px-6 pb-12">
+          <div className="mx-auto max-w-3xl">
+            <div className="mb-4">
+              <h2 className="text-xs uppercase tracking-widest text-violet-400 font-mono font-bold">Primary Forensic Exhibit</h2>
+            </div>
+            <div className="rounded-xl border-2 border-violet-700/40 bg-zinc-900 overflow-hidden">
+              <div className="bg-violet-950/30 border-b border-violet-700/30 px-5 py-3 flex items-center gap-3 flex-wrap">
+                <Badge className="bg-violet-500/15 text-violet-300 border-violet-500/30 text-xs font-mono">NON-VIDEO EVIDENCE</Badge>
+                <Badge className="bg-red-500/15 text-red-300 border-red-500/30 text-xs font-mono">TONY RIDLEY — NAMED CONFESSION</Badge>
+                <Badge className="bg-amber-500/15 text-amber-300 border-amber-500/30 text-xs font-mono">COMPLETE ADVOCACY RECORD</Badge>
+              </div>
+              <div className="flex">
+                <div className="shrink-0 w-24 sm:w-32 bg-zinc-950 border-r border-zinc-800 overflow-hidden">
+                  {getCoverSrc('cover-public-advocate-they-silenced') && (
+                    <img
+                      src={getCoverSrc('cover-public-advocate-they-silenced')}
+                      alt="The Public Advocate They Silenced — Primary Forensic Exhibit"
+                      data-testid="img-cover-primary-exhibit"
+                      className="w-full h-full object-cover"
+                      style={{ minHeight: "100%", display: "block" }}
+                    />
+                  )}
+                </div>
+                <div className="flex-1 min-w-0 flex flex-col">
+                  <div className="px-5 py-4 border-b border-zinc-800">
+                    <div className="flex items-center gap-2 mb-2">
+                      <AlertTriangle className="h-4 w-4 text-red-400 shrink-0" />
+                      <Mic className="h-4 w-4 text-amber-400 shrink-0" />
+                    </div>
+                    <h3 className="text-white font-bold text-sm leading-snug">The Public Advocate They Systematically Silenced</h3>
+                    <p className="text-xs text-zinc-500 mt-1">Tony Ridley's named confession of the conspiracy network · Full 20-year advocacy record · Qualifications · PhD · Text message forensic record · The complete professional indifference document</p>
+                  </div>
+                  <div className="px-5 py-4 flex-1">
+                    <p className="text-zinc-300 leading-relaxed text-sm">
+                      This primary forensic exhibit documents the full testimony and advocacy record: Tony Ridley's direct confrontation and named confession — Steve Iasonidis, Debbie Morgan, Bruce McMaster, April McLean, Doug McLean, Jodie McLean, and Brad McLean named as participants in the deception programme — triggered by Dr. McLean's contact with former partner Alan Ridley (who travelled to Canada to support the North American release of "Recovered, Not Cured"). The exhibit documents the complete 20-year public advocacy record: Parliament House Canberra, McGill University Montreal, ABC National Radio National, The Today Show, Good Morning Australia, Reuters TV International, Triple J, Radio 3AW, Spectrum FM, Curtin Radio Perth, Triple R Melbourne, 2SM Sydney, Radio 2NUR Newcastle, ABC Radio 702 (James Valentine), ABC Gold & Sunshine Coasts, JOY FM, SBS Drug Debate, and 30+ additional radio, television, print media, and institutional presentations. It documents the complete qualifications record: BFA (Drawing Honours), CAAD, MEd (A/r/tography), PhD candidate (passed via merit-based scholarship) on young people's ethical opinions regarding AI, posthumanism, and superintelligence; illustrator for The Age and The Herald Sun; 25+ years professional arts practice; NDIS therapeutic arts-life coach. It documents the forensic text message record with Dr. McLean's mother over multiple years as a primary-source exhibit. And it documents the full professional indifference record: not one police officer, lawyer, politician, media representative, or public official who benefited from Dr. McLean's twenty years of radical public vulnerability and advocacy has acknowledged the record or admitted a single institutional shortcoming. The accounting is at The Hague.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 px-5 pb-4">
+                    <a
+                      href="/the-public-advocate-they-silenced"
+                      data-testid="link-primary-exhibit-page"
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-violet-500/10 border border-violet-500/30 px-3 py-1.5 text-violet-300 text-xs font-mono hover:bg-violet-500/20 transition-colors"
+                    >
+                      <ExternalLink className="h-3 w-3" />
+                      View Full Exhibit
+                    </a>
+                    <a
+                      href="/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf"
+                      download
+                      data-testid="link-text-message-pdf"
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-blue-900/20 border border-blue-700/30 px-3 py-1.5 text-blue-400 text-xs font-mono hover:bg-blue-900/30 transition-colors"
+                    >
+                      <Download className="h-3 w-3" />
+                      Text Message Record (PDF)
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

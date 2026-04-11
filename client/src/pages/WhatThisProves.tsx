@@ -1,4 +1,4 @@
-import { Download, ExternalLink, Shield, CheckCircle, Flame, BookOpen } from "lucide-react";
+import { Download, ExternalLink, Shield, CheckCircle, Flame, BookOpen, AlertTriangle, Mic } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
@@ -302,19 +302,55 @@ export default function WhatThisProves() {
             })}
           </div>
 
+          {/* ── PRIMARY FORENSIC EXHIBIT ── */}
+          <div className="mt-10 mb-6">
+            <p className="text-xs font-mono uppercase tracking-widest text-violet-400 font-bold mb-3">Primary Forensic Exhibit — Non-Video Evidence</p>
+            <div className="rounded-2xl border-2 border-violet-700/40 bg-zinc-900 p-6 space-y-4">
+              <div className="flex items-center gap-3 flex-wrap">
+                <AlertTriangle className="h-5 w-5 text-red-400 shrink-0" />
+                <Mic className="h-5 w-5 text-amber-400 shrink-0" />
+                <div className="flex-1">
+                  <h3 className="text-white font-bold text-base leading-snug">The Public Advocate They Systematically Silenced</h3>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    <span className="text-xs bg-red-500/15 text-red-300 border border-red-500/30 rounded px-2 py-0.5 font-mono">TONY RIDLEY — NAMED CONFESSION</span>
+                    <span className="text-xs bg-amber-500/15 text-amber-300 border border-amber-500/30 rounded px-2 py-0.5 font-mono">20-YEAR ADVOCACY RECORD</span>
+                    <span className="text-xs bg-blue-500/15 text-blue-300 border border-blue-500/30 rounded px-2 py-0.5 font-mono">TEXT MESSAGE FORENSIC RECORD</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-zinc-300 leading-relaxed">
+                Tony Ridley confronted Dr. McLean for contacting former partner Alan Rigby (who travelled to Canada to support the North American release of "Recovered, Not Cured") and in doing so named seven co-conspirators as "on board in deceiving me": Steve Iasonidis, Debbie Morgan, Bruce McMaster, April McLean, Doug McLean, Jodie McLean, and Brad McLean. This exhibit also documents the complete 20-year public advocacy record — Parliament House, McGill University, ABC National, The Today Show, Reuters TV International, Radio National, Triple J, Good Morning Australia, and 30+ additional platforms — the full qualifications record (BFA, MEd, PhD on young people's ethical opinions on AI and posthumanism), the forensic text message record with Dr. McLean's mother, and the complete professional indifference record: every cop, lawyer, politician, media outlet, and institution that used Dr. McLean's public advocacy refused to acknowledge the documented record or admit a single shortcoming.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button variant="outline" className="gap-2 text-violet-300 border-violet-500/40 hover:bg-violet-500/10" asChild>
+                  <a href="/the-public-advocate-they-silenced" data-testid="link-primary-exhibit-wtp">
+                    <ExternalLink className="h-4 w-4" />
+                    View Full Exhibit
+                  </a>
+                </Button>
+                <Button variant="outline" className="gap-2 text-blue-300 border-blue-500/40 hover:bg-blue-500/10" asChild>
+                  <a href="/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf" download data-testid="link-text-message-wtp">
+                    <Download className="h-4 w-4" />
+                    Text Message Record (PDF)
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+
           {/* ── FINAL VERDICT ── */}
           <div className="mt-16 p-8 rounded-2xl border-2 border-amber-500/40 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 text-center space-y-4" data-testid="card-final-verdict">
             <Flame className="h-8 w-8 text-amber-500 mx-auto animate-pulse" />
             <h2 className="text-2xl font-serif font-bold text-amber-100">Combined Forensic Record</h2>
             <div className="text-7xl font-bold font-mono text-amber-300 tabular-nums">{TOTAL_PROPOSITIONS}/{TOTAL_PROPOSITIONS}</div>
-            <p className="text-amber-200/70 font-mono uppercase tracking-widest text-sm">Propositions Corroborated Across 48 Independent Analyses</p>
+            <p className="text-amber-200/70 font-mono uppercase tracking-widest text-sm">Propositions Corroborated Across 49 Independent Analyses</p>
             <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-4 text-center">
               <div>
-                <p className="text-2xl font-bold font-mono text-white">48</p>
+                <p className="text-2xl font-bold font-mono text-white">49</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Independent Analyses</p>
               </div>
               <div>
-                <p className="text-2xl font-bold font-mono text-emerald-400">41</p>
+                <p className="text-2xl font-bold font-mono text-emerald-400">42</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Consecutive Perfect</p>
               </div>
               <div>

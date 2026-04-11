@@ -456,6 +456,12 @@ uri = "file://client/src/assets/images/cover-they-dug-for-dirt-but-unearthed-dia
 type = "image"
 title = "they dug for dirt unearthed diamonds cover"
 
+[[generated]]
+id = "EKNlos99V1o4owWQUsRyo"
+uri = "file://client/src/assets/images/cover-public-advocate-they-silenced.png"
+type = "image"
+title = "public advocate they silenced cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
