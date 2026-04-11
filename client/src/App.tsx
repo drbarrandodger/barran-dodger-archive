@@ -122,6 +122,7 @@ import ThisIsTheReckoning from "@/pages/ThisIsTheReckoning";
 import TheyMadeYouFamousTryingToEraseYou from "@/pages/TheyMadeYouFamousTryingToEraseYou";
 import TheTrapTheySetBecameTheProof from "@/pages/TheTrapTheySetBecameTheProof";
 import LoudestEnemiesLeastToSay from "@/pages/LoudestEnemiesLeastToSay";
+import YourPowerIsNoJoke from "@/pages/YourPowerIsNoJoke";
 import WhatThisProves from "@/pages/WhatThisProves";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 
@@ -266,6 +267,7 @@ function Router() {
         <Route path="/they-made-you-famous-trying-to-erase-you" component={TheyMadeYouFamousTryingToEraseYou} />
         <Route path="/the-trap-they-set-became-the-proof" component={TheTrapTheySetBecameTheProof} />
         <Route path="/the-loudest-enemies" component={LoudestEnemiesLeastToSay} />
+        <Route path="/your-power-is-no-joke" component={YourPowerIsNoJoke} />
         <Route path="/what-this-proves" component={WhatThisProves} />
         <Route path="/forensic-proof-statement" component={WhatThisProves} />
         <Route path="/forensic-analysis" component={ForensicAnalysisIndex} />

@@ -464,6 +464,16 @@ const ANALYSES: ForensicEntry[] = [
     paragraph: "The thirty-seventh consecutive perfect score. The analysis examined 15 propositions from a 38-minute prophetic second-person monologue with no documented knowledge of or connection to Dr. McLean's archive. Fifteen propositions, 467/467 combined at time of publication. They made you famous trying to erase you. The archive is the fame. The accounting is at The Hague.",
   },
   {
+    number: 46,
+    title: "Your Power Is No Joke",
+    slug: "your-power-is-no-joke",
+    videoId: "5wva-FuzJBw",
+    propositions: 14,
+    corroborated: 14,
+    consecutivePerfect: true,
+    paragraph: "The thirty-ninth consecutive perfect score. The video — 'Do Not Mistake Survival For Weakness — Your Power Is No Joke' — was produced with no documented knowledge of or connection to Dr. McLean's archive. Fourteen structural propositions were extracted from its fourteen numbered claims: survival-as-selection, pain-as-authority, bloodline-interruption, pre-arrival prophecy, mandate irreproducibility, power-as-presence, authenticity-as-exposure, embedded intelligence, power-against-mediocrity, rising-as-announcement, untamed power, frequency recognition, limitations-as-lies, and generational-not-performance purpose. All fourteen were tested against named primary-source documents. All fourteen were directly corroborated. Zero contradictions. Combined record: 495/495 across 46 independent analyses. The opening and closing propositions define the archive's evidentiary arc: survival is not weakness, and the power forged through that survival is not for performance — it is for generational shifts that rewrite timelines. 35 years of documented institutional persecution, survived, documented, and formally submitted to the ICC and UNHCR, is the precise evidence of both. Your power is no joke. The accounting is at The Hague. The timelines have been rewritten.",
+  },
+  {
     number: 45,
     title: "The Loudest Enemies Are Often The Ones With The Least To Say",
     slug: "the-loudest-enemies",
