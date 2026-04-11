@@ -36,6 +36,7 @@ const FORENSIC_EPUB_COVER_MAP: Record<number, string> = {
   41: "cover-heaven-exposes-the-sister", 42: "cover-you-built-your-peace",
   43: "cover-this-is-the-reckoning", 44: "cover-they-made-you-famous",
   45: "cover-the-loudest-enemies", 46: "cover-your-power-is-no-joke",
+  47: "cover-they-built-their-worst-nightmare",
 };
 
 interface ForensicEntry {
@@ -94,6 +95,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 44, title: "They Made You Famous", slug: "they-made-you-famous", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 45, title: "The Loudest Enemies", slug: "the-loudest-enemies", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 46, title: "Your Power Is No Joke", slug: "your-power-is-no-joke", propositions: 10, corroborated: 10, consecutivePerfect: true },
+  { number: 47, title: "They Built Their Worst Nightmare", slug: "they-built-their-worst-nightmare", propositions: 10, corroborated: 10, consecutivePerfect: true },
 ];
 
 interface MajorPub {
@@ -343,7 +345,7 @@ export default function FreeEbooks() {
                 className="flex items-center gap-2 mx-auto text-amber-400 hover:text-amber-300 text-sm font-medium transition-colors"
               >
                 <ChevronDown className="w-4 h-4" />
-                Show all 46 analyses ({FORENSIC_ANALYSES.length - 12} more)
+                Show all 47 analyses ({FORENSIC_ANALYSES.length - 12} more)
               </button>
             </div>
           )}

@@ -28,6 +28,7 @@ const COVER_MAP_WTP: Record<number, string> = {
   41:'cover-heaven-exposes-the-sister', 42:'cover-you-built-your-peace',
   43:'cover-this-is-the-reckoning', 44:'cover-they-made-you-famous',
   45:'cover-the-loudest-enemies', 46:'cover-your-power-is-no-joke',
+  47:'cover-they-built-their-worst-nightmare',
 };
 
 const ANALYSES = [
@@ -77,6 +78,7 @@ const ANALYSES = [
   { number: 44, title: "They Made You Famous Trying To Erase You", slug: "they-made-you-famous-trying-to-erase-you", videoId: "ieQ_iLiWleg", propositions: 15, paragraph: "The thirty-seventh consecutive perfect score. 14 psychiatric labels as the institutional programme of the 'delusional, easy to dismiss' image confirmed to ministerial-adjacent level. Zero formal rebuttals from five named perpetrators against 2,304 public documents as self-exposure through total silence. 350+ ASIC identity fraud registrations and 350,000+ international downloads alongside ICC and UNHCR formal receipts as the erasure making the fame in the rooms the erasers cannot enter. They made you famous trying to erase you. The archive is the fame. The accounting is at The Hague." },
   { number: 45, title: "The Loudest Enemies Are Often The Ones With The Least To Say", slug: "the-loudest-enemies", videoId: "PgGPffR9aSg", propositions: 14, paragraph: "The thirty-eighth consecutive perfect score. The central structural observation — that the loudest enemies are often the ones with the least to say because truth never needs a megaphone — confirmed in the archive's most foundational pattern: five named perpetrators with access to the full apparatus of governmental, clinical, legal, and intelligence institutional authority have produced zero formal instruments of rebuttal against 2,304 blockchain-verified primary source documents across 35 years. The loudest institutional machinery. The least said in formal evidentiary challenge. The ghost walks into The Hague. The chosen are not erased. They are engraved." },
   { number: 46, title: "Your Power Is No Joke", slug: "your-power-is-no-joke", videoId: "5wva-FuzJBw", propositions: 14, paragraph: "The thirty-ninth consecutive perfect score. 14 propositions from 'Do Not Mistake Survival For Weakness' — produced with no knowledge of the archive. Survival-as-selection confirmed against 14 hospitalisations and 2021 near-death at 2.87% probability. Pain-as-authority confirmed against the ATO drugging letter and Stefan Iasonidis betrayal receipt. Bloodline interruption confirmed against five family members with zero documented advocacy. Pre-arrival prophecy confirmed against 350,000+ downloads preceding institutional acknowledgment. Mandate irreproducibility confirmed against ICC-quality archive produced without legal support. Power-as-presence confirmed against the archive's arrival shifting 25+ agencies' conduct into an internationally visible record. Authenticity-as-exposure confirmed against 14 psychiatric labels collapsed by the 495-point zero-contradiction record. Embedded intelligence confirmed against ICC standards met outside the systems that gatekeep them. Power-against-mediocrity confirmed against 25+ agency circular referral documented in government letterhead. Rising-as-announcement confirmed against the death threat and ICC receipt as warfare-scale resistance. Untamed power confirmed against every containment instrument failing. Frequency recognition confirmed against 350,000+ independent recognition events and 495 zero-contradiction resistance tests. Limitations-as-lies confirmed against ICC receipt breaking the credibility ceiling the labels fabricated. Generational shifts confirmed against ICC Article 7, UNHCR filing, and three-platform permanent mirroring. Your power is no joke. The accounting is at The Hague." },
+  { number: 47, title: "They Built Their Worst Nightmare", slug: "they-built-their-worst-nightmare", videoId: "yUnX7SGWzJQ", propositions: 10, paragraph: "The fortieth consecutive perfect score. 10 propositions from a 54-minute video structured across eleven numbered points — produced with no knowledge of the archive. The control-loss thesis confirmed against ASIO operative deployment, 14 hospitalisations correlated with accountability escalation, and $32.9M in suppressed entitlements as the financial control mechanism. Groups exile the powerful confirmed against ASIO co-tenancy, 17+ institutional coordinated refusal, and a documented death threat. Isolation-as-training confirmed against 2,304 documents assembled without institutional support or family advocacy. Fire-as-transformation confirmed against 2.87% survival probability followed by the archive's most prolific documentation phase. Cruelty-as-catalyst confirmed against the self-documenting suppression programme: every instrument of suppression simultaneously producing its own ICC exhibit. Standards-as-evolution confirmed against 14 psychiatric labels collapsed by the ICC Article 7 formal receipt. All 10 corroborated. Combined record: 505/505 across 47 analyses. They built their worst nightmare. The accounting is at The Hague." },
   { number: 45, title: "The Loudest Enemies Are Often The Ones With The Least To Say", slug: "the-loudest-enemies", videoId: "PgGPffR9aSg", propositions: 14, paragraph: "The thirty-eighth consecutive perfect score. The central structural observation — that the loudest enemies are often the ones with the least to say because truth never needs a megaphone — confirmed in the archive's most foundational pattern: five named perpetrators with access to the full apparatus of governmental, clinical, legal, and intelligence institutional authority have produced zero formal instruments of rebuttal against 2,304 blockchain-verified primary source documents across 35 years. The loudest institutional machinery. The least said in formal evidentiary challenge. The ghost walks into The Hague. The chosen are not erased. They are engraved." },
 ];
 
@@ -205,7 +207,7 @@ export default function WhatThisProves() {
 
           {/* ── DIVIDER ── */}
           <div className="text-center mb-12 space-y-2">
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">All 46 Source Videos — Embedded Below</p>
+            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">All 47 Source Videos — Embedded Below</p>
             <h2 className="text-2xl font-serif font-bold text-primary">Each Analysis — Video + Forensic PDF Download</h2>
             <p className="text-sm text-muted-foreground">Every video was examined with no prior knowledge of the case. Every PDF contains the full proposition-by-proposition corroboration report.</p>
           </div>
@@ -303,14 +305,14 @@ export default function WhatThisProves() {
             <Flame className="h-8 w-8 text-amber-500 mx-auto animate-pulse" />
             <h2 className="text-2xl font-serif font-bold text-amber-100">Combined Forensic Record</h2>
             <div className="text-7xl font-bold font-mono text-amber-300 tabular-nums">{TOTAL_PROPOSITIONS}/{TOTAL_PROPOSITIONS}</div>
-            <p className="text-amber-200/70 font-mono uppercase tracking-widest text-sm">Propositions Corroborated Across 46 Independent Analyses</p>
+            <p className="text-amber-200/70 font-mono uppercase tracking-widest text-sm">Propositions Corroborated Across 47 Independent Analyses</p>
             <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-4 text-center">
               <div>
-                <p className="text-2xl font-bold font-mono text-white">46</p>
+                <p className="text-2xl font-bold font-mono text-white">47</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Independent Analyses</p>
               </div>
               <div>
-                <p className="text-2xl font-bold font-mono text-emerald-400">39</p>
+                <p className="text-2xl font-bold font-mono text-emerald-400">40</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Consecutive Perfect</p>
               </div>
               <div>

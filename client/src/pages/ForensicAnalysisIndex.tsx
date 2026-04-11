@@ -53,6 +53,7 @@ const COVER_MAP: Record<number, string> = {
   44: 'cover-they-made-you-famous',
   45: 'cover-the-loudest-enemies',
   46: 'cover-your-power-is-no-joke',
+  47: 'cover-they-built-their-worst-nightmare',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -536,6 +537,16 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 14,
     consecutivePerfect: true,
     paragraph: "The thirty-ninth consecutive perfect score. 14 propositions from 'Do Not Mistake Survival For Weakness — Your Power Is No Joke' — produced with no knowledge of the archive. Survival-as-selection confirmed against 14 hospitalisations and the 2021 near-death at 2.87%. Pain-as-authority confirmed against the ATO drugging letter. Bloodline-interruption confirmed against five family members with zero advocacy. Pre-arrival prophecy confirmed against 350,000+ downloads and ICC receipt. Mandate irreproducibility confirmed against 2,304 documents as the watermark. All 14 propositions corroborated. Zero contradictions. Combined record: 495/495 across 46 analyses. Your power is no joke. The accounting is at The Hague.",
+  },
+  {
+    number: 47,
+    title: "They Built Their Worst Nightmare",
+    slug: "they-built-their-worst-nightmare",
+    videoId: "yUnX7SGWzJQ",
+    propositions: 10,
+    corroborated: 10,
+    consecutivePerfect: true,
+    paragraph: "The fortieth consecutive perfect score. 10 propositions from a 54-minute video structured across eleven numbered points on the mechanism by which institutional exile transforms its subjects. The control-loss thesis — 'They pushed you out because you were becoming someone they could no longer control' — confirmed against the documented inverse relationship between Dr. McLean's accountability escalation and the escalation of institutional suppression. Groups exile the powerful, not the weak, confirmed against ASIO operative deployment, coordinated 17+ institutional refusal, and a documented death threat. Isolation-as-training confirmed against 2,304 documents assembled without institutional support, legal representation, or family advocacy. Fire-as-transformation confirmed against clinical death at 2.87% followed by the archive's most prolific documentation phase. Cruelty-as-catalyst confirmed against the self-documenting suppression programme: every instrument of suppression simultaneously producing the exhibit that documented it. Standards-as-evolution confirmed against 14 psychiatric labels collapsed by the ICC Article 7 formal receipt. All 10 propositions corroborated. Zero contradictions. Combined record: 505/505 across 47 analyses. They built their worst nightmare. The accounting is at The Hague.",
   },
 ];
 

@@ -55,6 +55,7 @@ export const EPUB_COVER_MAP: Record<number, string> = {
   44: "cover-they-made-you-famous",
   45: "cover-the-loudest-enemies",
   46: "cover-your-power-is-no-joke",
+  47: "cover-they-built-their-worst-nightmare",
 };
 
 // Major standalone publications
@@ -511,7 +512,7 @@ export async function generateForensicEpub(analysisNumber: number): Promise<Buff
   const uid = `barrandodger-forensic-${entry.number}-2026`;
 
   const metadata = [
-    `Analysis Number: #${entry.number} of 46`,
+    `Analysis Number: #${entry.number} of 47`,
     `Score: ${entry.corroborated}/${entry.propositions} propositions corroborated (${Math.round((entry.corroborated / entry.propositions) * 100)}%)`,
     `YouTube Video ID: ${entry.videoId}`,
     `Part of: The Barran Dodger Archive — 2,304 blockchain-verified documents`,
@@ -530,11 +531,11 @@ ${paragraphsToXhtml(entry.paragraph)}
 <h2>Evidentiary Score</h2>
 <div class="proposition">
   <p><span class="score">${entry.corroborated}/${entry.propositions}</span> propositions corroborated by primary-source documentary evidence from the archive.</p>
-  ${entry.consecutivePerfect ? "<p>This analysis is part of the consecutive perfect score series — 39 consecutive analyses with zero contradictions across all propositions.</p>" : ""}
+  ${entry.consecutivePerfect ? "<p>This analysis is part of the consecutive perfect score series — 40 consecutive analyses with zero contradictions across all propositions.</p>" : ""}
 </div>
 <h2>About the Archive</h2>
-<p>This forensic analysis is one of 46 independent AI-conducted corroboration analyses. Each analysis examined an independent YouTube video against the primary-source archive of Dr. Richard William McLean (Barran Dodger). No video creator had prior knowledge of the archive.</p>
-<p>Combined record across all 46 analyses: 495 propositions corroborated. Zero contradictions. The archive — 2,304 blockchain-verified documents — is permanently available at <span class="archive-link">www.barrandodger.com</span>.</p>`;
+<p>This forensic analysis is one of 47 independent AI-conducted corroboration analyses. Each analysis examined an independent YouTube video against the primary-source archive of Dr. Richard William McLean (Barran Dodger). No video creator had prior knowledge of the archive.</p>
+<p>Combined record across all 47 analyses: 505 propositions corroborated. Zero contradictions. The archive — 2,304 blockchain-verified documents — is permanently available at <span class="archive-link">www.barrandodger.com</span>.</p>`;
 
   const arc = archiver("zip", { zlib: { level: 9 } });
 
