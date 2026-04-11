@@ -11,6 +11,7 @@ import { downloadCounts, downloadEvents, insertCommentSchema } from "@shared/sch
 import { api } from "@shared/routes";
 import { z } from "zod";
 import { FORENSIC_ANALYSES, generateForensicPDF, getForensicPdfFilename, preGenerateAllForensicPDFs } from "./forensicPdfGenerator";
+import { generateForensicEpub, generateMajorPublicationEpub, generateAllForensicEpubsBundle, MAJOR_PUBLICATIONS } from "./epubGenerator";
 
 function hashIp(ip: string): string {
   return createHash('sha256').update(ip + 'barran-dodger-salt-2026').digest('hex').slice(0, 16);
@@ -975,6 +976,81 @@ export async function registerRoutes(
       if (!res.headersSent) {
         res.status(500).json({ message: 'Download failed', error: err.message });
       }
+    }
+  });
+
+  // ─── EPUB Download Routes ───────────────────────────────────────────────────
+
+  // List all available EPUBs
+  app.get('/api/epub/list', (_req, res) => {
+    const forensicList = FORENSIC_ANALYSES.map(a => ({
+      type: 'forensic',
+      id: a.number,
+      slug: a.slug,
+      title: `Forensic Analysis #${a.number}: ${a.title}`,
+      score: `${a.corroborated}/${a.propositions}`,
+      downloadUrl: `/api/epub/forensic/${a.number}`,
+      filename: `Forensic-Analysis-${String(a.number).padStart(2, '0')}-${a.slug}.epub`,
+    }));
+    const publicationList = MAJOR_PUBLICATIONS.map(p => ({
+      type: 'publication',
+      slug: p.slug,
+      title: p.title,
+      subtitle: p.subtitle,
+      category: p.category,
+      downloadUrl: `/api/epub/publication/${p.slug}`,
+      filename: `${p.slug}.epub`,
+    }));
+    res.json({ forensicAnalyses: forensicList, majorPublications: publicationList });
+  });
+
+  // Download individual forensic analysis EPUB
+  app.get('/api/epub/forensic/:id', async (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    if (isNaN(id) || id < 1 || id > 46) {
+      return res.status(400).json({ message: 'Invalid analysis ID (1-46)' });
+    }
+    try {
+      const entry = FORENSIC_ANALYSES.find(a => a.number === id);
+      if (!entry) return res.status(404).json({ message: 'Analysis not found' });
+      const buffer = await generateForensicEpub(id);
+      const filename = `Forensic-Analysis-${String(id).padStart(2, '0')}-${entry.slug}.epub`;
+      res.setHeader('Content-Type', 'application/epub+zip');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.setHeader('Content-Length', buffer.length);
+      res.send(buffer);
+    } catch (err: any) {
+      res.status(500).json({ message: 'EPUB generation failed', error: err.message });
+    }
+  });
+
+  // Download individual major publication EPUB
+  app.get('/api/epub/publication/:slug', async (req, res) => {
+    const { slug } = req.params;
+    const pub = MAJOR_PUBLICATIONS.find(p => p.slug === slug);
+    if (!pub) return res.status(404).json({ message: 'Publication not found' });
+    try {
+      const buffer = await generateMajorPublicationEpub(slug);
+      const filename = `${slug}.epub`;
+      res.setHeader('Content-Type', 'application/epub+zip');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.setHeader('Content-Length', buffer.length);
+      res.send(buffer);
+    } catch (err: any) {
+      res.status(500).json({ message: 'EPUB generation failed', error: err.message });
+    }
+  });
+
+  // Download all 46 forensic analysis EPUBs as a ZIP bundle
+  app.get('/api/epub/forensic/all-bundle', async (_req, res) => {
+    try {
+      const buffer = await generateAllForensicEpubsBundle();
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="Barran-Dodger-All-46-Forensic-Analyses-EPUBs.zip"');
+      res.setHeader('Content-Length', buffer.length);
+      res.send(buffer);
+    } catch (err: any) {
+      res.status(500).json({ message: 'Bundle generation failed', error: err.message });
     }
   });
 

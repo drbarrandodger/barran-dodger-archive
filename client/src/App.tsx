@@ -35,6 +35,7 @@ import TaxpayerCostAnalysis from "@/pages/TaxpayerCostAnalysis";
 import Publications from "@/pages/Publications";
 import EvidenceVault from "@/pages/EvidenceVault";
 import Store from "@/pages/Store";
+import FreeEbooks from "@/pages/FreeEbooks";
 import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
 import RetrospectiveStatement from "@/pages/RetrospectiveStatement";
@@ -283,6 +284,7 @@ function Router() {
         <Route path="/whistleblower-comparison" component={WhistleblowerComparison} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
+        <Route path="/free-ebooks" component={FreeEbooks} />
         <Route component={ViralLanding} />
       </Switch>
     </>
