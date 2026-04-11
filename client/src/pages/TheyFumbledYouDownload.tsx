@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ExternalLink, ChevronDown, ChevronUp, Shield, Download, Link as LinkIcon, AlertTriangle } from "lucide-react";
-import ViralDownloadButton from "@/components/ViralDownloadButton";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import coverImage from "../assets/images/cover-they-fumbled-you.png";
 
 const SHA256 = "ca39e892610f1ff46db2beb681925100f9b6195401bdcb4a4219373c229cb76f";
