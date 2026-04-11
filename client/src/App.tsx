@@ -126,6 +126,7 @@ import LoudestEnemiesLeastToSay from "@/pages/LoudestEnemiesLeastToSay";
 import YourPowerIsNoJoke from "@/pages/YourPowerIsNoJoke";
 import TheyBuiltTheirWorstNightmare from "@/pages/TheyBuiltTheirWorstNightmare";
 import QuietStormTheyNeverSawComing from "@/pages/QuietStormTheyNeverSawComing";
+import TheyDugForDirtButUnearthedDiamonds from "@/pages/TheyDugForDirtButUnearthedDiamonds";
 import WhatThisProves from "@/pages/WhatThisProves";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 
@@ -275,6 +276,8 @@ function Router() {
         <Route path="/forensic-analysis/they-built-their-worst-nightmare" component={TheyBuiltTheirWorstNightmare} />
         <Route path="/quiet-storm-they-never-saw-coming" component={QuietStormTheyNeverSawComing} />
         <Route path="/forensic-analysis/quiet-storm-they-never-saw-coming" component={QuietStormTheyNeverSawComing} />
+        <Route path="/they-dug-for-dirt-but-unearthed-diamonds" component={TheyDugForDirtButUnearthedDiamonds} />
+        <Route path="/forensic-analysis/they-dug-for-dirt-but-unearthed-diamonds" component={TheyDugForDirtButUnearthedDiamonds} />
         <Route path="/what-this-proves" component={WhatThisProves} />
         <Route path="/forensic-proof-statement" component={WhatThisProves} />
         <Route path="/forensic-analysis" component={ForensicAnalysisIndex} />

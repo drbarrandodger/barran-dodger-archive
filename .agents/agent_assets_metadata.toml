@@ -450,6 +450,12 @@ uri = "file://client/src/assets/images/cover-your-power-is-no-joke.png"
 type = "image"
 title = "your power is no joke cover"
 
+[[generated]]
+id = "LG-OepU4ncdeSJAD48ogv"
+uri = "file://client/src/assets/images/cover-they-dug-for-dirt-but-unearthed-diamonds.png"
+type = "image"
+title = "they dug for dirt unearthed diamonds cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

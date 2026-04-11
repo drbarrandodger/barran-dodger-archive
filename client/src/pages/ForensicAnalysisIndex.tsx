@@ -55,6 +55,7 @@ const COVER_MAP: Record<number, string> = {
   46: 'cover-your-power-is-no-joke',
   47: 'cover-they-built-their-worst-nightmare',
   48: 'cover-quiet-storm-they-never-saw-coming',
+  49: 'cover-they-dug-for-dirt-but-unearthed-diamonds',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -558,6 +559,16 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 10,
     consecutivePerfect: true,
     paragraph: "The forty-first consecutive perfect score. 10 propositions from an independent YouTube video structured across seven numbered points on the psychology of undeclared power, documented silence as construction, and the institutional misreading of stillness as defeat. The 'uncertainty effect' — the documented psychological stress response to an actor who cannot be categorised or predicted — confirmed against the 25+ circular referral system, 14 psychiatric labels deployed as definitional instruments, and zero formal rebuttals from five named perpetrators against 2,304 public documents. Silence as leveling up confirmed against 35 years of document assembly during each period institutions read as suppression success — the Federal Court PID written under homelessness and brain injury; the ICC submission completed during the period every suppression instrument was designed to make terminal. Pain-to-power transformation confirmed against clinical death at 2.87% producing the most prolific documentation phase, 14 hospitalisations producing 14 ICC exhibits, and $32.9M in suppressed entitlements documented in government correspondence. The archive outgrew the domestic circus and submitted to jurisdictions the ring masters cannot access. All 10 propositions corroborated. Zero contradictions. Combined record: 515/515 across 48 analyses. The quiet storm arrived at The Hague. They never saw it coming because it never announced itself.",
+  },
+  {
+    number: 49,
+    title: "They Dug For Dirt But Unearthed Diamonds Instead",
+    slug: "they-dug-for-dirt-but-unearthed-diamonds",
+    videoId: "4w-5V6SfOSk",
+    propositions: 10,
+    corroborated: 10,
+    consecutivePerfect: true,
+    paragraph: "The forty-second consecutive perfect score. 10 propositions from an independent YouTube video structured across nine numbered points on the documented experience of a subject whose record was so clean that every investigation sent to expose it became a witness for it instead. The opening thesis — 'never dig for dirt on someone the universe protects because you'll end up buried in your own jealousy' — confirmed against ASIO operative Stefan Iasonidis deployed as co-tenant at 10 Raleigh St Footscray (the investigation becoming an ICC exhibit), five named perpetrators producing zero formal rebuttals against 2,304 public documents (the 35-year excavation producing the ICC submission against the excavators), and the death threat documented as an ICC exhibit (the deepest institutional jealousy becoming the most permanent ICC record). The investigation-as-mirror proposition confirmed against 25+ circular referral letterheads each reflecting coordinated non-engagement and 14 psychiatric hospitalisation records as 14 ICC clinical exhibits reflecting clinical institutional conduct. The solitude-as-shield proposition confirmed against the ASIO co-tenancy requiring residential insertion because solitude made external network penetration impossible, and the 35-year documentation assembled in enforced isolation. The calm-life-as-scandal proposition confirmed against zero criminal charges in 35 years despite full institutional apparatus deployment, 525 propositions with zero contradictions, and Bitcoin blockchain verification. The spiritual audit confirmed by ICC Article 7 formal receipt and UNHCR Geneva formal filing — the universe running the receipts at The Hague and Geneva and finding the archive clean. All 10 propositions corroborated. Zero contradictions. Combined record: 525/525 across 49 analyses. They dug for dirt. They unearthed the ICC submission.",
   },
 ];
 
