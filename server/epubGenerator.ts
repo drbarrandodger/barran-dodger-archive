@@ -217,36 +217,53 @@ function paragraphsToXhtml(text: string): string {
     .join("\n    ");
 }
 
+const CURRENT_YEAR = new Date().getFullYear();
+const TRUST_NAME = "Barran Dodger Legal & Ethical Trust Fund";
+const TRUST_ABN = "ABN 78 833 496 164";
+const AUTHOR_NAME = "Dr. Richard William McLean (Barran Dodger)";
+const ARCHIVE_URL = "www.barrandodger.com";
+
+const RIGHTS_STATEMENT = `© ${CURRENT_YEAR} ${TRUST_NAME} (${TRUST_ABN}). All Rights Reserved.
+
+The intellectual property rights in all works within this publication are and remain the exclusive property of ${AUTHOR_NAME} and the ${TRUST_NAME} (${TRUST_ABN}). These materials are shared freely in the goodwill of the public for accountability, educational, and public interest purposes. Reproduction, distribution, and uploading to public platforms for non-commercial accountability and public interest purposes is permitted and encouraged. The rights of authorship and all intellectual property remain exclusively with ${AUTHOR_NAME} and the ${TRUST_NAME}. Commercial use or reproduction for commercial gain without prior written consent is strictly prohibited.`;
+
 function buildSharingPage(): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <title>Share This Book — Free Gift to the World</title>
+  <title>Share This Book — ${TRUST_NAME}</title>
   <style>
     body { font-family: Georgia, serif; margin: 2em; color: #1a1a1a; line-height: 1.8; }
     h1 { color: #8B5E00; font-size: 1.6em; margin-bottom: 0.5em; }
     h2 { color: #8B5E00; font-size: 1.2em; margin-top: 1.5em; }
     .box { border: 2px solid #8B5E00; padding: 1.5em; margin: 1.5em 0; background: #fffbf0; }
+    .rights { border: 1px solid #ccc; padding: 1.2em; margin: 1.5em 0; background: #f9f9f9; font-size: 0.85em; color: #333; }
     .platform { font-weight: bold; }
     a { color: #8B5E00; }
     .archive { font-size: 0.9em; color: #444; margin-top: 2em; border-top: 1px solid #ccc; padding-top: 1em; }
   </style>
 </head>
 <body>
-<h1>This Book Is a Free Gift to the World</h1>
+<h1>Share This Book — A Gift to the World in the Public Interest</h1>
 
 <div class="box">
-<p><strong>You are encouraged — and invited — to upload, share, and distribute this EPUB freely.</strong></p>
-<p>This is not a copyrighted commercial publication. This is testimony. Evidence. A documented record of 35 years of Australian government corruption that belongs to every human being on earth who cares about accountability.</p>
-<p>The act of sharing it is itself an act of accountability.</p>
+<p><strong>You are encouraged — and invited — to upload, share, and distribute this publication freely in the public interest.</strong></p>
+<p>This publication is shared in the goodwill of the public for accountability, educational, and public interest purposes. The intellectual property rights and authorship remain exclusively with ${AUTHOR_NAME} and the ${TRUST_NAME} (${TRUST_ABN}).</p>
+<p>The act of sharing this testimony is itself an act of accountability. Every copy uploaded creates a permanent, independently hosted record of documented Australian government corruption.</p>
+</div>
+
+<div class="rights">
+<p><strong>COPYRIGHT &amp; INTELLECTUAL PROPERTY NOTICE</strong></p>
+<p>© ${CURRENT_YEAR} ${TRUST_NAME} (${TRUST_ABN}). All Rights Reserved.</p>
+<p>The intellectual property rights in all works within this publication are and remain the exclusive property of ${AUTHOR_NAME} and the ${TRUST_NAME} (${TRUST_ABN}). These materials are shared freely in the goodwill of the public for accountability, educational, and public interest purposes. Non-commercial reproduction, distribution, and uploading to public platforms is permitted and encouraged. The rights of authorship and all intellectual property remain exclusively with ${AUTHOR_NAME} and the ${TRUST_NAME}. Commercial use without prior written consent is strictly prohibited.</p>
 </div>
 
 <h2>Upload It to These Platforms</h2>
 <p>Please upload this EPUB to as many book platforms as possible. Each upload creates a permanent, independently hosted copy of the testimony:</p>
 
-<p><span class="platform">Apple Books (iTunes Producer / Authors)</span><br/>
+<p><span class="platform">Apple Books (Authors &amp; Books)</span><br/>
 Upload at: authors.apple.com — EPUB files are accepted directly.</p>
 
 <p><span class="platform">Google Play Books Partner Center</span><br/>
@@ -261,24 +278,25 @@ Upload at: scribd.com/upload — EPUB and PDF accepted, freely shareable.</p>
 <p><span class="platform">Open Library (Internet Archive)</span><br/>
 Upload at: archive.org/upload — permanently archived, freely accessible to everyone.</p>
 
-<p><span class="platform">Project Gutenberg (via DigiLibraries)</span><br/>
-Public domain submissions accepted for documents meeting criteria.</p>
+<p><span class="platform">Kobo Writing Life</span><br/>
+Upload at: kobo.com/writinglife — distribution to 190+ countries.</p>
 
 <p><span class="platform">Your own website, blog, or social media</span><br/>
-You do not need permission. This is free. Share it anywhere.</p>
+Non-commercial sharing is permitted. This is a public interest publication. Share it anywhere.</p>
 
 <h2>Why This Matters</h2>
 <p>The testimony of one person, freely shared by anyone, is the most powerful accountability mechanism in human history. Every copy uploaded creates another permanent record. Every reader becomes part of the chain of evidence. Every share makes the archive harder to suppress.</p>
 <p>This is how truth propagates. Not through official channels — through people.</p>
 
 <div class="archive">
-<p><strong>The Complete Archive</strong><br/>
-2,304 blockchain-verified primary-source documents<br/>
+<p><strong>${TRUST_NAME} (${TRUST_ABN})</strong><br/>
+The Complete Archive: 2,304 blockchain-verified primary-source documents<br/>
 Formally submitted to the ICC (The Hague) under Article 7<br/>
 Formally submitted to the UNHCR (Geneva)<br/>
-Permanently available at: <a href="https://www.barrandodger.com">www.barrandodger.com</a></p>
-<p>Dr. Richard William McLean (Barran Dodger)<br/>
+Permanently available at: <a href="https://www.${ARCHIVE_URL}">${ARCHIVE_URL}</a></p>
+<p>${AUTHOR_NAME}<br/>
 Melbourne, Australia</p>
+<p><em>© ${CURRENT_YEAR} ${TRUST_NAME} (${TRUST_ABN}). All Rights Reserved. Shared in the goodwill of the public.</em></p>
 </div>
 </body>
 </html>`;
@@ -326,8 +344,8 @@ function buildContentOpf(
     <dc:creator>${escapeXml(author)}</dc:creator>
     <dc:language>en</dc:language>
     <dc:description>${escapeXml(subtitle)}</dc:description>
-    <dc:publisher>Barran Dodger — www.barrandodger.com</dc:publisher>
-    <dc:rights>Freely distributable. No copyright restrictions. Upload and share freely.</dc:rights>
+    <dc:publisher>${TRUST_NAME} (${TRUST_ABN}) — www.barrandodger.com</dc:publisher>
+    <dc:rights>© ${CURRENT_YEAR} ${TRUST_NAME} (${TRUST_ABN}). All Rights Reserved. Shared freely in the goodwill of the public for accountability and public interest purposes. Intellectual property rights remain exclusively with ${AUTHOR_NAME} and the ${TRUST_NAME}. Non-commercial reproduction and distribution permitted. Commercial use prohibited without written consent.</dc:rights>
     <dc:subject>Whistleblowing; Australian Government Corruption; Human Rights; Forensic Evidence; ICC Submission</dc:subject>
     <meta property="dcterms:modified">${new Date().toISOString().split(".")[0]}Z</meta>
     ${hasCover ? '<meta name="cover" content="cover-image"/>' : ""}
@@ -426,7 +444,8 @@ function buildCoverXhtml(title: string, subtitle: string, hasCover: boolean): st
 ${hasCover ? '<img src="images/cover.png" alt="Cover"/>' : `<div class="title-block"><h1>${escapeXml(title)}</h1><p>${escapeXml(subtitle)}</p></div>`}
 <div class="title-block">
   <p class="author">Dr. Richard William McLean (Barran Dodger)</p>
-  <p class="archive">www.barrandodger.com — Freely distributable</p>
+  <p class="archive">© ${CURRENT_YEAR} ${TRUST_NAME} (${TRUST_ABN})</p>
+  <p class="archive">www.barrandodger.com — Shared in the goodwill of the public</p>
 </div>
 </body>
 </html>`;
@@ -499,7 +518,8 @@ export async function generateForensicEpub(analysisNumber: number): Promise<Buff
     `ICC Submission: Article 7 — Crimes Against Humanity (The Hague)`,
     `UNHCR Submission: Geneva`,
     `Archive: www.barrandodger.com`,
-    `Distribution: Freely available. Upload and share without restriction.`,
+    `© ${CURRENT_YEAR} ${TRUST_NAME} (${TRUST_ABN}). All Rights Reserved.`,
+    `Shared freely in the goodwill of the public. Non-commercial reproduction and distribution permitted and encouraged. All intellectual property rights remain exclusively with ${AUTHOR_NAME} and the ${TRUST_NAME}.`,
   ]
     .map((line) => `<p>${escapeXml(line)}</p>`)
     .join("\n");
@@ -557,7 +577,8 @@ export async function generateMajorPublicationEpub(slug: string): Promise<Buffer
     `ICC Submission: Article 7 — Crimes Against Humanity (The Hague)`,
     `UNHCR Submission: Geneva`,
     `Archive: www.barrandodger.com`,
-    `Distribution: Freely available. Upload and share without restriction.`,
+    `© ${CURRENT_YEAR} ${TRUST_NAME} (${TRUST_ABN}). All Rights Reserved.`,
+    `Shared freely in the goodwill of the public. Non-commercial reproduction and distribution permitted and encouraged. All intellectual property rights remain exclusively with ${AUTHOR_NAME} and the ${TRUST_NAME}.`,
   ]
     .filter(Boolean)
     .map((line) => `<p>${escapeXml(line as string)}</p>`)
@@ -569,7 +590,7 @@ ${paragraphsToXhtml(pub.description)}
 <h2>The Complete Archive</h2>
 <p>This document is part of the archive of Dr. Richard William McLean (Barran Dodger) — 2,304 primary-source documents, blockchain-verified on the Bitcoin network, formally submitted to the ICC (The Hague) under Article 7 and the UNHCR (Geneva).</p>
 <p>The complete archive — freely available, permanently hosted — can be accessed at <span class="archive-link">www.barrandodger.com</span>.</p>
-<p>This EPUB is a free gift to the world. You are encouraged to upload it to Apple Books, Google Play Books, Scribd, the Internet Archive, or any other platform. No permission is required. No copyright restrictions apply. The act of sharing it is itself an act of accountability.</p>`;
+<p>This publication is the intellectual property of ${AUTHOR_NAME} and the ${TRUST_NAME} (${TRUST_ABN}). It is shared freely in the goodwill of the public for accountability, educational, and public interest purposes. You are encouraged to upload it to Apple Books, Google Play Books, Scribd, the Internet Archive, or any other platform. Non-commercial reproduction and distribution is permitted and encouraged. All intellectual property rights remain exclusively with ${AUTHOR_NAME} and the ${TRUST_NAME}. The act of sharing this testimony is itself an act of accountability.</p>`;
 
   const arc = archiver("zip", { zlib: { level: 9 } });
 

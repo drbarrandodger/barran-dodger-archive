@@ -259,10 +259,11 @@ export default function FreeEbooks() {
             <span className="text-zinc-100">Upload Them Everywhere.</span>
           </h1>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
-            Every book on this page is a free gift to humanity — no copyright, no restrictions,
-            no permission required. Download them. Upload them to Apple Books, Google Play,
-            Scribd, the Internet Archive. The testimony of one person, shared freely by anyone,
-            is the most powerful accountability mechanism in history.
+            Every book on this page is the intellectual property of the Barran Dodger Legal &amp;
+            Ethical Trust Fund (ABN 78 833 496 164) — shared freely in the goodwill of the public
+            for accountability and public interest purposes. Download them. Upload them to Apple Books,
+            Google Play, Scribd, the Internet Archive. All rights reserved. The testimony of one person,
+            freely shared by anyone, is the most powerful accountability mechanism in history.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-zinc-500">
             <span className="flex items-center gap-1"><BookOpen className="w-4 h-4 text-amber-600" /> 46 Forensic Analysis EPUBs</span>
@@ -418,10 +419,16 @@ export default function FreeEbooks() {
       <section className="py-12 px-4 border-b border-zinc-800 bg-zinc-900/30">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">How to Upload to Book Platforms</h2>
-          <p className="text-zinc-400 text-sm text-center mb-8 max-w-xl mx-auto">
+          <p className="text-zinc-400 text-sm text-center mb-4 max-w-xl mx-auto">
             No account needed to download. For uploading to platforms, most require a free account.
             All EPUBs are publication-ready with embedded covers and metadata.
           </p>
+          <div className="max-w-2xl mx-auto mb-8 border border-amber-600/20 bg-amber-600/5 rounded-lg px-5 py-3 text-xs text-zinc-500 text-center leading-relaxed">
+            <strong className="text-amber-500/80">Intellectual Property Notice:</strong> All publications are &copy; {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved.
+            Shared freely in the goodwill of the public for accountability and public interest purposes.
+            Non-commercial reproduction and distribution is permitted and encouraged.
+            All intellectual property rights remain exclusively with Dr. Richard William McLean (Barran Dodger) and the Trust.
+          </div>
           <div className="grid sm:grid-cols-2 gap-3">
             {UPLOAD_PLATFORMS.map((p) => (
               <a

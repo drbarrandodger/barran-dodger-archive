@@ -90,9 +90,10 @@ export function generateForensicPDF(analysis: ForensicEntry): Promise<Buffer> {
     margin: 50,
     info: {
       Title: `Forensic Analysis #${analysis.number}: ${analysis.title}`,
-      Author: "Dr. Richard McLean — Barran Dodger",
+      Author: "Dr. Richard William McLean (Barran Dodger)",
       Subject: "Forensic AI Corroboration Analysis — barrandodger.com",
       Keywords: "forensic analysis, corroboration, whistleblower, ICC, UNHCR, barran dodger",
+      Creator: "Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164)",
     },
   });
 
@@ -228,6 +229,11 @@ export function generateForensicPDF(analysis: ForensicEntry): Promise<Buffer> {
     .text(
       `Downloaded from www.barrandodger.com  |  ICC Article 7 Filed — The Hague  |  UNHCR Geneva Lodged  |  Blockchain Verified`,
       50, footerY + 42, { align: "center", width: W }
+    );
+  doc.fillColor(zinc).fontSize(6).font("Helvetica")
+    .text(
+      `© ${new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved. Shared in the goodwill of the public. Intellectual property rights remain exclusively with Dr. Richard William McLean (Barran Dodger) and the Trust.`,
+      50, footerY + 56, { align: "center", width: W }
     );
 
   doc.end();
