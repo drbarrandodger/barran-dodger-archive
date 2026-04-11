@@ -378,7 +378,7 @@ export default function TheyFumbledYouDownload() {
                     Watch Source Video
                   </Button>
                 </a>
-                <a href="/forensic-analysis-9-they-fumbled-you">
+                <a href="/they-fumbled-you">
                   <Button variant="outline" className="border-zinc-700 text-zinc-300 hover:bg-zinc-900">
                     View Full Analysis
                   </Button>

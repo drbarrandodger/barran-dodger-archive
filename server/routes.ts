@@ -871,7 +871,7 @@ export async function registerRoutes(
   app.get('/api/forensic/bundle', async (_req, res) => {
     try {
       res.setHeader('Content-Type', 'application/zip');
-      res.setHeader('Content-Disposition', 'attachment; filename="BarranDodger_44_Forensic_Analyses.zip"');
+      res.setHeader('Content-Disposition', 'attachment; filename="BarranDodger_49_Forensic_Analyses.zip"');
       res.setHeader('Cache-Control', 'no-store');
       const archive = archiver('zip', { zlib: { level: 1 } });
       archive.on('error', (err) => { if (!res.headersSent) res.status(500).end(); });
@@ -888,6 +888,15 @@ export async function registerRoutes(
           } catch { /* skip */ }
         }
       }
+      // Include full essay PDFs
+      try {
+        const quietStormBuf = await generateQuietStormFullEssayPDF();
+        archive.append(quietStormBuf, { name: 'forensic-analysis-48-quiet-storm-they-never-saw-coming-full-essay.pdf' });
+      } catch { /* skip */ }
+      try {
+        const fumbledYouBuf = await generateFumbledYouFullEssayPDF();
+        archive.append(fumbledYouBuf, { name: 'forensic-analysis-9-they-fumbled-you-full-essay.pdf' });
+      } catch { /* skip */ }
       await archive.finalize();
     } catch (err: any) {
       if (!res.headersSent) res.status(500).json({ message: 'Bundle failed', error: err.message });
@@ -974,6 +983,19 @@ export async function registerRoutes(
         }
       }
 
+      // Include full essay PDFs in the divine archive
+      const fullEssayFiles: { name: string }[] = [];
+      try {
+        const quietStormBuf = await generateQuietStormFullEssayPDF();
+        archive.append(quietStormBuf, { name: 'full-essays/forensic-analysis-48-quiet-storm-full-essay.pdf' });
+        fullEssayFiles.push({ name: 'full-essays/forensic-analysis-48-quiet-storm-full-essay.pdf' });
+      } catch { /* skip */ }
+      try {
+        const fumbledYouBuf = await generateFumbledYouFullEssayPDF();
+        archive.append(fumbledYouBuf, { name: 'full-essays/forensic-analysis-9-they-fumbled-you-full-essay.pdf' });
+        fullEssayFiles.push({ name: 'full-essays/forensic-analysis-9-they-fumbled-you-full-essay.pdf' });
+      } catch { /* skip */ }
+
       // Manifest file
       const manifestLines = [
         'BARRAN DODGER — DIVINE JUSTICE ARCHIVE',
@@ -990,6 +1012,7 @@ export async function registerRoutes(
         'WHAT THIS ARCHIVE CONTAINS:',
         '───────────────────────────',
         ...pdfFiles.map((f, i) => `${String(i + 1).padStart(3, ' ')}. ${f.name}`),
+        ...(fullEssayFiles.length > 0 ? ['', 'FULL ESSAY PDFs:', ...fullEssayFiles.map((f, i) => `${String(pdfFiles.length + i + 1).padStart(3, ' ')}. ${f.name}`)] : []),
         '',
         'This archive was downloaded from www.barrandodger.com',
         'Every document is blockchain-verified.',
@@ -1076,7 +1099,7 @@ export async function registerRoutes(
     try {
       const buffer = await generateAllForensicEpubsBundle();
       res.setHeader('Content-Type', 'application/zip');
-      res.setHeader('Content-Disposition', 'attachment; filename="Barran-Dodger-All-46-Forensic-Analyses-EPUBs.zip"');
+      res.setHeader('Content-Disposition', 'attachment; filename="Barran-Dodger-All-49-Forensic-Analyses-EPUBs.zip"');
       res.setHeader('Content-Length', buffer.length);
       res.send(buffer);
     } catch (err: any) {
