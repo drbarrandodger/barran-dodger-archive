@@ -80,10 +80,13 @@ async function getFileSha(path) {
   return null;
 }
 
+const MAX_FILE_BYTES = 50 * 1024 * 1024; // 50 MB — GitHub API hard limit
+
 async function pushFile(relPath) {
   const fullPath = join(ROOT, relPath);
   let buf;
   try { buf = readFileSync(fullPath); } catch { return `SKIP (missing): ${relPath}`; }
+  if (buf.length > MAX_FILE_BYTES) return `SKIP (too large ${(buf.length/1024/1024).toFixed(1)}MB): ${relPath}`;
   const content = buf.toString('base64');
   const existingSha = await getFileSha(relPath);
   const body = { message: `Auto-sync: ${relPath}`, content, branch: BRANCH };
@@ -97,7 +100,8 @@ async function pushFile(relPath) {
     },
     body: JSON.stringify(body),
   });
-  const d = await res.json();
+  let d;
+  try { d = await res.json(); } catch { return `ERR (${res.status}, bad JSON): ${relPath}`; }
   if (res.status === 401 || res.status === 403) {
     console.error(`\n⚠️  TOKEN ERROR (${res.status}): ${d.message}`);
     console.error('Fix: refresh GH_SYNC_TOKEN with a PAT that has Contents: write access.\n');
