@@ -279,6 +279,19 @@ export default function Home() {
           marginTop: 0
         }}
       />
+
+      <div
+        className="w-full bg-black border-b border-[hsl(38,92%,50%)]/40 py-6 px-4"
+        data-testid="banner-biblical-quote-top"
+      >
+        <p className="text-center font-serif italic text-[hsl(38,92%,50%)] text-lg md:text-2xl leading-relaxed tracking-wide max-w-4xl mx-auto">
+          "For there is nothing hidden that will not be disclosed, and nothing concealed that will not be known or brought out into the open."
+        </p>
+        <p className="text-center text-sm text-[hsl(38,92%,50%)]/60 mt-2 tracking-widest uppercase font-medium">
+          — Luke 8:17 — Jesus Christ
+        </p>
+      </div>
+
       <SEO 
         title="240+ Blockchain-Verified Documents Expose Australian Government Corruption"
         description="They spent $11.5M to silence one whistleblower. 14 forced psychiatric detentions. An assassination attempt in 2024. Institutional murder in 2021 where I was revived by God. 35 years of persecution documented in 240+ blockchain-sealed forensic records. I DARE YOU TO PROVE ME WRONG."
