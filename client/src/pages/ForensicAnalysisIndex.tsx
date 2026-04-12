@@ -59,6 +59,9 @@ const COVER_MAP: Record<number, string> = {
   50: 'cover-confession-theyve-been-choking-on',
   51: 'cover-loudest-hate-weakest-link',
   52: 'cover-you-didnt-chase-the-throne-you-became-one',
+  53: 'cover-they-attacked-without-knowing',
+  54: 'cover-when-pack-of-wolves',
+  55: 'cover-when-wrong-people-get-nervous',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -757,16 +760,24 @@ export default function ForensicAnalysisIndex() {
                   data-testid={`analysis-entry-${a.number}`}
                   className="rounded-xl border border-zinc-800 bg-zinc-900 overflow-hidden flex"
                 >
-                  {/* Book Cover */}
+                  {/* Book Cover — click to download PDF */}
                   {coverSrc && (
                     <div className="shrink-0 w-24 sm:w-32 bg-zinc-950 border-r border-zinc-800 overflow-hidden">
-                      <img
-                        src={coverSrc}
-                        alt={`Analysis #${a.number} — ${a.title}`}
-                        data-testid={`img-cover-${a.number}`}
-                        className="w-full h-full object-cover"
-                        style={{ minHeight: "100%", display: "block" }}
-                      />
+                      <a
+                        href={`/api/forensic/pdf/${a.slug}`}
+                        download
+                        title={`Download ${a.title} — PDF`}
+                        className="block w-full h-full"
+                        data-testid={`link-cover-download-${a.number}`}
+                      >
+                        <img
+                          src={coverSrc}
+                          alt={`Analysis #${a.number} — ${a.title}`}
+                          data-testid={`img-cover-${a.number}`}
+                          className="w-full h-full object-cover hover:opacity-80 transition-opacity cursor-pointer"
+                          style={{ minHeight: "100%", display: "block" }}
+                        />
+                      </a>
                     </div>
                   )}
 

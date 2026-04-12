@@ -49,6 +49,22 @@ import coverUntouchableAgents from "../assets/images/cover-untouchable-agents.pn
 import coverFinalBlow from "../assets/images/cover-final-blow.png";
 import coverWhatYouBecome from "../assets/images/cover-what-you-become.png";
 import coverEveryoneWatching from "../assets/images/cover-everyone-watching.png";
+import coverUnhcrIcc from "../assets/images/cover-unhcr-icc-evidence-package.png";
+import coverTortureDossier from "../assets/images/cover-whistleblower-torture-dossier.png";
+import coverV2K from "../assets/images/cover-v2k-electronic-harassment.png";
+import coverWhitePsyops from "../assets/images/cover-white-psyops.png";
+import coverAcademicProfile from "../assets/images/cover-academic-profile-persecution.png";
+import coverImmortalTestimony from "../assets/images/cover-immortal-testimony-2025.png";
+import coverJosephsCoat from "../assets/images/cover-josephs-coat-barrans-mantle.png";
+import coverDeclarationSovereignty from "../assets/images/cover-declaration-of-sovereignty.png";
+import coverDswTextMessages from "../assets/images/cover-dsw-text-messages-evidence.png";
+import coverComprehensiveCase from "../assets/images/cover-comprehensive-case-persecution.png";
+import coverConfinementErasure from "../assets/images/cover-confinement-erasure-blade.png";
+import coverAfterForensicStatement from "../assets/images/cover-after-forensic-statement.png";
+import coverPropheticManifesto from "../assets/images/cover-prophetic-manifesto.png";
+import coverNdisPidPrisoner from "../assets/images/cover-ndis-pid-political-prisoner.png";
+import coverWitnessTribunal from "../assets/images/cover-witness-tribunal-humanity.png";
+import coverAiPersonalityProfile from "../assets/images/cover-ai-personality-profile.png";
 import { ChessmateHero } from "@/components/ChessmateHero";
 
 interface VaultFolder {
@@ -2373,6 +2389,62 @@ export default function EvidenceVault() {
                   </div>
                 </div>
               </div>
+            </div>
+          </motion.section>
+
+          {/* ── KEY DOCUMENTS COVER GALLERY ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+            className="mb-10"
+          >
+            <div className="mb-4">
+              <h2 className="text-white font-black text-xl tracking-tight mb-1 flex items-center gap-2">
+                <Archive className="h-5 w-5 text-amber-400" />
+                Key Document Archive
+              </h2>
+              <p className="text-zinc-400 text-sm">Click any cover to download the PDF directly.</p>
+            </div>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+              {[
+                { cover: coverUnhcrIcc, title: "ICC/UNHCR Cryptographic Evidence Package", file: "/documents/unhcr-icc-cryptographic-evidence-package.pdf", dl: "ICC-UNHCR-Evidence-Package-McLean.pdf" },
+                { cover: coverTortureDossier, title: "Official Whistleblower Torture Dossier", file: "/documents/official-whistleblower-torture-dossier-dr-richard-william-mclean.pdf", dl: "Whistleblower-Torture-Dossier-McLean.pdf" },
+                { cover: coverV2K, title: "V2K Electronic Harassment Evidence Review", file: "/documents/v2k-electronic-harassment-evidence-review.pdf", dl: "V2K-Electronic-Harassment-Evidence-McLean.pdf" },
+                { cover: coverWhitePsyops, title: "White PsyOps — Invisible Warfare", file: "/documents/white-psyops-invisible-warfare-against-cosmic-witness.pdf", dl: "White-PsyOps-Invisible-Warfare-McLean.pdf" },
+                { cover: coverAcademicProfile, title: "Evidence-Based Academic Profile", file: "/documents/barran-dodger-evidence-based-academic-profile-modern-persecution.pdf", dl: "Academic-Profile-Modern-Persecution-McLean.pdf" },
+                { cover: coverImmortalTestimony, title: "Immortal Testimony McLean 2025", file: "/documents/immortal-testimony-mclean-2025.pdf", dl: "Immortal-Testimony-McLean-2025.pdf" },
+                { cover: coverJosephsCoat, title: "Joseph's Coat — Barran's Mantle", file: "/documents/josephs-coat-barrans-mantle.pdf", dl: "Josephs-Coat-Barrans-Mantle-McLean.pdf" },
+                { cover: coverDeclarationSovereignty, title: "Declaration of Sovereignty", file: "/documents/declaration_of_sovereignty.pdf", dl: "Declaration-of-Sovereignty-McLean.pdf" },
+                { cover: coverDswTextMessages, title: "DSW Text Messages — Assassination Evidence", file: "/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf", dl: "DSW-Text-Messages-Assassination-Evidence-McLean.pdf" },
+                { cover: coverComprehensiveCase, title: "Comprehensive Case — Systematic Persecution", file: "/documents/comprehensive-case-systematic-persecution.pdf", dl: "Comprehensive-Case-Systematic-Persecution-McLean.pdf" },
+                { cover: coverConfinementErasure, title: "Confinement by Erasure — Threat by Blade", file: "/documents/confinement_by_erasure_threat_by_blade.pdf", dl: "Confinement-by-Erasure-Threat-by-Blade-McLean.pdf" },
+                { cover: coverAfterForensicStatement, title: "After Forensic Statement Evidence Record", file: "/documents/after-forensic-statement-evidence-record.pdf", dl: "After-Forensic-Statement-Evidence-Record-McLean.pdf" },
+                { cover: coverPropheticManifesto, title: "Prophetic Manifesto — Barran Dodger", file: "/documents/prophetic_manifesto_barran_dodger.pdf", dl: "Prophetic-Manifesto-Barran-Dodger.pdf" },
+                { cover: coverNdisPidPrisoner, title: "NDIS/PID Political Prisoner Disclosure", file: "/documents/ndis-pid-political-prisoner-dr-rich-mclean.pdf", dl: "NDIS-PID-Political-Prisoner-McLean.pdf" },
+                { cover: coverWitnessTribunal, title: "Witness Before the Tribunal of Humanity", file: "/documents/witness_before_tribunal_of_humanity.pdf", dl: "Witness-Before-Tribunal-of-Humanity-McLean.pdf" },
+                { cover: coverAiPersonalityProfile, title: "AI Personality Profile — Barran Dodger", file: "/documents/ai_personality_profile_barran_dodger.pdf", dl: "AI-Personality-Profile-Barran-Dodger.pdf" },
+              ].map(({ cover, title, file, dl }) => (
+                <a
+                  key={dl}
+                  href={file}
+                  download={dl}
+                  title={`Download: ${title}`}
+                  className="group relative block bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500/50 transition-all duration-200"
+                  data-testid={`cover-download-${dl.replace(/\.pdf$/, '').toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                >
+                  <img
+                    src={cover}
+                    alt={title}
+                    className="w-full aspect-[3/4] object-cover group-hover:opacity-80 transition-opacity"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-end justify-center pb-2 opacity-0 group-hover:opacity-100">
+                    <span className="bg-amber-500 text-black text-[10px] font-bold px-2 py-0.5 rounded flex items-center gap-1">
+                      <Download className="h-2.5 w-2.5" /> PDF
+                    </span>
+                  </div>
+                </a>
+              ))}
             </div>
           </motion.section>
 

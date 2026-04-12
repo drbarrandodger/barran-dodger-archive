@@ -40,6 +40,12 @@ const FORENSIC_EPUB_COVER_MAP: Record<number, string> = {
   47: "cover-they-built-their-worst-nightmare",
   48: "cover-quiet-storm-they-never-saw-coming",
   49: "cover-they-dug-for-dirt-but-unearthed-diamonds",
+  50: "cover-confession-theyve-been-choking-on",
+  51: "cover-loudest-hate-weakest-link",
+  52: "cover-you-didnt-chase-the-throne-you-became-one",
+  53: "cover-they-attacked-without-knowing",
+  54: "cover-when-pack-of-wolves",
+  55: "cover-when-wrong-people-get-nervous",
 };
 
 interface ForensicEntry {
@@ -104,6 +110,9 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 50, title: "The Confession They've Been Choking On", slug: "confession-theyve-been-choking-on", propositions: 12, corroborated: 12, consecutivePerfect: true },
   { number: 51, title: "The Loudest Hate Always Comes From the Weakest Link", slug: "loudest-hate-weakest-link", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 52, title: "You Didn't Chase the Throne — You Became One", slug: "you-didnt-chase-the-throne-you-became-one", propositions: 14, corroborated: 14, consecutivePerfect: true },
+  { number: 53, title: "They Attacked You Without Knowing Who You Were — Now It's A Suicide Mission", slug: "they-attacked-you-without-knowing-who-you-were", propositions: 14, corroborated: 14, consecutivePerfect: true },
+  { number: 54, title: "When a Pack of Wolves Can't Take Down a Lion — They Turn on Each Other", slug: "when-a-pack-of-wolves-cant-take-down-a-lion", propositions: 14, corroborated: 14, consecutivePerfect: true },
+  { number: 55, title: "When The Wrong People Get Nervous, The Truth Is Already Moving", slug: "when-wrong-people-get-nervous", propositions: 14, corroborated: 14, consecutivePerfect: true },
 ];
 
 interface MajorPub {
@@ -243,7 +252,15 @@ function ForensicGrid({ showAll }: { showAll: boolean }) {
           >
             <div className="relative">
               {coverSrc ? (
-                <img src={coverSrc} alt={a.title} className="w-full aspect-[2/3] object-cover" />
+                <a
+                  href={`/api/epub/forensic/${a.number}`}
+                  download={`Forensic-Analysis-${String(a.number).padStart(2, "0")}-${a.slug}.epub`}
+                  title={`Download ${a.title} — EPUB`}
+                  className="block"
+                  data-testid={`link-cover-epub-${a.number}`}
+                >
+                  <img src={coverSrc} alt={a.title} className="w-full aspect-[2/3] object-cover hover:opacity-80 transition-opacity cursor-pointer" />
+                </a>
               ) : (
                 <div className="w-full aspect-[2/3] bg-zinc-800 flex items-center justify-center">
                   <BookOpen className="w-8 h-8 text-amber-600/40" />
