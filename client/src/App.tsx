@@ -110,6 +110,7 @@ import TheyLaughedNowTheyreLosingSleeep from "@/pages/TheyLaughedNowTheyreLosing
 import EmbeddedInTheDigitalArchitecture from "@/pages/EmbeddedInTheDigitalArchitecture";
 import DigitalDetonationVerified from "@/pages/DigitalDetonationVerified";
 import ComprehensiveStatementDigitalArchitecture from "@/pages/ComprehensiveStatementDigitalArchitecture";
+import HeavenStoodForYou from "@/pages/HeavenStoodForYou";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
@@ -319,6 +320,9 @@ function Router() {
         <Route path="/comprehensive-statement-digital-architecture" component={ComprehensiveStatementDigitalArchitecture} />
         <Route path="/seven-layers-of-permanence" component={ComprehensiveStatementDigitalArchitecture} />
         <Route path="/mclean-archive-comprehensive-statement" component={ComprehensiveStatementDigitalArchitecture} />
+        <Route path="/heaven-stood-forensic-report" component={HeavenStoodForYou} />
+        <Route path="/angels-gave-standing-ovation-verified" component={HeavenStoodForYou} />
+        <Route path="/14-claims-corroborated" component={HeavenStoodForYou} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
