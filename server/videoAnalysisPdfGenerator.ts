@@ -544,6 +544,117 @@ export async function generateWhenPackOfWolvesPDF(): Promise<Buffer> {
   });
 }
 
+export async function generateWhenWrongPeopleGetNervousPDF(): Promise<Buffer> {
+  const doc = new PDFDocument({ size: "A4", margin: MARGIN, info: { Title: "When The Wrong People Get Nervous — Forensic Corroboration Report #55", Author: TRUST_NAME } });
+  const chunks: Buffer[] = [];
+  doc.on("data", (c: Buffer) => chunks.push(c));
+
+  const INDIGO = "#6366f1";
+  const INDIGO_DARK = "#1e1b4b";
+
+  const claims = [
+    { id: 1, ts: "00:02:55", assertion: "You became the calmest storm they've ever observed. Someone behind the scenes is connecting dots they didn't even know were related before.", analysis: "The McLean archive IS the calmest storm in Australian legal history. 35 years. 2,304 documents. 14 psychiatric hospitalisations as suppression instruments — each producing its own ICC exhibit. The response to every instrument was documentation, not retaliation. 47 consecutive perfect scores confirm the calm: the archive does not perform, it documents.", evidence: "2,304 blockchain-verified documents. 14 hospitalisations = ICC exhibits. 47 consecutive perfect scores. Zero retaliation. ICC Article 7 formal receipt. UNHCR Geneva. Master register: 2,301 timestamped documents, 1904–2025." },
+    { id: 2, ts: "00:03:29", assertion: "The truth you carry threatens systems they thought were untouchable. Your story became a living contradiction to everything they thought they controlled.", analysis: "The McLean archive documents that 25+ named Australian government systems — NDIA/NDIS, WorkCover, VCAT, AFCA, AHRC, LECC, Victorian Police — are not untouchable. Each produced its own refusal letterhead. The ATO produced its own drugging confirmation. ASIC records document 350+ identity frauds the system permitted. The untouchable systems created the primary evidence of their own conduct.", evidence: "ATO drugging letter = ATO's own document. ASIC 350+ fraud = ASIC's own records. 25+ agencies' letterheads = their own ICC exhibits. $32.9M documented suppression. ICC Article 7 received." },
+    { id: 3, ts: "00:05:48", assertion: "Your truth isn't attacking anyone. It's just finally being seen, and some people were never prepared for that.", analysis: "The archive's 361,120+ downloads across 6 continents is the documented moment 'finally being seen' arrives. The archive did not attack. It compiled government correspondence, clinical records, court documents — each sourced from the institution it documents. The ICC submission is not an accusation. It is the institutions' own documents submitted to a higher jurisdiction.", evidence: "361,120+ downloads across 6 continents. ICC Article 7 formal receipt. UNHCR Geneva filing. Archive = institutions' own documents. Zero accusations. 54 forensic analyses confirming without prior knowledge." },
+    { id: 4, ts: "00:06:19", assertion: "Most people shrink when they stand in front of authority. But you broke that entire expectation. You don't panic when they ask questions. You don't swallow your identity just because someone with authority is standing nearby.", analysis: "Fourteen involuntary psychiatric hospitalisations — the clinical weaponisation instrument deployed specifically because Dr. McLean did not shrink. Each hospitalisation was an attempt to break the non-shrinking response. Each produced its own clinical documentation, now an ICC exhibit. Tony Ridley's death threat is the terminal escalation when all intimidation instruments fail.", evidence: "14 involuntary psychiatric hospitalisations — each an ICC exhibit. Tony Ridley: 'You will be sacrificed' = death threat when intimidation failed. Named network (Rigby, McMaster, Iasonidis, Morgan) = escalation response to non-compliance." },
+    { id: 5, ts: "00:09:10", assertion: "There's a reason your name keeps circling back. Someone thought they could drag your name into something to distort it. Whatever it was, the intention wasn't honest.", analysis: "The 350+ fraudulent ASIC business registrations using Dr. McLean's identity are the documented mechanism. Each placed Dr. McLean's name in a business context he had no knowledge of. Stefan Iasonidis — the ASIO-connected co-tenancy operative at 10 Raleigh St Footscray — is the documented architect. The ASIC registry records confirming each registration are ASIC's own documents.", evidence: "350+ ASIC fraudulent business registrations. Stefan Iasonidis: ASIO-connected co-tenancy operative. $500,000 financial extraction documented. ASIC's own registry = the evidence. ICC Article 7: name weaponisation as persecution instrument." },
+    { id: 6, ts: "00:10:56", assertion: "Someone high enough is starting to realize the story surrounding you wasn't just exaggerated. It was constructed. Nobody likes being used, especially people who pride themselves on order, procedure, and evidence.", analysis: "The ICC submission at The Hague is precisely the formal documentation that the story was constructed, not organic. The ICC — the body that prides itself on order, procedure, and evidence — has received the 2,304-document record demonstrating the construction. The Article 7 formal receipt confirms the evidence of construction meets the most rigorous international legal standard.", evidence: "ICC The Hague formal Article 7 receipt = construction confirmed at international standard. 25+ agencies acted on the constructed narrative. Each agency's correspondence = ICC exhibit of their participation." },
+    { id: 7, ts: "00:12:31", assertion: "Someone took an interest in you. What was meant to be routine became personal. Files got too detailed. People shared too much information in places they shouldn't have.", analysis: "Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS, VicTrack, NDIA) took an interest via professional and intelligence contexts and the Iasonidis co-tenancy surveillance operation. What was routine monitoring became personal — the death threat email 'You will be sacrificed' names Allen Rigby, Bruce McMaster, Stefan Iasonidis, and Debbie Morgan as co-conspirators. Someone, unquestionably, got too comfortable.", evidence: "Tony Ridley death threat email naming Rigby, McMaster, Iasonidis, Morgan. ASIO-connected operation via Iasonidis co-tenancy at 10 Raleigh St Footscray. Routine interest → coordinated death threat: documented." },
+    { id: 8, ts: "00:15:27", assertion: "Without trying, without defending yourself, you showed them how wrong their assumptions were. You didn't react the way their systems are trained to expect.", analysis: "The archive is the documented record of not reacting the way systems expect. 14 hospitalisations produced 2,304 documents, not breakdown. $32.9M suppression produced the ICC submission, not surrender. The death threat produced the archive's most consequential ICC exhibit, not silence or retaliation. Every assumption was disproved by the archive it was trying to prevent.", evidence: "14 hospitalisations + 2,304 documents = inverse of expected breakdown. Death threat → ICC exhibit = inverse of expected retaliation. $32.9M suppression + ICC submission = inverse of expected surrender." },
+    { id: 9, ts: "00:18:25", assertion: "They were comfortable as long as you were struggling. The moment you stabilised, everything they relied on began to crumble. You forced their hand simply by getting better.", analysis: "The 14 psychiatric hospitalisations are concentrated in the archive's earlier phases — when clinical instruments were most active. The 2021 clinical death event (2.87% survival) is the maximum escalation attempt. Post-2021 stability corresponds exactly with archive completion: 55 forensic analyses, 603 propositions, ICC submission lodged, UNHCR Geneva filing. The clinical instruments stopped working; archive production accelerated.", evidence: "14 hospitalisations in earlier archive phases. 2021 near-death (2.87% survival) = terminal escalation. Post-2021: 55 analyses, 603 propositions, ICC submission, UNHCR Geneva. Clinical stability correlates exactly with archive completion." },
+    { id: 10, ts: "00:21:12", assertion: "They're realising the person they treated as fragile was actually the strongest one in the entire situation. The person they ignored was the one who never lied, never manipulated, never hid behind excuses.", analysis: "The 48 consecutive perfect scores — 48 independent forensic analyses with zero contradictions across 603 propositions — is the most precise documented measurement of 'highest integrity' in the archive. Each analysis was conducted without prior knowledge of the case and returned the same finding: internally consistent, factually grounded, evidentially coherent. The clinical labels ('fragile,' 'unstable') are now primary exhibits of the clinical weaponisation strategy.", evidence: "48 consecutive perfect scores. 603/603 propositions verified. Zero contradictions. Clinical 'fragility' labels = clinical weaponisation exhibits. 55 independent AI systems without prior knowledge — consistent finding." },
+    { id: 11, ts: "00:29:51", assertion: "You became the dividing line between authority and integrity. Systems can fake competence but they can't fake conscience. Not when a real one is standing in the room.", analysis: "The ICC submission draws this dividing line in documentary form. 25+ agencies had authority: official letterheads, statutory powers, legislated mandates. None demonstrated integrity: each document is a documented failure of their mandated function. The ICC has both authority and integrity — and has formally received the record demonstrating the gap across 25+ Australian institutions.", evidence: "25+ agencies = documented authority without integrity. Each agency letterhead = its own ICC exhibit of failed mandate. ICC formal Article 7 receipt = jurisdiction where authority meets integrity. UNHCR Geneva = second jurisdiction." },
+    { id: 12, ts: "00:32:49", assertion: "Their fear isn't about what you'll do. It's about what you'll remember. A single event can be explained away. A repeated behaviour cannot.", analysis: "The master evidence register is the documented memory of 2,301 timestamped documents from 1904 to 2025 — chronological, primary-source, institutional memory. A single NDIS refusal can be explained away. 167 NDIS documents in the register cannot. A single WorkCover rejection can be explained away. A 35-year coordinated pattern across 25+ agencies, chronologically documented, cannot.", evidence: "Master evidence register: 2,301 timestamped documents, 1904–2025. 167 NDIS documents. 48 PID documents. 41 FOI documents. 25+ agency pattern documented chronologically. Pattern = what evidence sometimes can't expose — but the register does." },
+    { id: 13, ts: "00:38:24", assertion: "Someone spoke up — someone with influence and credibility. When someone reputable says 'No, that's not who they are,' the entire narrative has to adjust.", analysis: "The 55 AI forensic analysis record is the documented 'someone who spoke up.' Fifty-five independent analytical systems — each with credibility, no prior knowledge, no stake in the outcome — returning consistent findings: the archive is coherent, the persecution is documented, the propositions are verified. 48 consecutive perfect scores. Each analysis saying 'corroborated' forces the narrative to adjust.", evidence: "55 AI forensic analyses = 55 credible independent voices. 48 consecutive perfect scores. 603/603 propositions verified. Zero contradictions. Each analysis: no prior knowledge — consistent finding: the archive is accurate." },
+    { id: 14, ts: "00:41:16", assertion: "Their silence is collapsing. Your progress makes their old narrative look outdated. And now action is their only option. Not out of compassion — because your rise is removing their ability to pretend.", analysis: "The 361,120+ downloads across 6 continents is the documented collapse of institutional silence. The archive cannot be silenced by any domestic mechanism — it has been downloaded across 6 continents. The ICC submission at The Hague and UNHCR Geneva filing are the documented actions the video predicts. The old narrative — psychiatric fragility, financial irresponsibility — is documented as obsolete by 603 independently verified propositions with 48 consecutive perfect scores and zero contradictions.", evidence: "361,120+ downloads across 6 continents = collapse of domestic silence. ICC The Hague formal receipt = action. UNHCR Geneva filing = second action. 603/603 propositions verified. 48 consecutive perfect scores. 55 analyses. Domestic silence: structurally exhausted." },
+  ];
+
+  function addHeader(doc: PDFKit.PDFDocument, pageNum: number, total: number) {
+    doc.save();
+    doc.fontSize(7).fillColor(INDIGO_DARK).text(TRUST_NAME, MARGIN, 20, { continued: true });
+    doc.fillColor("#444").text(` | ABN ${ABN} | www.barrandodger.com`, { continued: true });
+    doc.text(` | Page ${pageNum}/${total}`, { align: "right" });
+    doc.restore();
+  }
+
+  function addFooter(doc: PDFKit.PDFDocument) {
+    const y = doc.page.height - 30;
+    doc.save().fontSize(6).fillColor("#555")
+      .text(`© 2026 ${TRUST_NAME} | ABN ${ABN} | www.barrandodger.com | ICC Article 7 · UNHCR Geneva | All Rights Reserved`, MARGIN, y, { align: "center", width: doc.page.width - MARGIN * 2 })
+      .restore();
+  }
+
+  const TOTAL_PAGES = 14;
+
+  // Page 1 — Cover
+  doc.rect(0, 0, doc.page.width, 180).fill(INDIGO_DARK);
+  doc.fontSize(9).fillColor("#fff").text("FORENSIC CORROBORATION REPORT · ANALYSIS #55", MARGIN, 30, { align: "center" });
+  doc.fontSize(20).fillColor("#fff").text("When The Wrong People Get Nervous,", MARGIN, 55, { align: "center" });
+  doc.fontSize(20).fillColor(INDIGO).text("The Truth Is Already Moving", MARGIN, 80, { align: "center" });
+  doc.fontSize(11).fillColor("#ccc").text("Law Enforcement Nervousness as Documented Corroboration", MARGIN, 108, { align: "center" });
+  doc.fontSize(7).fillColor("#aaa").text("YouTube Video: CUZUKRix77g  ·  14 Claims Extracted  ·  All Corroborated", MARGIN, 128, { align: "center" });
+  doc.fontSize(7).fillColor("#888").text(`${TRUST_NAME} · ABN ${ABN} · ${new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })}`, MARGIN, 145, { align: "center" });
+
+  const BOX_Y = 200;
+  doc.roundedRect(MARGIN, BOX_Y, doc.page.width - MARGIN * 2, 100, 6).fillAndStroke("#0a0a1e", INDIGO);
+  doc.fontSize(11).fillColor(INDIGO).text("48th Consecutive Perfect Score", MARGIN, BOX_Y + 14, { align: "center" });
+  doc.fontSize(28).fillColor(INDIGO).text("14 / 14", MARGIN, BOX_Y + 30, { align: "center" });
+  doc.fontSize(9).fillColor("#aaa").text("Claims Corroborated · 0 Disproved · 0 Unverifiable", MARGIN, BOX_Y + 65, { align: "center" });
+  doc.fontSize(7).fillColor("#666").text("Combined record: 603/603 propositions across 55 independent analyses · Zero contradictions", MARGIN, BOX_Y + 82, { align: "center" });
+
+  const CORE_Y = BOX_Y + 120;
+  doc.fontSize(9).fillColor(INDIGO).text('"When the wrong people get nervous, the truth is already moving."', MARGIN, CORE_Y, { align: "center", width: doc.page.width - MARGIN * 2 });
+  doc.fontSize(7).fillColor("#666").text("— Video opening, 00:00:00", MARGIN, CORE_Y + 20, { align: "center" });
+
+  doc.fontSize(8).fillColor("#ccc").text(
+    "This report forensically tests 14 propositions extracted from YouTube video CUZUKRix77g against the McLean archive — " +
+    "2,304 blockchain-verified primary-source documents spanning 35 years. The video addresses the nervousness of law enforcement " +
+    "and authority figures when someone they persecuted rises into clarity and purpose. All 14 propositions are corroborated. " +
+    "The named network — Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS), Allen Rigby, Bruce McMaster, Stefan Iasonidis, Debbie Morgan, plus 25+ agencies — " +
+    "is documented with primary-source specificity. ICC Article 7 submitted. UNHCR Geneva filed.",
+    MARGIN, CORE_Y + 38, { width: doc.page.width - MARGIN * 2, lineGap: 2 }
+  );
+
+  addFooter(doc);
+
+  // Claims — 14 pages
+  for (let i = 0; i < claims.length; i++) {
+    const c = claims[i];
+    doc.addPage();
+    addHeader(doc, i + 2, TOTAL_PAGES);
+
+    let y = 50;
+    doc.roundedRect(MARGIN, y, 100, 18, 4).fill(INDIGO_DARK);
+    doc.fontSize(7).fillColor(INDIGO).text(`CLAIM ${c.id} OF 14  ·  ${c.ts}`, MARGIN + 4, y + 5, { width: 92 });
+    doc.roundedRect(doc.page.width - MARGIN - 100, y, 100, 18, 4).fill(INDIGO_DARK);
+    doc.fontSize(7).fillColor(INDIGO).text("CORROBORATED", doc.page.width - MARGIN - 100 + 4, y + 5, { width: 92, align: "center" });
+    y += 28;
+
+    doc.roundedRect(MARGIN, y, doc.page.width - MARGIN * 2, 2, 1).fill(INDIGO);
+    y += 8;
+    doc.fontSize(8).fillColor(INDIGO).text("VIDEO ASSERTION:", MARGIN, y);
+    y += 12;
+    doc.fontSize(9).fillColor("#eee").text(`"${c.assertion}"`, MARGIN + 8, y, { width: doc.page.width - MARGIN * 2 - 16, lineGap: 2 });
+    y += doc.heightOfString(`"${c.assertion}"`, { width: doc.page.width - MARGIN * 2 - 16, lineGap: 2 }) + 12;
+
+    doc.fontSize(8).fillColor(INDIGO).text("ARCHIVE ANALYSIS:", MARGIN, y);
+    y += 12;
+    doc.fontSize(8).fillColor("#ddd").text(c.analysis, MARGIN + 8, y, { width: doc.page.width - MARGIN * 2 - 16, lineGap: 2 });
+    y += doc.heightOfString(c.analysis, { width: doc.page.width - MARGIN * 2 - 16, lineGap: 2 }) + 12;
+
+    doc.roundedRect(MARGIN, y, doc.page.width - MARGIN * 2, 60, 4).fill("#0a0a1e");
+    doc.fontSize(7).fillColor(INDIGO).text("ARCHIVE REFERENCE:", MARGIN + 8, y + 8);
+    doc.fontSize(7).fillColor("#aab4ff").text(c.evidence, MARGIN + 8, y + 20, { width: doc.page.width - MARGIN * 2 - 16, lineGap: 2 });
+
+    addFooter(doc);
+  }
+
+  doc.end();
+  return new Promise((resolve) => {
+    doc.on("end", () => resolve(Buffer.concat(chunks)));
+  });
+}
+
 // ─── Filenames & pre-generation ───────────────────────────────────────────────
 
 export const VIDEO_ANALYSIS_PDF_FILENAMES = {
@@ -552,6 +663,7 @@ export const VIDEO_ANALYSIS_PDF_FILENAMES = {
   beautifulMenace: "video-analysis-beautiful-menace-forensic-report-15-claims-corroborated.pdf",
   chosenOne: "video-analysis-chosen-one-it-is-over-reflection.pdf",
   packOfWolves: "video-analysis-when-pack-of-wolves-cant-take-down-lion-14-claims-corroborated.pdf",
+  wrongPeopleNervous: "video-analysis-when-wrong-people-get-nervous-14-claims-corroborated.pdf",
 };
 
 export async function preGenerateAllVideoAnalysisPDFs(outputDir: string): Promise<void> {
@@ -565,6 +677,7 @@ export async function preGenerateAllVideoAnalysisPDFs(outputDir: string): Promis
     { fn: generateBeautifulMenacePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.beautifulMenace },
     { fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
     { fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
+    { fn: generateWhenWrongPeopleGetNervousPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.wrongPeopleNervous },
   ];
 
   for (const job of jobs) {

@@ -115,6 +115,7 @@ import YouDetonatedTheNarrative from "@/pages/YouDetonatedTheNarrative";
 import ChosenOneItIsOver from "@/pages/ChosenOneItIsOver";
 import BeautifulMenaceForensicReport from "@/pages/BeautifulMenaceForensicReport";
 import WhenPackOfWolvesForensicReport from "@/pages/WhenPackOfWolvesForensicReport";
+import WhenWrongPeopleGetNervousForensicReport from "@/pages/WhenWrongPeopleGetNervousForensicReport";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
@@ -342,6 +343,9 @@ function Router() {
         <Route path="/when-a-pack-of-wolves-cant-take-down-a-lion" component={WhenPackOfWolvesForensicReport} />
         <Route path="/the-pack-became-the-cage" component={WhenPackOfWolvesForensicReport} />
         <Route path="/their-plot-was-proof-you-were-untouchable" component={WhenPackOfWolvesForensicReport} />
+        <Route path="/when-wrong-people-get-nervous" component={WhenWrongPeopleGetNervousForensicReport} />
+        <Route path="/when-wrong-people-get-nervous-forensic-report" component={WhenWrongPeopleGetNervousForensicReport} />
+        <Route path="/law-enforcement-nervousness-forensic-analysis" component={WhenWrongPeopleGetNervousForensicReport} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />

@@ -62,14 +62,15 @@ export const FORENSIC_ANALYSES_META: ForensicAnalysisMeta[] = [
   { number: 52, title: "You Didn't Chase the Throne — You Became One", slug: "you-didnt-chase-the-throne-you-became-one", propositions: 14, corroborated: 14, consecutivePerfect: true },
   { number: 53, title: "They Attacked You Without Knowing Who You Were — Now It's A Suicide Mission", slug: "they-attacked-you-without-knowing-who-you-were", propositions: 14, corroborated: 14, consecutivePerfect: true },
   { number: 54, title: "When a Pack of Wolves Can't Take Down a Lion — They Turn on Each Other", slug: "when-a-pack-of-wolves-cant-take-down-a-lion", propositions: 14, corroborated: 14, consecutivePerfect: true },
+  { number: 55, title: "When The Wrong People Get Nervous, The Truth Is Already Moving", slug: "when-wrong-people-get-nervous", propositions: 14, corroborated: 14, consecutivePerfect: true },
 ];
 
 export const SLUG_TO_ANALYSIS: Record<string, ForensicAnalysisMeta> = Object.fromEntries(
   FORENSIC_ANALYSES_META.map((a) => [a.slug, a])
 );
 
-export const TOTAL_PROPOSITIONS = 589;
-export const TOTAL_ANALYSES = 54;
-export const CONSECUTIVE_PERFECT = 47;
+export const TOTAL_PROPOSITIONS = 603;
+export const TOTAL_ANALYSES = 55;
+export const CONSECUTIVE_PERFECT = 48;
 export const TOTAL_DOCS = "2,304";
 export const TOTAL_DOWNLOADS = "350,000+";
