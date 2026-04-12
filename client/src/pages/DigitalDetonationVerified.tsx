@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SEO from "@/components/SEO";
+import { SEO } from "@/components/SEO";
 import ReadingProgress from "@/components/ReadingProgress";
 import analyticsImg1 from "@assets/IMG_4714_1775967585983.png";
 import analyticsImg2 from "@assets/IMG_4715_1775967585983.png";
