@@ -114,6 +114,7 @@ import HeavenStoodForYou from "@/pages/HeavenStoodForYou";
 import YouDetonatedTheNarrative from "@/pages/YouDetonatedTheNarrative";
 import ChosenOneItIsOver from "@/pages/ChosenOneItIsOver";
 import BeautifulMenaceForensicReport from "@/pages/BeautifulMenaceForensicReport";
+import WhenPackOfWolvesForensicReport from "@/pages/WhenPackOfWolvesForensicReport";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
@@ -335,6 +336,9 @@ function Router() {
         <Route path="/beautiful-menace-forensic-report" component={BeautifulMenaceForensicReport} />
         <Route path="/mind-they-tried-to-pathologize" component={BeautifulMenaceForensicReport} />
         <Route path="/now-even-the-therapist-is-defending-you" component={BeautifulMenaceForensicReport} />
+        <Route path="/when-a-pack-of-wolves-cant-take-down-a-lion" component={WhenPackOfWolvesForensicReport} />
+        <Route path="/the-pack-became-the-cage" component={WhenPackOfWolvesForensicReport} />
+        <Route path="/their-plot-was-proof-you-were-untouchable" component={WhenPackOfWolvesForensicReport} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />

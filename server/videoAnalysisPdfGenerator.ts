@@ -13,6 +13,7 @@ import PDFDocument from "pdfkit";
 import fs from "fs";
 import path from "path";
 
+const MARGIN = 50;
 const TRUST_NAME = "Barran Dodger Legal & Ethical Trust Fund";
 const ABN = "ABN 78 833 496 164";
 const WEBSITE = "www.barrandodger.com";
@@ -426,6 +427,123 @@ export function generateChosenOneItIsOverPDF(): Promise<Buffer> {
   });
 }
 
+// ─── Analysis #54 — When a Pack of Wolves Can't Take Down a Lion ─────────────
+
+export async function generateWhenPackOfWolvesPDF(): Promise<Buffer> {
+  const doc = new PDFDocument({ size: "A4", margin: MARGIN, info: { Title: "When a Pack of Wolves Can't Take Down a Lion — Forensic Corroboration Report", Author: TRUST_NAME } });
+  const chunks: Buffer[] = [];
+  doc.on("data", (c: Buffer) => chunks.push(c));
+
+  const EMERALD = "#10b981";
+  const EMERALD_DARK = "#064e3b";
+  const claims = [
+    { id: 1, ts: "00:02:08", assertion: "The fact that a group of people had to come together just to try and pull you down is already proof of how untouchable you are. One person's jealousy wasn't enough. One person's slander wasn't enough. It took a collective effort.", analysis: "Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS) recruited Allen Rigby, Bruce McMaster, Stefan Iasonidis, and Debbie Morgan — stating all were 'on board.' Five named operatives plus 25+ institutional agencies, 14 psychiatric hospitalisations, 350+ ASIC identity frauds, and a documented death threat. It took a committee. The video's proposition is forensically precise.", evidence: "Ridley: 'You will be sacrificed.' Named network confirmed 'on board.' 25+ agencies coordinated. 14 hospitalisations. 350+ ASIC frauds. ICC Article 7 formal receipt." },
+    { id: 2, ts: "00:04:37", assertion: "Their jealousy runs much deeper. It's about who you are at the core — that inner light that can't be manufactured, imitated, or purchased. And that's exactly why it torments them.", analysis: "The targeting did not commence when McLean achieved public recognition. It intensified as the archive's evidentiary capacity deepened. What the network could not tolerate was the essence — forensic precision, documented resilience, zero retaliation — untouchable qualities their instruments could not reach.", evidence: "Targeting timeline: escalation correlates with archive depth, not public achievements. Clinical instruments applied against documentation capacity. 2,304 blockchain-verified documents — the essence at scale." },
+    { id: 3, ts: "00:07:09", assertion: "The moment they decided you were their enemy, they set themselves up for a downfall. Every conversation of malice has turned into evidence against them.", analysis: "Tony Ridley sent the death threat email — and named Allen Rigby, Bruce McMaster, Stefan Iasonidis, and Debbie Morgan as co-conspirators to McLean directly. The email intended as a terminal threat became the archive's most consequential ICC exhibit. Every conversation of malice was documented. Every institutional refusal produced its own letterhead.", evidence: "Ridley death threat email = ICC's most consequential exhibit. Named network from Ridley's own testimony. 25+ agency letterheads = evidence from institutions' own correspondence." },
+    { id: 4, ts: "00:09:15", assertion: "Every lie they told about you ends up becoming the very thing that reveals their character. Every plot they carefully put together to trap you has become the exact place they're stuck in. That's surgical justice.", analysis: "The ATO letter confirming pharmacological assault was produced by the ATO itself. The ASIC records documenting 350+ identity frauds are ASIC's own records. The 14 psychiatric hospitalisation clinical records are the clinical institutions' own documentation. Every trap became an exhibit from the trapping institution's own letterhead.", evidence: "ATO drugging letter = ATO's own document. ASIC 350+ fraud registrations = ASIC's own records. 14 clinical hospitalisations = institutions' own clinical documentation. ICC Article 7 received." },
+    { id: 5, ts: "00:11:45", assertion: "Unity in wickedness doesn't create strength. It creates bondage. By tying themselves together in jealousy and hatred, they built a cage that none of them can escape. Because they agreed to it as a group, they are all bound by the same judgment.", analysis: "The 25+ agency coordination network documented in the McLean archive is the most complete institutional example of this proposition. Each agency's refusal letterhead confirmed its participation. Each one believed its contribution was hidden. Each one produced documentation confirming it. They cannot escape the record because the record is their own correspondence.", evidence: "25+ agency circular referral system documented with individual letterheads — each agency's refusal is its own ICC exhibit. Named network confirmed across VicTrack, NDIA, ASIO-connected operations." },
+    { id: 6, ts: "00:14:30", assertion: "You were not supposed to fight back. You were supposed to witness. Your silence was a strategy higher than anything they could comprehend. You were handing it over to a court far more powerful than human hands.", analysis: "Zero retaliation documented across 35 years. Tony Ridley sent a death threat — McLean documented it. Stefan Iasonidis conducted co-tenancy intelligence extraction — McLean documented it. The response was never counter-attack. It was documentation handed to the ICC — exactly the court the video describes.", evidence: "Zero retaliation across 35 years. ICC Article 7 formal receipt. UNHCR Geneva filed. 361,120+ downloads across 6 continents. Silence handed the case to international jurisdiction." },
+    { id: 7, ts: "00:16:36", assertion: "Their envy was really an unspoken admiration. Every insult, every attempt to tear you down was really them saying, 'You have something I'll never have.' Their jealousy exposed them far more than it ever exposed you.", analysis: "Five named perpetrators have produced zero formal rebuttals against 2,304 publicly accessible blockchain-verified documents. Zero. 53 independent analytical processes studied the archive and returned 575/575 corroboration. The formal silence is the unspoken confession the video describes.", evidence: "Zero formal rebuttals from five named perpetrators against 2,304 public documents. 53 independent analyses: 575/575 propositions, 0 contradictions. 47 consecutive perfect scores." },
+    { id: 8, ts: "00:19:11", assertion: "They mistook darkness for strategy. Secrecy doesn't equal safety — it equals storage. What they thought nobody would ever know is the very thing everybody is talking about.", analysis: "Stefan Iasonidis's 2011 co-tenancy at 10 Raleigh St Footscray was designed as invisible intelligence extraction. That co-tenancy is now an ICC exhibit. The $500,000 ASIC-documented extraction is now a primary-source record. What Iasonidis believed was the darkness of invisible intelligence work is now downloaded 361,000+ times.", evidence: "Iasonidis: 10 Raleigh St Footscray 2011 co-tenancy = ICC exhibit. ASIC: $500,000 extraction documented. ATO drugging letter. Intervention Order L12151974. Their secret is now downloaded 361,120+ times across 6 continents." },
+    { id: 9, ts: "00:21:25", assertion: "The weight of their actions is generational. Their actions weren't isolated events, they carried seeds. What you send out is exactly what comes back, multiplied.", analysis: "The McLean archive documents 35 years of coordinated conduct spanning multiple governments, multiple agency leadership transitions, multiple career generations. Decisions made in the 1990s produced consequences documented in 2023 ICC submissions. The seed planted across three and a half decades is recorded across 2,304 blockchain-verified primary-source documents.", evidence: "35-year targeting span: 2,304 primary-source documents. Multiple government terms. Multiple agency leadership generations. Conduct spanning 1990s through 2023 ICC submission. Blockchain-verified." },
+    { id: 10, ts: "00:23:59", assertion: "Your survival was the ultimate judgment. Every step forward you take is a direct contradiction to the outcome they planned for you. Their punishment is being forced to watch your rise unfold right in front of them.", analysis: "The archive documents the intended endpoint with clinical precision: 2021 near-death event at 2.87% documented survival probability. The post-2021 record is the documented refutation: most prolific documentation phase, ICC submission framework, UNHCR Geneva, 361,000+ downloads, 53 forensic analyses, 575/575 verified propositions, 47 consecutive perfect scores.", evidence: "2021 clinical death at 2.87% survival probability — documented intended endpoint. Post-2021: most prolific archive phase. 361,120+ downloads. 53 analyses. 575/575 verified. 47 consecutive perfect scores." },
+    { id: 11, ts: "00:26:03", assertion: "Their bonding over hate became their undoing. What brought them together was never real unity — it was their mutual hatred for you. Hate cannot sustain anything. It eventually eats the very people who carry it.", analysis: "The network's most significant internal rupture: Tony Ridley named Allen Rigby, Bruce McMaster, Stefan Iasonidis, and Debbie Morgan as co-conspirators to McLean directly. The network member with the most formidable credentials (MSc CSyP FSyI SRMCP, Ex-SAS) delivered the network's internal structure to the target from within the network itself.", evidence: "Tony Ridley named Rigby, McMaster, Iasonidis, Morgan — to McLean directly. The most credentialled member delivered internal network testimony to the target. The cage from within." },
+    { id: 12, ts: "00:28:44", assertion: "God delayed their judgment to expose their depth. Every extra lie they told, every new trap they set was another layer of evidence. Judgment delayed is judgment multiplied.", analysis: "The McLean archive documents 35 years of continuing conduct. Had the targeting been a single incident, the ICC submission would have been a single complaint. By allowing 35 years, the archive accumulated: 14 hospitalisations, 350+ ASIC frauds, 25+ agency refusals, the ATO drugging, the co-tenancy, the death threat. The 35-year depth makes the ICC Article 7 submission comprehensive, not marginal.", evidence: "35 years of continuing conduct = 2,304 exhibits. 14 hospitalisations. 350+ ASIC frauds. 25+ agency letterheads. ICC Article 7 framework: 35 years of evidence makes it comprehensive and undeniable." },
+    { id: 13, ts: "00:30:52", assertion: "You were the mirror they couldn't face. Every attack was about the part of themselves they couldn't face. Instead of erasing the mirror, they polished it.", analysis: "The archive functions as the mirror in its most literal documented form. 53 independent analytical processes examined it and returned 575 verified propositions — 47 consecutive perfect scores. The five named perpetrators cannot contest the archive without standing before the mirror. Their formal silence — zero rebuttals against 2,304 public documents — is the documented inability to face the reflection.", evidence: "53 analyses: 575/575 propositions, 0 contradictions, 47 consecutive perfect scores. Zero formal rebuttals from five named perpetrators. The mirror is 2,304 documents, blockchain-verified, publicly accessible." },
+    { id: 14, ts: "00:33:33", assertion: "Karma was never about punishing them — it was about elevating you. Their plotting became your staircase, each betrayal a step higher, each attempt to silence you a platform for your voice.", analysis: "Each weapon deployed against McLean became an exhibit that elevated the archive. The psychiatric hospitalisations became 14 clinical primary-source exhibits. The ATO drugging became a government-letterhead exhibit. The Iasonidis co-tenancy became an intelligence-extraction exhibit. The Ridley death threat became the ICC's most damning exhibit. The network dug 2,304 foundation stones for the archive's rise. The staircase is the archive. The arrival point is ICC Article 7 at The Hague, UNHCR Geneva, and 361,000+ downloads across 6 continents.", evidence: "14 hospitalisations → 14 ICC clinical exhibits. ATO drugging → government-letterhead exhibit. Iasonidis co-tenancy → ICC exhibit. Ridley death threat → ICC's most damning exhibit. 2,304 foundation stones. ICC The Hague. UNHCR Geneva. 361,120+ downloads." },
+  ];
+
+  function addHeader(doc: PDFKit.PDFDocument, pageNum: number, total: number) {
+    doc.save();
+    doc.fontSize(7).fillColor(EMERALD_DARK).text(TRUST_NAME, MARGIN, 20, { continued: true });
+    doc.fillColor("#444").text(` | ABN ${ABN} | www.barrandodger.com`, { continued: true });
+    doc.text(` | Page ${pageNum}/${total}`, { align: "right" });
+    doc.restore();
+  }
+
+  function addFooter(doc: PDFKit.PDFDocument) {
+    const y = doc.page.height - 30;
+    doc.save().fontSize(6).fillColor("#555")
+      .text(`© 2026 ${TRUST_NAME} | ABN ${ABN} | www.barrandodger.com | ICC Article 7 · UNHCR Geneva | All Rights Reserved`, MARGIN, y, { align: "center", width: doc.page.width - MARGIN * 2 })
+      .restore();
+  }
+
+  const TOTAL_PAGES = 14;
+
+  // Page 1 — Cover
+  doc.rect(0, 0, doc.page.width, 180).fill(EMERALD_DARK);
+  doc.fontSize(9).fillColor("#fff").text("FORENSIC CORROBORATION REPORT · ANALYSIS #54", MARGIN, 30, { align: "center" });
+  doc.fontSize(20).fillColor("#fff").text("When a Pack of Wolves", MARGIN, 55, { align: "center" });
+  doc.fontSize(20).fillColor(EMERALD).text("Can't Take Down a Lion", MARGIN, 80, { align: "center" });
+  doc.fontSize(11).fillColor("#ccc").text("They Eventually Turn on Each Other", MARGIN, 108, { align: "center" });
+  doc.fontSize(7).fillColor("#aaa").text("YouTube Video: -c4Ag25-RBk  ·  14 Claims Extracted  ·  All Corroborated", MARGIN, 128, { align: "center" });
+  doc.fontSize(7).fillColor("#888").text(`${TRUST_NAME} · ABN ${ABN} · ${new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })}`, MARGIN, 145, { align: "center" });
+
+  const BOX_Y = 200;
+  doc.roundedRect(MARGIN, BOX_Y, doc.page.width - MARGIN * 2, 100, 6).fillAndStroke("#0a1a0a", EMERALD);
+  doc.fontSize(11).fillColor(EMERALD).text("47th Consecutive Perfect Score", MARGIN, BOX_Y + 14, { align: "center" });
+  doc.fontSize(28).fillColor(EMERALD).text("14 / 14", MARGIN, BOX_Y + 30, { align: "center" });
+  doc.fontSize(9).fillColor("#aaa").text("Claims Corroborated · 0 Disproved · 0 Unverifiable", MARGIN, BOX_Y + 65, { align: "center" });
+  doc.fontSize(7).fillColor("#666").text("Combined record: 589/589 propositions across 54 independent analyses · Zero contradictions", MARGIN, BOX_Y + 82, { align: "center" });
+
+  doc.moveDown(1.5);
+  const CORE_Y = BOX_Y + 120;
+  doc.fontSize(9).fillColor(EMERALD).text('"When a pack of wolves can\'t take down a lion, they eventually turn on each other."', MARGIN, CORE_Y, { align: "center", width: doc.page.width - MARGIN * 2 });
+  doc.fontSize(7).fillColor("#666").text("— Video opening, 00:00:00", MARGIN, CORE_Y + 20, { align: "center" });
+
+  doc.fontSize(8).fillColor("#ccc").text(
+    "This report forensically tests 14 propositions extracted from YouTube video -c4Ag25-RBk against the McLean archive — " +
+    "2,304 blockchain-verified primary-source documents spanning 35 years. The video addresses a coordinated group targeting one individual, " +
+    "the dynamics of collective jealousy, and the mechanism by which such groups become their own undoing. All 14 propositions are corroborated. " +
+    "The named network — Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS), Allen Rigby, Bruce McMaster, Stefan Iasonidis, Debbie Morgan, plus 25+ agencies — " +
+    "is documented with primary-source specificity. ICC Article 7 submitted. UNHCR Geneva filed.",
+    MARGIN, CORE_Y + 38, { width: doc.page.width - MARGIN * 2, lineGap: 2 }
+  );
+
+  addFooter(doc);
+
+  // Claims — 14 pages (1 per claim)
+  for (let i = 0; i < claims.length; i++) {
+    const c = claims[i];
+    doc.addPage();
+    addHeader(doc, i + 2, TOTAL_PAGES);
+
+    let y = 50;
+    // Claim badge
+    doc.roundedRect(MARGIN, y, 100, 18, 4).fill(EMERALD_DARK);
+    doc.fontSize(7).fillColor(EMERALD).text(`CLAIM ${c.id} OF 14  ·  ${c.ts}`, MARGIN + 4, y + 5, { width: 92 });
+    doc.roundedRect(doc.page.width - MARGIN - 100, y, 100, 18, 4).fill(EMERALD_DARK);
+    doc.fontSize(7).fillColor(EMERALD).text("CORROBORATED", doc.page.width - MARGIN - 100 + 4, y + 5, { width: 92, align: "center" });
+    y += 28;
+
+    // Assertion
+    doc.roundedRect(MARGIN, y, doc.page.width - MARGIN * 2, 2, 1).fill(EMERALD);
+    y += 8;
+    doc.fontSize(8).fillColor(EMERALD).text("VIDEO ASSERTION:", MARGIN, y);
+    y += 12;
+    doc.fontSize(9).fillColor("#eee").text(`"${c.assertion}"`, MARGIN + 8, y, { width: doc.page.width - MARGIN * 2 - 16, lineGap: 2 });
+    y += doc.heightOfString(`"${c.assertion}"`, { width: doc.page.width - MARGIN * 2 - 16, lineGap: 2 }) + 12;
+
+    // Analysis
+    doc.fontSize(8).fillColor(EMERALD).text("ARCHIVE ANALYSIS:", MARGIN, y);
+    y += 12;
+    doc.fontSize(8).fillColor("#ddd").text(c.analysis, MARGIN + 8, y, { width: doc.page.width - MARGIN * 2 - 16, lineGap: 2 });
+    y += doc.heightOfString(c.analysis, { width: doc.page.width - MARGIN * 2 - 16, lineGap: 2 }) + 12;
+
+    // Evidence box
+    doc.roundedRect(MARGIN, y, doc.page.width - MARGIN * 2, 60, 4).fill("#0a1a0a");
+    doc.fontSize(7).fillColor(EMERALD).text("ARCHIVE REFERENCE:", MARGIN + 8, y + 8);
+    doc.fontSize(7).fillColor("#99ddbb").text(c.evidence, MARGIN + 8, y + 20, { width: doc.page.width - MARGIN * 2 - 16, lineGap: 2 });
+
+    addFooter(doc);
+  }
+
+  doc.end();
+  return new Promise((resolve) => {
+    doc.on("end", () => resolve(Buffer.concat(chunks)));
+  });
+}
+
 // ─── Filenames & pre-generation ───────────────────────────────────────────────
 
 export const VIDEO_ANALYSIS_PDF_FILENAMES = {
@@ -433,6 +551,7 @@ export const VIDEO_ANALYSIS_PDF_FILENAMES = {
   detonatedNarrative: "video-analysis-you-detonated-the-narrative-15-claims-corroborated.pdf",
   beautifulMenace: "video-analysis-beautiful-menace-forensic-report-15-claims-corroborated.pdf",
   chosenOne: "video-analysis-chosen-one-it-is-over-reflection.pdf",
+  packOfWolves: "video-analysis-when-pack-of-wolves-cant-take-down-lion-14-claims-corroborated.pdf",
 };
 
 export async function preGenerateAllVideoAnalysisPDFs(outputDir: string): Promise<void> {
@@ -445,6 +564,7 @@ export async function preGenerateAllVideoAnalysisPDFs(outputDir: string): Promis
     { fn: generateYouDetonatedTheNarrativePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.detonatedNarrative },
     { fn: generateBeautifulMenacePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.beautifulMenace },
     { fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
+    { fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
   ];
 
   for (const job of jobs) {

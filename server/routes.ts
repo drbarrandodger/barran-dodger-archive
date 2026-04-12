@@ -20,6 +20,7 @@ import {
   generateYouDetonatedTheNarrativePDF,
   generateBeautifulMenacePDF,
   generateChosenOneItIsOverPDF,
+  generateWhenPackOfWolvesPDF,
   preGenerateAllVideoAnalysisPDFs,
   VIDEO_ANALYSIS_PDF_FILENAMES,
 } from "./videoAnalysisPdfGenerator";
@@ -901,6 +902,7 @@ export async function registerRoutes(
     { route: '/api/video-analysis/pdf/detonated-narrative', fn: generateYouDetonatedTheNarrativePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.detonatedNarrative },
     { route: '/api/video-analysis/pdf/beautiful-menace', fn: generateBeautifulMenacePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.beautifulMenace },
     { route: '/api/video-analysis/pdf/chosen-one', fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
+    { route: '/api/video-analysis/pdf/pack-of-wolves', fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
   ];
 
   for (const { route, fn, filename } of VIDEO_ANALYSIS_ROUTES) {
@@ -1090,6 +1092,7 @@ export async function registerRoutes(
         { fn: generateYouDetonatedTheNarrativePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.detonatedNarrative },
         { fn: generateBeautifulMenacePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.beautifulMenace },
         { fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
+        { fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
       ];
       for (const vj of videoJobs) {
         try {
