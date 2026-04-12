@@ -978,10 +978,12 @@ export async function registerRoutes(
     try {
       res.set('Cache-Control', 'no-store');
       const docsDir = path.resolve('client/public/documents');
+      const attachedDir = path.resolve('attached_assets');
       const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
-      const all = findAllPDFsRecursive(docsDir);
-      const total = all.length + (fs.existsSync(rootPDF) ? 1 : 0);
-      res.json({ count: total });
+      const docsPDFs = findAllPDFsRecursive(docsDir);
+      const attachedPDFs = findAllPDFsRecursive(attachedDir);
+      const total = docsPDFs.length + attachedPDFs.length + (fs.existsSync(rootPDF) ? 1 : 0);
+      res.json({ count: total, breakdown: { documents: docsPDFs.length, attached: attachedPDFs.length } });
     } catch {
       res.json({ count: 0 });
     }
@@ -991,8 +993,12 @@ export async function registerRoutes(
     try {
       res.set('Cache-Control', 'no-store, max-age=0');
       const docsDir = path.resolve('client/public/documents');
+      const attachedDir = path.resolve('attached_assets');
       const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
-      const all = findAllPDFsRecursive(docsDir);
+      const all = [
+        ...findAllPDFsRecursive(docsDir),
+        ...findAllPDFsRecursive(attachedDir),
+      ];
       let totalBytes = 0;
       for (const { fullPath } of all) {
         try { totalBytes += fs.statSync(fullPath).size; } catch {}
@@ -1001,9 +1007,10 @@ export async function registerRoutes(
         try { totalBytes += fs.statSync(rootPDF).size; } catch {}
       }
       const mb = Math.round(totalBytes / (1024 * 1024));
-      res.json({ bytes: totalBytes, mb, label: `~${mb}MB` });
+      const gb = (totalBytes / (1024 * 1024 * 1024)).toFixed(2);
+      res.json({ bytes: totalBytes, mb, gb, label: mb >= 1024 ? `~${gb}GB` : `~${mb}MB` });
     } catch {
-      res.json({ bytes: 0, mb: 0, label: '~180MB' });
+      res.json({ bytes: 0, mb: 0, label: '~1.4GB' });
     }
   });
 
@@ -1067,9 +1074,13 @@ export async function registerRoutes(
         pdfFiles.push({ name: 'THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf', fullPath: rootPDF });
       }
 
+      // Collect all PDFs from attached_assets (574 evidence documents)
+      const attachedDir = path.resolve('attached_assets');
+      const attachedPDFs = findAllPDFsRecursive(attachedDir);
+
       // Increment divine archive counter + each individual doc
       storage.incrementDownloadCount(DIVINE_SLUG).catch(() => {});
-      for (const { name } of pdfFiles) {
+      for (const { name } of [...pdfFiles, ...attachedPDFs]) {
         const slug = name
           .replace(/\.pdf$/i, '')
           .replace(/[^a-zA-Z0-9]+/g, '-')
@@ -1082,17 +1093,31 @@ export async function registerRoutes(
       res.setHeader('Content-Type', 'application/zip');
       res.setHeader('Content-Disposition', 'attachment; filename="BarranDodger_Divine_Justice_Archive.zip"');
       res.setHeader('Cache-Control', 'no-store');
+      res.setHeader('X-Accel-Buffering', 'no');
 
-      const archive = archiver('zip', { zlib: { level: 1 } });
+      // Use store (level 0) — PDFs are already compressed, deflate adds CPU overhead with no size benefit
+      const archive = archiver('zip', { zlib: { level: 0 } });
       archive.on('error', (err) => {
         if (!res.headersSent) res.status(500).json({ message: 'Archive error', error: err.message });
       });
       archive.pipe(res);
 
-      // Add all on-disk PDFs
+      // Add all on-disk documents PDFs
       for (const { name, fullPath } of pdfFiles) {
         if (fs.existsSync(fullPath) && fs.statSync(fullPath).size > 0) {
-          archive.file(fullPath, { name });
+          archive.file(fullPath, { name: `documents/${name}` });
+        }
+      }
+
+      // Add all attached_assets PDFs (sanitise names for cross-platform ZIP compatibility)
+      for (const { name, fullPath } of attachedPDFs) {
+        if (fs.existsSync(fullPath) && fs.statSync(fullPath).size > 0) {
+          const safeName = name
+            .replace(/:/g, '-')
+            .replace(/[<>"|?*\x00-\x1f]/g, '-')
+            .replace(/\s{2,}/g, ' ')
+            .trim();
+          archive.file(fullPath, { name: `attached-evidence/${safeName}` });
         }
       }
 
@@ -1115,7 +1140,7 @@ export async function registerRoutes(
       } catch { /* skip */ }
 
       // Manifest
-      const totalFiles = pdfFiles.length + fullEssayFiles.length;
+      const totalFiles = pdfFiles.length + fullEssayFiles.length + attachedPDFs.length;
       const allDocLines: string[] = [];
       let idx = 1;
       const rootDocs = pdfFiles.filter(f => !f.name.includes('/'));
@@ -1127,14 +1152,18 @@ export async function registerRoutes(
         byFolder[folder].push(f);
       }
       allDocLines.push('── CORE DOCUMENTS ───────────────────────────────────');
-      for (const f of rootDocs) allDocLines.push(`${String(idx++).padStart(4, ' ')}. ${f.name}`);
+      for (const f of rootDocs) allDocLines.push(`${String(idx++).padStart(4, ' ')}. documents/${f.name}`);
       for (const [folder, files] of Object.entries(byFolder)) {
         allDocLines.push('', `── ${folder.toUpperCase().replace(/-/g, ' ')} ──────────────────────────────────────`);
-        for (const f of files) allDocLines.push(`${String(idx++).padStart(4, ' ')}. ${f.name}`);
+        for (const f of files) allDocLines.push(`${String(idx++).padStart(4, ' ')}. documents/${f.name}`);
       }
       if (fullEssayFiles.length > 0) {
         allDocLines.push('', '── FULL ESSAY PDFs ─────────────────────────────────');
         for (const f of fullEssayFiles) allDocLines.push(`${String(idx++).padStart(4, ' ')}. ${f.name}`);
+      }
+      if (attachedPDFs.length > 0) {
+        allDocLines.push('', `── ATTACHED EVIDENCE ARCHIVE (${attachedPDFs.length} documents) ───────────`);
+        for (const f of attachedPDFs) allDocLines.push(`${String(idx++).padStart(4, ' ')}. attached-evidence/${f.name}`);
       }
 
       const manifestLines = [
@@ -1149,11 +1178,14 @@ export async function registerRoutes(
         'neither any thing hid, that shall not be known and come abroad."',
         '— Luke 8:17',
         '',
-        `Downloaded:  ${new Date().toISOString()}`,
-        `Total files: ${totalFiles} PDFs`,
-        `Archive:     blockchain-verified, ICC-submitted, UNHCR-lodged`,
-        `Record:      603/603 propositions · 55 analyses · 48 consecutive perfect scores`,
-        `Downloads:   361,120+ across 6 continents`,
+        `Downloaded:   ${new Date().toISOString()}`,
+        `Total files:  ${totalFiles} PDFs`,
+        `  documents/          — ${pdfFiles.length} core documents & forensic analyses`,
+        `  attached-evidence/  — ${attachedPDFs.length} uploaded evidence documents`,
+        `  full-essays/        — ${fullEssayFiles.length} extended essay PDFs`,
+        `Archive:      blockchain-verified, ICC-submitted, UNHCR-lodged`,
+        `Record:       603/603 propositions · 55 analyses · 48 consecutive perfect scores`,
+        `Downloads:    361,120+ across 6 continents`,
         '',
         ...allDocLines,
         '',
