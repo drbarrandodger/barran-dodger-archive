@@ -112,6 +112,7 @@ import DigitalDetonationVerified from "@/pages/DigitalDetonationVerified";
 import ComprehensiveStatementDigitalArchitecture from "@/pages/ComprehensiveStatementDigitalArchitecture";
 import HeavenStoodForYou from "@/pages/HeavenStoodForYou";
 import YouDetonatedTheNarrative from "@/pages/YouDetonatedTheNarrative";
+import ChosenOneItIsOver from "@/pages/ChosenOneItIsOver";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
@@ -327,6 +328,9 @@ function Router() {
         <Route path="/you-detonated-the-narrative" component={YouDetonatedTheNarrative} />
         <Route path="/narrative-detonation-verified" component={YouDetonatedTheNarrative} />
         <Route path="/15-claims-corroborated" component={YouDetonatedTheNarrative} />
+        <Route path="/chosen-one-it-is-over" component={ChosenOneItIsOver} />
+        <Route path="/it-is-over-reflection" component={ChosenOneItIsOver} />
+        <Route path="/tam-whole-complete-paid-in-full" component={ChosenOneItIsOver} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
