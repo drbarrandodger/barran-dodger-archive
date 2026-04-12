@@ -468,6 +468,12 @@ uri = "file://client/src/assets/images/cover-you-didnt-chase-the-throne-you-beca
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "uqyt7z1QCgxGDt-7xXcmv"
+uri = "file://client/src/assets/images/cover-comprehensive-statement-digital-architecture.png"
+type = "image"
+title = "comprehensive statement digital architecture cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

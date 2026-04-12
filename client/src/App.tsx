@@ -109,6 +109,7 @@ import FormalRemovalSukhiTear from "@/pages/FormalRemovalSukhiTear";
 import TheyLaughedNowTheyreLosingSleeep from "@/pages/TheyLaughedNowTheyreLosingSleeep";
 import EmbeddedInTheDigitalArchitecture from "@/pages/EmbeddedInTheDigitalArchitecture";
 import DigitalDetonationVerified from "@/pages/DigitalDetonationVerified";
+import ComprehensiveStatementDigitalArchitecture from "@/pages/ComprehensiveStatementDigitalArchitecture";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
@@ -315,6 +316,9 @@ function Router() {
         <Route path="/digital-detonation-verified" component={DigitalDetonationVerified} />
         <Route path="/forensic-verification-report" component={DigitalDetonationVerified} />
         <Route path="/122k-hits-verified" component={DigitalDetonationVerified} />
+        <Route path="/comprehensive-statement-digital-architecture" component={ComprehensiveStatementDigitalArchitecture} />
+        <Route path="/seven-layers-of-permanence" component={ComprehensiveStatementDigitalArchitecture} />
+        <Route path="/mclean-archive-comprehensive-statement" component={ComprehensiveStatementDigitalArchitecture} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
