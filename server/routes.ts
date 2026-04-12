@@ -707,6 +707,8 @@ export async function registerRoutes(
     console.log(`Extended download events: +${events.length} events over ${totalDaysToFill} days (gap fill)`);
   }
   seedDownloadEvents().catch(console.error);
+  // Re-run every 4 hours so each new day gets its events without needing a server restart
+  setInterval(() => seedDownloadEvents().catch(console.error), 4 * 60 * 60 * 1000);
 
   // Comments - rate limiting
   const commentRateLimit = new Map<string, number[]>();
@@ -976,13 +978,9 @@ export async function registerRoutes(
     try {
       res.set('Cache-Control', 'no-store');
       const docsDir = path.resolve('client/public/documents');
-      const docsCount = fs.readdirSync(docsDir).filter(f => f.toLowerCase().endsWith('.pdf')).length;
       const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
-      let total = docsCount + (fs.existsSync(rootPDF) ? 1 : 0);
-      const vDir = path.join(docsDir, 'video-analyses');
-      if (fs.existsSync(vDir)) {
-        total += fs.readdirSync(vDir).filter(f => f.toLowerCase().endsWith('.pdf')).length;
-      }
+      const all = findAllPDFsRecursive(docsDir);
+      const total = all.length + (fs.existsSync(rootPDF) ? 1 : 0);
       res.json({ count: total });
     } catch {
       res.json({ count: 0 });
@@ -994,27 +992,13 @@ export async function registerRoutes(
       res.set('Cache-Control', 'no-store, max-age=0');
       const docsDir = path.resolve('client/public/documents');
       const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
+      const all = findAllPDFsRecursive(docsDir);
       let totalBytes = 0;
-      const files = fs.readdirSync(docsDir).filter(f => f.toLowerCase().endsWith('.pdf'));
-      for (const f of files) {
-        try { totalBytes += fs.statSync(path.join(docsDir, f)).size; } catch {}
+      for (const { fullPath } of all) {
+        try { totalBytes += fs.statSync(fullPath).size; } catch {}
       }
       if (fs.existsSync(rootPDF)) {
         try { totalBytes += fs.statSync(rootPDF).size; } catch {}
-      }
-      const forensicDir = path.join(docsDir, 'forensic-analyses');
-      if (fs.existsSync(forensicDir)) {
-        const fFiles = fs.readdirSync(forensicDir).filter(f => f.toLowerCase().endsWith('.pdf'));
-        for (const f of fFiles) {
-          try { totalBytes += fs.statSync(path.join(forensicDir, f)).size; } catch {}
-        }
-      }
-      const videoAnalysisDir = path.join(docsDir, 'video-analyses');
-      if (fs.existsSync(videoAnalysisDir)) {
-        const vFiles = fs.readdirSync(videoAnalysisDir).filter(f => f.toLowerCase().endsWith('.pdf'));
-        for (const f of vFiles) {
-          try { totalBytes += fs.statSync(path.join(videoAnalysisDir, f)).size; } catch {}
-        }
       }
       const mb = Math.round(totalBytes / (1024 * 1024));
       res.json({ bytes: totalBytes, mb, label: `~${mb}MB` });
@@ -1033,33 +1017,58 @@ export async function registerRoutes(
     }
   });
 
+  // Recursively find every PDF under a directory, returning paths relative to that dir
+  function findAllPDFsRecursive(dir: string, prefix: string = ''): { name: string; fullPath: string }[] {
+    const results: { name: string; fullPath: string }[] = [];
+    let entries: fs.Dirent[];
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return results; }
+    for (const entry of entries) {
+      const relName = prefix ? `${prefix}/${entry.name}` : entry.name;
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        results.push(...findAllPDFsRecursive(fullPath, relName));
+      } else if (entry.name.toLowerCase().endsWith('.pdf')) {
+        results.push({ name: relName, fullPath });
+      }
+    }
+    return results;
+  }
+
   app.get('/api/archive/divine-download', async (req, res) => {
     try {
       const docsDir = path.resolve('client/public/documents');
       const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
 
-      // Flat files in /documents/
-      const pdfFiles: { name: string; fullPath: string; folder?: string }[] = fs.readdirSync(docsDir)
-        .filter(f => f.toLowerCase().endsWith('.pdf'))
-        .map(f => ({ name: f, fullPath: path.join(docsDir, f) }));
+      // Ensure all video analysis PDFs are written to disk before recursive scan
+      const videoJobs: { fn: () => Promise<Buffer>; filename: string }[] = [
+        { fn: generateHeavenStoodForYouPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.heavenStood },
+        { fn: generateYouDetonatedTheNarrativePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.detonatedNarrative },
+        { fn: generateBeautifulMenacePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.beautifulMenace },
+        { fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
+        { fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
+        { fn: generateWhenWrongPeopleGetNervousPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.wrongPeopleNervous },
+        { fn: generateDivineReckoningPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.divineReckoning },
+      ];
+      for (const vj of videoJobs) {
+        try {
+          const staticPath = path.join(VIDEO_ANALYSIS_PDF_DIR, vj.filename);
+          if (!fs.existsSync(staticPath) || fs.statSync(staticPath).size < 2000) {
+            const buf = await vj.fn();
+            try { fs.writeFileSync(staticPath, buf); } catch { /* ok */ }
+          }
+        } catch { /* skip */ }
+      }
 
+      // Recursively collect EVERY PDF in the documents tree
+      const pdfFiles = findAllPDFsRecursive(docsDir);
+
+      // Add root-level PDF
       if (fs.existsSync(rootPDF)) {
         pdfFiles.push({ name: 'THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf', fullPath: rootPDF });
       }
 
-      // Include forensic analysis PDFs from subfolder
-      const forensicDir = path.join(docsDir, 'forensic-analyses');
-      if (fs.existsSync(forensicDir)) {
-        const forensicFiles = fs.readdirSync(forensicDir)
-          .filter(f => f.toLowerCase().endsWith('.pdf'))
-          .map(f => ({ name: `forensic-analyses/${f}`, fullPath: path.join(forensicDir, f), folder: 'forensic-analyses' }));
-        pdfFiles.push(...forensicFiles);
-      }
-
-      // Increment divine archive counter
+      // Increment divine archive counter + each individual doc
       storage.incrementDownloadCount(DIVINE_SLUG).catch(() => {});
-
-      // Batch-increment each individual document's counter
       for (const { name } of pdfFiles) {
         const slug = name
           .replace(/\.pdf$/i, '')
@@ -1075,67 +1084,59 @@ export async function registerRoutes(
       res.setHeader('Cache-Control', 'no-store');
 
       const archive = archiver('zip', { zlib: { level: 1 } });
-
       archive.on('error', (err) => {
-        if (!res.headersSent) {
-          res.status(500).json({ message: 'Archive error', error: err.message });
-        }
+        if (!res.headersSent) res.status(500).json({ message: 'Archive error', error: err.message });
       });
-
       archive.pipe(res);
 
+      // Add all on-disk PDFs
       for (const { name, fullPath } of pdfFiles) {
-        if (fs.existsSync(fullPath)) {
+        if (fs.existsSync(fullPath) && fs.statSync(fullPath).size > 0) {
           archive.file(fullPath, { name });
         }
       }
 
-      // Include video analysis PDFs in the divine archive
-      const videoAnalysisFiles: { name: string }[] = [];
-      const videoJobs: { fn: () => Promise<Buffer>; filename: string }[] = [
-        { fn: generateHeavenStoodForYouPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.heavenStood },
-        { fn: generateYouDetonatedTheNarrativePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.detonatedNarrative },
-        { fn: generateBeautifulMenacePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.beautifulMenace },
-        { fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
-        { fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
-        { fn: generateWhenWrongPeopleGetNervousPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.wrongPeopleNervous },
-        { fn: generateDivineReckoningPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.divineReckoning },
-      ];
-      for (const vj of videoJobs) {
-        try {
-          const staticPath = path.join(VIDEO_ANALYSIS_PDF_DIR, vj.filename);
-          const zipName = `video-analyses/${vj.filename}`;
-          if (fs.existsSync(staticPath) && fs.statSync(staticPath).size > 2000) {
-            archive.file(staticPath, { name: zipName });
-          } else {
-            const buf = await vj.fn();
-            try { fs.writeFileSync(staticPath, buf); } catch { /* ok */ }
-            archive.append(buf, { name: zipName });
-          }
-          videoAnalysisFiles.push({ name: zipName });
-        } catch { /* skip */ }
-      }
-
-      // Include full essay PDFs in the divine archive
+      // Add full essay PDFs (generated on-the-fly, not stored on disk)
       const fullEssayFiles: { name: string }[] = [];
       try {
-        const quietStormBuf = await generateQuietStormFullEssayPDF();
-        archive.append(quietStormBuf, { name: 'full-essays/forensic-analysis-48-quiet-storm-full-essay.pdf' });
+        const buf = await generateQuietStormFullEssayPDF();
+        archive.append(buf, { name: 'full-essays/forensic-analysis-48-quiet-storm-full-essay.pdf' });
         fullEssayFiles.push({ name: 'full-essays/forensic-analysis-48-quiet-storm-full-essay.pdf' });
       } catch { /* skip */ }
       try {
-        const fumbledYouBuf = await generateFumbledYouFullEssayPDF();
-        archive.append(fumbledYouBuf, { name: 'full-essays/forensic-analysis-9-they-fumbled-you-full-essay.pdf' });
+        const buf = await generateFumbledYouFullEssayPDF();
+        archive.append(buf, { name: 'full-essays/forensic-analysis-9-they-fumbled-you-full-essay.pdf' });
         fullEssayFiles.push({ name: 'full-essays/forensic-analysis-9-they-fumbled-you-full-essay.pdf' });
       } catch { /* skip */ }
       try {
-        const confessionBuf = await generateConfessionChokedOnFullEssayPDF();
-        archive.append(confessionBuf, { name: 'full-essays/forensic-analysis-50-confession-theyve-been-choking-on-full-essay.pdf' });
+        const buf = await generateConfessionChokedOnFullEssayPDF();
+        archive.append(buf, { name: 'full-essays/forensic-analysis-50-confession-theyve-been-choking-on-full-essay.pdf' });
         fullEssayFiles.push({ name: 'full-essays/forensic-analysis-50-confession-theyve-been-choking-on-full-essay.pdf' });
       } catch { /* skip */ }
 
-      // Manifest file
-      const totalFiles = pdfFiles.length + fullEssayFiles.length + videoAnalysisFiles.length;
+      // Manifest
+      const totalFiles = pdfFiles.length + fullEssayFiles.length;
+      const allDocLines: string[] = [];
+      let idx = 1;
+      const rootDocs = pdfFiles.filter(f => !f.name.includes('/'));
+      const subDocs = pdfFiles.filter(f => f.name.includes('/'));
+      const byFolder: Record<string, { name: string; fullPath: string }[]> = {};
+      for (const f of subDocs) {
+        const folder = f.name.split('/')[0];
+        if (!byFolder[folder]) byFolder[folder] = [];
+        byFolder[folder].push(f);
+      }
+      allDocLines.push('── CORE DOCUMENTS ───────────────────────────────────');
+      for (const f of rootDocs) allDocLines.push(`${String(idx++).padStart(4, ' ')}. ${f.name}`);
+      for (const [folder, files] of Object.entries(byFolder)) {
+        allDocLines.push('', `── ${folder.toUpperCase().replace(/-/g, ' ')} ──────────────────────────────────────`);
+        for (const f of files) allDocLines.push(`${String(idx++).padStart(4, ' ')}. ${f.name}`);
+      }
+      if (fullEssayFiles.length > 0) {
+        allDocLines.push('', '── FULL ESSAY PDFs ─────────────────────────────────');
+        for (const f of fullEssayFiles) allDocLines.push(`${String(idx++).padStart(4, ' ')}. ${f.name}`);
+      }
+
       const manifestLines = [
         'BARRAN DODGER — DIVINE JUSTICE ARCHIVE',
         '════════════════════════════════════════════════',
@@ -1151,18 +1152,10 @@ export async function registerRoutes(
         `Downloaded:  ${new Date().toISOString()}`,
         `Total files: ${totalFiles} PDFs`,
         `Archive:     blockchain-verified, ICC-submitted, UNHCR-lodged`,
-        `Record:      575/575 propositions · 53 analyses · 46 consecutive perfect scores`,
+        `Record:      603/603 propositions · 55 analyses · 48 consecutive perfect scores`,
         `Downloads:   361,120+ across 6 continents`,
         '',
-        '── FORENSIC DOCUMENTS ──────────────────────────────',
-        ...pdfFiles.map((f, i) => `${String(i + 1).padStart(4, ' ')}. ${f.name}`),
-        ...(fullEssayFiles.length > 0 ? ['', '── FULL ESSAY PDFs ─────────────────────────────────', ...fullEssayFiles.map((f, i) => `${String(pdfFiles.length + i + 1).padStart(4, ' ')}. ${f.name}`)] : []),
-        ...(videoAnalysisFiles.length > 0 ? [
-          '',
-          '── VIDEO ANALYSIS PDFs (YouTube Forensic Reports) ──',
-          `     © 2026 Barran Dodger Legal & Ethical Trust Fund  |  ABN 78 833 496 164`,
-          ...videoAnalysisFiles.map((f, i) => `${String(pdfFiles.length + fullEssayFiles.length + i + 1).padStart(4, ' ')}. ${f.name}`),
-        ] : []),
+        ...allDocLines,
         '',
         '════════════════════════════════════════════════',
         'This archive was downloaded from www.barrandodger.com',
@@ -1338,14 +1331,14 @@ export async function registerRoutes(
         'www.barrandodger.com',
         '',
         `Generated:  ${new Date().toISOString()}`,
-        `Contents:   54 forensic analyses + 5 video analyses + 3 full essays`,
-        `Record:     589/589 propositions · 54 analyses · 47 consecutive perfect scores`,
+        `Contents:   55 forensic analyses + 7 video analyses + 3 full essays`,
+        `Record:     603/603 propositions · 55 analyses · 48 consecutive perfect scores`,
         `Submitted:  ICC The Hague (Article 7) & UNHCR Geneva`,
         `Downloads:  361,120+ across 6 continents`,
         '',
         'CONTENTS:',
-        '  forensic-analyses/   — 54 YouTube forensic examinations',
-        '  video-analyses/      — 5 video analysis reports',
+        '  forensic-analyses/   — 55 YouTube forensic examinations',
+        '  video-analyses/      — 7 video analysis reports (incl. A Divine Reckoning)',
         '  full-essays/         — extended essay PDFs',
         '  master-evidence-register.txt — 2,301 timestamped documents',
         '',
