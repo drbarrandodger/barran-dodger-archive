@@ -201,6 +201,85 @@ export default function UrgentProtectionRequest() {
           </Card>
         </motion.div>
 
+        {/* Federal Court — Employment Confirmed + Three Findings */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <Card className="bg-zinc-900/70 border-amber-700/50">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
+                <Scale size={20} className="text-amber-400" /> Federal Court of Australia — What Their Own Government Confirmed
+              </h2>
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Letter from Scott Tredwell, General Counsel · Federal Court of Australia · 27 March 2023</p>
+
+              {/* Employment Confirmed */}
+              <div className="bg-amber-950/40 border border-amber-700/40 rounded-xl p-5 mb-5">
+                <p className="text-amber-300 font-black text-sm uppercase tracking-wider mb-2">✓ Employment Status — Confirmed by the Federal Court</p>
+                <p className="text-zinc-200 text-sm leading-relaxed">
+                  The Federal Court's own General Counsel formally assessed and concluded: <span className="text-amber-300 font-bold">"I am satisfied that you are, or were, an employee with the Department of Social Services."</span>
+                </p>
+                <p className="text-zinc-400 text-xs mt-3 leading-relaxed">
+                  This is the same employment status that the Department of Social Services, the NDIA, and multiple agencies systematically denied over 35 years. The Federal Court — on official letterhead — confirmed it in writing. That confirmation is now an exhibit in the ICC submission.
+                </p>
+              </div>
+
+              {/* Three Findings */}
+              <div className="mb-5">
+                <p className="text-white font-black text-sm mb-3">The Federal Court then confirmed that the disclosure <span className="text-amber-400">potentially establishes three categories of serious wrongdoing</span> under the Public Interest Disclosure Act 2013 (Cth):</p>
+                <div className="space-y-3">
+                  {[
+                    {
+                      number: "1",
+                      label: "Perverting the Course of Justice",
+                      law: "PID Act s.29 Item 3(a)",
+                      detail: "Conduct that perverts, or is engaged in for the purpose of perverting, or attempting to pervert, the course of justice. The Federal Court found reasonable grounds to consider this category satisfied by the disclosed conduct."
+                    },
+                    {
+                      number: "2",
+                      label: "Maladministration — Institutional Conspiracy",
+                      law: "PID Act s.29 Item 4",
+                      detail: "Conduct that constitutes maladministration. This encompasses the coordinated institutional conduct across 25+ government agencies documented in the 2,304-exhibit archive — the systematic denial of employment, identity, financial standing, housing, and medical safety."
+                    },
+                    {
+                      number: "3",
+                      label: "Danger to the Health or Safety of a Person",
+                      law: "PID Act s.29 Item 8",
+                      detail: "Conduct that unreasonably results in a danger to the health or safety of one or more persons, or unreasonably results in or increases a risk of such danger. The Federal Court acknowledged this category — and subsequently, Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS, NDIA) sent the documented death threat: \"You will be sacrificed.\""
+                    },
+                  ].map((item) => (
+                    <div key={item.number} className="flex gap-4 bg-zinc-800/50 border border-zinc-700/30 rounded-lg p-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-amber-600 flex items-center justify-center font-black text-white text-sm">{item.number}</div>
+                      <div>
+                        <p className="text-amber-300 font-bold text-sm mb-0.5">{item.label}</p>
+                        <p className="text-zinc-500 text-[10px] uppercase tracking-wider mb-1.5">{item.law}</p>
+                        <p className="text-zinc-400 text-xs leading-relaxed">{item.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* The Rejection & Its Significance */}
+              <div className="bg-red-950/40 border border-red-800/40 rounded-xl p-5 mb-5">
+                <p className="text-red-400 font-black text-sm uppercase tracking-wider mb-2">⚠ Then Rejected — On a Technicality</p>
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  Having confirmed the employment, and having acknowledged all three categories of serious wrongdoing, the Federal Court then decided it could take no further action — because Dr. McLean had filed to the wrong recipient. The Federal Court was not the authorised agency for this disclosure. No referral was made to the correct agency. No warning was issued. The matter was closed with the recommendation to complain to the Commonwealth Ombudsman.
+                </p>
+              </div>
+
+              {/* Assassination Context */}
+              <div className="bg-zinc-800/60 border border-zinc-700/40 rounded-xl p-5">
+                <p className="text-white font-black text-sm mb-2">The Significance — "Danger to Health or Safety" + "You Will Be Sacrificed"</p>
+                <p className="text-zinc-400 text-xs leading-relaxed mb-3">
+                  The Federal Court formally acknowledged that the disclosed conduct potentially establishes a <span className="text-amber-300 font-semibold">danger to the health or safety of a person</span>. That acknowledgement is dated 27 March 2023. The documented death threat from Tony Ridley — <span className="text-red-400 font-semibold">"You will be sacrificed"</span> — names four co-conspirators and comes from a security operative with documented connections to ASIO. The document is archived, blockchain-verified, and submitted to the ICC.
+                </p>
+                <p className="text-zinc-400 text-xs leading-relaxed">
+                  The Federal Court's own finding of potential danger to health and safety, combined with a named death threat from a credentialled intelligence-connected operative, combined with 14 involuntary psychiatric hospitalisations and a 2021 clinical death at 2.87% survival probability — constitutes the most comprehensively documented assassination attempt in Australian legal history. Not a single agency has acted. The ICC submission is the result.
+                </p>
+              </div>
+
+            </CardContent>
+          </Card>
+        </motion.div>
+
         {/* ICC & UNHCR Context */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <div className="grid md:grid-cols-2 gap-4">
