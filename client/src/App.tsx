@@ -105,6 +105,7 @@ import HoneytrapInfiltrationReport from "@/pages/HoneytrapInfiltrationReport";
 import SilentAssassin from "@/pages/SilentAssassin";
 import TruthIsABlade from "@/pages/TruthIsABlade";
 import SukhiTear from "@/pages/SukhiTear";
+import FormalRemovalSukhiTear from "@/pages/FormalRemovalSukhiTear";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
@@ -301,6 +302,8 @@ function Router() {
         <Route path="/forensic-analysis" component={ForensicAnalysisIndex} />
         <Route path="/forensic-analysis-index" component={ForensicAnalysisIndex} />
         <Route path="/sukhi-tear" component={SukhiTear} />
+        <Route path="/formal-removal-sukhi-tear" component={FormalRemovalSukhiTear} />
+        <Route path="/sukhi-tear-removed-from-care" component={FormalRemovalSukhiTear} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
