@@ -118,6 +118,7 @@ import ChosenOneItIsOver from "@/pages/ChosenOneItIsOver";
 import BeautifulMenaceForensicReport from "@/pages/BeautifulMenaceForensicReport";
 import WhenPackOfWolvesForensicReport from "@/pages/WhenPackOfWolvesForensicReport";
 import WhenWrongPeopleGetNervousForensicReport from "@/pages/WhenWrongPeopleGetNervousForensicReport";
+import IllegalLevelGeniusForensicReport from "@/pages/IllegalLevelGeniusForensicReport";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
@@ -353,6 +354,9 @@ function Router() {
         <Route path="/when-wrong-people-get-nervous" component={WhenWrongPeopleGetNervousForensicReport} />
         <Route path="/when-wrong-people-get-nervous-forensic-report" component={WhenWrongPeopleGetNervousForensicReport} />
         <Route path="/law-enforcement-nervousness-forensic-analysis" component={WhenWrongPeopleGetNervousForensicReport} />
+        <Route path="/illegal-level-genius-new-equation" component={IllegalLevelGeniusForensicReport} />
+        <Route path="/illegal-level-genius-forensic-report" component={IllegalLevelGeniusForensicReport} />
+        <Route path="/genius-forged-in-suppression-forensic-analysis" component={IllegalLevelGeniusForensicReport} />
         <Route path="/divine-reckoning" component={DivineReckoning} />
         <Route path="/a-divine-reckoning" component={DivineReckoning} />
         <Route path="/to-those-who-chose-this" component={DivineReckoning} />

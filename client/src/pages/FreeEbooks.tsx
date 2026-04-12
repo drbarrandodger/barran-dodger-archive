@@ -46,6 +46,7 @@ const FORENSIC_EPUB_COVER_MAP: Record<number, string> = {
   53: "cover-they-attacked-without-knowing",
   54: "cover-when-pack-of-wolves",
   55: "cover-when-wrong-people-get-nervous",
+  56: "cover-illegal-level-genius",
 };
 
 interface ForensicEntry {
@@ -113,6 +114,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 53, title: "They Attacked You Without Knowing Who You Were — Now It's A Suicide Mission", slug: "they-attacked-you-without-knowing-who-you-were", propositions: 14, corroborated: 14, consecutivePerfect: true },
   { number: 54, title: "When a Pack of Wolves Can't Take Down a Lion — They Turn on Each Other", slug: "when-a-pack-of-wolves-cant-take-down-a-lion", propositions: 14, corroborated: 14, consecutivePerfect: true },
   { number: 55, title: "When The Wrong People Get Nervous, The Truth Is Already Moving", slug: "when-wrong-people-get-nervous", propositions: 14, corroborated: 14, consecutivePerfect: true },
+  { number: 56, title: "Illegal Level Genius — The New Equation", slug: "illegal-level-genius-new-equation", propositions: 14, corroborated: 14, consecutivePerfect: true },
 ];
 
 interface MajorPub {

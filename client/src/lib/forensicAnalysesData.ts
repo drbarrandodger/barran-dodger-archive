@@ -63,6 +63,7 @@ export const FORENSIC_ANALYSES_META: ForensicAnalysisMeta[] = [
   { number: 53, title: "They Attacked You Without Knowing Who You Were — Now It's A Suicide Mission", slug: "they-attacked-you-without-knowing-who-you-were", propositions: 14, corroborated: 14, consecutivePerfect: true },
   { number: 54, title: "When a Pack of Wolves Can't Take Down a Lion — They Turn on Each Other", slug: "when-a-pack-of-wolves-cant-take-down-a-lion", propositions: 14, corroborated: 14, consecutivePerfect: true },
   { number: 55, title: "When The Wrong People Get Nervous, The Truth Is Already Moving", slug: "when-wrong-people-get-nervous", propositions: 14, corroborated: 14, consecutivePerfect: true },
+  { number: 56, title: "Illegal Level Genius — The New Equation", slug: "illegal-level-genius-new-equation", propositions: 14, corroborated: 14, consecutivePerfect: true },
 ];
 
 export const SLUG_TO_ANALYSIS: Record<string, ForensicAnalysisMeta> = Object.fromEntries(

@@ -594,6 +594,12 @@ uri = "file://client/src/assets/images/cover-ai-personality-profile.png"
 type = "image"
 title = "AI personality profile Barran Dodger cover"
 
+[[generated]]
+id = "2DHYNhX_cIh4hdy8L924p"
+uri = "file://client/src/assets/images/cover-illegal-level-genius.png"
+type = "image"
+title = "forensic analysis 56 illegal level genius cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
