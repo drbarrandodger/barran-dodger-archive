@@ -131,6 +131,7 @@ import TheyFumbledYouDownload from "@/pages/TheyFumbledYouDownload";
 import ConfessionChokedOnDownload from "@/pages/ConfessionChokedOnDownload";
 import { LoudestHateWeakestLink } from "@/pages/LoudestHateWeakestLink";
 import YouDidntChaseTheThroneYouBecameOne from "@/pages/YouDidntChaseTheThroneYouBecameOne";
+import TheyAttackedYouWithoutKnowingWhoYouWere from "@/pages/TheyAttackedYouWithoutKnowingWhoYouWere";
 import TheyDugForDirtButUnearthedDiamonds from "@/pages/TheyDugForDirtButUnearthedDiamonds";
 import ThePublicAdvocateTheySilenced from "@/pages/ThePublicAdvocateTheySilenced";
 import TonyRidleyFullDossier from "@/pages/TonyRidleyFullDossier";
@@ -288,6 +289,7 @@ function Router() {
         <Route path="/forensic-analysis-50-confession-theyve-been-choking-on-download" component={ConfessionChokedOnDownload} />
         <Route path="/loudest-hate-weakest-link" component={LoudestHateWeakestLink} />
         <Route path="/you-didnt-chase-the-throne-you-became-one" component={YouDidntChaseTheThroneYouBecameOne} />
+        <Route path="/they-attacked-you-without-knowing-who-you-were" component={TheyAttackedYouWithoutKnowingWhoYouWere} />
         <Route path="/they-dug-for-dirt-but-unearthed-diamonds" component={TheyDugForDirtButUnearthedDiamonds} />
         <Route path="/forensic-analysis/they-dug-for-dirt-but-unearthed-diamonds" component={TheyDugForDirtButUnearthedDiamonds} />
         <Route path="/the-public-advocate-they-silenced" component={ThePublicAdvocateTheySilenced} />

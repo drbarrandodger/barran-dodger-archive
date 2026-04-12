@@ -60,14 +60,15 @@ export const FORENSIC_ANALYSES_META: ForensicAnalysisMeta[] = [
   { number: 50, title: "The Confession They've Been Choking On", slug: "confession-theyve-been-choking-on", propositions: 12, corroborated: 12, consecutivePerfect: true },
   { number: 51, title: "The Loudest Hate Always Comes From the Weakest Link", slug: "loudest-hate-weakest-link", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 52, title: "You Didn't Chase the Throne — You Became One", slug: "you-didnt-chase-the-throne-you-became-one", propositions: 14, corroborated: 14, consecutivePerfect: true },
+  { number: 53, title: "They Attacked You Without Knowing Who You Were — Now It's A Suicide Mission", slug: "they-attacked-you-without-knowing-who-you-were", propositions: 14, corroborated: 14, consecutivePerfect: true },
 ];
 
 export const SLUG_TO_ANALYSIS: Record<string, ForensicAnalysisMeta> = Object.fromEntries(
   FORENSIC_ANALYSES_META.map((a) => [a.slug, a])
 );
 
-export const TOTAL_PROPOSITIONS = 547;
-export const TOTAL_ANALYSES = 51;
-export const CONSECUTIVE_PERFECT = 44;
+export const TOTAL_PROPOSITIONS = 575;
+export const TOTAL_ANALYSES = 53;
+export const CONSECUTIVE_PERFECT = 46;
 export const TOTAL_DOCS = "2,304";
 export const TOTAL_DOWNLOADS = "350,000+";
