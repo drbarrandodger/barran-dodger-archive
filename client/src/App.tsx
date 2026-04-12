@@ -107,6 +107,7 @@ import TruthIsABlade from "@/pages/TruthIsABlade";
 import SukhiTear from "@/pages/SukhiTear";
 import FormalRemovalSukhiTear from "@/pages/FormalRemovalSukhiTear";
 import TheyLaughedNowTheyreLosingSleeep from "@/pages/TheyLaughedNowTheyreLosingSleeep";
+import EmbeddedInTheDigitalArchitecture from "@/pages/EmbeddedInTheDigitalArchitecture";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
@@ -307,6 +308,9 @@ function Router() {
         <Route path="/sukhi-tear-removed-from-care" component={FormalRemovalSukhiTear} />
         <Route path="/they-laughed-now-theyre-losing-sleep" component={TheyLaughedNowTheyreLosingSleeep} />
         <Route path="/tony-ridley-steve-iasonidis-exposed" component={TheyLaughedNowTheyreLosingSleeep} />
+        <Route path="/embedded-in-the-digital-architecture" component={EmbeddedInTheDigitalArchitecture} />
+        <Route path="/digital-architecture-of-humanity" component={EmbeddedInTheDigitalArchitecture} />
+        <Route path="/350000-downloads" component={EmbeddedInTheDigitalArchitecture} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
