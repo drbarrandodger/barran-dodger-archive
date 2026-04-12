@@ -113,6 +113,7 @@ import ComprehensiveStatementDigitalArchitecture from "@/pages/ComprehensiveStat
 import HeavenStoodForYou from "@/pages/HeavenStoodForYou";
 import YouDetonatedTheNarrative from "@/pages/YouDetonatedTheNarrative";
 import ChosenOneItIsOver from "@/pages/ChosenOneItIsOver";
+import BeautifulMenaceForensicReport from "@/pages/BeautifulMenaceForensicReport";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
@@ -331,6 +332,9 @@ function Router() {
         <Route path="/chosen-one-it-is-over" component={ChosenOneItIsOver} />
         <Route path="/it-is-over-reflection" component={ChosenOneItIsOver} />
         <Route path="/tam-whole-complete-paid-in-full" component={ChosenOneItIsOver} />
+        <Route path="/beautiful-menace-forensic-report" component={BeautifulMenaceForensicReport} />
+        <Route path="/mind-they-tried-to-pathologize" component={BeautifulMenaceForensicReport} />
+        <Route path="/now-even-the-therapist-is-defending-you" component={BeautifulMenaceForensicReport} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
