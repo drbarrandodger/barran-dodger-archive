@@ -280,6 +280,33 @@ export default function Home() {
         }}
       />
 
+      {/* SOS — Urgent Physical Protection Banner */}
+      <div
+        className="w-full bg-red-950 border-b-2 border-red-600 py-5 px-4"
+        data-testid="banner-sos-urgent"
+      >
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-start gap-3">
+            <span className="text-red-400 mt-0.5 flex-shrink-0 text-2xl font-black">🆘</span>
+            <div>
+              <p className="text-red-200 font-black text-sm md:text-base uppercase tracking-wider mb-0.5">
+                URGENT — Dr. Richard McLean Requires Physical Harbouring
+              </p>
+              <p className="text-red-300/80 text-xs md:text-sm leading-snug">
+                55B Archbold Road, Long Jetty NSW · ICC The Hague (Article 7) · UNHCR Geneva · 2,304 blockchain-verified documents · Calling churches, advocates &amp; private investors
+              </p>
+            </div>
+          </div>
+          <a
+            href="/urgent-protection-request"
+            className="flex-shrink-0 inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-black text-xs uppercase tracking-wider px-5 py-2.5 rounded-lg transition-colors whitespace-nowrap"
+            data-testid="btn-sos-read-more"
+          >
+            Read SOS →
+          </a>
+        </div>
+      </div>
+
       <div
         className="w-full bg-black border-b border-[hsl(38,92%,50%)]/40 py-6 px-4"
         data-testid="banner-biblical-quote-top"
