@@ -52,6 +52,36 @@ export default function UrgentProtectionRequest() {
           </div>
         </motion.div>
 
+        {/* My Story — YouTube Video */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-zinc-900/70 border border-red-900/40 rounded-2xl overflow-hidden">
+            <div className="px-6 pt-6 pb-4">
+              <h2 className="text-xl font-black text-white mb-1 flex items-center gap-2">
+                <span className="text-red-400">▶</span> My Story — I Dare Anyone To Prove Me Wrong
+              </h2>
+              <p className="text-zinc-400 text-sm">
+                35 years. 2,304 documents. ICC The Hague. UNHCR Geneva. Watch the account and disprove a single claim.
+              </p>
+            </div>
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                src="https://www.youtube.com/embed/AsJ8yFuq7t8?rel=0&modestbranding=1&autoplay=0"
+                title="Dr. Richard McLean — My Story: I Dare Anyone To Prove Me Wrong"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                data-testid="video-my-story"
+              />
+            </div>
+            <div className="px-6 py-4 bg-zinc-900/60 border-t border-zinc-800/60 flex flex-wrap gap-3 text-xs text-zinc-500">
+              <span>📍 55B Archbold Road, Long Jetty NSW</span>
+              <span>⚖️ ICC Article 7 — The Hague</span>
+              <span>🌐 UNHCR Geneva</span>
+              <span>🔗 www.barrandodger.com</span>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Who This Calls To */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <h2 className="text-xl font-black text-white mb-4 flex items-center gap-2">
