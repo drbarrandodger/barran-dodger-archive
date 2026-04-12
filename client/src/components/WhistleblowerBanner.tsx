@@ -32,7 +32,7 @@ export function WhistleblowerBanner() {
   return (
     <div
       id="whistleblower-banner"
-      className="fixed top-0 left-0 right-0 z-[70] bg-[hsl(222,55%,8%)] border-b-2 border-[hsl(38,92%,50%)] shadow-lg"
+      className="fixed top-[var(--sos-bar-height,36px)] left-0 right-0 z-[70] bg-[hsl(222,55%,8%)] border-b-2 border-[hsl(38,92%,50%)] shadow-lg"
       data-testid="whistleblower-banner"
     >
       <div className="container mx-auto px-4 py-2 md:py-3">

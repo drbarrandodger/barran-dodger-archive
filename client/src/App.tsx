@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { DonationBanner } from "@/components/DonationBanner";
 import { WhistleblowerBanner } from "@/components/WhistleblowerBanner";
+import { SOSTopBar } from "@/components/SOSTopBar";
 import { LanguageDetectionBanner } from "@/components/LanguageDetectionBanner";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Chatbot } from "@/components/Chatbot";
@@ -391,6 +392,7 @@ function App() {
         <TooltipProvider>
           <GlobalDownloadTracker />
           <ReadingProgress />
+          <SOSTopBar />
           <WhistleblowerBanner />
           <DonationBanner />
           <LanguageDetectionBanner />

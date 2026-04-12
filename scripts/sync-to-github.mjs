@@ -31,6 +31,7 @@ const EXCLUDE_DIRS = new Set([
 
 const INCLUDE_ROOTS = [
   'client/src',
+  'client/public',
   'server',
   'shared',
   'public',
