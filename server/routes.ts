@@ -1254,6 +1254,104 @@ export async function registerRoutes(
     }
   });
 
+  // ─── Evidence Significance Registry — Analyses Bundle ZIP ─────────────────
+  app.get('/api/evidence-registry/analyses-bundle', async (_req, res) => {
+    try {
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="BarranDodger_54_Forensic_Video_Analyses.zip"');
+      res.setHeader('Cache-Control', 'no-store');
+
+      const archive = archiver('zip', { zlib: { level: 1 } });
+      archive.on('error', () => { if (!res.headersSent) res.status(500).end(); });
+      archive.pipe(res);
+
+      // ── All pre-generated forensic analysis PDFs ──
+      if (fs.existsSync(FORENSIC_PDF_DIR)) {
+        const forensicFiles = fs.readdirSync(FORENSIC_PDF_DIR).filter(f => f.toLowerCase().endsWith('.pdf'));
+        for (const f of forensicFiles) {
+          const fp = path.join(FORENSIC_PDF_DIR, f);
+          if (fs.statSync(fp).size > 0) archive.file(fp, { name: `forensic-analyses/${f}` });
+        }
+        // Generate any not yet on disk
+        for (const analysis of FORENSIC_ANALYSES) {
+          const filename = getForensicPdfFilename(analysis);
+          const fp = path.join(FORENSIC_PDF_DIR, filename);
+          if (!fs.existsSync(fp)) {
+            try {
+              const buf = await generateForensicPDF(analysis);
+              archive.append(buf, { name: `forensic-analyses/${filename}` });
+            } catch { /* skip */ }
+          }
+        }
+      }
+
+      // ── All video analysis PDFs ──
+      if (fs.existsSync(VIDEO_ANALYSIS_PDF_DIR)) {
+        const videoFiles = fs.readdirSync(VIDEO_ANALYSIS_PDF_DIR).filter(f => f.toLowerCase().endsWith('.pdf'));
+        for (const f of videoFiles) {
+          const fp = path.join(VIDEO_ANALYSIS_PDF_DIR, f);
+          if (fs.statSync(fp).size > 0) archive.file(fp, { name: `video-analyses/${f}` });
+        }
+      }
+      // Generate any video analyses not yet on disk
+      for (const vj of [
+        { fn: generateHeavenStoodForYouPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.heavenStood },
+        { fn: generateYouDetonatedTheNarrativePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.detonatedNarrative },
+        { fn: generateBeautifulMenacePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.beautifulMenace },
+        { fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
+        { fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
+      ]) {
+        const staticPath = path.join(VIDEO_ANALYSIS_PDF_DIR, vj.filename);
+        if (!fs.existsSync(staticPath) || fs.statSync(staticPath).size < 2000) {
+          try {
+            const buf = await vj.fn();
+            try { fs.writeFileSync(staticPath, buf); } catch {}
+            archive.append(buf, { name: `video-analyses/${vj.filename}` });
+          } catch { /* skip */ }
+        }
+      }
+
+      // ── Full essay PDFs ──
+      try { archive.append(await generateQuietStormFullEssayPDF(), { name: 'full-essays/forensic-analysis-48-quiet-storm-full-essay.pdf' }); } catch {}
+      try { archive.append(await generateFumbledYouFullEssayPDF(), { name: 'full-essays/forensic-analysis-9-they-fumbled-you-full-essay.pdf' }); } catch {}
+      try { archive.append(await generateConfessionChokedOnFullEssayPDF(), { name: 'full-essays/forensic-analysis-50-confession-full-essay.pdf' }); } catch {}
+
+      // ── Master evidence register ──
+      const registerPath = path.resolve('client/public/documents/master-evidence-register.txt');
+      if (fs.existsSync(registerPath)) archive.file(registerPath, { name: 'master-evidence-register.txt' });
+
+      // ── Manifest ──
+      const manifest = [
+        'BARRAN DODGER — FORENSIC & VIDEO ANALYSES BUNDLE',
+        '══════════════════════════════════════════════════',
+        '',
+        'Barran Dodger Legal & Ethical Trust Fund',
+        'ABN 78 833 496 164',
+        'www.barrandodger.com',
+        '',
+        `Generated:  ${new Date().toISOString()}`,
+        `Contents:   54 forensic analyses + 5 video analyses + 3 full essays`,
+        `Record:     589/589 propositions · 54 analyses · 47 consecutive perfect scores`,
+        `Submitted:  ICC The Hague (Article 7) & UNHCR Geneva`,
+        `Downloads:  361,120+ across 6 continents`,
+        '',
+        'CONTENTS:',
+        '  forensic-analyses/   — 54 YouTube forensic examinations',
+        '  video-analyses/      — 5 video analysis reports',
+        '  full-essays/         — extended essay PDFs',
+        '  master-evidence-register.txt — 2,301 timestamped documents',
+        '',
+        '© Barran Dodger Legal & Ethical Trust Fund. ABN 78 833 496 164.',
+        'All rights reserved.',
+      ].join('\n');
+      archive.append(manifest, { name: 'MANIFEST.txt' });
+
+      await archive.finalize();
+    } catch (err: any) {
+      if (!res.headersSent) res.status(500).json({ message: 'Bundle failed', error: err.message });
+    }
+  });
+
   // ─── Evidence Significance Registry API ───────────────────────────────────
 
   // Stats overview

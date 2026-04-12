@@ -298,6 +298,50 @@ export default function EvidenceSignificanceRegistry() {
           </div>
         )}
 
+        {/* Download ZIP CTA */}
+        <div className="bg-zinc-900/80 border border-amber-700/50 rounded-xl p-6 mb-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <h2 className="text-base font-bold text-white mb-1">
+                Download All Forensic &amp; Video Analyses — Complete Bundle
+              </h2>
+              <p className="text-xs text-zinc-400 leading-relaxed max-w-xl">
+                ZIP bundle containing all <strong className="text-white">54 forensic analyses</strong>,{" "}
+                <strong className="text-white">5 video analysis reports</strong>,{" "}
+                <strong className="text-white">3 extended essays</strong>, and the{" "}
+                <strong className="text-white">master evidence register</strong> (2,301 timestamped documents).
+                One click. Every YouTube examination, reflection, and forensic report — blockchain-verified, ICC-submitted.
+              </p>
+            </div>
+            <a
+              href="/api/evidence-registry/analyses-bundle"
+              data-testid="btn-download-analyses-bundle"
+              className="shrink-0 inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-white font-bold px-6 py-3 rounded-lg transition-colors text-sm whitespace-nowrap shadow-lg shadow-amber-900/30"
+            >
+              <Download size={16} />
+              Download All Analyses ZIP
+            </a>
+          </div>
+          <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-center">
+            <div className="bg-zinc-800/60 rounded px-3 py-2 border border-zinc-700/40">
+              <div className="font-bold text-amber-400 text-base">54</div>
+              <div className="text-zinc-400">Forensic Analyses</div>
+            </div>
+            <div className="bg-zinc-800/60 rounded px-3 py-2 border border-zinc-700/40">
+              <div className="font-bold text-blue-400 text-base">5</div>
+              <div className="text-zinc-400">Video Reports</div>
+            </div>
+            <div className="bg-zinc-800/60 rounded px-3 py-2 border border-zinc-700/40">
+              <div className="font-bold text-purple-400 text-base">589</div>
+              <div className="text-zinc-400">Verified Propositions</div>
+            </div>
+            <div className="bg-zinc-800/60 rounded px-3 py-2 border border-zinc-700/40">
+              <div className="font-bold text-emerald-400 text-base">0</div>
+              <div className="text-zinc-400">Contradictions</div>
+            </div>
+          </div>
+        </div>
+
         {/* AI Note */}
         <div className="bg-amber-950/30 border border-amber-800/40 rounded-lg p-4 mb-8 flex gap-3">
           <AlertCircle size={16} className="text-amber-400 shrink-0 mt-0.5" />
