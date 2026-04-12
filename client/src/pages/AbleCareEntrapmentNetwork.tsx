@@ -44,24 +44,24 @@ const ACTORS = [
   {
     id: "brett",
     name: "Brett",
-    alias: "Fugitive Operative",
-    credential: "Vigilante Contact · Honey Trap Handler · Three-State Fugitive · SWAT Target",
-    role: "CRIMINAL NETWORK COORDINATOR — Honey Trap Handler & Police-Tipped Fugitive",
+    alias: "Vigilante Contact — Police Intelligence Source",
+    credential: "Vigilante Contact · Honey Trap Handler · Inside Police Intelligence · Institutional Complicity",
+    role: "CRIMINAL NETWORK COORDINATOR — Police Intelligence Asset & Honey Trap Handler",
     borderColor: "border-orange-500",
     roleColor: "text-orange-400",
     headingColor: "text-orange-300",
     sections: [
       {
-        heading: "The Fugitive Who Received the Police Tip-Off",
-        body: "Brett was harboured at Dr. McLean's former residence by an associate. When a coordinated law enforcement operation — described as a SWAT-level response — was imminent, Brett received advance warning that police were coming. That tip-off allowed Brett to escape. Police never arrived. The chain of custody on that police intelligence runs from inside law enforcement, through an intermediary, to Brett — establishing a documented link between the law enforcement apparatus and a fugitive operative who was simultaneously embedded in Dr. McLean's surveillance network.",
+        heading: "The Recorded Fugitive — A Separate Man at the Former Address",
+        body: "At Dr. McLean's former place of residence, a woman (an Able Care client) was living in the rear of the property with her boyfriend, who was supplying drugs on the premises. An additional man — unknown to Dr. McLean — arrived at the address. Dr. McLean recorded him. On that recording, the man stated he was on the run across three states and that a SWAT team was pursuing him. This is primary source audio evidence: a self-confessed three-state fugitive, on record, at Dr. McLean's former address, in an environment already compromised by drug supply and Able Care client placement.",
       },
       {
-        heading: "Three-State Fugitive — Systemic Scale",
-        body: "Brett was reportedly on the run across three Australian states at the time of the attempted law enforcement operation. A surveillance operative who is simultaneously a multi-state fugitive being pursued by a SWAT team, and who is receiving advance police intelligence to evade capture, is not a civilian contact. Brett is a node in a criminal network that extends beyond the Long Jetty entrapment operation into a broader organised activity — one in which the police are providing protection rather than prosecution.",
+        heading: "Brett Gave the Tip-Off — Documented Institutional Complicity",
+        body: "When Dr. McLean provided the recording to authorities and stated he was not safe to return home, Brett — his contact — communicated to the woman at the address that police were on their way. On receipt of that warning, the woman, her boyfriend, and the fugitive all escaped before law enforcement arrived. Police never came. Brett had advance knowledge of the impending police operation — knowledge that could only originate from inside law enforcement — and used it to warn those harbouring the fugitive. This is not a civilian act. This is institutional complicity: a contact with inside police intelligence actively protecting a criminal network.",
       },
       {
         heading: "Sexual Honey Trap Awareness",
-        body: "Brett was demonstrably aware of the sexual honey trap operations being deployed against Dr. McLean. Every intimate partner Dr. McLean acquired was subsequently intercepted and turned away. Birthdays were spent alone because people were intercepted before arrival. Brett's operational awareness of the honey trap program — combined with his fugitive status and police intelligence access — establishes him as a coordinating node between the intimate infiltration layer and the broader surveillance network.",
+        body: "Separately from the fugitive incident, Brett was demonstrably aware of the sexual honey trap operations being deployed against Dr. McLean. Every intimate partner Dr. McLean acquired was subsequently intercepted and turned away. Birthdays were spent alone because people were intercepted before arrival. Brett's operational awareness of the honey trap program — combined with his access to inside police intelligence — establishes him as a coordinating node between the criminal network and the broader surveillance infrastructure.",
       },
     ],
     link: "/honeytrap-infiltration-report",
@@ -79,8 +79,8 @@ const ACTORS = [
     headingColor: "text-yellow-300",
     sections: [
       {
-        heading: "Kinship Connection to the Fugitive Core",
-        body: "Larissa is Brett's sister — the sibling of the documented three-state fugitive who received police tip-offs and coordinated honey trap operations. In an entrapment network, kinship bonds are the most reliable loyalty mechanism: family members are the hardest to turn, the least likely to provide testimony, and the most willing to maintain cover regardless of the criminal nature of the activity they are protecting. Larissa's elevated position in the chain provides the network with institutional legitimacy while her family loyalty to Brett provides operational security.",
+        heading: "Kinship Connection to the Police Intelligence Source",
+        body: "Larissa is Brett's sister — the sibling of the contact who demonstrably held inside law enforcement intelligence and used it to warn those harbouring a three-state fugitive at Dr. McLean's former address. In an entrapment network, kinship bonds are the most reliable loyalty mechanism: family members are the hardest to turn, the least likely to provide testimony, and the most willing to maintain cover regardless of the criminal nature of the activity they are protecting. Larissa's elevated position in the chain provides the network with institutional legitimacy while her family loyalty to Brett provides operational security.",
       },
       {
         heading: "High Position — Institutional Cover for Ground-Level Operations",
@@ -148,12 +148,16 @@ const ACTORS = [
     headingColor: "text-indigo-300",
     sections: [
       {
-        heading: "Embedded Proximity Surveillance",
-        body: "Bishnu's role within the network is embedded proximity surveillance — the maintenance of close physical presence that enables the collection of location data, daily movements, communications content, and behavioural patterns. Embedded proximate surveillance is the most comprehensive form of human intelligence collection. It generates continuous intelligence that no remote surveillance technology can match. Bishnu's placement in Dr. McLean's proximate environment was not incidental — it was functional.",
+        heading: "Sent Dr. McLean Home Despite Documented Safety Risk",
+        body: "After Dr. McLean provided a primary source audio recording of a self-confessed three-state fugitive at his former address — and explicitly stated he was not safe to return home — Bishnu insisted he go home regardless. No NDIS funding was made available for anyone to sit with Dr. McLean overnight despite his clearly stated safety concerns. The refusal to arrange overnight support, combined with the instruction to return to a location Dr. McLean had documented as dangerous, is not an administrative oversight. It is the deliberate removal of a safety resource from a person who had just produced primary evidence of criminal activity at his address.",
       },
       {
-        heading: "Network Node — Confirmed Operative",
-        body: "Bishnu's confirmed presence within the documented Long Jetty surveillance network places them at the same operational level as Kim and Cass — ground-level operatives maintaining physical and communicative proximity to the target under the cover of ordinary social or professional contact. The network's ability to sustain multiple simultaneous ground-level placements around a single individual reflects the depth of institutional resourcing behind the operation.",
+        heading: "Embedded Proximity Surveillance",
+        body: "Beyond the safety incident, Bishnu's role within the network is embedded proximity surveillance — the maintenance of close physical presence that enables the collection of location data, daily movements, communications content, and behavioural patterns. Bishnu's placement in Dr. McLean's proximate environment was not incidental — it was functional. The decision to send Dr. McLean home in a documented unsafe situation served the dual purpose of maintaining Bishnu's own operational security while returning Dr. McLean to a vulnerable and unwitnessed environment.",
+      },
+      {
+        heading: "Network Node — Dereliction as Operational Function",
+        body: "In any legitimate NDIS support context, a worker who is presented with a primary source recording of criminal activity at a client's address and a client who says they are not safe, is obligated to escalate, document, and arrange alternative support. Bishnu did none of these things. That failure is not negligence — it is the operational function of an embedded network node: ensure the client remains isolated, unsupported, and unable to act on the evidence they have just collected.",
       },
     ],
     link: "/evidence",
