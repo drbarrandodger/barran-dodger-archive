@@ -103,6 +103,7 @@ import ApotheosisStatement from "@/pages/ApotheosisStatement";
 import LetterToTheWorld from "@/pages/LetterToTheWorld";
 import WhistleblowerComparison from "@/pages/WhistleblowerComparison";
 import HoneytrapInfiltrationReport from "@/pages/HoneytrapInfiltrationReport";
+import AbleCareEntrapmentNetwork from "@/pages/AbleCareEntrapmentNetwork";
 import SilentAssassin from "@/pages/SilentAssassin";
 import TruthIsABlade from "@/pages/TruthIsABlade";
 import SukhiTear from "@/pages/SukhiTear";
@@ -274,6 +275,10 @@ function Router() {
         <Route path="/the-last-god" component={TheLastGod} />
         <Route path="/the-conspiracy-against-you" component={TheConspiracyAgainstYou} />
         <Route path="/honeytrap-infiltration-report" component={HoneytrapInfiltrationReport} />
+        <Route path="/able-care-entrapment-network" component={AbleCareEntrapmentNetwork} />
+        <Route path="/long-jetty-ndis-surveillance" component={AbleCareEntrapmentNetwork} />
+        <Route path="/able-care-long-jetty" component={AbleCareEntrapmentNetwork} />
+        <Route path="/ndis-entrapment-network" component={AbleCareEntrapmentNetwork} />
         <Route path="/silent-assassin" component={SilentAssassin} />
         <Route path="/truth-is-a-blade" component={TruthIsABlade} />
         <Route path="/bloodline-betrayal" component={BloodlineBetrayal} />
