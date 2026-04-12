@@ -15,6 +15,14 @@ import { generateForensicEpub, generateMajorPublicationEpub, generateAllForensic
 import { generateQuietStormFullEssayPDF } from "./quietStormEssayPdf";
 import { generateFumbledYouFullEssayPDF } from "./fumbledYouEssayPdf";
 import { generateConfessionChokedOnFullEssayPDF } from "./confessionChokedOnPdf";
+import {
+  generateHeavenStoodForYouPDF,
+  generateYouDetonatedTheNarrativePDF,
+  generateBeautifulMenacePDF,
+  generateChosenOneItIsOverPDF,
+  preGenerateAllVideoAnalysisPDFs,
+  VIDEO_ANALYSIS_PDF_FILENAMES,
+} from "./videoAnalysisPdfGenerator";
 
 function hashIp(ip: string): string {
   return createHash('sha256').update(ip + 'barran-dodger-salt-2026').digest('hex').slice(0, 16);
@@ -814,6 +822,12 @@ export async function registerRoutes(
     preGenerateAllForensicPDFs(FORENSIC_PDF_DIR);
   } catch { /* non-fatal */ }
 
+  // ── Pre-generate video analysis PDFs on startup ──
+  const VIDEO_ANALYSIS_PDF_DIR = path.resolve('client/public/documents/video-analyses');
+  try {
+    preGenerateAllVideoAnalysisPDFs(VIDEO_ANALYSIS_PDF_DIR).catch(() => {});
+  } catch { /* non-fatal */ }
+
   // ── Forensic PDF: individual download ──
   app.get('/api/forensic/pdf/:slug', async (req, res) => {
     const { slug } = req.params;
@@ -881,6 +895,36 @@ export async function registerRoutes(
     }
   });
 
+  // ── Video Analysis PDFs: individual downloads ──
+  const VIDEO_ANALYSIS_ROUTES: { route: string; fn: () => Promise<Buffer>; filename: string }[] = [
+    { route: '/api/video-analysis/pdf/heaven-stood', fn: generateHeavenStoodForYouPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.heavenStood },
+    { route: '/api/video-analysis/pdf/detonated-narrative', fn: generateYouDetonatedTheNarrativePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.detonatedNarrative },
+    { route: '/api/video-analysis/pdf/beautiful-menace', fn: generateBeautifulMenacePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.beautifulMenace },
+    { route: '/api/video-analysis/pdf/chosen-one', fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
+  ];
+
+  for (const { route, fn, filename } of VIDEO_ANALYSIS_ROUTES) {
+    app.get(route, async (_req, res) => {
+      try {
+        const staticPath = path.join(VIDEO_ANALYSIS_PDF_DIR, filename);
+        if (fs.existsSync(staticPath) && fs.statSync(staticPath).size > 2000) {
+          res.setHeader('Content-Type', 'application/pdf');
+          res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+          res.setHeader('Cache-Control', 'public, max-age=86400');
+          return res.sendFile(staticPath);
+        }
+        const buf = await fn();
+        try { fs.writeFileSync(staticPath, buf); } catch { /* ok */ }
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+        res.setHeader('Cache-Control', 'public, max-age=86400');
+        res.end(buf);
+      } catch (err: any) {
+        res.status(500).json({ message: 'PDF generation failed', error: err.message });
+      }
+    });
+  }
+
   // ── Forensic PDF: all analyses as a ZIP ──
   app.get('/api/forensic/bundle', async (_req, res) => {
     try {
@@ -927,7 +971,11 @@ export async function registerRoutes(
       const docsDir = path.resolve('client/public/documents');
       const docsCount = fs.readdirSync(docsDir).filter(f => f.toLowerCase().endsWith('.pdf')).length;
       const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
-      const total = docsCount + (fs.existsSync(rootPDF) ? 1 : 0);
+      let total = docsCount + (fs.existsSync(rootPDF) ? 1 : 0);
+      const vDir = path.join(docsDir, 'video-analyses');
+      if (fs.existsSync(vDir)) {
+        total += fs.readdirSync(vDir).filter(f => f.toLowerCase().endsWith('.pdf')).length;
+      }
       res.json({ count: total });
     } catch {
       res.json({ count: 0 });
@@ -952,6 +1000,13 @@ export async function registerRoutes(
         const fFiles = fs.readdirSync(forensicDir).filter(f => f.toLowerCase().endsWith('.pdf'));
         for (const f of fFiles) {
           try { totalBytes += fs.statSync(path.join(forensicDir, f)).size; } catch {}
+        }
+      }
+      const videoAnalysisDir = path.join(docsDir, 'video-analyses');
+      if (fs.existsSync(videoAnalysisDir)) {
+        const vFiles = fs.readdirSync(videoAnalysisDir).filter(f => f.toLowerCase().endsWith('.pdf'));
+        for (const f of vFiles) {
+          try { totalBytes += fs.statSync(path.join(videoAnalysisDir, f)).size; } catch {}
         }
       }
       const mb = Math.round(totalBytes / (1024 * 1024));
@@ -1028,6 +1083,29 @@ export async function registerRoutes(
         }
       }
 
+      // Include video analysis PDFs in the divine archive
+      const videoAnalysisFiles: { name: string }[] = [];
+      const videoJobs: { fn: () => Promise<Buffer>; filename: string }[] = [
+        { fn: generateHeavenStoodForYouPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.heavenStood },
+        { fn: generateYouDetonatedTheNarrativePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.detonatedNarrative },
+        { fn: generateBeautifulMenacePDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.beautifulMenace },
+        { fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
+      ];
+      for (const vj of videoJobs) {
+        try {
+          const staticPath = path.join(VIDEO_ANALYSIS_PDF_DIR, vj.filename);
+          const zipName = `video-analyses/${vj.filename}`;
+          if (fs.existsSync(staticPath) && fs.statSync(staticPath).size > 2000) {
+            archive.file(staticPath, { name: zipName });
+          } else {
+            const buf = await vj.fn();
+            try { fs.writeFileSync(staticPath, buf); } catch { /* ok */ }
+            archive.append(buf, { name: zipName });
+          }
+          videoAnalysisFiles.push({ name: zipName });
+        } catch { /* skip */ }
+      }
+
       // Include full essay PDFs in the divine archive
       const fullEssayFiles: { name: string }[] = [];
       try {
@@ -1047,27 +1125,42 @@ export async function registerRoutes(
       } catch { /* skip */ }
 
       // Manifest file
+      const totalFiles = pdfFiles.length + fullEssayFiles.length + videoAnalysisFiles.length;
       const manifestLines = [
         'BARRAN DODGER — DIVINE JUSTICE ARCHIVE',
-        '═══════════════════════════════════════',
+        '════════════════════════════════════════════════',
+        '',
+        'Barran Dodger Legal & Ethical Trust Fund',
+        'ABN 78 833 496 164',
+        'www.barrandodger.com',
         '',
         '"For nothing is secret that shall not be made manifest;',
         'neither any thing hid, that shall not be known and come abroad."',
         '— Luke 8:17',
         '',
-        `Downloaded: ${new Date().toISOString()}`,
-        `Documents: ${pdfFiles.length} forensic PDF files`,
-        `Archive: blockchain-verified, ICC-submitted, UNHCR-lodged`,
+        `Downloaded:  ${new Date().toISOString()}`,
+        `Total files: ${totalFiles} PDFs`,
+        `Archive:     blockchain-verified, ICC-submitted, UNHCR-lodged`,
+        `Record:      575/575 propositions · 53 analyses · 46 consecutive perfect scores`,
+        `Downloads:   361,120+ across 6 continents`,
         '',
-        'WHAT THIS ARCHIVE CONTAINS:',
-        '───────────────────────────',
-        ...pdfFiles.map((f, i) => `${String(i + 1).padStart(3, ' ')}. ${f.name}`),
-        ...(fullEssayFiles.length > 0 ? ['', 'FULL ESSAY PDFs:', ...fullEssayFiles.map((f, i) => `${String(pdfFiles.length + i + 1).padStart(3, ' ')}. ${f.name}`)] : []),
+        '── FORENSIC DOCUMENTS ──────────────────────────────',
+        ...pdfFiles.map((f, i) => `${String(i + 1).padStart(4, ' ')}. ${f.name}`),
+        ...(fullEssayFiles.length > 0 ? ['', '── FULL ESSAY PDFs ─────────────────────────────────', ...fullEssayFiles.map((f, i) => `${String(pdfFiles.length + i + 1).padStart(4, ' ')}. ${f.name}`)] : []),
+        ...(videoAnalysisFiles.length > 0 ? [
+          '',
+          '── VIDEO ANALYSIS PDFs (YouTube Forensic Reports) ──',
+          `     © 2026 Barran Dodger Legal & Ethical Trust Fund  |  ABN 78 833 496 164`,
+          ...videoAnalysisFiles.map((f, i) => `${String(pdfFiles.length + fullEssayFiles.length + i + 1).padStart(4, ' ')}. ${f.name}`),
+        ] : []),
         '',
+        '════════════════════════════════════════════════',
         'This archive was downloaded from www.barrandodger.com',
-        'Every document is blockchain-verified.',
-        'ICC Article 7 formal receipt confirmed.',
+        'Every document is blockchain-verified on the Bitcoin network.',
+        'ICC Article 7 formal receipt confirmed — The Hague.',
         'UNHCR Geneva submission lodged.',
+        '© 2026 Barran Dodger Legal & Ethical Trust Fund | ABN 78 833 496 164',
+        'All Rights Reserved.',
         '',
         '"The LORD will not leave the guilty unpunished."',
         '— Nahum 1:3',
