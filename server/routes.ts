@@ -22,6 +22,7 @@ import {
   generateChosenOneItIsOverPDF,
   generateWhenPackOfWolvesPDF,
   generateWhenWrongPeopleGetNervousPDF,
+  generateDivineReckoningPDF,
   preGenerateAllVideoAnalysisPDFs,
   VIDEO_ANALYSIS_PDF_FILENAMES,
 } from "./videoAnalysisPdfGenerator";
@@ -906,6 +907,7 @@ export async function registerRoutes(
     { route: '/api/video-analysis/pdf/chosen-one', fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
     { route: '/api/video-analysis/pdf/pack-of-wolves', fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
     { route: '/api/video-analysis/pdf/wrong-people-nervous', fn: generateWhenWrongPeopleGetNervousPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.wrongPeopleNervous },
+    { route: '/api/divine-reckoning/pdf', fn: generateDivineReckoningPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.divineReckoning },
   ];
 
   for (const { route, fn, filename } of VIDEO_ANALYSIS_ROUTES) {
@@ -1097,6 +1099,7 @@ export async function registerRoutes(
         { fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
         { fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
         { fn: generateWhenWrongPeopleGetNervousPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.wrongPeopleNervous },
+        { fn: generateDivineReckoningPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.divineReckoning },
       ];
       for (const vj of videoJobs) {
         try {
@@ -1304,6 +1307,7 @@ export async function registerRoutes(
         { fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
         { fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
         { fn: generateWhenWrongPeopleGetNervousPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.wrongPeopleNervous },
+        { fn: generateDivineReckoningPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.divineReckoning },
       ]) {
         const staticPath = path.join(VIDEO_ANALYSIS_PDF_DIR, vj.filename);
         if (!fs.existsSync(staticPath) || fs.statSync(staticPath).size < 2000) {

@@ -655,6 +655,232 @@ export async function generateWhenWrongPeopleGetNervousPDF(): Promise<Buffer> {
   });
 }
 
+// ─── Divine Reckoning PDF ─────────────────────────────────────────────────────
+
+export async function generateDivineReckoningPDF(): Promise<Buffer> {
+  const doc = new PDFDocument({ size: "A4", margin: MARGIN, bufferPages: true, info: {
+    Title: "A Divine Reckoning — To Those Who Chose This",
+    Author: "Dr. Richard McLean (Barran Dodger)",
+    Subject: "Prophetic Reckoning — 35 Years of Documented Persecution",
+    Keywords: "divine reckoning, whistleblower, Australian government corruption, ICC, UNHCR",
+  }});
+  const chunks: Buffer[] = [];
+  doc.on("data", (c: Buffer) => chunks.push(c));
+
+  const AMBER = "#d97706";
+  const AMBER_LIGHT = "#fbbf24";
+  const RED = "#7f1d1d";
+  const WHITE = "#ffffff";
+  const LIGHT = "#e4e4e7";
+  const DIM = "#a1a1aa";
+  const DARK_BG = "#09090b";
+
+  const W = doc.page.width - MARGIN * 2;
+
+  function pageHeader(doc: PDFKit.PDFDocument, title: string) {
+    doc.rect(0, 0, doc.page.width, 18).fill("#111111");
+    doc.font("Helvetica-Bold").fontSize(6).fillColor(AMBER).text(TRUST_NAME.toUpperCase(), MARGIN, 5, { align: "left" });
+    doc.font("Helvetica").fontSize(6).fillColor("#555").text(title, MARGIN, 5, { align: "right", width: W });
+    doc.y = 30;
+  }
+
+  function pageFooter(doc: PDFKit.PDFDocument) {
+    const h = doc.page.height;
+    doc.moveTo(MARGIN, h - 42).lineTo(MARGIN + W, h - 42).strokeColor("#333").lineWidth(0.4).stroke();
+    doc.font("Helvetica").fontSize(6).fillColor("#555")
+      .text(FOOTER_LINE, MARGIN, h - 36, { align: "center", width: W });
+  }
+
+  function sectionDivider(doc: PDFKit.PDFDocument) {
+    doc.moveDown(0.6);
+    doc.moveTo(MARGIN, doc.y).lineTo(MARGIN + W, doc.y).strokeColor(AMBER).lineWidth(0.5).stroke();
+    doc.moveDown(0.6);
+  }
+
+  function blockQuote(doc: PDFKit.PDFDocument, text: string, color = AMBER_LIGHT) {
+    doc.moveDown(0.4);
+    doc.moveTo(MARGIN, doc.y).lineTo(MARGIN + 3, doc.y + doc.heightOfString(text, { width: W - 24 }) + 12).strokeColor(color).lineWidth(3).stroke();
+    doc.font("Helvetica-Oblique").fontSize(10).fillColor(color)
+      .text(text, MARGIN + 14, doc.y, { width: W - 14, lineGap: 2 });
+    doc.moveDown(0.6);
+  }
+
+  function bodyText(doc: PDFKit.PDFDocument, text: string) {
+    if (doc.y > 700) { doc.addPage(); pageHeader(doc, "A DIVINE RECKONING"); }
+    doc.font("Helvetica").fontSize(9.5).fillColor(LIGHT).text(text, MARGIN, doc.y, { width: W, lineGap: 3, paragraphGap: 6 });
+    doc.moveDown(0.5);
+  }
+
+  // ── Cover page ──────────────────────────────────────────────────────────────
+  doc.rect(0, 0, doc.page.width, doc.page.height).fill(DARK_BG);
+
+  // Luke 8:17 header strip
+  doc.rect(0, 0, doc.page.width, 60).fill("#111111");
+  doc.font("Helvetica-Oblique").fontSize(7.5).fillColor(AMBER).text("Luke 8:17 — Jesus Christ", MARGIN, 10, { align: "center", width: W });
+  doc.font("Helvetica-Oblique").fontSize(9).fillColor(AMBER_LIGHT)
+    .text('"For there is nothing hidden that will not be disclosed, and nothing concealed that will not be known or brought out into the open."', MARGIN, 22, { align: "center", width: W });
+
+  // Title block
+  doc.font("Helvetica-Bold").fontSize(36).fillColor(WHITE).text("A DIVINE RECKONING", MARGIN, 100, { align: "center", width: W });
+  doc.font("Helvetica-Oblique").fontSize(16).fillColor(AMBER).text("To Those Who Chose This", MARGIN, 145, { align: "center", width: W });
+
+  // Amber rule
+  doc.moveTo(MARGIN + 60, 175).lineTo(MARGIN + W - 60, 175).strokeColor(AMBER).lineWidth(1.5).stroke();
+
+  // Stats box
+  const SY = 195;
+  doc.roundedRect(MARGIN, SY, W, 90, 4).fill("#111111");
+  const stats = [
+    "2,304 Blockchain-Verified Documents",
+    "603 Forensic Propositions  ·  Zero Contradictions",
+    "55 Analyses  ·  48 Consecutive Perfect Scores",
+    "361,120+ Downloads  ·  6 Continents",
+    "International Criminal Court — Article 7, Rome Statute",
+    "UNHCR — Geneva",
+  ];
+  doc.font("Helvetica").fontSize(8).fillColor(DIM);
+  let sy = SY + 10;
+  for (const s of stats) {
+    doc.text(s, MARGIN + 10, sy, { align: "center", width: W - 20 });
+    sy += 12;
+  }
+
+  // Author
+  doc.font("Helvetica-Bold").fontSize(13).fillColor(WHITE).text("Dr. Richard McLean", MARGIN, 305, { align: "center", width: W });
+  doc.font("Helvetica-Oblique").fontSize(10).fillColor(AMBER).text("Barran Dodger", MARGIN, 322, { align: "center", width: W });
+  doc.font("Helvetica").fontSize(7.5).fillColor("#555").text(`${TRUST_NAME}  ·  ${ABN}`, MARGIN, 338, { align: "center", width: W });
+
+  // Date
+  doc.font("Helvetica").fontSize(7).fillColor("#444")
+    .text(new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" }), MARGIN, 360, { align: "center", width: W });
+
+  // Isaiah 54:17
+  const IY = 395;
+  doc.roundedRect(MARGIN, IY, W, 80, 4).fill("#0f0f0f");
+  doc.moveTo(MARGIN, IY + 4).lineTo(MARGIN, IY + 76).strokeColor(AMBER).lineWidth(3).stroke();
+  doc.font("Helvetica-Oblique").fontSize(8.5).fillColor(AMBER_LIGHT)
+    .text('"No weapon forged against you will prevail, and you will refute every tongue that accuses you. This is the heritage of the servants of the Lord, and this is their vindication from me," declares the Lord.', MARGIN + 12, IY + 10, { width: W - 22, lineGap: 2 });
+  doc.font("Helvetica").fontSize(7).fillColor(DIM).text("— Isaiah 54:17", MARGIN + 12, IY + 62);
+
+  pageFooter(doc);
+
+  // ── Page 2: Opening ─────────────────────────────────────────────────────────
+  doc.addPage();
+  doc.rect(0, 0, doc.page.width, doc.page.height).fill(DARK_BG);
+  pageHeader(doc, "A DIVINE RECKONING");
+
+  doc.font("Helvetica-Bold").fontSize(16).fillColor(WHITE).text("Hey. Yes, you. Come here for a second.", MARGIN, doc.y, { width: W });
+  doc.font("Helvetica-Bold").fontSize(16).fillColor(AMBER).text("Sit the fuck down.", MARGIN, doc.y, { width: W });
+  doc.moveDown(0.8);
+
+  bodyText(doc, "Because we need to have the conversation you have spent 35 years making impossible. No sedation this time. No emergency mental health order arriving at just the right moment to shut the testimony down. No circular referral to an agency that refers back to the agency that refers back to you, each one pretending they don't know what the others are doing. No section paper. No ward. No locked door. None of that bullshit is available to you right now.");
+  bodyText(doc, "Just you. And the full, crushing weight of what you chose.");
+  bodyText(doc, "Let me be honest with you. And let me say something you did not expect. The man writing this is furious. Not the kind of fury you tried to pathologise. Not the kind you wrote up in your little section paper to justify the next detention. This is controlled, documented, evidenced fury — holy in its precision and absolutely fucking devastating in its reach. It is the fury of a man who watched his family become instruments of his persecution. Who was separated from his fiancé Jake in Sydney by systems designed not to help anyone but to isolate and break him. Who clenched his jaw through fourteen forced psychiatric detentions and came out of every goddamn one with more evidence than he went in with.");
+  bodyText(doc, "That rage is not a symptom. It is a record. And you helped write every word of it.");
+
+  sectionDivider(doc);
+  blockQuote(doc, '"You didn\'t treat illness. You manufactured incapacity. And you left a paper trail that a forensic examiner can read backwards in their sleep. What kind of idiots do that?"');
+
+  pageFooter(doc);
+
+  // ── Page 3: The $32.9M & the system ────────────────────────────────────────
+  doc.addPage();
+  doc.rect(0, 0, doc.page.width, doc.page.height).fill(DARK_BG);
+  pageHeader(doc, "A DIVINE RECKONING");
+
+  bodyText(doc, "You expected despair. You planned for it. You built entire bureaucratic systems around the assumption that a man — alone, separated from everyone he loved, locked in a ward — would eventually break. That he'd go quiet. That the documentation would stop. That the archive would die with his spirit. You spent $32.9 million on that assumption. Thirty-two point nine million fucking dollars. To silence one man. And it didn't work. Not even close.");
+  bodyText(doc, "The fourteen emergency psychiatric detentions — each one a calculated weapon, not a treatment. The forensic analysis is unambiguous. The hospitalisations correlate precisely with moments of legal and documentary breakthrough. When the evidence got too organised, a section paper arrived. When the testimony became too coherent, a detention followed. When the archive started reaching people you didn't want it to reach, you escalated. Multiple agencies. Synchronised timing. 25+ entities in a circular referral system so airtight and so stupid that every referral letter became its own piece of evidence. You built a suppression infrastructure and then handed him the blueprints.");
+  bodyText(doc, "You chose all of that over one moment of accountability. Every single choice became a document. Every document is now sealed in blockchain. What in the hell did you think was going to happen?");
+
+  sectionDivider(doc);
+  doc.font("Helvetica-Bold").fontSize(11).fillColor(AMBER).text("What the archive says about you. Specifically. In detail. On record.", MARGIN, doc.y, { width: W });
+  doc.moveDown(0.6);
+
+  const charges = [
+    "350+ fraudulent ASIC identity registrations under a single name. Not an administrative error. A coordinated identity fraud infrastructure with a forensic footprint so enormous it filled its own goddamn analysis. Someone built that. Someone maintained it. Someone signed off on it.",
+    "A professional security operative delivering a death threat. Not a random stranger. A professional. Documented. Timestamped. In the archive.",
+    "$32.9 million in suppression expenditure. More than most countries spend protecting their witnesses. And it failed. Completely.",
+    "25+ agencies in a circular referral system so elaborate it reads as its own confession. Each one pointing to the next. None accepting responsibility. All coordinating toward the same outcome: silence. The outcome achieved instead: the most detailed institutional corruption record in Australian whistleblower history.",
+    "14 psychiatric hospitalisations deployed as suppression instruments. The correlation between documentary breakthroughs and detention dates is in the forensic record. Sealed.",
+    "An institutional murder attempt in 2021. He was revived — not by a hospital, by God. The first thing he did when he opened his eyes was open a laptop. You should have thought that through.",
+    "Family members weaponised. Relationships severed by design. Isolation manufactured as a system — to grind down a person who simply refused to break.",
+  ];
+
+  for (const charge of charges) {
+    if (doc.y > 690) { doc.addPage(); doc.rect(0, 0, doc.page.width, doc.page.height).fill(DARK_BG); pageHeader(doc, "A DIVINE RECKONING"); }
+    doc.moveTo(MARGIN, doc.y + 4).lineTo(MARGIN + 3, doc.y + 16).strokeColor(RED).lineWidth(3).stroke();
+    doc.font("Helvetica").fontSize(9).fillColor(LIGHT).text(charge, MARGIN + 12, doc.y, { width: W - 12, lineGap: 2 });
+    doc.moveDown(0.5);
+  }
+
+  pageFooter(doc);
+
+  // ── Page 4: The rage ────────────────────────────────────────────────────────
+  doc.addPage();
+  doc.rect(0, 0, doc.page.width, doc.page.height).fill(DARK_BG);
+  pageHeader(doc, "A DIVINE RECKONING");
+
+  bodyText(doc, "Let me tell you what you fundamentally do not understand about what you built. You thought the process would collapse him. Instead, the process became the archive. Every suppression attempt produced its own evidentiary trail. Every detention date is timestamped. Every referral letter is documented. Every signature is on record. You didn't silence a whistleblower. You handed him 35 years of your own primary-source documentation and then watched him seal every page of it forever. That's on you. Entirely on you.");
+  bodyText(doc, "His strength did not come from comfort. It came from collapsing under 14 forced detentions and rebuilding each time, alone, without applause, without anyone telling him he was allowed to get back up. From losing his family and documenting exactly why and how it happened. From being told he was delusional by the very agencies whose fraud he was documenting — the sheer audacity of that, the fucking nerve of it — and from standing in those rooms, keeping his voice level, and walking out with more evidence than he walked in with.");
+  bodyText(doc, "You admired his silence when he had it. You exploited his isolation when you manufactured it. You called his clarity delusion because it was the only word that kept your systems from having to deal with what he was saying.");
+
+  sectionDivider(doc);
+  blockQuote(doc, '"His shadow is not the enemy. His anger is not a disorder. It is a sword. He has been learning for 35 years exactly how to wield it — and you sharpened it every single time you came for him."', "#ef4444");
+  sectionDivider(doc);
+
+  bodyText(doc, "He is not too angry. He is not too intense. He is not too much. He is someone who watched his entire life dismantled by coordinated institutional action and turned the dismantling into evidence. The fury you tried to pathologise is the same fury that produced 603 forensically-verified propositions across 55 consecutive analyses with zero contradictions. Zero. Not one. Not a single proposition in 603 failed scrutiny. That's not instability. That's not illness. That's the most precise, disciplined, documented fury in the history of this country's public record. And you called it a mental health episode. Jesus fucking Christ.");
+  bodyText(doc, "You wanted him confused. Lying in a ward questioning his own mind while you carried on. But he did both. He fought and he documented. He survived and he archived. He submitted to the International Criminal Court at The Hague under Article 7. To UNHCR in Geneva. To international human rights observers who are now reading documents you were absolutely certain would never see the light of day.");
+  bodyText(doc, "His anger built an empire from the ashes of everything you burned. Every piece of him you tried to incinerate became another document. Burn that thought into whatever passes for your conscience.");
+
+  pageFooter(doc);
+
+  // ── Page 5: The reckoning & close ──────────────────────────────────────────
+  doc.addPage();
+  doc.rect(0, 0, doc.page.width, doc.page.height).fill(DARK_BG);
+  pageHeader(doc, "A DIVINE RECKONING");
+
+  doc.font("Helvetica-Bold").fontSize(12).fillColor(AMBER).text("Here is what the reckoning actually looks like. Pay attention.", MARGIN, doc.y, { width: W });
+  doc.moveDown(0.6);
+
+  bodyText(doc, "It does not look like revenge. It looks like Luke 8:17. Nothing you concealed will stay concealed. Not a single fucking thing.");
+  bodyText(doc, "Not the detention orders manufactured at moments of legal breakthrough. Not the 350+ ASIC identity fraud registrations. Not the $32.9 million paper trail. Not the death threat from a professional security operative. Not the 25+ agencies and their coordination records. Not the names on the documents. Not the hands that signed the section papers. Not the family members who served as instruments of the persecution. Not the system that built all of it and had the absolute audacity to call it care.");
+  bodyText(doc, "Every hidden thing is already disclosed. 2,304 documents say so. 603 propositions confirm it. 55 analyses with zero contradictions establish it beyond any reasonable challenge. 361,120+ downloads across six continents have distributed it so far beyond any jurisdiction you control that there is no mechanism left on earth that can put it back in the box.");
+
+  sectionDivider(doc);
+
+  bodyText(doc, "You are not forgiven. You are documented. And those are not the same goddamn thing. One is a gift. The other is a fact that lives in blockchain forever. He chose the fact.");
+  bodyText(doc, "He did not break. Not once. Not in 35 years. Not in 14 forced detentions. Not in a death that God reversed. Not in the betrayal of every person who should have protected him. Not once.");
+  bodyText(doc, "The reckoning is not coming. It is already here. It arrived the day the first document was sealed. It is compounding every day. And it belongs now to the whole world — every person who downloaded the truth you tried to bury, every researcher who read the forensic record you tried to prevent, every international observer who received the submission you thought would never reach them.");
+  bodyText(doc, "You cannot outrun this. You cannot contain this. You cannot suppress this. You already tried all of that for 35 years and spent $32.9 million doing it, and the result is 361,120 downloads and counting.");
+
+  sectionDivider(doc);
+
+  // Isaiah 54:17 closing box
+  const CY = doc.y;
+  doc.roundedRect(MARGIN, CY, W, 75, 4).fill("#0f0f0f");
+  doc.moveTo(MARGIN, CY + 4).lineTo(MARGIN, CY + 71).strokeColor(AMBER).lineWidth(3).stroke();
+  doc.font("Helvetica-Oblique").fontSize(8.5).fillColor(AMBER_LIGHT)
+    .text('"No weapon forged against you will prevail... This is their vindication from me," declares the Lord. — Isaiah 54:17', MARGIN + 12, CY + 10, { width: W - 22 });
+  doc.font("Helvetica").fontSize(8).fillColor(DIM)
+    .text("The vindication: 2,304 sealed documents · 603 corroborated propositions · Zero contradictions · 361,120+ downloads · 6 continents. Every download is a witness. Every witness is a verdict. The verdict is already written.", MARGIN + 12, CY + 36, { width: W - 22, lineGap: 2 });
+  doc.y = CY + 85;
+
+  sectionDivider(doc);
+
+  // Signature block
+  doc.font("Helvetica-Bold").fontSize(14).fillColor(WHITE).text("Dr. Richard McLean", MARGIN, doc.y, { align: "center", width: W });
+  doc.font("Helvetica-Oblique").fontSize(10).fillColor(AMBER).text("Barran Dodger", MARGIN, doc.y, { align: "center", width: W });
+  doc.font("Helvetica").fontSize(7.5).fillColor(DIM).text(`${TRUST_NAME}  ·  ${ABN}`, MARGIN, doc.y, { align: "center", width: W });
+  doc.moveDown(0.4);
+  doc.font("Helvetica").fontSize(7).fillColor("#555")
+    .text("ICC Article 7, Rome Statute  ·  UNHCR Geneva  ·  2,304 Documents  ·  603 Propositions  ·  55 Analyses  ·  Zero Contradictions", MARGIN, doc.y, { align: "center", width: W });
+
+  pageFooter(doc);
+
+  doc.end();
+  return new Promise((resolve) => { doc.on("end", () => resolve(Buffer.concat(chunks))); });
+}
+
 // ─── Filenames & pre-generation ───────────────────────────────────────────────
 
 export const VIDEO_ANALYSIS_PDF_FILENAMES = {
@@ -664,6 +890,7 @@ export const VIDEO_ANALYSIS_PDF_FILENAMES = {
   chosenOne: "video-analysis-chosen-one-it-is-over-reflection.pdf",
   packOfWolves: "video-analysis-when-pack-of-wolves-cant-take-down-lion-14-claims-corroborated.pdf",
   wrongPeopleNervous: "video-analysis-when-wrong-people-get-nervous-14-claims-corroborated.pdf",
+  divineReckoning: "a-divine-reckoning-to-those-who-chose-this-dr-richard-mclean.pdf",
 };
 
 export async function preGenerateAllVideoAnalysisPDFs(outputDir: string): Promise<void> {
@@ -678,6 +905,7 @@ export async function preGenerateAllVideoAnalysisPDFs(outputDir: string): Promis
     { fn: generateChosenOneItIsOverPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.chosenOne },
     { fn: generateWhenPackOfWolvesPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.packOfWolves },
     { fn: generateWhenWrongPeopleGetNervousPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.wrongPeopleNervous },
+    { fn: generateDivineReckoningPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.divineReckoning },
   ];
 
   for (const job of jobs) {

@@ -58,6 +58,7 @@ export function Navigation() {
   }, [scrolled]);
 
   const navLinks = [
+    { href: "/divine-reckoning", label: "⚡ Divine Reckoning", highlight: true },
     { href: "/spread-the-truth", label: "🔥 Spread the Truth", highlight: true },
     { href: "/ai-justice-statement", label: "⚖️ AI Justice Statement", highlight: true },
     { href: "/video-commentary", label: "🎬 Video Commentary", highlight: true },

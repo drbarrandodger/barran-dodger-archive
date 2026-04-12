@@ -58,6 +58,19 @@ export default function DivineReckoning() {
               <p className="text-zinc-500 text-sm max-w-xl mx-auto leading-relaxed">
                 2,304 Blockchain-Verified Documents &nbsp;·&nbsp; 603 Forensic Propositions &nbsp;·&nbsp; 55 Analyses &nbsp;·&nbsp; Zero Contradictions &nbsp;·&nbsp; 361,120+ Downloads Across 6 Continents
               </p>
+              <div className="pt-4">
+                <a
+                  href="/api/divine-reckoning/pdf"
+                  download
+                  data-testid="button-divine-reckoning-pdf"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-amber-700 hover:bg-amber-600 text-white font-bold text-base rounded transition-colors shadow-lg shadow-amber-900/40"
+                >
+                  ⬇ Download This Reckoning — PDF
+                </a>
+                <p className="text-zinc-600 text-xs mt-2">
+                  A Divine Reckoning — To Those Who Chose This &nbsp;·&nbsp; Dr. Richard McLean (Barran Dodger)
+                </p>
+              </div>
             </motion.div>
           </motion.div>
 
