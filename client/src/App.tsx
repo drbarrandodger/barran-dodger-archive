@@ -106,6 +106,7 @@ import SilentAssassin from "@/pages/SilentAssassin";
 import TruthIsABlade from "@/pages/TruthIsABlade";
 import SukhiTear from "@/pages/SukhiTear";
 import FormalRemovalSukhiTear from "@/pages/FormalRemovalSukhiTear";
+import TheyLaughedNowTheyreLosingSleeep from "@/pages/TheyLaughedNowTheyreLosingSleeep";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
@@ -304,6 +305,8 @@ function Router() {
         <Route path="/sukhi-tear" component={SukhiTear} />
         <Route path="/formal-removal-sukhi-tear" component={FormalRemovalSukhiTear} />
         <Route path="/sukhi-tear-removed-from-care" component={FormalRemovalSukhiTear} />
+        <Route path="/they-laughed-now-theyre-losing-sleep" component={TheyLaughedNowTheyreLosingSleeep} />
+        <Route path="/tony-ridley-steve-iasonidis-exposed" component={TheyLaughedNowTheyreLosingSleeep} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
