@@ -266,6 +266,73 @@ export default function Home() {
   });
   return (
     <div className="min-h-screen bg-background flex flex-col">
+
+      {/* ===== SOS EMERGENCY SECTION — TOP OF SITE ===== */}
+      <div className="w-full bg-red-950 border-b-4 border-red-500" style={{ paddingTop: 'calc(var(--sos-bar-height,36px) + var(--banner-height,40px) + 56px)' }}>
+        <div className="max-w-4xl mx-auto px-4 py-10">
+
+          {/* Header */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-red-600 text-white text-xs font-black uppercase tracking-widest px-5 py-2 rounded-full mb-5 animate-pulse">
+              🆘 URGENT — PHYSICAL PROTECTION REQUIRED
+            </div>
+            <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-4">
+              Dr. Richard McLean Requires<br />
+              <span className="text-red-400">Physical Harbouring Now</span>
+            </h1>
+            <p className="text-red-200 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-6">
+              55B Archbold Road, Long Jetty NSW · ICC The Hague (Article 7) · UNHCR Geneva · 2,304 blockchain-verified documents · 35 years of government persecution documented
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 mb-2">
+              <a href="mailto:drbarrandodger@proton.me" className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-black px-6 py-3 rounded-lg text-sm transition-colors">
+                ✉ drbarrandodger@proton.me
+              </a>
+              <a href="tel:+61431167907" className="inline-flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-black px-6 py-3 rounded-lg text-sm transition-colors">
+                📞 +61 431 167 907
+              </a>
+              <a href="/urgent-protection-request" className="inline-flex items-center gap-2 bg-white text-red-700 hover:bg-red-50 font-black px-6 py-3 rounded-lg text-sm transition-colors">
+                Read Full SOS →
+              </a>
+            </div>
+          </div>
+
+          {/* VIDEO — My Story */}
+          <div className="bg-black/60 rounded-2xl overflow-hidden border border-red-800/50 mb-6">
+            <div className="px-5 pt-5 pb-3">
+              <p className="text-red-300 font-black text-lg md:text-xl mb-1">▶ My Story — I Dare Anyone To Prove Me Wrong</p>
+              <p className="text-zinc-400 text-sm">Watch. Then disprove a single claim. 35 years · 2,304 documents · ICC The Hague · UNHCR Geneva</p>
+            </div>
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src="https://www.youtube.com/embed/AsJ8yFuq7t8?rel=0&modestbranding=1"
+                title="Dr. Richard McLean — My Story: I Dare Anyone To Prove Me Wrong"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                data-testid="video-sos-home"
+              />
+            </div>
+          </div>
+
+          {/* Who can help */}
+          <div className="grid md:grid-cols-3 gap-4 text-center">
+            {[
+              { emoji: '⛪', who: 'Churches & Faith Communities', ask: 'Safe housing outside NSW — Cairns, Perth or any jurisdiction' },
+              { emoji: '⚖️', who: 'Legal Aid & Advocates', ask: 'Pro bono representation — ICC record complete, 2,304 exhibits' },
+              { emoji: '💼', who: 'Private Investors', ask: 'Relocation funding — 361,120+ downloads, documented & verified' },
+            ].map((c, i) => (
+              <div key={i} className="bg-black/40 border border-red-900/40 rounded-xl p-4">
+                <div className="text-3xl mb-2">{c.emoji}</div>
+                <p className="text-white font-bold text-sm mb-1">{c.who}</p>
+                <p className="text-zinc-400 text-xs leading-snug">{c.ask}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+      {/* ===== END SOS ===== */}
+
       <img
         src="/evidence/jesus-checkmate-government.png?v=4"
         alt="Jesus Christ placing checkmate against the Australian government"
