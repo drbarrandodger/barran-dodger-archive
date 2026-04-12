@@ -268,7 +268,7 @@ export default function Home() {
     <div className="min-h-screen bg-background flex flex-col">
 
       {/* ===== SOS EMERGENCY SECTION — TOP OF SITE ===== */}
-      <div className="w-full bg-red-950 border-b-4 border-red-500" style={{ paddingTop: 'calc(var(--sos-bar-height,36px) + var(--banner-height,40px) + 56px)' }}>
+      <div className="w-full bg-red-950 border-b-4 border-red-500" style={{ paddingTop: '160px' }}>
         <div className="max-w-4xl mx-auto px-4 py-10">
 
           {/* Header */}
