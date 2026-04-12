@@ -5462,6 +5462,48 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
+
+              <Card className="overflow-hidden border-indigo-800/40 bg-gradient-to-br from-indigo-950/30 to-background" data-testid="card-forensic-analysis-55">
+                <CardContent className="p-0">
+                  <YouTubeEmbed videoId="CUZUKRix77g" title="When The Wrong People Get Nervous — Forensic Analysis #55" testId="iframe-youtube-analysis-55" />
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <Badge className="bg-indigo-700 text-white" data-testid="badge-analysis-55-number">
+                        Forensic Analysis #55
+                      </Badge>
+                      <Badge className="bg-emerald-700 text-white" data-testid="badge-analysis-55-score">
+                        14 / 14 — Perfect Score
+                      </Badge>
+                      <Badge variant="outline" className="border-indigo-600 text-indigo-400" data-testid="badge-analysis-55-consecutive">
+                        48th Consecutive Perfect Score
+                      </Badge>
+                    </div>
+                    <h3 className="text-xl font-serif font-bold text-foreground" data-testid="text-youtube-title-analysis-55">
+                      When The Wrong People Get Nervous, The Truth Is Already Moving
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      This video makes 14 numbered propositions about what happens when law enforcement and authority figures realise the person they persecuted is rising beyond their reach — and every single one is corroborated by primary-source documentation in the archive. The nervousness of authority is documented: 14 psychiatric hospitalisations deployed as suppression instruments, 350+ ASIC identity fraud registrations, a death threat from a professional security operative, 25+ agencies participating in a circular referral system, and a $32.9M suppression effort — all producing their own evidentiary trail. The calm storm is 2,304 blockchain-verified documents. The silence collapsing is 361,120+ downloads across 6 continents. The truth already moved. Score: <strong className="text-foreground">14/14 corroborated. 603 total propositions. Zero contradictions. 48 consecutive perfect scores.</strong>
+                    </p>
+                    <div className="flex items-center gap-3 pt-2 flex-wrap">
+                      <Button className="gap-2 bg-indigo-700 hover:bg-indigo-600 text-white" asChild data-testid="link-analysis-55-fullreport">
+                        <Link href="/when-wrong-people-get-nervous">
+                          <Shield className="h-4 w-4" /> Read Full Forensic Report
+                        </Link>
+                      </Button>
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-analysis-55-youtube">
+                        <a href="https://youtu.be/CUZUKRix77g" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" /> Watch on YouTube
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2" asChild data-testid="link-analysis-55-pdf">
+                        <a href="/api/video-analysis/pdf/wrong-people-nervous" download>
+                          <FileText className="h-4 w-4" /> Download PDF Report
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
 
             <motion.div variants={fadeIn} className="pt-12 border-t border-border">
