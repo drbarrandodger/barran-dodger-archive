@@ -147,6 +147,7 @@ import ThePublicAdvocateTheySilenced from "@/pages/ThePublicAdvocateTheySilenced
 import TonyRidleyFullDossier from "@/pages/TonyRidleyFullDossier";
 import WhatThisProves from "@/pages/WhatThisProves";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
+import EvidenceSignificanceRegistry from "@/pages/EvidenceSignificanceRegistry";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -336,6 +337,8 @@ function Router() {
         <Route path="/beautiful-menace-forensic-report" component={BeautifulMenaceForensicReport} />
         <Route path="/mind-they-tried-to-pathologize" component={BeautifulMenaceForensicReport} />
         <Route path="/now-even-the-therapist-is-defending-you" component={BeautifulMenaceForensicReport} />
+        <Route path="/evidence-significance-registry" component={EvidenceSignificanceRegistry} />
+        <Route path="/timestamped-documents-significance" component={EvidenceSignificanceRegistry} />
         <Route path="/when-a-pack-of-wolves-cant-take-down-a-lion" component={WhenPackOfWolvesForensicReport} />
         <Route path="/the-pack-became-the-cage" component={WhenPackOfWolvesForensicReport} />
         <Route path="/their-plot-was-proof-you-were-untouchable" component={WhenPackOfWolvesForensicReport} />

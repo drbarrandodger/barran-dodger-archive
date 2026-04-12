@@ -38,6 +38,7 @@ function getRealIp(req: any): string {
 }
 import { listDriveFiles, downloadDriveFile, searchDriveForEvidence, DriveFile } from "./googleDrive";
 import { registerChatRoutes } from "./replit_integrations/chat";
+import { parseEvidenceRegister, getLocalPDFRegistry, getRegistryStats, getRegisterCategories } from "./evidenceRegistry";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -1250,6 +1251,76 @@ export async function registerRoutes(
       res.send(buffer);
     } catch (err: any) {
       res.status(500).json({ message: 'Bundle generation failed', error: err.message });
+    }
+  });
+
+  // ─── Evidence Significance Registry API ───────────────────────────────────
+
+  // Stats overview
+  app.get('/api/evidence-registry/stats', (_req, res) => {
+    try {
+      const stats = getRegistryStats();
+      res.json(stats);
+    } catch (err: any) {
+      res.status(500).json({ message: 'Failed to load registry stats', error: err.message });
+    }
+  });
+
+  // Get all categories from the register
+  app.get('/api/evidence-registry/categories', (_req, res) => {
+    try {
+      const categories = getRegisterCategories();
+      res.json(categories);
+    } catch (err: any) {
+      res.status(500).json({ message: 'Failed to load categories', error: err.message });
+    }
+  });
+
+  // Paginated + searchable master evidence register
+  app.get('/api/evidence-registry', (req, res) => {
+    try {
+      const page = parseInt(String(req.query.page || '1'), 10);
+      const limit = Math.min(parseInt(String(req.query.limit || '50'), 10), 200);
+      const search = String(req.query.search || '').toLowerCase().trim();
+      const category = String(req.query.category || '').trim();
+
+      let entries = parseEvidenceRegister();
+
+      if (search) {
+        entries = entries.filter(
+          (e) =>
+            e.title.toLowerCase().includes(search) ||
+            e.authors.toLowerCase().includes(search) ||
+            e.summary.toLowerCase().includes(search) ||
+            e.filename.toLowerCase().includes(search) ||
+            e.date.toLowerCase().includes(search)
+        );
+      }
+
+      if (category && category !== 'All') {
+        entries = entries.filter((e) =>
+          e.category.toLowerCase().includes(category.toLowerCase())
+        );
+      }
+
+      const total = entries.length;
+      const totalPages = Math.ceil(total / limit);
+      const offset = (page - 1) * limit;
+      const paginated = entries.slice(offset, offset + limit);
+
+      res.json({ entries: paginated, total, page, totalPages, limit });
+    } catch (err: any) {
+      res.status(500).json({ message: 'Failed to load evidence registry', error: err.message });
+    }
+  });
+
+  // Local PDF registry
+  app.get('/api/evidence-registry/local', (_req, res) => {
+    try {
+      const entries = getLocalPDFRegistry();
+      res.json(entries);
+    } catch (err: any) {
+      res.status(500).json({ message: 'Failed to load local PDF registry', error: err.message });
     }
   });
 
