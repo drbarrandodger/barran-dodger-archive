@@ -76,6 +76,7 @@ export function Navigation() {
     { href: "/evidence-vault", label: t("nav.evidenceVault") },
     { href: "/taxpayer-cost-analysis", label: t("nav.costAnalysis") },
     { href: "/blockchain", label: t("nav.timestamps") },
+    { href: "/archive-index", label: "📋 Archive Index" },
     { href: "/free-ebooks", label: "📚 Free eBooks" },
     { href: "/store", label: t("nav.store") },
     { href: "/contact", label: t("nav.contact") },

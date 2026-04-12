@@ -23,7 +23,7 @@ const BIBLE_QUOTES = [
 ];
 
 const PRIMARY_QUOTE = BIBLE_QUOTES[0];
-const COUNTER_BASELINE = 777;
+const COUNTER_BASELINE = 999;
 const SITE_URL = "https://www.barrandodger.com";
 
 const SHARE_CONTENT = {

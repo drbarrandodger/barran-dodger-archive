@@ -36,6 +36,7 @@ import Publications from "@/pages/Publications";
 import EvidenceVault from "@/pages/EvidenceVault";
 import Store from "@/pages/Store";
 import FreeEbooks from "@/pages/FreeEbooks";
+import ArchiveIndex from "@/pages/ArchiveIndex";
 import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
 import RetrospectiveStatement from "@/pages/RetrospectiveStatement";
@@ -361,6 +362,9 @@ function Router() {
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
+        <Route path="/archive-index" component={ArchiveIndex} />
+        <Route path="/pdf-list" component={ArchiveIndex} />
+        <Route path="/complete-document-list" component={ArchiveIndex} />
         <Route component={ViralLanding} />
       </Switch>
     </>

@@ -974,6 +974,85 @@ export async function registerRoutes(
     }
   });
 
+  // Human-readable name from a raw PDF filename
+  function cleanPdfName(raw: string): string {
+    let name = raw
+      .replace(/\.pdf$/i, '')
+      .replace(/[_-]?\d{13,}(\s|$)/g, ' ')   // strip 13-digit timestamps
+      .replace(/\d{13,}$/g, '')               // strip bare timestamps at end
+      .replace(/[^\x20-\x7E]/g, ' ')          // strip non-printable / emoji / non-ASCII
+      .replace(/["""''"]/g, '')               // strip quotes
+      .replace(/[_-]+/g, ' ')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+    // Title-case each word
+    name = name.split(' ').map(w => w.length > 0 ? w[0].toUpperCase() + w.slice(1) : w).join(' ');
+    return name || raw.replace(/\.pdf$/i, '');
+  }
+
+  app.get('/api/archive/pdf-list', (_req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store');
+      const docsDir = path.resolve('client/public/documents');
+      const attachedDir = path.resolve('attached_assets');
+      const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
+
+      interface PdfEntry { name: string; path: string; category: string; size: number; humanName: string; }
+      const entries: PdfEntry[] = [];
+
+      // Root document
+      if (fs.existsSync(rootPDF)) {
+        entries.push({ name: 'THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf', path: '/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf', category: 'Core', size: fs.statSync(rootPDF).size, humanName: 'The Man Australia Tried to Erase' });
+      }
+
+      // Recursive documents tree
+      const docPDFs = findAllPDFsRecursive(docsDir);
+      for (const { name, fullPath } of docPDFs) {
+        let category = 'Core Documents';
+        const parts = name.split('/');
+        if (parts.length > 1) {
+          const folder = parts[0];
+          if (folder === 'forensic-analyses') category = 'Forensic Analyses';
+          else if (folder === 'video-analyses') category = 'Video Analyses';
+          else category = folder.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        }
+        const filename = parts[parts.length - 1];
+        let humanName = cleanPdfName(filename);
+        // Special formatting for forensic analyses
+        if (category === 'Forensic Analyses') {
+          const m = filename.match(/forensic-analysis-(\d+)-(.+)\.pdf$/i);
+          if (m) humanName = `Forensic Analysis #${m[1].padStart(2, '0')}: ${cleanPdfName(m[2] + '.pdf')}`;
+        }
+        if (category === 'Video Analyses') {
+          humanName = humanName.replace(/^Video Analysis /, '').replace(/\d+ Claims Corroborated$/, '').trim();
+          if (!humanName) humanName = cleanPdfName(filename);
+        }
+        let size = 0;
+        try { size = fs.statSync(fullPath).size; } catch {}
+        entries.push({ name, path: `/documents/${name}`, category, size, humanName });
+      }
+
+      // attached_assets
+      const attachedPDFs = findAllPDFsRecursive(attachedDir);
+      for (const { name, fullPath } of attachedPDFs) {
+        let size = 0;
+        try { size = fs.statSync(fullPath).size; } catch {}
+        entries.push({ name, path: '', category: 'Uploaded Evidence', size, humanName: cleanPdfName(name) });
+      }
+
+      // Group by category
+      const byCategory: Record<string, PdfEntry[]> = {};
+      for (const e of entries) {
+        if (!byCategory[e.category]) byCategory[e.category] = [];
+        byCategory[e.category].push(e);
+      }
+
+      res.json({ total: entries.length, byCategory, updatedAt: new Date().toISOString() });
+    } catch (err: any) {
+      res.status(500).json({ message: err.message });
+    }
+  });
+
   app.get('/api/archive/pdf-count', (_req, res) => {
     try {
       res.set('Cache-Control', 'no-store');
