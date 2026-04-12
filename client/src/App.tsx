@@ -149,6 +149,7 @@ import TonyRidleyFullDossier from "@/pages/TonyRidleyFullDossier";
 import WhatThisProves from "@/pages/WhatThisProves";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 import EvidenceSignificanceRegistry from "@/pages/EvidenceSignificanceRegistry";
+import DivineReckoning from "@/pages/DivineReckoning";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -346,6 +347,9 @@ function Router() {
         <Route path="/when-wrong-people-get-nervous" component={WhenWrongPeopleGetNervousForensicReport} />
         <Route path="/when-wrong-people-get-nervous-forensic-report" component={WhenWrongPeopleGetNervousForensicReport} />
         <Route path="/law-enforcement-nervousness-forensic-analysis" component={WhenWrongPeopleGetNervousForensicReport} />
+        <Route path="/divine-reckoning" component={DivineReckoning} />
+        <Route path="/a-divine-reckoning" component={DivineReckoning} />
+        <Route path="/to-those-who-chose-this" component={DivineReckoning} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
