@@ -934,6 +934,33 @@ export async function registerRoutes(
     }
   });
 
+  app.get('/api/archive/zip-size', (_req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store, max-age=0');
+      const docsDir = path.resolve('client/public/documents');
+      const rootPDF = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
+      let totalBytes = 0;
+      const files = fs.readdirSync(docsDir).filter(f => f.toLowerCase().endsWith('.pdf'));
+      for (const f of files) {
+        try { totalBytes += fs.statSync(path.join(docsDir, f)).size; } catch {}
+      }
+      if (fs.existsSync(rootPDF)) {
+        try { totalBytes += fs.statSync(rootPDF).size; } catch {}
+      }
+      const forensicDir = path.join(docsDir, 'forensic-analyses');
+      if (fs.existsSync(forensicDir)) {
+        const fFiles = fs.readdirSync(forensicDir).filter(f => f.toLowerCase().endsWith('.pdf'));
+        for (const f of fFiles) {
+          try { totalBytes += fs.statSync(path.join(forensicDir, f)).size; } catch {}
+        }
+      }
+      const mb = Math.round(totalBytes / (1024 * 1024));
+      res.json({ bytes: totalBytes, mb, label: `~${mb}MB` });
+    } catch {
+      res.json({ bytes: 0, mb: 0, label: '~180MB' });
+    }
+  });
+
   app.get('/api/archive/count', async (_req, res) => {
     try {
       res.set('Cache-Control', 'no-store');

@@ -227,12 +227,22 @@ function usePdfCount() {
   return data?.count ?? null;
 }
 
+function useZipSize() {
+  const { data } = useQuery<{ label: string; mb: number }>({
+    queryKey: ['/api/archive/zip-size'],
+    queryFn: () => fetch('/api/archive/zip-size', { cache: 'no-store' }).then(r => r.json()),
+    staleTime: 300000,
+  });
+  return data?.label ?? '~180MB';
+}
+
 export function DetonationButton({ className }: { className?: string }) {
   const [isDownloading, setIsDownloading] = useState(false);
   const [showFullStatement, setShowFullStatement] = useState(false);
   const [triggered, setTriggered] = useState(false);
   const displayCount = useArchiveCount();
   const pdfCount = usePdfCount();
+  const zipSize = useZipSize();
 
   const handleDetonation = async () => {
     if (isDownloading) return;
@@ -435,7 +445,7 @@ export function DetonationButton({ className }: { className?: string }) {
               <span className="text-zinc-700">·</span>
               <span className="flex items-center gap-1.5">
                 <AlertTriangle className="h-3 w-3 text-red-500" />
-                <span>~143MB ZIP Archive</span>
+                <span>{zipSize} ZIP Archive</span>
               </span>
               <span className="text-zinc-700">·</span>
               <span className="flex items-center gap-1.5">
