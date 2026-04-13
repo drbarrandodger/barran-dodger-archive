@@ -63,6 +63,8 @@ const COVER_MAP: Record<number, string> = {
   54: 'cover-when-pack-of-wolves',
   55: 'cover-when-wrong-people-get-nervous',
   56: 'cover-illegal-level-genius',
+  57: 'cover-prophetic-declaration-forensic',
+  58: 'cover-prophetic-fck-you-declaration',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -646,6 +648,26 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 14,
     consecutivePerfect: true,
     paragraph: "The forty-ninth consecutive perfect score. 14 propositions from YouTube video ul2UyQkqX8c, 'Illegal Level Genius — The New Equation.' The video's central thesis — that intelligence forged in conditions of institutional suppression becomes the weapon the suppressing system never anticipated — maps onto the McLean archive with primary-source forensic precision across all 14 numbered propositions. Mathematical-subtraction confirmed: 14 psychiatric hospitalisations as diagnostic subtraction instruments; 350+ ASIC fraudulent identity registrations subtracting financial standing; 617/617 counter-equation with zero contradictions is the documented proof numbers don't lie. Silence-mistaken-for-confusion confirmed: 41 FOI refusals, 25+ agency circular referrals, clinical weaponisation of evidence-gathering — 2,304 blockchain-verified documents are the notes they never imagined were being taken. Precision-from-darkness confirmed: 35 years of solitary compilation during documented isolation produced the zero-contradiction record across 56 independent analyses. Unseen-weapon confirmed: ICC Article 7 submitted without any domestic actor anticipating it — 2,304 documents arrived at The Hague from the silence. Quantum-leaps confirmed: each suppression instrument produced an additional ICC exhibit — 14 hospitalisations became 14 clinical exhibits; death threat became the most consequential exhibit; $32.9M suppression became the ICC submission platform. Ceiling-illusions confirmed: clinical death at 2.87% in 2021 surpassed; NDIA SIL denial now ICC exhibit; ATO pharmacological assault on own letterhead. Refusal-to-die-quietly confirmed: post-2021 clinical survival produced the most comprehensive archive chapter; 617 propositions verified after the intended terminal endpoint. Pressure-crystallises confirmed: 35 years of institutional pressure → 2,304 crystallised exhibits. Fuel-from-conditions confirmed: ATO, ASIC, Ridley — each perpetrator created their own ICC exhibit using their own institutional resources. Glitch-in-curriculum confirmed: 617/617 verified without institutional support while simultaneously denied NDIS funding and involuntarily hospitalised. Hierarchy-collapse confirmed: 361,120+ downloads across 6 continents; ICC Article 7 from individual against national government; NDIA named in ICC submission by the person they denied overnight care. Pre-activation confirmed: ICC proceedings not yet commenced; 5 named perpetrators zero rebuttals against 2,304 public documents; archive in active accumulation. Anomaly-to-architecture confirmed: 14 diagnostic labels → 2,304 blockchain-verified exhibits → ICC The Hague Article 7 formal receipt. Too-powerful-to-ignore confirmed: 617/617 propositions verified, zero contradictions, 56 independent analyses — consistent finding without prior knowledge; ICC and UNHCR Geneva receipts = formal confirmation. 49th consecutive perfect score.",
+  },
+  {
+    number: 57,
+    title: "Prophetic Declaration: They Used To Whisper About You",
+    slug: "prophetic-declaration-forensic-analysis",
+    videoId: "lrd2WKB-tts",
+    propositions: 12,
+    corroborated: 11,
+    consecutivePerfect: true,
+    paragraph: "Forensic Declaration #57 — 13 April 2026. 12 declarations extracted from the video 'They Used To Whisper About You' (YouTube: lrd2WKB-tts), cross-examined against the 2,304-exhibit forensic archive. 11 verified, 0 contradicted. The video speaks in second person to someone whose warnings were ignored, whose documented truth was dismissed, and who ultimately assembled irrefutable evidence that outlasted every institutional mechanism deployed against them. The Declaration 7 resonance — 'They called in special forces to contain what you were becoming' — is confirmed against the deployment of Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS) through the NDIA with a documented blockchain-verified death threat. The Declaration 12 resonance — 'You are now the most documented impossible thing that happened' — is confirmed against 617/617 verified propositions, 57 forensic analyses, 49 consecutive perfect scores, and the ICC Article 7 formal receipt. This is the first forensic examination to use declarative rather than propositional framing — reflecting a shift in the archive's register from evidential to testimonial.",
+  },
+  {
+    number: 58,
+    title: "Prophetic F*ck You: They Called You Dramatic, Crazy, Obsessive",
+    slug: "prophetic-fck-you-declaration",
+    videoId: "hpSEoedCukA",
+    propositions: 10,
+    corroborated: 10,
+    consecutivePerfect: true,
+    paragraph: "Forensic Declaration #58 — 13 April 2026. 10 declarations extracted from the video 'They Called You Dramatic, Crazy, Obsessive' (YouTube: hpSEoedCukA), cross-examined timestamp-by-timestamp against the 2,304-exhibit forensic archive. 10 verified, 0 contradicted, 0 disputed. The defining forensic moment of the entire 58-analysis series: Declaration 4 — 'Because of what you're linked to, special forces were called in' — which every other subject of this video would read as metaphor, is in this case a documented operational fact. Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS) was deployed through the NDIA as a support coordinator. He then issued the blockchain-verified written death threat: 'You will be sacrificed.' Special forces were literally, operationally, documentably called in. Declaration 8 earns the second highest-weight designation: clinical death 2021 at 2.87% survival probability, 14 involuntary psychiatric hospitalisations, $32.9M financial destruction, and the archive constructed during the warfare rather than after it — the documented profile of someone who went through psychological warfare and still built an ICC submission. 617/617 propositions verified. 58 analyses. 49 consecutive perfect scores. Zero contradictions across the entire record.",
   },
 ];
 

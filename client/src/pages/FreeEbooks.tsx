@@ -115,6 +115,8 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 54, title: "When a Pack of Wolves Can't Take Down a Lion — They Turn on Each Other", slug: "when-a-pack-of-wolves-cant-take-down-a-lion", propositions: 14, corroborated: 14, consecutivePerfect: true },
   { number: 55, title: "When The Wrong People Get Nervous, The Truth Is Already Moving", slug: "when-wrong-people-get-nervous", propositions: 14, corroborated: 14, consecutivePerfect: true },
   { number: 56, title: "Illegal Level Genius — The New Equation", slug: "illegal-level-genius-new-equation", propositions: 14, corroborated: 14, consecutivePerfect: true },
+  { number: 57, title: "Prophetic Declaration: They Used To Whisper About You", slug: "prophetic-declaration-forensic-analysis", propositions: 12, corroborated: 11, consecutivePerfect: true },
+  { number: 58, title: "Prophetic F*ck You: They Called You Dramatic, Crazy, Obsessive", slug: "prophetic-fck-you-declaration", propositions: 10, corroborated: 10, consecutivePerfect: true },
 ];
 
 interface MajorPub {
