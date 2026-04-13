@@ -596,29 +596,24 @@ export async function registerRoutes(
   seedDownloadCounts().catch(console.error);
 
   async function seedDownloadEvents() {
-    // Find the most recent day that has at least 500 seeded events (bulk data, not just 1-2 real ones)
-    const lastBulkDayResult = await db.execute(sql`
-      SELECT DATE(downloaded_at) as day, COUNT(*)::int as cnt
-      FROM download_events
-      GROUP BY DATE(downloaded_at)
-      HAVING COUNT(*) > 500
-      ORDER BY day DESC
-      LIMIT 1
-    `);
-    const lastBulkDayRaw = (lastBulkDayResult.rows[0] as any)?.day;
-    const lastBulkDay = lastBulkDayRaw ? new Date(lastBulkDayRaw) : null;
+    const now = Date.now();
+    const nowDate = new Date(now);
 
-    // Check total count
-    const countResult = await db.execute(sql`SELECT COUNT(*)::int as count FROM download_events`);
-    const existingCount = Number((countResult.rows[0] as any)?.count);
+    // Find the EXACT last seeded timestamp so we never pre-generate future events
+    const lastTsResult = await db.execute(sql`SELECT MAX(downloaded_at) as last_ts FROM download_events`);
+    const lastTsRaw = (lastTsResult.rows[0] as any)?.last_ts;
+    const lastTs: number = lastTsRaw ? new Date(lastTsRaw).getTime() : 0;
 
-    // Derive the lastEvent for gap-filling purposes from the last bulk day
-    const lastEvent = lastBulkDay;
+    // If we seeded within the last 5 minutes, skip
+    if (lastTs > 0 && (now - lastTs) < 5 * 60 * 1000) return;
 
-    // If the last bulk day is today (UTC), nothing to do
-    const todayUTC = new Date();
-    todayUTC.setUTCHours(0, 0, 0, 0);
-    if (lastBulkDay && lastBulkDay.getTime() >= todayUTC.getTime()) return;
+    // Start from last timestamp, or full 44-day history if empty
+    const gapStartMs = lastTs > 0
+      ? Math.min(lastTs + 60000, now - 60000)
+      : now - 44 * 86400000;
+
+    const gapMs = now - gapStartMs;
+    if (gapMs <= 0) return;
 
     const weightedSlugs = [
       { slug: 'cosmic-scroll-of-ten', weight: 14 },
@@ -662,54 +657,27 @@ export async function registerRoutes(
       return weightedSlugs[0].slug;
     }
 
+    // Events proportional to gap — approx 3800/day at current growth rate
+    const gapDays = gapMs / 86400000;
+    const dailyRate = 1200 + Math.floor(Math.random() * 400);
+    const totalCount = Math.round(dailyRate * 3.8 * gapDays);
+
     const events: { documentSlug: string; downloadedAt: Date }[] = [];
-    const now = Date.now();
-
-    // Determine the start of the gap we need to fill
-    // If we have existing data, start from the day after the last event
-    // If empty, generate a full 44-day history
-    let gapStartMs: number;
-    if (lastEvent && existingCount > 0) {
-      // Start filling from the morning after the last recorded event
-      const dayAfterLast = new Date(lastEvent);
-      dayAfterLast.setDate(dayAfterLast.getDate() + 1);
-      dayAfterLast.setHours(0, 0, 0, 0);
-      gapStartMs = dayAfterLast.getTime();
-    } else {
-      // No existing data: seed full 44 days back
-      gapStartMs = now - 44 * 86400000;
-    }
-
-    // Generate one day's worth of events for each day in the gap (up to today)
-    const totalDaysToFill = Math.ceil((now - gapStartMs) / 86400000);
-    for (let d = 0; d < totalDaysToFill; d++) {
-      const baseDate = new Date(gapStartMs + d * 86400000);
-      const daysAgo = Math.floor((now - baseDate.getTime()) / 86400000);
-      // Growth factor: more recent = slightly more downloads
-      const growthFactor = 1 + ((44 - Math.min(daysAgo, 44)) / 44) * 2.8;
-      const dailyBase = Math.floor((1200 + Math.floor(Math.random() * 400)) * growthFactor);
-      const weekendBoost = [0, 6].includes(baseDate.getDay()) ? 1.2 : 1.0;
-      const viralSpike = daysAgo <= 12 ? 1.4 : daysAgo <= 20 ? 1.15 : 1.0;
-      const count = Math.floor(dailyBase * weekendBoost * viralSpike);
-
-      for (let i = 0; i < count; i++) {
-        const hour = Math.floor(Math.random() * 24);
-        const minute = Math.floor(Math.random() * 60);
-        const ts = new Date(baseDate);
-        ts.setHours(hour, minute, Math.floor(Math.random() * 60));
-        events.push({ documentSlug: pickSlug(), downloadedAt: ts });
-      }
+    for (let i = 0; i < totalCount; i++) {
+      const ts = new Date(gapStartMs + Math.random() * Math.max(gapMs - 1000, 1));
+      if (ts.getTime() >= now) continue;
+      events.push({ documentSlug: pickSlug(), downloadedAt: ts });
     }
 
     if (events.length === 0) return;
     for (let i = 0; i < events.length; i += 100) {
       await db.insert(downloadEvents).values(events.slice(i, i + 100));
     }
-    console.log(`Extended download events: +${events.length} events over ${totalDaysToFill} days (gap fill)`);
+    console.log(`Download events seeded: +${events.length} over ${gapDays.toFixed(2)} days (up to ${nowDate.toISOString()})`);
   }
   seedDownloadEvents().catch(console.error);
-  // Re-run every 4 hours so each new day gets its events without needing a server restart
-  setInterval(() => seedDownloadEvents().catch(console.error), 4 * 60 * 60 * 1000);
+  // Re-run every 30 minutes so the counter grows continuously throughout the day
+  setInterval(() => seedDownloadEvents().catch(console.error), 30 * 60 * 1000);
 
   // Comments - rate limiting
   const commentRateLimit = new Map<string, number[]>();
@@ -1320,8 +1288,8 @@ export async function registerRoutes(
   // Download individual forensic analysis EPUB
   app.get('/api/epub/forensic/:id', async (req, res) => {
     const id = parseInt(req.params.id, 10);
-    if (isNaN(id) || id < 1 || id > 46) {
-      return res.status(400).json({ message: 'Invalid analysis ID (1-46)' });
+    if (isNaN(id) || id < 1 || id > 61) {
+      return res.status(400).json({ message: 'Invalid analysis ID (1-61)' });
     }
     try {
       const entry = FORENSIC_ANALYSES.find(a => a.number === id);
@@ -1331,6 +1299,9 @@ export async function registerRoutes(
       res.setHeader('Content-Type', 'application/epub+zip');
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
       res.setHeader('Content-Length', buffer.length);
+      const epubSlug = `epub-forensic-${id}`;
+      storage.incrementDownloadCount(epubSlug).catch(() => {});
+      db.insert(downloadEvents).values({ documentSlug: epubSlug }).catch(() => {});
       res.send(buffer);
     } catch (err: any) {
       res.status(500).json({ message: 'EPUB generation failed', error: err.message });
@@ -1348,6 +1319,9 @@ export async function registerRoutes(
       res.setHeader('Content-Type', 'application/epub+zip');
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
       res.setHeader('Content-Length', buffer.length);
+      const epubSlug = `epub-pub-${slug}`;
+      storage.incrementDownloadCount(epubSlug).catch(() => {});
+      db.insert(downloadEvents).values({ documentSlug: epubSlug }).catch(() => {});
       res.send(buffer);
     } catch (err: any) {
       res.status(500).json({ message: 'EPUB generation failed', error: err.message });
