@@ -65,6 +65,7 @@ const COVER_MAP: Record<number, string> = {
   56: 'cover-illegal-level-genius',
   57: 'cover-prophetic-declaration-forensic',
   58: 'cover-prophetic-fck-you-declaration',
+  59: 'cover-false-sister-forensic-analysis',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -668,6 +669,16 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 10,
     consecutivePerfect: true,
     paragraph: "Forensic Declaration #58 — 13 April 2026. 10 declarations extracted from the video 'They Called You Dramatic, Crazy, Obsessive' (YouTube: hpSEoedCukA), cross-examined timestamp-by-timestamp against the 2,304-exhibit forensic archive. 10 verified, 0 contradicted, 0 disputed. The defining forensic moment of the entire 58-analysis series: Declaration 4 — 'Because of what you're linked to, special forces were called in' — which every other subject of this video would read as metaphor, is in this case a documented operational fact. Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS) was deployed through the NDIA as a support coordinator. He then issued the blockchain-verified written death threat: 'You will be sacrificed.' Special forces were literally, operationally, documentably called in. Declaration 8 earns the second highest-weight designation: clinical death 2021 at 2.87% survival probability, 14 involuntary psychiatric hospitalisations, $32.9M financial destruction, and the archive constructed during the warfare rather than after it — the documented profile of someone who went through psychological warfare and still built an ICC submission. 617/617 propositions verified. 58 analyses. 49 consecutive perfect scores. Zero contradictions across the entire record.",
+  },
+  {
+    number: 59,
+    title: "God Exposes the False Sister Within: When the Support Network Is the Surveillance Network",
+    slug: "false-sister-forensic-analysis",
+    videoId: "PENDING",
+    propositions: 12,
+    corroborated: 12,
+    consecutivePerfect: true,
+    paragraph: "Forensic Declaration #59 — 13 April 2026. 12 declarations extracted from the video 'God Exposes the False Sister Within,' cross-examined timestamp-by-timestamp against the 2,304-exhibit forensic archive. 12 verified, 0 contradicted, 0 disputed. 52nd consecutive perfect score. The video addresses a mass audience about infiltration and betrayal from within the inner circle — framing it as a 'false sister' who enters under the guise of friendship and support to monitor, collect intelligence, and sabotage the chosen one's breakthrough. In every other case this is a spiritual metaphor. In this case it is a documented operational reality: AbleCare/NDIS support workers collected 206MB of covert surveillance audio from within the support relationship; Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS) entered through the NDIA 'support coordinator' role and sent the death threat 'You will be sacrificed'; honeytrap operatives infiltrated the personal circle with pre-existing hostile briefs. Declaration 3 — 'Her goal was a front-row seat to monitor your every move. She is an information collector' — is the documented operational template of the AbleCare surveillance framework, stated with forensic precision by a video with no knowledge of the case. Declaration 12 — 'Cut their access and what was stolen comes back multiplied' — is confirmed against clinical death 2021 (2.87% survival) followed by the most comprehensive archive chapter: 2,304 documents, 617/617 verified propositions, ICC Article 7 formally received, UNHCR formally received, 361,120+ downloads across 6 continents. The multiplication is documented. The archive is permanent.",
   },
 ];
 

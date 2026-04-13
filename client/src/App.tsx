@@ -157,6 +157,7 @@ import EvidenceSignificanceRegistry from "@/pages/EvidenceSignificanceRegistry";
 import DivineReckoning from "@/pages/DivineReckoning";
 import PropheticDeclarationForensicAnalysis from "@/pages/PropheticDeclarationForensicAnalysis";
 import PropheticFckYouDeclaration from "@/pages/PropheticFckYouDeclaration";
+import FalseSisterForensicAnalysis from "@/pages/FalseSisterForensicAnalysis";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -383,6 +384,10 @@ function Router() {
         <Route path="/they-called-you-crazy-forensic-analysis" component={PropheticFckYouDeclaration} />
         <Route path="/special-forces-were-called-in-forensic-proof" component={PropheticFckYouDeclaration} />
         <Route path="/prophetic-fuck-you-declaration" component={PropheticFckYouDeclaration} />
+        <Route path="/false-sister-forensic-analysis" component={FalseSisterForensicAnalysis} />
+        <Route path="/god-exposes-the-false-sister" component={FalseSisterForensicAnalysis} />
+        <Route path="/support-network-surveillance-network" component={FalseSisterForensicAnalysis} />
+        <Route path="/forensic-analysis-59" component={FalseSisterForensicAnalysis} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/archive-index" component={ArchiveIndex} />

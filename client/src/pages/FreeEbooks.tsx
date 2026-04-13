@@ -117,6 +117,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 56, title: "Illegal Level Genius — The New Equation", slug: "illegal-level-genius-new-equation", propositions: 14, corroborated: 14, consecutivePerfect: true },
   { number: 57, title: "Prophetic Declaration: They Used To Whisper About You", slug: "prophetic-declaration-forensic-analysis", propositions: 12, corroborated: 11, consecutivePerfect: true },
   { number: 58, title: "Prophetic F*ck You: They Called You Dramatic, Crazy, Obsessive", slug: "prophetic-fck-you-declaration", propositions: 10, corroborated: 10, consecutivePerfect: true },
+  { number: 59, title: "God Exposes the False Sister Within: When the Support Network Is the Surveillance Network", slug: "false-sister-forensic-analysis", propositions: 12, corroborated: 12, consecutivePerfect: true },
 ];
 
 interface MajorPub {
