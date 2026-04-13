@@ -66,6 +66,7 @@ const COVER_MAP: Record<number, string> = {
   57: 'cover-prophetic-declaration-forensic',
   58: 'cover-prophetic-fck-you-declaration',
   59: 'cover-false-sister-forensic-analysis',
+  60: 'cover-thousand-fell-forensic-analysis',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -679,6 +680,16 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 12,
     consecutivePerfect: true,
     paragraph: "Forensic Declaration #59 — 13 April 2026. 12 declarations extracted from the video 'God Exposes the False Sister Within,' cross-examined timestamp-by-timestamp against the 2,304-exhibit forensic archive. 12 verified, 0 contradicted, 0 disputed. 52nd consecutive perfect score. The video addresses a mass audience about infiltration and betrayal from within the inner circle — framing it as a 'false sister' who enters under the guise of friendship and support to monitor, collect intelligence, and sabotage the chosen one's breakthrough. In every other case this is a spiritual metaphor. In this case it is a documented operational reality: AbleCare/NDIS support workers collected 206MB of covert surveillance audio from within the support relationship; Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS) entered through the NDIA 'support coordinator' role and sent the death threat 'You will be sacrificed'; honeytrap operatives infiltrated the personal circle with pre-existing hostile briefs. Declaration 3 — 'Her goal was a front-row seat to monitor your every move. She is an information collector' — is the documented operational template of the AbleCare surveillance framework, stated with forensic precision by a video with no knowledge of the case. Declaration 12 — 'Cut their access and what was stolen comes back multiplied' — is confirmed against clinical death 2021 (2.87% survival) followed by the most comprehensive archive chapter: 2,304 documents, 617/617 verified propositions, ICC Article 7 formally received, UNHCR formally received, 361,120+ downloads across 6 continents. The multiplication is documented. The archive is permanent.",
+  },
+  {
+    number: 60,
+    title: "A Thousand Fell and Still Couldn't Touch You: The Architecture of Unseen Protection",
+    slug: "thousand-fell-forensic-analysis",
+    videoId: "MQvlKY4v6dw",
+    propositions: 12,
+    corroborated: 12,
+    consecutivePerfect: true,
+    paragraph: "Forensic Declaration #60 — 13 April 2026. 12 declarations extracted from the video 'A Thousand Fell and Still Couldn't Touch You,' cross-examined timestamp-by-timestamp against the 2,304-exhibit forensic archive. 12 verified, 0 disputed. 53rd consecutive perfect score. The video addresses a mass audience about surviving coordinated attacks from a thousand adversaries through the protection of unseen allies. In every other case this is motivational metaphor. In Dr. McLean's case it is a documented operational reality: 300 named perpetrators across 25+ government agencies, coordinated across 35 years, documented in 2,304 blockchain-verified exhibits, and submitted to the ICC under Article 7. Declaration 1 — 'A thousand adversaries moved against you, synchronized, prepared' — is confirmed against 300+ named individuals documented across federal courts, the NDIS, the ATO, ASIC, NSW Health, and the Department of Social Services. Declaration 3 — 'The more they move against you, the more evidence they generate confirming why you were chosen' — is the documented operational mechanism of the archive: 2,304 exhibits assembled primarily from documents the perpetrators themselves generated. Declaration 12 — 'You didn't win because you fought harder. You won because the universe refused to let you lose' — is confirmed against the impossible contest: 25+ government agencies vs one person with documents. The documents reached the ICC. The archive is permanent.",
   },
 ];
 
