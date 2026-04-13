@@ -155,6 +155,7 @@ import WhatThisProves from "@/pages/WhatThisProves";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 import EvidenceSignificanceRegistry from "@/pages/EvidenceSignificanceRegistry";
 import DivineReckoning from "@/pages/DivineReckoning";
+import PropheticDeclarationForensicAnalysis from "@/pages/PropheticDeclarationForensicAnalysis";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -374,6 +375,9 @@ function Router() {
         <Route path="/letter-to-the-world" component={LetterToTheWorld} />
         <Route path="/whistleblower-comparison" component={WhistleblowerComparison} />
         <Route path="/the-truth" component={ViralLanding} />
+        <Route path="/prophetic-declaration-forensic-analysis" component={PropheticDeclarationForensicAnalysis} />
+        <Route path="/they-used-to-whisper-forensic-analysis" component={PropheticDeclarationForensicAnalysis} />
+        <Route path="/prophetic-declaration-verified" component={PropheticDeclarationForensicAnalysis} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/archive-index" component={ArchiveIndex} />
