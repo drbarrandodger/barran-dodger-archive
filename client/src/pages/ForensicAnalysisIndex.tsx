@@ -674,7 +674,7 @@ const ANALYSES: ForensicEntry[] = [
     number: 59,
     title: "God Exposes the False Sister Within: When the Support Network Is the Surveillance Network",
     slug: "false-sister-forensic-analysis",
-    videoId: "PENDING",
+    videoId: "Klqc4dmwkCQ",
     propositions: 12,
     corroborated: 12,
     consecutivePerfect: true,

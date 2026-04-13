@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Shield, CheckCircle, Eye, Scale, AlertTriangle, Crosshair } from "lucide-react";
 
 // ── Paste the YouTube video ID here once the URL is confirmed ──
-const VIDEO_ID = "PENDING";
+const VIDEO_ID = "Klqc4dmwkCQ";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
