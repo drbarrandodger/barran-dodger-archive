@@ -159,6 +159,7 @@ import PropheticDeclarationForensicAnalysis from "@/pages/PropheticDeclarationFo
 import PropheticFckYouDeclaration from "@/pages/PropheticFckYouDeclaration";
 import FalseSisterForensicAnalysis from "@/pages/FalseSisterForensicAnalysis";
 import ThousandFellForensicAnalysis from "@/pages/ThousandFellForensicAnalysis";
+import TheyreAboutToBeHindBarsForensicAnalysis from "@/pages/TheyreAboutToBeHindBarsForensicAnalysis";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -393,6 +394,10 @@ function Router() {
         <Route path="/thousand-fell" component={ThousandFellForensicAnalysis} />
         <Route path="/architecture-of-unseen-protection" component={ThousandFellForensicAnalysis} />
         <Route path="/forensic-analysis-60" component={ThousandFellForensicAnalysis} />
+        <Route path="/theyre-about-to-be-behind-bars-forensic-analysis" component={TheyreAboutToBeHindBarsForensicAnalysis} />
+        <Route path="/god-signed-the-warrant" component={TheyreAboutToBeHindBarsForensicAnalysis} />
+        <Route path="/300k-slow-down-system" component={TheyreAboutToBeHindBarsForensicAnalysis} />
+        <Route path="/forensic-analysis-61" component={TheyreAboutToBeHindBarsForensicAnalysis} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/archive-index" component={ArchiveIndex} />

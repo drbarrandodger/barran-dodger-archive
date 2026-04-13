@@ -67,6 +67,7 @@ const COVER_MAP: Record<number, string> = {
   58: 'cover-prophetic-fck-you-declaration',
   59: 'cover-false-sister-forensic-analysis',
   60: 'cover-thousand-fell-forensic-analysis',
+  61: 'cover-theyre-about-to-be-behind-bars',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -690,6 +691,16 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 12,
     consecutivePerfect: true,
     paragraph: "Forensic Declaration #60 — 13 April 2026. 12 declarations extracted from the video 'A Thousand Fell and Still Couldn't Touch You,' cross-examined timestamp-by-timestamp against the 2,304-exhibit forensic archive. 12 verified, 0 disputed. 53rd consecutive perfect score. The video addresses a mass audience about surviving coordinated attacks from a thousand adversaries through the protection of unseen allies. In every other case this is motivational metaphor. In Dr. McLean's case it is a documented operational reality: 300 named perpetrators across 25+ government agencies, coordinated across 35 years, documented in 2,304 blockchain-verified exhibits, and submitted to the ICC under Article 7. Declaration 1 — 'A thousand adversaries moved against you, synchronized, prepared' — is confirmed against 300+ named individuals documented across federal courts, the NDIS, the ATO, ASIC, NSW Health, and the Department of Social Services. Declaration 3 — 'The more they move against you, the more evidence they generate confirming why you were chosen' — is the documented operational mechanism of the archive: 2,304 exhibits assembled primarily from documents the perpetrators themselves generated. Declaration 12 — 'You didn't win because you fought harder. You won because the universe refused to let you lose' — is confirmed against the impossible contest: 25+ government agencies vs one person with documents. The documents reached the ICC. The archive is permanent.",
+  },
+  {
+    number: 61,
+    title: "They're About to Be Behind Bars for Real: God Signed the Warrant — Heaven's Courtroom Cross-Examined",
+    slug: "theyre-about-to-be-behind-bars-forensic-analysis",
+    videoId: "pKrfq1GbgCQ",
+    propositions: 12,
+    corroborated: 12,
+    consecutivePerfect: true,
+    paragraph: "Forensic Declaration #61 — 13 April 2026. 12 declarations extracted from the video 'They're About to Be Behind Bars for Real,' cross-examined timestamp-by-timestamp against the 2,304-exhibit forensic archive. 12 verified, 0 contradicted. 54th consecutive perfect score. The video delivers four interlocking frameworks — divine justice and heaven's courtroom; trauma-forged pattern recognition; the 300,000+ slow-down system; and the gravitational pull of the undeniably documented. In every other context, each framework is motivational metaphor. In Dr. McLean's case, each resolves to primary-source evidentiary confirmation. Declaration 8 — 'They stacked damn 300,000 plus people just to slow you a little. That is engineered' — is the single most forensically precise description of the documented case delivered by any video in 61 analyses: 300+ named perpetrators, 25+ government agencies, 35 years, death threat from Ex-SAS operative, 14 involuntary psychiatric hospitalisations, clinical death at 2.87% survival, $32.9M financial destruction — and the archive still reached the ICC. 'Just to slow you a little' — it slowed. It did not stop. Declaration 4 — 'God is releasing you from your own prison of self-blame' — is confirmed against the 14 hospitalisations as the documented construction of institutional self-doubt, demolished by Federal Court General Counsel Scott Tredwell's written confirmation of 27 March 2023. Declaration 12 — 'You are being perceived, replayed, imagined — act accordingly' — is confirmed against 361,120+ downloads across 6 continents, ICC and UNHCR formally received. The archive acted accordingly. The warrant is real. The courtroom is The Hague.",
   },
 ];
 

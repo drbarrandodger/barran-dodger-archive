@@ -51,6 +51,7 @@ const FORENSIC_EPUB_COVER_MAP: Record<number, string> = {
   58: "cover-prophetic-fck-you-declaration",
   59: "cover-false-sister-forensic-analysis",
   60: "cover-thousand-fell-forensic-analysis",
+  61: "cover-theyre-about-to-be-behind-bars",
 };
 
 interface ForensicEntry {
@@ -123,6 +124,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 58, title: "Prophetic F*ck You: They Called You Dramatic, Crazy, Obsessive", slug: "prophetic-fck-you-declaration", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 59, title: "God Exposes the False Sister Within: When the Support Network Is the Surveillance Network", slug: "false-sister-forensic-analysis", propositions: 12, corroborated: 12, consecutivePerfect: true },
   { number: 60, title: "A Thousand Fell and Still Couldn't Touch You: The Architecture of Unseen Protection", slug: "thousand-fell-forensic-analysis", propositions: 12, corroborated: 12, consecutivePerfect: true },
+  { number: 61, title: "They're About to Be Behind Bars for Real: God Signed the Warrant — Heaven's Courtroom Cross-Examined", slug: "theyre-about-to-be-behind-bars-forensic-analysis", propositions: 12, corroborated: 12, consecutivePerfect: true },
 ];
 
 interface MajorPub {
