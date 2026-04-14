@@ -221,6 +221,7 @@ const MAJOR_PUBLICATIONS: MajorPub[] = [
   { slug: "they-fumbled-you", title: "They Fumbled You — Full Essay", subtitle: "Forensic Analysis #9 — First Perfect Score — 13/13 Corroborated", coverFile: "cover-they-fumbled-you", category: "Forensic Essay", downloadUrl: "/api/forensic/full-essay/fumbled-you", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-9-they-fumbled-you-full-essay.pdf", pageUrl: "/forensic-analysis-9-they-fumbled-you-download" },
   { slug: "confession-theyve-been-choking-on", title: "The Confession They've Been Choking On", subtitle: "Forensic Analysis #50 — 43rd Consecutive Perfect Score — 12/12 Corroborated", coverFile: "cover-confession-theyve-been-choking-on", category: "Forensic Essay", downloadUrl: "/api/forensic/full-essay/confession-choked-on", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-50-confession-theyve-been-choking-on-full-essay.pdf", pageUrl: "/forensic-analysis-50-confession-theyve-been-choking-on-download" },
   { slug: "comprehensive-statement-digital-architecture", title: "Comprehensive Statement — Digital Architecture of Humanity", subtitle: "Seven Layers of Permanence — Blockchain Verified — ICC Submitted — UNHCR Submitted", coverFile: "cover-comprehensive-statement-digital-architecture", category: "Primary Exhibit", pageUrl: "/comprehensive-statement-digital-architecture" },
+  { slug: "police-complicity-death-threat-documentation", title: "Police Complicity & Death Threat — April 15, 2026", subtitle: "Direct death threat by Tory Kilborn · Police slur · Institutional complicity · 50+ MPs notified", coverFile: "cover-police-complicity-death-threat", category: "Primary Evidence", pageUrl: "/police-complicity-death-threat-documentation" },
 ];
 
 interface PdfDoc {
@@ -230,6 +231,7 @@ interface PdfDoc {
 }
 
 const ALL_PDFS: PdfDoc[] = [
+  { file: "police-complicity-death-threat-documentation.pdf", title: "Police Complicity & Death Threat — April 15, 2026 — Tory Kilborn, Iasonidis, AVO Applications, 50+ MPs Notified", category: "Primary Evidence" },
   { file: "digital_oppression_100000_word_essay.pdf", title: "Digital Oppression and Institutional Failure (100,000 Words)", category: "Forensic Reports" },
   { file: "master-forensic-evidence-report.pdf", title: "Master Forensic Evidence Report — Complete Evidentiary Summary", category: "Forensic Reports" },
   { file: "forensic-meltdown-report.pdf", title: "Forensic Meltdown Report", category: "Forensic Reports" },

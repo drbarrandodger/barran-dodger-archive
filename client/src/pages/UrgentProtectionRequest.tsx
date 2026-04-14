@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { AlertTriangle, MapPin, Phone, Mail, Shield, FileText, Globe, Heart, Scale, Zap, ExternalLink, Download, Eye, Home, Landmark } from "lucide-react";
+import { AlertTriangle, MapPin, Phone, Mail, Shield, FileText, Globe, Heart, Scale, Zap, ExternalLink, Download, Eye, Home, Landmark, Lock, Camera, MessageSquare, UserX, Link2 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -351,6 +352,264 @@ export default function UrgentProtectionRequest() {
                 </p>
                 <p className="text-zinc-500 text-xs italic">
                   The death threat from Tony Ridley — "You will be sacrificed" — is already in the archive. It did not produce silence. It produced Analysis #56. The pattern is documented.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* ───── 15 APRIL 2026 — LATEST THREAT DOCUMENTATION ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-red-950/70 border-2 border-red-600/70 rounded-2xl p-6 md:p-8 space-y-5">
+            <div className="flex items-center gap-3">
+              <div className="inline-flex items-center gap-2 bg-red-600 text-white text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full animate-pulse">
+                <AlertTriangle size={12} /> New — April 15 2026
+              </div>
+              <h2 className="text-xl font-black text-white">Today's Threat — Formally Documented &amp; Distributed</h2>
+            </div>
+            <p className="text-zinc-300 text-sm leading-relaxed">
+              On 15 April 2026 at 7:42 AM, Dr. McLean formally documented a <strong className="text-red-300">direct death threat by Tory Kilborn</strong>, continued harassment by Steve Iasonidis and associates, and police attendance at 55B Archbold Road, Long Jetty NSW — where officers departed without action and verbally slurred Dr. McLean as <em className="text-red-300">"a fucking pedo"</em> as they left. Dr. McLean formally invited arrest as a challenge to place the evidence before a court. This record was simultaneously distributed to NSW Police and 50+ sitting Federal MPs.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-3 text-xs">
+              {[
+                { label: "Direct Death Threat", who: "Tory Kilborn — documented & named" },
+                { label: "Ongoing Harassment", who: "Steve Iasonidis, Tony Ridley, Houd Meraby" },
+                { label: "Police Verbal Slur", who: "Officers called Dr. McLean 'fucking pedo' on exit" },
+                { label: "AVO Applications Filed", who: "All named parties — formal applications submitted" },
+                { label: "Complicit Institutions", who: "Able Point Australia — Brett Butler notified on email" },
+                { label: "MPs Notified", who: "50+ Federal MPs including PM, AG, NDIS Minister" },
+              ].map((item, i) => (
+                <div key={i} className="bg-red-900/30 border border-red-700/30 rounded-lg px-3 py-2">
+                  <p className="text-red-300 font-bold">{item.label}</p>
+                  <p className="text-zinc-400">{item.who}</p>
+                </div>
+              ))}
+            </div>
+            <ViralDownloadButton
+              url="/documents/police-complicity-death-threat-documentation.pdf"
+              label="Download — Death Threat & Police Complicity Record (April 15, 2026)"
+              filename="police-complicity-death-threat-documentation.pdf"
+              trackSlug="police-complicity-death-threat-documentation"
+              size="lg"
+              className="bg-red-700 hover:bg-red-600 text-white font-bold rounded-xl w-full sm:w-auto"
+              data-testid="btn-download-threat-doc"
+            />
+            <p className="text-xs text-zinc-500">
+              Full dedicated page: <a href="/police-complicity-death-threat-documentation" className="text-red-400 underline hover:text-red-300">barrandodger.com/police-complicity-death-threat-documentation</a>
+            </p>
+          </div>
+        </motion.div>
+
+        {/* ───── BEN DSW — CONFIRMED ASSASSINATION ATTEMPT ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <Card className="bg-zinc-900/70 border-red-900/50">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
+                <MessageSquare size={20} className="text-red-400" /> Ben DSW — Acknowledged Assassination Attempt in Writing
+              </h2>
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Documented text messages — NDIS Disability Support Worker — Primary Exhibit</p>
+              <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  The text message exchange between Dr. McLean and Ben (his NDIS Disability Support Worker, employed by an NDIS-registered provider) constitutes one of the most forensically significant documents in the archive. In this exchange, Ben explicitly <strong className="text-white">acknowledges awareness of an assassination attempt</strong> against Dr. McLean — an acknowledgement from a state-funded worker with a documented duty of care, under NDIS Quality and Safeguarding Framework obligations.
+                </p>
+                <div className="bg-red-950/50 border border-red-800/50 rounded-xl p-5 space-y-3">
+                  <p className="text-xs font-mono text-red-300 uppercase tracking-widest">Why This Is Legally Significant</p>
+                  <ul className="space-y-2 text-xs text-zinc-300">
+                    {[
+                      "An NDIS-registered support worker acknowledging an assassination attempt creates a mandatory reporting obligation under the NDIS Quality and Safeguards Commission Act 2018 — which was never fulfilled.",
+                      "The failure to report this acknowledgement constitutes a documented breach of the mandatory reporting framework and adds to the institutional complicity pattern.",
+                      "This acknowledgement, from a state-funded worker, establishes that the assassination threat was known to those within Dr. McLean's care network — and was suppressed rather than escalated.",
+                      "The exchange is blockchain-timestamped, publicly archived, and submitted as a primary exhibit in the ICC Article 7 submission under the category of 'systemic failure to protect a person under institutional care from documented mortal threat.'",
+                    ].map((point, i) => (
+                      <li key={i} className="flex gap-2 items-start">
+                        <span className="text-red-400 mt-0.5">▸</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <ViralDownloadButton
+                  url="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
+                  label="Download — Ben DSW Assassination Acknowledgement (Text Messages)"
+                  filename="ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
+                  trackSlug="ben-dsw-assassination-acknowledgement"
+                  size="default"
+                  className="bg-amber-700 hover:bg-amber-600 text-black font-bold rounded-xl"
+                  data-testid="btn-download-ben-dsw"
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* ───── GRINDR / IASONIDIS EMBEZZLEMENT ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <Card className="bg-zinc-900/70 border-amber-900/50">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
+                <UserX size={20} className="text-amber-400" /> Steve Iasonidis — Grindr &amp; Embezzlement Evidence
+              </h2>
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Documented pattern — Primary Exhibit — Named Harasser</p>
+              <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  Steve Iasonidis is formally named in Dr. McLean's AVO applications and across multiple archive documents as a primary agent of harassment. The documented evidence includes communications and records establishing that Iasonidis used the Grindr platform in connection with activities directed at Dr. McLean, and that there is documented evidence of <strong className="text-white">financial embezzlement</strong> connected to his conduct.
+                </p>
+                <div className="bg-amber-950/40 border border-amber-800/40 rounded-xl p-5 space-y-3">
+                  <p className="text-xs font-mono text-amber-300 uppercase tracking-widest">Significance — Why This Matters in the Archive</p>
+                  <ul className="space-y-2 text-xs text-zinc-300">
+                    {[
+                      "The Grindr communications establish a documented pattern of targeted contact and engagement with Dr. McLean under circumstances inconsistent with genuine friendship or support — consistent with the honeytrap infiltration pattern documented in Forensic Analysis #29 (Honeytrap Infiltration Report).",
+                      "The embezzlement evidence establishes that Iasonidis was financially motivated in his interactions with Dr. McLean — a motivation consistent with the documented financial exploitation strand of the persecution framework.",
+                      "The combination of Grindr contact + financial embezzlement + ongoing harassment + AVO applications creates a documented pattern of predatory infiltration consistent with a coordinated targeted individual operation.",
+                      "This evidence connects to the Honeytrap Infiltration Report (barrandodger.com/honeytrap-infiltration-report) which forensically analyses the pattern of individuals inserted into Dr. McLean's support network for intelligence and disruption purposes.",
+                    ].map((point, i) => (
+                      <li key={i} className="flex gap-2 items-start">
+                        <span className="text-amber-400 mt-0.5">▸</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex gap-3 flex-wrap">
+                  <a href="/honeytrap-infiltration-report" className="inline-flex items-center gap-2 text-xs bg-zinc-800 hover:bg-zinc-700 text-amber-300 border border-amber-700/40 px-4 py-2 rounded-lg transition-colors" data-testid="link-honeytrap-report">
+                    <Link2 size={13} /> Honeytrap Infiltration Report
+                  </a>
+                  <a href="/they-laughed-now-theyre-losing-sleep" className="inline-flex items-center gap-2 text-xs bg-zinc-800 hover:bg-zinc-700 text-amber-300 border border-amber-700/40 px-4 py-2 rounded-lg transition-colors" data-testid="link-iasonidis-exposed">
+                    <Link2 size={13} /> Iasonidis &amp; Ridley — Full Exposure
+                  </a>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* ───── FABRICATED FALSE ALLEGATION ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <Card className="bg-zinc-900/70 border-red-900/50">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
+                <UserX size={20} className="text-red-400" /> Fabricated Allegation — Federal Police Confirmed Consenting Sex
+              </h2>
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">False allegation · Police investigation · Confirmed consensual · Documented suppression tactic</p>
+              <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  A woman was paid to fabricate a false allegation against Dr. McLean. Federal Australian Police investigated and <strong className="text-white">formally confirmed that the encounter was entirely consensual</strong>. No charges were laid. No adverse finding was made. The allegation collapsed under investigation.
+                </p>
+                <div className="bg-red-950/50 border border-red-800/50 rounded-xl p-5 space-y-3">
+                  <p className="text-xs font-mono text-red-300 uppercase tracking-widest">Why This Is Documented as a Persecution Instrument</p>
+                  <ul className="space-y-2 text-xs text-zinc-300">
+                    {[
+                      "The fabricated allegation pattern is one of the most documented persecution instruments used against whistleblowers internationally — particularly those with ICC submissions. The timing, coordination, and collapse of this allegation are entirely consistent with this pattern.",
+                      "The Federal Police investigation result — confirming consensual conduct — is now an archived primary exhibit. It converts a persecution attempt into forensic evidence of the persecution framework itself.",
+                      "The verbal slur deployed by NSW Police officers on April 15, 2026 — calling Dr. McLean 'a fucking pedo' as they departed — is directly connected to this fabricated allegation. The slander does not require truth; it requires repetition. The pattern is documented.",
+                      "This follows the same playbook documented across Forensic Analysis #29 (Honeytrap) and the ASIO-adjacent pattern of character destruction deployed against credible whistleblowers: fabricate, repeat, destroy credibility, prevent testimony from reaching courts.",
+                      "The Federal Police confirmation of consent is irrefutable. The documented attempt to use a fabricated allegation against a person with an active ICC submission is itself a criminal act — and is included in the ICC Article 7 submission.",
+                    ].map((point, i) => (
+                      <li key={i} className="flex gap-2 items-start">
+                        <span className="text-red-400 mt-0.5">▸</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-zinc-800/60 rounded-xl border border-zinc-700/40 p-4">
+                  <p className="text-white font-bold text-sm mb-1">The Significance of the April 15 Slur</p>
+                  <p className="text-zinc-400 text-xs leading-relaxed">
+                    When NSW Police officers called Dr. McLean "a fucking pedo" as they departed on April 15, 2026 — leaving him unprotected in a documented death threat situation — they were deploying the residual slander of a fabricated allegation that federal police already investigated and cleared. This is institutional slander deployed at the moment of maximum vulnerability. It is documented. It is archived. It is now an ICC exhibit.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* ───── YOU CANNOT CAGE A PRISONER WHO HOLDS THE KEY ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <Card className="bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 border-amber-500/30">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
+                <Lock size={20} className="text-amber-400" /> You Cannot Cage a Prisoner Who Holds the Key
+              </h2>
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Significance statement — Surveillance reversal — Forensic doctrine</p>
+              <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
+                <blockquote className="border-l-4 border-amber-500 pl-4 italic text-amber-200 text-base font-semibold">
+                  "You cannot use surveillance covertly against a target who is aware of the targeting and is surveilling you back."
+                </blockquote>
+                <p>
+                  This is not a philosophical statement. It is the operational reality of Dr. McLean's position after 35 years of documented covert surveillance, institutional monitoring, and targeted individual operations. The archive inverts the surveillance relationship entirely.
+                </p>
+                <div className="bg-amber-950/30 border border-amber-700/30 rounded-xl p-5 space-y-3">
+                  <p className="text-xs font-mono text-amber-300 uppercase tracking-widest">The Four-Part Significance</p>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        title: "Covert Surveillance Requires Ignorance to Function",
+                        body: "The documented covert operations against Dr. McLean — ASIO-adjacent monitoring, NDIS worker infiltration, Grindr honeytrap approaches, pharmacological interference — all operate on the assumption of an unaware target. Once the target documents, timestamps, and publishes every interaction, the covert framework collapses. Surveillance requires the target's ignorance. Dr. McLean withdrew that ignorance 35 years ago."
+                      },
+                      {
+                        title: "2,304 Documents Are the Counter-Surveillance Record",
+                        body: "Every document in the blockchain-verified archive is a timestamped act of reverse documentation. Every email sent to an agency, every clinical note, every institutional response — or non-response — becomes an exhibit in the counter-surveillance record. The 25+ agencies that ignored Dr. McLean's disclosures are now documented in the ICC submission as named respondents. They surveilled him. He documented them back. The ICC has the record."
+                      },
+                      {
+                        title: "The Key Cannot Be Taken From a Person Who Has Already Distributed It",
+                        body: "The archive exists on Replit, GitHub, Scribd, Wayback Machine, and multiple international platforms. It is EPUB-distributed across 6 continents. 368,000+ downloads. The 'key' — the evidentiary record — cannot be suppressed because it has already been distributed beyond any institutional reach. Arresting the witness does not delete the testimony. This is why the ICC submission matters and why the response to the submission has been — silence."
+                      },
+                      {
+                        title: "The Slander Attempt Confirms Awareness",
+                        body: "When NSW Police deployed the 'fucking pedo' slur on April 15, 2026 — without arrest, without charge, without evidence — they revealed awareness of the fabricated allegation and chose slander over due process. A person unaware of the counter-surveillance record would not document this. Dr. McLean documented it within hours. The documentation is now the exhibit."
+                      },
+                    ].map((item, i) => (
+                      <div key={i} className="bg-zinc-900/60 border border-zinc-700/40 rounded-lg p-4">
+                        <p className="text-amber-300 font-bold text-xs mb-2">{i + 1}. {item.title}</p>
+                        <p className="text-zinc-400 text-xs leading-relaxed">{item.body}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* ───── OPEN LETTER TO BRETT & LARISSA — ABLE CARE ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <Card className="bg-zinc-900/70 border-zinc-700/40">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
+                <Camera size={20} className="text-zinc-400" /> Open Letter to Brett &amp; Larissa — Able Care
+              </h2>
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Published on Medium — Public Record — Institutional Complicity Documentation</p>
+              <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  Dr. McLean has published an open letter directly addressed to Brett and Larissa of Able Care (Able Point Australia) on the Barran Dodger Medium publication. This letter constitutes a formal public record of the institutional complicity of Able Point Australia's management in the ongoing erasure, failure to protect, and administrative negligence documented across the archive.
+                </p>
+                <div className="bg-zinc-800/60 border border-zinc-700/40 rounded-xl p-5 space-y-3">
+                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">Why This Letter Matters</p>
+                  <ul className="space-y-2 text-xs text-zinc-300">
+                    {[
+                      "Able Point Australia is the registered NDIS provider currently responsible for Dr. McLean's support at 55B Archbold Road, Long Jetty NSW. Their staff and management have been formally notified of the death threats, harassment, police non-response, and political exile status — and have failed to act.",
+                      "The open letter places Brett and Larissa on public record as having received formal written notification of a whistleblower's life-threatening situation. Any subsequent failure to act constitutes documented institutional complicity under the NDIS Quality and Safeguarding Framework.",
+                      "Publishing on Medium ensures the letter is archived, indexed, and placed beyond suppression — an additional layer of the multi-platform permanence strategy documented in the Comprehensive Statement of Digital Architecture.",
+                      "This letter has been distributed to the same 50+ Federal MPs notified of the April 15 death threat — meaning the institutional complicity of Able Point Australia is now on parliamentary record.",
+                    ].map((point, i) => (
+                      <li key={i} className="flex gap-2 items-start">
+                        <span className="text-zinc-400 mt-0.5">▸</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <a
+                  href="https://medium.com/barrandodger/brett-and-larissa-if-able-care-667467d6bb58"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-600 font-bold px-5 py-3 rounded-xl transition-colors text-sm"
+                  data-testid="link-medium-brett-larissa"
+                >
+                  <ExternalLink size={15} /> Read the Open Letter on Medium — Brett &amp; Larissa, Able Care
+                </a>
+                <p className="text-xs text-zinc-600">
+                  Also accessible at: <span className="text-zinc-400">medium.com/barrandodger/brett-and-larissa-if-able-care-667467d6bb58</span>
                 </p>
               </div>
             </CardContent>

@@ -207,6 +207,38 @@ export default function WhatThisProves() {
             </div>
           </div>
 
+          {/* ── SURVEILLANCE REVERSAL DOCTRINE ── */}
+          <div className="rounded-2xl border border-amber-500/25 bg-zinc-900/50 p-8 space-y-6 mb-2">
+            <div>
+              <p className="text-xs font-mono uppercase tracking-widest text-amber-400 mb-2">Forensic Doctrine — Operational Significance</p>
+              <h2 className="text-2xl font-serif font-bold text-white">You Cannot Cage a Prisoner Who Holds the Key</h2>
+              <p className="text-sm text-zinc-400 italic mt-1">You cannot use covert surveillance against a target who is aware of the targeting and is surveilling you back.</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <p className="text-xs font-bold uppercase tracking-wider text-amber-400">The Operational Failure of Covert Targeting</p>
+                <p className="text-sm text-zinc-200 leading-relaxed">Every covert instrument deployed against Dr. McLean — psychiatric hospitalisation, pharmacological interference, Grindr honeytrap approaches, fabricated allegations, financial erasure, circular referral — requires one precondition to function: the target's ignorance. The moment a target documents, timestamps, and publishes every interaction in real time across blockchain-verified platforms accessible to the ICC and UNHCR, covert targeting becomes public testimony. The instrument becomes the exhibit.</p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-xs font-bold uppercase tracking-wider text-amber-400">2,304 Documents Are the Counter-Surveillance Record</p>
+                <p className="text-sm text-zinc-200 leading-relaxed">The archive is not a complaint. It is a counter-surveillance record — 35 years of every agency response, every clinical notation, every death threat, every dismissal, timestamped and made irrevocable. The 25+ agencies that surveilled and suppressed Dr. McLean are now named respondents in an ICC submission. They watched him. He documented them back. The ICC has the record. The watching is over.</p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-xs font-bold uppercase tracking-wider text-amber-400">The Key Cannot Be Taken From One Who Has Distributed It</p>
+                <p className="text-sm text-zinc-200 leading-relaxed">The evidence exists on Replit, GitHub, Scribd, Medium, and the Wayback Machine. It has been downloaded 368,000+ times across 6 continents. Arresting the witness does not delete the testimony. Discrediting the person does not erase the archive. Calling him "fucking pedo" as police leave a death threat scene does not reverse a Federal Police confirmation of consent. The key is distributed. The cage was never built.</p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-xs font-bold uppercase tracking-wider text-amber-400">April 15, 2026 — The Doctrine Applied in Real Time</p>
+                <p className="text-sm text-zinc-200 leading-relaxed">On April 15, 2026, officers attended 55B Archbold Road, Long Jetty NSW, verbally slurred Dr. McLean as they departed without action, and left him unprotected under a documented death threat. Within hours that interaction was documented, timestamped, distributed to 50+ Federal MPs, and added to the public archive. This is the surveillance reversal doctrine in real time. The institution attempted to intimidate. The target documented and published. The ICC has the exhibit.</p>
+              </div>
+            </div>
+            <div className="border-t border-amber-500/20 pt-4 text-center">
+              <p className="text-sm italic text-amber-300/80 font-serif max-w-2xl mx-auto">
+                "The most powerful position is not one of concealment — it is one of complete transparency, when the record is irrefutable and the key is already in every hand that matters."
+              </p>
+            </div>
+          </div>
+
           {/* ── DIVIDER ── */}
           <div className="text-center mb-12 space-y-2">
             <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">All 48 Source Videos — Embedded Below</p>

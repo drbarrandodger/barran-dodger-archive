@@ -160,6 +160,7 @@ import PropheticFckYouDeclaration from "@/pages/PropheticFckYouDeclaration";
 import FalseSisterForensicAnalysis from "@/pages/FalseSisterForensicAnalysis";
 import ThousandFellForensicAnalysis from "@/pages/ThousandFellForensicAnalysis";
 import TheyreAboutToBeHindBarsForensicAnalysis from "@/pages/TheyreAboutToBeHindBarsForensicAnalysis";
+import { PolicComplicityDeathThreat } from "@/pages/PolicComplicityDeathThreat";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -365,6 +366,9 @@ function Router() {
         <Route path="/urgent-protection-request" component={UrgentProtectionRequest} />
         <Route path="/sos" component={UrgentProtectionRequest} />
         <Route path="/help-dr-mclean" component={UrgentProtectionRequest} />
+        <Route path="/police-complicity-death-threat-documentation" component={PolicComplicityDeathThreat} />
+        <Route path="/death-threat-april-2026" component={PolicComplicityDeathThreat} />
+        <Route path="/tory-kilborn-death-threat" component={PolicComplicityDeathThreat} />
         <Route path="/illegal-level-genius-forensic-report" component={IllegalLevelGeniusForensicReport} />
         <Route path="/genius-forged-in-suppression-forensic-analysis" component={IllegalLevelGeniusForensicReport} />
         <Route path="/divine-reckoning" component={DivineReckoning} />
