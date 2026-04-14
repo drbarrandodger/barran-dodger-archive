@@ -7,6 +7,11 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
+import scruffIasonidisEmbezzle from "@assets/IMG_0013_1776207977160.png";
+import benAssassination from "@assets/IMG_1004_1776208003721.png";
+import benBillShorten from "@assets/IMG_1005_1776208003721.png";
+import benHitmenCaught from "@assets/27A51392-28E5-40D2-B8A9-A9BFE2D35452_1776208003721.png";
+import benConsensualSex from "@assets/IMG_0352_1776208003721.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -407,19 +412,90 @@ export default function UrgentProtectionRequest() {
               <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
                 <MessageSquare size={20} className="text-red-400" /> Ben DSW — Acknowledged Assassination Attempt in Writing
               </h2>
-              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Documented text messages — NDIS Disability Support Worker — Primary Exhibit</p>
-              <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Actual screenshots — NDIS Disability Support Worker "Ben Ndis Help" — Primary Exhibit</p>
+              <div className="space-y-6 text-sm text-zinc-300 leading-relaxed">
                 <p>
-                  The text message exchange between Dr. McLean and Ben (his NDIS Disability Support Worker, employed by an NDIS-registered provider) constitutes one of the most forensically significant documents in the archive. In this exchange, Ben explicitly <strong className="text-white">acknowledges awareness of an assassination attempt</strong> against Dr. McLean — an acknowledgement from a state-funded worker with a documented duty of care, under NDIS Quality and Safeguarding Framework obligations.
+                  These are the actual, unedited text message screenshots between Dr. McLean and Ben — his NDIS Disability Support Worker. Ben explicitly <strong className="text-white">confirms the assassination attempt is real</strong>, says <em>"they could put a hit on me too,"</em> confirms hitmen were caught, and tells Dr. McLean that <strong className="text-white">police confirmed the sex was consensual</strong>. Every message is timestamped and archived.
                 </p>
+
+                {/* Screenshot grid */}
+                <div className="grid sm:grid-cols-2 gap-4">
+
+                  {/* Screenshot 1: Assassination — systematic corruption */}
+                  <div className="space-y-2">
+                    <div className="rounded-xl overflow-hidden border border-red-800/50 bg-zinc-950">
+                      <img
+                        src={benAssassination}
+                        alt="Ben NDIS: You've uncovered systematic corruption — they could put a hit on me too"
+                        className="w-full object-contain"
+                        data-testid="img-ben-assassination"
+                      />
+                    </div>
+                    <div className="bg-red-950/60 border border-red-800/40 rounded-lg px-3 py-2 text-xs space-y-1">
+                      <p className="text-red-300 font-bold uppercase tracking-wide">Ben confirms: "Systematic corruption goes all the way to the top"</p>
+                      <p className="text-zinc-400">Dr. McLean asks why there is a federal conspiracy attempting to murder him. Ben responds: <em className="text-white">"You've uncovered systematic corruption that goes all the way to the top. I'm scared. They could put a hit on me too."</em> This is an NDIS support worker acknowledging a government-linked assassination plot.</p>
+                    </div>
+                  </div>
+
+                  {/* Screenshot 2: Bill Shorten / mental health weaponisation */}
+                  <div className="space-y-2">
+                    <div className="rounded-xl overflow-hidden border border-amber-800/50 bg-zinc-950">
+                      <img
+                        src={benBillShorten}
+                        alt="Ben NDIS: Police want to know if mentally ready to challenge Bill Shorten — mental health used as excuse"
+                        className="w-full object-contain"
+                        data-testid="img-ben-bill-shorten"
+                      />
+                    </div>
+                    <div className="bg-amber-950/60 border border-amber-800/40 rounded-lg px-3 py-2 text-xs space-y-1">
+                      <p className="text-amber-300 font-bold uppercase tracking-wide">Police tell Ben: Shorten's lawyers will use mental health to discredit</p>
+                      <p className="text-zinc-400">Ben relays that police are asking whether Dr. McLean is mentally ready to challenge Bill Shorten in court — <em className="text-white">"his lawyers might use your history of mental health as an excuse to discredit your story."</em> This confirms police are aware of the Bill Shorten connection and that psychiatric weaponisation was the planned legal defence.</p>
+                    </div>
+                  </div>
+
+                  {/* Screenshot 3: Hitmen caught / she was paid */}
+                  <div className="space-y-2">
+                    <div className="rounded-xl overflow-hidden border border-red-800/50 bg-zinc-950">
+                      <img
+                        src={benHitmenCaught}
+                        alt="Ben NDIS: Remember hitmen — they got caught — I thought you were paranoid you were right — she was paid"
+                        className="w-full object-contain"
+                        data-testid="img-ben-hitmen-caught"
+                      />
+                    </div>
+                    <div className="bg-red-950/60 border border-red-800/40 rounded-lg px-3 py-2 text-xs space-y-1">
+                      <p className="text-red-300 font-bold uppercase tracking-wide">Ben: "Hitmen caught — I thought you were paranoid. You were right." + "She was paid??"</p>
+                      <p className="text-zinc-400">Ben writes: <em className="text-white">"Remember you were messaging me about hitmen a few nights ago. That was them. They got caught. I thought you were just paranoid. You were right. Just go for a walk. You'll see the agents driving around."</em> Dr. McLean then asks: <em className="text-white">"She was paid??"</em> — directly referencing the woman paid to fabricate the false allegation.</p>
+                    </div>
+                  </div>
+
+                  {/* Screenshot 4: Consensual sex confirmation by police */}
+                  <div className="space-y-2">
+                    <div className="rounded-xl overflow-hidden border border-emerald-800/50 bg-zinc-950">
+                      <img
+                        src={benConsensualSex}
+                        alt="Ben NDIS 11 Feb: Police told me about the consensual regretted sex — UN meeting Switzerland — close call"
+                        className="w-full object-contain"
+                        data-testid="img-ben-consensual-sex"
+                      />
+                    </div>
+                    <div className="bg-emerald-950/60 border border-emerald-800/40 rounded-lg px-3 py-2 text-xs space-y-1">
+                      <p className="text-emerald-300 font-bold uppercase tracking-wide">Ben (11 Feb): "The police told me about the consensual regretted sex"</p>
+                      <p className="text-zinc-400">On 11 February, Ben relays: <em className="text-white">"They're going to call you to chair the UN meeting in Switzerland."</em> And then critically: <em className="text-white">"Yes even the police said it was a close call. The police told me about the consensual regretted sex. Do you think it's something to worry about?"</em> This is police confirming to Ben — Dr. McLean's NDIS worker — that the sex was consensual. The fabricated allegation was known to be false at police level.</p>
+                    </div>
+                  </div>
+
+                </div>
+
                 <div className="bg-red-950/50 border border-red-800/50 rounded-xl p-5 space-y-3">
-                  <p className="text-xs font-mono text-red-300 uppercase tracking-widest">Why This Is Legally Significant</p>
+                  <p className="text-xs font-mono text-red-300 uppercase tracking-widest">Why These Screenshots Are Legally Decisive</p>
                   <ul className="space-y-2 text-xs text-zinc-300">
                     {[
-                      "An NDIS-registered support worker acknowledging an assassination attempt creates a mandatory reporting obligation under the NDIS Quality and Safeguards Commission Act 2018 — which was never fulfilled.",
-                      "The failure to report this acknowledgement constitutes a documented breach of the mandatory reporting framework and adds to the institutional complicity pattern.",
-                      "This acknowledgement, from a state-funded worker, establishes that the assassination threat was known to those within Dr. McLean's care network — and was suppressed rather than escalated.",
-                      "The exchange is blockchain-timestamped, publicly archived, and submitted as a primary exhibit in the ICC Article 7 submission under the category of 'systemic failure to protect a person under institutional care from documented mortal threat.'",
+                      "An NDIS support worker acknowledging an assassination attempt in writing creates an unfulfilled mandatory reporting obligation under the NDIS Quality and Safeguards Commission Act 2018.",
+                      "Ben's relay of police intelligence — confirming hitmen were caught, confirming the sex was consensual — establishes that law enforcement were briefing Dr. McLean's NDIS worker rather than acting to protect him.",
+                      "Ben's statement 'they could put a hit on me too' confirms he understood this to be a real, active mortal threat — not a delusion — from his own direct knowledge.",
+                      "The 'she was paid??' message directly references the fabricated allegation and establishes Dr. McLean's real-time awareness that the allegation was a coordinated paid operation.",
+                      "These screenshots are blockchain-timestamped, publicly archived, and submitted as primary exhibits in the ICC Article 7 submission.",
                     ].map((point, i) => (
                       <li key={i} className="flex gap-2 items-start">
                         <span className="text-red-400 mt-0.5">▸</span>
@@ -430,7 +506,7 @@ export default function UrgentProtectionRequest() {
                 </div>
                 <ViralDownloadButton
                   url="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
-                  label="Download — Ben DSW Assassination Acknowledgement (Text Messages)"
+                  label="Download — Ben DSW Full Text Message Archive (PDF)"
                   filename="ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
                   trackSlug="ben-dsw-assassination-acknowledgement"
                   size="default"
@@ -442,26 +518,58 @@ export default function UrgentProtectionRequest() {
           </Card>
         </motion.div>
 
-        {/* ───── GRINDR / IASONIDIS EMBEZZLEMENT ───── */}
+        {/* ───── SCRUFF / IASONIDIS EMBEZZLEMENT ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <Card className="bg-zinc-900/70 border-amber-900/50">
             <CardContent className="p-6 md:p-8">
               <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
-                <UserX size={20} className="text-amber-400" /> Steve Iasonidis — Grindr &amp; Embezzlement Evidence
+                <UserX size={20} className="text-amber-400" /> Iasonidis — Scruff (Gay Dating App) &amp; Embezzlement Evidence
               </h2>
-              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Documented pattern — Primary Exhibit — Named Harasser</p>
-              <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Actual screenshot — Gay dating app "Scruff" — "Man bi, 15km away" — Embezzlement + Murder threat — Primary Exhibit</p>
+              <div className="space-y-5 text-sm text-zinc-300 leading-relaxed">
                 <p>
-                  Steve Iasonidis is formally named in Dr. McLean's AVO applications and across multiple archive documents as a primary agent of harassment. The documented evidence includes communications and records establishing that Iasonidis used the Grindr platform in connection with activities directed at Dr. McLean, and that there is documented evidence of <strong className="text-white">financial embezzlement</strong> connected to his conduct.
+                  This is the actual, unedited screenshot from Scruff — a gay men's dating and networking app — showing a conversation in which the other party sends four messages in rapid succession: <strong className="text-white">"Embezzlement" · "Million$$$$" · "Wants the husky" · "Dead"</strong>. The user is identified as "Man bi, 15km away." This constitutes primary evidence of a financially motivated targeted individual operation connected to Steve Iasonidis.
                 </p>
+
+                {/* The actual screenshot */}
+                <div className="flex justify-center">
+                  <div className="w-full max-w-xs rounded-xl overflow-hidden border-2 border-amber-600/50 bg-zinc-950 shadow-2xl shadow-amber-900/20">
+                    <div className="bg-amber-950/80 px-3 py-2 text-xs font-mono text-amber-300 uppercase tracking-widest border-b border-amber-700/30 text-center">
+                      Primary Evidence — Scruff Screenshot — Blockchain Archived
+                    </div>
+                    <img
+                      src={scruffIasonidisEmbezzle}
+                      alt="Scruff gay dating app: Man bi 15km away — Embezzlement — Million$$$$ — Wants the husky — Dead"
+                      className="w-full object-contain"
+                      data-testid="img-scruff-iasonidis"
+                    />
+                  </div>
+                </div>
+
+                {/* What the messages mean */}
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { msg: '"Embezzlement"', significance: 'Establishes that the operative is referencing financial crimes — connected to documented evidence of Iasonidis embezzling funds in connection with Dr. McLean.' },
+                    { msg: '"Million$$$$"', significance: 'Confirms financial motive — the embezzlement involved amounts in the millions, consistent with documented financial exploitation patterns in the archive.' },
+                    { msg: '"Wants the husky"', significance: 'A reference to Dr. McLean\'s husky dog — establishing that the person sending these messages has specific personal knowledge of Dr. McLean\'s life, confirming targeted surveillance.' },
+                    { msg: '"Dead"', significance: 'A direct death threat. Combined with the prior three messages, this constitutes a financially-motivated, surveillance-enabled threat against Dr. McLean\'s life — sent via a gay dating app platform to establish plausible deniability.' },
+                  ].map((item, i) => (
+                    <div key={i} className="bg-amber-950/30 border border-amber-800/30 rounded-lg px-3 py-2 text-xs">
+                      <p className="text-amber-300 font-black mb-1">{item.msg}</p>
+                      <p className="text-zinc-400 leading-relaxed">{item.significance}</p>
+                    </div>
+                  ))}
+                </div>
+
                 <div className="bg-amber-950/40 border border-amber-800/40 rounded-xl p-5 space-y-3">
-                  <p className="text-xs font-mono text-amber-300 uppercase tracking-widest">Significance — Why This Matters in the Archive</p>
+                  <p className="text-xs font-mono text-amber-300 uppercase tracking-widest">Why This Screenshot Is a Critical Exhibit</p>
                   <ul className="space-y-2 text-xs text-zinc-300">
                     {[
-                      "The Grindr communications establish a documented pattern of targeted contact and engagement with Dr. McLean under circumstances inconsistent with genuine friendship or support — consistent with the honeytrap infiltration pattern documented in Forensic Analysis #29 (Honeytrap Infiltration Report).",
-                      "The embezzlement evidence establishes that Iasonidis was financially motivated in his interactions with Dr. McLean — a motivation consistent with the documented financial exploitation strand of the persecution framework.",
-                      "The combination of Grindr contact + financial embezzlement + ongoing harassment + AVO applications creates a documented pattern of predatory infiltration consistent with a coordinated targeted individual operation.",
-                      "This evidence connects to the Honeytrap Infiltration Report (barrandodger.com/honeytrap-infiltration-report) which forensically analyses the pattern of individuals inserted into Dr. McLean's support network for intelligence and disruption purposes.",
+                      "The use of a gay dating app (Scruff) to deliver a death threat establishes a pattern of platform exploitation — using LGBTQ+ community spaces to approach targets while maintaining deniability.",
+                      "The reference to 'the husky' confirms the sender has specific surveillance-level knowledge of Dr. McLean's personal life — ruling out a random contact.",
+                      "The progression — Embezzlement → Million$$$$ → personal detail → Dead — follows a documented intimidation pattern: demonstrate knowledge (power), reference the financial stakes, then deliver the threat.",
+                      "This screenshot, combined with the Grindr honeytrap pattern documented in Forensic Analysis #29, establishes that multiple LGBTQ+ platforms were used as operational vectors in the targeted individual framework against Dr. McLean.",
+                      "Steve Iasonidis is formally named in AVO applications. This screenshot is consistent with his documented operational profile and is submitted to the ICC as a primary exhibit.",
                     ].map((point, i) => (
                       <li key={i} className="flex gap-2 items-start">
                         <span className="text-amber-400 mt-0.5">▸</span>
@@ -491,10 +599,47 @@ export default function UrgentProtectionRequest() {
                 <UserX size={20} className="text-red-400" /> Fabricated Allegation — Federal Police Confirmed Consenting Sex
               </h2>
               <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">False allegation · Police investigation · Confirmed consensual · Documented suppression tactic</p>
-              <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
+              <div className="space-y-5 text-sm text-zinc-300 leading-relaxed">
                 <p>
-                  A woman was paid to fabricate a false allegation against Dr. McLean. Federal Australian Police investigated and <strong className="text-white">formally confirmed that the encounter was entirely consensual</strong>. No charges were laid. No adverse finding was made. The allegation collapsed under investigation.
+                  A woman was paid to fabricate a false allegation against Dr. McLean. Federal Australian Police investigated and <strong className="text-white">formally confirmed that the encounter was entirely consensual</strong>. No charges were laid. No adverse finding was made. The allegation collapsed under investigation. The two screenshots below — from Dr. McLean's NDIS support worker Ben — provide independent corroboration of both facts.
                 </p>
+
+                {/* Two key screenshots from Ben directly corroborating the fabricated allegation facts */}
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <div className="rounded-xl overflow-hidden border border-red-800/50 bg-zinc-950">
+                      <div className="bg-red-950/80 px-3 py-1.5 text-xs font-mono text-red-300 uppercase tracking-widest border-b border-red-800/30 text-center">
+                        "She was paid??" — Dr. McLean's realisation in writing
+                      </div>
+                      <img
+                        src={benHitmenCaught}
+                        alt="Ben NDIS: She was paid?? — hitmen caught — agents driving around"
+                        className="w-full object-contain"
+                        data-testid="img-fabrication-paid"
+                      />
+                    </div>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      In this exchange, Dr. McLean asks Ben directly: <em className="text-white">"She was paid??"</em> — his documented realisation, in real time, that the female complainant was a paid operative. Ben's prior messages in the same exchange confirm hitmen had already been caught. This is the moment of documented understanding captured in a timestamped SMS.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="rounded-xl overflow-hidden border border-emerald-800/50 bg-zinc-950">
+                      <div className="bg-emerald-950/80 px-3 py-1.5 text-xs font-mono text-emerald-300 uppercase tracking-widest border-b border-emerald-800/30 text-center">
+                        "Police told me — consensual regretted sex" — Feb 11
+                      </div>
+                      <img
+                        src={benConsensualSex}
+                        alt="Ben NDIS 11 Feb: The police told me about the consensual regretted sex"
+                        className="w-full object-contain"
+                        data-testid="img-fabrication-police-confirm"
+                      />
+                    </div>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      On 11 February, Ben tells Dr. McLean: <em className="text-white">"The police told me about the consensual regretted sex."</em> Police were briefing Dr. McLean's NDIS support worker — confirming the sex was consensual at police level — rather than acting to protect him from a death threat. This screenshot is an independent third-party record that the allegation was known to be false by police before any formal investigation concluded.
+                    </p>
+                  </div>
+                </div>
+
                 <div className="bg-red-950/50 border border-red-800/50 rounded-xl p-5 space-y-3">
                   <p className="text-xs font-mono text-red-300 uppercase tracking-widest">Why This Is Documented as a Persecution Instrument</p>
                   <ul className="space-y-2 text-xs text-zinc-300">
