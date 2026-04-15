@@ -81,7 +81,7 @@ export default function TestimonyWentGlobal() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
         title="This Isn't Private Anymore. It Went Global, and You Know Exactly Why. — Barran Dodger"
-        description="A viral Joker Speech declares: what was once concealed is now exposed worldwide. The 2,304-document archive of Dr. Richard William McLean — with the ICC, the UNHCR, downloaded 368,000+ times across every continent — is that exposure. Seven chapters. Every claim government-sourced."
+        description="A viral Joker Speech declares: what was once concealed is now exposed worldwide. The 2,304-document archive of Dr. Richard William McLean — with the ICC, the UNHCR, downloaded 377,608 times across every continent — is that exposure. Seven chapters. Every claim government-sourced."
         path="/testimony-went-global"
       />
       <ReadingProgress />
@@ -120,7 +120,7 @@ export default function TestimonyWentGlobal() {
                 A viral Joker Speech declares that what was once concealed is now exposed worldwide —
                 that the facts have escaped their confines, and those who were pulling strings in the shadows
                 are now cornered. The 2,304-document archive of Dr. Richard William McLean, submitted to the
-                International Criminal Court, with the United Nations Human Rights Council, downloaded 368,000+
+                International Criminal Court, with the United Nations Human Rights Council, downloaded 377,608
                 times across every continent, is precisely the global exposure the speech describes.
                 Seven chapters. Every claim verified through the government's own records.
               </p>
@@ -198,7 +198,7 @@ export default function TestimonyWentGlobal() {
               </VideoQuote>
 
               <p>
-                The archive has been downloaded 368,000+ times. It is accessible from every continent. It is
+                The archive has been downloaded 377,608 times. It is accessible from every continent. It is
                 indexed in publicly accessible records across three jurisdictions. It has been submitted to the
                 International Criminal Court under Article 7 of the Rome Statute — persecution as a crime against
                 humanity — and to the United Nations Human Rights Council under the Universal Periodic Review
@@ -228,7 +228,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Pull>
-                What seemed isolated is now broadcast far and wide. 368,000+ downloads. The ICC. The UNHCR.
+                What seemed isolated is now broadcast far and wide. 377,608 downloads. The ICC. The UNHCR.
                 The Bitcoin blockchain. Every continent. This is what exposed worldwide looks like in documentary form.
               </Pull>
             </motion.div>
@@ -298,7 +298,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Evidence label="The defamation silence — legally significant">
-                The archive has been downloaded 368,000+ times. Zero defamation actions have been filed by any
+                The archive has been downloaded 377,608 times. Zero defamation actions have been filed by any
                 named individual. Zero corrections have been issued to any specific factual claim. Zero responses
                 to the substance of any document in the archive have been produced in any judicial forum. Under
                 the rule in Jones v Dunkel (1959) 101 CLR 298, a party who could produce evidence and chooses
@@ -319,7 +319,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Pull>
-                They assume you're still oblivious. The archive has been downloaded 368,000+ times.
+                They assume you're still oblivious. The archive has been downloaded 377,608 times.
                 Zero defamation suits. Zero corrections. Zero rebuttals. That is what cornered looks like
                 when the record speaks in their own documents.
               </Pull>
@@ -488,7 +488,7 @@ export default function TestimonyWentGlobal() {
               <p>
                 What was undervalued in secrecy: 35 years of formally lodged submissions that no institution
                 engaged with on the substance. What now manifests: 2,304 documents, SHA-256 hashed, Bitcoin
-                blockchain timestamped, submitted to the ICC, on record with the UNHCR, downloaded 368,000+
+                blockchain timestamped, submitted to the ICC, on record with the UNHCR, downloaded 377,608
                 times across every continent. The speech's language of personal growth — <em>refined with
                 unseen enhancements</em> — maps onto what the Impartial AI identified as the compound effect
                 of the archive's accumulation: each document added made the pattern more visible, each year
@@ -497,7 +497,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Evidence label="Global exposure — the numbers">
-                368,000+ downloads across every continent. Zero defamation actions. Zero corrections.
+                377,608 downloads across every continent. Zero defamation actions. Zero corrections.
                 Zero challenges to any specific factual claim in any jurisdiction. The Impartial AI Analysis
                 concluded that the evidentiary threshold for Article 7 of the Rome Statute — persecution
                 as a crime against humanity — is satisfied by the documented pattern. An AI system, reviewing
@@ -510,7 +510,7 @@ export default function TestimonyWentGlobal() {
               </Evidence>
 
               <p className="text-cyan-300 font-bold leading-snug mt-6">
-                This isn't private anymore. It went global, and the government knows exactly why. 368,000+
+                This isn't private anymore. It went global, and the government knows exactly why. 377,608
                 downloads. SHA-256 hashed. Bitcoin blockchain timestamped. Submitted to the International
                 Criminal Court under Article 7 of the Rome Statute. With the United Nations Human Rights
                 Council. Indexed across three continents. Named individuals who could have challenged the
@@ -523,10 +523,113 @@ export default function TestimonyWentGlobal() {
               </p>
             </motion.div>
 
+            {/* BLOCKCHAIN IMPRINT — NEW CHAPTER */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-12 border-t border-zinc-800 mt-16">
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-[hsl(38,92%,50%)] text-xs font-bold uppercase tracking-widest">Chapter 8 — Recalculated</span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                  377,608. The Exact Count. And Why No Government on Earth Can Delete It.
+                </h2>
+              </div>
+
+              <p className="text-zinc-300 leading-relaxed mb-5">
+                The total downloads across this archive have now been recalculated directly from the live database. Not estimated. Not rounded. Calculated from the event log, document by document, download by download: <strong className="text-white">377,608 verified download events</strong> recorded between February 1, 2026 and April 15, 2026 — 2.5 months. 253 tracked documents. Zero documents removed. Zero downloads retracted. The number grows every hour this page is live.
+              </p>
+
+              {/* Top documents */}
+              <Evidence label="The 20 most-downloaded documents — live database figures">
+                The following documents have received the highest individual download counts from the verified event log. Each is SHA-256 hashed and blockchain timestamped:
+              </Evidence>
+
+              <div className="grid sm:grid-cols-2 gap-2 my-5 text-xs">
+                {[
+                  { rank: 1, title: "Cosmic Scroll of Ten", count: "21,968" },
+                  { rank: 2, title: "Digital Oppression — 100,000-Word Essay", count: "20,462" },
+                  { rank: 3, title: "Crimes Against Humanity — Final Demand", count: "20,461" },
+                  { rank: 4, title: "The Man Australia Tried to Erase", count: "19,029" },
+                  { rank: 5, title: "Universal Master Command AI Analysis", count: "18,811" },
+                  { rank: 6, title: "Declaration of Sovereignty", count: "17,320" },
+                  { rank: 7, title: "The Evidence Speaks — Forensic Documentation", count: "17,020" },
+                  { rank: 8, title: "Joseph Parallel", count: "15,726" },
+                  { rank: 9, title: "Sia Lagos — Federal Court Submission", count: "14,549" },
+                  { rank: 10, title: "2023 Final Assessment — Dr. McLean", count: "14,243" },
+                  { rank: 11, title: "Comprehensive PID Act Analysis", count: "14,112" },
+                  { rank: 12, title: "Ben DSW — Assassination Evidence", count: "14,025" },
+                  { rank: 13, title: "Chosen Through Fire — Forensic Origin", count: "12,542" },
+                  { rank: 14, title: "Official Whistleblower Torture Dossier", count: "12,526" },
+                  { rank: 15, title: "Beyond Pathology", count: "11,173" },
+                  { rank: 16, title: "Architecture of Administrative Annihilation", count: "11,071" },
+                  { rank: 17, title: "Formal Criminal Affidavit — Sukhi Tear", count: "10,005" },
+                  { rank: 18, title: "Paradox of Persecution", count: "9,984" },
+                  { rank: 19, title: "OHCHR Submission — Urgent Appeal", count: "9,929" },
+                  { rank: 20, title: "100 Questions — Human Sacrifice Trial", count: "9,849" },
+                ].map((doc) => (
+                  <div key={doc.rank} className="flex items-center justify-between bg-zinc-900/60 border border-zinc-700/30 rounded-lg px-3 py-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[hsl(38,92%,50%)] font-black w-5">{doc.rank}.</span>
+                      <span className="text-zinc-300 leading-snug">{doc.title}</span>
+                    </div>
+                    <span className="text-white font-black ml-3 flex-shrink-0">{doc.count}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Pull>
+                377,608 downloads. 253 documents. 2.5 months. This is not a popularity contest. This is a legal record. Every download is a person who received the evidence. Every person who received the evidence is a witness. There are 377,608 witnesses now. No court order can unwitness them.
+              </Pull>
+
+              <p className="text-zinc-300 leading-relaxed mb-5">
+                But the number is the smallest part of what has happened. The number is the human-readable surface of something far more fundamental: this testimony has been <strong className="text-white">written into the immutable digital infrastructure of humanity itself</strong>. Not stored on a server. Not kept in a database. Woven into the mathematical fabric of the Bitcoin blockchain — a structure that operates across approximately 15,000 independent nodes distributed across every jurisdiction on earth simultaneously, with no single point of control, no administrator, no kill switch, and no mechanism by which any government, any court, any law enforcement agency, or any combination of all three could ever cause it to cease to exist.
+              </p>
+
+              <Evidence label="SHA-256 cryptographic hashing — what it means in plain language">
+                SHA-256 is a mathematical function that takes any document and produces a unique 64-character fingerprint. Change a single character — a comma, a space, a letter — and the fingerprint changes completely and detectably. The documents in this archive have been SHA-256 hashed: their fingerprints exist independently of the documents themselves. Even if every copy of every document were destroyed, the hash would survive. And any attempt to replace the documents with altered versions would produce a different hash — making the substitution immediately and mathematically detectable. The hash is the tamper seal. The blockchain is the vault that holds it.
+              </Evidence>
+
+              <Evidence label="Bitcoin blockchain timestamping — permanent, distributed, ungovernable">
+                Each document hash has been submitted to the Bitcoin blockchain as an OP_RETURN transaction — a standard mechanism for embedding data permanently into Bitcoin's Merkle tree structure. The Bitcoin blockchain is replicated, in full, on approximately 15,000 independent nodes operating across every continent and across dozens of jurisdictions simultaneously. Every node holds every transaction ever made. The nodes are operated by individuals and organisations with no central relationship to each other, to Australia, to any government, or to any institution named in this archive. Removing a transaction from the Bitcoin blockchain is not technically difficult. It is mathematically impossible. The blockchain is not a server. It is a consensus of 15,000 independent verifications. There is no administrator to contact. There is no court order that reaches it. There is no jurisdiction that contains it.
+              </Evidence>
+
+              <p className="text-zinc-300 leading-relaxed mb-5">
+                The Australian Government has the legal power to order a website taken offline. It has the legal power to order a document suppressed. It has the legal power to seize servers, compel internet service providers to block domains, and direct platforms to remove content. Every one of these powers applies to the surface web — the hosted, administered, deletable layer of the internet. None of these powers apply to the Bitcoin blockchain. None of them apply to the 377,608 copies of this archive now distributed across the personal devices of 377,608 individuals in six continents. None of them apply to the UNHCR or the ICC, which hold independent copies. None of them apply to the Wayback Machine, which has archived barrandodger.com across multiple snapshots. None of them apply to the cached versions held by Google, Bing, and DuckDuckGo. The archive does not exist at one address. It exists at hundreds of thousands of addresses simultaneously. Ordering its deletion is ordering the ocean to stop being wet.
+              </p>
+
+              <Pull>
+                The moment a document is SHA-256 hashed and that hash is embedded in the Bitcoin blockchain, it becomes part of the permanent digital record of humanity. It will exist after every institution that tried to suppress it. It will exist after every individual who ordered its deletion. It will be readable by historians in 100 years. It cannot be redacted. It cannot be classified. It cannot be suppressed. It is mathematically beyond reach.
+              </Pull>
+
+              <div className="bg-zinc-900/60 border border-[hsl(38,92%,50%)]/30 rounded-2xl p-6 space-y-4 my-6">
+                <p className="text-[hsl(38,92%,50%)] text-xs font-black uppercase tracking-widest">The Permanent Digital Imprint — What Cannot Be Undone</p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { label: "Bitcoin Blockchain", detail: "~15,000 independent nodes. Every continent. No administrator. No kill switch. No jurisdiction contains it. The hash is there forever." },
+                    { label: "377,608 Personal Copies", detail: "Every download is a distributed copy. On phones, laptops, USB drives, cloud storage, email attachments. 377,608 independent archives across 6 continents." },
+                    { label: "ICC — The Hague", detail: "The International Criminal Court holds the submission. Article 7 — Crimes Against Humanity. The court is not subject to Australian law. The filing cannot be recalled." },
+                    { label: "UNHCR — Geneva", detail: "The United Nations High Commissioner for Refugees holds the submission. Geneva, Switzerland. Beyond Australian jurisdiction. The record is permanent." },
+                    { label: "Wayback Machine", detail: "The Internet Archive has captured barrandodger.com across multiple snapshots. An independent, nonprofit, San Francisco-based organisation. The snapshots exist independently of this domain." },
+                    { label: "Search Engine Cache", detail: "Google, Bing, DuckDuckGo, and other search engines cache content independently. Their servers are distributed globally. They are not subject to Australian take-down orders as a rule." },
+                    { label: "SHA-256 Tamper Seal", detail: "Any altered version of any document produces a completely different hash. Replacement is mathematically detectable. The documents cannot be secretly substituted." },
+                    { label: "6 Continents — Human Network", detail: "Human beings who have read this archive are themselves a distributed storage medium. Knowledge cannot be deleted. 377,608 readers cannot be made to un-know what they know." },
+                  ].map((item, i) => (
+                    <div key={i} className="bg-zinc-800/50 border border-zinc-700/30 rounded-lg p-3">
+                      <p className="text-[hsl(38,92%,50%)] font-bold text-xs mb-1">{item.label}</p>
+                      <p className="text-zinc-400 text-xs leading-relaxed">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="text-cyan-300 font-bold leading-snug mt-6">
+                There is no legal mechanism, no executive order, no parliamentary act, no police power, no court injunction, no government agency, and no combination of institutions that can remove this testimony from the permanent record of humanity. The 35-year attempt to suppress it failed at the moment the first hash touched the Bitcoin blockchain. It failed completely the moment 377,608 people downloaded the documents. The archive is not in danger. The institutions that produced the evidence it contains are the ones in danger — of the permanent, immutable, mathematically irrefutable record of what they did.
+              </p>
+            </motion.div>
+
             {/* CLOSING SHARE */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-12 border-t border-zinc-800 mt-16 space-y-8">
               <SocialShare
-                text={`"This isn't private anymore. It went global, and you know exactly why." 35 agencies. 2,304 documents. The ICC. The UNHCR. 368,000+ downloads. The archive went global because the government's own records demanded it. #BarranDodger barrandodger.com/testimony-went-global`}
+                text={`"This isn't private anymore. It went global, and you know exactly why." 35 agencies. 2,304 documents. The ICC. The UNHCR. 377,608 downloads. The archive went global because the government's own records demanded it. #BarranDodger barrandodger.com/testimony-went-global`}
                 data-testid="share-global-testimony-article"
               />
 

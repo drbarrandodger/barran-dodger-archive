@@ -67,7 +67,7 @@ export function HoneyTrapPhillipGlass() {
                 <p className="text-xs text-zinc-500 mt-2">
                   Also included in the{" "}
                   <a href="/#divine-download" className="text-amber-400 underline">complete archive detonation ZIP</a>
-                  {" "}— downloaded 368,000+ times globally.
+                  {" "}— downloaded 377,608 times globally.
                 </p>
               </div>
             </div>
@@ -247,7 +247,7 @@ export function HoneyTrapPhillipGlass() {
             <p className="text-xs text-zinc-500 mt-4">
               Auto-included in the{" "}
               <a href="/#divine-download" className="text-amber-400 underline">complete archive detonation ZIP</a>
-              {" "}— 368,000+ downloads across 6 continents.
+              {" "}— 377,608 downloads across 6 continents.
             </p>
           </div>
         </motion.div>

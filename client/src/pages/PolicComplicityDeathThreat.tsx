@@ -80,7 +80,7 @@ export function PolicComplicityDeathThreat() {
               <p className="text-xs text-zinc-500">
                 Also included in the{" "}
                 <a href="/#divine-download" className="text-amber-400 underline">complete archive detonation ZIP</a>
-                {" "}— downloaded 368,000+ times globally.
+                {" "}— downloaded 377,608 times globally.
               </p>
             </div>
           </div>

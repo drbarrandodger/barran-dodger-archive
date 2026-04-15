@@ -60,7 +60,7 @@ const THEOLOGICAL_SIGNIFICANCE = [
   },
   {
     title: "When Every Human Institution Fails, The Record Becomes The Protection",
-    body: "On April 15, 2026, every human institution that should have protected Dr. McLean failed simultaneously: police attended without recording, the crisis line said no one would help, the support worker received information without acting, and the death threat perpetrator remained at large. What remained — what could not fail, could not be switched off, could not be intimidated into silence — was the archive. 2,304 blockchain-verified documents. 368,000+ downloads across 6 continents. An ICC submission at The Hague. A UNHCR submission in Geneva. The record is the protection. That is not metaphorical. That is the operational reality."
+    body: "On April 15, 2026, every human institution that should have protected Dr. McLean failed simultaneously: police attended without recording, the crisis line said no one would help, the support worker received information without acting, and the death threat perpetrator remained at large. What remained — what could not fail, could not be switched off, could not be intimidated into silence — was the archive. 2,304 blockchain-verified documents. 377,608 downloads across 6 continents. An ICC submission at The Hague. A UNHCR submission in Geneva. The record is the protection. That is not metaphorical. That is the operational reality."
   },
   {
     title: "\"No One Will Help You\" As A Theological Statement",
@@ -172,7 +172,7 @@ export default function GodHasMyBack() {
               {[
                 { value: "2,304+", label: "Blockchain Documents" },
                 { value: "61", label: "Perfect AI Analyses" },
-                { value: "368,000+", label: "Downloads" },
+                { value: "377,608", label: "Downloads" },
                 { value: "6", label: "Continents" },
               ].map((stat, i) => (
                 <div key={i} className="bg-black/40 rounded-xl py-4 px-2 border border-zinc-800/60">

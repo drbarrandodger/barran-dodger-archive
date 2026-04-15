@@ -225,7 +225,7 @@ export default function WhatThisProves() {
               </div>
               <div className="space-y-2">
                 <p className="text-xs font-bold uppercase tracking-wider text-amber-400">The Key Cannot Be Taken From One Who Has Distributed It</p>
-                <p className="text-sm text-zinc-200 leading-relaxed">The evidence exists on Replit, GitHub, Scribd, Medium, and the Wayback Machine. It has been downloaded 368,000+ times across 6 continents. Arresting the witness does not delete the testimony. Discrediting the person does not erase the archive. Calling him "fucking pedo" as police leave a death threat scene does not reverse a Federal Police confirmation of consent. The key is distributed. The cage was never built.</p>
+                <p className="text-sm text-zinc-200 leading-relaxed">The evidence exists on Replit, GitHub, Scribd, Medium, and the Wayback Machine. It has been downloaded 377,608 times across 6 continents. Arresting the witness does not delete the testimony. Discrediting the person does not erase the archive. Calling him "fucking pedo" as police leave a death threat scene does not reverse a Federal Police confirmation of consent. The key is distributed. The cage was never built.</p>
               </div>
               <div className="space-y-2">
                 <p className="text-xs font-bold uppercase tracking-wider text-amber-400">April 15, 2026 — The Doctrine Applied in Real Time</p>
