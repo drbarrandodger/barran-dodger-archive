@@ -110,6 +110,52 @@ export async function timestampString(
   return result as any;
 }
 
+function collectAllSourcePdfs(): Array<{ file: string; filePath: string; category: string }> {
+  const cwd = process.cwd();
+  const sourceDirs = [
+    { dir: path.join(cwd, "client/public/documents"), category: "document", recursive: true },
+    { dir: path.join(cwd, "attached_assets"), category: "exhibit", recursive: false },
+  ];
+
+  const collected: Array<{ file: string; filePath: string; category: string }> = [];
+  const seenPaths = new Set<string>();
+
+  for (const { dir, category, recursive } of sourceDirs) {
+    if (!fs.existsSync(dir)) continue;
+
+    const scanDir = (currentDir: string) => {
+      let entries: string[];
+      try {
+        entries = fs.readdirSync(currentDir);
+      } catch {
+        return;
+      }
+      for (const entry of entries.sort()) {
+        const fullPath = path.join(currentDir, entry);
+        let stat: fs.Stats;
+        try {
+          stat = fs.statSync(fullPath);
+        } catch {
+          continue;
+        }
+        if (stat.isDirectory() && recursive) {
+          scanDir(fullPath);
+        } else if (entry.toLowerCase().endsWith(".pdf") && stat.isFile()) {
+          const normalized = path.resolve(fullPath);
+          if (!seenPaths.has(normalized)) {
+            seenPaths.add(normalized);
+            collected.push({ file: entry, filePath: fullPath, category });
+          }
+        }
+      }
+    };
+
+    scanDir(dir);
+  }
+
+  return collected;
+}
+
 export async function batchTimestampAllDocuments(): Promise<{
   total: number;
   succeeded: number;
@@ -117,25 +163,20 @@ export async function batchTimestampAllDocuments(): Promise<{
   failed: number;
   results: Array<{ slug: string; sha256?: string; status: "new" | "existing" | "failed"; error?: string }>;
 }> {
-  const documentsDir = path.join(process.cwd(), "client/public/documents");
-
-  if (!fs.existsSync(documentsDir)) {
-    return { total: 0, succeeded: 0, alreadyDone: 0, failed: 0, results: [] };
-  }
-
-  const files = fs
-    .readdirSync(documentsDir)
-    .filter((f) => f.endsWith(".pdf"))
-    .sort();
+  const allPdfs = collectAllSourcePdfs();
 
   const results: Array<{ slug: string; sha256?: string; status: "new" | "existing" | "failed"; error?: string }> = [];
   let succeeded = 0;
   let alreadyDone = 0;
   let failed = 0;
 
-  for (const file of files) {
-    const slug = `doc-${file.replace(/[^a-z0-9]/gi, "-").toLowerCase().replace(/-+/g, "-").replace(/-pdf$/i, "")}`;
-    const filePath = path.join(documentsDir, file);
+  for (const { file, filePath, category } of allPdfs) {
+    const slug = `${category === "exhibit" ? "exhibit" : "doc"}-${file
+      .replace(/[^a-z0-9]/gi, "-")
+      .toLowerCase()
+      .replace(/-+/g, "-")
+      .replace(/-pdf$/i, "")
+      .slice(0, 80)}`;
 
     try {
       const existing = await db
@@ -149,18 +190,18 @@ export async function batchTimestampAllDocuments(): Promise<{
         continue;
       }
 
-      const result = await timestampDocument(slug, file, filePath, "document");
+      const result = await timestampDocument(slug, file, filePath, category);
       succeeded++;
       results.push({ slug, sha256: result.sha256, status: "new" });
 
-      await new Promise((r) => setTimeout(r, 150));
+      await new Promise((r) => setTimeout(r, 120));
     } catch (err) {
       failed++;
       results.push({ slug, status: "failed", error: String(err) });
     }
   }
 
-  return { total: files.length, succeeded, alreadyDone, failed, results };
+  return { total: allPdfs.length, succeeded, alreadyDone, failed, results };
 }
 
 export async function getAllTimestamps() {

@@ -62,6 +62,9 @@ export default function BitcoinProof() {
   const totalTimestamped = timestamps?.length ?? 0;
   const confirmed = timestamps?.filter((t) => t.bitcoinBlock != null).length ?? 0;
   const pending = totalTimestamped - confirmed;
+  const docCount = timestamps?.filter((t) => t.category === "document").length ?? 0;
+  const exhibitCount = timestamps?.filter((t) => t.category === "exhibit").length ?? 0;
+  const withOts = timestamps?.filter((t) => t.otsReceipt != null).length ?? 0;
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -102,18 +105,26 @@ export default function BitcoinProof() {
               Using the OpenTimestamps protocol, the SHA-256 cryptographic hash of every document in this archive is submitted to the Bitcoin blockchain calendar network. Within ~10 minutes, each hash is anchored in a Bitcoin block — permanently, immutably, and verifiably — by thousands of independent nodes worldwide. No government, institution, or court can alter this. The bell is unringable.
             </p>
 
-            <div className="grid grid-cols-3 gap-4 max-w-md mx-auto mb-6">
-              <div className="bg-zinc-900 rounded-xl p-4 text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-2xl mx-auto mb-6">
+              <div className="bg-zinc-900 rounded-xl p-3 text-center">
                 <div className="text-2xl font-black text-amber-400">{totalTimestamped}</div>
-                <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Timestamped</div>
+                <div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Total Anchored</div>
               </div>
-              <div className="bg-zinc-900 rounded-xl p-4 text-center">
+              <div className="bg-zinc-900 rounded-xl p-3 text-center">
+                <div className="text-2xl font-black text-blue-400">{docCount}</div>
+                <div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Documents</div>
+              </div>
+              <div className="bg-zinc-900 rounded-xl p-3 text-center">
+                <div className="text-2xl font-black text-purple-400">{exhibitCount}</div>
+                <div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Exhibits</div>
+              </div>
+              <div className="bg-zinc-900 rounded-xl p-3 text-center">
+                <div className="text-2xl font-black text-orange-400">{withOts}</div>
+                <div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">OTS Submitted</div>
+              </div>
+              <div className="bg-zinc-900 rounded-xl p-3 text-center">
                 <div className="text-2xl font-black text-green-400">{confirmed}</div>
-                <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Bitcoin Confirmed</div>
-              </div>
-              <div className="bg-zinc-900 rounded-xl p-4 text-center">
-                <div className="text-2xl font-black text-amber-300">{pending}</div>
-                <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Pending Block</div>
+                <div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">BTC Confirmed</div>
               </div>
             </div>
 
