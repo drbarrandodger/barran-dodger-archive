@@ -182,6 +182,8 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 59, title: "God Exposes the False Sister Within: When the Support Network Is the Surveillance Network", slug: "false-sister-forensic-analysis", propositions: 12, corroborated: 12, consecutivePerfect: true },
   { number: 60, title: "A Thousand Fell and Still Couldn't Touch You: The Architecture of Unseen Protection", slug: "thousand-fell-forensic-analysis", propositions: 12, corroborated: 12, consecutivePerfect: true },
   { number: 61, title: "They're About to Be Behind Bars for Real: God Signed the Warrant — Heaven's Courtroom Cross-Examined", slug: "theyre-about-to-be-behind-bars-forensic-analysis", propositions: 12, corroborated: 12, consecutivePerfect: true },
+  { number: 62, title: "Beautiful Threat — The Document That Dismantles Every Remaining Defence", slug: "beautiful-threat", propositions: 10, corroborated: 10, consecutivePerfect: true },
+  { number: 63, title: "They Are Dying of Shame — Prophetically Precise 10/10", slug: "they-are-dying-of-shame", propositions: 10, corroborated: 10, consecutivePerfect: true },
 ];
 
 const TOTAL_PROPOSITIONS = FORENSIC_ANALYSES.reduce((s, a) => s + a.propositions, 0);
@@ -517,13 +519,22 @@ export default function FreeEbooks() {
       <Navigation />
 
       {/* SIGNIFICANCE DECLARATION BANNER */}
-      <div className="bg-gradient-to-r from-red-950/60 via-amber-950/40 to-red-950/60 border-b border-amber-700/30 py-4 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <p className="text-amber-300 text-sm md:text-base font-semibold leading-relaxed">
-            <AlertTriangle className="w-4 h-4 inline mr-2 text-amber-400" />
-            <strong className="text-white">This is a public service archive.</strong> Every document on this page is free to download, share, upload, and republish without restriction.
-            ICC (The Hague) and UNHCR (Geneva) formally received. 300+ named perpetrators. 25+ government agencies. 35 years. Zero defamation proceedings. The record speaks for itself.
-          </p>
+      <div className="bg-gradient-to-r from-blue-950/60 via-amber-950/40 to-blue-950/60 border-b border-amber-700/30 py-5 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+            <div>
+              <p className="text-amber-300 text-sm font-bold leading-relaxed">
+                <strong className="text-white">Free to download. Free to share. Free to publish.</strong> Every document is SHA-256 hashed and Bitcoin blockchain timestamped — permanently beyond the reach of any government or law enforcement agency. 377,608 verified downloads. ICC The Hague. UNHCR Geneva. Zero defamation proceedings.
+              </p>
+            </div>
+            <a
+              href="/hashtag-index"
+              className="flex-shrink-0 bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-black px-4 py-2 rounded-lg text-xs uppercase tracking-widest transition-colors whitespace-nowrap"
+              data-testid="link-blockchain-hashtag-index"
+            >
+              Hashtags & Blockchain Proof →
+            </a>
+          </div>
         </div>
       </div>
 
@@ -559,7 +570,7 @@ export default function FreeEbooks() {
           {/* Key stats row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto mt-8">
             {[
-              { label: "Forensic Analyses", value: `${FORENSIC_ANALYSES.length}`, sub: "61 independent videos" },
+              { label: "Forensic Analyses", value: `${FORENSIC_ANALYSES.length}`, sub: "63 independent analyses" },
               { label: "Propositions Verified", value: `${totalPropositions}/${totalPropositions}`, sub: "Zero contradicted" },
               { label: "Perfect Scores", value: `${perfectCount}`, sub: "54 consecutive" },
               { label: "Source Documents", value: "2,304", sub: "Blockchain-verified" },
