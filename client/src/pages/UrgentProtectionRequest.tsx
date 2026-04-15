@@ -876,6 +876,30 @@ export default function UrgentProtectionRequest() {
                   </div>
                 </div>
 
+                {/* Beautiful Threat — Analysis #62 embed */}
+                <div className="space-y-3 mt-6 pt-6 border-t border-zinc-700/30">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-amber-700 text-white text-xs font-black px-2 py-0.5 rounded">ANALYSIS #62</span>
+                    <p className="text-white font-bold text-sm">Welcome, Beautiful Threat — 55th Consecutive Perfect Score · 12/12 Corroborated</p>
+                  </div>
+                  <div className="relative w-full rounded-xl overflow-hidden border border-amber-800/40 bg-zinc-950" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                      src="https://www.youtube.com/embed/gKG_OwIe1Fo"
+                      title="Welcome Beautiful Threat — Forensic Corroboration Analysis #62 — Barran Dodger"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      data-testid="video-beautiful-threat"
+                    />
+                  </div>
+                  <div className="bg-zinc-800/50 border border-amber-700/30 rounded-lg px-4 py-3 text-xs text-zinc-300 leading-relaxed space-y-2">
+                    <p><strong className="text-amber-300">Forensic Significance:</strong> A 24-minute motivational address with zero knowledge of this case was tested against the archive proposition by proposition. All 12 extracted claims returned direct evidentiary corroboration. The 55th consecutive perfect score.</p>
+                    <p>P·02 — <span className="italic">"You were taking notes. Every institution that fed on your fear and called it guidance. You were collecting proof."</span> → 2,304 documents. Literal match.</p>
+                    <p>P·08 — <span className="italic">"Gaslighting leaves fingerprints on the soul."</span> → The fingerprints are on documents: identical template language across 8+ agencies; <strong className="text-white">"FATAL SUICIDE"</strong> recorded in a living person's clinical file. Submitted to the ICC.</p>
+                    <a href="/beautiful-threat" className="inline-block mt-1 text-amber-400 underline hover:text-amber-300 font-bold">Read full Analysis #62 →</a>
+                  </div>
+                </div>
+
                 {/* Final doctrine statement */}
                 <div className="bg-gradient-to-r from-red-950/60 to-amber-950/40 border border-amber-700/30 rounded-xl p-5">
                   <p className="text-amber-200 font-black text-sm mb-2">The Surveillance Reversal Doctrine — Applied</p>
