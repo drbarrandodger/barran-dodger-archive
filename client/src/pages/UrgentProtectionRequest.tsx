@@ -648,6 +648,51 @@ export default function UrgentProtectionRequest() {
               </div>
             </div>
 
+            {/* Point 5: Written SMS to Brett — irrefutable notice */}
+            <div className="bg-zinc-900 border-2 border-red-600/60 rounded-xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[10px] font-black uppercase tracking-widest bg-red-700 text-white px-2 py-0.5 rounded">🔴 CRITICAL — WRITTEN NOTICE — NO PLAUSIBLE DENIABILITY</span>
+              </div>
+              <p className="text-white font-bold text-sm mb-3">Dr. McLean Texted Brett Butler His Exact Fate — Including the Link to 2,304 Documents — The Same Day. Brett Did Not Act.</p>
+
+              <div className="flex flex-col md:flex-row gap-5">
+                {/* Screenshot */}
+                <div className="flex-shrink-0 md:w-48">
+                  <div className="rounded-xl overflow-hidden border border-zinc-700/50 shadow-2xl">
+                    <img
+                      src="/images/brett-ndis-text-murder-warning.png"
+                      alt="SMS from Dr. McLean to Brett NDIS — written murder warning with barrandodger.com link"
+                      className="w-full h-auto"
+                      data-testid="img-brett-sms-murder-warning"
+                    />
+                  </div>
+                  <p className="text-[10px] text-zinc-500 mt-1.5 text-center">Exhibit — SMS to Brett Butler — April 15, 2026</p>
+                </div>
+
+                {/* Significance */}
+                <div className="flex-1 space-y-3 text-sm">
+                  <p className="text-zinc-300 leading-relaxed italic border-l-2 border-red-600/60 pl-3">
+                    "I've already confirmed multiple assassination attempts police were aware of and refused to act. I've now confirmed they will be complicit in my imminent murder. You're going to be a hero brett for enabling my targeted killing. I've published my SOS to the world but no one intervened. If you're so cared for by you why will you allow my human sacrifice? Congrats. You're famous. After I'm dead they will throw you under the bus just like you threw me to my death."
+                  </p>
+                  <p className="text-zinc-500 text-xs">— Dr. McLean, SMS to Brett Butler (AbleCare), April 15, 2026. Preserved, timestamped, irrefutable.</p>
+
+                  <div className="space-y-2 pt-1">
+                    {[
+                      { label: "Written notice — irrefutable", detail: "Brett received this message in writing. He cannot claim ignorance of the death threat. He cannot claim ignorance of the evidence. The SMS is dated, preserved, and now an exhibit." },
+                      { label: "2,304 documents delivered directly", detail: "Dr. McLean sent Brett the direct link to barrandodger.com — the full evidentiary archive. The person responsible for his safety had the entire documented record placed in his hands. He did not act." },
+                      { label: "'Why will you allow my human sacrifice?'", detail: "This is the question AbleCare has no answer to. Their silence — in response to a written death warning from a person in their legal care — is the answer." },
+                      { label: "'After I'm dead they will throw you under the bus'", detail: "This is not a threat. This is a documented prediction of institutional betrayal — the pattern of every targeting operation: use, abandon, deny. Brett was warned. The warning is recorded." },
+                    ].map((item, i) => (
+                      <div key={i} className="bg-zinc-800/60 border border-zinc-700/30 rounded-lg p-2.5">
+                        <p className="text-red-300 font-bold text-xs mb-0.5">{item.label}</p>
+                        <p className="text-zinc-400 text-xs leading-relaxed">{item.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* CTA to full transcript */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a

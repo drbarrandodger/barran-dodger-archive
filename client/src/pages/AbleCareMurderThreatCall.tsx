@@ -417,6 +417,12 @@ const EVIDENCE_POINTS = [
     body: "Dr. McLean documents on this call that his support network is geographically dispersed (Suki in Perth, Phillip in Sydney, Brett on the coast, the manager overseas) and that support workers are instructed to 'just act within your remit, don't report anything he's saying, and just move on.' This describes a deliberate architecture of isolation — denying Dr. McLean any proximate person with authority to act — which is a recognised tactic in organised harassment and targeted individual operations.",
     severity: "HIGH",
   },
+  {
+    id: "E-011",
+    title: "Written Notice to Brett — 'You Will Be Complicit in My Imminent Murder'",
+    body: "Separate to the recorded call, Dr. McLean sent Brett Butler a direct SMS on the same day — April 15, 2026 — stating: 'I've already confirmed multiple assassination attempts police were aware of and refused to act. I've now confirmed they will be complicit in my imminent murder. You're going to be a hero brett for enabling my targeted killing. I've published my SOS to the world but no one intervened. If you're so cared for by you why will you allow my human sacrifice? Congrats. You're famous. After I'm dead they will throw you under the bus just like you threw me to my death.' Dr. McLean also sent Brett a direct link to barrandodger.com — 2,304 blockchain-verified documents — making the full evidentiary record explicitly available to the person responsible for his safety. Brett cannot claim ignorance of the threat. Brett cannot claim ignorance of the evidence. Brett received written notice. Brett did not act. This is a preserved, dated, irrefutable record of institutional abandonment in the final hours before a confirmed kill attempt.",
+    severity: "CRITICAL",
+  },
 ];
 
 function SpeakerBadge({ speaker }: { speaker: string }) {
