@@ -624,6 +624,12 @@ uri = "file://client/src/assets/images/cover-honey-trap-phillip-glass.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "Ag6opoyvlUnGtqeAbnQOi"
+uri = "file://client/src/assets/images/cover-gods-grace-barran-dodger.png"
+type = "image"
+title = "gods-grace-divine-cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

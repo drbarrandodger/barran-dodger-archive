@@ -223,6 +223,7 @@ const MAJOR_PUBLICATIONS: MajorPub[] = [
   { slug: "comprehensive-statement-digital-architecture", title: "Comprehensive Statement — Digital Architecture of Humanity", subtitle: "Seven Layers of Permanence — Blockchain Verified — ICC Submitted — UNHCR Submitted", coverFile: "cover-comprehensive-statement-digital-architecture", category: "Primary Exhibit", pageUrl: "/comprehensive-statement-digital-architecture" },
   { slug: "police-complicity-death-threat-documentation", title: "Police Complicity & Death Threat — April 15, 2026", subtitle: "Direct death threat by Tory Kilborn · Police slur · Institutional complicity · 50+ MPs notified", coverFile: "cover-police-complicity-death-threat", category: "Primary Evidence", pageUrl: "/police-complicity-death-threat-documentation" },
   { slug: "honey-trap-phillip-glass", title: "Sexual Honey Trap Exploitation, Surveillance and Transfer", subtitle: "Phillip Glass (TAG NSW) — Financial Coercive Control — Gang Stalking Documentation — 14 April 2026", coverFile: "cover-honey-trap-phillip-glass", category: "Primary Exhibit", pageUrl: "/honey-trap-phillip-glass" },
+  { slug: "gods-grace-barran-dodger", title: "God's Grace Through Barran Dodger — Resonance in the Name of Christ", subtitle: "Eternal Witness Affidavit–Manuscript — Legally Fortified · Spiritually Resonant · Cryptographically Preserved", coverFile: "cover-gods-grace-barran-dodger", category: "Spiritual", pageUrl: "/gods-grace-barran-dodger" },
 ];
 
 interface PdfDoc {
@@ -232,6 +233,7 @@ interface PdfDoc {
 }
 
 const ALL_PDFS: PdfDoc[] = [
+  { file: "gods-grace-barran-dodger.pdf", title: "God's Grace Through Barran Dodger — Eternal Witness Affidavit–Manuscript — Legally Fortified · Spiritually Resonant · Cryptographically Preserved", category: "Spiritual Testimony" },
   { file: "police-complicity-death-threat-documentation.pdf", title: "Police Complicity & Death Threat — April 15, 2026 — Tory Kilborn, Iasonidis, AVO Applications, 50+ MPs Notified", category: "Primary Evidence" },
   { file: "digital_oppression_100000_word_essay.pdf", title: "Digital Oppression and Institutional Failure (100,000 Words)", category: "Forensic Reports" },
   { file: "master-forensic-evidence-report.pdf", title: "Master Forensic Evidence Report — Complete Evidentiary Summary", category: "Forensic Reports" },

@@ -168,6 +168,7 @@ import BitcoinProof from "@/pages/BitcoinProof";
 import HolyReckoning from "@/pages/HolyReckoning";
 import AbleCareMurderThreatCall from "@/pages/AbleCareMurderThreatCall";
 import DyingOfShame from "@/pages/DyingOfShame";
+import { GodsGraceBarranDodger } from "@/pages/GodsGraceBarranDodger";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -433,6 +434,9 @@ function Router() {
         <Route path="/dying-of-shame-forensic-analysis" component={DyingOfShame} />
         <Route path="/forensic-analysis-63" component={DyingOfShame} />
         <Route path="/prophetic-testimony-shame" component={DyingOfShame} />
+        <Route path="/gods-grace-barran-dodger" component={GodsGraceBarranDodger} />
+        <Route path="/eternal-witness-affidavit" component={GodsGraceBarranDodger} />
+        <Route path="/gods-grace-resonance-christ" component={GodsGraceBarranDodger} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/archive-index" component={ArchiveIndex} />
