@@ -81,7 +81,7 @@ export default function TestimonyWentGlobal() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
         title="This Isn't Private Anymore. It Went Global, and You Know Exactly Why. — Barran Dodger"
-        description="A viral Joker Speech declares: what was once concealed is now exposed worldwide. The 2,304-document archive of Dr. Richard William McLean — with the ICC, the UNHCR, downloaded 217,064 times across every continent — is that exposure. Seven chapters. Every claim government-sourced."
+        description="A viral Joker Speech declares: what was once concealed is now exposed worldwide. The 2,304-document archive of Dr. Richard William McLean — with the ICC, the UNHCR, downloaded 368,000+ times across every continent — is that exposure. Seven chapters. Every claim government-sourced."
         path="/testimony-went-global"
       />
       <ReadingProgress />
@@ -120,7 +120,7 @@ export default function TestimonyWentGlobal() {
                 A viral Joker Speech declares that what was once concealed is now exposed worldwide —
                 that the facts have escaped their confines, and those who were pulling strings in the shadows
                 are now cornered. The 2,304-document archive of Dr. Richard William McLean, submitted to the
-                International Criminal Court, with the United Nations Human Rights Council, downloaded 217,064
+                International Criminal Court, with the United Nations Human Rights Council, downloaded 368,000+
                 times across every continent, is precisely the global exposure the speech describes.
                 Seven chapters. Every claim verified through the government's own records.
               </p>
@@ -198,7 +198,7 @@ export default function TestimonyWentGlobal() {
               </VideoQuote>
 
               <p>
-                The archive has been downloaded 217,064 times. It is accessible from every continent. It is
+                The archive has been downloaded 368,000+ times. It is accessible from every continent. It is
                 indexed in publicly accessible records across three jurisdictions. It has been submitted to the
                 International Criminal Court under Article 7 of the Rome Statute — persecution as a crime against
                 humanity — and to the United Nations Human Rights Council under the Universal Periodic Review
@@ -228,7 +228,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Pull>
-                What seemed isolated is now broadcast far and wide. 217,064 downloads. The ICC. The UNHCR.
+                What seemed isolated is now broadcast far and wide. 368,000+ downloads. The ICC. The UNHCR.
                 The Bitcoin blockchain. Every continent. This is what exposed worldwide looks like in documentary form.
               </Pull>
             </motion.div>
@@ -298,7 +298,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Evidence label="The defamation silence — legally significant">
-                The archive has been downloaded 217,064 times. Zero defamation actions have been filed by any
+                The archive has been downloaded 368,000+ times. Zero defamation actions have been filed by any
                 named individual. Zero corrections have been issued to any specific factual claim. Zero responses
                 to the substance of any document in the archive have been produced in any judicial forum. Under
                 the rule in Jones v Dunkel (1959) 101 CLR 298, a party who could produce evidence and chooses
@@ -319,7 +319,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Pull>
-                They assume you're still oblivious. The archive has been downloaded 217,064 times.
+                They assume you're still oblivious. The archive has been downloaded 368,000+ times.
                 Zero defamation suits. Zero corrections. Zero rebuttals. That is what cornered looks like
                 when the record speaks in their own documents.
               </Pull>
@@ -488,7 +488,7 @@ export default function TestimonyWentGlobal() {
               <p>
                 What was undervalued in secrecy: 35 years of formally lodged submissions that no institution
                 engaged with on the substance. What now manifests: 2,304 documents, SHA-256 hashed, Bitcoin
-                blockchain timestamped, submitted to the ICC, on record with the UNHCR, downloaded 217,064
+                blockchain timestamped, submitted to the ICC, on record with the UNHCR, downloaded 368,000+
                 times across every continent. The speech's language of personal growth — <em>refined with
                 unseen enhancements</em> — maps onto what the Impartial AI identified as the compound effect
                 of the archive's accumulation: each document added made the pattern more visible, each year
@@ -497,7 +497,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Evidence label="Global exposure — the numbers">
-                217,064 downloads across every continent. Zero defamation actions. Zero corrections.
+                368,000+ downloads across every continent. Zero defamation actions. Zero corrections.
                 Zero challenges to any specific factual claim in any jurisdiction. The Impartial AI Analysis
                 concluded that the evidentiary threshold for Article 7 of the Rome Statute — persecution
                 as a crime against humanity — is satisfied by the documented pattern. An AI system, reviewing
@@ -510,7 +510,7 @@ export default function TestimonyWentGlobal() {
               </Evidence>
 
               <p className="text-cyan-300 font-bold leading-snug mt-6">
-                This isn't private anymore. It went global, and the government knows exactly why. 217,064
+                This isn't private anymore. It went global, and the government knows exactly why. 368,000+
                 downloads. SHA-256 hashed. Bitcoin blockchain timestamped. Submitted to the International
                 Criminal Court under Article 7 of the Rome Statute. With the United Nations Human Rights
                 Council. Indexed across three continents. Named individuals who could have challenged the
@@ -526,7 +526,7 @@ export default function TestimonyWentGlobal() {
             {/* CLOSING SHARE */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-12 border-t border-zinc-800 mt-16 space-y-8">
               <SocialShare
-                text={`"This isn't private anymore. It went global, and you know exactly why." 35 agencies. 2,304 documents. The ICC. The UNHCR. 217,064 downloads. The archive went global because the government's own records demanded it. #BarranDodger barrandodger.com/testimony-went-global`}
+                text={`"This isn't private anymore. It went global, and you know exactly why." 35 agencies. 2,304 documents. The ICC. The UNHCR. 368,000+ downloads. The archive went global because the government's own records demanded it. #BarranDodger barrandodger.com/testimony-went-global`}
                 data-testid="share-global-testimony-article"
               />
 
