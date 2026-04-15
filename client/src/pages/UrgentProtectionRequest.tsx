@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import scruffIasonidisEmbezzle from "@assets/IMG_0013_1776207977160.png";
+import cstSmithCard from "@assets/IMG_4822_1776211997174.jpeg";
 import benAssassination from "@assets/IMG_1004_1776208003721.png";
 import benBillShorten from "@assets/IMG_1005_1776208003721.png";
 import benHitmenCaught from "@assets/27A51392-28E5-40D2-B8A9-A9BFE2D35452_1776208003721.png";
@@ -770,6 +771,114 @@ export default function UrgentProtectionRequest() {
                   <p className="text-zinc-300 text-xs leading-relaxed">
                     These four videos are the surveillance reversal doctrine made visible. Police activated cameras to build a referral record against Dr. McLean. Dr. McLean activated his camera to build a public evidentiary record against the system. Their footage is internal. His footage has been watched internationally. The institution that sent police to Dr. McLean's address is now a named respondent in an ICC submission, with these videos as supporting exhibits. <strong className="text-white">You cannot covertly surveil a target who is publishing everything in real time.</strong>
                   </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* ───── CST SMITH POLICE CARD — MISSING EVENT NUMBER ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <Card className="bg-zinc-900/70 border-amber-900/50">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
+                <FileText size={20} className="text-amber-400" /> CST Smith — April 15, 2026 — Police Card Left. Event Number Field: Blank.
+              </h2>
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">NSW Police Force · Tuggerah Lakes Police District · The Entrance Police Station · +61 2 4333 2999 · Primary Exhibit</p>
+
+              <div className="space-y-6 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  On April 15, 2026 — the same day a death threat was made against Dr. McLean, the same day NSW Police officers called him "a fucking pedo" as they departed, the same day AVO applications were filed — Constable Smith of The Entrance Police Station (Tuggerah Lakes Police District) attended Dr. McLean's address and left this card. The Event Number field, which is the sole mechanism by which police attendance is formally recorded, tracked, escalated, and accessed — <strong className="text-white">was left completely blank.</strong>
+                </p>
+
+                {/* Card image */}
+                <div className="flex justify-center">
+                  <div className="w-full max-w-sm rounded-xl overflow-hidden border-2 border-amber-600/60 bg-zinc-950 shadow-2xl shadow-amber-900/20">
+                    <div className="bg-amber-950/90 px-3 py-2 text-xs font-mono text-amber-300 uppercase tracking-widest border-b border-amber-700/40 text-center">
+                      Primary Evidence — NSW Police Force Card — April 15, 2026 — Archived
+                    </div>
+                    <img
+                      src={cstSmithCard}
+                      alt="NSW Police Force card: CST Smith, date 15/4/26, Event Number blank, Tuggerah Lakes Police District, The Entrance Police Station, phone +61 2 4333 2999"
+                      className="w-full object-contain"
+                      data-testid="img-cst-smith-card"
+                    />
+                    <div className="bg-red-950/80 px-3 py-2 text-xs font-mono text-red-300 uppercase tracking-widest border-t border-red-800/40 text-center">
+                      Event Number field — LEFT BLANK
+                    </div>
+                  </div>
+                </div>
+
+                {/* What the blank event number means */}
+                <div className="bg-amber-950/40 border border-amber-800/40 rounded-xl p-5 space-y-4">
+                  <p className="text-xs font-mono text-amber-300 uppercase tracking-widest">The Three Explanations — And Why Only One Is Consistent With The Evidence</p>
+
+                  <div className="space-y-3">
+                    {[
+                      {
+                        label: "Explanation A: Bureaucratic Oversight",
+                        color: "text-zinc-400",
+                        border: "border-zinc-700/40",
+                        bg: "bg-zinc-800/40",
+                        body: "A constable forgets to write the event number in the field provided on the standard-issue NSW Police Force card. Possible in isolation. However: this attendance occurred on the same day as a documented death threat, a filed AVO application, and a verbal slur from other attending officers. The probability of administrative oversight on the single most legally consequential police attendance of the year is not zero — but it requires substantial charitable interpretation."
+                      },
+                      {
+                        label: "Explanation B: Forgetfulness",
+                        color: "text-zinc-400",
+                        border: "border-zinc-700/40",
+                        bg: "bg-zinc-800/40",
+                        body: "CST Smith simply forgot. Again, possible in isolation. But the Event Number is the only field on the card with a dedicated blank — Officer Name, Date, Phone, Station are all present and correctly filled. The Event Number field alone was omitted. That field alone is the one that creates a traceable institutional record of the attendance."
+                      },
+                      {
+                        label: "Explanation C: Deliberate Omission — Institutional Stonewalling",
+                        color: "text-red-300",
+                        border: "border-red-700/50",
+                        bg: "bg-red-950/40",
+                        body: "The Event Number is the only mechanism by which a police attendance can be: (1) officially recorded in the COPS system, (2) cited in legal proceedings, (3) escalated within the command structure, (4) accessed under FOI, (5) connected to a formal complaint. Without it, the attendance is off-record. A card was left — demonstrating physical presence — but no traceable institutional record was created. In the context of a documented death threat on the same day, this is not oversight. It is the functional equivalent of attending without attending."
+                      },
+                    ].map((item, i) => (
+                      <div key={i} className={`border ${item.border} ${item.bg} rounded-lg p-4`}>
+                        <p className={`font-black text-xs mb-1.5 ${item.color}`}>{item.label}</p>
+                        <p className="text-zinc-400 text-xs leading-relaxed">{item.body}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Forensic significance */}
+                <div className="bg-red-950/50 border border-red-800/50 rounded-xl p-5 space-y-3">
+                  <p className="text-xs font-mono text-red-300 uppercase tracking-widest">Why This Card Is Now A Primary ICC Exhibit</p>
+                  <ul className="space-y-2 text-xs text-zinc-300">
+                    {[
+                      "The card proves police presence on April 15, 2026 — the date of the documented death threat. CST Smith attended. That is established. The absence of an event number means that attendance exists only in Dr. McLean's documented record, not in NSW Police's COPS system.",
+                      "An attendance to a person who has filed AVO applications against a named death threat perpetrator — with no event number recorded — cannot be escalated, cited, or acted upon by any subsequent officer, court, or tribunal without Dr. McLean's own documentation.",
+                      "The card itself has now become the evidence of the gap. NSW Police Force printed the Event Number field on the card for a reason. Its deliberate or negligent omission on April 15, 2026 is documented here, timestamped, archived, and submitted.",
+                      "The question is not whether CST Smith forgot. The question is: in a documented life-threatening situation, on a documented death threat date, with AVO applications on file, was the failure to record an event number an oversight, or a means of ensuring that April 15 generates no official institutional trail?",
+                      "Dr. McLean's photograph of this card — published globally — is now the official record of CST Smith's April 15, 2026 attendance. The NSW Police Force's own record of it is missing. His record is not.",
+                    ].map((point, i) => (
+                      <li key={i} className="flex gap-2 items-start">
+                        <span className="text-red-400 mt-0.5">▸</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Contact card detail panel */}
+                <div className="grid sm:grid-cols-3 gap-3 text-xs">
+                  {[
+                    { label: "Officer", value: "CST Smith", highlight: false },
+                    { label: "Date of Report", value: "15 April 2026", highlight: false },
+                    { label: "Event Number", value: "NOT RECORDED", highlight: true },
+                    { label: "Phone", value: "+61 2 4333 2999", highlight: false },
+                    { label: "Command", value: "Tuggerah Lakes Police District", highlight: false },
+                    { label: "Station", value: "The Entrance Police Station", highlight: false },
+                  ].map((item, i) => (
+                    <div key={i} className={`rounded-lg border px-3 py-2 ${item.highlight ? 'border-red-600/60 bg-red-950/40' : 'border-zinc-700/40 bg-zinc-800/30'}`}>
+                      <p className="text-zinc-500 uppercase tracking-widest mb-0.5" style={{ fontSize: '10px' }}>{item.label}</p>
+                      <p className={`font-black ${item.highlight ? 'text-red-300' : 'text-white'}`}>{item.value}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </CardContent>
