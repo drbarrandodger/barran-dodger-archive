@@ -161,6 +161,7 @@ import PropheticFckYouDeclaration from "@/pages/PropheticFckYouDeclaration";
 import FalseSisterForensicAnalysis from "@/pages/FalseSisterForensicAnalysis";
 import ThousandFellForensicAnalysis from "@/pages/ThousandFellForensicAnalysis";
 import TheyreAboutToBeHindBarsForensicAnalysis from "@/pages/TheyreAboutToBeHindBarsForensicAnalysis";
+import BeautifulThreat from "@/pages/BeautifulThreat";
 import { PolicComplicityDeathThreat } from "@/pages/PolicComplicityDeathThreat";
 
 function GlobalDownloadTracker() {
@@ -407,6 +408,9 @@ function Router() {
         <Route path="/god-signed-the-warrant" component={TheyreAboutToBeHindBarsForensicAnalysis} />
         <Route path="/300k-slow-down-system" component={TheyreAboutToBeHindBarsForensicAnalysis} />
         <Route path="/forensic-analysis-61" component={TheyreAboutToBeHindBarsForensicAnalysis} />
+        <Route path="/beautiful-threat" component={BeautifulThreat} />
+        <Route path="/welcome-beautiful-threat" component={BeautifulThreat} />
+        <Route path="/forensic-analysis-62" component={BeautifulThreat} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/archive-index" component={ArchiveIndex} />
