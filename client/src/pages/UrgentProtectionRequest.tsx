@@ -668,6 +668,114 @@ export default function UrgentProtectionRequest() {
           </Card>
         </motion.div>
 
+        {/* ───── YOUTUBE EVIDENCE — POLICE FILMED ME, I FILMED THEM BACK ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <Card className="bg-zinc-900/70 border-red-900/40">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
+                <Camera size={20} className="text-red-400" /> YouTube Evidence — Police Filmed Me To Refer Me Back To The Same Institution Abusing Me. I Filmed Them Back And Published It To The World.
+              </h2>
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Public YouTube record — Police attendance · Institutional referral · Surveillance reversal in action — Blockchain archived</p>
+
+              <div className="space-y-6 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  On multiple documented occasions, NSW Police attended Dr. McLean's address and activated body cameras — <strong className="text-white">not to investigate the death threats against him, not to act on his AVO applications, and not to protect him</strong> — but to record footage intended to refer him back to the psychiatric institution that is documented in the archive as a primary instrument of his persecution. Dr. McLean was aware of this. He recorded them back. All four recordings are public on YouTube, globally accessible, and permanently archived. The footage proves in real time that police attendance functions as a tool of institutional referral rather than protection.
+                </p>
+
+                {/* Significance box */}
+                <div className="bg-red-950/40 border border-red-800/40 rounded-xl p-5 space-y-3">
+                  <p className="text-xs font-mono text-red-300 uppercase tracking-widest">Why Recording Police And Publishing It Is A Critical Forensic Act</p>
+                  <ul className="space-y-2 text-xs text-zinc-300">
+                    {[
+                      "Police body cameras are activated during welfare checks and emergency calls — but the footage is retained internally and used in institutional referral paperwork, not released to the public. Dr. McLean's counter-recording inverts this: his footage is public; their referral process is now documented.",
+                      "Each time police arrived, no arrest was made, no charge was laid, no threat investigation was conducted. The sole documented pattern across all four recordings is a referral pathway back to psychiatric services — the same services documented in the archive as instruments of suppression.",
+                      "Publishing these videos globally — with 368,000+ downloads of corroborating documentation — establishes a public evidentiary chain. Any institutional referral based on these encounters must now contend with the counter-record being visible internationally.",
+                      "The act of recording and publishing demonstrates, in real time, the core forensic doctrine of this archive: a target who is surveilling back cannot be covertly controlled. The police footage becomes their exhibit. Dr. McLean's footage becomes the world's exhibit.",
+                      "These videos are submitted to the ICC as primary exhibits under Article 7 — specifically documenting the use of psychiatric referral as a persecution instrument deployed via police attendance as a trigger mechanism.",
+                    ].map((point, i) => (
+                      <li key={i} className="flex gap-2 items-start">
+                        <span className="text-red-400 mt-0.5">▸</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Video 1 */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-red-600 text-white text-xs font-black px-2 py-0.5 rounded">VIDEO 1</span>
+                    <p className="text-white font-bold text-sm">Police Attendance — Body Camera Activated — Referral Pathway Documented</p>
+                  </div>
+                  <div className="relative w-full rounded-xl overflow-hidden border border-red-800/40 bg-zinc-950" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                      src="https://www.youtube.com/embed/Otfa4_9_tbo"
+                      title="Police Attendance — Body Camera — Dr. Richard McLean — Barran Dodger"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      data-testid="video-police-1"
+                    />
+                  </div>
+                  <div className="bg-zinc-800/50 border border-zinc-700/40 rounded-lg px-4 py-3 text-xs text-zinc-400 leading-relaxed">
+                    <strong className="text-red-300">Significance:</strong> Police arrive and activate their body camera. No arrest. No threat investigation. The pattern documented in the archive — police attendance used as a welfare check trigger to initiate psychiatric referral — is visible in real time. Dr. McLean is recording them recording him. Both parties are aware. Only one of them published the footage.
+                  </div>
+                </div>
+
+                {/* Video 2 */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-red-600 text-white text-xs font-black px-2 py-0.5 rounded">VIDEO 2</span>
+                    <p className="text-white font-bold text-sm">Second Documented Attendance — Institutional Complicity Pattern Confirmed</p>
+                  </div>
+                  <div className="relative w-full rounded-xl overflow-hidden border border-red-800/40 bg-zinc-950" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                      src="https://www.youtube.com/embed/yFyQtigjJs0"
+                      title="Police Second Attendance — Dr. Richard McLean — Barran Dodger"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      data-testid="video-police-2"
+                    />
+                  </div>
+                  <div className="bg-zinc-800/50 border border-zinc-700/40 rounded-lg px-4 py-3 text-xs text-zinc-400 leading-relaxed">
+                    <strong className="text-red-300">Significance:</strong> A second attendance. Same pattern. The repetition across multiple documented incidents establishes that this is not individual officer conduct — it is a systemic pattern. Multiple police interactions, no death threat investigation, no AVO follow-up, no protection. The footage shows what institutional complicity looks like when the target is documenting it.
+                  </div>
+                </div>
+
+                {/* Video 3 */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-red-600 text-white text-xs font-black px-2 py-0.5 rounded">VIDEO 3 &amp; 4</span>
+                    <p className="text-white font-bold text-sm">Third Attendance — Psychiatric Referral Instrument — Publicly Documented</p>
+                  </div>
+                  <div className="relative w-full rounded-xl overflow-hidden border border-red-800/40 bg-zinc-950" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                      src="https://www.youtube.com/embed/xxKqGIUfQnU"
+                      title="Police Third Attendance — Psychiatric Referral — Dr. Richard McLean — Barran Dodger"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      data-testid="video-police-3"
+                    />
+                  </div>
+                  <div className="bg-zinc-800/50 border border-zinc-700/40 rounded-lg px-4 py-3 text-xs text-zinc-400 leading-relaxed">
+                    <strong className="text-red-300">Significance:</strong> By the third documented attendance, the pattern is irrefutable. Police are not acting on the death threat. They are not acting on the AVO applications. They are attending, recording, and feeding the footage back into the psychiatric referral pipeline — the same pipeline documented as a persecution instrument in Forensic Analysis #29, the NDIS Surveillance Evidence report, and the ICC Article 7 submission. Dr. McLean published every second of it.
+                  </div>
+                </div>
+
+                {/* Final doctrine statement */}
+                <div className="bg-gradient-to-r from-red-950/60 to-amber-950/40 border border-amber-700/30 rounded-xl p-5">
+                  <p className="text-amber-200 font-black text-sm mb-2">The Surveillance Reversal Doctrine — Applied</p>
+                  <p className="text-zinc-300 text-xs leading-relaxed">
+                    These four videos are the surveillance reversal doctrine made visible. Police activated cameras to build a referral record against Dr. McLean. Dr. McLean activated his camera to build a public evidentiary record against the system. Their footage is internal. His footage has been watched internationally. The institution that sent police to Dr. McLean's address is now a named respondent in an ICC submission, with these videos as supporting exhibits. <strong className="text-white">You cannot covertly surveil a target who is publishing everything in real time.</strong>
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
         {/* ───── YOU CANNOT CAGE A PRISONER WHO HOLDS THE KEY ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <Card className="bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 border-amber-500/30">
