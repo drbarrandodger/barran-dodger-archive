@@ -164,6 +164,7 @@ import TheyreAboutToBeHindBarsForensicAnalysis from "@/pages/TheyreAboutToBeHind
 import BeautifulThreat from "@/pages/BeautifulThreat";
 import { PolicComplicityDeathThreat } from "@/pages/PolicComplicityDeathThreat";
 import HoneyTrapPhillipGlass from "@/pages/HoneyTrapPhillipGlass";
+import BitcoinProof from "@/pages/BitcoinProof";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -415,6 +416,9 @@ function Router() {
         <Route path="/honey-trap-phillip-glass" component={HoneyTrapPhillipGlass} />
         <Route path="/phillip-glass-tag-gang-stalker" component={HoneyTrapPhillipGlass} />
         <Route path="/sexual-honey-trap-exploitation" component={HoneyTrapPhillipGlass} />
+        <Route path="/bitcoin-proof" component={BitcoinProof} />
+        <Route path="/blockchain-proof" component={BitcoinProof} />
+        <Route path="/bitcoin-timestamp" component={BitcoinProof} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/archive-index" component={ArchiveIndex} />

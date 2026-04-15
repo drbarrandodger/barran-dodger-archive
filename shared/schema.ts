@@ -98,4 +98,20 @@ export const pageViews = pgTable("page_views", {
 
 export type PageView = typeof pageViews.$inferSelect;
 
+export const bitcoinTimestamps = pgTable("bitcoin_timestamps", {
+  id: serial("id").primaryKey(),
+  slug: text("slug").notNull().unique(),
+  filename: text("filename").notNull(),
+  sha256: text("sha256").notNull(),
+  otsReceipt: text("ots_receipt"),
+  submittedAt: timestamp("submitted_at").defaultNow(),
+  bitcoinBlock: integer("bitcoin_block"),
+  confirmedAt: timestamp("confirmed_at"),
+  category: text("category").notNull().default("document"),
+  documentPath: text("document_path"),
+  calendarUrl: text("calendar_url"),
+});
+
+export type BitcoinTimestamp = typeof bitcoinTimestamps.$inferSelect;
+
 export * from "./models/chat";

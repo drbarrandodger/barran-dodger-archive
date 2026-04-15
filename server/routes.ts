@@ -172,6 +172,52 @@ export async function registerRoutes(
   
   seedData().catch(console.error);
 
+  // ===== BITCOIN TIMESTAMP ROUTES =====
+  app.get('/api/bitcoin-timestamps', async (_req, res) => {
+    try {
+      const { getAllTimestamps } = await import('./bitcoinTimestamp');
+      const records = await getAllTimestamps();
+      res.json(records);
+    } catch (err) {
+      res.status(500).json({ message: String(err) });
+    }
+  });
+
+  app.post('/api/bitcoin-timestamp/batch', async (_req, res) => {
+    try {
+      const { batchTimestampAllDocuments } = await import('./bitcoinTimestamp');
+      res.json({ message: "Batch timestamp started", status: "processing" });
+      batchTimestampAllDocuments()
+        .then((result) => console.log(`Bitcoin batch complete: ${result.succeeded} new, ${result.alreadyDone} existing, ${result.failed} failed`))
+        .catch((err) => console.error("Bitcoin batch error:", err));
+    } catch (err) {
+      res.status(500).json({ message: String(err) });
+    }
+  });
+
+  app.post('/api/bitcoin-timestamp/batch-sync', async (_req, res) => {
+    try {
+      const { batchTimestampAllDocuments } = await import('./bitcoinTimestamp');
+      const result = await batchTimestampAllDocuments();
+      res.json(result);
+    } catch (err) {
+      res.status(500).json({ message: String(err) });
+    }
+  });
+
+  app.get('/api/bitcoin-timestamp/:slug', async (req, res) => {
+    try {
+      const { getAllTimestamps } = await import('./bitcoinTimestamp');
+      const records = await getAllTimestamps();
+      const record = records.find((r) => r.slug === req.params.slug);
+      if (!record) return res.status(404).json({ message: "Not found" });
+      res.json(record);
+    } catch (err) {
+      res.status(500).json({ message: String(err) });
+    }
+  });
+  // ===== END BITCOIN TIMESTAMP ROUTES =====
+
   app.get('/api/downloads/total', async (_req, res) => {
     try {
       res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
