@@ -163,6 +163,7 @@ import ThousandFellForensicAnalysis from "@/pages/ThousandFellForensicAnalysis";
 import TheyreAboutToBeHindBarsForensicAnalysis from "@/pages/TheyreAboutToBeHindBarsForensicAnalysis";
 import BeautifulThreat from "@/pages/BeautifulThreat";
 import { PolicComplicityDeathThreat } from "@/pages/PolicComplicityDeathThreat";
+import HoneyTrapPhillipGlass from "@/pages/HoneyTrapPhillipGlass";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -411,6 +412,9 @@ function Router() {
         <Route path="/beautiful-threat" component={BeautifulThreat} />
         <Route path="/welcome-beautiful-threat" component={BeautifulThreat} />
         <Route path="/forensic-analysis-62" component={BeautifulThreat} />
+        <Route path="/honey-trap-phillip-glass" component={HoneyTrapPhillipGlass} />
+        <Route path="/phillip-glass-tag-gang-stalker" component={HoneyTrapPhillipGlass} />
+        <Route path="/sexual-honey-trap-exploitation" component={HoneyTrapPhillipGlass} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/archive-index" component={ArchiveIndex} />
