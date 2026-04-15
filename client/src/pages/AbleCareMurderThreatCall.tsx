@@ -389,8 +389,8 @@ const EVIDENCE_POINTS = [
   },
   {
     id: "E-006",
-    title: "V2K (Voice-to-Skull) Acknowledged in Real-Time on Recording",
-    body: "Dr. McLean states on this recording, in real-time: 'The V2K is in the background saying, give up.' This is a contemporaneous record of an electronic harassment technology being deployed during a recorded call — adding to the existing V2K documentation across dozens of exhibits. The normalised, factual tone in which it is mentioned is consistent with ongoing, sustained, long-term targeting rather than acute psychological distress.",
+    title: "V2K (Voice-to-Skull) — Voices Parroting 'Give Up' and 'Pedo' in Real Time",
+    body: "Dr. McLean states on this recording, in real-time: 'The V2K is in the background saying give up.' The two specific words deployed — 'give up' and 'pedo' — are the twin psychological levers of the targeting operation. 'Give up' manufactures hopelessness. 'Pedo' deploys the fabricated allegation as an auditory weapon. These are the same words shouted by NSW Police officers as they left the property that same morning. The simultaneous deployment of the same slur — by police verbally and by V2K electronically — on the same day is not coincidence. It is coordination. The normalised, matter-of-fact tone in which Dr. McLean references the V2K — as background noise during a phone call — is consistent with long-term, sustained electronic harassment that has become part of daily existence, not an acute psychotic episode.",
     severity: "HIGH",
   },
   {

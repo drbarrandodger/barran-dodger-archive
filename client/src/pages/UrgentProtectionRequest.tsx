@@ -555,6 +555,120 @@ export default function UrgentProtectionRequest() {
           </div>
         </motion.div>
 
+        {/* ───── ABLECARE TRANSCRIPT — APRIL 15 CALL — SIGNIFICANCE ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-zinc-950 border-2 border-red-700/60 rounded-2xl p-6 md:p-8 space-y-6">
+
+            <div className="flex items-center gap-3">
+              <div className="inline-flex items-center gap-2 bg-red-700 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                <AlertTriangle size={11} /> Recorded Call — April 15, 2026
+              </div>
+              <h2 className="text-xl font-black text-white">AbleCare Call — What It Proves</h2>
+            </div>
+
+            <p className="text-zinc-300 text-sm leading-relaxed">
+              On the same morning as the death threat, Dr. McLean was on a recorded phone call with AbleCare CEO Rachel and support worker Brett — the NDIS provider legally responsible for his safety. The call is now a primary source exhibit. <a href="/ablecare-murder-threat-call" className="text-red-400 underline hover:text-red-300 font-bold">Full annotated transcript →</a>
+            </p>
+
+            {/* Point 1: Brett's victim-blaming */}
+            <div className="bg-red-950/40 border border-red-700/40 rounded-xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[10px] font-black uppercase tracking-widest bg-red-700/60 text-red-200 px-2 py-0.5 rounded">🔴 CRITICAL — VICTIM-BLAMING AS INSTITUTIONAL POSTURE</span>
+              </div>
+              <p className="text-white font-bold text-sm mb-2">Brett (AbleCare) Blamed Dr. McLean for Giving His Address to the Person Now Trying to Murder Him.</p>
+              <p className="text-zinc-300 text-sm leading-relaxed mb-3">
+                Instead of initiating any emergency response, Brett's primary intervention was to say: <em className="text-red-200">"If you're worried about people doing this, you shouldn't be giving out your address to random people."</em>
+              </p>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Dr. McLean is a human being trying to live a normal life — to have friends, to meet people, to exist in the world as every other person does. He is entrapped within AbleCare's own company, inside AbleCare's housing, dependent on AbleCare's workers, and isolated by the architecture of the NDIS support system. When he attempts to exercise the basic human right to social connection, his care provider — his supposed protector — uses that act of human normalcy as the justification for his own endangerment. This is not a welfare response. This is coercive control framed as support.
+              </p>
+              <div className="mt-3 bg-zinc-900/60 border border-zinc-700/40 rounded-lg p-3">
+                <p className="text-xs text-amber-300 italic">
+                  "I don't take unsolicited advice from any single person on this earth because I fly this spaceship. It's my life. No one can tell me what to do — which is legal and acceptable in any other human life if it wasn't mine. What I've done is just try to have a normal life when all of you have ganged up on me." — Dr. McLean, on the call
+                </p>
+              </div>
+            </div>
+
+            {/* Point 2: Rachel's tactical exit */}
+            <div className="bg-purple-950/30 border border-purple-700/40 rounded-xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[10px] font-black uppercase tracking-widest bg-purple-700/60 text-purple-200 px-2 py-0.5 rounded">🔴 CRITICAL — TACTICAL DISCONNECTION = ADMISSION OF COMPLICITY</span>
+              </div>
+              <p className="text-white font-bold text-sm mb-2">Rachel (AbleCare CEO) Hung Up Mid-Call During an Active Death Threat — Then Said "Thanks, Barron."</p>
+              <p className="text-zinc-300 text-sm leading-relaxed mb-3">
+                Rachel explicitly confirmed on this recorded call: <em className="text-purple-200">"Of course"</em> — when asked whether AbleCare is under legal obligation to protect a vulnerable person in their care from physical harm. She then immediately deflected to the Public Guardian, told Dr. McLean resolution would take <em className="text-red-300">"some days or some weeks,"</em> and terminated the call citing another incoming call — ending with: <em className="text-zinc-300">"Thanks, Barron."</em>
+              </p>
+              <p className="text-zinc-400 text-sm leading-relaxed mb-3">
+                No interim safety measure was offered. No additional worker was assigned. No police report was filed. No incident report was initiated. No follow-up time was confirmed. Rachel acknowledged a legal duty of care and then exited the conversation as though it were a routine scheduling matter.
+              </p>
+              <p className="text-zinc-300 text-sm leading-relaxed font-semibold">
+                When a CEO confirms a legal obligation on a recorded call and then provides zero response to an active, same-day murder threat — that is not incompetence. That is a choice. A choice with a name: complicity.
+              </p>
+            </div>
+
+            {/* Point 3: The contradiction */}
+            <div className="bg-amber-950/30 border border-amber-600/40 rounded-xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[10px] font-black uppercase tracking-widest bg-amber-700/60 text-amber-200 px-2 py-0.5 rounded">🟠 THE CONTRADICTION — IF THEY CARE SO MUCH</span>
+              </div>
+              <p className="text-white font-bold text-sm mb-3">AbleCare Claims to Care. So Why Is Dr. McLean Trapped in a House Without Food, Legal Representation, or Basic Human Rights — With a Killer on the Way and Police Who Won't Investigate?</p>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {[
+                  { label: "No Food", detail: "Dr. McLean is trapped in NDIS accommodation without adequate food. His support system — paid by the Australian government to care for him — has not resolved this." },
+                  { label: "No Legal Representation", detail: "Legal aid has been obstructed by the Public Guardian. Every avenue to legal counsel has been blocked. He defends himself in the public domain because he has no choice." },
+                  { label: "No Human Rights", detail: "He cannot leave freely. He cannot socialise without being targeted. He cannot use his phone without it being intercepted. His home is bugged. He is surveilled in the house his care provider manages." },
+                  { label: "No Police Protection", detail: "Police attended on April 15, 2026. They left without an incident report. They verbally slurred him as 'a fucking pedo' on the way out. They did not investigate the death threat. They did not arrest anyone." },
+                  { label: "Killer Approaching — Unimpeded", detail: "The person who threatened to murder Dr. McLean is documented, named, and known to police. No action has been taken. No apprehension has occurred. No protection order has been enforced." },
+                  { label: "Response: 'Days or Weeks'", detail: "AbleCare CEO Rachel told Dr. McLean that his request for emergency relocation away from the active threat would take 'some days or some weeks.' This is the sum total of the response." },
+                ].map((item, i) => (
+                  <div key={i} className="bg-zinc-900/60 border border-amber-700/20 rounded-lg p-3">
+                    <p className="text-amber-300 font-bold text-xs mb-1">{item.label}</p>
+                    <p className="text-zinc-400 text-xs leading-relaxed">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Point 4: V2K voices */}
+            <div className="bg-zinc-900 border border-zinc-600/50 rounded-xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[10px] font-black uppercase tracking-widest bg-zinc-700 text-zinc-200 px-2 py-0.5 rounded">🟠 V2K REAL-TIME — VOICES PARROTING "GIVE UP" AND "PEDO"</span>
+              </div>
+              <p className="text-white font-bold text-sm mb-2">During and After the Call: Electronic Voice-to-Skull (V2K) Harassment in Real Time</p>
+              <p className="text-zinc-300 text-sm leading-relaxed mb-3">
+                At the end of the recorded call, Dr. McLean states plainly: <em className="text-amber-200">"The V2K is in the background saying 'give up.'"</em> This is not a metaphor or a complaint about external noise. Voice-to-Skull (V2K) technology — microwave auditory effect weapons capable of transmitting sound directly into the skull without speakers — has been documented in this archive across multiple forensic exhibits and is the subject of its own dedicated evidence page.
+              </p>
+              <p className="text-zinc-300 text-sm leading-relaxed mb-3">
+                The words being delivered are strategically chosen: <strong className="text-white">"give up"</strong> and <strong className="text-white">"pedo."</strong> These are not random. They are the two psychological levers of the targeting operation: manufactured hopelessness and fabricated stigma. The same slur shouted by NSW Police as they walked away — <em className="text-red-300">"fucking pedo"</em> — is now being whispered directly into his skull by electronic means. The slander does not need to be believed. It needs to be repeated. At every layer. By every mechanism. Until the target either internalises it or breaks.
+              </p>
+              <div className="bg-red-950/30 border border-red-700/30 rounded-lg p-3">
+                <p className="text-xs text-red-300 leading-relaxed">
+                  <strong>Forensic significance:</strong> The simultaneous deployment of the same slur ("pedo") by police officers verbally, and by V2K technology audibly, on the same day, is not coincidence. It is coordination. The words are the same because the operation is the same. This is documented. This is archived. This is an ICC exhibit.
+                </p>
+              </div>
+            </div>
+
+            {/* CTA to full transcript */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <a
+                href="/ablecare-murder-threat-call"
+                className="flex items-center justify-center gap-2 bg-red-700 hover:bg-red-600 text-white font-bold text-sm px-5 py-3 rounded-xl transition-colors"
+                data-testid="link-ablecare-transcript"
+              >
+                <FileText size={16} /> Read Full Annotated Transcript
+              </a>
+              <a
+                href="/ndis-surveillance-evidence"
+                className="flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-sm px-5 py-3 rounded-xl transition-colors"
+                data-testid="link-ndis-evidence"
+              >
+                <Shield size={16} /> NDIS Surveillance Evidence
+              </a>
+            </div>
+
+          </div>
+        </motion.div>
+
         {/* ───── LIVE MURDER CASE EMAIL — APRIL 13 — 48 HRS BEFORE KILL HIT — ZERO RESPONSE ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <Card className="bg-zinc-900/70 border-red-900/60">
