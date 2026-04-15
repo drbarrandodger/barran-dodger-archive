@@ -1558,6 +1558,166 @@ export default function UrgentProtectionRequest() {
           </Card>
         </motion.div>
 
+        {/* ───── TONY RIDLEY — RECORDED HONEYPOT CONFESSION ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-gradient-to-br from-red-950/80 via-zinc-950 to-zinc-900 border-2 border-red-700/60 rounded-2xl p-6 md:p-8 shadow-2xl shadow-red-900/20 space-y-5">
+
+            <div className="flex flex-wrap gap-2 mb-1">
+              <span className="bg-red-900 text-red-100 border border-red-700 text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full">Primary Audio Evidence</span>
+              <span className="bg-zinc-800 text-zinc-200 border border-zinc-600 text-xs px-3 py-1 rounded-full">SAS Honeypot Operative</span>
+              <span className="bg-amber-900 text-amber-200 border border-amber-700 text-xs px-3 py-1 rounded-full">$6 Billion Fraud Confession</span>
+              <span className="bg-zinc-900 text-zinc-300 border border-zinc-700 text-xs px-3 py-1 rounded-full">Bill Shorten — Named on Recording</span>
+              <span className="bg-red-950 text-red-300 border border-red-800 text-xs px-3 py-1 rounded-full">Assassination Order — Documented</span>
+            </div>
+
+            <div>
+              <h2 className="text-xl md:text-2xl font-black text-white leading-tight mb-1">
+                He Didn't Know He Was Being Recorded.
+              </h2>
+              <p className="text-[hsl(38,92%,50%)] font-bold text-base leading-snug">
+                Tony Ridley — PhD Counter-Terrorism Surveillance, Ex-SAS, Senior Fraud Investigator — Sent as a Government Honeypot. Barran Recorded the Entire Drugged Session.
+              </p>
+            </div>
+
+            {/* YouTube embed */}
+            <div className="rounded-xl overflow-hidden border border-zinc-700/50 shadow-xl aspect-video w-full">
+              <iframe
+                src="https://www.youtube.com/embed/4vqBFkojD2g"
+                title="Tony Ridley — Paid Government SAS Honeypot Recording — Barran Dodger"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+                data-testid="video-tony-ridley-honeypot-sos"
+              />
+            </div>
+            <p className="text-zinc-500 text-xs text-center">Primary evidence — recorded by Dr. Richard McLean during a drug-facilitated entrapment session. ICC Article 7 exhibit. ABN 78 833 496 164.</p>
+
+            {/* The 8 pillars */}
+            <div className="space-y-4 pt-2">
+
+              {/* Pillar 1 — Who Ridley is */}
+              <div className="bg-zinc-900/60 border border-red-800/30 rounded-xl p-4">
+                <p className="text-red-300 font-black text-xs uppercase tracking-widest mb-2">1 — Who Tony Ridley Is — And Why His Credentials Make This Worse</p>
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  Tony Ridley is not an ordinary criminal. He holds a <strong className="text-white">PhD in counter-terrorism surveillance</strong>, is a former <strong className="text-white">senior fraud investigator</strong> with a track record of exposing financial crime at scale, and carries <strong className="text-white">status of international significance</strong>. He was not chosen despite these credentials — he was chosen <em>because</em> of them. A honeypot agent must be credible enough that if the target ever spoke out, the agent's institutional standing would override the target's account. Against an unprotected, impoverished, disabled whistleblower, those credentials were meant to be decisive. They were not. Because Barran recorded everything.
+                </p>
+              </div>
+
+              {/* Pillar 2 — The drugged session */}
+              <div className="bg-zinc-900/60 border border-red-800/30 rounded-xl p-4">
+                <p className="text-red-300 font-black text-xs uppercase tracking-widest mb-2">2 — The Drugged Entrapment — Sex, Drugs, and a Recording He Didn't Know Existed</p>
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  The operation involved sexual exploitation and drug facilitation — documented instruments of a honeypot entrapment designed to compromise, destabilise, and produce either incriminating material or a breakdown. Ridley believed he was in control of the room. He was not. Dr. McLean recorded the entire session. On that recording, Tony Ridley — speaking freely, confident he was unobserved — disclosed the existence of <strong className="text-white">approximately $6 billion in misappropriated government funds</strong> that he had personally encountered as a fraud investigator. He named <strong className="text-red-300">Bill Shorten</strong> as someone who was aware of those funds. The confession was not elicited. It was volunteered by someone who thought no one was listening.
+                </p>
+              </div>
+
+              {/* Pillar 3 — Shorten */}
+              <div className="bg-zinc-900/60 border border-red-800/30 rounded-xl p-4">
+                <p className="text-red-300 font-black text-xs uppercase tracking-widest mb-2">3 — Bill Shorten — Named on the Recording — His Knowledge and Coordination</p>
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  The Ridley recording establishes three things about Shorten: (a) he was aware of the $6 billion misappropriation; (b) he would have been aware that Dr. McLean had already exposed NDIS corruption and was an <strong className="text-white">unprotected whistleblower</strong>; and (c) the coordinated attack that followed — involving the <strong className="text-white">NDIS, the police, the magistrates court, and Graeme Wells of Victoria Legal Aid</strong> — did not occur in a vacuum. Four independent institutions acting simultaneously against a single disabled whistleblower, at the same moment, with the same suppression purpose, is not coincidence. It is coordination. Coordination requires a coordinator.
+                </p>
+                <div className="grid grid-cols-2 gap-2 mt-3">
+                  {[
+                    { name: "NDIS", action: "Withdrew support. Enabled financial coercive control. Providers weaponised." },
+                    { name: "NSW Police", action: "Deployed against Barran rather than for him. No action on assassination documentation." },
+                    { name: "Magistrates Court", action: "Part of the coordinated judicial pressure. Administrative annihilation documented." },
+                    { name: "Victoria Legal Aid — Graeme Wells", action: "Denied representation to a disabled, impoverished person with an ICC submission." },
+                  ].map((item, i) => (
+                    <div key={i} className="bg-zinc-800/60 border border-zinc-700/30 rounded-lg p-2.5">
+                      <p className="text-[hsl(38,92%,50%)] font-bold text-xs">{item.name}</p>
+                      <p className="text-zinc-400 text-xs mt-1">{item.action}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Pillar 4 — Exile */}
+              <div className="bg-zinc-900/60 border border-red-800/30 rounded-xl p-4">
+                <p className="text-red-300 font-black text-xs uppercase tracking-widest mb-2">4 — Forced Into Political Exile — Removed From the Torture Chamber</p>
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  Following the coordinated institutional attack, Barran was removed from what the archive describes as a torture chamber — an environment of systematic persecution, isolation, and psychological destruction maintained through the combined action of the institutions above. The removal was not voluntary in any meaningful sense: it was the only survivable option after every protective mechanism had been withdrawn or weaponised. The UNHCR recognises this as political exile. It is documented in the submission. The ICC has the record.
+                </p>
+              </div>
+
+              {/* Pillar 5 — Ben, Meraby, NDA */}
+              <div className="bg-zinc-900/60 border border-red-800/30 rounded-xl p-4">
+                <p className="text-red-300 font-black text-xs uppercase tracking-widest mb-2">5 — Ben, Houd Meraby, and the Assassination Order — Confirmed, Not Alleged</p>
+                <p className="text-zinc-300 text-sm leading-relaxed mb-3">
+                  The assassination attempt is not an allegation. It is a documented event confirmed in writing by an independent NDIS provider named <strong className="text-white">Ben</strong>. Ben confirmed that an assassination order had been issued — the trail leads to Shorten — to <strong className="text-red-300">Houd Meraby</strong>, who was presented as an NDIS provider but was not. Meraby is documented as part of a <strong className="text-white">Lebanese corrupt criminal network sent to "erase" Barran</strong> under the cover of disability support.
+                </p>
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  Upon confirming the assassination attempt, Ben was forced to sign a <strong className="text-white">Non-Disclosure Agreement by the secret service</strong>. An NDA signed under intelligence-service compulsion — by a witness to a state-coordinated assassination attempt against a whistleblower — is not a civil contract. It is evidence of consciousness of guilt. It establishes that the intelligence services knew what Ben knew and needed his silence. The NDA does not suppress the knowledge. It documents the suppression attempt. The suppression attempt is now part of the ICC record.
+                </p>
+              </div>
+
+              {/* Pillar 6 — Structural pattern */}
+              <div className="bg-zinc-900/60 border border-red-800/30 rounded-xl p-4">
+                <p className="text-red-300 font-black text-xs uppercase tracking-widest mb-2">6 — Every NDIS Provider — The Same Criminal Structure</p>
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  Ben's confirmation extended beyond Houd Meraby. He confirmed that the criminal structure underlying the Meraby deployment applies to the pattern of NDIS provider conduct across Barran's entire documented history of hospitalisations and entrapments. <strong className="text-white">Every single hospitalisation. Every entrapment. The same structure. The same coordination. The same purpose.</strong> The NDIS — presented as a disability support framework — has been used, in Barran's case, as a mechanism of coercive control, targeted persecution, financial deprivation, and assassination facilitation. Under Article 7 of the Rome Statute, this is the definition of a systematic attack. The ICC has the submission.
+                </p>
+              </div>
+
+              {/* Pillar 7 — Brett / AbleCare continuum */}
+              <div className="bg-zinc-900/60 border border-amber-800/30 rounded-xl p-4">
+                <p className="text-[hsl(38,92%,50%)] font-black text-xs uppercase tracking-widest mb-2">7 — Brett of AbleCare — The Current Iteration of the Same Structure</p>
+                <p className="text-zinc-300 text-sm leading-relaxed mb-3">
+                  Brett of AbleCare is not a separate case. He is the current personnel of the same apparatus that deployed Tony Ridley, that placed Houd Meraby, that silenced Ben, that coordinated the withdrawal of legal aid. The entrapment policy does not change its method — it changes its face. Brett is the current face. And Barran is presently maintained in the same conditions that have applied throughout:
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {[
+                    { condition: "Impoverished", detail: "NDIS funding withheld. AbleCare, TAG (Phillip Glass), Diversitas WA (Sukhi Tear) all documented as blocking approved funds." },
+                    { condition: "Tortured", detail: "Systematic isolation, psychological persecution, multiple hospitalisations used as entrapment instruments rather than treatment." },
+                    { condition: "Surveilled", detail: "V2K technology documented. SAS and intelligence operatives placed as co-tenants and support workers. Ridley himself disclosed the surveillance apparatus." },
+                    { condition: "Denied Legal Aid", detail: "Victoria Legal Aid — Graeme Wells — denied representation. The denial has not been reversed. It is an exhibit." },
+                    { condition: "Deliberately Isolated", detail: "Every support mechanism withdrawn or weaponised. No independent advocacy. No protective relationship that is not documented as part of the targeting apparatus." },
+                    { condition: "Brett — AbleCare", detail: "Received written SMS of imminent murder warning with 2,304-document link. Did not act. Did not file SIRS. Is now part of the permanent record." },
+                  ].map((item, i) => (
+                    <div key={i} className="bg-zinc-800/50 border border-zinc-700/30 rounded-lg p-2.5">
+                      <p className="text-[hsl(38,92%,50%)] font-bold text-xs">{item.condition}</p>
+                      <p className="text-zinc-500 text-xs mt-1">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Pillar 8 — The silence */}
+              <div className="bg-zinc-900/60 border border-red-800/30 rounded-xl p-4">
+                <p className="text-red-300 font-black text-xs uppercase tracking-widest mb-2">8 — Not One Person Has Disproved the Assassination Attempt. Not One.</p>
+                <p className="text-zinc-300 text-sm leading-relaxed mb-3">
+                  The assassination attempt has been in the public record since Ben's written confirmation was documented. It has been in the ICC submission. It has been downloaded 377,608 times. It has been before the UNHCR. In all of that time — Tony Ridley, Bill Shorten, Houd Meraby, Graeme Wells, Brett of AbleCare, the NDIS, NSW Police — not one person has produced a document, statement, or legal filing that challenges, qualifies, or disproves the claim. Under <strong className="text-white">Jones v Dunkel</strong>, their silence is an inferential admission. It has been legally significant from the first day they declined to respond.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { name: "Tony Ridley", status: "Recording exists. PhD operative. Zero challenge filed." },
+                    { name: "Bill Shorten", status: "Named on recording. Former NDIS Minister. Zero response." },
+                    { name: "Houd Meraby", status: "Named by Ben. Assassination operative. Zero response." },
+                    { name: "Graeme Wells — VLA", status: "Denied legal aid. Not reversed. Zero correction." },
+                    { name: "Brett — AbleCare", status: "Received murder-warning SMS. Did not act. Zero response." },
+                    { name: "NSW Police", status: "Verbally slurred Barran on exit. No investigation filed." },
+                  ].map((person, i) => (
+                    <div key={i} className="bg-zinc-800/50 border border-zinc-700/30 rounded-lg p-2.5">
+                      <p className="text-white font-bold text-xs">{person.name}</p>
+                      <p className="text-zinc-400 text-xs mt-0.5">{person.status}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            <a
+              href="/tony-ridley-recorded-confession"
+              className="inline-flex items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-5 py-3 rounded-xl transition-colors text-sm"
+              data-testid="link-tony-ridley-full-page"
+            >
+              <ExternalLink size={15} /> Full Analysis — Tony Ridley Recorded Confession →
+            </a>
+
+          </div>
+        </motion.div>
+
         {/* Key Evidence Links */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <h2 className="text-xl font-black text-white mb-5 flex items-center gap-2">
