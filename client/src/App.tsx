@@ -152,6 +152,7 @@ import TheyAttackedYouWithoutKnowingWhoYouWere from "@/pages/TheyAttackedYouWith
 import TheyDugForDirtButUnearthedDiamonds from "@/pages/TheyDugForDirtButUnearthedDiamonds";
 import ThePublicAdvocateTheySilenced from "@/pages/ThePublicAdvocateTheySilenced";
 import TonyRidleyFullDossier from "@/pages/TonyRidleyFullDossier";
+import { TonyRidleyRecordedConfession } from "@/pages/TonyRidleyRecordedConfession";
 import WhatThisProves from "@/pages/WhatThisProves";
 import ForensicAnalysisIndex from "@/pages/ForensicAnalysisIndex";
 import EvidenceSignificanceRegistry from "@/pages/EvidenceSignificanceRegistry";
@@ -336,6 +337,10 @@ function Router() {
         <Route path="/tony-ridley-confession" component={ThePublicAdvocateTheySilenced} />
         <Route path="/tony-ridley-full-dossier" component={TonyRidleyFullDossier} />
         <Route path="/tony-ridley-exposed" component={TonyRidleyFullDossier} />
+        <Route path="/tony-ridley-recorded-confession" component={TonyRidleyRecordedConfession} />
+        <Route path="/government-sas-honeypot-recording" component={TonyRidleyRecordedConfession} />
+        <Route path="/tony-ridley-6-billion-confession" component={TonyRidleyRecordedConfession} />
+        <Route path="/shorten-assassination-order-documented" component={TonyRidleyRecordedConfession} />
         <Route path="/what-this-proves" component={WhatThisProves} />
         <Route path="/forensic-proof-statement" component={WhatThisProves} />
         <Route path="/forensic-analysis" component={ForensicAnalysisIndex} />
