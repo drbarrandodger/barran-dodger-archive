@@ -1718,6 +1718,140 @@ export default function UrgentProtectionRequest() {
           </div>
         </motion.div>
 
+        {/* ───── MASTER EVIDENCE REGISTER — PREDETERMINED CORRUPTION ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-gradient-to-br from-slate-900 via-red-950/30 to-slate-900 border border-red-700/60 rounded-xl p-6">
+
+            {/* Header */}
+            <div className="flex items-center gap-3 mb-5">
+              <div className="bg-red-700/30 p-3 rounded-lg">
+                <FileText size={26} className="text-red-400" />
+              </div>
+              <div>
+                <h2 className="text-xl font-black text-white leading-tight">
+                  Master Evidence Register — 2,301 Documents
+                </h2>
+                <p className="text-red-400 font-bold text-sm mt-0.5 uppercase tracking-wider">
+                  Proving Predetermined Institutional Corruption Across 35 Years
+                </p>
+              </div>
+            </div>
+
+            {/* Core argument */}
+            <div className="bg-red-950/40 border border-red-700/40 rounded-lg p-5 mb-5">
+              <h3 className="text-white font-black text-base mb-3 flex items-center gap-2">
+                <AlertTriangle size={16} className="text-red-400 flex-shrink-0" />
+                What This Register Proves That No Individual Bad Actor Can Explain
+              </h3>
+              <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                Every NDIS provider who later participated in Barran's mistreatment — Sukhi Tear (Diversitas WA), 
+                Phillip Glass (TAG NSW), Brett Gibbons and Rachel (AbleCare) — is documented in the evidence register.
+                <span className="text-amber-300 font-bold"> But so are 35 years of preceding systemic failure that predates every one of them by years or decades.</span>
+              </p>
+              <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                Entries in this register span from <span className="text-white font-bold">Melbourne Health (2006–2007)</span>, 
+                VCAT rulings <span className="text-white font-bold">(2019)</span>, VOCAT proceedings, Comcare complaints, 
+                WorkSafe denials, AHRC referrals, ATO correspondence, AFSA bankruptcy proceedings, and NSW Police LECC referrals — 
+                every one of them showing the same outcome: denial, obstruction, poverty, and isolation.
+              </p>
+              <p className="text-amber-200 text-sm leading-relaxed font-semibold">
+                Sukhi Tear did not create this apparatus. Phillip Glass did not create this apparatus. 
+                Brett and Rachel at AbleCare did not create this apparatus. They entered a structure 
+                where the outcome for Barran was already decided — documented across 2,301 files, 
+                spanning 35 years, across 40+ agencies — long before any of them ever appeared.
+              </p>
+            </div>
+
+            {/* Before/after timeline */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-5">
+              <div className="bg-slate-800/60 border border-slate-600/50 rounded-lg p-4">
+                <p className="text-red-400 font-black text-xs uppercase tracking-widest mb-2">Already Documented Before They Arrived</p>
+                <ul className="space-y-1 text-slate-300 text-xs">
+                  <li className="flex gap-2"><span className="text-red-400 font-bold flex-shrink-0">2006–07</span> Melbourne Health employment obstruction on record</li>
+                  <li className="flex gap-2"><span className="text-red-400 font-bold flex-shrink-0">2008+</span> WorkSafe / Comcare systematic denial cycle begins</li>
+                  <li className="flex gap-2"><span className="text-red-400 font-bold flex-shrink-0">2010+</span> AHRC, ATO, ASIC — institutional pattern solidified</li>
+                  <li className="flex gap-2"><span className="text-red-400 font-bold flex-shrink-0">2019</span> VCAT fee relief application — documented suppression</li>
+                  <li className="flex gap-2"><span className="text-red-400 font-bold flex-shrink-0">2021</span> NDIS Commission complaints — coordinated non-response</li>
+                  <li className="flex gap-2"><span className="text-red-400 font-bold flex-shrink-0">2023</span> NSW Police LECC referral — Sadleir eviction by NDIS provider</li>
+                </ul>
+              </div>
+              <div className="bg-slate-800/60 border border-slate-600/50 rounded-lg p-4">
+                <p className="text-amber-400 font-black text-xs uppercase tracking-widest mb-2">Statistical Impossibility of Coincidence</p>
+                <ul className="space-y-1 text-slate-300 text-xs">
+                  <li className="flex gap-2"><span className="text-amber-400">◆</span> 2,301 documents from 40+ agencies — all with the same outcome</li>
+                  <li className="flex gap-2"><span className="text-amber-400">◆</span> Every appeal, complaint, and referral denied or ignored</li>
+                  <li className="flex gap-2"><span className="text-amber-400">◆</span> Every legal avenue blocked before being pursued</li>
+                  <li className="flex gap-2"><span className="text-amber-400">◆</span> Every financial avenue closed simultaneously</li>
+                  <li className="flex gap-2"><span className="text-amber-400">◆</span> Forced exile from Australia as the only remaining option</li>
+                  <li className="flex gap-2"><span className="text-amber-400">◆</span> Submitted to ICC and UNHCR as evidence of state-level coordination</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Agency list */}
+            <div className="bg-slate-800/40 border border-slate-600/40 rounded-lg p-5 mb-5">
+              <h3 className="text-white font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <Landmark size={14} className="text-amber-400" />
+                Every Agency, Institution, and Body Documented as Acting to Cause Barran's Detriment or Poverty
+              </h3>
+              <p className="text-slate-400 text-xs leading-relaxed">
+                Victorian Civil &amp; Administrative Tribunal (VCAT), NSW Civil &amp; Administrative Tribunal (NCAT), 
+                Victims of Crime Assistance Tribunal (VOCAT), Administrative Appeals Tribunal (AAT), 
+                Federal Court of Australia, Federal Circuit and Family Court of Australia, Court Services Victoria, 
+                Magistrates' Court of Victoria, Victoria Police, Australian Federal Police, NSW Police Force, 
+                Law Enforcement Conduct Commission (LECC), National Disability Insurance Agency (NDIA), 
+                NDIS Quality and Safeguards Commission, Department of Social Services, 
+                Department of Health and Aged Care, Department of Human Services, Department of Finance, 
+                Department of the Prime Minister and Cabinet, Attorney-General's Department, 
+                Australian Government Legal Service (AGLS), Comcare, WorkSafe Victoria, WorkCover, 
+                Accident Compensation Conciliation Service (ACCS), Australian Securities and Investments Commission (ASIC), 
+                Australian Financial Security Authority (AFSA), Australian Health Practitioner Regulation Agency (AHPRA), 
+                Australian Human Rights Commission (AHRC), Commonwealth Ombudsman, Victorian Ombudsman, 
+                Australian Taxation Office (ATO), Australian Tax Office, Centrelink, 
+                Australian Financial Complaints Authority (AFCA), Access Program (Justice Connect), 
+                AED Legal Centre, Victoria Legal Aid (VLA), 
+                Melbourne Health, Eastern Health, 
+                Ascot Vale Housing Office, Footscray Housing Office, Brimbank City Council, 
+                Commonwealth Bank of Australia, Bendigo Bank, Bankwest, 
+                AustralianSuper, Aware Super, Health Super, 
+                Liberty Behavioural Services, Aligned Community Care, Central Care Services, CRG Healthcare, 
+                Diversitas WA (Sukhi Tear), TAG NSW (Phillip Glass), AbleCare (Brett Gibbons / Rachel), 
+                Accident &amp; Health International (AHI), 
+                Bill Shorten (NDIS Minister — named on recorded confession), 
+                Anthony Albanese (Prime Minister — Prime Minister and Cabinet correspondence on file), 
+                Graeme Wells (Victoria Legal Aid — denied access to justice), 
+                Houd Meraby (Lebanese criminal network — NDIS Commission coordination confirmed)
+              </p>
+            </div>
+
+            {/* What it proves */}
+            <div className="bg-amber-950/30 border border-amber-700/40 rounded-lg p-4 mb-5">
+              <h3 className="text-amber-300 font-black text-sm uppercase tracking-wider mb-2">What This File Proves</h3>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                The 27,085-line Master Evidence Register is a complete chronological inventory of 2,301 documents 
+                proving that the pattern of institutional denial was <span className="text-white font-bold">not reactive to Barran's behaviour — 
+                it was proactive, coordinated, and predetermined</span> well before Sukhi Tear, Phillip Glass, or the AbleCare 
+                employees ever entered Barran's life. It proves systemic conspiracy, not coincidence. 
+                It has been submitted in full to the ICC under Article 7 and to UNHCR Geneva as evidence of 
+                state-sponsored persecution. <span className="text-amber-300 font-bold">No individual named in this register has challenged, 
+                disputed, or sought to correct the record.</span>
+              </p>
+            </div>
+
+            {/* Download button */}
+            <a
+              href="/documents/master-evidence-register-2301-documents.txt"
+              download="Master-Evidence-Register-2301-Documents.txt"
+              data-testid="download-master-evidence-register"
+              className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-bold px-5 py-3 rounded-lg transition-colors text-sm"
+            >
+              <Download size={16} />
+              Download Master Evidence Register — 2,301 Documents (TXT, 27,085 lines)
+            </a>
+
+          </div>
+        </motion.div>
+
         {/* Key Evidence Links */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <h2 className="text-xl font-black text-white mb-5 flex items-center gap-2">
