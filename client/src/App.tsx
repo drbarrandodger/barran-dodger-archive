@@ -166,6 +166,7 @@ import { PolicComplicityDeathThreat } from "@/pages/PolicComplicityDeathThreat";
 import HoneyTrapPhillipGlass from "@/pages/HoneyTrapPhillipGlass";
 import BitcoinProof from "@/pages/BitcoinProof";
 import HolyReckoning from "@/pages/HolyReckoning";
+import AbleCareMurderThreatCall from "@/pages/AbleCareMurderThreatCall";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -423,6 +424,10 @@ function Router() {
         <Route path="/holy-reckoning" component={HolyReckoning} />
         <Route path="/holy-reckoning-ndis-plea" component={HolyReckoning} />
         <Route path="/ndis-provider-entrapment-plea" component={HolyReckoning} />
+        <Route path="/ablecare-murder-threat-call" component={AbleCareMurderThreatCall} />
+        <Route path="/ablecare-transcript" component={AbleCareMurderThreatCall} />
+        <Route path="/ablecare-ceo-duty-of-care-breach" component={AbleCareMurderThreatCall} />
+        <Route path="/ndis-murder-threat-transcript" component={AbleCareMurderThreatCall} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/archive-index" component={ArchiveIndex} />
