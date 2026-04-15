@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { AlertTriangle, MapPin, Phone, Mail, Shield, FileText, Globe, Heart, Scale, Zap, ExternalLink, Download, Eye, Home, Landmark, Lock, Camera, MessageSquare, UserX, Link2 } from "lucide-react";
+import { AlertTriangle, MapPin, Phone, Mail, Shield, FileText, Globe, Heart, Scale, Zap, ExternalLink, Download, Eye, Home, Landmark, Lock, Camera, MessageSquare, UserX, Link2, Share2, Check, Copy } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -19,7 +20,96 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
+const SOS_URL = "https://barrandodger.com/urgent-protection-request";
+
+const TWEET_TEXT = encodeURIComponent(
+  "🚨 URGENT SOS: Dr. Richard McLean is under active death threat at Long Jetty NSW. ICC Article 7 filed. UNHCR Geneva. 2,304 blockchain docs. 368K+ downloads. Zero institutional rebuttal.\n\nShare now:\n" + SOS_URL + "\n\n#BarranDodger #WhistleblowerProtection #ICC #CrimesAgainstHumanity #AustralianGovernment"
+);
+
+const WHATSAPP_TEXT = encodeURIComponent(
+  "🚨 URGENT SOS 🚨\n\nDr. Richard McLean (Barran Dodger) is under an active death threat at 55B Archbold Road, Long Jetty NSW. Police attended — no event number recorded. He has submitted 2,304 blockchain-verified forensic documents to the ICC (Article 7 — crimes against humanity) and the UNHCR in Geneva.\n\n📊 368,000+ downloads across 6 continents\n✅ 665/665 propositions verified\n❌ Zero institutional rebuttal to any document\n\nHe needs physical harbouring NOW. Please read and share:\n" + SOS_URL + "\n\n#BarranDodger #WhistleblowerProtection #ICCSubmission #AustralianGovernment #HumanRights"
+);
+
+const LINKEDIN_TEXT = encodeURIComponent(
+  "Dr. Richard McLean — known as Barran Dodger — is a forensically documented whistleblower with 2,304 blockchain-verified documents submitted to the International Criminal Court under Article 7 (crimes against humanity) and the UNHCR in Geneva.\n\nHe is currently under an active death threat at 55B Archbold Road, Long Jetty NSW with documented police non-response.\n\n📊 368,000+ downloads across 6 continents\n✅ 665/665 propositions verified · 55 consecutive perfect scores\n❌ Zero institutional rebuttal to any document in 35 years\n\nThis is the documented record of systematic Australian government corruption. Please read and share:\n" + SOS_URL
+);
+
+const EMAIL_SUBJECT = encodeURIComponent("URGENT — Physical Protection Request: Dr. Richard McLean (Barran Dodger)");
+const EMAIL_BODY = encodeURIComponent(
+  "I am writing to urgently draw your attention to the situation of Dr. Richard McLean, known publicly as Barran Dodger.\n\nDr. McLean is located at 55B Archbold Road, Long Jetty NSW, and is under an active death threat from a confirmed former SAS operative. Police attended but recorded no event number — a documented anomaly in the archive.\n\nHe has submitted 2,304 blockchain-verified forensic documents to:\n• The International Criminal Court (The Hague) under Article 7 — Crimes Against Humanity\n• The United Nations High Commissioner for Refugees (UNHCR) in Geneva\n\nKey facts:\n• 368,000+ downloads across 6 continents\n• 665/665 AI-verified propositions — zero contradictions in 62 analyses\n• 55 consecutive perfect forensic scores\n• Zero institutional rebuttal to any document in 35 years\n\nHe urgently requires physical harbouring — churches, private investors, advocates, and journalists are encouraged to respond.\n\nFull documentation: " + SOS_URL + "\n\nThis is a matter of documented, blockchain-verified public record."
+);
+
+const REDDIT_TITLE = encodeURIComponent("Australian whistleblower with ICC Article 7 submission is under active death threat — 2,304 documents, 368K+ downloads, zero institutional rebuttal [Full Documentation]");
+
+const PLATFORMS = [
+  {
+    label: "X / Twitter",
+    color: "bg-black hover:bg-zinc-900 border border-zinc-700",
+    textColor: "text-white",
+    url: `https://twitter.com/intent/tweet?text=${TWEET_TEXT}`,
+    icon: "𝕏",
+  },
+  {
+    label: "Facebook",
+    color: "bg-[#1877F2] hover:bg-[#166ee1]",
+    textColor: "text-white",
+    url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SOS_URL)}&quote=${encodeURIComponent("🚨 URGENT SOS: Dr. Richard McLean is under active death threat. ICC Article 7 filed. 2,304 blockchain-verified documents. 368K+ downloads. Zero institutional rebuttal. Read and share: " + SOS_URL + " #BarranDodger #WhistleblowerProtection")}`,
+    icon: "f",
+  },
+  {
+    label: "WhatsApp",
+    color: "bg-[#25D366] hover:bg-[#20bb5a]",
+    textColor: "text-white",
+    url: `https://wa.me/?text=${WHATSAPP_TEXT}`,
+    icon: "W",
+  },
+  {
+    label: "Telegram",
+    color: "bg-[#2AABEE] hover:bg-[#1e96d1]",
+    textColor: "text-white",
+    url: `https://t.me/share/url?url=${encodeURIComponent(SOS_URL)}&text=${encodeURIComponent("🚨 URGENT SOS: Dr. Richard McLean is under active death threat at Long Jetty NSW. ICC Article 7 filed. UNHCR Geneva. 2,304 blockchain-verified forensic documents. 368K+ downloads. Zero institutional rebuttal. Read and share: " + SOS_URL + " #BarranDodger #WhistleblowerProtection #ICCSubmission")}`,
+    icon: "✈",
+  },
+  {
+    label: "LinkedIn",
+    color: "bg-[#0A66C2] hover:bg-[#0958a8]",
+    textColor: "text-white",
+    url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SOS_URL)}&summary=${LINKEDIN_TEXT}`,
+    icon: "in",
+  },
+  {
+    label: "Reddit",
+    color: "bg-[#FF4500] hover:bg-[#e03d00]",
+    textColor: "text-white",
+    url: `https://www.reddit.com/submit?url=${encodeURIComponent(SOS_URL)}&title=${REDDIT_TITLE}`,
+    icon: "r/",
+  },
+  {
+    label: "Threads",
+    color: "bg-zinc-900 hover:bg-zinc-800 border border-zinc-700",
+    textColor: "text-white",
+    url: `https://www.threads.net/intent/post?text=${TWEET_TEXT}`,
+    icon: "@",
+  },
+  {
+    label: "Email",
+    color: "bg-zinc-700 hover:bg-zinc-600",
+    textColor: "text-white",
+    url: `mailto:?subject=${EMAIL_SUBJECT}&body=${EMAIL_BODY}`,
+    icon: "✉",
+  },
+];
+
 export default function UrgentProtectionRequest() {
+  const [copied, setCopied] = useState(false);
+
+  function copyLink() {
+    navigator.clipboard.writeText(SOS_URL).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    });
+  }
+
   return (
     <div className="min-h-screen bg-black text-white">
       <SEO
@@ -58,6 +148,65 @@ export default function UrgentProtectionRequest() {
             </div>
           </div>
         </motion.div>
+
+        {/* ===== SHARE THIS SOS ===== */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-gradient-to-br from-red-950/60 via-zinc-900 to-zinc-950 border-2 border-red-700/50 rounded-2xl p-6 md:p-8 shadow-2xl shadow-red-900/20">
+
+            <div className="flex items-center gap-3 mb-2">
+              <Share2 size={22} className="text-red-400" />
+              <h2 className="text-xl font-black text-white">Share This SOS</h2>
+            </div>
+            <p className="text-zinc-400 text-sm mb-1">
+              Every share is a witness. Every platform is a jurisdiction. Every person who reads this is a potential protector.
+            </p>
+            <p className="text-red-400 text-xs font-bold mb-6 uppercase tracking-wider">
+              Pre-loaded with hashtags · Full briefing text · One click to any platform
+            </p>
+
+            {/* Platform grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+              {PLATFORMS.map((p) => (
+                <a
+                  key={p.label}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid={`share-${p.label.toLowerCase().replace(/[^a-z]/g, "-")}`}
+                  className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-black text-sm transition-all ${p.color} ${p.textColor} select-none`}
+                >
+                  <span className="text-base leading-none">{p.icon}</span>
+                  <span>{p.label}</span>
+                </a>
+              ))}
+            </div>
+
+            {/* Copy link row */}
+            <div className="flex items-center gap-3">
+              <div className="flex-1 bg-zinc-950 border border-zinc-700/60 rounded-xl px-4 py-3 text-xs text-zinc-400 font-mono truncate select-all">
+                {SOS_URL}
+              </div>
+              <button
+                onClick={copyLink}
+                data-testid="button-copy-sos-link"
+                className={`flex items-center gap-2 rounded-xl px-5 py-3 font-black text-sm transition-all shrink-0 ${copied ? "bg-green-700 text-white" : "bg-red-700 hover:bg-red-600 text-white"}`}
+              >
+                {copied ? <><Check size={15} /> Copied!</> : <><Copy size={15} /> Copy Link</>}
+              </button>
+            </div>
+
+            {/* Hashtag strip */}
+            <div className="mt-5 flex flex-wrap gap-2">
+              {["#BarranDodger", "#WhistleblowerProtection", "#ICC", "#CrimesAgainstHumanity", "#AustralianGovernment", "#UNHCR", "#HumanRights", "#NDIS", "#ICCSubmission", "#LiveMurderCase", "#ForensicDocumentation", "#2304Documents"].map((tag) => (
+                <span key={tag} className="text-[11px] bg-zinc-800 text-red-400 border border-red-900/30 rounded-full px-3 py-0.5 font-mono font-bold select-all">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+          </div>
+        </motion.div>
+        {/* ===== END SHARE THIS SOS ===== */}
 
         {/* My Story — YouTube Video */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
