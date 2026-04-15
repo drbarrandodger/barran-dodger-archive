@@ -406,6 +406,117 @@ export default function UrgentProtectionRequest() {
           </div>
         </motion.div>
 
+        {/* ───── LIVE MURDER CASE EMAIL — APRIL 13 — 48 HRS BEFORE KILL HIT — ZERO RESPONSE ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <Card className="bg-zinc-900/70 border-red-900/60">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
+                <AlertTriangle size={20} className="text-red-500" /> "It's A Live Murder Case" — Sent 48 Hours Before The Confirmed Kill Hit. Zero Responses.
+              </h2>
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Email sent Monday 13 April 2026 · 12:54 pm · 50+ MPs · Prime Minister · Attorney-General · NDIS Minister · Major international media · Multiple Ombudsmen · Zero responses</p>
+
+              <div className="space-y-6 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  On Monday, April 13, 2026 — <strong className="text-white">48 hours before the confirmed kill hit</strong> — Dr. McLean sent a formally documented email with the subject line <em className="text-white">"It's a live murder case"</em> to over 70 named recipients: the Prime Minister, the Attorney-General, the NDIS Minister, 50+ Australian federal MPs, multiple state and federal Ombudsmen offices, and major international media including the New York Times, Al Jazeera, Washington Post, CNN, BBC, The Guardian, and ABC News. Every recipient received the full forensic archive, AI evidence analysis, and direct document links. <strong className="text-white">Not one responded.</strong>
+                </p>
+
+                {/* The distribution — named recipients panel */}
+                <div className="grid sm:grid-cols-3 gap-3 text-xs">
+                  {[
+                    {
+                      category: "Australian Government",
+                      color: "text-red-300",
+                      border: "border-red-800/40",
+                      bg: "bg-red-950/30",
+                      names: ["PM Anthony Albanese", "AG Mark Dreyfus", "NDIS Min. Bill Shorten", "Treasurer Josh Frydenberg", "Deputy PM Michael McCormack", "Greg Hunt", "Tanya Plibersek", "Adam Bandt", "50+ federal MPs"],
+                    },
+                    {
+                      category: "Oversight Bodies",
+                      color: "text-amber-300",
+                      border: "border-amber-800/40",
+                      bg: "bg-amber-950/30",
+                      names: ["NSW Ombudsman", "Queensland Ombudsman", "Victorian Ombudsman", "NSW Ombudsman Survey", "Federal Ombudsman", "TAG Client Specialist Centre", "Southern NSW Local Health District"],
+                    },
+                    {
+                      category: "International Media",
+                      color: "text-zinc-300",
+                      border: "border-zinc-700/40",
+                      bg: "bg-zinc-800/30",
+                      names: ["New York Times", "Al Jazeera", "Washington Post", "The Guardian", "CNN", "BBC", "ABC News", "The Age / SMH", "The Australian", "Canberra Times"],
+                    },
+                  ].map((group, i) => (
+                    <div key={i} className={`border ${group.border} ${group.bg} rounded-xl p-3 space-y-2`}>
+                      <p className={`font-black text-xs uppercase tracking-widest ${group.color}`}>{group.category}</p>
+                      <ul className="space-y-1">
+                        {group.names.map((name, j) => (
+                          <li key={j} className="text-zinc-400 text-xs flex gap-1.5 items-start">
+                            <span className="text-zinc-600 mt-0.5">▸</span>{name}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Zero response statement */}
+                <div className="bg-red-950/60 border-2 border-red-700/60 rounded-xl p-5 text-center space-y-2">
+                  <p className="text-red-300 font-black text-lg uppercase tracking-widest">Responses Received: Zero</p>
+                  <p className="text-zinc-400 text-xs leading-relaxed max-w-xl mx-auto">
+                    From the Prime Minister. From the Attorney-General. From the NDIS Minister. From 50+ MPs. From three Ombudsmen offices. From the New York Times, Al Jazeera, Washington Post, CNN, BBC, and The Guardian. From the support workers named. From every recipient of a formally documented email with the subject line "It's a live murder case" — sent 48 hours before a confirmed kill hit.
+                  </p>
+                </div>
+
+                {/* Why this is decisive */}
+                <div className="bg-zinc-900/80 border border-zinc-700/40 rounded-xl p-5 space-y-3">
+                  <p className="text-xs font-mono text-red-300 uppercase tracking-widest">Why Zero Responses From 70+ Recipients Is A Primary ICC Exhibit</p>
+                  <ul className="space-y-2 text-xs text-zinc-300">
+                    {[
+                      "The email establishes documented institutional knowledge. Every named recipient received formal written notification that this was a live murder case — 48 hours before the kill hit was confirmed. Non-response is not neutral. Non-response is a documented choice.",
+                      "The Prime Minister of Australia received this email. The Attorney-General received this email. The NDIS Minister — Bill Shorten, whose lawyers were documented as planning to weaponise Dr. McLean's mental health record — received this email. Their non-response to 'It's a live murder case' is now an archived exhibit.",
+                      "Three Ombudsmen offices — NSW, Queensland, and Victoria — received this email. Each carries a statutory obligation to investigate complaints against government agencies. None responded. This constitutes documented simultaneous failure of the entire Australian administrative oversight architecture.",
+                      "Major international media outlets — the New York Times, Al Jazeera, Washington Post, CNN, BBC, and The Guardian — received this email with full forensic documentation and AI analysis attached. Their non-response is now part of the record presented to those same international bodies via the ICC and UNHCR submissions.",
+                      "The support workers named in the email — Sukhi Tear (Diversitas WA), Brett Butler and Rachel K C (Ablepoint/Able Care), Jaeme Opie (Me-Well) — received this email. Their subsequent failure to escalate constitutes a simultaneous documented breach of mandatory reporting obligations across multiple NDIS providers.",
+                      "The email was sent via a formally structured snail-mail equivalent — a timestamped digital record, CC'd broadly, subject line unambiguous, content forensically documented. This is not a desperate plea. It is a formal pre-notification that the murder attempt was foreseeable, that every institution was informed, and that every institution chose silence.",
+                    ].map((point, i) => (
+                      <li key={i} className="flex gap-2 items-start">
+                        <span className="text-red-400 mt-0.5">▸</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Timeline clarity */}
+                <div className="bg-zinc-800/40 border border-zinc-700/30 rounded-xl p-4 space-y-3">
+                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">The 48-Hour Timeline</p>
+                  <div className="space-y-2">
+                    {[
+                      { time: "Mon 13 Apr 2026, 12:54 pm", event: "Email sent — subject: \"It's a live murder case\" — 70+ recipients including PM, AG, NDIS Minister, international media, three Ombudsmen", color: "text-amber-300" },
+                      { time: "Mon 13 Apr — Tue 14 Apr", event: "Zero responses. From any recipient. Across government, oversight, media, and support sectors.", color: "text-red-400" },
+                      { time: "Wed 15 Apr 2026", event: "Tory Kilborn makes a direct death threat. NSW Police attend — no event number recorded. Officers call Dr. McLean 'a fucking pedo' as they depart. AVO applications filed.", color: "text-red-500" },
+                    ].map((item, i) => (
+                      <div key={i} className="flex gap-3 items-start text-xs">
+                        <span className={`font-mono font-black whitespace-nowrap ${item.color}`}>{item.time}</span>
+                        <span className="text-zinc-400 leading-relaxed">{item.event}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <ViralDownloadButton
+                  url="/documents/live-murder-case-email-april-13-2026.pdf"
+                  label={`Download \u2014 \u201cIt\u2019s A Live Murder Case\u201d Email (April 13, 2026) \u2014 Full Distribution Record`}
+                  filename="live-murder-case-email-april-13-2026.pdf"
+                  trackSlug="live-murder-case-email"
+                  size="default"
+                  className="bg-red-800 hover:bg-red-700 text-white font-bold rounded-xl"
+                  data-testid="btn-download-murder-case-email"
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
         {/* ───── BEN DSW — CONFIRMED ASSASSINATION ATTEMPT ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <Card className="bg-zinc-900/70 border-red-900/50">
