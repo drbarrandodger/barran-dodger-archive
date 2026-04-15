@@ -165,6 +165,7 @@ import BeautifulThreat from "@/pages/BeautifulThreat";
 import { PolicComplicityDeathThreat } from "@/pages/PolicComplicityDeathThreat";
 import HoneyTrapPhillipGlass from "@/pages/HoneyTrapPhillipGlass";
 import BitcoinProof from "@/pages/BitcoinProof";
+import HolyReckoning from "@/pages/HolyReckoning";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -419,6 +420,9 @@ function Router() {
         <Route path="/bitcoin-proof" component={BitcoinProof} />
         <Route path="/blockchain-proof" component={BitcoinProof} />
         <Route path="/bitcoin-timestamp" component={BitcoinProof} />
+        <Route path="/holy-reckoning" component={HolyReckoning} />
+        <Route path="/holy-reckoning-ndis-plea" component={HolyReckoning} />
+        <Route path="/ndis-provider-entrapment-plea" component={HolyReckoning} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/archive-index" component={ArchiveIndex} />
