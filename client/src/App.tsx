@@ -92,6 +92,7 @@ import HistoryKeepsReceipts from "@/pages/HistoryKeepsReceipts";
 import AbsorbedErasure from "@/pages/AbsorbedErasure";
 import SurvivalWasTheWarning from "@/pages/SurvivalWasTheWarning";
 import GodWillMakeYouFamous from "@/pages/GodWillMakeYouFamous";
+import GodHasMyBack from "@/pages/GodHasMyBack";
 import DivineBeforeYourTime from "@/pages/DivineBeforeYourTime";
 import BloodlineOfGod from "@/pages/BloodlineOfGod";
 import { TheLastGod } from "@/pages/TheLastGod";
@@ -279,6 +280,10 @@ function Router() {
         <Route path="/absorbed-the-erasure" component={AbsorbedErasure} />
         <Route path="/survival-was-the-warning" component={SurvivalWasTheWarning} />
         <Route path="/god-will-make-you-famous" component={GodWillMakeYouFamous} />
+        <Route path="/god-has-my-back-when-people-dont" component={GodHasMyBack} />
+        <Route path="/when-people-dont-god-does" component={GodHasMyBack} />
+        <Route path="/god-has-my-back" component={GodHasMyBack} />
+        <Route path="/no-one-will-help-you-they-said" component={GodHasMyBack} />
         <Route path="/divine-before-your-time" component={DivineBeforeYourTime} />
         <Route path="/bloodline-of-god" component={BloodlineOfGod} />
         <Route path="/the-last-god" component={TheLastGod} />
