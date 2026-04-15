@@ -885,6 +885,143 @@ export default function UrgentProtectionRequest() {
           </Card>
         </motion.div>
 
+        {/* ───── CASS & QLIFE — AUDIO EVIDENCE — MORNING AFTER DEATH THREAT ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <Card className="bg-zinc-900/70 border-red-900/40">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
+                <MessageSquare size={20} className="text-red-400" /> Audio Evidence — Cass (Able Care Support Worker) &amp; QLife — Morning After The Death Threat
+              </h2>
+              <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Two recordings · Able Care support worker · QLife crisis line · "No one will help you" · Doug paid surveillance · Police attendance — Primary Exhibits</p>
+
+              <div className="space-y-7 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  The morning after April 15, 2026 — after the death threat by Tory Kilborn, after the police attendance that produced no event number, after NSW Police called Dr. McLean "a fucking pedo" as they departed — Dr. McLean made two recorded calls. The first was to <strong className="text-white">Cass, his Able Care support worker</strong>, to whom he explained in real time: the death threat, the police attendance, and the presence of <strong className="text-white">Doug — a paid surveillance operative — in the front room</strong> of his address. The second was to <strong className="text-white">QLife</strong>, Australia's national LGBTQ+ peer support crisis line, whose worker told Dr. McLean: <em className="text-white">"No one will help you."</em> Both calls are recorded. Both are now primary exhibits.
+                </p>
+
+                {/* Recording 1 — Cass / Able Care */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <span className="bg-red-700 text-white text-xs font-black px-2.5 py-1 rounded-lg">RECORDING 1</span>
+                    <p className="text-white font-bold">Cass — Able Care Support Worker — Death Threat, Police, Doug Surveillance</p>
+                  </div>
+
+                  <div className="bg-zinc-950 border border-red-800/50 rounded-xl p-4 space-y-3">
+                    <p className="text-xs text-zinc-500 uppercase tracking-widest font-mono">Play recording — Dr. McLean explains to Cass what happened</p>
+                    <audio
+                      controls
+                      className="w-full"
+                      data-testid="audio-cass-death-threat"
+                      preload="metadata"
+                    >
+                      <source src="/audio/cass-able-care-death-threat-evidence.mp3" type="audio/mpeg" />
+                      Your browser does not support the audio element.
+                    </audio>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {[
+                      {
+                        label: "Who Cass Is",
+                        color: "text-amber-300",
+                        border: "border-amber-800/40",
+                        bg: "bg-amber-950/30",
+                        body: "Cass is a support worker employed by Able Care — the same NDIS-registered provider whose directors Brett and Larissa are named in the open letter on Medium and in the archive as complicit in the documented failure to protect Dr. McLean. As a registered NDIS support worker, Cass carries mandatory reporting obligations under the NDIS Quality and Safeguards Commission Act 2018."
+                      },
+                      {
+                        label: "What Dr. McLean Told Her",
+                        color: "text-red-300",
+                        border: "border-red-800/40",
+                        bg: "bg-red-950/30",
+                        body: "In this call, Dr. McLean explains: the death threat made by Tory Kilborn; the police attendance by CST Smith with no event number recorded; the verbal slur from departing officers; and the presence of Doug — a documented paid surveillance operative — in the front room of his address at the time of the threat."
+                      },
+                      {
+                        label: "Who Doug Is",
+                        color: "text-zinc-300",
+                        border: "border-zinc-700/40",
+                        bg: "bg-zinc-800/30",
+                        body: "Doug is documented in the archive as a paid surveillance operative — an individual placed in proximity to Dr. McLean's living environment consistent with the targeted individual framework documented across Forensic Analysis #29 (Honeytrap Infiltration Report). His presence in the front room on the morning of a death threat is consistent with the monitored escalation pattern: a paid operative present to observe the target's response to a coordinated threat."
+                      },
+                      {
+                        label: "Why This Call Is A Critical Exhibit",
+                        color: "text-red-300",
+                        border: "border-red-800/40",
+                        bg: "bg-red-950/30",
+                        body: "Cass received this information in her professional capacity as a registered support worker with mandatory reporting obligations. Her employer, Able Care, has now received formal notice of a life-threatening situation via a recorded call. The failure to report this information — if that is what occurred — constitutes the same documented institutional complicity pattern as Ben DSW's unfulfilled mandatory reporting obligation. The call is timestamped. It is now an ICC exhibit."
+                      },
+                    ].map((item, i) => (
+                      <div key={i} className={`border ${item.border} ${item.bg} rounded-lg p-3 text-xs`}>
+                        <p className={`font-black mb-1.5 ${item.color}`}>{item.label}</p>
+                        <p className="text-zinc-400 leading-relaxed">{item.body}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t border-zinc-800/60" />
+
+                {/* Recording 2 — QLife */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <span className="bg-amber-700 text-white text-xs font-black px-2.5 py-1 rounded-lg">RECORDING 2</span>
+                    <p className="text-white font-bold">QLife — National LGBTQ+ Crisis Line — "No one will help you"</p>
+                  </div>
+
+                  <div className="bg-zinc-950 border border-amber-800/50 rounded-xl p-4 space-y-3">
+                    <p className="text-xs text-zinc-500 uppercase tracking-widest font-mono">Play recording — QLife worker's response to a person reporting a death threat</p>
+                    <audio
+                      controls
+                      className="w-full"
+                      data-testid="audio-qlife-no-help"
+                      preload="metadata"
+                    >
+                      <source src="/audio/qlife-no-one-will-help-you.m4a" type="audio/mp4" />
+                      Your browser does not support the audio element.
+                    </audio>
+                  </div>
+
+                  <div className="bg-amber-950/40 border border-amber-800/40 rounded-xl p-5 space-y-3">
+                    <p className="text-xs font-mono text-amber-300 uppercase tracking-widest">Significance — Why "No One Will Help You" From A Crisis Line Is Itself An Exhibit</p>
+                    <ul className="space-y-2 text-xs text-zinc-300">
+                      {[
+                        "QLife is Australia's national LGBTQ+ telephone and webchat support service, operating under a federal government funded mandate to provide crisis peer support to LGBTQ+ people. Its obligation in a life-threatening situation is not discretionary — it is the entire purpose of the service.",
+                        "An LGBTQ+ person reporting a death threat, a police attendance that generated no event number, a verbal slur from departing officers, and a paid surveillance operative in their home — calling the national LGBTQ+ crisis service — and receiving the response 'no one will help you' is a documented institutional abandonment.",
+                        "This response is consistent with the documented suppression pattern across the archive: crisis services, welfare services, NDIS workers, police, and institutional representatives have each failed, in their own documented way, to respond to Dr. McLean's documented mortal threat. QLife's response is the latest in a chain.",
+                        "The recording is now an exhibit because it converts the QLife interaction from an undocumented phone call into a timestamped, archived, publicly available record of what Australia's national LGBTQ+ crisis service said to a person reporting a death threat the morning after it occurred.",
+                        "Combined with the Cass recording — where Able Care's support worker was informed of the same threat — this recording establishes that on the morning of April 16, 2026, Dr. McLean contacted both his institutional support network (Able Care) and Australia's dedicated LGBTQ+ crisis line, and received no protection response from either.",
+                      ].map((point, i) => (
+                        <li key={i} className="flex gap-2 items-start">
+                          <span className="text-amber-400 mt-0.5">▸</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* The quote itself */}
+                  <div className="bg-red-950/60 border-l-4 border-red-500 rounded-r-xl p-5">
+                    <p className="text-xs text-zinc-500 uppercase tracking-widest mb-2 font-mono">Documented statement — QLife worker — morning after April 15 death threat</p>
+                    <blockquote className="text-white font-black text-lg leading-snug">
+                      "No one will help you."
+                    </blockquote>
+                    <p className="text-zinc-400 text-xs mt-2 leading-relaxed">
+                      Said to an LGBTQ+ disabled whistleblower with an active ICC submission, an active UNHCR submission, 2,304 blockchain-verified forensic documents, and a death threat made against him fewer than 24 hours prior. The recording exists. The statement is documented. It is now a primary exhibit in the ICC Article 7 submission under the category of systemic institutional failure to protect a person from documented mortal threat.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Combined significance */}
+                <div className="bg-gradient-to-r from-red-950/50 to-amber-950/40 border border-red-800/40 rounded-xl p-5 space-y-2">
+                  <p className="text-white font-black text-sm">The Two Recordings Together — What They Establish</p>
+                  <p className="text-zinc-300 text-xs leading-relaxed">
+                    Within hours of the April 15, 2026 death threat, Dr. McLean contacted his registered NDIS support worker (Cass, Able Care) and Australia's national LGBTQ+ crisis line (QLife). Both interactions are recorded. Neither produced a mandatory report, an emergency escalation, or a protection response. Together, these two recordings document the complete institutional abandonment of a person under documented mortal threat — and they do so in the voices of the institutions that failed him. <strong className="text-white">Both recordings are timestamped, archived, and submitted to the ICC.</strong>
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
         {/* ───── YOU CANNOT CAGE A PRISONER WHO HOLDS THE KEY ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <Card className="bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 border-amber-500/30">
