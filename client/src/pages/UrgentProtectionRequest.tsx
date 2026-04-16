@@ -19,6 +19,7 @@ import benConsensualSex from "@assets/IMG_0352_1776208003721.png";
 import heraldSunArticle from "@assets/2023-02-18_04.00.18_1776317136588.jpeg";
 import benUnSwitzerland from "@assets/IMG_1003_1776317163067.png";
 import benShortenPolice from "@assets/IMG_3289_1776317163067.png";
+import troyDeathThreat from "@assets/IMG_4814_1776365102883.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -920,6 +921,151 @@ export default function UrgentProtectionRequest() {
                   </div>
                 ))}
               </div>
+            </div>
+
+          </div>
+        </motion.div>
+
+        {/* ───── TROY — DIRECT DEATH THREAT — TEXT MESSAGE EVIDENCE ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-gradient-to-br from-red-950/80 via-zinc-900 to-zinc-950 border-2 border-red-700/60 rounded-2xl p-6 md:p-8 shadow-2xl shadow-red-900/30">
+
+            <div className="flex items-center gap-3 mb-2">
+              <div className="bg-red-600/20 p-2 rounded-lg">
+                <AlertTriangle size={20} className="text-red-400" />
+              </div>
+              <div>
+                <div className="inline-flex items-center gap-2 bg-red-700/40 text-red-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-1 animate-pulse">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-400 inline-block" /> Imminent Direct Death Threat — Text Message Evidence
+                </div>
+                <h2 className="text-xl font-black text-white leading-tight">
+                  "Ur a Dead Man" — Troy: Written Death Threat + Fabricated Rape Allegation as Weapon
+                </h2>
+              </div>
+            </div>
+            <p className="text-zinc-400 text-xs mb-6 uppercase tracking-wider">
+              Primary source evidence · Preserved screenshot · No incident report filed by AbleCare · No police report accepted · Zero accountability
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              {/* Screenshot */}
+              <div className="flex flex-col gap-3">
+                <div className="bg-black/60 border border-red-700/40 rounded-xl overflow-hidden">
+                  <img
+                    src={troyDeathThreat}
+                    alt="Troy — Text message death threat: 'Ur a dead man' and fabricated rape allegation"
+                    className="w-full max-w-[340px] mx-auto block"
+                    data-testid="img-troy-death-threat"
+                  />
+                </div>
+                <div className="bg-zinc-900/80 border border-zinc-700/40 rounded-lg p-3">
+                  <p className="text-zinc-400 text-[10px] uppercase tracking-wider font-bold mb-1">Screenshot — Preserved Evidence</p>
+                  <p className="text-zinc-300 text-xs leading-relaxed">
+                    Troy (contact blocked) — full sequence of messages including coordinated arrival with associates, extortion via fabricated rape allegation, and explicit death threat "Ur a dead man." Screenshot is blockchain-timestamped, archived, and submitted to ICC.
+                  </p>
+                </div>
+              </div>
+
+              {/* Message breakdown */}
+              <div className="space-y-3">
+                <h3 className="text-red-300 font-black text-sm uppercase tracking-wider mb-2">What Troy's Messages Establish — Forensic Breakdown</h3>
+
+                {[
+                  {
+                    msg: '"I\'ll be there in a bit with a few mates"',
+                    label: "Pre-meditated Group Attack",
+                    detail: "Troy announced he would arrive with multiple associates — a coordinated group attack, not a spontaneous individual. This is not a verbal altercation. This is a planned assault.",
+                    color: "border-orange-600/50 bg-orange-950/30 text-orange-300",
+                  },
+                  {
+                    msg: '"Or I\'ll just go to the cops and tell them how U help me against my will and rapped me and live streamed it"',
+                    label: "Fabricated Rape Allegation as Extortion Weapon",
+                    detail: "Troy explicitly weaponised a false rape allegation as leverage — demanding compliance under threat of a fabricated criminal complaint. This mirrors the documented pattern: a girl paid to fabricate an allegation (confirmed by Ben, DSW), Shorten's psychiatric destruction strategy disclosed by police to Dr. McLean's NDIS worker. Allegation fabrication is the operational template used against Dr. McLean across 35 years. Troy used it as a threat instrument in real time.",
+                    color: "border-purple-600/50 bg-purple-950/30 text-purple-300",
+                  },
+                  {
+                    msg: '"U wait cunt" / "Ur a dead man"',
+                    label: "Explicit Death Threat — In Writing",
+                    detail: "Direct, explicit, written death threat. No ambiguity. No interpretation required. Troy stated he would kill Dr. McLean. This is preserved in a screenshot. AbleCare received written notice. No incident report was filed.",
+                    color: "border-red-600/50 bg-red-950/30 text-red-300",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className={`border rounded-xl p-3 ${item.color}`}>
+                    <p className="font-black text-xs uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-current inline-block shrink-0" />
+                      {item.label}
+                    </p>
+                    <p className="font-mono text-[10px] italic mb-2 opacity-80 leading-relaxed">"{item.msg}"</p>
+                    <p className="text-zinc-300 text-xs leading-relaxed">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* No incident report — significance */}
+            <div className="bg-black/50 border-2 border-amber-600/50 rounded-xl p-5 mb-5">
+              <h3 className="text-amber-300 font-black text-base uppercase tracking-wider mb-4 flex items-center gap-2">
+                <Shield size={16} className="text-amber-400" />
+                The Absence of an Incident Report Is Not Administrative Failure — It Is a Weapon
+              </h3>
+              <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                AbleCare is Dr. McLean's NDIS registered provider. They are <span className="text-white font-bold">legally obliged</span> under the NDIS Quality and Safeguards Commission Act 2018 to file a mandatory incident report whenever a supported participant faces risk to their safety. Troy's death threat — "Ur a dead man" — received by a person in AbleCare's care and formally documented in writing — is precisely the class of event that mandates immediate incident reporting. <span className="text-red-400 font-bold">No incident report was filed.</span> Police attended and left without recording an event number. <span className="text-red-400 font-bold">No police report exists.</span>
+              </p>
+              <p className="text-slate-300 text-sm leading-relaxed mb-5">
+                This is not a coincidence of administrative process. The deliberate absence of an incident report has three direct operational consequences — all of which increase the risk to Dr. McLean's life and all of which benefit the perpetrators:
+              </p>
+
+              <div className="space-y-3">
+                {[
+                  {
+                    who: "Vigilantes (Troy and his mates)",
+                    icon: <UserX size={14} />,
+                    color: "border-red-600/50 bg-red-950/30",
+                    label: "text-red-300",
+                    consequence: "Without a police event number or incident report, Troy faces zero documented accountability for his death threat. There is no official record that he threatened Dr. McLean's life. He can return. He can escalate. His \"mates\" can arrive. The absence of documentation is functional impunity — and it is created and maintained by AbleCare's refusal to report.",
+                  },
+                  {
+                    who: "Law Enforcement",
+                    icon: <Scale size={14} />,
+                    color: "border-orange-600/50 bg-orange-950/30",
+                    label: "text-orange-300",
+                    consequence: "Without an incident report or police event number, any subsequent confrontation — including a fatal one — begins from a blank record. Police cannot act on patterns they have refused to document. If Troy returns and kills Dr. McLean, the prior threat leaves no official trace. This is the operational advantage of the zero-report response: it prevents protective intervention before the fact and forecloses accountability after.",
+                  },
+                  {
+                    who: "Legally Obliged Carers (AbleCare, NDIS system)",
+                    icon: <Heart size={14} />,
+                    color: "border-amber-600/50 bg-amber-950/30",
+                    label: "text-amber-300",
+                    consequence: "AbleCare's failure to file a mandatory incident report is not just a breach — it is a strategic choice that insulates them from scrutiny. If no report exists, then officially no threat occurred. If no threat officially occurred, AbleCare has no obligation to relocate Dr. McLean, no obligation to escalate to the NDIS Commission, and no liability for his death. The absence of documentation is not carelessness. It is a tactic. Rachel's response of \"some days or some weeks\" makes sense in this context: she was not planning to act. She was planning to wait until the problem solved itself.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className={`border rounded-xl p-4 ${item.color}`}>
+                    <p className={`font-black text-sm uppercase tracking-wider mb-2 flex items-center gap-2 ${item.label}`}>
+                      {item.icon} Vulnerability Created For: {item.who}
+                    </p>
+                    <p className="text-zinc-300 text-sm leading-relaxed">{item.consequence}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Jones v Dunkel / legal inference */}
+            <div className="bg-zinc-900/60 border border-zinc-700/40 rounded-xl p-4 mb-4">
+              <h3 className="text-zinc-200 font-black text-sm uppercase tracking-wider mb-3">Legal Inference — Jones v Dunkel</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Under the principle in <em className="text-white">Jones v Dunkel</em> (1959) 101 CLR 298, where a party fails to call evidence that would naturally be available to them if their account were true, the court may draw an adverse inference from that silence. AbleCare had Troy's death threat in documented form — in writing, via Dr. McLean's direct communication to Brett Butler. They had the audio recording of their own CEO acknowledging her legal duty of care. They had the recorded denial from Larissa. They had a legal obligation to file. They did none of it. The absence of an incident report is not a neutral act. It is an admission by conduct that AbleCare chose institutional self-preservation over the life of a person in their statutory care.
+              </p>
+            </div>
+
+            {/* Condone as tactic */}
+            <div className="bg-red-950/40 border border-red-700/40 rounded-xl p-4">
+              <h3 className="text-red-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <AlertTriangle size={13} className="text-red-400" />
+                AbleCare's Inaction Is Condoning This — As A Tactic
+              </h3>
+              <p className="text-zinc-300 text-sm leading-relaxed">
+                Rachel, Larissa, Brett, and Kim are not ignorant. They were formally notified. They had a legal duty. They had the capability to act. They chose not to. Kim then blamed Dr. McLean for his distress and departed. Larissa denied all knowledge on a recorded call. Rachel said resolution would take "some days or some weeks" and hung up. This is a coordinated non-response — and it is the same pattern documented across 40+ agencies over 35 years. In this instance, it has a specific consequence: <span className="text-white font-bold">Troy is free. He announced he was coming with mates. There is no police record of his threat. There is no incident report from his NDIS provider. He is, operationally, invisible to the system.</span> That invisibility was created and is maintained by the people who are legally obliged to protect Dr. McLean from it.
+              </p>
             </div>
 
           </div>
