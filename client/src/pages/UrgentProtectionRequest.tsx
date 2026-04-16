@@ -523,11 +523,11 @@ export default function UrgentProtectionRequest() {
               <h2 className="text-xl font-black text-white">Today's Threat — Formally Documented &amp; Distributed</h2>
             </div>
             <p className="text-zinc-300 text-sm leading-relaxed">
-              On 15 April 2026 at 7:42 AM, Dr. McLean formally documented a <strong className="text-red-300">direct death threat by Tory Kilborn</strong>, continued harassment by Steve Iasonidis and associates, and police attendance at 55B Archbold Road, Long Jetty NSW — where officers departed without action and verbally slurred Dr. McLean as <em className="text-red-300">"a fucking pedo"</em> as they left. Dr. McLean formally invited arrest as a challenge to place the evidence before a court. This record was simultaneously distributed to NSW Police and 50+ sitting Federal MPs.
+              On 15 April 2026 at 7:42 AM, Dr. McLean formally documented a <strong className="text-red-300">direct death threat by a local individual</strong>, continued harassment by Steve Iasonidis and associates, and police attendance at 55B Archbold Road, Long Jetty NSW — where officers departed without action and verbally slurred Dr. McLean as <em className="text-red-300">"a fucking pedo"</em> as they left. Dr. McLean formally invited arrest as a challenge to place the evidence before a court. This record was simultaneously distributed to NSW Police and 50+ sitting Federal MPs.
             </p>
             <div className="grid sm:grid-cols-3 gap-3 text-xs">
               {[
-                { label: "Direct Death Threat", who: "Tory Kilborn — documented & named" },
+                { label: "Direct Death Threat", who: "Local individual — documented on record" },
                 { label: "Ongoing Harassment", who: "Steve Iasonidis, Tony Ridley, Houd Meraby" },
                 { label: "Police Verbal Slur", who: "Officers called Dr. McLean 'fucking pedo' on exit" },
                 { label: "AVO Applications Filed", who: "All named parties — formal applications submitted" },
@@ -801,7 +801,7 @@ export default function UrgentProtectionRequest() {
                     {[
                       { time: "Mon 13 Apr 2026, 12:54 pm", event: "Email sent — subject: \"It's a live murder case\" — 70+ recipients including PM, AG, NDIS Minister, international media, three Ombudsmen", color: "text-amber-300" },
                       { time: "Mon 13 Apr — Tue 14 Apr", event: "Zero responses. From any recipient. Across government, oversight, media, and support sectors.", color: "text-red-400" },
-                      { time: "Wed 15 Apr 2026", event: "Tory Kilborn makes a direct death threat. NSW Police attend — no event number recorded. Officers call Dr. McLean 'a fucking pedo' as they depart. AVO applications filed.", color: "text-red-500" },
+                      { time: "Wed 15 Apr 2026", event: "A local individual makes a direct death threat. NSW Police attend — no event number recorded. Officers call Dr. McLean 'a fucking pedo' as they depart. AVO applications filed.", color: "text-red-500" },
                     ].map((item, i) => (
                       <div key={i} className="flex gap-3 items-start text-xs">
                         <span className={`font-mono font-black whitespace-nowrap ${item.color}`}>{item.time}</span>
@@ -1339,7 +1339,7 @@ export default function UrgentProtectionRequest() {
 
               <div className="space-y-7 text-sm text-zinc-300 leading-relaxed">
                 <p>
-                  The morning after April 15, 2026 — after the death threat by Tory Kilborn, after the police attendance that produced no event number, after NSW Police called Dr. McLean "a fucking pedo" as they departed — Dr. McLean made two recorded calls. The first was to <strong className="text-white">Cass, his Able Care support worker</strong>, to whom he explained in real time: the death threat, the police attendance, and the presence of <strong className="text-white">Doug — a paid surveillance operative — in the front room</strong> of his address. The second was to <strong className="text-white">QLife</strong>, Australia's national LGBTQ+ peer support crisis line, whose worker told Dr. McLean: <em className="text-white">"No one will help you."</em> Both calls are recorded. Both are now primary exhibits.
+                  The morning after April 15, 2026 — after the death threat by a local individual, after the police attendance that produced no event number, after NSW Police called Dr. McLean "a fucking pedo" as they departed — Dr. McLean made two recorded calls. The first was to <strong className="text-white">Cass, his Able Care support worker</strong>, to whom he explained in real time: the death threat, the police attendance, and the presence of <strong className="text-white">Doug — a paid surveillance operative — in the front room</strong> of his address. The second was to <strong className="text-white">QLife</strong>, Australia's national LGBTQ+ peer support crisis line, whose worker told Dr. McLean: <em className="text-white">"No one will help you."</em> Both calls are recorded. Both are now primary exhibits.
                 </p>
 
                 {/* Recording 1 — Cass / Able Care */}
@@ -1376,7 +1376,7 @@ export default function UrgentProtectionRequest() {
                         color: "text-red-300",
                         border: "border-red-800/40",
                         bg: "bg-red-950/30",
-                        body: "In this call, Dr. McLean explains: the death threat made by Tory Kilborn; the police attendance by CST Smith with no event number recorded; the verbal slur from departing officers; and the presence of Doug — a documented paid surveillance operative — in the front room of his address at the time of the threat."
+                        body: "In this call, Dr. McLean explains: the death threat made by a local individual; the police attendance by CST Smith with no event number recorded; the verbal slur from departing officers; and the presence of Doug — a documented paid surveillance operative — in the front room of his address at the time of the threat."
                       },
                       {
                         label: "Who Doug Is",
