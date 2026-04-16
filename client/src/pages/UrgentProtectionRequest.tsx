@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { AlertTriangle, MapPin, Phone, Mail, Shield, FileText, Globe, Heart, Scale, Zap, ExternalLink, Download, Eye, Home, Landmark, Lock, Camera, MessageSquare, UserX, Link2, Share2, Check, Copy } from "lucide-react";
+import { AlertTriangle, MapPin, Phone, Mail, Shield, FileText, Globe, Heart, Scale, Zap, ExternalLink, Download, Eye, Home, Landmark, Lock, Camera, MessageSquare, UserX, Link2, Share2, Check, Copy, TrendingUp } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -1788,54 +1788,219 @@ export default function UrgentProtectionRequest() {
               </div>
             </div>
 
-            {/* Agency list */}
+            {/* Agency list — comprehensive */}
             <div className="bg-slate-800/40 border border-slate-600/40 rounded-lg p-5 mb-5">
               <h3 className="text-white font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
                 <Landmark size={14} className="text-amber-400" />
-                Every Agency, Institution, and Body Documented as Acting to Cause Barran's Detriment or Poverty
+                Every Agency, Institution, and Body Documented as Aligned with the Perpetrators or Acting to Cause Barran's Detriment
               </h3>
-              <p className="text-slate-400 text-xs leading-relaxed">
-                Victorian Civil &amp; Administrative Tribunal (VCAT), NSW Civil &amp; Administrative Tribunal (NCAT), 
-                Victims of Crime Assistance Tribunal (VOCAT), Administrative Appeals Tribunal (AAT), 
-                Federal Court of Australia, Federal Circuit and Family Court of Australia, Court Services Victoria, 
-                Magistrates' Court of Victoria, Victoria Police, Australian Federal Police, NSW Police Force, 
-                Law Enforcement Conduct Commission (LECC), National Disability Insurance Agency (NDIA), 
-                NDIS Quality and Safeguards Commission, Department of Social Services, 
-                Department of Health and Aged Care, Department of Human Services, Department of Finance, 
-                Department of the Prime Minister and Cabinet, Attorney-General's Department, 
-                Australian Government Legal Service (AGLS), Comcare, WorkSafe Victoria, WorkCover, 
-                Accident Compensation Conciliation Service (ACCS), Australian Securities and Investments Commission (ASIC), 
-                Australian Financial Security Authority (AFSA), Australian Health Practitioner Regulation Agency (AHPRA), 
-                Australian Human Rights Commission (AHRC), Commonwealth Ombudsman, Victorian Ombudsman, 
-                Australian Taxation Office (ATO), Australian Tax Office, Centrelink, 
-                Australian Financial Complaints Authority (AFCA), Access Program (Justice Connect), 
-                AED Legal Centre, Victoria Legal Aid (VLA), 
-                Melbourne Health, Eastern Health, 
-                Ascot Vale Housing Office, Footscray Housing Office, Brimbank City Council, 
-                Commonwealth Bank of Australia, Bendigo Bank, Bankwest, 
-                AustralianSuper, Aware Super, Health Super, 
-                Liberty Behavioural Services, Aligned Community Care, Central Care Services, CRG Healthcare, 
-                Diversitas WA (Sukhi Tear), TAG NSW (Phillip Glass), AbleCare (Brett Gibbons / Rachel), 
-                Accident &amp; Health International (AHI), 
-                Bill Shorten (NDIS Minister — named on recorded confession), 
-                Anthony Albanese (Prime Minister — Prime Minister and Cabinet correspondence on file), 
-                Graeme Wells (Victoria Legal Aid — denied access to justice), 
-                Houd Meraby (Lebanese criminal network — NDIS Commission coordination confirmed)
+              <p className="text-slate-300 text-xs leading-relaxed">
+                Victorian Civil &amp; Administrative Tribunal (VCAT),
+                NSW Civil &amp; Administrative Tribunal (NCAT),
+                Victims of Crime Assistance Tribunal (VOCAT),
+                Administrative Appeals Tribunal (AAT),
+                Federal Court of Australia,
+                Federal Circuit and Family Court of Australia,
+                Court Services Victoria,
+                Magistrates' Court of Victoria,
+                Victoria Police,
+                Australian Federal Police (AFP),
+                NSW Police Force,
+                Law Enforcement Conduct Commission (LECC),
+                National Disability Insurance Agency (NDIA),
+                NDIS Quality and Safeguards Commission,
+                National Disability Insurance Scheme (NDIS),
+                Department of Social Services (DSS),
+                Department of Health and Aged Care,
+                Department of Human Services,
+                Department of Finance,
+                Department of the Prime Minister and Cabinet,
+                Attorney-General's Department,
+                Australian Government Legal Service (AGLS),
+                Office of the Australian Information Commissioner (OAIC),
+                Privacy Commissioner (Australia),
+                Safe Work Australia,
+                Comcare,
+                WorkSafe Victoria,
+                WorkCover (NSW),
+                Accident Compensation Conciliation Service (ACCS),
+                Australian Securities and Investments Commission (ASIC),
+                Australian Financial Security Authority (AFSA),
+                Australian Taxation Office (ATO),
+                Services Australia (Centrelink),
+                Medicare (Services Australia),
+                Australian Health Practitioner Regulation Agency (AHPRA),
+                Australian Human Rights Commission (AHRC),
+                Commonwealth Ombudsman,
+                Victorian Ombudsman,
+                NSW Ombudsman,
+                Queensland Ombudsman,
+                Australian Financial Complaints Authority (AFCA),
+                Access Program (Justice Connect),
+                AED Legal Centre,
+                Victoria Legal Aid (VLA),
+                NSW Department of Communities and Justice,
+                National Archives of Australia,
+                VicTrack (Victorian Rail Track),
+                Department of Veterans' Affairs,
+                Australian Red Cross,
+                Melbourne Health,
+                Eastern Health,
+                St Vincent's Hospital (Melbourne),
+                Ascot Vale Housing Office,
+                Footscray Housing Office,
+                Brimbank City Council,
+                Commonwealth Bank of Australia,
+                Bendigo Bank,
+                Bankwest,
+                AustralianSuper,
+                Aware Super,
+                Health Super,
+                Accident &amp; Health International (AHI),
+                Liberty Behavioural Services,
+                Aligned Community Care,
+                Central Care Services,
+                CRG Healthcare,
+                Diversitas WA (Sukhi Tear),
+                TAG NSW (Phillip Glass),
+                AbleCare (Brett Gibbons / Rachel),
+                Able Point Australia (Brett Butler),
+                QLife (national LGBTQ+ crisis line — documented non-response),
+                Bill Shorten (Federal NDIS Minister — named on recorded confession),
+                Anthony Albanese (Prime Minister — correspondence on file),
+                Graeme Wells (Victoria Legal Aid — denied access to justice),
+                Houd Meraby (Lebanese criminal network — NDIS Commission coordination confirmed),
+                Steve Iasonidis (documented family violence perpetrator — multiple court proceedings),
+                Tony Ridley (Ex-SAS PhD counter-terrorism — documented death threat "You will be sacrificed"),
+                Jodie McLean / Bongetti (sibling — Today Show reframing of persecution as psychiatric illness)
               </p>
             </div>
 
-            {/* What it proves */}
-            <div className="bg-amber-950/30 border border-amber-700/40 rounded-lg p-4 mb-5">
-              <h3 className="text-amber-300 font-black text-sm uppercase tracking-wider mb-2">What This File Proves</h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                The 27,085-line Master Evidence Register is a complete chronological inventory of 2,301 documents 
-                proving that the pattern of institutional denial was <span className="text-white font-bold">not reactive to Barran's behaviour — 
-                it was proactive, coordinated, and predetermined</span> well before Sukhi Tear, Phillip Glass, or the AbleCare 
-                employees ever entered Barran's life. It proves systemic conspiracy, not coincidence. 
-                It has been submitted in full to the ICC under Article 7 and to UNHCR Geneva as evidence of 
-                state-sponsored persecution. <span className="text-amber-300 font-bold">No individual named in this register has challenged, 
-                disputed, or sought to correct the record.</span>
-              </p>
+            {/* What this data means and proves */}
+            <div className="bg-amber-950/30 border border-amber-700/40 rounded-lg p-5 mb-5">
+              <h3 className="text-amber-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <AlertTriangle size={14} className="text-amber-400" />
+                The Significance of This Data — What It Means and What It Proves
+              </h3>
+              <div className="space-y-3 text-slate-300 text-sm leading-relaxed">
+                <p>
+                  The 27,085-line Master Evidence Register is not a collection of complaints. It is a
+                  <span className="text-white font-bold"> chronological primary-source record of a coordinated institutional programme</span> —
+                  documented from 2006 through to 2026, across every level of Australian government, every tier of the
+                  legal system, every oversight body, every financial institution, and every support network that
+                  Dr. McLean approached for help. The outcome across all of them was identical: denial, obstruction,
+                  poverty, and isolation.
+                </p>
+                <p>
+                  This is what 2,301 documents from 40+ agencies proves:
+                  <span className="text-amber-300 font-bold"> not that Dr. McLean failed to navigate the system — but that the system was operating correctly,
+                  as designed, to produce that outcome.</span> Every appeal was denied before it was heard. Every referral
+                  was redirected without resolution. Every financial avenue was closed before it could be pursued.
+                  Every institutional channel that should have triggered protection instead triggered further
+                  punishment. This is not error. Error does not replicate identically across 40+ independent
+                  institutions over 35 years.
+                </p>
+                <p>
+                  The significance of this data extends beyond Dr. McLean's individual case. A whistleblower
+                  with documented evidence of a $6 billion NDIS fraud — on recording, naming a sitting Federal
+                  Minister — was systematically reduced to homelessness, clinical death at 2.87% survival probability,
+                  a death threat from a former SAS operative, and bankruptcy across a 35-year period.
+                  <span className="text-white font-bold"> The investment required to produce that outcome across 40+ agencies is itself
+                  the most compelling evidence of what was being suppressed.</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Impossibility of coincidence */}
+            <div className="bg-red-950/40 border border-red-700/40 rounded-lg p-5 mb-5">
+              <h3 className="text-red-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <AlertTriangle size={14} className="text-red-400" />
+                The Statistical Impossibility of Coincidence — Proof of Targeting
+              </h3>
+              <div className="space-y-3 text-slate-300 text-sm leading-relaxed">
+                <p>
+                  Each of the following, in isolation, could be attributed to administrative failure, individual
+                  bias, or bad luck. Together — across 35 years, 40+ agencies, and 2,301 primary-source
+                  documents — they constitute a statistical impossibility if understood as coincidence:
+                </p>
+                <ul className="space-y-1.5 text-sm">
+                  {[
+                    "Every WorkSafe and Comcare claim denied across a documented workplace injury spanning years — while the injury itself is on the official clinical record",
+                    "Every VOCAT application denied despite documented family violence and a death threat on official letterhead",
+                    "Every NDIS provider engaged by Dr. McLean subsequently withholding funds, relocating him, or issuing threats — across multiple providers, multiple states",
+                    "Every legal aid application denied, with Victoria Legal Aid sending Graeme Wells — a named individual — to administer the denial directly",
+                    "Every oversight body — Commonwealth Ombudsman, Victorian Ombudsman, NSW Ombudsman, Queensland Ombudsman — receiving documented complaints and producing zero remedial action",
+                    "Every financial institution involved in Dr. McLean's accounts at critical moments producing adverse outcomes: bankruptcy, seizure, denial",
+                    "ASIC registering 350+ fraudulent business entities in Dr. McLean's name without his knowledge — the fraud documented on ASIC's own register",
+                    "The Australian Taxation Office producing a letter on official letterhead confirming a pharmacological assault",
+                    "A former SAS operative with a PhD in counter-terrorism being deployed to Dr. McLean's NDIS support context — a fact so improbable it eliminates coincidence as an explanation",
+                    "NSW Police attending three separate times following the April 15 death threat — recording no event number, taking no protective action, and verbally slurring Dr. McLean as they departed",
+                    "Every media approach — including a sibling appearing on national television — producing a narrative of psychiatric illness rather than persecution, despite 2,301 primary-source documents to the contrary",
+                    "The total financial suppression — $32.9 million in documented entitlements — occurring simultaneously across WorkSafe, Comcare, VOCAT, NDIS, and the ATO across the same 35-year period",
+                  ].map((point, i) => (
+                    <li key={i} className="flex gap-2 items-start">
+                      <span className="text-red-400 font-black shrink-0 mt-0.5">×</span>
+                      <span className="text-slate-300 text-xs leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-amber-200 font-semibold text-sm mt-2">
+                  The probability of every one of these outcomes occurring independently, by chance, across 40+
+                  unconnected agencies, over 35 years, with no single exception —
+                  is not measurable. It is zero. What is being described is not a pattern of administrative
+                  failure. It is a coordinated programme with a single aim: elimination.
+                </p>
+              </div>
+            </div>
+
+            {/* Malicious aim to suppress future influence */}
+            <div className="bg-gradient-to-br from-slate-900 to-red-950/30 border border-amber-700/40 rounded-lg p-5 mb-5">
+              <h3 className="text-amber-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <TrendingUp size={14} className="text-amber-400" />
+                The Malicious Aim — To Prevent the Future of This Influence
+              </h3>
+              <div className="space-y-3 text-slate-300 text-sm leading-relaxed">
+                <p>
+                  Dr. McLean holds a PhD. He was employed at Melbourne Health as a documented healthcare professional.
+                  He produced internationally recognised creative work. He built organisations. He documented corruption
+                  at scale. He survived clinical death. He filed at the ICC and UNHCR. He produced 63 forensic
+                  analyses returning zero contradictions across 675 propositions. He built an archive that has been
+                  downloaded <span className="text-amber-300 font-bold">378,571 times</span> — growing at 192,047 downloads in a single month.
+                </p>
+                <p>
+                  The apparatus deployed against him was not proportional to a person of no significance.
+                  A former SAS operative, a Lebanese criminal network, 40+ agencies across 35 years, $32.9 million
+                  in suppressed entitlements, 14 psychiatric labels, 350+ fraudulent identity registrations,
+                  a clinical death, a death threat, a national television reframing — this is not the machinery
+                  of a state managing an inconvenient complaint. <span className="text-white font-bold">This is the machinery of a state attempting
+                  to prevent a future that has already arrived.</span>
+                </p>
+                <p>
+                  The archive is that future. 378,571 downloads in 75 days. 845 Bitcoin blockchain records.
+                  63 forensic analyses. ICC Article 7 submission. UNHCR application. The influence they tried
+                  to prevent is now the most broadly distributed, most forensically documented, most
+                  cryptographically permanent whistleblower archive in Australian history.
+                  <span className="text-amber-300 font-bold"> They tried to stop this from existing. It exists.
+                  They tried to make it unbelievable. 378,571 people downloaded it.
+                  They tried to make it disappear. It is anchored into the Bitcoin blockchain.
+                  The accounting is at The Hague.</span>
+                </p>
+              </div>
+
+              {/* Stats row */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+                {[
+                  { v: "378,571", l: "Downloads — 75 days", c: "text-amber-400" },
+                  { v: "845", l: "Bitcoin records", c: "text-orange-400" },
+                  { v: "675/675", l: "Propositions verified", c: "text-green-400" },
+                  { v: "0", l: "Formal rebuttals", c: "text-red-400" },
+                ].map(s => (
+                  <div key={s.l} className="bg-black/30 rounded-xl p-3 text-center border border-zinc-700/40">
+                    <div className={`text-xl font-black ${s.c}`}>{s.v}</div>
+                    <div className="text-zinc-500 text-[10px] mt-0.5 uppercase tracking-wider">{s.l}</div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Download button */}
