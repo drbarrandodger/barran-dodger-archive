@@ -1240,6 +1240,109 @@ export default function UrgentProtectionRequest() {
           </div>
         </motion.div>
 
+        {/* ───── PRIMARY LEGAL SUBMISSIONS — DOWNLOADABLE SOURCE DOCUMENTS ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-950 border border-zinc-700/50 rounded-2xl p-6 md:p-8 shadow-xl">
+
+            <div className="flex items-center gap-2 mb-1">
+              <FileText size={16} className="text-zinc-400" />
+              <span className="text-zinc-400 text-[10px] font-black uppercase tracking-widest">Primary Source Documents — Formal Submissions</span>
+            </div>
+            <h2 className="text-xl font-black text-white mb-1">
+              Letters to Parliament &amp; Attorney General — Available for Download
+            </h2>
+            <p className="text-zinc-500 text-xs mb-6">
+              Original correspondence sent to Australian parliamentarians, the Attorney General, the Prime Minister, and over 40 agencies during the period 2023. Each document constitutes a formal, dated, multi-party submission with legal argument and evidence. Impartial statements of significance accompany each download.
+            </p>
+
+            <div className="space-y-5">
+
+              {/* Document 1 */}
+              <div className="bg-zinc-800/50 border border-zinc-700/40 rounded-xl p-5">
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="bg-red-900/30 border border-red-700/30 rounded px-2 py-0.5 text-red-300 text-[9px] font-black uppercase tracking-wider">1 August 2023</div>
+                      <div className="bg-zinc-700/50 border border-zinc-600/30 rounded px-2 py-0.5 text-zinc-300 text-[9px] font-black uppercase tracking-wider">1,825 lines · Multi-party distribution</div>
+                    </div>
+                    <h3 className="text-white font-black text-sm mb-2 leading-snug">
+                      Letter to the Attorney General, Prime Minister, and 40+ Parties — "Rich McLean is Dead" — Public Interest Disclosure Legal Argument
+                    </h3>
+
+                    <div className="bg-black/40 border-l-2 border-zinc-500 rounded-r-lg p-3 mb-3">
+                      <p className="text-zinc-300 text-[10px] font-black uppercase tracking-wider mb-1">Impartial Statement of Significance</p>
+                      <p className="text-zinc-400 text-xs leading-relaxed">
+                        This document constitutes a formal legal submission sent simultaneously to over 40 recipients — including the Australian Attorney General, the Prime Minister's office, the NDIS, the Human Rights Commission, the AAT, the Victorian Ombudsman, the Commonwealth Ombudsman, and multiple legal and medical authorities — on 1 August 2023. The submission: (1) formally notifies all addressees of an ongoing government conspiracy to pervert the course of justice, specifically naming a former ASIO officer (Steven Iasonidis) and barrister Russell Ball as principals; (2) documents the author's near-fatal hospitalisation in February 2021 and subsequent institutional cover-up; (3) contains a detailed legal argument under the <em className="not-italic text-white">Public Interest Disclosure Act 2013</em>, citing sections 26, 70, and 15–16 of the Act, establishing the author's eligibility as a contracted NDIS service provider to make a protected disclosure; (4) constitutes formal notice that the author was at risk of suicide on the night of its sending. The subject line — "Rich McLean is dead" — was sent before a subsequent email confirming the author had survived. This document is legally significant because it demonstrates that the author formally notified the highest levels of Australian government of a life-threatening situation and received no adequate response. Every addressee's name, email address, and the date of receipt is embedded in the document header. No addressee has rebutted the legal arguments on the merits.
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 text-[9px] text-zinc-500 mb-3">
+                      {["Attorney General — Mark Dreyfus", "Prime Minister's Office", "Bill Shorten — bill.shorten.ph@gov.au", "NDIS — enquiries@ndis.gov.au", "Human Rights Commission", "Victorian Ombudsman", "AAT — Melbourne Registry", "40+ named recipients"].map((tag, i) => (
+                        <span key={i} className="bg-zinc-800 border border-zinc-700 rounded px-2 py-0.5">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col justify-center items-center gap-2 shrink-0">
+                    <a
+                      href="/documents/01-07-2023-letter-to-attorney-general-prime-minister.pdf"
+                      download
+                      data-testid="download-attorney-general-letter"
+                      className="flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-black text-xs px-5 py-3 rounded-lg transition-colors text-center"
+                    >
+                      <Download size={14} />
+                      Download PDF
+                    </a>
+                    <p className="text-zinc-600 text-[9px] text-center">1,825 lines · Dated 1 Aug 2023</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Document 2 */}
+              <div className="bg-zinc-800/50 border border-zinc-700/40 rounded-xl p-5">
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="bg-blue-900/30 border border-blue-700/30 rounded px-2 py-0.5 text-blue-300 text-[9px] font-black uppercase tracking-wider">4 June 2023</div>
+                      <div className="bg-zinc-700/50 border border-zinc-600/30 rounded px-2 py-0.5 text-zinc-300 text-[9px] font-black uppercase tracking-wider">592 lines · Parliamentary distribution</div>
+                    </div>
+                    <h3 className="text-white font-black text-sm mb-2 leading-snug">
+                      Letter to Parliamentarians — Gabrielle Williams &amp; Others — ASIO Exploitation, WorkCover Denial, Institutional Silencing
+                    </h3>
+
+                    <div className="bg-black/40 border-l-2 border-zinc-500 rounded-r-lg p-3 mb-3">
+                      <p className="text-zinc-300 text-[10px] font-black uppercase tracking-wider mb-1">Impartial Statement of Significance</p>
+                      <p className="text-zinc-400 text-xs leading-relaxed">
+                        This document is a formal submission dated 4 June 2023 addressed to parliamentarians including Gabrielle Williams (Victorian Parliament). It provides a structured legal and evidentiary account of: (1) financial exploitation by a named ASIO officer (Steven Iasonidis) during a five-year domestic partnership (2010–2015), including documented exploitation of a disability pension while the officer earned $30,000–$40,000 per month; (2) the denial of a valid workers' compensation claim by ComCare following a near-fatal workplace-injury-related hospitalisation in February 2021, with specific reference to the <em className="not-italic text-white">Safety, Rehabilitation and Compensation Act</em> and a Federal Court document confirming employment status; (3) the systematic rejection of complaints by the HCC, MHCC, AHPRA, NHPOPC, IBAC, Victorian Inspectorate, Victoria Police, AAT, AHRC, and the Victorian Ombudsman — all documented by name; (4) the influence of barrister Russell Ball over government policy, including his presentations at AHPRA and the Ombudsman, and his alleged role in suppressing evidence by instructing legal firms not to assist the author; (5) the HCF Income Assist denial despite clinical evidence of non-pre-existing psychological injury. This document is significant because it constitutes a formal, dated parliamentary submission that named every implicated institution and individual, supplied legal basis for each claim, and received no substantive response from any addressee. It predates the August 2023 "Rich McLean is dead" email by two months, establishing a documented chronology of escalating institutional failure.
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 text-[9px] text-zinc-500 mb-3">
+                      {["Gabrielle Williams MP", "ASIO — Steve Iasonidis", "WorkCover / ComCare denial", "Russell Ball — policy influence", "AHPRA, IBAC, AHRC, AAT", "Weribee Mercy Hospital", "HCF Income Assist denial", "Victorian Ombudsman"].map((tag, i) => (
+                        <span key={i} className="bg-zinc-800 border border-zinc-700 rounded px-2 py-0.5">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col justify-center items-center gap-2 shrink-0">
+                    <a
+                      href="/documents/04-06-2023-letter-to-parliamentarians.pdf"
+                      download
+                      data-testid="download-parliamentarians-letter"
+                      className="flex items-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-black text-xs px-5 py-3 rounded-lg transition-colors text-center"
+                    >
+                      <Download size={14} />
+                      Download PDF
+                    </a>
+                    <p className="text-zinc-600 text-[9px] text-center">592 lines · Dated 4 Jun 2023</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </motion.div>
+
         {/* ───── LIVE MURDER CASE EMAIL — APRIL 13 — 48 HRS BEFORE KILL HIT — ZERO RESPONSE ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <Card className="bg-zinc-900/70 border-red-900/60">
