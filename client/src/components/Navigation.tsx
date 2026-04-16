@@ -77,6 +77,7 @@ export function Navigation() {
     { href: "/taxpayer-cost-analysis", label: t("nav.costAnalysis") },
     { href: "/blockchain", label: t("nav.timestamps") },
     { href: "/able-care-entrapment-network", label: "🕵️ Able Care Entrapment" },
+    { href: "/digital-archive", label: "⛓ Digital Archive — All PDFs" },
     { href: "/archive-index", label: "📋 Archive Index" },
     { href: "/free-ebooks", label: "📚 Free eBooks" },
     { href: "/store", label: t("nav.store") },

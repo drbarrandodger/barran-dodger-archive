@@ -37,6 +37,7 @@ import Publications from "@/pages/Publications";
 import EvidenceVault from "@/pages/EvidenceVault";
 import Store from "@/pages/Store";
 import FreeEbooks from "@/pages/FreeEbooks";
+import DigitalArchive from "@/pages/DigitalArchive";
 import ArchiveIndex from "@/pages/ArchiveIndex";
 import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
@@ -453,6 +454,7 @@ function Router() {
         <Route path="/gods-grace-resonance-christ" component={GodsGraceBarranDodger} />
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
+        <Route path="/digital-archive" component={DigitalArchive} />
         <Route path="/archive-index" component={ArchiveIndex} />
         <Route path="/pdf-list" component={ArchiveIndex} />
         <Route path="/complete-document-list" component={ArchiveIndex} />
