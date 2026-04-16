@@ -260,17 +260,70 @@ export async function registerRoutes(
     }
   });
 
+  // ── SOS records — must be before :slug wildcard ──
+  app.get('/api/bitcoin-timestamp/sos-records', async (_req, res) => {
+    try {
+      const { getAllTimestamps } = await import('./bitcoinTimestamp');
+      const all = await getAllTimestamps();
+      const sos = all.filter((r: any) =>
+        r.slug === 'page-urgent-protection-request' ||
+        r.slug?.startsWith('sos-page')
+      );
+      res.json(sos);
+    } catch (err) {
+      res.status(500).json({ message: String(err) });
+    }
+  });
+
   app.get('/api/bitcoin-timestamp/:slug', async (req, res) => {
     try {
       const { getAllTimestamps } = await import('./bitcoinTimestamp');
       const records = await getAllTimestamps();
-      const record = records.find((r) => r.slug === req.params.slug);
+      const record = records.find((r: any) => r.slug === req.params.slug);
       if (!record) return res.status(404).json({ message: "Not found" });
       res.json(record);
     } catch (err) {
       res.status(500).json({ message: String(err) });
     }
   });
+  // ── SOS page-specific timestamp endpoint ──
+  app.post('/api/bitcoin-timestamp/sos-page-now', async (_req, res) => {
+    try {
+      const { timestampString } = await import('./bitcoinTimestamp');
+      const slug = `sos-page-v2-2026-04-16`;
+      const label = `SOS Page v2 — April 16 2026 — Larissa AbleCare Denial + Herald Sun Ritual + 75-Agency List`;
+      const canonical = [
+        `SOS PAGE — CANONICAL CONTENT RECORD — v2 — April 16, 2026`,
+        `Dr Richard William McLean (Barran Dodger) — barrandodger.com/urgent-protection-request`,
+        ``,
+        `NEW MATERIAL TIMESTAMPED:`,
+        `[1] Larissa (AbleCare) — recorded denial of death threat knowledge. No incident report filed. No police report accepted for confirmed assassination attempt. Kim abandons blaming Dr. McLean for distress after deliberate entrapment. Section 7(2) Surveillance Devices Act 2007 (NSW) — lawful recording.`,
+        `[2] Herald Sun 2002 defamation "My Descent Into Madness" — based on autobiography Recovered Not Cured — fired from The Age weeks after publication. Coordinated public humiliation ritual documented.`,
+        `[3] Ben (NDIS worker) revealed: girl from Recovered Not Cured was paid to fabricate false allegation. Police confirmed consensual sex to Ben. Police disclosed Shorten's psychiatric destruction strategy to NDIS worker before advising Dr. McLean.`,
+        `[4] Bill Shorten — weaponisation of mental illness with money, lawyers, power and influence confirmed via police intelligence relay. Height of moral cowardice. Zero persons have formally disproven Shorten ordered assassination. Jones v Dunkel applies.`,
+        `[5] 75+ agencies documented as aligned with perpetrators — comprehensive list including all courts, law enforcement, oversight bodies, financial institutions, NDIS providers, and named individuals.`,
+        `[6] Statistical impossibility of coincidence — 12 documented data points — 40+ agencies — 35 years — zero exceptions — proving coordinated targeting not administrative failure.`,
+        `[7] Malicious aim to prevent future influence: 378,571 downloads, 845 Bitcoin records, 675/675 propositions verified, zero formal rebuttals. Influence cannot be prevented.`,
+        ``,
+        `EXISTING RECORD:`,
+        `ICC Article 7 Submission — The Hague — Formally Received`,
+        `UNHCR Geneva Application — Formally Filed`,
+        `2,301 primary-source documents — 40+ agencies — 35 years`,
+        `Tony Ridley (Ex-SAS PhD): "You will be sacrificed" — death threat on email`,
+        `ATO pharmacological assault confirmation on official letterhead`,
+        `ASIC: 350+ fraudulent identity registrations documented on ASIC's own register`,
+        `14 involuntary psychiatric hospitalisations — 2021 clinical death at 2.87% survival`,
+        ``,
+        `Bitcoin blockchain permanent record — OpenTimestamps Protocol`,
+        `SHA-256 hash submitted to: a.pool.opentimestamps.org, b.pool.opentimestamps.org, alice.btc.calendar.opentimestamps.org`,
+      ].join('\n');
+      const result = await timestampString(slug, label, canonical, 'sos-page');
+      res.json({ success: true, slug: result.slug, sha256: result.sha256, submittedAt: result.submittedAt });
+    } catch (err) {
+      res.status(500).json({ message: String(err) });
+    }
+  });
+
   // ===== END BITCOIN TIMESTAMP ROUTES =====
 
   app.get('/api/downloads/total', async (_req, res) => {

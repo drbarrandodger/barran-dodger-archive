@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 import { motion } from "framer-motion";
 import { AlertTriangle, MapPin, Phone, Mail, Shield, FileText, Globe, Heart, Scale, Zap, ExternalLink, Download, Eye, Home, Landmark, Lock, Camera, MessageSquare, UserX, Link2, Share2, Check, Copy, TrendingUp } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
@@ -106,6 +108,22 @@ const PLATFORMS = [
 export default function UrgentProtectionRequest() {
   const [copied, setCopied] = useState(false);
 
+  // Fetch all SOS blockchain records
+  const { data: sosTimestamps } = useQuery<any[]>({
+    queryKey: ['/api/bitcoin-timestamp/sos-records'],
+    staleTime: 1000 * 60 * 10,
+  });
+
+  // Trigger the SOS page timestamp on first load
+  const timestampMutation = useMutation({
+    mutationFn: () => apiRequest('POST', '/api/bitcoin-timestamp/sos-page-now'),
+  });
+
+  useEffect(() => {
+    timestampMutation.mutate();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   function copyLink() {
     navigator.clipboard.writeText(SOS_URL).then(() => {
       setCopied(true);
@@ -148,6 +166,88 @@ export default function UrgentProtectionRequest() {
               <Badge className="bg-zinc-800 text-zinc-200 border-zinc-600 text-sm px-4 py-1.5">
                 <Mail size={13} className="mr-1.5" /> drbarrandodger@proton.me
               </Badge>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ===== BITCOIN BLOCKCHAIN TIMESTAMP BANNER ===== */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-gradient-to-r from-amber-950/60 via-orange-950/40 to-amber-950/60 border border-amber-600/50 rounded-xl p-4 md:p-5">
+            <div className="flex items-start gap-3 mb-3">
+              <div className="bg-amber-600/20 p-2 rounded-lg shrink-0 mt-0.5">
+                <Shield size={18} className="text-amber-400" />
+              </div>
+              <div>
+                <p className="text-amber-300 font-black text-sm uppercase tracking-widest mb-0.5 flex items-center gap-2">
+                  <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                  Bitcoin Blockchain Timestamped — OpenTimestamps Protocol
+                </p>
+                <p className="text-zinc-400 text-xs leading-relaxed">
+                  This page and its contents are permanently anchored to the Bitcoin blockchain via SHA-256 cryptographic hash submitted to three independent OTS calendars. The record cannot be altered, deleted, or denied by any government, institution, or individual. Every update to this page generates a new immutable proof of existence.
+                </p>
+              </div>
+            </div>
+
+            {sosTimestamps && sosTimestamps.length > 0 ? (
+              <div className="space-y-2">
+                {sosTimestamps.map((ts: any) => (
+                  <div key={ts.slug} className="bg-black/50 border border-amber-700/30 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center gap-2">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-0.5">{ts.filename || ts.slug}</p>
+                      <p className="text-zinc-300 font-mono text-[10px] break-all leading-relaxed"
+                         data-testid={`hash-sos-${ts.slug}`}>
+                        SHA-256: {ts.sha256}
+                      </p>
+                      {ts.submittedAt && (
+                        <p className="text-zinc-500 text-[10px] mt-0.5">
+                          Submitted: {new Date(ts.submittedAt).toUTCString()}
+                        </p>
+                      )}
+                    </div>
+                    <div className="flex gap-2 shrink-0">
+                      <a
+                        href={`https://opentimestamps.org/timestamp/${ts.sha256}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 bg-amber-700 hover:bg-amber-600 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg transition-colors uppercase tracking-wider whitespace-nowrap"
+                        data-testid={`btn-verify-ots-${ts.slug}`}
+                      >
+                        <ExternalLink size={10} /> Verify OTS
+                      </a>
+                      <a
+                        href={`https://www.blockchain.com/explorer/search?search=${ts.sha256}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 bg-orange-800 hover:bg-orange-700 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg transition-colors uppercase tracking-wider whitespace-nowrap"
+                        data-testid={`btn-blockchain-explorer-${ts.slug}`}
+                      >
+                        <ExternalLink size={10} /> Blockchain
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-black/40 border border-amber-700/20 rounded-lg p-3 text-center">
+                <p className="text-amber-400 text-xs font-mono animate-pulse">
+                  {timestampMutation.isPending
+                    ? "⛏ Submitting to Bitcoin blockchain via OpenTimestamps..."
+                    : "⛏ Loading blockchain records..."}
+                </p>
+              </div>
+            )}
+
+            <div className="grid grid-cols-3 gap-2 mt-3 text-center">
+              {[
+                { v: "SHA-256", l: "Cryptographic hash" },
+                { v: "3 OTS", l: "Calendar servers" },
+                { v: "∞", l: "Permanent record" },
+              ].map(s => (
+                <div key={s.l} className="bg-black/30 rounded-lg p-2 border border-amber-700/20">
+                  <div className="text-amber-400 font-black text-sm">{s.v}</div>
+                  <div className="text-zinc-600 text-[9px] uppercase tracking-wider">{s.l}</div>
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
