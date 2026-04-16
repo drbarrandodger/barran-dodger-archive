@@ -205,6 +205,61 @@ export async function registerRoutes(
     }
   });
 
+  app.post('/api/bitcoin-timestamp/full-archive', async (_req, res) => {
+    try {
+      const { batchTimestampFullArchive } = await import('./bitcoinTimestamp');
+      res.json({ message: "Full archive timestamp started — all PDFs, forensic analyses, ebooks, and site pages", status: "processing" });
+      batchTimestampFullArchive()
+        .then((r) => console.log(`Full archive stamp: docs ${r.documents.succeeded} new / pages ${r.pages.succeeded} new / grandTotal ${r.grandTotal}`))
+        .catch((err) => console.error("Full archive stamp error:", err));
+    } catch (err) {
+      res.status(500).json({ message: String(err) });
+    }
+  });
+
+  app.post('/api/bitcoin-timestamp/full-archive-sync', async (_req, res) => {
+    try {
+      const { batchTimestampFullArchive } = await import('./bitcoinTimestamp');
+      const result = await batchTimestampFullArchive();
+      res.json(result);
+    } catch (err) {
+      res.status(500).json({ message: String(err) });
+    }
+  });
+
+  app.get('/api/bitcoin-timestamp/manifest.json', async (_req, res) => {
+    try {
+      const { getAllTimestamps } = await import('./bitcoinTimestamp');
+      const records = await getAllTimestamps();
+      const manifest = {
+        archive: "Barran Dodger Archive — barrandodger.com",
+        abn: "78 833 496 164",
+        icc: "Submitted under Article 7 — Crimes Against Humanity",
+        unhcr: "Submitted to UNHCR Geneva",
+        generated: new Date().toISOString(),
+        totalTimestamped: records.length,
+        protocol: "OpenTimestamps — Bitcoin Blockchain",
+        nodes: "~15,000 independent Bitcoin nodes",
+        entries: records.map((r) => ({
+          slug: r.slug,
+          label: r.filename,
+          sha256: r.sha256,
+          category: r.category,
+          submittedAt: r.submittedAt,
+          otsSubmitted: !!r.otsReceipt,
+          calendarUrl: r.calendarUrl,
+          verifyUrl: `https://opentimestamps.org/timestamp/${r.sha256}`,
+          explorerUrl: `https://www.blockchain.com/explorer/search?search=${r.sha256}`,
+        })),
+      };
+      res.setHeader("Content-Disposition", "attachment; filename=barrandodger-blockchain-manifest.json");
+      res.setHeader("Content-Type", "application/json");
+      res.json(manifest);
+    } catch (err) {
+      res.status(500).json({ message: String(err) });
+    }
+  });
+
   app.get('/api/bitcoin-timestamp/:slug', async (req, res) => {
     try {
       const { getAllTimestamps } = await import('./bitcoinTimestamp');
