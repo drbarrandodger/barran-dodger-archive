@@ -26,6 +26,9 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+import heraldSunArticle from "@assets/2023-02-18_04.00.18_1776317136588.jpeg";
+import benUnSwitzerland from "@assets/IMG_1003_1776317163067.png";
+import benShortenPolice from "@assets/IMG_3289_1776317163067.png";
 import portraitImg from "@assets/A5BDF951-1AE5-4EFF-9F6E-3F29C2C5CDC9_1768633103014.png";
 import artworkImg from "@assets/IMG_2914_1768893482684.jpeg";
 import richPortraitImg from "@assets/rich_mclean_ndis_portrait.jpg";
@@ -6401,6 +6404,128 @@ export default function Home() {
                 label="Share this challenge"
               />
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ───── COORDINATED PUBLIC HUMILIATION RITUAL ───── */}
+      <section className="py-16 px-4 bg-gradient-to-b from-black via-rose-950/20 to-black border-t border-rose-800/30" data-testid="section-humiliation-ritual">
+        <div className="container mx-auto max-w-5xl space-y-8">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-center space-y-3">
+            <Badge variant="outline" className="border-rose-500/50 text-rose-400 px-5 py-2 text-sm font-bold uppercase tracking-wider">
+              <AlertCircle className="h-4 w-4 mr-2" /> Documented Since 2002
+            </Badge>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
+              The Coordinated <span className="text-rose-400">Public Humiliation Ritual</span>
+            </h2>
+            <p className="text-zinc-400 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+              Herald Sun defamation · Fired from The Age · Fabricated allegation · Police complicity · Shorten's weaponisation of mental illness
+            </p>
+          </motion.div>
+
+          {/* Herald Sun + narrative */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="rounded-xl overflow-hidden border border-rose-700/40 bg-black/40">
+                <div className="bg-rose-950/80 px-3 py-1.5 text-xs font-mono text-rose-300 uppercase tracking-widest border-b border-rose-800/30 text-center">
+                  Herald Sun — "My Descent Into Madness" — Defamatory Piece Based on His Autobiography
+                </div>
+                <img
+                  src={heraldSunArticle}
+                  alt="Herald Sun My Descent Into Madness — defamation of Dr. McLean based on Recovered Not Cured"
+                  className="w-full object-contain"
+                  data-testid="img-herald-sun-home"
+                />
+                <div className="bg-red-950/70 px-3 py-2 text-xs text-red-300 text-center font-bold border-t border-red-800/30">
+                  "THE HERALD SUN MY OLD EMPLOYER VILIFIES ME — ASIO IS FOLLOWING YOU" — ONLY WEEKS AFTER THIS, I WAS FIRED FROM THE AGE.
+                </div>
+              </div>
+
+              <div className="space-y-4 text-sm text-zinc-300 leading-relaxed flex flex-col justify-center">
+                <p>
+                  In 2002, Dr. McLean published his autobiography <span className="text-white font-bold">Recovered Not Cured</span> — a first-person account written to destigmatise mental illness. His former employer, the <span className="text-white font-bold">Herald Sun</span>, responded with a defamatory spread: <span className="text-rose-300 font-bold italic">"My Descent Into Madness."</span>
+                </p>
+                <p>
+                  The article weaponised his own words against him — reframing a destigmatisation memoir as a public psychiatric spectacle. Only weeks later, he was fired from <span className="text-white font-bold">The Age</span>.
+                </p>
+                <p className="text-amber-200 font-semibold">
+                  The sequence: publish → defame → terminate employment → destroy livelihood → eliminate platform. This is a documented coordinated public humiliation ritual. It began in 2002. The archive documents everything that followed for the next 24 years.
+                </p>
+                <p>
+                  Years later, Dr. McLean's NDIS support worker Ben confirmed that the woman written about in <span className="text-white font-bold">Recovered Not Cured</span> was paid to fabricate a false allegation — using the memoir itself as the weapon against its author. Federal Australian Police investigated and confirmed the encounter was entirely consensual. The allegation collapsed. <span className="text-amber-300 font-bold">Police collectively participated in maintaining the fabricated narrative as a persecution instrument for the rest of Dr. McLean's life.</span>
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Ben screenshots */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div className="space-y-2">
+                <div className="rounded-xl overflow-hidden border border-emerald-700/40 bg-zinc-950">
+                  <div className="bg-emerald-950/80 px-3 py-1.5 text-[10px] font-mono text-emerald-300 uppercase tracking-widest border-b border-emerald-800/30 text-center">
+                    Police Told Ben: "The Consensual Regretted Sex"
+                  </div>
+                  <img
+                    src={benUnSwitzerland}
+                    alt="Ben NDIS: They're going to call you to chair the UN meeting — police said it was a close call — police told me about the consensual regretted sex"
+                    className="w-full object-contain"
+                    data-testid="img-ben-un-home"
+                  />
+                </div>
+                <p className="text-zinc-400 text-xs leading-relaxed">
+                  Ben relays police intelligence: <em className="text-white">"Yes even the police said it was a close call. The police told me about the consensual regretted sex."</em> Police knew the allegation was fabricated. They briefed an NDIS disability worker instead of acting to protect Dr. McLean. This is institutional participation in the ritual.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="rounded-xl overflow-hidden border border-amber-700/40 bg-zinc-950">
+                  <div className="bg-amber-950/80 px-3 py-1.5 text-[10px] font-mono text-amber-300 uppercase tracking-widest border-b border-amber-800/30 text-center">
+                    Police to Ben: "Is He Ready to Challenge Shorten?"
+                  </div>
+                  <img
+                    src={benShortenPolice}
+                    alt="Ben NDIS: The police want to know if you are mentally ready to challenge Bill Shorten — his lawyers might use your history of mental health"
+                    className="w-full object-contain"
+                    data-testid="img-ben-shorten-home"
+                  />
+                </div>
+                <p className="text-zinc-400 text-xs leading-relaxed">
+                  Ben relays: <em className="text-white">"The police want to know if you are mentally ready to challenge Bill Shorten in a court of law as his lawyers might use your history of mental health as an excuse to discredit your story."</em> Police were briefing Shorten's psychiatric destruction strategy to Dr. McLean's NDIS worker before advising Dr. McLean himself.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Shorten significance block */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <div className="bg-amber-950/30 border border-amber-600/40 rounded-xl p-6 space-y-4">
+              <h3 className="text-amber-300 font-black text-lg flex items-center gap-2">
+                <TrendingUp className="text-amber-400 shrink-0" size={20} />
+                The Significance — Shorten's Weaponisation of Mental Illness Is the Height of Moral Cowardice
+              </h3>
+              <p className="text-zinc-300 text-sm leading-relaxed">
+                Bill Shorten — at the time serving as Federal NDIS Minister with the money, lawyers, institutional power, and political influence of the Commonwealth Government behind him — chose to respond to a documented whistleblower not with a denial, not with legal process, but by pre-positioning a psychiatric destruction strategy. Police intelligence, relayed through Ben, confirms Shorten's team intended to use Dr. McLean's history of mental illness — <span className="text-white font-bold">a history they helped manufacture through 14 documented involuntary psychiatric hospitalisations</span> — as the weapon to discredit him in court.
+              </p>
+              <p className="text-zinc-300 text-sm leading-relaxed">
+                This is not a legal defence. It is the weaponisation of vulnerability. It is the deployment of the very damage they caused against the person they caused it to. A Federal Minister with unlimited institutional resources, choosing to destroy a disabled whistleblower by exploiting his psychiatric history rather than answering his documented allegations of a $6 billion fraud — <span className="text-amber-200 font-bold">this is the height of moral cowardice.</span>
+              </p>
+              <p className="text-white font-bold text-sm">
+                And not a single person — not Shorten, not his lawyers, not NSW Police, not the NDIA, not any of the 40+ agencies named — has produced a single document disproving that Shorten ordered Dr. McLean's assassination. Under Jones v Dunkel, their silence is an inferential admission. It has been legally significant from the day they chose it.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                {[
+                  { v: "2002", l: "Herald Sun ritual begins", c: "text-rose-400" },
+                  { v: "0", l: "Formal rebuttals issued", c: "text-red-400" },
+                  { v: "378,571", l: "People downloaded the proof", c: "text-amber-400" },
+                  { v: "ICC", l: "The Hague — formally received", c: "text-green-400" },
+                ].map(s => (
+                  <div key={s.l} className="bg-black/40 rounded-xl p-3 text-center border border-zinc-700/40">
+                    <div className={`text-xl font-black ${s.c}`}>{s.v}</div>
+                    <div className="text-zinc-500 text-[10px] mt-1 uppercase tracking-wider">{s.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

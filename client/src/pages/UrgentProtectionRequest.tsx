@@ -14,6 +14,9 @@ import benAssassination from "@assets/IMG_1004_1776208003721.png";
 import benBillShorten from "@assets/IMG_1005_1776208003721.png";
 import benHitmenCaught from "@assets/27A51392-28E5-40D2-B8A9-A9BFE2D35452_1776208003721.png";
 import benConsensualSex from "@assets/IMG_0352_1776208003721.png";
+import heraldSunArticle from "@assets/2023-02-18_04.00.18_1776317136588.jpeg";
+import benUnSwitzerland from "@assets/IMG_1003_1776317163067.png";
+import benShortenPolice from "@assets/IMG_3289_1776317163067.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -1009,6 +1012,148 @@ export default function UrgentProtectionRequest() {
               </div>
             </CardContent>
           </Card>
+        </motion.div>
+
+        {/* ───── COORDINATED PUBLIC HUMILIATION RITUAL ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-gradient-to-br from-slate-900 via-rose-950/30 to-slate-900 border border-rose-700/50 rounded-xl p-6">
+
+            <div className="flex items-center gap-3 mb-5">
+              <div className="bg-rose-700/30 p-3 rounded-lg">
+                <AlertTriangle size={24} className="text-rose-400" />
+              </div>
+              <div>
+                <h2 className="text-xl font-black text-white leading-tight">The Coordinated Public Humiliation Ritual</h2>
+                <p className="text-rose-400 font-bold text-sm mt-0.5 uppercase tracking-wider">
+                  Herald Sun · The Age · Fabricated Allegation · Shorten · Police Complicity
+                </p>
+              </div>
+            </div>
+
+            {/* Herald Sun article image + narrative */}
+            <div className="grid md:grid-cols-2 gap-5 mb-5">
+              <div className="space-y-3">
+                <div className="rounded-xl overflow-hidden border border-rose-700/40 bg-black/40">
+                  <div className="bg-rose-950/80 px-3 py-1.5 text-xs font-mono text-rose-300 uppercase tracking-widest border-b border-rose-800/30 text-center">
+                    Herald Sun — "My Descent Into Madness" — 2002 Defamation
+                  </div>
+                  <img
+                    src={heraldSunArticle}
+                    alt="Herald Sun article My Descent Into Madness — defamatory piece based on Dr. McLean's autobiography Recovered Not Cured"
+                    className="w-full object-contain"
+                    data-testid="img-herald-sun-defamation"
+                  />
+                  <div className="bg-red-950/70 px-3 py-2 text-xs text-red-300 text-center font-bold border-t border-red-800/30">
+                    "THE HERALD SUN MY OLD EMPLOYER VILIFIES ME — IRONICALLY IT STATES THAT 'ASIO' IS FOLLOWING YOU" — ONLY WEEKS AFTER THIS, I WAS FIRED FROM THE AGE.
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-3 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  In 2002, Dr. McLean published his autobiography <span className="text-white font-bold">Recovered Not Cured</span> — a first-person account of living with schizophrenia, written to reduce stigma and document his experience. His former employer, the <span className="text-white font-bold">Herald Sun</span>, responded by publishing a defamatory piece: <span className="text-rose-300 font-bold italic">"My Descent Into Madness."</span>
+                </p>
+                <p>
+                  The article used language from his own autobiography — language written to destigmatise mental illness — and reframed it as a psychiatric spectacle for public consumption. It was a coordinated act of character assassination by a former employer, timed to the release of his book.
+                </p>
+                <p className="text-amber-200 font-semibold">
+                  Only weeks after that article was published, Dr. McLean was fired from <span className="text-white">The Age</span> — a competing newspaper where he was employed as a graphics artist. The sequence is not coincidence. It is a documented pattern: <span className="text-white">publish → defame → terminate employment → destroy livelihood → eliminate platform.</span> This is what a coordinated public humiliation ritual looks like from inside it.
+                </p>
+                <p>
+                  The Herald Sun article did not emerge from journalism. It emerged from the same apparatus that would, years later, deploy a former SAS operative, a Lebanese criminal network, 14 psychiatric hospitalisations, and a Federal NDIS Minister against the same individual. The ritual began in 2002. The archive documents everything that followed.
+                </p>
+              </div>
+            </div>
+
+            {/* The paid allegation — Ben's revelation */}
+            <div className="bg-red-950/40 border border-red-700/40 rounded-xl p-5 mb-5">
+              <h3 className="text-red-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <UserX size={14} className="text-red-400" />
+                Years Later — Ben Revealed the Girl from Recovered Not Cured Was Paid to Fabricate
+              </h3>
+              <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                The woman written about in <span className="text-white font-bold">Recovered Not Cured</span> was later paid to fabricate a false allegation against Dr. McLean — a deliberate operation designed to permanently damage him using content from his own memoir as the weapon. Dr. McLean's NDIS support worker Ben confirmed this in writing. The allegation was investigated by Federal Australian Police, who confirmed the encounter was entirely consensual. The allegation collapsed.
+                <span className="text-amber-300 font-bold"> Police collectively participated in the maintenance of this fabricated narrative for the rest of Dr. McLean's life — using it as a tool of ongoing persecution, psychiatric referral triggering, and credibility destruction.</span>
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <div className="rounded-xl overflow-hidden border border-emerald-700/40 bg-zinc-950">
+                    <div className="bg-emerald-950/80 px-3 py-1.5 text-[10px] font-mono text-emerald-300 uppercase tracking-widest border-b border-emerald-800/30 text-center">
+                      Ben: "The police told me about the consensual regretted sex"
+                    </div>
+                    <img
+                      src={benUnSwitzerland}
+                      alt="Ben NDIS: They're going to call you to chair the UN meeting in Switzerland — police told me about the consensual regretted sex"
+                      className="w-full object-contain"
+                      data-testid="img-ben-un-switzerland-humiliation"
+                    />
+                  </div>
+                  <p className="text-zinc-400 text-xs leading-relaxed">
+                    Ben relays police intelligence directly: <em className="text-white">"Yes even the police said it was a close call. The police told me about the consensual regretted sex."</em> Police knew the allegation was fabricated. They briefed Dr. McLean's disability support worker rather than act to protect him. This is institutional participation in the humiliation ritual.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <div className="rounded-xl overflow-hidden border border-amber-700/40 bg-zinc-950">
+                    <div className="bg-amber-950/80 px-3 py-1.5 text-[10px] font-mono text-amber-300 uppercase tracking-widest border-b border-amber-800/30 text-center">
+                      Ben: "Police want to know if you are mentally ready to challenge Shorten"
+                    </div>
+                    <img
+                      src={benShortenPolice}
+                      alt="Ben NDIS: The police want to know if you are mentally ready to challenge Bill Shorten — his lawyers might use your history of mental health"
+                      className="w-full object-contain"
+                      data-testid="img-ben-shorten-police-humiliation"
+                    />
+                  </div>
+                  <p className="text-zinc-400 text-xs leading-relaxed">
+                    Ben relays: <em className="text-white">"The police want to know if you are mentally ready to challenge Bill Shorten in a court of law as his lawyers might use your history of mental health as an excuse to discredit your story."</em> Police knew Shorten's legal strategy before Dr. McLean did. They disclosed Shorten's plan to an NDIS worker. This is institutional intelligence sharing in service of the persecutor.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Shorten significance */}
+            <div className="bg-amber-950/30 border border-amber-600/40 rounded-xl p-5 mb-5">
+              <h3 className="text-amber-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <TrendingUp size={14} className="text-amber-400" />
+                The Significance — Shorten's Weaponisation of Mental Illness Is the Height of Moral Cowardice
+              </h3>
+              <div className="space-y-3 text-slate-300 text-sm leading-relaxed">
+                <p>
+                  Bill Shorten — at the time serving as Federal NDIS Minister with the money, lawyers, institutional power, and political influence of the Commonwealth Government behind him — chose to respond to a documented whistleblower not with a denial, not with legal process, but by pre-positioning a psychiatric destruction strategy.
+                </p>
+                <p>
+                  Police intelligence, relayed through Ben, confirms Shorten's team intended to use <span className="text-white font-bold">Dr. McLean's history of mental illness — a history they helped manufacture through 14 documented involuntary psychiatric hospitalisations — as the weapon to discredit him in court.</span> This is not a legal defence. It is the weaponisation of vulnerability. It is the deployment of the very damage they caused against the person they caused it to.
+                </p>
+                <p className="text-amber-200 font-semibold">
+                  A Federal Minister with unlimited institutional resources, choosing to destroy a disabled whistleblower by exploiting his psychiatric history rather than answering his documented allegations of a $6 billion fraud — this is the height of moral cowardice. It is also documented. It is in the ICC submission. It has been downloaded 378,571 times. <span className="text-white">And not a single person — not Shorten, not his lawyers, not NSW Police, not the NDIA, not any of the 40+ agencies named — has produced a single document disproving that Shorten ordered Dr. McLean's assassination.</span>
+                </p>
+                <p>
+                  Under the principle established in <span className="text-white font-bold">Jones v Dunkel</span>, the failure of Shorten and every named individual to respond to the documented assassination allegation — despite having every legal and institutional resource to do so — is an inferential admission. The silence has been legally significant from the day they chose it.
+                </p>
+              </div>
+            </div>
+
+            {/* Significance summary row */}
+            <div className="bg-black/40 border border-zinc-700/40 rounded-xl p-4">
+              <p className="text-zinc-400 text-xs uppercase tracking-wider font-bold mb-3">What the Ritual Proves — Each Stage Documented</p>
+              <div className="grid sm:grid-cols-2 gap-2 text-xs text-zinc-300">
+                {[
+                  { stage: "2002", act: "Herald Sun defamatory piece — former employer publishes 'My Descent Into Madness' from autobiography content" },
+                  { stage: "2002", act: "Fired from The Age — employment destroyed weeks after the Herald Sun article. Not coincidence. Pattern." },
+                  { stage: "Ongoing", act: "Girl from Recovered Not Cured paid to fabricate — using the memoir itself as the weapon against its author" },
+                  { stage: "Documented", act: "Police confirmed consensual sex to Ben — then maintained the fabricated narrative as a persecution instrument" },
+                  { stage: "Confirmed", act: "Police briefed Shorten's psychiatric destruction strategy to Dr. McLean's NDIS worker before advising Dr. McLean" },
+                  { stage: "Undisputed", act: "No person, agency, or government has formally disproven that Shorten ordered the assassination of Dr. McLean" },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-2 items-start border border-zinc-800/50 rounded-lg p-2">
+                    <span className="text-rose-400 font-black shrink-0 text-[10px] uppercase mt-0.5">{item.stage}</span>
+                    <span className="text-zinc-300 text-[11px] leading-relaxed">{item.act}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
         </motion.div>
 
         {/* ───── FABRICATED FALSE ALLEGATION ───── */}
