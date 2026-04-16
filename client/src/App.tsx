@@ -171,6 +171,7 @@ import HolyReckoning from "@/pages/HolyReckoning";
 import AbleCareMurderThreatCall from "@/pages/AbleCareMurderThreatCall";
 import DyingOfShame from "@/pages/DyingOfShame";
 import { GodsGraceBarranDodger } from "@/pages/GodsGraceBarranDodger";
+import { BlockchainManifest } from "@/pages/BlockchainManifest";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -433,6 +434,9 @@ function Router() {
         <Route path="/bitcoin-proof" component={BitcoinProof} />
         <Route path="/blockchain-proof" component={BitcoinProof} />
         <Route path="/bitcoin-timestamp" component={BitcoinProof} />
+        <Route path="/blockchain-manifest" component={BlockchainManifest} />
+        <Route path="/bitcoin-manifest" component={BlockchainManifest} />
+        <Route path="/timestamp-manifest" component={BlockchainManifest} />
         <Route path="/holy-reckoning" component={HolyReckoning} />
         <Route path="/holy-reckoning-ndis-plea" component={HolyReckoning} />
         <Route path="/ndis-provider-entrapment-plea" component={HolyReckoning} />
