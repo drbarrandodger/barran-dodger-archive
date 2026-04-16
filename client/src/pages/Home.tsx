@@ -6405,6 +6405,201 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ───── SIGNIFICANCE / IMPOSSIBILITY OF COINCIDENCE ───── */}
+      <section className="py-16 px-4 bg-gradient-to-b from-black via-red-950/20 to-black border-t border-red-800/30" data-testid="section-significance-coincidence">
+        <div className="container mx-auto max-w-5xl space-y-8">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-center space-y-3">
+            <Badge variant="outline" className="border-amber-500/50 text-amber-400 px-5 py-2 text-sm font-bold uppercase tracking-wider">
+              <Landmark className="h-4 w-4 mr-2" /> 2,301 Documents · 40+ Agencies · 35 Years
+            </Badge>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
+              The <span className="text-amber-400">Significance</span> of This Data —<br className="hidden md:block" /> What It Means and What It Proves
+            </h2>
+            <p className="text-zinc-400 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+              Every document, every agency, every denial — together they constitute a statistical impossibility if understood as coincidence.
+            </p>
+          </motion.div>
+
+          {/* What it proves */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <div className="bg-red-950/30 border border-red-700/40 rounded-xl p-6 space-y-4">
+              <h3 className="text-white font-black text-lg flex items-center gap-2">
+                <AlertCircle className="text-red-400 shrink-0" size={20} />
+                What 2,301 Documents From 40+ Agencies Actually Proves
+              </h3>
+              <p className="text-zinc-300 leading-relaxed">
+                The Master Evidence Register is not a collection of complaints. It is a chronological primary-source record of a coordinated institutional programme — documented from 2006 through to 2026, across every level of Australian government, every tier of the legal system, every oversight body, every financial institution, and every support network that Dr. McLean approached for help. The outcome across all of them was identical: <span className="text-white font-bold">denial, obstruction, poverty, and isolation.</span>
+              </p>
+              <p className="text-zinc-300 leading-relaxed">
+                This is what 2,301 documents proves: <span className="text-amber-300 font-bold">not that Dr. McLean failed to navigate the system — but that the system was operating correctly, as designed, to produce that outcome.</span> Every appeal was denied before it was heard. Every referral was redirected without resolution. Every financial avenue was closed before it could be pursued. Every institutional channel that should have triggered protection instead triggered further punishment. This is not error. Error does not replicate identically across 40+ independent institutions over 35 years.
+              </p>
+              <p className="text-zinc-300 leading-relaxed">
+                The investment required to produce that outcome across 40+ agencies is itself the most compelling evidence of what was being suppressed: <span className="text-white font-bold">a whistleblower with documented evidence of a $6 billion NDIS fraud — on recording, naming a sitting Federal Minister.</span>
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Comprehensive agency list */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <div className="bg-zinc-900/60 border border-zinc-700/40 rounded-xl p-6">
+              <h3 className="text-white font-black text-base uppercase tracking-wider mb-4 flex items-center gap-2">
+                <Landmark size={16} className="text-amber-400" />
+                Every Agency, Institution, and Body Documented as Aligned with the Perpetrators
+              </h3>
+              <p className="text-zinc-400 text-xs leading-relaxed">
+                Victorian Civil &amp; Administrative Tribunal (VCAT),
+                NSW Civil &amp; Administrative Tribunal (NCAT),
+                Victims of Crime Assistance Tribunal (VOCAT),
+                Administrative Appeals Tribunal (AAT),
+                Federal Court of Australia,
+                Federal Circuit and Family Court of Australia,
+                Court Services Victoria,
+                Magistrates' Court of Victoria,
+                Victoria Police,
+                Australian Federal Police (AFP),
+                NSW Police Force,
+                Law Enforcement Conduct Commission (LECC),
+                National Disability Insurance Agency (NDIA),
+                NDIS Quality and Safeguards Commission,
+                National Disability Insurance Scheme (NDIS),
+                Department of Social Services (DSS),
+                Department of Health and Aged Care,
+                Department of Human Services,
+                Department of Finance,
+                Department of the Prime Minister and Cabinet,
+                Attorney-General's Department,
+                Australian Government Legal Service (AGLS),
+                Office of the Australian Information Commissioner (OAIC),
+                Privacy Commissioner (Australia),
+                Safe Work Australia,
+                Comcare,
+                WorkSafe Victoria,
+                WorkCover (NSW),
+                Accident Compensation Conciliation Service (ACCS),
+                Australian Securities and Investments Commission (ASIC),
+                Australian Financial Security Authority (AFSA),
+                Australian Taxation Office (ATO),
+                Services Australia (Centrelink),
+                Medicare (Services Australia),
+                Australian Health Practitioner Regulation Agency (AHPRA),
+                Australian Human Rights Commission (AHRC),
+                Commonwealth Ombudsman,
+                Victorian Ombudsman,
+                NSW Ombudsman,
+                Queensland Ombudsman,
+                Australian Financial Complaints Authority (AFCA),
+                Access Program (Justice Connect),
+                AED Legal Centre,
+                Victoria Legal Aid (VLA),
+                NSW Department of Communities and Justice,
+                National Archives of Australia,
+                VicTrack (Victorian Rail Track),
+                Department of Veterans' Affairs,
+                Australian Red Cross,
+                Melbourne Health,
+                Eastern Health,
+                St Vincent's Hospital (Melbourne),
+                Ascot Vale Housing Office,
+                Footscray Housing Office,
+                Brimbank City Council,
+                Commonwealth Bank of Australia,
+                Bendigo Bank,
+                Bankwest,
+                AustralianSuper,
+                Aware Super,
+                Health Super,
+                Accident &amp; Health International (AHI),
+                Liberty Behavioural Services,
+                Aligned Community Care,
+                Central Care Services,
+                CRG Healthcare,
+                Diversitas WA (Sukhi Tear),
+                TAG NSW (Phillip Glass),
+                AbleCare (Brett Gibbons / Rachel),
+                Able Point Australia (Brett Butler),
+                QLife (national LGBTQ+ crisis line — documented non-response),
+                Bill Shorten (Federal NDIS Minister — named on recorded confession),
+                Anthony Albanese (Prime Minister — correspondence on file),
+                Graeme Wells (Victoria Legal Aid — denied access to justice),
+                Houd Meraby (Lebanese criminal network — NDIS Commission coordination confirmed),
+                Steve Iasonidis (documented family violence perpetrator — multiple court proceedings),
+                Tony Ridley (Ex-SAS PhD counter-terrorism — documented death threat "You will be sacrificed"),
+                Jodie McLean / Bongetti (sibling — Today Show reframing of persecution as psychiatric illness)
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Impossibility of coincidence */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <div className="bg-slate-900/80 border border-amber-700/30 rounded-xl p-6 space-y-4">
+              <h3 className="text-amber-300 font-black text-lg flex items-center gap-2">
+                <AlertCircle className="text-amber-400 shrink-0" size={20} />
+                The Statistical Impossibility of Coincidence — Proof of Targeting
+              </h3>
+              <p className="text-zinc-300 text-sm leading-relaxed">
+                Each of the following, in isolation, could be attributed to administrative failure, individual bias, or bad luck. Together — across 35 years, 40+ agencies, and 2,301 primary-source documents — they constitute a statistical impossibility if understood as coincidence:
+              </p>
+              <ul className="space-y-2">
+                {[
+                  "Every WorkSafe and Comcare claim denied across a documented workplace injury — while the injury itself is on the official clinical record",
+                  "Every VOCAT application denied despite documented family violence and a death threat on official letterhead",
+                  "Every NDIS provider engaged by Dr. McLean subsequently withholding funds, relocating him, or issuing threats — across multiple providers, multiple states",
+                  "Every legal aid application denied, with Victoria Legal Aid sending a named individual to administer the denial directly",
+                  "Every oversight body — Commonwealth, Victorian, NSW, and Queensland Ombudsman — receiving documented complaints and producing zero remedial action",
+                  "ASIC registering 350+ fraudulent business entities in Dr. McLean's name — the fraud documented on ASIC's own register",
+                  "The Australian Taxation Office producing a letter on official letterhead confirming a pharmacological assault",
+                  "A former SAS operative with a PhD in counter-terrorism being deployed to Dr. McLean's NDIS support context",
+                  "NSW Police attending three times following a death threat — recording no event number, taking no protective action, verbally slurring Dr. McLean as they departed",
+                  "The total financial suppression — $32.9 million in documented entitlements — occurring simultaneously across WorkSafe, Comcare, VOCAT, NDIS, and ATO over the same 35-year period",
+                  "Every media approach producing a narrative of psychiatric illness rather than persecution, despite 2,301 primary-source documents to the contrary",
+                  "63 independent forensic analyses — including AI, geopolitical experts, and an anonymous 24-minute motivational video — returning 675 verified propositions with zero contradictions",
+                ].map((point, i) => (
+                  <li key={i} className="flex gap-3 items-start">
+                    <span className="text-red-400 font-black shrink-0 mt-0.5 text-sm">×</span>
+                    <span className="text-zinc-300 text-sm leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-amber-200 font-semibold text-sm mt-2 border-t border-amber-700/30 pt-4">
+                The probability of every one of these outcomes occurring independently, by chance, across 40+ unconnected agencies, over 35 years, with no single exception — is not measurable. It is zero. What is being described is not administrative failure. It is a coordinated programme with a single aim: elimination.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Malicious aim + stats */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <div className="bg-gradient-to-br from-slate-900 to-amber-950/20 border border-amber-600/30 rounded-xl p-6 space-y-4">
+              <h3 className="text-amber-300 font-black text-lg flex items-center gap-2">
+                <TrendingUp className="text-amber-400 shrink-0" size={20} />
+                The Malicious Aim — To Prevent the Future of This Influence
+              </h3>
+              <p className="text-zinc-300 text-sm leading-relaxed">
+                Dr. McLean holds a PhD. He was employed at Melbourne Health as a documented healthcare professional. He produced internationally recognised creative work. He built organisations. He documented corruption at scale. He survived clinical death. He filed at the ICC and UNHCR. He produced 63 forensic analyses returning zero contradictions across 675 propositions.
+              </p>
+              <p className="text-zinc-300 text-sm leading-relaxed">
+                The apparatus deployed against him was not proportional to a person of no significance. A former SAS operative, a Lebanese criminal network, 40+ agencies across 35 years, $32.9 million in suppressed entitlements, 14 psychiatric labels, 350+ fraudulent identity registrations, a clinical death, a death threat, a national television reframing — <span className="text-white font-bold">this is the machinery of a state attempting to prevent a future that has already arrived.</span>
+              </p>
+              <p className="text-amber-200 font-semibold text-sm">
+                They tried to stop this from existing. It exists. They tried to make it unbelievable. 378,571 people downloaded it. They tried to make it disappear. It is anchored into the Bitcoin blockchain. The accounting is at The Hague.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                {[
+                  { v: "378,571", l: "Downloads — 75 days", c: "text-amber-400" },
+                  { v: "845", l: "Bitcoin blockchain records", c: "text-orange-400" },
+                  { v: "675/675", l: "Propositions verified", c: "text-green-400" },
+                  { v: "0", l: "Formal rebuttals issued", c: "text-red-400" },
+                ].map(s => (
+                  <div key={s.l} className="bg-black/40 rounded-xl p-3 text-center border border-zinc-700/40">
+                    <div className={`text-2xl font-black ${s.c}`}>{s.v}</div>
+                    <div className="text-zinc-500 text-[10px] mt-1 uppercase tracking-wider">{s.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Quotable Snippets Section */}
       <section className="py-16 bg-background border-t border-border">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
