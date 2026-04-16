@@ -717,6 +717,114 @@ export default function UrgentProtectionRequest() {
           </div>
         </motion.div>
 
+        {/* ───── LARISSA ABLECARE — DEATH THREAT DENIAL AUDIO ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-gradient-to-br from-slate-900 via-orange-950/30 to-slate-900 border border-orange-700/50 rounded-xl p-6">
+
+            <div className="flex items-center gap-3 mb-5">
+              <div className="bg-orange-700/30 p-3 rounded-lg">
+                <AlertTriangle size={24} className="text-orange-400" />
+              </div>
+              <div>
+                <h2 className="text-xl font-black text-white leading-tight">Larissa (AbleCare) — Recorded Denial of Death Threat Knowledge</h2>
+                <p className="text-orange-400 font-bold text-sm mt-0.5 uppercase tracking-wider">
+                  No Incident Report · No Police Report Filed · Deliberate Entrapment · Kim Abandons Blaming Barran
+                </p>
+              </div>
+            </div>
+
+            {/* Audio player */}
+            <div className="bg-black/60 border border-orange-700/40 rounded-xl p-4 mb-5">
+              <p className="text-orange-300 font-black text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-red-500 animate-pulse" /> Primary Audio Evidence — AbleCare Incident Response Failure
+              </p>
+              <audio
+                controls
+                className="w-full rounded-lg"
+                data-testid="audio-ablecare-larissa-denial"
+                preload="none"
+              >
+                <source src="/evidence/ablecare-larissa-death-threat-denial.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+              <p className="text-zinc-500 text-[10px] mt-2 text-center uppercase tracking-wider">
+                Recorded call — Larissa (AbleCare) — Death threat denial / failure to file incident report / abandonment
+              </p>
+            </div>
+
+            {/* What the recording proves */}
+            <div className="space-y-4 mb-5">
+
+              <div className="bg-red-950/40 border border-red-700/40 rounded-xl p-4">
+                <h3 className="text-red-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <UserX size={13} className="text-red-400" />
+                  Larissa Denies All Knowledge of the Death Threat — While Placed Responsible for His Safety
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed mb-2">
+                  On this recording, Larissa — an AbleCare representative — denies any knowledge of the documented death threat against Dr. McLean, despite AbleCare being his registered NDIS provider with a statutory duty of care under the NDIS Quality and Safeguards Commission Act 2018. She claims AbleCare "cares" about him.
+                </p>
+                <p className="text-amber-200 text-sm leading-relaxed font-semibold">
+                  At the time of this call, Dr. McLean had already been subjected to a confirmed assassination attempt. AbleCare had already received written notice of the threat — including the full forensic archive at barrandodger.com — directly from Dr. McLean to Brett Butler. No incident report was filed. No police report was initiated. No emergency response protocol was activated. Larissa denied knowledge of all of it and offered reassurances of care that the evidence directly contradicts.
+                </p>
+              </div>
+
+              <div className="bg-zinc-900/60 border border-zinc-700/40 rounded-xl p-4">
+                <h3 className="text-zinc-200 font-black text-sm uppercase tracking-wider mb-3">What AbleCare's Inaction Proves — The Incident Report That Never Existed</h3>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { label: "No Incident Report", detail: "Under NDIS regulation, any threat to a participant's safety requires a mandatory incident report to the NDIS Quality and Safeguards Commission. No report was filed. This is a documented regulatory breach — for a confirmed assassination attempt." },
+                    { label: "Zero Police Report Accepted", detail: "Police attended after the April 15 death threat and left without filing a report or event number. AbleCare — aware of this — did not escalate, did not file independently, did not challenge police inaction. They accepted a zero-report response to a murder attempt." },
+                    { label: "Deliberate Entrapment to Cause Harm", detail: "Dr. McLean was housed inside AbleCare's own infrastructure — dependent on their workers, isolated by their system, with no independent exit. This is not care. This is structural entrapment: the provider who controls your housing, your workers, and your case management also controls whether you survive a death threat." },
+                    { label: "Larissa Claims They Care", detail: "Claiming to care, while deliberately placing a person in harm, refusing to file mandatory incident reports, accepting a zero police response, and offering no interim safety measure — is not care. It is a cover story. It is documented. It is on the recording." },
+                  ].map((item, i) => (
+                    <div key={i} className="bg-zinc-800/50 border border-zinc-700/30 rounded-lg p-3">
+                      <p className="text-orange-300 font-bold text-xs mb-1">{item.label}</p>
+                      <p className="text-zinc-400 text-xs leading-relaxed">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Kim abandons / consent argument */}
+              <div className="bg-amber-950/30 border border-amber-700/40 rounded-xl p-4">
+                <h3 className="text-amber-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <AlertTriangle size={13} className="text-amber-400" />
+                  Kim Leaves Blaming Him for Being "Unreasonable" — After Deliberate Entrapment to Cause Harm
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                  Kim — an AbleCare support worker — departed the situation blaming Dr. McLean for being "unreasonable" following his raised voice. This departure occurred <span className="text-white font-bold">after AbleCare had deliberately structured conditions designed to cause harm</span>: no incident report, no police report, no emergency response, no alternative housing, no safety plan — and a known assassin in proximity. Dr. McLean's anger in that context is not evidence of unreasonableness. It is the rational response of a person who understands that he has been deliberately placed in danger and that the organisation responsible for his safety has chosen institutional self-protection over his survival.
+                </p>
+                <div className="bg-black/40 border border-amber-800/30 rounded-lg p-3">
+                  <p className="text-amber-200 font-bold text-sm italic leading-relaxed">
+                    "Larissa doesn't consent to being recorded." <span className="text-white not-italic font-black">He doesn't consent to being murdered by her negligence.</span> The recording exists because the institutional response to a death threat was denial. The anger exists because the support worker left after entrapment. These are not the defendant's problems to manage. They are evidence.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Significance summary */}
+            <div className="bg-black/40 border border-zinc-700/40 rounded-xl p-4">
+              <p className="text-zinc-400 text-xs uppercase tracking-wider font-bold mb-3">Significance of This Recording — Legal and Forensic</p>
+              <div className="space-y-2 text-xs text-zinc-300">
+                {[
+                  "AbleCare's failure to file a mandatory incident report following a confirmed assassination attempt is a breach of the NDIS Quality and Safeguards Commission Act 2018 — independently reportable to the Commission, the Ombudsman, and the ICC.",
+                  "Larissa's denial of knowledge of the death threat — on a recorded call, after written notice had been delivered to her organisation — establishes either deliberate deception or wilful institutional blindness. Both are documented failures of duty of care.",
+                  "Kim's departure — framing the victim's distress as unreasonableness after deliberate entrapment — is a documented pattern of blame-shifting that has characterised every AbleCare, Diversitas WA, and NDIS provider interaction in this archive.",
+                  "The recording is a primary-source exhibit. It does not require interpretation. It contains AbleCare's own words denying knowledge of an assassination attempt they had been formally notified of in writing.",
+                  "Under Section 7(2) of the Surveillance Devices Act 2007 (NSW), a party to a conversation may record it without consent where it is reasonably necessary to protect their lawful interests. A person facing a confirmed death threat, with an NDIS provider refusing to act, has the most documented lawful interest for self-protective recording in this archive.",
+                ].map((point, i) => (
+                  <div key={i} className="flex gap-2 items-start">
+                    <span className="text-orange-400 font-black shrink-0">◆</span>
+                    <span className="leading-relaxed">{point}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </motion.div>
+
         {/* ───── LIVE MURDER CASE EMAIL — APRIL 13 — 48 HRS BEFORE KILL HIT — ZERO RESPONSE ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <Card className="bg-zinc-900/70 border-red-900/60">
