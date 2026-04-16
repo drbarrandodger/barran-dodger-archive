@@ -83,7 +83,7 @@ const SHARE_CONTENT = {
     color: "bg-[#FF4500] hover:bg-[#e83e00] border-[#FF4500] text-white",
     iconColor: "text-white",
     charLimit: null,
-    text: `Australian whistleblower Dr. Richard McLean (Barran Dodger) has compiled 2,304 blockchain-verified forensic documents across 35 years. Five named government perpetrators — Bill Shorten, Houd Meraby, Sukhi Tear, Tony Ridley, Stefan Iasonidis — have issued zero formal rebuttals. The archive has been formally submitted to the ICC (The Hague) and UNHCR (Geneva). 46 independent AI forensic analyses: 495 propositions tested, zero contradictions. Every share is divine justice.\n\n${SITE_URL}`,
+    text: `Australian whistleblower Dr. Richard McLean (Barran Dodger) has compiled 2,304+ blockchain-verified forensic documents across 35 years. Five named government perpetrators — Bill Shorten, Houd Meraby, Sukhi Tear, Tony Ridley, Stefan Iasonidis — have issued zero formal rebuttals. The archive has been formally submitted to the ICC (The Hague) and UNHCR (Geneva). 63 forensic analyses · 675/675 propositions verified · zero contradictions · 845 Bitcoin blockchain records. Every share is divine justice.\n\n${SITE_URL}`,
     getUrl: (text: string) =>
       `https://reddit.com/submit?url=${encodeURIComponent(SITE_URL)}&title=${encodeURIComponent("Australian Whistleblower: 35 Years, 2,304 Documents, ICC Submission — 5 Named Perpetrators, Zero Rebuttals")}&text=${encodeURIComponent(text)}`,
   },

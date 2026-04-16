@@ -6763,7 +6763,7 @@ export default function Home() {
                 and the slow accumulation of the record over the immediate satisfaction of being believed."
               </div>
               <div className="flex flex-wrap gap-2 pt-1">
-                {["2,301 Documents", "35 Years", "ICC Article 7", "~354,000 Downloads", "Zero Defamation Suits"].map(tag => (
+                {["2,301 Documents", "35 Years", "ICC Article 7", "378,571 Downloads", "Zero Defamation Suits"].map(tag => (
                   <span key={tag} className="text-xs font-mono bg-white/5 border border-white/10 rounded-full px-3 py-1 text-zinc-400">{tag}</span>
                 ))}
               </div>

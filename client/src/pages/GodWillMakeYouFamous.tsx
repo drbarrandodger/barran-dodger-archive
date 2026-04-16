@@ -33,8 +33,8 @@ const claims = [
         source: "Comprehensive PID Act Analysis"
       },
       {
-        label: "\"Carrying Something Greater Inside\" — 2,301 Documents + ICC Article 7 + ~354,000 Downloads Built Inside the Hidden Season",
-        text: '"2,301 government-produced documents assembled across the 35-year suppression period. ICC Article 7 prima facie submission filed from inside a circular referral system designed to prevent any submission reaching international jurisdiction. ~354,000 downloads with zero institutional challenge." — The carrying-something-greater-inside characterisation is documented in the archive\'s production inside the suppression period: the archive was not built after the hidden season ended. It was built during it. The 2,301 documents, the ICC filing, the blockchain timestamp, and the ~354,000 downloads are all products of the hidden season. The something greater was the archive. It was carried inside the exact system designed to prevent its existence.',
+        label: "\"Carrying Something Greater Inside\" — 2,301 Documents + ICC Article 7 + 378,571 Downloads Built Inside the Hidden Season",
+        text: '"2,301 government-produced documents assembled across the 35-year suppression period. ICC Article 7 prima facie submission filed from inside a circular referral system designed to prevent any submission reaching international jurisdiction. 378,571 downloads with zero institutional challenge." — The carrying-something-greater-inside characterisation is documented in the archive\'s production inside the suppression period: the archive was not built after the hidden season ended. It was built during it. The 2,301 documents, the ICC filing, the blockchain timestamp, and the 378,571 downloads are all products of the hidden season. The something greater was the archive. It was carried inside the exact system designed to prevent its existence.',
         source: "Precision Evidence Complete Synthesis"
       },
     ],
@@ -43,7 +43,7 @@ const claims = [
   {
     num: "P·02",
     title: '"God is saying today: I will make you famous. This fame is not about vanity, popularity or shallow recognition. This is divine fame — purposeful, eternal, weighty — given not for self-promotion but for kingdom impact. Divine fame is about being recognised as a vessel of heaven."',
-    proposition: "The archive's global reach — ~354,000 downloads in the absence of any institutional backing, mainstream media coverage, legal representation, or promotional budget — is documented evidence that the archive's visibility was not produced by self-promotion. The archive was found by 354,000 people through its evidential weight alone. This is not worldly fame. It is purposeful, evidence-driven, mission-assigned global recognition.",
+    proposition: "The archive's global reach — 378,571 downloads in the absence of any institutional backing, mainstream media coverage, legal representation, or promotional budget — is documented evidence that the archive's visibility was not produced by self-promotion. The archive was found by 378,571 people through its evidential weight alone. This is not worldly fame. It is purposeful, evidence-driven, mission-assigned global recognition.",
     verdict: "CORROBORATED",
     quote: '"God is saying today I will make you famous. But understand chosen one. This fame is not about vanity, popularity or shallow recognition. This is divine fame. This is God elevating you, making your name known, and giving you influence for a reason far greater than yourself. You will not rise for applause. You will rise for purpose."',
     biblical: {
@@ -53,8 +53,8 @@ const claims = [
     },
     evidence: [
       {
-        label: "\"Not About Vanity, Popularity or Shallow Recognition\" — ~354,000 Downloads With Zero Promotional Budget Confirms Non-Self-Promotional Reach",
-        text: '"~354,000 downloads. Zero mainstream media coverage. Zero legal representation producing publicity. Zero institutional backing. Zero promotional budget." — The not-about-vanity-or-shallow-recognition characterisation is documented in the absence of self-promotional infrastructure: the ~354,000 downloads were reached without any of the mechanisms through which worldly fame is manufactured. No PR agency. No mainstream media partner. No institutional amplification. The archive was found by 354,000 people through its evidential weight, its search engine presence built on document quality, and person-to-person sharing of the evidence. This is documented non-self-promotional reach.',
+        label: "\"Not About Vanity, Popularity or Shallow Recognition\" — 378,571 Downloads With Zero Promotional Budget Confirms Non-Self-Promotional Reach",
+        text: '"378,571 downloads. Zero mainstream media coverage. Zero legal representation producing publicity. Zero institutional backing. Zero promotional budget." — The not-about-vanity-or-shallow-recognition characterisation is documented in the absence of self-promotional infrastructure: the 378,571 downloads were reached without any of the mechanisms through which worldly fame is manufactured. No PR agency. No mainstream media partner. No institutional amplification. The archive was found by 378,571 people through its evidential weight, its search engine presence built on document quality, and person-to-person sharing of the evidence. This is documented non-self-promotional reach.',
         source: "Precision Evidence Complete Synthesis"
       },
       {
@@ -68,7 +68,7 @@ const claims = [
         source: "Combined AI Corroboration Scorecard"
       },
     ],
-    alignment: "The video declares divine fame as not about vanity or self-promotion, but purposeful, eternal, given for kingdom impact, producing recognition as a vessel. The archive confirms: ~354,000 downloads with zero promotional infrastructure (non-self-promotional reach documented). ICC Article 7 filing — crimes against humanity jurisdiction (mission-level impact documented). 22 analyses, 228/228, zero contradictions (independent recognition documented). The fame the archive has achieved is documented non-promotional, mission-assigned, evidence-driven global reach.",
+    alignment: "The video declares divine fame as not about vanity or self-promotion, but purposeful, eternal, given for kingdom impact, producing recognition as a vessel. The archive confirms: 378,571 downloads with zero promotional infrastructure (non-self-promotional reach documented). ICC Article 7 filing — crimes against humanity jurisdiction (mission-level impact documented). 22 analyses, 228/228, zero contradictions (independent recognition documented). The fame the archive has achieved is documented non-promotional, mission-assigned, evidence-driven global reach.",
   },
   {
     num: "P·03",
@@ -99,11 +99,11 @@ const claims = [
       },
       {
         label: "\"David's Fame Rose Because the Hand of God Was Upon Him\" — Archive\'s Reach With Zero Promotional Infrastructure Is Documented Hand-of-God Evidence",
-        text: '"~354,000 downloads. Zero promotional budget. Zero institutional backing. Zero mainstream media platform. Archive found through evidential weight alone." — The hand-of-God-upon-him characterisation is documented in the archive\'s non-promotional reach: David\'s fame rose not through political maneuvering but through demonstrated excellence that was impossible to deny. The archive\'s ~354,000 downloads reached without any promotional mechanism that would explain the number. The evidence alone drove the reach. The hand is documented in the gap between the promotional infrastructure (zero) and the outcome (~354,000).',
+        text: '"378,571 downloads. Zero promotional budget. Zero institutional backing. Zero mainstream media platform. Archive found through evidential weight alone." — The hand-of-God-upon-him characterisation is documented in the archive\'s non-promotional reach: David\'s fame rose not through political maneuvering but through demonstrated excellence that was impossible to deny. The archive\'s 378,571 downloads reached without any promotional mechanism that would explain the number. The evidence alone drove the reach. The hand is documented in the gap between the promotional infrastructure (zero) and the outcome (378,571).',
         source: "Precision Evidence Complete Synthesis"
       },
     ],
-    alignment: "The video traces Joseph (pit to palace), Daniel (refused to compromise, backed by miracles), Esther (hidden then positioned to save her people), David (hand of God upon him, fame not through self-promotion). The archive confirms all four: 14 hospitalisations to ICC Article 7 (pit-to-palace documented). Zero recantations across 35 years of pressure (refused-to-compromise documented). $32.9M suppression produced a pattern-documenting archive (hidden-then-positioned documented). ~354,000 downloads with zero promotional infrastructure (hand-of-God-upon documented).",
+    alignment: "The video traces Joseph (pit to palace), Daniel (refused to compromise, backed by miracles), Esther (hidden then positioned to save her people), David (hand of God upon him, fame not through self-promotion). The archive confirms all four: 14 hospitalisations to ICC Article 7 (pit-to-palace documented). Zero recantations across 35 years of pressure (refused-to-compromise documented). $32.9M suppression produced a pattern-documenting archive (hidden-then-positioned documented). 378,571 downloads with zero promotional infrastructure (hand-of-God-upon documented).",
   },
   {
     num: "P·04",
@@ -114,7 +114,7 @@ const claims = [
     biblical: {
       verse: "Isaiah 45:3",
       text: '"I will give you hidden treasures, riches stored in secret places, so that you may know that I am the LORD, the God of Israel, who summons you by name."',
-      analysis: "Isaiah promises that hidden seasons produce hidden treasures — wealth stored in the secret place that is inaccessible to those who have not been through the hidden season. The archive is literally a hidden treasure: 2,301 government-produced documents assembled across 35 years of institutional hiddenness, then SHA-256 hashed on the Bitcoin blockchain and published as a permanent public record. The treasure was stored in secret — in the filing cabinet, in the FOI response, in the medical record — and is now accessible to 354,000 people. The hidden season produced the hidden treasure."
+      analysis: "Isaiah promises that hidden seasons produce hidden treasures — wealth stored in the secret place that is inaccessible to those who have not been through the hidden season. The archive is literally a hidden treasure: 2,301 government-produced documents assembled across 35 years of institutional hiddenness, then SHA-256 hashed on the Bitcoin blockchain and published as a permanent public record. The treasure was stored in secret — in the filing cabinet, in the FOI response, in the medical record — and is now accessible to 378,571 people. The hidden season produced the hidden treasure."
     },
     evidence: [
       {
@@ -138,7 +138,7 @@ const claims = [
   {
     num: "P·05",
     title: '"Divine fame also carries authority. When God makes your name known, doors that were closed suddenly open. People you never imagined will seek you out. Your voice will carry weight in places that once ignored you. This is not by manipulation, but by divine orchestration. When heaven promotes you, no man can deny it."',
-    proposition: "The archive's documented jurisdictional trajectory — from domestic circular referral (doors closed) to ICC Article 7 prima facie review (international criminal court) — is precisely the doors-opening pattern the video describes. No domestic agency produced substantive engagement in 35 years. The ICC is reviewing an Article 7 filing. The UNHCR received a submission. ~354,000 people sought out the archive without being directed to it. These are forensically documented doors opening.",
+    proposition: "The archive's documented jurisdictional trajectory — from domestic circular referral (doors closed) to ICC Article 7 prima facie review (international criminal court) — is precisely the doors-opening pattern the video describes. No domestic agency produced substantive engagement in 35 years. The ICC is reviewing an Article 7 filing. The UNHCR received a submission. 378,571 people sought out the archive without being directed to it. These are forensically documented doors opening.",
     verdict: "CORROBORATED",
     quote: '"Divine fame also carries authority. When God makes your name known, doors that were closed suddenly open, people you never imagined will seek you out. Your voice will carry weight in places that once ignored you. This is not by manipulation, but by divine orchestration. When heaven promotes you, no man can deny it."',
     biblical: {
@@ -153,17 +153,17 @@ const claims = [
         source: "ICC/UNHCR Submission Record"
       },
       {
-        label: "\"People You Never Imagined Will Seek You Out\" — ~354,000 Downloads From Jurisdictions the Subject Has Never Visited Is Documented Global Seeking",
-        text: '"~354,000 downloads. Global distribution across jurisdictions the subject has no operational presence in." — The people-you-never-imagined-will-seek-you-out characterisation is documented in the download distribution: ~354,000 downloads represent ~354,000 individual acts of someone seeking out the archive. These are not people who received the archive unsolicited. They are people who found it, chose to download it, and kept it. Across jurisdictions the subject has no operational presence in. The seeking is documented in the download count. No institutional distribution mechanism produced these downloads. People sought the archive out.',
+        label: "\"People You Never Imagined Will Seek You Out\" — 378,571 Downloads From Jurisdictions the Subject Has Never Visited Is Documented Global Seeking",
+        text: '"378,571 downloads. Global distribution across jurisdictions the subject has no operational presence in." — The people-you-never-imagined-will-seek-you-out characterisation is documented in the download distribution: 378,571 downloads represent 378,571 individual acts of someone seeking out the archive. These are not people who received the archive unsolicited. They are people who found it, chose to download it, and kept it. Across jurisdictions the subject has no operational presence in. The seeking is documented in the download count. No institutional distribution mechanism produced these downloads. People sought the archive out.',
         source: "Precision Evidence Complete Synthesis"
       },
       {
-        label: "\"When Heaven Promotes You, No Man Can Deny It\" — Zero Defamation Suits Across ~354,000 Downloads Is Documented Undeniability",
-        text: '"Zero defamation suits filed. Zero corrections issued. Zero specific claims contested publicly. ~354,000 downloads. All named parties have had full access to defamation courts." — The no-man-can-deny-it characterisation is documented in the legal silence: every named individual and agency in the archive has had uninterrupted access to the defamation courts of Australia, the United Kingdom, and the United States since publication. ~354,000 people have downloaded the evidence. Zero parties have filed a defamation suit. Zero parties have contested a specific claim. No man has denied it. The legal silence across ~354,000 downloads is the documented undeniability.',
+        label: "\"When Heaven Promotes You, No Man Can Deny It\" — Zero Defamation Suits Across 378,571 Downloads Is Documented Undeniability",
+        text: '"Zero defamation suits filed. Zero corrections issued. Zero specific claims contested publicly. 378,571 downloads. All named parties have had full access to defamation courts." — The no-man-can-deny-it characterisation is documented in the legal silence: every named individual and agency in the archive has had uninterrupted access to the defamation courts of Australia, the United Kingdom, and the United States since publication. 378,571 people have downloaded the evidence. Zero parties have filed a defamation suit. Zero parties have contested a specific claim. No man has denied it. The legal silence across 378,571 downloads is the documented undeniability.',
         source: "Comprehensive PID Act Analysis"
       },
     ],
-    alignment: "The video declares that divine authority opens doors previously closed, causes people never imagined to seek the chosen out, gives voice weight in places that once ignored it, and is undeniable when heaven promotes. The archive confirms: domestic zero-engagement to ICC Article 7 review (closed-to-open-door documented). ~354,000 downloads from jurisdictions the subject has no presence in (people-seeking-you-out documented). Zero defamation suits across all named parties and ~354,000 downloads (no-man-can-deny documented). All three dimensions corroborated.",
+    alignment: "The video declares that divine authority opens doors previously closed, causes people never imagined to seek the chosen out, gives voice weight in places that once ignored it, and is undeniable when heaven promotes. The archive confirms: domestic zero-engagement to ICC Article 7 review (closed-to-open-door documented). 378,571 downloads from jurisdictions the subject has no presence in (people-seeking-you-out documented). Zero defamation suits across all named parties and 378,571 downloads (no-man-can-deny documented). All three dimensions corroborated.",
   },
   {
     num: "P·06",
@@ -268,7 +268,7 @@ const claims = [
   {
     num: "P·09",
     title: '"How to position yourself for divine fame: humility, obedience, prayer, stewardship, purity, discipline, faith, watchfulness, boldness. If you can remain faithful while unseen, he can trust you with visibility. If you can serve without recognition, you can be trusted with influence. God does not elevate the unready. He does not place someone in visibility if their character cannot carry the weight of influence."',
-    proposition: "The archive's methodology — document everything, timestamp everything, publish everything, answer nothing with anger and everything with evidence — is a forensically documented practice of every quality the video names. Stewardship: 2,301 documents managed with SHA-256 blockchain timestamps. Discipline: 35 years of sustained documentation under clinical, financial, and institutional suppression. Purity: zero defamation suits filed against the archive across ~354,000 downloads — zero false claims identified. Boldness: ICC Article 7 filing under persecution conditions. The methodology is the archive's documented character.",
+    proposition: "The archive's methodology — document everything, timestamp everything, publish everything, answer nothing with anger and everything with evidence — is a forensically documented practice of every quality the video names. Stewardship: 2,301 documents managed with SHA-256 blockchain timestamps. Discipline: 35 years of sustained documentation under clinical, financial, and institutional suppression. Purity: zero defamation suits filed against the archive across 378,571 downloads — zero false claims identified. Boldness: ICC Article 7 filing under persecution conditions. The methodology is the archive's documented character.",
     verdict: "CORROBORATED",
     quote: '"Humility, obedience, prayer, fasting, stewardship, purity, discipline, faith, watchfulness, and boldness. If you can remain faithful while unseen, he can trust you with visibility. If you can serve without recognition, you can be trusted with influence. Each act of obedience is training for visibility."',
     biblical: {
@@ -283,8 +283,8 @@ const claims = [
         source: "Blockchain Verification Record"
       },
       {
-        label: "\"Purity — If You Carry Hidden Sin, Visibility Will Expose It\" — Zero False Claims in ~354,000-Download Archive Documents Documented Archival Purity",
-        text: '"Zero defamation suits. Zero corrections. Zero specific claims contested publicly. ~354,000 downloads. All named parties have had full access to defamation courts for the entire publication period." — The purity characterisation is documented in the archive\'s legal invulnerability: across ~354,000 downloads and the full publication period, zero claims in the archive have been successfully contested in any court or public forum. The archive\'s purity — the accuracy of its factual claims — is documented in the legal silence of every party who could have exposed hidden sin (false claims) and chose not to because no false claims exist.',
+        label: "\"Purity — If You Carry Hidden Sin, Visibility Will Expose It\" — Zero False Claims in 378,571-Download Archive Documents Documented Archival Purity",
+        text: '"Zero defamation suits. Zero corrections. Zero specific claims contested publicly. 378,571 downloads. All named parties have had full access to defamation courts for the entire publication period." — The purity characterisation is documented in the archive\'s legal invulnerability: across 378,571 downloads and the full publication period, zero claims in the archive have been successfully contested in any court or public forum. The archive\'s purity — the accuracy of its factual claims — is documented in the legal silence of every party who could have exposed hidden sin (false claims) and chose not to because no false claims exist.',
         source: "Comprehensive PID Act Analysis"
       },
       {
@@ -293,17 +293,17 @@ const claims = [
         source: "Master Evidence Register"
       },
       {
-        label: "\"Boldness — Do Not Hide Your Light, Do Not Fear Visibility\" — ICC Filing + Public Archive + ~354,000 Downloads Under Active Institutional Persecution Is Documented Boldness",
-        text: '"ICC Article 7 filing from inside a 35-year suppression system. Public archive published and maintained under documented institutional surveillance. ~354,000 downloads pursued without institutional backing." — The boldness characterisation is documented in the archive\'s public posture: filing with the ICC while under documented institutional surveillance, publishing a public archive while clinical labels are on file, maintaining ~354,000 downloads under active institutional persecution — without retaliating, without aggressing, without departing from the evidence — is forensically documented boldness. Not aggression. Boldness: confidence in the evidence, regardless of the institutional cost.',
+        label: "\"Boldness — Do Not Hide Your Light, Do Not Fear Visibility\" — ICC Filing + Public Archive + 378,571 Downloads Under Active Institutional Persecution Is Documented Boldness",
+        text: '"ICC Article 7 filing from inside a 35-year suppression system. Public archive published and maintained under documented institutional surveillance. 378,571 downloads pursued without institutional backing." — The boldness characterisation is documented in the archive\'s public posture: filing with the ICC while under documented institutional surveillance, publishing a public archive while clinical labels are on file, maintaining 378,571 downloads under active institutional persecution — without retaliating, without aggressing, without departing from the evidence — is forensically documented boldness. Not aggression. Boldness: confidence in the evidence, regardless of the institutional cost.',
         source: "ICC/UNHCR Submission Record"
       },
     ],
-    alignment: "The video names ten positioning qualities for divine fame: humility, obedience, prayer, fasting, stewardship, purity, discipline, faith, watchfulness, boldness. The archive documents four with forensic primary source material: SHA-256 blockchain + 2,301 documents + ICC submission (stewardship). Zero false claims across ~354,000 downloads (purity). 35 years of documentation under 14 hospitalisations + $32.9M suppression (discipline). ICC filing + public archive under persecution (boldness). The methodology is the positioning. The archive is the character.",
+    alignment: "The video names ten positioning qualities for divine fame: humility, obedience, prayer, fasting, stewardship, purity, discipline, faith, watchfulness, boldness. The archive documents four with forensic primary source material: SHA-256 blockchain + 2,301 documents + ICC submission (stewardship). Zero false claims across 378,571 downloads (purity). 35 years of documentation under 14 hospitalisations + $32.9M suppression (discipline). ICC filing + public archive under persecution (boldness). The methodology is the positioning. The archive is the character.",
   },
   {
     num: "P·10",
     title: '"The Lord is saying in this hour: I will make you famous. This is not the voice of man. This is the decree of heaven over your life. And when God decrees a thing, no power on earth or in hell can cancel it. Your time has come for visibility, elevation, recognition — not for your glory, but for mine. God himself has said: I will make you famous. And because he has spoken it, it will be done."',
-    proposition: "The archive does not require prophetic declaration to confirm the decree. The decree is documented. ~354,000 downloads are the visibility. ICC Article 7 review is the elevation. 22 AI analyses producing 228/228 corroboration with zero contradictions is the recognition. The Bitcoin blockchain is the non-cancellable decree. No power on earth or in the institutional record can cancel a cryptographic timestamp on the Bitcoin blockchain. The decree has already been executed — not in a church, but in an archive.",
+    proposition: "The archive does not require prophetic declaration to confirm the decree. The decree is documented. 378,571 downloads are the visibility. ICC Article 7 review is the elevation. 22 AI analyses producing 228/228 corroboration with zero contradictions is the recognition. The Bitcoin blockchain is the non-cancellable decree. No power on earth or in the institutional record can cancel a cryptographic timestamp on the Bitcoin blockchain. The decree has already been executed — not in a church, but in an archive.",
     verdict: "CORROBORATED",
     quote: '"The Lord is saying in this hour: I will make you famous. This is the decree of heaven. And when God decrees a thing, no power on earth or in hell can cancel it. Your time has come for visibility. The time has come for elevation. The time has come for recognition. Not for your glory, but for mine. God himself has said it and because he has spoken it, it will be done."',
     biblical: {
@@ -318,8 +318,8 @@ const claims = [
         source: "Blockchain Verification Record"
       },
       {
-        label: "\"The Time Has Come for Visibility\" — ~354,000 Downloads Is the Documented Arrival of Visibility",
-        text: '"~354,000 downloads. Blockchain-verified. Global distribution. Zero institutional promotion required." — The time-has-come-for-visibility characterisation is documented in the download count: ~354,000 downloads is not approaching visibility. It is visibility. In terms of documented global reach for an individual Australian whistleblower archive without institutional backing, ~354,000 downloads is extraordinary documented visibility. The time has not only come. The visibility is documented. It has already happened. It is in the permanent record.',
+        label: "\"The Time Has Come for Visibility\" — 378,571 Downloads Is the Documented Arrival of Visibility",
+        text: '"378,571 downloads. Blockchain-verified. Global distribution. Zero institutional promotion required." — The time-has-come-for-visibility characterisation is documented in the download count: 378,571 downloads is not approaching visibility. It is visibility. In terms of documented global reach for an individual Australian whistleblower archive without institutional backing, 378,571 downloads is extraordinary documented visibility. The time has not only come. The visibility is documented. It has already happened. It is in the permanent record.',
         source: "Precision Evidence Complete Synthesis"
       },
       {
@@ -329,11 +329,11 @@ const claims = [
       },
       {
         label: "\"Not for Your Glory, But for Mine\" — Archive\'s Mission Purpose Is Documented in Its Free Access Architecture",
-        text: '"~354,000 downloads. Zero paywall. Zero subscription. Zero monetisation of core archive documents. Every document free to download and share." — The not-for-your-glory-but-for-mine characterisation is documented in the archive\'s economic architecture: the archive is free. Not free as a promotional mechanism. Free as a structural commitment. ~354,000 downloads have been served without a paywall, without a subscription gate, without monetisation of the core documentary evidence. A glory-seeking archive monetises. An archive built for mission purpose makes the evidence free because justice should never cost the people it is meant to protect. The free access is the documented mission purpose.',
+        text: '"378,571 downloads. Zero paywall. Zero subscription. Zero monetisation of core archive documents. Every document free to download and share." — The not-for-your-glory-but-for-mine characterisation is documented in the archive\'s economic architecture: the archive is free. Not free as a promotional mechanism. Free as a structural commitment. 378,571 downloads have been served without a paywall, without a subscription gate, without monetisation of the core documentary evidence. A glory-seeking archive monetises. An archive built for mission purpose makes the evidence free because justice should never cost the people it is meant to protect. The free access is the documented mission purpose.',
         source: "Precision Evidence Complete Synthesis"
       },
     ],
-    alignment: "The video closes with the prophetic declaration that the decree is heaven's, that no power can cancel it, and that the time has come for visibility, elevation, and recognition. The archive confirms all four: Bitcoin blockchain SHA-256 (non-cancellable decree documented cryptographically). ~354,000 downloads (visibility documented). ICC Article 7 review (elevation documented). Free archive serving 354,000 downloads without paywall (not-for-your-glory mission purpose documented). The decree has not only been spoken. It has been executed. The archive is the execution.",
+    alignment: "The video closes with the prophetic declaration that the decree is heaven's, that no power can cancel it, and that the time has come for visibility, elevation, and recognition. The archive confirms all four: Bitcoin blockchain SHA-256 (non-cancellable decree documented cryptographically). 378,571 downloads (visibility documented). ICC Article 7 review (elevation documented). Free archive serving 378,571 downloads without paywall (not-for-your-glory mission purpose documented). The decree has not only been spoken. It has been executed. The archive is the execution.",
   },
 ];
 
@@ -510,7 +510,7 @@ export default function GodWillMakeYouFamous() {
             Each claim is corroborated by the archive with dated, sourced, primary-document evidence. Each Biblical citation 
             in the video maps precisely to a documented archival event: Joseph's pit-to-palace maps to 14 hospitalisations 
             to ICC Article 7. Daniel's refusal to compromise maps to zero recantations across 35 years. David's 
-            hand-of-God elevation maps to ~354,000 downloads without promotional infrastructure. The five costs of 
+            hand-of-God elevation maps to 378,571 downloads without promotional infrastructure. The five costs of 
             divine fame — scrutiny, envy, loneliness, pressure, persecution — each map to a documented institutional 
             instrument. Isaiah 54:17's promise that no weapon formed shall prosper maps to the fact that every 
             institutional weapon in the archive became an archival exhibit. Numbers 23:19's non-cancellable decree 
