@@ -107,7 +107,7 @@ export function BlockchainManifest() {
             ].map(s => (
               <div key={s.label} className="bg-zinc-950 border border-zinc-800 rounded-xl px-5 py-3 text-center">
                 <div className={`text-2xl font-black ${s.color}`}>{s.value}</div>
-                <div className="text-[10px] text-zinc-600 uppercase tracking-wider mt-0.5">{s.label}</div>
+                <div className="text-[10px] text-zinc-400 uppercase tracking-wider mt-0.5">{s.label}</div>
               </div>
             ))}
           </div>
@@ -164,7 +164,7 @@ export function BlockchainManifest() {
               />
             </div>
           </div>
-          <p className="text-[11px] text-zinc-600">Showing {filtered.length.toLocaleString()} of {total.toLocaleString()} records</p>
+          <p className="text-[11px] text-zinc-400">Showing {filtered.length.toLocaleString()} of {total.toLocaleString()} records</p>
         </motion.div>
 
         {/* Record list */}
@@ -180,24 +180,24 @@ export function BlockchainManifest() {
                 return (
                   <div
                     key={r.id}
-                    className="flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-zinc-950 transition-colors border border-transparent hover:border-zinc-800/50 group"
+                    className="flex items-start gap-3 px-3 py-2.5 rounded-lg bg-zinc-900/30 hover:bg-zinc-800/50 transition-colors border border-zinc-800/40 hover:border-zinc-700/60 group"
                     data-testid={`manifest-row-${r.id}`}
                   >
                     {/* Index + category */}
                     <div className="shrink-0 flex items-center gap-1.5 w-20">
-                      <span className="text-[10px] text-zinc-700 font-mono w-6 text-right">{idx + 1}</span>
-                      <span className={`text-[9px] font-black ${meta.color} bg-zinc-900 px-1.5 py-0.5 rounded`}>{meta.abbr}</span>
+                      <span className="text-[10px] text-zinc-400 font-mono w-6 text-right">{idx + 1}</span>
+                      <span className={`text-[9px] font-black ${meta.color} bg-zinc-800 px-1.5 py-0.5 rounded`}>{meta.abbr}</span>
                     </div>
 
                     {/* Name */}
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs text-white font-medium truncate leading-tight">{r.filename}</p>
+                      <p className="text-xs text-white font-semibold truncate leading-tight">{r.filename}</p>
                       <div className="flex items-center mt-0.5">
-                        <code className="text-[9px] text-amber-800/70 font-mono truncate">{r.sha256}</code>
+                        <code className="text-[9px] text-amber-500/80 font-mono truncate">{r.sha256}</code>
                         <CopyBtn text={r.sha256} />
                       </div>
                       {r.submittedAt && (
-                        <p className="text-[9px] text-zinc-700 mt-0.5 leading-none">
+                        <p className="text-[9px] text-zinc-500 mt-0.5 leading-none">
                           {new Date(r.submittedAt).toISOString().replace("T", " ").slice(0, 19)} UTC
                         </p>
                       )}
@@ -212,7 +212,7 @@ export function BlockchainManifest() {
                         href={`https://opentimestamps.org/timestamp/${r.sha256}`}
                         target="_blank" rel="noopener noreferrer"
                         title="Verify on OpenTimestamps"
-                        className="text-zinc-700 hover:text-amber-400 transition-colors opacity-0 group-hover:opacity-100"
+                        className="text-zinc-500 hover:text-amber-400 transition-colors"
                       >
                         <ExternalLink size={11} />
                       </a>
@@ -220,7 +220,7 @@ export function BlockchainManifest() {
                         href={`https://www.blockchain.com/explorer/search?search=${r.sha256}`}
                         target="_blank" rel="noopener noreferrer"
                         title="Search Bitcoin blockchain"
-                        className="text-zinc-700 hover:text-orange-400 transition-colors opacity-0 group-hover:opacity-100"
+                        className="text-zinc-500 hover:text-orange-400 transition-colors"
                       >
                         <Globe size={11} />
                       </a>
