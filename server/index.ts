@@ -8,6 +8,16 @@ import { storage } from "./storage";
 
 const app = express();
 
+// Redirect every www.barrandodger.com request to barrandodger.com permanently
+app.use((req, res, next) => {
+  const host = req.hostname || req.headers.host || '';
+  if (host.startsWith('www.')) {
+    const bare = host.replace(/^www\./, '');
+    return res.redirect(301, `https://${bare}${req.url}`);
+  }
+  next();
+});
+
 app.get('/robots.txt', (_req, res) => {
   res.type('text/plain');
   res.send(`User-agent: *
