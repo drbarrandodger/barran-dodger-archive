@@ -358,6 +358,28 @@ export async function registerRoutes(
     }
   });
 
+  /* ── Share tracking ─────────────────────────────────────── */
+  const shareCounts: Record<string, Record<string, number>> = {};
+
+  app.post('/api/share', (req, res) => {
+    const { page = '/', platform = 'unknown' } = req.body || {};
+    if (!shareCounts[page]) shareCounts[page] = {};
+    shareCounts[page][platform] = (shareCounts[page][platform] || 0) + 1;
+    res.json({ ok: true, page, platform, count: shareCounts[page][platform] });
+  });
+
+  app.get('/api/share/stats', (_req, res) => {
+    const totals: Record<string, number> = {};
+    let grand = 0;
+    for (const page of Object.values(shareCounts)) {
+      for (const [platform, count] of Object.entries(page)) {
+        totals[platform] = (totals[platform] || 0) + count;
+        grand += count;
+      }
+    }
+    res.json({ grand, platforms: totals, pages: shareCounts });
+  });
+
   app.get('/api/analytics/daily', async (req, res) => {
     try {
       res.set('Cache-Control', 'no-store, no-cache, must-revalidate');

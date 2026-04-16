@@ -5,6 +5,7 @@ import { Download, Shield, Search, Filter, ExternalLink, FileText, BookOpen, Sca
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { FloatingShareBar, InlineShareStrip } from "@/components/FloatingShareBar";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
@@ -346,6 +347,7 @@ export default function DigitalArchive() {
         url="https://www.barrandodger.com/digital-archive"
       />
       <Navigation />
+      <FloatingShareBar />
       <div className="max-w-7xl mx-auto px-4 pt-8 pb-20">
 
         {/* Hero */}
@@ -485,6 +487,13 @@ export default function DigitalArchive() {
             </div>
           </div>
         </motion.div>
+
+        <div className="mt-8 mb-4">
+          <InlineShareStrip
+            message="SHARE THIS ARCHIVE — 187+ blockchain-verified documents. They tried to erase him. They authored his evidence."
+            path="/digital-archive"
+          />
+        </div>
 
       </div>
       <Footer />

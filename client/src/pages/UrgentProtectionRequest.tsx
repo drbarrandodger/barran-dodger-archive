@@ -6,6 +6,9 @@ import { AlertTriangle, MapPin, Phone, Mail, Shield, FileText, Globe, Heart, Sca
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { FloatingShareBar, InlineShareStrip } from "@/components/FloatingShareBar";
+import { SectionShare } from "@/components/SectionShare";
+import { EmbedGenerator } from "@/components/EmbedGenerator";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -149,6 +152,7 @@ export default function UrgentProtectionRequest() {
       />
       <ReadingProgress />
       <Navigation />
+      <FloatingShareBar />
 
       <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
 
@@ -1079,6 +1083,14 @@ export default function UrgentProtectionRequest() {
           </div>
         </motion.div>
 
+        <div className="mb-6">
+          <SectionShare
+            shareText='🚨 "Ur a dead man" — written death threat against Australian whistleblower Dr. Richard McLean. AbleCare (NDIS provider) suppressed the incident report. Troy announced he was coming with mates. Zero police record. Zero institutional response. 2,304 blockchain-sealed documents. barrandodger.com'
+            url="https://www.barrandodger.com/urgent-protection-request"
+            label="Share the Troy death threat evidence"
+          />
+        </div>
+
         {/* ───── HOUD MERABY — LEBANESE NDIS OPERATIVE — MULTI-SOURCE CORROBORATION ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <div className="bg-gradient-to-br from-orange-950/70 via-zinc-900 to-zinc-950 border-2 border-orange-700/50 rounded-2xl p-6 md:p-8 shadow-2xl shadow-orange-900/20">
@@ -1240,6 +1252,14 @@ export default function UrgentProtectionRequest() {
           </div>
         </motion.div>
 
+        <div className="mb-6">
+          <SectionShare
+            shareText='🚨 NAMED ASSASSINATION OPERATIVE: Houd Meraby — ABN confirmed, LinkedIn identified, bank transactions documented. 4 independent anonymous sources warn of Lebanese NDIS operative deployed to "extinguish" Dr. McLean. Bill Shorten named as deployment authority. Zero police response. barrandodger.com'
+            url="https://www.barrandodger.com/urgent-protection-request"
+            label="Share the Houd Meraby assassination evidence"
+          />
+        </div>
+
         {/* ───── PRIMARY LEGAL SUBMISSIONS — DOWNLOADABLE SOURCE DOCUMENTS ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <div className="bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-950 border border-zinc-700/50 rounded-2xl p-6 md:p-8 shadow-xl">
@@ -1381,6 +1401,34 @@ export default function UrgentProtectionRequest() {
               </div>
 
             </div>
+          </div>
+        </motion.div>
+
+        {/* ───── EMBED THIS TESTIMONY IN THE DIGITAL INFRASTRUCTURE OF HUMANITY ───── */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 border border-green-500/20 rounded-2xl p-6 md:p-8 shadow-xl shadow-green-900/10">
+            <div className="flex items-center gap-2 mb-1">
+              <Globe size={15} className="text-green-400" />
+              <span className="text-green-400 text-[10px] font-black uppercase tracking-widest">Help Propagate the Evidence</span>
+            </div>
+            <h2 className="text-xl font-black text-white mb-1">
+              Embed This Testimony in the Permanent Record
+            </h2>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+              This evidence cannot be suppressed if it is distributed across enough nodes. Share it on every platform. Embed it on every website. Link to it from every article. The more places it exists, the more permanently it is woven into the world's digital infrastructure. Every share is a blockchain of its own.
+            </p>
+
+            <div className="mb-6">
+              <InlineShareStrip
+                message="SPREAD THIS — Every agency chose silence. You don't have to."
+                path="/urgent-protection-request"
+              />
+            </div>
+
+            <EmbedGenerator
+              path="/urgent-protection-request"
+              title="Barran Dodger — Urgent Protection Request — Physical Harbouring Required"
+            />
           </div>
         </motion.div>
 
