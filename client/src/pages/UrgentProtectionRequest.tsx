@@ -1339,6 +1339,47 @@ export default function UrgentProtectionRequest() {
                 </div>
               </div>
 
+              {/* Document 3 */}
+              <div className="bg-zinc-800/50 border border-zinc-700/40 rounded-xl p-5">
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="bg-emerald-900/30 border border-emerald-700/30 rounded px-2 py-0.5 text-emerald-300 text-[9px] font-black uppercase tracking-wider">31 May 2022</div>
+                      <div className="bg-zinc-700/50 border border-zinc-600/30 rounded px-2 py-0.5 text-zinc-300 text-[9px] font-black uppercase tracking-wider">772 lines · Addressed to the Prime Minister</div>
+                    </div>
+                    <h3 className="text-white font-black text-sm mb-2 leading-snug">
+                      Letter to PM Anthony Albanese &amp; OPMC — CDDA Scheme — Manslaughter, Vagrancy, and the Systemic Erasure of a Human Rights Champion
+                    </h3>
+
+                    <div className="bg-black/40 border-l-2 border-zinc-500 rounded-r-lg p-3 mb-3">
+                      <p className="text-zinc-300 text-[10px] font-black uppercase tracking-wider mb-1">Impartial Statement of Significance</p>
+                      <p className="text-zinc-400 text-xs leading-relaxed">
+                        This document is a formal submission dated 31 May 2022, addressed to the Department of the Prime Minister and Cabinet (OPMC) and directly to Prime Minister Anthony Albanese, filed as a Compensation for Detriment caused by Defective Administration (CDDA) claim. It is the first formal submission to reach Albanese's office following the May 2022 federal election. The document: (1) confirms at the time of writing the author had cancer, a brain memory impairment, was squatting, facing imminent police-enforced eviction by VCAT, and had been denied emergency housing by DHHS — all documented in writing; (2) details the near-fatal hospitalisation at Weribee Mercy Hospital in February 2021, where the author was found with no observable pulse, revived by chance, and subsequently subjected to institutional cover-up across the HCC, MHCC, AHPRA, NHPOPC, IBAC, and the Victorian Ombudsman; (3) establishes that barrister Russell Ball — whose ABN was cancelled in 2012 and who advises government policy and sits on the legal bar — was the mechanism by which the author was denied legal representation across all firms for years, framed as an extortionist, and silenced at AHPRA; (4) documents the government simultaneously suing the author for recording conversations while representing Comcare with a 25-year experienced lawyer in an AAT proceeding the author predicted he would lose — which he subsequently did; (5) names the Attorney General (at the time), the NDIS under Linda Reynolds, and multiple MPs — Dan Andrews, Adam Bandt, Tanya Plibersek — as having received evidence and failed to act; (6) makes a formal, documented request: not admission of liability, but a monthly bursary enabling the author to live without death threats. The OPMC response — deflecting to an FOI review process and attaching a CDDA application form — is included in the document. It constitutes a formal reply from the Department of the Prime Minister and Cabinet acknowledging receipt. No substantive action followed. This exchange took place 14 months before the August 2023 "Rich McLean is dead" email and 11 months after the near-fatal hospitalisation. Every person, agency, and institution named has been notified. None has rebutted the account on the merits.
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 text-[9px] text-zinc-500 mb-3">
+                      {["PM Anthony Albanese — OPMC", "CDDA Compensation Claim", "Weribee Mercy Hospital", "Russell Ball — ABN cancelled 2012", "DHHS emergency housing denied", "VCAT eviction proceedings", "Attorney General notified", "Dan Andrews, Tanya Plibersek, Adam Bandt"].map((tag, i) => (
+                        <span key={i} className="bg-zinc-800 border border-zinc-700 rounded px-2 py-0.5">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col justify-center items-center gap-2 shrink-0">
+                    <a
+                      href="/documents/31-05-2022-letter-to-pm-albanese-opmc.pdf"
+                      download
+                      data-testid="download-albanese-opmc-letter"
+                      className="flex items-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-black text-xs px-5 py-3 rounded-lg transition-colors text-center"
+                    >
+                      <Download size={14} />
+                      Download PDF
+                    </a>
+                    <p className="text-zinc-600 text-[9px] text-center">772 lines · Dated 31 May 2022</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </motion.div>
