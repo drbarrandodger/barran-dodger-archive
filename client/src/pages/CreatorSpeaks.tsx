@@ -199,11 +199,6 @@ export default function CreatorSpeaks() {
           <div className="mt-4 w-32 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent mx-auto" />
         </motion.div>
 
-        {/* TOP TEN PROPHETIC GOSPELS */}
-        <div className="w-full -mx-4 px-0">
-          <TopTenGospelsSection />
-        </div>
-
         <AnimatePresence>
           {!hasBegun && (
             <motion.div
@@ -229,6 +224,11 @@ export default function CreatorSpeaks() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* TOP TEN PROPHETIC GOSPELS */}
+        <div className="w-full -mx-4 px-0">
+          <TopTenGospelsSection />
+        </div>
 
         {showOpening && (
           <motion.div
@@ -519,6 +519,21 @@ export default function CreatorSpeaks() {
           <p className="text-center text-amber-800/30 text-xs mt-3 font-sans">
             230-page digital art portfolio · Rich McLean · Barran Dodger
           </p>
+        </div>
+
+        {/* VIDEO */}
+        <div className="mt-10 mb-2 px-2 max-w-2xl mx-auto w-full">
+          <div className="relative w-full rounded-xl overflow-hidden border border-amber-900/30" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              src="https://www.youtube.com/embed/PN-FpTDYNug"
+              title="Barran Dodger — Dr. Richard William McLean"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+              style={{ border: "none" }}
+              data-testid="video-barran-dodger"
+            />
+          </div>
         </div>
 
         <div className="text-center mt-6 pb-6">
