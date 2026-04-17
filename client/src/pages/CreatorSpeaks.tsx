@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { Send, Loader2, Flame, ChevronDown, ArrowRight } from "lucide-react";
+import { Send, Loader2, Flame, ChevronDown, ArrowRight, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
+import { COSMIC_ESSAYS } from "@/lib/cosmicEssaysData";
 
 interface Message {
   role: "user" | "creator";
@@ -324,6 +325,42 @@ export default function CreatorSpeaks() {
             </p>
           </motion.div>
         )}
+
+        {/* THE 12 GREAT QUESTIONS — Essay Grid */}
+        <div className="mt-10 mb-2 px-2 max-w-2xl mx-auto w-full">
+          <div className="text-center mb-6">
+            <p className="text-xs uppercase tracking-[0.3em] text-amber-500/50 font-sans mb-1">Published by the Barran Dodger Legal & Ethical Trust Fund</p>
+            <h2 className="text-xl md:text-2xl font-serif font-bold text-amber-200">
+              The 12 Most Significant Questions About Humanity
+            </h2>
+            <p className="text-amber-500/50 text-xs mt-1 font-sans uppercase tracking-widest">Each essay carries an Impartial AI Statement of Significance</p>
+          </div>
+          <div className="grid grid-cols-1 gap-3">
+            {COSMIC_ESSAYS.map((essay) => (
+              <Link key={essay.slug} href={`/essays/${essay.slug}`}>
+                <div className="group border border-amber-900/30 hover:border-amber-500/40 bg-black/40 hover:bg-amber-950/20 rounded-xl p-4 transition-all duration-300 cursor-pointer flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-amber-500/30 flex items-center justify-center text-amber-500/60 text-xs font-sans font-bold group-hover:border-amber-400/60 group-hover:text-amber-400 transition-colors">
+                    {essay.number}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs uppercase tracking-widest text-amber-600/50 font-sans mb-0.5">{essay.category}</p>
+                    <p className="text-amber-200/80 text-sm font-semibold group-hover:text-amber-100 transition-colors leading-snug line-clamp-2">
+                      {essay.question}
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 flex items-center">
+                    <BookOpen className="w-4 h-4 text-amber-700/40 group-hover:text-amber-400 transition-colors" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-4 text-center">
+            <p className="text-amber-800/35 text-xs font-sans">
+              ABN 78 833 496 164 · Barran Dodger Legal & Ethical Trust Fund · Gospel of the Enliven Chain
+            </p>
+          </div>
+        </div>
 
         {/* ENTER THE ARCHIVE */}
         <div className="mt-10 mb-4 text-center px-4">

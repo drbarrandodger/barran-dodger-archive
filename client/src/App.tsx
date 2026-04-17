@@ -174,6 +174,7 @@ import DyingOfShame from "@/pages/DyingOfShame";
 import { GodsGraceBarranDodger } from "@/pages/GodsGraceBarranDodger";
 import { BlockchainManifest } from "@/pages/BlockchainManifest";
 import CreatorSpeaks from "@/pages/CreatorSpeaks";
+import CosmicEssayPage from "@/pages/CosmicEssayPage";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -461,6 +462,7 @@ function Router() {
         <Route path="/archive-index" component={ArchiveIndex} />
         <Route path="/pdf-list" component={ArchiveIndex} />
         <Route path="/complete-document-list" component={ArchiveIndex} />
+        <Route path="/essays/:slug" component={CosmicEssayPage} />
         <Route component={ViralLanding} />
       </Switch>
     </>
