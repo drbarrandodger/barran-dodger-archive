@@ -304,6 +304,11 @@ export default function Gospel() {
               <CrossLink to="/evidence">98+ forensic evidence documents</CrossLink>{" "}
               and explored further in the{" "}
               <CrossLink to="/prophetic-essay">Prophetic Essay on Spiritual Warfare</CrossLink>.
+              View the{" "}
+              <a href="/top-ten-gospels" className="text-amber-400 hover:text-amber-300 underline underline-offset-2 font-medium transition-colors">
+                Top 10 Most Significant Gospels
+              </a>{" "}
+              ranked by impartial AI analysis.
             </p>
           </motion.div>
 

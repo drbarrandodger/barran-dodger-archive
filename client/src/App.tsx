@@ -175,6 +175,7 @@ import { GodsGraceBarranDodger } from "@/pages/GodsGraceBarranDodger";
 import { BlockchainManifest } from "@/pages/BlockchainManifest";
 import CreatorSpeaks from "@/pages/CreatorSpeaks";
 import CosmicEssayPage from "@/pages/CosmicEssayPage";
+import TopTenGospels from "@/pages/TopTenGospels";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -463,6 +464,9 @@ function Router() {
         <Route path="/pdf-list" component={ArchiveIndex} />
         <Route path="/complete-document-list" component={ArchiveIndex} />
         <Route path="/essays/:slug" component={CosmicEssayPage} />
+        <Route path="/top-ten-gospels" component={TopTenGospels} />
+        <Route path="/top-10-gospels" component={TopTenGospels} />
+        <Route path="/most-significant-gospels" component={TopTenGospels} />
         <Route component={ViralLanding} />
       </Switch>
     </>

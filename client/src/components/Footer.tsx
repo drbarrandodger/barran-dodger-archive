@@ -184,6 +184,7 @@ export function Footer() {
             <Link href="/timeline" className="hover:text-white transition-colors">Timeline</Link>
             <Link href="/legal-status" className="hover:text-white transition-colors">Legal Status</Link>
             <Link href="/gospel" className="hover:text-white transition-colors">Gospel</Link>
+            <Link href="/top-ten-gospels" className="hover:text-white transition-colors">Top 10 Gospels</Link>
             <Link href="/church" className="hover:text-white transition-colors">Church</Link>
             <Link href="/evidence" className="hover:text-white transition-colors">Evidence</Link>
             <Link href="/blockchain" className="hover:text-white transition-colors">Timestamps</Link>
