@@ -630,6 +630,12 @@ uri = "file://client/src/assets/images/cover-gods-grace-barran-dodger.png"
 type = "image"
 title = "gods-grace-divine-cover"
 
+[[generated]]
+id = "iHmkdn236fRmPVkktGPXC"
+uri = "file://client/src/assets/images/cover-gospel-enliven-chain-complete.png"
+type = "image"
+title = "gospel enliven chain cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
