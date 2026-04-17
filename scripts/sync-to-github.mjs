@@ -108,6 +108,55 @@ async function checkAuth() {
   }
 }
 
+// ── Rate limit pre-check ─────────────────────────────────────────────────────
+const RATE_LIMIT_MIN_REMAINING = 200;
+const RATE_LIMIT_MIN_RESET_SECS = 5 * 60; // 5 minutes
+
+async function checkRateLimit() {
+  let res;
+  try {
+    res = await ghFetch('https://api.github.com/rate_limit');
+  } catch (e) {
+    console.warn(`⚠️  Could not fetch rate limit (${e.message}) — proceeding anyway.`);
+    return;
+  }
+
+  if (!res.ok) {
+    console.warn(`⚠️  Rate limit check returned HTTP ${res.status} — proceeding anyway.`);
+    return;
+  }
+
+  const data = await res.json();
+  const core = data?.resources?.core;
+  if (!core) {
+    console.warn('⚠️  Unexpected rate_limit response shape — proceeding anyway.');
+    return;
+  }
+
+  const { remaining, reset, limit } = core;
+  const resetInSecs = reset - Math.floor(Date.now() / 1000);
+  const resetAt = new Date(reset * 1000).toLocaleTimeString();
+
+  console.log(`GitHub API quota: ${remaining}/${limit} remaining (resets at ${resetAt})`);
+
+  if (remaining < RATE_LIMIT_MIN_REMAINING) {
+    console.error(
+      `\n⚠️  QUOTA TOO LOW: Only ${remaining} API requests remain (minimum required: ${RATE_LIMIT_MIN_REMAINING}).`
+    );
+    console.error(`    Quota resets at ${resetAt} (in ~${Math.max(0, Math.ceil(resetInSecs / 60))} minute(s)).`);
+    console.error('    Aborting sync to prevent a partial update. Please retry after the quota resets.\n');
+    process.exit(0);
+  }
+
+  if (resetInSecs > 0 && resetInSecs <= RATE_LIMIT_MIN_RESET_SECS) {
+    console.error(
+      `\n⚠️  QUOTA RESET IMMINENT: Quota resets in ~${Math.ceil(resetInSecs / 60)} minute(s) (${remaining} requests remaining).`
+    );
+    console.error('    Aborting sync to prevent a partial update mid-reset. Please retry after the quota resets.\n');
+    process.exit(0);
+  }
+}
+
 // ── Fetch all current SHAs via Git Trees API (2 calls total) ────────────────
 async function fetchAllShas() {
   const branchRes = await ghFetch(`https://api.github.com/repos/${REPO}/branches/${BRANCH}`);
@@ -253,6 +302,7 @@ async function pushFile(relPath, shaMap) {
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 await checkAuth();
+await checkRateLimit();
 console.log('Fetching current file SHAs from GitHub...');
 const shaMap = await fetchAllShas();
 console.log(`Loaded ${Object.keys(shaMap).length} existing file SHAs.`);
