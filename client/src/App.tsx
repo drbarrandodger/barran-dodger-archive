@@ -218,7 +218,8 @@ function Router() {
     <>
       <ScrollToTop />
       <Switch>
-        <Route path="/" component={ViralLanding} />
+        <Route path="/" component={CreatorSpeaks} />
+        <Route path="/main" component={ViralLanding} />
         <Route path="/archive" component={Home} />
         <Route path="/start-here" component={StartHere} />
         <Route path="/mission" component={Mission} />

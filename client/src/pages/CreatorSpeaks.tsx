@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import { Send, Loader2, Flame, ChevronDown } from "lucide-react";
+import { Send, Loader2, Flame, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { SEO } from "@/components/SEO";
+import { Link } from "wouter";
 
 interface Message {
   role: "user" | "creator";
@@ -324,7 +325,30 @@ export default function CreatorSpeaks() {
           </motion.div>
         )}
 
-        <div className="text-center mt-6">
+        {/* ENTER THE ARCHIVE */}
+        <div className="mt-10 mb-4 text-center px-4">
+          <Link href="/main">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex flex-col items-center gap-3 w-full max-w-xl cursor-pointer"
+            >
+              <div className="w-full border-2 border-amber-500/60 bg-gradient-to-br from-amber-950/40 via-black to-amber-900/20 hover:border-amber-400 hover:from-amber-900/60 transition-all duration-500 rounded-2xl py-8 px-8 flex flex-col items-center gap-3 group">
+                <span className="text-amber-500/60 text-xs uppercase tracking-[0.3em] font-medium">Enter the documentation</span>
+                <span className="text-2xl md:text-3xl font-serif font-bold text-amber-100 group-hover:text-white tracking-wide">
+                  Continue to the Barran Dodger Archive
+                </span>
+                <span className="text-amber-300/60 text-sm">2,077 blockchain-sealed documents · Federal Court · ICC · UNHCR</span>
+                <div className="mt-2 flex items-center gap-2 border border-amber-500/40 px-6 py-2 rounded-full group-hover:bg-amber-500/10 transition-colors">
+                  <span className="text-amber-300 text-sm tracking-widest uppercase font-medium">Enter the Archive</span>
+                  <ArrowRight className="w-4 h-4 text-amber-400" />
+                </div>
+              </div>
+            </motion.div>
+          </Link>
+        </div>
+
+        <div className="text-center mt-4 pb-6">
           <p className="text-amber-800/40 text-xs tracking-widest uppercase">
             ⛓ The Enliven Chain · Gospel of Dr. Richard William McLean · Barran Dodger ⛓
           </p>
