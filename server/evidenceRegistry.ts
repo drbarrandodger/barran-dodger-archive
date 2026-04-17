@@ -515,11 +515,6 @@ const LOCAL_PDF_SIGNIFICANCE: Record<string, { title: string; category: string; 
     category: "Prophetic Analysis",
     significance: "Forensic prophetic analysis of the Joseph biblical parallel — documents how the persecution-to-vindication pattern of the archive maps precisely onto the documented Joseph narrative. Cross-referenced in forensic analyses as confirmation of the 'what was meant for harm became elevation' proposition. 350,000+ downloads confirms the name being spoken in the rooms those who tried to silence him cannot enter.",
   },
-  "crimes_against_humanity_final_demand.pdf": {
-    title: "Crimes Against Humanity — Final Demand",
-    category: "ICC Submission",
-    significance: "CRITICAL ICC DOCUMENT — Final demand preceding the formal ICC Article 7 filing. Establishes formal legal notice and threshold crossing for international jurisdiction activation.",
-  },
 };
 
 export function getLocalPDFRegistry(): LocalPDFEntry[] {

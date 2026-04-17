@@ -287,10 +287,6 @@ const PAGE_META: Record<string, PageMeta> = {
     title: "Letter to the World — Dr Richard McLean Addresses the International Community | Barran Dodger",
     description: "Dr Richard McLean's open letter to the world: addressed to the ICC, UNHCR, international media, and every person who has ever been told their persecution was delusion. The letter is backed by 2,304 documents and formally received at The Hague.",
   },
-  "/apotheosis": {
-    title: "Apotheosis — The Final Elevation | Barran Dodger",
-    description: "The apotheosis: from dismissed domestic nuisance to international criminal record at The Hague. The final elevation is documented across 2,304 exhibits, 28 AI analyses, and two formal international submissions.",
-  },
   "/retrospective-statement": {
     title: "Retrospective Statement — Looking Back Across 35 Years | Barran Dodger",
     description: "Dr Richard McLean's retrospective statement: looking back across 35 years of persecution, 14 hospitalisations, and 2,304 documents. Every betrayal was a breadcrumb. Every dismissal was a document. The retrospective confirms: the archive was always going to The Hague.",
@@ -404,10 +400,6 @@ const PAGE_META: Record<string, PageMeta> = {
   "/archive": {
     title: "The Complete Archive — 2,304 Primary Source Documents | Barran Dodger",
     description: "The complete Barran Dodger archive: 2,304 primary source documents spanning 35 years. Clinical records, government correspondence, surveillance logs, financial instruments, legal proceedings, and AI forensic analyses — all blockchain-verified.",
-  },
-  "/ai-justice-statement": {
-    title: "AI Justice Statement — 28 AI Systems, Zero Contradictions | Barran Dodger",
-    description: "28 independent AI systems examined 288+ propositions against Dr Richard McLean's archive. Result: 288 confirmed, zero contradictions. The AI justice statement: the most independent, unbiased corroboration available — and it confirms everything.",
   },
 };
 
