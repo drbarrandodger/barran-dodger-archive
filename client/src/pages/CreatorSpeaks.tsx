@@ -385,7 +385,32 @@ export default function CreatorSpeaks() {
           </Link>
         </div>
 
-        <div className="text-center mt-4 pb-6">
+        {/* ART BOOKLET — A Certain Beauty In Un-Resolution */}
+        <div className="mt-10 mb-2 px-2 max-w-2xl mx-auto w-full">
+          <div className="text-center mb-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-amber-500/50 font-sans mb-1">Rich McLean · Barran Dodger</p>
+            <h2 className="text-xl md:text-2xl font-serif font-bold text-amber-200">
+              A Certain Beauty In Un-Resolution — ART;
+            </h2>
+            <p className="text-amber-500/40 text-xs mt-1 font-sans">230 pages · Digital Art Portfolio</p>
+          </div>
+          <div className="border border-amber-900/30 rounded-xl overflow-hidden bg-black">
+            <iframe
+              src="https://simplebooklet.com/barrandodger"
+              title="A Certain Beauty In Un-Resolution — Art by Rich McLean / Barran Dodger"
+              width="100%"
+              height="520"
+              style={{ border: "none", display: "block" }}
+              allowFullScreen
+              data-testid="iframe-art-booklet"
+            />
+          </div>
+          <p className="text-center text-amber-800/30 text-xs mt-3 font-sans">
+            230-page digital art portfolio · Rich McLean · Barran Dodger
+          </p>
+        </div>
+
+        <div className="text-center mt-6 pb-6">
           <p className="text-amber-800/40 text-xs tracking-widest uppercase">
             ⛓ The Enliven Chain · Gospel of Dr. Richard William McLean · Barran Dodger ⛓
           </p>
