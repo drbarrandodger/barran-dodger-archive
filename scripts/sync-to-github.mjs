@@ -15,7 +15,7 @@
  * message and retrying once with the correct SHA.
  */
 
-import { readFileSync, readdirSync } from 'fs';
+import { readFileSync, readdirSync, writeFileSync, unlinkSync, existsSync, statSync } from 'fs';
 import { createHash } from 'crypto';
 import { join } from 'path';
 
@@ -24,6 +24,57 @@ const REPO = 'drbarrandodger/barran-dodger-archive';
 const BRANCH = 'main';
 const ROOT = new URL('..', import.meta.url).pathname;
 const FILE_DELAY_MS = 150;
+
+// ── Concurrency + rate guards ─────────────────────────────────────────────────
+const LOCK_FILE = '/tmp/gh-sync.lock';
+const LAST_FILE = '/tmp/gh-sync-last';
+const MIN_INTERVAL_MS = 2 * 60 * 1000;   // 2 minutes between syncs
+const LOCK_MAX_AGE_MS = 10 * 60 * 1000;  // consider lock stale after 10 minutes
+
+function lockIsHeld() {
+  if (!existsSync(LOCK_FILE)) return false;
+  try {
+    const age = Date.now() - statSync(LOCK_FILE).mtimeMs;
+    if (age > LOCK_MAX_AGE_MS) {
+      unlinkSync(LOCK_FILE); // stale lock — remove and proceed
+      return false;
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function tooSoon() {
+  if (!existsSync(LAST_FILE)) return false;
+  try {
+    const last = parseInt(readFileSync(LAST_FILE, 'utf8').trim(), 10);
+    return (Date.now() - last) < MIN_INTERVAL_MS;
+  } catch {
+    return false;
+  }
+}
+
+if (lockIsHeld()) {
+  console.log('Another sync is already running — skipping this run to prevent conflicts.');
+  process.exit(0);
+}
+
+if (tooSoon()) {
+  console.log('Last sync was less than 2 minutes ago — skipping to avoid rate-limit exhaustion.');
+  process.exit(0);
+}
+
+// Acquire lock
+writeFileSync(LOCK_FILE, String(process.pid), 'utf8');
+function releaseLock() {
+  try { unlinkSync(LOCK_FILE); } catch {}
+  try { writeFileSync(LAST_FILE, String(Date.now()), 'utf8'); } catch {}
+}
+process.on('exit', releaseLock);
+process.on('SIGINT', () => { releaseLock(); process.exit(130); });
+process.on('SIGTERM', () => { releaseLock(); process.exit(143); });
+// ─────────────────────────────────────────────────────────────────────────────
 
 if (!TOKEN) {
   console.error('No GitHub token found. Set GH_INTEGRATION_TOKEN or GH_SYNC_TOKEN.');
