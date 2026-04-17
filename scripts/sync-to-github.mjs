@@ -1,23 +1,29 @@
 #!/usr/bin/env node
 /**
  * Syncs key source files to GitHub via the GitHub Contents API.
- * 
+ *
  * Uses GitHub's Git Trees API to pre-fetch all current SHAs in one request,
- * which avoids the 1 MB Contents API limit and stale-SHA 409 errors.
+ * then computes local git blob SHAs to skip unchanged files entirely.
+ * Only changed files consume write API quota.
  *
  * TOKEN PRIORITY:
  *   1. GH_INTEGRATION_TOKEN (set by the Replit GitHub integration — recommended)
  *   2. GH_SYNC_TOKEN        (custom secret)
  *   3. GITHUB_TOKEN         (classic PAT — may expire or lose repo access)
+ *
+ * 409 conflicts are resolved by parsing the "is at {SHA}" from GitHub's error
+ * message and retrying once with the correct SHA.
  */
 
 import { readFileSync, readdirSync } from 'fs';
+import { createHash } from 'crypto';
 import { join } from 'path';
 
 const TOKEN = process.env.GH_INTEGRATION_TOKEN || process.env.GH_SYNC_TOKEN || process.env.GITHUB_TOKEN;
 const REPO = 'drbarrandodger/barran-dodger-archive';
 const BRANCH = 'main';
 const ROOT = new URL('..', import.meta.url).pathname;
+const FILE_DELAY_MS = 150;
 
 if (!TOKEN) {
   console.error('No GitHub token found. Set GH_INTEGRATION_TOKEN or GH_SYNC_TOKEN.');
@@ -51,9 +57,8 @@ async function checkAuth() {
   }
 }
 
-// ── Fetch all current SHAs via Git Trees API (no 1 MB limit) ────────────────
+// ── Fetch all current SHAs via Git Trees API (2 calls total) ────────────────
 async function fetchAllShas() {
-  // Get the HEAD commit SHA for the branch
   const branchRes = await ghFetch(`https://api.github.com/repos/${REPO}/branches/${BRANCH}`);
   if (!branchRes.ok) {
     const d = await branchRes.json();
@@ -63,7 +68,6 @@ async function fetchAllShas() {
   const branchData = await branchRes.json();
   const treeSha = branchData.commit.commit.tree.sha;
 
-  // Fetch the full recursive tree
   const treeRes = await ghFetch(
     `https://api.github.com/repos/${REPO}/git/trees/${treeSha}?recursive=1`
   );
@@ -74,7 +78,6 @@ async function fetchAllShas() {
   }
   const treeData = await treeRes.json();
 
-  // Build path → sha map (blobs only)
   const shaMap = {};
   for (const item of treeData.tree) {
     if (item.type === 'blob') shaMap[item.path] = item.sha;
@@ -83,6 +86,15 @@ async function fetchAllShas() {
     console.warn('⚠️  Tree response was truncated — some SHAs may be missing, retry will handle them.');
   }
   return shaMap;
+}
+
+// ── Compute git blob SHA locally (no API call needed) ────────────────────────
+function computeBlobSha(buf) {
+  const header = `blob ${buf.length}\0`;
+  const hash = createHash('sha1');
+  hash.update(header, 'binary');
+  hash.update(buf);
+  return hash.digest('hex');
 }
 
 // ── File collection ──────────────────────────────────────────────────────────
@@ -136,9 +148,14 @@ async function pushFile(relPath, shaMap) {
   try { buf = readFileSync(fullPath); } catch { return `SKIP (missing): ${relPath}`; }
   if (buf.length > MAX_FILE_BYTES) return `SKIP (too large ${(buf.length / 1024 / 1024).toFixed(1)}MB): ${relPath}`;
 
-  const content = buf.toString('base64');
+  const localSha = computeBlobSha(buf);
   const existingSha = shaMap[relPath] || null;
 
+  if (existingSha && existingSha === localSha) {
+    return `SKIP (unchanged): ${relPath}`;
+  }
+
+  const content = buf.toString('base64');
   const body = { message: `Auto-sync: ${relPath}`, content, branch: BRANCH };
   if (existingSha) body.sha = existingSha;
 
@@ -157,8 +174,6 @@ async function pushFile(relPath, shaMap) {
     process.exit(1);
   }
 
-  // On 409: extract the current SHA from the error ("is at {SHA} but expected ..."),
-  // update the local shaMap, and retry once.
   if (res.status === 409) {
     const msg = d.message || '';
     const isAtMatch = msg.match(/is at\s+([a-f0-9]{40})/i);
@@ -189,7 +204,8 @@ async function pushFile(relPath, shaMap) {
 await checkAuth();
 console.log('Fetching current file SHAs from GitHub...');
 const shaMap = await fetchAllShas();
-console.log(`Loaded ${Object.keys(shaMap).length} existing file SHAs.\n`);
+console.log(`Loaded ${Object.keys(shaMap).length} existing file SHAs.`);
+console.log('(Unchanged files will be skipped — only changed content is pushed)\n');
 
 const files = [
   ...INCLUDE_ROOT_FILES,
@@ -205,7 +221,9 @@ for (const f of files) {
   if (result.startsWith('OK')) ok++;
   else if (result.startsWith('SKIP')) skip++;
   else err++;
-  await new Promise(r => setTimeout(r, 150));
+  if (!result.startsWith('SKIP')) {
+    await new Promise(r => setTimeout(r, FILE_DELAY_MS));
+  }
 }
 
-console.log(`\nDone. ${ok} pushed, ${skip} skipped, ${err} errors.`);
+console.log(`\nDone. ${ok} pushed, ${skip} skipped (unchanged), ${err} errors.`);
