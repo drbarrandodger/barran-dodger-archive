@@ -74,6 +74,7 @@ import coverThousandFell from "@/assets/images/cover-thousand-fell-forensic-anal
 import coverTheyreAboutToBeHindBars from "@/assets/images/cover-theyre-about-to-be-behind-bars.png";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { TopTenGospelsSection } from "@/components/TopTenGospelsSection";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -5103,6 +5104,9 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* TOP TEN PROPHETIC GOSPELS */}
+      <TopTenGospelsSection />
 
       {/* Featured Book: A Certain Beauty in Un-Resolution */}
       <section className="py-20 bg-muted/30 border-y border-border/50">
