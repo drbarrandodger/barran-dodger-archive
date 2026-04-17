@@ -1,8 +1,15 @@
 import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, BookOpen, Shield, ChevronRight } from "lucide-react";
+import { ArrowLeft, BookOpen, Shield, Download, FileText, Hash, ExternalLink, BookMarked } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { COSMIC_ESSAYS } from "@/lib/cosmicEssaysData";
+
+const coverImages = import.meta.glob('../assets/images/cover-essay-*.png', { eager: true }) as Record<string, { default: string }>;
+
+function getEssayCover(slug: string): string | undefined {
+  const key = `../assets/images/cover-essay-${slug}.png`;
+  return coverImages[key]?.default;
+}
 
 export default function CosmicEssayPage() {
   const params = useParams<{ slug: string }>();
@@ -23,6 +30,12 @@ export default function CosmicEssayPage() {
       </div>
     );
   }
+
+  const coverSrc = getEssayCover(essay.slug);
+  const pdfUrl = `/api/essays/${essay.slug}/pdf`;
+  const epubUrl = `/api/essays/${essay.slug}/epub`;
+  const pdfFilename = `cosmic-essay-${String(essay.number).padStart(2, '0')}-${essay.slug}.pdf`;
+  const epubFilename = `cosmic-essay-${String(essay.number).padStart(2, '0')}-${essay.slug}.epub`;
 
   return (
     <div className="min-h-screen bg-[#050500] text-amber-100 font-serif">
@@ -47,6 +60,37 @@ export default function CosmicEssayPage() {
 
       <div className="max-w-3xl mx-auto px-4 pb-24 pt-12">
 
+        {/* AI Cover Image */}
+        {coverSrc && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mb-10"
+          >
+            <a
+              href={pdfUrl}
+              download={pdfFilename}
+              className="block group relative overflow-hidden rounded-2xl border border-amber-700/30 shadow-2xl shadow-amber-900/20 cursor-pointer"
+              title="Click to download PDF"
+              data-testid="cover-image-download"
+            >
+              <img
+                src={coverSrc}
+                alt={`Cover — ${essay.title}`}
+                className="w-full max-w-xs mx-auto block rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                style={{ aspectRatio: "3/4", objectFit: "cover" }}
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-end justify-center pb-4 rounded-2xl">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-amber-300 text-xs uppercase tracking-widest font-sans flex items-center gap-1 bg-black/70 px-3 py-1.5 rounded-full">
+                  <Download className="w-3 h-3" /> Download PDF
+                </span>
+              </div>
+            </a>
+            <p className="text-center text-amber-700/40 text-xs mt-2 font-sans">Click cover to download PDF</p>
+          </motion.div>
+        )}
+
         {/* Category + Number */}
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -69,6 +113,19 @@ export default function CosmicEssayPage() {
             {essay.title}
           </h1>
           <p className="text-amber-300/60 text-lg leading-relaxed mb-2">{essay.subtitle}</p>
+
+          {/* Blockchain Hash Badge */}
+          {essay.blockchainHash && (
+            <div className="mt-4 mb-6 flex items-start gap-2 border border-amber-900/30 bg-amber-950/10 rounded-lg px-4 py-3">
+              <Hash className="w-3.5 h-3.5 text-amber-600/60 mt-0.5 shrink-0" />
+              <div>
+                <p className="text-amber-600/50 text-xs uppercase tracking-widest font-sans mb-0.5">Blockchain SHA-256 Timestamp</p>
+                <p className="text-amber-800/60 text-[10px] font-mono break-all leading-relaxed" data-testid="blockchain-hash">
+                  {essay.blockchainHash}
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Divider */}
           <div className="my-8 flex items-center gap-4">
@@ -108,7 +165,7 @@ export default function CosmicEssayPage() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="border border-amber-500/20 bg-amber-950/10 rounded-xl p-6 mb-12"
+          className="border border-amber-500/20 bg-amber-950/10 rounded-xl p-6 mb-10"
         >
           <div className="flex items-center gap-2 mb-3">
             <BookOpen className="w-4 h-4 text-amber-500/60" />
@@ -119,6 +176,118 @@ export default function CosmicEssayPage() {
           <p className="text-amber-200/60 text-sm leading-relaxed font-sans italic">
             {essay.aiStatement}
           </p>
+        </motion.div>
+
+        {/* Download Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="border border-amber-700/30 bg-amber-950/20 rounded-2xl p-6 mb-10"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <Download className="w-4 h-4 text-amber-500/70" />
+            <h3 className="text-amber-400/80 text-sm uppercase tracking-widest font-sans font-semibold">
+              Download This Essay
+            </h3>
+          </div>
+          <p className="text-amber-700/50 text-xs font-sans mb-5 leading-relaxed">
+            Free to download, share, and distribute. Includes AI-generated cover, essay body, AI Statement of Significance, and blockchain SHA-256 timestamp. © Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href={pdfUrl}
+              download={pdfFilename}
+              className="flex-1 flex items-center justify-center gap-2 bg-amber-900/30 hover:bg-amber-800/40 border border-amber-700/40 hover:border-amber-500/50 text-amber-300 hover:text-amber-100 transition-all duration-200 rounded-xl px-5 py-3 text-sm font-sans font-medium"
+              data-testid="download-pdf"
+            >
+              <FileText className="w-4 h-4" />
+              Download PDF
+              <span className="text-amber-600/50 text-xs ml-1">with cover</span>
+            </a>
+            <a
+              href={epubUrl}
+              download={epubFilename}
+              className="flex-1 flex items-center justify-center gap-2 bg-amber-900/20 hover:bg-amber-800/30 border border-amber-700/30 hover:border-amber-500/40 text-amber-400 hover:text-amber-200 transition-all duration-200 rounded-xl px-5 py-3 text-sm font-sans font-medium"
+              data-testid="download-epub"
+            >
+              <BookMarked className="w-4 h-4" />
+              Download EPUB
+              <span className="text-amber-600/50 text-xs ml-1">eBook</span>
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Free Ebooks Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mb-12"
+        >
+          <div className="flex items-center gap-2 mb-5">
+            <BookMarked className="w-4 h-4 text-amber-600/50" />
+            <h3 className="text-amber-600/60 text-xs uppercase tracking-widest font-sans font-semibold">
+              Free Ebooks — All 12 Cosmic Essays
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 gap-2">
+            {COSMIC_ESSAYS.map((e) => (
+              <div
+                key={e.slug}
+                className={`flex items-center justify-between gap-3 rounded-xl border px-4 py-3 transition-all ${
+                  e.slug === essay.slug
+                    ? 'border-amber-500/30 bg-amber-900/20'
+                    : 'border-amber-900/20 bg-black/20 hover:border-amber-700/30 hover:bg-amber-950/10'
+                }`}
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="text-amber-700/40 text-xs font-mono shrink-0 font-sans w-5 text-right">
+                    {e.number}
+                  </span>
+                  {e.slug === essay.slug ? (
+                    <span className="text-amber-300/80 text-sm font-sans truncate">{e.title}</span>
+                  ) : (
+                    <Link href={`/essays/${e.slug}`}>
+                      <span className="text-amber-500/60 hover:text-amber-300/80 text-sm font-sans truncate cursor-pointer transition-colors">
+                        {e.title}
+                      </span>
+                    </Link>
+                  )}
+                  {e.slug === essay.slug && (
+                    <span className="text-amber-600/50 text-xs font-sans shrink-0 hidden sm:inline">← you are here</span>
+                  )}
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <a
+                    href={`/api/essays/${e.slug}/pdf`}
+                    download={`cosmic-essay-${String(e.number).padStart(2,'0')}-${e.slug}.pdf`}
+                    className="text-amber-700/50 hover:text-amber-400 transition-colors"
+                    title="Download PDF"
+                    data-testid={`download-pdf-list-${e.slug}`}
+                  >
+                    <FileText className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href={`/api/essays/${e.slug}/epub`}
+                    download={`cosmic-essay-${String(e.number).padStart(2,'0')}-${e.slug}.epub`}
+                    className="text-amber-700/40 hover:text-amber-500 transition-colors"
+                    title="Download EPUB"
+                    data-testid={`download-epub-list-${e.slug}`}
+                  >
+                    <BookMarked className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 text-center">
+            <Link href="/free-ebooks">
+              <span className="inline-flex items-center gap-1.5 text-amber-600/50 hover:text-amber-400 text-xs font-sans uppercase tracking-widest cursor-pointer transition-colors">
+                <ExternalLink className="w-3 h-3" /> View All Free Ebooks &amp; Publications
+              </span>
+            </Link>
+          </div>
         </motion.div>
 
         {/* Navigation between essays */}
@@ -162,6 +331,11 @@ export default function CosmicEssayPage() {
           <p className="text-amber-800/20 text-xs mt-1 font-sans">
             ABN 78 833 496 164 · Barran Dodger Legal & Ethical Trust Fund
           </p>
+          {essay.blockchainHash && (
+            <p className="text-amber-900/20 text-[9px] mt-1 font-mono font-sans">
+              SHA-256: {essay.blockchainHash}
+            </p>
+          )}
         </div>
       </div>
     </div>

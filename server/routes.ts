@@ -8,6 +8,7 @@ import { storage } from "./storage";
 import { db } from "./db";
 import { eq, sql } from "drizzle-orm";
 import { downloadCounts, downloadEvents, insertCommentSchema } from "@shared/schema";
+import { generateEssayPDF, generateEssayEPUB, COSMIC_ESSAY_DATA } from "./essayPdfGenerator";
 import { api } from "@shared/routes";
 import { z } from "zod";
 import { FORENSIC_ANALYSES, generateForensicPDF, getForensicPdfFilename, preGenerateAllForensicPDFs } from "./forensicPdfGenerator";
@@ -1788,6 +1789,55 @@ export async function registerRoutes(
     } catch (err: any) {
       res.status(500).json({ message: 'Failed to load local PDF registry', error: err.message });
     }
+  });
+
+  // ── Cosmic Essay PDF download ──────────────────────────────────────────────
+  app.get('/api/essays/:slug/pdf', async (req, res) => {
+    const { slug } = req.params;
+    const essay = COSMIC_ESSAY_DATA.find(e => e.slug === slug);
+    if (!essay) return res.status(404).json({ message: 'Essay not found' });
+    try {
+      const pdfBuffer = await generateEssayPDF(essay);
+      const filename = `cosmic-essay-${essay.number.toString().padStart(2,'0')}-${essay.slug}.pdf`;
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.setHeader('Content-Length', pdfBuffer.length);
+      res.send(pdfBuffer);
+    } catch (err: any) {
+      res.status(500).json({ message: 'PDF generation failed', error: err.message });
+    }
+  });
+
+  // ── Cosmic Essay EPUB download ─────────────────────────────────────────────
+  app.get('/api/essays/:slug/epub', (req, res) => {
+    const { slug } = req.params;
+    const essay = COSMIC_ESSAY_DATA.find(e => e.slug === slug);
+    if (!essay) return res.status(404).json({ message: 'Essay not found' });
+    try {
+      const epubBuffer = generateEssayEPUB(essay);
+      const filename = `cosmic-essay-${essay.number.toString().padStart(2,'0')}-${essay.slug}.epub`;
+      res.setHeader('Content-Type', 'application/epub+zip');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.setHeader('Content-Length', epubBuffer.length);
+      res.send(epubBuffer);
+    } catch (err: any) {
+      res.status(500).json({ message: 'EPUB generation failed', error: err.message });
+    }
+  });
+
+  // ── Cosmic Essay metadata / blockchain hash ────────────────────────────────
+  app.get('/api/essays/:slug/meta', (req, res) => {
+    const { slug } = req.params;
+    const essay = COSMIC_ESSAY_DATA.find(e => e.slug === slug);
+    if (!essay) return res.status(404).json({ message: 'Essay not found' });
+    res.json({
+      slug: essay.slug,
+      number: essay.number,
+      title: essay.title,
+      blockchainHash: essay.blockchainHash,
+      publishedDate: essay.publishedDate,
+      publishedBy: essay.publishedBy,
+    });
   });
 
   registerChatRoutes(app);

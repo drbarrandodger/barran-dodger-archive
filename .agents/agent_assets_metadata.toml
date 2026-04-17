@@ -636,6 +636,78 @@ uri = "file://client/src/assets/images/cover-gospel-enliven-chain-complete.png"
 type = "image"
 title = "gospel enliven chain cover"
 
+[[generated]]
+id = "ezASGN--69GmF_wCmGJU7"
+uri = "file://client/src/assets/images/cover-essay-humanity-true-nature.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Nf-HwxaL3D2uB7OCFlWmm"
+uri = "file://client/src/assets/images/cover-essay-does-god-exist.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "IC6I0YsBA204n02PC8ULe"
+uri = "file://client/src/assets/images/cover-essay-universe-consciousness.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "LvZ6zZD6i9Wl6Yn1Y3-ur"
+uri = "file://client/src/assets/images/cover-essay-human-survival.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "9oogciIPnYdm0d8oiuqth"
+uri = "file://client/src/assets/images/cover-essay-world-peace.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "_IVg7vjDvecdtVJ1eC_8P"
+uri = "file://client/src/assets/images/cover-essay-alien-disclosure.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "gPJRm-J-dNHY4PUMzO3-O"
+uri = "file://client/src/assets/images/cover-essay-biblical-prophecy.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "AO9a_Rp2Yiwhl3j-NwWme"
+uri = "file://client/src/assets/images/cover-essay-revelation-decoded.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "zkEinCNbeGmrNpYElWX4P"
+uri = "file://client/src/assets/images/cover-essay-enliven-chain.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "08ePPlJ7AB0trO-yI03d6"
+uri = "file://client/src/assets/images/cover-essay-silencing-prophets.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "4QHKkKMeaB3OVg1N0vAuf"
+uri = "file://client/src/assets/images/cover-essay-suffering-divine-plan.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "mk9iVPwkNqvh5G4bRTgMT"
+uri = "file://client/src/assets/images/cover-essay-creators-final-message.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
