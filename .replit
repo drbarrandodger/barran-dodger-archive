@@ -63,4 +63,3 @@ timeoutMs = 20000
 [userenv]
 
 [userenv.shared]
-GH_INTEGRATION_TOKEN = "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"
