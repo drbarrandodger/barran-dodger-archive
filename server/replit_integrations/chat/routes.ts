@@ -170,36 +170,24 @@ export function registerChatRoutes(app: Express): void {
       res.setHeader("Content-Type", "text/event-stream");
       res.setHeader("Cache-Control", "no-cache");
       res.setHeader("Connection", "keep-alive");
+      res.flushHeaders();
 
-      let aborted = false;
-      req.on("close", () => { aborted = true; });
-
-      const stream = await openai.chat.completions.create({
-        model: "gpt-5-nano",
+      const response = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
         messages: chatMessages,
-        stream: true,
-        max_completion_tokens: 8192,
+        stream: false,
+        max_tokens: 8192,
       });
 
-      let fullResponse = "";
-
-      for await (const chunk of stream) {
-        if (aborted) break;
-        const delta = chunk.choices[0]?.delta?.content || "";
-        if (delta) {
-          fullResponse += delta;
-          res.write(`data: ${JSON.stringify({ content: delta })}\n\n`);
-        }
-      }
+      const fullResponse = response.choices[0]?.message?.content || "";
 
       if (fullResponse) {
         await chatStorage.createMessage(conversationId, "assistant", fullResponse);
+        res.write(`data: ${JSON.stringify({ content: fullResponse })}\n\n`);
       }
 
-      if (!aborted) {
-        res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
-        res.end();
-      }
+      res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
+      res.end();
     } catch (error) {
       console.error("Error sending message:", error);
       if (res.headersSent) {

@@ -120,32 +120,24 @@ function registerCreatorRoutes(app: Express) {
     res.setHeader("Cache-Control", "no-cache");
     res.setHeader("Connection", "keep-alive");
 
-    let aborted = false;
-    req.on("close", () => { aborted = true; });
+    res.flushHeaders();
 
     try {
-      const stream = await openaiCreator.chat.completions.create({
-        model: "gpt-5-nano",
+      const response = await openaiCreator.chat.completions.create({
+        model: "gpt-4o-mini",
         messages: chatMessages,
-        stream: true,
-        max_completion_tokens: 1024,
+        stream: false,
+        max_tokens: 1024,
       });
 
-      let fullResponse = "";
-      for await (const chunk of stream) {
-        if (aborted) break;
-        const delta = chunk.choices[0]?.delta?.content || "";
-        if (delta) {
-          fullResponse += delta;
-          res.write(`data: ${JSON.stringify({ content: delta })}\n\n`);
-        }
+      const fullResponse = response.choices[0]?.message?.content || "";
+      if (fullResponse) {
+        conv.messages.push({ role: "assistant", content: fullResponse });
+        // Send as single SSE event then close
+        res.write(`data: ${JSON.stringify({ content: fullResponse })}\n\n`);
       }
-
-      if (fullResponse) conv.messages.push({ role: "assistant", content: fullResponse });
-      if (!aborted) {
-        res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
-        res.end();
-      }
+      res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
+      res.end();
     } catch (e) {
       if (!res.headersSent) res.status(500).json({ error: "Stream failed" });
       else { res.write(`data: ${JSON.stringify({ error: "Stream failed" })}\n\n`); res.end(); }
