@@ -1016,6 +1016,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TOP TEN PROPHETIC GOSPELS */}
+      <TopTenGospelsSection />
+
       {/* THE FOUNDATIONAL TRUTH - Declaration of Innocence & Assassination Evidence */}
       <section className="px-4 pb-8 bg-black relative overflow-hidden pt-10" data-testid="section-foundational-truth">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(220,38,38,0.08)_0%,_transparent_60%)] pointer-events-none" />
@@ -5104,9 +5107,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      {/* TOP TEN PROPHETIC GOSPELS */}
-      <TopTenGospelsSection />
 
       {/* Featured Book: A Certain Beauty in Un-Resolution */}
       <section className="py-20 bg-muted/30 border-y border-border/50">
