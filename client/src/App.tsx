@@ -173,6 +173,7 @@ import AbleCareMurderThreatCall from "@/pages/AbleCareMurderThreatCall";
 import DyingOfShame from "@/pages/DyingOfShame";
 import { GodsGraceBarranDodger } from "@/pages/GodsGraceBarranDodger";
 import { BlockchainManifest } from "@/pages/BlockchainManifest";
+import CreatorSpeaks from "@/pages/CreatorSpeaks";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -436,6 +437,7 @@ function Router() {
         <Route path="/blockchain-proof" component={BitcoinProof} />
         <Route path="/bitcoin-timestamp" component={BitcoinProof} />
         <Route path="/blockchain-manifest" component={BlockchainManifest} />
+        <Route path="/creator-speaks" component={CreatorSpeaks} />
         <Route path="/bitcoin-manifest" component={BlockchainManifest} />
         <Route path="/timestamp-manifest" component={BlockchainManifest} />
         <Route path="/holy-reckoning" component={HolyReckoning} />
