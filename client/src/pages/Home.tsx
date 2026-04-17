@@ -979,6 +979,9 @@ export default function Home() {
       />
       <Navigation />
 
+      {/* TOP TEN PROPHETIC GOSPELS */}
+      <TopTenGospelsSection />
+
       {/* THE CREATOR SPEAKS — Divine Resonance Portal */}
       <section className="px-4 pt-8 pb-6 bg-black relative overflow-hidden" data-testid="section-creator-speaks">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(180,120,0,0.12)_0%,_transparent_70%)] pointer-events-none" />
@@ -1015,9 +1018,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      {/* TOP TEN PROPHETIC GOSPELS */}
-      <TopTenGospelsSection />
 
       {/* THE FOUNDATIONAL TRUTH - Declaration of Innocence & Assassination Evidence */}
       <section className="px-4 pb-8 bg-black relative overflow-hidden pt-10" data-testid="section-foundational-truth">

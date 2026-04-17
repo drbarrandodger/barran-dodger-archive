@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { COSMIC_ESSAYS } from "@/lib/cosmicEssaysData";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
+import { TopTenGospelsSection } from "@/components/TopTenGospelsSection";
 
 interface Message {
   role: "user" | "creator";
@@ -197,6 +198,11 @@ export default function CreatorSpeaks() {
           </p>
           <div className="mt-4 w-32 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent mx-auto" />
         </motion.div>
+
+        {/* TOP TEN PROPHETIC GOSPELS */}
+        <div className="w-full -mx-4 px-0">
+          <TopTenGospelsSection />
+        </div>
 
         <AnimatePresence>
           {!hasBegun && (
