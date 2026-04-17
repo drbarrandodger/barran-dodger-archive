@@ -2,12 +2,13 @@
 /**
  * Syncs key source files to GitHub via the GitHub Contents API.
  * 
- * TOKEN PRIORITY:
- *   1. GH_SYNC_TOKEN   (set by the Replit GitHub integration — recommended)
- *   2. GITHUB_TOKEN    (classic PAT — may expire or lose repo access)
+ * Uses GitHub's Git Trees API to pre-fetch all current SHAs in one request,
+ * which avoids the 1 MB Contents API limit and stale-SHA 409 errors.
  *
- * If the active token returns 404/403, the script exits with a clear message.
- * To refresh: set GH_SYNC_TOKEN to a valid PAT with repo write access.
+ * TOKEN PRIORITY:
+ *   1. GH_INTEGRATION_TOKEN (set by the Replit GitHub integration — recommended)
+ *   2. GH_SYNC_TOKEN        (custom secret)
+ *   3. GITHUB_TOKEN         (classic PAT — may expire or lose repo access)
  */
 
 import { readFileSync, readdirSync } from 'fs';
@@ -19,11 +20,72 @@ const BRANCH = 'main';
 const ROOT = new URL('..', import.meta.url).pathname;
 
 if (!TOKEN) {
-  console.error('No GitHub token found (GH_SYNC_TOKEN or GITHUB_TOKEN not set).');
-  console.error('Set GH_SYNC_TOKEN to a PAT with repo write access to enable syncing.');
+  console.error('No GitHub token found. Set GH_INTEGRATION_TOKEN or GH_SYNC_TOKEN.');
   process.exit(0);
 }
 
+async function ghFetch(url, opts = {}) {
+  return fetch(url, {
+    ...opts,
+    headers: {
+      Authorization: `Bearer ${TOKEN}`,
+      Accept: 'application/vnd.github+json',
+      'Cache-Control': 'no-cache',
+      ...(opts.headers || {}),
+    },
+  });
+}
+
+// ── Auth check ──────────────────────────────────────────────────────────────
+async function checkAuth() {
+  const res = await ghFetch(`https://api.github.com/repos/${REPO}`);
+  if (res.status === 401 || res.status === 403) {
+    const d = await res.json();
+    console.error(`\n⚠️  TOKEN ERROR (${res.status}): ${d.message}`);
+    console.error('Fix: refresh GH_INTEGRATION_TOKEN / GH_SYNC_TOKEN with repo write access.\n');
+    process.exit(1);
+  }
+  if (res.status === 404) {
+    console.error(`\n⚠️  REPO NOT FOUND: ${REPO}`);
+    process.exit(1);
+  }
+}
+
+// ── Fetch all current SHAs via Git Trees API (no 1 MB limit) ────────────────
+async function fetchAllShas() {
+  // Get the HEAD commit SHA for the branch
+  const branchRes = await ghFetch(`https://api.github.com/repos/${REPO}/branches/${BRANCH}`);
+  if (!branchRes.ok) {
+    const d = await branchRes.json();
+    console.error(`⚠️  Failed to get branch: ${d.message}`);
+    process.exit(1);
+  }
+  const branchData = await branchRes.json();
+  const treeSha = branchData.commit.commit.tree.sha;
+
+  // Fetch the full recursive tree
+  const treeRes = await ghFetch(
+    `https://api.github.com/repos/${REPO}/git/trees/${treeSha}?recursive=1`
+  );
+  if (!treeRes.ok) {
+    const d = await treeRes.json();
+    console.error(`⚠️  Failed to get tree: ${d.message}`);
+    process.exit(1);
+  }
+  const treeData = await treeRes.json();
+
+  // Build path → sha map (blobs only)
+  const shaMap = {};
+  for (const item of treeData.tree) {
+    if (item.type === 'blob') shaMap[item.path] = item.sha;
+  }
+  if (treeData.truncated) {
+    console.warn('⚠️  Tree response was truncated — some SHAs may be missing, retry will handle them.');
+  }
+  return shaMap;
+}
+
+// ── File collection ──────────────────────────────────────────────────────────
 const EXCLUDE_DIRS = new Set([
   'node_modules', '.git', 'dist', '.cache', '.local',
   'attached_assets', '.agents', '.config', '.upm',
@@ -65,60 +127,70 @@ function collect(dir, base = '') {
   return results;
 }
 
-async function getFileSha(path) {
-  const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
-    headers: { Authorization: `Bearer ${TOKEN}`, Accept: 'application/vnd.github+json' },
-  });
-  if (res.status === 200) return (await res.json()).sha;
-  if (res.status === 401 || res.status === 403) {
-    const d = await res.json();
-    console.error(`\n⚠️  TOKEN ERROR (${res.status}): ${d.message}`);
-    console.error('The active GitHub token does not have access to this repo.');
-    console.error('Fix: set GH_SYNC_TOKEN to a valid PAT with Contents: write access.\n');
-    process.exit(1);
-  }
-  return null;
-}
+const MAX_FILE_BYTES = 50 * 1024 * 1024;
 
-const MAX_FILE_BYTES = 50 * 1024 * 1024; // 50 MB — GitHub API hard limit
-
-async function pushFile(relPath) {
+// ── Push a single file ────────────────────────────────────────────────────────
+async function pushFile(relPath, shaMap) {
   const fullPath = join(ROOT, relPath);
   let buf;
   try { buf = readFileSync(fullPath); } catch { return `SKIP (missing): ${relPath}`; }
-  if (buf.length > MAX_FILE_BYTES) return `SKIP (too large ${(buf.length/1024/1024).toFixed(1)}MB): ${relPath}`;
+  if (buf.length > MAX_FILE_BYTES) return `SKIP (too large ${(buf.length / 1024 / 1024).toFixed(1)}MB): ${relPath}`;
+
   const content = buf.toString('base64');
-  const existingSha = await getFileSha(relPath);
+  const existingSha = shaMap[relPath] || null;
+
   const body = { message: `Auto-sync: ${relPath}`, content, branch: BRANCH };
   if (existingSha) body.sha = existingSha;
-  const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${relPath}`, {
+
+  const res = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${relPath}`, {
     method: 'PUT',
-    headers: {
-      Authorization: `Bearer ${TOKEN}`,
-      Accept: 'application/vnd.github+json',
-      'Content-Type': 'application/json',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   });
+
   let d;
   try { d = await res.json(); } catch { return `ERR (${res.status}, bad JSON): ${relPath}`; }
+
   if (res.status === 401 || res.status === 403) {
     console.error(`\n⚠️  TOKEN ERROR (${res.status}): ${d.message}`);
-    console.error('Fix: refresh GH_SYNC_TOKEN with a PAT that has Contents: write access.\n');
+    console.error('Fix: refresh GH_INTEGRATION_TOKEN with Contents write access.\n');
     process.exit(1);
   }
-  if (res.status === 404) {
-    console.error(`\n⚠️  REPO NOT FOUND or NO ACCESS (404): ${relPath}`);
-    console.error(`Repo: ${REPO}  Branch: ${BRANCH}`);
-    console.error('Check: (1) repo exists, (2) token has Contents: write access.\n');
-    process.exit(1);
+
+  // On 409: extract the current SHA from the error ("is at {SHA} but expected ..."),
+  // update the local shaMap, and retry once.
+  if (res.status === 409) {
+    const msg = d.message || '';
+    const isAtMatch = msg.match(/is at\s+([a-f0-9]{40})/i);
+    if (isAtMatch) {
+      const correctSha = isAtMatch[1];
+      shaMap[relPath] = correctSha;
+      const retryBody = { message: `Auto-sync: ${relPath}`, content, branch: BRANCH, sha: correctSha };
+      const retryRes = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${relPath}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(retryBody),
+      });
+      let rd;
+      try { rd = await retryRes.json(); } catch { return `ERR (${retryRes.status}, bad JSON retry): ${relPath}`; }
+      return retryRes.status <= 201
+        ? `OK (retry): ${relPath}`
+        : `ERR (${retryRes.status}): ${relPath} — ${rd.message}`;
+    }
+    return `ERR (409): ${relPath} — ${msg}`;
   }
+
   return res.status <= 201
     ? `OK: ${relPath}`
     : `ERR (${res.status}): ${relPath} — ${d.message}`;
 }
 
-// Collect all files under included roots + root-level files
+// ── Main ─────────────────────────────────────────────────────────────────────
+await checkAuth();
+console.log('Fetching current file SHAs from GitHub...');
+const shaMap = await fetchAllShas();
+console.log(`Loaded ${Object.keys(shaMap).length} existing file SHAs.\n`);
+
 const files = [
   ...INCLUDE_ROOT_FILES,
   ...INCLUDE_ROOTS.flatMap(r => collect(join(ROOT, r), r)),
@@ -128,12 +200,12 @@ console.log(`Syncing ${files.length} files to GitHub (${REPO})…\n`);
 
 let ok = 0, skip = 0, err = 0;
 for (const f of files) {
-  const result = await pushFile(f);
+  const result = await pushFile(f, shaMap);
   console.log(result);
   if (result.startsWith('OK')) ok++;
   else if (result.startsWith('SKIP')) skip++;
   else err++;
-  await new Promise(r => setTimeout(r, 200));
+  await new Promise(r => setTimeout(r, 150));
 }
 
 console.log(`\nDone. ${ok} pushed, ${skip} skipped, ${err} errors.`);
