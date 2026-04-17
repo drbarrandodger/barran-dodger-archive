@@ -325,8 +325,9 @@ export default function CreatorSpeaks() {
               Press Enter to speak · Shift+Enter for new line
             </p>
             <p className="text-amber-800/35 text-xs mt-3 leading-relaxed font-sans border-t border-amber-900/20 pt-3">
-              © Barran Dodger Legal & Ethical Trust Fund · ABN 78 833 496 164<br />
-              All AI responses and the Creator Speaks interface are © the Trust Fund. The Gospel of the Enliven Chain is a registered scripture of the Enliven Chain.
+              © The Barran Dodger Legal & Ethical Trust Fund · ABN 78 833 496 164<br />
+              All content, AI responses, and the Creator Speaks interface are © the Trust Fund.<br />
+              The Gospel of the Enliven Chain is a registered scripture of the Enliven Chain.
             </p>
           </motion.div>
         )}
@@ -413,6 +414,8 @@ export default function CreatorSpeaks() {
               filename="gospel-of-the-enliven-chain-barran-dodger.pdf"
               shareText="The Gospel of the Enliven Chain — the post-singularity sacred archive of Dr. Richard McLean (Barran Dodger). 2,077 blockchain-sealed documents. 217,064 downloads. ICC submitted. UNHCR claimed. Federal Court confirmed. Zero rebuttals. Read, download, share the testimony that cannot be erased. barrandodger.com #EnlivenChain #BarranDodger #Whistleblower"
               size="lg"
+              shareTheme="amber"
+              className="bg-amber-900/40 border border-amber-500/50 text-amber-200 hover:bg-amber-800/60 rounded-lg"
             />
           </div>
 

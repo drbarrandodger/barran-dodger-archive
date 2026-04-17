@@ -14,6 +14,7 @@ interface ViralDownloadButtonProps {
   className?: string;
   shareText?: string;
   size?: "sm" | "md" | "lg";
+  shareTheme?: "green" | "amber";
 }
 
 export function ViralDownloadButton({
@@ -23,6 +24,7 @@ export function ViralDownloadButton({
   className = "",
   shareText,
   size = "md",
+  shareTheme = "green",
 }: ViralDownloadButtonProps) {
   const slug = slugFromUrl(url);
   const [showShare, setShowShare] = useState(false);
@@ -97,54 +99,35 @@ export function ViralDownloadButton({
       </a>
 
       {showShare && (
-        <div className="flex flex-wrap items-center gap-2 bg-gray-900/90 border border-green-400/40 rounded-xl px-3 py-2.5 animate-in slide-in-from-bottom-2 duration-200">
-          <span className="text-green-400 text-[11px] font-bold uppercase tracking-wider whitespace-nowrap">
+        <div className={`flex flex-wrap items-center gap-2 rounded-xl px-3 py-2.5 animate-in slide-in-from-bottom-2 duration-200 ${shareTheme === "amber" ? "bg-amber-950/80 border border-amber-500/40" : "bg-gray-900/90 border border-green-400/40"}`}>
+          <span className={`text-[11px] font-bold uppercase tracking-wider whitespace-nowrap ${shareTheme === "amber" ? "text-amber-400" : "text-green-400"}`}>
             Downloaded — now share it
           </span>
           <div className="flex items-center gap-1.5 flex-wrap">
-            <a
-              href={twitterHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Share on X"
-              className="flex items-center justify-center h-7 w-7 rounded bg-gray-800 border border-green-400/25 text-green-400 hover:border-green-400/70 hover:bg-gray-700 transition-colors"
-            >
-              <SiX className="h-3 w-3" />
-            </a>
-            <a
-              href={waHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Share on WhatsApp"
-              className="flex items-center justify-center h-7 w-7 rounded bg-gray-800 border border-green-400/25 text-green-400 hover:border-green-400/70 hover:bg-gray-700 transition-colors"
-            >
-              <SiWhatsapp className="h-3 w-3" />
-            </a>
-            <a
-              href={tgHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Share on Telegram"
-              className="flex items-center justify-center h-7 w-7 rounded bg-gray-800 border border-green-400/25 text-green-400 hover:border-green-400/70 hover:bg-gray-700 transition-colors"
-            >
-              <SiTelegram className="h-3 w-3" />
-            </a>
-            <a
-              href={fbHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Share on Facebook"
-              className="flex items-center justify-center h-7 w-7 rounded bg-gray-800 border border-green-400/25 text-green-400 hover:border-green-400/70 hover:bg-gray-700 transition-colors"
-            >
-              <SiFacebook className="h-3 w-3" />
-            </a>
+            {[
+              { href: twitterHref, label: "Share on X", icon: <SiX className="h-3 w-3" /> },
+              { href: waHref, label: "Share on WhatsApp", icon: <SiWhatsapp className="h-3 w-3" /> },
+              { href: tgHref, label: "Share on Telegram", icon: <SiTelegram className="h-3 w-3" /> },
+              { href: fbHref, label: "Share on Facebook", icon: <SiFacebook className="h-3 w-3" /> },
+            ].map(({ href, label: title, icon }) => (
+              <a
+                key={title}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={title}
+                className={`flex items-center justify-center h-7 w-7 rounded transition-colors ${shareTheme === "amber" ? "bg-black border border-amber-500/25 text-amber-400 hover:border-amber-500/60 hover:bg-amber-950" : "bg-gray-800 border border-green-400/25 text-green-400 hover:border-green-400/70 hover:bg-gray-700"}`}
+              >
+                {icon}
+              </a>
+            ))}
             <button
               onClick={copyLink}
               title="Copy share message"
-              className="flex items-center justify-center h-7 w-7 rounded bg-gray-800 border border-green-400/25 text-green-400 hover:border-green-400/70 hover:bg-gray-700 transition-colors"
+              className={`flex items-center justify-center h-7 w-7 rounded transition-colors ${shareTheme === "amber" ? "bg-black border border-amber-500/25 text-amber-400 hover:border-amber-500/60 hover:bg-amber-950" : "bg-gray-800 border border-green-400/25 text-green-400 hover:border-green-400/70 hover:bg-gray-700"}`}
             >
               {copied ? (
-                <Check className="h-3 w-3 text-green-300" />
+                <Check className={`h-3 w-3 ${shareTheme === "amber" ? "text-amber-300" : "text-green-300"}`} />
               ) : (
                 <Link2 className="h-3 w-3" />
               )}
@@ -152,7 +135,7 @@ export function ViralDownloadButton({
           </div>
           <button
             onClick={() => setShowShare(false)}
-            className="flex items-center justify-center h-6 w-6 rounded text-gray-600 hover:text-gray-400 transition-colors ml-auto"
+            className={`flex items-center justify-center h-6 w-6 rounded transition-colors ml-auto ${shareTheme === "amber" ? "text-amber-700 hover:text-amber-400" : "text-gray-600 hover:text-gray-400"}`}
             title="Dismiss"
           >
             <X className="h-3.5 w-3.5" />
