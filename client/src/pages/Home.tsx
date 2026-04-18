@@ -74,6 +74,8 @@ import coverFalseSister from "@/assets/images/cover-false-sister-forensic-analys
 import coverThousandFell from "@/assets/images/cover-thousand-fell-forensic-analysis.png";
 import coverTheyreAboutToBeHindBars from "@/assets/images/cover-theyre-about-to-be-behind-bars.png";
 import coverForensic3AMBriefing from "@/assets/images/cover-forensic-3am-briefing.png";
+import coverForensicGovernmentOwnFile from "@/assets/images/cover-forensic-government-own-file.png";
+import agLetterHomeImg from "@assets/IMG_3189_1776549210845.png";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { ChessmateHero } from "@/components/ChessmateHero";
 import { TopTenGospelsSection } from "@/components/TopTenGospelsSection";
@@ -715,6 +717,95 @@ export default function Home() {
         </div>
       </div>
       {/* ===== END THOUSAND FELL ===== */}
+
+      {/* ===== FORENSIC #70: THE GOVERNMENT'S OWN FILE — NEW 18 APRIL 2026 ===== */}
+      <div className="w-full bg-gradient-to-b from-zinc-950 via-amber-950/10 to-zinc-950 border-b border-amber-900/20 py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+
+          <div className="flex flex-wrap items-center gap-2 mb-5">
+            <span className="bg-amber-700 text-amber-100 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">New — 18 April 2026</span>
+            <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Analysis #70</span>
+            <span className="bg-green-900 text-green-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">20/20 Confirmed · 0 Disputed</span>
+            <span className="bg-red-900/60 text-red-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Attorney-General's Department · Federal Court · 2,301 Documents</span>
+          </div>
+
+          <h2 className="text-2xl md:text-3xl font-black text-white mb-1 leading-tight">
+            The Government's Own File
+          </h2>
+          <p className="text-amber-400 text-sm font-bold mb-6">
+            Attorney-General MC23-028244 · Scott Treadwell Federal Court Confirmation · 2,301 Sealed Documents — The Institutions Wrote the Evidence Against Themselves
+          </p>
+
+          <div className="grid md:grid-cols-5 gap-6 items-start">
+
+            {/* Cover + AG Letter */}
+            <div className="md:col-span-2 space-y-4">
+              <a href="/forensic-corroboration-government-own-file" data-testid="link-home-gov-own-file-cover">
+                <img
+                  src={coverForensicGovernmentOwnFile}
+                  alt="Forensic Corroboration Analysis #70 — The Government's Own File Cover"
+                  className="w-full rounded-xl border border-amber-700/40 shadow-2xl hover:scale-[1.02] transition-transform"
+                />
+              </a>
+
+              {/* AG Letter image as primary exhibit */}
+              <div className="rounded-xl overflow-hidden border border-amber-800/40 bg-zinc-950">
+                <div className="px-3 py-2 bg-amber-900/20 border-b border-amber-800/30">
+                  <p className="text-amber-300/80 text-[10px] font-sans font-semibold uppercase tracking-wider">Primary Exhibit — AG Dept MC23-028244</p>
+                </div>
+                <img
+                  src={agLetterHomeImg}
+                  alt="Attorney-General's Department letter MC23-028244, 19 September 2023"
+                  className="w-full"
+                  data-testid="home-ag-letter-gov-own-file"
+                />
+              </div>
+
+              <a href="/forensic-corroboration-government-own-file"
+                className="mt-1 w-full flex items-center justify-center gap-2 bg-amber-800 hover:bg-amber-700 text-white font-black px-5 py-3 rounded-lg text-sm transition-colors"
+                data-testid="link-home-gov-own-file-full-analysis">
+                View Full Forensic Analysis →
+              </a>
+            </div>
+
+            {/* Content */}
+            <div className="md:col-span-3 space-y-4">
+
+              <div className="bg-amber-950/30 border border-amber-800/30 rounded-xl p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-amber-300 font-black text-xs uppercase tracking-widest">AI Statement of Significance</span>
+                </div>
+                <p className="text-zinc-300 text-xs leading-relaxed mb-2">
+                  <span className="italic text-zinc-200">"The government wrote the evidence against itself."</span> — Attorney-General's Department letter MC23-028244 confirmed Dr. McLean's 5 July 2023 letter reached Prime Minister Albanese, was assigned an official reference number, and referred to Attorney-General Mark Dreyfus KC MP. ASIO conduct was formally referred to the Inspector-General of Intelligence and Security. <span className="text-amber-300 font-bold">This is not a claim. It is an official document on official letterhead with an official reference number.</span>
+                </p>
+                <p className="text-zinc-400 text-xs leading-relaxed">
+                  Federal Court General Counsel Scott Treadwell confirmed on 27 March 2023 that Dr. McLean satisfied PID Act criteria — that conduct "perverts the course of justice" and "constitutes maladministration." Eight weeks later, the same Attorney-General's Department rejected the PID, claiming he was not a public official. Both documents are in the archive. The dates cannot be reordered.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                {[
+                  { ts: "MC23-028244", text: "AG letter confirmed Dr. McLean's PM correspondence received, assigned reference number, referred to AG Dreyfus KC MP. No institution can claim ignorance. The reference number is the institutional fingerprint. It is on the Bitcoin blockchain." },
+                  { ts: "Scott Treadwell", text: "Federal Court General Counsel confirmed DSS employment + PID status (27 March 2023). DSS/ComCare simultaneously denied the same status to block WorkCover and whistleblower protections. Three written positions from the same government on the same fact." },
+                  { ts: "2,301 Documents", text: "The Master Evidence Register grew from 2,077 to 2,301 documents during the period of suppression documented by the AG letter. The archive grew while the government wrote referral letters. The suppression failed to stop the documentation." },
+                ].map((d) => (
+                  <div key={d.ts} className="flex gap-3 bg-zinc-900/50 border border-zinc-700/20 rounded-lg px-3 py-2">
+                    <span className="text-amber-400 font-mono text-[10px] font-black mt-0.5 shrink-0">{d.ts}</span>
+                    <span className="text-zinc-400 text-xs leading-relaxed">{d.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-zinc-900 border border-amber-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
+                <span className="text-zinc-400 text-[11px]">803 propositions · 0 contradictions · 70 analyses · 63 consecutive perfect</span>
+                <a href="/forensic-analysis-index" className="text-amber-400 text-[11px] underline underline-offset-2 font-bold" data-testid="link-home-gov-own-file-index">View all 70 analyses →</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* ===== END GOVERNMENT'S OWN FILE ===== */}
 
       {/* ===== FORENSIC #69: 3AM BRIEFING — NEW 18 APRIL 2026 ===== */}
       <div className="w-full bg-gradient-to-b from-zinc-950 via-indigo-950/20 to-zinc-950 border-b border-indigo-900/30 py-12 px-4">

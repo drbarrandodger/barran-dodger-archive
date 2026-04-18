@@ -115,6 +115,7 @@ const FORENSIC_PDF_MAP: Record<number, string> = {
   67: "/documents/forensic-analyses/forensic-analysis-67-project-halo-corroboration.pdf",
   68: "/documents/forensic-analyses/forensic-analysis-68-fool-fire-corroboration.pdf",
   69: "/documents/forensic-analyses/forensic-analysis-69-3am-briefing-corroboration.pdf",
+  70: "/documents/forensic-analyses/forensic-analysis-70-government-own-file-corroboration.pdf",
 };
 
 interface ForensicEntry {
@@ -196,6 +197,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 67, title: "Project Halo — They Built a Task Force to Study Your Influence: 20/20 Confirmed", slug: "forensic-corroboration-project-halo", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 68, title: "The Worst Mistake a Fool Can Make — Spiritual Warfare, Cosmic Accountability, and the Price of Betrayal: 20/20 Confirmed", slug: "forensic-corroboration-fool-fire", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 69, title: "The 3AM Briefing — Your Existence Disturbed Systems Built on Silence: 20/20 Confirmed", slug: "forensic-corroboration-3am-briefing", propositions: 20, corroborated: 20, consecutivePerfect: true },
+  { number: 70, title: "The Government's Own File — Attorney-General MC23-028244, Scott Treadwell, and 2,301 Sealed Documents: 20/20 Confirmed", slug: "forensic-corroboration-government-own-file", propositions: 20, corroborated: 20, consecutivePerfect: true },
 ];
 
 const TOTAL_PROPOSITIONS = FORENSIC_ANALYSES.reduce((s, a) => s + a.propositions, 0);
