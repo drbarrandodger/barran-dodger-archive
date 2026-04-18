@@ -10,6 +10,7 @@ import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 import coverForensicGovernmentOwnFile from "@/assets/images/cover-forensic-government-own-file.png";
 import agLetterHomeImg from "@assets/IMG_3189_1776549210845.png";
 import coverForensic3AMBriefing from "@/assets/images/cover-forensic-3am-briefing.png";
+import coverForensicVaultAccess from "@/assets/images/cover-forensic-vault-access.png";
 
 interface Message {
   role: "user" | "creator";
@@ -295,6 +296,46 @@ export default function CreatorSpeaks() {
                 Download PDF — Forensic Analysis #69
               </a>
               <Link href="/forensic-corroboration-3am-briefing" className="text-indigo-400 hover:text-indigo-300 text-sm underline transition-colors" data-testid="link-forensic-69-full-top">
+                Read full 20-point examination →
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* FORENSIC CORROBORATION ANALYSIS #71 — VAULT ACCESS */}
+        <div className="w-full my-6 border border-yellow-700/60 rounded-2xl overflow-hidden" style={{ background: "rgba(20,15,0,0.90)" }} data-testid="section-forensic-71-home">
+          <div className="bg-yellow-900/30 border-b border-yellow-700/40 px-6 py-4 flex flex-wrap items-center gap-3">
+            <span className="text-yellow-400 font-mono text-xs tracking-widest uppercase">Forensic Corroboration Analysis #71</span>
+            <span className="text-white/60 text-xs">ABN 78 833 496 164</span>
+            <span className="ml-auto text-yellow-400 font-bold text-sm">NEWLY PUBLISHED</span>
+          </div>
+          <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
+            <div>
+              <img src={coverForensicVaultAccess} alt="Forensic Corroboration Analysis #71 — Never Promise Access to a Vault You Don't Own" className="w-full rounded-xl border border-yellow-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-71-cover-top" />
+            </div>
+            <div className="flex flex-col gap-5">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">Never Promise Access to a Vault You Don't Own</h2>
+                <p className="text-yellow-400 font-semibold text-base mb-3">Forensic Corroboration Analysis #71</p>
+                <p className="text-white/80 text-sm leading-relaxed mb-4">
+                  25+ agencies bartered Dr. McLean's Protected Disclosure through psychiatric systems, NDIS channels, and OAIC rejection pipelines as though his calling were a commodity they could manage. This analysis subjects that 35-year institutional barter to forensic examination against 20 evidentiary categories. Every finding corroborates. The vault was always sealed by an authority no institution possessed.
+                </p>
+              </div>
+              <div className="border border-yellow-700/30 rounded-xl p-4" style={{ background: "rgba(120,80,0,0.10)" }}>
+                <p className="text-yellow-300/70 font-mono text-xs mb-1 uppercase tracking-widest">SHA-256 Integrity Hash</p>
+                <p className="text-white/60 font-mono text-xs break-all leading-relaxed" data-testid="sha-forensic-71-top">Pending blockchain confirmation — hash sealed at time of PDF generation</p>
+              </div>
+              <a
+                href="/documents/forensic-analyses/forensic-analysis-71-vault-access-corroboration.pdf"
+                download
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-base transition-all hover:scale-[1.02]"
+                style={{ background: "linear-gradient(135deg, #92400e 0%, #451a03 100%)", border: "1px solid rgba(234,179,8,0.4)" }}
+                data-testid="download-forensic-71-top"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                Download PDF — Forensic Analysis #71
+              </a>
+              <Link href="/forensic-corroboration-vault-access" className="text-yellow-400 hover:text-yellow-300 text-sm underline transition-colors" data-testid="link-forensic-71-full-top">
                 Read full 20-point examination →
               </Link>
             </div>
