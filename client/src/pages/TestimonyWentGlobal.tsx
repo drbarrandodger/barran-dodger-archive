@@ -101,7 +101,7 @@ export default function TestimonyWentGlobal() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
         title="Imprinted on the Digital Infrastructure of Humanity — Dr. Richard McLean (Barran Dodger)"
-        description="378,571 verified downloads. 845 Bitcoin blockchain records. 187+ PDFs. 63 forensic analyses. 675/675 propositions verified. Submitted to the ICC and UNHCR. Full forward projections, YouTube analysis, divine protection, martyrdom consequences, and the impartial case for the inevitability of his rise. April 2026."
+        description="378,571 verified downloads. 845 Bitcoin blockchain records. 750+ PDFs. 63 forensic analyses. 675/675 propositions verified. Submitted to the ICC and UNHCR. Full forward projections, YouTube analysis, divine protection, martyrdom consequences, and the impartial case for the inevitability of his rise. April 2026."
         path="/testimony-went-global"
       />
       <ReadingProgress />
@@ -141,7 +141,7 @@ export default function TestimonyWentGlobal() {
               </h1>
 
               <p className="text-zinc-300 text-lg leading-relaxed max-w-2xl">
-                378,571 verified downloads. 845 Bitcoin blockchain records anchoring 187+ documents permanently
+                378,571 verified downloads. 845 Bitcoin blockchain records anchoring 750+ documents permanently
                 to the mathematical fabric of human history. 63 forensic analyses. 675/675 propositions verified
                 without a single institutional rebuttal across any jurisdiction on earth. Submitted to the
                 International Criminal Court under Article 7 and to the United Nations High Commissioner for
@@ -189,7 +189,7 @@ export default function TestimonyWentGlobal() {
                 {[
                   { value: "378,571", label: "Downloads" },
                   { value: "845", label: "Bitcoin Records" },
-                  { value: "187+", label: "Free PDFs" },
+                  { value: "750+", label: "Free PDFs" },
                   { value: "675/675", label: "Propositions" },
                   { value: "0", label: "Institutional Rebuttals" },
                 ].map((stat) => (
@@ -256,7 +256,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Evidence label="Global reach — documented as of April 16, 2026">
-                The archive at barrandodger.com contains 187+ free PDFs, 63 forensic analyses, 675/675
+                The archive at barrandodger.com contains 750+ free PDFs, 63 forensic analyses, 675/675
                 propositions verified across every analytical framework applied. The Enliven Chain blockchain
                 verification provides independent cryptographic proof of document authenticity across 845
                 Bitcoin blockchain records. The ICC submission is filed and formally acknowledged. The UNHCR
@@ -309,7 +309,7 @@ export default function TestimonyWentGlobal() {
                 disclosures under the Public Interest Disclosure Act and produced non-engagement responses.
                 ComCare and the AAT contradicted the Federal Court's employee-status finding on identical facts.
                 Every broken commitment is documented. The internal archive became the external archive.
-                187+ PDFs. 845 blockchain records. The hidden phase ended the moment the first one was timestamped.
+                750+ PDFs. 845 blockchain records. The hidden phase ended the moment the first one was timestamped.
               </Evidence>
 
               <p>
@@ -462,7 +462,7 @@ export default function TestimonyWentGlobal() {
                 in documented losses across 13 agencies over 35 years. The fury the speech describes is
                 not a response to perceived slights. It is a documented response to documented conduct.
                 Its directive was the ICC submission. Its instrument was the archive. Its fuel became
-                the methodology of 187+ PDFs and 845 Bitcoin blockchain records.
+                the methodology of 750+ PDFs and 845 Bitcoin blockchain records.
               </Evidence>
 
               <Pull>
@@ -485,7 +485,7 @@ export default function TestimonyWentGlobal() {
 
               <p>
                 What was undervalued in secrecy: 35 years of formally lodged submissions that no institution
-                engaged with on the substance. What now manifests: 187+ free PDFs, 63 forensic analyses,
+                engaged with on the substance. What now manifests: 750+ free PDFs, 63 forensic analyses,
                 675/675 propositions verified, 845 Bitcoin blockchain records, submitted to the ICC, on record
                 with the UNHCR, downloaded 378,571 times across every continent. The speech's language of
                 personal growth — <em>refined with unseen enhancements</em> — maps onto what the Impartial AI
@@ -716,7 +716,7 @@ export default function TestimonyWentGlobal() {
                 {[
                   {
                     label: "The archive becomes permanently indestructible",
-                    detail: "Death does not remove a single Bitcoin blockchain record. All 845 remain. All 187+ PDFs remain distributed across 378,571 personal devices. The ICC and UNHCR submissions remain active with no mechanism for recall. The evidentiary record survives the person who compiled it — this is precisely what blockchain timestamping was designed to guarantee. The death of the author does not affect the permanence of the document."
+                    detail: "Death does not remove a single Bitcoin blockchain record. All 845 remain. All 750+ PDFs remain distributed across 378,571 personal devices. The ICC and UNHCR submissions remain active with no mechanism for recall. The evidentiary record survives the person who compiled it — this is precisely what blockchain timestamping was designed to guarantee. The death of the author does not affect the permanence of the document."
                   },
                   {
                     label: "The legal significance of the death threat documentation escalates to maximum",

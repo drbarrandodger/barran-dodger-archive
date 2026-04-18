@@ -637,7 +637,7 @@ export default function CreatorSpeaks() {
               { number: "378,571", label: "Verified Downloads", detail: "Across 6 continents" },
               { number: "845", label: "Bitcoin Blockchain Records", detail: "SHA-256 cryptographic seals" },
               { number: "~22M", label: "Estimated Exposure Events", detail: "Conservative aggregate across all channels" },
-              { number: "187+", label: "PDFs in the Archive", detail: "Gospels, forensic analyses, legal submissions" },
+              { number: "750+", label: "PDFs in the Archive", detail: "Gospels, forensic analyses, legal submissions" },
               { number: "675/675", label: "Propositions Verified", detail: "Every analytical framework confirmed" },
               { number: "2.1M", label: "12-Month Download Projection", detail: "At current trajectory" },
             ].map((stat) => (

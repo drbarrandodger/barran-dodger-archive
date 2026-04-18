@@ -490,7 +490,7 @@ export default function DigitalArchive() {
 
         <div className="mt-8 mb-4">
           <InlineShareStrip
-            message="SHARE THIS ARCHIVE — 187+ blockchain-verified documents. They tried to erase him. They authored his evidence."
+            message="SHARE THIS ARCHIVE — 750+ blockchain-verified documents. They tried to erase him. They authored his evidence."
             path="/digital-archive"
           />
         </div>
