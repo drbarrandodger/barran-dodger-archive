@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -97,6 +98,8 @@ function SectionHeading({ number, title, icon: Icon }: { number: string; title: 
 }
 
 export default function TestimonyWentGlobal() {
+  const { data: totalDownloads } = useLiveDownloadTotal();
+  const liveCount = formatCount(totalDownloads, "389,759+");
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
@@ -121,7 +124,7 @@ export default function TestimonyWentGlobal() {
                   <Globe className="h-3 w-3 mr-1.5" /> Imprinted Globally
                 </Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">
-                  378,571 Downloads
+                  {liveCount} Downloads
                 </Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">
                   845 Bitcoin Records
@@ -187,7 +190,7 @@ export default function TestimonyWentGlobal() {
               {/* Live stats strip */}
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-2">
                 {[
-                  { value: "378,571", label: "Downloads" },
+                  { value: liveCount, label: "Downloads" },
                   { value: "845", label: "Bitcoin Records" },
                   { value: "750+", label: "Free PDFs" },
                   { value: "675/675", label: "Propositions" },

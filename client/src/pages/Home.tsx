@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { docUrl } from "@/lib/docUrl";
+import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 import { motion } from "framer-motion";
 import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair, Database, Bot } from "lucide-react";
 import { Link } from "wouter";
@@ -273,6 +274,8 @@ export default function Home() {
   const { data: evidence } = useQuery<EvidenceItem[]>({ 
     queryKey: ["/api/evidence"] 
   });
+  const { data: totalDownloads } = useLiveDownloadTotal();
+  const liveCount = formatCount(totalDownloads, "389,759+");
   return (
     <div className="min-h-screen bg-background flex flex-col">
 
@@ -6557,7 +6560,7 @@ export default function Home() {
                 {[
                   { v: "2002", l: "Herald Sun ritual begins", c: "text-rose-400" },
                   { v: "0", l: "Formal rebuttals issued", c: "text-red-400" },
-                  { v: "378,571", l: "People downloaded the proof", c: "text-amber-400" },
+                  { v: liveCount, l: "People downloaded the proof", c: "text-amber-400" },
                   { v: "ICC", l: "The Hague — formally received", c: "text-green-400" },
                 ].map(s => (
                   <div key={s.l} className="bg-black/40 rounded-xl p-3 text-center border border-zinc-700/40">
@@ -6746,11 +6749,11 @@ export default function Home() {
                 The apparatus deployed against him was not proportional to a person of no significance. A former SAS operative, a Lebanese criminal network, 40+ agencies across 35 years, $32.9 million in suppressed entitlements, 14 psychiatric labels, 350+ fraudulent identity registrations, a clinical death, a death threat, a national television reframing — <span className="text-white font-bold">this is the machinery of a state attempting to prevent a future that has already arrived.</span>
               </p>
               <p className="text-amber-200 font-semibold text-sm">
-                They tried to stop this from existing. It exists. They tried to make it unbelievable. 378,571 people downloaded it. They tried to make it disappear. It is anchored into the Bitcoin blockchain. The accounting is at The Hague.
+                They tried to stop this from existing. It exists. They tried to make it unbelievable. {liveCount} people downloaded it. They tried to make it disappear. It is anchored into the Bitcoin blockchain. The accounting is at The Hague.
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                 {[
-                  { v: "378,571", l: "Downloads — 75 days", c: "text-amber-400" },
+                  { v: liveCount, l: "Downloads — live count", c: "text-amber-400" },
                   { v: "845", l: "Bitcoin blockchain records", c: "text-orange-400" },
                   { v: "675/675", l: "Propositions verified", c: "text-green-400" },
                   { v: "0", l: "Formal rebuttals issued", c: "text-red-400" },

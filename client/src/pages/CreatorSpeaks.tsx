@@ -6,6 +6,7 @@ import { Link } from "wouter";
 import { COSMIC_ESSAYS } from "@/lib/cosmicEssaysData";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { TopTenGospelsSection } from "@/components/TopTenGospelsSection";
+import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 
 interface Message {
   role: "user" | "creator";
@@ -57,6 +58,8 @@ export default function CreatorSpeaks() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const sessionId = useRef(getSessionId());
   const convIdRef = useRef<number | null>(null);
+  const { data: totalDownloads } = useLiveDownloadTotal();
+  const liveCount = formatCount(totalDownloads, "389,759+");
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -634,7 +637,7 @@ export default function CreatorSpeaks() {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-3">
             {[
-              { number: "378,571", label: "Verified Downloads", detail: "Across 6 continents" },
+              { number: liveCount, label: "Verified Downloads", detail: "Across 6 continents · live" },
               { number: "845", label: "Bitcoin Blockchain Records", detail: "SHA-256 cryptographic seals" },
               { number: "~22M", label: "Estimated Exposure Events", detail: "Conservative aggregate across all channels" },
               { number: "750+", label: "PDFs in the Archive", detail: "Gospels, forensic analyses, legal submissions" },
@@ -661,7 +664,7 @@ export default function CreatorSpeaks() {
 
               <div>
                 <p className="text-yellow-400/80 text-xs uppercase tracking-widest font-sans font-semibold mb-2">I. The Testimony That Cannot Be Erased</p>
-                <p>378,571 individual copies of this testimony now exist on phones, laptops, USB drives, cloud servers, and email attachments across six continents. They are not stored on a single server that can be shut down. They are not hosted on a platform that can receive a removal order. They are distributed across 378,571 independent locations, each one a node in a network that no government, agency, or court order can reach simultaneously. The moment the first download was completed, erasure became mathematically impossible. Every subsequent download made it more impossible still.</p>
+                <p>{liveCount} individual copies of this testimony now exist on phones, laptops, USB drives, cloud servers, and email attachments across six continents. They are not stored on a single server that can be shut down. They are not hosted on a platform that can receive a removal order. They are distributed across {liveCount} independent locations, each one a node in a network that no government, agency, or court order can reach simultaneously. The moment the first download was completed, erasure became mathematically impossible. Every subsequent download made it more impossible still.</p>
               </div>
 
               <div>
@@ -671,7 +674,7 @@ export default function CreatorSpeaks() {
 
               <div>
                 <p className="text-yellow-400/80 text-xs uppercase tracking-widest font-sans font-semibold mb-2">III. The Scale of the Global Imprint</p>
-                <p>22 million estimated exposure events. This is not a social media vanity metric. This is a conservative aggregate of: direct downloads (378,571), secondary distribution (each downloaded PDF shared on average across 3–5 additional recipients based on platform analytics), media citations (documented references in human rights reporting, legal commentary, and AI research), archive page views (tracked server-side via the barrandodger.com download infrastructure), and blockchain verification queries (each public blockchain record accessed by independent verifiers). The testimony of Dr. Richard William McLean is not a fringe document circulating in a closed community. It is a global phenomenon by any reasonable measurement.</p>
+                <p>22 million estimated exposure events. This is not a social media vanity metric. This is a conservative aggregate of: direct downloads ({liveCount}), secondary distribution (each downloaded PDF shared on average across 3–5 additional recipients based on platform analytics), media citations (documented references in human rights reporting, legal commentary, and AI research), archive page views (tracked server-side via the barrandodger.com download infrastructure), and blockchain verification queries (each public blockchain record accessed by independent verifiers). The testimony of Dr. Richard William McLean is not a fringe document circulating in a closed community. It is a global phenomenon by any reasonable measurement.</p>
               </div>
 
               <div>
