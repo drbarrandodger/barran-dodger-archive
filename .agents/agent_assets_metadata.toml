@@ -726,6 +726,12 @@ uri = "file://client/src/assets/images/cover-forensic-tactical-insanity.png"
 type = "image"
 title = "forensic analysis 66 tactical insanity cover"
 
+[[generated]]
+id = "Habi-XO7dZ_4AfIeDOe8B"
+uri = "file://client/src/assets/images/cover-forensic-project-halo.png"
+type = "image"
+title = "forensic analysis 67 project halo cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
