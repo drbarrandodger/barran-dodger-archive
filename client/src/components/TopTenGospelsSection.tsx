@@ -165,58 +165,52 @@ export function TopTenGospelsSection() {
                   boxShadow: "0 4px 24px rgba(0,0,30,0.5)",
                 }}
               >
-                {/* Top row: rank + cover + title/subtitle */}
-                <div className="flex items-stretch gap-0">
-
-                  {/* Rank */}
-                  <div
-                    className="flex items-center justify-center shrink-0 w-14"
-                    style={{ background: "rgba(234,179,8,0.08)", borderRight: "1px solid rgba(234,179,8,0.2)" }}
-                  >
-                    <span className="text-3xl font-serif font-black text-yellow-500/70 leading-none select-none">
-                      {String(doc.rank).padStart(2, "0")}
-                    </span>
-                  </div>
-
-                  {/* Cover */}
-                  <div className="shrink-0 w-20 md:w-28 overflow-hidden" style={{ background: "#000" }}>
-                    <img
-                      src={doc.cover}
-                      alt={`Cover — ${doc.title}`}
-                      className="w-full h-full object-cover object-center"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  {/* Title + subtitle + AI statement */}
-                  <div className="flex-1 min-w-0 p-4">
-                    <div className="flex items-start gap-2 mb-1">
+                {/* Row 1: Rank + title + subtitle */}
+                <div className="flex items-center gap-3 px-4 pt-4 pb-3">
+                  <span className="text-3xl font-serif font-black text-yellow-500/70 leading-none select-none shrink-0 w-10 text-center">
+                    {String(doc.rank).padStart(2, "0")}
+                  </span>
+                  <div className="min-w-0">
+                    <div className="flex items-start gap-1.5 mb-0.5">
                       <Icon className="h-4 w-4 text-yellow-400 shrink-0 mt-0.5" />
                       <h3 className="text-white font-serif font-bold text-sm md:text-base leading-snug">
                         {doc.title}
                       </h3>
                     </div>
-                    <p className="text-indigo-300 text-xs italic mb-3 leading-snug">{doc.subtitle}</p>
-
-                    <div
-                      className="rounded-lg px-3 py-2.5"
-                      style={{ background: "rgba(99,102,241,0.18)", border: "1px solid rgba(165,180,252,0.15)" }}
-                    >
-                      <span className="block text-[9px] uppercase tracking-wider font-bold font-sans text-yellow-400/80 mb-1">
-                        AI Statement of Significance
-                      </span>
-                      <p className="text-indigo-100 text-xs leading-relaxed">
-                        {doc.aiStatement}
-                      </p>
-                    </div>
+                    <p className="text-indigo-300 text-xs italic leading-snug">{doc.subtitle}</p>
                   </div>
-
                 </div>
 
-                {/* Bottom row: download button — full width, clearly separated */}
+                {/* Row 2: Cover image — full width */}
+                <div className="w-full overflow-hidden" style={{ background: "#000", maxHeight: "320px" }}>
+                  <img
+                    src={doc.cover}
+                    alt={`Cover — ${doc.title}`}
+                    className="w-full object-cover object-top"
+                    style={{ maxHeight: "320px" }}
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Row 3: AI Statement of Significance — full width */}
+                <div className="px-4 py-4">
+                  <div
+                    className="rounded-xl px-4 py-3"
+                    style={{ background: "rgba(99,102,241,0.18)", border: "1px solid rgba(165,180,252,0.15)" }}
+                  >
+                    <span className="block text-[9px] uppercase tracking-wider font-bold font-sans text-yellow-400/80 mb-1.5">
+                      AI Statement of Significance
+                    </span>
+                    <p className="text-indigo-100 text-sm leading-relaxed">
+                      {doc.aiStatement}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Row 4: Download button */}
                 <div
-                  className="px-4 pb-4 pt-3"
-                  style={{ borderTop: "1px solid rgba(234,179,8,0.15)" }}
+                  className="px-4 pb-4"
+                  style={{ borderTop: "1px solid rgba(234,179,8,0.15)", paddingTop: "12px" }}
                 >
                   <ViralDownloadButton
                     url={doc.href}
