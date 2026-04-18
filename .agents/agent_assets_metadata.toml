@@ -720,6 +720,12 @@ uri = "file://client/src/assets/images/cover-forensic-tick-tick-tick-game-over.p
 type = "image"
 title = "forensic analysis 65 tick tick tick cover"
 
+[[generated]]
+id = "clvwcphDf0MG81BYWiayh"
+uri = "file://client/src/assets/images/cover-forensic-tactical-insanity.png"
+type = "image"
+title = "forensic analysis 66 tactical insanity cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
