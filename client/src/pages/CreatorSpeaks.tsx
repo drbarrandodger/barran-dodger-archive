@@ -7,6 +7,9 @@ import { COSMIC_ESSAYS } from "@/lib/cosmicEssaysData";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { TopTenGospelsSection } from "@/components/TopTenGospelsSection";
 import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
+import coverForensicGovernmentOwnFile from "@/assets/images/cover-forensic-government-own-file.png";
+import agLetterHomeImg from "@assets/IMG_3189_1776549210845.png";
+import coverForensic3AMBriefing from "@/assets/images/cover-forensic-3am-briefing.png";
 
 interface Message {
   role: "user" | "creator";
@@ -208,6 +211,96 @@ export default function CreatorSpeaks() {
           <div className="mt-4 w-32 h-px bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent mx-auto" />
         </motion.div>
 
+        {/* FORENSIC CORROBORATION ANALYSIS #70 — GOVERNMENT'S OWN FILE */}
+        <div className="w-full my-6 border border-red-700/60 rounded-2xl overflow-hidden" style={{ background: "rgba(20,0,0,0.85)" }} data-testid="section-forensic-70-home">
+          <div className="bg-red-900/40 border-b border-red-700/40 px-6 py-4 flex flex-wrap items-center gap-3">
+            <span className="text-red-400 font-mono text-xs tracking-widest uppercase">Forensic Corroboration Analysis #70</span>
+            <span className="text-white/60 text-xs">ABN 78 833 496 164</span>
+            <span className="ml-auto text-yellow-400 font-bold text-sm">NEWLY PUBLISHED</span>
+          </div>
+          <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
+            <div>
+              <img src={coverForensicGovernmentOwnFile} alt="Forensic Corroboration Analysis #70 — The Government's Own File" className="w-full rounded-xl border border-red-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-70-cover-top" />
+            </div>
+            <div className="flex flex-col gap-5">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">The Government's Own File</h2>
+                <p className="text-red-400 font-semibold text-base mb-3">Forensic Corroboration Analysis #70</p>
+                <p className="text-white/80 text-sm leading-relaxed mb-4">
+                  The Attorney-General's letter — Exhibit AG-01 — was produced by the government itself. It confirms formal receipt of Dr. McLean's submissions, corroborates the documented timeline of persecution, and constitutes an admission by the state that the record exists. This analysis subjects that letter and 19 cross-referenced primary-source documents to forensic examination. Every finding corroborates. Nothing contradicts.
+                </p>
+              </div>
+              <div className="border border-red-700/30 rounded-xl p-4" style={{ background: "rgba(180,0,0,0.10)" }}>
+                <p className="text-red-300/70 font-mono text-xs mb-1 uppercase tracking-widest">SHA-256 Integrity Hash</p>
+                <p className="text-white/60 font-mono text-xs break-all leading-relaxed" data-testid="sha-forensic-70-top">b789917c69318800aa5a0aa0d06f58a49ea628e5590ad2bb8f2450365733756b</p>
+              </div>
+              <a
+                href="/documents/forensic-analyses/forensic-analysis-70-government-own-file-corroboration.pdf"
+                download
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-base transition-all hover:scale-[1.02]"
+                style={{ background: "linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%)", border: "1px solid rgba(239,68,68,0.4)" }}
+                data-testid="download-forensic-70-top"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                Download PDF — Forensic Analysis #70
+              </a>
+              <Link href="/forensic-corroboration-government-own-file" className="text-red-400 hover:text-red-300 text-sm underline transition-colors" data-testid="link-forensic-70-full-top">
+                Read full 20-point examination →
+              </Link>
+            </div>
+          </div>
+          {/* AG Letter Exhibit */}
+          <div className="px-6 md:px-8 pb-8">
+            <div className="border border-yellow-600/30 rounded-xl overflow-hidden">
+              <div className="bg-yellow-900/20 border-b border-yellow-700/30 px-4 py-2">
+                <span className="text-yellow-400/80 font-mono text-xs uppercase tracking-widest">Exhibit AG-01 — Attorney-General's Letter (Government-Produced Primary Source)</span>
+              </div>
+              <img src={agLetterHomeImg} alt="Attorney-General's Letter — Exhibit AG-01" className="w-full" data-testid="img-ag-letter-70-top" />
+            </div>
+            <p className="text-white/50 text-xs mt-3 font-mono">This letter was produced by the Australian government. It confirms formal receipt of submissions by Dr. Richard William McLean (ABN 78 833 496 164) and corroborates the documented timeline. Its existence is independently verified by SHA-256 hash: b789917c69318800aa5a0aa0d06f58a49ea628e5590ad2bb8f2450365733756b</p>
+          </div>
+        </div>
+
+        {/* FORENSIC CORROBORATION ANALYSIS #69 — THE 3AM BRIEFING */}
+        <div className="w-full my-6 border border-indigo-700/60 rounded-2xl overflow-hidden" style={{ background: "rgba(10,5,30,0.90)" }} data-testid="section-forensic-69-home">
+          <div className="bg-indigo-900/40 border-b border-indigo-700/40 px-6 py-4 flex flex-wrap items-center gap-3">
+            <span className="text-indigo-400 font-mono text-xs tracking-widest uppercase">Forensic Corroboration Analysis #69</span>
+            <span className="text-white/60 text-xs">ABN 78 833 496 164</span>
+            <span className="ml-auto text-yellow-400 font-bold text-sm">NEWLY PUBLISHED</span>
+          </div>
+          <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
+            <div>
+              <img src={coverForensic3AMBriefing} alt="Forensic Corroboration Analysis #69 — The 3AM Briefing" className="w-full rounded-xl border border-indigo-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-69-cover-top" />
+            </div>
+            <div className="flex flex-col gap-5">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">The 3AM Briefing</h2>
+                <p className="text-indigo-400 font-semibold text-base mb-3">Forensic Corroboration Analysis #69</p>
+                <p className="text-white/80 text-sm leading-relaxed mb-4">
+                  At 3AM on a documented night of crisis, Dr. McLean received a briefing — recorded, timestamped, and cross-referenced against 19 primary-source documents. This analysis applies forensic methodology to the briefing transcript and its surrounding evidence. Every point corroborates. The pattern of institutional knowledge, deliberate suppression, and targeted persecution is confirmed through independent cross-examination of the record.
+                </p>
+              </div>
+              <div className="border border-indigo-700/30 rounded-xl p-4" style={{ background: "rgba(67,56,202,0.10)" }}>
+                <p className="text-indigo-300/70 font-mono text-xs mb-1 uppercase tracking-widest">SHA-256 Integrity Hash</p>
+                <p className="text-white/60 font-mono text-xs break-all leading-relaxed" data-testid="sha-forensic-69-top">c9ac77527b716a4c14f078158989ab2f643bc98c880eab517bdb2d145408df29</p>
+              </div>
+              <a
+                href="/documents/forensic-analyses/forensic-analysis-69-3am-briefing-corroboration.pdf"
+                download
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-base transition-all hover:scale-[1.02]"
+                style={{ background: "linear-gradient(135deg, #4338ca 0%, #1e1b4b 100%)", border: "1px solid rgba(99,102,241,0.4)" }}
+                data-testid="download-forensic-69-top"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                Download PDF — Forensic Analysis #69
+              </a>
+              <Link href="/forensic-corroboration-3am-briefing" className="text-indigo-400 hover:text-indigo-300 text-sm underline transition-colors" data-testid="link-forensic-69-full-top">
+                Read full 20-point examination →
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Pre-chat summon state */}
         <AnimatePresence>
           {!hasBegun && (
@@ -238,6 +331,96 @@ export default function CreatorSpeaks() {
         {/* TOP TEN PROPHETIC GOSPELS */}
         <div className="w-full -mx-4 px-0">
           <TopTenGospelsSection />
+        </div>
+
+        {/* FORENSIC CORROBORATION ANALYSIS #70 — GOVERNMENT'S OWN FILE */}
+        <div className="w-full my-8 border border-red-700/60 rounded-2xl overflow-hidden" style={{ background: "rgba(20,0,0,0.85)" }} data-testid="section-forensic-70-home">
+          <div className="bg-red-900/40 border-b border-red-700/40 px-6 py-4 flex flex-wrap items-center gap-3">
+            <span className="text-red-400 font-mono text-xs tracking-widest uppercase">Forensic Corroboration Analysis #70</span>
+            <span className="text-white/60 text-xs">ABN 78 833 496 164</span>
+            <span className="ml-auto text-yellow-400 font-bold text-sm">NEWLY PUBLISHED</span>
+          </div>
+          <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
+            <div>
+              <img src={coverForensicGovernmentOwnFile} alt="Forensic Corroboration Analysis #70 — The Government's Own File" className="w-full rounded-xl border border-red-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-70-cover" />
+            </div>
+            <div className="flex flex-col gap-5">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">The Government's Own File</h2>
+                <p className="text-red-400 font-semibold text-base mb-3">Forensic Corroboration Analysis #70</p>
+                <p className="text-white/80 text-sm leading-relaxed mb-4">
+                  The Attorney-General's letter — Exhibit AG-01 — was produced by the government itself. It confirms formal receipt of Dr. McLean's submissions, corroborates the documented timeline of persecution, and constitutes an admission by the state that the record exists. This analysis subjects that letter and 19 cross-referenced primary-source documents to forensic examination. Every finding corroborates. Nothing contradicts.
+                </p>
+              </div>
+              <div className="border border-red-700/30 rounded-xl p-4" style={{ background: "rgba(180,0,0,0.10)" }}>
+                <p className="text-red-300/70 font-mono text-xs mb-1 uppercase tracking-widest">SHA-256 Integrity Hash</p>
+                <p className="text-white/60 font-mono text-xs break-all leading-relaxed" data-testid="sha-forensic-70">b789917c69318800aa5a0aa0d06f58a49ea628e5590ad2bb8f2450365733756b</p>
+              </div>
+              <a
+                href="/documents/forensic-analyses/forensic-analysis-70-government-own-file-corroboration.pdf"
+                download
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-base transition-all hover:scale-[1.02]"
+                style={{ background: "linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%)", border: "1px solid rgba(239,68,68,0.4)" }}
+                data-testid="download-forensic-70"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                Download PDF — Forensic Analysis #70
+              </a>
+              <Link href="/forensic-corroboration-government-own-file" className="text-red-400 hover:text-red-300 text-sm underline transition-colors" data-testid="link-forensic-70-full">
+                Read full 20-point examination →
+              </Link>
+            </div>
+          </div>
+          {/* AG Letter Exhibit */}
+          <div className="px-6 md:px-8 pb-8">
+            <div className="border border-yellow-600/30 rounded-xl overflow-hidden">
+              <div className="bg-yellow-900/20 border-b border-yellow-700/30 px-4 py-2">
+                <span className="text-yellow-400/80 font-mono text-xs uppercase tracking-widest">Exhibit AG-01 — Attorney-General's Letter (Government-Produced Primary Source)</span>
+              </div>
+              <img src={agLetterHomeImg} alt="Attorney-General's Letter — Exhibit AG-01" className="w-full" data-testid="img-ag-letter-70" />
+            </div>
+            <p className="text-white/50 text-xs mt-3 font-mono">This letter was produced by the Australian government. It confirms formal receipt of submissions by Dr. Richard William McLean (ABN 78 833 496 164) and corroborates the documented timeline. Its existence is independently verified by SHA-256 hash: b789917c69318800aa5a0aa0d06f58a49ea628e5590ad2bb8f2450365733756b</p>
+          </div>
+        </div>
+
+        {/* FORENSIC CORROBORATION ANALYSIS #69 — THE 3AM BRIEFING */}
+        <div className="w-full my-8 border border-indigo-700/60 rounded-2xl overflow-hidden" style={{ background: "rgba(10,5,30,0.90)" }} data-testid="section-forensic-69-home">
+          <div className="bg-indigo-900/40 border-b border-indigo-700/40 px-6 py-4 flex flex-wrap items-center gap-3">
+            <span className="text-indigo-400 font-mono text-xs tracking-widest uppercase">Forensic Corroboration Analysis #69</span>
+            <span className="text-white/60 text-xs">ABN 78 833 496 164</span>
+            <span className="ml-auto text-yellow-400 font-bold text-sm">NEWLY PUBLISHED</span>
+          </div>
+          <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
+            <div>
+              <img src={coverForensic3AMBriefing} alt="Forensic Corroboration Analysis #69 — The 3AM Briefing" className="w-full rounded-xl border border-indigo-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-69-cover" />
+            </div>
+            <div className="flex flex-col gap-5">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">The 3AM Briefing</h2>
+                <p className="text-indigo-400 font-semibold text-base mb-3">Forensic Corroboration Analysis #69</p>
+                <p className="text-white/80 text-sm leading-relaxed mb-4">
+                  At 3AM on a documented night of crisis, Dr. McLean received a briefing — recorded, timestamped, and cross-referenced against 19 primary-source documents. This analysis applies forensic methodology to the briefing transcript and its surrounding evidence. Every point corroborates. The pattern of institutional knowledge, deliberate suppression, and targeted persecution is confirmed through independent cross-examination of the record.
+                </p>
+              </div>
+              <div className="border border-indigo-700/30 rounded-xl p-4" style={{ background: "rgba(67,56,202,0.10)" }}>
+                <p className="text-indigo-300/70 font-mono text-xs mb-1 uppercase tracking-widest">SHA-256 Integrity Hash</p>
+                <p className="text-white/60 font-mono text-xs break-all leading-relaxed" data-testid="sha-forensic-69">c9ac77527b716a4c14f078158989ab2f643bc98c880eab517bdb2d145408df29</p>
+              </div>
+              <a
+                href="/documents/forensic-analyses/forensic-analysis-69-3am-briefing-corroboration.pdf"
+                download
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-base transition-all hover:scale-[1.02]"
+                style={{ background: "linear-gradient(135deg, #4338ca 0%, #1e1b4b 100%)", border: "1px solid rgba(99,102,241,0.4)" }}
+                data-testid="download-forensic-69"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                Download PDF — Forensic Analysis #69
+              </a>
+              <Link href="/forensic-corroboration-3am-briefing" className="text-indigo-400 hover:text-indigo-300 text-sm underline transition-colors" data-testid="link-forensic-69-full">
+                Read full 20-point examination →
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Opening Declaration + Chat */}
