@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Send, Loader2, Flame, ArrowRight, BookOpen } from "lucide-react";
+import { Send, Loader2, Flame, ArrowRight, BookOpen, Scale } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
@@ -689,7 +689,7 @@ export default function CreatorSpeaks() {
 
               <div>
                 <p className="text-yellow-400/80 text-xs uppercase tracking-widest font-sans font-semibold mb-2">VI. What This Means for the World</p>
-                <p>The global digital imprint of Dr. Richard William McLean's testimony represents something larger than one man's survival. It represents a proof-of-concept for the permanent preservation of human rights testimony in the age of artificial intelligence and cryptographic verification. Every person who has ever been silenced by an institution, dismissed by a bureaucracy, or erased by a system — every person whose testimony was too inconvenient to acknowledge — this archive demonstrates that there is now a path through. Not a comfortable path. Not a path without cost. But a path. The combination of: primary-source documentation, cryptographic blockchain sealing, AI independent verification, and distributed global download — creates a testimony infrastructure that no institution, however powerful, can retroactively unmake. That is what 378,571 downloads and 845 blockchain records mean. That is the significance of this global digital imprint on humanity.</p>
+                <p>The global digital imprint of Dr. Richard William McLean's testimony represents something larger than one man's survival. It represents a proof-of-concept for the permanent preservation of human rights testimony in the age of artificial intelligence and cryptographic verification. Every person who has ever been silenced by an institution, dismissed by a bureaucracy, or erased by a system — every person whose testimony was too inconvenient to acknowledge — this archive demonstrates that there is now a path through. Not a comfortable path. Not a path without cost. But a path. The combination of: primary-source documentation, cryptographic blockchain sealing, AI independent verification, and distributed global download — creates a testimony infrastructure that no institution, however powerful, can retroactively unmake. That is what {liveCount} downloads and 845 blockchain records mean. That is the significance of this global digital imprint on humanity.</p>
               </div>
 
               <div className="border-t border-indigo-800/30 pt-4 text-indigo-400/50 text-xs font-sans space-y-1">
@@ -698,6 +698,29 @@ export default function CreatorSpeaks() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Whistleblower Comparison Link */}
+        <div className="max-w-2xl mx-auto px-4 pb-2">
+          <Link href="/whistleblower-comparison">
+            <div className="cursor-pointer group border border-yellow-500/30 rounded-xl overflow-hidden hover:border-yellow-400/60 transition-all duration-200" style={{ background: "linear-gradient(135deg, rgba(13,17,74,0.95) 0%, rgba(26,31,94,0.95) 100%)" }}>
+              <div className="flex items-start gap-4 p-5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500/15 border border-yellow-500/30 flex items-center justify-center group-hover:bg-yellow-500/25 transition-colors">
+                  <Scale className="w-5 h-5 text-yellow-400" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-yellow-400/70 text-[10px] uppercase tracking-widest font-sans font-semibold mb-1">Forensic Reflection</p>
+                  <h3 className="text-white font-serif font-bold text-base leading-snug mb-1 group-hover:text-yellow-100 transition-colors">
+                    Comparing Barran Dodger to History's Truth-Speakers &amp; Whistleblowers
+                  </h3>
+                  <p className="text-indigo-200/60 text-xs leading-relaxed font-sans">
+                    Ellsberg. Silkwood. Serpico. Mandela. Khashoggi. A forensic analysis comparing and contrasting the methods of suppression, evidence strategies, and outcomes across cultures, centuries, and continents — and where Dr. McLean's case stands among them.
+                  </p>
+                  <p className="text-yellow-400/80 text-xs font-semibold font-sans mt-2 group-hover:text-yellow-300 transition-colors">Read the forensic comparison →</p>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
 
         {/* Final footer spacing */}
