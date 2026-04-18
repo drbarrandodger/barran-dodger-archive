@@ -55,6 +55,7 @@ import ForensicCorroborationBillionaireCircle from "@/pages/ForensicCorroboratio
 import ForensicCorroborationTickTickTick from "@/pages/ForensicCorroborationTickTickTick";
 import ForensicCorroborationTacticalInsanity from "@/pages/ForensicCorroborationTacticalInsanity";
 import ForensicCorroborationProjectHalo from "@/pages/ForensicCorroborationProjectHalo";
+import ForensicCorroborationFoolFire from "@/pages/ForensicCorroborationFoolFire";
 import TheyBoughtOffJudges from "@/pages/TheyBoughtOffJudges";
 import LawTheyOverlooked from "@/pages/LawTheyOverlooked";
 import IChooseSilence from "@/pages/IChooseSilence";
@@ -261,6 +262,7 @@ function Router() {
         <Route path="/forensic-corroboration-tick-tick-tick" component={ForensicCorroborationTickTickTick} />
         <Route path="/forensic-corroboration-tactical-insanity" component={ForensicCorroborationTacticalInsanity} />
         <Route path="/forensic-corroboration-project-halo" component={ForensicCorroborationProjectHalo} />
+        <Route path="/forensic-corroboration-fool-fire" component={ForensicCorroborationFoolFire} />
         <Route path="/they-bought-off-judges" component={TheyBoughtOffJudges} />
         <Route path="/i-choose-silence" component={IChooseSilence} />
         <Route path="/master-forensic-evidence-report" component={MasterForensicEvidenceReport} />

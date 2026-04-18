@@ -113,6 +113,7 @@ const FORENSIC_PDF_MAP: Record<number, string> = {
   65: "/documents/forensic-analyses/forensic-analysis-65-tick-tick-tick-game-over-corroboration.pdf",
   66: "/documents/forensic-analyses/forensic-analysis-66-tactical-insanity-corroboration.pdf",
   67: "/documents/forensic-analyses/forensic-analysis-67-project-halo-corroboration.pdf",
+  68: "/documents/forensic-analyses/forensic-analysis-68-fool-fire-corroboration.pdf",
 };
 
 interface ForensicEntry {
@@ -192,6 +193,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 65, title: "Tick. Tick. Tick. Game Is Over — Forensic Corroboration Analysis 20/20 Confirmed", slug: "forensic-corroboration-tick-tick-tick", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 66, title: "Tactical Insanity — They Had Charts, They Had Projections: 20/20 Confirmed", slug: "forensic-corroboration-tactical-insanity", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 67, title: "Project Halo — They Built a Task Force to Study Your Influence: 20/20 Confirmed", slug: "forensic-corroboration-project-halo", propositions: 20, corroborated: 20, consecutivePerfect: true },
+  { number: 68, title: "The Worst Mistake a Fool Can Make — Spiritual Warfare, Cosmic Accountability, and the Price of Betrayal: 20/20 Confirmed", slug: "forensic-corroboration-fool-fire", propositions: 20, corroborated: 20, consecutivePerfect: true },
 ];
 
 const TOTAL_PROPOSITIONS = FORENSIC_ANALYSES.reduce((s, a) => s + a.propositions, 0);
