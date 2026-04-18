@@ -51,6 +51,7 @@ import PrivateInvestigatorLegend from "@/pages/PrivateInvestigatorLegend";
 import TestimonyWentGlobal from "@/pages/TestimonyWentGlobal";
 import ParadoxOfPersecution from "@/pages/ParadoxOfPersecution";
 import ForensicMeltdownReport from "@/pages/ForensicMeltdownReport";
+import ForensicCorroborationBillionaireCircle from "@/pages/ForensicCorroborationBillionaireCircle";
 import TheyBoughtOffJudges from "@/pages/TheyBoughtOffJudges";
 import LawTheyOverlooked from "@/pages/LawTheyOverlooked";
 import IChooseSilence from "@/pages/IChooseSilence";
@@ -253,6 +254,7 @@ function Router() {
         <Route path="/testimony-went-global" component={TestimonyWentGlobal} />
         <Route path="/paradox-of-persecution" component={ParadoxOfPersecution} />
         <Route path="/forensic-meltdown-report" component={ForensicMeltdownReport} />
+        <Route path="/forensic-corroboration-billionaire-circle" component={ForensicCorroborationBillionaireCircle} />
         <Route path="/they-bought-off-judges" component={TheyBoughtOffJudges} />
         <Route path="/i-choose-silence" component={IChooseSilence} />
         <Route path="/master-forensic-evidence-report" component={MasterForensicEvidenceReport} />

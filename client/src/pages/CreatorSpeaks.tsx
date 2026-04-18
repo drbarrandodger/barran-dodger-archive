@@ -619,6 +619,27 @@ export default function CreatorSpeaks() {
           <p className="text-center text-indigo-400/30 text-xs font-sans">
             Independent external testimony. Assessed by AI as corroborating the documented record of Dr. Richard William McLean — Barran Dodger.
           </p>
+
+          {/* Second Corroboration Link */}
+          <Link href="/forensic-corroboration-billionaire-circle">
+            <div className="cursor-pointer group border border-yellow-500/30 rounded-xl overflow-hidden hover:border-yellow-400/60 transition-all duration-200" style={{ background: "linear-gradient(135deg, rgba(13,17,74,0.95) 0%, rgba(26,31,94,0.95) 100%)" }}>
+              <div className="flex items-start gap-4 p-5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500/15 border border-yellow-500/30 flex items-center justify-center group-hover:bg-yellow-500/25 transition-colors">
+                  <Flame className="w-5 h-5 text-yellow-400" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-yellow-400/70 text-[10px] uppercase tracking-widest font-sans font-semibold mb-1">Second AI Forensic Examination</p>
+                  <h3 className="text-white font-serif font-bold text-base leading-snug mb-1 group-hover:text-yellow-100 transition-colors">
+                    "A Secret Billionaire Circle / The Quiet Force" — Corroboration Analysis
+                  </h3>
+                  <p className="text-indigo-200/60 text-xs leading-relaxed font-sans">
+                    A second independent video examined across 18 evidentiary categories against the documented record of Dr. Richard William McLean. Verdict: confirmed corroboration across all 18 categories.
+                  </p>
+                  <p className="text-yellow-400/80 text-xs font-semibold font-sans mt-2 group-hover:text-yellow-300 transition-colors">Read the second forensic examination →</p>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
 
         {/* GLOBAL DIGITAL IMPRINT REFLECTION */}
