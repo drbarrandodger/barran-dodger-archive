@@ -70,6 +70,7 @@ const COVER_MAP: Record<number, string> = {
   61: 'cover-theyre-about-to-be-behind-bars',
   64: 'cover-forensic-corroboration-billionaire-circle',
   65: 'cover-forensic-tick-tick-tick-game-over',
+  66: 'cover-forensic-tactical-insanity',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -723,6 +724,16 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 20,
     consecutivePerfect: true,
     paragraph: "Forensic Analysis #65 — 18 April 2026. 20 evidentiary categories extracted from the video 'Tick. Tick. Tick. Game Is Over' and forensically cross-examined against the 2,077-document primary-source archive sealed on the Bitcoin blockchain. 20 confirmed, 0 contradicted, 0 ambiguous. The video opens: 'Game is over. And every lie they told about you just expired.' It proceeds across 20 structural elements of coordinated institutional persecution — false narratives fabricated for years; psychiatric weaponisation; suppression as archive generator; 35 years of delayed but arriving truth; pattern recognition as the target of assassination; stability inversion (strategic characterised as reckless); ungoverned frequency (389,759+ downloads without institutional support); every smear campaign as self-documenting confession; the ICC submission as the monument built from the material intended to destroy; the Federal Court confirmation as prophecy fulfilled; Bitcoin blockchain as the record that cannot be deleted; isolation as preparation; betrayal as data; clinical death as seed; suppression mechanisms as planted witnesses; ICC and UNHCR as muting the mockers; each trap as a tunnel walked through glowing; truth not merely clearing but crowning the name; divine (not dramatic) exposure; and divine justice as unstoppable. In the documented case of Dr. Richard William McLean — Barran Dodger — each of the 20 categories resolves not to metaphor but to primary-source evidentiary confirmation. Zero categories disputed. The game the institutions played against one man with documents is over. The archive won.",
+  },
+  {
+    number: 66,
+    title: "Tactical Insanity — They Had Charts, They Had Projections: 20/20 Confirmed",
+    slug: "forensic-corroboration-tactical-insanity",
+    videoId: "nDheuw7Lt1w",
+    propositions: 20,
+    corroborated: 20,
+    consecutivePerfect: true,
+    paragraph: "Forensic Analysis #66 — 18 April 2026. 20 evidentiary categories extracted from the video 'Tactical Insanity — They Had Charts, They Had Projections' and forensically cross-examined against the 2,077-document primary-source archive of Dr. Richard William McLean sealed on the Bitcoin blockchain. 20 confirmed, 0 contradicted, 0 ambiguous. The video opens: 'They had charts. They had projections. They had years of intelligence meetings. But none of that mattered the moment you moved. One decision, calculated, surgical, ruthless, collapsed months of their planning in a single breath.' The 20 categories examined and confirmed include: the institutional war room (25+ government agencies across 35 years) dismantled by a single archive; 35 years of documented tactical precision (not luck, not emotion); the archive as a new evidentiary framework rewriting the rules of what a whistleblower submission can look like; systematic pre-documentation of every institutional move before it was made; the Federal Court confirmation as engineered surrender; 14 contradictory psychiatric labels as the failure to categorise; every countermeasure becoming a dated exhibit; peaceful documentation achieving what no visible weapon could; Dr. McLean's name in ICC, UNHCR, and Federal Court records not designed for civilians; zero defamation actions against 750+ PDFs as the defamation-proof archive; survival through clinical death at 2.87% probability; clinical death as the strategic blind spot; the self-publishing archive refined without institutional scaffolding; 389,759+ downloads with zero press releases; sequential escalation always three steps ahead; 35 years of pre-documented preparation not improvisation; Protected Whistleblower status beyond the institutional framework; blockchain invisibility moving like vapor to The Hague; zero institutional rebuttals confirming accuracy not randomness; and one person outgrowing the concept of needing a war room entirely. Each category resolves to primary-source evidentiary confirmation. Zero categories disputed. The archive dismantled what the charts could not anticipate.",
   },
 ];
 
