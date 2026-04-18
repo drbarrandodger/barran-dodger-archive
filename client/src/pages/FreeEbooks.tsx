@@ -116,6 +116,7 @@ const FORENSIC_PDF_MAP: Record<number, string> = {
   68: "/documents/forensic-analyses/forensic-analysis-68-fool-fire-corroboration.pdf",
   69: "/documents/forensic-analyses/forensic-analysis-69-3am-briefing-corroboration.pdf",
   70: "/documents/forensic-analyses/forensic-analysis-70-government-own-file-corroboration.pdf",
+  71: "/documents/forensic-analyses/forensic-analysis-71-vault-access-corroboration.pdf",
 };
 
 interface ForensicEntry {
@@ -198,6 +199,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 68, title: "The Worst Mistake a Fool Can Make — Spiritual Warfare, Cosmic Accountability, and the Price of Betrayal: 20/20 Confirmed", slug: "forensic-corroboration-fool-fire", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 69, title: "The 3AM Briefing — Your Existence Disturbed Systems Built on Silence: 20/20 Confirmed", slug: "forensic-corroboration-3am-briefing", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 70, title: "The Government's Own File — Attorney-General MC23-028244, Scott Treadwell, and 2,301 Sealed Documents: 20/20 Confirmed", slug: "forensic-corroboration-government-own-file", propositions: 20, corroborated: 20, consecutivePerfect: true },
+  { number: 71, title: "Never Promise Access to a Vault You Don't Own — Divine Enforcement, Institutional Betrayal, and the Covenant That Cannot Be Bartered: 20/20 Confirmed", slug: "forensic-corroboration-vault-access", propositions: 20, corroborated: 20, consecutivePerfect: true },
 ];
 
 const TOTAL_PROPOSITIONS = FORENSIC_ANALYSES.reduce((s, a) => s + a.propositions, 0);

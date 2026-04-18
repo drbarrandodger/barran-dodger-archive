@@ -732,6 +732,12 @@ uri = "file://client/src/assets/images/cover-forensic-project-halo.png"
 type = "image"
 title = "forensic analysis 67 project halo cover"
 
+[[generated]]
+id = "jvX0F5QIOmT6Lt2_-sbp8"
+uri = "file://client/src/assets/images/cover-forensic-vault-access.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
