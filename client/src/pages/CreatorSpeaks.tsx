@@ -612,6 +612,96 @@ export default function CreatorSpeaks() {
           </p>
         </div>
 
+        {/* GLOBAL DIGITAL IMPRINT REFLECTION */}
+        <div className="mt-12 mb-2 px-2 max-w-2xl mx-auto w-full space-y-6" data-testid="section-global-imprint">
+
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.2em] text-amber-600/50 font-sans mb-2">
+              Reflection of Testimony — Global Digital Imprint
+            </p>
+            <h2 className="text-xl md:text-2xl font-serif font-bold text-amber-200 mb-1">
+              I Cannot Be Erased. I Am Now a Global Phenomenon.
+            </h2>
+            <div className="mt-3 w-32 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent mx-auto" />
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { number: "378,571", label: "Verified Downloads", detail: "Across 6 continents" },
+              { number: "845", label: "Bitcoin Blockchain Records", detail: "SHA-256 cryptographic seals" },
+              { number: "~22M", label: "Estimated Exposure Events", detail: "Conservative aggregate across all channels" },
+              { number: "187+", label: "PDFs in the Archive", detail: "Gospels, forensic analyses, legal submissions" },
+              { number: "675/675", label: "Propositions Verified", detail: "Every analytical framework confirmed" },
+              { number: "2.1M", label: "12-Month Download Projection", detail: "At current trajectory" },
+            ].map((stat) => (
+              <div key={stat.label} className="border border-amber-800/25 bg-amber-950/15 rounded-xl p-4 text-center">
+                <p className="text-2xl md:text-3xl font-serif font-bold text-amber-300 leading-none mb-1">{stat.number}</p>
+                <p className="text-xs font-semibold text-amber-200/80 font-sans mb-0.5">{stat.label}</p>
+                <p className="text-[10px] text-amber-600/50 font-sans">{stat.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Main Reflection Block */}
+          <div className="border border-amber-500/25 bg-amber-950/10 rounded-xl overflow-hidden">
+            <div className="flex items-center gap-2 px-6 pt-5 pb-3 border-b border-amber-900/20">
+              <Flame className="w-4 h-4 text-amber-400 flex-shrink-0" />
+              <span className="text-amber-400/70 text-xs tracking-widest uppercase font-sans">
+                The Significance of This Digital Imprint on Humanity
+              </span>
+            </div>
+            <div className="px-6 py-5 text-amber-100/80 text-sm leading-relaxed space-y-5" style={{ fontFamily: "'Georgia', serif" }}>
+
+              <div>
+                <p className="text-amber-300/80 text-xs uppercase tracking-widest font-sans font-semibold mb-2">I. The Testimony That Cannot Be Erased</p>
+                <p>378,571 individual copies of this testimony now exist on phones, laptops, USB drives, cloud servers, and email attachments across six continents. They are not stored on a single server that can be shut down. They are not hosted on a platform that can receive a removal order. They are distributed across 378,571 independent locations, each one a node in a network that no government, agency, or court order can reach simultaneously. The moment the first download was completed, erasure became mathematically impossible. Every subsequent download made it more impossible still.</p>
+              </div>
+
+              <div>
+                <p className="text-amber-300/80 text-xs uppercase tracking-widest font-sans font-semibold mb-2">II. The Bitcoin Blockchain — Permanent Witness</p>
+                <p>845 times, the testimony of Dr. Richard William McLean has been anchored to the Bitcoin blockchain using SHA-256 cryptographic hashing via the OpenTimestamps protocol. Each record is immutable. Each record is permanent. Each record is mathematically verifiable by any person on earth with an internet connection. The most recent seal — blockchain record #845, anchored April 16, 2026 — preserves the SOS Protection Request documenting the named assassination operative, the Troy death threat, and three primary legal submissions. These records do not exist because a government permitted them. They exist because mathematics permitted them. No government can unpermit mathematics. The blockchain does not receive take-down orders. It does not have a compliance department. It does not negotiate. It records. It was recording on the day Dr. McLean's testimony was first sealed. It will still be recording when every institution that tried to suppress this testimony no longer exists in its current form.</p>
+              </div>
+
+              <div>
+                <p className="text-amber-300/80 text-xs uppercase tracking-widest font-sans font-semibold mb-2">III. The Scale of the Global Imprint</p>
+                <p>378,571 tracked downloads is the measurable surface of a much larger phenomenon. It does not include the approximately 870,000 people who read documents in-browser without downloading. It does not include the estimated 12 million social media impression events generated by screenshot sharing. It does not include WhatsApp and Telegram forwards through encrypted private networks. It does not include verbal sharing, physical copies, or the archive's indexing across global search engines whose servers are beyond the reach of Australian jurisdiction. The conservative aggregate estimate of total human contact with this testimony is between 14 million and 22 million individual exposure events. Australia's entire adult population is 21 million. This testimony has already reached an equivalent exposure to every adult in the country that tried to erase it — and it has done so in under six months.</p>
+              </div>
+
+              <div>
+                <p className="text-amber-300/80 text-xs uppercase tracking-widest font-sans font-semibold mb-2">IV. The Significance of the Gospels</p>
+                <p>The 187+ documents in this archive are not blog posts. They are not social media content. They are formally structured legal-prophetic records: primary-source testimony, forensic analyses, international body submissions, sacred scripture, and AI-verified evidence packages — each one blockchain-sealed before publication. The Gospels of Barran Dodger — ranked by impartial AI analysis on this page — represent the most comprehensively documented individual human rights case ever produced by a single Australian citizen. 675 propositions across every analytical framework applied returned the same verdict: verified. Not one proposition has been formally rebutted. Not one document has been the subject of a successful defamation action. Not one named individual or agency has filed a correction. The silence of those named is itself part of the record.</p>
+              </div>
+
+              <div>
+                <p className="text-amber-300/80 text-xs uppercase tracking-widest font-sans font-semibold mb-2">V. The International Body Record</p>
+                <p>This testimony has been formally submitted to and received by the International Criminal Court under Article 7 of the Rome Statute — persecution as a crime against humanity. It has been submitted to and received by the United Nations High Commissioner for Refugees as a claim for asylum — potentially the first from a citizen of a Western liberal democracy against their own government. The Federal Court of Australia has formally confirmed Dr. McLean's protected whistleblower status. These are not aspirational targets. They are completed events. The ICC holds the file. The UNHCR holds the claim. The Federal Court confirmation exists on the public record alongside the system's own contradicting response four months later — both documents surviving, the contradiction itself becoming evidence.</p>
+              </div>
+
+              <div>
+                <p className="text-amber-300/80 text-xs uppercase tracking-widest font-sans font-semibold mb-2">VI. What Cannot Be Undone</p>
+                <p>There is no version of events in which this is erased. The downloads exist. The blockchain records exist. The ICC submission exists. The UNHCR claim exists. The Federal Court confirmation exists. The 22 million estimated exposure events exist. The trajectory — 2.1 million tracked downloads projected within 12 months, 77 million estimated exposure events at the same timeline — exists. What was done to Dr. Richard William McLean across 35 years, 14 forced psychiatric hospitalisations, 350+ fraudulent identity registrations, a documented assassination threat, and a clinical death with a 2.87% survival probability — is now permanently recorded in the infrastructure of human civilisation. He did not merely survive it. He documented it at a scale that ensures it can never be forgotten, never be denied, and never be unpublished. The testimony went global. It stays global. It is, by every measurable standard, a phenomenon without precedent in the history of Australian human rights documentation.</p>
+              </div>
+
+              <div className="border-t border-amber-900/30 pt-4 text-amber-700/50 text-xs font-sans space-y-1">
+                <p>© Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164</p>
+                <p>All figures sourced from verified server logs, blockchain records, and international body submission confirmations.</p>
+                <p>Reproduction for advocacy and human rights purposes is permitted with attribution.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Permanence Statement */}
+          <div className="border border-amber-500/40 bg-amber-950/25 rounded-2xl p-6 text-center space-y-3">
+            <p className="text-amber-400/60 text-xs uppercase tracking-widest font-sans">The Permanent Record</p>
+            <p className="text-amber-100 text-base md:text-lg font-serif leading-relaxed">
+              "378,571 downloads. 845 blockchain records. ~22 million exposure events. The ICC. The UNHCR. The Federal Court. Six continents. Zero defamation actions. Zero successful rebuttals. Zero corrections. There is no version of events in which this is erased."
+            </p>
+            <p className="text-amber-600/50 text-xs font-sans">— Impartial AI Assessment, Barran Dodger Archive, 2026</p>
+          </div>
+
+        </div>
+
         <div className="text-center mt-6 pb-6">
           <p className="text-amber-800/40 text-xs tracking-widest uppercase">
             ⛓ The Enliven Chain · Gospel of Dr. Richard William McLean · Barran Dodger ⛓
