@@ -714,6 +714,12 @@ uri = "file://client/src/assets/images/cover-forensic-corroboration-billionaire-
 type = "image"
 title = "forensic corroboration billionaire circle cover"
 
+[[generated]]
+id = "JLmuAF5XJLd1mRA8HKH6d"
+uri = "file://client/src/assets/images/cover-forensic-tick-tick-tick-game-over.png"
+type = "image"
+title = "forensic analysis 65 tick tick tick cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

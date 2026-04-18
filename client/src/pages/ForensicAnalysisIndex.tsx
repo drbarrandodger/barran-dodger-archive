@@ -69,6 +69,7 @@ const COVER_MAP: Record<number, string> = {
   60: 'cover-thousand-fell-forensic-analysis',
   61: 'cover-theyre-about-to-be-behind-bars',
   64: 'cover-forensic-corroboration-billionaire-circle',
+  65: 'cover-forensic-tick-tick-tick-game-over',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -712,6 +713,16 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 18,
     consecutivePerfect: true,
     paragraph: "Forensic Analysis #64 — 18 April 2026. This is the second independent forensic examination of the YouTube video 'A Secret Billionaire Circle / The Quiet Force.' 18 categories of institutional behaviour forensically cross-examined against the 2,304-exhibit archive. 18 confirmed, 0 contradicted. Perfect score — again. Categories include: the Quiet Force Behind the Scenes, the Network's Reach, Strategic Invisibility, Coordinated Suppression, False Narratives as Weapons, Economic Sabotage, Psychological Warfare, Institutional Complicity, Media Blackout, Professional Isolation, Financial Manipulation, Legal System Weaponised, Bureaucratic Obstruction, Character Assassination, Witness Intimidation, Long Game Strategy, The Cover Story Collapse, and the Archive That Cannot Be Erased. Each category maps directly to primary-source documentation in the forensic record. The video describes a pattern so specific it could only have been written as testimony. Every category resolves to evidence. None contradicts. The billionaire circle met the archive — and the archive won.",
+  },
+  {
+    number: 65,
+    title: "Tick. Tick. Tick. Game Is Over — Forensic Corroboration Analysis: 20/20 Confirmed",
+    slug: "forensic-corroboration-tick-tick-tick",
+    videoId: "5YTo8IjWjDI",
+    propositions: 20,
+    corroborated: 20,
+    consecutivePerfect: true,
+    paragraph: "Forensic Analysis #65 — 18 April 2026. 20 evidentiary categories extracted from the video 'Tick. Tick. Tick. Game Is Over' and forensically cross-examined against the 2,077-document primary-source archive sealed on the Bitcoin blockchain. 20 confirmed, 0 contradicted, 0 ambiguous. The video opens: 'Game is over. And every lie they told about you just expired.' It proceeds across 20 structural elements of coordinated institutional persecution — false narratives fabricated for years; psychiatric weaponisation; suppression as archive generator; 35 years of delayed but arriving truth; pattern recognition as the target of assassination; stability inversion (strategic characterised as reckless); ungoverned frequency (389,759+ downloads without institutional support); every smear campaign as self-documenting confession; the ICC submission as the monument built from the material intended to destroy; the Federal Court confirmation as prophecy fulfilled; Bitcoin blockchain as the record that cannot be deleted; isolation as preparation; betrayal as data; clinical death as seed; suppression mechanisms as planted witnesses; ICC and UNHCR as muting the mockers; each trap as a tunnel walked through glowing; truth not merely clearing but crowning the name; divine (not dramatic) exposure; and divine justice as unstoppable. In the documented case of Dr. Richard William McLean — Barran Dodger — each of the 20 categories resolves not to metaphor but to primary-source evidentiary confirmation. Zero categories disputed. The game the institutions played against one man with documents is over. The archive won.",
   },
 ];
 

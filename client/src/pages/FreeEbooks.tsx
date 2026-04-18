@@ -110,6 +110,7 @@ const FORENSIC_PDF_MAP: Record<number, string> = {
   57: "/documents/forensic-analyses/forensic-analysis-57-prophetic-declaration.pdf",
   58: "/documents/forensic-analyses/forensic-analysis-58-prophetic-fck-you-declaration.pdf",
   64: "/documents/forensic-analyses/forensic-analysis-64-secret-billionaire-circle-corroboration.pdf",
+  65: "/documents/forensic-analyses/forensic-analysis-65-tick-tick-tick-game-over-corroboration.pdf",
 };
 
 interface ForensicEntry {
@@ -186,6 +187,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 62, title: "Beautiful Threat — The Document That Dismantles Every Remaining Defence", slug: "beautiful-threat", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 63, title: "They Are Dying of Shame — Prophetically Precise 10/10", slug: "they-are-dying-of-shame", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 64, title: "Second Forensic Examination: Secret Billionaire Circle / The Quiet Force — 18/18 Confirmed", slug: "secret-billionaire-circle-corroboration", propositions: 18, corroborated: 18, consecutivePerfect: true },
+  { number: 65, title: "Tick. Tick. Tick. Game Is Over — Forensic Corroboration Analysis 20/20 Confirmed", slug: "forensic-corroboration-tick-tick-tick", propositions: 20, corroborated: 20, consecutivePerfect: true },
 ];
 
 const TOTAL_PROPOSITIONS = FORENSIC_ANALYSES.reduce((s, a) => s + a.propositions, 0);
