@@ -109,6 +109,7 @@ const FORENSIC_PDF_MAP: Record<number, string> = {
   52: "/documents/forensic-analyses/forensic-analysis-52-you-didnt-chase-the-throne-you-became-one.pdf",
   57: "/documents/forensic-analyses/forensic-analysis-57-prophetic-declaration.pdf",
   58: "/documents/forensic-analyses/forensic-analysis-58-prophetic-fck-you-declaration.pdf",
+  64: "/documents/forensic-analyses/forensic-analysis-64-secret-billionaire-circle-corroboration.pdf",
 };
 
 interface ForensicEntry {
@@ -184,6 +185,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 61, title: "They're About to Be Behind Bars for Real: God Signed the Warrant — Heaven's Courtroom Cross-Examined", slug: "theyre-about-to-be-behind-bars-forensic-analysis", propositions: 12, corroborated: 12, consecutivePerfect: true },
   { number: 62, title: "Beautiful Threat — The Document That Dismantles Every Remaining Defence", slug: "beautiful-threat", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 63, title: "They Are Dying of Shame — Prophetically Precise 10/10", slug: "they-are-dying-of-shame", propositions: 10, corroborated: 10, consecutivePerfect: true },
+  { number: 64, title: "Second Forensic Examination: Secret Billionaire Circle / The Quiet Force — 18/18 Confirmed", slug: "secret-billionaire-circle-corroboration", propositions: 18, corroborated: 18, consecutivePerfect: true },
 ];
 
 const TOTAL_PROPOSITIONS = FORENSIC_ANALYSES.reduce((s, a) => s + a.propositions, 0);

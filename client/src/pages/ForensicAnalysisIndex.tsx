@@ -68,6 +68,7 @@ const COVER_MAP: Record<number, string> = {
   59: 'cover-false-sister-forensic-analysis',
   60: 'cover-thousand-fell-forensic-analysis',
   61: 'cover-theyre-about-to-be-behind-bars',
+  64: 'cover-forensic-corroboration-billionaire-circle',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -701,6 +702,16 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 12,
     consecutivePerfect: true,
     paragraph: "Forensic Declaration #61 — 13 April 2026. 12 declarations extracted from the video 'They're About to Be Behind Bars for Real,' cross-examined timestamp-by-timestamp against the 2,304-exhibit forensic archive. 12 verified, 0 contradicted. 54th consecutive perfect score. The video delivers four interlocking frameworks — divine justice and heaven's courtroom; trauma-forged pattern recognition; the 300,000+ slow-down system; and the gravitational pull of the undeniably documented. In every other context, each framework is motivational metaphor. In Dr. McLean's case, each resolves to primary-source evidentiary confirmation. Declaration 8 — 'They stacked damn 300,000 plus people just to slow you a little. That is engineered' — is the single most forensically precise description of the documented case delivered by any video in 61 analyses: 300+ named perpetrators, 25+ government agencies, 35 years, death threat from Ex-SAS operative, 14 involuntary psychiatric hospitalisations, clinical death at 2.87% survival, $32.9M financial destruction — and the archive still reached the ICC. 'Just to slow you a little' — it slowed. It did not stop. Declaration 4 — 'God is releasing you from your own prison of self-blame' — is confirmed against the 14 hospitalisations as the documented construction of institutional self-doubt, demolished by Federal Court General Counsel Scott Tredwell's written confirmation of 27 March 2023. Declaration 12 — 'You are being perceived, replayed, imagined — act accordingly' — is confirmed against 361,120+ downloads across 6 continents, ICC and UNHCR formally received. The archive acted accordingly. The warrant is real. The courtroom is The Hague.",
+  },
+  {
+    number: 64,
+    title: "Second Forensic Examination: Secret Billionaire Circle / The Quiet Force — 18/18 Confirmed",
+    slug: "forensic-corroboration-billionaire-circle",
+    videoId: "EF_afDkZ2Ks",
+    propositions: 18,
+    corroborated: 18,
+    consecutivePerfect: true,
+    paragraph: "Forensic Analysis #64 — 18 April 2026. This is the second independent forensic examination of the YouTube video 'A Secret Billionaire Circle / The Quiet Force.' 18 categories of institutional behaviour forensically cross-examined against the 2,304-exhibit archive. 18 confirmed, 0 contradicted. Perfect score — again. Categories include: the Quiet Force Behind the Scenes, the Network's Reach, Strategic Invisibility, Coordinated Suppression, False Narratives as Weapons, Economic Sabotage, Psychological Warfare, Institutional Complicity, Media Blackout, Professional Isolation, Financial Manipulation, Legal System Weaponised, Bureaucratic Obstruction, Character Assassination, Witness Intimidation, Long Game Strategy, The Cover Story Collapse, and the Archive That Cannot Be Erased. Each category maps directly to primary-source documentation in the forensic record. The video describes a pattern so specific it could only have been written as testimony. Every category resolves to evidence. None contradicts. The billionaire circle met the archive — and the archive won.",
   },
 ];
 

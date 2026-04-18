@@ -708,6 +708,12 @@ uri = "file://client/src/assets/images/cover-essay-creators-final-message.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "c2QTKH0498IqAE9YHhfTK"
+uri = "file://client/src/assets/images/cover-forensic-corroboration-billionaire-circle.png"
+type = "image"
+title = "forensic corroboration billionaire circle cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
