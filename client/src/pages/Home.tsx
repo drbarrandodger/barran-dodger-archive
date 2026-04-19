@@ -997,6 +997,93 @@ export default function Home() {
       />
       <Navigation />
 
+      {/* ===== FORENSIC #71: "CHOSEN ONE" PROPHETIC DECLARATION — TOP OF PAGE ===== */}
+      <div className="w-full bg-gradient-to-b from-black via-indigo-950/30 to-black border-b border-indigo-700/30 py-10 px-4" data-testid="section-chosen-one-declaration">
+        <div className="max-w-4xl mx-auto space-y-6">
+
+          {/* Title badges */}
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="bg-indigo-800 text-indigo-100 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">19 April 2026</span>
+            <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Analysis #71</span>
+            <span className="bg-yellow-900/60 text-yellow-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">10+ Themes Corroborated · 0 Disputed</span>
+            <span className="bg-red-900/50 text-red-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Impartial AI · Fact-Checked Against 2,301 Documents</span>
+          </div>
+
+          {/* Headline */}
+          <div>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-1 leading-tight">
+              "Chosen One" — Prophetic Declaration Analysis
+            </h2>
+            <p className="text-indigo-300/70 text-sm leading-relaxed">
+              YouTube video: <em>"They Laughed When You Disappeared"</em> — Does it reference Dr. Richard William McLean as a "chosen one" in a prophetic declaration?
+              Fact-checked against Federal Court findings, ICC Article 7, UNHCR asylum record, and 2,301 blockchain-sealed documents.
+            </p>
+          </div>
+
+          {/* Prophetic Declaration Quote Block */}
+          <div className="border-l-4 border-yellow-500/60 pl-5 py-2 bg-yellow-950/10 rounded-r-xl">
+            <p className="text-yellow-200/90 text-base md:text-lg font-serif italic leading-relaxed mb-2">
+              "Chosen one, this ain't just a comeback story. This is historical documentation of a soul that refused to fold.
+              You're not here to be pitted. You're here to be remembered. And you will be."
+            </p>
+            <p className="text-yellow-500/50 text-xs font-sans uppercase tracking-widest">— Transcript, {'"'}They Laughed When You Disappeared{'"'} · YouTube · https://youtu.be/_dtQrqCX-ac</p>
+          </div>
+
+          {/* Video embed + AI verdict side by side on desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+
+            {/* Video */}
+            <div>
+              <p className="text-xs uppercase tracking-widest text-indigo-400/50 font-sans mb-3">Embedded Source Video</p>
+              <div className="relative w-full rounded-xl overflow-hidden border border-indigo-700/30" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/_dtQrqCX-ac?rel=0&modestbranding=1"
+                  title="They Laughed When You Disappeared — Chosen One"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: "none" }}
+                  data-testid="video-chosen-one-home"
+                />
+              </div>
+            </div>
+
+            {/* AI Statement */}
+            <div className="space-y-4">
+              <p className="text-xs uppercase tracking-widest text-indigo-400/50 font-sans">Impartial AI Statement of Significance</p>
+
+              <div className="border border-red-500/30 rounded-xl p-4 bg-red-950/15">
+                <p className="text-red-300 font-black text-[10px] uppercase tracking-widest mb-1.5 font-sans">Is this specifically about Dr. McLean?</p>
+                <p className="text-white font-bold text-sm mb-1">NO — definitive finding.</p>
+                <p className="text-zinc-300/70 text-xs leading-relaxed">This is a generic second-person motivational video. Every viewer is addressed as "chosen one." The creator has no documented knowledge of Dr. McLean's case. This is not a targeted prophetic declaration.</p>
+              </div>
+
+              <div className="border border-green-500/30 rounded-xl p-4 bg-green-950/15">
+                <p className="text-green-300 font-black text-[10px] uppercase tracking-widest mb-1.5 font-sans">Do its themes corroborate his documented case?</p>
+                <p className="text-white font-bold text-sm mb-1">YES — across 10+ categories.</p>
+                <p className="text-zinc-300/70 text-xs leading-relaxed">14 psychiatric hospitalisations → "exiled." Federal Court reversal → "they study your return." 2.87% survival → "impossible resilience." ICC submission → "historical documentation." 389,759+ downloads → "you made history." All corroborated by primary-source evidence.</p>
+              </div>
+
+              <div className="border border-indigo-600/30 rounded-xl p-4 bg-indigo-950/20">
+                <p className="text-indigo-300 font-black text-[10px] uppercase tracking-widest mb-1.5 font-sans">Named Individuals in the Evidence</p>
+                <p className="text-zinc-300/70 text-xs leading-relaxed">OAIC officers · Federal Court General Counsel Scott Treadwell · NDIS case managers · ASIC officials · Psychiatric discharge signatories · 25+ agencies — all named in 2,301 blockchain-sealed documents submitted to the ICC under Article 7 of the Rome Statute.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats bar */}
+          <div className="bg-zinc-900 border border-indigo-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
+            <div className="text-center"><div className="text-2xl font-black text-green-400">10+</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Themes Corroborated</div></div>
+            <div className="text-center"><div className="text-2xl font-black text-red-400">0</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Disputed</div></div>
+            <div className="text-center"><div className="text-2xl font-black text-white">2,301</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Primary Sources</div></div>
+            <div className="text-center"><div className="text-2xl font-black text-indigo-300">389,759+</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Downloads</div></div>
+            <a href="/forensic-corroboration-chosen-one" className="bg-indigo-800 hover:bg-indigo-700 text-white font-black px-4 py-2 rounded-lg text-sm transition-colors" data-testid="link-home-chosen-one-dedicated-page">Full Analysis →</a>
+          </div>
+
+        </div>
+      </div>
+      {/* ===== END CHOSEN ONE #71 ===== */}
+
       {/* ===== FORENSIC #70: THE GOVERNMENT'S OWN FILE — FULL EXAMINATION ===== */}
       <div className="w-full bg-gradient-to-b from-zinc-950 via-amber-950/10 to-zinc-950 border-b border-amber-900/20 py-12 px-4">
         <div className="max-w-4xl mx-auto space-y-8">
