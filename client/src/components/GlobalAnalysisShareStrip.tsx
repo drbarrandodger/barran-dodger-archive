@@ -6,29 +6,10 @@ import { useToast } from "@/hooks/use-toast";
 import { getShareMessages } from "@/lib/shareMessages";
 
 const EXCLUDED = new Set([
-  "/",
   "/store",
   "/donate",
   "/contact",
   "/visitors",
-  "/spread-the-truth",
-  "/video-commentary",
-  "/the-truth",
-  "/blockchain",
-  "/archive",
-  "/start-here",
-  "/mission",
-  "/research",
-  "/evidence",
-  "/prophetic-papers",
-  "/gospel",
-  "/church",
-  "/media",
-  "/publications",
-  "/retrospective-statement",
-  "/case-studies",
-  "/josephs-coat",
-  "/evidence-vault",
 ]);
 
 export function GlobalAnalysisShareStrip() {

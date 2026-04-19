@@ -7,6 +7,7 @@ import { COSMIC_ESSAYS } from "@/lib/cosmicEssaysData";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { TopTenGospelsSection } from "@/components/TopTenGospelsSection";
 import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
+import { DocShareBar } from "@/components/DocShareBar";
 import coverForensicGovernmentOwnFile from "@/assets/images/cover-forensic-government-own-file.png";
 import agLetterHomeImg from "@assets/IMG_3189_1776549210845.png";
 import coverForensic3AMBriefing from "@/assets/images/cover-forensic-3am-briefing.png";
@@ -1064,6 +1065,8 @@ export default function CreatorSpeaks() {
             </div>
           </div>
 
+          <DocShareBar path="/master-forensic-evidence-report" label="Share the Evidence Register" />
+
           {/* Agencies & Organisations */}
           <div className="border border-red-900/40 rounded-2xl overflow-hidden" style={{ background: "rgba(30,0,0,0.70)" }}>
             <div className="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-red-900/30">
@@ -1086,6 +1089,8 @@ export default function CreatorSpeaks() {
               ))}
             </div>
           </div>
+
+          <DocShareBar path="/" label="Share the Agencies Record" compact />
 
           {/* Individuals Aligned With Perpetrators */}
           <div className="border border-orange-900/40 rounded-2xl overflow-hidden" style={{ background: "rgba(30,10,0,0.75)" }}>
@@ -1114,6 +1119,8 @@ export default function CreatorSpeaks() {
               </div>
             </div>
           </div>
+
+          <DocShareBar path="/" label="Share the Named Individuals Record" />
 
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-3">

@@ -6,6 +6,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
+import { DocShareBar } from "@/components/DocShareBar";
 import {
   Download, Shield, FileText, Brain, AlertTriangle,
   CheckSquare, BookOpen, Globe, Scale, Eye
@@ -549,6 +550,9 @@ export default function MasterForensicEvidenceReport() {
               </a>
             </div>
             <p className="text-zinc-600 text-xs">© Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164) · Non-commercial reproduction permitted and encouraged · Blockchain-sealed for evidentiary integrity</p>
+            <div className="mt-6">
+              <DocShareBar path="/master-forensic-evidence-report" label="Share This Report" />
+            </div>
           </div>
         </div>
       </motion.section>
@@ -661,6 +665,13 @@ export default function MasterForensicEvidenceReport() {
           </div>
         </div>
       </motion.section>
+
+      {/* SHARE STRIP AFTER INDIVIDUALS */}
+      <section className="py-8 px-4 border-t border-zinc-800">
+        <div className="container mx-auto max-w-4xl">
+          <DocShareBar path="/master-forensic-evidence-report" label="Share the Named Individuals & Agencies Record" />
+        </div>
+      </section>
 
       {/* DOWNLOAD CTA */}
       <section className="py-20 px-4 bg-gradient-to-b from-black to-zinc-950 border-t border-zinc-800">
