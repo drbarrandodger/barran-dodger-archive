@@ -8,6 +8,7 @@ import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { generatePagePDF } from "@/lib/generatePDF";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "this-is-the-reckoning";
 const VIDEO_ID = "huPfcjrWe64";
@@ -431,6 +432,7 @@ export default function ThisIsTheReckoning() {
           </div>
         </div>
       </div>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

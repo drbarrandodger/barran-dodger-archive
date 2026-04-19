@@ -9,6 +9,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import analyticsImg1 from "@assets/IMG_4714_1775967585983.png";
 import analyticsImg2 from "@assets/IMG_4715_1775967585983.png";
 import analyticsImg3 from "@assets/IMG_4716_1775967585983.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -557,6 +558,7 @@ export default function DigitalDetonationVerified() {
         </section>
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

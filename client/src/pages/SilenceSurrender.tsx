@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "silence-surrender";
 const VIDEO_ID = "Uhr5D0Lvq_Q";
@@ -425,4 +426,5 @@ export default function SilenceSurrender() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   AlertTriangle, Shield, Eye, FileText, ExternalLink,
   Scale, Users, Lock, Flame, ChevronDown, ChevronUp,
@@ -711,6 +712,7 @@ export default function AbleCareEntrapmentNetwork() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

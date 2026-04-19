@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ChessmateHero } from "@/components/ChessmateHero";
 import { generatePagePDF } from "@/lib/generatePDF";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "truth-is-a-blade";
 const VIDEO_ID = "AsJ8yFuq7t8";
@@ -395,6 +396,7 @@ export default function TruthIsABlade() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

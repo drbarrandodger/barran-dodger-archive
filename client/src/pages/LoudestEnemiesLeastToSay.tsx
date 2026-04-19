@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "the-loudest-enemies";
 const VIDEO_ID = "PgGPffR9aSg";
@@ -397,6 +398,7 @@ export default function LoudestEnemiesLeastToSay() {
 
         </div>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

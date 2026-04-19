@@ -8,6 +8,7 @@ import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { generatePagePDF } from "@/lib/generatePDF";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "evidence-doesnt-whisper-it-stares";
 const VIDEO_ID = "gBMsBG1ugp8";
@@ -319,6 +320,7 @@ export default function EvidenceDoesntWhisper() {
         </div>
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

@@ -31,6 +31,7 @@ import docCoverIdentity from "@/assets/images/doc-cover-identity.png";
 import docCoverGospel from "@/assets/images/doc-cover-gospel.png";
 import docCoverSovereignty from "@/assets/images/doc-cover-sovereignty.png";
 import coverParadoxPersecution from "@/assets/images/cover-paradox-persecution.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const CATEGORIES = [
   { id: "all", label: "All Documents", icon: Archive, color: "from-slate-500/20 to-gray-500/10" },
@@ -3930,6 +3931,7 @@ export default function Evidence() {
 
       <RelatedContent currentPath="/evidence" />
 
+      <ArchiveCrossLinks />
       <Footer />
 
       {/* Document Preview Modal */}

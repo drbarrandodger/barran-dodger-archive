@@ -9,6 +9,7 @@ import { Link } from "wouter";
 import { SocialShare } from "@/components/SocialShare";
 import { CommentSection } from "@/components/CommentSection";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -379,6 +380,7 @@ export function TonyRidleyRecordedConfession() {
 
         </div>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

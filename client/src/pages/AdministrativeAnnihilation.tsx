@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -1223,6 +1224,7 @@ export default function AdministrativeAnnihilation() {
         </div>
       </div>
 
+      <ArchiveCrossLinks />
       <RelatedContent currentPath="/administrative-annihilation" />
 
       <FloatingCTA />

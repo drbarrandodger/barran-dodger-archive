@@ -8,6 +8,7 @@ import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { generatePagePDF } from "@/lib/generatePDF";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "some-truths-dont-whisper";
 const VIDEO_ID = "RFRLD5JMTJA";
@@ -343,6 +344,7 @@ export default function SomeTruthsDontWhisper() {
         </div>
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

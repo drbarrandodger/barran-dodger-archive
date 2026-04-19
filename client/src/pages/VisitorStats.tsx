@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Eye, Download, FileText, Clock, TrendingUp, BarChart2, RefreshCw, Bot, AlertTriangle } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const PAGE_LABELS: Record<string, string> = {
   "/": "Home (Viral Landing)",
@@ -464,6 +465,7 @@ export default function VisitorStats() {
         )}
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

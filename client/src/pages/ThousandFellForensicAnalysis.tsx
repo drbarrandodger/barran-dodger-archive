@@ -6,6 +6,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, CheckCircle, Eye, Scale, AlertTriangle, Crosshair } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const VIDEO_ID = "MQvlKY4v6dw";
 
@@ -372,6 +373,7 @@ export default function ThousandFellForensicAnalysis() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </>
   );

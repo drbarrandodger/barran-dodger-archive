@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "loudest-hate-weakest-link";
 const VIDEO_ID = "pyr0KH3oOzE";
@@ -356,6 +357,7 @@ export function LoudestHateWeakestLink() {
 
         </div>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

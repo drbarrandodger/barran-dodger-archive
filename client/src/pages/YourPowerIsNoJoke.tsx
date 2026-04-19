@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "your-power-is-no-joke";
 const VIDEO_ID = "5wva-FuzJBw";
@@ -355,6 +356,7 @@ export default function YourPowerIsNoJoke() {
 
         </div>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

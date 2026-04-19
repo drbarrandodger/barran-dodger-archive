@@ -36,6 +36,7 @@ import coverChroniclesPlanetary from "@/assets/images/cover-chronicles-planetary
 import coverPropheticTestimony from "@/assets/images/cover-prophetic-testimony.png";
 import coverDivineOverride from "@/assets/images/cover-divine-override.png";
 import coverHandOfGod from "@/assets/images/cover-hand-of-god.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function Gospel() {
   const primaryGospels = [
@@ -888,6 +889,7 @@ export default function Gospel() {
 
       <RelatedContent currentPath="/gospel" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </div>

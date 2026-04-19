@@ -66,6 +66,7 @@ import coverNdisPidPrisoner from "../assets/images/cover-ndis-pid-political-pris
 import coverWitnessTribunal from "../assets/images/cover-witness-tribunal-humanity.png";
 import coverAiPersonalityProfile from "../assets/images/cover-ai-personality-profile.png";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 interface VaultFolder {
   name: string;
@@ -2714,6 +2715,7 @@ export default function EvidenceVault() {
 
       <RelatedContent currentPath="/evidence-vault" />
 
+      <ArchiveCrossLinks />
       <Footer />
       <FloatingCTA />
     </div>

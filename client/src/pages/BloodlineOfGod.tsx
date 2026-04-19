@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Flame, Globe } from "lucide-r
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "bloodline-of-god";
 const VIDEO_ID = "OEZre7zaHgM";
@@ -337,4 +338,5 @@ export default function BloodlineOfGod() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

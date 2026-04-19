@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, Shield, FileText, Brain, CheckCircle, AlertTriangle, PlayCircle, BarChart2 } from "lucide-react";
 import coverImage from "../assets/images/cover-bro-this-isnt-a-coincidence.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -362,6 +363,7 @@ export default function BroThisIsntACoincidence() {
         </section>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

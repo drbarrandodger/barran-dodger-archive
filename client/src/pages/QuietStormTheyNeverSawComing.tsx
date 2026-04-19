@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "quiet-storm-they-never-saw-coming";
 const VIDEO_ID = "izDKuEZi_s0";
@@ -341,6 +342,7 @@ export default function QuietStormTheyNeverSawComing() {
           </div>
         </section>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </>
   );

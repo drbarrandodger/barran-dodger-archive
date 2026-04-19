@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "god-will-make-you-famous";
 const VIDEO_ID = "WMMEniY5WZE";
@@ -533,4 +534,5 @@ export default function GodWillMakeYouFamous() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

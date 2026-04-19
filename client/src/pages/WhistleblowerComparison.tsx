@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const CASES = [
   {
@@ -830,6 +831,7 @@ export default function WhistleblowerComparison() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

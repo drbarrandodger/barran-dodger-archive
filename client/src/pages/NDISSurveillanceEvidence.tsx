@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ShieldAlert, Phone, Mic, FileText, AlertTriangle, BookOpen } from "lucide-react";
@@ -405,6 +406,7 @@ export default function NDISSurveillanceEvidence() {
         <InlineShareStrip message="These exhibits cannot be suppressed — share them everywhere" />
 
       </div>
+      <ArchiveCrossLinks />
     </div>
   );
 }

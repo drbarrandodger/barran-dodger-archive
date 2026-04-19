@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-silent-checkmate.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "silent-checkmate";
 const VIDEO_ID = "y_MCRQ5yeVE";
@@ -614,4 +615,5 @@ export default function SilentCheckmate() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

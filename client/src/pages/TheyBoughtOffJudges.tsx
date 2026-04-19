@@ -10,6 +10,7 @@ import {
   BookOpen, Globe, Brain, Flame, Scale, Gavel, Eye
 } from "lucide-react";
 import coverImage from "../assets/images/cover-they-bought-off-judges.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -443,6 +444,7 @@ export default function TheyBoughtOffJudges() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

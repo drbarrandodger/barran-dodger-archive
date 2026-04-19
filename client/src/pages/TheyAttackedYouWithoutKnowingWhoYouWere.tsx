@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "they-attacked-you-without-knowing-who-you-were";
 const VIDEO_ID = "4V6oUS7s4Bo";
@@ -395,6 +396,7 @@ export default function TheyAttackedYouWithoutKnowingWhoYouWere() {
 
         </div>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

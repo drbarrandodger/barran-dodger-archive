@@ -82,6 +82,7 @@ import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    FORENSIC ANALYSIS REGISTRY
@@ -1158,6 +1159,7 @@ export default function ForensicAnalysisIndex() {
         </section>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </>
   );

@@ -10,6 +10,7 @@ import {
   BookOpen, Globe, CheckSquare
 } from "lucide-react";
 import coverImage from "../assets/images/cover-i-choose-silence.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -394,6 +395,7 @@ export default function IChooseSilence() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

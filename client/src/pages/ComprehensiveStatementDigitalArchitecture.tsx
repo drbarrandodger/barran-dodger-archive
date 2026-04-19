@@ -9,6 +9,7 @@ import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import coverImage from "../assets/images/cover-comprehensive-statement-digital-architecture.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -386,6 +387,7 @@ export default function ComprehensiveStatementDigitalArchitecture() {
         </section>
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

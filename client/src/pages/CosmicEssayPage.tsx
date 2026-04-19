@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, BookOpen, Shield, Download, FileText, Hash, ExternalLink, BookMarked } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { COSMIC_ESSAYS } from "@/lib/cosmicEssaysData";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const coverImages = import.meta.glob('../assets/images/cover-essay-*.png', { eager: true }) as Record<string, { default: string }>;
 
@@ -340,4 +341,5 @@ export default function CosmicEssayPage() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

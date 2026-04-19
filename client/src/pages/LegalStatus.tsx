@@ -18,6 +18,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { RelatedContent } from "@/components/RelatedContent";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 interface LegalSubmission {
   body: string;
@@ -386,6 +387,7 @@ export default function LegalStatus() {
 
       <RelatedContent currentPath="/legal-status" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </>

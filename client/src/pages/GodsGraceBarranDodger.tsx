@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import coverImg from "@/assets/images/cover-gods-grace-barran-dodger.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "gods-grace-barran-dodger";
 const PDF_URL = "/documents/gods-grace-barran-dodger.pdf";
@@ -254,6 +255,7 @@ export function GodsGraceBarranDodger() {
 
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

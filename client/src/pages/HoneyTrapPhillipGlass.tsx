@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import coverImg from "@/assets/images/cover-honey-trap-phillip-glass.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -275,6 +276,7 @@ export function HoneyTrapPhillipGlass() {
         </motion.div>
 
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

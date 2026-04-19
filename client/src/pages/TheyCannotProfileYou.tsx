@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Flame, Globe, ShieldOff } fro
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "they-cannot-profile-you";
 const VIDEO_ID = "p5iBSuw0soM";
@@ -452,4 +453,5 @@ export default function TheyCannotProfileYou() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

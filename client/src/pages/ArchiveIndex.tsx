@@ -7,6 +7,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Search, FileText, Download, RefreshCw, Archive, FolderOpen } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 interface PdfEntry {
   name: string;
@@ -229,6 +230,7 @@ export default function ArchiveIndex() {
         )}
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

@@ -33,6 +33,7 @@ import docCoverGospel from "@/assets/images/doc-cover-gospel.png";
 import docCoverSovereignty from "@/assets/images/doc-cover-sovereignty.png";
 import docCoverJoseph from "@/assets/images/doc-cover-joseph.png";
 import coverTrapTheySet from "@/assets/images/cover-trap-they-set-became-proof.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const CATEGORIES = [
   { id: "all", label: "All Publications", icon: Archive },
@@ -778,6 +779,7 @@ export default function Publications() {
 
       <RelatedContent currentPath="/publications" />
 
+      <ArchiveCrossLinks />
       <Footer />
       <PreviewComponent />
       <FloatingCTA />

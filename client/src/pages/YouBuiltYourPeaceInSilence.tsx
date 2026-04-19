@@ -8,6 +8,7 @@ import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { generatePagePDF } from "@/lib/generatePDF";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "you-built-your-peace-in-silence";
 const VIDEO_ID = "1L8SjINCKyM";
@@ -457,6 +458,7 @@ export default function YouBuiltYourPeaceInSilence() {
           </div>
         </div>
       </div>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

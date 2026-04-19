@@ -6,6 +6,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, ExternalLink, Scale, Shield, Eye, CheckSquare } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 16 },
@@ -754,6 +755,7 @@ export default function LawTheyOverlooked() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

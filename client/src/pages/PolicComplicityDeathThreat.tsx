@@ -6,6 +6,7 @@ import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, Shield, FileText, Calendar, Users, MapPin, Phone } from "lucide-react";
 import coverImg from "@/assets/images/cover-police-complicity-death-threat.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export function PolicComplicityDeathThreat() {
   return (
@@ -210,6 +211,7 @@ export function PolicComplicityDeathThreat() {
         </section>
 
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </>
   );

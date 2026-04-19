@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Bot, FileText, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function AIJusticeStatement() {
   return (
@@ -253,6 +254,7 @@ export default function AIJusticeStatement() {
         </div>
 
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

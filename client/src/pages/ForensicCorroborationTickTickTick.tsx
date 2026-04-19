@@ -5,6 +5,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Flame, Shield, ExternalLink } from "lucide-react";
 import coverImg from "../assets/images/cover-forensic-tick-tick-tick-game-over.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const PDF_URL = "/documents/forensic-analyses/forensic-analysis-65-tick-tick-tick-game-over-corroboration.pdf";
 const PAGE_URL = "https://www.barrandodger.com/forensic-corroboration-tick-tick-tick";
@@ -277,6 +278,7 @@ export default function ForensicCorroborationTickTickTick() {
         </div>
 
       </div>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

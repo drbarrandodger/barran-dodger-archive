@@ -8,6 +8,7 @@ import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { generatePagePDF } from "@/lib/generatePDF";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "you-brought-receipts-to-a-vibe-war";
 const VIDEO_ID = "F17gfM7Q0jE";
@@ -330,6 +331,7 @@ export default function YouBroughtReceiptsToAVibeWar() {
         </div>
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

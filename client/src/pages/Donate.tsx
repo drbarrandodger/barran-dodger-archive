@@ -14,6 +14,7 @@ import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { SocialShare } from "@/components/SocialShare";
 import { RelatedContent } from "@/components/RelatedContent";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const donationTiers = [
   {
@@ -684,6 +685,7 @@ export default function Donate() {
 
       <RelatedContent currentPath="/donate" />
 
+      <ArchiveCrossLinks />
       <Footer />
       <FloatingCTA />
     </div>

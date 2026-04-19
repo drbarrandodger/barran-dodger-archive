@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "they-built-their-worst-nightmare";
 const VIDEO_ID = "yUnX7SGWzJQ";
@@ -344,6 +345,7 @@ export default function TheyBuiltTheirWorstNightmare() {
           </a>
         </div>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

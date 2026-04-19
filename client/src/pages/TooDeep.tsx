@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "too-deep";
 const VIDEO_ID = "Tf1QBxsNkzk";
@@ -411,4 +412,5 @@ export default function TooDeep() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-clock-strikes-back.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "clock-strikes-back";
 const VIDEO_ID = "Md8dTkbgwE0";
@@ -407,4 +408,5 @@ export default function ClockStrikesBack() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

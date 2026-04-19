@@ -5,6 +5,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Flame, Shield, ExternalLink } from "lucide-react";
 import coverImg from "../assets/images/cover-forensic-corroboration-billionaire-circle.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const PDF_URL = "/documents/forensic-analyses/forensic-analysis-64-secret-billionaire-circle-corroboration.pdf";
 const PAGE_URL = "https://www.barrandodger.com/forensic-corroboration-billionaire-circle";
@@ -259,6 +260,7 @@ export default function ForensicCorroborationBillionaireCircle() {
 
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

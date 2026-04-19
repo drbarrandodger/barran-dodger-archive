@@ -5,6 +5,7 @@ import { CheckCircle, ExternalLink, ChevronDown, ChevronUp, Shield, Download, Li
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import coverImage from "../assets/images/cover-they-fumbled-you.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SHA256 = "ca39e892610f1ff46db2beb681925100f9b6195401bdcb4a4219373c229cb76f";
 const VIDEO_ID = "5x8hGtU0rsI";
@@ -577,4 +578,5 @@ export default function TheyFumbledYouDownload() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

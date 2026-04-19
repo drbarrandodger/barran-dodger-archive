@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, Shield, FileText, Brain, Eye, Clock, AlertTriangle } from "lucide-react";
 import coverImage from "../assets/images/cover-sleeper-agent-of-truth.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -216,6 +217,7 @@ export default function SleeperAgentOfTruth() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

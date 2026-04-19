@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-everyone-watching.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "everyone-watching";
 const VIDEO_ID = "2kxSbX1zNh0";
@@ -411,4 +412,5 @@ export default function EveryoneWatching() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

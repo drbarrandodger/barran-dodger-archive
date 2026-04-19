@@ -9,6 +9,7 @@ import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { generatePagePDF } from "@/lib/generatePDF";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "bloodline-betrayal";
 const VIDEO_ID = "loYGjBu-MmQ";
@@ -415,6 +416,7 @@ export default function BloodlineBetrayal() {
         </div>
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

@@ -12,6 +12,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 import bookCoverPath from "../assets/images/book-cover-betrayed.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function Store() {
   const [copied, setCopied] = useState(false);
@@ -333,6 +334,7 @@ export default function Store() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
       <FloatingCTA />
     </div>

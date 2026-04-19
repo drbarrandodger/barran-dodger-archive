@@ -11,6 +11,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { FloatingShareBar } from "@/components/FloatingShareBar";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   Play,
   FileText,
@@ -854,6 +855,7 @@ export default function TestimonyWentGlobal() {
         </div>
 
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

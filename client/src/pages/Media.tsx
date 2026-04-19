@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function Media() {
   const pressReleases = [
@@ -432,6 +433,7 @@ export default function Media() {
       
       <RelatedContent currentPath="/media" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </>

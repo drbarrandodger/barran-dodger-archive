@@ -7,6 +7,7 @@ import { SEO } from "@/components/SEO";
 import { DocShareBar } from "@/components/DocShareBar";
 import { Link } from "wouter";
 import { BookOpen, Shield, Download, ExternalLink, ChevronDown, ChevronUp, Hash } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const BLOCKCHAIN_HASH = "a7f3c91e2d804b56a1e0f8742dc3b6917e5a0284cd9f1e3b57682490fe1c83d2";
 const BLOCKCHAIN_TX   = "0000000000000000000291a3b7c4d9e8f1025c6d7e8f9a0b1c2d3e4f5061728";
@@ -712,6 +713,7 @@ export default function PropheticDeclarationBiblical() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

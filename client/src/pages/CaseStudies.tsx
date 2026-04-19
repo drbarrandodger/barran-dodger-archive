@@ -43,6 +43,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { useState } from "react";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const caseStudies = [
   {
@@ -1161,6 +1162,7 @@ export default function CaseStudies() {
 
       <RelatedContent currentPath="/case-studies" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </div>

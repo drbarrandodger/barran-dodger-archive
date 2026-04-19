@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import coverImg from "@/assets/images/cover-quiet-storm-they-never-saw-coming.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SHA256 = "6d01640b6e06eb5e43f1f1fee501d3dfe09a1290edac17308326121c349395ca";
 
@@ -386,6 +387,7 @@ export default function QuietStormDownload() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-they-fumbled-you.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const PERPETRATORS_SUMMARY = [
   { name: "Bill Shorten", role: "Former NDIS Minister", badge: "MINISTERIAL SUPPRESSION", href: "/taxpayer-cost-analysis" },
@@ -498,4 +499,5 @@ export default function TheyFumbledYou() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

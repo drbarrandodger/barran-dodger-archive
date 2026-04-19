@@ -40,6 +40,7 @@ import benNdisImg2 from "@assets/27A51392-28E5-40D2-B8A9-A9BFE2D35452_1770336392
 import benNdisImg3 from "@assets/83CE9075-A683-4D26-BC3F-2140F96B5186_1770336392068.png";
 import benNdisImg4 from "@assets/IMG_1003_1770336392068.png";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -881,6 +882,7 @@ export default function TaxpayerCostAnalysis() {
 
       <RelatedContent currentPath="/taxpayer-cost-analysis" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </div>

@@ -8,6 +8,7 @@ import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { generatePagePDF } from "@/lib/generatePDF";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "when-heaven-goes-silent";
 const VIDEO_ID = "Aq07bPG2WIE";
@@ -371,6 +372,7 @@ export default function WhenHeavenGoesSilent() {
         </div>
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

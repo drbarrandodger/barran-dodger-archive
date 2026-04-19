@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-fbi-precision.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "fbi-precision";
 const VIDEO_ID = "e2KpN6P0VLA";
@@ -421,4 +422,5 @@ export default function FBIPrecision() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "you-didnt-chase-the-throne-you-became-one";
 const VIDEO_ID = "gky1vxaahac";
@@ -407,6 +408,7 @@ export default function YouDidntChaseTheThroneYouBecameOne() {
 
         </div>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

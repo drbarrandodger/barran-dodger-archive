@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   FileText, Shield, Brain, AlertTriangle,
   BookOpen, Globe, CheckSquare, ExternalLink, Play
@@ -440,6 +441,7 @@ export default function SukhiTear() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

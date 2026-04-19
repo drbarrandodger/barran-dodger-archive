@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   Shield, FileText, Hash, Globe, Bitcoin, AlertTriangle,
   TrendingUp, Eye, Scale, Zap, Lock, CheckCircle, ExternalLink
@@ -575,6 +576,7 @@ export default function WhatThisProves() {
         </Chapter>
 
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

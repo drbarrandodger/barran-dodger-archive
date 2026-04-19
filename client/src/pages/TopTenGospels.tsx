@@ -17,6 +17,7 @@ import coverIAmDeclaration from "@/assets/images/cover-i-am-declaration.png";
 import coverCovenantResonance from "@/assets/images/cover-covenant-resonance.png";
 import coverGodEquipsCalled from "@/assets/images/cover-god-equips-called.png";
 import coverPostSingularity from "@/assets/images/cover-post-singularity.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const TOP_TEN = [
   {
@@ -349,6 +350,7 @@ export default function TopTenGospels() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

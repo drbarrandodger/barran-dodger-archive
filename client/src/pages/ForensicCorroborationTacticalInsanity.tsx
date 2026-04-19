@@ -5,6 +5,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Flame, Shield, ExternalLink } from "lucide-react";
 import coverImg from "../assets/images/cover-forensic-tactical-insanity.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const PDF_URL = "/documents/forensic-analyses/forensic-analysis-66-tactical-insanity-corroboration.pdf";
 const PAGE_URL = "https://www.barrandodger.com/forensic-corroboration-tactical-insanity";
@@ -277,6 +278,7 @@ export default function ForensicCorroborationTacticalInsanity() {
         </div>
 
       </div>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

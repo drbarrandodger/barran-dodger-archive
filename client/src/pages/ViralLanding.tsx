@@ -69,6 +69,7 @@ import imgDivineScales from "@/assets/images/divine-justice-scales.png";
 import imgCorruptionWeb from "@/assets/images/corruption-web-exposed.png";
 import imgAsioSurveillance from "@/assets/images/asio-shadow-surveillance.png";
 import imgTruthPhoenix from "@/assets/images/truth-phoenix-rising.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const NEW_RELEASES = [
   {
@@ -5453,6 +5454,7 @@ export default function ViralLanding() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

@@ -13,6 +13,7 @@ import agLetterHomeImg from "@assets/IMG_3189_1776549210845.png";
 import coverForensic3AMBriefing from "@/assets/images/cover-forensic-3am-briefing.png";
 import coverForensicVaultAccess from "@/assets/images/cover-forensic-vault-access.png";
 import coverForensicMakingHistory from "@/assets/images/cover-forensic-making-history.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 interface Message {
   role: "user" | "creator";
@@ -1269,4 +1270,5 @@ export default function CreatorSpeaks() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

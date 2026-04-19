@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Download, Shield, Brain, CheckCircle, AlertTriangle, PlayCircle, XCircle, BarChart2, Eye, TrendingUp, FileText, Globe, ExternalLink, Database, Scale, Gavel, Calendar } from "lucide-react";
 import coverImage from "../assets/images/cover-no-one-could-be-that-smart.png";
 import { useQuery } from "@tanstack/react-query";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -486,6 +487,7 @@ export default function NoOneCouldBeThatSmart() {
         </section>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

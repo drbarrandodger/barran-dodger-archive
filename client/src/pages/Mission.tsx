@@ -10,6 +10,7 @@ import { Link } from "wouter";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { RelatedContent } from "@/components/RelatedContent";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function Mission() {
   return (
@@ -213,6 +214,7 @@ export default function Mission() {
 
       <RelatedContent currentPath="/mission" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </div>

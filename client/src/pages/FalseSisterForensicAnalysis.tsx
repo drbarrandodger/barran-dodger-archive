@@ -6,6 +6,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, CheckCircle, Eye, Scale, AlertTriangle, Crosshair } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 // ── Paste the YouTube video ID here once the URL is confirmed ──
 const VIDEO_ID = "Klqc4dmwkCQ";
@@ -404,6 +405,7 @@ export default function FalseSisterForensicAnalysis() {
         </motion.div>
 
       </div>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

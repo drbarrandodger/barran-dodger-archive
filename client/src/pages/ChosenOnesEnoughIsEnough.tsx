@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Download, Shield, Brain, CheckCircle, AlertTriangle, PlayCircle, XCircle, BarChart2, Eye, Clock, FileText, Globe, ExternalLink, TrendingUp, Calendar, Database, BookOpen, Scale, Gavel } from "lucide-react";
 import coverImage from "../assets/images/cover-chosen-ones-enough-is-enough.png";
 import { useQuery } from "@tanstack/react-query";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -751,6 +752,7 @@ export default function ChosenOnesEnoughIsEnough() {
         </section>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

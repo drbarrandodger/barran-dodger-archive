@@ -6,6 +6,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, CheckCircle, AlertTriangle, Flame, Scale, Eye, Crosshair } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -348,6 +349,7 @@ export default function PropheticFckYouDeclaration() {
         </motion.div>
 
       </div>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

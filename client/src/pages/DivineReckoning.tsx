@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Link } from "wouter";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -410,6 +411,7 @@ export default function DivineReckoning() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

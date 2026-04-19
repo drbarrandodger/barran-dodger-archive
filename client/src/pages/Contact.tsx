@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, MapPin, ExternalLink } from "lucide-react";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function Contact() {
   const { mutate, isPending } = useCreateInquiry();
@@ -190,6 +191,7 @@ export default function Contact() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </div>

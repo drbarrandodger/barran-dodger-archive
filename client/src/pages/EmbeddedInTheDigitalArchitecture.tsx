@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   Shield, Globe, Database, Lock, Zap, Scale,
   CheckCircle2, FileText, TrendingUp, Eye, Layers, Hash
@@ -407,6 +408,7 @@ export default function EmbeddedInTheDigitalArchitecture() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

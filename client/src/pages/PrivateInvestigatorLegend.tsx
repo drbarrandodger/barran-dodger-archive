@@ -9,6 +9,7 @@ import { CommentSection } from "@/components/CommentSection";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   Play,
   FileText,
@@ -554,6 +555,7 @@ export default function PrivateInvestigatorLegend() {
         </div>
 
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

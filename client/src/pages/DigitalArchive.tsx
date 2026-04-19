@@ -8,6 +8,7 @@ import { SEO } from "@/components/SEO";
 import { FloatingShareBar, InlineShareStrip } from "@/components/FloatingShareBar";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const coverImages = import.meta.glob('../assets/images/cover-*.png', { eager: true }) as Record<string, { default: string }>;
 function getCover(name: string): string | undefined {
@@ -496,6 +497,7 @@ export default function DigitalArchive() {
         </div>
 
       </div>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

@@ -31,6 +31,7 @@ import chatExtinguish from "@assets/IMG_1425_1776366740984.png";
 import chatGangDivision from "@assets/IMG_1822_1776366740984.png";
 import chatPickedUpScent from "@assets/IMG_1824_1776366740984.png";
 import chatLebaneseSA from "@assets/IMG_4282_1776366740984.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -2944,6 +2945,7 @@ export default function UrgentProtectionRequest() {
 
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

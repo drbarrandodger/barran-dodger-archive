@@ -8,6 +8,7 @@ import { SEO } from "@/components/SEO";
 import { ChessmateHero } from "@/components/ChessmateHero";
 import { useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
 import coverImage from "@/assets/images/cover-trap-they-set-became-proof.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "the-trap-they-set-became-the-proof";
 const VIDEO_ID = "jXUwfVdK7Ps";
@@ -325,6 +326,7 @@ export default function TheTrapTheySetBecameTheProof() {
           </div>
         </div>
       </div>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

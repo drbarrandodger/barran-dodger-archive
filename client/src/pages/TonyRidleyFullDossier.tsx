@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import tonyRidleyProfile from "@assets/IMG_4709_1775944508378.png";
 import tonyRidleyLinkedIn from "@assets/IMG_4708_1775944508378.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const YOUTUBE_MAIN = "zPxzceqgDoc";
 const YOUTUBE_ANALYSIS_52 = "gky1vxaahac";
@@ -742,6 +743,7 @@ export default function TonyRidleyFullDossier() {
         </section>
 
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </>
   );

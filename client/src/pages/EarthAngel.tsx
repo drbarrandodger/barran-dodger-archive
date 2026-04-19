@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "earth-angel";
 const VIDEO_ID = "Drb23IXvs5k";
@@ -410,4 +411,5 @@ export default function EarthAngel() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

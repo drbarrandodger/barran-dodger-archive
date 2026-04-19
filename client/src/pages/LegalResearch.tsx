@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function LegalResearch() {
   const [query, setQuery] = useState("");
@@ -127,6 +128,7 @@ export default function LegalResearch() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </div>

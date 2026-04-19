@@ -10,6 +10,7 @@ import {
   ExternalLink, BookOpen, Gavel, Globe, Brain
 } from "lucide-react";
 import coverImage from "../assets/images/cover-paradox-persecution.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -314,6 +315,7 @@ export default function ParadoxOfPersecution() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

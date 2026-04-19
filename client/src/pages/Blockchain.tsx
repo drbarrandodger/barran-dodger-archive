@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function Blockchain() {
   const blockchainDocuments = [
@@ -568,6 +569,7 @@ export default function Blockchain() {
 
       <RelatedContent currentPath="/blockchain" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </div>

@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "they-dug-for-dirt-but-unearthed-diamonds";
 const VIDEO_ID = "4w-5V6SfOSk";
@@ -322,6 +323,7 @@ export default function TheyDugForDirtButUnearthedDiamonds() {
           </div>
         </section>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </>
   );

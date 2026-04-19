@@ -6,6 +6,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -510,7 +511,8 @@ export default function HeavenStoodForYou() {
           </div>
         </section>
 
-        <Footer />
+        <ArchiveCrossLinks />
+      <Footer />
       </div>
     </>
   );

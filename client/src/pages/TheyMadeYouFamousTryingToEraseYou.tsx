@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SectionShare } from "@/components/SectionShare";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "they-made-you-famous-trying-to-erase-you";
 const VIDEO_ID = "ieQ_iLiWleg";
@@ -432,6 +433,7 @@ export default function TheyMadeYouFamousTryingToEraseYou() {
 
         </div>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

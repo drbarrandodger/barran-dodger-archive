@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   Shield, AlertTriangle, FileText, BookOpen, Scale,
   Ban, CheckCircle2, Clock, Gavel
@@ -384,6 +385,7 @@ export default function FormalRemovalSukhiTear() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

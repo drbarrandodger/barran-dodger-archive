@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const ANALYSIS_DATE = "April 8, 2026";
 const COMBINED_PRIOR = 302;
@@ -408,4 +409,5 @@ export default function ArchitectureOfResolution() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

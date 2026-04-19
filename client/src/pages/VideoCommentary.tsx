@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { FileText, ExternalLink, Play } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 interface ArticleProps {
   videoId: string;
@@ -1200,6 +1201,7 @@ export default function VideoCommentary() {
         </div>
 
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

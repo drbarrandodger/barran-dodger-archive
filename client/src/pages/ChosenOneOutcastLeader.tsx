@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-chosen-one-outcast-leader.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "chosen-one-outcast-leader";
 const VIDEO_ID = "uwaT7PfxkPQ";
@@ -475,4 +476,5 @@ export default function ChosenOneOutcastLeader() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

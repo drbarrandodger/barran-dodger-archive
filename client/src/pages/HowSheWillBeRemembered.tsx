@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   FileText, Shield, Brain, Globe, BookOpen,
   CheckSquare, Scale, Landmark, Eye, Play, ExternalLink
@@ -317,6 +318,7 @@ export default function HowSheWillBeRemembered() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

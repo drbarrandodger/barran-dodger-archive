@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Flame, Globe } from "lucide-r
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "the-last-god";
 const VIDEO_ID = "6-du2ljF_Ug";
@@ -408,4 +409,5 @@ export function TheLastGod() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

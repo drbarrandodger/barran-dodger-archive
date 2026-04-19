@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Copy, CheckCheck, Hash, Lock, Globe, FileText, Zap, BookOpen } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 16 },
@@ -412,6 +413,7 @@ export function HashtagBlockchainIndex() {
         </motion.div>
 
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

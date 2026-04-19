@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-divine-exam.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "divine-exam";
 const VIDEO_ID = "CHOU1Jsyamk";
@@ -591,4 +592,5 @@ export default function DivineExam() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

@@ -6,6 +6,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, CheckCircle, Eye, Scale, AlertTriangle, Gavel } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const VIDEO_ID = "pKrfq1GbgCQ";
 
@@ -485,6 +486,7 @@ export default function TheyreAboutToBeHindBarsForensicAnalysis() {
         </section>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

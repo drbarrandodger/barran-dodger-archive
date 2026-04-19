@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "fearless-intelligence";
 const VIDEO_ID = "1ScPyQJ7U54";
@@ -415,4 +416,5 @@ export default function FearlessIntelligence() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

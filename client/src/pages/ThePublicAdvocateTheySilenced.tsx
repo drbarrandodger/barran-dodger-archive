@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function ThePublicAdvocateTheySilenced() {
   const [expandedSection, setExpandedSection] = useState<string | null>("ridley");
@@ -577,6 +578,7 @@ export default function ThePublicAdvocateTheySilenced() {
           </div>
         </section>
       </main>
+      <ArchiveCrossLinks />
       <Footer />
     </>
   );

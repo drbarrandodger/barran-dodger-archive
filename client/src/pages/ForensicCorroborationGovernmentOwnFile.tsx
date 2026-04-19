@@ -6,6 +6,7 @@ import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Flame, Shield, ExternalLink, FileText } from "lucide-react";
 import coverImg from "../assets/images/cover-forensic-government-own-file.png";
 import agLetterImg from "@assets/IMG_3189_1776549210845.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const PDF_URL = "/documents/forensic-analyses/forensic-analysis-70-government-own-file-corroboration.pdf";
 const PAGE_URL = "https://www.barrandodger.com/forensic-corroboration-government-own-file";
@@ -262,6 +263,7 @@ export default function ForensicCorroborationGovernmentOwnFile() {
 
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

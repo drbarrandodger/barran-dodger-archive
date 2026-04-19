@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Flame, Globe, AlertTriangle }
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "the-conspiracy-against-you";
 const VIDEO_ID = "zPxzceqgDoc";
@@ -603,4 +604,5 @@ export function TheConspiracyAgainstYou() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

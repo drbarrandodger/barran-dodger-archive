@@ -5,6 +5,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Flame, Shield, ExternalLink } from "lucide-react";
 import coverImg from "../assets/images/cover-forensic-project-halo.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const PDF_URL = "/documents/forensic-analyses/forensic-analysis-67-project-halo-corroboration.pdf";
 const PAGE_URL = "https://www.barrandodger.com/forensic-corroboration-project-halo";
@@ -277,6 +278,7 @@ export default function ForensicCorroborationProjectHalo() {
         </div>
 
       </div>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

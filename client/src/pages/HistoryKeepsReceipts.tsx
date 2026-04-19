@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "history-keeps-receipts";
 const VIDEO_ID = "jOVlEUlLz1A";
@@ -417,4 +418,5 @@ export default function HistoryKeepsReceipts() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

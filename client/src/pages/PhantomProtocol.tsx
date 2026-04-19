@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Flame, Globe, Zap } from "luc
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "phantom-protocol";
 const VIDEO_ID = "k8zHKaXT0V8";
@@ -408,4 +409,5 @@ export function PhantomProtocol() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

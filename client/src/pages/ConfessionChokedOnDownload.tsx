@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   Shield, CheckCircle, ExternalLink, BookOpen, ChevronDown, ChevronUp,
   AlertTriangle, FileText, Download
@@ -289,6 +290,7 @@ export default function ConfessionChokedOnDownload() {
         </section>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </>
   );

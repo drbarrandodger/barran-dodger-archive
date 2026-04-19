@@ -12,6 +12,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { RelatedContent } from "@/components/RelatedContent";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function Church() {
   const tenets = [
@@ -415,6 +416,7 @@ export default function Church() {
 
       <RelatedContent currentPath="/church" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </div>

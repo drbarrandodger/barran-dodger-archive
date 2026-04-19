@@ -6,6 +6,7 @@ import { Flame, Shield, ExternalLink, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 import coverImg from "../assets/images/cover-forensic-making-history.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const PDF_URL = "/documents/forensic-analyses/forensic-analysis-72-making-history-corroboration.pdf";
 const PAGE_URL = "https://www.barrandodger.com/forensic-corroboration-making-history";
@@ -443,6 +444,7 @@ export default function ForensicCorroborationMakingHistory() {
         </div>
 
       </div>
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

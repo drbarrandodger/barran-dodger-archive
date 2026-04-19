@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Globe, Shield, Scale, Download, Clock, Archive } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const STAT_PILLS = [
   { icon: Archive, label: "2,301 Documents" },
@@ -509,6 +510,7 @@ export default function LetterToTheWorld() {
         </div>
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

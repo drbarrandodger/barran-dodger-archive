@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-what-you-become.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "what-you-become";
 const VIDEO_ID = "GCWYJRGgJSw";
@@ -410,4 +411,5 @@ export default function WhatYouBecome() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

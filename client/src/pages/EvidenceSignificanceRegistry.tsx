@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 interface EvidenceEntry {
   number: number;
@@ -520,6 +521,7 @@ export default function EvidenceSignificanceRegistry() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

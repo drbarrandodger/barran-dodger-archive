@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-untouchable-agents.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "untouchable-agents";
 const VIDEO_ID = "_mwkiTjeHQU";
@@ -402,4 +403,5 @@ export default function UntouchableAgents() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

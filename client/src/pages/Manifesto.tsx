@@ -34,6 +34,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function Manifesto() {
   const trustFundPurpose = {
@@ -1023,6 +1024,7 @@ export default function Manifesto() {
 
       <RelatedContent currentPath="/manifesto" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </div>

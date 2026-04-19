@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const TRANSCRIPT_LINES: { speaker: string; text: string; significance?: { label: string; body: string; severity: "critical" | "high" | "notable" } }[] = [
   {
@@ -751,6 +752,7 @@ export default function AbleCareMurderThreatCall() {
 
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

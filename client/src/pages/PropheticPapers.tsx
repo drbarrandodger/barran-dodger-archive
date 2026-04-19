@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { RelatedContent } from "@/components/RelatedContent";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function PropheticPapers() {
   const gospels = [
@@ -412,6 +413,7 @@ export default function PropheticPapers() {
 
       <RelatedContent currentPath="/prophetic-papers" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </div>

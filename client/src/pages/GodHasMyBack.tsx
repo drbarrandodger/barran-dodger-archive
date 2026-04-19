@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Shield, Heart, AlertTriangle, Scale, Zap, Lock, Eye, Globe } from "lucide-react";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -223,6 +224,7 @@ export default function GodHasMyBack() {
 
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

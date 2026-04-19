@@ -10,6 +10,7 @@ import {
   BookOpen, Globe, CheckSquare, Flame, Star
 } from "lucide-react";
 import coverImage from "../assets/images/cover-prophetic-testimony-biblical-correlation.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -479,6 +480,7 @@ export default function PropheticTestimonyBiblical() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

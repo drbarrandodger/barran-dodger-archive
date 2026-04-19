@@ -10,6 +10,7 @@ import {
   BookOpen, Globe, CheckSquare, Lock, Unlock
 } from "lucide-react";
 import coverImage from "../assets/images/cover-testimony-dr-richard-mclean.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -429,6 +430,7 @@ export default function TheTestimony() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

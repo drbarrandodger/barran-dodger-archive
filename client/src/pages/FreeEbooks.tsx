@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const coverImages = import.meta.glob('../assets/images/cover-*.png', { eager: true }) as Record<string, { default: string }>;
 
@@ -898,6 +899,7 @@ export default function FreeEbooks() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

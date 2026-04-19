@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 function LiveTracker() {
   const { data } = useQuery<{ count: number }>({
@@ -318,6 +319,7 @@ export default function DyingOfShame() {
 
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-someone-slipped-up.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "someone-slipped-up";
 const VIDEO_ID = "BRYGDgDY4kU";
@@ -522,4 +523,5 @@ export default function SomeoneSlippedUp() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

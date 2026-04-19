@@ -80,6 +80,7 @@ import coverConfinementErasure from "@/assets/images/cover-confinement-erasure-b
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { ChessmateHero } from "@/components/ChessmateHero";
 import { TopTenGospelsSection } from "@/components/TopTenGospelsSection";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -7235,6 +7236,7 @@ export default function Home() {
 
       <RelatedContent currentPath="/archive" />
 
+      <ArchiveCrossLinks />
       <Footer />
 
       {/* Floating Share Bar - Always accessible */}

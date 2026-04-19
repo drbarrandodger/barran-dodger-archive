@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   Copy, Check, Mail, Share2, ExternalLink, AlertTriangle, Flame,
   Globe, MessageCircle, Users, FileText, Zap, Radio
@@ -487,6 +488,7 @@ export default function SpreadTheTruth() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, Brain, CheckCircle, AlertCircle, Star, Youtube } from "lucide-react";
 import coverImage from "../assets/images/cover-chosen-ones-your-story.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -198,6 +199,7 @@ export default function ChosenOnesYourStory() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

@@ -17,6 +17,7 @@ import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 interface TimelineEvent {
   year: string;
@@ -394,6 +395,7 @@ export default function Timeline() {
 
       <RelatedContent currentPath="/timeline" />
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </>

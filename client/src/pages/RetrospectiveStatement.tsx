@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import { docUrl } from "@/lib/docUrl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -984,6 +985,7 @@ export default function RetrospectiveStatement() {
             <CommentSection pageSlug="retrospective-statement" />
           </div>
         </div>
+        <ArchiveCrossLinks />
         <RelatedContent currentPath="/retrospective-statement" />
 
         <FloatingCTA />

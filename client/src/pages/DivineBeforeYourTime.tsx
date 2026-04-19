@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles, Globe, Scroll } fro
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "divine-before-your-time";
 const VIDEO_ID = "MlQlthhoBVo";
@@ -488,4 +489,5 @@ export default function DivineBeforeYourTime() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

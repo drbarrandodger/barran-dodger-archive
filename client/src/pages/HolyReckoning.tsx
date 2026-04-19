@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function HolyReckoning() {
   return (
@@ -215,6 +216,7 @@ export default function HolyReckoning() {
 
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

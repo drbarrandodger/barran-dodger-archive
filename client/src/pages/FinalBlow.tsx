@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-final-blow.png";
 import { SEO } from "@/components/SEO";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const SLUG = "final-blow";
 const VIDEO_ID = "tYQHMzKDuZg";
@@ -409,4 +410,5 @@ export default function FinalBlow() {
       </div>
     </div>
   );
+      <ArchiveCrossLinks />
 }

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 export default function ApotheosisStatement() {
   return (
@@ -308,6 +309,7 @@ export default function ApotheosisStatement() {
 
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

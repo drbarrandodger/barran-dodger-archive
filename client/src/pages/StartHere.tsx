@@ -22,6 +22,7 @@ import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { RelatedContent } from "@/components/RelatedContent";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -571,6 +572,7 @@ export default function StartHere() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
           <FloatingCTA />
 </>

@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, Shield, Brain, CheckCircle, XCircle, FileText } from "lucide-react";
 import coverImage from "../assets/images/cover-government-called-delusional.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -196,6 +197,7 @@ export default function GovernmentCalledHimDelusional() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

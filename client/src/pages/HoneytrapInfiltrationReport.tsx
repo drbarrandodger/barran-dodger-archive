@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { generatePagePDF } from "@/lib/generatePDF";
 import { ChessmateHero } from "@/components/ChessmateHero";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import {
   AlertTriangle, Shield, Eye, FileText, Download,
   ExternalLink, Scale, Users, Lock, Flame, Globe,
@@ -497,6 +498,7 @@ export default function HoneytrapInfiltrationReport() {
         </div>
       </main>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

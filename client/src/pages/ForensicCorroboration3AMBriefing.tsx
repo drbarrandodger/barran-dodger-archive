@@ -5,6 +5,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Flame, Shield, ExternalLink } from "lucide-react";
 import coverImg from "../assets/images/cover-forensic-3am-briefing.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const PDF_URL = "/documents/forensic-analyses/forensic-analysis-69-3am-briefing-corroboration.pdf";
 const PAGE_URL = "https://www.barrandodger.com/forensic-corroboration-3am-briefing";
@@ -241,6 +242,7 @@ export default function ForensicCorroboration3AMBriefing() {
 
       </div>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );

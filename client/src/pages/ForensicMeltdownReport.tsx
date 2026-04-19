@@ -10,6 +10,7 @@ import {
   ExternalLink, BookOpen, Globe, Brain, Flame, Zap
 } from "lucide-react";
 import coverImage from "../assets/images/cover-forensic-meltdown.png";
+import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -384,6 +385,7 @@ export default function ForensicMeltdownReport() {
         </div>
       </section>
 
+      <ArchiveCrossLinks />
       <Footer />
     </div>
   );
