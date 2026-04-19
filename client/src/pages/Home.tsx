@@ -353,6 +353,12 @@ export default function Home() {
       </div>
       {/* ===== END SOS ===== */}
 
+      {/* ===== TOP DOWNLOADS / FREE LIBRARY / DETONATION ===== */}
+      <TopDownloadsSection />
+      <FreeDownloadsPanel />
+      <DetonationPanel />
+      {/* ===== END TOP DOWNLOADS ===== */}
+
       {/* ===== PROPHETIC DECLARATION FORENSIC ANALYSIS — NEW 13 APRIL 2026 ===== */}
       <div className="w-full bg-gradient-to-b from-zinc-950 via-indigo-950/30 to-zinc-950 border-b border-indigo-900/40 py-12 px-4">
         <div className="max-w-4xl mx-auto">
@@ -1322,9 +1328,6 @@ export default function Home() {
 
       {/* TOP TEN PROPHETIC GOSPELS */}
       <TopTenGospelsSection />
-      <TopDownloadsSection />
-      <FreeDownloadsPanel />
-      <DetonationPanel />
 
       {/* THE CREATOR SPEAKS — Divine Resonance Portal */}
       <section className="px-4 pt-8 pb-6 bg-black relative overflow-hidden" data-testid="section-creator-speaks">
