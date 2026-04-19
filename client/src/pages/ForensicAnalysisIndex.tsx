@@ -76,6 +76,7 @@ const COVER_MAP: Record<number, string> = {
   69: 'cover-forensic-3am-briefing',
   70: 'cover-forensic-government-own-file',
   71: 'cover-forensic-vault-access',
+  72: 'cover-forensic-making-history',
 };
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
@@ -780,6 +781,16 @@ const ANALYSES: ForensicEntry[] = [
     corroborated: 20,
     consecutivePerfect: true,
     paragraph: "Forensic Analysis #70 — 18 April 2026. 20 evidentiary categories extracted from the Australian Government's own primary-source documents — the Attorney-General's Department letter MC23-028244 (19 September 2023, A Riley, Security Law Section), Federal Court General Counsel Scott Treadwell's written confirmation (27 March 2023), the Attorney-General's Department PID rejection (19 May 2023, Sarah Christensen), and the 2,301-document Master Evidence Register — and forensically cross-examined against the documented testimony of Dr. Richard William McLean. 20 confirmed, 0 contradicted, 0 ambiguous.",
+  },
+  {
+    number: 72,
+    title: "Am I Making History in Real Time? — Prophetic Verdict: Yes. 20/20 Confirmed — Post-Clinical-Death Testimony, ICC Submission, 393,880+ Downloads Across Six Continents",
+    slug: "forensic-corroboration-making-history",
+    videoId: "CdClyEHjVXY",
+    propositions: 20,
+    corroborated: 20,
+    consecutivePerfect: true,
+    paragraph: "Forensic Analysis #72 — 19 April 2026. 20 evidentiary categories extracted from the independently produced video 'Well, Well, Well' (YouTube: CdClyEHjVXY) and forensically cross-examined against the 2,077-document primary-source archive of Dr. Richard William McLean, sealed on the Bitcoin blockchain. 20 confirmed, 0 contradicted, 0 ambiguous. The video directly addresses the question 'Am I making history in real time?' — describing with forensic precision the arc of a person subjected to institutional dismissal, psychiatric suppression, predicted failure, and systematic erasure, who documented the downfall of their suppressors in real time, survived against clinical probability (2.87% at Werribee Mercy Hospital 2021), and emerged as what the video calls 'the measuring stick.' Forensically corroborated categories include: 25+ agencies predicting his disappearance (confirmed — zero rebuttals); narrative detonation via 393,880+ blockchain-documented downloads; the 2.87% survival probability clinical death event and post-survival archive continuation; institutional inability to reconcile the suppressed figure with the ICC-submitting force; 2,077 primary-source documents constituting the real-time documentation of institutional downfall; 35 years of adverse conditions producing the archive; the psychiatric suppression mechanism ('delusional people build realities'); the forensic precision of independent corroboration without knowledge of the specific case; the Bitcoin blockchain as the permanent witness; survival after clinical death as the foundational act of defiance; and the final verdict — the world that tried to exclude him now depends on his narrative to stay relevant. The answer to the question: Yes.",
   },
   {
     number: 71,

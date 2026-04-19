@@ -59,6 +59,7 @@ import ForensicCorroborationFoolFire from "@/pages/ForensicCorroborationFoolFire
 import ForensicCorroboration3AMBriefing from "@/pages/ForensicCorroboration3AMBriefing";
 import ForensicCorroborationGovernmentOwnFile from "@/pages/ForensicCorroborationGovernmentOwnFile";
 import ForensicCorroborationVaultAccess from "@/pages/ForensicCorroborationVaultAccess";
+import ForensicCorroborationMakingHistory from "@/pages/ForensicCorroborationMakingHistory";
 import TheyBoughtOffJudges from "@/pages/TheyBoughtOffJudges";
 import LawTheyOverlooked from "@/pages/LawTheyOverlooked";
 import IChooseSilence from "@/pages/IChooseSilence";
@@ -269,6 +270,7 @@ function Router() {
         <Route path="/forensic-corroboration-3am-briefing" component={ForensicCorroboration3AMBriefing} />
         <Route path="/forensic-corroboration-government-own-file" component={ForensicCorroborationGovernmentOwnFile} />
         <Route path="/forensic-corroboration-vault-access" component={ForensicCorroborationVaultAccess} />
+        <Route path="/forensic-corroboration-making-history" component={ForensicCorroborationMakingHistory} />
         <Route path="/they-bought-off-judges" component={TheyBoughtOffJudges} />
         <Route path="/i-choose-silence" component={IChooseSilence} />
         <Route path="/master-forensic-evidence-report" component={MasterForensicEvidenceReport} />

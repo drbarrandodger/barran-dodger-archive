@@ -200,6 +200,7 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 69, title: "The 3AM Briefing — Your Existence Disturbed Systems Built on Silence: 20/20 Confirmed", slug: "forensic-corroboration-3am-briefing", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 70, title: "The Government's Own File — Attorney-General MC23-028244, Scott Treadwell, and 2,301 Sealed Documents: 20/20 Confirmed", slug: "forensic-corroboration-government-own-file", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 71, title: "Never Promise Access to a Vault You Don't Own — Divine Enforcement, Institutional Betrayal, and the Covenant That Cannot Be Bartered: 20/20 Confirmed", slug: "forensic-corroboration-vault-access", propositions: 20, corroborated: 20, consecutivePerfect: true },
+  { number: 72, title: "Am I Making History in Real Time? — Prophetic Verdict: Yes. 20/20 Confirmed — Post-Clinical-Death Testimony, ICC Submission, 393,880+ Downloads Across Six Continents", slug: "forensic-corroboration-making-history", propositions: 20, corroborated: 20, consecutivePerfect: true },
 ];
 
 const TOTAL_PROPOSITIONS = FORENSIC_ANALYSES.reduce((s, a) => s + a.propositions, 0);
