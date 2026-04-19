@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { DonationBanner } from "@/components/DonationBanner";
 import { WhistleblowerBanner } from "@/components/WhistleblowerBanner";
 import { SOSTopBar } from "@/components/SOSTopBar";
+import { ScripturalBar } from "@/components/ScripturalBar";
 import { LanguageDetectionBanner } from "@/components/LanguageDetectionBanner";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Chatbot } from "@/components/Chatbot";
@@ -499,6 +500,7 @@ function App() {
           <GlobalDownloadTracker />
           <ReadingProgress />
           <SOSTopBar />
+          <ScripturalBar />
           <WhistleblowerBanner />
           <DonationBanner />
           <LanguageDetectionBanner />

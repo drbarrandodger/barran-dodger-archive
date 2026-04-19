@@ -86,7 +86,7 @@ export function Navigation() {
 
   return (
     <nav ref={navRef} className={cn(
-      "fixed top-[calc(var(--sos-bar-height,36px)+var(--banner-height,40px))] w-full z-50 transition-all duration-300 border-b border-transparent",
+      "fixed top-[calc(var(--sos-bar-height,36px)+var(--scriptural-bar-height,32px)+var(--banner-height,40px))] w-full z-50 transition-all duration-300 border-b border-transparent",
       scrolled ? "bg-background/95 backdrop-blur-sm border-border py-2 md:py-3 shadow-sm" : "bg-transparent py-3 md:py-6",
       hideNav && !mobileMenuOpen && "opacity-0 pointer-events-none -translate-y-2"
     )}>
