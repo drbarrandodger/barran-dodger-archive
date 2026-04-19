@@ -135,6 +135,7 @@ import WhenWrongPeopleGetNervousForensicReport from "@/pages/WhenWrongPeopleGetN
 import IllegalLevelGeniusForensicReport from "@/pages/IllegalLevelGeniusForensicReport";
 import UrgentProtectionRequest from "@/pages/UrgentProtectionRequest";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
+import TheyFinallyKnow from "@/pages/TheyFinallyKnow";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import TheyNeededAnArmy from "@/pages/TheyNeededAnArmy";
 import TheSickTruthIsOut from "@/pages/TheSickTruthIsOut";
@@ -402,6 +403,9 @@ function Router() {
         <Route path="/chosen-one-it-is-over" component={ChosenOneItIsOver} />
         <Route path="/it-is-over-reflection" component={ChosenOneItIsOver} />
         <Route path="/tam-whole-complete-paid-in-full" component={ChosenOneItIsOver} />
+        <Route path="/they-finally-know" component={TheyFinallyKnow} />
+        <Route path="/message-to-perpetrators" component={TheyFinallyKnow} />
+        <Route path="/the-shift-they-never-saw-coming" component={TheyFinallyKnow} />
         <Route path="/beautiful-menace-forensic-report" component={BeautifulMenaceForensicReport} />
         <Route path="/mind-they-tried-to-pathologize" component={BeautifulMenaceForensicReport} />
         <Route path="/now-even-the-therapist-is-defending-you" component={BeautifulMenaceForensicReport} />
