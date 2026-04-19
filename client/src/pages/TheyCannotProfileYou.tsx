@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Flame, Globe, ShieldOff } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "they-cannot-profile-you";
 const VIDEO_ID = "p5iBSuw0soM";
@@ -254,6 +255,10 @@ export default function TheyCannotProfileYou() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
+      <SEO
+        title="They Cannot Profile You — You Do Not Fit Any Blueprint | Forensic Analysis"
+        description="Forensic corroboration analysis: They cannot profile you because you do not fit any blueprint. Dr. McLean documented archive across 35 years defies every institutional profiling attempt. 675/675 AI propositions corroborated. Zero contradictions."
+      />
       {/* Header */}
       <div className="bg-gray-900 border-b border-orange-400/30 py-12 px-4">
         <div className="max-w-4xl mx-auto">

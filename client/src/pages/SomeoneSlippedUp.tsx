@@ -3,6 +3,7 @@ import { CheckCircle, Zap, ExternalLink, Eye, Flame, Shield, BookOpen } from "lu
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-someone-slipped-up.png";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "someone-slipped-up";
 const VIDEO_ID = "BRYGDgDY4kU";
@@ -239,6 +240,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="Your Silence Was the Warning — Someone Slipped Up | Corroboration Analysis"
+        description="Forensic corroboration analysis: Your silence was the warning — they just were not smart enough to hear it. Dr. McLean 35 years of documented strategic silence became the most comprehensive whistleblower archive in Australian history."
+      />
       <div className="bg-zinc-900 border border-orange-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-orange-400">8</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

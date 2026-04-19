@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, Target, BookOpen } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-fbi-precision.png";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "fbi-precision";
 const VIDEO_ID = "e2KpN6P0VLA";
@@ -146,6 +147,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="You Were Not Invisible — You Were Inevitable | FBI Precision Corroboration Analysis"
+        description="Forensic corroboration analysis of a viral video on precision and inevitability. Dr. McLean 35-year archive of 2,301 government documents demonstrates that precision — not violence — obtained global institutional attention."
+      />
       <div className="bg-zinc-900 border border-teal-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-teal-400">10</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

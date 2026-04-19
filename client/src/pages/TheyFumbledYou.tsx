@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, Sparkles, BookOpen, Trophy, AlertTriang
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-they-fumbled-you.png";
+import { SEO } from "@/components/SEO";
 
 const PERPETRATORS_SUMMARY = [
   { name: "Bill Shorten", role: "Former NDIS Minister", badge: "MINISTERIAL SUPPRESSION", href: "/taxpayer-cost-analysis" },
@@ -207,6 +208,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="They Knew Exactly What They Had and They Still Dropped It — They Fumbled You"
+        description="Forensic corroboration analysis: They fumbled you because they were blind. 35 years. 35+ agencies. 11.5M of documented expenditure. Clinical death survived. They confused stillness with surrender. The archive is now before the ICC."
+      />
       <div className="bg-zinc-900 border border-indigo-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-indigo-400">9</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

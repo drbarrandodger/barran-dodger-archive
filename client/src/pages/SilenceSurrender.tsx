@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "silence-surrender";
 const VIDEO_ID = "Uhr5D0Lvq_Q";
@@ -162,6 +163,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="Silence Is Not Surrender — Strategic Silence Corroboration Analysis"
+        description="Forensic corroboration analysis: Only fools think silence means surrender. Dr. McLean strategic silence across 35 years produced 2,301 documents, 394,000+ downloads, and formal ICC and UNHCR submissions. Zero defamation actions."
+      />
       <div className="bg-zinc-900 border border-cyan-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-cyan-400">18</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

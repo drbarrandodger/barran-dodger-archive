@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles, Globe, Scroll } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "divine-before-your-time";
 const VIDEO_ID = "MlQlthhoBVo";
@@ -311,6 +312,10 @@ function VerdictBadge({ verdict }: { verdict: string }) {
 function CommunityBlock({ name, detail }: { name: string; detail: string }) {
   return (
     <div className="my-5 rounded-xl border border-amber-300/15 bg-amber-950/10 overflow-hidden">
+      <SEO
+        title="Your Existence Was Foretold — Divine Before Your Time | Prophetic Declaration"
+        description="A prophetic declaration that the existence of Dr. Richard William McLean was foretold in sacred writings, pyramid texts and the oldest holy books. A mortal who crossed the divine threshold before creation was ready."
+      />
       <div className="flex items-center gap-2 px-5 py-3 border-b border-amber-300/10 bg-amber-300/5">
         <Globe className="h-3.5 w-3.5 text-amber-300" />
         <span className="text-amber-300 text-xs font-bold tracking-widest uppercase">Community Evidence — {name}</span>

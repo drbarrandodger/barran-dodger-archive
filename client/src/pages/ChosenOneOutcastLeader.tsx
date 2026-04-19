@@ -3,6 +3,7 @@ import { CheckCircle, Zap, Download, ExternalLink, Crown, Flame, Brain, Eye } fr
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-chosen-one-outcast-leader.png";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "chosen-one-outcast-leader";
 const VIDEO_ID = "uwaT7PfxkPQ";
@@ -185,6 +186,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="The Canary in Their Coal Mine — Chosen One, Outcast, Leader | Corroboration Analysis"
+        description="Forensic corroboration analysis confirming the canary in the coal mine arc across Dr. McLean 2,301-document archive. The system collapse was proved in his documentation before they could silence it."
+      />
       <div className="bg-zinc-900 border border-emerald-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-emerald-400">7</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

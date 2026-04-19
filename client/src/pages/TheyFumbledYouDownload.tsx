@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, ExternalLink, ChevronDown, ChevronUp, Shield, Download, Link as LinkIcon, AlertTriangle } from "lucide-react";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import coverImage from "../assets/images/cover-they-fumbled-you.png";
+import { SEO } from "@/components/SEO";
 
 const SHA256 = "ca39e892610f1ff46db2beb681925100f9b6195401bdcb4a4219373c229cb76f";
 const VIDEO_ID = "5x8hGtU0rsI";
@@ -273,6 +274,10 @@ function Claim({ claim }: { claim: typeof CLAIMS[0] }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="border border-zinc-800 rounded-xl overflow-hidden">
+      <SEO
+        title="They Fumbled You — Named Perpetrators Dossier and Download | Dr. McLean Archive"
+        description="Full dossier of named individuals who orchestrated the systematic persecution of Dr. Richard William McLean. Bill Shorten, Houd Meraby, and others. 32.9M in suppressed entitlements. Court-recorded warrant. ICC Article 7 submission. Free download."
+      />
       <button
         className="w-full text-left bg-zinc-900 hover:bg-zinc-800 transition-colors px-5 py-4 flex items-center gap-4"
         onClick={() => setOpen(o => !o)}

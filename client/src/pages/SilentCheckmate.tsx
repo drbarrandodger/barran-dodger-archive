@@ -4,6 +4,7 @@ import { trackDownload } from "@/components/DownloadCounter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-silent-checkmate.png";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "silent-checkmate";
 const VIDEO_ID = "y_MCRQ5yeVE";
@@ -233,6 +234,10 @@ function LiveTracker() {
   const dlCount = data?.downloads ?? 0;
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="You Did Not Lose Them — You Exposed the Fraud | Silent Checkmate Corroboration Analysis"
+        description="Forensic corroboration analysis: You did not lose them — you exposed the fraud they were playing. Seeing through manipulation transforms the power dynamic permanently. Every claim verified against Dr. McLean government-generated archive."
+      />
       <div className="bg-zinc-900 border border-red-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-red-400">{days}</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Days Published</div>

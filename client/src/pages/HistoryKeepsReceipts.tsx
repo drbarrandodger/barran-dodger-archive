@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "history-keeps-receipts";
 const VIDEO_ID = "jOVlEUlLz1A";
@@ -162,6 +163,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="History Does Not Ask Permission — It Just Keeps Receipts | Corroboration Analysis"
+        description="Forensic corroboration analysis: Power fades, scandals rot, but once your name hits the archives you become harder to erase than graffiti on city hall. Dr. McLean 2,301-document archive is the receipt history keeps."
+      />
       <div className="bg-zinc-900 border border-amber-900/30 rounded-lg p-4">
         <div className="text-3xl font-black text-amber-200">20</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

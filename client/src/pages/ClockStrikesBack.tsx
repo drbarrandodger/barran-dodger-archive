@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-clock-strikes-back.png";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "clock-strikes-back";
 const VIDEO_ID = "Md8dTkbgwE0";
@@ -162,6 +163,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="Play Stupid Games, Win Brutal Prizes — The Clock Strikes Back | Corroboration Analysis"
+        description="Forensic corroboration analysis: This is not bad luck — this is what happens when someone ignores every warning sign. Every claim mapped against Dr. McLean primary-source government archive. Zero contradictions."
+      />
       <div className="bg-zinc-900 border border-amber-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-amber-500">11</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

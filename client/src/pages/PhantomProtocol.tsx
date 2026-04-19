@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Flame, Globe, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "phantom-protocol";
 const VIDEO_ID = "k8zHKaXT0V8";
@@ -190,6 +191,10 @@ export function PhantomProtocol() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
+      <SEO
+        title="Phantom Protocol — Covert Surveillance Forensic Corroboration Analysis"
+        description="Forensic corroboration analysis of Phantom Protocol — the covert institutional surveillance operation against Dr. Richard McLean. Every proposition assessed against government-generated primary-source documents. AI-verified."
+      />
       {/* Header */}
       <div className="bg-gradient-to-b from-cyan-950 via-gray-900 to-gray-950 border-b border-cyan-800/40 pt-20 pb-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">

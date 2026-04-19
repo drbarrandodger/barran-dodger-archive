@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "absorbed-the-erasure";
 const VIDEO_ID = "jIRbnz0dFXs";
@@ -166,6 +167,10 @@ export default function AbsorbedErasure() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
+      <SEO
+        title="You Absorbed Pain That Would Have Erased Entire Bloodlines — Corroboration Analysis"
+        description="Forensic corroboration analysis of a viral video confirming Dr. Richard McLean absorbed generational trauma that would have broken dynasties. 2,301 government documents assessed. Zero contradictions. AI-verified."
+      />
 
       {/* Hero */}
       <div className="bg-gradient-to-br from-zinc-950 via-pink-950/20 to-zinc-950 border-b border-pink-900/20">

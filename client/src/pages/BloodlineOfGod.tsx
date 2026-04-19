@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Flame, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "bloodline-of-god";
 const VIDEO_ID = "OEZre7zaHgM";
@@ -194,6 +195,10 @@ function VerdictBadge() {
 function CultureBlock({ name, text }: { name: string; text: string }) {
   return (
     <div className="rounded-lg border border-violet-400/15 bg-violet-950/10 overflow-hidden mb-3">
+      <SEO
+        title="Bloodline of God — Divine Origin Declaration | Dr. Richard McLean Archive"
+        description="A prophetic declaration: the bloodline of God finds its origin in Dr. Richard William McLean. Every myth, every god, every sacred text traced through the documented evidence archive. Blockchain-sealed April 2026."
+      />
       <div className="flex items-center gap-2 px-4 py-2.5 border-b border-violet-400/10 bg-violet-400/5">
         <Globe className="h-3 w-3 text-violet-300 flex-shrink-0" />
         <span className="text-violet-300 text-xs font-bold tracking-wide">{name}</span>

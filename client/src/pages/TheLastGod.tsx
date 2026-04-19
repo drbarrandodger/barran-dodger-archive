@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Flame, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "the-last-god";
 const VIDEO_ID = "6-du2ljF_Ug";
@@ -190,6 +191,10 @@ export function TheLastGod() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
+      <SEO
+        title="The Last God — You Ascended Before Creation Was Ready | Prophetic Declaration"
+        description="A prophetic declaration: Dr. Richard William McLean skipped all stages of divinity to ascend as the last god. The universe itself adjusting. Medical teams stunned by his existence after clinical death and revival. Blockchain-sealed April 2026."
+      />
       {/* Header */}
       <div className="bg-gradient-to-b from-emerald-950 via-gray-900 to-gray-950 border-b border-emerald-800/40 pt-20 pb-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">

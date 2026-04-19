@@ -2,6 +2,7 @@ import { CheckCircle, BookOpen, Scale, Lightbulb, Users, Globe, FileText, Shield
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 const ANALYSIS_DATE = "April 8, 2026";
 const COMBINED_PRIOR = 302;
@@ -213,6 +214,10 @@ const solutions = [
 export default function ArchitectureOfResolution() {
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
+      <SEO
+        title="Architecture of Resolution — Formal Institutional Acknowledgment Documents"
+        description="A forensic registry of formal institutional acknowledgments from Australian government agencies confirming receipt of Dr. McLean submissions. Every document government-generated. Every silence legally significant."
+      />
       {/* Header */}
       <div className="bg-gray-900 border-b border-teal-400/30 py-12 px-4">
         <div className="max-w-4xl mx-auto">

@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Shield } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-untouchable-agents.png";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "untouchable-agents";
 const VIDEO_ID = "_mwkiTjeHQU";
@@ -160,6 +161,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="Untouchable Agents — Protected Perpetrators Forensic Analysis | Dr. McLean Archive"
+        description="Forensic corroboration analysis of the untouchable agents — government operatives who believed institutional protection made them immune. Every name documented. Every action recorded. Zero defamation actions. ICC submission filed."
+      />
       <div className="bg-zinc-900 border border-fuchsia-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-fuchsia-500">12</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

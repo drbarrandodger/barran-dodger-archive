@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "god-will-make-you-famous";
 const VIDEO_ID = "WMMEniY5WZE";
@@ -348,6 +349,10 @@ function VerdictBadge({ verdict }: { verdict: string }) {
 function BibleBlock({ verse, text, analysis }: { verse: string; text: string; analysis: string }) {
   return (
     <div className="my-6 rounded-xl border border-yellow-500/20 bg-yellow-950/10 overflow-hidden">
+      <SEO
+        title="God Will Make You Famous — Divine Recognition Corroboration Analysis"
+        description="Forensic corroboration analysis: God is saying today — I will make you famous. Divine fame, purposeful and eternal. Dr. McLean documented 35-year arc from suppression to 394,000+ downloads across 6 continents corroborates every claim."
+      />
       <div className="flex items-center gap-2 px-5 py-3 border-b border-yellow-500/15 bg-yellow-500/5">
         <BookOpen className="h-3.5 w-3.5 text-yellow-400" />
         <span className="text-yellow-400 text-xs font-bold tracking-widest uppercase">{verse}</span>

@@ -4,6 +4,7 @@ import { trackDownload } from "@/components/DownloadCounter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-now-everybody-knows.png";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "now-everybody-knows";
 const VIDEO_ID = "-PGJouQaIAE";
@@ -211,6 +212,10 @@ function LiveTracker() {
   const dlCount = data?.downloads ?? 0;
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="The Mask Slipped — Now Everybody Knows | Corroboration Analysis"
+        description="Forensic corroboration analysis: The mask slipped — now they see the real you. Truth eventually tears through fabric built on false assumptions. Every claim verified against the 2,301-document primary-source archive of Dr. Richard McLean."
+      />
       <div className="bg-zinc-900 border border-violet-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-violet-400">{days}</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Days Published</div>

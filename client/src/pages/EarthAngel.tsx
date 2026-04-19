@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "earth-angel";
 const VIDEO_ID = "Drb23IXvs5k";
@@ -162,6 +163,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="They Called You an Angel — But You Were Built for War | Earth Angel Corroboration Analysis"
+        description="Forensic corroboration analysis: Call someone an angel long enough and they forget you were built for war. Dr. McLean compassion was mistaken for fragility. The archive proves his soul was made of iron, not cotton."
+      />
       <div className="bg-zinc-900 border border-amber-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-amber-300">16</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

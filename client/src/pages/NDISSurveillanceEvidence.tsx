@@ -4,12 +4,17 @@ import { Link } from "wouter";
 import { ShieldAlert, Phone, Mic, FileText, AlertTriangle, BookOpen } from "lucide-react";
 import { ViralDownloadButton, DownloadSocialProofBanner } from "@/components/ViralDownloadButton";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
+import { SEO } from "@/components/SEO";
 
 const DATE_ADDED = "April 8, 2026";
 
 export default function NDISSurveillanceEvidence() {
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
+      <SEO
+        title="NDIS Surveillance Audio Exhibit A — Recorded Evidence of Entrapment | Dr. McLean Archive"
+        description="Primary-source audio evidence of NDIS surveillance and entrapment operations against Dr. Richard William McLean. April 2026 exhibit. Blockchain-sealed. Submitted to ICC Article 7 proceedings and UNHCR Geneva."
+      />
 
       {/* Header */}
       <div className="bg-gray-900 border-b border-red-500/30 py-12 px-4">

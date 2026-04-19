@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Flame, Globe, AlertTriangle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "the-conspiracy-against-you";
 const VIDEO_ID = "zPxzceqgDoc";
@@ -190,6 +191,10 @@ export function TheConspiracyAgainstYou() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
+      <SEO
+        title="The Conspiracy Against You — Assassination Planning, Named Operatives and Forensic Evidence"
+        description="Forensic evidence report: someone you trusted with access to your life orchestrated your removal from existence. Named operatives. Documented coordination. 4 independent sources. Death threat in writing. ICC Article 7 submission filed."
+      />
       {/* Header */}
       <div className="bg-gradient-to-b from-rose-950 via-gray-900 to-gray-950 border-b border-rose-800/40 pt-20 pb-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">

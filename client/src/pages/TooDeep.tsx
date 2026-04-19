@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "too-deep";
 const VIDEO_ID = "Tf1QBxsNkzk";
@@ -162,6 +163,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="Too Deep — They Are Already Implicated | Forensic Corroboration Analysis"
+        description="Forensic corroboration analysis: they went too deep into the corruption to ever cleanly extract. Every agency that participated in the circular referral system is now documented in Dr. McLean 2,301-file archive submitted to the ICC."
+      />
       <div className="bg-zinc-900 border border-purple-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-purple-400">17</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

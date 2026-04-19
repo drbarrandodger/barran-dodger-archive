@@ -3,6 +3,7 @@ import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-everyone-watching.png";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "everyone-watching";
 const VIDEO_ID = "2kxSbX1zNh0";
@@ -163,6 +164,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="They Are Watching You Now the Way People Watch Breaking News — Corroboration Analysis"
+        description="Forensic corroboration analysis: the same faces that looked through Dr. McLean now refresh timelines hoping to catch a glimpse. Every claim verified against 2,301 government documents. His name trends because disbelief travels faster than truth."
+      />
       <div className="bg-zinc-900 border border-lime-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-lime-400">15</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>

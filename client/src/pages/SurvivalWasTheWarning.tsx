@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "survival-was-the-warning";
 const VIDEO_ID = "HTdKIr04PJQ";
@@ -161,6 +162,10 @@ export default function SurvivalWasTheWarning() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <SEO
+        title="They Built the Story With Your Collapse as the Ending — Survival Was the Warning"
+        description="Forensic corroboration analysis: Every move was calculated to make sure you disappear before the credits rolled — but here you are, breathing. Dr. McLean survived clinical death, 14 forced hospitalisations, and a documented assassination attempt."
+      />
       {/* Header */}
       <div className="bg-zinc-950 border-b border-amber-600/20 py-4 px-4">
         <div className="container mx-auto max-w-5xl flex items-center justify-between flex-wrap gap-3">

@@ -4,6 +4,7 @@ import { trackDownload } from "@/components/DownloadCounter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-divine-exam.png";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "divine-exam";
 const VIDEO_ID = "CHOU1Jsyamk";
@@ -203,6 +204,10 @@ function LiveTracker() {
   const dlCount = data?.downloads ?? 0;
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="Those Who Tried to Break You Were Unknowingly Training You — Divine Exam | Corroboration Analysis"
+        description="Forensic corroboration analysis: every forced hospitalisation, every suppressed submission, every financial exclusion was unknowingly a training programme. 14 forced psychiatric detentions documented. 675/675 AI-verified."
+      />
       <div className="bg-zinc-900 border border-amber-900/40 rounded-lg p-4">
         <div className="text-3xl font-black text-amber-400">{days}</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Days Published</div>

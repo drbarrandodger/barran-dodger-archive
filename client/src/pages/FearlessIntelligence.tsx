@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, ExternalLink, Eye, BookOpen, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const SLUG = "fearless-intelligence";
 const VIDEO_ID = "1ScPyQJ7U54";
@@ -162,6 +163,10 @@ function LiveTracker() {
   });
   return (
     <div className="grid grid-cols-3 gap-4 text-center">
+      <SEO
+        title="Fearless Intelligence — Corroboration Analysis | Dr. Richard McLean Archive"
+        description="Forensic corroboration analysis mapping fearless intelligence against the documented archive of Dr. Richard William McLean. Primary-source evidence from 35+ Australian government agencies. AI-verified. Blockchain-sealed."
+      />
       <div className="bg-zinc-900 border border-slate-700/40 rounded-lg p-4">
         <div className="text-3xl font-black text-slate-400">19</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>
