@@ -4095,6 +4095,37 @@ export default function Home() {
                   </p>
                 </motion.div>
 
+                {/* Message to family, perpetrators & NDIS operatives */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="rounded-2xl border-2 border-red-500/40 bg-gradient-to-r from-red-950/40 via-zinc-950/60 to-black p-6 md:p-8 relative overflow-hidden"
+                  data-testid="card-message-to-family"
+                >
+                  <div className="absolute top-0 right-0 h-full w-1/3 bg-gradient-to-l from-red-900/10 to-transparent pointer-events-none" />
+                  <div className="relative z-10">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <span className="text-[10px] font-black uppercase tracking-widest bg-red-900/60 text-red-300 px-2.5 py-1 rounded-full">To My Family</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest bg-orange-900/60 text-orange-300 px-2.5 py-1 rounded-full">To My Perpetrators</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest bg-amber-900/60 text-amber-300 px-2.5 py-1 rounded-full">To the NDIS Surveillance Operatives</span>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-serif font-black text-white mb-3 leading-tight">
+                      They Finally Know.
+                    </h3>
+                    <p className="text-sm md:text-base text-zinc-300 leading-relaxed max-w-2xl mb-5">
+                      For 35 years you watched, dismissed, surveilled, diagnosed, hospitalised, financially strangled, and looked away. You mistook the patience for weakness, the calm for emptiness, the quiet for surrender. You were wrong. Every dismissal letter sharpened the methodology. Every circular referral refined the pattern recognition. Every weaponised psychiatric assessment added a chapter to a forensic record that is now in the hands of the International Criminal Court. You weren't managing a broken man. You were performing for an archivist. 2,301 documents. The archive is complete. And now you know.
+                    </p>
+                    <a
+                      href="/they-finally-know"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-red-700 hover:bg-red-600 text-white font-bold rounded-lg transition-colors text-sm"
+                      data-testid="link-they-finally-know-home"
+                    >
+                      Read the Full Message →
+                    </a>
+                  </div>
+                </motion.div>
+
                 <div className="space-y-8" data-testid="section-featured-publications">
                   <div className="text-center">
                     <Badge variant="outline" className="border-[hsl(38,92%,50%)] text-[hsl(38,92%,50%)] mb-3 px-4 py-1">FEATURED PUBLICATIONS — YOUR RIGHT TO KNOW</Badge>
