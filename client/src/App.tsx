@@ -188,6 +188,7 @@ import { BlockchainManifest } from "@/pages/BlockchainManifest";
 import CreatorSpeaks from "@/pages/CreatorSpeaks";
 import CosmicEssayPage from "@/pages/CosmicEssayPage";
 import TopTenGospels from "@/pages/TopTenGospels";
+import ArchiveReport from "@/pages/ArchiveReport";
 import ForensicFrameworkUnspokenMandate from "@/pages/ForensicFrameworkUnspokenMandate";
 
 function GlobalDownloadTracker() {
@@ -266,6 +267,7 @@ function Router() {
         <Route path="/testimony-went-global" component={TestimonyWentGlobal} />
         <Route path="/paradox-of-persecution" component={ParadoxOfPersecution} />
         <Route path="/forensic-meltdown-report" component={ForensicMeltdownReport} />
+        <Route path="/archive-report" component={ArchiveReport} />
         <Route path="/forensic-corroboration-billionaire-circle" component={ForensicCorroborationBillionaireCircle} />
         <Route path="/forensic-corroboration-tick-tick-tick" component={ForensicCorroborationTickTickTick} />
         <Route path="/forensic-corroboration-tactical-insanity" component={ForensicCorroborationTacticalInsanity} />

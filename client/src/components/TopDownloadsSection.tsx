@@ -439,9 +439,15 @@ export function TopDownloadsSection() {
           <span className="text-xs font-mono text-orange-300/90 font-semibold">
             2,077+ DOCUMENTS · BITCOIN BLOCKCHAIN SEALED · OPENTIMESTAMPS PROTOCOL · SHA-256 VERIFIED · BEYOND ERASURE
           </span>
-          <a href="/blockchain" className="text-xs text-orange-400 underline underline-offset-2 hover:text-orange-300 flex-shrink-0" data-testid="link-blockchain-verify">
-            Verify →
-          </a>
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <a href="/blockchain" className="text-xs text-orange-400 underline underline-offset-2 hover:text-orange-300" data-testid="link-blockchain-verify">
+              Verify →
+            </a>
+            <span className="text-zinc-600 text-xs">|</span>
+            <a href="/archive-report" className="text-xs text-yellow-400 underline underline-offset-2 hover:text-yellow-300" data-testid="link-archive-report">
+              Full Report →
+            </a>
+          </div>
         </div>
 
         {isLoading ? (
