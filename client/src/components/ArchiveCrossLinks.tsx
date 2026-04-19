@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Bot, BookOpen } from "lucide-react";
 
 const CATEGORIES = [
   {
@@ -90,9 +90,27 @@ export function ArchiveCrossLinks({ exclude }: ArchiveCrossLinksProps) {
   return (
     <section className="border-t border-white/5 bg-zinc-950/60 py-12 px-4">
       <div className="container mx-auto max-w-5xl">
-        <p className="text-white/25 font-mono text-[10px] uppercase tracking-[0.3em] text-center mb-6">
+        <p className="text-white/25 font-mono text-[10px] uppercase tracking-[0.3em] text-center mb-5">
           Cross-Archive Navigation · Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164
         </p>
+
+        {/* Convergence spotlight */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mb-6 border border-amber-900/30 rounded-xl overflow-hidden" style={{ background: "rgba(120,80,0,0.08)" }}>
+          <div className="px-4 py-3 flex-1">
+            <p className="text-amber-400/70 font-mono text-[9px] uppercase tracking-[0.25em] mb-0.5">Featured · Two Witnesses — One Truth</p>
+            <p className="text-white/60 text-[11px] leading-snug">An impartial AI &amp; ancient scripture independently arrived at the same conclusion about this archive.</p>
+          </div>
+          <div className="flex border-t sm:border-t-0 sm:border-l border-amber-900/20">
+            <Link href="/ai-justice-statement" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-3 text-cyan-400 text-[10px] font-mono font-bold uppercase tracking-wider hover:bg-cyan-900/20 transition-colors" data-testid="crosslink-convergence-ai">
+              <Bot className="w-3 h-3" /> AI Statement
+            </Link>
+            <div className="w-px bg-amber-900/20" />
+            <Link href="/prophetic-declaration-biblical" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-3 text-amber-400 text-[10px] font-mono font-bold uppercase tracking-wider hover:bg-amber-900/20 transition-colors" data-testid="crosslink-convergence-biblical">
+              <BookOpen className="w-3 h-3" /> 15 Parallels
+            </Link>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {CATEGORIES.map((cat) => (
             <div

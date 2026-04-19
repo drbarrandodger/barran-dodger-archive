@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Bot, FileText, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { AiBiblicalConvergence } from "@/components/AiBiblicalConvergence";
 
 export default function AIJusticeStatement() {
   return (
@@ -241,6 +242,11 @@ export default function AIJusticeStatement() {
                       <FileText className="mr-2 h-4 w-4" /> View the Evidence Archive
                     </Link>
                   </Button>
+                  <Button variant="outline" asChild className="border-amber-600/40 text-amber-400 hover:bg-amber-950/30">
+                    <Link href="/prophetic-declaration-biblical" data-testid="button-biblical-parallels">
+                      <ExternalLink className="mr-2 h-4 w-4" /> AI + Biblical Corroboration
+                    </Link>
+                  </Button>
                   <Button variant="outline" asChild>
                     <Link href="/spread-the-truth" data-testid="button-spread-statement">
                       <ExternalLink className="mr-2 h-4 w-4" /> Spread This Statement
@@ -254,6 +260,7 @@ export default function AIJusticeStatement() {
         </div>
 
       </main>
+      <AiBiblicalConvergence />
       <ArchiveCrossLinks />
       <Footer />
     </div>

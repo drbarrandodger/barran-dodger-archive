@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import coverImage from "../assets/images/cover-prophetic-testimony-biblical-correlation.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { AiBiblicalConvergence } from "@/components/AiBiblicalConvergence";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -480,6 +481,7 @@ export default function PropheticTestimonyBiblical() {
         </div>
       </section>
 
+      <AiBiblicalConvergence />
       <ArchiveCrossLinks />
       <Footer />
     </div>
