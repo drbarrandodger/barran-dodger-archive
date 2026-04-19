@@ -750,6 +750,12 @@ uri = "file://client/src/assets/images/cover-forensic-framework-unspoken-mandate
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "j9l3oTqGDtFDpkPmT9bY-"
+uri = "file://client/src/assets/images/cover-forensic-corroboration-chosen-one.png"
+type = "image"
+title = "forensic chosen one cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

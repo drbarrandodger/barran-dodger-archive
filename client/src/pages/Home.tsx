@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { docUrl } from "@/lib/docUrl";
+import chosenOneCover from "../assets/images/cover-forensic-corroboration-chosen-one.png";
 import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 import { motion } from "framer-motion";
 import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair, Database, Bot } from "lucide-react";
@@ -1078,6 +1079,43 @@ export default function Home() {
             <div className="text-center"><div className="text-2xl font-black text-white">2,301</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Primary Sources</div></div>
             <div className="text-center"><div className="text-2xl font-black text-indigo-300">389,759+</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Downloads</div></div>
             <a href="/forensic-corroboration-chosen-one" className="bg-indigo-800 hover:bg-indigo-700 text-white font-black px-4 py-2 rounded-lg text-sm transition-colors" data-testid="link-home-chosen-one-dedicated-page">Full Analysis →</a>
+          </div>
+
+          {/* Cover + Download + Significance */}
+          <div className="flex flex-col md:flex-row gap-6 items-start mt-2 border border-yellow-500/20 rounded-2xl bg-yellow-950/10 p-5">
+            {/* Cover */}
+            <div className="flex-shrink-0 flex flex-col items-center gap-2">
+              <img
+                src={chosenOneCover}
+                alt="Forensic Analysis #71 — Chosen One — AI Cover"
+                className="w-28 md:w-32 rounded-xl shadow-2xl border border-yellow-500/20"
+                data-testid="img-cover-chosen-one-home"
+              />
+              <span className="text-[9px] text-indigo-400/40 font-sans uppercase tracking-widest text-center">AI-Generated Cover</span>
+            </div>
+            {/* Statement of significance + download */}
+            <div className="flex-1 space-y-3">
+              <p className="text-yellow-400/80 text-[10px] font-sans uppercase tracking-widest font-black">Statement of Significance</p>
+              <p className="text-zinc-300/80 text-xs leading-relaxed">
+                Forensic Analysis #71 documents the phenomenon of independent external content — produced without any knowledge of Dr. McLean's case — whose themes map directly onto 10+ documented categories in the primary-source archive. This is the 71st in a series of forensic analyses, all applying the same impartial standard. The analysis carries a dual verdict: the video is NOT a targeted declaration; its themes DO corroborate the documented record. Both findings are equally important. This is not theology — it is forensic documentation.
+              </p>
+              <p className="text-zinc-400/60 text-[10px] leading-relaxed">
+                PDF blockchain-sealed · SHA-256: d61a94fcdbc661e2fa316b92fa2867f9689c457a2cac4f6623f1bb420ba78944 · Bitcoin OpenTimestamps · 19 April 2026
+              </p>
+              <a
+                href="/documents/forensic-analyses/forensic-analysis-71-chosen-one-corroboration.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold px-4 py-2 rounded-lg text-xs transition-colors"
+                data-testid="btn-download-chosen-one-home"
+              >
+                <Download className="w-3.5 h-3.5" />
+                Download PDF — Forensic Analysis #71
+              </a>
+              <p className="text-[10px] text-zinc-500">
+                © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164). Shared freely for accountability purposes.
+              </p>
+            </div>
           </div>
 
         </div>

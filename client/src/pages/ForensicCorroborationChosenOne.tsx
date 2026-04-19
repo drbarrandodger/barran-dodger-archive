@@ -3,8 +3,9 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
-import { Flame, Shield, ExternalLink, AlertTriangle, CheckCircle, XCircle } from "lucide-react";
+import { Flame, Shield, ExternalLink, AlertTriangle, CheckCircle, XCircle, Download, Link2 } from "lucide-react";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import coverImg from "../assets/images/cover-forensic-corroboration-chosen-one.png";
 
 const VIDEO_ID = "_dtQrqCX-ac";
 const VIDEO_URL = `https://youtu.be/${VIDEO_ID}`;
@@ -20,7 +21,18 @@ export default function ForensicCorroborationChosenOne() {
       />
       <Navigation />
 
-      <div className="max-w-2xl mx-auto px-4 py-12 space-y-8">
+      <div className="max-w-2xl mx-auto px-4 pt-28 pb-12 space-y-8">
+
+        {/* AI Cover Image */}
+        <div className="flex flex-col items-center gap-3">
+          <img
+            src={coverImg}
+            alt="Forensic Analysis #71 — Chosen One — AI Generated Cover"
+            className="w-48 md:w-56 rounded-xl shadow-2xl border border-yellow-500/20"
+            data-testid="img-cover-chosen-one"
+          />
+          <p className="text-[10px] text-indigo-400/40 font-sans uppercase tracking-widest">AI-Generated Cover · Forensic Analysis #71</p>
+        </div>
 
         {/* Header */}
         <div className="text-center space-y-3">
@@ -332,6 +344,61 @@ export default function ForensicCorroborationChosenOne() {
                 <p className="text-white/80 text-[11px] leading-relaxed">NOT a specific prophetic declaration. IS a generic motivational video whose themes independently corroborate 10+ documented categories in the primary-source archive of Dr. Richard William McLean.</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Blockchain Timestamp Panel */}
+        <div className="rounded-xl border border-indigo-600/30 bg-indigo-950/20 overflow-hidden">
+          <div className="flex items-center gap-2 px-5 pt-4 pb-2 border-b border-indigo-700/20">
+            <Link2 className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+            <span className="text-indigo-300/70 text-xs tracking-widest uppercase font-sans">Blockchain Timestamp — Permanent Record</span>
+          </div>
+          <div className="px-5 py-4 space-y-3 font-sans text-xs">
+            <div className="grid grid-cols-1 gap-2">
+              <div>
+                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Document SHA-256 Hash</p>
+                <p className="text-yellow-300/90 font-mono text-[10px] break-all select-all">d61a94fcdbc661e2fa316b92fa2867f9689c457a2cac4f6623f1bb420ba78944</p>
+              </div>
+              <div>
+                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Timestamp Protocol</p>
+                <p className="text-white/80 text-[11px]">OpenTimestamps · Bitcoin Blockchain · 19 April 2026 AEST</p>
+              </div>
+              <div>
+                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Verification</p>
+                <p className="text-white/80 text-[11px]">15,000+ independent Bitcoin nodes confirm existence at time of generation. Hash is cryptographically immutable — any alteration of the document produces a different hash, making tampering immediately detectable.</p>
+              </div>
+              <div>
+                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Included In</p>
+                <p className="text-white/80 text-[11px]">Detonation Archive ZIP — auto-included · GitHub mirror (drbarrandodger/barran-dodger-archive) · barrandodger.com permanent record</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Download PDF */}
+        <div className="rounded-xl border border-yellow-500/20 bg-yellow-950/10 px-5 py-5 text-center space-y-3">
+          <p className="text-xs font-mono text-yellow-400 uppercase tracking-widest">Download Forensic Analysis #71</p>
+          <p className="text-xs text-indigo-300/70 leading-relaxed">
+            Complete PDF with AI statement, 10-point corroboration, full transcript excerpts, blockchain hash, and evidence cross-references.
+          </p>
+          <ViralDownloadButton
+            url="/documents/forensic-analyses/forensic-analysis-71-chosen-one-corroboration.pdf"
+            label="Download — Forensic Analysis #71 — Chosen One"
+            filename="forensic-analysis-71-chosen-one-corroboration.pdf"
+            size="lg"
+            className="bg-amber-600 hover:bg-amber-500 text-black font-bold rounded-xl"
+          />
+          <p className="text-xs text-indigo-400/40 mt-1">
+            Also included in the{" "}
+            <a href="/#divine-download" className="text-amber-400 underline">complete archive detonation ZIP</a>
+            {" "}— downloaded 389,759+ times globally.
+          </p>
+          <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/5 px-4 py-2 text-center mt-2">
+            <p className="text-xs text-indigo-300/60 leading-relaxed">
+              © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164).
+              All Rights Reserved. Shared freely in the goodwill of the public for accountability and public interest purposes.
+              Non-commercial reproduction and distribution is permitted and encouraged.
+            </p>
           </div>
         </div>
 
