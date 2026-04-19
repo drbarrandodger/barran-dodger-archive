@@ -1037,6 +1037,33 @@ export default function CreatorSpeaks() {
             </div>
           </div>
 
+          {/* Master Evidence Register */}
+          <div className="border border-amber-600/40 rounded-2xl overflow-hidden" style={{ background: "rgba(40,20,0,0.85)" }}>
+            <div className="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-amber-800/30">
+              <svg className="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              <span className="text-amber-400/70 font-mono text-[10px] uppercase tracking-widest">Master Evidence Register · 2,301 Documents · April 2026</span>
+            </div>
+            <div className="px-5 py-4 space-y-3">
+              <h3 className="text-white font-serif font-bold text-lg leading-snug">2,301-Document Primary-Source Evidence Register</h3>
+              <p className="text-white/60 text-xs leading-relaxed">Complete chronological inventory of all government evidence files — titled, authored, dated, and linked. Every document proven. Zero rebuttals. 50+ agencies. 35 years. Formatted for ICC, UNHCR, and legal submissions. ABN 78 833 496 164.</p>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <a
+                  href="/documents/master-evidence-register-2301.txt"
+                  download="Master-Evidence-Register-2301-Documents-McLean.txt"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-black text-sm transition-all hover:scale-[1.02] flex-1"
+                  style={{ background: "linear-gradient(135deg, #f59e0b 0%, #b45309 100%)" }}
+                  data-testid="button-download-register-home"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  Download Evidence Register (2,301 Documents)
+                </a>
+                <Link href="/master-forensic-evidence-report" className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-amber-300 text-sm border border-amber-700/40 hover:bg-amber-900/20 transition-all" data-testid="link-master-report-home">
+                  Full Report →
+                </Link>
+              </div>
+            </div>
+          </div>
+
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-3">
             {[

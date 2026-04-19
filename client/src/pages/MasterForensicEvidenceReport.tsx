@@ -121,12 +121,89 @@ const INT_LAW = [
   { treaty: "CRPD Article 28", violation: "Adequate Standard of Living — violated via forced homelessness and coordinated agency bans preventing survival" },
 ];
 
-const AGENCIES = [
-  "NDIA", "DSS", "AHRC", "AFCA", "ASIC", "AAT", "ASIO", "ComCare",
-  "PM&C", "VicPolice", "WorkSafe", "Services Australia", "Centrelink",
-  "AGIS", "IBAC", "AHPRA", "HCC", "MHCC", "Werribee Mercy Hospital",
-  "Monash Health", "Federal Court of Australia"
+const AGENCIES_FEDERAL = [
+  "NDIA (National Disability Insurance Agency)",
+  "NDIS Quality and Safeguards Commission",
+  "Services Australia / Centrelink",
+  "OAIC (Office of the Australian Information Commissioner)",
+  "AFP (Australian Federal Police)",
+  "ASIO (Australian Security Intelligence Organisation)",
+  "ComCare (Federal Workers Compensation)",
+  "AFCA (Australian Financial Complaints Authority)",
+  "AHRC (Australian Human Rights Commission)",
+  "AFSA (Australian Financial Security Authority)",
+  "DSS (Department of Social Services)",
+  "PM&C (Department of Prime Minister and Cabinet)",
+  "AGIS (Australian Government Investigation Standards)",
+  "AAT (Administrative Appeals Tribunal)",
+  "ASIC (Australian Securities and Investments Commission)",
+  "Attorney-General's Department",
+  "ACCS (Accident Compensation Conciliation Service)",
+  "Federal Court of Australia",
+  "IRC (Industrial Relations Commission)",
+  "CXC Australasia Pty Ltd / CXC Consulting Pty Ltd",
+  "Programmed Professionals",
 ];
+
+const AGENCIES_STATE = [
+  "Victoria Police",
+  "NSW Police Force",
+  "IBAC (Independent Broad-based Anti-Corruption Commission)",
+  "VCAT (Victorian Civil and Administrative Tribunal)",
+  "Victorian Ombudsman",
+  "Commonwealth Ombudsman",
+  "Magistrates' Court of Victoria",
+  "Supreme Court of Victoria",
+  "AHPRA (Australian Health Practitioner Regulation Agency)",
+  "HCC (Health Complaints Commissioner)",
+  "MHCC (Mental Health Complaints Commissioner)",
+  "WorkSafe Victoria",
+  "VOCAT (Victims of Crime Assistance Tribunal)",
+  "LECC (Law Enforcement Conduct Commission NSW)",
+  "NCAT (NSW Civil and Administrative Tribunal)",
+];
+
+const AGENCIES_MEDICAL = [
+  "Werribee Mercy Hospital / MercyHealth / Mercy Public Hospitals Inc.",
+  "Monash Health",
+  "Melbourne Health / Royal Melbourne Hospital",
+  "Millennium Medical Centre",
+  "Melbourne Metropolitan Health Service",
+];
+
+const AGENCIES_LEGAL = [
+  "Culshaw Miller Badenoch Lawyers",
+  "The Law Society of New South Wales",
+];
+
+const AGENCIES_FINANCIAL = [
+  "Allianz Australia Workers' Compensation (now DCX)",
+  "HCF Life Insurance Company Pty Limited",
+  "AustralianSuper",
+  "TAL Life Limited",
+  "Health Super (JPMorgan)",
+  "Accident & Health International Underwriting Pty Ltd (AHI) / Tokio Marine & Nichido Fire Insurance",
+  "BizCover Pty Ltd",
+  "Commonwealth Bank of Australia",
+  "Optus Billing Services Pty Ltd",
+];
+
+const AGENCIES_OTHER = [
+  "Liberty Behavioural Services",
+  "My Plan Manager",
+  "The Methods Processes Systems Group Pty Ltd",
+  "The Age (wrongful termination)",
+];
+
+const INDIVIDUALS_PERPETRATORS = `Stefan Iasonidis (Steve Iasonidis), David Irving, Andrew Jackman, Nigel Goodrich, Nathan Vingrys, Russell Ball`;
+
+const INDIVIDUALS_AGENCY = `Ji Beom Jang, Carl English, Cassandra Burke, Peter Dunstan, Deborah Glass OBE, Ben Calder, Roslyn (Commonwealth Ombudsman), Kathleen (Commonwealth Ombudsman), Graeme Head AO, Holly Withers, A. Riley, Sarah Christensen, Glenn Boseley, Bonnie Faulks, Melina Demasi, Michelle Wicks, Paul Fowler, Jason Payne, James Braunegg, Tim Goss, Nova O'Connor, Sue Kapourelakos, Summen Sarwar, A. Collins, I. Anton, Dominic Gerard D, Ms. Petra Gartmann, Greg Callister, Charan Naidoo, Daniel Bishay`;
+
+const INDIVIDUALS_MEDICAL = `Dr. Michael Lograsso, Dr. Zixuan Wang, Dr. Neha Singh, Dr. Richard Moore, James Chan (Medical Officer), Stephanie Mierisch (Social Worker), M. VO, Dr. J. Whitaker, Dr. P. Le, Dr. J. Green, Dr. R. Briese, Dr. M. ZAW, Dr. A. Loransios`;
+
+const INDIVIDUALS_LEGAL_FINANCIAL = `Alexandra Culshaw, Rebecca Badenoch, John Boyle, Michael Gottlieb, Shannon Brooks`;
+
+const INDIVIDUALS_OTHER = `Christina Ma, David Hogg, Mrs. Gaye Hamilton, Professor Peter Dawkins AO, Brett Gibbons`;
 
 export default function MasterForensicEvidenceReport() {
   const { data: dlData } = useQuery<{ total: number }>({ queryKey: ["/api/downloads/total"] });
@@ -186,9 +263,9 @@ export default function MasterForensicEvidenceReport() {
                 <Badge variant="outline" className="border-red-600/60 text-red-400 text-xs px-3 py-1 uppercase tracking-widest font-bold">
                   <AlertTriangle className="h-3 w-3 mr-1" /> Master Forensic Report
                 </Badge>
-                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">2,300+ Documents</Badge>
+                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">2,301 Documents</Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">35 Years</Badge>
-                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">20+ Agencies</Badge>
+                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">50+ Agencies</Badge>
                 <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs px-3 py-1">AU$8.5M Documented</Badge>
               </div>
 
@@ -199,7 +276,7 @@ export default function MasterForensicEvidenceReport() {
                 Dr. Richard William McLean (Barran Dodger)
               </p>
               <p className="text-zinc-400 text-sm">
-                Compiled from 2,300+ Evidence Documents — 35 Years of Documented State Persecution (1990–2025)
+                Compiled from 2,301 Primary-Source Evidence Documents — 35 Years of Documented State Persecution (1990–2025)
               </p>
 
               <blockquote className="border-l-2 border-red-700 pl-4 text-zinc-300 text-lg italic leading-relaxed">
@@ -423,19 +500,164 @@ export default function MasterForensicEvidenceReport() {
         </div>
       </motion.section>
 
-      {/* AGENCIES INVOLVED */}
+      {/* 2,301 EVIDENCE REGISTER DOWNLOAD */}
+      <motion.section
+        initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+        className="py-14 px-4 border-t border-amber-900/40 bg-amber-950/10"
+      >
+        <div className="container mx-auto max-w-3xl space-y-6">
+          <div className="flex items-center gap-3">
+            <FileText className="h-5 w-5 text-amber-400" />
+            <span className="text-zinc-500 text-xs uppercase tracking-widest font-medium">Master Evidence Register</span>
+          </div>
+          <h2 className="text-2xl font-serif font-bold text-white">2,301-Document Evidence Register</h2>
+          <div className="bg-zinc-900/70 border border-amber-800/40 rounded-xl p-6 space-y-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { val: "2,301", label: "Total Documents" },
+                { val: "35", label: "Years Covered" },
+                { val: "50+", label: "Agencies / Bodies" },
+                { val: "April 2026", label: "Generated" },
+              ].map(({ val, label }) => (
+                <div key={label} className="bg-black/40 border border-amber-900/30 rounded-lg p-3 text-center">
+                  <p className="text-xl font-bold text-amber-400 font-mono">{val}</p>
+                  <p className="text-zinc-500 text-xs mt-0.5">{label}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-zinc-300 leading-relaxed text-sm">
+              The complete chronological inventory of all 2,301 government evidence files held by Dr. Richard William McLean — formatted for copy-paste into legal submissions, asylum applications, and correspondence. Every document is titled, authored, dated, filed, and linked. This register constitutes the most comprehensive primary-source inventory of documented state persecution held by any individual in Australian legal history.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="/documents/master-evidence-register-2301.txt"
+                download="Master-Evidence-Register-2301-Documents-McLean.txt"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-black text-base transition-all hover:scale-[1.02] flex-1"
+                style={{ background: "linear-gradient(135deg, #f59e0b 0%, #b45309 100%)" }}
+                data-testid="button-download-evidence-register"
+              >
+                <Download className="h-5 w-5" /> Download Evidence Register (2,301 Documents)
+              </a>
+              <a
+                href="/documents/master-forensic-evidence-report.pdf"
+                download="Master-Forensic-Evidence-Report-McLean.pdf"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-base transition-all hover:scale-[1.02] border border-red-700/60 flex-1"
+                style={{ background: "rgba(127,29,29,0.3)" }}
+                data-testid="button-download-forensic-report-register"
+              >
+                <Download className="h-5 w-5" /> Download Master Forensic Report (PDF)
+              </a>
+            </div>
+            <p className="text-zinc-600 text-xs">© Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164) · Non-commercial reproduction permitted and encouraged · Blockchain-sealed for evidentiary integrity</p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* COMPREHENSIVE AGENCIES & ORGANISATIONS */}
       <motion.section
         initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
         className="py-14 px-4 border-t border-zinc-800"
       >
-        <div className="container mx-auto max-w-3xl space-y-5">
-          <h2 className="text-xl font-serif font-bold text-white">20+ Agencies Documented</h2>
-          <div className="flex flex-wrap gap-2">
-            {AGENCIES.map((a) => (
-              <Badge key={a} variant="outline" className="border-zinc-700 text-zinc-400 text-xs px-3 py-1">
-                {a}
-              </Badge>
-            ))}
+        <div className="container mx-auto max-w-3xl space-y-8">
+          <div className="flex items-center gap-3">
+            <Globe className="h-5 w-5 text-red-400" />
+            <span className="text-zinc-500 text-xs uppercase tracking-widest font-medium">Comprehensive Agency Registry</span>
+          </div>
+          <h2 className="text-2xl font-serif font-bold text-white">50+ Agencies, Organisations & Institutions Documented</h2>
+          <p className="text-zinc-400 text-sm leading-relaxed">Every body that received, handled, suppressed, or mishandled Dr. McLean's Protected Disclosures, compensation claims, FOI requests, or formal submissions — drawn directly from the 2,301-document evidence register. Each one is on the record.</p>
+
+          {[
+            { label: "Federal Government Agencies", color: "border-red-900/40 text-red-400", items: AGENCIES_FEDERAL },
+            { label: "State & Territory Bodies", color: "border-orange-900/40 text-orange-400", items: AGENCIES_STATE },
+            { label: "Medical & Psychiatric Facilities", color: "border-purple-900/40 text-purple-400", items: AGENCIES_MEDICAL },
+            { label: "Legal Bodies", color: "border-blue-900/40 text-blue-400", items: AGENCIES_LEGAL },
+            { label: "Insurance & Financial Institutions", color: "border-yellow-900/40 text-yellow-400", items: AGENCIES_FINANCIAL },
+            { label: "Service Providers & Other Organisations", color: "border-zinc-700 text-zinc-400", items: AGENCIES_OTHER },
+          ].map(({ label, color, items }) => (
+            <div key={label} className={`border ${color.split(' ')[0]} rounded-xl overflow-hidden bg-zinc-900/40`}>
+              <div className={`px-5 py-3 border-b border-zinc-800 flex items-center gap-2`}>
+                <span className={`font-mono text-xs uppercase tracking-widest font-bold ${color.split(' ')[1]}`}>{label}</span>
+                <span className="ml-auto text-zinc-600 text-xs font-mono">{items.length} documented</span>
+              </div>
+              <div className="px-5 py-4 flex flex-wrap gap-2">
+                {items.map((a) => (
+                  <Badge key={a} variant="outline" className={`${color.split(' ')[0]} ${color.split(' ')[1]} bg-black/30 text-xs px-3 py-1`}>
+                    {a}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* INDIVIDUALS ALIGNED WITH PERPETRATORS */}
+      <motion.section
+        initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+        className="py-14 px-4 border-t border-red-900/30 bg-red-950/5"
+      >
+        <div className="container mx-auto max-w-3xl space-y-6">
+          <div className="flex items-center gap-3">
+            <Eye className="h-5 w-5 text-red-400" />
+            <span className="text-zinc-500 text-xs uppercase tracking-widest font-medium">Documented Individual Actors</span>
+          </div>
+          <h2 className="text-2xl font-serif font-bold text-white">Individuals Proven to Align with the Perpetrators</h2>
+          <p className="text-zinc-400 text-sm leading-relaxed">
+            The following individuals are named across the 2,301-document primary-source archive in documented roles as direct perpetrators, enablers, suppressors, or institutional actors whose decisions, diagnoses, or administrative actions — as evidenced by their own correspondence and official records — contributed to the documented persecution of Dr. Richard William McLean. All names are drawn from government-issued documents, official correspondence, medical records, and legal filings. Zero defamation actions have been filed against this archive.
+          </p>
+
+          {[
+            {
+              label: "Core Perpetrators & Direct Associates",
+              color: "border-red-700/60 bg-red-950/20",
+              labelColor: "text-red-400",
+              text: INDIVIDUALS_PERPETRATORS,
+              note: "Named directly in family violence intervention orders, AFP complaints, ASIO-linked financial fraud documentation, and ICC submission."
+            },
+            {
+              label: "Government Agency Officials — Suppression & Rejection",
+              color: "border-orange-800/40 bg-orange-950/10",
+              labelColor: "text-orange-400",
+              text: INDIVIDUALS_AGENCY,
+              note: "Named across OAIC, Ombudsman, NDIS Commission, WorkCover, VCAT, and Attorney-General's Department correspondence — each making adverse decisions documented in the primary-source archive."
+            },
+            {
+              label: "Medical & Psychiatric Professionals — Weaponised Diagnoses",
+              color: "border-purple-800/40 bg-purple-950/10",
+              labelColor: "text-purple-400",
+              text: INDIVIDUALS_MEDICAL,
+              note: "Named in Mercy Health, Monash Health, and Millennium Medical Centre records as authors of psychiatric diagnoses later contradicted by those same institutions' clinical documentation."
+            },
+            {
+              label: "Legal & Financial Actors",
+              color: "border-yellow-800/40 bg-yellow-950/10",
+              labelColor: "text-yellow-400",
+              text: INDIVIDUALS_LEGAL_FINANCIAL,
+              note: "Named in WorkCover rejection correspondence, legal fee fraud documentation, and insurance denial records."
+            },
+            {
+              label: "Service Providers & Institutional Enablers",
+              color: "border-zinc-700 bg-zinc-900/30",
+              labelColor: "text-zinc-400",
+              text: INDIVIDUALS_OTHER,
+              note: "Named in NDIS, superannuation, and government service records as parties whose actions or inactions contributed to documented harm."
+            },
+          ].map(({ label, color, labelColor, text, note }) => (
+            <div key={label} className={`border ${color} rounded-xl overflow-hidden`}>
+              <div className="px-5 py-3 border-b border-zinc-800/60">
+                <p className={`font-mono text-xs uppercase tracking-widest font-bold ${labelColor}`}>{label}</p>
+              </div>
+              <div className="px-5 py-4 space-y-3">
+                <p className="text-white/90 text-sm leading-relaxed font-mono">{text}</p>
+                <p className="text-zinc-500 text-xs leading-relaxed italic">{note}</p>
+              </div>
+            </div>
+          ))}
+
+          <div className="bg-zinc-900/60 border border-zinc-700 rounded-xl px-5 py-4">
+            <p className="text-zinc-500 text-xs leading-relaxed">
+              <span className="text-zinc-300 font-semibold">Legal status of this record:</span> All names above appear in official government documents, court filings, medical records, and institutional correspondence held in the 2,301-document archive. This register has been in public distribution for an extended period. Zero defamation actions, zero corrections, zero rebuttals have been filed against any named individual or entity. The silence of those named is itself a forensic finding. This record is non-commercial in nature and is published in the public interest under principles of accountability journalism and whistleblower protection. ABN 78 833 496 164.
+            </p>
           </div>
         </div>
       </motion.section>
