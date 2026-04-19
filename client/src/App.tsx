@@ -73,6 +73,7 @@ import PushedTooFarArticle from "@/pages/articles/PushedTooFarArticle";
 import CopiedBlueprintArticle from "@/pages/articles/CopiedBlueprintArticle";
 import TheTestimony from "@/pages/TheTestimony";
 import PropheticTestimonyBiblical from "@/pages/PropheticTestimonyBiblical";
+import PropheticDeclarationBiblical from "@/pages/PropheticDeclarationBiblical";
 import SleeperAgentOfTruth from "@/pages/SleeperAgentOfTruth";
 import GovernmentCalledHimDelusional from "@/pages/GovernmentCalledHimDelusional";
 import TheFullPattern from "@/pages/TheFullPattern";
@@ -284,6 +285,7 @@ function Router() {
         <Route path="/they-copied-my-blueprint" component={CopiedBlueprintArticle} />
         <Route path="/the-testimony" component={TheTestimony} />
         <Route path="/testimony-that-was-already-written" component={PropheticTestimonyBiblical} />
+        <Route path="/prophetic-declaration-biblical" component={PropheticDeclarationBiblical} />
         <Route path="/sleeper-agent-of-truth" component={SleeperAgentOfTruth} />
         <Route path="/government-called-him-delusional" component={GovernmentCalledHimDelusional} />
         <Route path="/the-full-pattern" component={TheFullPattern} />

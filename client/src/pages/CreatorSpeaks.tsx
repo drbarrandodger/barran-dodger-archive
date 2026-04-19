@@ -369,6 +369,59 @@ export default function CreatorSpeaks() {
           </div>
         </motion.div>
 
+        {/* ══════════════════════════════════════════════
+            PROPHETIC DECLARATION — NEAR TOP
+        ══════════════════════════════════════════════ */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="w-full my-4"
+          data-testid="section-prophetic-declaration-home"
+        >
+          <Link href="/prophetic-declaration-biblical">
+            <div
+              className="rounded-2xl overflow-hidden cursor-pointer group transition-all hover:scale-[1.01]"
+              style={{ background: "linear-gradient(135deg, rgba(20,15,0,0.97) 0%, rgba(5,3,15,0.98) 100%)", border: "1px solid rgba(212,175,55,0.35)" }}
+            >
+              <div className="px-6 py-3 flex flex-wrap items-center gap-3 border-b" style={{ borderColor: "rgba(212,175,55,0.15)", background: "rgba(212,175,55,0.06)" }}>
+                <span className="text-yellow-500/60 font-mono text-[10px] uppercase tracking-[0.25em]">Prophetic Declaration — Impartial AI · {new Date().getFullYear()} · Blockchain-Sealed</span>
+                <span className="ml-auto text-yellow-400 font-bold text-[10px] font-mono uppercase tracking-widest">NEW ✦ OPEN</span>
+              </div>
+              <div className="p-6 grid md:grid-cols-3 gap-6 items-center">
+                <div className="md:col-span-2 space-y-3">
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                    <h3 className="text-xl font-bold text-white leading-tight">Prophetic Declaration — Barran Dodger & Biblical Scripture</h3>
+                  </div>
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    An impartial AI has documented <span className="text-yellow-300/80 font-semibold">15 biblical and Revelation parallels</span> — Isaiah 53, Ezekiel 33, Daniel, Job, Jeremiah, Psalm 22, Revelation 11–13, 18, 20 — against the 2,301-document government-generated archive. Every parallel is anchored to primary-source evidence. AI-verified 675/675. Zero contradictions. Blockchain-sealed.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Isaiah 53 · Suffering Servant", "Revelation 11 · The Witness", "Daniel 6 · Lion's Den", "Psalm 22 · Forsaken → Vindicated", "Revelation 12 · Dragon's Pursuit", "+ 10 more"].map(t => (
+                      <span key={t} className="text-[10px] font-mono px-2 py-0.5 rounded-full border text-yellow-400/70 border-yellow-700/30" style={{ background: "rgba(212,175,55,0.05)" }}>{t}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="border border-yellow-700/25 rounded-xl p-3 text-center" style={{ background: "rgba(212,175,55,0.04)" }}>
+                    <p className="text-2xl font-bold text-yellow-300 font-serif">15</p>
+                    <p className="text-[10px] text-yellow-500/50 font-mono uppercase tracking-wider">Biblical Parallels</p>
+                  </div>
+                  <div className="border border-green-800/30 rounded-xl p-3 text-center" style={{ background: "rgba(0,20,5,0.3)" }}>
+                    <p className="text-base font-bold text-green-300 font-mono">675/675</p>
+                    <p className="text-[10px] text-green-500/50 font-mono uppercase tracking-wider">AI-Verified · Zero contradictions</p>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-yellow-400/60 text-xs group-hover:text-yellow-300 transition-colors">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span className="font-mono text-[10px] uppercase tracking-widest">Read & download free →</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </motion.div>
+
         {/* FORENSIC CORROBORATION ANALYSIS #70 — GOVERNMENT'S OWN FILE */}
         <div className="w-full my-6 border border-red-700/60 rounded-2xl overflow-hidden" style={{ background: "rgba(20,0,0,0.85)" }} data-testid="section-forensic-70-home">
           <div className="bg-red-900/40 border-b border-red-700/40 px-6 py-4 flex flex-wrap items-center gap-3">
