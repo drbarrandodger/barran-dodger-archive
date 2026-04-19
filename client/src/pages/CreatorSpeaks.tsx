@@ -1064,6 +1064,57 @@ export default function CreatorSpeaks() {
             </div>
           </div>
 
+          {/* Agencies & Organisations */}
+          <div className="border border-red-900/40 rounded-2xl overflow-hidden" style={{ background: "rgba(30,0,0,0.70)" }}>
+            <div className="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-red-900/30">
+              <svg className="w-4 h-4 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+              <span className="text-red-400/70 font-mono text-[10px] uppercase tracking-widest">50+ Agencies & Organisations · Documented Involvement</span>
+            </div>
+            <div className="px-5 py-4 space-y-4">
+              {[
+                { label: "Federal Government", color: "text-red-300", items: ["NDIA", "NDIS Quality & Safeguards Commission", "Services Australia", "Office of the Australian Information Commissioner (OAIC)", "Australian Federal Police (AFP)", "ASIO", "Comcare", "Australian Financial Complaints Authority (AFCA)", "Australian Human Rights Commission (AHRC)", "Australian Financial Security Authority (AFSA)", "Department of Social Services (DSS)", "Department of the Prime Minister & Cabinet (PM&C)", "Attorney-General's Government Investigation Services (AGIS)", "Administrative Appeals Tribunal (AAT)", "Australian Securities & Investments Commission (ASIC)", "Attorney-General's Department", "Australian Childhood & Child Safety Commission (ACCS)", "Federal Court of Australia", "Industrial Relations Commission (IRC)", "CXC Global (Commonwealth Contractor)", "Programmed Professionals"] },
+                { label: "State & Territory Bodies", color: "text-orange-300", items: ["Victoria Police", "NSW Police Force", "Independent Broad-based Anti-corruption Commission (IBAC)", "Victorian Civil & Administrative Tribunal (VCAT)", "Victorian Ombudsman", "Commonwealth Ombudsman", "Magistrates' Court of Victoria", "Australian Health Practitioner Regulation Agency (AHPRA)", "Health Complaints Commissioner Victoria (HCC)", "Mental Health Complaints Commissioner (MHCC)", "WorkSafe Victoria", "Victims of Crime Assistance Tribunal (VOCAT)", "Law Enforcement Conduct Commission NSW (LECC)", "NSW Civil & Administrative Tribunal (NCAT)", "Supreme Court of Victoria"] },
+                { label: "Medical & Psychiatric Facilities", color: "text-purple-300", items: ["Werribee Mercy Hospital / MercyHealth", "Monash Health", "Melbourne Health / Royal Melbourne Hospital", "Millennium Medical Centre", "Melbourne Metropolitan Health Service"] },
+                { label: "Legal Bodies", color: "text-blue-300", items: ["Culshaw Miller Badenoch Lawyers", "Law Society NSW"] },
+                { label: "Insurance & Financial Institutions", color: "text-yellow-300", items: ["Allianz / DCX", "HCF", "AustralianSuper", "TAL Life Insurance", "Health Super", "AHI / Tokio Marine", "BizCover", "Commonwealth Bank of Australia (CBA)", "Optus"] },
+                { label: "Service Providers & Other", color: "text-zinc-300", items: ["Liberty Behavioural Services", "My Plan Manager", "Methods Processes Systems Group", "The Age (Nine Entertainment)"] },
+              ].map(({ label, color, items }) => (
+                <div key={label}>
+                  <p className={`font-mono text-[10px] uppercase tracking-widest mb-1.5 ${color}`}>{label}</p>
+                  <p className="text-white/70 text-xs leading-relaxed">{items.join(", ")}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Individuals Aligned With Perpetrators */}
+          <div className="border border-orange-900/40 rounded-2xl overflow-hidden" style={{ background: "rgba(30,10,0,0.75)" }}>
+            <div className="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-orange-900/30">
+              <svg className="w-4 h-4 text-orange-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              <span className="text-orange-400/70 font-mono text-[10px] uppercase tracking-widest">Individuals Proven to Align With Perpetrators</span>
+            </div>
+            <div className="px-5 py-4 space-y-4">
+              <p className="text-white/40 text-[10px] leading-relaxed italic">Every name below appears in government-issued documentation. Zero defamation actions have been filed against this archive. Zero corrections. Zero rebuttals. Their silence is the record.</p>
+              {[
+                { label: "Core Perpetrators & Direct Associates", color: "text-red-400", text: "Stefan Iasonidis (Steve Iasonidis), David Irving, Andrew Jackman, Nigel Goodrich, Nathan Vingrys, Russell Ball" },
+                { label: "Government Agency Officials", color: "text-orange-400", text: "Ji Beom Jang, Carl English, Cassandra Burke, Peter Dunstan, Deborah Glass OBE, Ben Calder, Roslyn (Commonwealth Ombudsman), Kathleen (Commonwealth Ombudsman), Graeme Head AO, Holly Withers, A. Riley, Sarah Christensen, Glenn Boseley, Bonnie Faulks, Melina Demasi, Michelle Wicks, Paul Fowler, Jason Payne, James Braunegg, Tim Goss, Nova O'Connor, Sue Kapourelakos, Summen Sarwar, A. Collins, I. Anton, Dominic Gerard D, Ms. Petra Gartmann, Greg Callister, Charan Naidoo, Daniel Bishay" },
+                { label: "Medical & Psychiatric Professionals", color: "text-purple-400", text: "Dr. Michael Lograsso, Dr. Zixuan Wang, Dr. Neha Singh, Dr. Richard Moore, James Chan (Medical Officer), Stephanie Mierisch (Social Worker), M. VO, Dr. J. Whitaker, Dr. P. Le, Dr. J. Green, Dr. R. Briese, Dr. M. ZAW, Dr. A. Loransios" },
+                { label: "Legal & Financial Actors", color: "text-blue-400", text: "Alexandra Culshaw, Rebecca Badenoch, John Boyle, Michael Gottlieb, Shannon Brooks" },
+                { label: "Service Provider Enablers", color: "text-zinc-400", text: "Christina Ma, David Hogg, Mrs. Gaye Hamilton, Professor Peter Dawkins AO, Brett Gibbons" },
+              ].map(({ label, color, text }) => (
+                <div key={label}>
+                  <p className={`font-mono text-[10px] uppercase tracking-widest mb-1.5 ${color}`}>{label}</p>
+                  <p className="text-white/70 text-xs leading-relaxed">{text}</p>
+                </div>
+              ))}
+              <div className="pt-2 border-t border-orange-900/20">
+                <Link href="/master-forensic-evidence-report" className="text-orange-400/60 text-[10px] hover:text-orange-300 transition-colors font-mono">
+                  Full documented report with source citations →
+                </Link>
+              </div>
+            </div>
+          </div>
+
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-3">
             {[
