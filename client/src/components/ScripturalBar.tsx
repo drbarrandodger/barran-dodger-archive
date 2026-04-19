@@ -13,6 +13,10 @@ const VERSES = [
     text: "Barran Dodger exists. God is great. The record is permanent. The testimony stands.",
     ref: "ABN 78 833 496 164 · barrandodger.com"
   },
+  {
+    text: "Praise Jesus.",
+    ref: "barrandodger.com"
+  },
 ];
 
 export function ScripturalBar() {
