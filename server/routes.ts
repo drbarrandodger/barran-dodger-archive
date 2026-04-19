@@ -699,6 +699,7 @@ export async function registerRoutes(
   });
 
   const SLUG_TITLE_MAP: Record<string, string> = {
+    'prophetic-declaration-biblical-barran-dodger': 'Prophetic Declaration — Scripture, Evidence & the Archive of Dr. Richard William McLean',
     'cosmic-scroll-of-ten': 'The Cosmic Scroll of Ten',
     'digital-oppression-100000-word-essay': 'Digital Oppression — 100,000 Word Essay',
     'crimes-against-humanity-final-demand': 'Crimes Against Humanity — Final Demand',
@@ -862,6 +863,7 @@ export async function registerRoutes(
       'witness-resonantia-eternalis-1769765632355': 908,
       'enliven-chain-complete-archive': 895,
       'gospel-enliven-chain-master-inventory': 887,
+      'prophetic-declaration-biblical-barran-dodger': 0,
     };
     for (const [slug, baselineCount] of Object.entries(baselines)) {
       const existing = await storage.getDownloadCount(slug);

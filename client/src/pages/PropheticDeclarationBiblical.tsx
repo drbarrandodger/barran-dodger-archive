@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -11,6 +12,8 @@ const BLOCKCHAIN_HASH = "a7f3c91e2d804b56a1e0f8742dc3b6917e5a0284cd9f1e3b5768249
 const BLOCKCHAIN_TX   = "0000000000000000000291a3b7c4d9e8f1025c6d7e8f9a0b1c2d3e4f5061728";
 const DOC_DATE        = "April 19, 2026";
 const ABN             = "ABN 78 833 496 164";
+const SLUG            = "prophetic-declaration-biblical-barran-dodger";
+const PDF_PATH        = "/documents/prophetic-declaration-biblical-barran-dodger.pdf";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -325,6 +328,30 @@ const COLOUR_MAP: Record<string, { border: string; header: string; badge: string
 
 export default function PropheticDeclarationBiblical() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const queryClient = useQueryClient();
+
+  const { data: dlData } = useQuery<{ downloads: number }>({
+    queryKey: ["/api/downloads", SLUG],
+    queryFn: async () => {
+      const res = await fetch(`/api/downloads/${SLUG}`);
+      if (!res.ok) return { downloads: 0 };
+      return res.json();
+    },
+    refetchInterval: 30000,
+  });
+
+  const handleDownload = useCallback(async () => {
+    try {
+      await fetch(`/api/downloads/${SLUG}/increment`, { method: "POST" });
+      queryClient.invalidateQueries({ queryKey: ["/api/downloads", SLUG] });
+    } catch {}
+    const a = document.createElement("a");
+    a.href = PDF_PATH;
+    a.download = "Prophetic-Declaration-Biblical-BarranDodger.pdf";
+    a.click();
+  }, [queryClient]);
+
+  const downloadCount = dlData?.downloads ?? 0;
 
   const toggle = (id: string) => setExpanded(p => ({ ...p, [id]: !p[id] }));
 
@@ -409,17 +436,25 @@ export default function PropheticDeclarationBiblical() {
             <p className="text-green-500/30 text-[9px] mt-1 font-mono">OpenTimestamps · Bitcoin Network · Immutable · Cannot be altered by any government, court or agency</p>
           </motion.div>
 
+          {/* Live download counter */}
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.3 }}
+            className="inline-flex items-center gap-3 border border-yellow-800/30 rounded-xl px-5 py-3 justify-center"
+            style={{ background: "rgba(20,15,0,0.5)" }}>
+            <Download className="w-4 h-4 text-yellow-400/60" />
+            <span className="text-yellow-100 font-bold text-xl font-mono">{downloadCount > 0 ? downloadCount.toLocaleString() : "—"}</span>
+            <span className="text-yellow-500/50 text-xs font-mono uppercase tracking-wider">downloads · live counter</span>
+          </motion.div>
+
           {/* Download + scroll CTA */}
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.4 }} className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="/documents/prophetic-declaration-biblical-barran-dodger.pdf"
-              download="Prophetic-Declaration-Biblical-BarranDodger.pdf"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-black text-sm"
+            <button
+              onClick={handleDownload}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-black text-sm cursor-pointer"
               style={{ background: "linear-gradient(135deg, #d4af37 0%, #b8860b 100%)" }}
               data-testid="button-download-prophetic-declaration-pdf"
             >
-              <Download className="w-4 h-4" /> Download PDF
-            </a>
+              <Download className="w-4 h-4" /> Download PDF Free
+            </button>
             <Link href="/free-ebooks" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-yellow-300 text-sm border border-yellow-700/40 hover:bg-yellow-900/20 transition-all" data-testid="link-prophetic-free-ebooks">
               <BookOpen className="w-4 h-4" /> Free eBook Library
             </Link>
@@ -650,16 +685,23 @@ export default function PropheticDeclarationBiblical() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-6">
             <h2 className="text-2xl font-bold text-white">Download & Share This Declaration</h2>
             <p className="text-white/40 text-sm">Free. No paywall. Blockchain-sealed. Freely distributable. The record is permanent.</p>
+            {/* Bottom live counter */}
+            <div className="inline-flex items-center gap-3 border border-yellow-800/30 rounded-xl px-5 py-2 justify-center mx-auto"
+              style={{ background: "rgba(20,15,0,0.5)" }}>
+              <Download className="w-3.5 h-3.5 text-yellow-400/60" />
+              <span className="text-yellow-100 font-bold text-lg font-mono">{downloadCount > 0 ? downloadCount.toLocaleString() : "—"}</span>
+              <span className="text-yellow-500/50 text-xs font-mono uppercase tracking-wider">downloads · live</span>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="/documents/prophetic-declaration-biblical-barran-dodger.pdf"
-                download="Prophetic-Declaration-Biblical-BarranDodger.pdf"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-bold text-black"
+              <button
+                onClick={handleDownload}
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-bold text-black cursor-pointer"
                 style={{ background: "linear-gradient(135deg, #d4af37 0%, #b8860b 100%)" }}
                 data-testid="button-download-prophetic-declaration-pdf-bottom"
               >
                 <Download className="w-4 h-4" /> Download Free PDF
-              </a>
+              </button>
               <Link href="/free-ebooks" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-bold text-yellow-300 border border-yellow-700/40 hover:bg-yellow-900/20 transition-all" data-testid="link-prophetic-declaration-free-ebooks">
                 <BookOpen className="w-4 h-4" /> Free eBook Library
               </Link>
