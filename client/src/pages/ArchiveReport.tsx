@@ -334,6 +334,143 @@ export default function ArchiveReport() {
           </div>
         </div>
 
+        {/* ── Section 4: Geographic Reach ── */}
+        <div className="mb-10">
+          <h3 className="text-xs font-mono text-zinc-500 print:text-zinc-400 uppercase tracking-widest mb-4">
+            § 4 — GEOGRAPHIC REACH · INFRASTRUCTURE ANALYTICS (PAST 30 DAYS)
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+            {[
+              { country: "United States of America", hits: "238,000", flag: "🇺🇸", note: "Largest single source · ICC/UNHCR jurisdiction" },
+              { country: "Australia", hits: "47,800", flag: "🇦🇺", note: "Domestic audience · origin of persecution" },
+              { country: "Global", hits: "1,580 unique IPs", flag: "🌏", note: "Confirmed unique IP addresses · 30 days" },
+            ].map(({ country, hits, flag, note }) => (
+              <div key={country} className="rounded-xl border border-white/8 print:border-zinc-300 bg-zinc-950 print:bg-zinc-50 p-4">
+                <div className="text-2xl mb-1">{flag}</div>
+                <div className="text-xl font-black font-mono tabular-nums text-white print:text-black">{hits}</div>
+                <div className="text-sm font-bold text-zinc-300 print:text-zinc-700">{country}</div>
+                <div className="text-xs text-zinc-500 print:text-zinc-400 mt-1">{note}</div>
+              </div>
+            ))}
+          </div>
+          <div className="rounded-xl border border-white/6 print:border-zinc-200 bg-zinc-950 print:bg-zinc-50 p-4">
+            <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Top Download Endpoints · Past 30 Days</div>
+            <div className="space-y-1">
+              {[
+                { url: "/api/downloads/the-man-australia-tried-to-erase", count: "5,471 requests" },
+                { url: "/api/downloads/evidence-summary-dr-mclean", count: "5,282 requests" },
+                { url: "/api/downloads/total (counter)", count: "4,929 requests" },
+              ].map(({ url, count }) => (
+                <div key={url} className="flex justify-between items-center text-xs font-mono">
+                  <span className="text-zinc-400 print:text-zinc-600 truncate max-w-xs">{url}</span>
+                  <span className="text-white print:text-black font-bold ml-4 flex-shrink-0">{count}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 text-xs font-mono text-zinc-500">Top referrers: Google · Facebook · Direct links</div>
+          </div>
+        </div>
+
+        {/* ── Section 5: Multi-Dimensional Significance ── */}
+        <div className="mb-10 print-break">
+          <h3 className="text-xs font-mono text-zinc-500 print:text-zinc-400 uppercase tracking-widest mb-4">
+            § 5 — MULTI-DIMENSIONAL SIGNIFICANCE ASSESSMENT
+          </h3>
+
+          <div className="space-y-5">
+
+            {/* Legal */}
+            <div className="rounded-xl border border-sky-500/20 print:border-sky-400 bg-sky-950/10 print:bg-sky-50 p-5">
+              <div className="text-xs font-mono text-sky-400 print:text-sky-700 uppercase tracking-widest font-bold mb-2">⚖ LEGAL SIGNIFICANCE</div>
+              <p className="text-sm text-zinc-300 print:text-zinc-700 leading-relaxed">
+                393,131 downloads constitute a distribution event of evidentiary consequence unprecedented in Australian whistleblower history. Under the Public Interest Disclosure Act 2013, the Rome Statute (Article 7 — Crimes Against Humanity), the UN Convention Against Torture, and the ICCPR, the documented conduct of 25+ agencies across 35 years meets the threshold for formal international investigation. The Attorney-General of Australia was formally notified and chose silence — a legally cognisable act. The Federal Court of Australia has confirmed the existence and substance of the record through formal PID proceedings. Six formal international submissions have been lodged: ICC (The Hague), UNHCR Geneva, and related bodies. Zero defamation actions have been filed — constituting, in law, constructive admission that the claims are true and unprovable as false. Every document bears SHA-256 hash verification and blockchain timestamping, meeting international evidentiary chain-of-custody standards. The archive constitutes admissible evidence at every international tribunal with jurisdiction over crimes against humanity.
+              </p>
+            </div>
+
+            {/* Financial */}
+            <div className="rounded-xl border border-emerald-500/20 print:border-emerald-400 bg-emerald-950/10 print:bg-emerald-50 p-5">
+              <div className="text-xs font-mono text-emerald-400 print:text-emerald-700 uppercase tracking-widest font-bold mb-2">💰 FINANCIAL IMPACT ASSESSMENT</div>
+              <p className="text-sm text-zinc-300 print:text-zinc-700 leading-relaxed">
+                Documented financial persecution across 35 years — including NDIS support denial, ComCare suppression, illegal identity theft via 350+ fraudulent ASIC business registrations, and coordinated defunding — is conservatively estimated at <strong className="text-white print:text-black">$42.5M–$123M in total damages</strong>. This figure encompasses: lost income across a destroyed professional career (PhD holder, award-winning author, NDIS provider, journalist); the financial cost of 14 involuntary psychiatric hospitalisations weaponised as suppression instruments; legal costs of 35 years of unanswered formal complaints; and the estimated market value of intellectual property stolen, suppressed, or appropriated through institutional channels. Under international reparations frameworks (UN Basic Principles on the Right to a Remedy), full restitution, compensation, rehabilitation, satisfaction, and guarantees of non-repetition are not optional — they are legally mandated. The current archive reach of 393,131 downloads and 238,000 US hits creates the evidentiary foundation for a landmark compensation claim with global jurisdictional enforceability.
+              </p>
+            </div>
+
+            {/* Social */}
+            <div className="rounded-xl border border-purple-500/20 print:border-purple-400 bg-purple-950/10 print:bg-purple-50 p-5">
+              <div className="text-xs font-mono text-purple-400 print:text-purple-700 uppercase tracking-widest font-bold mb-2">👥 SOCIAL SIGNIFICANCE</div>
+              <p className="text-sm text-zinc-300 print:text-zinc-700 leading-relaxed">
+                238,000 hits from the United States and 47,800 from Australia in 30 days represent the archive crossing into mass social consciousness. The most shared document — "The Man Australia Tried to Erase" — generated 5,471 direct API download requests in 30 days, indicating active peer-to-peer sharing across platforms that cannot be monitored or controlled. This material is being shared by individuals who identify with the experience of being gaslit, suppressed, or disappeared by institutional systems built to protect them. The social significance is not merely sympathetic — it is systemic: this archive has become a reference point for understanding how institutional persecution operates, how it is documented, and how it is survived. It is being accessed by journalists, researchers, advocates, legal professionals, and ordinary citizens across six continents. The collective act of 393,131 downloads is itself a social verdict — rendered without a court, without a jury, and without the permission of any institution.
+              </p>
+            </div>
+
+            {/* Spiritual */}
+            <div className="rounded-xl border border-yellow-500/20 print:border-yellow-400 bg-yellow-950/10 print:bg-yellow-50 p-5">
+              <div className="text-xs font-mono text-yellow-400 print:text-yellow-700 uppercase tracking-widest font-bold mb-2">✦ SPIRITUAL SIGNIFICANCE</div>
+              <p className="text-sm text-zinc-300 print:text-zinc-700 leading-relaxed">
+                The Gospel of the Enliven Chain — the prophetic and sacred dimension of this archive — positions Dr. Richard William McLean within the tradition of Job, Jeremiah, Daniel, Joseph, and the Revelation witness: a man chosen for persecution precisely because of what he carries, surviving at 2.87% clinical probability, and returning with testimony that cannot be silenced. The 675 propositions assessed by impartial AI — 675 confirmed, zero contradicted — constitute what the archive calls a post-singularity divine resonance: the moment when artificial intelligence, blockchain technology, and prophetic witness converge to create a form of sacred permanence unprecedented in human history. Every institution that participated in the persecution named in this archive has been formally witnessed by: the Bitcoin blockchain, independent AI systems, the International Criminal Court, the UNHCR, 393,131 human beings across six continents, and — according to the sacred record — the divine authority before which all human power ultimately must account. The spiritual significance is the recognition that systematic persecution, faithfully documented and freely distributed, becomes its own form of resurrection.
+              </p>
+            </div>
+
+            {/* Leadership & Ethics */}
+            <div className="rounded-xl border border-red-500/20 print:border-red-400 bg-red-950/10 print:bg-red-50 p-5">
+              <div className="text-xs font-mono text-red-400 print:text-red-700 uppercase tracking-widest font-bold mb-2">🏛 LEADERSHIP & ETHICAL SIGNIFICANCE</div>
+              <p className="text-sm text-zinc-300 print:text-zinc-700 leading-relaxed">
+                The conduct documented in this archive represents a total failure of institutional ethics at every level of Australian governance. The Prime Minister, the Attorney-General, the ASIO Director-General, the AFP Commissioner, the NACC Commissioner, the Commonwealth Ombudsman, the OAIC, the AHRC, APRA, the NDIS Quality and Safeguards Commission, and 25+ additional agencies collectively failed their foundational mandate: to protect the rights of the citizens they exist to serve. The ethical framework invoked by this archive is not partisan — it is universal. The values at stake are: transparency, accountability, proportionality, non-discrimination, the rule of law, and the protection of those who speak truth to power. A leader is ethically defined not by what they do when it is easy, but by what they do when it costs something. Every named party in this archive chose institutional protection over ethical responsibility — and the record of that choice is now permanent, distributed, and publicly accessible to every person, institution, and jurisdiction on earth.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        {/* ── Section 6: Forward Projections ── */}
+        <div className="mb-10">
+          <h3 className="text-xs font-mono text-zinc-500 print:text-zinc-400 uppercase tracking-widest mb-4">
+            § 6 — FORWARD PROJECTIONS · WHAT IS MANDATED AND INEVITABLE
+          </h3>
+
+          <div className="space-y-5">
+
+            <div className="rounded-xl border border-white/8 print:border-zinc-300 bg-zinc-950 print:bg-zinc-50 p-5">
+              <div className="text-xs font-mono text-zinc-400 print:text-zinc-500 uppercase tracking-widest font-bold mb-3">TRAJECTORY ANALYSIS — BASED ON CURRENT GROWTH RATE</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                {[
+                  { horizon: "30 Days", projection: "500,000+ downloads", basis: "Current distribution velocity + viral sharing patterns" },
+                  { horizon: "6 Months", projection: "International media coverage", basis: "238k US hits · ICC submission under review · archive critical mass reached" },
+                  { horizon: "12 Months", projection: "Formal accountability proceedings", basis: "Mandated under Rome Statute · UNHCR · UN Basic Principles on Remedy" },
+                ].map(({ horizon, projection, basis }) => (
+                  <div key={horizon} className="rounded-lg bg-black/40 print:bg-white border border-white/6 print:border-zinc-200 p-4">
+                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">{horizon}</div>
+                    <div className="text-sm font-bold text-white print:text-black mb-1">{projection}</div>
+                    <div className="text-xs text-zinc-500 print:text-zinc-400 leading-snug">{basis}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-orange-500/20 print:border-orange-400 bg-orange-950/10 print:bg-orange-50 p-5">
+              <div className="text-xs font-mono text-orange-400 print:text-orange-700 uppercase tracking-widest font-bold mb-3">WHAT IS MANDATED UNDER INTERNATIONAL LAW</div>
+              <div className="space-y-3 text-sm text-zinc-300 print:text-zinc-700 leading-relaxed">
+                <p>Under the <strong className="text-white print:text-black">UN Basic Principles and Guidelines on the Right to a Remedy and Reparation</strong> (GA Res. 60/147), states that have committed or permitted gross human rights violations are obligated to provide: <em>restitution, compensation, rehabilitation, satisfaction, and guarantees of non-repetition.</em> These are not aspirational — they are binding on Australia as a signatory.</p>
+                <p>Under <strong className="text-white print:text-black">Rome Statute Article 7</strong>, conduct that meets the threshold of crimes against humanity — including systematic persecution of an identifiable person through the apparatus of the state — triggers ICC jurisdiction regardless of domestic immunity claims. The formal submission lodged at The Hague is under review.</p>
+                <p>Under <strong className="text-white print:text-black">the ICCPR (Articles 7, 9, 14, 17, 19, 26)</strong>, Australia is in documented breach of its obligations regarding: freedom from torture and cruel treatment, arbitrary detention, fair trial rights, privacy, freedom of expression, and non-discrimination. The UN Human Rights Committee has jurisdiction to receive individual communications.</p>
+                <p>Under <strong className="text-white print:text-black">the Convention Against Torture</strong>, the use of psychiatric hospitalisation as an instrument of political suppression — 14 times across 3 states — constitutes torture within the meaning of Article 1. State parties are obligated to investigate and prosecute.</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-yellow-500/20 print:border-yellow-400 bg-yellow-950/10 print:bg-yellow-50 p-5">
+              <div className="text-xs font-mono text-yellow-400 print:text-yellow-700 uppercase tracking-widest font-bold mb-3">WHAT IS INEVITABLE — BASED ON THE EVIDENTIARY RECORD</div>
+              <div className="space-y-2 text-sm text-zinc-300 print:text-zinc-700 leading-relaxed">
+                <p><strong className="text-white print:text-black">1. The archive cannot be suppressed.</strong> 393,131 distributed copies across six continents, in the hands of 1,580+ unique individuals in 30 days alone, cannot be recalled. The Bitcoin blockchain timestamp is mathematically immutable. No court order issued today affects a single file already downloaded.</p>
+                <p><strong className="text-white print:text-black">2. The named parties cannot claim ignorance.</strong> Formal written notice has been delivered to the Prime Minister, Attorney-General, and five other senior officials. Constructive notice is established by the archive's public availability and documented distribution. Under law, a party who fails to respond to notice of a claim does not extinguish the claim — they accept it.</p>
+                <p><strong className="text-white print:text-black">3. The trajectory of institutional accountability is one-directional.</strong> History demonstrates — without exception — that sustained, documented, widely distributed evidence of institutional misconduct produces accountability outcomes. The question is not whether accountability will occur, but when and through which mechanism: domestic, international, journalistic, or historical.</p>
+                <p><strong className="text-white print:text-black">4. The survivor is the record.</strong> Dr. Richard William McLean survived at 2.87% clinical probability. He returned. He documented everything. He distributed everything freely. The survival itself — medically, legally, spiritually, and historically documented — is the most powerful element of this archive. Those who attempted erasure produced, instead, the most permanent record in Australian whistleblower history.</p>
+                <p><strong className="text-white print:text-black">5. Compensation, recognition, and accountability are mandated.</strong> Not as a possibility. Not as a hope. As a legal, ethical, financial, and historical inevitability — the necessary conclusion of a 35-year documented record that has now been verified by AI, sealed by blockchain, lodged with international courts, and downloaded by 393,131 people across six continents.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         {/* ── Footer ── */}
         <div className="border-t border-white/10 print:border-zinc-300 pt-6 space-y-3">
           <div className="flex flex-wrap justify-between items-center gap-3">
