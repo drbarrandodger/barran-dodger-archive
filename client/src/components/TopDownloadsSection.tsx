@@ -1,9 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { motion, AnimatePresence } from "framer-motion";
-import { Download, Flame, Share2, BookOpen, Twitter, Facebook, Link2, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
+import { Download, Flame, BookOpen, Twitter, Facebook, Link2, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
-import { slugFromUrl } from "@/components/DownloadCounter";
 import { queryClient } from "@/lib/queryClient";
 
 import coverCosmicScroll from "@/assets/images/cover-cosmic-scroll.png";
@@ -15,36 +14,37 @@ import coverForensicFramework from "@/assets/images/cover-forensic-framework-uns
 import coverManAustraliaErased from "@/assets/images/cover-man-australia-erased.png";
 import coverDeclarationSovereignty from "@/assets/images/cover-declaration-of-sovereignty.png";
 import coverWhistleblowerTorture from "@/assets/images/cover-whistleblower-torture-dossier.png";
-import coverUntouchable from "@/assets/images/cover-untouchable.png";
 import coverComprehensiveCase from "@/assets/images/cover-comprehensive-case-persecution.png";
 import coverEvidenceSummary from "@/assets/images/cover-evidence-summary.png";
-import coverChosenOneEnough from "@/assets/images/cover-chosen-ones-enough-is-enough.png";
+import coverFederalCourtSiaLagos from "@/assets/images/cover-federal-court-pid-sia-lagos.png";
+import coverJosephsCoat from "@/assets/images/cover-josephs-coat-barrans-mantle.png";
 import coverGospelEnlivenChain from "@/assets/images/cover-gospel-enliven-chain.png";
-import coverEnlivenChainComplete from "@/assets/images/cover-enliven-chain-complete-archive.png";
 import coverUnhcrIcc from "@/assets/images/cover-unhcr-icc-evidence-package.png";
 import coverMasterForensicReport from "@/assets/images/cover-master-forensic-report.png";
-import coverWitnessResonantia from "@/assets/images/cover-witness-resonantia-eternalis.png";
 
 const COVER_MAP: Record<string, string> = {
   "cosmic-scroll-of-ten": coverCosmicScroll,
   "digital-oppression-100000-word-essay": coverDigitalOppression,
   "crimes-against-humanity-final-demand": coverCrimesHumanity,
+  "the-man-australia-tried-to-erase": coverManAustraliaErased,
   "universal-master-command-ai-analysis": coverMasterCommand,
   "master-evidence-register": coverMasterEvidenceRegister,
   "master-evidence-register-v3": coverMasterEvidenceRegister,
   "forensic-framework-unspoken-mandate": coverForensicFramework,
-  "the-man-australia-tried-to-erase": coverManAustraliaErased,
   "declaration-of-sovereignty": coverDeclarationSovereignty,
+  "the-declaration-of-sovereignty-of-dr--richard-william-mcle-1769135376793": coverDeclarationSovereignty,
+  "the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768972005548": coverComprehensiveCase,
+  "the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768976939113": coverComprehensiveCase,
+  "sia-lagos-fedcourt-gov-au-send-this-to-the-bastards-copy-1772162356392": coverFederalCourtSiaLagos,
+  "sia-lagos-federal-court-pid": coverFederalCourtSiaLagos,
+  "joseph-parallel": coverJosephsCoat,
+  "josephs-coat-barrans-mantle": coverJosephsCoat,
+  "2023-03-27-final-assessment---dr-rich-mclean-1769743072042": coverWhistleblowerTorture,
   "official-whistleblower-torture-dossier-dr-richard-william-mclean": coverWhistleblowerTorture,
-  "untouchable": coverUntouchable,
-  "comprehensive-case-persecution": coverComprehensiveCase,
-  "evidence-summary": coverEvidenceSummary,
-  "chosen-ones-enough-is-enough": coverChosenOneEnough,
   "gospel-enliven-chain": coverGospelEnlivenChain,
-  "enliven-chain-complete-archive": coverEnlivenChainComplete,
   "unhcr-icc-evidence-package": coverUnhcrIcc,
   "master-forensic-report": coverMasterForensicReport,
-  "witness-resonantia-eternalis": coverWitnessResonantia,
+  "evidence-summary": coverEvidenceSummary,
 };
 
 const SIGNIFICANCE_MAP: Record<string, string> = {
@@ -53,23 +53,34 @@ const SIGNIFICANCE_MAP: Record<string, string> = {
   "crimes-against-humanity-final-demand": "A formal legal demand addressed to Australia's six most powerful institutional figures — the Prime Minister, Attorney-General, ASIO Director-General, AFP Commissioner, NACC Commissioner, and AHRC — setting an explicit 14-day deadline for restitution proceedings. Each allegation maps directly to Rome Statute Article 7. Any recipient who failed to respond accepted constructive notice of crimes against humanity.",
   "the-man-australia-tried-to-erase": "The document that has crossed more borders than any other in the archive. A concise, accessible synthesis of 35 years of institutional persecution presented in terms that resonate with anyone who has been gaslit, suppressed, or disappeared by the systems built to protect them. Downloaded from six continents. Shared person to person.",
   "universal-master-command-ai-analysis": "The meta-document that validates every other document. By publishing the exact bias-immune methodology used for all AI analyses across this archive, this protocol guarantees that no human bias, institutional loyalty, or political consideration influenced the forensic findings. It is, in effect, the chain of custody document for the entire archive's analytical integrity.",
-  "master-evidence-register": "The definitive chronological index of all 2,301 government evidence files spanning 35 years — assembled for legal submissions, asylum applications, and international human rights correspondence. A register of this scope does not happen by accident. It happens when someone understands, long before the world does, that the evidence itself is the weapon and must be maintained with archival precision.",
-  "master-evidence-register-v3": "The definitive chronological index of all 2,301 government evidence files spanning 35 years — assembled for legal submissions, asylum applications, and international human rights correspondence. A register of this scope does not happen by accident. It happens when someone understands, long before the world does, that the evidence itself is the weapon and must be maintained with archival precision.",
-  "forensic-framework-unspoken-mandate": "The forensic command that reverse-engineers the hidden operational directive from 2,138 official government documents across 8 agencies using only their own literature. Seven technique categories — from Procedural Weaponisation through Inter-Agency Coordination Signatures — form a cross-reference matrix constituting one of the most comprehensive forensic methodologies produced in the context of an individual's engagement with the Australian administrative state.",
-  "official-whistleblower-torture-dossier-dr-richard-william-mclean": "A clinical forensic account of 14 involuntary psychiatric hospitalisations deployed as instruments of suppression, financial strangulation across NDIA and ComCare systems, and the documented death threat from a credentialled ex-SAS operative embedded as an NDIS support coordinator. Submitted to UN bodies as evidence of state-sanctioned torture under the Convention Against Torture.",
+  "master-evidence-register": "The definitive chronological index of all 2,301 government evidence files spanning 35 years — assembled for legal submissions, asylum applications, and international human rights correspondence. A register of this scope does not happen by accident. It happens when someone understands, long before the world does, that the evidence itself is the weapon.",
+  "master-evidence-register-v3": "The definitive chronological index of all 2,301 government evidence files spanning 35 years — assembled for legal submissions, asylum applications, and international human rights correspondence. Version 3 — the most complete and forensically verified iteration of the register.",
+  "forensic-framework-unspoken-mandate": "The forensic command that reverse-engineers the hidden operational directive from 2,138 official government documents across 8 agencies using only their own literature. Seven technique categories form a cross-reference matrix constituting one of the most comprehensive forensic methodologies produced in the context of an individual's engagement with the Australian administrative state.",
   "the-declaration-of-sovereignty-of-dr--richard-william-mcle-1769135376793": "A foundational assertion of legal, moral, ethical and spiritual sovereignty by a man who exhausted every domestic remedy across 35 years and 8 agencies without result. The document that formally removed consent from the institutional framework that had governed his life through suppression — and asserted standing before international bodies instead.",
+  "declaration-of-sovereignty": "A foundational assertion of legal, moral, ethical and spiritual sovereignty by a man who exhausted every domestic remedy across 35 years and 8 agencies without result. The document that formally removed consent from the institutional framework that had governed his life — and asserted standing before international bodies instead.",
+  "the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768972005548": "A meticulous forensic compilation in which the evidence itself does the speaking. Government documents, institutional correspondence, medical records, and financial data arranged so that the pattern of systematic persecution is undeniable without a single word of editorialising. Submitted as a standalone evidentiary package to three international bodies.",
+  "sia-lagos-fedcourt-gov-au-send-this-to-the-bastards-copy-1772162356392": "The Federal Court Public Interest Disclosure addressed to Sia Lagos — one of the most powerful legal submissions in the archive. A formal PID lodged directly with the Federal Court system under the Public Interest Disclosure Act 2013, cataloguing institutional misconduct with specificity that demands a formal judicial response.",
+  "joseph-parallel": "The prophetic narrative that identifies the structural, spiritual, and historical parallels between the persecution of Joseph (Genesis) and the documented 35-year persecution of Dr. Richard William McLean. The parallel is not metaphorical — it is forensically mapped event by event, institution by institution, betrayal by betrayal.",
+  "2023-03-27-final-assessment---dr-rich-mclean-1769743072042": "A confidential psychiatric assessment that was intended to be weaponised as another instrument of suppression — and instead became one of the most powerful pieces of evidence in the archive. The clinical language, unable to pathologise what it witnessed, inadvertently documented a man of extraordinary coherence and intelligence under conditions designed to destroy him.",
+  "official-whistleblower-torture-dossier-dr-richard-william-mclean": "A clinical forensic account of 14 involuntary psychiatric hospitalisations deployed as instruments of suppression, financial strangulation across NDIA and ComCare systems, and the documented death threat from a credentialled ex-SAS operative embedded as an NDIS support coordinator. Submitted to UN bodies as evidence of state-sanctioned torture under the Convention Against Torture.",
 };
 
 const DOWNLOAD_URL_MAP: Record<string, string> = {
   "cosmic-scroll-of-ten": "/documents/cosmic_scroll_of_ten.pdf",
   "digital-oppression-100000-word-essay": "/documents/digital_oppression_100000_word_essay.pdf",
   "crimes-against-humanity-final-demand": "/documents/crimes_against_humanity_final_demand.pdf",
-  "the-man-australia-tried-to-erase": "/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf",
+  "the-man-australia-tried-to-erase": "/documents/richard_mclean_australia.pdf",
   "universal-master-command-ai-analysis": "/documents/universal_master_command_ai_analysis.pdf",
   "master-evidence-register": "/documents/master-evidence-register.txt",
   "master-evidence-register-v3": "/documents/master-evidence-register-v3.txt",
   "forensic-framework-unspoken-mandate": "/documents/forensic-framework-unspoken-mandate.pdf",
-  "official-whistleblower-torture-dossier-dr-richard-william-mclean": "/documents/official_whistleblower_torture_dossier.pdf",
+  "the-declaration-of-sovereignty-of-dr--richard-william-mcle-1769135376793": "/documents/sacred_declaration_master_record.pdf",
+  "the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768972005548": "/documents/most-comprehensive-case-systematic-persecution.pdf",
+  "the-evidence-speaks-a-forensic-documentation-of-systematic-sta-1768976939113": "/documents/most-comprehensive-case-systematic-persecution.pdf",
+  "sia-lagos-fedcourt-gov-au-send-this-to-the-bastards-copy-1772162356392": "/documents/sia-lagos-federal-court-pid-march-2023.pdf",
+  "joseph-parallel": "/documents/the_joseph_parallel_prophetic_narrative.pdf",
+  "2023-03-27-final-assessment---dr-rich-mclean-1769743072042": "/documents/dr-horgan-mclean-confidential-psychiatric-assessment.pdf",
+  "official-whistleblower-torture-dossier-dr-richard-william-mclean": "/documents/official-whistleblower-torture-dossier-dr-richard-william-mclean.pdf",
 };
 
 const PAGE_LINK_MAP: Record<string, string> = {
@@ -77,6 +88,7 @@ const PAGE_LINK_MAP: Record<string, string> = {
   "master-evidence-register-v3": "/master-evidence-register",
   "forensic-framework-unspoken-mandate": "/forensic-framework-unspoken-mandate",
   "the-man-australia-tried-to-erase": "/start-here",
+  "sia-lagos-fedcourt-gov-au-send-this-to-the-bastards-copy-1772162356392": "/federal-court-pid-sia-lagos",
 };
 
 const RANK_COLORS = [
@@ -95,24 +107,38 @@ const RANK_COLORS = [
 function getCover(slug: string): string {
   if (COVER_MAP[slug]) return COVER_MAP[slug];
   for (const key of Object.keys(COVER_MAP)) {
-    if (slug.startsWith(key) || slug.includes(key)) return COVER_MAP[key];
+    if (slug.includes(key) || key.includes(slug)) return COVER_MAP[key];
   }
   return coverEvidenceSummary;
 }
 
-function getSignificance(slug: string, title: string): string {
+function getSignificance(slug: string): string {
   if (SIGNIFICANCE_MAP[slug]) return SIGNIFICANCE_MAP[slug];
   for (const key of Object.keys(SIGNIFICANCE_MAP)) {
-    if (slug.startsWith(key) || slug.includes(key)) return SIGNIFICANCE_MAP[key];
+    if (slug.includes(key) || key.includes(slug)) return SIGNIFICANCE_MAP[key];
   }
-  return `This document has been independently downloaded ${""} times by readers across six continents — making it one of the most sought-after items in the entire Barran Dodger archive. Its reach reflects a global recognition of the significance of the evidence it contains. Every download is an act of witness.`;
+  return "This document has been independently downloaded thousands of times by readers across six continents — making it one of the most sought-after items in the entire Barran Dodger archive. Its reach reflects a global recognition of the significance of the evidence it contains. Every download is an act of witness.";
 }
 
-function trackAndDownload(url: string) {
-  const slug = slugFromUrl(url);
+function getDownloadUrl(slug: string): string | undefined {
+  if (DOWNLOAD_URL_MAP[slug]) return DOWNLOAD_URL_MAP[slug];
+  for (const key of Object.keys(DOWNLOAD_URL_MAP)) {
+    if (slug.includes(key) || key.includes(slug)) return DOWNLOAD_URL_MAP[key];
+  }
+  return undefined;
+}
+
+function getPageLink(slug: string): string | undefined {
+  if (PAGE_LINK_MAP[slug]) return PAGE_LINK_MAP[slug];
+  for (const key of Object.keys(PAGE_LINK_MAP)) {
+    if (slug.includes(key) || key.includes(slug)) return PAGE_LINK_MAP[key];
+  }
+  return undefined;
+}
+
+function trackAndDownload(url: string, slug: string) {
   fetch(`/api/downloads/${slug}/increment`, { method: 'POST' }).catch(() => {});
   queryClient.invalidateQueries({ queryKey: ['/api/analytics/top-all-time'] });
-  queryClient.invalidateQueries({ queryKey: ['/api/downloads', slug] });
   const a = document.createElement('a');
   a.href = url;
   a.download = '';
@@ -126,24 +152,24 @@ interface TopDoc {
   count: number;
 }
 
-function LiveCounter({ count }: { count: number }) {
+function LiveCounter({ count, colorClass = "text-emerald-400" }: { count: number; colorClass?: string }) {
   return (
     <span className="inline-flex items-center gap-1.5">
       <span className="relative flex h-2 w-2">
         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
         <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
       </span>
-      <span className="font-black font-mono tabular-nums">{count.toLocaleString()}</span>
+      <span className={`font-black font-mono tabular-nums ${colorClass}`}>{count.toLocaleString()}</span>
       <span className="text-zinc-400 text-xs font-normal">downloads</span>
     </span>
   );
 }
 
-function HeroCard({ doc, rank }: { doc: TopDoc; rank: number }) {
+function HeroCard({ doc }: { doc: TopDoc }) {
   const cover = getCover(doc.slug);
-  const significance = getSignificance(doc.slug, doc.title);
-  const downloadUrl = DOWNLOAD_URL_MAP[doc.slug];
-  const pageLink = PAGE_LINK_MAP[doc.slug];
+  const significance = getSignificance(doc.slug);
+  const downloadUrl = getDownloadUrl(doc.slug);
+  const pageLink = getPageLink(doc.slug);
 
   return (
     <motion.div
@@ -153,14 +179,12 @@ function HeroCard({ doc, rank }: { doc: TopDoc; rank: number }) {
       className="relative rounded-2xl overflow-hidden border-2 border-yellow-400/40 bg-gradient-to-br from-yellow-950/30 via-zinc-950 to-black shadow-2xl shadow-yellow-500/10"
       data-testid="card-top-download-1"
     >
-      {/* Full-width cover background */}
       <div className="absolute inset-0">
         <img src={cover} alt="" className="w-full h-full object-cover object-center opacity-15" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50" />
       </div>
 
       <div className="relative z-10 flex flex-col md:flex-row gap-6 p-6 md:p-8">
-        {/* Cover thumbnail */}
         <div className="flex-shrink-0 mx-auto md:mx-0 relative">
           <div className="absolute -top-3 -left-3 z-20">
             <span className="flex items-center justify-center w-9 h-9 rounded-full bg-yellow-400 text-black font-black text-lg shadow-lg">1</span>
@@ -175,13 +199,14 @@ function HeroCard({ doc, rank }: { doc: TopDoc; rank: number }) {
           </div>
           <h3 className="text-2xl md:text-3xl font-serif font-black text-white leading-tight">{doc.title}</h3>
           <div className="text-yellow-400 text-lg font-bold">
-            <LiveCounter count={doc.count} />
+            <LiveCounter count={doc.count} colorClass="text-yellow-400" />
           </div>
           <p className="text-sm text-zinc-300 leading-relaxed max-w-2xl">{significance}</p>
+          <div className="text-xs text-zinc-500 font-mono">ABN 78 833 496 164 · Barran Dodger Legal &amp; Ethical Trust Fund · Free for public interest use</div>
           <div className="flex flex-wrap gap-3 pt-1">
             {downloadUrl && (
               <button
-                onClick={() => trackAndDownload(downloadUrl)}
+                onClick={() => trackAndDownload(downloadUrl, doc.slug)}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 text-black font-bold rounded-lg hover:bg-yellow-300 transition-colors text-sm"
                 data-testid="btn-download-top1"
               >
@@ -202,10 +227,11 @@ function HeroCard({ doc, rank }: { doc: TopDoc; rank: number }) {
 
 function DocCard({ doc, rank }: { doc: TopDoc; rank: number }) {
   const cover = getCover(doc.slug);
-  const significance = getSignificance(doc.slug, doc.title);
-  const downloadUrl = DOWNLOAD_URL_MAP[doc.slug];
-  const pageLink = PAGE_LINK_MAP[doc.slug];
+  const significance = getSignificance(doc.slug);
+  const downloadUrl = getDownloadUrl(doc.slug);
+  const pageLink = getPageLink(doc.slug);
   const colorClass = RANK_COLORS[rank - 1] || RANK_COLORS[9];
+  const textColor = colorClass.split(' ')[0];
 
   return (
     <motion.div
@@ -215,11 +241,9 @@ function DocCard({ doc, rank }: { doc: TopDoc; rank: number }) {
       className="rounded-xl border border-white/8 bg-zinc-950 hover:border-white/15 transition-colors flex flex-col overflow-hidden"
       data-testid={`card-top-download-${rank}`}
     >
-      {/* Full-width cover image */}
       <div className="relative w-full aspect-[3/2] overflow-hidden">
         <img src={cover} alt={doc.title} className="w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
-        {/* Rank badge */}
         <div className={`absolute top-3 left-3 w-8 h-8 rounded-full flex items-center justify-center text-sm font-black border ${colorClass}`}>
           {rank}
         </div>
@@ -227,14 +251,14 @@ function DocCard({ doc, rank }: { doc: TopDoc; rank: number }) {
 
       <div className="p-4 flex flex-col flex-1 space-y-2">
         <h4 className="text-sm font-bold text-white leading-snug line-clamp-2">{doc.title}</h4>
-        <div className={`text-sm font-bold ${colorClass.split(' ')[0]}`}>
-          <LiveCounter count={doc.count} />
+        <div className={`text-sm font-bold ${textColor}`}>
+          <LiveCounter count={doc.count} colorClass={textColor} />
         </div>
-        <p className="text-xs text-zinc-400 leading-relaxed line-clamp-3 flex-1">{significance.slice(0, 180)}…</p>
+        <p className="text-xs text-zinc-400 leading-relaxed line-clamp-3 flex-1">{significance.slice(0, 200)}…</p>
         <div className="flex gap-2 pt-1">
           {downloadUrl && (
             <button
-              onClick={() => trackAndDownload(downloadUrl)}
+              onClick={() => trackAndDownload(downloadUrl, doc.slug)}
               className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-white/8 hover:bg-white/12 text-white text-xs font-semibold rounded-lg transition-colors"
               data-testid={`btn-download-top${rank}`}
             >
@@ -256,7 +280,7 @@ function DocCard({ doc, rank }: { doc: TopDoc; rank: number }) {
   );
 }
 
-// ── Social Share Bar ────────────────────────────────────────────
+// ── Social Share Bar ──────────────────────────────────────────────────────────
 function SocialShareBar({ url = "https://barrandodger.com", text = "" }: { url?: string; text?: string }) {
   const [copied, setCopied] = useState(false);
   const shareUrl = encodeURIComponent(url);
@@ -287,7 +311,7 @@ function SocialShareBar({ url = "https://barrandodger.com", text = "" }: { url?:
   );
 }
 
-// ── Top 10 Section ──────────────────────────────────────────────
+// ── Top 10 Section ────────────────────────────────────────────────────────────
 export function TopDownloadsSection() {
   const { data, isLoading } = useQuery<{ data: TopDoc[]; since: string }>({
     queryKey: ['/api/analytics/top-all-time'],
@@ -312,14 +336,17 @@ export function TopDownloadsSection() {
         </div>
 
         {isLoading ? (
-          <div className="grid gap-4">
-            {[...Array(3)].map((_, i) => (
-              <div key={i} className="h-40 rounded-xl bg-zinc-900 animate-pulse" />
-            ))}
+          <div className="space-y-4">
+            <div className="h-64 rounded-2xl bg-zinc-900 animate-pulse" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[...Array(9)].map((_, i) => (
+                <div key={i} className="h-72 rounded-xl bg-zinc-900 animate-pulse" />
+              ))}
+            </div>
           </div>
         ) : (
           <>
-            {top && <HeroCard doc={top} rank={1} />}
+            {top && <HeroCard doc={top} />}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {rest.map((doc, i) => (
                 <DocCard key={doc.slug} doc={doc} rank={i + 2} />
@@ -332,7 +359,7 @@ export function TopDownloadsSection() {
   );
 }
 
-// ── Free Downloads & eBooks Panel ───────────────────────────────
+// ── Free Downloads & eBooks Panel ─────────────────────────────────────────────
 export function FreeDownloadsPanel() {
   return (
     <section className="py-14 px-4 bg-zinc-950 border-t border-white/5" data-testid="section-free-downloads-panel">
@@ -349,10 +376,11 @@ export function FreeDownloadsPanel() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <Badge variant="outline" className="border-emerald-500/40 text-emerald-400 mb-2 px-3 py-0.5 text-xs uppercase tracking-widest">Free Library</Badge>
-            <h3 className="text-2xl font-serif font-black text-white mb-2">Free eBooks & Documents</h3>
+            <h3 className="text-2xl font-serif font-black text-white mb-2">Free eBooks &amp; Documents</h3>
             <p className="text-sm text-zinc-300 leading-relaxed max-w-xl">
               The complete free library — every publication, forensic analysis, prophetic text, and legal submission in this archive is free to read, download, and share. No registration. No paywall. Truth should never have a price tag.
             </p>
+            <p className="text-xs text-zinc-500 mt-2 font-mono">© {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164</p>
           </div>
           <div className="flex-shrink-0">
             <a
@@ -369,7 +397,7 @@ export function FreeDownloadsPanel() {
   );
 }
 
-// ── Detonation ZIP Panel ────────────────────────────────────────
+// ── Detonation ZIP Panel ──────────────────────────────────────────────────────
 export function DetonationPanel() {
   const { data: pdfCountData } = useQuery<{ count: number }>({
     queryKey: ['/api/archive/pdf-count'],
@@ -383,7 +411,7 @@ export function DetonationPanel() {
   });
 
   const pdfCount = pdfCountData?.count ?? "500+";
-  const zipSize = zipSizeData?.label ?? "~1.4GB";
+  const zipSize = zipSizeData?.label ?? "~1.4 GB";
 
   const handleDetonate = () => {
     const slug = "divine-archive-detonation";
@@ -402,52 +430,36 @@ export function DetonationPanel() {
           className="rounded-2xl border-2 border-red-500/40 bg-gradient-to-br from-red-950/30 via-zinc-950 to-black p-8 text-center relative overflow-hidden"
         >
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(ellipse at center, hsl(0,80%,40%) 0%, transparent 65%)' }} />
-          <div className="relative z-10 space-y-4">
-            <Badge variant="outline" className="border-red-500/40 text-red-400 mb-2 px-4 py-1 text-xs uppercase tracking-widest">Archive Detonation</Badge>
+          <div className="relative z-10 space-y-5">
+            <Badge variant="outline" className="border-red-500/40 text-red-400 px-4 py-1 text-xs uppercase tracking-widest">
+              Complete Archive
+            </Badge>
             <h3 className="text-3xl md:text-4xl font-serif font-black text-white">
-              Download the <span className="text-red-400">Entire Archive</span>
+              Detonate the Archive
             </h3>
-            <p className="text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed">
-              Every PDF on this site — forensic analyses, legal submissions, prophetic texts, evidence packages, government document collections — compressed into a single ZIP file. {pdfCount} documents. {zipSize} of evidence they never expected to become public.
+            <p className="text-zinc-300 text-sm max-w-xl mx-auto leading-relaxed">
+              Download every single document in this archive as one complete ZIP — <strong className="text-white">{pdfCount} PDFs</strong>, <strong className="text-white">{zipSize}</strong> of forensic evidence, legal submissions, prophetic texts, and testimony. Built dynamically on every request. Every file that exists on this site — yours in a single download.
             </p>
-
-            <div className="flex flex-wrap justify-center gap-4 mt-2">
-              {[
-                { label: "Documents", value: String(pdfCount) },
-                { label: "Archive Size", value: zipSize },
-                { label: "Agencies Documented", value: "8+" },
-                { label: "Years of Evidence", value: "35" },
-              ].map(stat => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-xl font-black text-red-400 font-mono">{stat.value}</p>
-                  <p className="text-xs text-zinc-500 uppercase tracking-wider">{stat.label}</p>
-                </div>
-              ))}
+            <div className="text-xs text-zinc-500 font-mono">
+              © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164 · All Rights Reserved
             </div>
-
-            <div className="pt-2">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               <button
                 onClick={handleDetonate}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-red-700 hover:bg-red-600 text-white font-black rounded-xl transition-colors text-lg shadow-lg shadow-red-900/30"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-500 text-white font-black rounded-xl transition-colors text-base shadow-lg shadow-red-900/40"
                 data-testid="btn-detonate-archive"
               >
-                <Download className="h-5 w-5" /> DETONATE THE ARCHIVE — FREE ZIP
+                <Download className="h-5 w-5" /> DETONATE THE ARCHIVE
               </button>
             </div>
-            <p className="text-xs text-zinc-600 mt-2">Free download · No registration · Share freely · ABN 78 833 496 164</p>
+            <p className="text-xs text-zinc-500">Free download. No registration. No paywall. Shared freely for accountability and public interest purposes.</p>
           </div>
         </motion.div>
 
-        {/* Social Share */}
-        <div className="text-center space-y-3">
-          <p className="text-xs text-zinc-500 uppercase tracking-widest">
-            <Share2 className="h-3 w-3 inline mr-1" />Share the archive
-          </p>
-          <SocialShareBar
-            url="https://barrandodger.com"
-            text="395,000+ downloads across 6 continents. The most comprehensively documented case of institutional persecution in Australian history — all documents free: barrandodger.com"
-          />
-        </div>
+        <SocialShareBar
+          url="https://barrandodger.com"
+          text="395,000+ downloads. The most documented case of institutional persecution in Australian history. Every document free. #BarranDodger #Whistleblower"
+        />
       </div>
     </section>
   );
