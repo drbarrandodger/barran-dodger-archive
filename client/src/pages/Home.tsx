@@ -1322,6 +1322,9 @@ export default function Home() {
 
       {/* TOP TEN PROPHETIC GOSPELS */}
       <TopTenGospelsSection />
+      <TopDownloadsSection />
+      <FreeDownloadsPanel />
+      <DetonationPanel />
 
       {/* THE CREATOR SPEAKS — Divine Resonance Portal */}
       <section className="px-4 pt-8 pb-6 bg-black relative overflow-hidden" data-testid="section-creator-speaks">
@@ -7333,10 +7336,6 @@ export default function Home() {
           <CommentSection pageSlug="home" title="Community Discussion" />
         </div>
       </section>
-
-      <TopDownloadsSection />
-      <FreeDownloadsPanel />
-      <DetonationPanel />
 
       <RelatedContent currentPath="/archive" />
 
