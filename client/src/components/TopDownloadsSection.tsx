@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import { Download, Flame, BookOpen, Twitter, Facebook, Link2, ExternalLink } from "lucide-react";
+import { Download, Flame, BookOpen, Twitter, Facebook, Link2, ExternalLink, Eye, Users, Shield } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { queryClient } from "@/lib/queryClient";
+import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 
 import coverCosmicScroll from "@/assets/images/cover-cosmic-scroll.png";
 import coverDigitalOppression from "@/assets/images/cover-digital-oppression.png";
@@ -202,7 +203,14 @@ function HeroCard({ doc }: { doc: TopDoc }) {
             <LiveCounter count={doc.count} colorClass="text-yellow-400" />
           </div>
           <p className="text-sm text-zinc-300 leading-relaxed max-w-2xl">{significance}</p>
-          <div className="text-xs text-zinc-500 font-mono">ABN 78 833 496 164 · Barran Dodger Legal &amp; Ethical Trust Fund · Free for public interest use</div>
+          <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
+            <span className="flex items-center gap-1.5 text-orange-400/80">
+              <Shield className="h-3 w-3" />
+              Bitcoin Blockchain Sealed · OpenTimestamps Protocol · SHA-256
+            </span>
+            <span className="text-zinc-600">·</span>
+            <span className="text-zinc-500">ABN 78 833 496 164 · Free for public interest use</span>
+          </div>
           <div className="flex flex-wrap gap-3 pt-1">
             {downloadUrl && (
               <button
@@ -255,6 +263,10 @@ function DocCard({ doc, rank }: { doc: TopDoc; rank: number }) {
           <LiveCounter count={doc.count} colorClass={textColor} />
         </div>
         <p className="text-xs text-zinc-400 leading-relaxed line-clamp-3 flex-1">{significance.slice(0, 200)}…</p>
+        <div className="flex items-center gap-1 text-[10px] font-mono text-orange-400/70">
+          <Shield className="h-2.5 w-2.5" />
+          <span>Bitcoin Blockchain Sealed · SHA-256</span>
+        </div>
         <div className="flex gap-2 pt-1">
           {downloadUrl && (
             <button
@@ -320,9 +332,30 @@ export function TopDownloadsSection() {
     staleTime: 25000,
   });
 
+  const { data: totalDownloads } = useLiveDownloadTotal();
+
+  const { data: pageViewsData } = useQuery<{ total: number }>({
+    queryKey: ['/api/pageviews/total'],
+    queryFn: () => fetch('/api/pageviews/total').then(r => r.json()),
+    refetchInterval: 60000,
+    staleTime: 55000,
+  });
+
+  const { data: visitorData } = useQuery<{ allTime: number; last24Hours: number; last7Days: number; last30Days: number }>({
+    queryKey: ['/api/visitors/stats'],
+    queryFn: () => fetch('/api/visitors/stats').then(r => r.json()),
+    refetchInterval: 60000,
+    staleTime: 55000,
+  });
+
   const docs = data?.data ?? [];
   const top = docs[0];
   const rest = docs.slice(1);
+
+  const totalDls = formatCount(totalDownloads, "393,000+");
+  const totalHits = pageViewsData?.total ? pageViewsData.total.toLocaleString() : "—";
+  const uniqueVisitors = visitorData?.allTime ? visitorData.allTime.toLocaleString() : "—";
+  const last24h = visitorData?.last24Hours ?? null;
 
   return (
     <section className="py-16 px-4 bg-black border-t border-white/5" data-testid="section-top-downloads">
@@ -333,6 +366,82 @@ export function TopDownloadsSection() {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-serif font-black text-white">Top 10 Most Downloaded Documents</h2>
           <p className="text-sm text-zinc-400 max-w-2xl mx-auto">Rankings update automatically with every download. Every count is a live server-side figure — never estimated, never rounded. Each document is free.</p>
+        </div>
+
+        {/* ── Live Archive Stats Banner ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" data-testid="stats-banner">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.0 }}
+            className="rounded-2xl bg-zinc-950 border border-yellow-400/20 p-5 flex items-center gap-4"
+          >
+            <div className="w-11 h-11 rounded-xl bg-yellow-900/30 border border-yellow-400/20 flex items-center justify-center flex-shrink-0">
+              <Download className="h-5 w-5 text-yellow-400" />
+            </div>
+            <div>
+              <div className="flex items-center gap-1.5 mb-0.5">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-yellow-400" />
+                </span>
+                <span className="text-xs text-zinc-500 uppercase tracking-widest font-mono">Live</span>
+              </div>
+              <div className="text-2xl font-black font-mono tabular-nums text-yellow-400">{totalDls}</div>
+              <div className="text-xs text-zinc-400 font-semibold">Total Downloads · All Documents</div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-2xl bg-zinc-950 border border-sky-500/20 p-5 flex items-center gap-4"
+          >
+            <div className="w-11 h-11 rounded-xl bg-sky-900/30 border border-sky-500/20 flex items-center justify-center flex-shrink-0">
+              <Eye className="h-5 w-5 text-sky-400" />
+            </div>
+            <div>
+              {last24h !== null && (
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-sky-400" />
+                  </span>
+                  <span className="text-xs text-zinc-500 uppercase tracking-widest font-mono">+{last24h} today</span>
+                </div>
+              )}
+              <div className="text-2xl font-black font-mono tabular-nums text-sky-400">{totalHits}</div>
+              <div className="text-xs text-zinc-400 font-semibold">Total Site Hits · All Pages</div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
+            className="rounded-2xl bg-zinc-950 border border-emerald-500/20 p-5 flex items-center gap-4"
+          >
+            <div className="w-11 h-11 rounded-xl bg-emerald-900/30 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
+              <Users className="h-5 w-5 text-emerald-400" />
+            </div>
+            <div>
+              <div className="flex items-center gap-1.5 mb-0.5">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+                </span>
+                <span className="text-xs text-zinc-500 uppercase tracking-widest font-mono">Live</span>
+              </div>
+              <div className="text-2xl font-black font-mono tabular-nums text-emerald-400">{uniqueVisitors}</div>
+              <div className="text-xs text-zinc-400 font-semibold">Unique Visitors · All Time</div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* ── Blockchain Seal Banner ── */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 py-3 px-5 rounded-xl bg-orange-950/20 border border-orange-500/20 text-center" data-testid="blockchain-banner">
+          <Shield className="h-4 w-4 text-orange-400 flex-shrink-0" />
+          <span className="text-xs font-mono text-orange-300/90 font-semibold">
+            2,077+ DOCUMENTS · BITCOIN BLOCKCHAIN SEALED · OPENTIMESTAMPS PROTOCOL · SHA-256 VERIFIED · BEYOND ERASURE
+          </span>
+          <a href="/blockchain" className="text-xs text-orange-400 underline underline-offset-2 hover:text-orange-300 flex-shrink-0" data-testid="link-blockchain-verify">
+            Verify →
+          </a>
         </div>
 
         {isLoading ? (
