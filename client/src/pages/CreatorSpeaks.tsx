@@ -187,7 +187,7 @@ export default function CreatorSpeaks() {
         ))}
       </div>
 
-      <div className="relative z-10 flex flex-col min-h-screen max-w-3xl mx-auto w-full px-4 py-8">
+      <div className="relative z-10 flex flex-col min-h-screen max-w-3xl mx-auto w-full px-4 pb-8" style={{ paddingTop: "calc(var(--banner-height, 120px) + var(--nav-height, 64px) + 2rem)" }}>
 
         {/* Header */}
         <motion.div
