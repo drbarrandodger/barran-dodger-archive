@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 
 export function useLiveDownloadTotal() {
-  return useQuery<number>({
+  return useQuery<{ total: number }, Error, number>({
     queryKey: ["/api/downloads/total"],
+    select: (data) => data.total,
     refetchInterval: 30_000,
     staleTime: 15_000,
   });

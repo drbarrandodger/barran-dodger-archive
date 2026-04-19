@@ -232,10 +232,25 @@ export default function CreatorSpeaks() {
           </div>
           <div className="p-6 md:p-8 space-y-5">
 
+            {/* LIVE Download Counter — top panel */}
+            <div className="flex items-center gap-4 border border-green-700/30 rounded-xl px-5 py-3" style={{ background: "rgba(0,60,20,0.18)" }} data-testid="live-counter-top">
+              <div className="flex-shrink-0 flex flex-col items-center gap-1">
+                <div className="flex items-center gap-1.5">
+                  <motion.div animate={{ opacity: [1, 0.15, 1] }} transition={{ duration: 1.3, repeat: Infinity }} className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                  <span className="text-green-400 font-mono text-[10px] uppercase tracking-wider">Live</span>
+                </div>
+                <p className="text-3xl font-serif font-bold text-yellow-200 leading-none" data-testid="count-live-top">{liveCount}</p>
+                <p className="text-[10px] text-green-400/70 font-mono uppercase tracking-wide">downloads</p>
+              </div>
+              <div className="flex-1 border-l border-green-700/30 pl-4">
+                <p className="text-white/75 text-xs leading-relaxed">This number is read live from the barrandodger.com database every 30 seconds. Every PDF download across the entire archive is tracked server-side. {liveCount} individual distributed copies now exist across 6 continents — beyond the simultaneous reach of any government, court order, or suppression mechanism. Zero defamation actions. Zero rebuttals. The silence of those named is its own verdict.</p>
+              </div>
+            </div>
+
             {/* AI Analysis Brief */}
             <div className="border border-yellow-500/15 rounded-xl p-4" style={{ background: "rgba(67,56,202,0.10)" }}>
               <p className="text-yellow-400/70 font-mono text-xs uppercase tracking-widest mb-2">Impartial AI Assessment — Gospel of the Enliven Chain</p>
-              <p className="text-white/65 text-sm leading-relaxed">The Gospel of the Enliven Chain is the primary-source legal and prophetic archive of Dr. Richard William McLean — 2,077 blockchain-sealed documents produced across 35 years of documented institutional persecution. 675 propositions assessed by independent AI — 675 confirmed, zero contradicted. 217,064 downloads across six continents. Federal Court confirmation. ICC submission. UNHCR claim. Zero successful defamation actions. The Creator Speaks interface channels this testimony directly. Ask anything. The record is permanent and cannot be erased.</p>
+              <p className="text-white/65 text-sm leading-relaxed">The Gospel of the Enliven Chain is the primary-source legal and prophetic archive of Dr. Richard William McLean — 2,077 blockchain-sealed documents produced across 35 years of documented institutional persecution. 675 propositions assessed by independent AI — 675 confirmed, zero contradicted. {liveCount} downloads across six continents. Federal Court confirmation. ICC submission. UNHCR claim. Zero successful defamation actions. The Creator Speaks interface channels this testimony directly. Ask anything. The record is permanent and cannot be erased.</p>
             </div>
 
             {/* CTA Buttons */}
@@ -943,15 +958,30 @@ export default function CreatorSpeaks() {
             <div className="mt-3 w-32 h-px bg-gradient-to-r from-transparent via-yellow-500/40 to-transparent mx-auto" />
           </div>
 
+          {/* LIVE Download Counter — Hero stat */}
+          <div className="border-2 border-yellow-500/40 rounded-2xl p-5 text-center relative overflow-hidden" style={{ background: "linear-gradient(135deg, rgba(67,56,202,0.25) 0%, rgba(20,10,0,0.95) 100%)" }} data-testid="stat-live-downloads-hero">
+            <div className="absolute top-3 right-3 flex items-center gap-1.5">
+              <motion.div animate={{ opacity: [1, 0.2, 1] }} transition={{ duration: 1.4, repeat: Infinity }} className="w-2 h-2 rounded-full bg-green-400" />
+              <span className="text-green-400 font-mono text-[10px] uppercase tracking-widest">Live reading — barrandodger.com database</span>
+            </div>
+            <p className="text-5xl md:text-6xl font-serif font-bold text-yellow-300 leading-none mb-2 mt-4" data-testid="count-live-downloads">{liveCount}</p>
+            <p className="text-base font-semibold text-white/90 font-sans mb-1">Verified Downloads — Tracked in Real Time</p>
+            <p className="text-xs text-indigo-300/60 font-sans mb-4">Across 6 continents · Each download recorded in the barrandodger.com database · Updated every 30 seconds</p>
+            <div className="border border-yellow-500/20 rounded-xl p-3 text-left" style={{ background: "rgba(67,56,202,0.10)" }}>
+              <p className="text-yellow-400/70 font-mono text-[10px] uppercase tracking-widest mb-1.5">Why this number matters</p>
+              <p className="text-white/60 text-xs leading-relaxed">This is not an estimate. Every download of every PDF in the archive is tracked server-side and recorded in the Replit application database. This number represents {liveCount} individual distributed copies of the testimony — each one a node in a network no single government, agency, or court order can simultaneously reach. At the moment of each download, the probability of total erasure decreased. The more this number grows, the more mathematically impossible it becomes to suppress what Dr. Richard William McLean documented. Zero defamation actions have been filed against this archive. Zero corrections. Zero rebuttals. {liveCount} downloads. The silence of those named is the loudest corroboration of all.</p>
+            </div>
+          </div>
+
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-3">
             {[
-              { number: liveCount, label: "Verified Downloads", detail: "Across 6 continents · live" },
-              { number: "845", label: "Bitcoin Blockchain Records", detail: "SHA-256 cryptographic seals" },
+              { number: "845", label: "Bitcoin Blockchain Records", detail: "SHA-256 cryptographic seals · immutable" },
               { number: "~22M", label: "Estimated Exposure Events", detail: "Conservative aggregate across all channels" },
               { number: "750+", label: "PDFs in the Archive", detail: "Gospels, forensic analyses, legal submissions" },
               { number: "675/675", label: "Propositions Verified", detail: "Every analytical framework confirmed" },
               { number: "2.1M", label: "12-Month Download Projection", detail: "At current trajectory" },
+              { number: "0", label: "Successful Defamation Actions", detail: "Against 2,077 documents · zero rebuttals" },
             ].map((stat) => (
               <div key={stat.label} className="border border-indigo-700/25 rounded-xl p-4 text-center" style={{ background: "rgba(67,56,202,0.12)" }}>
                 <p className="text-2xl md:text-3xl font-serif font-bold text-yellow-300 leading-none mb-1">{stat.number}</p>
