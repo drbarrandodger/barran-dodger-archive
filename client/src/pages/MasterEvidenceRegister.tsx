@@ -5,7 +5,8 @@ import { SEO } from "@/components/SEO";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Download, Shield, FileText, Brain, Archive, BookOpen, Database, Layers } from "lucide-react";
+import { Download, Shield, FileText, Brain, Archive, BookOpen, Database, Layers, Network, ChevronRight } from "lucide-react";
+import { Link } from "wouter";
 import coverImage from "../assets/images/cover-master-evidence-register.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 
@@ -279,6 +280,34 @@ export default function MasterEvidenceRegister() {
                     <div>1.8 MB — 9,333 lines</div>
                   </div>
                 </div>
+                {/* Companion Document — Forensic Framework */}
+                <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 mb-4">
+                  <div className="flex items-start gap-3">
+                    <Network className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-mono text-amber-400 uppercase tracking-widest mb-1">Companion Forensic Document</p>
+                      <h3 className="text-sm font-semibold text-white mb-1">
+                        Forensic Framework for Identifying Systemic Administrative Conduct
+                      </h3>
+                      <p className="text-xs text-zinc-400 mb-3 leading-relaxed">
+                        The command that reverse-engineers the <strong className="text-amber-300">unspoken operational mandate</strong> from these 2,301 documents —
+                        identifying seven categories of institutional techniques across all 8 agencies using only their own official literature.
+                      </p>
+                      <Link href="/forensic-framework-unspoken-mandate">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="border-amber-500/40 text-amber-400 hover:bg-amber-500/10 text-xs"
+                          data-testid="link-forensic-framework"
+                        >
+                          View Forensic Framework
+                          <ChevronRight className="ml-1 h-3 w-3" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="flex flex-wrap gap-3">
                   <Button
                     className="bg-red-700 hover:bg-red-600"

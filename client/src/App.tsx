@@ -187,6 +187,7 @@ import { BlockchainManifest } from "@/pages/BlockchainManifest";
 import CreatorSpeaks from "@/pages/CreatorSpeaks";
 import CosmicEssayPage from "@/pages/CosmicEssayPage";
 import TopTenGospels from "@/pages/TopTenGospels";
+import ForensicFrameworkUnspokenMandate from "@/pages/ForensicFrameworkUnspokenMandate";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -294,6 +295,7 @@ function Router() {
         <Route path="/100-absurdities" component={HundredAbsurdities} />
         <Route path="/bro-this-isnt-a-coincidence" component={BroThisIsntACoincidence} />
         <Route path="/master-evidence-register" component={MasterEvidenceRegister} />
+        <Route path="/forensic-framework-unspoken-mandate" component={ForensicFrameworkUnspokenMandate} />
         <Route path="/chosen-ones-enough-is-enough" component={ChosenOnesEnoughIsEnough} />
         <Route path="/no-one-could-be-that-smart" component={NoOneCouldBeThatSmart} />
         <Route path="/the-divine-exam" component={DivineExam} />
