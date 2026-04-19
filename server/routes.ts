@@ -757,6 +757,7 @@ export async function registerRoutes(
     'chosen-through-fire-forensic-origin-document': 'Chosen Through Fire — Forensic Origin Document',
     'systemic-endangerment-of-whistleblowers-institutional-dossier': 'Systemic Endangerment of Whistleblowers — Institutional Dossier',
     'forensic-framework-unspoken-mandate': 'Forensic Framework for Identifying Systemic Administrative Conduct — The Unspoken Mandate',
+    'master-evidence-register-v3': 'Master Evidence Register v3 — Complete Government Evidence Inventory (2,301 Documents)',
     'declaration-of-breakthrough-and-identity-as-chosen-one': 'Declaration of Breakthrough & Identity as Chosen One',
     'after-forensic-statement-evidence-record': 'After — Forensic Statement Evidence Record',
     'ot-sil-report-recommending-sils-richard-mclean': 'OT SIL Report Recommending SILs — Richard McLean',
