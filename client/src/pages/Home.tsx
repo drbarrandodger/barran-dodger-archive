@@ -83,6 +83,7 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { ChessmateHero } from "@/components/ChessmateHero";
 import { TopTenGospelsSection } from "@/components/TopTenGospelsSection";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { TopDownloadsSection, FreeDownloadsPanel, DetonationPanel } from "@/components/TopDownloadsSection";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -7332,6 +7333,10 @@ export default function Home() {
           <CommentSection pageSlug="home" title="Community Discussion" />
         </div>
       </section>
+
+      <TopDownloadsSection />
+      <FreeDownloadsPanel />
+      <DetonationPanel />
 
       <RelatedContent currentPath="/archive" />
 
