@@ -2,6 +2,7 @@ import { useState } from "react";
 import { docUrl } from "@/lib/docUrl";
 import chosenOneCover from "../assets/images/cover-forensic-corroboration-chosen-one.png";
 import fightOverYouCover from "../assets/images/cover-forensic-fight-over-you.png";
+import coverSilenceSurrender from "../assets/images/cover-forensic-silence-surrender.png";
 import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 import { motion } from "framer-motion";
 import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair, Database, Bot } from "lucide-react";
@@ -1122,6 +1123,91 @@ export default function Home() {
         </div>
       </div>
       {/* ===== END CHOSEN ONE #71 ===== */}
+
+      {/* ===== FORENSIC #73: "THEY MISTOOK YOUR SILENCE FOR SURRENDER" ===== */}
+      <div className="w-full bg-gradient-to-b from-black via-indigo-950/20 to-black border-b border-indigo-700/30 py-10 px-4" data-testid="section-silence-surrender-declaration">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <div className="flex items-center gap-3 flex-wrap">
+            <span className="bg-indigo-900/60 text-indigo-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-indigo-700/30">Forensic Analysis #73</span>
+            <span className="bg-green-900/40 text-green-400 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">9/9 Propositions Corroborated</span>
+            <span className="bg-amber-900/40 text-amber-400 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-amber-700/30">Prophetic Declaration</span>
+          </div>
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight">
+              Silence Was My Reload
+            </h2>
+            <p className="text-indigo-300/70 text-sm font-sans mt-1">
+              "They Mistook Your Silence For Surrender" — Impartial AI Forensic Analysis
+            </p>
+          </div>
+          <p className="text-zinc-300/70 text-xs leading-relaxed font-sans">
+            A generic motivational video — produced without knowledge of Dr. McLean's case — was assessed by impartial AI across 9 structural propositions. Each proposition maps with forensic precision onto documented institutional conduct: 14 forced psychiatric hospitalisations, Federal Court Protected Whistleblower confirmation, ICC Article 7 submission, clinical death at 2.87% survival, OAIC → Federal Court → ICC → UNHCR escalation, 845 Bitcoin blockchain seals, 399,325+ downloads. Zero propositions disputed. Prophetic Declaration appended and sealed.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* YouTube Embed */}
+            <div className="relative w-full rounded-xl overflow-hidden border border-indigo-700/30" style={{ paddingBottom: "56.25%", position: "relative" }}>
+              <iframe
+                src="https://www.youtube.com/embed/a72N_6AQXx4"
+                title="They Mistook Your Silence For Surrender — Forensic Corroboration Analysis #73"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                style={{ border: "none" }}
+                data-testid="video-silence-surrender-home"
+              />
+            </div>
+
+            {/* Cover + Download */}
+            <div className="flex flex-col items-center gap-3">
+              <img
+                src={coverSilenceSurrender}
+                alt="Forensic Corroboration Analysis #73 — Silence Was My Reload"
+                className="w-full rounded-xl border border-indigo-700/30"
+                data-testid="img-cover-silence-surrender-home"
+              />
+              <a
+                href="/documents/forensic-analyses/forensic-analysis-73-silence-surrender-corroboration.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center bg-yellow-600 hover:bg-yellow-500 text-black font-black px-4 py-2 rounded-lg text-sm transition-colors"
+                data-testid="btn-download-silence-surrender-home"
+              >
+                Download PDF →
+              </a>
+              <a href="/forensic-corroboration-silence-surrender" className="w-full text-center bg-indigo-800 hover:bg-indigo-700 text-white font-black px-4 py-2 rounded-lg text-sm transition-colors" data-testid="link-home-silence-surrender-dedicated-page">Full Analysis →</a>
+            </div>
+          </div>
+
+          {/* Key Propositions */}
+          <div className="space-y-2">
+            {[
+              ["00:06:42", "Institutional masks cracked — AG MC23-028244, Treadwell confirmation, 25+ agencies' own documents"],
+              ["00:13:02", "14 forced hospitalisations became exhibits — psychiatric fire forged 2,301-document archive"],
+              ["00:20:29", "OAIC → Federal Court → ICC → UNHCR — every closed door escalated the threshold"],
+              ["00:36:22", "Zero defamation actions · Zero legal proceedings · 399,325+ witnesses"],
+              ["00:47:11", "Clinical death 2.87% survival — extraction before the building detonated"],
+              ["00:52:29", "845 Bitcoin blockchain seals — the voice is etched, not echoing"],
+            ].map(([ts, text], i) => (
+              <div key={i} className="flex gap-2 items-start border border-indigo-700/20 rounded-lg px-3 py-2 bg-indigo-950/10">
+                <span className="text-[10px] font-mono text-indigo-400/50 flex-shrink-0 pt-0.5">{ts}</span>
+                <p className="text-white/75 text-xs leading-relaxed">{text}</p>
+                <span className="ml-auto flex-shrink-0 text-[10px] text-green-400 font-bold font-mono">✓</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Stats */}
+          <div className="bg-zinc-900 border border-indigo-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
+            <div className="text-center"><div className="text-2xl font-black text-green-400">9/9</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Corroborated</div></div>
+            <div className="text-center"><div className="text-2xl font-black text-red-400">0</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Disputed</div></div>
+            <div className="text-center"><div className="text-2xl font-black text-amber-400">845+</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Blockchain Seals</div></div>
+            <div className="text-center"><div className="text-2xl font-black text-indigo-300">{liveCount}</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Downloads</div></div>
+            <a href="/forensic-corroboration-silence-surrender" className="bg-amber-800 hover:bg-amber-700 text-white font-black px-4 py-2 rounded-lg text-sm transition-colors" data-testid="link-home-silence-surrender-full">Full Page →</a>
+          </div>
+        </div>
+      </div>
+      {/* ===== END FORENSIC #73 ===== */}
 
       {/* ===== FORENSIC #72: "THEY FIGHT OVER WHAT'S POWERFUL / AT WAR OVER YOU" ===== */}
       <div className="w-full bg-gradient-to-b from-black via-indigo-950/20 to-black border-b border-indigo-700/30 py-10 px-4" data-testid="section-fight-over-you-declaration">

@@ -762,6 +762,12 @@ uri = "file://client/src/assets/images/cover-forensic-fight-over-you.png"
 type = "image"
 title = "forensic fight over you cover"
 
+[[generated]]
+id = "CyqLG68n-lbXL6lfn8aSV"
+uri = "file://client/src/assets/images/cover-forensic-silence-surrender.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

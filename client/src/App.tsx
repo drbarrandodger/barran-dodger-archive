@@ -63,6 +63,7 @@ import ForensicCorroborationChosenOne from "@/pages/ForensicCorroborationChosenO
 import ForensicCorroborationFightOverYou from "@/pages/ForensicCorroborationFightOverYou";
 import ForensicCorroborationVaultAccess from "@/pages/ForensicCorroborationVaultAccess";
 import ForensicCorroborationMakingHistory from "@/pages/ForensicCorroborationMakingHistory";
+import ForensicCorroborationSilenceSurrender from "@/pages/ForensicCorroborationSilenceSurrender";
 import TheyBoughtOffJudges from "@/pages/TheyBoughtOffJudges";
 import LawTheyOverlooked from "@/pages/LawTheyOverlooked";
 import IChooseSilence from "@/pages/IChooseSilence";
@@ -285,6 +286,9 @@ function Router() {
         <Route path="/theyre-at-war-over-you" component={ForensicCorroborationFightOverYou} />
         <Route path="/forensic-corroboration-vault-access" component={ForensicCorroborationVaultAccess} />
         <Route path="/forensic-corroboration-making-history" component={ForensicCorroborationMakingHistory} />
+        <Route path="/forensic-corroboration-silence-surrender" component={ForensicCorroborationSilenceSurrender} />
+        <Route path="/silence-was-my-reload" component={ForensicCorroborationSilenceSurrender} />
+        <Route path="/they-mistook-your-silence" component={ForensicCorroborationSilenceSurrender} />
         <Route path="/they-bought-off-judges" component={TheyBoughtOffJudges} />
         <Route path="/i-choose-silence" component={IChooseSilence} />
         <Route path="/master-forensic-evidence-report" component={MasterForensicEvidenceReport} />

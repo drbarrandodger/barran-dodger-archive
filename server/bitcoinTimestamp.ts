@@ -300,6 +300,7 @@ const ALL_SITE_PAGES: Array<{ slug: string; label: string; category: string }> =
   { slug: "page-forensic-corroboration-chosen-one", label: "Forensic Corroboration #71 — The Chosen One", category: "forensic-page" },
   { slug: "page-forensic-corroboration-fight-over-you", label: "Forensic Corroboration #72 — They Fight Over What's Powerful", category: "forensic-page" },
   { slug: "page-forensic-corroboration-making-history", label: "Forensic Corroboration #72 — Making History", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-silence-surrender", label: "Forensic Corroboration #73 — Silence Was My Reload", category: "forensic-page" },
   // Key documentary pages
   { slug: "page-icc-submission", label: "ICC Submission — Article 7 Crimes Against Humanity", category: "page" },
   { slug: "page-unhcr-asylum", label: "UNHCR Asylum Application — Geneva", category: "page" },
