@@ -100,7 +100,7 @@ function SectionHeading({ number, title, icon: Icon }: { number: string; title: 
 
 export default function TestimonyWentGlobal() {
   const { data: totalDownloads } = useLiveDownloadTotal();
-  const liveCount = formatCount(totalDownloads, "389,759+");
+  const liveCount = formatCount(totalDownloads, "399,325+");
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO

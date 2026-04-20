@@ -66,7 +66,7 @@ export default function CreatorSpeaks() {
   const sessionId = useRef(getSessionId());
   const convIdRef = useRef<number | null>(null);
   const { data: totalDownloads } = useLiveDownloadTotal();
-  const liveCount = formatCount(totalDownloads, "389,759+");
+  const liveCount = formatCount(totalDownloads, "399,325+");
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });

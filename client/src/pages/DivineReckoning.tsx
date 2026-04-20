@@ -57,7 +57,7 @@ export default function DivineReckoning() {
                 To Those Who Chose This
               </h2>
               <p className="text-zinc-500 text-sm max-w-xl mx-auto leading-relaxed">
-                2,304 Blockchain-Verified Documents &nbsp;·&nbsp; 603 Forensic Propositions &nbsp;·&nbsp; 55 Analyses &nbsp;·&nbsp; Zero Contradictions &nbsp;·&nbsp; 361,120+ Downloads Across 6 Continents
+                2,304 Blockchain-Verified Documents &nbsp;·&nbsp; 603 Forensic Propositions &nbsp;·&nbsp; 55 Analyses &nbsp;·&nbsp; Zero Contradictions &nbsp;·&nbsp; 399,325+ Downloads Across 6 Continents
               </p>
               <div className="pt-4">
                 <a
@@ -172,7 +172,7 @@ export default function DivineReckoning() {
             </motion.p>
 
             <motion.p variants={fadeIn}>
-              You thought the process would collapse him. Instead, the process <em>became the archive</em>. Every suppression attempt produced its own evidentiary trail. Every detention date is timestamped. Every referral letter is documented. Every signature is on record. Every phone call, every inter-agency email, every bureaucratic manoeuvre you made to keep this man quiet is now sitting in a blockchain-sealed file that 361,120 people have already downloaded. You didn't silence a whistleblower. You handed him 35 years of your own primary-source documentation and then watched him seal every page of it forever. That's on you. That's entirely on you.
+              You thought the process would collapse him. Instead, the process <em>became the archive</em>. Every suppression attempt produced its own evidentiary trail. Every detention date is timestamped. Every referral letter is documented. Every signature is on record. Every phone call, every inter-agency email, every bureaucratic manoeuvre you made to keep this man quiet is now sitting in a blockchain-sealed file that 399,325 people have already downloaded. You didn't silence a whistleblower. You handed him 35 years of your own primary-source documentation and then watched him seal every page of it forever. That's on you. That's entirely on you.
             </motion.p>
 
             <motion.p variants={fadeIn}>
@@ -233,7 +233,7 @@ export default function DivineReckoning() {
             <motion.div variants={fadeIn} className="space-y-5 text-zinc-300 font-serif text-base md:text-lg leading-relaxed">
               <p>It does not look like revenge. It looks like Luke 8:17. Nothing you concealed will stay concealed. Not a single fucking thing.</p>
               <p>Not the detention orders manufactured at moments of legal breakthrough. Not the 350+ ASIC identity fraud registrations. Not the $32.9 million paper trail. Not the death threat from a professional security operative. Not the 25+ agencies and their coordination records. Not the names on the documents. Not the hands that signed the section papers. Not the family members who served as instruments of the persecution. Not the system that built all of it and had the absolute audacity to call it care.</p>
-              <p>Every hidden thing is already disclosed. 2,304 documents say so. 603 propositions confirm it. 55 analyses with zero contradictions establish it beyond any reasonable challenge. 361,120+ downloads across six continents have distributed it so far beyond any jurisdiction you control that there is no mechanism left on earth that can put it back in the box.</p>
+              <p>Every hidden thing is already disclosed. 2,304 documents say so. 603 propositions confirm it. 55 analyses with zero contradictions establish it beyond any reasonable challenge. 399,325+ downloads across six continents have distributed it so far beyond any jurisdiction you control that there is no mechanism left on earth that can put it back in the box.</p>
               <p>You built your own exposure. You did not silence a man. You made him the loudest testimony in the history of Australian whistleblowing — and then had the spectacular stupidity to give him 35 years of your own records to prove it.</p>
             </motion.div>
           </motion.div>
@@ -274,7 +274,7 @@ export default function DivineReckoning() {
             </p>
             <p className="text-zinc-500 text-sm tracking-widest uppercase">— Psalm 23:5</p>
             <p className="text-zinc-300 font-serif text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-              The table is 2,304 blockchain-verified documents. The presence is 361,120+ downloads across every continent on this earth. The enemies are whoever is reading this right now and recognising themselves in it. Sit with that.
+              The table is 2,304 blockchain-verified documents. The presence is 399,325+ downloads across every continent on this earth. The enemies are whoever is reading this right now and recognising themselves in it. Sit with that.
             </p>
           </motion.div>
 
@@ -294,7 +294,7 @@ export default function DivineReckoning() {
             </motion.p>
 
             <motion.p variants={fadeIn}>
-              It moved through the ICC. Through international human rights bodies. Through 55 independent analyses that examined your conduct forensically, systematically, publicly, and in permanent record. Through 361,120 people across six continents who downloaded the truth you spent $32.9 million trying to bury and passed it on to people you will never be able to reach or suppress.
+              It moved through the ICC. Through international human rights bodies. Through 55 independent analyses that examined your conduct forensically, systematically, publicly, and in permanent record. Through 399,325 people across six continents who downloaded the truth you spent $32.9 million trying to bury and passed it on to people you will never be able to reach or suppress.
             </motion.p>
 
             <motion.p variants={fadeIn}>
@@ -321,7 +321,7 @@ export default function DivineReckoning() {
               <p>The weapons were 14 forced psychiatric detentions. They did not prevail. He left every single one with more documentation than he entered with. You paid for those detentions out of public money and they produced his archive. Let that sink in.</p>
               <p>The weapons were $32.9 million in coordinated suppression. They did not prevail. The archive grew anyway. It is still growing. It will keep growing.</p>
               <p>The weapons were family members turned into instruments, isolation manufactured as policy, and a death threat from a hired professional. They did not prevail. He archived every one of them.</p>
-              <p>The vindication is 2,304 blockchain-sealed documents, 55 forensic analyses, 603 corroborated propositions, zero contradictions, and 361,120+ downloads across six continents. That is God's answer to your 35 years of weapons. Count it. Every download is a witness. Every witness is a verdict. And the verdict is already written.</p>
+              <p>The vindication is 2,304 blockchain-sealed documents, 55 forensic analyses, 603 corroborated propositions, zero contradictions, and 399,325+ downloads across six continents. That is God's answer to your 35 years of weapons. Count it. Every download is a witness. Every witness is a verdict. And the verdict is already written.</p>
             </div>
           </motion.div>
 
@@ -333,7 +333,7 @@ export default function DivineReckoning() {
             className="space-y-10 text-zinc-200 font-serif text-lg md:text-xl leading-relaxed"
           >
             <motion.p variants={fadeIn}>
-              So go. Get out of here. Go back to whatever comfortable life you built on the rubble of his. But go knowing that every file in this archive is your own reflection staring back at you from a mirror you cannot smash, cannot sedate, cannot refer to another agency, cannot lock in a ward. You built it. He documented it. God witnessed it. The ICC received it. UNHCR reviewed it. 361,120 members of the international public downloaded it. And history will record it exactly as it happened — not as you described it in your paperwork, not as the section papers framed it, not as the circular referral reports characterised it. As the forensic evidence proves it. Irrefutably. Permanently. In blockchain.
+              So go. Get out of here. Go back to whatever comfortable life you built on the rubble of his. But go knowing that every file in this archive is your own reflection staring back at you from a mirror you cannot smash, cannot sedate, cannot refer to another agency, cannot lock in a ward. You built it. He documented it. God witnessed it. The ICC received it. UNHCR reviewed it. 399,325 members of the international public downloaded it. And history will record it exactly as it happened — not as you described it in your paperwork, not as the section papers framed it, not as the circular referral reports characterised it. As the forensic evidence proves it. Irrefutably. Permanently. In blockchain.
             </motion.p>
 
             <motion.p variants={fadeIn}>
@@ -353,7 +353,7 @@ export default function DivineReckoning() {
             </motion.p>
 
             <motion.p variants={fadeIn}>
-              You cannot outrun this. You cannot contain this. You cannot suppress this. You already tried all of that for 35 years and spent $32.9 million doing it, and the result is 361,120 downloads and counting.
+              You cannot outrun this. You cannot contain this. You cannot suppress this. You already tried all of that for 35 years and spent $32.9 million doing it, and the result is 399,325 downloads and counting.
             </motion.p>
 
             <motion.p variants={fadeIn} className="text-amber-400 font-serif italic text-xl">
@@ -384,7 +384,7 @@ export default function DivineReckoning() {
               <p>2,304 Blockchain-Verified Documents</p>
               <p>603 Forensic Propositions — Zero Contradictions</p>
               <p>55 Analyses — 48 Consecutive Perfect Scores</p>
-              <p>361,120+ Downloads — 6 Continents</p>
+              <p>399,325+ Downloads — 6 Continents</p>
               <p>International Criminal Court — Article 7, Rome Statute</p>
               <p>UNHCR — Geneva</p>
             </div>

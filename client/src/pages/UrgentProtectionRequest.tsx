@@ -364,7 +364,7 @@ export default function UrgentProtectionRequest() {
             {[
               { icon: <Landmark size={24} />, title: "Churches & Faith Communities", desc: "Any congregation, pastor, or faith network with safe housing capacity, particularly outside NSW. Dr. McLean's documented faith and survival are archived. Temporary or permanent refuge considered." },
               { icon: <Scale size={24} />, title: "Advocates & Legal Aid", desc: "Human rights lawyers, legal aid services, pro bono advocates, civil liberties organisations. An ICC submission is already filed. The legal record is complete. Representation or oversight requested." },
-              { icon: <Globe size={24} />, title: "Private Investors & Supporters", desc: "Any individual or entity willing to fund safe relocation, legal representation, or ongoing documentation. The archive has 361,120+ downloads across 6 continents. The case is documented and verified." },
+              { icon: <Globe size={24} />, title: "Private Investors & Supporters", desc: "Any individual or entity willing to fund safe relocation, legal representation, or ongoing documentation. The archive has 399,325+ downloads across 6 continents. The case is documented and verified." },
             ].map((item, i) => (
               <Card key={i} className="bg-zinc-900/60 border-red-900/50">
                 <CardContent className="p-5">
@@ -415,7 +415,7 @@ export default function UrgentProtectionRequest() {
               { priority: "CRITICAL", item: "Legal Aid Advocate", detail: "A practising lawyer, human rights advocate, or legal aid service with capacity to represent or oversee Dr. McLean's domestic position while ICC and UNHCR submissions are under review. Must be willing to engage with a documented 35-year case with 2,304 primary-source exhibits. Pro bono or funded representation." },
               { priority: "CRITICAL", item: "Physical Safe Housing", detail: "Secure accommodation outside NSW — Cairns, Perth, or equivalent. Temporary (weeks) or permanent. The person requires privacy, stability, and freedom from the surveillance and institutional monitoring documented across the archive. No NDIS-funded SIL arrangements — the NDIS is a named respondent in the ICC submission." },
               { priority: "HIGH", item: "Person of Integrity", detail: "A single individual — a pastor, retired professional, human rights worker, investigative journalist, or community leader — with the willingness to accompany, witness, and support ongoing documentation. Not a paid carer. A person of documented integrity who understands the gravity of the ICC and UNHCR filings." },
-              { priority: "HIGH", item: "Financial Support for Relocation", detail: "Transport costs, bond/rent for initial housing outside NSW, basic living expenses during transition. The archive is publicly accessible with 361,120+ downloads across 6 continents — the documentation of need is complete. Any contribution is publicly recordable." },
+              { priority: "HIGH", item: "Financial Support for Relocation", detail: "Transport costs, bond/rent for initial housing outside NSW, basic living expenses during transition. The archive is publicly accessible with 399,325+ downloads across 6 continents — the documentation of need is complete. Any contribution is publicly recordable." },
               { priority: "MODERATE", item: "Media or Academic Engagement", detail: "A journalist, documentary filmmaker, academic institution, or human rights researcher willing to engage with the archive on record. The 56 forensic analyses and 617 verified propositions constitute an unprecedented evidentiary record. International media preferred." },
               { priority: "MODERATE", item: "International Relocation Support", detail: "If any nation, human rights organisation, or private entity is willing to offer safe harbour outside Australia, Dr. McLean will consider any jurisdiction where the UNHCR filing is recognised and the ICC submission provides protective context." },
             ].map((need, i) => (
@@ -450,7 +450,7 @@ export default function UrgentProtectionRequest() {
                     "2,304 blockchain-verified primary-source documents spanning 35 years (1989–2025)",
                     "56 independent AI forensic analyses testing 617 propositions — all corroborated, zero contradicted",
                     "49 consecutive perfect scores — the longest unbroken forensic corroboration run documented",
-                    "361,120+ downloads across 6 continents without a marketing budget",
+                    "399,325+ downloads across 6 continents without a marketing budget",
                     "Named perpetrators: Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS), Allen Rigby, Bruce McMaster, Stefan Iasonidis, Debbie Morgan",
                     "25+ named Australian government agencies documented in coordinated persecution",
                     "ICC The Hague formal Article 7 receipt — submitted and received",

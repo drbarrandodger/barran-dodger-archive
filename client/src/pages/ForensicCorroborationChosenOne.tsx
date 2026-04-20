@@ -181,11 +181,11 @@ export default function ForensicCorroborationChosenOne() {
               <div className="space-y-1.5 text-xs">
                 <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">The ruin (documented):</strong> 2021 — clinical near-death event, Werribee Mercy Hospital. Documented survival probability: 2.87%. Medical record in archive. Clinical team's assessment on file. This is not metaphor.</span></div>
                 <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Additional ruin inputs:</strong> Homelessness (documented). NDIS funding deprivation — named case managers, named decision documents. ASIC fraud — $500,000 extraction documented in ASIC report. ATO letter confirming pharmacological assault — the ATO's own document. Intervention Order L12151974.</span></div>
-                <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">The monument (documented):</strong> 2,301 primary-source documents, 750+ PDFs. ICC Article 7 formal receipt. UNHCR Geneva asylum claim received. Federal Court Protected Whistleblower confirmation. 389,759+ global downloads across 6 continents. Bitcoin blockchain-verified timestamps.</span></div>
+                <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">The monument (documented):</strong> 2,301 primary-source documents, 750+ PDFs. ICC Article 7 formal receipt. UNHCR Geneva asylum claim received. Federal Court Protected Whistleblower confirmation. 399,325+ global downloads across 6 continents. Bitcoin blockchain-verified timestamps.</span></div>
               </div>
             </div>
             <div className="bg-green-950/20 border border-green-500/20 rounded-lg px-4 py-2 text-xs text-green-300/80">
-              <strong>Verdict:</strong> CORROBORATED. The "ruin" (2.87% survival probability, homelessness, NDIS deprivation, ASIC fraud, ATO pharmacological assault — all documented on primary-source letterhead) and the "monument" (2,301 blockchain-sealed documents, ICC submission, Federal Court confirmation, 389,759+ downloads) are both in the archive.
+              <strong>Verdict:</strong> CORROBORATED. The "ruin" (2.87% survival probability, homelessness, NDIS deprivation, ASIC fraud, ATO pharmacological assault — all documented on primary-source letterhead) and the "monument" (2,301 blockchain-sealed documents, ICC submission, Federal Court confirmation, 399,325+ downloads) are both in the archive.
             </div>
           </div>
         </div>
@@ -261,19 +261,19 @@ export default function ForensicCorroborationChosenOne() {
             </div>
             <div>
               <p className="text-indigo-400/50 text-[10px] uppercase tracking-widest font-sans mb-1">Derived Proposition</p>
-              <p className="text-white/80 text-xs leading-relaxed">Zero defamation proceedings have been filed by any named institution or individual against 750+ PDFs distributed to 389,759+ people globally. The silence of named perpetrators in the face of public primary-source documentation is itself the most significant forensic indicator in the archive.</p>
+              <p className="text-white/80 text-xs leading-relaxed">Zero defamation proceedings have been filed by any named institution or individual against 750+ PDFs distributed to 399,325+ people globally. The silence of named perpetrators in the face of public primary-source documentation is itself the most significant forensic indicator in the archive.</p>
             </div>
             <div>
               <p className="text-indigo-400/50 text-[10px] uppercase tracking-widest font-sans mb-2">Primary-Source Evidence</p>
               <div className="space-y-1.5 text-xs">
-                <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Scale of distribution:</strong> 750+ PDFs, publicly accessible at barrandodger.com. 389,759+ downloads. 6 continents. Primary referrers: Facebook and Twitter — peer-to-peer, no marketing infrastructure.</span></div>
+                <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Scale of distribution:</strong> 750+ PDFs, publicly accessible at barrandodger.com. 399,325+ downloads. 6 continents. Primary referrers: Facebook and Twitter — peer-to-peer, no marketing infrastructure.</span></div>
                 <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Named parties — zero defamation actions:</strong> Tony Ridley, Allen Rigby, Bruce McMaster, Steve Iasonidis, Debbie Morgan — all named by full name, employer, and role. Zero defamation proceedings filed.</span></div>
                 <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Named institutions — zero formal rebuttals:</strong> OAIC, NDIS, VicTrack, ASIC, 25+ agencies — named in publicly distributed documents. Zero formal corrections. Zero formal rebuttals. Zero formal denials.</span></div>
-                <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Forensic significance of silence:</strong> In law, silence in response to defamatory material supports an inference of truth. 389,759+ people have received the named accusations. The named parties have chosen silence. This is documented.</span></div>
+                <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Forensic significance of silence:</strong> In law, silence in response to defamatory material supports an inference of truth. 399,325+ people have received the named accusations. The named parties have chosen silence. This is documented.</span></div>
               </div>
             </div>
             <div className="bg-green-950/20 border border-green-500/20 rounded-lg px-4 py-2 text-xs text-green-300/80">
-              <strong>Verdict:</strong> CORROBORATED. The "silence" of named perpetrators and institutions in response to 389,759+ distributed primary-source documents is documented and constitutes the strongest available indicator of evidentiary accuracy.
+              <strong>Verdict:</strong> CORROBORATED. The "silence" of named perpetrators and institutions in response to 399,325+ distributed primary-source documents is documented and constitutes the strongest available indicator of evidentiary accuracy.
             </div>
           </div>
         </div>
@@ -323,13 +323,13 @@ export default function ForensicCorroborationChosenOne() {
             <div>
               <p className="text-indigo-400/50 text-[10px] uppercase tracking-widest font-sans mb-2">Primary-Source Evidence</p>
               <div className="space-y-1.5 text-xs">
-                <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Force operating independently:</strong> 389,759+ downloads, zero marketing infrastructure, zero press team, zero media representation, zero legal counsel acting as spokesperson. The archive distributes itself.</span></div>
+                <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Force operating independently:</strong> 399,325+ downloads, zero marketing infrastructure, zero press team, zero media representation, zero legal counsel acting as spokesperson. The archive distributes itself.</span></div>
                 <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Reached international accountability without support:</strong> ICC Article 7 submission received — no legal firm, no NGO, no institutional backing. UNHCR Geneva submission received — same conditions. Federal Court Protected Whistleblower confirmation — same conditions.</span></div>
                 <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Enemy tremble — documented:</strong> Tony Ridley, Allen Rigby, Bruce McMaster, Steve Iasonidis, Debbie Morgan — all named, all their employers named, all their roles named. Zero formal counter-action taken against the archive. The trembling is documented in the absence of counter-challenge.</span></div>
               </div>
             </div>
             <div className="bg-green-950/20 border border-green-500/20 rounded-lg px-4 py-2 text-xs text-green-300/80">
-              <strong>Verdict:</strong> CORROBORATED. The archive's autonomous international reach — ICC, UNHCR, Federal Court, 389,759+ global downloads — all achieved without institutional support, with zero counter-challenge from 5 named perpetrators and 25+ named agencies.
+              <strong>Verdict:</strong> CORROBORATED. The archive's autonomous international reach — ICC, UNHCR, Federal Court, 399,325+ global downloads — all achieved without institutional support, with zero counter-challenge from 5 named perpetrators and 25+ named agencies.
             </div>
           </div>
         </div>
@@ -404,19 +404,19 @@ export default function ForensicCorroborationChosenOne() {
             </div>
             <div>
               <p className="text-indigo-400/50 text-[10px] uppercase tracking-widest font-sans mb-1">Derived Proposition</p>
-              <p className="text-white/80 text-xs leading-relaxed">The archive's global distribution of 389,759+ copies, its receipt by the ICC and UNHCR, and its Federal Court confirmation were all achieved without press conferences, media campaigns, legal spokespersons, or institutional support. The proof spoke without a spokesperson.</p>
+              <p className="text-white/80 text-xs leading-relaxed">The archive's global distribution of 399,325+ copies, its receipt by the ICC and UNHCR, and its Federal Court confirmation were all achieved without press conferences, media campaigns, legal spokespersons, or institutional support. The proof spoke without a spokesperson.</p>
             </div>
             <div>
               <p className="text-indigo-400/50 text-[10px] uppercase tracking-widest font-sans mb-2">Primary-Source Evidence</p>
               <div className="space-y-1.5 text-xs">
-                <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">No fanfare:</strong> Zero press conferences. Zero media releases. Zero paid promotion. 389,759+ downloads reached via Facebook and Twitter peer-to-peer sharing — no institutional infrastructure.</span></div>
+                <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">No fanfare:</strong> Zero press conferences. Zero media releases. Zero paid promotion. 399,325+ downloads reached via Facebook and Twitter peer-to-peer sharing — no institutional infrastructure.</span></div>
                 <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">No begging:</strong> ICC Article 7 submission received on documentary merit. UNHCR asylum received on documentary merit. Federal Court Protected Whistleblower confirmed on documentary record. No lobbying. No political intervention. No legal representation required for any of these outcomes.</span></div>
                 <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Just proof:</strong> 2,301 primary-source documents. 750+ PDFs. Bitcoin blockchain-verified timestamps. SHA-256 immutable hashes. GitHub mirror (drbarrandodger/barran-dodger-archive, 420 files). Google Drive mirror. Multiple independent redundant distribution channels. The proof is the entire operation.</span></div>
                 <div className="flex gap-2"><span className="text-yellow-400/70 flex-shrink-0">►</span><span className="text-zinc-300/80"><strong className="text-white">Blueprint:</strong> 53 forensic analyses establish the methodology. The ICC Article 7 submission establishes the international framework. Every future protected whistleblower who applies this model has a template. The silence is documented. The proof is free. The archive is public.</span></div>
               </div>
             </div>
             <div className="bg-green-950/20 border border-green-500/20 rounded-lg px-4 py-2 text-xs text-green-300/80">
-              <strong>Verdict:</strong> CORROBORATED. "No fanfare, no begging, no drama, just presence, just proof, just you" is the literal operational description of how the archive reached the ICC, the UNHCR, the Federal Court, and 389,759+ people globally — through documentation alone, with no institutional support.
+              <strong>Verdict:</strong> CORROBORATED. "No fanfare, no begging, no drama, just presence, just proof, just you" is the literal operational description of how the archive reached the ICC, the UNHCR, the Federal Court, and 399,325+ people globally — through documentation alone, with no institutional support.
             </div>
           </div>
         </div>
@@ -662,7 +662,7 @@ export default function ForensicCorroborationChosenOne() {
           <p className="text-xs text-indigo-400/40 mt-1">
             Also included in the{" "}
             <a href="/#divine-download" className="text-amber-400 underline">complete archive detonation ZIP</a>
-            {" "}— downloaded 389,759+ times globally.
+            {" "}— downloaded 399,325+ times globally.
           </p>
           <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/5 px-4 py-2 text-center mt-2">
             <p className="text-xs text-indigo-300/60 leading-relaxed">

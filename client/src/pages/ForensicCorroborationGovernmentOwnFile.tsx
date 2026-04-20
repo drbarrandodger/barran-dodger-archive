@@ -81,7 +81,7 @@ export default function ForensicCorroborationGovernmentOwnFile() {
           <p className="text-xs text-indigo-400/50 text-center font-sans mt-1">
             Part of the{" "}
             <a href="/#divine-download" className="text-yellow-400/70 underline">complete archive detonation ZIP</a>
-            {" "}— 389,759+ downloads globally, six continents.
+            {" "}— 399,325+ downloads globally, six continents.
           </p>
         </div>
 

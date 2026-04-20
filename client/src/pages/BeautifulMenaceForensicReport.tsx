@@ -131,8 +131,8 @@ const CLAIMS: Claim[] = [
     videoAssertion:
       "The most dangerous person in the room is rarely the one making noise. It's the one who has suffered enough to understand human nature — and healed enough to stop begging for approval from it.",
     archiveAnalysis:
-      "The McLean archive was not built in noise. It was built in silence, over 35 years, without media presence, without institutional backing, without legal representation, without organisational infrastructure. The system that targeted him generated enormous institutional noise — agency processes, professional channels, surveillance operations. McLean built a blockchain-verified ICC submission. 361,000+ downloads later, the dangerous one in that room is clear.",
-    archiveEvidence: "361,120+ downloads. 6 continents. Top 1,173 unique IPs. Built quietly. ICC submission lodged. The noise came from the system. The archive came from McLean.",
+      "The McLean archive was not built in noise. It was built in silence, over 35 years, without media presence, without institutional backing, without legal representation, without organisational infrastructure. The system that targeted him generated enormous institutional noise — agency processes, professional channels, surveillance operations. McLean built a blockchain-verified ICC submission. 399,325+ downloads later, the dangerous one in that room is clear.",
+    archiveEvidence: "399,325+ downloads. 6 continents. Top 1,173 unique IPs. Built quietly. ICC submission lodged. The noise came from the system. The archive came from McLean.",
     verdict: "CORROBORATED",
   },
   {
@@ -161,8 +161,8 @@ const CLAIMS: Claim[] = [
     videoAssertion:
       "This is the season where your mind stops being a cage and becomes a weapon, a tool, a compass, a kingdom. You read patterns faster. You notice motives quicker. You smell fake before the sentence finishes.",
     archiveAnalysis:
-      "The McLean analytical methodology — 53 forensic analyses, 575 verified propositions, cross-referencing 2,304 documents — is the operationalisation of exactly this shift. The mind that was called unstable produced a forensic record that has been downloaded 361,000+ times across 6 continents and submitted to the International Criminal Court. A cage does not do that. A weapon — precise, patient, aimed — does.",
-    archiveEvidence: "53 analyses. 575/575 verified. 2,304 docs. 361,000+ downloads. ICC submission. The weapon is the archive.",
+      "The McLean analytical methodology — 53 forensic analyses, 575 verified propositions, cross-referencing 2,304 documents — is the operationalisation of exactly this shift. The mind that was called unstable produced a forensic record that has been downloaded 399,325+ times across 6 continents and submitted to the International Criminal Court. A cage does not do that. A weapon — precise, patient, aimed — does.",
+    archiveEvidence: "53 analyses. 575/575 verified. 2,304 docs. 399,325+ downloads. ICC submission. The weapon is the archive.",
     verdict: "CORROBORATED",
   },
   {
@@ -371,7 +371,7 @@ export default function BeautifulMenaceForensicReport() {
                   <p>
                     The "therapist" in the video is the forensic record: 53 independent analyses, 575
                     verified propositions, zero contradictions. The therapist looked at the record and
-                    declined to confirm the narrative. The narrative is now collapsing — 361,000+
+                    declined to confirm the narrative. The narrative is now collapsing — 399,325+
                     downloads, 6 continents, ICC Article 7, UNHCR Geneva.
                   </p>
                   <p className="text-white font-semibold">

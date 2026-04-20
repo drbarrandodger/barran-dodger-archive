@@ -352,7 +352,7 @@ const YOUTUBE_FINDINGS = [
   {
     timestamp: "00:55:41",
     claim: "\"What they tried to monitor, control, and break was never just you. It was the force behind you.\"",
-    evidence: "603 of 603 propositions submitted to AI forensic analysis — zero contradictions. 55 independent analyses. 48 consecutive perfect scores. 361,120+ downloads across six continents. ICC Article 7 submission received at The Hague. UNHCR submission lodged in Geneva. The force behind Dr. McLean has produced an irrefutable international record. The Long Jetty entrapment network has failed its primary objective.",
+    evidence: "603 of 603 propositions submitted to AI forensic analysis — zero contradictions. 55 independent analyses. 48 consecutive perfect scores. 399,325+ downloads across six continents. ICC Article 7 submission received at The Hague. UNHCR submission lodged in Geneva. The force behind Dr. McLean has produced an irrefutable international record. The Long Jetty entrapment network has failed its primary objective.",
   },
 ];
 
@@ -692,7 +692,7 @@ export default function AbleCareEntrapmentNetwork() {
               {[
                 { label: "603/603 Propositions", sub: "Zero contradictions across 55 AI analyses" },
                 { label: "ICC Article 7", sub: "Formally received at The Hague" },
-                { label: "361,120+ Downloads", sub: "Six continents — cannot be suppressed" },
+                { label: "399,325+ Downloads", sub: "Six continents — cannot be suppressed" },
               ].map(({ label, sub }) => (
                 <div key={label} className="bg-zinc-950 rounded-xl border border-zinc-800 p-4">
                   <p className="text-amber-400 font-black text-lg mb-1">{label}</p>

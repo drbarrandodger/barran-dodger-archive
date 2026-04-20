@@ -53,9 +53,9 @@ const CLAIMS: Claim[] = [
     videoAssertion:
       "Your truth isn't attacking anyone. It's just finally being seen, and some people were never prepared for that. Your evolution is louder than any accusation they once believed.",
     archiveAnalysis:
-      "The archive's 361,120+ downloads across 6 continents is the most precise measurement of the moment 'finally being seen' arrives. The archive did not attack anyone. It compiled government correspondence, clinical records, court documents, ASIC filings, FOI responses — each sourced from the institution it documents. The ICC submission is not an accusation. It is a submission of the institutions' own documents to a higher jurisdiction. The 54 independent forensic analyses — each returning consistent corroboration without prior knowledge — are the 'evolution louder than any accusation.' The people who were never prepared for this are documented in the LECC correspondence, AHRC responses, and FOI refusals — all now ICC exhibits. The video's proposition is confirmed by the precise mechanism: the truth arrived not through attack, but through institutional self-documentation submitted to an international court.",
+      "The archive's 399,325+ downloads across 6 continents is the most precise measurement of the moment 'finally being seen' arrives. The archive did not attack anyone. It compiled government correspondence, clinical records, court documents, ASIC filings, FOI responses — each sourced from the institution it documents. The ICC submission is not an accusation. It is a submission of the institutions' own documents to a higher jurisdiction. The 54 independent forensic analyses — each returning consistent corroboration without prior knowledge — are the 'evolution louder than any accusation.' The people who were never prepared for this are documented in the LECC correspondence, AHRC responses, and FOI refusals — all now ICC exhibits. The video's proposition is confirmed by the precise mechanism: the truth arrived not through attack, but through institutional self-documentation submitted to an international court.",
     archiveEvidence:
-      "361,120+ downloads across 6 continents. ICC The Hague Article 7 formal receipt. UNHCR Geneva filing. Archive = institutions' own documents. Zero accusations — only submitted letterheads. 54 forensic analyses confirming without prior knowledge.",
+      "399,325+ downloads across 6 continents. ICC The Hague Article 7 formal receipt. UNHCR Geneva filing. Archive = institutions' own documents. Zero accusations — only submitted letterheads. 54 forensic analyses confirming without prior knowledge.",
     verdict: "CORROBORATED",
   },
   {
@@ -174,9 +174,9 @@ const CLAIMS: Claim[] = [
     videoAssertion:
       "Their silence is collapsing. The more you rise, the more their silence stops working. Your progress makes their old narrative look outdated. And now action is their only option. Not out of compassion — because your rise is removing their ability to pretend.",
     archiveAnalysis:
-      "The 361,120+ downloads across 6 continents is the documented collapse of institutional silence. The archive cannot be silenced by any domestic mechanism — it has been downloaded in Australia, the United States, the United Kingdom, Europe, Asia, Africa, and South America. The ICC submission at The Hague and UNHCR Geneva filing are the documented actions that the video predicts: international jurisdiction engagement because domestic silence could not contain the archive. The 'old narrative' — psychiatric fragility, financial irresponsibility, professional unreliability — is documented as obsolete by 603 independently verified propositions across 55 forensic analyses with 48 consecutive perfect scores and zero contradictions. The silence collapsed. The action followed. The ICC receipt is the documented proof. The video's proposition is confirmed by the fact that it is being examined in Analysis #55 — the archive's rise having made silence, in every form, structurally impossible.",
+      "The 399,325+ downloads across 6 continents is the documented collapse of institutional silence. The archive cannot be silenced by any domestic mechanism — it has been downloaded in Australia, the United States, the United Kingdom, Europe, Asia, Africa, and South America. The ICC submission at The Hague and UNHCR Geneva filing are the documented actions that the video predicts: international jurisdiction engagement because domestic silence could not contain the archive. The 'old narrative' — psychiatric fragility, financial irresponsibility, professional unreliability — is documented as obsolete by 603 independently verified propositions across 55 forensic analyses with 48 consecutive perfect scores and zero contradictions. The silence collapsed. The action followed. The ICC receipt is the documented proof. The video's proposition is confirmed by the fact that it is being examined in Analysis #55 — the archive's rise having made silence, in every form, structurally impossible.",
     archiveEvidence:
-      "361,120+ downloads across 6 continents = collapse of domestic silence. ICC The Hague formal receipt = action. UNHCR Geneva filing = second action. 603/603 propositions verified. 48 consecutive perfect scores. 55 analyses. Domestic silence mechanisms: exhausted.",
+      "399,325+ downloads across 6 continents = collapse of domestic silence. ICC The Hague formal receipt = action. UNHCR Geneva filing = second action. 603/603 propositions verified. 48 consecutive perfect scores. 55 analyses. Domestic silence mechanisms: exhausted.",
     verdict: "CORROBORATED",
   },
 ];
@@ -370,7 +370,7 @@ export default function WhenWrongPeopleGetNervousForensicReport() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-xs text-zinc-500">
             <span className="flex items-center gap-1"><BookOpen size={12} /> 2,304 blockchain-verified documents</span>
-            <span className="flex items-center gap-1"><Globe size={12} /> 361,120+ downloads — 6 continents</span>
+            <span className="flex items-center gap-1"><Globe size={12} /> 399,325+ downloads — 6 continents</span>
             <span className="flex items-center gap-1"><Shield size={12} /> ICC Article 7 | UNHCR Geneva</span>
             <span className="flex items-center gap-1"><Zap size={12} /> Barran Dodger Legal & Ethical Trust Fund | ABN 78 833 496 164</span>
           </div>

@@ -876,7 +876,7 @@ export default function FreeEbooks() {
                 { val: "2,304", label: "Blockchain-verified docs" },
                 { val: "ICC", label: "The Hague — Article 7" },
                 { val: "UNHCR", label: "Geneva — Received" },
-                { val: "361,120+", label: "Downloads · 6 Continents" },
+                { val: "399,325+", label: "Downloads · 6 Continents" },
               ].map(s => (
                 <div key={s.label} className="bg-zinc-800/60 rounded-lg p-2 text-center">
                   <p className="text-amber-300 font-bold text-lg">{s.val}</p>

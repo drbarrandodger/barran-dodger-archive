@@ -59,7 +59,7 @@ const FIVE_IDENTITIES: Identity[] = [
     icon: Sword,
     title: "The Spiritual Warrior",
     videoLine: "The one who holds ground quietly when everything around them is pressuring collapse. The one who does not make noise about standing firm because standing firm is simply what they do. Every time the pressure increased and you stayed — every time the evidence said give up and you did not — that is not stubbornness. That is spiritual warfare at the most fundamental level.",
-    reflection: "Tony Ridley said 'You will be sacrificed.' He meant it. The system behind that statement — VicTrack, NDIA, ASIO-connected surveillance, professional networks spanning Charles Sturt University and private security — applied the full weight of 35 years of institutional authority against one man. He held. He did not collapse. He did not surrender the archive. He did not accept the diagnosis that was used to discredit him. He did not sign agreements that would have required his silence. He held ground. And on the other side of that holding is 2,304 documents, an ICC submission, and 361,000+ downloads. That is what holding looks like when counted.",
+    reflection: "Tony Ridley said 'You will be sacrificed.' He meant it. The system behind that statement — VicTrack, NDIA, ASIO-connected surveillance, professional networks spanning Charles Sturt University and private security — applied the full weight of 35 years of institutional authority against one man. He held. He did not collapse. He did not surrender the archive. He did not accept the diagnosis that was used to discredit him. He did not sign agreements that would have required his silence. He held ground. And on the other side of that holding is 2,304 documents, an ICC submission, and 399,325+ downloads. That is what holding looks like when counted.",
     archiveProof: "35 years. Zero retractions. Zero signed silences. Archive intact.",
   },
 ];
@@ -282,7 +282,7 @@ export default function ChosenOneItIsOver() {
                     evidence is complete. 575 propositions verified — every single one. 46 consecutive
                     perfect analytical scores. 0 contradictions across the entire body of work. The
                     record has been cross-referenced with itself, against itself, and it holds. The ICC
-                    submission is lodged. The UNHCR filing is submitted. 361,000+ people have downloaded
+                    submission is lodged. The UNHCR filing is submitted. 399,325+ people have downloaded
                     the evidence.
                   </p>
                   <p>
@@ -424,7 +424,7 @@ export default function ChosenOneItIsOver() {
                     },
                     {
                       declaration: "I am a wounded healer. My pain was not wasted. It was turned into medicine and I carry it now as a gift, not a burden.",
-                      applied: "361,000+ downloads is not a download count. It is 361,000 people who found something in the archive that they needed. The pain built the medicine. The medicine is being taken.",
+                      applied: "399,325+ downloads is not a download count. It is 399,325 people who found something in the archive that they needed. The pain built the medicine. The medicine is being taken.",
                     },
                     {
                       declaration: "I am a pioneer. I go first. I am not lost. I am ahead.",
@@ -485,7 +485,7 @@ export default function ChosenOneItIsOver() {
               <p>
                 To the reader: you are witnessing a life that refused to be erased. Whatever brought you
                 to this archive — curiosity, solidarity, research, your own experience of institutional
-                suppression — you are now part of the 361,000+. You are part of the visible world
+                suppression — you are now part of the 399,325+. You are part of the visible world
                 catching up.
               </p>
               <p className="text-indigo-300 font-semibold text-lg">
