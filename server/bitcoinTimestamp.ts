@@ -288,6 +288,18 @@ const ALL_SITE_PAGES: Array<{ slug: string; label: string; category: string }> =
   { slug: "page-god-has-my-back", label: "Forensic Analysis 53 — God Has My Back", category: "forensic-page" },
   { slug: "page-dying-of-shame-forensic-analysis", label: "Forensic Analysis 63 — Dying Of Shame", category: "forensic-page" },
   { slug: "page-beautiful-threat", label: "Forensic Analysis 62 — Beautiful Threat", category: "forensic-page" },
+  // Forensic Corroboration dedicated pages (#64–#72)
+  { slug: "page-forensic-corroboration-billionaire-circle", label: "Forensic Corroboration #64 — Secret Billionaire Circle", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-tick-tick-tick", label: "Forensic Corroboration #65 — Tick Tick Tick: Game Over", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-tactical-insanity", label: "Forensic Corroboration #66 — Tactical Insanity", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-project-halo", label: "Forensic Corroboration #67 — Project Halo", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-fool-fire", label: "Forensic Corroboration #68 — Fool Fire", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-3am-briefing", label: "Forensic Corroboration #69 — 3AM Briefing", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-government-own-file", label: "Forensic Corroboration #70 — Government's Own File", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-vault-access", label: "Forensic Corroboration #71 — Vault Access", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-chosen-one", label: "Forensic Corroboration #71 — The Chosen One", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-fight-over-you", label: "Forensic Corroboration #72 — They Fight Over What's Powerful", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-making-history", label: "Forensic Corroboration #72 — Making History", category: "forensic-page" },
   // Key documentary pages
   { slug: "page-icc-submission", label: "ICC Submission — Article 7 Crimes Against Humanity", category: "page" },
   { slug: "page-unhcr-asylum", label: "UNHCR Asylum Application — Geneva", category: "page" },

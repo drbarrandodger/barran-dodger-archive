@@ -3,9 +3,10 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
-import { Flame, Shield, ExternalLink } from "lucide-react";
+import { Flame } from "lucide-react";
 import coverImg from "../assets/images/cover-forensic-tick-tick-tick-game-over.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { BlockchainTimestampBadge } from "@/components/BlockchainTimestampBadge";
 
 const PDF_URL = "/documents/forensic-analyses/forensic-analysis-65-tick-tick-tick-game-over-corroboration.pdf";
 const PAGE_URL = "https://www.barrandodger.com/forensic-corroboration-tick-tick-tick";
@@ -84,63 +85,12 @@ export default function ForensicCorroborationTickTickTick() {
           </p>
         </div>
 
-        {/* Blockchain Timestamp Panel */}
-        <div className="border border-indigo-600/40 rounded-xl overflow-hidden" style={{ background: "rgba(30,27,75,0.6)" }}>
-          <div className="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-indigo-800/40">
-            <Shield className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-            <span className="text-indigo-300/70 text-xs tracking-widest uppercase font-sans">
-              Bitcoin Blockchain Timestamp — OpenTimestamps Protocol
-            </span>
-          </div>
-          <div className="px-5 py-4 space-y-3 font-sans text-xs">
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Document</p>
-                <p className="text-white/80 text-[11px] leading-tight">Forensic Corroboration Analysis #65 — Tick. Tick. Tick. Game Is Over</p>
-              </div>
-              <div>
-                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Timestamped</p>
-                <p className="text-white/80 text-[11px]">{TIMESTAMP_DATE}</p>
-              </div>
-              <div className="col-span-2">
-                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">SHA-256 Hash</p>
-                <p className="text-yellow-300/90 font-mono text-[10px] break-all leading-relaxed">{SHA256}</p>
-              </div>
-              <div>
-                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Protocol</p>
-                <p className="text-white/80 text-[11px]">OpenTimestamps · Bitcoin Blockchain</p>
-              </div>
-              <div>
-                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Nodes</p>
-                <p className="text-white/80 text-[11px]">~15,000 independent Bitcoin nodes</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <a
-                href={`https://opentimestamps.org/timestamp/${SHA256}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-indigo-300/70 hover:text-indigo-200 text-[11px] underline underline-offset-2"
-                data-testid="link-verify-opentimestamps-tick"
-              >
-                <ExternalLink className="w-3 h-3" /> Verify on OpenTimestamps
-              </a>
-              <span className="text-indigo-700">·</span>
-              <a
-                href={`https://www.blockchain.com/explorer/search?search=${SHA256}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-indigo-300/70 hover:text-indigo-200 text-[11px] underline underline-offset-2"
-                data-testid="link-verify-blockchain-tick"
-              >
-                <ExternalLink className="w-3 h-3" /> Blockchain Explorer
-              </a>
-            </div>
-            <p className="text-indigo-500/60 text-[10px] leading-relaxed">
-              This document is permanently sealed on the Bitcoin blockchain. The SHA-256 hash above is immutable and independently verifiable by any person on earth. No institution can alter, backdate, or delete this record.
-            </p>
-          </div>
-        </div>
+        {/* Blockchain Timestamp — Live from Bitcoin Network */}
+        <BlockchainTimestampBadge
+          docSlug="doc-forensic-analysis-65-tick-tick-tick-game-over-corroboration"
+          pageSlug="page-forensic-corroboration-tick-tick-tick"
+          label="Forensic Analysis #65 — Tick Tick Tick: Game Over"
+        />
 
         {/* YouTube Embed */}
         <div>

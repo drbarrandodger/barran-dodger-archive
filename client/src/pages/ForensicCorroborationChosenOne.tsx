@@ -5,6 +5,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Flame, Shield, ExternalLink, AlertTriangle, CheckCircle, XCircle, Download, Link2 } from "lucide-react";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { BlockchainTimestampBadge } from "@/components/BlockchainTimestampBadge";
 import coverImg from "../assets/images/cover-forensic-corroboration-chosen-one.png";
 
 const VIDEO_ID = "_dtQrqCX-ac";
@@ -618,33 +619,12 @@ export default function ForensicCorroborationChosenOne() {
           </div>
         </div>
 
-        {/* Blockchain Timestamp Panel */}
-        <div className="rounded-xl border border-indigo-600/30 bg-indigo-950/20 overflow-hidden">
-          <div className="flex items-center gap-2 px-5 pt-4 pb-2 border-b border-indigo-700/20">
-            <Link2 className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-            <span className="text-indigo-300/70 text-xs tracking-widest uppercase font-sans">Blockchain Timestamp — Permanent Record</span>
-          </div>
-          <div className="px-5 py-4 space-y-3 font-sans text-xs">
-            <div className="grid grid-cols-1 gap-2">
-              <div>
-                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Document SHA-256 Hash</p>
-                <p className="text-yellow-300/90 font-mono text-[10px] break-all select-all">d61a94fcdbc661e2fa316b92fa2867f9689c457a2cac4f6623f1bb420ba78944</p>
-              </div>
-              <div>
-                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Timestamp Protocol</p>
-                <p className="text-white/80 text-[11px]">OpenTimestamps · Bitcoin Blockchain · 19 April 2026 AEST</p>
-              </div>
-              <div>
-                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Verification</p>
-                <p className="text-white/80 text-[11px]">15,000+ independent Bitcoin nodes confirm existence at time of generation. Hash is cryptographically immutable — any alteration of the document produces a different hash, making tampering immediately detectable.</p>
-              </div>
-              <div>
-                <p className="text-indigo-400/50 uppercase tracking-wider text-[10px] mb-0.5">Included In</p>
-                <p className="text-white/80 text-[11px]">Detonation Archive ZIP — auto-included · GitHub mirror (drbarrandodger/barran-dodger-archive) · barrandodger.com permanent record</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Blockchain Timestamp — Live from Bitcoin Network */}
+        <BlockchainTimestampBadge
+          docSlug="doc-forensic-analysis-71-chosen-one-corroboration"
+          pageSlug="page-forensic-corroboration-chosen-one"
+          label="Forensic Analysis #71 — The Chosen One"
+        />
 
         {/* Download PDF */}
         <div className="rounded-xl border border-yellow-500/20 bg-yellow-950/10 px-5 py-5 text-center space-y-3">

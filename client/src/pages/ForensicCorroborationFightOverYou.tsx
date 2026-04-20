@@ -5,6 +5,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Flame, Shield, ExternalLink, AlertTriangle, CheckCircle, XCircle, Download, Link2 } from "lucide-react";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { BlockchainTimestampBadge } from "@/components/BlockchainTimestampBadge";
 import coverImg from "../assets/images/cover-forensic-fight-over-you.png";
 
 const VIDEO_ID = "n_6nw2kEnPQ";
@@ -453,12 +454,12 @@ export default function ForensicCorroborationFightOverYou() {
           </div>
         </div>
 
-        {/* Blockchain timestamp */}
-        <div className="border border-indigo-700/20 rounded-xl px-6 py-4 bg-black/20 font-sans space-y-2">
-          <p className="text-indigo-400/50 text-[10px] uppercase tracking-widest">Blockchain Timestamp — Bitcoin OpenTimestamps Protocol</p>
-          <p className="text-zinc-400/60 text-[10px] font-mono break-all">SHA-256: a3f82e1dc7b9045e6a1f94c8d530b2e75f46d318c9a07e2b81049d3f5c6e8a91</p>
-          <p className="text-zinc-500/50 text-[10px]">15,000+ independent verification nodes · Cryptographically immutable · Independently verifiable by any person on earth</p>
-        </div>
+        {/* Blockchain Timestamp — Live from Bitcoin Network */}
+        <BlockchainTimestampBadge
+          docSlug="doc-forensic-analysis-72-fight-over-you"
+          pageSlug="page-forensic-corroboration-fight-over-you"
+          label="Forensic Analysis #72 — They Fight Over What's Powerful"
+        />
 
         {/* Cross-links */}
         <ArchiveCrossLinks currentSlug="forensic-corroboration-fight-over-you" />

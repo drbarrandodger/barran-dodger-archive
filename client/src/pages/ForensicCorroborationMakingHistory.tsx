@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 import coverImg from "../assets/images/cover-forensic-making-history.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { BlockchainTimestampBadge } from "@/components/BlockchainTimestampBadge";
 
 const PDF_URL = "/documents/forensic-analyses/forensic-analysis-72-making-history-corroboration.pdf";
 const PAGE_URL = "https://www.barrandodger.com/forensic-corroboration-making-history";
@@ -304,31 +305,12 @@ export default function ForensicCorroborationMakingHistory() {
           </p>
         </div>
 
-        {/* Timestamp Block */}
-        <div className="border border-amber-500/20 rounded-xl px-5 py-4" style={{ background: "rgba(120,80,0,0.08)" }}>
-          <div className="flex items-center gap-2 mb-3">
-            <Clock className="w-4 h-4 text-amber-400/70" />
-            <span className="text-amber-400/70 font-mono text-xs uppercase tracking-widest">Forensic Timestamp — Blockchain Anchored</span>
-          </div>
-          <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-            <div>
-              <p className="text-white/40 mb-0.5">Analysis Published</p>
-              <p className="text-white/80">{TIMESTAMP_DATE}</p>
-            </div>
-            <div>
-              <p className="text-white/40 mb-0.5">Examination Number</p>
-              <p className="text-white/80">Forensic Analysis #72</p>
-            </div>
-            <div>
-              <p className="text-white/40 mb-0.5">SHA-256 Integrity Hash</p>
-              <p className="text-white/60 break-all">Pending blockchain confirmation — hash sealed at PDF generation</p>
-            </div>
-            <div>
-              <p className="text-white/40 mb-0.5">Archive Status</p>
-              <p className="text-green-400/80">Live · {liveCount} downloads · Zero rebuttals</p>
-            </div>
-          </div>
-        </div>
+        {/* Blockchain Timestamp — Live from Bitcoin Network */}
+        <BlockchainTimestampBadge
+          docSlug="doc-forensic-analysis-72-making-history-corroboration"
+          pageSlug="page-forensic-corroboration-making-history"
+          label="Forensic Analysis #72 — Making History"
+        />
 
         {/* Download + Share */}
         <div className="space-y-4">
