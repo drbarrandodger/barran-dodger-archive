@@ -78,10 +78,9 @@ export default function ForensicCorroborationFightOverYou() {
         {/* Download PDF */}
         <div className="flex justify-center">
           <ViralDownloadButton
-            href={PDF_PATH}
+            url={PDF_PATH}
             filename={PDF_FILENAME}
             label="Download Forensic Analysis #72 PDF"
-            data-testid="btn-download-fight-over-you-pdf"
           />
         </div>
 
