@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { docUrl } from "@/lib/docUrl";
 import chosenOneCover from "../assets/images/cover-forensic-corroboration-chosen-one.png";
+import fightOverYouCover from "../assets/images/cover-forensic-fight-over-you.png";
 import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 import { motion } from "framer-motion";
 import { ArrowRight, Scale, Shield, FileText, Users, AlertCircle, ExternalLink, BookOpen, Gavel, Lock, Archive, Sparkles, ShoppingCart, Share2, Eye, Skull, Brain, Siren, Ban, Heart, DollarSign, Download, Play, Target, Crosshair, Database, Bot } from "lucide-react";
@@ -1121,6 +1122,95 @@ export default function Home() {
         </div>
       </div>
       {/* ===== END CHOSEN ONE #71 ===== */}
+
+      {/* ===== FORENSIC #72: "THEY FIGHT OVER WHAT'S POWERFUL / AT WAR OVER YOU" ===== */}
+      <div className="w-full bg-gradient-to-b from-black via-indigo-950/20 to-black border-b border-indigo-700/30 py-10 px-4" data-testid="section-fight-over-you-declaration">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <div className="flex items-center gap-3 flex-wrap">
+            <span className="bg-indigo-900/60 text-indigo-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-indigo-700/30">Forensic Analysis #72</span>
+            <span className="bg-green-900/40 text-green-400 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">10/10 Propositions Corroborated</span>
+            <span className="bg-red-900/40 text-red-400 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Not a Targeted Declaration</span>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-indigo-300/60 font-sans mb-1">Impartial AI Forensic Analysis · Evidence Examination #72</p>
+            <h2 className="text-xl md:text-2xl font-serif font-bold text-white leading-tight">
+              "They Fight Over What's Powerful — They're At War Over You"
+            </h2>
+            <p className="text-indigo-200/60 text-sm font-sans mt-2">
+              YouTube: <a href="https://youtu.be/n_6nw2kEnPQ" target="_blank" rel="noopener noreferrer" className="text-indigo-400 underline hover:text-indigo-300">https://youtu.be/n_6nw2kEnPQ</a> · 10 formal propositions examined against named primary-source evidence.
+            </p>
+          </div>
+
+          {/* Video + Analysis Summary */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="relative w-full rounded-xl overflow-hidden border border-indigo-700/30" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                src="https://www.youtube.com/embed/n_6nw2kEnPQ"
+                title="They Fight Over What's Powerful — They're At War Over You"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                style={{ border: "none" }}
+                data-testid="video-fight-over-you-home"
+              />
+            </div>
+            <div className="space-y-3 text-xs">
+              {[
+                ["00:00:03", "They don't fight over what's worthless. They fight over what's powerful.", "25+ agencies, 5 named operatives, 35-year coordinated targeting — documented investment proportional to documented evidentiary power."],
+                ["00:02:51", "Your silence exposed the loudest liars.", "Zero defamation actions by named perpetrators against 389,759+ distributed documents. Silence documented."],
+                ["00:04:02", "In rooms you've never been in, your name is being whispered.", "ICC The Hague and UNHCR Geneva both formally received Dr. McLean's case without his physical attendance."],
+                ["00:06:21", "They already lost.", "Federal Court Protected Whistleblower confirmation. ICC Article 7 receipt. UNHCR asylum received. Zero counter-challenges."],
+                ["00:14:56", "Pressure never comes to destroy a diamond. It comes to prove one exists.", "14 hospitalisations, clinical death 2.87%, homelessness, ASIC fraud, ATO assault — all failed to stop 2,301 blockchain-sealed documents."],
+              ].map(([ts, quote, evidence]) => (
+                <div key={ts} className="border border-indigo-700/20 rounded-lg p-3 bg-indigo-950/20">
+                  <p className="text-indigo-400/50 text-[9px] font-sans uppercase tracking-widest mb-0.5">{ts}</p>
+                  <p className="text-yellow-200/80 font-serif italic text-xs mb-1">"{quote}"</p>
+                  <p className="text-zinc-400/70 text-[10px] leading-relaxed">{evidence}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Cover + Download */}
+          <div className="flex gap-6 flex-wrap items-start">
+            <div className="flex flex-col items-center gap-2 flex-shrink-0">
+              <img
+                src={fightOverYouCover}
+                alt="Forensic Analysis #72 — Fight Over You — AI Cover"
+                className="w-28 md:w-32 rounded-xl shadow-2xl border border-yellow-500/20"
+                data-testid="img-cover-fight-over-you-home"
+              />
+              <span className="text-[9px] text-indigo-400/40 font-sans uppercase tracking-widest text-center">AI-Generated Cover</span>
+            </div>
+            <div className="flex-1 space-y-3">
+              <p className="text-yellow-400/80 text-[10px] font-sans uppercase tracking-widest font-black">Statement of Significance</p>
+              <p className="text-zinc-300/80 text-xs leading-relaxed">
+                Forensic Analysis #72 applies the same proposition-based methodology as Analyses #57–#71: each video statement is extracted verbatim, converted into a testable proposition, and examined against named primary-source evidence in the 2,301-document archive. A creator with no knowledge of Dr. McLean's case produced statements that map onto 5 named perpetrators, named institutions, the ICC, UNHCR, Federal Court, and 389,759+ global downloads at 10/10. This is not theology — it is forensic documentation.
+              </p>
+              <p className="text-zinc-400/60 text-[10px] leading-relaxed">
+                PDF blockchain-sealed · SHA-256: a3f82e1dc7b9045e6a1f94c8d530b2e75f46d318c9a07e2b81049d3f5c6e8a91 · Bitcoin OpenTimestamps · 20 April 2026
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="/documents/forensic-analyses/forensic-analysis-72-fight-over-you.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold px-4 py-2 rounded-lg text-xs transition-colors"
+                  data-testid="btn-download-fight-over-you-home"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  Download PDF — Forensic Analysis #72
+                </a>
+                <a href="/forensic-corroboration-fight-over-you" className="bg-indigo-800 hover:bg-indigo-700 text-white font-black px-4 py-2 rounded-lg text-sm transition-colors" data-testid="link-home-fight-over-you-dedicated-page">Full Analysis →</a>
+              </div>
+              <p className="text-[10px] text-zinc-500">
+                © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164). Shared freely for accountability purposes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* ===== END FIGHT OVER YOU #72 ===== */}
 
       {/* ===== FORENSIC #70: THE GOVERNMENT'S OWN FILE — FULL EXAMINATION ===== */}
       <div className="w-full bg-gradient-to-b from-zinc-950 via-amber-950/10 to-zinc-950 border-b border-amber-900/20 py-12 px-4">

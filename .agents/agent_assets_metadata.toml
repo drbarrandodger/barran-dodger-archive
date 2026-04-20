@@ -756,6 +756,12 @@ uri = "file://client/src/assets/images/cover-forensic-corroboration-chosen-one.p
 type = "image"
 title = "forensic chosen one cover"
 
+[[generated]]
+id = "YfKbOiZxakCA3eSVeqI3e"
+uri = "file://client/src/assets/images/cover-forensic-fight-over-you.png"
+type = "image"
+title = "forensic fight over you cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"

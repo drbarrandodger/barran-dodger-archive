@@ -60,6 +60,7 @@ import ForensicCorroborationFoolFire from "@/pages/ForensicCorroborationFoolFire
 import ForensicCorroboration3AMBriefing from "@/pages/ForensicCorroboration3AMBriefing";
 import ForensicCorroborationGovernmentOwnFile from "@/pages/ForensicCorroborationGovernmentOwnFile";
 import ForensicCorroborationChosenOne from "@/pages/ForensicCorroborationChosenOne";
+import ForensicCorroborationFightOverYou from "@/pages/ForensicCorroborationFightOverYou";
 import ForensicCorroborationVaultAccess from "@/pages/ForensicCorroborationVaultAccess";
 import ForensicCorroborationMakingHistory from "@/pages/ForensicCorroborationMakingHistory";
 import TheyBoughtOffJudges from "@/pages/TheyBoughtOffJudges";
@@ -279,6 +280,9 @@ function Router() {
         <Route path="/forensic-corroboration-chosen-one" component={ForensicCorroborationChosenOne} />
         <Route path="/chosen-one-forensic-analysis" component={ForensicCorroborationChosenOne} />
         <Route path="/they-laughed-when-you-disappeared" component={ForensicCorroborationChosenOne} />
+        <Route path="/forensic-corroboration-fight-over-you" component={ForensicCorroborationFightOverYou} />
+        <Route path="/they-fight-over-whats-powerful" component={ForensicCorroborationFightOverYou} />
+        <Route path="/theyre-at-war-over-you" component={ForensicCorroborationFightOverYou} />
         <Route path="/forensic-corroboration-vault-access" component={ForensicCorroborationVaultAccess} />
         <Route path="/forensic-corroboration-making-history" component={ForensicCorroborationMakingHistory} />
         <Route path="/they-bought-off-judges" component={TheyBoughtOffJudges} />
