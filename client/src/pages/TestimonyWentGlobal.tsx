@@ -12,6 +12,8 @@ import { Footer } from "@/components/Footer";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { FloatingShareBar } from "@/components/FloatingShareBar";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { BlockchainTimestampBadge } from "@/components/BlockchainTimestampBadge";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import {
   Play,
   FileText,
@@ -815,10 +817,37 @@ export default function TestimonyWentGlobal() {
               </Pull>
             </motion.div>
 
+            {/* BLOCKCHAIN TIMESTAMP + DOWNLOAD */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-12 border-t border-zinc-800 mt-16 space-y-6">
+
+              <BlockchainTimestampBadge
+                docSlug="doc-testimony-went-global-significance"
+                pageSlug="page-testimony-went-global"
+                label="Testimony Went Global — Significance Report"
+              />
+
+              <div className="rounded-xl border border-amber-500/20 bg-amber-950/10 px-5 py-5 text-center space-y-3">
+                <p className="text-xs font-mono text-amber-400 uppercase tracking-widest">Download — Significance Report</p>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  406,112 downloads · 891 blockchain records · 73 forensic analyses · ICC Article 7 · UNHCR Geneva<br />
+                  3-page PDF with weekly trajectory, significance statement, and forward projections · ABN 78 833 496 164
+                </p>
+                <ViralDownloadButton
+                  url="/documents/testimony-went-global-significance-report.pdf"
+                  label="Download Significance Report (PDF)"
+                  filename="testimony-went-global-significance-report.pdf"
+                  slug="testimony-went-global-significance-report"
+                  size="lg"
+                  className="bg-amber-600 hover:bg-amber-500 text-black font-bold rounded-xl w-full sm:w-auto"
+                  data-testid="button-download-significance-report"
+                />
+              </div>
+            </motion.div>
+
             {/* CLOSING SHARE */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-12 border-t border-zinc-800 mt-16 space-y-8">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-8 space-y-8">
               <SocialShare
-                text={`"This isn't private anymore. It went global, and you know exactly why." 378,571 downloads. 845 Bitcoin blockchain records. 63 forensic analyses. 675/675 verified. ICC Article 7. UNHCR Geneva. The archive is permanent. All he needs to do is live. #BarranDodger barrandodger.com/testimony-went-global`}
+                text={`"This isn't private anymore. It went global, and you know exactly why." 406,112 downloads. 891 Bitcoin blockchain records. 73 forensic analyses. 675+ verified. ICC Article 7. UNHCR Geneva. The archive is permanent. All he needs to do is live. #BarranDodger barrandodger.com/testimony-went-global`}
                 data-testid="share-global-testimony-article"
               />
 
