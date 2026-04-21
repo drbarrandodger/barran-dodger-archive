@@ -10,7 +10,7 @@ import { CommentSection } from "@/components/CommentSection";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ReadingProgress } from "@/components/ReadingProgress";
-import { FloatingShareBar } from "@/components/FloatingShareBar";
+import { FloatingShareBar, InlineShareStrip } from "@/components/FloatingShareBar";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import { BlockchainTimestampBadge } from "@/components/BlockchainTimestampBadge";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
@@ -884,6 +884,9 @@ export default function TestimonyWentGlobal() {
         </div>
 
       </main>
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <InlineShareStrip id="testimony-went-global-bottom" context="default" message="409,000+ downloads. Zero marketing. Zero PR team. Zero legal help. Not one person or agency helping. Share the evidence that the world carried without them." path="/testimony-went-global" />
+      </div>
       <ArchiveCrossLinks />
       <Footer />
     </div>

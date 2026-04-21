@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Flame, ExternalLink, Scroll } from "lucide-react";
 import { motion } from "framer-motion";
@@ -368,6 +369,11 @@ export default function ForensicCorroborationSilenceSurrender() {
             This analysis is part of the complete Barran Dodger archive — freely downloadable at{" "}
             <a href="/free-ebooks" className="text-indigo-400 underline" data-testid="link-free-ebooks">barrandodger.com/free-ebooks</a>
           </p>
+        </div>
+
+        {/* Inline Share Strip */}
+        <div className="mb-6">
+          <InlineShareStrip id="silence-surrender-main" context="default" message="Forensic #73: They mistook his silence for surrender. It was the archive building itself. 409,000+ downloads. 891 blockchain seals. Zero contradictions. Share it." path="/forensic-corroboration-silence-surrender" />
         </div>
 
         {/* Hashtag Export */}

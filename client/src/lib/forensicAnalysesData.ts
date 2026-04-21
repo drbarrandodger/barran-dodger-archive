@@ -74,4 +74,4 @@ export const TOTAL_PROPOSITIONS = 603;
 export const TOTAL_ANALYSES = 55;
 export const CONSECUTIVE_PERFECT = 48;
 export const TOTAL_DOCS = "2,304";
-export const TOTAL_DOWNLOADS = "350,000+";
+export const TOTAL_DOWNLOADS = "409,000+";

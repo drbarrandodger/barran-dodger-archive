@@ -1052,7 +1052,17 @@ export async function registerRoutes(
       '/blockchain', '/timeline', '/manifesto', '/josephs-coat', '/gospel',
       '/spread-the-truth', '/ai-justice-statement', '/video-commentary',
       '/chosen-ones-perfect-trap', '/private-investigator-legend', '/testimony-went-global', '/paradox-of-persecution',
-      '/donate', '/store', '/contact', '/media',
+      '/forensic-meltdown-report', '/archive-report', '/master-forensic-evidence-report',
+      '/forensic-corroboration-billionaire-circle', '/forensic-corroboration-tick-tick-tick',
+      '/forensic-corroboration-tactical-insanity', '/forensic-corroboration-project-halo',
+      '/forensic-corroboration-fool-fire', '/forensic-corroboration-3am-briefing',
+      '/forensic-corroboration-government-own-file', '/forensic-corroboration-chosen-one',
+      '/forensic-corroboration-fight-over-you', '/forensic-corroboration-vault-access',
+      '/forensic-corroboration-making-history', '/forensic-corroboration-silence-surrender',
+      '/silence-was-my-reload', '/they-mistook-your-silence', '/they-bought-off-judges',
+      '/i-choose-silence', '/the-law-they-overlooked', '/scary-smart', '/i-called-this',
+      '/the-truth', '/church', '/prophetic-papers', '/mission', '/research',
+      '/case-studies', '/legal-status', '/visitors', '/donate', '/store', '/contact', '/media',
     ];
     const urls = pages.map(p => `
   <url>
