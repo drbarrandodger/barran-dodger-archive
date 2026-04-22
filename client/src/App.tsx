@@ -39,6 +39,7 @@ import EvidenceVault from "@/pages/EvidenceVault";
 import Store from "@/pages/Store";
 import FreeEbooks from "@/pages/FreeEbooks";
 import CopyrightRegister from "@/pages/CopyrightRegister";
+import ForensicCorroborationStillStanding from "@/pages/ForensicCorroborationStillStanding";
 import DigitalArchive from "@/pages/DigitalArchive";
 import ArchiveIndex from "@/pages/ArchiveIndex";
 import ViralLanding from "@/pages/ViralLanding";
@@ -502,6 +503,7 @@ function Router() {
         <Route path="/store" component={Store} />
         <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/copyright-register" component={CopyrightRegister} />
+        <Route path="/forensic-corroboration-still-standing" component={ForensicCorroborationStillStanding} />
         <Route path="/digital-archive" component={DigitalArchive} />
         <Route path="/archive-index" component={ArchiveIndex} />
         <Route path="/pdf-list" component={ArchiveIndex} />
