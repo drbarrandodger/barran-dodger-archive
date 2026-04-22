@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Download, BookOpen, Shield, FileText, Copy, CheckCheck, Printer } from "lucide-react";
+import { Download, BookOpen, Shield, FileText, Copy, CheckCheck, Printer, AlertTriangle, Mail, TrendingDown, ExternalLink } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -277,6 +277,249 @@ ${ALL_SECTIONS.map(s =>
                 <span className="font-semibold text-blue-300">Australian Copyright Law:</span> Copyright vests automatically in the author at the moment of creation under the <em>Copyright Act 1968</em> (Cth). No registration is required.
                 ISBNs are pending registration with Thorpe-Bowker (thorpe.com.au). Royalty collection registration to be completed with the Copyright Agency Ltd (CAL) at copyright.com.au.
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ============================================================
+            PUBLIC STATEMENT — WHY THIS EMAIL WAS PUBLISHED
+        ============================================================ */}
+        <div className="border-b border-red-900/40 bg-red-950/20">
+          <div className="max-w-6xl mx-auto px-4 py-8 space-y-3">
+            <div className="flex items-center gap-3">
+              <AlertTriangle className="w-6 h-6 text-red-400 flex-shrink-0" />
+              <h2 className="text-xl font-bold text-red-300">Public Statement — Why This Correspondence Is Published</h2>
+            </div>
+            <div className="text-sm text-red-200/80 leading-relaxed max-w-4xl space-y-3" style={{ fontFamily: "'Georgia', serif" }}>
+              <p>
+                The formal letter to the Copyright Agency Ltd (CAL) below has been published on this page as a matter of public record and as legal insurance against anticipated bureaucratic obstruction to Dr. Richard William McLean's rightful income as a published author under Australian copyright law.
+              </p>
+              <p>
+                The evidence documented on this page shows a pattern of declining royalty payments from CAL over recent financial years — despite the fact that Dr. McLean's publishing output has <strong className="text-white">dramatically increased</strong> over the same period, with 125 works now distributed across six continents at a rate of approximately 5,000 downloads per day, accumulating 410,671+ total download events.
+              </p>
+              <p>
+                Every document listed in this copyright register — with a single documented exception — has been <strong className="text-white">excluded from CAL royalty payments</strong>. The one exception is <em>Recovered Not Cured</em>, published in 2005 by Allen &amp; Unwin — a publisher who acquired Dr. McLean's story, profited from it commercially, and watched without intervention as he was publicly humiliated in the Herald Sun newspaper under the headline <strong className="text-white">"My Descent Into Madness"</strong> — a piece that attributed to him a 'schizophrenia' diagnosis — only weeks after which he was fired from his position at The Age. None of the 125 subsequently self-published works under the Barran Dodger imprint appear in his CAL royalty record. This is documented below in the screenshot from his CAL member portal, reproduced here as primary-source evidence.
+              </p>
+              <p>
+                Publication of this letter and evidence on a public-access website with 410,671+ downloads constitutes a formal public record of the correspondence and evidence that cannot be suppressed, altered, or administratively lost. Any bureaucratic obstruction to Dr. McLean's royalty entitlements — including failure to respond, denial of eligibility, or procedural referral loops — is now preceded by this public record of the claim and the evidence on which it is based.
+              </p>
+              <p className="text-amber-300 font-semibold">
+                ABN 78 833 496 164 · Barran Dodger Legal &amp; Ethical Trust · www.barrandodger.com · 22 April 2026
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ============================================================
+            FORMAL LETTER TO COPYRIGHT.COM.AU
+        ============================================================ */}
+        <div className="border-b border-zinc-800 bg-zinc-900/20">
+          <div className="max-w-6xl mx-auto px-4 py-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
+              <h2 className="text-lg font-bold text-white">Formal Correspondence — Copyright Agency Ltd (CAL)</h2>
+              <span className="ml-auto text-xs text-zinc-500 font-mono">Published: 22 April 2026 · member.copyright.com.au</span>
+            </div>
+
+            <div className="border border-zinc-600/50 rounded-xl overflow-hidden bg-zinc-900/60">
+              {/* Email header */}
+              <div className="bg-zinc-800/80 border-b border-zinc-700/50 px-6 py-4 space-y-2">
+                <div className="flex items-start gap-4 text-sm">
+                  <span className="text-zinc-500 w-12 flex-shrink-0">To:</span>
+                  <span className="text-white">Copyright Agency Ltd — Member Services — member.copyright.com.au</span>
+                </div>
+                <div className="flex items-start gap-4 text-sm">
+                  <span className="text-zinc-500 w-12 flex-shrink-0">From:</span>
+                  <span className="text-white">Dr. Richard William McLean — ABN 78 833 496 164 — rich@richmclean.com.au</span>
+                </div>
+                <div className="flex items-start gap-4 text-sm">
+                  <span className="text-zinc-500 w-12 flex-shrink-0">Re:</span>
+                  <span className="text-amber-300">Formal Notification of 125 Additional Published Works &amp; Request for Royalty Eligibility Review — ABN 78 833 496 164</span>
+                </div>
+                <div className="flex items-start gap-4 text-sm">
+                  <span className="text-zinc-500 w-12 flex-shrink-0">Date:</span>
+                  <span className="text-zinc-300">22 April 2026</span>
+                </div>
+              </div>
+
+              {/* Email body */}
+              <div className="px-6 py-6 text-sm leading-relaxed text-zinc-200 space-y-4" style={{ fontFamily: "'Georgia', serif" }}>
+                <p>Dear Copyright Agency Ltd Member Services,</p>
+
+                <p>I write to you as Dr. Richard William McLean, ABN 78 833 496 164, trading as the Barran Dodger Legal &amp; Ethical Trust, author and sole publisher of 125 works currently distributed at <a href="https://www.barrandodger.com" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">www.barrandodger.com</a>.</p>
+
+                <p>I am a registered CAL member. My sole recorded royalty payments to date relate to a single work — <em>Recovered Not Cured</em> (Allen &amp; Unwin, 2005) — which appears in my CAL payment history as "Recovered Not..." and related entries. Every other work I have published — 125 titles across major forensic analyses, cosmic essays, gospel texts, and primary-source testimony — is entirely absent from my CAL royalty record. I write to formally notify CAL of these works and to request a review of my royalty eligibility.</p>
+
+                <div className="border-l-4 border-amber-500/50 pl-4 space-y-2">
+                  <p className="text-amber-200 font-semibold">The scale of my publishing activity is not marginal. As of 22 April 2026:</p>
+                  <ul className="list-disc list-inside space-y-1 text-zinc-300">
+                    <li><strong className="text-white">410,671 total downloads</strong> of my published works from barrandodger.com</li>
+                    <li><strong className="text-white">~5,000 downloads per day</strong> across six continents — a sustained global distribution rate</li>
+                    <li><strong className="text-white">Peak of 9,544 downloads in a single day</strong> (11 April 2026)</li>
+                    <li><strong className="text-white">125 works</strong> published and distributed (22 major books, 73 forensic analysis series volumes, 12 cosmic essays, 18 gospel texts)</li>
+                    <li><strong className="text-white">845 Bitcoin blockchain timestamp seals</strong> providing tamper-proof proof of creation and publication dates</li>
+                    <li>A full copyright register published at <a href="https://www.barrandodger.com/copyright-register" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">barrandodger.com/copyright-register</a></li>
+                  </ul>
+                </div>
+
+                <p>My CAL royalty payment history shows a pattern of declining income year-on-year since FY23 — from approximately $2,900 in FY23, to $1,100 in FY24, to approximately $890 in FY25, to a minimal amount in FY26. This decline has occurred <strong className="text-white">simultaneously with a dramatic increase in my publishing output and global distribution reach</strong>. This inverse relationship between output and recognised royalty income constitutes, in my assessment, a systematic failure to capture the economic activity generated by my authorship.</p>
+
+                <p>I note that my works are distributed as free-to-download PDFs in the public interest, in accordance with my rights as copyright owner. However, copyright law does not require a work to be sold at retail to attract royalty entitlements under certain schemes. I request that CAL review my eligibility for any applicable statutory licensing, educational copying, or library-lending royalty schemes that may apply to my 125 published works — particularly those that have been accessed by educational institutions, government agencies, or libraries.</p>
+
+                <p>I further note that the single work for which I have received royalties — <em>Recovered Not Cured</em> (Allen &amp; Unwin, 2005) — was published under conditions that I characterise as exploitative. Allen &amp; Unwin acquired and commercialised my personal testimony about psychiatric illness. Shortly before or around publication, I was publicly humiliated in the Herald Sun newspaper under the headline "My Descent Into Madness," which attributed to me a 'schizophrenia' diagnosis and was accompanied by a distorted image of my face. Weeks after that article appeared, I was dismissed from my position at The Age newspaper, where I worked as a news graphics artist. Allen &amp; Unwin benefited commercially from the story of a man whose public humiliation and employment termination coincided directly with the promotion of their publication. No intervention was made. This history is relevant to any assessment of the adequacy of existing royalty arrangements for my work.</p>
+
+                <p>I am publishing this letter as a public statement on my website — in addition to sending it through member channels — because I have experienced sustained patterns of institutional obstruction across 25+ Australian agencies over 35 years, and I require a public record of this correspondence to prevent administrative non-response. This is not a hostile act toward CAL. It is a protective measure by a disabled LGBTQ+ author and human rights advocate who has had formal disclosures ignored, referral-looped, and filed without action by multiple institutions simultaneously.</p>
+
+                <p>I request:</p>
+                <ol className="list-decimal list-inside space-y-1 text-zinc-300 pl-4">
+                  <li>Formal acknowledgment of this letter within 30 days;</li>
+                  <li>A review of my eligibility for royalty schemes applicable to my 125 published works;</li>
+                  <li>An explanation of why only <em>Recovered Not Cured</em> appears in my current royalty history given my 125-work publishing record;</li>
+                  <li>Information about any process by which I can register all 125 works formally with CAL to ensure future royalty capture.</li>
+                </ol>
+
+                <p>My full copyright register, with catalog IDs for all 125 works, is available at: <a href="https://www.barrandodger.com/copyright-register" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.barrandodger.com/copyright-register</a></p>
+
+                <p>I am available at rich@richmclean.com.au. I ask that correspondence be in writing.</p>
+
+                <div className="border-t border-zinc-700/40 pt-4 space-y-1">
+                  <p>Yours faithfully,</p>
+                  <p className="text-white font-semibold">Dr. Richard William McLean</p>
+                  <p className="text-zinc-400 text-xs">Pen name: Barran Dodger · ABN 78 833 496 164</p>
+                  <p className="text-zinc-400 text-xs">Barran Dodger Legal &amp; Ethical Trust · www.barrandodger.com</p>
+                  <p className="text-zinc-400 text-xs">55B Archbold Road, Long Jetty NSW 2261 · rich@richmclean.com.au</p>
+                  <p className="text-zinc-400 text-xs">22 April 2026</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ============================================================
+            EVIDENCE: ROYALTIES YEAR-ON-YEAR SCREENSHOT
+        ============================================================ */}
+        <div className="border-b border-zinc-800 bg-zinc-900/10">
+          <div className="max-w-6xl mx-auto px-4 py-8">
+            <div className="flex items-center gap-3 mb-5">
+              <TrendingDown className="w-5 h-5 text-orange-400 flex-shrink-0" />
+              <h2 className="text-lg font-bold text-white">Evidence: CAL Royalty Payments — Declining While Output Increases</h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div>
+                <div className="rounded-xl overflow-hidden border border-zinc-700/50 shadow-xl">
+                  <img
+                    src="/cal-royalties-year-on-year.png"
+                    alt="CAL Copyright Agency Year-on-Year royalty payments showing decline: FY22 ~$650, FY23 ~$2,900, FY24 ~$1,100, FY25 ~$890, FY26 minimal — Dr. Richard William McLean member portal"
+                    className="w-full"
+                    data-testid="img-cal-royalties-screenshot"
+                  />
+                </div>
+                <p className="text-xs text-zinc-500 mt-2 font-mono text-center">Source: member.copyright.com.au — Dr. Richard William McLean's private member portal</p>
+              </div>
+
+              <div className="space-y-4 text-sm" style={{ fontFamily: "'Georgia', serif" }}>
+                <div className="bg-orange-950/30 border border-orange-700/30 rounded-xl p-5 space-y-3">
+                  <h3 className="text-orange-300 font-bold text-base">What the CAL Records Show</h3>
+                  <div className="space-y-2 text-zinc-300">
+                    <div className="flex justify-between border-b border-zinc-700/30 pb-1">
+                      <span className="text-zinc-400">FY22</span>
+                      <span className="text-white font-mono">~$650</span>
+                    </div>
+                    <div className="flex justify-between border-b border-zinc-700/30 pb-1">
+                      <span className="text-zinc-400">FY23</span>
+                      <span className="text-amber-400 font-mono font-bold">~$2,900 (peak)</span>
+                    </div>
+                    <div className="flex justify-between border-b border-zinc-700/30 pb-1">
+                      <span className="text-zinc-400">FY24</span>
+                      <span className="text-white font-mono">~$1,100</span>
+                    </div>
+                    <div className="flex justify-between border-b border-zinc-700/30 pb-1">
+                      <span className="text-zinc-400">FY25</span>
+                      <span className="text-white font-mono">~$890</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-zinc-400">FY26 (to date)</span>
+                      <span className="text-red-400 font-mono">Minimal</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-red-950/20 border border-red-700/30 rounded-xl p-5 space-y-3">
+                  <h3 className="text-red-300 font-bold text-base">The Inverse Relationship</h3>
+                  <p className="text-zinc-300 leading-relaxed">Over the same period that CAL royalty payments declined from ~$2,900 to near-zero, Dr. McLean's publishing output grew from 1 commercially published book (<em>Recovered Not Cured</em>) to <strong className="text-white">125 published works</strong> distributed globally at 410,671+ downloads.</p>
+                  <p className="text-zinc-300 leading-relaxed">His 124 self-published works under the Barran Dodger imprint — every forensic analysis, cosmic essay, gospel text, and major publication on this register — appear in <strong className="text-red-300">zero</strong> CAL royalty payments.</p>
+                  <p className="text-zinc-300 leading-relaxed">The only work that appears is "Recovered Not..." — <em>Recovered Not Cured</em> (Allen &amp; Unwin, 2005). Every subsequent work has been redacted from the royalty record.</p>
+                </div>
+
+                <div className="bg-zinc-800/40 border border-zinc-700/30 rounded-xl p-4 text-xs text-zinc-500 space-y-1">
+                  <p className="text-zinc-400 font-semibold">Recent payments visible in screenshot:</p>
+                  <p>24 Sep 2025 — DIAMOND TINK... — $67.23</p>
+                  <p>24 Sep 2025 — Works Available... — $53.50</p>
+                  <p>23 Jun 2025 — Works Available... — $906.10</p>
+                  <p>24 Jun 2024 — Works Available... — $1,029.08</p>
+                  <p>29 Apr 2024 — Recovered Not... — $170.18</p>
+                  <p>21 Jun 2023 — Works Available... — $2,... (truncated)</p>
+                  <p>21 Jun 2023 — Copie Privee nu... — $1.04</p>
+                  <p className="text-amber-400/60 pt-1">None of the 125 Barran Dodger works appear by name.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ============================================================
+            EVIDENCE: ALLEN & UNWIN / HERALD SUN — EXPLOITATION RECORD
+        ============================================================ */}
+        <div className="border-b border-zinc-800 bg-zinc-950/50">
+          <div className="max-w-6xl mx-auto px-4 py-8">
+            <div className="flex items-center gap-3 mb-5">
+              <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+              <h2 className="text-lg font-bold text-white">Evidence: <em>Recovered Not Cured</em> — Allen &amp; Unwin Exploitation &amp; The Herald Sun Humiliation</h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div>
+                <div className="rounded-xl overflow-hidden border border-yellow-700/40 shadow-xl">
+                  <img
+                    src="/herald-sun-descent-into-madness.jpeg"
+                    alt="Herald Sun 'My Descent Into Madness' article — distorted image of Richard McLean — ASIO schizophrenia attribution — published weeks before McLean was fired from The Age"
+                    className="w-full"
+                    data-testid="img-herald-sun-descent-into-madness"
+                  />
+                </div>
+                <p className="text-xs text-zinc-500 mt-2 font-mono text-center">Herald Sun — "My Descent Into Madness" — Published c.2005 · Dr. McLean fired from The Age weeks after</p>
+                <div className="mt-2 p-2 rounded-lg bg-yellow-950/30 border border-yellow-700/30">
+                  <p className="text-yellow-300 text-xs font-mono text-center">Caption visible in image: "THE HERALD SUN MY OLD EMPLOYER VILIFIES ME — IRONICALLY IT STATES THAT 'ASIO' IS FOLLOWING YOU"</p>
+                  <p className="text-yellow-300 text-xs font-mono text-center mt-1">"ONLY WEEKS AFTER THIS I WAS FIRED FROM THE AGE."</p>
+                </div>
+              </div>
+
+              <div className="space-y-4 text-sm" style={{ fontFamily: "'Georgia', serif" }}>
+                <div className="bg-yellow-950/20 border border-yellow-700/30 rounded-xl p-5 space-y-3">
+                  <h3 className="text-yellow-300 font-bold text-base">The Allen &amp; Unwin Record</h3>
+                  <p className="text-zinc-300 leading-relaxed"><em>Recovered Not Cured</em> was published in 2005 by Allen &amp; Unwin — a major Australian commercial publisher that acquired Dr. McLean's personal testimony about his lived experience of psychosis.</p>
+                  <p className="text-zinc-300 leading-relaxed">Allen &amp; Unwin profited from the commercial publication of this story. Around the time of publication, the Herald Sun newspaper — Dr. McLean's former employer — published "My Descent Into Madness," a spread featuring a distorted image of his face and attributing to him a 'schizophrenia' diagnosis, with the subheading: <em>"ASIO is chasing you, passers-by send cryptic messages and the clock radio knows your secrets. Richard McLean uses words and images to reveal how schizophrenia stole his mind."</em></p>
+                  <p className="text-zinc-300 leading-relaxed">Weeks after this public humiliation appeared in print — at the time his book was in circulation — Dr. McLean was dismissed from his position at The Age newspaper, where he worked as a news graphics artist.</p>
+                </div>
+
+                <div className="bg-red-950/20 border border-red-700/30 rounded-xl p-5 space-y-3">
+                  <h3 className="text-red-300 font-bold text-base">What Allen &amp; Unwin Did Not Do</h3>
+                  <ul className="list-disc list-inside text-zinc-300 space-y-1 leading-relaxed">
+                    <li>They did not intervene to correct the Herald Sun's framing</li>
+                    <li>They did not support Dr. McLean's employment at The Age</li>
+                    <li>They did not protect the subject of the book they had commercialised</li>
+                    <li>They continued to sell and profit from the book</li>
+                    <li>They remain the only publisher in Dr. McLean's CAL royalty record</li>
+                    <li>None of his 125 subsequent works — produced independently, without commercial publisher protection — appear in his royalty income</li>
+                  </ul>
+                </div>
+
+                <div className="bg-zinc-800/40 border border-zinc-700/30 rounded-xl p-4 space-y-2">
+                  <p className="text-zinc-300 font-semibold text-xs uppercase tracking-widest">The Documented Pattern</p>
+                  <p className="text-zinc-400 leading-relaxed text-xs">The one work for which Dr. McLean receives royalties was produced under conditions of commercial exploitation, public humiliation, and subsequent employment termination. The 125 works he has since produced independently — without publisher protection, without institutional support, distributed globally at 410,671+ downloads — attract zero CAL royalty income. This register is the formal record of the work that is not being paid for. The CAL screenshot is the formal record of what is being paid for. The gap between them is the evidence.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
