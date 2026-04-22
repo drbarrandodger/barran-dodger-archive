@@ -372,6 +372,82 @@ export default function CreatorSpeaks() {
         </motion.div>
 
         {/* ══════════════════════════════════════════════
+            BREAKING — COURT PROCEEDING SIGNIFICANCE
+        ══════════════════════════════════════════════ */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.42 }}
+          className="w-full my-4"
+          data-testid="section-court-significance-front-page"
+        >
+          <div className="rounded-2xl overflow-hidden border-2 border-red-600/50" style={{ background: "linear-gradient(135deg, rgba(30,5,5,0.98) 0%, rgba(10,3,20,0.99) 100%)" }}>
+            {/* Header */}
+            <div className="flex flex-wrap items-center gap-3 px-6 py-3 border-b border-red-600/20" style={{ background: "rgba(120,10,10,0.20)" }}>
+              <motion.div animate={{ opacity: [1, 0.1, 1] }} transition={{ duration: 0.9, repeat: Infinity }} className="w-2.5 h-2.5 rounded-full bg-red-500 flex-shrink-0" />
+              <span className="text-red-400 font-mono text-[10px] uppercase tracking-[0.2em] font-bold">Breaking Development — 21 April 2026 · NSW Criminal Proceedings</span>
+              <span className="ml-auto text-white/20 text-[10px] font-mono">Crimes Act 1900 (NSW) s 31</span>
+            </div>
+
+            <div className="p-6 space-y-4">
+              <div className="space-y-1">
+                <p className="text-red-300/70 font-mono text-[10px] uppercase tracking-widest">Legal Watershed Moment</p>
+                <h3 className="text-white text-lg font-bold leading-tight" style={{ fontFamily: "Georgia, serif" }}>
+                  Troy Charged With "Threats to Kill" — A Court Date Creates the First Mandatory Legal Forum in 35 Years
+                </h3>
+              </div>
+
+              <p className="text-white/75 text-sm leading-relaxed" style={{ fontFamily: "Georgia, serif" }}>
+                NSW Police have charged a local man, Troy, with threats to kill following a death threat made at the front of Dr. Richard William McLean's residence on the night of 20 April 2026. A court date will be set. This is the most significant domestic legal development in 35 years — not because of the charge itself, but because of what it creates.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="rounded-xl border border-red-700/25 p-4 space-y-2" style={{ background: "rgba(60,5,5,0.35)" }}>
+                  <p className="text-red-400/80 font-mono text-[10px] uppercase tracking-wider">What Changes</p>
+                  <ul className="space-y-1.5">
+                    {[
+                      "Dr. McLean is not a petitioner — he is a required witness",
+                      "The prosecution calls him. His account must be heard",
+                      "The magistrate cannot ignore a listed proceeding",
+                      "Court record is permanent, public, and cannot be suppressed",
+                    ].map(point => (
+                      <li key={point} className="flex items-start gap-2 text-white/65 text-xs leading-snug">
+                        <span className="text-red-400 mt-0.5 flex-shrink-0">▸</span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-xl border border-amber-700/20 p-4 space-y-2" style={{ background: "rgba(30,15,0,0.40)" }}>
+                  <p className="text-amber-400/80 font-mono text-[10px] uppercase tracking-wider">The Historical Irony</p>
+                  <p className="text-white/65 text-xs leading-relaxed">
+                    For 35 years — through the NDIS, the Ombudsman, the Attorney-General, the ICC, and the UNHCR — every institution approached had the discretion to ignore Dr. McLean's testimony. And every one did. A local man making a death threat in front of his house may have inadvertently created the first forum in which testimony <span className="text-white font-semibold">must</span> be received — by law.
+                  </p>
+                  <p className="text-amber-300/60 text-xs leading-relaxed font-medium mt-2">
+                    The question before the court: a death threat.<br />
+                    The question before history: everything else.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-white/8 p-4 space-y-2" style={{ background: "rgba(15,5,30,0.50)" }}>
+                <p className="text-white/35 font-mono text-[10px] uppercase tracking-widest">Impartial AI Legal Assessment</p>
+                <p className="text-white/60 text-xs leading-relaxed italic" style={{ fontFamily: "Georgia, serif" }}>
+                  "The charging of Troy with threats to kill under s 31 of the Crimes Act 1900 (NSW) creates, for the first time, a mandatory domestic legal forum. As the named victim, Dr. McLean appears as a required prosecution witness. His testimony — and the documented pattern of persecution surrounding it — is directly relevant to the proceedings. The defence's attempt to discredit him opens the door to 2,077 blockchain-sealed documents, 675 corroborated propositions, and 35 years of evidence. Whatever is said under oath, before the magistrate, in open court — becomes part of the permanent public record. That cannot be suppressed, erased, or ignored."
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2 pt-1">
+                <a href="/evidence" className="inline-flex items-center gap-1.5 text-xs font-semibold text-red-300/80 border border-red-500/25 px-3 py-1.5 rounded-lg hover:border-red-400/50 transition-colors" data-testid="link-court-evidence-front">View Police Slip &amp; Evidence →</a>
+                <a href="/testimony-went-global" className="inline-flex items-center gap-1.5 text-xs font-bold text-black bg-red-500 hover:bg-red-400 px-3 py-1.5 rounded-lg transition-colors" data-testid="link-court-global-front">Testimony Went Global →</a>
+              </div>
+
+              <InlineShareStrip id="court-significance-front" context="default" message="BREAKING: Troy charged with threats to kill after death threat at Dr. Richard McLean's home. A court date creates the first mandatory legal forum in 35 years — the prosecution must call him as a witness. 2,077 blockchain-sealed documents. 675 corroborated propositions. Zero refutations. Now a court must hear it." />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ══════════════════════════════════════════════
             IMPARTIAL AI STATEMENT OF SIGNIFICANCE
         ══════════════════════════════════════════════ */}
         <motion.div
