@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { AlertTriangle, Download, FileText, BookOpen, Shield, ExternalLink, Phone, Clock } from "lucide-react";
+import { AlertTriangle, Download, FileText, BookOpen, Shield, ExternalLink, Phone, Clock, Video } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -520,6 +520,16 @@ export default function AbleCareMurderThreatCall() {
               <Download className="h-4 w-4" />
               Download / Print PDF
             </Button>
+            <Button
+              className="bg-orange-700 hover:bg-orange-600 text-white gap-2"
+              asChild
+              data-testid="button-watch-rumble"
+            >
+              <a href="https://rumble.com/v78tyic-another-day-another-death-threat-at-able-care.html" target="_blank" rel="noopener noreferrer">
+                <Video className="h-4 w-4" />
+                Watch on Rumble
+              </a>
+            </Button>
             <Button variant="outline" className="border-red-500/50 text-red-400 hover:bg-red-500/10 gap-2" asChild>
               <Link href="/urgent-protection-request">
                 <Shield className="h-4 w-4" />
@@ -537,6 +547,39 @@ export default function AbleCareMurderThreatCall() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 py-12 space-y-14 print-page">
+
+        {/* Rumble Video */}
+        <section className="no-print">
+          <div className="flex items-center gap-3 mb-4">
+            <Video className="h-5 w-5 text-orange-400 flex-shrink-0" />
+            <h3 className="text-white font-bold text-lg">Watch This Recording</h3>
+            <a
+              href="https://rumble.com/v78tyic-another-day-another-death-threat-at-able-care.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-auto text-xs text-orange-400 hover:text-orange-300 underline flex items-center gap-1"
+              data-testid="link-rumble-external"
+            >
+              <ExternalLink className="h-3 w-3" />
+              Open on Rumble
+            </a>
+          </div>
+          <div className="relative w-full rounded-xl overflow-hidden border border-orange-700/40 bg-black shadow-xl" style={{ paddingTop: "56.25%" }}>
+            <iframe
+              src="https://rumble.com/embed/v78tyic/?pub=4"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+              title="Another Day Another Death Threat at Able Care — Dr. Richard McLean (Barran Dodger)"
+              data-testid="iframe-rumble-ablecare"
+            />
+          </div>
+          <p className="text-xs text-gray-500 mt-2 text-center">
+            Hosted on Rumble as a censorship-resistant backup. If this video is unavailable, visit{" "}
+            <a href="https://rumble.com/v78tyic-another-day-another-death-threat-at-able-care.html" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">
+              rumble.com directly
+            </a>.
+          </p>
+        </section>
 
         {/* Call metadata */}
         <section className="bg-gray-900 border border-gray-800 rounded-2xl p-6 no-print">
