@@ -448,6 +448,86 @@ export default function CreatorSpeaks() {
         </motion.div>
 
         {/* ══════════════════════════════════════════════
+            VIDEO EVIDENCE — CHOSEN ONE · POLICE CONFIRMATION
+        ══════════════════════════════════════════════ */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.43 }}
+          className="w-full my-4"
+          data-testid="section-video-evidence-front-page"
+        >
+          <div className="rounded-2xl overflow-hidden border border-yellow-600/20" style={{ background: "linear-gradient(135deg, rgba(8,6,22,0.99) 0%, rgba(4,3,12,0.99) 100%)" }}>
+            <div className="flex flex-wrap items-center gap-3 px-6 py-3 border-b border-yellow-600/10" style={{ background: "rgba(67,56,202,0.10)" }}>
+              <motion.div animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} className="w-2 h-2 rounded-full bg-yellow-400 flex-shrink-0" />
+              <span className="text-yellow-400/70 font-mono text-[10px] uppercase tracking-[0.2em]">Video Evidence — Primary Source Documentation · 21 April 2026</span>
+            </div>
+
+            <div className="p-6 space-y-6">
+              {/* THE CHOSEN ONE */}
+              <div className="space-y-2" data-testid="video-chosen-one">
+                <div className="flex items-center gap-2">
+                  <Flame className="w-4 h-4 text-yellow-400 flex-shrink-0" />
+                  <p className="text-yellow-300/80 font-mono text-[10px] uppercase tracking-wider font-bold">The Chosen One — Biblical Pattern &amp; Personal Resonance</p>
+                </div>
+                <p className="text-white/50 text-xs leading-relaxed">The video that speaks directly to the prophetic archetype — the pattern of the chosen witness, isolated, persecuted, and ultimately vindicated. Dr. McLean finds personal resonance and support in this testimony.</p>
+                <div className="relative w-full rounded-xl overflow-hidden border border-yellow-500/15" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    src="https://www.youtube.com/embed/2v2YsvrP1MA"
+                    title="The Chosen One — Biblical Pattern & Personal Resonance"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                    style={{ border: "none" }}
+                  />
+                </div>
+              </div>
+
+              {/* POLICE CONFIRMATION VIDEOS */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-red-400/80 font-mono text-[10px] uppercase tracking-wider font-bold">Police Confirmation — Troy Charged &amp; Death Threat Document Number</span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2" data-testid="video-police-troy-charged">
+                    <p className="text-white/50 text-[10px] font-mono uppercase tracking-wider">Video: Police Confirm Troy Charged With Threats to Kill</p>
+                    <div className="relative w-full rounded-xl overflow-hidden border border-red-600/20" style={{ paddingBottom: "56.25%" }}>
+                      <iframe
+                        src="https://www.youtube.com/embed/ijAamrDJ1aM"
+                        title="Police Confirm: Troy Charged With Threats to Kill"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full"
+                        style={{ border: "none" }}
+                      />
+                    </div>
+                    <p className="text-white/35 text-[10px] leading-relaxed">NSW Police Force attending officer confirms charges laid. This is the first official institutional acknowledgement of a criminal threat against Dr. McLean — creating the mandatory court forum.</p>
+                  </div>
+                  <div className="space-y-2" data-testid="video-police-death-threat-document">
+                    <p className="text-white/50 text-[10px] font-mono uppercase tracking-wider">Video: Police Confirmation of Death Threat &amp; Document Number</p>
+                    <div className="relative w-full rounded-xl overflow-hidden border border-red-600/20" style={{ paddingBottom: "56.25%" }}>
+                      <iframe
+                        src="https://www.youtube.com/embed/B0WpxclgNAI"
+                        title="Police Confirmation of Death Threat & Document Number"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full"
+                        style={{ border: "none" }}
+                      />
+                    </div>
+                    <p className="text-white/35 text-[10px] leading-relaxed">Police confirm the death threat and provide the document event number — the incident reference previously refused and now formally confirmed on the record.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-t border-yellow-500/10 pt-3">
+                <InlineShareStrip id="video-evidence-front" context="default" message="WATCH: NSW Police confirm Troy charged with threats to kill against Dr. Richard McLean. Police also confirm death threat & document number on record. A court date now creates the first mandatory legal forum in 35 years. barrandodger.com" />
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ══════════════════════════════════════════════
             IMPARTIAL AI STATEMENT OF SIGNIFICANCE
         ══════════════════════════════════════════════ */}
         <motion.div
