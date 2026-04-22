@@ -98,7 +98,7 @@ const DECLARATIONS = [
       "AbleCare surveillance deployment is documented as pre-emptive — initiated before Dr. McLean formally filed complaints against the NDIS system. The placement preceded the breakthrough, consistent with the video's framework: the false sister positioned to sabotage the miracle before it arrives.",
       "Tony Ridley's NDIA deployment preceded the archive's most consequential phase — the ICC submission preparation. The death threat 'You will be sacrificed' was issued while the archive was approaching international submission threshold. Sabotage attempt documented.",
       "The honeytrap operatives documented in the Honeytrap Infiltration Report were placed in Dr. McLean's circle during the period of maximum archive construction. Sabotage of the miracle (the archive) was the documented operational intent.",
-      "They failed. 2,304 blockchain-verified documents. ICC Article 7 formally received. UNHCR formally received. 399,325+ downloads across 6 continents. The miracle arrived. The false sisters were exposed. The archive is permanent.",
+      "They failed. 2,304 blockchain-verified documents. ICC Article 7 formally received. UNHCR formally received. 410,500+ downloads across 6 continents. The miracle arrived. The false sisters were exposed. The archive is permanent.",
     ],
   },
   {
@@ -154,7 +154,7 @@ const DECLARATIONS = [
       "The targeting intensified as the archive grew, not as material wealth accumulated. The death threat 'You will be sacrificed' arrived after the archive reached ICC submission threshold — after the light became undeniable, not after any material acquisition.",
       "$32.9M in documented financial destruction confirms the target was not wealth — it was the capacity to document. Destroying the financial base was designed to prevent the archive, not to acquire material resources.",
       "The peace documented in the archive — 617 verified propositions built during 14 hospitalisations, clinical death, and NDIA surveillance — is the specific achievement that required an Ex-SAS operative to address. Peace in chaos is the documented threat they could not neutralise.",
-      "ICC Article 7 submission, UNHCR submission, 399,325+ downloads across 6 continents — these arrived from someone who had none of the material resources the envious typically target. They arrived from someone who had the peace to keep working regardless of what was deployed against him.",
+      "ICC Article 7 submission, UNHCR submission, 410,500+ downloads across 6 continents — these arrived from someone who had none of the material resources the envious typically target. They arrived from someone who had the peace to keep working regardless of what was deployed against him.",
     ],
   },
   {
@@ -177,11 +177,11 @@ const DECLARATIONS = [
     title: "Cut Their Access and What Was Stolen Comes Back Multiplied.",
     quote: "When you cut the access of a spiritual leech, something miraculous happens. That energy that was being stolen from you, it comes back, and it comes back multiplied. The ideas that were stuck will start to flow like a river in your mind. The peace that had left your home will return.",
     finding: "VERIFIED — HIGHEST EVIDENTIARY WEIGHT",
-    forensic: "Clinical death. 2021. 2.87% survival probability. The terminal endpoint of a 35-year extraction operation. He died. And then: the most comprehensive archive chapter ever compiled. 2,304 documents. 617 propositions verified. ICC submission. UNHCR submission. 399,325+ downloads across 6 continents. The multiplied return of everything that was stolen. The ideas that were stuck for 35 years flowed like a river. Not metaphorically. Documentarily. The archive is the river.",
+    forensic: "Clinical death. 2021. 2.87% survival probability. The terminal endpoint of a 35-year extraction operation. He died. And then: the most comprehensive archive chapter ever compiled. 2,304 documents. 617 propositions verified. ICC submission. UNHCR submission. 410,500+ downloads across 6 continents. The multiplied return of everything that was stolen. The ideas that were stuck for 35 years flowed like a river. Not metaphorically. Documentarily. The archive is the river.",
     evidence: [
       "Clinical death 2021 — survival probability 2.87% — was the terminal endpoint of the extraction operation. Post-clinical death: the archive entered its most prolific phase. 2,304 documents, 617 verified propositions, ICC submission. The stolen energy returned multiplied in the form of indestructible documentation.",
       "The 35-year period of documented suppression — 14 hospitalisations, $32.9M destruction, SAS death threat — was the 'energy being stolen.' Post-survival: 58 forensic analyses, 617/617 verified propositions, 49 consecutive perfect scores. Multiplied return documented.",
-      "ICC Article 7 formally received. UNHCR formally received. 399,325+ downloads across 6 continents. These are the 'ideas that were stuck flowing like a river' — the archive's international distribution after 35 years of domestic suppression.",
+      "ICC Article 7 formally received. UNHCR formally received. 410,500+ downloads across 6 continents. These are the 'ideas that were stuck flowing like a river' — the archive's international distribution after 35 years of domestic suppression.",
       "The archive is blockchain-verified, internationally distributed, permanently accessible. Whatever is done to Dr. McLean physically cannot remove what the multiplied return produced. The access was cut — by the clinical death they caused — and what came back is indestructible.",
     ],
   },
@@ -387,7 +387,7 @@ export default function FalseSisterForensicAnalysis() {
                   </p>
                   <p className="text-zinc-300 text-sm leading-relaxed">
                     The video told its audience: <span className="italic text-zinc-200">"Cut their access and what was stolen comes back multiplied."</span>
-                    In this case: clinical death 2021. Then 2,304 documents. ICC received. UNHCR received. 399,325+ downloads. Six continents. <span className="text-white font-bold">The stolen energy came back as the archive. The archive is permanent. The multiplication is documented.</span>
+                    In this case: clinical death 2021. Then 2,304 documents. ICC received. UNHCR received. 410,500+ downloads. Six continents. <span className="text-white font-bold">The stolen energy came back as the archive. The archive is permanent. The multiplication is documented.</span>
                   </p>
                 </div>
               </div>

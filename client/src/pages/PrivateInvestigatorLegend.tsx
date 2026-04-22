@@ -429,7 +429,7 @@ export default function PrivateInvestigatorLegend() {
               <p>
                 The file they wanted to close is now submitted to the International Criminal Court under Article 7
                 of the Rome Statute — persecution as a crime against humanity — and to the United Nations Human
-                Rights Council. It has been downloaded 217,064 times across every continent. It is SHA-256 hashed
+                Rights Council. It has been downloaded 410,503 times across every continent. It is SHA-256 hashed
                 and Bitcoin blockchain timestamped. Its contents cannot be altered without the alteration becoming
                 visible in the hash record. The Enliven Chain blockchain verification means the archive exists
                 permanently in a form that no agency whose conduct it documents can amend, suppress, or deny.
@@ -488,7 +488,7 @@ export default function PrivateInvestigatorLegend() {
                 reasonably be expected to call, if that evidence existed and would assist their case, permits the
                 adverse inference that the evidence would not assist them. Every named individual in the archive could
                 have filed a defamation action. Every named agency could have challenged the archive's factual claims
-                in a judicial forum. The silence — 217,064 downloads, zero responses to specific factual claims — is
+                in a judicial forum. The silence — 410,503 downloads, zero responses to specific factual claims — is
                 the most legally significant element of the archive's public record. It is not absence of interest.
                 It is the choice not to engage with facts that cannot be rebutted.
               </Evidence>
@@ -499,7 +499,7 @@ export default function PrivateInvestigatorLegend() {
                 that investigated him, produced contradictory findings about him, applied psychiatric interventions
                 to suppress him, registered fraudulent entities in his name, and refused to investigate the fraud
                 in their own records — those agencies built the archive. The sovereignty is the archive. The fire
-                is 217,064 downloads. The crown is the ICC submission, the UNHCR submission, the blockchain
+                is 410,503 downloads. The crown is the ICC submission, the UNHCR submission, the blockchain
                 timestamp, and the defamation silence of every person who could have challenged the record
                 and chose not to.
               </p>
@@ -512,7 +512,7 @@ export default function PrivateInvestigatorLegend() {
               <p className="text-cyan-300 font-bold leading-snug mt-8">
                 They sent investigators. Thirty-five of them, across three decades, each with institutional authority
                 and a mandate to close the file. They found 2,304 documents. SHA-256 hashed. Bitcoin blockchain
-                timestamped. Submitted to the ICC. With the UNHCR. Downloaded 217,064 times. Freely available at
+                timestamped. Submitted to the ICC. With the UNHCR. Downloaded 410,503 times. Freely available at
                 barrandodger.com. The investigators came for shame. They built a legend. And every name they tried
                 to bury, every file they tried to close, every truth they tried to silence — is now permanently,
                 irrevocably, verifiably part of the public record. The sovereignty is already documented. The fire

@@ -483,7 +483,7 @@ export default function DigitalArchive() {
             <div className="text-left">
               <p className="text-amber-300 font-black text-sm mb-1">This Archive Cannot Be Erased</p>
               <p className="text-zinc-400 text-xs leading-relaxed">
-                Every document in this archive is permanently anchored to the Bitcoin blockchain via OpenTimestamps. The SHA-256 cryptographic hashes are verifiable by any person on Earth, forever. This record has been submitted to the International Criminal Court (The Hague) under Article 7 and the United Nations High Commissioner for Refugees (UNHCR) in Geneva. 378,571 downloads across 6 continents. Zero institutional rebuttals. Zero.
+                Every document in this archive is permanently anchored to the Bitcoin blockchain via OpenTimestamps. The SHA-256 cryptographic hashes are verifiable by any person on Earth, forever. This record has been submitted to the International Criminal Court (The Hague) under Article 7 and the United Nations High Commissioner for Refugees (UNHCR) in Geneva. 410,503 downloads across 6 continents. Zero institutional rebuttals. Zero.
               </p>
             </div>
           </div>

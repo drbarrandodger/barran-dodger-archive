@@ -129,7 +129,7 @@ function generateSignificance(entry: {
   }
 
   // Fallback
-  return "Primary-source archive exhibit — part of the 2,304 blockchain-verified document record submitted to the ICC under Article 7 (crimes against humanity) and filed with the UNHCR in Geneva. Contributes to the documented pattern of 35-year systematic persecution of Dr. Richard William McLean by named Australian government operatives and institutions. Downloaded 361,000+ times across six continents.";
+  return "Primary-source archive exhibit — part of the 2,304 blockchain-verified document record submitted to the ICC under Article 7 (crimes against humanity) and filed with the UNHCR in Geneva. Contributes to the documented pattern of 35-year systematic persecution of Dr. Richard William McLean by named Australian government operatives and institutions. Downloaded 410,503+ times across six continents.";
 }
 
 // ─── Parse the master evidence register ───────────────────────────────────────
@@ -398,7 +398,7 @@ const LOCAL_PDF_SIGNIFICANCE: Record<string, { title: string; category: string; 
   "document_that_cannot_be_erased.pdf": {
     title: "The Document That Cannot Be Erased",
     category: "Foundational Document",
-    significance: "Foundational archive statement — the document establishing the inerasability of the blockchain-verified record. Demonstrates that the 2,304-document archive, once distributed across the blockchain and downloaded 361,000+ times globally, cannot be suppressed by any domestic institutional mechanism.",
+    significance: "Foundational archive statement — the document establishing the inerasability of the blockchain-verified record. Demonstrates that the 2,304-document archive, once distributed across the blockchain and downloaded 410,503+ times globally, cannot be suppressed by any domestic institutional mechanism.",
   },
   "fih_third_party_authorisation.pdf": {
     title: "FIH Third Party Authorisation",
@@ -418,7 +418,7 @@ const LOCAL_PDF_SIGNIFICANCE: Record<string, { title: string; category: string; 
   "gospel_of_barran_dodger_victory_2.pdf": {
     title: "Gospel of Barran Dodger Victory",
     category: "Prophetic Archive",
-    significance: "Victory gospel document — documents the transition from persecution to vindication as evidenced by the ICC submission, UNHCR Geneva filing, and 361,000+ international downloads. The victory is documented and measured, not metaphorical.",
+    significance: "Victory gospel document — documents the transition from persecution to vindication as evidenced by the ICC submission, UNHCR Geneva filing, and 410,503+ international downloads. The victory is documented and measured, not metaphorical.",
   },
   "i_tried_to_kill_barran_dodger_satire_2.pdf": {
     title: "I Tried to Kill Barran Dodger — Satire",
@@ -438,7 +438,7 @@ const LOCAL_PDF_SIGNIFICANCE: Record<string, { title: string; category: string; 
   "living_scroll_unkillable_witness.pdf": {
     title: "Living Scroll — The Unkillable Witness",
     category: "Testimony",
-    significance: "Testimony document establishing the 'unkillable witness' proposition — that the archive, distributed globally across blockchain and downloaded 361,000+ times, constitutes an unkillable witness to the documented persecution. The 2021 clinical death at 2.87% survival is the documented attempted killing of the witness; the archive's global distribution is the documented impossibility of its suppression.",
+    significance: "Testimony document establishing the 'unkillable witness' proposition — that the archive, distributed globally across blockchain and downloaded 410,503+ times, constitutes an unkillable witness to the documented persecution. The 2021 clinical death at 2.87% survival is the documented attempted killing of the witness; the archive's global distribution is the documented impossibility of its suppression.",
   },
   "precision_as_evidence_evidentiary_synthesis.pdf": {
     title: "Precision as Evidence — Evidentiary Synthesis",

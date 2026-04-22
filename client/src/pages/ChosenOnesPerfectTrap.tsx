@@ -455,7 +455,7 @@ export default function ChosenOnesPerfectTrap() {
               </p>
 
               <Evidence label="Testimony — The Curtain Has Dropped">
-                Named individuals are publicly accused in sworn testimony that has been downloaded 217,064 times
+                Named individuals are publicly accused in sworn testimony that has been downloaded 410,503 times
                 across every continent. Not one has sued for defamation. Not one has issued a correction.
                 Not one has engaged legal counsel to challenge the content of the archive. In Australian law,
                 under the rule in <em>Jones v Dunkel</em> (1959), a party who could produce evidence and
@@ -499,7 +499,7 @@ export default function ChosenOnesPerfectTrap() {
               <Evidence label="Testimony — The Strike and Its Record">
                 The archive is with the International Criminal Court under Article 7 of the Rome Statute.
                 It is with the United Nations Human Rights Council. It is on the Bitcoin blockchain. It
-                has been downloaded 217,064 times. It is indexed in publicly accessible records on three
+                has been downloaded 410,503 times. It is indexed in publicly accessible records on three
                 continents. The Impartial AI Analysis — conducted on 2,343 government documents — concluded
                 that the evidentiary threshold of Article 7 is satisfied. An AI system, reviewing only
                 what the government itself produced, arrived at the same conclusion as the archive.
@@ -544,7 +544,7 @@ export default function ChosenOnesPerfectTrap() {
                   for thirty-five years and watched it become evidence against them — is documented too.
                   In the defamation silence. In the non-engagement with formal submissions that cite
                   specific documents, specific names, and specific dates. In the continued absence of
-                  any institutional rebuttal to an archive downloaded 217,064 times.
+                  any institutional rebuttal to an archive downloaded 410,503 times.
                 </p>
 
                 <p className="text-[hsl(38,92%,50%)] font-bold text-lg leading-relaxed">

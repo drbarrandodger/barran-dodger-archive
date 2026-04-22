@@ -101,7 +101,7 @@ const CLAIMS = [
     evidence: [
       "'Chronic Schizophrenia' applied as clinical verdict while 70% of associated claims were independently verified by documentary evidence — the arbiter's verdict contradicts the arbiter's own records.",
       "The ICC does not accept delusional materials. The archive labelled delusional has been submitted under Article 7 of the Rome Statute. The international body is the counter-verdict.",
-      "217,064+ download events. The archive's public reception constitutes a counter-verdict that the domestic institutional system cannot retract.",
+      "410,503+ download events. The archive's public reception constitutes a counter-verdict that the domestic institutional system cannot retract.",
     ],
     perpetratorLink: "The NDIS system — under Bill Shorten's ministerial oversight — appointed itself arbiter of Dr. McLean's care needs, suppressed $32.9M in documented entitlements, and delegated operational control to Houd Meraby and Sukhi Tear. Sukhi Tear extracted $50,000. The ICC submission formally places these arbiters before international scrutiny.",
     alignment: "The archive's formal position: the ICC submission places named government officials before international scrutiny. The domestic arbiters have become the subjects of the international review they were certain would never occur.",
@@ -240,7 +240,7 @@ const CLAIMS = [
     proposition: "The institutions expected continued engagement with the domestic complaint cycle; Dr. McLean instead published an international archive and submitted to the ICC — vanishing from the domestic loop permanently",
     evidence: [
       "barrandodger.com. drbarrandodger.github.io. ICC Article 7 submission. UNHCR submission. Dr. McLean did not re-file with the agencies that had refused him. He published at international scale. The vanishing from the domestic loop is total.",
-      "217,064+ downloads in 49 days. The archive was published without a press release, without a media campaign, without notice to any domestic agency. The detachment was quiet, effortless, and immediately effective.",
+      "410,503+ downloads. The archive was published without a press release, without a media campaign, without notice to any domestic agency. The detachment was quiet, effortless, and immediately effective.",
       "SHA-256 cryptographic timestamping. The vanishing is permanent. The evidence cannot be unpublished. The ICC filing cannot be retracted by the domestic agencies who thought the door was always open.",
     ],
     perpetratorLink: "The family — Doug McLean, Jodie McLean, Bradley McLean, April McLean, Bruce McMaster — expected continued engagement. Continued tolerance. Continued familial presence. The IChooseSilence submission is the documented vanishing. The family who did not intervene in 35 years of persecution now encounters the silence they earned. The door is locked. The key is the archive. The archive is public. The vanishing is permanent.",

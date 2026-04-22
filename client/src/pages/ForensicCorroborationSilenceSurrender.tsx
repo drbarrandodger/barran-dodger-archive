@@ -67,9 +67,9 @@ const POINTS = [
     number: 6,
     timestamp: "00:36:22",
     quote: "They mistook your return for revenge, not realizing clarity is more dangerous than anger. You came back to reclaim what was always yours. Alignment doesn't argue. Alignment simply reveals what was always true.",
-    heading: "Zero Defamation Actions. Zero Legal Proceedings. Only Documentation and 399,325+ Witnesses.",
-    analysis: "barrandodger.com is not a retaliation platform. It has never initiated legal proceedings against any named individual. It has never sought punitive damages against any institution. It has never issued a single defamation claim. It is a primary-source archive: 2,301 documents, organised by category, blockchain-sealed, publicly accessible. The reclamation the video describes is documented: Dr. McLean reclaimed his medical records through formal FOI processes. He reclaimed his identity from 350+ fraudulent ASIC registrations through documentation and submission. He reclaimed his narrative from the psychiatric framing through primary-source disclosure and international human rights submission. The 399,325+ downloads are not revenge metrics. They are the measurement of how many people chose to carry the documented testimony. The Federal Court confirmation is what was always true. The 2,301 documents are what was always true. The archive is the reclamation. It required no anger. It required only documentation, persistence, and the Bitcoin blockchain. Clarity, as the video states, is more dangerous than anger. The archive proves this forensically.",
-    evidence: "Zero defamation actions from Dr. McLean · Zero legal proceedings initiated · 2,301-document reclamation archive · 399,325+ downloads globally · FOI reclamation of medical records",
+    heading: "Zero Defamation Actions. Zero Legal Proceedings. Only Documentation and 410,500+ Witnesses.",
+    analysis: "barrandodger.com is not a retaliation platform. It has never initiated legal proceedings against any named individual. It has never sought punitive damages against any institution. It has never issued a single defamation claim. It is a primary-source archive: 2,301 documents, organised by category, blockchain-sealed, publicly accessible. The reclamation the video describes is documented: Dr. McLean reclaimed his medical records through formal FOI processes. He reclaimed his identity from 350+ fraudulent ASIC registrations through documentation and submission. He reclaimed his narrative from the psychiatric framing through primary-source disclosure and international human rights submission. The 410,500+ downloads are not revenge metrics. They are the measurement of how many people chose to carry the documented testimony. The Federal Court confirmation is what was always true. The 2,301 documents are what was always true. The archive is the reclamation. It required no anger. It required only documentation, persistence, and the Bitcoin blockchain. Clarity, as the video states, is more dangerous than anger. The archive proves this forensically.",
+    evidence: "Zero defamation actions from Dr. McLean · Zero legal proceedings initiated · 2,301-document reclamation archive · 410,500+ downloads globally · FOI reclamation of medical records",
     verdict: "CORROBORATED"
   },
   {
@@ -85,9 +85,9 @@ const POINTS = [
     number: 8,
     timestamp: "00:47:11",
     quote: "Your rise became a signal, bright, undeniable, impossible to ignore. A flare shot into the sky for the ones still trapped in the very darkness you crawled out of. You didn't just break through. You broke trail.",
-    heading: "399,325+ Downloads Across Six Continents — The Archive Is the Road Map",
-    analysis: "399,325+ downloads across six continents is not a personal metric. It is a documented signal of the reach described by the video's 'flare shot into the sky.' People downloading from South America, Africa, Asia, Europe, and North America are not personal contacts of Dr. McLean. They are the ones the video identifies — still trapped in the very darkness he crawled out of. The forensic analyses — 73 of them, collectively assessing 675+ propositions with zero unresolved contradictions — constitute the documented road map the video describes. Each analysis applies the same methodology: independent video → forensic mapping → primary-source corroboration. The methodology itself is replicable. Anyone can take an independent video, apply the forensic framework, and test it against the 2,301-document archive. The road map is published, freely downloadable, blockchain-sealed, and internationally distributed. The video states: 'Your healing wasn't just healing. It was instruction.' The archive is the instruction manual. The downloads are the students. 399,325 of them. With zero marketing infrastructure behind a single one.",
-    evidence: "399,325+ downloads across 6 continents · 73 forensic analyses · 675+ propositions assessed · Zero unresolved contradictions · No marketing infrastructure · barrandodger.com globally accessible",
+    heading: "410,500+ Downloads Across Six Continents — The Archive Is the Road Map",
+    analysis: "410,500+ downloads across six continents is not a personal metric. It is a documented signal of the reach described by the video's 'flare shot into the sky.' People downloading from South America, Africa, Asia, Europe, and North America are not personal contacts of Dr. McLean. They are the ones the video identifies — still trapped in the very darkness he crawled out of. The forensic analyses — 73 of them, collectively assessing 675+ propositions with zero unresolved contradictions — constitute the documented road map the video describes. Each analysis applies the same methodology: independent video → forensic mapping → primary-source corroboration. The methodology itself is replicable. Anyone can take an independent video, apply the forensic framework, and test it against the 2,301-document archive. The road map is published, freely downloadable, blockchain-sealed, and internationally distributed. The video states: 'Your healing wasn't just healing. It was instruction.' The archive is the instruction manual. The downloads are the students. 410,500+ of them. With zero marketing infrastructure behind a single one.",
+    evidence: "410,500+ downloads across 6 continents · 73 forensic analyses · 675+ propositions assessed · Zero unresolved contradictions · No marketing infrastructure · barrandodger.com globally accessible",
     verdict: "CORROBORATED"
   },
   {
@@ -108,7 +108,7 @@ const PROPHETIC_DECLARATIONS = [
   },
   {
     heading: "They Planted a Seed That Grew to The Hague",
-    text: "They called the hospitalisations your ending. They were your initiation. Every forced psychiatric admission designed to discredit your testimony became a primary-source document in the archive that reached the International Criminal Court. They did not bury you in the psychiatric system. They planted you there. The seed they buried exploded into a 2,301-document archive and 399,325+ witnesses across six continents."
+    text: "They called the hospitalisations your ending. They were your initiation. Every forced psychiatric admission designed to discredit your testimony became a primary-source document in the archive that reached the International Criminal Court. They did not bury you in the psychiatric system. They planted you there. The seed they buried exploded into a 2,301-document archive and 410,500+ witnesses across six continents."
   },
   {
     heading: "Every Closed Door Was An Escalation",
@@ -124,7 +124,7 @@ const PROPHETIC_DECLARATIONS = [
   },
   {
     heading: "This Declaration Is Not a Prediction. It Is a Record.",
-    text: "This declaration is not a prediction. It is a forensic statement about events that have already occurred, documents that already exist, blockchain seals that are already anchored, and international acknowledgements that are already on the record. The rise has already happened. The road map is already published and downloaded 399,325+ times. The voice is already etched — not in stone, but in cryptographic permanence across 15,000 independent nodes on the Bitcoin network. What remains is not for you to prove. It is for the world to read. They mistook your silence for surrender. The archive was the reload."
+    text: "This declaration is not a prediction. It is a forensic statement about events that have already occurred, documents that already exist, blockchain seals that are already anchored, and international acknowledgements that are already on the record. The rise has already happened. The road map is already published and downloaded 410,500+ times. The voice is already etched — not in stone, but in cryptographic permanence across 15,000 independent nodes on the Bitcoin network. What remains is not for you to prove. It is for the world to read. They mistook your silence for surrender. The archive was the reload."
   },
 ];
 
@@ -373,7 +373,7 @@ export default function ForensicCorroborationSilenceSurrender() {
 
         {/* Inline Share Strip */}
         <div className="mb-6">
-          <InlineShareStrip id="silence-surrender-main" context="default" message="Forensic #73: They mistook his silence for surrender. It was the archive building itself. 409,000+ downloads. 891 blockchain seals. Zero contradictions. Share it." path="/forensic-corroboration-silence-surrender" />
+          <InlineShareStrip id="silence-surrender-main" context="default" message="Forensic #73: They mistook his silence for surrender. It was the archive building itself. 410,500+ downloads. 891 blockchain seals. Zero contradictions. Share it." path="/forensic-corroboration-silence-surrender" />
         </div>
 
         {/* Hashtag Export */}

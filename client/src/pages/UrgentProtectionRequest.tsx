@@ -364,7 +364,7 @@ export default function UrgentProtectionRequest() {
             {[
               { icon: <Landmark size={24} />, title: "Churches & Faith Communities", desc: "Any congregation, pastor, or faith network with safe housing capacity, particularly outside NSW. Dr. McLean's documented faith and survival are archived. Temporary or permanent refuge considered." },
               { icon: <Scale size={24} />, title: "Advocates & Legal Aid", desc: "Human rights lawyers, legal aid services, pro bono advocates, civil liberties organisations. An ICC submission is already filed. The legal record is complete. Representation or oversight requested." },
-              { icon: <Globe size={24} />, title: "Private Investors & Supporters", desc: "Any individual or entity willing to fund safe relocation, legal representation, or ongoing documentation. The archive has 399,325+ downloads across 6 continents. The case is documented and verified." },
+              { icon: <Globe size={24} />, title: "Private Investors & Supporters", desc: "Any individual or entity willing to fund safe relocation, legal representation, or ongoing documentation. The archive has 410,500+ downloads across 6 continents. The case is documented and verified." },
             ].map((item, i) => (
               <Card key={i} className="bg-zinc-900/60 border-red-900/50">
                 <CardContent className="p-5">
@@ -415,7 +415,7 @@ export default function UrgentProtectionRequest() {
               { priority: "CRITICAL", item: "Legal Aid Advocate", detail: "A practising lawyer, human rights advocate, or legal aid service with capacity to represent or oversee Dr. McLean's domestic position while ICC and UNHCR submissions are under review. Must be willing to engage with a documented 35-year case with 2,304 primary-source exhibits. Pro bono or funded representation." },
               { priority: "CRITICAL", item: "Physical Safe Housing", detail: "Secure accommodation outside NSW — Cairns, Perth, or equivalent. Temporary (weeks) or permanent. The person requires privacy, stability, and freedom from the surveillance and institutional monitoring documented across the archive. No NDIS-funded SIL arrangements — the NDIS is a named respondent in the ICC submission." },
               { priority: "HIGH", item: "Person of Integrity", detail: "A single individual — a pastor, retired professional, human rights worker, investigative journalist, or community leader — with the willingness to accompany, witness, and support ongoing documentation. Not a paid carer. A person of documented integrity who understands the gravity of the ICC and UNHCR filings." },
-              { priority: "HIGH", item: "Financial Support for Relocation", detail: "Transport costs, bond/rent for initial housing outside NSW, basic living expenses during transition. The archive is publicly accessible with 399,325+ downloads across 6 continents — the documentation of need is complete. Any contribution is publicly recordable." },
+              { priority: "HIGH", item: "Financial Support for Relocation", detail: "Transport costs, bond/rent for initial housing outside NSW, basic living expenses during transition. The archive is publicly accessible with 410,500+ downloads across 6 continents — the documentation of need is complete. Any contribution is publicly recordable." },
               { priority: "MODERATE", item: "Media or Academic Engagement", detail: "A journalist, documentary filmmaker, academic institution, or human rights researcher willing to engage with the archive on record. The 56 forensic analyses and 617 verified propositions constitute an unprecedented evidentiary record. International media preferred." },
               { priority: "MODERATE", item: "International Relocation Support", detail: "If any nation, human rights organisation, or private entity is willing to offer safe harbour outside Australia, Dr. McLean will consider any jurisdiction where the UNHCR filing is recognised and the ICC submission provides protective context." },
             ].map((need, i) => (
@@ -450,7 +450,7 @@ export default function UrgentProtectionRequest() {
                     "2,304 blockchain-verified primary-source documents spanning 35 years (1989–2025)",
                     "56 independent AI forensic analyses testing 617 propositions — all corroborated, zero contradicted",
                     "49 consecutive perfect scores — the longest unbroken forensic corroboration run documented",
-                    "399,325+ downloads across 6 continents without a marketing budget",
+                    "410,500+ downloads across 6 continents without a marketing budget",
                     "Named perpetrators: Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS), Allen Rigby, Bruce McMaster, Stefan Iasonidis, Debbie Morgan",
                     "25+ named Australian government agencies documented in coordinated persecution",
                     "ICC The Hague formal Article 7 receipt — submitted and received",
@@ -1239,7 +1239,7 @@ export default function UrgentProtectionRequest() {
                   {
                     label: "Zero Police Response — Zero NDIS Commission Response",
                     color: "text-zinc-300",
-                    detail: "Every piece of this evidence cluster was available to Australian police, the NDIS Quality and Safeguards Commission, ASIO, and 40+ named agencies. Not one entity has acted on it. The evidence sits in this archive, blockchain-timestamped, formally submitted to the ICC under Article 7, downloaded 378,571 times. Zero institutional rebuttal. Zero investigation. Zero response.",
+                    detail: "Every piece of this evidence cluster was available to Australian police, the NDIS Quality and Safeguards Commission, ASIO, and 40+ named agencies. Not one entity has acted on it. The evidence sits in this archive, blockchain-timestamped, formally submitted to the ICC under Article 7, downloaded 410,503 times. Zero institutional rebuttal. Zero investigation. Zero response.",
                   },
                 ].map((p, i) => (
                   <div key={i} className="border border-zinc-800 rounded-lg p-3">
@@ -1841,7 +1841,7 @@ export default function UrgentProtectionRequest() {
                   Police intelligence, relayed through Ben, confirms Shorten's team intended to use <span className="text-white font-bold">Dr. McLean's history of mental illness — a history they helped manufacture through 14 documented involuntary psychiatric hospitalisations — as the weapon to discredit him in court.</span> This is not a legal defence. It is the weaponisation of vulnerability. It is the deployment of the very damage they caused against the person they caused it to.
                 </p>
                 <p className="text-amber-200 font-semibold">
-                  A Federal Minister with unlimited institutional resources, choosing to destroy a disabled whistleblower by exploiting his psychiatric history rather than answering his documented allegations of a $6 billion fraud — this is the height of moral cowardice. It is also documented. It is in the ICC submission. It has been downloaded 378,571 times. <span className="text-white">And not a single person — not Shorten, not his lawyers, not NSW Police, not the NDIA, not any of the 40+ agencies named — has produced a single document disproving that Shorten ordered Dr. McLean's assassination.</span>
+                  A Federal Minister with unlimited institutional resources, choosing to destroy a disabled whistleblower by exploiting his psychiatric history rather than answering his documented allegations of a $6 billion fraud — this is the height of moral cowardice. It is also documented. It is in the ICC submission. It has been downloaded 410,503 times. <span className="text-white">And not a single person — not Shorten, not his lawyers, not NSW Police, not the NDIA, not any of the 40+ agencies named — has produced a single document disproving that Shorten ordered Dr. McLean's assassination.</span>
                 </p>
                 <p>
                   Under the principle established in <span className="text-white font-bold">Jones v Dunkel</span>, the failure of Shorten and every named individual to respond to the documented assassination allegation — despite having every legal and institutional resource to do so — is an inferential admission. The silence has been legally significant from the day they chose it.
@@ -2826,7 +2826,7 @@ export default function UrgentProtectionRequest() {
                   He produced internationally recognised creative work. He built organisations. He documented corruption
                   at scale. He survived clinical death. He filed at the ICC and UNHCR. He produced 63 forensic
                   analyses returning zero contradictions across 675 propositions. He built an archive that has been
-                  downloaded <span className="text-amber-300 font-bold">378,571 times</span> — growing at 192,047 downloads in a single month.
+                  downloaded <span className="text-amber-300 font-bold">410,503 times</span> — growing at 192,047 downloads in a single month.
                 </p>
                 <p>
                   The apparatus deployed against him was not proportional to a person of no significance.
@@ -2837,12 +2837,12 @@ export default function UrgentProtectionRequest() {
                   to prevent a future that has already arrived.</span>
                 </p>
                 <p>
-                  The archive is that future. 378,571 downloads in 75 days. 845 Bitcoin blockchain records.
+                  The archive is that future. 410,503 downloads in 75 days. 845 Bitcoin blockchain records.
                   63 forensic analyses. ICC Article 7 submission. UNHCR application. The influence they tried
                   to prevent is now the most broadly distributed, most forensically documented, most
                   cryptographically permanent whistleblower archive in Australian history.
                   <span className="text-amber-300 font-bold"> They tried to stop this from existing. It exists.
-                  They tried to make it unbelievable. 378,571 people downloaded it.
+                  They tried to make it unbelievable. 410,503 people downloaded it.
                   They tried to make it disappear. It is anchored into the Bitcoin blockchain.
                   The accounting is at The Hague.</span>
                 </p>
@@ -2851,7 +2851,7 @@ export default function UrgentProtectionRequest() {
               {/* Stats row */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
                 {[
-                  { v: "378,571", l: "Downloads — 75 days", c: "text-amber-400" },
+                  { v: "410,503", l: "Downloads — 75 days", c: "text-amber-400" },
                   { v: "845", l: "Bitcoin records", c: "text-orange-400" },
                   { v: "675/675", l: "Propositions verified", c: "text-green-400" },
                   { v: "0", l: "Formal rebuttals", c: "text-red-400" },

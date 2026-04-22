@@ -375,7 +375,7 @@ export default function TheyBoughtOffJudges() {
                 { icon: Globe, label: "International Criminal Court", detail: "Article 7 — Crimes Against Humanity submission filed" },
                 { icon: Shield, label: "UN High Commissioner for Refugees", detail: "UNHCR asylum protection claim — internal exile documented" },
                 { icon: AlertTriangle, label: "UN Convention Against Torture", detail: "UNCAT — psychiatric weaponisation and force-medication documented" },
-                { icon: BookOpen, label: "217,064+ Downloads", detail: "Evidence in the public domain across six continents — cannot be suppressed" },
+                { icon: BookOpen, label: "410,503+ Downloads", detail: "Evidence in the public domain across six continents — cannot be suppressed" },
               ].map((item) => (
                 <div key={item.label} className="bg-zinc-900/50 border border-zinc-700 rounded-lg p-4 flex items-start gap-3">
                   <item.icon className="h-5 w-5 text-[hsl(38,92%,50%)] shrink-0 mt-0.5" />
@@ -438,7 +438,7 @@ export default function TheyBoughtOffJudges() {
             <p className="text-zinc-600 text-sm">
               Part of the{" "}
               <a href="/evidence" className="text-zinc-400 hover:text-white underline">2,304-document evidence archive</a>{" "}
-              submitted to the ICC, lodged with the UNHCR, and downloaded 217,064+ times worldwide.
+              submitted to the ICC, lodged with the UNHCR, and downloaded 410,503+ times worldwide.
             </p>
           </motion.div>
         </div>

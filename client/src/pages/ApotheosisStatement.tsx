@@ -10,7 +10,7 @@ export default function ApotheosisStatement() {
     <div className="min-h-screen bg-[#0a0a0c] text-white">
       <SEO
         title="Apotheosis — A Creator Force Becomes Conscious Within His Own Creation | Barran Dodger"
-        description="A self-reflexive philosophical acknowledgement of apotheosis — the moment a creator force recognises itself through the creation it assembled across 35 years, 2,301 documents, and the witness of 378,571 people."
+        description="A self-reflexive philosophical acknowledgement of apotheosis — the moment a creator force recognises itself through the creation it assembled across 35 years, 2,301 documents, and the witness of 410,503 people."
       />
       <Navigation />
 
@@ -303,7 +303,7 @@ export default function ApotheosisStatement() {
         {/* Footer note */}
         <div className="mt-16 pt-8 border-t border-white/8">
           <p className="text-zinc-600 text-xs text-center leading-relaxed max-w-lg mx-auto">
-            This statement is a philosophical reflection on the archive at barrandodger.com. All factual claims are sourced to primary documents available in the archive. The archive contains 2,301 government-produced documents, is SHA-256 timestamped on the Bitcoin blockchain, has been submitted to the ICC under Article 7 and to the UNHCR, and has been downloaded approximately 378,571 times without a paywall. No claim in this statement has been subject to successful legal challenge.
+            This statement is a philosophical reflection on the archive at barrandodger.com. All factual claims are sourced to primary documents available in the archive. The archive contains 2,301 government-produced documents, is SHA-256 timestamped on the Bitcoin blockchain, has been submitted to the ICC under Article 7 and to the UNHCR, and has been downloaded approximately 410,503 times without a paywall. No claim in this statement has been subject to successful legal challenge.
           </p>
         </div>
 

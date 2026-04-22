@@ -389,7 +389,7 @@ export default function IChooseSilence() {
             <p className="text-zinc-600 text-sm">
               Part of the{" "}
               <a href="/evidence" className="text-zinc-400 hover:text-white underline">2,304-document evidence archive</a>{" "}
-              submitted to the ICC, lodged with the UNHCR, and downloaded 217,064+ times worldwide.
+              submitted to the ICC, lodged with the UNHCR, and downloaded 410,503+ times worldwide.
             </p>
           </motion.div>
         </div>

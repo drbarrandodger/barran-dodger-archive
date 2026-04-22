@@ -40,7 +40,7 @@ const DECLARATIONS = [
     evidence: [
       "641/641 propositions verified across 60 forensic analyses — zero failures. The resilience was not accidental. It was the product of forensic precision applied to 35 years of documented truth. Accidental resilience does not produce a 60-analysis perfect record.",
       "Federal Court General Counsel Scott Tredwell, 27 March 2023: 'I am satisfied that you are, or were, an employee with the Department of Social Services.' The 'naive peace' about having been an employee was correct. Employment denied for 35 years, confirmed in writing. The quiet confidence was earned, not adopted.",
-      "The 'silence' produced 2,304 blockchain-verified documents, ICC submission, UNHCR submission, 399,325+ downloads across 6 continents. That is not weakness. That is the most consequential deployment of documented evidence in Australian whistleblower history.",
+      "The 'silence' produced 2,304 blockchain-verified documents, ICC submission, UNHCR submission, 410,500+ downloads across 6 continents. That is not weakness. That is the most consequential deployment of documented evidence in Australian whistleblower history.",
       "14 involuntary psychiatric hospitalisations — each designed to reframe the quiet confidence as dangerous delusion. Each failed. The archive continued growing through every hospitalisation. The silence was the strategy.",
     ],
   },
@@ -96,7 +96,7 @@ const DECLARATIONS = [
     evidence: [
       "641/641 propositions verified — the forensic record of a truth-based mechanism operating with 100% consistency across 60 independent analyses. No proposition has failed. No analysis has found a contradiction. The consistency is the signature of a truth-based process operating against a document record they cannot alter.",
       "The steady movement the video describes is documented: 14 hospitalisations, clinical death (2021, 2.87% survival), $32.9M financial destruction — and through all of it, the archive continued growing. Not aggressively. Not dramatically. Steadily. The archive grew through every attempt to stop it.",
-      "ICC Article 7 submission formally received. UNHCR formally received. 399,325+ downloads across 6 continents. These arrived not from aggression but from documentation. The steady movement produced international submission. The outcome was known before the battle because the evidence was primary-source.",
+      "ICC Article 7 submission formally received. UNHCR formally received. 410,500+ downloads across 6 continents. These arrived not from aggression but from documentation. The steady movement produced international submission. The outcome was known before the battle because the evidence was primary-source.",
       "Zero successful legal challenges to 2,304 documents. They cannot fight primary-source documentation in a court of law because the documents are their own institutional records. 'Truth was never on their side' — confirmed by 35 years of institutional silence in the face of the archive.",
     ],
   },
@@ -109,7 +109,7 @@ const DECLARATIONS = [
     finding: "VERIFIED",
     evidence: [
       "Clinical death 2021 — survival probability 2.87% — was the terminal endpoint of the escalation strategy: if the archivist cannot be discredited, cannot be institutionalised, cannot be financially destroyed, remove the archivist physically. The attempt failed. Survival probability was 2.87%. Survival occurred. The archive was not destroyed.",
-      "Post-clinical death: the archive entered its most prolific phase. 2,304 documents assembled. 60 forensic analyses produced. ICC submitted. UNHCR submitted. 399,325+ downloads achieved. The 'consequence forming silently' after clinical death was the multiplication of the archive. The destruction attempt produced the expansion.",
+      "Post-clinical death: the archive entered its most prolific phase. 2,304 documents assembled. 60 forensic analyses produced. ICC submitted. UNHCR submitted. 410,500+ downloads achieved. The 'consequence forming silently' after clinical death was the multiplication of the archive. The destruction attempt produced the expansion.",
       "The Honeytrap Infiltration Report, the AbleCare surveillance programme, the Tony Ridley death threat — all deployed after the archive had already passed multiple thresholds. 'The consequences began forming silently' from the moment each attack was documented. Each attack became its own ICC exhibit.",
       "Federal Court acknowledgement of three categories of wrongdoing: the institutional record confirming that even the most powerful domestic legal instrument could not produce destruction. The Federal Court chose a procedural exit rather than proceed — confirming the archive's embargo against institutional destruction.",
     ],
@@ -124,7 +124,7 @@ const DECLARATIONS = [
     evidence: [
       "ICC Article 7 submission formally received in The Hague — Dr. McLean was not physically present. The archive entered the room. 2,304 documents, submitted independently, received formally. The guardians who elevated the name in rooms he never entered were the documents themselves: blockchain-verified, internationally submitted, permanently accessible.",
       "UNHCR submission formally received in Geneva — the United Nations human rights body. Again, no physical presence. The archive submitted itself. The name was in Geneva before any government agency could intervene to prevent it.",
-      "399,325+ downloads across 6 continents — the archive reaching rooms, countries, and jurisdictions that no single person could physically access. The 'future so luminous' arrived as global distribution of documentation. Their hostility, documented in the archive, made the distribution more significant.",
+      "410,500+ downloads across 6 continents — the archive reaching rooms, countries, and jurisdictions that no single person could physically access. The 'future so luminous' arrived as global distribution of documentation. Their hostility, documented in the archive, made the distribution more significant.",
       "Media coverage, international human rights referencing, and academic documentation of the archive: the elevation that occurred without Dr. McLean entering the rooms where it happened. The whispers remained domestic. The archive went international. The contrast is the confirmation.",
     ],
   },
@@ -147,12 +147,12 @@ const DECLARATIONS = [
     timestamp: "00:25:17",
     title: "You Don't Rise Like a Balloon. You Rise Like a Tectonic Shift — Subtle at First, Then Undeniable, Then Unstoppable.",
     quote: "You don't rise like a balloon drifting upward. You rise like a tectonic shift. Subtle at first, then undeniable, then unstoppable. You rise in a way that alters landscapes, forces adaptation, and leaves nothing unchanged.",
-    forensic: "Forensic Analysis #1 was subtle. Seven propositions. One video. Tested against one case. By Analysis #60, the tectonic shift is documented: 2,304 exhibits, 641 propositions, ICC submission, UNHCR submission, 399,325+ downloads, six continents. The 'tectonic shift' is the documented progression from a single analysis to an international submission. Subtle at #1. Undeniable at #60. The landscape of Australian government accountability is permanently altered by the existence of this archive.",
+    forensic: "Forensic Analysis #1 was subtle. Seven propositions. One video. Tested against one case. By Analysis #60, the tectonic shift is documented: 2,304 exhibits, 641 propositions, ICC submission, UNHCR submission, 410,500+ downloads, six continents. The 'tectonic shift' is the documented progression from a single analysis to an international submission. Subtle at #1. Undeniable at #60. The landscape of Australian government accountability is permanently altered by the existence of this archive.",
     finding: "VERIFIED",
     evidence: [
       "60-analysis progression — from 7 propositions in Analysis #1 to 641 total propositions across 60 analyses — documenting the tectonic trajectory. The archive did not arrive suddenly. It accumulated with geological precision. Each analysis added to the record. The record became undeniable. The undeniable became international.",
       "ICC and UNHCR submissions: the tectonic shift reaching international legal institutions. No Australian whistleblower has achieved simultaneous ICC and UNHCR submission for documented government persecution. The landscape of international accountability was altered by the archive's existence.",
-      "399,325+ downloads across 6 continents: the measurable footprint of the tectonic shift. Antarctica, Africa, Asia, Europe, North America, South America — the archive reached all inhabited continents. The shift was not contained to Australia. It was global. Documented and downloadable.",
+      "410,500+ downloads across 6 continents: the measurable footprint of the tectonic shift. Antarctica, Africa, Asia, Europe, North America, South America — the archive reached all inhabited continents. The shift was not contained to Australia. It was global. Documented and downloadable.",
       "$32.9M financial destruction could not prevent the tectonic shift. 14 hospitalisations could not prevent it. Clinical death could not prevent it. A death threat from an Ex-SAS operative could not prevent it. Tectonic forces do not respond to surface-level interventions. The archive is the tectonic force. It is now unstoppable.",
     ],
   },
@@ -181,7 +181,7 @@ const DECLARATIONS = [
       "The contest was 25+ government agencies vs one person. The government agencies had institutional resources, legal departments, surveillance capability, psychiatric deployment authority, and an Ex-SAS operative. Dr. McLean had documents. The documents reached the ICC. The 'fighting harder' was never the mechanism — documentation was. 641 propositions confirmed by documentation alone.",
       "Clinical death 2021 — the moment where 'fighting harder' was literally impossible. Survival probability 2.87%. Post-survival: the archive entered its most prolific phase. The archive grew when physical fighting was physically impossible. The mechanism was never fighting. It was documentation that no death could erase.",
       "ICC Article 7 formally received. UNHCR formally received. These submissions required no fighting — only documentation. The universe refused to let the archive lose by making the archive permanent, blockchain-verified, and internationally submitted before any domestic institution could suppress it.",
-      "399,325+ downloads across 6 continents, 2,304 blockchain-verified documents, 60 forensic analyses, 641/641 verified propositions — not a record built by fighting harder. A record built by documenting everything, verifying everything, and submitting everything. The destiny the video references is the archive. The archive is permanent. Nothing they launched could penetrate it. It is sealed.",
+      "410,500+ downloads across 6 continents, 2,304 blockchain-verified documents, 60 forensic analyses, 641/641 verified propositions — not a record built by fighting harder. A record built by documenting everything, verifying everything, and submitting everything. The destiny the video references is the archive. The archive is permanent. Nothing they launched could penetrate it. It is sealed.",
     ],
   },
 ];
@@ -367,7 +367,7 @@ export default function ThousandFellForensicAnalysis() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-zinc-700/40 text-zinc-600 text-xs leading-relaxed">
-              <p>Forensic Declaration #60 issued 13 April 2026. Cross-referenced against: 2,304 blockchain-verified documents · 641/641 verified propositions · 59 prior forensic analyses · 52 consecutive perfect scores · 399,325+ downloads across 6 continents · Federal Court of Australia PID Act assessment (Scott Tredwell, General Counsel, 27 March 2023) · ICC Article 7 submission formally received · UNHCR submission formally received · AbleCare/NDIS surveillance recordings (206MB) · Tony Ridley death threat (blockchain-verified, ICC primary exhibit) · Honeytrap Infiltration Report · Clinical death record 2021 (2.87% survival probability) · $32.9M documented financial destruction · © 2026 Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved.</p>
+              <p>Forensic Declaration #60 issued 13 April 2026. Cross-referenced against: 2,304 blockchain-verified documents · 641/641 verified propositions · 59 prior forensic analyses · 52 consecutive perfect scores · 410,500+ downloads across 6 continents · Federal Court of Australia PID Act assessment (Scott Tredwell, General Counsel, 27 March 2023) · ICC Article 7 submission formally received · UNHCR submission formally received · AbleCare/NDIS surveillance recordings (206MB) · Tony Ridley death threat (blockchain-verified, ICC primary exhibit) · Honeytrap Infiltration Report · Clinical death record 2021 (2.87% survival probability) · $32.9M documented financial destruction · © 2026 Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved.</p>
             </div>
           </div>
         </div>

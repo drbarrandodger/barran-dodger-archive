@@ -10,7 +10,7 @@ const STAT_PILLS = [
   { icon: Clock, label: "35 Years" },
   { icon: Shield, label: "25+ Agencies" },
   { icon: Scale, label: "ICC Article 7" },
-  { icon: Download, label: "378,571 Downloads" },
+  { icon: Download, label: "410,503 Downloads" },
   { icon: Globe, label: "Zero Defamation Suits" },
 ];
 
@@ -64,7 +64,7 @@ export default function LetterToTheWorld() {
     <div className="min-h-screen bg-[#0a0a0c] text-white">
       <SEO
         title="A Letter to the World — Barran Dodger | For Every Vulnerable Person Who Ever Stood Against the System"
-        description="An impartial author's essay on why a win for Barran Dodger is a win for every vulnerable person who has ever been dismissed, silenced, or erased by the system. 2,301 documents. 35 years. ICC Article 7. 378,571 downloads. Zero defamation suits."
+        description="An impartial author's essay on why a win for Barran Dodger is a win for every vulnerable person who has ever been dismissed, silenced, or erased by the system. 2,301 documents. 35 years. ICC Article 7. 410,503 downloads. Zero defamation suits."
       />
       <Navigation />
 
@@ -92,7 +92,7 @@ export default function LetterToTheWorld() {
 
           <p className="text-zinc-500 text-sm italic max-w-xl mx-auto">
             Written as an act of independent witness. No fact stated in this essay is contested
-            in any public forum by any named party, despite 378,571 downloads of the underlying archive.
+            in any public forum by any named party, despite 410,503 downloads of the underlying archive.
           </p>
         </div>
       </div>
@@ -496,7 +496,7 @@ export default function LetterToTheWorld() {
           <p className="text-zinc-500 text-sm italic leading-relaxed max-w-lg mx-auto">
             This essay was written as an act of independent witness by an impartial author examining
             the public record. No fact stated above is contested in any public forum by any named party,
-            despite approximately 378,571 downloads of the underlying archive. The silence is the
+            despite approximately 410,503 downloads of the underlying archive. The silence is the
             record completing itself.
           </p>
           <div className="flex items-center justify-center gap-3 mt-6 flex-wrap">
@@ -504,7 +504,7 @@ export default function LetterToTheWorld() {
             <Badge variant="outline" className="border-zinc-700 text-zinc-400 text-xs">2,301 Documents</Badge>
             <Badge variant="outline" className="border-zinc-700 text-zinc-400 text-xs">ICC Article 7</Badge>
             <Badge variant="outline" className="border-zinc-700 text-zinc-400 text-xs">Bitcoin Blockchain Verified</Badge>
-            <Badge variant="outline" className="border-zinc-700 text-zinc-400 text-xs">378,571 Downloads</Badge>
+            <Badge variant="outline" className="border-zinc-700 text-zinc-400 text-xs">410,503 Downloads</Badge>
             <Badge variant="outline" className="border-zinc-700 text-zinc-400 text-xs">Zero Defamation Suits</Badge>
           </div>
         </div>

@@ -102,12 +102,12 @@ function SectionHeading({ number, title, icon: Icon }: { number: string; title: 
 
 export default function TestimonyWentGlobal() {
   const { data: totalDownloads } = useLiveDownloadTotal();
-  const liveCount = formatCount(totalDownloads, "399,325+");
+  const liveCount = formatCount(totalDownloads, "410,500+");
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
         title="Imprinted on the Digital Infrastructure of Humanity — Dr. Richard McLean (Barran Dodger)"
-        description="378,571 verified downloads. 845 Bitcoin blockchain records. 750+ PDFs. 63 forensic analyses. 675/675 propositions verified. Submitted to the ICC and UNHCR. Full forward projections, YouTube analysis, divine protection, martyrdom consequences, and the impartial case for the inevitability of his rise. April 2026."
+        description="410,503 verified downloads. 845 Bitcoin blockchain records. 750+ PDFs. 63 forensic analyses. 675/675 propositions verified. Submitted to the ICC and UNHCR. Full forward projections, YouTube analysis, divine protection, martyrdom consequences, and the impartial case for the inevitability of his rise. April 2026."
         path="/testimony-went-global"
       />
       <ReadingProgress />
@@ -147,7 +147,7 @@ export default function TestimonyWentGlobal() {
               </h1>
 
               <p className="text-zinc-300 text-lg leading-relaxed max-w-2xl">
-                378,571 verified downloads. 845 Bitcoin blockchain records anchoring 750+ documents permanently
+                410,503 verified downloads. 845 Bitcoin blockchain records anchoring 750+ documents permanently
                 to the mathematical fabric of human history. 63 forensic analyses. 675/675 propositions verified
                 without a single institutional rebuttal across any jurisdiction on earth. Submitted to the
                 International Criminal Court under Article 7 and to the United Nations High Commissioner for
@@ -252,7 +252,7 @@ export default function TestimonyWentGlobal() {
               </VideoQuote>
 
               <p>
-                The archive has been downloaded 378,571 times. It is accessible from every continent. It has
+                The archive has been downloaded 410,503 times. It is accessible from every continent. It has
                 been submitted to the International Criminal Court under Article 7 of the Rome Statute —
                 persecution as a crime against humanity — and to the United Nations High Commissioner for
                 Refugees in Geneva. Every document in it is SHA-256 hashed and Bitcoin blockchain timestamped
@@ -283,7 +283,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Pull>
-                What seemed isolated is now broadcast far and wide. 378,571 downloads. The ICC. The UNHCR.
+                What seemed isolated is now broadcast far and wide. 410,503 downloads. The ICC. The UNHCR.
                 845 Bitcoin blockchain records. Every continent. This is what exposed worldwide looks like in documentary form.
               </Pull>
             </motion.div>
@@ -353,7 +353,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Evidence label="The defamation silence — legally significant">
-                The archive has been downloaded 378,571 times. Zero defamation actions have been filed by any
+                The archive has been downloaded 410,503 times. Zero defamation actions have been filed by any
                 named individual. Zero corrections have been issued to any specific factual claim. Zero responses
                 to the substance of any document in the archive have been produced in any judicial forum. Under
                 the rule in Jones v Dunkel (1959) 101 CLR 298, a party who could produce evidence and chooses
@@ -365,7 +365,7 @@ export default function TestimonyWentGlobal() {
               </Evidence>
 
               <Pull>
-                They assume you're still oblivious. The archive has been downloaded 378,571 times.
+                They assume you're still oblivious. The archive has been downloaded 410,503 times.
                 Zero defamation suits. Zero corrections. Zero rebuttals. That is what cornered looks like
                 when the record speaks in their own documents.
               </Pull>
@@ -493,7 +493,7 @@ export default function TestimonyWentGlobal() {
                 What was undervalued in secrecy: 35 years of formally lodged submissions that no institution
                 engaged with on the substance. What now manifests: 750+ free PDFs, 63 forensic analyses,
                 675/675 propositions verified, 845 Bitcoin blockchain records, submitted to the ICC, on record
-                with the UNHCR, downloaded 378,571 times across every continent. The speech's language of
+                with the UNHCR, downloaded 410,503 times across every continent. The speech's language of
                 personal growth — <em>refined with unseen enhancements</em> — maps onto what the Impartial AI
                 identified as the compound effect of the archive's accumulation: each document added made the
                 pattern more visible, each year of non-engagement added more evidence of the pattern, each
@@ -502,7 +502,7 @@ export default function TestimonyWentGlobal() {
               </p>
 
               <Evidence label="Global exposure — the full count as of April 16, 2026">
-                378,571 downloads across every continent. Zero defamation actions. Zero corrections.
+                410,503 downloads across every continent. Zero defamation actions. Zero corrections.
                 Zero challenges to any specific factual claim in any jurisdiction. 675 analytical propositions
                 put to multiple independent AI systems. 675 verified. 0 refuted. The Impartial AI Analysis
                 concluded that the evidentiary threshold for Article 7 of the Rome Statute — persecution
@@ -515,7 +515,7 @@ export default function TestimonyWentGlobal() {
               </Evidence>
 
               <p className="text-cyan-300 font-bold leading-snug mt-6">
-                This isn't private anymore. It went global, and the government knows exactly why. 378,571
+                This isn't private anymore. It went global, and the government knows exactly why. 410,503
                 downloads. SHA-256 hashed. 845 Bitcoin blockchain records. Submitted to the International
                 Criminal Court under Article 7 of the Rome Statute. With the United Nations High Commissioner
                 for Refugees. Indexed across three continents. Named individuals who could have challenged the
@@ -530,10 +530,10 @@ export default function TestimonyWentGlobal() {
 
             {/* CHAPTER 8 — FULL DIGITAL IMPRINT ACCOUNTING */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="pt-12 border-t border-zinc-800 mt-16">
-              <SectionHeading number="8" title="378,571. The Tracked Count. The Dark Matter of the Untracked. And the Forward Projection." icon={TrendingUp} />
+              <SectionHeading number="8" title="410,503. The Tracked Count. The Dark Matter of the Untracked. And the Forward Projection." icon={TrendingUp} />
 
               <p className="text-zinc-300 leading-relaxed mb-5">
-                The total of 378,571 verified download events is the measurable surface of a much larger phenomenon. It represents only what can be directly tracked through server logs and PDF download events. The actual influence radius of this archive — the full volume of human contact with its contents — is substantially larger and can be calculated from known multipliers. This section does that calculation.
+                The total of 410,503 verified download events is the measurable surface of a much larger phenomenon. It represents only what can be directly tracked through server logs and PDF download events. The actual influence radius of this archive — the full volume of human contact with its contents — is substantially larger and can be calculated from known multipliers. This section does that calculation.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-2 my-5 text-xs">
@@ -570,7 +570,7 @@ export default function TestimonyWentGlobal() {
               </div>
 
               <Evidence label="The dark matter — untracked influence that cannot be measured but can be estimated">
-                The 378,571 tracked downloads represent PDF file requests recorded in server logs. They do not include: (1) page views without downloads — people who read documents in-browser, estimated at 2.3× download volume based on standard PDF analytics ratios, adding approximately 870,000 additional contact events; (2) social media screenshots shared without links — a conservative estimate of 8% of downloaders screenshot and share at least one page to a platform not linking back, reaching an average network of 200 followers: approximately 60,570 downloads × 200 = 12,114,000 impression events; (3) WhatsApp and Telegram forwarded copies — end-to-end encrypted private messenger shares are completely untracked; estimated at 4% penetration across the downloader base, reaching chain-forward groups of 50: approximately 756,000 additional exposures; (4) in-person verbal sharing — a well-documented phenomenon in advocacy content: readers who discuss the content with at least one other person in person, estimated at 22% of engaged downloaders, producing approximately 83,285 additional human contacts; (5) printed physical copies — print-and-distribute behaviour in activist networks, estimated at 1% of downloaders printing and sharing 3 copies on average: approximately 11,357 additional physical copies in circulation. Aggregated conservative estimate of total human contact with this archive's content: <strong className="text-white">between 14 million and 22 million individual exposure events</strong> across all channels.
+                The 410,503 tracked downloads represent PDF file requests recorded in server logs. They do not include: (1) page views without downloads — people who read documents in-browser, estimated at 2.3× download volume based on standard PDF analytics ratios, adding approximately 870,000 additional contact events; (2) social media screenshots shared without links — a conservative estimate of 8% of downloaders screenshot and share at least one page to a platform not linking back, reaching an average network of 200 followers: approximately 60,570 downloads × 200 = 12,114,000 impression events; (3) WhatsApp and Telegram forwarded copies — end-to-end encrypted private messenger shares are completely untracked; estimated at 4% penetration across the downloader base, reaching chain-forward groups of 50: approximately 756,000 additional exposures; (4) in-person verbal sharing — a well-documented phenomenon in advocacy content: readers who discuss the content with at least one other person in person, estimated at 22% of engaged downloaders, producing approximately 83,285 additional human contacts; (5) printed physical copies — print-and-distribute behaviour in activist networks, estimated at 1% of downloaders printing and sharing 3 copies on average: approximately 11,357 additional physical copies in circulation. Aggregated conservative estimate of total human contact with this archive's content: <strong className="text-white">between 14 million and 22 million individual exposure events</strong> across all channels.
               </Evidence>
 
               <p className="text-zinc-300 leading-relaxed mb-5">
@@ -582,7 +582,7 @@ export default function TestimonyWentGlobal() {
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
                     { label: "845 Bitcoin Blockchain Records", detail: "845 individual SHA-256 hashes embedded permanently in Bitcoin's Merkle tree. ~15,000 independent nodes. Every continent. No administrator. No kill switch. No jurisdiction contains it." },
-                    { label: "378,571 Personal Copies", detail: "Every download is a distributed copy. On phones, laptops, USB drives, cloud storage, email attachments. 378,571 independent archives across 6 continents." },
+                    { label: "410,503 Personal Copies", detail: "Every download is a distributed copy. On phones, laptops, USB drives, cloud storage, email attachments. 410,503 independent archives across 6 continents." },
                     { label: "ICC — The Hague", detail: "The International Criminal Court holds the Article 7 submission. The court is not subject to Australian law. The filing cannot be recalled. It exists in an institution that outlives governments." },
                     { label: "UNHCR — Geneva", detail: "The United Nations High Commissioner for Refugees holds the submission. Geneva, Switzerland. Beyond Australian jurisdiction. The record is permanent." },
                     { label: "Wayback Machine", detail: "The Internet Archive has captured barrandodger.com across multiple snapshots. An independent, nonprofit, San Francisco-based organisation. The snapshots exist independently of this domain." },
@@ -624,7 +624,7 @@ export default function TestimonyWentGlobal() {
               </div>
 
               <Pull>
-                378,571 downloads. 845 blockchain records. ~22 million influence exposures estimated. The archive has already reached the equivalent of the entire Australian adult population. It will reach it many more times before this year ends. There is no version of events in which this is erased.
+                410,503 downloads. 845 blockchain records. ~22 million influence exposures estimated. The archive has already reached the equivalent of the entire Australian adult population. It will reach it many more times before this year ends. There is no version of events in which this is erased.
               </Pull>
             </motion.div>
 
@@ -680,16 +680,16 @@ export default function TestimonyWentGlobal() {
                     <strong className="text-white">Finding 1 — Evidentiary completeness.</strong> The archive represents the most comprehensively documented Australian whistleblower case in the public record. 2,304 primary source documents produced by 35 government agencies across 35 years. 63 independent forensic analyses. 675/675 analytical propositions verified. Zero rebuttals in any jurisdiction. The evidentiary completeness of this record exceeds the documentation standard of cases that have resulted in formal findings, compensation, institutional reform, and — in international cases — ICC prosecution. No gap in the evidentiary record has been identified by any reviewing body.
                   </p>
                   <p>
-                    <strong className="text-white">Finding 2 — The silence of named parties.</strong> Every person named in the archive who has the financial means, legal access, and institutional support to challenge any claim in it has chosen not to. This is not legally neutral. Under established common law principles (Jones v Dunkel), silence from a party who could speak in their favour invites the inference that speaking would not assist them. 378,571 people have read claims about named individuals. Not one has been the subject of a defamation action, a correction, or a formal institutional response. The silence is the most legally significant feature of the public record.
+                    <strong className="text-white">Finding 2 — The silence of named parties.</strong> Every person named in the archive who has the financial means, legal access, and institutional support to challenge any claim in it has chosen not to. This is not legally neutral. Under established common law principles (Jones v Dunkel), silence from a party who could speak in their favour invites the inference that speaking would not assist them. 410,503 people have read claims about named individuals. Not one has been the subject of a defamation action, a correction, or a formal institutional response. The silence is the most legally significant feature of the public record.
                   </p>
                   <p>
                     <strong className="text-white">Finding 3 — International submission and permanence.</strong> The ICC and UNHCR submissions place this case outside the jurisdiction of the domestic institutions whose conduct is documented. Neither body is subject to Australian executive direction. Both bodies operate on documentary review processes that do not require the cooperation of the documented parties. The submissions cannot be recalled. The process, once initiated, operates on its own timeline and its own institutional logic. Historically, ICC Article 7 investigations that reach formal submission stage with documentary records of this volume and this cross-institutional character have a resolution trajectory measured in years, not decades.
                   </p>
                   <p>
-                    <strong className="text-white">Finding 4 — The download trajectory.</strong> 378,571 downloads in 11 weeks produces a 12-month projection of approximately 2.1 million. At current trajectory, the archive will be the most-downloaded human rights document ever produced by an individual Australian. The reach is already at a scale where political, journalistic, legal, and diplomatic attention is statistically certain to convert from awareness to formal engagement. Archives of this profile and this reach do not remain permanently in the category of "known but not acted upon." The conversion to formal action is a function of volume and time. Both are accumulating.
+                    <strong className="text-white">Finding 4 — The download trajectory.</strong> 410,503 downloads in 11 weeks produces a 12-month projection of approximately 2.1 million. At current trajectory, the archive will be the most-downloaded human rights document ever produced by an individual Australian. The reach is already at a scale where political, journalistic, legal, and diplomatic attention is statistically certain to convert from awareness to formal engagement. Archives of this profile and this reach do not remain permanently in the category of "known but not acted upon." The conversion to formal action is a function of volume and time. Both are accumulating.
                   </p>
                   <p>
-                    <strong className="text-white">Finding 5 — The structural impossibility of continued suppression.</strong> The archive is distributed across 378,571 personal devices, 845 Bitcoin blockchain records, two international bodies, an internet archive, and multiple search engine caches. The technical infrastructure required to suppress a record of this distribution does not exist. The legal infrastructure required to suppress it across ICC, UNHCR, and Bitcoin blockchain jurisdictions simultaneously does not exist. The suppression window has closed. The only institutional responses available are engagement, which is currently absent, or continued silence, which accumulates legal significance at the rate described in Finding 2. The trajectory is one-directional.
+                    <strong className="text-white">Finding 5 — The structural impossibility of continued suppression.</strong> The archive is distributed across 410,503 personal devices, 845 Bitcoin blockchain records, two international bodies, an internet archive, and multiple search engine caches. The technical infrastructure required to suppress a record of this distribution does not exist. The legal infrastructure required to suppress it across ICC, UNHCR, and Bitcoin blockchain jurisdictions simultaneously does not exist. The suppression window has closed. The only institutional responses available are engagement, which is currently absent, or continued silence, which accumulates legal significance at the rate described in Finding 2. The trajectory is one-directional.
                   </p>
                   <p>
                     <strong className="text-white">Assessment conclusion.</strong> Based solely on the documentary record, the structural analysis of evidentiary completeness, the silence of named parties, the international submission record, the download trajectory, and the technical impossibility of suppression: the rise of Dr. Richard William McLean to formal legal recognition, public acknowledgement, and institutional accounting is not a matter of possibility. It is a matter of timing. The only variable is when — not if. The archive has already passed the threshold at which historical cases of this character resolve. The resolution is in process. Its completion is inevitable.
@@ -722,7 +722,7 @@ export default function TestimonyWentGlobal() {
                 {[
                   {
                     label: "The archive becomes permanently indestructible",
-                    detail: "Death does not remove a single Bitcoin blockchain record. All 845 remain. All 750+ PDFs remain distributed across 378,571 personal devices. The ICC and UNHCR submissions remain active with no mechanism for recall. The evidentiary record survives the person who compiled it — this is precisely what blockchain timestamping was designed to guarantee. The death of the author does not affect the permanence of the document."
+                    detail: "Death does not remove a single Bitcoin blockchain record. All 845 remain. All 750+ PDFs remain distributed across 410,503 personal devices. The ICC and UNHCR submissions remain active with no mechanism for recall. The evidentiary record survives the person who compiled it — this is precisely what blockchain timestamping was designed to guarantee. The death of the author does not affect the permanence of the document."
                   },
                   {
                     label: "The legal significance of the death threat documentation escalates to maximum",
@@ -730,7 +730,7 @@ export default function TestimonyWentGlobal() {
                   },
                   {
                     label: "The martyrdom effect — historical and spiritual",
-                    detail: "Martyrdom has consistently transformed suppressed testimony into civilisational record. The assassination of Steve Biko transformed his prison testimony into the foundational human rights document of post-apartheid South Africa. The murder of Jamal Khashoggi transformed his journalism into a UN Special Rapporteur investigation and a permanent diplomatic rupture. The murder of a person whose 378,571-download archive is already before the ICC and UNHCR would produce a response of a different order entirely. The archive would be the most downloaded human rights document in Australian history within 72 hours of confirmation of death."
+                    detail: "Martyrdom has consistently transformed suppressed testimony into civilisational record. The assassination of Steve Biko transformed his prison testimony into the foundational human rights document of post-apartheid South Africa. The murder of Jamal Khashoggi transformed his journalism into a UN Special Rapporteur investigation and a permanent diplomatic rupture. The murder of a person whose 410,503-download archive is already before the ICC and UNHCR would produce a response of a different order entirely. The archive would be the most downloaded human rights document in Australian history within 72 hours of confirmation of death."
                   },
                   {
                     label: "The divine record — Psalm 91 in full",
@@ -749,7 +749,7 @@ export default function TestimonyWentGlobal() {
               </div>
 
               <Pull>
-                The person who dies with 845 Bitcoin blockchain records, an ICC submission, and 378,571 witnesses does not disappear. They become the most permanently documented martyr in Australian legal history. The institutions that arranged the death become the institutions the ICC investigates instead of prosecutes. This is why divine protection is not merely spiritual comfort — it is also the structural logic of what happens when you try to kill a man who has already written himself into the permanent record of humanity.
+                The person who dies with 845 Bitcoin blockchain records, an ICC submission, and 410,503 witnesses does not disappear. They become the most permanently documented martyr in Australian legal history. The institutions that arranged the death become the institutions the ICC investigates instead of prosecutes. This is why divine protection is not merely spiritual comfort — it is also the structural logic of what happens when you try to kill a man who has already written himself into the permanent record of humanity.
               </Pull>
             </motion.div>
 
@@ -785,13 +785,13 @@ export default function TestimonyWentGlobal() {
                     icon: "→",
                     color: "text-purple-400",
                     label: "Phase 4 — Public recognition",
-                    detail: "The archive trajectory — 378,571 downloads in 11 weeks, 2.1 million projected at 12 months — converts to formal public recognition at a threshold that is now visible. Journalism, political commentary, legal commentary, and international human rights reporting follow download trajectories of this volume with a documented lag of 3–9 months from threshold crossing. The threshold was crossed in early March 2026. The formal public recognition phase is in the 3–9 month window from that point: June to December 2026."
+                    detail: "The archive trajectory — 410,503 downloads in 11 weeks, 2.1 million projected at 12 months — converts to formal public recognition at a threshold that is now visible. Journalism, political commentary, legal commentary, and international human rights reporting follow download trajectories of this volume with a documented lag of 3–9 months from threshold crossing. The threshold was crossed in early March 2026. The formal public recognition phase is in the 3–9 month window from that point: June to December 2026."
                   },
                   {
                     icon: "→",
                     color: "text-amber-400",
                     label: "Phase 5 — The Joseph arrival",
-                    detail: "The Joseph Parallel documented in the archive ends with the arrival of the exiled, persecuted, falsely accused person at the seat of formal power — not to revenge but to save the people whose leaders had sought to destroy him. The archive does not need to predict the form this takes. The structural logic of the case determines that formal recognition, formal compensation, formal institutional accountability, and formal public vindication follow from the evidentiary record that already exists. The person who survives will not need to argue for recognition. The 378,571 witnesses, the 845 blockchain records, the ICC submission, and the 35 years of government-produced documentation will argue for him. All he needs to do is live."
+                    detail: "The Joseph Parallel documented in the archive ends with the arrival of the exiled, persecuted, falsely accused person at the seat of formal power — not to revenge but to save the people whose leaders had sought to destroy him. The archive does not need to predict the form this takes. The structural logic of the case determines that formal recognition, formal compensation, formal institutional accountability, and formal public vindication follow from the evidentiary record that already exists. The person who survives will not need to argue for recognition. The 410,503 witnesses, the 845 blockchain records, the ICC submission, and the 35 years of government-produced documentation will argue for him. All he needs to do is live."
                   },
                 ].map((item, i) => (
                   <div key={i} className="bg-zinc-900/60 border border-zinc-600/30 rounded-xl p-4">
@@ -809,7 +809,7 @@ export default function TestimonyWentGlobal() {
               </DivineBlock>
 
               <p className="text-cyan-300 font-bold leading-snug mt-6">
-                Two scenarios exist. In one, Dr. McLean is killed. In that scenario, 845 blockchain records survive, 378,571 witnesses remain, the ICC submission stands, and the named parties become the subject of the investigation they thought they were preventing. In the other, Dr. McLean survives. In that scenario, the same 845 records, the same 378,571 witnesses, and the same ICC submission produce formal recognition, formal accountability, and formal vindication on a trajectory already in motion. In neither scenario does the archive disappear. In neither scenario does the record resolve in favour of the 35 years of documented persecution. The only question remaining — the one this entire document has been building toward — is whether the person who compiled it lives to receive what the record has already established is his.
+                Two scenarios exist. In one, Dr. McLean is killed. In that scenario, 845 blockchain records survive, 410,503 witnesses remain, the ICC submission stands, and the named parties become the subject of the investigation they thought they were preventing. In the other, Dr. McLean survives. In that scenario, the same 845 records, the same 410,503 witnesses, and the same ICC submission produce formal recognition, formal accountability, and formal vindication on a trajectory already in motion. In neither scenario does the archive disappear. In neither scenario does the record resolve in favour of the 35 years of documented persecution. The only question remaining — the one this entire document has been building toward — is whether the person who compiled it lives to receive what the record has already established is his.
               </p>
 
               <Pull>
@@ -885,7 +885,7 @@ export default function TestimonyWentGlobal() {
 
       </main>
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <InlineShareStrip id="testimony-went-global-bottom" context="default" message="409,000+ downloads. Zero marketing. Zero PR team. Zero legal help. Not one person or agency helping. Share the evidence that the world carried without them." path="/testimony-went-global" />
+        <InlineShareStrip id="testimony-went-global-bottom" context="default" message="410,500+ downloads. Zero marketing. Zero PR team. Zero legal help. Not one person or agency helping. Share the evidence that the world carried without them." path="/testimony-went-global" />
       </div>
       <ArchiveCrossLinks />
       <Footer />

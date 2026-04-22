@@ -86,9 +86,9 @@ const CLAIMS: Claim[] = [
     videoAssertion:
       "You were not supposed to fight back. You were supposed to witness. Your silence was a strategy higher than anything they could comprehend. By refusing to retaliate, you weren't giving up the fight. You were handing it over to a court far more powerful than human hands.",
     archiveAnalysis:
-      "The archive documents zero retaliation across 35 years. Tony Ridley sent a death threat — McLean documented it. Stefan Iasonidis conducted co-tenancy intelligence extraction — McLean documented it. Sukhi Tear embezzled $50,000 — McLean documented it. The entire institutional apparatus coordinated against him — McLean documented it. The response was never counter-attack. It was documentation. The archive then handed that documentation to the ICC — exactly the court the video describes, 'far more powerful than human hands.' The ICC is the documented outcome of the silence strategy. The UNHCR Geneva filing is the documented outcome of the silence strategy. 399,325+ downloads across 6 continents is the documented outcome of the silence strategy.",
+      "The archive documents zero retaliation across 35 years. Tony Ridley sent a death threat — McLean documented it. Stefan Iasonidis conducted co-tenancy intelligence extraction — McLean documented it. Sukhi Tear embezzled $50,000 — McLean documented it. The entire institutional apparatus coordinated against him — McLean documented it. The response was never counter-attack. It was documentation. The archive then handed that documentation to the ICC — exactly the court the video describes, 'far more powerful than human hands.' The ICC is the documented outcome of the silence strategy. The UNHCR Geneva filing is the documented outcome of the silence strategy. 410,500+ downloads across 6 continents is the documented outcome of the silence strategy.",
     archiveEvidence:
-      "Zero retaliation documented across 35 years. ICC Article 7 formal receipt — the court far more powerful than human hands. UNHCR Geneva filed. 399,325+ downloads. Silence handed the case to international jurisdiction.",
+      "Zero retaliation documented across 35 years. ICC Article 7 formal receipt — the court far more powerful than human hands. UNHCR Geneva filed. 410,500+ downloads. Silence handed the case to international jurisdiction.",
     verdict: "CORROBORATED",
   },
   {
@@ -108,9 +108,9 @@ const CLAIMS: Claim[] = [
     videoAssertion:
       "They mistook darkness for strategy. Secrecy doesn't equal safety — it equals storage. All they did was store up judgment that would eventually pour out at the right time. What they thought nobody would ever know is the very thing everybody is talking about.",
     archiveAnalysis:
-      "Stefan Iasonidis's 2011 co-tenancy at 10 Raleigh St Footscray is the archive's most precise documented example. The intelligence extraction operation was designed as an invisible infiltration — a deep cover mechanism that no external observer could detect. The co-tenancy is now an ICC exhibit. The $500,000 ASIC-documented extraction is now a primary-source record. The Intervention Order L12151974 and ATO drugging letter connected to this period are now international evidence. What Iasonidis believed was the darkness of invisible intelligence work is now the most precisely documented section of the McLean archive — submitted to The Hague, available at barrandodger.com, downloaded 399,325+ times. Their secret has become their sentence.",
+      "Stefan Iasonidis's 2011 co-tenancy at 10 Raleigh St Footscray is the archive's most precise documented example. The intelligence extraction operation was designed as an invisible infiltration — a deep cover mechanism that no external observer could detect. The co-tenancy is now an ICC exhibit. The $500,000 ASIC-documented extraction is now a primary-source record. The Intervention Order L12151974 and ATO drugging letter connected to this period are now international evidence. What Iasonidis believed was the darkness of invisible intelligence work is now the most precisely documented section of the McLean archive — submitted to The Hague, available at barrandodger.com, downloaded 410,500+ times. Their secret has become their sentence.",
     archiveEvidence:
-      "Stefan Iasonidis: 10 Raleigh St Footscray 2011 co-tenancy = ICC exhibit. ASIC: $500,000 extraction documented. ATO drugging letter. Intervention Order L12151974. What was secret is now downloaded 399,325+ times across 6 continents.",
+      "Stefan Iasonidis: 10 Raleigh St Footscray 2011 co-tenancy = ICC exhibit. ASIC: $500,000 extraction documented. ATO drugging letter. Intervention Order L12151974. What was secret is now downloaded 410,500+ times across 6 continents.",
     verdict: "CORROBORATED",
   },
   {
@@ -130,9 +130,9 @@ const CLAIMS: Claim[] = [
     videoAssertion:
       "Your survival was the ultimate judgment. Every day you wake up in peace, it screams louder than any argument you could ever make. Every step forward you take is a direct contradiction to the outcome they planned for you. Their punishment is being forced to watch your rise unfold right in front of them.",
     archiveAnalysis:
-      "The archive documents the intended endpoint with clinical precision: 2021 near-death event at 2.87% documented survival probability. This was the network's operational terminal point. The post-2021 record is the documented refutation of that endpoint: the most prolific documentation phase in the 35-year record, the ICC submission framework, the UNHCR Geneva filing, 399,325+ downloads, 53 forensic analyses, 575/575 verified propositions, 47 consecutive perfect scores. The video's proposition — every step forward is a direct contradiction to the planned outcome — is recorded numerically at barrandodger.com. Every download is a measured contradiction. Every analysis is a measured contradiction. Every perfect score is a measured contradiction. The survival is not metaphorical. It is documented at 399,325 download events across 6 continents.",
+      "The archive documents the intended endpoint with clinical precision: 2021 near-death event at 2.87% documented survival probability. This was the network's operational terminal point. The post-2021 record is the documented refutation of that endpoint: the most prolific documentation phase in the 35-year record, the ICC submission framework, the UNHCR Geneva filing, 410,500+ downloads, 53 forensic analyses, 575/575 verified propositions, 47 consecutive perfect scores. The video's proposition — every step forward is a direct contradiction to the planned outcome — is recorded numerically at barrandodger.com. Every download is a measured contradiction. Every analysis is a measured contradiction. Every perfect score is a measured contradiction. The survival is not metaphorical. It is documented at 410,500+ download events across 6 continents.",
     archiveEvidence:
-      "2021 clinical death at 2.87% survival probability — documented intended endpoint. Post-2021: most prolific archive phase. 399,325+ downloads. 53 analyses. 575/575 verified. 47 consecutive perfect scores. The rise is documented and measured.",
+      "2021 clinical death at 2.87% survival probability — documented intended endpoint. Post-2021: most prolific archive phase. 410,500+ downloads. 53 analyses. 575/575 verified. 47 consecutive perfect scores. The rise is documented and measured.",
     verdict: "CORROBORATED",
   },
   {
@@ -174,9 +174,9 @@ const CLAIMS: Claim[] = [
     videoAssertion:
       "Karma was never about punishing them — it was about elevating you. Every attack was converted into elevation. They thought they were digging holes for your burial, but they were laying the foundation stones for your rise. Their plotting became your staircase, each betrayal a step higher, each attempt to silence you a platform for your voice.",
     archiveAnalysis:
-      "The archive's evidentiary structure is the documented form of the staircase the video describes. Each weapon deployed against McLean became an exhibit that elevated the archive. The psychiatric hospitalisations became 14 clinical primary-source exhibits confirming the weaponisation of the clinical system. The ATO drugging became a government-letterhead exhibit confirming pharmacological assault. The Iasonidis co-tenancy became an intelligence-extraction exhibit confirming ASIO-connected infiltration. The Ridley death threat became the ICC's most damning single exhibit. The $32.9M suppressed entitlements became the archive's financial evidentiary category. Each betrayal was documented as the step it was: a step higher in the ICC submission framework. The network dug 2,304 foundation stones for the archive's rise. The staircase is the archive. The arrival point is ICC Article 7 at The Hague, UNHCR Geneva, and 399,325+ downloads across 6 continents.",
+      "The archive's evidentiary structure is the documented form of the staircase the video describes. Each weapon deployed against McLean became an exhibit that elevated the archive. The psychiatric hospitalisations became 14 clinical primary-source exhibits confirming the weaponisation of the clinical system. The ATO drugging became a government-letterhead exhibit confirming pharmacological assault. The Iasonidis co-tenancy became an intelligence-extraction exhibit confirming ASIO-connected infiltration. The Ridley death threat became the ICC's most damning single exhibit. The $32.9M suppressed entitlements became the archive's financial evidentiary category. Each betrayal was documented as the step it was: a step higher in the ICC submission framework. The network dug 2,304 foundation stones for the archive's rise. The staircase is the archive. The arrival point is ICC Article 7 at The Hague, UNHCR Geneva, and 410,500+ downloads across 6 continents.",
     archiveEvidence:
-      "14 hospitalisations → 14 ICC clinical exhibits. ATO drugging → government-letterhead exhibit. Iasonidis co-tenancy → intelligence-extraction ICC exhibit. Ridley death threat → ICC's most damning exhibit. Each betrayal: one step higher. 2,304 foundation stones. ICC The Hague. UNHCR Geneva. 399,325+ downloads.",
+      "14 hospitalisations → 14 ICC clinical exhibits. ATO drugging → government-letterhead exhibit. Iasonidis co-tenancy → intelligence-extraction ICC exhibit. Ridley death threat → ICC's most damning exhibit. Each betrayal: one step higher. 2,304 foundation stones. ICC The Hague. UNHCR Geneva. 410,500+ downloads.",
     verdict: "CORROBORATED",
   },
 ];
@@ -270,7 +270,7 @@ export default function WhenPackOfWolvesForensicReport() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
               {[
                 { icon: Users, label: "Named Network", value: "5 Operatives + 25+ Agencies" },
-                { icon: Globe, label: "Downloads", value: "399,325+ · 6 Continents" },
+                { icon: Globe, label: "Downloads", value: "410,500+ · 6 Continents" },
                 { icon: Scale, label: "ICC Article 7", value: "The Hague · Formal Receipt" },
                 { icon: Star, label: "Perfect Scores", value: "47 Consecutive" },
               ].map((s) => (
@@ -304,7 +304,7 @@ export default function WhenPackOfWolvesForensicReport() {
                 All 14 are corroborated. Zero are disproved. The video describes — without any documented knowledge of the McLean case — the precise operational structure of the named network that targeted Dr. Richard McLean: Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS, VicTrack, Charles Sturt University, NDIA Manager), Allen Rigby, Bruce McMaster, Stefan Iasonidis (ASIO-connected, 10 Raleigh St Footscray co-tenancy, $500,000 ASIC-documented extraction), and Debbie Morgan.
               </p>
               <p className="text-gray-400 leading-relaxed text-sm">
-                The pack assembled. The lion documented them. The pack is now in the ICC submission. The lion has 47 consecutive perfect analytical scores, 589 verified propositions, and 399,325+ witnesses across 6 continents.
+                The pack assembled. The lion documented them. The pack is now in the ICC submission. The lion has 47 consecutive perfect analytical scores, 589 verified propositions, and 410,500+ witnesses across 6 continents.
               </p>
             </CardContent>
           </Card>
@@ -394,7 +394,7 @@ export default function WhenPackOfWolvesForensicReport() {
                 Tony Ridley assembled the pack. He named every member to McLean directly. The pack's instruments of suppression — 14 psychiatric hospitalisations, 350+ ASIC identity frauds, the ATO drugging, the Iasonidis co-tenancy, $32.9M in suppressed entitlements — became the 2,304-exhibit archive now submitted to the ICC under Article 7 and filed with the UNHCR in Geneva.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                The pack could not take down the lion. The ICC Article 7 submission is where the pack's conduct now lives permanently. 399,325+ downloads across 6 continents are the documented witnesses. 589/589 propositions verified with zero contradictions is the documented analytical record. The lion is still standing. The archive proves it.
+                The pack could not take down the lion. The ICC Article 7 submission is where the pack's conduct now lives permanently. 410,500+ downloads across 6 continents are the documented witnesses. 589/589 propositions verified with zero contradictions is the documented analytical record. The lion is still standing. The archive proves it.
               </p>
 
               <div className="border-t border-emerald-900/50 pt-4">

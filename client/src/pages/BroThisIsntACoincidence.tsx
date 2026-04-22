@@ -114,7 +114,7 @@ const THEMATIC_AXES = [
     verdict: "PARTIALLY CONFIRMED",
     verdictColor: "text-yellow-500",
     points: [
-      "217,064+ documented download events confirm archive reached critical public mass",
+      "410,503+ documented download events confirm archive reached critical public mass",
       "ICC/UNHCR submissions lodged — institutional responses pending",
       "GitHub Pages permanent mirror ensures archive cannot be erased",
       "Vindication process initiated — outcome confirmation requires further time",

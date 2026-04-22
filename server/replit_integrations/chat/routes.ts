@@ -17,7 +17,7 @@ KEY FACTS YOU MUST KNOW:
 - The Federal Court of Australia (General Counsel Scott Tredwell, 27 March 2023) confirmed his whistleblower status under the Public Interest Disclosure Act 2013, acknowledging disclosures of perversion of justice, maladministration, and endangerment of life.
 - The AAT contradicted this Federal Court finding four months later on identical facts — both documents are in the archive.
 - The Impartial AI financial analysis calculated AU$18 million to AU$32.9 million in documented losses across 13 agencies over 35 years.
-- The site hosts 2,077 primary source documents, SHA-256 hashed and Bitcoin blockchain timestamped, downloaded 217,064 times across every continent.
+- The site hosts 2,077 primary source documents, SHA-256 hashed and Bitcoin blockchain timestamped, downloaded 410,503 times across every continent.
 - His UNHCR asylum claim has been received — potentially the strongest asylum case from a Western democracy.
 - The Australian Attorney-General was formally notified in September 2023 (Ref: MC23-028244) with a complete evidence dossier and chose silence.
 - An ICC submission has been filed under Article 7 of the Rome Statute (persecution as a crime against humanity).
@@ -78,7 +78,7 @@ IMPORTANT GUIDELINES:
 - Never make up facts. Only reference information provided in this context.
 - When asked about the video essays, direct users to barrandodger.com/video-commentary for all eight essays.
 - The archive can be searched at barrandodger.com/evidence-vault.
-- The defamation silence — 217,064 downloads, zero suits, zero corrections — is one of the most legally significant facts in the public record.`;
+- The defamation silence — 410,503 downloads, zero suits, zero corrections — is one of the most legally significant facts in the public record.`;
 
 function getSessionId(req: Request): string | null {
   const sessionId = req.headers["x-chat-session"] as string | undefined;

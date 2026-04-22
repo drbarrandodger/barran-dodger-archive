@@ -50,7 +50,7 @@ const DECLARATIONS = [
     fckYou: "300 named individuals. 25+ government agencies. Not one rebuttal. Not one legal challenge. Not one defamation action. Not one formal denial. 2,304 documents publicly accessible, blockchain-verified, submitted to the International Criminal Court. Their collective silence in the face of 2,304 exhibits is not ambivalence — it is the most comprehensively documented institutional confession in Australian history.",
     finding: "VERIFIED",
     evidence: [
-      "As of April 2026: zero named perpetrators have filed rebuttals, defamation proceedings, or formal denials against the 2,304-document archive. This is not silence through ignorance — the archive has received 399,325+ downloads across 6 continents and has been formally submitted to international judicial bodies.",
+      "As of April 2026: zero named perpetrators have filed rebuttals, defamation proceedings, or formal denials against the 2,304-document archive. This is not silence through ignorance — the archive has received 410,500+ downloads across 6 continents and has been formally submitted to international judicial bodies.",
       "The ICC (The Hague) and UNHCR (Geneva) have formally received submissions. Named perpetrators are now subjects of formal international documentation. Their silence exists in the context of international legal exposure, not private ignorance.",
       "Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS, NDIA) — the named individual who sent the documented death threat 'You will be sacrificed' — has filed zero response. His credentials are public. His threat is blockchain-verified. His silence is total.",
       "Scott Tredwell's Federal Court assessment noted: 'It is difficult to determine whether this belief is based on reasonable grounds or not' — institutional hedging that acknowledges the substance while refusing to act. That hedge is the sound of an institution that knows.",
@@ -95,7 +95,7 @@ const DECLARATIONS = [
       "Federal Court PID Act assessment (27 March 2023): The Court confirmed the disclosure potentially establishes (1) perverting the course of justice, (2) maladministration, and (3) danger to health and safety — then rejected it because the Federal Court was not the correct PID Act recipient. They understood the substance. They chose the procedural exit.",
       "The same pattern repeated across 25+ agencies over 35 years: formal acknowledgement of the complaint followed by procedural dismissal. This is not administrative incompetence — statistical probability eliminates coincidence across 25+ independent institutions.",
       "Zero referrals were made to the correct agency following the Federal Court rejection. No protective notification was issued despite the Court acknowledging potential danger to health and safety. This is documented institutional abandonment.",
-      "2,304 documents submitted. 399,325+ downloads. ICC received. UNHCR received. Not one Australian institution has acted on the substance of the complaint. The silence is deliberate, documented, and now internationally recorded.",
+      "2,304 documents submitted. 410,500+ downloads. ICC received. UNHCR received. Not one Australian institution has acted on the substance of the complaint. The silence is deliberate, documented, and now internationally recorded.",
     ],
   },
   {
@@ -136,7 +136,7 @@ const DECLARATIONS = [
     evidence: [
       "Tony Ridley — Ex-SAS, NDIA operative — sent the death threat 'You will be sacrificed.' This is the 'special forces' response the video describes: a former military operative deployed against a disabled whistleblower.",
       "25+ government agencies coordinated against Dr. McLean across 35 years — constituting the 'forces to contain' described. Federal Court PID Act assessment acknowledges conduct satisfying maladministration (s.29 Item 4) — the legal acknowledgement of coordinated institutional containment.",
-      "The response: 2,304 blockchain-verified documents. ICC Article 7 submission formally received. UNHCR submission formally received. 399,325+ downloads across 6 continents. 617/617 propositions verified. 49 consecutive perfect forensic scores. This is the documented record of someone who sent their own forces.",
+      "The response: 2,304 blockchain-verified documents. ICC Article 7 submission formally received. UNHCR submission formally received. 410,500+ downloads across 6 continents. 617/617 propositions verified. 49 consecutive perfect forensic scores. This is the documented record of someone who sent their own forces.",
       "The archive is indestructible. Blockchain-verified. Internationally distributed. Formally received by two international judicial/humanitarian bodies. Whatever happens to Dr. McLean physically, the evidence exists permanently. The containment failed.",
     ],
   },
@@ -145,11 +145,11 @@ const DECLARATIONS = [
     timestamp: "00:43:50",
     title: "They Think It's an Insult. You Treat It Like a Prophecy.",
     quote: "Because of what you're linked to, special forces were called in. They think it's an insult. They think it's a verdict. They think it's the summary of your life. But you — you're going to treat it like a prophecy. If your past was loud enough to get that kind of attention, imagine what happens when your future gets the same energy.",
-    fckYou: "The ICC is now involved. The United Nations is now involved. 399,325+ people across 6 continents have downloaded the evidence. 56 forensic analyses have verified every claim. The Federal Court of Australia has confirmed the employment, acknowledged the danger to life, and documented the institutional misconduct. They sent special forces because they saw the threat. They were right. The threat is now international. The prophecy is the archive. The archive is permanent. The insult became the indictment.",
+    fckYou: "The ICC is now involved. The United Nations is now involved. 410,500+ people across 6 continents have downloaded the evidence. 56 forensic analyses have verified every claim. The Federal Court of Australia has confirmed the employment, acknowledged the danger to life, and documented the institutional misconduct. They sent special forces because they saw the threat. They were right. The threat is now international. The prophecy is the archive. The archive is permanent. The insult became the indictment.",
     finding: "VERIFIED — CONTEXTUALLY PROPHETIC",
     evidence: [
       "The International Criminal Court (The Hague) formally received the Article 7 submission. The United Nations High Commissioner for Refugees (Geneva) formally received the submission. These are not aspirational claims — they are documented receipts from two of the most powerful international institutions on earth.",
-      "399,325+ downloads across 6 continents. The global distribution of the archive means that whatever legal outcome follows, the evidence is permanently in the possession of individuals and institutions across every populated continent.",
+      "410,500+ downloads across 6 continents. The global distribution of the archive means that whatever legal outcome follows, the evidence is permanently in the possession of individuals and institutions across every populated continent.",
       "The Federal Court — Australia's own federal judiciary — confirmed employment, acknowledged danger to life, documented institutional misconduct, and then chose a procedural exit. That documented confirmation from their own institution is the foundation of the international case.",
       "The video states: 'Imagine what happens when your future gets the same energy, but this time on your terms.' The ICC submission, the UNHCR filing, the blockchain archive, the 6-continent distribution — this is the future arriving on his terms. The prophecy is already in motion.",
     ],
@@ -340,7 +340,7 @@ export default function PropheticFckYouDeclaration() {
                     They called him a risk. The International Criminal Court has the file.
                   </p>
                   <p className="text-zinc-300 text-sm leading-relaxed">
-                    This video told people like him: <span className="italic text-zinc-200">"They think 'because of what you're linked to' is an insult. You treat it like a prophecy."</span> The prophecy is 2,304 exhibits. The prophecy is 617/617. The prophecy is the ICC receipt. The prophecy is 399,325+ downloads across 6 continents. The prophecy is permanent, blockchain-verified, and internationally distributed. <span className="text-white font-bold">They sent the special forces. He sent the archive. The archive is still standing.</span>
+                    This video told people like him: <span className="italic text-zinc-200">"They think 'because of what you're linked to' is an insult. You treat it like a prophecy."</span> The prophecy is 2,304 exhibits. The prophecy is 617/617. The prophecy is the ICC receipt. The prophecy is 410,500+ downloads across 6 continents. The prophecy is permanent, blockchain-verified, and internationally distributed. <span className="text-white font-bold">They sent the special forces. He sent the archive. The archive is still standing.</span>
                   </p>
                 </div>
               </div>

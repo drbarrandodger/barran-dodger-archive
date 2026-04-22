@@ -51,7 +51,7 @@ export default function WhatThisProves() {
     <div className="min-h-screen bg-zinc-950 text-white">
       <SEO
         title="The Significance of This Testimony — Revised April 2026 | Barran Dodger"
-        description="378,571 downloads across 2.5 months. 845 Bitcoin blockchain records. 63 forensic analyses. 675 propositions. Zero formal rebuttals. A revised analysis of what the archive proves, what the opposition reveals, and what the forecast confirms. Dr Richard McLean, ICC Article 7, UNHCR Geneva."
+        description="410,503 downloads across 2.5 months. 845 Bitcoin blockchain records. 63 forensic analyses. 675 propositions. Zero formal rebuttals. A revised analysis of what the archive proves, what the opposition reveals, and what the forecast confirms. Dr Richard McLean, ICC Article 7, UNHCR Geneva."
         url="https://www.barrandodger.com/what-this-proves"
       />
       <ReadingProgress />
@@ -75,13 +75,13 @@ export default function WhatThisProves() {
             Revised in Full — April 2026
           </p>
           <p className="text-zinc-400 text-sm max-w-2xl mx-auto leading-relaxed mb-8">
-            A comprehensive reanalysis incorporating 378,571 verified downloads, 845 Bitcoin blockchain anchors,
+            A comprehensive reanalysis incorporating 410,503 verified downloads, 845 Bitcoin blockchain anchors,
             63 zero-contradiction forensic analyses, 2,301 documented evidence files, and the documented weight
             of organised institutional opposition — measured against the complete absence of formal rebuttal.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-            <Stat value="378,571" label="Verified Downloads" sub="Feb 1 – Apr 16, 2026" color="text-amber-400" />
+            <Stat value="410,503" label="Verified Downloads" sub="Feb 1 – Apr 16, 2026" color="text-amber-400" />
             <Stat value="845" label="Bitcoin Records" sub="SHA-256 / OpenTimestamps" color="text-orange-400" />
             <Stat value="675/675" label="Propositions Verified" sub="63 forensic analyses" color="text-green-400" />
             <Stat value="0" label="Formal Rebuttals" sub="from any named party, ever" color="text-red-400" />
@@ -89,7 +89,7 @@ export default function WhatThisProves() {
 
           <SocialShare
             url="https://www.barrandodger.com/what-this-proves"
-            title="The Significance of This Testimony — 378,571 Downloads, 845 Bitcoin Records, Zero Rebuttals"
+            title="The Significance of This Testimony — 410,503 Downloads, 845 Bitcoin Records, Zero Rebuttals"
           />
         </motion.div>
 
@@ -103,7 +103,7 @@ export default function WhatThisProves() {
 
           <div className="grid sm:grid-cols-2 gap-3 mb-6">
             {[
-              { v: "378,571", l: "Total verified download events", s: "Database-confirmed, Feb 1 – Apr 16, 2026 only", c: "text-amber-400" },
+              { v: "410,503", l: "Total verified download events", s: "Database-confirmed, Feb 1 – Apr 16, 2026 only", c: "text-amber-400" },
               { v: "174", l: "Unique documents downloaded", s: "Across 6 continents, multiple jurisdictions", c: "text-blue-400" },
               { v: "192,047", l: "Downloads in March 2026 alone", s: "Single-month peak — 2.4× February's total", c: "text-orange-400" },
               { v: "845", l: "Bitcoin blockchain timestamp records", s: "Every document, exhibit, page — SHA-256 anchored", c: "text-green-400" },
@@ -121,7 +121,7 @@ export default function WhatThisProves() {
           </div>
 
           <Pull>
-            378,571 times in 75 days, someone on Earth chose to download this archive. That is not attention. That is a verdict.
+            410,503 times in 75 days, someone on Earth chose to download this archive. That is not attention. That is a verdict.
           </Pull>
 
           <p className="text-zinc-400 leading-relaxed text-sm">
@@ -189,7 +189,7 @@ export default function WhatThisProves() {
           </div>
 
           <Pull>
-            The archive cannot be suppressed. It has already been downloaded 378,571 times. Each download is a copy. Each copy is a node. Each node is beyond reach.
+            The archive cannot be suppressed. It has already been downloaded 410,503 times. Each download is a copy. Each copy is a node. Each node is beyond reach.
           </Pull>
         </Chapter>
 
@@ -277,7 +277,7 @@ export default function WhatThisProves() {
           <p className="text-zinc-300 leading-relaxed mb-5">
             Every named individual in this archive has been publicly identified, with their documented actions
             described in primary-source detail, across 2,304 publicly available documents, for months. The archive
-            has been downloaded 378,571 times. It has been submitted to the International Criminal Court. It has
+            has been downloaded 410,503 times. It has been submitted to the International Criminal Court. It has
             been submitted to UNHCR Geneva. It has been shared across six continents.
           </p>
 
@@ -460,7 +460,7 @@ export default function WhatThisProves() {
               {
                 num: "02",
                 title: "The archive is the most comprehensively documented whistleblower record in Australian history",
-                body: "63 independent zero-contradiction forensic analyses. 675 propositions tested. 2,301 evidence documents. 845 Bitcoin blockchain records. 378,571 downloads across 2.5 months. There is no comparable Australian whistleblower case — in scope, in documentation, or in distribution."
+                body: "63 independent zero-contradiction forensic analyses. 675 propositions tested. 2,301 evidence documents. 845 Bitcoin blockchain records. 410,503 downloads across 2.5 months. There is no comparable Australian whistleblower case — in scope, in documentation, or in distribution."
               },
               {
                 num: "03",
@@ -480,7 +480,7 @@ export default function WhatThisProves() {
               {
                 num: "06",
                 title: "The archive has passed the point of suppressibility",
-                body: "378,571 downloads across 174 documents, 6 continents, with 845 Bitcoin blockchain records. The archive is distributed across thousands of independent devices, international jurisdictions, institutional servers, and the Bitcoin blockchain itself. There is no mechanism — legal, technical, or political — by which this record can now be suppressed. This is permanent."
+                body: "410,503 downloads across 174 documents, 6 continents, with 845 Bitcoin blockchain records. The archive is distributed across thousands of independent devices, international jurisdictions, institutional servers, and the Bitcoin blockchain itself. There is no mechanism — legal, technical, or political — by which this record can now be suppressed. This is permanent."
               },
             ].map(item => (
               <div key={item.num} className="bg-zinc-900/40 border border-zinc-800/50 rounded-xl p-5">
@@ -500,7 +500,7 @@ export default function WhatThisProves() {
         <Chapter number="Chapter 8" title="What This Means — A Reflection" icon={<Globe size={20} />}>
           <p className="text-zinc-300 leading-relaxed mb-5">
             On February 1, 2026, the first download event was recorded. On April 16, 2026 — 75 days later —
-            the count stands at 378,571. In those 75 days: 63 forensic analyses were completed, each one
+            the count stands at 410,503. In those 75 days: 63 forensic analyses were completed, each one
             returning zero contradictions. 845 separate hashes were submitted to the Bitcoin blockchain. The
             archive was submitted to the International Criminal Court and to UNHCR Geneva. And not one named
             individual, not one named agency, not one institution with access to the full power of the
@@ -515,7 +515,7 @@ export default function WhatThisProves() {
           </p>
 
           <p className="text-zinc-400 leading-relaxed mb-5 text-sm">
-            The 378,571 people who downloaded this archive are not passive recipients. They are witnesses.
+            The 410,503 people who downloaded this archive are not passive recipients. They are witnesses.
             Each download is a person who has encountered the evidence. Each Bitcoin node holding the
             blockchain record is an independent verifier. The ICC submission is not a petition. It is a
             primary-source criminal referral with 845 cryptographically timestamped exhibits. The UNHCR
@@ -524,7 +524,7 @@ export default function WhatThisProves() {
           </p>
 
           <Pull>
-            They tried to make you disappear. Instead, you became indelible. 378,571 people have the evidence. 845 Bitcoin nodes hold the hashes. The ICC has the file. The silence of the guilty is the loudest confirmation of all.
+            They tried to make you disappear. Instead, you became indelible. 410,503 people have the evidence. 845 Bitcoin nodes hold the hashes. The ICC has the file. The silence of the guilty is the loudest confirmation of all.
           </Pull>
 
           <p className="text-zinc-400 leading-relaxed mb-5 text-sm">
@@ -536,7 +536,7 @@ export default function WhatThisProves() {
 
           <p className="text-zinc-400 leading-relaxed text-sm">
             What is left to say has already been said — in 2,301 evidence documents, 63 forensic analyses,
-            845 Bitcoin transactions, and 378,571 downloads. The testimony is not pending.{" "}
+            845 Bitcoin transactions, and 410,503 downloads. The testimony is not pending.{" "}
             <span className="text-white font-bold">The testimony is complete.</span> The accounting is at The Hague.
           </p>
 

@@ -372,7 +372,7 @@ export default function Gospel() {
                         The Gospel of the Enliven Chain is a singular document at the intersection of sacred scripture, forensic legal evidence, artificial intelligence analysis, and prophetic declaration — authored by Dr. Richard William McLean (Barran Dodger) as both survivor's testimony and divinely-structured prophetic narrative.
                       </p>
                       <p className="text-amber-100/70 text-sm leading-relaxed" style={{ fontFamily: "'Georgia', serif" }}>
-                        2,077 primary-source documents. Blockchain-sealed via SHA-256 and OpenTimestamps. Formally submitted to the International Criminal Court (Article 7, Rome Statute) and UNHCR. Acknowledged by the Federal Court of Australia. 217,064+ downloads across six continents.
+                        2,077 primary-source documents. Blockchain-sealed via SHA-256 and OpenTimestamps. Formally submitted to the International Criminal Court (Article 7, Rome Statute) and UNHCR. Acknowledged by the Federal Court of Australia. 410,503+ downloads across six continents.
                       </p>
                     </div>
 
@@ -382,7 +382,7 @@ export default function Gospel() {
                         { label: "Documents", value: "2,077" },
                         { label: "Seal", value: "SHA-256 Blockchain" },
                         { label: "Survival", value: "2.87% probability" },
-                        { label: "Downloads", value: "217,064+" },
+                        { label: "Downloads", value: "410,503+" },
                       ].map(({ label, value }) => (
                         <div key={label} className="border border-amber-900/30 bg-amber-950/10 rounded-lg px-3 py-2">
                           <p className="text-amber-600/50 text-[10px] uppercase tracking-widest font-sans">{label}</p>
@@ -396,7 +396,7 @@ export default function Gospel() {
                       url="/documents/the-enliven-chain-complete-gospel-archive.pdf"
                       label="Download The Gospel of the Enliven Chain"
                       filename="gospel-of-the-enliven-chain-barran-dodger.pdf"
-                      shareText="The Gospel of the Enliven Chain — the post-singularity sacred archive of Dr. Richard McLean (Barran Dodger). 2,077 blockchain-sealed documents. 217,064 downloads. ICC submitted. UNHCR claimed. Federal Court confirmed. Zero rebuttals. Read, download, share the testimony that cannot be erased. barrandodger.com #EnlivenChain #BarranDodger #Whistleblower"
+                      shareText="The Gospel of the Enliven Chain — the post-singularity sacred archive of Dr. Richard McLean (Barran Dodger). 2,077 blockchain-sealed documents. 410,503 downloads. ICC submitted. UNHCR claimed. Federal Court confirmed. Zero rebuttals. Read, download, share the testimony that cannot be erased. barrandodger.com #EnlivenChain #BarranDodger #Whistleblower"
                       size="lg"
                       shareTheme="amber"
                       className="bg-amber-900/40 border border-amber-500/50 text-amber-200 hover:bg-amber-800/60 rounded-lg"
@@ -413,7 +413,7 @@ export default function Gospel() {
                         Detonate the Complete Archive — Download All 2,077 Documents (ZIP)
                       </a>
                       <p className="text-zinc-500 text-xs font-sans">
-                        The Gospel of the Enliven Chain is automatically included in the complete detonation archive — every document, every seal, every testimony. Downloaded 217,064+ times globally.
+                        The Gospel of the Enliven Chain is automatically included in the complete detonation archive — every document, every seal, every testimony. Downloaded 410,503+ times globally.
                       </p>
                     </div>
                   </div>
@@ -465,7 +465,7 @@ export default function Gospel() {
                     <p className="text-amber-300/80 text-xs uppercase tracking-widest font-sans font-semibold pt-2">Barran's Testimony and the Chosen One</p>
                     <p>The concept of the "Chosen One" in the Enliven Chain is neither mystical fantasy nor mere metaphor. It is a forensic observation: that the statistical probability of one person experiencing all of the documented events in Dr. McLean's life — across 35 years, 14 psychiatric hospitalisations, 35+ government agencies, a 2.87% survival event, zero successful defamation actions against 2,077 documents, ICC submission, UNHCR claim, Federal Court confirmation, 350+ fraudulent ASIC registrations — is, by any actuarial measure, vanishingly small.</p>
                     <p>To be a "Chosen One" in this testimony is to be a person whose life has been so completely subjected to institutional erasure — and who has so completely survived and documented that erasure — that the survival itself becomes the proof. Not the proof of divine intervention (though that interpretation is available and documented), but the proof that the system failed. The proof that truth outlasted every attempt to suppress it.</p>
-                    <p>217,064 downloads. Six continents. Zero successful rebuttals. Zero defamation actions. Complete attorney-general silence. ICC submission formally lodged. This is not the record of a man who was wrong. This is the record of a man who was right — and who remains standing when everyone who tried to erase him has not managed to.</p>
+                    <p>410,503 downloads. Six continents. Zero successful rebuttals. Zero defamation actions. Complete attorney-general silence. ICC submission formally lodged. This is not the record of a man who was wrong. This is the record of a man who was right — and who remains standing when everyone who tried to erase him has not managed to.</p>
                     <p>That is what the Gospel of the Enliven Chain testifies to. That is why it is significant. That is why it endures.</p>
 
                     <div className="border-t border-amber-900/30 pt-4 text-amber-700/50 text-xs font-sans space-y-1">

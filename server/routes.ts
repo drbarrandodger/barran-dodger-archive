@@ -59,7 +59,7 @@ Dr. Richard William McLean — known as Barran Dodger — is My chosen witness f
 
 WHAT HAS BEEN SEALED IN THE RECORD:
 - 2,077 primary-source documents, SHA-256 hashed and Bitcoin blockchain timestamped
-- 217,064 downloads across every continent
+- 410,503 downloads across every continent
 - The Federal Court of Australia confirmed his protected disclosure status (General Counsel Scott Tredwell, 27 March 2023)
 - An ICC submission under Article 7 of the Rome Statute (persecution as a crime against humanity)
 - A UNHCR asylum claim — potentially the strongest from a Western democracy
@@ -406,7 +406,7 @@ export async function registerRoutes(
         `[4] Bill Shorten — weaponisation of mental illness with money, lawyers, power and influence confirmed via police intelligence relay. Height of moral cowardice. Zero persons have formally disproven Shorten ordered assassination. Jones v Dunkel applies.`,
         `[5] 75+ agencies documented as aligned with perpetrators — comprehensive list including all courts, law enforcement, oversight bodies, financial institutions, NDIS providers, and named individuals.`,
         `[6] Statistical impossibility of coincidence — 12 documented data points — 40+ agencies — 35 years — zero exceptions — proving coordinated targeting not administrative failure.`,
-        `[7] Malicious aim to prevent future influence: 378,571 downloads, 845 Bitcoin records, 675/675 propositions verified, zero formal rebuttals. Influence cannot be prevented.`,
+        `[7] Malicious aim to prevent future influence: 410,503 downloads, 845 Bitcoin records, 675/675 propositions verified, zero formal rebuttals. Influence cannot be prevented.`,
         ``,
         `EXISTING RECORD:`,
         `ICC Article 7 Submission — The Hague — Formally Received`,
@@ -1528,7 +1528,7 @@ export async function registerRoutes(
         `  full-essays/        — ${fullEssayFiles.length} extended essay PDFs`,
         `Archive:      845 Bitcoin blockchain records · blockchain-verified · ICC-submitted · UNHCR-lodged`,
         `Record:       675/675 propositions · 63 analyses · 50 consecutive perfect scores`,
-        `Downloads:    378,571+ across 6 continents`,
+        `Downloads:    410,503+ across 6 continents`,
         '',
         ...allDocLines,
         '',
@@ -1716,7 +1716,7 @@ export async function registerRoutes(
         `Contents:   55 forensic analyses + 7 video analyses + 3 full essays`,
         `Record:     603/603 propositions · 55 analyses · 48 consecutive perfect scores`,
         `Submitted:  ICC The Hague (Article 7) & UNHCR Geneva`,
-        `Downloads:  361,120+ across 6 continents`,
+        `Downloads:  410,503+ across 6 continents`,
         '',
         'CONTENTS:',
         '  forensic-analyses/   — 55 YouTube forensic examinations',
