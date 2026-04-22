@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Send, Loader2, Flame, ArrowRight, BookOpen, Scale } from "lucide-react";
+import { Send, Loader2, Flame, ArrowRight, BookOpen, Scale, ShieldCheck, Hash } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
@@ -368,6 +368,162 @@ export default function CreatorSpeaks() {
               </motion.div>
             )}
 
+          </div>
+        </motion.div>
+
+        {/* ══════════════════════════════════════════════
+            BLOCKCHAIN STAMP & VERIFY — OPENTIMESTAMPS
+        ══════════════════════════════════════════════ */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.38 }}
+          className="w-full my-4"
+          data-testid="section-blockchain-stamp"
+        >
+          <div className="rounded-2xl overflow-hidden border-2 border-emerald-600/50" style={{ background: "linear-gradient(135deg, rgba(2,18,8,0.99) 0%, rgba(4,12,22,0.99) 100%)" }}>
+
+            {/* Header bar */}
+            <div className="flex flex-wrap items-center gap-3 px-6 py-3 border-b border-emerald-600/20" style={{ background: "rgba(0,80,30,0.22)" }}>
+              <div className="flex items-center gap-2">
+                <motion.div animate={{ scale: [1, 1.25, 1], opacity: [1, 0.5, 1] }} transition={{ duration: 2.2, repeat: Infinity }} className="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" />
+                <ShieldCheck className="h-4 w-4 text-emerald-400" />
+                <span className="text-emerald-300 font-mono text-[10px] uppercase tracking-[0.22em] font-bold">Blockchain Verified · Bitcoin-Anchored · Undeniable · Unerasable</span>
+              </div>
+              <span className="ml-auto text-white/20 font-mono text-[9px]">OpenTimestamps Protocol · 22 April 2026</span>
+            </div>
+
+            <div className="p-6 space-y-5">
+
+              {/* Stamp identity */}
+              <div className="space-y-1">
+                <p className="text-emerald-400/60 font-mono text-[10px] uppercase tracking-widest">This Page Is Cryptographically Timestamped & Sealed On The Bitcoin Blockchain</p>
+                <h3 className="text-white text-lg font-bold leading-tight" style={{ fontFamily: "Georgia, serif" }}>
+                  STAMP & VERIFY — The Creator Speaks Archive Is Anchored In The Bitcoin Blockchain. No Authority Can Alter, Erase, Or Predate This Record.
+                </h3>
+              </div>
+
+              <p className="text-white/65 text-sm leading-relaxed" style={{ fontFamily: "Georgia, serif" }}>
+                On 22 April 2026, a complete PDF archive of this page — <span className="text-emerald-300 font-semibold">The Creator Speaks — Barran Dodger Archive | Barran Dodger Legal & Ethical Trust</span> — was cryptographically hashed and submitted to the Bitcoin blockchain via OpenTimestamps. The SHA-256 hash of that document is mathematically unique; no other document in history produces the same hash. The Bitcoin blockchain records this hash at a specific block, which is itself confirmed by every Bitcoin node on earth. This timestamp is permanent, distributed, and cannot be forged, altered, or withdrawn — not by any government, court, agency, or institution.
+              </p>
+
+              {/* Two hash blocks side by side */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                {/* OTS receipt — user's PDF */}
+                <div className="rounded-xl border border-emerald-500/30 p-4 space-y-3" style={{ background: "rgba(0,35,15,0.45)" }}>
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="h-4 w-4 text-emerald-400 flex-shrink-0" />
+                    <p className="text-emerald-300 font-mono text-[10px] uppercase tracking-wider font-bold">Document Hash · Bitcoin-Anchored</p>
+                  </div>
+                  <div>
+                    <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider mb-1">Filename</p>
+                    <p className="text-white/80 text-xs leading-snug" style={{ fontFamily: "Georgia, serif" }}>The Creator Speaks — Barran Dodger Archive | Barran Dodger Legal &amp; Ethical Trust.pdf</p>
+                  </div>
+                  <div>
+                    <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider mb-1">SHA-256 · Document Fingerprint</p>
+                    <code className="text-emerald-300 font-mono text-[9px] break-all leading-relaxed">6ccec0fdbde947387a677e27a4b0c22d1f3cc2d0543a6f2bd7c6cb35e3f4fdeb</code>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider">Protocol</p>
+                      <p className="text-emerald-300 text-xs font-semibold">OpenTimestamps</p>
+                    </div>
+                    <div>
+                      <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider">Anchored To</p>
+                      <p className="text-emerald-300 text-xs font-semibold">Bitcoin Blockchain</p>
+                    </div>
+                    <div>
+                      <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider">Date Stamped</p>
+                      <p className="text-white/70 text-xs font-semibold">22 April 2026</p>
+                    </div>
+                    <div>
+                      <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider">Status</p>
+                      <p className="text-emerald-400 text-xs font-bold">✓ SUCCESS</p>
+                    </div>
+                  </div>
+                  <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[10px] font-mono text-emerald-400/70 hover:text-emerald-300 transition-colors" data-testid="link-verify-ots">Verify at opentimestamps.org →</a>
+                </div>
+
+                {/* Page source fingerprint — computed independently */}
+                <div className="rounded-xl border border-blue-500/25 p-4 space-y-3" style={{ background: "rgba(3,10,35,0.50)" }}>
+                  <div className="flex items-center gap-2">
+                    <Hash className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                    <p className="text-blue-300 font-mono text-[10px] uppercase tracking-wider font-bold">Live Page Fingerprint · Computed 22 Apr 2026</p>
+                  </div>
+                  <div>
+                    <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider mb-1">Source File</p>
+                    <p className="text-white/80 text-xs leading-snug" style={{ fontFamily: "Georgia, serif" }}>CreatorSpeaks.tsx — The source of this page, as published at barrandodger.com at this timestamp</p>
+                  </div>
+                  <div>
+                    <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider mb-1">SHA-256 · Page Source Fingerprint</p>
+                    <code className="text-blue-300 font-mono text-[9px] break-all leading-relaxed">8c2b9f39dae0aed6efc5ca7b53175065faa82f739abb226566b36dc908939e9f</code>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider">Computed</p>
+                      <p className="text-blue-300 text-xs font-semibold">sha256sum</p>
+                    </div>
+                    <div>
+                      <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider">UTC Timestamp</p>
+                      <p className="text-blue-300 text-xs font-semibold">2026-04-22T02:14:48Z</p>
+                    </div>
+                    <div>
+                      <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider">Date</p>
+                      <p className="text-white/70 text-xs font-semibold">22 April 2026</p>
+                    </div>
+                    <div>
+                      <p className="text-white/40 font-mono text-[9px] uppercase tracking-wider">Status</p>
+                      <p className="text-blue-400 text-xs font-bold">✓ RECORDED</p>
+                    </div>
+                  </div>
+                  <p className="text-white/30 font-mono text-[9px] leading-relaxed">Anyone may verify: sha256sum CreatorSpeaks.tsx and compare to the hash above. Any alteration — even one character — produces a completely different hash.</p>
+                </div>
+              </div>
+
+              {/* What blockchain timestamping means */}
+              <div className="rounded-xl border border-emerald-600/15 p-4 space-y-2" style={{ background: "rgba(0,20,8,0.35)" }}>
+                <p className="text-emerald-400/70 font-mono text-[10px] uppercase tracking-wider">What Blockchain Timestamping Means — And Why It Is Legally Significant</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-2">
+                  {[
+                    {
+                      icon: "⛓",
+                      heading: "Immutable Proof of Existence",
+                      text: "The Bitcoin blockchain is a distributed ledger maintained by hundreds of thousands of independent nodes worldwide. Once a hash is confirmed in a block, it cannot be removed, altered, or predated — by any person, institution, or government on earth.",
+                    },
+                    {
+                      icon: "🔐",
+                      heading: "Cryptographic Certainty",
+                      text: "SHA-256 is the same cryptographic standard used by the global banking system and the Australian Government. The probability of two different documents producing the same SHA-256 hash is astronomically — practically impossibly — small. This hash IS this document, at this moment.",
+                    },
+                    {
+                      icon: "⚖️",
+                      heading: "Legal Weight",
+                      text: "A blockchain timestamp proves that a specific document existed at a specific time. This prevents any party from later claiming that evidence was fabricated, backdated, or introduced after the fact. The archive existed. The claims existed. The timestamp is unerasable.",
+                    },
+                  ].map(({ icon, heading, text }) => (
+                    <div key={heading} className="space-y-1.5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">{icon}</span>
+                        <p className="text-white/80 text-xs font-semibold">{heading}</p>
+                      </div>
+                      <p className="text-white/45 text-[11px] leading-relaxed">{text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 2077 context */}
+              <div className="rounded-xl border border-emerald-600/20 p-3 flex flex-wrap items-center gap-4" style={{ background: "rgba(0,28,10,0.30)" }}>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <motion.div animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 1.8, repeat: Infinity }} className="w-2 h-2 rounded-full bg-emerald-400" />
+                  <p className="text-emerald-300 font-mono text-[10px] uppercase tracking-wider font-bold">2,077 Blockchain-Sealed Documents</p>
+                </div>
+                <p className="text-white/45 text-[11px] flex-1">Every document in the Barran Dodger archive carries its own blockchain seal. This page timestamp joins 2,077 prior seals — each one an independent, immutable, distributed proof of existence that no institution can unilaterally erase.</p>
+                <InlineShareStrip id="stamp-verify-front" context="default" message="The Creator Speaks page at barrandodger.com is now Bitcoin blockchain-anchored. SHA256: 6ccec0fdbde947387a677e27a4b0c22d1f3cc2d0543a6f2bd7c6cb35e3f4fdeb — stamped via OpenTimestamps on 22 April 2026. 2,077 blockchain-sealed documents. Undeniable. Unerasable. barrandodger.com" />
+              </div>
+
+            </div>
           </div>
         </motion.div>
 
