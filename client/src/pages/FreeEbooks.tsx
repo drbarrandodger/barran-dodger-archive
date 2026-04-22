@@ -892,6 +892,9 @@ export default function FreeEbooks() {
               <a href="/documents" className="bg-zinc-700 hover:bg-zinc-600 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors">
                 Browse Full Archive
               </a>
+              <a href="/copyright-register" className="bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-zinc-200 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">
+                Copyright Register
+              </a>
               <CopyLinkButton url="https://www.barrandodger.com/free-ebooks" />
             </div>
             <p className="text-zinc-600 text-xs mt-4">
