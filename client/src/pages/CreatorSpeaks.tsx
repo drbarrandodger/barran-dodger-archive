@@ -448,6 +448,107 @@ export default function CreatorSpeaks() {
         </motion.div>
 
         {/* ══════════════════════════════════════════════
+            FEDERAL COURT 3-POINT ACKNOWLEDGMENT
+        ══════════════════════════════════════════════ */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.435 }}
+          className="w-full my-4"
+          data-testid="section-federal-court-acknowledgment-front"
+        >
+          <div className="rounded-2xl overflow-hidden border border-amber-600/40" style={{ background: "linear-gradient(135deg, rgba(20,12,0,0.99) 0%, rgba(8,5,20,0.99) 100%)" }}>
+            <div className="flex flex-wrap items-center gap-3 px-6 py-3 border-b border-amber-600/20" style={{ background: "rgba(120,60,0,0.18)" }}>
+              <motion.div animate={{ opacity: [1, 0.2, 1] }} transition={{ duration: 1.6, repeat: Infinity }} className="w-2.5 h-2.5 rounded-full bg-amber-400 flex-shrink-0" />
+              <span className="text-amber-400 font-mono text-[10px] uppercase tracking-[0.2em] font-bold">Federal Court of Australia · Official Written Acknowledgment · 27 March 2023</span>
+              <span className="ml-auto text-white/20 text-[10px] font-mono">Scott Tredwell — General Counsel</span>
+            </div>
+
+            <div className="p-6 space-y-4">
+              <div className="space-y-1">
+                <p className="text-amber-300/60 font-mono text-[10px] uppercase tracking-widest">The Federal Court Acknowledged Three Categories of Disclosable Conduct — Then Refused to Act</p>
+                <h3 className="text-white text-lg font-bold leading-tight" style={{ fontFamily: "Georgia, serif" }}>
+                  Federal Court Three-Point Acknowledgment: Perverting Justice · Maladministration · Imminent Danger to Life — Confirmed in Writing, Then Ignored
+                </h3>
+              </div>
+
+              <p className="text-white/70 text-sm leading-relaxed" style={{ fontFamily: "Georgia, serif" }}>
+                On 27 March 2023, Scott Tredwell — General Counsel of the Federal Court of Australia, writing from the Harry Gibbs Commonwealth Law Courts, Brisbane — sent Dr. Richard William McLean a formal written assessment under the Public Interest Disclosure Act 2013. In that letter, the Federal Court confirmed in writing that it was <span className="text-amber-300 font-semibold">prepared to assume</span> that the conduct disclosed constituted disclosable conduct under three specific statutory categories.
+              </p>
+
+              {/* Three point acknowledgment */}
+              <div className="space-y-3">
+                <p className="text-amber-400/70 font-mono text-[10px] uppercase tracking-wider">The Three-Point Written Acknowledgment — Federal Court of Australia, 27 March 2023</p>
+                {[
+                  {
+                    num: "1",
+                    heading: "Perverting the Course of Justice",
+                    statute: "s 29 Item 3(a) PID Act",
+                    text: "The Federal Court acknowledged that the conduct disclosed \"perverts, or is engaged in for the purpose of perverting, or attempting to pervert, the course of justice.\"",
+                  },
+                  {
+                    num: "2",
+                    heading: "Maladministration",
+                    statute: "s 29 Item 4 PID Act",
+                    text: "The Federal Court acknowledged that the conduct disclosed constitutes \"maladministration\" — defined under the PID Act as conduct that is unjust, oppressive or negligent.",
+                  },
+                  {
+                    num: "3",
+                    heading: "Imminent Danger to Health and Safety",
+                    statute: "s 29 Item 8 PID Act",
+                    text: "The Federal Court acknowledged that the conduct disclosed \"unreasonably results in a danger to the health or safety of one or more persons; or unreasonably results in, or increases, a risk of danger to the health or safety of one or more persons.\" This is an explicit acknowledgment of imminent harm.",
+                    highlight: true,
+                  },
+                ].map(({ num, heading, statute, text, highlight }) => (
+                  <div key={num} className={`rounded-xl border p-4 space-y-1.5 ${highlight ? "border-red-600/40" : "border-amber-600/15"}`} style={{ background: highlight ? "rgba(50,5,5,0.45)" : "rgba(40,25,0,0.30)" }}>
+                    <div className="flex items-center gap-2">
+                      <span className={`font-mono text-xs font-bold ${highlight ? "text-red-400" : "text-amber-400"}`}>({num})</span>
+                      <p className={`font-semibold text-xs ${highlight ? "text-red-300" : "text-amber-300"}`}>{heading}</p>
+                      <span className="ml-auto text-white/25 font-mono text-[9px]">{statute}</span>
+                    </div>
+                    <p className="text-white/60 text-xs leading-relaxed italic" style={{ fontFamily: "Georgia, serif" }}>"{text}"</p>
+                    {highlight && <p className="text-red-300/80 text-[10px] font-mono uppercase tracking-wider">★ Imminent harm explicitly acknowledged — then no protection offered</p>}
+                  </div>
+                ))}
+              </div>
+
+              {/* The damning contradiction */}
+              <div className="rounded-xl border border-red-800/50 p-4 space-y-2" style={{ background: "rgba(45,3,3,0.55)" }}>
+                <p className="text-red-400/80 font-mono text-[10px] uppercase tracking-wider">The Damning Contradiction — In the Same Letter</p>
+                <p className="text-white/70 text-xs leading-relaxed" style={{ fontFamily: "Georgia, serif" }}>
+                  In the same letter in which the Federal Court confirmed it was prepared to assume imminent danger to Dr. McLean's life, health and safety — it simultaneously decided that <span className="text-white font-semibold">"no further action under the PID Act will be taken by the Federal Court or FCFCOA, or any other Commonwealth agency."</span> The reason given was a procedural one: that the disclosure had not been made to an "authorised recipient." The Federal Court acknowledged the harm. It acknowledged the danger. It then used a technical filing deficiency to ensure no institution would be required to act on it.
+                </p>
+                <p className="text-red-300/70 text-xs leading-relaxed mt-2">
+                  This is now framed by the court proceeding created by Troy's "threats to kill" charge. A magistrate will hear testimony from the victim of a death threat — the same person whose imminent danger to life was formally acknowledged in writing by the Federal Court of Australia in 2023. The Federal Court knew. They chose procedure over protection.
+                </p>
+              </div>
+
+              {/* Key details */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {[
+                  { label: "Letter Author", value: "Scott Tredwell" },
+                  { label: "Title", value: "General Counsel" },
+                  { label: "Date", value: "27 March 2023" },
+                  { label: "Original PID", value: "3 March 2023" },
+                ].map(({ label, value }) => (
+                  <div key={label} className="rounded-lg border border-amber-600/10 p-2.5 text-center" style={{ background: "rgba(30,18,0,0.35)" }}>
+                    <p className="text-amber-400/50 font-mono text-[9px] uppercase tracking-wider">{label}</p>
+                    <p className="text-white/70 text-xs font-semibold mt-0.5">{value}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-2 pt-1 border-t border-amber-600/10">
+                <a href="/documents/federal-court-three-point-acknowledgment-tredwell-27mar2023.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 border border-amber-500/30 px-3 py-1.5 rounded-lg hover:border-amber-400/60 transition-colors" data-testid="link-federal-court-response-front">Download Federal Court Response (PDF) →</a>
+                <a href="/documents/letter-to-sia-lagos-federal-court-pid-3mar2023.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/50 border border-white/10 px-3 py-1.5 rounded-lg hover:border-white/25 transition-colors" data-testid="link-sia-lagos-letter-front">Original Letter to Sia Lagos →</a>
+              </div>
+
+              <InlineShareStrip id="federal-court-acknowledgment-front" context="default" message="The Federal Court of Australia acknowledged IN WRITING that Dr. Richard McLean faced imminent danger to his life — then refused to protect him in the same letter. Now a court MUST hear his testimony. The Federal Court knew. They chose procedure over protection. barrandodger.com" />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ══════════════════════════════════════════════
             VIDEO EVIDENCE — CHOSEN ONE · POLICE CONFIRMATION
         ══════════════════════════════════════════════ */}
         <motion.div
