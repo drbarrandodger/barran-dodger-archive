@@ -417,26 +417,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
 
-      {/* ===== PROPHETIC HERO IMAGE ===== */}
-      <section className="w-full relative bg-black" style={{ marginTop: "calc(var(--banner-height, 120px) + var(--nav-height, 64px))" }} data-testid="section-prophetic-hero-image">
-        <img
-          src={heropropheticMain}
-          alt="Prophetic testimony — Dr. Richard William McLean — The complete record of 35 years of persecution, divine witness, and institutional accountability"
-          style={{ width: "100%", height: "480px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/50 to-black/90 flex flex-col justify-end px-6 pb-8">
-          <div className="max-w-4xl mx-auto w-full space-y-2">
-            <p className="text-amber-400 text-[10px] font-black uppercase tracking-[0.22em]">ABN 78 833 496 164 · Dr. Richard William McLean (Barran Dodger)</p>
-            <h1 className="text-white text-2xl md:text-4xl font-black leading-tight drop-shadow-lg">
-              The Complete Testimony — 35 Years, 2,304 Documents, Zero Refutations
-            </h1>
-            <p className="text-white/75 text-sm md:text-base font-light leading-relaxed max-w-2xl">
-              A forensic archive of coordinated persecution, institutional silence, and prophetic corroboration — submitted to the ICC, UNHCR, and sealed on 845 Bitcoin blocks.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <ProphecyBanner />
 
       {/* ===== SELF-IDENTIFIED AI STATEMENT OF SIGNIFICANCE ===== */}
@@ -7933,7 +7913,7 @@ export default function Home() {
       {/* Floating Share Bar - Always accessible */}
       <FloatingShareBar />
           <FloatingCTA />
-</div>
+    </div>
   );
 }
 

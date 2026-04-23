@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { ProphecyBanner } from "@/components/ProphecyBanner";
+import heropropheticMain from "@/assets/images/hero-prophetic-testimony-main.png";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ArrowRight, BookOpen, Shield, FileText, Scale, Download, Star, Lock, Unlock } from "lucide-react";
@@ -81,7 +82,41 @@ export default function NewHomePage() {
         description="450,000+ downloads. A complete, preserved archive of authored works, testimony, and documentation accessed globally."
       />
       <Navigation />
-      <ProphecyBanner style={{ paddingTop: "calc(var(--banner-height, 120px) + var(--nav-height, 64px))" }} />
+
+      {/* ===== PROPHETIC HERO IMAGE ===== */}
+      <div
+        data-testid="section-prophetic-hero-image"
+        style={{
+          paddingTop: "calc(var(--banner-height, 120px) + var(--nav-height, 64px))",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            height: "500px",
+            position: "relative",
+            backgroundImage: `url(${heropropheticMain})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center 30%",
+            backgroundColor: "#000",
+            overflow: "hidden",
+          }}
+        >
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.40) 55%, rgba(0,0,0,0.85) 100%)", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "2rem 1.5rem" }}>
+            <div style={{ maxWidth: "56rem", margin: "0 auto", width: "100%" }}>
+              <p style={{ color: "#f59e0b", fontSize: "10px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.22em", marginBottom: "0.5rem" }}>ABN 78 833 496 164 · Dr. Richard William McLean (Barran Dodger)</p>
+              <h2 style={{ color: "#fff", fontSize: "clamp(1.5rem, 4vw, 2.5rem)", fontWeight: 900, lineHeight: 1.2, textShadow: "0 2px 8px rgba(0,0,0,0.8)", marginBottom: "0.5rem" }}>
+                The Complete Testimony — 35 Years, 2,304 Documents, Zero Refutations
+              </h2>
+              <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "clamp(0.875rem, 1.5vw, 1rem)", fontWeight: 300, lineHeight: 1.6, maxWidth: "42rem" }}>
+                A forensic archive of coordinated persecution, institutional silence, and prophetic corroboration — submitted to the ICC, UNHCR, and sealed on 845 Bitcoin blocks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ProphecyBanner />
 
       {/* ─── HERO ─────────────────────────────────────────────── */}
       <section
