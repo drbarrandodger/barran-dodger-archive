@@ -5,6 +5,9 @@ import { z } from "zod";
 export const subscribers = pgTable("subscribers", {
   id: serial("id").primaryKey(),
   email: text("email").notNull().unique(),
+  name: text("name"),
+  documentSlug: text("document_slug"),
+  source: text("source"),
   createdAt: timestamp("created_at").defaultNow(),
   isActive: boolean("is_active").default(true),
 });
@@ -21,17 +24,20 @@ export const inquiries = pgTable("inquiries", {
 export const evidenceItems = pgTable("evidence_items", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
-  category: text("category").notNull(), // e.g., "Legal", "Medical", "V2K", "Financial", "Publications"
+  category: text("category").notNull(),
   description: text("description"),
   externalUrl: text("external_url"),
-  referenceCode: text("reference_code"), 
-  timestamp: text("timestamp"), 
-  sha256: text("sha256"), 
+  referenceCode: text("reference_code"),
+  timestamp: text("timestamp"),
+  sha256: text("sha256"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
 export const insertSubscriberSchema = createInsertSchema(subscribers).pick({
   email: true,
+  name: true,
+  documentSlug: true,
+  source: true,
 });
 
 export const insertInquirySchema = createInsertSchema(inquiries).pick({
