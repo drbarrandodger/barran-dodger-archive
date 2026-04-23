@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { 
   Scale, Globe, FileText, Clock, CheckCircle, 
   AlertCircle, Loader2, ExternalLink, Shield, Landmark
@@ -337,16 +338,20 @@ export default function LegalStatus() {
                   Historical Legal Notice & Final Demand for Justice addressed to the Prime Minister, Attorney-General, <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>NDIS</DocumentPopup>, AFP, NACC, AHRC, and ASIO. Documents 2021 state-sanctioned murder at Werribee Mercy Hospital, financial entombment, 2024 <DocumentPopup {...KEY_DOCUMENTS.stateTargeting}>assassination attempt</DocumentPopup> in Port Macquarie, and <CrossLink to="/prophetic-essay">V2K</CrossLink> psychological warfare. Establishes 14-day deadline for acknowledgment, restitution ($42.5M–$123M), and criminal investigation.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button variant="destructive" className="gap-2" asChild data-testid="button-download-legal-demand">
-                    <a href={docUrl("/documents/crimes_against_humanity_final_demand.pdf")} target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/crimes_against_humanity_final_demand.pdf")}>
-                      <FileText className="h-4 w-4" /> Download Final Demand (PDF) <DownloadBadge url="/documents/crimes_against_humanity_final_demand.pdf" />
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="gap-2" asChild data-testid="button-download-100k-essay-legal">
-                    <a href={docUrl("/documents/digital_oppression_100000_word_essay.pdf")} target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/digital_oppression_100000_word_essay.pdf")}>
-                      <FileText className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF) <DownloadBadge url="/documents/digital_oppression_100000_word_essay.pdf" />
-                    </a>
-                  </Button>
+                  <ViralDownloadButton
+                    url="/documents/crimes_against_humanity_final_demand.pdf"
+                    filename="crimes_against_humanity_final_demand.pdf"
+                    slug="crimes-against-humanity-final-demand"
+                    label="Download Final Demand (PDF)"
+                    data-testid="button-download-legal-demand"
+                  />
+                  <ViralDownloadButton
+                    url="/documents/digital_oppression_100000_word_essay.pdf"
+                    filename="digital_oppression_100000_word_essay.pdf"
+                    slug="digital-oppression-100000-word-essay"
+                    label="100,000-Word Digital Oppression Exposé (PDF)"
+                    data-testid="button-download-100k-essay-legal"
+                  />
                 </div>
               </CardContent>
             </Card>

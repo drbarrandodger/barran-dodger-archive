@@ -62,7 +62,7 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4 p-6 bg-white rounded-lg border border-border shadow-sm">
+                  <div className="flex items-start gap-4 p-6 bg-zinc-900 rounded-lg border border-border shadow-sm">
                     <Mail className="h-6 w-6 text-primary mt-1" />
                     <div>
                       <h3 className="font-bold text-foreground mb-1">General Inquiries</h3>
@@ -74,7 +74,7 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-6 bg-white rounded-lg border border-border shadow-sm">
+                  <div className="flex items-start gap-4 p-6 bg-zinc-900 rounded-lg border border-border shadow-sm">
                     <MapPin className="h-6 w-6 text-primary mt-1" />
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Office</h3>
@@ -97,7 +97,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-xl border border-border shadow-lg">
+              <div className="bg-zinc-900 p-8 rounded-xl border border-border shadow-lg">
                 <h2 className="text-2xl font-serif font-bold text-primary mb-6">Send a Message</h2>
                 
                 <Form {...form}>

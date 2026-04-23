@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CheckCircle, Download, ExternalLink, Eye, Shield, AlertTriangle, Brain, Gavel, Flame } from "lucide-react";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import imgLoneWhistleblower from "@/assets/images/lone-whistleblower-light.png";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -414,11 +415,13 @@ export default function TheyMadeYouFamousTryingToEraseYou() {
 
           {/* Download and Actions */}
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="outline" className="gap-2" asChild>
-              <a href={`/api/forensic/pdf/${SLUG}`} download data-testid="button-download-pdf">
-                <Download className="h-4 w-4" /> Download Analysis as PDF
-              </a>
-            </Button>
+            <ViralDownloadButton
+              url={`/api/forensic/pdf/${SLUG}`}
+              filename={`${SLUG}.pdf`}
+              slug={SLUG}
+              label="Download Analysis as PDF"
+              data-testid="button-download-pdf"
+            />
             <Button variant="outline" className="gap-2" asChild>
               <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" data-testid="link-youtube-video">
                 <ExternalLink className="h-4 w-4" /> Watch on YouTube

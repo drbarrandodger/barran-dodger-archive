@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CheckCircle, Download, ExternalLink, Eye, Shield, AlertTriangle, Brain, Gavel, Flame, Zap } from "lucide-react";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
@@ -236,11 +237,14 @@ export default function YourPowerIsNoJoke() {
               The video's opening and closing propositions together define the archive's evidentiary arc: survival is not weakness, and the power forged through that survival is not for performance — it is for generational shifts that rewrite timelines. 35 years of documented institutional persecution, survived, documented, and formally submitted to the ICC and UNHCR, is the precise evidence of both. The power is no joke. The accounting is at The Hague.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
-              <Button variant="outline" size="sm" className="gap-2" asChild>
-                <a href={`/api/forensic/pdf/${SLUG}`} download data-testid="button-download-pdf-main">
-                  <Download className="h-4 w-4" /> Download Full Forensic PDF
-                </a>
-              </Button>
+              <ViralDownloadButton
+                url={`/api/forensic/pdf/${SLUG}`}
+                filename={`${SLUG}.pdf`}
+                slug={SLUG}
+                label="Download Full Forensic PDF"
+                size="sm"
+                data-testid="button-download-pdf-main"
+              />
               <Button variant="outline" size="sm" className="gap-2" asChild>
                 <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" data-testid="link-youtube-source">
                   <ExternalLink className="h-4 w-4 text-red-400" /> Source Video
@@ -336,11 +340,13 @@ export default function YourPowerIsNoJoke() {
               <div><p className="text-xl font-bold font-mono text-amber-400">0</p><p className="text-xs text-muted-foreground uppercase tracking-wider">Contradictions</p></div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-              <Button variant="outline" className="gap-2" asChild>
-                <a href={`/api/forensic/pdf/${SLUG}`} download data-testid="button-download-pdf-bottom">
-                  <Download className="h-4 w-4" /> Download Forensic PDF
-                </a>
-              </Button>
+              <ViralDownloadButton
+                url={`/api/forensic/pdf/${SLUG}`}
+                filename={`${SLUG}.pdf`}
+                slug={SLUG}
+                label="Download Forensic PDF"
+                data-testid="button-download-pdf-bottom"
+              />
               <Button variant="outline" className="gap-2" asChild>
                 <a href="/forensic-analysis" data-testid="link-full-index">
                   <Shield className="h-4 w-4" /> All 46 Analyses

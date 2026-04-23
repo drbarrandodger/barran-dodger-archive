@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ReadingProgress } from "@/components/ReadingProgress";
@@ -528,11 +529,13 @@ export default function PrivateInvestigatorLegend() {
               />
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button asChild className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
-                  <a href="/documents/they-set-a-perfect-trap.pdf" download data-testid="button-download-trap-pdf">
-                    <FileText className="mr-2 h-4 w-4" /> Download Related PDF
-                  </a>
-                </Button>
+                <ViralDownloadButton
+                  url="/documents/they-set-a-perfect-trap.pdf"
+                  filename="they-set-a-perfect-trap.pdf"
+                  slug="they-set-a-perfect-trap"
+                  label="Download Related PDF"
+                  data-testid="button-download-trap-pdf"
+                />
                 <Button variant="outline" asChild>
                   <Link href="/evidence" data-testid="button-view-evidence-investigator">
                     <Shield className="mr-2 h-4 w-4" /> View the Evidence Archive

@@ -11,6 +11,7 @@ import { ProgressTracker, useDocumentProgress } from "@/components/ProgressTrack
 import { useDocumentPreview } from "@/components/DocumentPreview";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { DetonationButton } from "@/components/DetonationButton";
 import { ShareEvidence } from "@/components/ShareEvidence";
 import { CommentSection } from "@/components/CommentSection";
@@ -3947,21 +3948,24 @@ export default function Evidence() {
                               <source src={doc.url} type="audio/mpeg" />
                               Your browser does not support the audio element.
                             </audio>
-                            <Button variant="default" className="w-full gap-2 bg-amber-600 hover:bg-amber-700 text-white" asChild data-testid={`button-download-audio-${index}`}>
-                              <a href={doc.url} download onClick={() => trackDownload(doc.url)}>
-                                <Download className="h-4 w-4" />
-                                Download Audio Recording
-                              </a>
-                            </Button>
+                            <ViralDownloadButton
+                              url={doc.url}
+                              filename={doc.url.split("/").pop()}
+                              slug={doc.url.split("/").pop()?.replace(/\.[^/.]+$/, "")}
+                              label="Download Audio Recording"
+                              className="w-full"
+                              data-testid={`button-download-audio-${index}`}
+                            />
                           </div>
                         ) : (
-                          <Button variant="default" className="w-full gap-2 bg-amber-600 hover:bg-amber-700 text-white" asChild data-testid={`button-download-doc-${index}`}>
-                            <a href={docUrl(doc.url)} download onClick={() => trackDownload(doc.url)}>
-                              <Download className="h-4 w-4" />
-                              {(doc as any).isImage ? "Download Image" : "Download PDF"}
-                              <DownloadBadge url={doc.url} />
-                            </a>
-                          </Button>
+                          <ViralDownloadButton
+                            url={docUrl(doc.url)}
+                            filename={doc.url.split("/").pop()}
+                            slug={doc.url.split("/").pop()?.replace(/\.[^/.]+$/, "")}
+                            label={(doc as any).isImage ? "Download Image" : "Download PDF"}
+                            className="w-full"
+                            data-testid={`button-download-doc-${index}`}
+                          />
                         )}
                       </div>
                       <div className="mt-3">

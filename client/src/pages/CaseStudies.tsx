@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { RelatedContent } from "@/components/RelatedContent";
@@ -1006,16 +1007,20 @@ export default function CaseStudies() {
                       <Download className="h-4 w-4" /> Download Full Paper (PDF) <DownloadBadge url="/attached_assets/THE_PARADOX_OF_PERSECUTION-How_the_Australian_Government's_Own_1770757189035.pdf" />
                     </Button>
                   </a>
-                  <a href={docUrl("/documents/digital_oppression_100000_word_essay.pdf")} target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/digital_oppression_100000_word_essay.pdf")}>
-                    <Button variant="default" className="gap-2 w-full sm:w-auto" data-testid="link-download-100k-essay-casestudies">
-                      <Download className="h-4 w-4" /> 100,000-Word Digital Oppression Exposé (PDF) <DownloadBadge url="/documents/digital_oppression_100000_word_essay.pdf" />
-                    </Button>
-                  </a>
-                  <a href={docUrl("/documents/crimes_against_humanity_final_demand.pdf")} target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/documents/crimes_against_humanity_final_demand.pdf")}>
-                    <Button variant="destructive" className="gap-2 w-full sm:w-auto" data-testid="link-download-crimes-demand-casestudies">
-                      <Download className="h-4 w-4" /> Crimes Against Humanity: Final Demand (PDF) <DownloadBadge url="/documents/crimes_against_humanity_final_demand.pdf" />
-                    </Button>
-                  </a>
+                  <ViralDownloadButton
+                    url="/documents/digital_oppression_100000_word_essay.pdf"
+                    filename="digital_oppression_100000_word_essay.pdf"
+                    slug="digital-oppression-100000-word-essay"
+                    label="100,000-Word Digital Oppression Exposé (PDF)"
+                    data-testid="link-download-100k-essay-casestudies"
+                  />
+                  <ViralDownloadButton
+                    url="/documents/crimes_against_humanity_final_demand.pdf"
+                    filename="crimes_against_humanity_final_demand.pdf"
+                    slug="crimes-against-humanity-final-demand"
+                    label="Crimes Against Humanity: Final Demand (PDF)"
+                    data-testid="link-download-crimes-demand-casestudies"
+                  />
                   <Link href="/evidence">
                     <Button variant="outline" className="gap-2 w-full sm:w-auto" data-testid="link-view-evidence-archive">
                       <ExternalLink className="h-4 w-4" /> View Evidence Archive

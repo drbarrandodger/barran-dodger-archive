@@ -852,11 +852,13 @@ export default function TestimonyWentGlobal() {
               />
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button asChild className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold">
-                  <a href="/documents/the-paradox-of-persecution.pdf" download data-testid="button-download-paradox-pdf">
-                    <FileText className="mr-2 h-4 w-4" /> Download: Paradox of Persecution
-                  </a>
-                </Button>
+                <ViralDownloadButton
+                  url="/documents/the-paradox-of-persecution.pdf"
+                  filename="the-paradox-of-persecution.pdf"
+                  slug="the-paradox-of-persecution"
+                  label="Download: Paradox of Persecution"
+                  data-testid="button-download-paradox-pdf"
+                />
                 <Button variant="outline" asChild>
                   <Link href="/urgent-protection-request" data-testid="button-view-sos">
                     <AlertTriangle className="mr-2 h-4 w-4" /> Active SOS Page

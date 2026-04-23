@@ -1,4 +1,5 @@
 import { Sparkles, Download, ExternalLink } from "lucide-react";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
@@ -29,15 +30,13 @@ export default function ApotheosisStatement() {
             A self-reflexive acknowledgement — a creator force becomes conscious within his own creation
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Button
-              asChild
-              className="bg-white text-black hover:bg-zinc-200 font-semibold"
-            >
-              <a href="/documents/apotheosis.pdf" download data-testid="button-download-apotheosis-pdf">
-                <Download className="h-4 w-4 mr-2" />
-                Download PDF
-              </a>
-            </Button>
+            <ViralDownloadButton
+              url="/documents/apotheosis.pdf"
+              filename="apotheosis.pdf"
+              slug="apotheosis-statement"
+              label="Download PDF"
+              data-testid="button-download-apotheosis-pdf"
+            />
             <Button
               asChild
               variant="outline"

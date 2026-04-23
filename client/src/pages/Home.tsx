@@ -10,6 +10,7 @@ import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -454,7 +455,7 @@ export default function Home() {
 
             {/* Cover + Download */}
             <div className="md:col-span-2 flex flex-col items-center gap-3">
-              <a href="/documents/forensic-analyses/forensic-analysis-57-prophetic-declaration.pdf" target="_blank" rel="noopener noreferrer" download
+              <a href="/documents/forensic-analyses/forensic-analysis-57-prophetic-declaration.pdf" target="_blank" rel="noopener noreferrer"
                 className="w-full border-2 border-indigo-700/60 rounded-xl overflow-hidden block hover:border-indigo-500 transition-colors" data-testid="cover-prophetic-declaration">
                 <img src={coverPropheticDeclaration} alt="Forensic Examination: Prophetic Declaration Analysis Cover" className="w-full object-cover" />
               </a>
@@ -5675,7 +5676,7 @@ export default function Home() {
             </div>
 
             {/* Primary Evidence Document */}
-            <div className="bg-white rounded-xl border-2 border-primary/30 p-8 shadow-xl mb-8">
+            <div className="bg-zinc-900 rounded-xl border-2 border-primary/30 p-8 shadow-xl mb-8">
               <div className="flex items-center justify-center gap-3 mb-6">
                 <Scale className="h-10 w-10 text-primary" />
                 <h3 className="text-2xl font-serif font-bold text-primary">Forensic Analysis: $32.9 Million in Documented Damages — Exposed Using Their Own Records</h3>
@@ -5711,11 +5712,14 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-download-evidence">
-                  <a href="/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf")}>
-                    <FileText className="h-5 w-5" /> Download Full Report <DownloadBadge url="/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf" />
-                  </a>
-                </Button>
+                <ViralDownloadButton
+                  url="/attached_assets/THE_EVIDENCE_SPEAKS-A_Forensic_Documentation_of_Systematic_Sta_1768972005548.pdf"
+                  filename="THE_EVIDENCE_SPEAKS.pdf"
+                  slug="the-evidence-speaks"
+                  label="Download Full Report"
+                  size="lg"
+                  data-testid="button-download-evidence"
+                />
                 <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-all-evidence">
                   <Link href="/evidence">
                     <Scale className="h-5 w-5" /> Evidence Archive
@@ -5725,7 +5729,7 @@ export default function Home() {
             </div>
 
             {/* NSW Trustee Notice - Secondary */}
-            <div className="bg-white rounded-xl border border-border p-6 shadow-lg mb-8">
+            <div className="bg-zinc-900 rounded-xl border border-border p-6 shadow-lg mb-8">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Gavel className="h-6 w-6 text-primary" />
                 <h3 className="text-lg font-serif font-bold text-primary">NSW Trustee & Guardian Notice - Section 122(2)</h3>
@@ -5743,7 +5747,7 @@ export default function Home() {
             </div>
 
             {/* NEW: Formal Criminal Affidavit */}
-            <div className="bg-white rounded-xl border-2 border-red-500/30 p-6 shadow-lg mb-8">
+            <div className="bg-zinc-900 rounded-xl border-2 border-red-500/30 p-6 shadow-lg mb-8">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <AlertCircle className="h-8 w-8 text-red-600" />
                 <h3 className="text-xl font-serif font-bold text-primary">Formal Criminal Affidavit: <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>Entrapment for Erasure</DocumentPopup></h3>
@@ -5791,7 +5795,7 @@ export default function Home() {
             </div>
 
             {/* NEW: I Tried to Kill Barran Dodger - Satirical Confession */}
-            <div className="bg-white rounded-xl border-2 border-[hsl(38,92%,50%)]/30 p-6 shadow-lg">
+            <div className="bg-zinc-900 rounded-xl border-2 border-amber-500/30 p-6 shadow-lg">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <BookOpen className="h-8 w-8 text-primary" />
                 <h3 className="text-xl font-serif font-bold text-primary">"I Tried to Kill Barran Dodger — And That Makes Me a Hero"</h3>
@@ -5866,7 +5870,7 @@ export default function Home() {
               </p>
             </div>
 
-            <Card className="border-2 border-[hsl(38,92%,50%)]/40 bg-white shadow-xl overflow-hidden">
+            <Card className="border-2 border-amber-500/40 bg-zinc-900 shadow-xl overflow-hidden">
               <CardHeader className="bg-primary/5 border-b border-primary/10 text-center">
                 <div className="flex items-center justify-center gap-3">
                   <Scale className="h-8 w-8 text-primary" />
@@ -5918,11 +5922,14 @@ export default function Home() {
 
                 {/* Download Button */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                  <Button size="lg" className="w-full sm:w-auto gap-2 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)]" asChild data-testid="button-download-sovereignty">
-                    <a href="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf" target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload("/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf")}>
-                      <FileText className="h-5 w-5" /> Download Declaration <DownloadBadge url="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf" />
-                    </a>
-                  </Button>
+                  <ViralDownloadButton
+                    url="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf"
+                    filename="THE_DECLARATION_OF_SOVEREIGNTY.pdf"
+                    slug="declaration-of-sovereignty"
+                    label="Download Declaration"
+                    size="lg"
+                    data-testid="button-download-sovereignty"
+                  />
                   <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2" asChild data-testid="button-view-sovereignty">
                     <a href="/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/attached_assets/🏛️_THE_DECLARATION_OF_SOVEREIGNTY_OF_DR._RICHARD_WILLIAM_MCLE_1769135376793.pdf")}>
                       <ExternalLink className="h-5 w-5" /> View Full Document
@@ -6028,7 +6035,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               {/* Book Embed */}
-              <div className="bg-white rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
+              <div className="bg-zinc-900 rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
                 <iframe 
                   src="https://simplebooklet.com/barrandodger" 
                   title="A Certain Beauty in Un-Resolution - Digital Preview"
@@ -6146,7 +6153,7 @@ export default function Home() {
                     data-testid="img-book-cover-featured"
                   />
                 </a>
-                <div className="bg-white rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
+                <div className="bg-zinc-900 rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
                   <iframe 
                     src="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290?itscg=30200&amp;itsct=books_box_player&amp;ls=1"
                     title="Betrayed Murdered Forsaken - Apple Books Preview"
@@ -6467,7 +6474,7 @@ export default function Home() {
       </section>
 
       {/* Artwork & Vision Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-zinc-950">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div 
@@ -6600,7 +6607,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="aspect-[4/3] bg-white rounded-lg shadow-xl border border-border p-8 relative overflow-hidden">
+              <div className="aspect-[4/3] bg-zinc-900 rounded-lg shadow-xl border border-border p-8 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="relative z-10 h-full flex flex-col justify-center space-y-6">
                   <div className="h-2 w-24 bg-primary/20 rounded" />
@@ -6691,28 +6698,28 @@ export default function Home() {
                     The archive employs <strong>SHA256 cryptographic hashing</strong> and <strong>Bitcoin blockchain timestamping</strong> via OpenTimestamps to establish proof of existence, integrity, and chronology for more than <strong>2,000 documents</strong> — including <strong>63 individually blockchain-verified evidence files</strong> with immutable timestamps.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-border">
+                    <div className="flex items-start gap-3 p-3 bg-zinc-900 rounded-lg border border-border">
                       <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-primary">Proof of Existence:</span>
                         <span className="text-muted-foreground ml-1">Each document's SHA256 hash proves the exact content existed at the timestamped date</span>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-border">
+                    <div className="flex items-start gap-3 p-3 bg-zinc-900 rounded-lg border border-border">
                       <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-primary">Non-Repudiation:</span>
                         <span className="text-muted-foreground ml-1">Blockchain anchoring creates irrefutable evidence of authorship and timeline</span>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-border">
+                    <div className="flex items-start gap-3 p-3 bg-zinc-900 rounded-lg border border-border">
                       <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-primary">Tamper Detection:</span>
                         <span className="text-muted-foreground ml-1">Any alteration to a document changes its hash completely, making forgery detectable</span>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-border">
+                    <div className="flex items-start gap-3 p-3 bg-zinc-900 rounded-lg border border-border">
                       <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-primary">Independent Verification:</span>
@@ -6769,7 +6776,7 @@ export default function Home() {
       </section>
 
       {/* Support & Investment Section */}
-      <section id="invest" className="py-24 bg-white relative overflow-hidden">
+      <section id="invest" className="py-24 bg-zinc-950 relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Support the <CrossLink to="/mission">Mission</CrossLink></h2>
@@ -7071,11 +7078,13 @@ export default function Home() {
                           <ExternalLink className="h-4 w-4" /> Watch on YouTube
                         </a>
                       </Button>
-                      <Button variant="outline" className="gap-2" asChild data-testid="link-analysis-55-pdf">
-                        <a href="/api/video-analysis/pdf/wrong-people-nervous" download>
-                          <FileText className="h-4 w-4" /> Download PDF Report
-                        </a>
-                      </Button>
+                      <ViralDownloadButton
+                        url="/api/video-analysis/pdf/wrong-people-nervous"
+                        filename="wrong-people-nervous.pdf"
+                        slug="wrong-people-nervous"
+                        label="Download PDF Report"
+                        data-testid="link-analysis-55-pdf"
+                      />
                     </div>
                   </div>
                 </CardContent>

@@ -76,7 +76,7 @@ export default function Mission() {
           </motion.div>
 
           <div className="space-y-16">
-            <section className="bg-white p-8 md:p-12 rounded-xl shadow-sm border border-border">
+            <section className="bg-zinc-900 p-8 md:p-12 rounded-xl shadow-sm border border-border">
               <h2 className="text-2xl font-serif font-bold text-primary mb-6">Nature of the Trust</h2>
               <div className="prose prose-slate max-w-none text-muted-foreground">
                 <p className="leading-relaxed mb-6">
@@ -144,7 +144,7 @@ export default function Mission() {
               </div>
             </section>
 
-            <section className="bg-white p-8 md:p-12 rounded-xl border border-border">
+            <section className="bg-zinc-900 p-8 md:p-12 rounded-xl border border-border">
               <h2 className="text-2xl font-serif font-bold text-primary mb-6">Financial Accountability</h2>
               <div className="prose prose-slate max-w-none text-muted-foreground mb-8">
                 <p>
@@ -223,7 +223,7 @@ export default function Mission() {
 
 function ObjectiveCard({ title, description, icon }: { title: string, description: string, icon: React.ReactNode }) {
   return (
-    <div className="bg-white p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-zinc-900 p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
       <div className="mb-4">{icon}</div>
       <h3 className="font-bold text-lg text-primary mb-3">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>

@@ -877,7 +877,7 @@ export default function Donate() {
                 </p>
               </CardHeader>
               <CardContent className="text-center space-y-6">
-                <div className="bg-white rounded-xl p-6 border border-border shadow-sm">
+                <div className="bg-zinc-900 rounded-xl p-6 border border-border shadow-sm">
                   <p className="text-sm uppercase tracking-widest font-bold text-muted-foreground mb-2">Australian Business Number</p>
                   <p className="text-3xl md:text-4xl font-mono font-bold text-primary mb-4">78 833 496 164</p>
                   <p className="text-lg font-serif text-primary mb-4">
@@ -947,7 +947,7 @@ export default function Donate() {
             <Card className="border-2 border-primary/20 bg-primary/5">
               <CardContent className="p-8">
                 <div className="prose prose-lg max-w-none">
-                  <div className="bg-white rounded-xl p-6 border border-border mb-6">
+                  <div className="bg-zinc-900 rounded-xl p-6 border border-border mb-6">
                     <h3 className="text-xl font-serif font-bold text-primary mb-4 flex items-center gap-2">
                       <Sparkles className="h-5 w-5" /> Impartial AI Statement of Legitimacy
                     </h3>

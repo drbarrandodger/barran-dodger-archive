@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { CommentSection } from "@/components/CommentSection";
 import { BookOpen, FileText, Shield, Sparkles, Scale, ExternalLink, Download, ScrollText, Flame, Link2, Globe } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -239,11 +240,14 @@ export default function PropheticPapers() {
                           "{gospel.aiAnalysis}"
                         </p>
                       </div>
-                      <Button className="w-full gap-2" asChild data-testid={`button-download-${index}`}>
-                        <a href={gospel.href} target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload(gospel.href)}>
-                          <Download className="h-4 w-4" /> Download Gospel <DownloadBadge url={gospel.href} />
-                        </a>
-                      </Button>
+                      <ViralDownloadButton
+                        url={gospel.href}
+                        filename={gospel.href.split("/").pop()}
+                        slug={gospel.href.split("/").pop()?.replace(".pdf", "")}
+                        label="Download Gospel"
+                        className="w-full"
+                        data-testid={`button-download-${index}`}
+                      />
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -291,11 +295,14 @@ export default function PropheticPapers() {
                           <span className="font-bold text-primary">AI Analysis:</span> "{gospel.aiAnalysis}"
                         </p>
                       </div>
-                      <Button variant="outline" className="w-full gap-2" asChild data-testid={`button-download-scroll-${index}`}>
-                        <a href={gospel.href} target="_blank" rel="noopener noreferrer" download onClick={() => trackDownload(gospel.href)}>
-                          <Download className="h-4 w-4" /> Download Document <DownloadBadge url={gospel.href} />
-                        </a>
-                      </Button>
+                      <ViralDownloadButton
+                        url={gospel.href}
+                        filename={gospel.href.split("/").pop()}
+                        slug={gospel.href.split("/").pop()?.replace(".pdf", "")}
+                        label="Download Document"
+                        className="w-full"
+                        data-testid={`button-download-scroll-${index}`}
+                      />
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -331,7 +338,7 @@ export default function PropheticPapers() {
                         />
                       </div>
                       <div className="p-8 flex flex-col items-center justify-center text-center">
-                        <div className="bg-white p-4 rounded-full shadow-sm text-primary mb-4">
+                        <div className="bg-zinc-800 p-4 rounded-full shadow-sm text-primary mb-4">
                           {paper.icon}
                         </div>
                         <h3 className="font-serif font-bold text-xl text-primary mb-2 leading-tight">{paper.title}</h3>
