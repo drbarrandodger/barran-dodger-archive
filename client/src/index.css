@@ -5,75 +5,130 @@
 @tailwind utilities;
 
 :root {
-  /* Deep Navy + Warm Gold/Amber Palette - Trust & Truth */
-  --background: 220 20% 97%;      /* Very light cool gray with navy tint */
-  --foreground: 222 47% 11%;      /* Deep navy/black */
-  
-  --primary: 222 55% 18%;         /* Deep Navy - authoritative */
-  --primary-foreground: 45 100% 96%;  /* Warm cream for contrast */
-  
-  --secondary: 38 92% 50%;        /* Warm Amber/Gold - truth & light */
-  --secondary-foreground: 222 55% 12%;  /* Dark navy text on gold */
-  
-  --muted: 220 20% 94%;           /* Light cool gray */
-  --muted-foreground: 220 15% 45%;
-  
-  --accent: 40 85% 55%;           /* Bright Gold accent */
-  --accent-foreground: 222 55% 12%;
-  
-  --destructive: 0 84% 60%;
+  /* ── DARK SOVEREIGN THEME — Creator Speaks Aesthetic ─────────────────── */
+  /* Base: Near-black with warm undertone */
+  --background: 222 25% 6%;          /* Near-black navy — entire site base */
+  --foreground: 210 20% 94%;         /* Off-white — all body text */
+
+  /* Primary: Deep amber-gold — authority, testimony, truth */
+  --primary: 38 92% 50%;             /* Amber gold — primary action colour */
+  --primary-foreground: 222 55% 6%;  /* Near-black text on gold buttons */
+
+  /* Secondary: Dark panel surface */
+  --secondary: 222 20% 12%;          /* Very dark navy — panel backgrounds */
+  --secondary-foreground: 38 85% 65%; /* Warm gold text on dark panels */
+
+  /* Muted: Subtle dark surface */
+  --muted: 222 18% 10%;              /* Darker muted surface */
+  --muted-foreground: 210 15% 55%;   /* Medium grey for secondary text */
+
+  /* Accent: Bright gold for highlights */
+  --accent: 40 90% 55%;              /* Bright gold — links, highlights */
+  --accent-foreground: 222 55% 6%;   /* Dark text on gold accent */
+
+  /* Cards: Dark elevated surfaces */
+  --card: 222 22% 9%;
+  --card-foreground: 210 20% 92%;
+  --card-border: 222 20% 16%;
+
+  /* Popovers */
+  --popover: 222 22% 8%;
+  --popover-foreground: 210 20% 92%;
+  --popover-border: 222 20% 18%;
+
+  /* Destructive stays red */
+  --destructive: 0 72% 51%;
   --destructive-foreground: 210 40% 98%;
-  
-  --border: 220 25% 88%;
-  --input: 220 25% 88%;
-  --ring: 38 92% 50%;             /* Gold ring for focus states */
-  
-  --radius: 0.25rem; /* Sharper corners for a "legal" feel */
-  
-  /* Custom gold/amber shades for special use */
+  --destructive-border: 0 72% 40%;
+
+  /* Borders & inputs */
+  --border: 222 20% 18%;             /* Dark border — visible but subtle */
+  --input: 222 20% 14%;
+  --ring: 38 92% 50%;                /* Gold focus ring */
+
+  /* Radius */
+  --radius: 0.25rem;
+
+  /* Custom semantic tokens */
   --gold: 38 92% 50%;
   --gold-light: 42 100% 70%;
-  --navy-dark: 222 55% 12%;
-  --navy-light: 222 40% 25%;
+  --navy-dark: 222 55% 5%;
+  --navy-light: 222 40% 18%;
   --body-text: 210 70% 75%;
+
+  /* Chart colours */
+  --chart-1: 38 92% 50%;
+  --chart-2: 200 80% 55%;
+  --chart-3: 142 60% 45%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 0 72% 51%;
+
+  /* Borders for component variants */
+  --primary-border: hsl(38 92% 35%);
+  --secondary-border: hsl(222 20% 22%);
+  --muted-border: hsl(222 18% 20%);
+  --accent-border: hsl(40 90% 40%);
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/10 selection:text-primary;
+    @apply bg-background text-foreground antialiased selection:bg-amber-500/20 selection:text-amber-300;
     font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Baskerville', serif;
-    @apply text-primary tracking-tight;
+    @apply text-amber-400 tracking-tight;
+  }
+
+  /* Make all plain links gold on dark */
+  a:not([class]) {
+    @apply text-amber-400 hover:text-amber-300 transition-colors;
+  }
+
+  /* Scrollbar styling for dark theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(222 25% 8%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(38 60% 35%);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(38 80% 50%);
   }
 }
 
-/* Custom Utilities for Textures */
+/* Custom Utilities */
 @layer utilities {
   .bg-grid-pattern {
-    background-image: linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(251,191,36,0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(251,191,36,0.04) 1px, transparent 1px);
     background-size: 40px 40px;
   }
-  
+
   .text-balance {
     text-wrap: balance;
   }
 }
 
+/* ── Animations ───────────────────────────────────────────────────────────── */
+
 @keyframes share-pulse-wave {
   0% {
-    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5);
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.5);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 12px 4px rgba(74, 222, 128, 0.25);
+    box-shadow: 0 0 12px 4px rgba(251, 191, 36, 0.25);
     transform: scale(1.08);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
     transform: scale(1);
   }
 }
@@ -90,6 +145,11 @@
 .share-icon-pulse:nth-child(7) { animation-delay: 0.9s; }
 .share-icon-pulse:nth-child(8) { animation-delay: 1.05s; }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 @media print {
   nav, footer, button, [data-testid*="btn-"] { display: none !important; }
   body { background: white !important; color: black !important; }
@@ -104,10 +164,4 @@
   .text-amber-400, .text-amber-300, .text-blue-400 { color: #333 !important; }
   .border-zinc-800, .border-zinc-700 { border-color: #ccc !important; }
   a { color: #333 !important; text-decoration: none; }
-}
-
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
