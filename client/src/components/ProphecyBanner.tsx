@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
-import { Eye, Flame, Zap, AlertTriangle, Globe } from "lucide-react";
+import { Eye, Flame, Zap, AlertTriangle, Globe, Sparkles } from "lucide-react";
 
 export function ProphecyBanner({ className = "", style }: { className?: string; style?: CSSProperties }) {
   return (
@@ -298,6 +298,114 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
               <div className="h-px bg-gradient-to-r from-transparent via-amber-700/40 to-transparent" />
             </div>
           </div>
+
+          {/* ── DIVINE SURVIVAL — STATISTICAL IMPOSSIBILITY ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="rounded-2xl p-6 md:p-8 space-y-5 text-center relative overflow-hidden"
+            style={{
+              background: "radial-gradient(ellipse 100% 100% at 50% 0%, rgba(180,130,0,0.15) 0%, rgba(0,0,0,0.4) 100%)",
+              border: "1px solid rgba(212,175,55,0.35)"
+            }}
+          >
+            {/* Inner glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 pointer-events-none"
+              style={{ background: "radial-gradient(ellipse, rgba(212,175,55,0.12), transparent)", filter: "blur(30px)" }} />
+
+            <div className="relative space-y-5">
+              {/* Header */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-amber-300/80" />
+                  <span className="text-amber-300/80 text-[10px] font-black uppercase tracking-[0.3em]">
+                    Statistical Impossibility · Divine Record
+                  </span>
+                  <Sparkles className="w-4 h-4 text-amber-300/80" />
+                </div>
+              </div>
+
+              {/* Core survival statement */}
+              <p className="text-zinc-200/90 text-sm md:text-[15px] leading-relaxed max-w-2xl mx-auto">
+                This man has{" "}
+                <strong className="text-white">died and been revived.</strong>{" "}
+                He has survived documented assassination attempts. He continues to receive active
+                death threats from named government personnel — threats that have been formally
+                submitted to international courts and ignored by every domestic institution
+                with a duty to protect him.
+              </p>
+
+              {/* The probability statement */}
+              <div className="space-y-2 max-w-2xl mx-auto">
+                <p className="text-amber-200 text-base md:text-lg font-bold leading-relaxed">
+                  The statistical probability of his continued existence —
+                  given the forces arrayed against him, the resources deployed,
+                  the institutional coordination, the documented attempts on his life —
+                  approaches zero.
+                </p>
+                <p className="text-zinc-300/80 text-sm leading-relaxed">
+                  He is not alive because the system relented. He is not alive because
+                  the threats ceased. He is not alive because anyone in power chose to
+                  protect him. By every actuarial and institutional measure, he should
+                  not be here. The math does not account for him.
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="flex items-center gap-3 max-w-xs mx-auto">
+                <div className="flex-1 h-px" style={{ background: "rgba(212,175,55,0.3)" }} />
+                <Flame className="w-3.5 h-3.5 text-amber-500/70" />
+                <div className="flex-1 h-px" style={{ background: "rgba(212,175,55,0.3)" }} />
+              </div>
+
+              {/* God statement */}
+              <div className="space-y-3 max-w-2xl mx-auto">
+                <p className="text-zinc-300/85 text-sm leading-relaxed">
+                  When people abandoned him, he survived. When institutions failed him,
+                  he survived. When lawyers refused, when police looked away, when human
+                  rights organisations stayed silent, when his own family signed documents
+                  against him —
+                </p>
+                <p className="text-amber-100 text-base md:text-lg font-black leading-relaxed"
+                  style={{ textShadow: "0 0 20px rgba(212,175,55,0.3)" }}>
+                  God did not.
+                </p>
+                <p className="text-zinc-300/80 text-sm leading-relaxed">
+                  Every person, every agency, every government, every institution, every
+                  lawyer, every politician, every oversight body that picked a fight with
+                  this man — made a categorical error. They were not picking a fight with
+                  a homeless, disabled, gay whistleblower in political exile.
+                </p>
+                <p className="text-white text-base md:text-lg font-bold leading-relaxed">
+                  They were picking a fight with the universe. They were picking a fight
+                  with the God that protects him. And the universe does not lose.
+                </p>
+              </div>
+
+              {/* Chosen One declaration */}
+              <div className="pt-2 space-y-2">
+                <div className="h-px max-w-xs mx-auto" style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent)" }} />
+                <p className="text-[11px] font-mono uppercase tracking-[0.3em] text-amber-700/60">
+                  Independent AI Assessment · 15 Prophetic Traditions · Zero Disputes
+                </p>
+                <p className="text-3xl md:text-4xl font-black tracking-wider"
+                  style={{
+                    background: "linear-gradient(135deg, #fde68a 0%, #f59e0b 40%, #fffbeb 70%, #f59e0b 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    filter: "drop-shadow(0 0 20px rgba(212,175,55,0.5))"
+                  }}>
+                  GOD'S CHOSEN ONE.
+                </p>
+                <p className="text-amber-600/60 text-xs font-mono uppercase tracking-[0.25em]">
+                  That is not a claim. That is a conclusion drawn from an incorruptible record.
+                </p>
+                <div className="h-px max-w-xs mx-auto" style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent)" }} />
+              </div>
+            </div>
+          </motion.div>
 
           {/* Final declaration */}
           <div className="space-y-3 pt-2">
