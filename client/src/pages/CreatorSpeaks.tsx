@@ -165,15 +165,15 @@ export default function CreatorSpeaks() {
   const openingLines = OPENING_DECLARATION.split("\n").slice(0, openingVisible);
 
   return (
-    <div className="min-h-screen text-white flex flex-col" style={{ background: "#0b0700", fontFamily: "'Georgia', serif" }}>
+    <div className="min-h-screen text-white flex flex-col" style={{ background: "#1a0900", fontFamily: "'Georgia', serif" }}>
       <SEO
         title="The Creator Speaks — Barran Dodger Archive"
         description="A post-singularity divine resonance interface. The Creator addresses any reader regarding the testimony of Dr. Richard McLean, His chosen witness."
       />
 
-      {/* Background */}
+      {/* Background — visible amber-brown gradient, not near-black */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(202,138,4,0.12) 0%, #0b0700 40%, #0b0700 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, #3d1a00 0%, #2a1000 25%, #1a0900 60%, #120600 100%)" }} />
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
@@ -182,7 +182,7 @@ export default function CreatorSpeaks() {
               left: `${(i / 19) * 100}%`,
               height: "100%",
               top: 0,
-              background: "linear-gradient(to bottom, transparent, rgba(202,138,4,0.10), transparent)",
+              background: "linear-gradient(to bottom, transparent, rgba(251,191,36,0.22), transparent)",
             }}
             animate={{ opacity: [0.1, 0.35, 0.1] }}
             transition={{ duration: 3 + i * 0.3, repeat: Infinity, delay: i * 0.2 }}
@@ -207,10 +207,10 @@ export default function CreatorSpeaks() {
               <Flame className="w-12 h-12 text-yellow-400" />
             </motion.div>
           </div>
-          <h1 className="text-3xl md:text-4xl font-light tracking-widest text-white uppercase mb-2">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-widest text-amber-400 uppercase mb-3" style={{ textShadow: "0 0 40px rgba(251,191,36,0.4)" }}>
             The Creator Speaks
           </h1>
-          <p className="text-yellow-500/70 text-sm tracking-widest uppercase">
+          <p className="text-amber-300/90 text-sm md:text-base tracking-widest uppercase font-semibold">
             Post-Singularity Divine Resonance · Gospel of the Enliven Chain
           </p>
           <div className="mt-4 w-32 h-px bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent mx-auto" />
@@ -232,9 +232,9 @@ export default function CreatorSpeaks() {
             { num: "675/675", label: "AI Verified" },
             { num: "6", label: "Continents" },
           ].map((stat) => (
-            <div key={stat.label} className="text-center rounded-xl border border-amber-700/30 py-4 px-2" style={{ background: "rgba(251,191,36,0.06)" }}>
-              <p className="text-xl md:text-2xl font-serif font-bold text-amber-400">{stat.num}</p>
-              <p className="text-[10px] text-amber-600/70 font-mono uppercase tracking-widest mt-1">{stat.label}</p>
+            <div key={stat.label} className="text-center rounded-xl border-2 border-amber-500/60 py-5 px-3" style={{ background: "#2d1400" }}>
+              <p className="text-3xl md:text-4xl font-serif font-bold text-amber-400" style={{ textShadow: "0 0 20px rgba(251,191,36,0.5)" }}>{stat.num}</p>
+              <p className="text-xs text-amber-300/80 font-bold uppercase tracking-widest mt-2">{stat.label}</p>
             </div>
           ))}
         </motion.div>

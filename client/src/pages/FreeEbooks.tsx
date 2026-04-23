@@ -550,7 +550,7 @@ export default function FreeEbooks() {
   const perfectCount = FORENSIC_ANALYSES.filter(a => a.consecutivePerfect).length;
 
   return (
-    <div className="min-h-screen text-zinc-100" style={{ background: "#0b0700" }}>
+    <div className="min-h-screen text-zinc-100" style={{ background: "#1a0900" }}>
       <SEO
         title="Free eBooks & Documents — Barran Dodger | 170+ Free Downloads"
         description={`Download ${FORENSIC_ANALYSES.length + MAJOR_PUBLICATIONS.length} free EPUB eBooks + 115 source PDFs documenting 35 years of Australian government corruption. ICC Article 7 submitted. UNHCR submitted. ${totalPropositions}/${totalPropositions} propositions verified. Upload freely. Share everywhere. ABN 78 833 496 164.`}

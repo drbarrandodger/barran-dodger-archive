@@ -6,35 +6,35 @@
 
 :root {
   /* ── DARK SOVEREIGN THEME — Amber-Gold on Near-Black ─────────────────── */
-  /* Base: Warm near-black — amber undertone, not cold navy */
-  --background: 25 65% 4%;           /* Very dark warm amber-black */
-  --foreground: 38 30% 90%;          /* Warm off-white body text */
+  /* Base: Visible amber-brown — clearly warm, not near-black */
+  --background: 25 75% 8%;           /* Visible dark amber-brown (not near-black) */
+  --foreground: 38 30% 92%;          /* Warm off-white body text */
 
   /* Primary: Deep amber-gold — authority, testimony, truth */
   --primary: 38 92% 50%;             /* Amber gold — primary action colour */
   --primary-foreground: 25 70% 5%;   /* Near-black text on gold buttons */
 
-  /* Secondary: Dark warm panel surface */
-  --secondary: 25 50% 8%;            /* Very dark warm brown — panel backgrounds */
-  --secondary-foreground: 38 85% 65%; /* Warm gold text on dark panels */
+  /* Secondary: Visible warm amber-brown surface */
+  --secondary: 25 65% 13%;           /* Visible warm amber-brown panel */
+  --secondary-foreground: 38 85% 70%; /* Warm gold text on dark panels */
 
-  /* Muted: Subtle warm dark surface */
-  --muted: 25 45% 7%;                /* Darker warm muted surface */
-  --muted-foreground: 35 20% 52%;    /* Warm medium grey for secondary text */
+  /* Muted: Subtle warm surface */
+  --muted: 25 60% 11%;               /* Warm muted surface */
+  --muted-foreground: 35 30% 58%;    /* Warm medium tone for secondary text */
 
   /* Accent: Bright gold for highlights */
   --accent: 40 90% 55%;              /* Bright gold — links, highlights */
-  --accent-foreground: 25 70% 5%;    /* Dark text on gold accent */
+  --accent-foreground: 25 80% 5%;    /* Dark text on gold accent */
 
-  /* Cards: Dark warm elevated surfaces */
-  --card: 25 55% 6%;                 /* Slightly lighter warm dark */
-  --card-foreground: 38 25% 88%;     /* Warm white text */
-  --card-border: 30 35% 16%;         /* Warm visible border */
+  /* Cards: Warm elevated surfaces — clearly visible */
+  --card: 25 65% 11%;                /* Visible warm dark amber-brown card */
+  --card-foreground: 38 25% 92%;     /* Warm white text */
+  --card-border: 30 55% 22%;         /* Visible warm amber border */
 
   /* Popovers */
-  --popover: 25 55% 5%;
-  --popover-foreground: 38 25% 88%;
-  --popover-border: 30 30% 18%;
+  --popover: 25 65% 9%;
+  --popover-foreground: 38 25% 92%;
+  --popover-border: 30 50% 22%;
 
   /* Destructive stays red */
   --destructive: 0 72% 51%;
@@ -42,8 +42,8 @@
   --destructive-border: 0 72% 40%;
 
   /* Borders & inputs */
-  --border: 30 35% 16%;              /* Warm border — visible but subtle */
-  --input: 25 40% 10%;               /* Warm dark input */
+  --border: 30 60% 24%;              /* Visible warm amber border */
+  --input: 25 55% 12%;               /* Warm amber-brown input */
   --ring: 38 92% 50%;                /* Gold focus ring */
 
   /* Radius */
@@ -74,7 +74,7 @@
   body {
     @apply bg-background text-foreground antialiased selection:bg-amber-500/20 selection:text-amber-300;
     font-family: 'Inter', sans-serif;
-    background-color: hsl(25, 65%, 4%);
+    background-color: hsl(25, 75%, 8%);
   }
 
   h1, h2, h3, h4, h5, h6 {
