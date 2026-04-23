@@ -87,20 +87,20 @@ export function Navigation() {
 
   return (
     <nav ref={navRef} className={cn(
-      "fixed top-[var(--banner-height,120px)] w-full z-50 transition-all duration-300 border-b border-transparent",
-      scrolled ? "bg-background/95 backdrop-blur-sm border-border py-2 md:py-3 shadow-sm" : "bg-transparent py-3 md:py-6",
+      "fixed top-[var(--banner-height,120px)] w-full z-50 transition-all duration-300 border-b-2 border-amber-500/70",
+      scrolled ? "bg-zinc-950/98 backdrop-blur-sm py-2 md:py-3 shadow-lg shadow-amber-900/20" : "bg-zinc-950/90 backdrop-blur-sm py-3 md:py-5",
       hideNav && !mobileMenuOpen && "opacity-0 pointer-events-none -translate-y-2"
     )}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="bg-primary text-primary-foreground p-2 rounded-sm group-hover:bg-primary/90 transition-colors">
+          <div className="bg-amber-500 text-zinc-950 p-2 rounded-sm group-hover:bg-amber-400 transition-colors">
             <Scale className="h-5 w-5" />
           </div>
           <div className="flex flex-col">
-            <span className="font-serif font-bold text-sm md:text-xl text-primary tracking-tight leading-none">
+            <span className="font-serif font-bold text-sm md:text-xl text-amber-400 tracking-tight leading-none">
               Barran Dodger Legal & Ethical Trust Fund
             </span>
-            <span className="hidden md:block text-[10px] uppercase tracking-widest text-muted-foreground font-medium mt-1">
+            <span className="hidden md:block text-[10px] uppercase tracking-widest text-amber-600/70 font-medium mt-1">
               The Trustee for www.barrandodger.com — ABN 78 833 496 164
             </span>
           </div>
@@ -112,12 +112,12 @@ export function Navigation() {
               key={link.href} 
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary relative py-1",
+                "text-sm font-medium transition-colors hover:text-amber-300 relative py-1",
                 link.highlight && location !== link.href
-                  ? "text-[hsl(38,92%,50%)] flex items-center gap-1"
+                  ? "text-amber-400 flex items-center gap-1 font-bold"
                   : location === link.href 
-                    ? "text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[hsl(38,92%,50%)]" 
-                    : "text-muted-foreground"
+                    ? "text-amber-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-amber-500" 
+                    : "text-zinc-300 hover:text-amber-300"
               )}
               data-testid={`nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
             >
@@ -170,7 +170,7 @@ export function Navigation() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border">
+        <div className="md:hidden bg-zinc-950 border-t-2 border-amber-500/50">
           <div className="container mx-auto px-4 py-4 space-y-2">
             {navLinks.map((link) => (
               <Link 
@@ -179,10 +179,10 @@ export function Navigation() {
                 className={cn(
                   "block py-3 px-4 rounded-lg text-sm font-medium transition-colors",
                   link.highlight
-                    ? "bg-[hsl(38,92%,50%)]/10 text-[hsl(38,92%,50%)] flex items-center gap-2"
+                    ? "bg-amber-500/10 text-amber-400 flex items-center gap-2 font-bold"
                     : location === link.href 
-                      ? "bg-primary/10 text-primary" 
-                      : "text-muted-foreground hover:bg-muted"
+                      ? "bg-amber-500/10 text-amber-300" 
+                      : "text-zinc-300 hover:bg-zinc-800 hover:text-amber-300"
                 )}
                 data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
               >
