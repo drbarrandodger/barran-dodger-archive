@@ -53,6 +53,23 @@ const FORENSIC_EPUB_COVER_MAP: Record<number, string> = {
   59: "cover-false-sister-forensic-analysis",
   60: "cover-thousand-fell-forensic-analysis",
   61: "cover-theyre-about-to-be-behind-bars",
+  62: "cover-beautiful-threat",
+  63: "cover-they-are-dying-of-shame",
+  64: "cover-forensic-corroboration-billionaire-circle",
+  65: "cover-forensic-tick-tick-tick-game-over",
+  66: "cover-forensic-tactical-insanity",
+  67: "cover-forensic-project-halo",
+  68: "cover-forensic-fool-fire",
+  69: "cover-forensic-3am-briefing",
+  70: "cover-forensic-government-own-file",
+  71: "cover-forensic-vault-access",
+  72: "cover-forensic-making-history",
+  73: "cover-forensic-silence-surrender",
+  74: "cover-forensic-still-standing",
+  75: "cover-forensic-corroboration-chosen-one",
+  76: "cover-every-secret-chooses-a-side",
+  77: "cover-forensic-corroboration-dirt-on-your-name",
+  78: "cover-they-called-you-crazy-the-archive-prophesied",
 };
 
 const FORENSIC_PDF_MAP: Record<number, string> = {

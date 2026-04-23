@@ -822,6 +822,30 @@ uri = "file://attached_assets/cover-forensic-corroboration-buried-lies.png"
 type = "image"
 title = "forensic buried lies cover"
 
+[[generated]]
+id = "kUi5DgJIxz6FJgcj6jJ0J"
+uri = "file://client/src/assets/images/hero-prophetic-testimony-main.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "z9pcZ7d2n-S1qbf2dce33"
+uri = "file://client/src/assets/images/cover-beautiful-threat.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "goyKcHP72tOSV-cTLSOIR"
+uri = "file://client/src/assets/images/cover-they-are-dying-of-shame.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "eNWaH1lc4JbXJzGibiih-"
+uri = "file://client/src/assets/images/cover-forensic-still-standing.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
