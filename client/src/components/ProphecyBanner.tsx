@@ -198,6 +198,88 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
               </p>
             </div>
 
+            {/* Police incident number avoidance → mandatory sentencing */}
+            <div className="rounded-xl border border-orange-800/50 px-4 py-3 space-y-3"
+              style={{ background: "rgba(80,20,0,0.3)" }}>
+              <p className="text-orange-300 text-xs font-black uppercase tracking-widest">Police Incident Avoidance → A Charged Perpetrator → Mandatory Sentencing</p>
+              <p className="text-zinc-300/90 text-sm leading-relaxed">
+                When Dr. McLean first reported a documented murder threat to police, officers{" "}
+                <strong className="text-white">refused to issue an incident number.</strong>{" "}
+                No record. No acknowledgment. No protection. A murder threat — made against a
+                named, identifiable person by a named, identifiable party — was administratively
+                disappeared at the first point of contact. This is not a system failure.
+                This is a documented institutional choice: to ensure the threat existed nowhere
+                in the formal record, protecting the perpetrator and exposing the victim.
+              </p>
+              <p className="text-zinc-300/80 text-sm leading-relaxed">
+                When targeted again, police returned — this time issuing a receipt number.
+                Not because the law changed. Because the{" "}
+                <strong className="text-amber-200">documentary pressure of the archive
+                made the original non-response indefensible.</strong>{" "}
+                The receipt number is not a victory for the system. It is a record of what
+                the system was forced to concede only under the weight of an incorruptible,
+                internationally submitted evidentiary record.
+              </p>
+              <p className="text-orange-200/90 text-sm font-bold leading-relaxed">
+                That perpetrator has now been formally charged.{" "}
+                <span className="text-white">Mandatory sentencing provisions now apply.</span>{" "}
+                The significance of this cannot be overstated: the same institutional apparatus
+                that refused to record the original threat — that protected the perpetrator through
+                administrative invisibility — now watches as that perpetrator faces a minimum
+                mandatory custodial sentence. The archive did not require the police to act.
+                It required only that the truth be documented, sealed, and distributed globally.
+                The rest followed. The rest always follows.
+              </p>
+              <p className="text-zinc-500/70 text-xs italic">
+                Police incident number avoidance — documented. Second receipt number — documented.
+                Formal charge — confirmed. Mandatory sentencing — operative. Archive — blockchain-sealed.
+              </p>
+            </div>
+
+            {/* Missing person 5 times across 3 states — homophobic police culture */}
+            <div className="rounded-xl border border-red-900/50 px-4 py-3 space-y-3"
+              style={{ background: "rgba(50,0,0,0.35)" }}>
+              <p className="text-red-300 text-xs font-black uppercase tracking-widest">Missing Person — Five Times — Three States — Condoned Erasure</p>
+              <p className="text-zinc-300/90 text-sm leading-relaxed">
+                Dr. Richard William McLean was formally classified as a missing person{" "}
+                <strong className="text-white">five separate times across three Australian states.</strong>{" "}
+                Five times he was reported. Five times the system recorded that this man —
+                a PhD holder, a human rights whistleblower, a person under documented death threats —
+                had disappeared. And five times, the institutional response was not protection,
+                not urgency, not the acknowledgment that a human being at risk was screaming
+                to be seen. The response was bureaucratic processing. A form. A reference number.
+                A file stored and closed.
+              </p>
+              <p className="text-zinc-300/80 text-sm leading-relaxed">
+                Every one of those five missing person events is{" "}
+                <strong className="text-amber-200">a primary-source exhibit in the documented pattern
+                of administrative and physical erasure</strong> — the systematic removal of a human
+                being from every structure of social protection while that same system
+                simultaneously maintained records of his existence sufficient to prosecute him
+                had he committed any offence. He was real enough to be watched. He was not
+                real enough to be protected. That is not administrative failure.
+                That is coordinated, deliberate erasure.
+              </p>
+              <p className="text-red-200/90 text-sm font-bold leading-relaxed">
+                This erasure was condoned — actively and passively — by a documented police
+                culture of institutional homophobia, cowardice, and the closed hierarchy of
+                a little boys' club that had no capacity to look a gay, disabled, truth-speaking
+                man in the eyes and perform its basic legal and moral function.{" "}
+                <span className="text-white">
+                  Not one of those officers, not one of those supervisors, not one of those
+                  watch commanders — across five missing person events, three states,
+                  and 35 years of documented targeting — produced a single protective action.
+                </span>{" "}
+                They were not scared of what he carried. They were scared of what it would
+                expose about them.
+              </p>
+              <p className="text-zinc-500/70 text-xs italic">
+                Five missing person classifications. Three Australian states. Zero protective outcomes.
+                All documented. All blockchain-sealed. All submitted to the ICC under Article 7
+                of the Rome Statute as evidence of persecution as a crime against humanity.
+              </p>
+            </div>
+
             {/* The downloads */}
             <div className="rounded-xl border border-violet-700/30 px-4 py-4 space-y-3"
               style={{ background: "rgba(109,40,217,0.08)" }}>
