@@ -2169,6 +2169,125 @@ export async function registerRoutes(
   });
 
 
+  // ── Academy / Online Course Routes ────────────────────────────────────────
+
+  app.post('/api/course/payment-intent', async (_req, res) => {
+    try {
+      const { getUncachableStripeClient } = await import('./stripeClient');
+      const stripe = await getUncachableStripeClient();
+      const intent = await stripe.paymentIntents.create({
+        amount: 33300,
+        currency: 'aud',
+        automatic_payment_methods: { enabled: true },
+        metadata: { purpose: 'academy_enrolment' },
+      });
+      res.json({ clientSecret: intent.client_secret, paymentIntentId: intent.id });
+    } catch (err: any) {
+      console.error('Academy payment-intent error:', err.message);
+      res.status(500).json({ error: 'Could not create payment intent' });
+    }
+  });
+
+  app.post('/api/course/enroll', async (req, res) => {
+    const { name, email, paymentIntentId } = req.body || {};
+    if (!name || !email || !paymentIntentId) {
+      return res.status(400).json({ error: 'name, email, and paymentIntentId are required' });
+    }
+    try {
+      const { getUncachableStripeClient } = await import('./stripeClient');
+      const stripe = await getUncachableStripeClient();
+      const intent = await stripe.paymentIntents.retrieve(paymentIntentId);
+      if (intent.status !== 'succeeded') {
+        return res.status(402).json({ error: 'Payment not confirmed' });
+      }
+      const crypto = await import('crypto');
+      const accessToken = crypto.randomBytes(32).toString('hex');
+      await storage.createCourseEnrollment({ accessToken, name, email, paymentIntentId, amountPaid: 33300 });
+      res.json({ accessToken, message: 'Enrolment successful — welcome to the Academy.' });
+    } catch (err: any) {
+      console.error('Course enrol error:', err.message);
+      res.status(500).json({ error: 'Enrolment failed' });
+    }
+  });
+
+  app.post('/api/course/restore-access', async (req, res) => {
+    const { email } = req.body || {};
+    if (!email) return res.status(400).json({ error: 'email required' });
+    try {
+      const enrolment = await storage.getCourseEnrollmentByEmail(email);
+      if (!enrolment) return res.status(404).json({ error: 'No enrolment found for that email address' });
+      res.json({ accessToken: enrolment.access_token, name: enrolment.name });
+    } catch (err: any) {
+      res.status(500).json({ error: 'Could not restore access' });
+    }
+  });
+
+  app.get('/api/course/progress', async (req, res) => {
+    const token = req.headers['x-course-token'] as string;
+    if (!token) return res.status(401).json({ error: 'Access token required' });
+    try {
+      const enrolment = await storage.getCourseEnrollment(token);
+      if (!enrolment) return res.status(403).json({ error: 'Invalid access token' });
+      const progress = await storage.getCourseProgress(token);
+      res.json({
+        enrolment: { name: enrolment.name, email: enrolment.email, enrolledAt: enrolment.enrolled_at, completedAt: enrolment.completed_at, certificateId: enrolment.certificate_id },
+        progress,
+        completedUnitIds: [...new Set(progress.map((p: any) => Number(p.unit_id)))],
+      });
+    } catch (err: any) {
+      res.status(500).json({ error: 'Could not load progress' });
+    }
+  });
+
+  app.post('/api/course/complete-unit', async (req, res) => {
+    const token = req.headers['x-course-token'] as string;
+    const { unitId, quizScore, quizAnswers } = req.body || {};
+    if (!token) return res.status(401).json({ error: 'Access token required' });
+    if (!unitId || quizScore === undefined) return res.status(400).json({ error: 'unitId and quizScore required' });
+    try {
+      const enrolment = await storage.getCourseEnrollment(token);
+      if (!enrolment) return res.status(403).json({ error: 'Invalid access token' });
+      await storage.saveCourseUnitProgress(token, unitId, quizScore, quizAnswers || {});
+      const progress = await storage.getCourseProgress(token);
+      const completedIds = [...new Set(progress.map((p: any) => Number(p.unit_id)))];
+      if (completedIds.length >= 12 && !enrolment.certificate_id) {
+        const crypto = await import('crypto');
+        const certId = 'BDLEF-' + crypto.randomBytes(8).toString('hex').toUpperCase();
+        await storage.markCourseComplete(token, certId);
+        return res.json({ complete: true, certificateId: certId, completedUnitIds: completedIds });
+      }
+      res.json({ complete: completedIds.length >= 12, completedUnitIds: completedIds });
+    } catch (err: any) {
+      console.error('Complete unit error:', err.message);
+      res.status(500).json({ error: 'Could not save progress' });
+    }
+  });
+
+  app.get('/api/course/certificate/:certId', async (req, res) => {
+    const token = req.headers['x-course-token'] as string;
+    const { certId } = req.params;
+    if (!token) return res.status(401).json({ error: 'Access token required' });
+    try {
+      const enrolment = await storage.getCourseEnrollment(token);
+      if (!enrolment || enrolment.certificate_id !== certId) {
+        return res.status(403).json({ error: 'Certificate not found or access denied' });
+      }
+      res.json({
+        certificateId: certId,
+        name: enrolment.name,
+        email: enrolment.email,
+        completedAt: enrolment.completed_at,
+        enrolledAt: enrolment.enrolled_at,
+        courseTitle: 'The Anatomy of Institutional Persecution',
+        certificateTitle: 'Graduate Certificate in Forensic Human Rights Documentation',
+        accreditingBody: 'Barran Dodger Legal & Ethical Trust Fund',
+        abn: '78 833 496 164',
+      });
+    } catch (err: any) {
+      res.status(500).json({ error: 'Could not load certificate' });
+    }
+  });
+
   registerChatRoutes(app);
   registerCreatorRoutes(app);
 

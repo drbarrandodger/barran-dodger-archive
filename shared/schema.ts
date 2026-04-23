@@ -1,4 +1,4 @@
-import { pgTable, text, serial, timestamp, boolean, integer } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, timestamp, boolean, integer, json } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -145,3 +145,43 @@ export const insertCommissionSchema = createInsertSchema(commissionRequests).omi
 
 export type CommissionRequest = typeof commissionRequests.$inferSelect;
 export type InsertCommission = z.infer<typeof insertCommissionSchema>;
+
+// ── Online Academy — Course Enrollment & Progress ──────────────────────────
+
+export const courseEnrollments = pgTable("course_enrollments", {
+  id: serial("id").primaryKey(),
+  accessToken: text("access_token").notNull().unique(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  paymentIntentId: text("payment_intent_id"),
+  amountPaid: integer("amount_paid").notNull().default(33300),
+  enrolledAt: timestamp("enrolled_at").defaultNow(),
+  completedAt: timestamp("completed_at"),
+  certificateId: text("certificate_id"),
+});
+
+export const courseProgress = pgTable("course_progress", {
+  id: serial("id").primaryKey(),
+  accessToken: text("access_token").notNull(),
+  unitId: integer("unit_id").notNull(),
+  completedAt: timestamp("completed_at").defaultNow(),
+  quizScore: integer("quiz_score"),
+  quizAnswers: json("quiz_answers"),
+});
+
+export const insertCourseEnrollmentSchema = createInsertSchema(courseEnrollments).omit({
+  id: true,
+  enrolledAt: true,
+  completedAt: true,
+  certificateId: true,
+});
+
+export const insertCourseProgressSchema = createInsertSchema(courseProgress).omit({
+  id: true,
+  completedAt: true,
+});
+
+export type CourseEnrollment = typeof courseEnrollments.$inferSelect;
+export type InsertCourseEnrollment = z.infer<typeof insertCourseEnrollmentSchema>;
+export type CourseProgress = typeof courseProgress.$inferSelect;
+export type InsertCourseProgress = z.infer<typeof insertCourseProgressSchema>;

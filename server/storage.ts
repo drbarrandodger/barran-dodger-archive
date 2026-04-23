@@ -238,6 +238,53 @@ export class DatabaseStorage implements IStorage {
     const row = result.rows[0] as any;
     return row ? Number(row.count) : 0;
   }
+
+  async createCourseEnrollment(data: { accessToken: string; name: string; email: string; paymentIntentId?: string; amountPaid?: number }): Promise<any> {
+    const result = await db.execute(sql`
+      INSERT INTO course_enrollments (access_token, name, email, payment_intent_id, amount_paid)
+      VALUES (${data.accessToken}, ${data.name}, ${data.email}, ${data.paymentIntentId ?? null}, ${data.amountPaid ?? 33300})
+      ON CONFLICT (access_token) DO NOTHING
+      RETURNING *
+    `);
+    return result.rows[0];
+  }
+
+  async getCourseEnrollment(accessToken: string): Promise<any | null> {
+    const result = await db.execute(sql`
+      SELECT * FROM course_enrollments WHERE access_token = ${accessToken} LIMIT 1
+    `);
+    return result.rows[0] ?? null;
+  }
+
+  async getCourseEnrollmentByEmail(email: string): Promise<any | null> {
+    const result = await db.execute(sql`
+      SELECT * FROM course_enrollments WHERE LOWER(email) = LOWER(${email}) ORDER BY enrolled_at DESC LIMIT 1
+    `);
+    return result.rows[0] ?? null;
+  }
+
+  async getCourseProgress(accessToken: string): Promise<any[]> {
+    const result = await db.execute(sql`
+      SELECT * FROM course_progress WHERE access_token = ${accessToken} ORDER BY unit_id ASC
+    `);
+    return result.rows as any[];
+  }
+
+  async saveCourseUnitProgress(accessToken: string, unitId: number, quizScore: number, quizAnswers: any): Promise<void> {
+    await db.execute(sql`
+      INSERT INTO course_progress (access_token, unit_id, quiz_score, quiz_answers)
+      VALUES (${accessToken}, ${unitId}, ${quizScore}, ${JSON.stringify(quizAnswers)})
+      ON CONFLICT DO NOTHING
+    `);
+  }
+
+  async markCourseComplete(accessToken: string, certificateId: string): Promise<void> {
+    await db.execute(sql`
+      UPDATE course_enrollments
+      SET completed_at = NOW(), certificate_id = ${certificateId}
+      WHERE access_token = ${accessToken}
+    `);
+  }
 }
 
 export const storage = new DatabaseStorage();

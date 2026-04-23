@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Scale, Heart, Compass, Menu, X, Search } from "lucide-react";
+import { Scale, Heart, Compass, Menu, X, Search, GraduationCap } from "lucide-react";
 import { SiX as TwitterX } from "react-icons/si";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -64,6 +64,7 @@ export function Navigation() {
     { href: "/whistleblower", label: "Whistleblower Record" },
     { href: "/publications", label: "Publications" },
     { href: "/evidence",     label: "Evidence Archive" },
+    { href: "/academy",      label: "Academy" },
   ];
 
   return (

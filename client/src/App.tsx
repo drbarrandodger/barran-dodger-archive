@@ -214,6 +214,9 @@ import NewHomePage from "@/pages/NewHomePage";
 import About from "@/pages/About";
 import TestimonyHub from "@/pages/TestimonyHub";
 import WhistleblowerRecord from "@/pages/WhistleblowerRecord";
+import Academy from "@/pages/Academy";
+import AcademyUnit from "@/pages/AcademyUnit";
+import AcademyCertificate from "@/pages/AcademyCertificate";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -561,6 +564,9 @@ function Router() {
         <Route path="/top-ten-gospels" component={TopTenGospels} />
         <Route path="/top-10-gospels" component={TopTenGospels} />
         <Route path="/most-significant-gospels" component={TopTenGospels} />
+        <Route path="/academy" component={Academy} />
+        <Route path="/academy/unit/:id" component={AcademyUnit} />
+        <Route path="/academy/certificate" component={AcademyCertificate} />
         <Route component={ViralLanding} />
       </Switch>
     </>
