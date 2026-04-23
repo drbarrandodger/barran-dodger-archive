@@ -75,6 +75,9 @@
     @apply bg-background text-foreground antialiased selection:bg-amber-500/20 selection:text-amber-300;
     font-family: 'Inter', sans-serif;
     background-color: hsl(25, 75%, 8%);
+    /* Tell browsers to honour background colours when printing */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -154,17 +157,26 @@
 }
 
 @media print {
-  nav, footer, button, [data-testid*="btn-"] { display: none !important; }
-  body { background: white !important; color: black !important; }
+  /* Force the browser to print ALL background colours exactly as shown on screen */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide interactive chrome — keep all content */
+  nav,
+  [data-testid="floating-donate-widget"],
+  [data-testid="chatbot-button"] { display: none !important; }
+
+  /* Tables */
   table { border-collapse: collapse; width: 100%; font-size: 10pt; }
-  th, td { border: 1px solid #ccc; padding: 4px 8px; text-align: left; }
-  th { background: #f0f0f0 !important; color: black !important; }
+  th, td { border: 1px solid rgba(251,191,36,0.3); padding: 4px 8px; text-align: left; }
   tr { page-break-inside: avoid; }
+
+  /* Typography */
   h1 { font-size: 18pt; }
   h3 { font-size: 12pt; }
-  .bg-zinc-950, .bg-zinc-900, .bg-zinc-800 { background: white !important; }
-  .text-white, .text-zinc-400, .text-zinc-300 { color: black !important; }
-  .text-amber-400, .text-amber-300, .text-blue-400 { color: #333 !important; }
-  .border-zinc-800, .border-zinc-700 { border-color: #ccc !important; }
-  a { color: #333 !important; text-decoration: none; }
+
+  /* Links */
+  a { text-decoration: none; }
 }
