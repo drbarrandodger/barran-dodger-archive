@@ -150,6 +150,40 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+
+  // ── Global gate — every PDF/ZIP/EPUB generating API route ───────────────────
+  // Patterns that always produce a binary document (never JSON metadata)
+  const PDF_API_RE = [
+    /^\/api\/forensic\/(pdf|full-essay|bundle)/,
+    /^\/api\/video-analysis\/pdf\//,
+    /^\/api\/divine-reckoning\/pdf/,
+    /^\/api\/evidence-registry\/analyses-bundle/,
+    /^\/api\/archive\/divine-download/,
+    /^\/api\/essays\/[^/]+\/(pdf|epub)/,
+  ];
+  app.use(async (req, res, next) => {
+    if (!PDF_API_RE.some(r => r.test(req.path))) return next();
+    const token = (req.query.token as string) || (req.headers['x-download-token'] as string);
+    const { sendGatePage } = await import('./gatePageHtml');
+    if (!token) return sendGatePage(res, { documentPath: req.path });
+    const { isValidDownloadToken } = await import('./downloadTokens');
+    if (!isValidDownloadToken(token, req.path)) return sendGatePage(res, { expired: true, documentPath: req.path });
+    next();
+  });
+
+  // ── Gate the root-level THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf ─────────────────
+  // Must be registered here (before Vite catch-all) to intercept direct access
+  app.get('/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf', async (req, res, next) => {
+    const token = (req.query.token as string) || (req.headers['x-download-token'] as string);
+    const { sendGatePage } = await import('./gatePageHtml');
+    if (!token) return sendGatePage(res, { documentPath: '/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf' });
+    const { isValidDownloadToken } = await import('./downloadTokens');
+    if (!isValidDownloadToken(token, '/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf')) {
+      return sendGatePage(res, { expired: true, documentPath: '/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf' });
+    }
+    next();
+  });
+
   // Subscribers
   app.post(api.subscribers.create.path, async (req, res) => {
     try {

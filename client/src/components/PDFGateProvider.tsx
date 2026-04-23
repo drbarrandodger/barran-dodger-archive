@@ -40,7 +40,16 @@ export function getDownloadUrl(url: string): string {
 function isGatedHref(href: string): boolean {
   if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return false;
   const lower = href.toLowerCase();
-  return lower.endsWith(".pdf") || lower.includes("/attached_assets/") || lower.includes("/api/epub/") || lower.includes("/api/download/");
+  if (lower.endsWith(".pdf") || lower.endsWith(".epub")) return true;
+  if (lower.includes("/attached_assets/")) return true;
+  if (lower.includes("/api/epub/")) return true;
+  if (lower.includes("/api/forensic/pdf/") || lower.includes("/api/forensic/full-essay") || lower.includes("/api/forensic/bundle")) return true;
+  if (lower.includes("/api/video-analysis/pdf/")) return true;
+  if (lower.includes("/api/divine-reckoning/pdf")) return true;
+  if (lower.includes("/api/evidence-registry/analyses-bundle")) return true;
+  if (lower.includes("/api/archive/divine-download")) return true;
+  if (/\/api\/essays\/[^/]+\/(pdf|epub)/.test(lower)) return true;
+  return false;
 }
 
 function getDocumentName(url: string): string {
