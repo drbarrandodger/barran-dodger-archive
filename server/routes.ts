@@ -16,6 +16,7 @@ import { generateForensicEpub, generateMajorPublicationEpub, generateAllForensic
 import { generateQuietStormFullEssayPDF } from "./quietStormEssayPdf";
 import { generateFumbledYouFullEssayPDF } from "./fumbledYouEssayPdf";
 import { generateConfessionChokedOnFullEssayPDF } from "./confessionChokedOnPdf";
+import { generateTheyCalledYouCrazyPDF } from "./theyCalledYouCrazyPdf";
 import {
   generateHeavenStoodForYouPDF,
   generateYouDetonatedTheNarrativePDF,
@@ -1232,6 +1233,20 @@ export async function registerRoutes(
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
       res.setHeader('Cache-Control', 'public, max-age=3600');
       const buf = await generateConfessionChokedOnFullEssayPDF();
+      res.end(buf);
+    } catch (err: any) {
+      res.status(500).json({ message: 'Full essay PDF generation failed', error: err.message });
+    }
+  });
+
+  // ── Forensic PDF: Full Essay #75 — They Called You Crazy — The Archive Prophesied ──
+  app.get('/api/forensic/full-essay/they-called-you-crazy', async (_req, res) => {
+    try {
+      const filename = 'forensic-analysis-75-they-called-you-crazy-the-archive-prophesied.pdf';
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      const buf = await generateTheyCalledYouCrazyPDF();
       res.end(buf);
     } catch (err: any) {
       res.status(500).json({ message: 'Full essay PDF generation failed', error: err.message });

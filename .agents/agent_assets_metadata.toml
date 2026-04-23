@@ -804,6 +804,12 @@ uri = "file://client/src/assets/images/cover-forensic-corroboration-dirt-on-your
 type = "image"
 title = "forensic corroboration dirt on your name cover"
 
+[[generated]]
+id = "wosEdwnkxP4Y6EFsz7-sC"
+uri = "file://client/src/assets/images/cover-they-called-you-crazy-the-archive-prophesied.png"
+type = "image"
+title = "forensic prophecy cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
