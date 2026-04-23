@@ -43,6 +43,7 @@ import FreeEbooks from "@/pages/FreeEbooks";
 import CopyrightRegister from "@/pages/CopyrightRegister";
 import ForensicCorroborationStillStanding from "@/pages/ForensicCorroborationStillStanding";
 import { ForensicCorroborationKnivesClaps } from "@/pages/ForensicCorroborationKnivesClaps";
+import ForensicCorroborationBuriedLies from "@/pages/ForensicCorroborationBuriedLies";
 import TheyCalledYouCrazyProphesied from "@/pages/TheyCalledYouCrazyProphesied";
 import DigitalArchive from "@/pages/DigitalArchive";
 import ArchiveIndex from "@/pages/ArchiveIndex";
@@ -547,6 +548,7 @@ function Router() {
         <Route path="/copyright-register" component={CopyrightRegister} />
         <Route path="/forensic-corroboration-still-standing" component={ForensicCorroborationStillStanding} />
         <Route path="/forensic-corroboration-knives-claps" component={ForensicCorroborationKnivesClaps} />
+        <Route path="/forensic-corroboration-buried-lies" component={ForensicCorroborationBuriedLies} />
         <Route path="/forensic-analysis-78-they-called-you-crazy-prophesied" component={TheyCalledYouCrazyProphesied} />
         <Route path="/digital-archive" component={DigitalArchive} />
         <Route path="/archive-index" component={ArchiveIndex} />

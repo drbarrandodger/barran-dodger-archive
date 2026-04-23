@@ -816,6 +816,12 @@ uri = "file://client/src/assets/images/cover-forensic-corroboration-knives-claps
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "UzyHiZa2tnKPk16JfA9Ce"
+uri = "file://attached_assets/cover-forensic-corroboration-buried-lies.png"
+type = "image"
+title = "forensic buried lies cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
