@@ -187,6 +187,7 @@ import HoneyTrapPhillipGlass from "@/pages/HoneyTrapPhillipGlass";
 import BitcoinProof from "@/pages/BitcoinProof";
 import HolyReckoning from "@/pages/HolyReckoning";
 import AbleCareMurderThreatCall from "@/pages/AbleCareMurderThreatCall";
+import CtoBreachAppointment from "@/pages/CtoBreachAppointment";
 import DyingOfShame from "@/pages/DyingOfShame";
 import { GodsGraceBarranDodger } from "@/pages/GodsGraceBarranDodger";
 import { BlockchainManifest } from "@/pages/BlockchainManifest";
@@ -493,6 +494,9 @@ function Router() {
         <Route path="/ablecare-transcript" component={AbleCareMurderThreatCall} />
         <Route path="/ablecare-ceo-duty-of-care-breach" component={AbleCareMurderThreatCall} />
         <Route path="/ndis-murder-threat-transcript" component={AbleCareMurderThreatCall} />
+        <Route path="/cto-breach-appointment" component={CtoBreachAppointment} />
+        <Route path="/community-treatment-order-breach" component={CtoBreachAppointment} />
+        <Route path="/mental-health-act-political-weapon" component={CtoBreachAppointment} />
         <Route path="/they-are-dying-of-shame" component={DyingOfShame} />
         <Route path="/dying-of-shame-forensic-analysis" component={DyingOfShame} />
         <Route path="/forensic-analysis-63" component={DyingOfShame} />
