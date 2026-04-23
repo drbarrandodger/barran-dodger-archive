@@ -1,6 +1,15 @@
 import Stripe from "stripe";
 
 async function getCredentials(): Promise<{ publishableKey: string; secretKey: string }> {
+  // If live keys are stored as Replit secrets, use them directly
+  if (process.env.STRIPE_SECRET_KEY && process.env.STRIPE_PUBLISHABLE_KEY) {
+    return {
+      publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+      secretKey: process.env.STRIPE_SECRET_KEY,
+    };
+  }
+
+  // Fall back to Replit Stripe connector (test keys in development)
   const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME;
   const xReplitToken = process.env.REPL_IDENTITY
     ? "repl " + process.env.REPL_IDENTITY
@@ -9,7 +18,7 @@ async function getCredentials(): Promise<{ publishableKey: string; secretKey: st
       : null;
 
   if (!hostname || !xReplitToken) {
-    throw new Error("Stripe integration not connected. Ensure Stripe is connected via the Integrations tab.");
+    throw new Error("Stripe not configured. Add STRIPE_SECRET_KEY and STRIPE_PUBLISHABLE_KEY secrets.");
   }
 
   const isProduction = process.env.REPLIT_DEPLOYMENT === "1";
