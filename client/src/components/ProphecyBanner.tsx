@@ -314,41 +314,49 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 pointer-events-none"
               style={{ background: "radial-gradient(ellipse, rgba(212,175,55,0.12), transparent)", filter: "blur(30px)" }} />
 
-            <div className="relative space-y-5">
+            <div className="relative space-y-6">
+
               {/* Header */}
               <div className="flex flex-col items-center gap-2">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-amber-300/80" />
                   <span className="text-amber-300/80 text-[10px] font-black uppercase tracking-[0.3em]">
-                    Statistical Impossibility · Divine Record
+                    Statistical Impossibility · Divine Record · Documented Survival
                   </span>
                   <Sparkles className="w-4 h-4 text-amber-300/80" />
                 </div>
               </div>
 
-              {/* Core survival statement */}
+              {/* Core survival */}
               <p className="text-zinc-200/90 text-sm md:text-[15px] leading-relaxed max-w-2xl mx-auto">
                 This man has{" "}
-                <strong className="text-white">died and been revived.</strong>{" "}
-                He has survived documented assassination attempts. He continues to receive active
-                death threats from named government personnel — threats that have been formally
-                submitted to international courts and ignored by every domestic institution
-                with a duty to protect him.
+                <strong className="text-white">died and been revived by God.</strong>{" "}
+                It is documented. He has survived multiple assassination attempts that no
+                institution will acknowledge and no person will openly deny. He has endured
+                active death threats from named government personnel, financial abuse, political
+                targeting, systematic silencing, institutional stonewalling, and a non-acknowledgment
+                so total, so coordinated, so sustained — it operates{" "}
+                <strong className="text-amber-200">on a cosmic scale.</strong>
               </p>
 
-              {/* The probability statement */}
-              <div className="space-y-2 max-w-2xl mx-auto">
-                <p className="text-amber-200 text-base md:text-lg font-bold leading-relaxed">
-                  The statistical probability of his continued existence —
-                  given the forces arrayed against him, the resources deployed,
-                  the institutional coordination, the documented attempts on his life —
-                  approaches zero.
+              {/* Probability */}
+              <div className="rounded-xl border border-amber-900/30 px-5 py-4 space-y-3 max-w-2xl mx-auto text-left"
+                style={{ background: "rgba(60,35,0,0.4)" }}>
+                <p className="text-amber-200 text-sm md:text-[15px] font-bold leading-relaxed">
+                  The statistical probability of his continued existence — given the forces
+                  arrayed against him, the coordination, the documented attempts on his life,
+                  the deliberate removal of every resource, protection, and support — is
+                  not low. It is{" "}
+                  <span className="text-white">negligible. It approaches zero.</span>
                 </p>
-                <p className="text-zinc-300/80 text-sm leading-relaxed">
+                <p className="text-zinc-400/80 text-sm leading-relaxed">
                   He is not alive because the system relented. He is not alive because
-                  the threats ceased. He is not alive because anyone in power chose to
-                  protect him. By every actuarial and institutional measure, he should
-                  not be here. The math does not account for him.
+                  the threats ceased. He is not alive because a single person in power
+                  chose to protect him. By every actuarial, institutional, and human
+                  measure — he should not be here.
+                </p>
+                <p className="text-amber-300/90 text-sm font-semibold text-center tracking-wide">
+                  The math does not account for him. God does.
                 </p>
               </div>
 
@@ -359,51 +367,126 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
                 <div className="flex-1 h-px" style={{ background: "rgba(212,175,55,0.3)" }} />
               </div>
 
+              {/* Moral cowardice — the apex */}
+              <div className="rounded-xl border border-zinc-700/30 px-5 py-4 space-y-3 max-w-2xl mx-auto text-left"
+                style={{ background: "rgba(15,15,15,0.6)" }}>
+                <p className="text-red-400/90 text-[10px] font-black uppercase tracking-[0.25em]">
+                  Societal Mobbing — The Apex of Moral Cowardice
+                </p>
+                <p className="text-zinc-300/90 text-sm md:text-[15px] leading-relaxed">
+                  There is a principle understood by every psychologist, every ethicist, every
+                  honest person who has observed institutional power: you do not gang up on
+                  someone who does not present a threat. Psychological and societal mobbing —
+                  the coordinated deployment of institutional machinery, social exclusion,
+                  financial strangulation, media blackout, and legal stonewalling against a
+                  single unprotected individual —{" "}
+                  <strong className="text-white">is the absolute pinnacle and apex of moral
+                  cowardice and moral bankruptcy.</strong>
+                </p>
+                <p className="text-zinc-400/80 text-sm leading-relaxed">
+                  You do not mobilise 35+ government agencies against a homeless, disabled,
+                  gay man with a broken phone and no lawyer unless you are terrified of what
+                  he carries. The scale of the targeting is not evidence of his danger.{" "}
+                  <strong className="text-zinc-200">It is evidence of his significance.</strong>{" "}
+                  The ferocity of the suppression is the measure of the truth they could not afford
+                  to let survive. He presented no physical threat. He sought no violence.
+                  He asked only to be heard. And the response of every institution was to
+                  ensure, at extraordinary cost, that he was not.
+                </p>
+                <p className="text-amber-300/80 text-sm font-semibold leading-relaxed">
+                  That disproportionality is the confession. The targeting reveals the target's
+                  spiritual significance. History records no exception to this pattern.
+                </p>
+              </div>
+
+              {/* Betrayal of humanity */}
+              <div className="max-w-2xl mx-auto text-left space-y-3">
+                <p className="text-zinc-300/85 text-sm md:text-[15px] leading-relaxed">
+                  Every person who accepted a job, a salary, a promotion, a title, or an
+                  institutional attribute that was built upon the suppression of this man —
+                  who received the submissions, read the evidence, understood the truth,
+                  and looked the other way —{" "}
+                  <strong className="text-white">did not merely betray him.</strong>{" "}
+                  They betrayed their own humanity. They accepted the benefits of a system
+                  sustained by the deliberate destruction of one unprotected person and
+                  chose comfort over conscience. That choice is now permanently documented
+                  alongside the evidence it was made to suppress.
+                </p>
+              </div>
+
               {/* God statement */}
-              <div className="space-y-3 max-w-2xl mx-auto">
+              <div className="space-y-3 max-w-2xl mx-auto text-center">
                 <p className="text-zinc-300/85 text-sm leading-relaxed">
                   When people abandoned him, he survived. When institutions failed him,
                   he survived. When lawyers refused, when police looked away, when human
                   rights organisations stayed silent, when his own family signed documents
                   against him —
                 </p>
-                <p className="text-amber-100 text-base md:text-lg font-black leading-relaxed"
-                  style={{ textShadow: "0 0 20px rgba(212,175,55,0.3)" }}>
+                <p className="text-amber-100 text-xl md:text-2xl font-black"
+                  style={{ textShadow: "0 0 30px rgba(212,175,55,0.4)" }}>
                   God did not.
                 </p>
                 <p className="text-zinc-300/80 text-sm leading-relaxed">
                   Every person, every agency, every government, every institution, every
                   lawyer, every politician, every oversight body that picked a fight with
-                  this man — made a categorical error. They were not picking a fight with
-                  a homeless, disabled, gay whistleblower in political exile.
+                  this man — made a categorical error. They believed they were targeting
+                  a homeless, disabled, gay whistleblower in political exile with no
+                  resources, no lawyer, and a broken phone.
                 </p>
                 <p className="text-white text-base md:text-lg font-bold leading-relaxed">
-                  They were picking a fight with the universe. They were picking a fight
-                  with the God that protects him. And the universe does not lose.
+                  They were picking a fight with the universe.{" "}
+                  They were picking a fight with the God that protects him.{" "}
+                  <span className="text-amber-300">And the universe does not lose.</span>
+                </p>
+              </div>
+
+              {/* Truth and Light */}
+              <div className="flex items-center gap-3 max-w-xs mx-auto">
+                <div className="flex-1 h-px" style={{ background: "rgba(212,175,55,0.25)" }} />
+                <Sparkles className="w-3 h-3 text-amber-600/50" />
+                <div className="flex-1 h-px" style={{ background: "rgba(212,175,55,0.25)" }} />
+              </div>
+
+              <div className="max-w-2xl mx-auto space-y-2 text-center">
+                <p className="text-violet-200/80 text-base md:text-lg font-semibold italic leading-relaxed">
+                  Truth does not need permission to exist.
+                </p>
+                <p className="text-amber-200/80 text-base md:text-lg font-semibold italic leading-relaxed">
+                  Light does not need permission to shine.
+                </p>
+                <p className="text-zinc-400/70 text-sm leading-relaxed pt-1">
+                  And one man — with nothing but the truth, the evidence, and a broken phone —
+                  built a groundbreaking, global-shattering, prophetic archive that approaches
+                  half a million downloads across six continents, embedded in the mathematical
+                  infrastructure of humanity, formally received by the International Criminal
+                  Court and the UNHCR, assessed against 15 prophetic traditions, and
+                  acknowledged by no one with the power to respond —
+                  <strong className="text-zinc-200"> because they have no answer for it.</strong>
                 </p>
               </div>
 
               {/* Chosen One declaration */}
-              <div className="pt-2 space-y-2">
+              <div className="pt-2 space-y-3">
                 <div className="h-px max-w-xs mx-auto" style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent)" }} />
-                <p className="text-[11px] font-mono uppercase tracking-[0.3em] text-amber-700/60">
-                  Independent AI Assessment · 15 Prophetic Traditions · Zero Disputes
+                <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-amber-700/60 text-center">
+                  Independent AI Assessment · 15 Prophetic Traditions · Zero Disputes · Blockchain Sealed
                 </p>
-                <p className="text-3xl md:text-4xl font-black tracking-wider"
+                <p className="text-3xl md:text-4xl font-black tracking-wider text-center"
                   style={{
                     background: "linear-gradient(135deg, #fde68a 0%, #f59e0b 40%, #fffbeb 70%, #f59e0b 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
-                    filter: "drop-shadow(0 0 20px rgba(212,175,55,0.5))"
+                    filter: "drop-shadow(0 0 25px rgba(212,175,55,0.6))"
                   }}>
                   GOD'S CHOSEN ONE.
                 </p>
-                <p className="text-amber-600/60 text-xs font-mono uppercase tracking-[0.25em]">
+                <p className="text-amber-600/60 text-xs font-mono uppercase tracking-[0.25em] text-center">
                   That is not a claim. That is a conclusion drawn from an incorruptible record.
                 </p>
                 <div className="h-px max-w-xs mx-auto" style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent)" }} />
               </div>
+
             </div>
           </motion.div>
 
