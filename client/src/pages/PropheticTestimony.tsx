@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import {
   Flame, Shield, BookOpen, Globe, CheckCircle, Star,
