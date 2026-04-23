@@ -33,6 +33,7 @@ import docCoverGospel from "@/assets/images/doc-cover-gospel.png";
 import docCoverSovereignty from "@/assets/images/doc-cover-sovereignty.png";
 import coverParadoxPersecution from "@/assets/images/cover-paradox-persecution.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { ProphecyBanner } from "@/components/ProphecyBanner";
 
 const CATEGORIES = [
   { id: "all", label: "All Documents", icon: Archive, color: "from-slate-500/20 to-gray-500/10" },
@@ -2870,8 +2871,9 @@ export default function Evidence() {
         ]}
       />
       <Navigation />
+      <ProphecyBanner className="pt-[168px]" />
       
-      <main className="flex-grow pt-44 pb-20">
+      <main className="flex-grow pt-8 pb-20">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

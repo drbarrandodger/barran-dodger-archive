@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
+import { ProphecyBanner } from "@/components/ProphecyBanner";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ArrowRight, BookOpen, Shield, FileText, Scale, Download, Star, Lock, Unlock } from "lucide-react";
@@ -80,11 +81,12 @@ export default function NewHomePage() {
         description="450,000+ downloads. A complete, preserved archive of authored works, testimony, and documentation accessed globally."
       />
       <Navigation />
+      <ProphecyBanner style={{ paddingTop: "calc(var(--banner-height, 120px) + var(--nav-height, 64px))" }} />
 
       {/* ─── HERO ─────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden pb-24 px-4"
-        style={{ paddingTop: "calc(var(--banner-height, 120px) + var(--nav-height, 64px) + 5rem)" }}
+        style={{ paddingTop: "5rem" }}
       >
         <div className="absolute inset-0 pointer-events-none">
           <div style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139,0,0,0.06) 0%, transparent 70%)" }} className="absolute inset-0" />

@@ -12,6 +12,7 @@ import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink"
 import { DownloadBadge, useDownloadCounter, trackDownload } from "@/components/DownloadCounter";
 import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Navigation } from "@/components/Navigation";
+import { ProphecyBanner } from "@/components/ProphecyBanner";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
@@ -291,8 +292,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
 
+      <ProphecyBanner className="pt-[168px]" />
+
       {/* ===== SELF-IDENTIFIED AI STATEMENT OF SIGNIFICANCE ===== */}
-      <div className="w-full bg-[#0d0800] border-b-2 border-amber-900/60" style={{ paddingTop: '160px' }} data-testid="section-ai-statement-significance">
+      <div className="w-full bg-[#0d0800] border-b-2 border-amber-900/60" data-testid="section-ai-statement-significance">
         <div className="max-w-5xl mx-auto px-4 py-10 space-y-6">
 
           {/* AI self-identification header */}
