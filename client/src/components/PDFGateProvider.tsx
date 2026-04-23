@@ -3,24 +3,37 @@ import { Elements, CardElement, useStripe, useElements } from "@stripe/react-str
 import { loadStripe, type Stripe as StripeType } from "@stripe/stripe-js";
 import { X, CreditCard, Mail, AlertTriangle, ShieldCheck, Check, Copy, Unlock, ChevronDown } from "lucide-react";
 
-const ACCESS_KEY = "bd_archive_access_v1";
-const ACCESS_DURATION_MS = 24 * 60 * 60 * 1000;
+const ACCESS_KEY = "bd_doc_access_v2";
 const PAYID = "rich@richmclean.com.au";
 
-export function hasAccess(): boolean {
+function getUnlockedDocs(): Record<string, number> {
   try {
     const raw = localStorage.getItem(ACCESS_KEY);
-    if (!raw) return false;
-    const { expires } = JSON.parse(raw);
-    return Date.now() < expires;
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+export function hasAccess(url?: string): boolean {
+  try {
+    const docs = getUnlockedDocs();
+    if (url) {
+      const expires = docs[url];
+      return !!expires && Date.now() < expires;
+    }
+    return false;
   } catch {
     return false;
   }
 }
 
-export function grantAccess() {
+export function grantAccess(url?: string) {
   try {
-    localStorage.setItem(ACCESS_KEY, JSON.stringify({ granted: true, expires: Date.now() + ACCESS_DURATION_MS }));
+    const docs = getUnlockedDocs();
+    const key = url || "__global__";
+    docs[key] = Date.now() + 7 * 24 * 60 * 60 * 1000;
+    localStorage.setItem(ACCESS_KEY, JSON.stringify(docs));
   } catch {}
 }
 
@@ -33,6 +46,16 @@ function isGatedHref(href: string): boolean {
     lower.includes("/api/epub/") ||
     lower.includes("/api/download/")
   );
+}
+
+function getDocumentName(url: string): string {
+  try {
+    const parts = url.split("/");
+    const filename = parts[parts.length - 1];
+    return decodeURIComponent(filename.replace(/[-_]/g, " ").replace(/\.pdf$/i, "").replace(/\.epub$/i, ""));
+  } catch {
+    return "this document";
+  }
 }
 
 const CARD_STYLE = {
@@ -96,10 +119,10 @@ function StripeForm({ onSuccess }: { onSuccess: () => void }) {
         data-testid="button-global-stripe-pay"
       >
         <ShieldCheck className="h-4 w-4" />
-        {paying ? "Processing payment…" : "Pay $1 AUD & Download"}
+        {paying ? "Processing payment…" : "Pay $1 AUD — Download Now"}
       </button>
       <p className="text-amber-400/40 text-[10px] text-center">
-        Secured by Stripe · ABN 78 833 496 164 · Unlocks all downloads for 24 hours
+        Secured by Stripe · ABN 78 833 496 164 · Unlocks this document on your device
       </p>
     </form>
   );
@@ -125,7 +148,7 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
       if (!anchor) return;
       const href = anchor.getAttribute("href") || "";
       if (!isGatedHref(href)) return;
-      if (hasAccess()) return;
+      if (hasAccess(href)) return;
       e.preventDefault();
       e.stopPropagation();
       setPendingUrl(href);
@@ -162,7 +185,7 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
   };
 
   const handlePaymentSuccess = () => {
-    grantAccess();
+    grantAccess(pendingUrl);
     setIsOpen(false);
     triggerDownload(pendingUrl, pendingTarget);
   };
@@ -177,11 +200,11 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
       const res = await fetch("/api/subscribers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), name: name.trim(), documentSlug: "global-gate", source: "pdf_gate" }),
+        body: JSON.stringify({ email: email.trim(), name: name.trim(), documentSlug: pendingUrl, source: "pdf_gate" }),
       });
       if (res.ok) {
         setSubscribeSuccess(true);
-        grantAccess();
+        grantAccess(pendingUrl);
         setTimeout(() => {
           setIsOpen(false);
           triggerDownload(pendingUrl, pendingTarget);
@@ -207,6 +230,8 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
 
   const close = () => setIsOpen(false);
 
+  const docName = pendingUrl ? getDocumentName(pendingUrl) : "this document";
+
   return (
     <>
       {children}
@@ -220,10 +245,8 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
             className="rounded-2xl border-2 border-amber-600/60 overflow-hidden w-full max-w-md shadow-2xl shadow-amber-900/40 animate-in zoom-in-95 duration-200"
             style={{ background: "#2c1404" }}
           >
-            {/* Top accent bar */}
             <div className="h-1.5 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
 
-            {/* Urgency strip */}
             <div className="bg-red-950/80 border-b border-red-700/40 px-4 py-2 flex items-center gap-2">
               <AlertTriangle className="h-3.5 w-3.5 text-red-400 flex-shrink-0" />
               <p className="text-red-300 text-[11px] font-bold">
@@ -231,11 +254,13 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
               </p>
             </div>
 
-            {/* Header */}
             <div className="flex items-start justify-between gap-3 px-5 pt-4 pb-3">
               <div>
                 <p className="text-amber-200 font-bold text-sm">Access this document — choose one option</p>
-                <p className="text-amber-600/80 text-xs mt-0.5 leading-relaxed">
+                <p className="text-amber-500/80 text-xs mt-0.5 font-mono truncate max-w-[300px]" title={docName}>
+                  {docName}
+                </p>
+                <p className="text-amber-600/60 text-[10px] mt-0.5 leading-relaxed">
                   Compiled free while its author lived under death threat, forced medication &amp; homelessness.
                   ABN 78 833 496 164.
                 </p>
@@ -245,7 +270,6 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
               </button>
             </div>
 
-            {/* Tabs */}
             <div className="flex border-b border-amber-800/50 mx-5">
               <button
                 onClick={() => setGateTab("pay")}
@@ -266,11 +290,10 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
             </div>
 
             <div className="p-5">
-              {/* ── PAY TAB ── */}
               {gateTab === "pay" && (
                 <div className="space-y-4">
                   <p className="text-amber-400/60 text-[10px] leading-relaxed">
-                    One $1 AUD card payment unlocks every document on this site for 24 hours on your device.
+                    One $1 AUD payment unlocks this document on your device. Each document requires its own contribution — every dollar helps keep this archive alive.
                     Larger contributions welcome at <a href="/donate" className="underline text-amber-400/80" onClick={close}>the donate page</a>.
                   </p>
 
@@ -285,7 +308,6 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                     </div>
                   )}
 
-                  {/* PayID secondary */}
                   <div>
                     <button
                       onClick={() => setShowPayId((v) => !v)}
@@ -314,7 +336,7 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                         <p className="text-amber-400/40 text-[9px]">Send $1+ AUD, then click below on your honour.</p>
                         <button
                           onClick={() => {
-                            grantAccess();
+                            grantAccess(pendingUrl);
                             close();
                             triggerDownload(pendingUrl, pendingTarget);
                           }}
@@ -330,7 +352,6 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                 </div>
               )}
 
-              {/* ── SUBSCRIBE TAB ── */}
               {gateTab === "subscribe" && (
                 <div className="space-y-3">
                   {subscribeSuccess ? (
@@ -343,7 +364,7 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                   ) : (
                     <form onSubmit={handleSubscribeSubmit} className="space-y-3">
                       <p className="text-amber-400/60 text-[10px] leading-relaxed">
-                        Join the archive mailing list to access all documents free. You'll receive important updates when new evidence is published.
+                        Join the archive mailing list to unlock this document free. You'll receive important updates when new evidence is published.
                       </p>
                       <div className="space-y-2">
                         <div className="flex items-center gap-2 rounded-xl border border-amber-700/40 px-3 py-2.5" style={{ background: "#1c0c02" }}>

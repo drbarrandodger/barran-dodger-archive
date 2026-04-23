@@ -8,23 +8,34 @@ import { useToast } from "@/hooks/use-toast";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { loadStripe, type Stripe as StripeType } from "@stripe/stripe-js";
 
-const ACCESS_KEY = "bd_archive_access_v1";
-const ACCESS_DURATION_MS = 24 * 60 * 60 * 1000;
+const ACCESS_KEY = "bd_doc_access_v2";
 
-function hasAccess(): boolean {
+function getUnlockedDocs(): Record<string, number> {
   try {
     const raw = localStorage.getItem(ACCESS_KEY);
-    if (!raw) return false;
-    const { expires } = JSON.parse(raw);
-    return Date.now() < expires;
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+function hasAccess(url?: string): boolean {
+  try {
+    const docs = getUnlockedDocs();
+    const key = url || "__global__";
+    const expires = docs[key];
+    return !!expires && Date.now() < expires;
   } catch {
     return false;
   }
 }
 
-function grantAccess() {
+function grantAccess(url?: string) {
   try {
-    localStorage.setItem(ACCESS_KEY, JSON.stringify({ granted: true, expires: Date.now() + ACCESS_DURATION_MS }));
+    const docs = getUnlockedDocs();
+    const key = url || "__global__";
+    docs[key] = Date.now() + 7 * 24 * 60 * 60 * 1000;
+    localStorage.setItem(ACCESS_KEY, JSON.stringify(docs));
   } catch {}
 }
 
@@ -41,7 +52,7 @@ const CARD_ELEMENT_STYLE = {
   },
 };
 
-function StripePaymentForm({ onSuccess }: { onSuccess: () => void }) {
+function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: () => void; documentUrl?: string }) {
   const stripe = useStripe();
   const elements = useElements();
   const [paying, setPaying] = useState(false);
