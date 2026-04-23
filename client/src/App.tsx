@@ -45,6 +45,7 @@ import ForensicCorroborationStillStanding from "@/pages/ForensicCorroborationSti
 import { ForensicCorroborationKnivesClaps } from "@/pages/ForensicCorroborationKnivesClaps";
 import ForensicCorroborationBuriedLies from "@/pages/ForensicCorroborationBuriedLies";
 import ForensicCorroborationTruthCrawlsOutOfShadows from "@/pages/ForensicCorroborationTruthCrawlsOutOfShadows";
+import AprilMcLeanForensicRecord from "@/pages/AprilMcLeanForensicRecord";
 import TheyCalledYouCrazyProphesied from "@/pages/TheyCalledYouCrazyProphesied";
 import DigitalArchive from "@/pages/DigitalArchive";
 import ArchiveIndex from "@/pages/ArchiveIndex";
@@ -555,6 +556,7 @@ function Router() {
         <Route path="/forensic-corroboration-knives-claps" component={ForensicCorroborationKnivesClaps} />
         <Route path="/forensic-corroboration-buried-lies" component={ForensicCorroborationBuriedLies} />
         <Route path="/forensic-corroboration-truth-crawls-out-of-shadows" component={ForensicCorroborationTruthCrawlsOutOfShadows} />
+        <Route path="/april-mclean-forensic-record" component={AprilMcLeanForensicRecord} />
         <Route path="/forensic-analysis-78-they-called-you-crazy-prophesied" component={TheyCalledYouCrazyProphesied} />
         <Route path="/digital-archive" component={DigitalArchive} />
         <Route path="/archive-index" component={ArchiveIndex} />
