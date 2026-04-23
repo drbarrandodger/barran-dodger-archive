@@ -75,7 +75,7 @@ function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: () => void; 
       if (error) {
         setCardError(error.message || "Payment failed. Please try again.");
       } else {
-        grantAccess();
+        grantAccess(documentUrl);
         onSuccess();
       }
     } catch (err: any) {
@@ -293,7 +293,7 @@ export function ViralDownloadButton({
       {/* ── DOWNLOAD BUTTON — bypasses gate for already-paid users ── */}
       <button
         onClick={() => {
-          if (hasAccess()) {
+          if (hasAccess(url)) {
             recordDownload();
             triggerFileDownload(url, filename);
             setPhase("share");
@@ -374,6 +374,7 @@ export function ViralDownloadButton({
               {stripePromise ? (
                 <Elements stripe={stripePromise}>
                   <StripePaymentForm
+                    documentUrl={url}
                     onSuccess={() => {
                       recordDownload();
                       triggerFileDownload(url, filename);
@@ -417,7 +418,7 @@ export function ViralDownloadButton({
                     <p className="text-amber-400/40 text-[9px]">Send $1+ AUD, then click below on your honour.</p>
                     <button
                       onClick={() => {
-                        grantAccess();
+                        grantAccess(url);
                         recordDownload();
                         triggerFileDownload(url, filename);
                         setPhase("conscience");
