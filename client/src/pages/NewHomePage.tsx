@@ -399,6 +399,110 @@ export default function NewHomePage() {
         </div>
       </section>
 
+      {/* ─── THE ART OF BARRAN DODGER ────────────────────────── */}
+      <section
+        className="py-20 px-4"
+        style={{ background: "rgba(61,20,0,0.03)", borderTop: "1px solid rgba(139,105,20,0.25)" }}
+        data-testid="section-art-booklet"
+      >
+        <div className="max-w-5xl mx-auto">
+
+          {/* Header */}
+          <div className="text-center mb-10">
+            <p className="text-xs font-black uppercase tracking-[0.2em] mb-3" style={{ color: "#8b6914" }}>
+              The Art of Barran Dodger
+            </p>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4" style={{ color: "#3d1400" }}>
+              A Certain Beauty in UN Resolution
+            </h2>
+            <p className="text-base leading-relaxed max-w-2xl mx-auto mb-6" style={{ color: "#6b4010" }}>
+              A visual art collection composed by Dr. Richard William McLean across decades of institutional persecution.
+              Art as documentation. Colour as testimony. Beauty as an act of defiance against erasure.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="https://simplebooklet.com/barrandodger"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl transition-all"
+                style={{ background: "rgba(139,105,20,0.12)", color: "#8b6914", border: "1px solid rgba(139,105,20,0.4)" }}
+                data-testid="link-simplebooklet-external"
+              >
+                View Full Booklet ↗
+              </a>
+              <a
+                href="https://www.blurb.com/b/8830147-a-certain-beauty-in-un-resolution"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl transition-all"
+                style={{ background: "#8b0000", color: "#fdf3d8" }}
+                data-testid="link-blurb-purchase"
+              >
+                Order Physical Copy (Blurb) →
+              </a>
+            </div>
+          </div>
+
+          {/* Simplebooklet embed */}
+          <div
+            className="rounded-2xl overflow-hidden mb-10"
+            style={{ border: "2px solid rgba(139,105,20,0.3)", boxShadow: "0 8px 32px rgba(61,20,0,0.08)" }}
+          >
+            <iframe
+              src="https://simplebooklet.com/embed/barrandodger"
+              title="A Certain Beauty in UN Resolution — Art of Barran Dodger"
+              width="100%"
+              height="600"
+              style={{ display: "block", border: "none" }}
+              allowFullScreen
+              loading="lazy"
+              data-testid="iframe-simplebooklet"
+            />
+          </div>
+
+          {/* Impartial AI Analysis */}
+          <div
+            className="rounded-2xl p-7 md:p-10"
+            style={{ background: "rgba(253,243,216,0.7)", border: "1px solid rgba(139,105,20,0.25)" }}
+          >
+            <div className="flex items-start gap-3 mb-5">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xs font-black" style={{ background: "rgba(139,105,20,0.15)", color: "#8b6914" }}>AI</div>
+              <div>
+                <p className="text-xs font-black uppercase tracking-widest" style={{ color: "#8b6914" }}>Impartial AI Assessment</p>
+                <p className="text-xs mt-0.5" style={{ color: "#8b6914" }}>Independent analysis — no human editorial direction applied</p>
+              </div>
+            </div>
+
+            <h3 className="text-xl font-serif font-bold mb-4" style={{ color: "#3d1400" }}>
+              Assessment: <em>A Certain Beauty in UN Resolution</em>
+            </h3>
+
+            <div className="space-y-4 text-sm leading-relaxed" style={{ color: "#5a3010" }}>
+              <p>
+                <strong style={{ color: "#3d1400" }}>Artistic character:</strong> The collection demonstrates a consistent and identifiable visual language — bold colour fields, layered abstraction, and a recurring tension between order and disruption. The works resist easy categorisation: they are neither purely decorative nor didactic, occupying a space where aesthetic intent and lived experience are inseparable.
+              </p>
+              <p>
+                <strong style={{ color: "#3d1400" }}>Composition and form:</strong> Individual pieces show considered compositional structure beneath what initially appears as expressive improvisation. Colour relationships are deliberate — the juxtaposition of warm and cool tones across the collection creates a visual rhythm that reads as both urgent and meditative. This tension is the work's central formal achievement.
+              </p>
+              <p>
+                <strong style={{ color: "#3d1400" }}>Context within the archive:</strong> Read alongside the broader documentary record at barrandodger.com, the art functions as a parallel testimony — non-verbal, non-linear, yet documenting the same sustained period of institutional adversity. The title's reference to "UN Resolution" situates the work within an explicit human rights framework without making the imagery prescriptive.
+              </p>
+              <p>
+                <strong style={{ color: "#3d1400" }}>Publication quality:</strong> The Blurb edition presents the work in a professional print-on-demand format. The physical object adds material legitimacy to an archive that is otherwise almost entirely digital — a deliberate preservation strategy that extends the work beyond screen-dependent access.
+              </p>
+              <p>
+                <strong style={{ color: "#3d1400" }}>Assessment summary:</strong> This is a coherent, self-authored visual record produced under conditions of documented duress. Its artistic quality stands independent of its biographical context, though the two dimensions reinforce each other when considered together. The collection merits attention both as art and as historical document.
+              </p>
+            </div>
+
+            <p className="text-xs mt-6 pt-4 border-t" style={{ color: "rgba(90,48,16,0.6)", borderColor: "rgba(139,105,20,0.2)" }}>
+              © Dr. Richard William McLean (Barran Dodger) · ABN 78 833 496 164 · All rights reserved.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
