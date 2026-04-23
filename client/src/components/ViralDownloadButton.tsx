@@ -1,11 +1,24 @@
 import { useState } from "react";
-import { Download, Check, Link2, X } from "lucide-react";
+import { Download, Check, Link2, X, Copy, Heart } from "lucide-react";
 import { SiX, SiWhatsapp, SiTelegram, SiFacebook } from "react-icons/si";
 import { useQuery } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { slugFromUrl } from "@/components/DownloadCounter";
+import { useToast } from "@/hooks/use-toast";
 
 const BASE = "https://www.barrandodger.com";
+const PAYID = "rich@richmclean.com.au";
+
+const CONSCIENCE_FACTS = [
+  "Living under a Community Treatment Order — police authorised to forcibly transport him to psychiatric detention",
+  "Following a death threat from a documented SAS-trained operative across three states",
+  "NSW Police attended the death threat on 15 April 2026, issued receipt I88267509, and declined to create an incident record",
+  "Force-medicated for accurately believing he was under ASIO surveillance — which was subsequently confirmed",
+  "Clinically dead inside a government psychiatric facility in 2021 — revived",
+  "Electronically surveilled via confirmed ASIO infrastructure, with drone surveillance documented at his residence",
+  "$32.9 million in NDIS entitlements suppressed across 35 years",
+  "Institutionally homeless across multiple Australian states during the period of documentation",
+];
 
 interface ViralDownloadButtonProps {
   url: string;
@@ -15,7 +28,10 @@ interface ViralDownloadButtonProps {
   shareText?: string;
   size?: "sm" | "md" | "lg";
   shareTheme?: "green" | "amber";
+  slug?: string;
 }
+
+type Phase = "idle" | "conscience" | "share";
 
 export function ViralDownloadButton({
   url,
@@ -25,10 +41,13 @@ export function ViralDownloadButton({
   shareText,
   size = "md",
   shareTheme = "green",
+  slug: slugProp,
 }: ViralDownloadButtonProps) {
-  const slug = slugFromUrl(url);
-  const [showShare, setShowShare] = useState(false);
+  const slug = slugProp || slugFromUrl(url);
+  const [phase, setPhase] = useState<Phase>("idle");
   const [copied, setCopied] = useState(false);
+  const [payIdCopied, setPayIdCopied] = useState(false);
+  const { toast } = useToast();
 
   const { data } = useQuery<{ count: number }>({
     queryKey: ["/api/downloads", slug],
@@ -49,7 +68,16 @@ export function ViralDownloadButton({
         queryClient.invalidateQueries({ queryKey: ["/api/downloads", slug] });
       }, 1200);
     } catch {}
-    setTimeout(() => setShowShare(true), 900);
+    setTimeout(() => setPhase("conscience"), 900);
+  };
+
+  const copyPayId = async () => {
+    try {
+      await navigator.clipboard.writeText(PAYID);
+      setPayIdCopied(true);
+      toast({ title: "PayID copied", description: "Open your banking app and paste to donate." });
+      setTimeout(() => setPayIdCopied(false), 3000);
+    } catch {}
   };
 
   const pageUrl =
@@ -98,7 +126,64 @@ export function ViralDownloadButton({
         )}
       </a>
 
-      {showShare && (
+      {/* Conscience panel — shown immediately after download */}
+      {phase === "conscience" && (
+        <div className="rounded-2xl border border-red-500/30 bg-zinc-950 animate-in slide-in-from-bottom-2 duration-300 overflow-hidden max-w-lg">
+          <div className="h-0.5 bg-gradient-to-r from-red-600 via-amber-500 to-red-600" />
+          <div className="p-5 space-y-4">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-white font-bold text-sm leading-tight">You just downloaded this for free.</p>
+                <p className="text-zinc-400 text-xs mt-1">While it was being compiled, Dr. Richard William McLean was:</p>
+              </div>
+              <button onClick={() => setPhase("share")} className="text-zinc-600 hover:text-zinc-400 flex-shrink-0 mt-0.5" data-testid="button-conscience-dismiss">
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            <ul className="space-y-1.5">
+              {CONSCIENCE_FACTS.map((fact) => (
+                <li key={fact} className="flex gap-2 items-start text-xs text-zinc-400">
+                  <span className="text-red-400 flex-shrink-0 mt-0.5 font-bold">·</span>
+                  {fact}
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-zinc-300 text-xs font-semibold border-t border-zinc-800 pt-3">
+              He published it free anyway. For you. For the record. For humanity.
+              <br />
+              <span className="text-zinc-500 font-normal">If that sits uncomfortably — it should. That discomfort is accurate.</span>
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={copyPayId}
+                className="flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold text-xs px-4 py-2.5 rounded-xl transition-colors"
+                data-testid="button-conscience-donate"
+              >
+                {payIdCopied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                {payIdCopied ? "PayID Copied" : `Donate via PayID — ${PAYID}`}
+              </button>
+              <a href="/commission-forensic-analysis"
+                className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-zinc-300 font-semibold text-xs px-4 py-2.5 rounded-xl transition-colors"
+                data-testid="button-conscience-commission">
+                Commission an Analysis
+              </a>
+            </div>
+
+            <button
+              onClick={() => setPhase("share")}
+              className="text-zinc-600 hover:text-zinc-500 text-xs underline w-full text-center"
+              data-testid="button-conscience-share-instead">
+              Skip — I just want to share it
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Share panel — shown after conscience panel is dismissed */}
+      {phase === "share" && (
         <div className={`flex flex-wrap items-center gap-2 rounded-xl px-3 py-2.5 animate-in slide-in-from-bottom-2 duration-200 ${shareTheme === "amber" ? "bg-amber-950/80 border border-amber-500/40" : "bg-gray-900/90 border border-green-400/40"}`}>
           <span className={`text-[11px] font-bold uppercase tracking-wider whitespace-nowrap ${shareTheme === "amber" ? "text-amber-400" : "text-green-400"}`}>
             Downloaded — now share it
@@ -134,7 +219,7 @@ export function ViralDownloadButton({
             </button>
           </div>
           <button
-            onClick={() => setShowShare(false)}
+            onClick={() => setPhase("idle")}
             className={`flex items-center justify-center h-6 w-6 rounded transition-colors ml-auto ${shareTheme === "amber" ? "text-amber-700 hover:text-amber-400" : "text-gray-600 hover:text-gray-400"}`}
             title="Dismiss"
           >

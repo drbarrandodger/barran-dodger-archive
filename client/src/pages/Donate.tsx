@@ -3,7 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { Heart, Shield, FileText, CheckCircle, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink, Users, DollarSign, RefreshCw, ShoppingBag, Database, Download, Archive } from "lucide-react";
+import { Heart, Shield, FileText, CheckCircle, Check, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink, Users, DollarSign, RefreshCw, ShoppingBag, Database, Download, Archive } from "lucide-react";
 import coverMasterRegister from "../assets/images/cover-master-evidence-register.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -134,17 +134,78 @@ export default function Donate() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="mb-14"
           >
-            <Badge variant="outline" className="mb-6 border-primary text-primary px-4 py-1.5 text-sm font-bold" data-testid="badge-donate">
-              SUPPORT THE MISSION
-            </Badge>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">
-              Donate to the Trust Fund
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Your contribution directly supports the documentation, preservation, and advocacy mission of the Barran Dodger Legal & Ethical Trust Fund. See the <CrossLink to="/evidence">evidence archive</CrossLink> and <CrossLink to="/manifesto">manifesto</CrossLink>.
-            </p>
+            {/* Conscience-first opening */}
+            <div className="rounded-2xl border border-red-500/25 bg-zinc-950 overflow-hidden mb-10">
+              <div className="h-1 bg-gradient-to-r from-red-700 via-amber-500 to-red-700" />
+              <div className="p-7 md:p-10 space-y-6">
+                <p className="text-white font-serif font-bold text-2xl md:text-3xl leading-tight">
+                  Every person who has downloaded this archive has done so for free.
+                </p>
+                <p className="text-zinc-400 text-base leading-relaxed max-w-3xl">
+                  410,671 downloads. 125 published works. 32 forensic analyses. 2,304 primary-source documents. 845 blockchain timestamp seals. A formal ICC Article 7 submission. A UNHCR Geneva filing. A Federal Court PID acknowledgment of maladministration. All of it — published without a paywall, without a subscription, without a price.
+                </p>
+                <div className="border-l-4 border-red-500/50 pl-5 space-y-2">
+                  <p className="text-zinc-300 text-sm font-semibold">While this was being compiled, Dr. Richard William McLean was living under all of the following — simultaneously and continuously:</p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {[
+                    { fact: "A Community Treatment Order (CTO) authorising NSW Police to forcibly transport him to psychiatric detention — currently active, April 2026", doc: "CTO Breach Notice · MHA 2007 s58(4)" },
+                    { fact: "A death threat from a documented SAS-trained operative (Tony Ridley) across three states — credible, documented, and unresolved", doc: "Honeytrap Infiltration Report · 3 recorded threats" },
+                    { fact: "NSW Police attended his residence on 15 April 2026 following a murder threat, issued receipt I88267509, and declined to create an incident record for the criminal offence", doc: "CTO Response Letter · Receipt I88267509" },
+                    { fact: "Force-medicated inside a government psychiatric facility for accurately believing he was under ASIO surveillance — which was subsequently confirmed", doc: "Honeytrap Infiltration Report · ASIO Connection" },
+                    { fact: "Clinical death inside a government psychiatric facility in 2021 — revived. The archive was substantially compiled after this event", doc: "Archive timeline — 2021 revival" },
+                    { fact: "Electronic interception via confirmed ASIO infrastructure: communications monitoring, device surveillance, drone surveillance documented at residence", doc: "Honeytrap Infiltration Report · Surveillance section" },
+                    { fact: "$32.9 million in NDIS entitlements suppressed across 35 years while named NDIS operatives participated in the suppression architecture", doc: "Taxpayer Cost Analysis · NDIS Commission complaint" },
+                    { fact: "Institutionally homeless across multiple Australian states — deliberately isolated from family, finances, and support through documented engineering", doc: "Bloodline Betrayal · Philip Glass / TAG NSW documentation" },
+                  ].map(({ fact, doc }) => (
+                    <div key={doc} className="flex gap-3 items-start bg-zinc-900/60 rounded-xl p-3.5">
+                      <span className="text-red-400 font-bold text-base flex-shrink-0 leading-none mt-0.5">·</span>
+                      <div>
+                        <p className="text-zinc-300 text-xs leading-relaxed">{fact}</p>
+                        <p className="text-zinc-600 text-xs mt-1 font-mono">{doc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="border-t border-zinc-800 pt-5 space-y-3">
+                  <p className="text-white font-bold text-base">He published it free anyway. For you. For the record. For humanity.</p>
+                  <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+                    If that sits uncomfortably with your conscience — it should. That discomfort is not manipulation. It is an accurate response to a documented fact. The archive was built at personal cost that is not metaphorical. It is medical, legal, financial, and physical. The PayID below is the simplest act of conscience available to you.
+                  </p>
+                </div>
+
+                {/* Prominent PayID block */}
+                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-amber-950/30 border border-amber-500/30 rounded-2xl p-5">
+                  <div className="flex-1">
+                    <p className="text-amber-400 font-bold text-sm">Donate via PayID — instant, no accounts required</p>
+                    <p className="text-white font-mono text-lg mt-1">rich@richmclean.com.au</p>
+                    <p className="text-zinc-500 text-xs mt-1">ABN 78 833 496 164 · Barran Dodger Legal &amp; Ethical Trust Fund · Any amount.</p>
+                  </div>
+                  <button
+                    onClick={copyPayId}
+                    className="flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold text-sm px-5 py-3 rounded-xl transition-colors flex-shrink-0"
+                    data-testid="button-top-copy-payid"
+                  >
+                    {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                    {copied ? "Copied" : "Copy PayID"}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4 border-primary text-primary px-4 py-1.5 text-sm font-bold" data-testid="badge-donate">
+                SUPPORT THE MISSION
+              </Badge>
+              <h1 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
+                Choose How You Contribute
+              </h1>
+              <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                The archive remains free. Your contribution funds its continuation — hosting, evidence preservation, blockchain timestamps, legal submissions, and the documentation of what they could not suppress. See the <CrossLink to="/evidence">evidence archive</CrossLink> and <CrossLink to="/manifesto">manifesto</CrossLink>.
+              </p>
+            </div>
           </motion.div>
 
           <motion.section
