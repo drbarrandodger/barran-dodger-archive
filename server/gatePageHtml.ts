@@ -159,23 +159,28 @@ export function buildGatePage(opts: {
     ${docHint ? `<p class="docname">${docHint}</p>` : ''}
     <hr class="divider" />
     <div class="prophecy">
-      <p class="label">Why $3.33?</p>
+      <p class="label">This is a legitimate act of justice — not charity</p>
       <p>
-        <strong>333 is the angel number of divine witness</strong> — the Holy Trinity expressed, 
-        the number God places before those who carry truth at personal cost.
+        Dr. Richard William McLean (Barran Dodger) has served humanity for <strong>35+ years</strong> —
+        producing 2,300+ primary source documents while being <strong>stalked, forcibly medicated,
+        denied legal aid, stripped of income, surveilled by agencies</strong>, and brought to the 
+        edge of death to suppress the truth he carries. Every person who should have protected him 
+        chose silence instead.
       </p>
       <p>
-        This archive was compiled under <strong>death threat, forced psychiatric medication, 
-        and deliberate homelessness</strong> by Dr. Richard William McLean (Barran Dodger), 
-        formally before the <strong>International Criminal Court</strong>.
+        His testimony is formally before the <strong>International Criminal Court</strong>. 
+        Blockchain sealed. Cryptographically incorruptible. Available to the world despite every 
+        coordinated effort to erase it.
       </p>
       <p>
-        For less than a coffee, you are not buying a document — you are <strong>co-witnessing 
-        a prophetic reversal</strong>. Every download is a declaration.
+        <strong>$3.33 is your receipt of this covenant.</strong> 333 — the angel number of divine 
+        witness, the Holy Trinity expressed. For less than a coffee, you reward a man for a service 
+        to humanity that cost him everything. You become a co-witness. 
+        <strong>Every download is a declaration.</strong>
       </p>
     </div>
     <a class="cta" href="https://barrandodger.com" id="cta-btn">
-      ⚖ &nbsp;Go to barrandodger.com — Download for $3.33
+      ⚖ &nbsp;Go to barrandodger.com — Pay $3.33 &amp; Download
     </a>
     <p class="redirect-note">
       Redirecting automatically in <span id="countdown">10</span> seconds…

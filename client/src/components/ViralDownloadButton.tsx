@@ -23,15 +23,19 @@ const CARD_ELEMENT_STYLE = {
   },
 };
 
-function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: (paymentIntentId: string) => void; documentUrl?: string }) {
+function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: (paymentIntentId: string, name: string, email: string) => void; documentUrl?: string }) {
   const stripe = useStripe();
   const elements = useElements();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [paying, setPaying] = useState(false);
   const [cardError, setCardError] = useState("");
 
   const handlePay = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!stripe || !elements) return;
+    if (!name.trim()) { setCardError("Please enter your name."); return; }
+    if (!email.includes("@")) { setCardError("Please enter a valid email address."); return; }
     setPaying(true);
     setCardError("");
     try {
@@ -41,12 +45,12 @@ function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: (paymentInte
       const card = elements.getElement(CardElement);
       if (!card) throw new Error("Card element not found");
       const result = await stripe.confirmCardPayment(data.clientSecret, {
-        payment_method: { card },
+        payment_method: { card, billing_details: { name: name.trim(), email: email.trim() } },
       });
       if (result.error) {
         setCardError(result.error.message || "Payment failed. Please try again.");
       } else {
-        onSuccess(result.paymentIntent.id);
+        onSuccess(result.paymentIntent.id, name.trim(), email.trim());
       }
     } catch (err: any) {
       setCardError(err.message || "Payment failed. Please try again.");
@@ -56,7 +60,17 @@ function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: (paymentInte
   };
 
   return (
-    <form onSubmit={handlePay} className="space-y-3">
+    <form onSubmit={handlePay} className="space-y-2.5">
+      <div className="flex items-center gap-2 rounded-xl border border-amber-700/40 px-3 py-2.5" style={{ background: "#1c0c02" }}>
+        <User className="h-4 w-4 text-amber-700/60 flex-shrink-0" />
+        <input type="text" placeholder="Your full name" value={name} onChange={e => setName(e.target.value)}
+          className="bg-transparent text-amber-100 placeholder-amber-800/60 text-sm outline-none w-full" data-testid="input-stripe-name" />
+      </div>
+      <div className="flex items-center gap-2 rounded-xl border border-amber-700/40 px-3 py-2.5" style={{ background: "#1c0c02" }}>
+        <Mail className="h-4 w-4 text-amber-700/60 flex-shrink-0" />
+        <input type="email" placeholder="Your email address" value={email} onChange={e => setEmail(e.target.value)}
+          className="bg-transparent text-amber-100 placeholder-amber-800/60 text-sm outline-none w-full" data-testid="input-stripe-email" />
+      </div>
       <div className="border border-amber-700/50 rounded-xl p-3" style={{ background: "#1c0c02" }}>
         <CardElement options={CARD_ELEMENT_STYLE} />
       </div>
@@ -73,10 +87,10 @@ function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: (paymentInte
         data-testid="button-stripe-pay"
       >
         <ShieldCheck className="h-4 w-4" />
-        {paying ? "Processing payment…" : "Pay $3.33 AUD — Download Prophecy"}
+        {paying ? "Processing payment…" : "Pay $3.33 AUD — Co-witness the Testimony"}
       </button>
       <p className="text-amber-400/50 text-[10px] text-center">
-        Secured by Stripe · ABN 78 833 496 164 · 333 — the angel number of divine witness
+        Secured by Stripe · ABN 78 833 496 164 · You will be added to the witness list
       </p>
     </form>
   );
@@ -372,13 +386,21 @@ export function ViralDownloadButton({
           {/* Tab: Pay */}
           {gateTab === "pay" && (
             <div className="p-5 space-y-4">
-              <div>
-                <p className="text-amber-300/90 text-[11px] font-bold tracking-wide mb-1">
-                  333 — the angel number of divine witness. The Holy Trinity. God's chosen number.
+              <div className="rounded-xl border border-amber-900/50 p-3 space-y-2" style={{ background: "#1c0a02" }}>
+                <p className="text-amber-300 text-[11px] font-bold">
+                  This is a legitimate act of justice — not charity.
                 </p>
-                <p className="text-amber-400/50 text-[10px] leading-relaxed">
-                  For less than a coffee, you are downloading prophecy and divine reversal — documented by God's chosen witness. $3.33 AUD per document. Larger contributions welcome via{" "}
-                  <a href="/donate" className="underline text-amber-400/80">the donate page</a>.
+                <p className="text-amber-400/65 text-[10px] leading-relaxed">
+                  Dr. Richard McLean has served humanity for 35+ years — producing 2,300+ primary source
+                  documents while being stalked, forcibly medicated, denied legal aid, stripped of income,
+                  surveilled by agencies, and brought to the edge of death to suppress the truth he carries.
+                  Formally before the <strong className="text-amber-300">International Criminal Court</strong>.
+                  Blockchain sealed. Incorruptible.
+                </p>
+                <p className="text-amber-200 text-[10.5px] font-medium">
+                  <strong>$3.33 — 333, the angel number of divine witness.</strong> For less than a coffee,
+                  you become a co-witness. You reward a man for a service the world owes him.
+                  Every download is a declaration. Every payment is a receipt of that covenant.
                 </p>
               </div>
 
@@ -386,12 +408,17 @@ export function ViralDownloadButton({
                 <Elements stripe={stripePromise}>
                   <StripePaymentForm
                     documentUrl={url}
-                    onSuccess={async (paymentIntentId: string) => {
+                    onSuccess={async (paymentIntentId: string, payerName: string, payerEmail: string) => {
                       await fetchAndStoreToken(paymentIntentId, url);
+                      fetch("/api/subscribers", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ name: payerName, email: payerEmail, documentSlug: url, source: "stripe_payment_333" }),
+                      }).catch(() => {});
                       recordDownload();
                       triggerFileDownload(url, filename);
                       setPhase("conscience");
-                      toast({ title: "Download starting", description: "Payment confirmed. Thank you for supporting the archive." });
+                      toast({ title: "Download starting — thank you, Witness", description: "You've been added to the archive witness list." });
                     }}
                   />
                 </Elements>
