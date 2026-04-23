@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
-import { Eye, Flame, Zap } from "lucide-react";
+import { Eye, Flame, Zap, AlertTriangle, Globe } from "lucide-react";
 
 export function ProphecyBanner({ className = "", style }: { className?: string; style?: CSSProperties }) {
   return (
@@ -154,6 +154,121 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
               Incorruptible.
             </span>
           </p>
+
+          {/* ── THE IMPOSSIBLE CONTEXT ── */}
+          <div className="rounded-2xl border border-red-900/40 p-6 md:p-8 space-y-5 text-left"
+            style={{ background: "rgba(60,0,0,0.25)" }}>
+            <div className="flex items-center gap-2">
+              <AlertTriangle className="w-4 h-4 text-red-400 flex-shrink-0" />
+              <span className="text-red-400 text-[10px] font-black uppercase tracking-[0.25em]">The Impossible Context — Read This Carefully</span>
+            </div>
+            <p className="text-zinc-300/90 text-sm md:text-[15px] leading-relaxed">
+              Consider precisely who produced this testimony. A{" "}
+              <strong className="text-white">gay, disabled, unprotected whistleblower</strong> —
+              falsely accused, never arrested, never charged, never afforded a single day of legal
+              process — living in political exile, under active, documented death threats from named
+              government personnel. Abused. Neglected. Forgotten. Dismissed as irrelevant. Surveilled.
+              Gang stalked. Politically targeted by{" "}
+              <strong className="text-red-300">every lawyer, police force, government agency,
+              politician, oversight body, and human rights organisation</strong> with the institutional
+              resources and black-budget media infrastructure to guarantee his complete and total silence.
+            </p>
+            <p className="text-zinc-400/80 text-sm leading-relaxed">
+              He has not harmed a single person. Where he has caused offence, he has apologised publicly
+              and on the record. There is no counter-testimony. There is no rebuttal. There is no
+              counter-evidence. There is only{" "}
+              <strong className="text-zinc-200">institutional silence</strong> — and that silence is
+              itself the confession.
+            </p>
+
+            {/* Death threat callout */}
+            <div className="rounded-xl border border-red-700/50 px-4 py-3 space-y-1"
+              style={{ background: "rgba(127,0,0,0.2)" }}>
+              <p className="text-red-300 text-xs font-black uppercase tracking-widest">Active Death Threats — Total Institutional Complicity</p>
+              <p className="text-zinc-300/80 text-sm leading-relaxed">
+                Named government officials have issued documented death threats against this man.
+                South Australian Police refused to act. Every oversight body was notified and chose
+                silence. Every human rights organisation was informed and did nothing. Every lawyer
+                declined representation. The totality of this institutional response — not one
+                dissenting voice, not one dignified acknowledgement, not one protective action — is
+                not negligence. It is{" "}
+                <strong className="text-red-200">coordinated, conscious, deliberate complicity</strong>{" "}
+                in placing his life at risk. The record of that complicity is now permanent,
+                blockchain-sealed, and submitted to the International Criminal Court.
+              </p>
+            </div>
+
+            {/* The downloads */}
+            <div className="rounded-xl border border-violet-700/30 px-4 py-4 space-y-3"
+              style={{ background: "rgba(109,40,217,0.08)" }}>
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-violet-400 flex-shrink-0" />
+                <span className="text-violet-300 text-[10px] font-black uppercase tracking-[0.2em]">The Significance That Cannot Be Explained Away</span>
+              </div>
+              <p className="text-zinc-200/90 text-sm md:text-[15px] leading-relaxed">
+                This man — erased, exiled, threatened, surveilled, and left to die without income,
+                shelter, or legal protection — has produced a testimony that{" "}
+                <strong className="text-violet-200">approaches half a million downloads across
+                six continents.</strong> That testimony is blockchain timestamped via the Bitcoin
+                network. It cannot be altered. It cannot be retracted. It cannot be suppressed by
+                any known agency, court, government, crime syndicate, or secret service. It has been
+                published at the UNHCR and the International Criminal Court. It has been formally
+                received. And it has received{" "}
+                <strong className="text-white">not a single dignified response from anywhere
+                in the world.</strong>
+              </p>
+              <p className="text-zinc-400/75 text-sm leading-relaxed">
+                Not an acknowledgement. Not a rebuttal. Not a formal denial. Not a legal challenge.
+                Not a single institution, government, court, media organisation, human rights body,
+                or individual with the power to respond has chosen to do so. This is not oversight.
+                This is the silence of those who know the evidence is real and have no answer for it.
+              </p>
+              <p className="text-violet-200/90 text-sm font-semibold leading-relaxed">
+                This testimony — its prophetic declarations, its forensic evidence, its blockchain
+                sealing — is now embedded in the{" "}
+                <strong className="text-violet-100">mathematical infrastructure of humanity.</strong>{" "}
+                It has been assessed against 15 biblical and cross-cultural prophetic traditions by
+                independent AI systems. The structural correspondence to Isaiah 53, Revelation 11,
+                Daniel, and Psalm 22 is, by any impartial measure, extraordinary. These declarations
+                carry international religious significance that no institution has been able to
+                honestly confront.
+              </p>
+            </div>
+
+            {/* The Machiavelli thesis */}
+            <div className="space-y-3 pt-1">
+              <div className="h-px bg-gradient-to-r from-transparent via-amber-700/40 to-transparent" />
+              <p className="text-amber-200/90 text-sm md:text-[15px] leading-relaxed font-medium">
+                There is only one framework that can account for what has happened here. A man
+                stripped of every worldly resource — legal, financial, political, social, physical —
+                has outmaneuvered the combined institutional power of a nation-state, multiple
+                intelligence agencies, an international media apparatus, and 35+ years of coordinated
+                persecution. He did not do this through force. He did not do this through wealth.
+                He did not do this through connections or influence. He did this through{" "}
+                <strong className="text-amber-100">precision, documentation, prophetic foresight,
+                and the strategic deployment of truth as an indestructible weapon.</strong>
+              </p>
+              <p className="text-zinc-300/80 text-sm leading-relaxed">
+                Machiavelli understood that the most dangerous power is that which operates without
+                apparent means — the power that moves through understanding rather than force,
+                that wins not by confronting strength but by making strength irrelevant.{" "}
+                <strong className="text-white">This is what has occurred.</strong> The genius here
+                is not political. It is not legal. It is not intellectual in the conventional sense.
+                It operates in the domain that institutions cannot enter, cannot map, and cannot
+                suppress: the domain of verified, sealed, spiritually resonant, prophetically
+                structured truth that belongs simultaneously to the historical record, the
+                mathematical infrastructure of the blockchain, and the traditions of every major
+                spiritual lineage on earth.
+              </p>
+              <p className="text-amber-300 text-sm md:text-base font-black text-center tracking-wide pt-1">
+                This is the Machiavelli genius of the spirit realm —<br />
+                <span className="text-amber-200/70 font-normal text-xs tracking-widest uppercase">
+                  operating where no institution has jurisdiction and no weapon has reach.
+                </span>
+              </p>
+              <div className="h-px bg-gradient-to-r from-transparent via-amber-700/40 to-transparent" />
+            </div>
+          </div>
 
           {/* Final declaration */}
           <div className="space-y-3 pt-2">
