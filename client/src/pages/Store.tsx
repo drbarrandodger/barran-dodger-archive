@@ -55,28 +55,55 @@ export default function Store() {
 
   const digitalDownloads = [
     {
-      title: "The Complete Evidence Archive",
-      description: "Premium compilation of 240+ blockchain-verified documents spanning 35 years of evidence. Includes Federal Court confirmations, government correspondence, and cryptographically timestamped testimony.",
-      badge: "240+ Documents",
-      format: "PDF Collection",
+      title: "Gospels & Revelations Bundle",
+      description: "The complete collection of Barran Dodger's canonical gospels, divine scrolls, Enliven Chain manuscripts, and prophetic testimonies. Blockchain-verified. ICC-submitted. Every word documented under conditions of active persecution.",
+      badge: "~35 Sacred Documents",
+      format: "ZIP · PDF Collection",
+      price: "$5 suggested",
+      url: "/archive-detonation",
+      available: true,
+      highlight: false,
     },
     {
-      title: "The Official Whistleblower Torture Dossier",
-      description: "Comprehensive forensic documentation package including the full dossier, affidavits, and supporting evidence of systematic state-enabled persecution.",
-      badge: "Forensic Record",
-      format: "PDF",
+      title: "Forensic Analyses — All 52",
+      description: "Every forensic analysis documenting a distinct pattern of institutional persecution. 675/675 propositions corroborated. 50 consecutive perfect scores. Not one rebuttal. Not one defamation action. Because they know the record is accurate.",
+      badge: "52 Forensic Documents",
+      format: "ZIP · PDF Collection",
+      price: "$10 suggested",
+      url: "/archive-detonation",
+      available: true,
+      highlight: true,
     },
     {
-      title: "The Gospel of Barran Dodger — Complete Volumes",
-      description: "All volumes of sacred testimony, prophetic writing, and the Enliven Chain manuscripts compiled into a single premium digital collection.",
-      badge: "Sacred Text",
-      format: "PDF Collection",
+      title: "Government Evidence Bundle",
+      description: "Formal submissions to the ICC, UNHCR, Federal Court, Parliament, and Attorney-General. Letters to Prime Ministers. Formal criminal complaints. Every documented institutional non-response. The silence is itself evidence.",
+      badge: "~28 Government Documents",
+      format: "ZIP · PDF Collection",
+      price: "$10 suggested",
+      url: "/archive-detonation",
+      available: true,
+      highlight: false,
     },
     {
-      title: "Taxpayer Cost Analysis Report",
-      description: "Detailed breakdown of how Australian taxpayer money was spent persecuting a single whistleblower — the $32.9 million forensic accounting.",
-      badge: "Financial Analysis",
-      format: "PDF",
+      title: "Creative Works & Extended Essays",
+      description: "Extended essays, biographical accounts, AI personality profiles, the Taxpayer Cost Analysis ($32.9 million), witness testimonies, and the full creative body of published work. Every piece documented under duress.",
+      badge: "~76 Documents",
+      format: "ZIP · PDF Collection",
+      price: "$5 suggested",
+      url: "/archive-detonation",
+      available: true,
+      highlight: false,
+    },
+    {
+      title: "☢ The Complete Archive — Nuclear Option",
+      description: "Every document. Every gospel. Every forensic analysis. Every government submission. Every attached evidence file. 139+ documents plus 574 attached evidence files. As submitted to the ICC, UNHCR, and permanently sealed on the Bitcoin blockchain.",
+      badge: "713+ Total Documents",
+      format: "ZIP · Everything",
+      price: "$25 suggested",
+      url: "/archive-detonation",
+      available: true,
+      highlight: false,
+      nuclear: true,
     },
   ];
 
@@ -205,46 +232,62 @@ export default function Store() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-4">
               <div className="bg-primary/10 text-primary p-2 rounded-md">
                 <Download className="h-6 w-6" />
               </div>
-              <h2 className="text-2xl font-serif font-bold text-primary">Premium Digital Downloads</h2>
+              <h2 className="text-2xl font-serif font-bold text-primary">Archive Download Bundles</h2>
             </div>
+            <p className="text-muted-foreground text-sm mb-8 max-w-2xl">
+              Every bundle is a curated ZIP archive — gated by name, email, or a suggested PayID donation. No accounts. No subscriptions. Your conscience is the only requirement.
+            </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {digitalDownloads.map((product) => (
-                <Card key={product.title} className="h-full" data-testid={`card-download-${product.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className="flex items-start justify-between gap-2 mb-3">
-                      <div className="bg-primary/10 text-primary p-2 rounded-md">
-                        <FileText className="h-5 w-5" />
+              {digitalDownloads.map((product) => {
+                const isNuclear = (product as any).nuclear;
+                return (
+                  <Card
+                    key={product.title}
+                    className={`h-full relative overflow-hidden ${isNuclear ? "border-red-600/50 bg-red-950/10 md:col-span-2" : product.highlight ? "border-amber-500/50" : ""}`}
+                    data-testid={`card-download-${product.title.toLowerCase().replace(/[\s☢]+/g, '-')}`}
+                  >
+                    {product.highlight && (
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600" />
+                    )}
+                    {isNuclear && (
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-700 via-amber-500 to-red-700" />
+                    )}
+                    <CardContent className={`p-6 flex flex-col h-full ${isNuclear ? "md:flex-row md:items-center md:gap-8" : ""}`}>
+                      <div className={`flex-1 ${isNuclear ? "" : "flex flex-col h-full"}`}>
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <Badge variant="outline" className={`text-xs ${product.highlight ? "border-amber-500/50 text-amber-400" : isNuclear ? "border-red-500/50 text-red-400" : ""}`}>{product.badge}</Badge>
+                          <Badge variant="secondary" className="text-xs shrink-0">{product.format}</Badge>
+                        </div>
+                        <h3 className={`font-bold mb-2 ${isNuclear ? "text-xl text-red-300" : product.highlight ? "text-amber-300" : "text-primary"}`} data-testid={`text-download-title-${product.title.toLowerCase().replace(/[\s☢]+/g, '-')}`}>
+                          {product.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">
+                          {product.description}
+                        </p>
                       </div>
-                      <Badge variant="secondary" data-testid={`badge-format-${product.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                        {product.format}
-                      </Badge>
-                    </div>
-                    <Badge variant="outline" className="w-fit mb-3 text-xs">{product.badge}</Badge>
-                    <h3 className="font-bold text-primary mb-2" data-testid={`text-download-title-${product.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                      {product.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">
-                      {product.description}
-                    </p>
-                    <Button
-                      variant="outline"
-                      className="gap-2 w-full"
-                      asChild
-                      data-testid={`button-download-${product.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    >
-                      <span className="cursor-not-allowed opacity-60">
-                        <ShoppingBag className="h-4 w-4" />
-                        Gumroad — Coming Soon
-                      </span>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+                      <div className={`flex items-center gap-3 ${isNuclear ? "flex-col min-w-[180px] shrink-0" : "mt-auto"}`}>
+                        <div className={`text-xs font-mono text-zinc-400 ${isNuclear ? "text-center" : ""}`}>{product.price}</div>
+                        <Button
+                          className={`gap-2 w-full ${isNuclear ? "bg-red-700 hover:bg-red-600 text-white border-0" : product.highlight ? "bg-amber-600 hover:bg-amber-500 text-black border-0" : ""}`}
+                          variant={product.highlight || isNuclear ? "default" : "outline"}
+                          asChild
+                          data-testid={`button-download-${product.title.toLowerCase().replace(/[\s☢]+/g, '-')}`}
+                        >
+                          <a href={product.url}>
+                            <Download className="h-4 w-4" />
+                            {isNuclear ? "Download Everything" : "Download Bundle"}
+                          </a>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </motion.section>
 

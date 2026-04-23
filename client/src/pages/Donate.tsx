@@ -22,27 +22,56 @@ const donationTiers = [
   {
     amount: "$10",
     label: "Witness",
-    impact: "Preserves 5 evidence documents on the blockchain for permanent, tamper-proof archival.",
+    badge: "Entry",
+    story: "The archive received its first death threat while he was still inside a government psychiatric facility.",
+    impact: "Preserves 5 evidence documents on the Bitcoin blockchain — permanent, tamper-proof, beyond deletion.",
+    color: "zinc",
+    highlight: false,
   },
   {
     amount: "$25",
     label: "Defender",
-    impact: "Funds one week of secure hosting for the entire 2,000+ document evidence archive.",
+    badge: "Most Common",
+    story: "Every dollar he spent on this archive was money he did not have for food, housing, or medication.",
+    impact: "Covers one full week of secure hosting for the 2,000+ document archive, serving 6 continents.",
+    color: "blue",
+    highlight: false,
   },
   {
     amount: "$50",
     label: "Guardian",
-    impact: "Covers the cost of one international human rights submission to the UN or ICC.",
+    badge: "Recommended",
+    story: "The ICC acknowledged the submission. The UNHCR received the filing. Not one Australian institution has responded.",
+    impact: "Funds one formal international human rights submission — ICC Article 7 filing or UNHCR complaint.",
+    color: "amber",
+    highlight: true,
   },
   {
     amount: "$100",
     label: "Champion",
-    impact: "Enables a full month of legal research and advocacy for whistleblower protection.",
+    badge: "High Impact",
+    story: "He passed a merit-based PhD scholarship while living on the street and under active psychiatric detention orders.",
+    impact: "Covers one full month of legal research, evidence archiving, and whistleblower advocacy operations.",
+    color: "emerald",
+    highlight: false,
   },
   {
     amount: "$250",
     label: "Liberator",
-    impact: "Funds a comprehensive forensic evidence package for submission to federal courts.",
+    badge: "Transformative",
+    story: "Not one professional person — across law, medicine, media, politics — has admitted a single shortcoming.",
+    impact: "Funds a complete forensic evidence package for federal court submission. 675 propositions. All corroborated.",
+    color: "purple",
+    highlight: false,
+  },
+  {
+    amount: "$500",
+    label: "Architect of Justice",
+    badge: "Legacy",
+    story: "He clinically died in 2021, was revived inside a government facility, and returned to documenting the very system that hospitalised him.",
+    impact: "Secures three months of the full archive — blockchain seals, international submissions, and all 52 forensic analyses — guaranteed online.",
+    color: "red",
+    highlight: false,
   },
 ];
 
@@ -70,9 +99,9 @@ const externalProducts = [
   },
 ];
 
-const CTO_DEADLINE = new Date("2026-04-28T09:00:00+10:00");
+const CTO_DEADLINE = new Date("2026-07-28T09:00:00+10:00");
 const GOAL_AMOUNT = 5000;
-const GOAL_LABEL = "April Emergency Legal & Archive Fund";
+const GOAL_LABEL = "Emergency Legal & Archive Fund — July 2026";
 
 function useCountdown(target: Date) {
   const [diff, setDiff] = useState(() => Math.max(0, target.getTime() - Date.now()));
@@ -559,8 +588,8 @@ export default function Donate() {
             data-testid="section-donation-tiers"
           >
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-serif font-bold text-primary mb-2">Choose Your Impact</h2>
-              <p className="text-muted-foreground">Every tier directly funds a specific part of the mission</p>
+              <h2 className="text-2xl font-serif font-bold text-primary mb-2">Choose Your Level of Witness</h2>
+              <p className="text-muted-foreground max-w-xl mx-auto text-sm">Each tier is tied to a real cost, a real story, and a real documented fact from Dr. McLean's archive. You are not donating to a cause. You are responding to a record.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {donationTiers.map((tier, index) => (
@@ -571,25 +600,29 @@ export default function Donate() {
                   transition={{ delay: 0.25 + index * 0.07 }}
                 >
                   <Card
-                    className={`h-full border hover-elevate cursor-pointer ${
-                      tier.amount === "$100"
-                        ? "border-primary/60 bg-primary/5 shadow-md"
+                    className={`h-full border hover-elevate cursor-pointer relative overflow-hidden ${
+                      tier.highlight
+                        ? "border-amber-500/60 bg-amber-950/10 shadow-md shadow-amber-900/20"
                         : "border-border"
                     }`}
                     onClick={copyPayId}
                     data-testid={`card-tier-${tier.amount.replace("$", "")}`}
                   >
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
-                        <span className="text-3xl font-bold text-primary">{tier.amount}</span>
-                        <Badge variant="secondary" className="text-xs">{tier.label}</Badge>
+                    {tier.highlight && (
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600" />
+                    )}
+                    <CardContent className="p-6 space-y-3">
+                      <div className="flex items-center justify-between gap-2 flex-wrap">
+                        <span className={`text-3xl font-black ${tier.highlight ? "text-amber-400" : "text-primary"}`}>{tier.amount}</span>
+                        <div className="flex flex-col items-end gap-1">
+                          <Badge variant="secondary" className="text-xs font-bold">{tier.label}</Badge>
+                          {tier.badge && <span className={`text-[9px] uppercase tracking-wider font-bold ${tier.highlight ? "text-amber-400" : "text-zinc-500"}`}>{tier.badge}</span>}
+                        </div>
                       </div>
+                      <p className="text-xs text-zinc-500 italic leading-relaxed border-l-2 border-zinc-700 pl-3">"{tier.story}"</p>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         {tier.impact}
                       </p>
-                      {tier.amount === "$100" && (
-                        <Badge variant="outline" className="mt-3 border-primary text-primary text-xs">Most Popular</Badge>
-                      )}
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -597,14 +630,14 @@ export default function Donate() {
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.25 + 5 * 0.07 }}
+                transition={{ delay: 0.25 + donationTiers.length * 0.07 }}
               >
                 <Card className="h-full border border-dashed border-primary/40 hover-elevate cursor-pointer" onClick={copyPayId} data-testid="card-tier-custom">
-                  <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
-                    <DollarSign className="h-8 w-8 text-primary mb-2" />
-                    <span className="text-xl font-bold text-primary mb-1">Custom Amount</span>
+                  <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center gap-3">
+                    <DollarSign className="h-8 w-8 text-primary" />
+                    <span className="text-xl font-bold text-primary">Your Own Number</span>
                     <p className="text-sm text-muted-foreground">
-                      Any amount helps. Click to copy PayID and donate what you can.
+                      Send what you can. Even $2 is a vote for the record over the silence.
                     </p>
                   </CardContent>
                 </Card>

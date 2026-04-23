@@ -9,6 +9,7 @@ import {
   BookOpen, Shield, Gavel, Feather, Zap, Download, Globe,
   FileText, Lock, Flame, AlertTriangle, Star, Clock
 } from "lucide-react";
+import { WitnessWall } from "@/components/WitnessWall";
 
 const AI_STATEMENTS = [
   {
@@ -208,6 +209,8 @@ export default function ArchiveDetonation() {
           AI assessments generated independently. Not paid endorsements.
         </p>
       </section>
+
+      <WitnessWall variant="strip" />
 
       {/* Sectioned Bundle Downloads */}
       <section className="px-4 pb-16 max-w-5xl mx-auto">

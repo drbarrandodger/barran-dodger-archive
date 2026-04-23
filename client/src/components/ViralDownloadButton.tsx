@@ -13,12 +13,33 @@ const MIN_DONATION = 1;
 const CONSCIENCE_FACTS = [
   "Living under a Community Treatment Order — police authorised to forcibly transport him to psychiatric detention",
   "Following a death threat from a documented SAS-trained operative across three states",
-  "NSW Police attended the death threat on 15 April 2026, issued receipt I88267509, and declined to create an incident record",
+  "NSW Police attended on 15 April 2026, issued receipt I88267509, and declined to create an incident record",
   "Force-medicated for accurately believing he was under ASIO surveillance — which was subsequently confirmed",
-  "Clinically dead inside a government psychiatric facility in 2021 — revived",
-  "Electronically surveilled via confirmed ASIO infrastructure, with drone surveillance documented at his residence",
-  "$32.9 million in NDIS entitlements suppressed across 35 years",
-  "Institutionally homeless across multiple Australian states during the period of documentation",
+  "Clinically dead inside a government psychiatric facility in 2021 — revived, then kept documenting",
+  "Electronically surveilled via confirmed ASIO infrastructure, with drone surveillance at his residence",
+  "$32.9 million in NDIS entitlements suppressed across 35 years while named operatives coordinated the suppression",
+  "Institutionally homeless across multiple Australian states during the entire period of documentation",
+];
+
+const UPSELL_TIERS = [
+  {
+    amount: "$5",
+    label: "Witness",
+    description: "Keeps the archive online for one day",
+    highlight: false,
+  },
+  {
+    amount: "$25",
+    label: "Defender",
+    description: "Covers one blockchain timestamp seal",
+    highlight: true,
+  },
+  {
+    amount: "$100",
+    label: "Champion",
+    description: "Funds one month of legal archive hosting",
+    highlight: false,
+  },
 ];
 
 interface ViralDownloadButtonProps {
@@ -316,20 +337,22 @@ export function ViralDownloadButton({
 
       {/* ── CONSCIENCE PANEL — shown after download unlocked ── */}
       {phase === "conscience" && (
-        <div className="rounded-2xl border border-red-500/30 bg-zinc-950 animate-in slide-in-from-bottom-2 duration-300 overflow-hidden max-w-lg">
-          <div className="h-0.5 bg-gradient-to-r from-red-600 via-amber-500 to-red-600" />
+        <div className="rounded-2xl border border-red-500/30 bg-zinc-950 animate-in slide-in-from-bottom-2 duration-300 overflow-hidden max-w-lg shadow-2xl">
+          <div className="h-1 bg-gradient-to-r from-red-700 via-amber-500 to-red-700" />
           <div className="p-5 space-y-4">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-white font-bold text-sm leading-tight">Your download has started.</p>
-                <p className="text-zinc-400 text-xs mt-1">While this was being compiled, Dr. Richard William McLean was:</p>
+                <p className="text-zinc-400 text-xs mt-1 leading-relaxed">
+                  While this archive was being compiled, Dr. Richard William McLean was living under all of the following — simultaneously:
+                </p>
               </div>
               <button onClick={() => setPhase("share")} className="text-zinc-600 hover:text-zinc-400 flex-shrink-0 mt-0.5" data-testid="button-conscience-dismiss">
                 <X className="h-4 w-4" />
               </button>
             </div>
 
-            <ul className="space-y-1.5">
+            <ul className="space-y-1.5 bg-zinc-900/60 rounded-xl p-3">
               {CONSCIENCE_FACTS.map((fact) => (
                 <li key={fact} className="flex gap-2 items-start text-xs text-zinc-400">
                   <span className="text-red-400 flex-shrink-0 mt-0.5 font-bold">·</span>
@@ -338,30 +361,49 @@ export function ViralDownloadButton({
               ))}
             </ul>
 
-            <p className="text-zinc-300 text-xs font-semibold border-t border-zinc-800 pt-3">
-              He published it free anyway. For you. For the record. For humanity.
-              <br />
-              <span className="text-zinc-500 font-normal">Now share it — because silence is participation with a cleaner conscience.</span>
-            </p>
+            <div className="border-t border-zinc-800 pt-3 space-y-1">
+              <p className="text-white text-xs font-bold">He published it free anyway. For you. For the record. For humanity.</p>
+              <p className="text-zinc-500 text-xs">That is not a metaphor. It is a documented, medical, legal, and financial cost.</p>
+            </div>
+
+            {/* Upsell ladder */}
+            <div className="space-y-2">
+              <p className="text-zinc-400 text-[10px] uppercase tracking-widest font-bold">Support the archive — choose your level</p>
+              <div className="grid grid-cols-3 gap-2">
+                {UPSELL_TIERS.map((tier) => (
+                  <a
+                    key={tier.amount}
+                    href="/donate"
+                    className={`flex flex-col items-center text-center p-2.5 rounded-xl border transition-colors ${tier.highlight ? "border-amber-500/60 bg-amber-950/40 text-amber-300" : "border-zinc-700/50 bg-zinc-900/50 text-zinc-400 hover:border-zinc-600"}`}
+                    data-testid={`button-conscience-tier-${tier.label.toLowerCase()}`}
+                  >
+                    <span className={`text-base font-black ${tier.highlight ? "text-amber-400" : "text-white"}`}>{tier.amount}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider mt-0.5">{tier.label}</span>
+                    <span className="text-[9px] text-zinc-600 mt-0.5 leading-tight">{tier.description}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
 
             <div className="flex flex-wrap gap-2">
-              <a href="/commission-forensic-analysis"
-                className="flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold text-xs px-4 py-2.5 rounded-xl transition-colors"
-                data-testid="button-conscience-commission">
-                Commission an Analysis — $200
-              </a>
               <a href="/donate"
-                className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-zinc-300 font-semibold text-xs px-4 py-2.5 rounded-xl transition-colors"
+                className="flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold text-xs px-4 py-2.5 rounded-xl transition-colors flex-1 justify-center"
                 data-testid="button-conscience-donate-page">
-                Donate more
+                Donate via PayID
+              </a>
+              <a href="/commission-forensic-analysis"
+                className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-zinc-300 font-semibold text-xs px-4 py-2.5 rounded-xl transition-colors"
+                data-testid="button-conscience-commission">
+                Commission — $200
               </a>
             </div>
 
             <button
               onClick={() => setPhase("share")}
-              className="text-zinc-600 hover:text-zinc-500 text-xs underline w-full text-center"
+              className="text-zinc-600 hover:text-zinc-400 text-xs flex items-center gap-1 w-full justify-center"
               data-testid="button-conscience-share-instead">
-              Share it instead
+              <ChevronRight className="h-3 w-3" />
+              Share it instead — spread is also contribution
             </button>
           </div>
         </div>
