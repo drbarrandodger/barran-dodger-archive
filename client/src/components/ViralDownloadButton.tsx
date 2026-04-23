@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Download, Check, Link2, X, Copy, Mail, CreditCard, Lock, Unlock, User, ChevronRight } from "lucide-react";
+import { Download, Check, Link2, X, Copy, Mail, CreditCard, Lock, Unlock, User, ChevronRight, AlertTriangle } from "lucide-react";
 import { SiX, SiWhatsapp, SiTelegram, SiFacebook } from "react-icons/si";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient, apiRequest } from "@/lib/queryClient";
@@ -23,21 +23,21 @@ const CONSCIENCE_FACTS = [
 
 const UPSELL_TIERS = [
   {
-    amount: "$5",
-    label: "Witness",
-    description: "Keeps the archive online for one day",
+    amount: "$250",
+    label: "Liberator",
+    description: "Funds a full federal court submission",
     highlight: false,
   },
   {
-    amount: "$25",
-    label: "Defender",
-    description: "Covers one blockchain timestamp seal",
+    amount: "$50",
+    label: "Guardian",
+    description: "Keeps the archive live for one month",
     highlight: true,
   },
   {
-    amount: "$100",
-    label: "Champion",
-    description: "Funds one month of legal archive hosting",
+    amount: "$10",
+    label: "Witness",
+    description: "Seals one document on the blockchain",
     highlight: false,
   },
 ];
@@ -195,27 +195,33 @@ export function ViralDownloadButton({
 
       {/* ── DOWNLOAD GATE MODAL ── */}
       {phase === "gate" && (
-        <div className="rounded-2xl border border-amber-500/40 bg-zinc-950 animate-in slide-in-from-bottom-2 duration-300 overflow-hidden max-w-lg shadow-2xl">
-          <div className="h-1 bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600" />
+        <div className="rounded-2xl border-2 border-amber-600/60 animate-in slide-in-from-bottom-2 duration-300 overflow-hidden max-w-lg shadow-2xl shadow-amber-900/40" style={{ background: "#2c1404" }}>
+          <div className="h-1.5 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
+
+          {/* Urgency banner */}
+          <div className="bg-red-950/80 border-b border-red-700/40 px-4 py-2 flex items-center gap-2">
+            <AlertTriangle className="h-3.5 w-3.5 text-red-400 flex-shrink-0" />
+            <p className="text-red-300 text-[11px] font-bold">This archive operates without government funding — donations are its only lifeline.</p>
+          </div>
 
           {/* Header */}
-          <div className="flex items-start justify-between gap-3 px-5 pt-5 pb-3">
+          <div className="flex items-start justify-between gap-3 px-5 pt-4 pb-3">
             <div className="flex items-center gap-2">
               <Lock className="h-4 w-4 text-amber-400 flex-shrink-0" />
               <div>
-                <p className="text-white font-bold text-sm">This document is gated</p>
-                <p className="text-zinc-500 text-xs mt-0.5">
-                  {documentTitle ? `"${documentTitle}"` : "This testimony"} — built under documented persecution. To access it, choose one option below.
+                <p className="text-amber-200 font-bold text-sm">Access this document — choose one option below</p>
+                <p className="text-amber-600/90 text-xs mt-0.5">
+                  {documentTitle ? `"${documentTitle}"` : "This testimony"} — compiled free while its author lived under death threat, forced medication &amp; homelessness.
                 </p>
               </div>
             </div>
-            <button onClick={() => setPhase("idle")} className="text-zinc-600 hover:text-zinc-400 flex-shrink-0" data-testid="button-gate-close">
+            <button onClick={() => setPhase("idle")} className="text-amber-800 hover:text-amber-600 flex-shrink-0 mt-0.5" data-testid="button-gate-close">
               <X className="h-4 w-4" />
             </button>
           </div>
 
           {/* Tabs */}
-          <div className="flex border-b border-zinc-800 mx-5">
+          <div className="flex border-b border-amber-800/50 mx-5">
             <button
               onClick={() => setGateTab("pay")}
               className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors ${gateTab === "pay" ? "border-amber-500 text-amber-400" : "border-transparent text-zinc-500 hover:text-zinc-300"}`}
@@ -255,7 +261,7 @@ export function ViralDownloadButton({
                 <p className="text-zinc-600 text-[10px] mt-1.5 text-center">Any amount unlocks the download. Every dollar matters.</p>
               </div>
 
-              <div className="bg-zinc-900 border border-amber-500/20 rounded-xl p-4 space-y-3">
+              <div className="border border-amber-600/40 rounded-xl p-4 space-y-3" style={{ background: "#1c0c02" }}>
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <p className="text-zinc-500 text-[10px] uppercase tracking-widest font-bold">PayID</p>
@@ -309,18 +315,20 @@ export function ViralDownloadButton({
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Your full name"
-                    className="w-full bg-zinc-800 border border-zinc-700 rounded-xl pl-9 pr-4 py-2.5 text-white text-sm focus:outline-none focus:border-primary placeholder:text-zinc-600"
+                    className="w-full border border-amber-700/40 rounded-xl pl-9 pr-4 py-2.5 text-amber-100 text-sm focus:outline-none focus:border-amber-500 placeholder:text-amber-800"
+                    style={{ background: "#1c0c02" }}
                     data-testid="input-gate-name"
                   />
                 </div>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-zinc-500" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-amber-700" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="your@email.com"
-                    className="w-full bg-zinc-800 border border-zinc-700 rounded-xl pl-9 pr-4 py-2.5 text-white text-sm focus:outline-none focus:border-primary placeholder:text-zinc-600"
+                    className="w-full border border-amber-700/40 rounded-xl pl-9 pr-4 py-2.5 text-amber-100 text-sm focus:outline-none focus:border-amber-500 placeholder:text-amber-800"
+                    style={{ background: "#1c0c02" }}
                     data-testid="input-gate-email"
                   />
                 </div>
@@ -352,7 +360,7 @@ export function ViralDownloadButton({
 
       {/* ── CONSCIENCE PANEL — shown after download unlocked ── */}
       {phase === "conscience" && (
-        <div className="rounded-2xl border border-red-500/30 bg-zinc-950 animate-in slide-in-from-bottom-2 duration-300 overflow-hidden max-w-lg shadow-2xl">
+        <div className="rounded-2xl border border-red-600/50 animate-in slide-in-from-bottom-2 duration-300 overflow-hidden max-w-lg shadow-2xl shadow-red-900/30" style={{ background: "#2c1404" }}>
           <div className="h-1 bg-gradient-to-r from-red-700 via-amber-500 to-red-700" />
           <div className="p-5 space-y-4">
             <div className="flex items-start justify-between gap-3">
@@ -367,7 +375,7 @@ export function ViralDownloadButton({
               </button>
             </div>
 
-            <ul className="space-y-1.5 bg-zinc-900/60 rounded-xl p-3">
+            <ul className="space-y-1.5 rounded-xl p-3 border border-amber-900/40" style={{ background: "#1c0c02" }}>
               {CONSCIENCE_FACTS.map((fact) => (
                 <li key={fact} className="flex gap-2 items-start text-xs text-zinc-400">
                   <span className="text-red-400 flex-shrink-0 mt-0.5 font-bold">·</span>

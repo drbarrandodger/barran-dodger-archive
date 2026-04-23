@@ -11,6 +11,22 @@ export default {
         sm: ".1875rem", /* 3px */
       },
       colors: {
+        // ── ZINC REMAPPED: cold grey → warm amber-brown ──────────────────────
+        // Every bg-zinc-*, text-zinc-*, border-zinc-* across all 150+ pages
+        // automatically becomes warm amber instead of cold grey.
+        zinc: {
+          50:  '#faecd0',  // warm near-white cream
+          100: '#f0d8b0',  // warm light
+          200: '#ddba88',  // warm off-cream
+          300: '#c49462',  // warm tan
+          400: '#be8050',  // warm body text — readable on dark amber
+          500: '#8a5830',  // warm mid-dark text
+          600: '#6a3c18',  // warm dark
+          700: '#4a2410',  // dark warm amber
+          800: '#3a1c08',  // elevated panel bg — visible above page
+          900: '#2c1404',  // deep panel bg
+          950: '#1c0c02',  // darkest amber shadow
+        },
         // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",

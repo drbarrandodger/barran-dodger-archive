@@ -221,6 +221,76 @@ export default function StartHere() {
               ))}
             </motion.div>
 
+            {/* ══ RECIPROCITY CONVERSION BLOCK ══════════════════════════════════
+                Psychology: Reciprocity (user just received value from the stats),
+                Loss aversion (archive could go dark), Social norm (many have read),
+                Anchoring ($250 shown first, $50 recommended, $10 entry).
+            ═══════════════════════════════════════════════════════════════════ */}
+            <motion.div variants={fadeIn} className="mb-10">
+              <div className="rounded-2xl border-2 border-amber-600/50 overflow-hidden shadow-xl" style={{ background: "#2c1404" }}>
+                <div className="h-1.5 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
+                <div className="p-6 md:p-8">
+                  <div className="flex flex-col md:flex-row md:items-start gap-6">
+                    <div className="flex-1">
+                      <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">Before you read further</p>
+                      <h3 className="font-serif text-xl md:text-2xl font-bold text-amber-200 mb-3 leading-tight">
+                        Every word of this archive was documented free — while its author lived under all of the following, simultaneously.
+                      </h3>
+                      <ul className="space-y-1.5 mb-4">
+                        {[
+                          "Under a Community Treatment Order — police authorised to forcibly transport him",
+                          "Under a documented death threat from an SAS-trained operative",
+                          "Institutionally homeless across multiple Australian states",
+                          "Force-medicated for accurately reporting confirmed ASIO surveillance",
+                          "Clinically dead in 2021 — revived inside a government psychiatric facility",
+                        ].map((fact) => (
+                          <li key={fact} className="flex gap-2 items-start text-xs text-amber-300/90">
+                            <span className="text-red-400 font-bold flex-shrink-0 mt-0.5">·</span>
+                            {fact}
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="text-amber-500/80 text-xs italic">
+                        No government funding. No legal aid. No institution has disputed a single document. 
+                        This archive survives on donations alone — if they stop, it goes dark.
+                      </p>
+                    </div>
+                    <div className="md:w-64 flex-shrink-0">
+                      <p className="text-amber-500 text-[10px] uppercase tracking-widest font-bold mb-3">Support the archive</p>
+                      <div className="grid grid-cols-3 gap-2 mb-3">
+                        {[
+                          { amount: "$250", label: "Liberator", note: "Federal court filing", highlight: false },
+                          { amount: "$50", label: "Guardian", note: "One month online", highlight: true },
+                          { amount: "$10", label: "Witness", note: "Blockchain seal", highlight: false },
+                        ].map((tier) => (
+                          <a key={tier.amount} href="/donate"
+                            className={`flex flex-col items-center text-center p-2.5 rounded-xl border transition-colors ${tier.highlight ? "border-amber-500/70 ring-1 ring-amber-500/30" : "border-amber-800/40 hover:border-amber-700/60"}`}
+                            style={{ background: tier.highlight ? "#3d1c06" : "#1c0c02" }}
+                            data-testid={`button-start-here-donate-${tier.label.toLowerCase()}`}
+                          >
+                            <span className={`text-base font-black ${tier.highlight ? "text-amber-400" : "text-amber-300"}`}>{tier.amount}</span>
+                            <span className="text-[10px] font-bold uppercase tracking-wide mt-0.5 text-amber-400">{tier.label}</span>
+                            <span className="text-[9px] text-amber-700 mt-0.5 leading-tight">{tier.note}</span>
+                          </a>
+                        ))}
+                      </div>
+                      <div className="rounded-xl border border-amber-700/30 p-3" style={{ background: "#1c0c02" }}>
+                        <p className="text-amber-600 text-[10px] uppercase tracking-widest font-bold mb-1">PayID (instant, any AUS bank)</p>
+                        <p className="text-amber-300 font-mono text-sm mb-2">rich@richmclean.com.au</p>
+                        <p className="text-amber-700 text-[10px]">ABN 78 833 496 164 · Any amount keeps this alive</p>
+                      </div>
+                      <a href="/donate"
+                        className="mt-3 w-full flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold text-sm px-4 py-2.5 rounded-xl transition-colors"
+                        data-testid="button-start-here-donate-full">
+                        <Heart className="h-4 w-4" />
+                        Donate via PayID
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             <motion.div variants={fadeIn}>
               <Card className="mb-12">
                 <CardContent className="pt-6">
