@@ -188,6 +188,7 @@ import BitcoinProof from "@/pages/BitcoinProof";
 import HolyReckoning from "@/pages/HolyReckoning";
 import AbleCareMurderThreatCall from "@/pages/AbleCareMurderThreatCall";
 import CtoBreachAppointment from "@/pages/CtoBreachAppointment";
+import CtoResponseLetter from "@/pages/CtoResponseLetter";
 import DyingOfShame from "@/pages/DyingOfShame";
 import { GodsGraceBarranDodger } from "@/pages/GodsGraceBarranDodger";
 import { BlockchainManifest } from "@/pages/BlockchainManifest";
@@ -497,6 +498,9 @@ function Router() {
         <Route path="/cto-breach-appointment" component={CtoBreachAppointment} />
         <Route path="/community-treatment-order-breach" component={CtoBreachAppointment} />
         <Route path="/mental-health-act-political-weapon" component={CtoBreachAppointment} />
+        <Route path="/cto-response-letter" component={CtoResponseLetter} />
+        <Route path="/cto-formal-response" component={CtoResponseLetter} />
+        <Route path="/mental-health-response-letter" component={CtoResponseLetter} />
         <Route path="/they-are-dying-of-shame" component={DyingOfShame} />
         <Route path="/dying-of-shame-forensic-analysis" component={DyingOfShame} />
         <Route path="/forensic-analysis-63" component={DyingOfShame} />

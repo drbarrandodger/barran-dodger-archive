@@ -217,12 +217,20 @@ export default function CtoBreachAppointment() {
                   data-testid="btn-download-cto-pdf"
                 />
                 <a
+                  href="/cto-response-letter"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-amber-600 hover:bg-amber-500 rounded-xl text-sm text-black font-bold transition-colors"
+                  data-testid="link-cto-response"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Read &amp; Copy the Response Letter
+                </a>
+                <a
                   href="/ablecare-murder-threat-call"
                   className="inline-flex items-center gap-2 px-5 py-3 bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 rounded-xl text-sm text-zinc-300 font-semibold transition-colors"
                   data-testid="link-ablecare-call"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  Read the AbleCare Call Transcript
+                  AbleCare Call Transcript
                 </a>
               </div>
               <p className="text-xs text-zinc-500 mt-1">
