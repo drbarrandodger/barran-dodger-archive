@@ -2028,10 +2028,10 @@ export async function registerRoutes(
       const { getUncachableStripeClient } = await import('./stripeClient');
       const stripe = await getUncachableStripeClient();
       const intent = await stripe.paymentIntents.create({
-        amount: 100,
+        amount: 333,
         currency: 'aud',
         automatic_payment_methods: { enabled: true },
-        metadata: { source: 'barrandodger_archive_access', abn: '78833496164' },
+        metadata: { source: 'barrandodger_archive_access', abn: '78833496164', angel_number: '333' },
       });
       res.json({ clientSecret: intent.client_secret });
     } catch (err: any) {

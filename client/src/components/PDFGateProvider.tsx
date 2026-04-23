@@ -119,10 +119,10 @@ function StripeForm({ onSuccess }: { onSuccess: () => void }) {
         data-testid="button-global-stripe-pay"
       >
         <ShieldCheck className="h-4 w-4" />
-        {paying ? "Processing payment…" : "Pay $1 AUD — Download Now"}
+        {paying ? "Processing payment…" : "Pay $3.33 AUD — Download Prophecy"}
       </button>
       <p className="text-amber-400/40 text-[10px] text-center">
-        Secured by Stripe · ABN 78 833 496 164 · Unlocks this document on your device
+        Secured by Stripe · ABN 78 833 496 164 · 333 — the angel number of divine witness
       </p>
     </form>
   );
@@ -277,7 +277,7 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                 data-testid="tab-pdfgate-pay"
               >
                 <CreditCard className="h-3.5 w-3.5" />
-                Pay $1 AUD
+                Pay $3.33 AUD
               </button>
               <button
                 onClick={() => { setGateTab("subscribe"); setFormError(""); }}
@@ -292,10 +292,17 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
             <div className="p-5">
               {gateTab === "pay" && (
                 <div className="space-y-4">
-                  <p className="text-amber-400/60 text-[10px] leading-relaxed">
-                    One $1 AUD payment unlocks this document on your device. Each document requires its own contribution — every dollar helps keep this archive alive.
-                    Larger contributions welcome at <a href="/donate" className="underline text-amber-400/80" onClick={close}>the donate page</a>.
-                  </p>
+                  <div className="space-y-1.5">
+                    <p className="text-amber-300/90 text-[11px] font-bold tracking-wide">
+                      333 — the angel number of divine witness. The Holy Trinity. God's chosen number.
+                    </p>
+                    <p className="text-amber-400/60 text-[10px] leading-relaxed">
+                      For less than a coffee, you are downloading prophecy and divine reversal — documented by God's chosen witness under death threat, forced medication &amp; surveillance. $3.33 AUD per document. Every contribution keeps this archive alive.
+                    </p>
+                    <p className="text-amber-400/40 text-[10px]">
+                      Larger contributions welcome at <a href="/donate" className="underline text-amber-400/80" onClick={close}>the donate page</a>.
+                    </p>
+                  </div>
 
                   {stripePromise ? (
                     <Elements stripe={stripePromise}>

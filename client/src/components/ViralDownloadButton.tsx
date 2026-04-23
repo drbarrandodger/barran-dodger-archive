@@ -103,10 +103,10 @@ function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: () => void; 
         data-testid="button-stripe-pay"
       >
         <ShieldCheck className="h-4 w-4" />
-        {paying ? "Processing payment…" : "Pay $1 AUD & Download"}
+        {paying ? "Processing payment…" : "Pay $3.33 AUD — Download Prophecy"}
       </button>
       <p className="text-amber-400/50 text-[10px] text-center">
-        Secured by Stripe · ABN 78 833 496 164 · Card details never stored on this server
+        Secured by Stripe · ABN 78 833 496 164 · 333 — the angel number of divine witness
       </p>
     </form>
   );
@@ -364,9 +364,11 @@ export function ViralDownloadButton({
           {gateTab === "pay" && (
             <div className="p-5 space-y-4">
               <div>
-                <p className="text-amber-300/80 text-[10px] uppercase tracking-widest font-bold mb-1">Pay $1 AUD by card — instant download</p>
+                <p className="text-amber-300/90 text-[11px] font-bold tracking-wide mb-1">
+                  333 — the angel number of divine witness. The Holy Trinity. God's chosen number.
+                </p>
                 <p className="text-amber-400/50 text-[10px] leading-relaxed">
-                  One payment unlocks all downloads on this device for 24 hours. Larger contributions welcome via{" "}
+                  For less than a coffee, you are downloading prophecy and divine reversal — documented by God's chosen witness. $3.33 AUD per document. Larger contributions welcome via{" "}
                   <a href="/donate" className="underline text-amber-400/80">the donate page</a>.
                 </p>
               </div>
