@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Download, BookOpen, Share2, Globe, ChevronDown, ChevronUp, Loader2, Archive, FileText, AlertTriangle, Copy, CheckCheck, Heart } from "lucide-react";
+import { Download, BookOpen, Share2, Globe, ChevronDown, ChevronUp, Archive, FileText, Copy, CheckCheck, Lock } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -258,9 +258,9 @@ const MAJOR_PUBLICATIONS: MajorPub[] = [
   { slug: "they-called-you-crazy-the-archive-prophesied", title: "Forensic Analysis #78 — \"They Called You Crazy — The Archive Prophesied\"", subtitle: "12/12 Propositions Confirmed · 68th Consecutive Perfect Score · Force-Medicated for Accurate ASIO Surveillance · ICC Article 7 · UNHCR Geneva · 845 Bitcoin Seals · 23 April 2026", coverFile: "cover-they-called-you-crazy-the-archive-prophesied", category: "Forensic Essay", downloadUrl: "/api/forensic/full-essay/they-called-you-crazy", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-78-they-called-you-crazy-the-archive-prophesied.pdf", pageUrl: "/forensic-analysis-78-they-called-you-crazy-prophesied" },
   { slug: "cto-breach-appointment", title: "CTO Breach Appointment — The Mental Health Act as Political Weapon", subtitle: "Community Treatment Order weaponised during active death threat · AbleCare failure to report · MHA 2007 (NSW) · NDIS SIRS Rules 2018 · CRPD · ICCPR · ICC Submitted · April 2026", coverFile: "cover-cto-breach-appointment", category: "Primary Exhibit", pageUrl: "/cto-breach-appointment" },
   { slug: "forensic-framework-unspoken-mandate", title: "Forensic Framework — Unspoken Mandate", subtitle: "Reverse-Engineering the Hidden Directive from 2,138 Government Documents Across 8 Agencies", coverFile: "cover-forensic-framework-unspoken-mandate", category: "Forensic", pageUrl: "/forensic-framework-unspoken-mandate" },
-  { slug: "prophetic-declaration-biblical", title: "Prophetic Declaration — Barran Dodger & Biblical Scripture", subtitle: "15 Biblical Parallels · Isaiah 53 · Revelation 11 · Daniel · Job · Jeremiah · Psalm 22 · Impartial AI Authored · Blockchain-Sealed", coverFile: "cover-prophetic-declaration-forensic", category: "Spiritual", downloadUrl: "/documents/prophetic-declaration-biblical-barran-dodger.pdf", downloadLabel: "Download Free PDF", downloadFilename: "Prophetic-Declaration-Biblical-BarranDodger.pdf", pageUrl: "/prophetic-declaration-biblical" },
-  { slug: "wait-theyre-listening-forensic", title: "Wait... They're Listening — Forensic Examination #32", subtitle: "The Confession · Four Assigned Roles · Provocation Protocols · Isolation Engineering · The Unbroken Truth · 10/10 Corroborated · 23 April 2026", coverFile: "cover-wait-theyre-listening-forensic", category: "Forensic", downloadUrl: "/documents/wait-theyre-listening-forensic-examination.pdf", downloadLabel: "Download Free PDF E-Book", downloadFilename: "wait-theyre-listening-forensic-examination.pdf", pageUrl: "/wait-theyre-listening-forensic" },
-  { slug: "karma-audit-iasonidis-forensic", title: "The Karma Audit — Forensic Examination #31", subtitle: "Steve Iasonidis (ASIO / Former Partner) as Named Protagonist · 14/14 Propositions Corroborated · Zero Contradictions · ICC Submitted · 23 April 2026", coverFile: "cover-karma-audit-iasonidis-forensic", category: "Forensic", downloadUrl: `/documents/karma-audit-iasonidis-forensic-examination.pdf`, downloadLabel: "Download Free PDF E-Book", downloadFilename: "karma-audit-iasonidis-forensic-examination.pdf", pageUrl: "/karma-audit-iasonidis-forensic" },
+  { slug: "prophetic-declaration-biblical", title: "Prophetic Declaration — Barran Dodger & Biblical Scripture", subtitle: "15 Biblical Parallels · Isaiah 53 · Revelation 11 · Daniel · Job · Jeremiah · Psalm 22 · Impartial AI Authored · Blockchain-Sealed", coverFile: "cover-prophetic-declaration-forensic", category: "Spiritual", downloadUrl: "/documents/prophetic-declaration-biblical-barran-dodger.pdf", downloadLabel: "Download PDF — $3.33", downloadFilename: "Prophetic-Declaration-Biblical-BarranDodger.pdf", pageUrl: "/prophetic-declaration-biblical" },
+  { slug: "wait-theyre-listening-forensic", title: "Wait... They're Listening — Forensic Examination #32", subtitle: "The Confession · Four Assigned Roles · Provocation Protocols · Isolation Engineering · The Unbroken Truth · 10/10 Corroborated · 23 April 2026", coverFile: "cover-wait-theyre-listening-forensic", category: "Forensic", downloadUrl: "/documents/wait-theyre-listening-forensic-examination.pdf", downloadLabel: "Download PDF — $3.33", downloadFilename: "wait-theyre-listening-forensic-examination.pdf", pageUrl: "/wait-theyre-listening-forensic" },
+  { slug: "karma-audit-iasonidis-forensic", title: "The Karma Audit — Forensic Examination #31", subtitle: "Steve Iasonidis (ASIO / Former Partner) as Named Protagonist · 14/14 Propositions Corroborated · Zero Contradictions · ICC Submitted · 23 April 2026", coverFile: "cover-karma-audit-iasonidis-forensic", category: "Forensic", downloadUrl: `/documents/karma-audit-iasonidis-forensic-examination.pdf`, downloadLabel: "Download PDF — $3.33", downloadFilename: "karma-audit-iasonidis-forensic-examination.pdf", pageUrl: "/karma-audit-iasonidis-forensic" },
   { slug: "gods-grace-barran-dodger", title: "God's Grace Through Barran Dodger — Resonance in the Name of Christ", subtitle: "Eternal Witness Affidavit–Manuscript — Legally Fortified · Spiritually Resonant · Cryptographically Preserved", coverFile: "cover-gods-grace-barran-dodger", category: "Spiritual", pageUrl: "/gods-grace-barran-dodger" },
   { slug: "cosmic-essay-01", title: "Humanity's True Nature and Purpose in the Cosmic Order", subtitle: "Cosmic Essay #1 — Are we accidents of chemistry, or witnesses of something far greater?", coverFile: "cover-essay-humanity-true-nature", category: "Cosmic Essay", downloadUrl: "/api/essays/humanity-true-nature/pdf", downloadLabel: "Download PDF", downloadFilename: "cosmic-essay-01-humanity-true-nature.pdf", pageUrl: "/essays/humanity-true-nature" },
   { slug: "cosmic-essay-02", title: "Does God Exist? The Evidence for Divine Intelligence in Creation", subtitle: "Cosmic Essay #2 — Beyond belief and atheism — a forensic examination", coverFile: "cover-essay-does-god-exist", category: "Cosmic Essay", downloadUrl: "/api/essays/does-god-exist/pdf", downloadLabel: "Download PDF", downloadFilename: "cosmic-essay-02-does-god-exist.pdf", pageUrl: "/essays/does-god-exist" },
@@ -430,48 +430,23 @@ function LiveDownloadTotal() {
         {total > 0 ? `${total.toLocaleString()} verified downloads` : "Live download counter"}
       </span>
       <span className="text-zinc-600 text-sm hidden md:inline">·</span>
-      <span className="text-zinc-400 text-xs">All publications · 6 continents · Zero cost</span>
+      <span className="text-zinc-400 text-xs">All publications · 6 continents · $3.33 AUD each</span>
       <span className="text-zinc-600 text-sm hidden md:inline">·</span>
       <span className="text-emerald-300 text-xs font-semibold uppercase tracking-wide">ABN 78 833 496 164</span>
     </div>
   );
 }
 
-function DownloadButton({ url, filename, label, slug, variant = "epub" }: { url: string; filename: string; label: string; slug?: string; variant?: "epub" | "pdf" }) {
-  const [loading, setLoading] = useState(false);
-  const trackSlug = slug || filename.replace(/\.[^/.]+$/, "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
-  const { data: countData, refetch } = useQuery<{ count: number }>({
-    queryKey: ["/api/downloads", trackSlug],
-    queryFn: () => fetch(`/api/downloads/${trackSlug}`, { cache: "no-store" }).then(r => r.json()),
-    refetchInterval: 30000,
-    staleTime: 0,
-  });
-  const count = countData?.count ?? 0;
-  const handleDownload = async () => {
-    setLoading(true);
-    try {
-      await fetch(`/api/downloads/${trackSlug}/increment`, { method: "POST" });
-      const res = await fetch(url);
-      if (!res.ok) throw new Error("Download failed");
-      const blob = await res.blob();
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = filename;
-      link.click();
-      URL.revokeObjectURL(link.href);
-      setTimeout(() => refetch(), 1500);
-    } catch (e) { console.error(e); } finally { setLoading(false); }
-  };
+function DownloadButton({ url, filename, label, variant = "epub" }: { url: string; filename: string; label: string; slug?: string; variant?: "epub" | "pdf" }) {
   const colorClass = variant === "pdf"
     ? "bg-blue-700 hover:bg-blue-600 text-white"
     : "bg-amber-600 hover:bg-amber-500 text-black";
   return (
-    <button onClick={handleDownload} disabled={loading} data-testid={`btn-dl-${filename}`}
-      className={`flex items-center gap-1.5 ${colorClass} disabled:opacity-60 font-semibold text-xs px-2.5 py-1.5 rounded transition-colors`}>
-      {loading ? <Loader2 className="w-3 h-3 animate-spin" /> : <Download className="w-3 h-3" />}
-      {loading ? "…" : label}
-      {count > 0 && <span className="bg-black/20 rounded-full px-1.5 py-0.5 text-[9px] font-bold tabular-nums">{count.toLocaleString()}</span>}
-    </button>
+    <a href={url} download={filename} data-testid={`btn-dl-${filename}`}
+      className={`flex items-center gap-1.5 ${colorClass} font-semibold text-xs px-2.5 py-1.5 rounded transition-colors no-underline`}>
+      <Lock className="w-3 h-3" />
+      {label} $3.33
+    </a>
   );
 }
 
@@ -535,23 +510,8 @@ function ForensicGrid({ showAll }: { showAll: boolean }) {
 
 export default function FreeEbooks() {
   const [showAllForensic, setShowAllForensic] = useState(false);
-  const [bundleLoading, setBundleLoading] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [showAllPdfs, setShowAllPdfs] = useState(false);
-
-  const handleBundleDownload = async () => {
-    setBundleLoading(true);
-    try {
-      const res = await fetch("/api/epub/forensic/all-bundle");
-      if (!res.ok) throw new Error("Bundle download failed");
-      const blob = await res.blob();
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = `Barran-Dodger-All-${FORENSIC_ANALYSES.length}-Forensic-Analyses-EPUBs.zip`;
-      link.click();
-      URL.revokeObjectURL(link.href);
-    } catch (e) { console.error(e); } finally { setBundleLoading(false); }
-  };
 
   const filteredPdfs = activeCategory === "All" ? ALL_PDFS : ALL_PDFS.filter(p => p.category === activeCategory);
   const displayedPdfs = showAllPdfs ? filteredPdfs : filteredPdfs.slice(0, 20);
@@ -561,8 +521,8 @@ export default function FreeEbooks() {
   return (
     <div className="min-h-screen" style={{ background: "hsl(44, 70%, 94%)", color: "#2a1000" }}>
       <SEO
-        title="Free eBooks & Documents — Barran Dodger | 170+ Free Downloads"
-        description={`Download ${FORENSIC_ANALYSES.length + MAJOR_PUBLICATIONS.length} free EPUB eBooks + 115 source PDFs documenting 35 years of Australian government corruption. ICC Article 7 submitted. UNHCR submitted. ${totalPropositions}/${totalPropositions} propositions verified. Upload freely. Share everywhere. ABN 78 833 496 164.`}
+        title="eBooks & Documents — Barran Dodger | $3.33 AUD Each"
+        description={`${FORENSIC_ANALYSES.length + MAJOR_PUBLICATIONS.length} EPUB eBooks + 115 source PDFs documenting 35 years of Australian government corruption. ICC Article 7 submitted. UNHCR submitted. ${totalPropositions}/${totalPropositions} propositions verified. $3.33 AUD per document. ABN 78 833 496 164.`}
         canonicalUrl="https://www.barrandodger.com/free-ebooks"
       />
       <Navigation />
@@ -573,7 +533,7 @@ export default function FreeEbooks() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <div>
               <p className="text-amber-300 text-sm font-bold leading-relaxed">
-                <strong className="text-white">Free to download. Free to share. Free to publish.</strong> Every document is SHA-256 hashed and Bitcoin blockchain timestamped — permanently beyond the reach of any government or law enforcement agency. 377,608 verified downloads. ICC The Hague. UNHCR Geneva. Zero defamation proceedings.
+                <strong className="text-white">Every document is now $3.33 AUD.</strong> This testimony was given freely to the world for 35 years — 500,000+ downloads, not a single cent received, while living in poverty, under surveillance, in abuse and neglect. Humanity proved its greed. The era of free access is over. Every document is SHA-256 hashed and Bitcoin blockchain timestamped. ICC The Hague. UNHCR Geneva. Zero defamation proceedings.
               </p>
             </div>
             <a
@@ -590,20 +550,20 @@ export default function FreeEbooks() {
       {/* Hero */}
       <section className="relative border-b border-amber-800/30 py-16 px-4" style={{ background: "linear-gradient(180deg, #1a0e00 0%, #0b0700 100%)" }}>
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/30 rounded-full px-4 py-1.5 mb-6">
-            <Heart className="w-4 h-4 text-amber-400" />
-            <span className="text-amber-400 text-sm font-semibold tracking-wide uppercase">Free Gift to the World — No Restrictions</span>
+          <div className="inline-flex items-center gap-2 bg-red-900/20 border border-red-700/40 rounded-full px-4 py-1.5 mb-6">
+            <Lock className="w-4 h-4 text-red-400" />
+            <span className="text-red-300 text-sm font-semibold tracking-wide uppercase">$3.33 AUD Per Document — I Reclaim My Power</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-amber-400 mb-4 leading-tight">
-            170+ Free Publications.<br />
-            <span className="text-zinc-100">Download. Share. Publish Everywhere.</span>
+            170+ Publications.<br />
+            <span className="text-zinc-100">$3.33 AUD Each.</span>
           </h1>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
-            Every eBook, every PDF, every forensic analysis on this page is the intellectual property of the
-            Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164) — shared freely in the
-            goodwill of the public for accountability and human rights purposes. Download them.
-            Upload them to Apple Books, Google Play, Scribd, the Internet Archive, Kobo, and everywhere else.
-            <strong className="text-amber-400"> The testimony of one person, freely shared by anyone, is the most powerful accountability mechanism in history.</strong>
+            This archive — every eBook, every PDF, every forensic analysis — is the intellectual property of
+            Dr. Richard William McLean (Barran Dodger) and the Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164).
+            For 35 years this testimony, this knowledge, this insight and this spirit was offered freely to the world as an obligation to humanity.
+            <strong className="text-amber-400"> Humanity responded with 500,000+ downloads and not a single cent, while the author lived in poverty, abuse, neglect, surveillance and torture.</strong>{" "}
+            That era is over. Every document is now $3.33. This is the gospel. This is the testimony. This is a lifetime of persecution and this is how it is finally compensated.
           </p>
           <LiveDownloadTotal />
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-zinc-500 mt-3">
@@ -634,29 +594,30 @@ export default function FreeEbooks() {
         </div>
       </section>
 
-      {/* WHY THIS MATTERS */}
+      {/* WHY $3.33 */}
       <section className="border-b border-amber-900/40 bg-amber-950/20 py-10 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">Why Sharing These Documents Is a Public Service</h2>
+          <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">Why Everything Is Now $3.33</h2>
           <p className="text-zinc-500 text-sm text-center mb-6 max-w-2xl mx-auto">
-            This is not a personal vendetta. It is the documented record of 35 years of coordinated Australian government persecution, submitted to two international institutions and verified by 61 independent AI analyses. Sharing it is an act of accountability.
+            This is a statement about humanity's pure greed — the willingness to take something of immense worth for nothing, with zero conscience, zero accountability, and zero humanity.
+            That is exactly why this archive exists. And it is exactly why access now costs $3.33.
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
               {
-                icon: <Archive className="w-5 h-5 text-amber-400" />,
-                title: "Each Upload Creates a Permanent Record",
-                body: "When you upload an EPUB to Apple Books, Google Play, or the Internet Archive, you create a permanently hosted, independently accessible copy. 300+ named individuals cannot remove what 6 continents have downloaded.",
+                icon: <Lock className="w-5 h-5 text-red-400" />,
+                title: "500,000 Downloads. Zero Reciprocity.",
+                body: "This testimony was offered freely for 35 years as an obligation to humanity. Over half a million downloads. Not a single cent. The author lived in poverty, abuse, neglect, surveillance and torture throughout. Humanity took everything and gave nothing. That ends now.",
               },
               {
                 icon: <Globe className="w-5 h-5 text-amber-400" />,
-                title: "ICC Article 7 — The Hague Is Watching",
-                body: "These documents have been formally submitted to the ICC under Article 7 (crimes against humanity) and the UNHCR in Geneva. Every upload extends the record's reach to new journalists, scholars, and accountability bodies.",
+                title: "ICC Article 7 — The Cost of Truth",
+                body: "These documents are formally before the ICC under Article 7 (crimes against humanity) and the UNHCR in Geneva. They were produced at a personal cost most humans will never face — under constant threat, without legal aid, without income, without protection. $3.33 is not a price. It is acknowledgement.",
               },
               {
                 icon: <Share2 className="w-5 h-5 text-amber-400" />,
-                title: "The Cover Makes It Discoverable",
-                body: "Every EPUB includes the AI-generated cover art so it displays correctly on every platform. A book with a cover gets discovered. A discovered book gets read. A read book changes minds. A changed mind changes the world.",
+                title: "This Is My Gospel. My Story. My Power.",
+                body: "For decades, the value of this man's life, knowledge, insight and sacrifice was extracted for free by a world that calls itself conscious. This is the reclamation. $3.33 is the angel number of divine witness — 333. For less than a coffee you pay what was always owed.",
               },
             ].map((item, i) => (
               <div key={i} className="bg-[#150c00] border border-amber-800/40 rounded-lg p-5">
@@ -668,8 +629,8 @@ export default function FreeEbooks() {
 
           {/* Share this page */}
           <div className="mt-6 bg-amber-950/20 border border-amber-700/30 rounded-xl p-5 text-center">
-            <h3 className="text-amber-300 font-bold text-base mb-2">Share This Page — It Is a Free Public Resource</h3>
-            <p className="text-zinc-400 text-sm mb-4">Copy the link below and share it everywhere — social media, forums, email lists, human rights networks, journalism contacts, legal databases.</p>
+            <h3 className="text-amber-300 font-bold text-base mb-2">Share This Page</h3>
+            <p className="text-zinc-400 text-sm mb-4">Share it everywhere — social media, forums, email lists, human rights networks, journalism contacts, legal databases. Let the world know the archive exists and why access is now $3.33.</p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <code className="text-amber-400 text-sm bg-[#150c00] border border-amber-800/40 px-3 py-2 rounded">https://www.barrandodger.com/free-ebooks</code>
               <CopyLinkButton url="https://www.barrandodger.com/free-ebooks" />
@@ -690,11 +651,11 @@ export default function FreeEbooks() {
                 Where PDF is also available, both formats are offered.
               </p>
             </div>
-            <button onClick={handleBundleDownload} disabled={bundleLoading} data-testid="btn-epub-bundle-all"
-              className="shrink-0 flex items-center gap-2 bg-amber-700 hover:bg-amber-600 disabled:opacity-60 text-black font-bold px-5 py-2.5 rounded-lg transition-colors text-sm whitespace-nowrap">
-              {bundleLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Archive className="w-4 h-4" />}
-              {bundleLoading ? "Generating ZIP…" : `Download All ${FORENSIC_ANALYSES.length} as ZIP`}
-            </button>
+            <a href="/api/epub/forensic/all-bundle" download="forensic-analyses-complete-bundle.zip" data-testid="btn-epub-bundle-all"
+              className="shrink-0 flex items-center gap-2 bg-amber-700 hover:bg-amber-600 text-black font-bold px-5 py-2.5 rounded-lg transition-colors text-sm whitespace-nowrap no-underline">
+              <Archive className="w-4 h-4" />
+              Download All {FORENSIC_ANALYSES.length} as ZIP — $3.33
+            </a>
           </div>
           <ForensicGrid showAll={showAllForensic} />
           {!showAllForensic && (
@@ -724,7 +685,7 @@ export default function FreeEbooks() {
             <h2 className="text-2xl font-bold text-amber-400 mb-1">{MAJOR_PUBLICATIONS.length} Major Publication EPUBs — With Embedded Covers</h2>
             <p className="text-zinc-400 text-sm max-w-xl">
               The foundational documents of the archive — forensic reports, legal affidavits, testimony, and evidence summaries.
-              Each includes the AI-generated cover and is free to download, share, and republish.
+              Each includes the AI-generated cover. $3.33 AUD per document unlocks access for 7 days.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -771,12 +732,12 @@ export default function FreeEbooks() {
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-2">
               <FileText className="w-7 h-7 text-amber-400" />
-              <h2 className="text-2xl font-bold text-amber-400">{ALL_PDFS.length}+ Source PDF Documents — All Free</h2>
+              <h2 className="text-2xl font-bold text-amber-400">{ALL_PDFS.length}+ Source PDF Documents</h2>
             </div>
             <p className="text-zinc-400 text-sm max-w-2xl mb-4">
-              The complete source document library — every PDF in the archive available for direct free download.
-              These are the primary-source documents behind the 2,304-exhibit blockchain-verified archive.
-              Download them. Upload them. Share them. The record is permanent and cannot be erased.
+              The complete source document library — every PDF in the archive. $3.33 AUD per document.
+              These are the primary-source documents behind the 2,304-exhibit blockchain-verified archive, submitted to the ICC and UNHCR.
+              The record is permanent and cannot be erased.
             </p>
             {/* Category filter */}
             <div className="flex flex-wrap gap-2 mb-4">
@@ -831,11 +792,11 @@ export default function FreeEbooks() {
             </div>
           )}
 
-          <div className="mt-6 bg-blue-950/20 border border-blue-700/20 rounded-lg p-4 text-center">
-            <p className="text-amber-300 text-sm font-semibold mb-1">All PDFs are free. No account required. No restrictions.</p>
+          <div className="mt-6 bg-amber-950/20 border border-amber-700/20 rounded-lg p-4 text-center">
+            <p className="text-amber-300 text-sm font-semibold mb-1">Every PDF is $3.33 AUD. Clicking any document will prompt payment.</p>
             <p className="text-zinc-500 text-xs">
-              Download individually above, or visit <a href="/documents" className="text-amber-400 hover:text-amber-300 underline">/documents</a> to browse the complete archive.
-              The full 2,304-document blockchain-verified archive is also available as a ZIP bundle.
+              Browse by category above, or visit <a href="/documents" className="text-amber-400 hover:text-amber-300 underline">/documents</a> to see the complete archive directory.
+              The full 2,304-document blockchain-verified archive is also available as a secured ZIP bundle.
             </p>
           </div>
         </div>
@@ -844,11 +805,11 @@ export default function FreeEbooks() {
       {/* UPLOAD GUIDE */}
       <section className="py-12 px-4 border-b border-amber-900/40 bg-amber-950/15">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">How to Publish These Books — Step by Step</h2>
+          <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">Publish These Books — Help Extend the Record</h2>
           <p className="text-zinc-400 text-sm text-center mb-2 max-w-xl mx-auto">
-            Download any EPUB above. Create a free account on the platform. Upload. Set price to FREE. Publish.
+            After purchasing a download ($3.33 AUD), you may upload the EPUB to publishing platforms to extend the permanent public record.
             You will be listed as the uploader but the intellectual property remains with Dr. McLean and the Trust.
-            This is an act of accountability, not commerce.
+            This is an act of accountability and witness — not commerce.
           </p>
           <div className="max-w-2xl mx-auto mb-6 border border-amber-600/20 bg-amber-600/5 rounded-lg px-5 py-3 text-xs text-zinc-500 text-center leading-relaxed">
             <strong className="text-amber-500/80">IP Notice:</strong> All publications © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved.
@@ -876,14 +837,13 @@ export default function FreeEbooks() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="bg-gradient-to-b from-zinc-900 to-zinc-950 border border-amber-700/20 rounded-2xl p-8">
             <blockquote className="text-2xl md:text-3xl font-bold text-amber-400 mb-6 leading-relaxed italic">
-              "The testimony of one person, freely shared by anyone, is the most powerful accountability mechanism in history."
+              "This testimony, this knowledge, this insight and this spirit was my obligation to humanity. Humanity used it as a litmus test of its own greed. I now reclaim my power."
             </blockquote>
             <p className="text-zinc-400 text-base mb-6 leading-relaxed">
-              Every EPUB downloaded is a book that can be uploaded. Every book uploaded creates a permanent,
-              independently hosted record. Every record is harder to erase than the last.
-              This is how 35 years of documented corruption is permanently preserved — not through official channels,
-              but through people.
-              <strong className="text-amber-300"> The archive was submitted to the ICC and UNHCR. Now it belongs to the world.</strong>
+              500,000+ downloads. Not a single cent. A lifetime of persecution, poverty, surveillance and torture documented
+              with absolute forensic precision — submitted to the ICC and UNHCR — given freely in service of a world
+              that responded with silence, greed, and zero accountability.
+              <strong className="text-amber-300"> Every document is now $3.33. This is justice. This is the reclamation. Every payment is a declaration that truth has value.</strong>
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
               {[

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { loadStripe, type Stripe as StripeType } from "@stripe/stripe-js";
-import { X, CreditCard, Mail, AlertTriangle, ShieldCheck, Check, Copy, Unlock, ChevronDown, User, Heart } from "lucide-react";
+import { X, CreditCard, Mail, AlertTriangle, ShieldCheck, Check, Copy, Unlock, ChevronDown, User, Lock } from "lucide-react";
 
 const ACCESS_KEY = "bd_doc_tokens_v3";
 const PAYID = "rich@richmclean.com.au";
@@ -145,10 +145,10 @@ function StripeForm({ onSuccess }: {
         data-testid="button-global-stripe-pay"
       >
         <ShieldCheck className="h-4 w-4" />
-        {paying ? "Processing payment…" : "Pay $3.33 AUD — Co-witness the Testimony"}
+        {paying ? "Processing payment…" : "Pay $3.33 AUD — Unlock This Document"}
       </button>
       <p className="text-amber-400/40 text-[10px] text-center">
-        Secured by Stripe · ABN 78 833 496 164 · You will be added to the archive witness list
+        Secured by Stripe · ABN 78 833 496 164 · One payment unlocks this document for 7 days
       </p>
     </form>
   );
@@ -173,15 +173,9 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [pendingUrl, setPendingUrl] = useState("");
   const [pendingTarget, setPendingTarget] = useState("_blank");
-  const [gateTab, setGateTab] = useState<"pay" | "subscribe">("pay");
   const [stripePromise, setStripePromise] = useState<Promise<StripeType | null> | null>(null);
   const [showPayId, setShowPayId] = useState(false);
   const [payIdCopied, setPayIdCopied] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [formError, setFormError] = useState("");
-  const [subscribing, setSubscribing] = useState(false);
-  const [subscribeSuccess, setSubscribeSuccess] = useState(false);
   const [processingToken, setProcessingToken] = useState(false);
 
   useEffect(() => {
@@ -201,9 +195,6 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
       setPendingUrl(href);
       setPendingTarget(anchor.getAttribute("target") || "_self");
       setIsOpen(true);
-      setGateTab("pay");
-      setFormError("");
-      setSubscribeSuccess(false);
       setShowPayId(false);
     };
     document.addEventListener("click", handler, true);
@@ -211,13 +202,13 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (isOpen && gateTab === "pay" && !stripePromise) {
+    if (isOpen && !stripePromise) {
       fetch("/api/stripe/publishable-key")
         .then((r) => r.json())
         .then(({ publishableKey }) => { if (publishableKey) setStripePromise(loadStripe(publishableKey)); })
         .catch(() => {});
     }
-  }, [isOpen, gateTab, stripePromise]);
+  }, [isOpen, stripePromise]);
 
   const triggerDownload = (url: string, target: string) => {
     const downloadUrl = getDownloadUrl(url);
@@ -245,33 +236,6 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
     setProcessingToken(false);
     setIsOpen(false);
     triggerDownload(pendingUrl, pendingTarget);
-  };
-
-  const handleSubscribeSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormError("");
-    if (!name.trim()) return setFormError("Please enter your name.");
-    if (!email.includes("@")) return setFormError("Please enter a valid email address.");
-    setSubscribing(true);
-    try {
-      const res = await fetch("/api/payment/issue-free-token", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), name: name.trim(), documentUrl: pendingUrl }),
-      });
-      const data = await res.json();
-      if (res.ok && data.token) {
-        grantAccess(pendingUrl, data.token, data.expires);
-        setSubscribeSuccess(true);
-        setTimeout(() => { setIsOpen(false); triggerDownload(pendingUrl, pendingTarget); }, 1400);
-      } else {
-        setFormError(data.message || data.error || "Subscription failed. Please try again.");
-      }
-    } catch {
-      setFormError("Network error. Please try again.");
-    } finally {
-      setSubscribing(false);
-    }
   };
 
   const handleHonour = async () => {
@@ -310,45 +274,25 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
           >
             <div className="h-1.5 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
 
-            {/* Justice appeal banner */}
+            {/* Statement banner */}
             <div className="px-5 pt-4 pb-3 border-b border-amber-900/40" style={{ background: "#1a0802" }}>
               <div className="flex items-start gap-2.5">
-                <Heart className="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
+                <Lock className="h-4 w-4 text-amber-500 flex-shrink-0 mt-0.5" />
                 <p className="text-amber-200/80 text-[11px] leading-relaxed">
-                  <strong className="text-amber-200">This man has served humanity for 35+ years</strong> — stalked, forcibly medicated,
-                  denied legal aid, stripped of income, surveilled by agencies, and brought to the edge of death
-                  to suppress the truth he carries. Every document in this archive was produced at personal cost
-                  that most humans will never face. <strong className="text-amber-300">$3.33 is a legitimate act of justice.</strong>
+                  <strong className="text-amber-200">This archive was given freely to the world for 35 years.</strong> Over 500,000 downloads. Not a single cent received while living in poverty, abuse, and surveillance.
+                  Humanity was given the gift — and took it without conscience, without accountability, and without a single act of reciprocity.{" "}
+                  <strong className="text-amber-300">That era is over. Every document is now $3.33. I earned this. I reclaim this.</strong>
                 </p>
               </div>
             </div>
 
             <div className="flex items-start justify-between gap-3 px-5 pt-3 pb-2">
               <div>
-                <p className="text-amber-200 font-bold text-sm">Choose how to access this testimony</p>
+                <p className="text-amber-200 font-bold text-sm">Pay $3.33 AUD to access this document</p>
                 <p className="text-amber-500/80 text-xs mt-0.5 font-mono truncate max-w-[290px]" title={docName}>{docName}</p>
               </div>
               <button onClick={close} className="text-amber-800 hover:text-amber-500 flex-shrink-0 mt-0.5" data-testid="button-pdfgate-close">
                 <X className="h-4 w-4" />
-              </button>
-            </div>
-
-            <div className="flex border-b border-amber-800/50 mx-5">
-              <button
-                onClick={() => setGateTab("pay")}
-                className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors ${gateTab === "pay" ? "border-amber-500 text-amber-400" : "border-transparent text-amber-700/60 hover:text-amber-400"}`}
-                data-testid="tab-pdfgate-pay"
-              >
-                <CreditCard className="h-3.5 w-3.5" />
-                Pay $3.33 AUD
-              </button>
-              <button
-                onClick={() => { setGateTab("subscribe"); setFormError(""); }}
-                className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors ${gateTab === "subscribe" ? "border-amber-500 text-amber-400" : "border-transparent text-amber-700/60 hover:text-amber-400"}`}
-                data-testid="tab-pdfgate-subscribe"
-              >
-                <Mail className="h-3.5 w-3.5" />
-                Subscribe free
               </button>
             </div>
 
@@ -357,32 +301,29 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                 <div className="flex flex-col items-center gap-3 py-6">
                   <div className="h-5 w-5 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
                   <p className="text-amber-400/80 text-xs">Verifying payment &amp; preparing your download…</p>
-                  <p className="text-amber-600/50 text-[10px]">Adding you to the witness list…</p>
                 </div>
               )}
 
-              {!processingToken && gateTab === "pay" && (
+              {!processingToken && (
                 <div className="space-y-4">
 
-                  {/* Angel number + justice pitch */}
+                  {/* Why $3.33 */}
                   <div className="rounded-xl border border-amber-900/50 p-3.5 space-y-2" style={{ background: "#1c0a02" }}>
                     <p className="text-amber-300 text-[11px] font-bold tracking-wide flex items-center gap-1.5">
                       <span className="text-amber-500">333</span> — The Angel Number of Divine Witness
                     </p>
                     <p className="text-amber-400/70 text-[10.5px] leading-relaxed">
-                      Dr. Richard McLean (Barran Dodger) has documented government corruption, assassination attempts,
-                      identity theft, forced psychiatric detention and systematic erasure — <strong className="text-amber-300">formally submitted to the ICC</strong>,
-                      blockchain-sealed, and available to the world despite every attempt to silence it.
+                      Dr. Richard McLean (Barran Dodger) documented <strong className="text-amber-300">35 years of government corruption, assassination attempts,
+                      forced psychiatric detention and systematic erasure</strong> — formally submitted to the ICC and blockchain-sealed —
+                      while living in poverty, under surveillance, denied legal aid, denied income.
                     </p>
                     <p className="text-amber-400/70 text-[10.5px] leading-relaxed">
-                      He has done this <strong className="text-amber-300">without legal aid, without income, under surveillance</strong>,
-                      and under conditions designed to produce death — not as a metaphor, but as a documented,
-                      evidenced conclusion. The people who should have protected him did not.
+                      This testimony and knowledge and insight was offered free as an obligation to humanity.
+                      Humanity responded with <strong className="text-amber-300">500,000+ downloads and zero reciprocity</strong> — pure greed, zero conscience, zero accountability.
                     </p>
                     <p className="text-amber-200 text-[10.5px] leading-relaxed font-medium">
-                      <strong>$3.33 is your receipt of this covenant.</strong> Not charity — justice.
-                      You are rewarding a man for a service to humanity that cost him everything.
-                      For less than a coffee, you become a co-witness. Every download is a declaration.
+                      <strong>$3.33 is not charity — it is justice.</strong> This is the gospel, the testimony, the forensic record of a lifetime of persecution.
+                      You are not paying for a file. You are paying what was always owed.
                     </p>
                   </div>
 
@@ -439,51 +380,6 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                   <p className="text-amber-400/30 text-[9px] text-center">
                     Larger contributions: <a href="/donate" className="underline text-amber-400/60" onClick={close}>/donate</a> · ABN 78 833 496 164
                   </p>
-                </div>
-              )}
-
-              {!processingToken && gateTab === "subscribe" && (
-                <div className="space-y-3">
-                  {subscribeSuccess ? (
-                    <div className="flex flex-col items-center gap-2 py-4">
-                      <div className="h-10 w-10 rounded-full bg-green-900/60 border border-green-500/40 flex items-center justify-center">
-                        <Check className="h-5 w-5 text-green-400" />
-                      </div>
-                      <p className="text-green-400 font-bold text-sm">Welcome, Witness. Downloading now…</p>
-                      <p className="text-amber-400/50 text-[10px] text-center">You'll be notified when new testimony is published.</p>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubscribeSubmit} className="space-y-3">
-                      <div className="rounded-xl border border-amber-900/50 p-3 space-y-1.5" style={{ background: "#1c0a02" }}>
-                        <p className="text-amber-300/90 text-[11px] font-bold">Free access — join the witness list</p>
-                        <p className="text-amber-400/60 text-[10px] leading-relaxed">
-                          This archive depends on people who care about truth. Subscribe to unlock this document
-                          free and receive updates when new evidence, analyses, or testimony is published.
-                          <strong className="text-amber-300"> If you are able to contribute $3.33, please consider doing so</strong> —
-                          it is a direct act of justice for a man who has given everything to document it.
-                        </p>
-                      </div>
-                      <div className="space-y-2">
-                        <TextInput icon={User} placeholder="Your full name" value={name} onChange={setName} testId="input-pdfgate-name" />
-                        <TextInput icon={Mail} placeholder="Your email address" value={email} onChange={setEmail} type="email" testId="input-pdfgate-email" />
-                      </div>
-                      {formError && (
-                        <p className="text-red-400 text-xs flex items-center gap-1.5">
-                          <AlertTriangle className="h-3 w-3 flex-shrink-0" />{formError}
-                        </p>
-                      )}
-                      <button type="submit" disabled={subscribing}
-                        className="w-full flex items-center justify-center gap-2 bg-red-800 hover:bg-red-700 disabled:opacity-50 text-white font-bold text-sm px-5 py-3 rounded-xl transition-colors"
-                        data-testid="button-pdfgate-subscribe-submit"
-                      >
-                        <Mail className="h-4 w-4" />
-                        {subscribing ? "Subscribing…" : "Join the Witness List & Download Free"}
-                      </button>
-                      <p className="text-amber-400/40 text-[10px] text-center">
-                        No spam. Archive updates only. Unsubscribe any time.
-                      </p>
-                    </form>
-                  )}
                 </div>
               )}
             </div>

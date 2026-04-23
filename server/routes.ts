@@ -156,6 +156,7 @@ export async function registerRoutes(
   // Patterns that always produce a binary document (never JSON metadata)
   const PDF_API_RE = [
     /^\/api\/forensic\/(pdf|full-essay|bundle)/,
+    /^\/api\/epub\//,
     /^\/api\/video-analysis\/pdf\//,
     /^\/api\/divine-reckoning\/pdf/,
     /^\/api\/evidence-registry\/analyses-bundle/,
