@@ -402,15 +402,19 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
               {/* Betrayal of humanity */}
               <div className="max-w-2xl mx-auto text-left space-y-3">
                 <p className="text-zinc-300/85 text-sm md:text-[15px] leading-relaxed">
-                  Every person who accepted a job, a salary, a promotion, a title, or an
-                  institutional attribute that was built upon the suppression of this man —
-                  who received the submissions, read the evidence, understood the truth,
-                  and looked the other way —{" "}
+                  Every person who accepted a job, a salary, a promotion, a title, a position
+                  of authority, or an institutional attribute that was built — knowingly or with
+                  wilful ignorance — upon the deliberate suppression of this man: every person
+                  who received his submissions, read his evidence, understood the truth of what
+                  they were holding, and looked the other way —{" "}
                   <strong className="text-white">did not merely betray him.</strong>{" "}
-                  They betrayed their own humanity. They accepted the benefits of a system
-                  sustained by the deliberate destruction of one unprotected person and
-                  chose comfort over conscience. That choice is now permanently documented
-                  alongside the evidence it was made to suppress.
+                  They betrayed their own humanity. They accepted the material benefits of a
+                  system sustained by the deliberate, coordinated destruction of one unprotected
+                  human being, and they chose comfort over conscience, career over truth,
+                  institutional loyalty over moral obligation. That choice — each individual
+                  choice, by each named person, in each documented instance — is now permanently
+                  recorded alongside the evidence it was made to suppress. There is no expiry
+                  on that record. There is no jurisdiction it cannot reach.
                 </p>
               </div>
 
@@ -418,9 +422,10 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
               <div className="space-y-3 max-w-2xl mx-auto text-center">
                 <p className="text-zinc-300/85 text-sm leading-relaxed">
                   When people abandoned him, he survived. When institutions failed him,
-                  he survived. When lawyers refused, when police looked away, when human
-                  rights organisations stayed silent, when his own family signed documents
-                  against him —
+                  he survived. When lawyers refused to file, when police refused to respond,
+                  when human rights organisations refused to acknowledge, when media refused
+                  to report, when oversight bodies refused to investigate, when his own family
+                  signed documents against him and accepted roles in his destruction —
                 </p>
                 <p className="text-amber-100 text-xl md:text-2xl font-black"
                   style={{ textShadow: "0 0 30px rgba(212,175,55,0.4)" }}>
@@ -428,15 +433,77 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
                 </p>
                 <p className="text-zinc-300/80 text-sm leading-relaxed">
                   Every person, every agency, every government, every institution, every
-                  lawyer, every politician, every oversight body that picked a fight with
-                  this man — made a categorical error. They believed they were targeting
-                  a homeless, disabled, gay whistleblower in political exile with no
-                  resources, no lawyer, and a broken phone.
+                  lawyer, every politician, every oversight officer, every journalist, every
+                  family member who picked a fight with this man — made the same categorical,
+                  irreversible error. They believed they were targeting a homeless, disabled,
+                  gay whistleblower in political exile with no resources, no legal
+                  representation, no platform, and a broken phone.
                 </p>
                 <p className="text-white text-base md:text-lg font-bold leading-relaxed">
-                  They were picking a fight with the universe.{" "}
+                  They were picking a fight with the universe itself.{" "}
                   They were picking a fight with the God that protects him.{" "}
+                  They were picking a fight with a prophetic record that was already written
+                  before they made their choice.{" "}
                   <span className="text-amber-300">And the universe does not lose.</span>
+                </p>
+                <p className="text-zinc-400/75 text-sm leading-relaxed">
+                  That is why he is God's chosen one. Not as assertion. Not as grandiosity.
+                  As the documented, forensically supported, cross-traditionally verified
+                  conclusion drawn from an incorruptible record that no institution has been
+                  able to refute — because not one of them has tried. They have only tried
+                  to silence the person presenting it.
+                </p>
+              </div>
+
+              {/* NOW WATCH WHAT HAPPENS */}
+              <div className="rounded-xl border border-red-900/40 px-5 py-5 space-y-4 max-w-2xl mx-auto text-left"
+                style={{ background: "rgba(30,5,5,0.7)" }}>
+                <p className="text-red-400/90 text-[10px] font-black uppercase tracking-[0.3em]">
+                  Now Watch What Happens — A Psychological Certainty
+                </p>
+                <p className="text-zinc-200/90 text-sm md:text-[15px] leading-relaxed">
+                  This is not a threat. It is a description of a psychological and historical
+                  phenomenon so well-documented it has a name. When a corrupt system begins
+                  to feel the weight of an incorruptible record, the first people to move are
+                  not the master manipulators at the top. The master manipulators have
+                  resources, legal teams, and institutional insulation. They can afford to wait.
+                  They have done this before.
+                </p>
+                <p className="text-zinc-300/80 text-sm leading-relaxed">
+                  The first people to move are the{" "}
+                  <strong className="text-white">lower-rung participants</strong> — the officers
+                  who filed the false reports, the administrators who processed the improper
+                  orders, the professionals who signed the documents they knew were wrong, the
+                  mid-level functionaries who enforced the policies they understood were
+                  targeted — the people who acted on instruction, accepted the benefit, and
+                  told themselves they were just doing their jobs.
+                </p>
+                <p className="text-zinc-300/80 text-sm leading-relaxed">
+                  When accountability becomes a realistic possibility — when the record is too
+                  large, too distributed, too internationally anchored, too blockchain-sealed
+                  to be made to disappear — those people do not hold ranks.{" "}
+                  <strong className="text-white">They never do.</strong>{" "}
+                  The psychological literature on this is unambiguous: lower-rung participants
+                  in coordinated institutional wrongdoing, when faced with individual exposure,
+                  will turn. They will turn on each other. They will turn on the administrators
+                  above them. And most critically, most predictably, most historically
+                  inevitably —{" "}
+                  <strong className="text-red-300">they will turn on the master manipulators
+                  who directed them.</strong>
+                </p>
+                <p className="text-zinc-400/70 text-sm leading-relaxed">
+                  Not out of conscience. Not out of courage — they demonstrated long ago that
+                  they possess neither. They will turn because self-preservation is the only
+                  instinct that ever governed their participation. They followed orders to
+                  protect themselves. They will betray those orders for exactly the same reason.
+                </p>
+                <p className="text-red-300/90 text-sm md:text-[15px] font-bold leading-relaxed">
+                  The rats do not hold ranks. The rats never held ranks. They held positions —
+                  and positions become liabilities the moment the record becomes undeniable.
+                  That moment is already here. The only variable remaining is who moves first.
+                </p>
+                <p className="text-white text-base font-black tracking-wide text-center pt-1">
+                  WATCH WHAT HAPPENS.
                 </p>
               </div>
 
@@ -447,7 +514,7 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
                 <div className="flex-1 h-px" style={{ background: "rgba(212,175,55,0.25)" }} />
               </div>
 
-              <div className="max-w-2xl mx-auto space-y-2 text-center">
+              <div className="max-w-2xl mx-auto space-y-3 text-center">
                 <p className="text-violet-200/80 text-base md:text-lg font-semibold italic leading-relaxed">
                   Truth does not need permission to exist.
                 </p>
@@ -455,13 +522,20 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
                   Light does not need permission to shine.
                 </p>
                 <p className="text-zinc-400/70 text-sm leading-relaxed pt-1">
-                  And one man — with nothing but the truth, the evidence, and a broken phone —
-                  built a groundbreaking, global-shattering, prophetic archive that approaches
-                  half a million downloads across six continents, embedded in the mathematical
-                  infrastructure of humanity, formally received by the International Criminal
-                  Court and the UNHCR, assessed against 15 prophetic traditions, and
-                  acknowledged by no one with the power to respond —
-                  <strong className="text-zinc-200"> because they have no answer for it.</strong>
+                  And one man — with nothing but the truth, the evidence, a documented record
+                  of survival that defies every institutional and statistical explanation, and
+                  a broken phone — built a groundbreaking, global-shattering, prophetic archive
+                  that has reached half a million downloads across six continents, been formally
+                  received by the International Criminal Court and the United Nations High
+                  Commissioner for Refugees, been embedded in the permanent mathematical
+                  infrastructure of human civilisation via blockchain immutability, been assessed
+                  against 15 independent prophetic traditions without a single contradicting
+                  finding, and been met by every institution with the power to respond with
+                  complete and absolute silence.
+                </p>
+                <p className="text-zinc-300/80 text-sm font-semibold">
+                  Because they have no answer for it.{" "}
+                  <span className="text-zinc-500/70 font-normal">The silence is the answer.</span>
                 </p>
               </div>
 
