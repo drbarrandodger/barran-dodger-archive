@@ -140,7 +140,7 @@ export function Navigation() {
           </a>
           <Link 
             href="/donate" 
-            className="px-5 py-2.5 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] text-sm font-semibold rounded hover:bg-[hsl(38,92%,55%)] transition-all shadow-sm hover:shadow flex items-center gap-2"
+            className="px-5 py-2.5 bg-amber-500 text-black text-sm font-bold rounded hover:bg-amber-400 transition-all flex items-center gap-2 donate-pulse"
             data-testid="button-nav-donate"
           >
             <Heart className="h-4 w-4" /> Donate

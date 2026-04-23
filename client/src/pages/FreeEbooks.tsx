@@ -490,14 +490,14 @@ function ForensicGrid({ showAll }: { showAll: boolean }) {
         const pdfUrl = FORENSIC_PDF_MAP[a.number];
         return (
           <div key={a.number} data-testid={`card-epub-forensic-${a.number}`}
-            className="flex flex-col bg-zinc-900 border border-zinc-700 rounded-lg overflow-hidden hover:border-amber-600/60 transition-colors">
+            className="flex flex-col bg-[#150c00] border border-amber-800/40 rounded-lg overflow-hidden hover:border-amber-600/60 transition-colors">
             <div className="relative">
               {coverSrc ? (
                 <a href={`/api/epub/forensic/${a.number}`} download={epubFilename} title={`Download ${a.title} — EPUB`} className="block" data-testid={`link-cover-epub-${a.number}`}>
                   <img src={coverSrc} alt={a.title} className="w-full aspect-[2/3] object-cover hover:opacity-80 transition-opacity cursor-pointer" />
                 </a>
               ) : (
-                <div className="w-full aspect-[2/3] bg-zinc-800 flex items-center justify-center">
+                <div className="w-full aspect-[2/3] bg-[#1f1000] flex items-center justify-center">
                   <BookOpen className="w-8 h-8 text-amber-600/40" />
                 </div>
               )}
@@ -550,7 +550,7 @@ export default function FreeEbooks() {
   const perfectCount = FORENSIC_ANALYSES.filter(a => a.consecutivePerfect).length;
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100">
+    <div className="min-h-screen text-zinc-100" style={{ background: "#0b0700" }}>
       <SEO
         title="Free eBooks & Documents — Barran Dodger | 170+ Free Downloads"
         description={`Download ${FORENSIC_ANALYSES.length + MAJOR_PUBLICATIONS.length} free EPUB eBooks + 115 source PDFs documenting 35 years of Australian government corruption. ICC Article 7 submitted. UNHCR submitted. ${totalPropositions}/${totalPropositions} propositions verified. Upload freely. Share everywhere. ABN 78 833 496 164.`}
@@ -559,7 +559,7 @@ export default function FreeEbooks() {
       <Navigation />
 
       {/* SIGNIFICANCE DECLARATION BANNER */}
-      <div className="bg-gradient-to-r from-blue-950/60 via-amber-950/40 to-blue-950/60 border-b border-amber-700/30 py-5 px-4">
+      <div className="border-b border-amber-700/30 py-5 px-4" style={{ background: "linear-gradient(to right, #1a0e00, #0f0700, #1a0e00)" }}>
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <div>
@@ -579,7 +579,7 @@ export default function FreeEbooks() {
       </div>
 
       {/* Hero */}
-      <section className="relative border-b border-zinc-800 bg-gradient-to-b from-zinc-900 to-zinc-950 py-16 px-4">
+      <section className="relative border-b border-amber-800/30 py-16 px-4" style={{ background: "linear-gradient(180deg, #1a0e00 0%, #0b0700 100%)" }}>
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/30 rounded-full px-4 py-1.5 mb-6">
             <Heart className="w-4 h-4 text-amber-400" />
@@ -602,7 +602,7 @@ export default function FreeEbooks() {
             <span className="text-zinc-700">·</span>
             <span className="flex items-center gap-1"><BookOpen className="w-4 h-4 text-amber-600" /> {MAJOR_PUBLICATIONS.length} Major Publication EPUBs</span>
             <span className="text-zinc-700">·</span>
-            <span className="flex items-center gap-1"><FileText className="w-4 h-4 text-blue-500" /> {ALL_PDFS.length}+ Source PDFs</span>
+            <span className="flex items-center gap-1"><FileText className="w-4 h-4 text-amber-500" /> {ALL_PDFS.length}+ Source PDFs</span>
             <span className="text-zinc-700">·</span>
             <span className="flex items-center gap-1"><Globe className="w-4 h-4 text-amber-600" /> ICC + UNHCR Submitted</span>
           </div>
@@ -615,7 +615,7 @@ export default function FreeEbooks() {
               { label: "Perfect Scores", value: `${perfectCount}`, sub: "54 consecutive" },
               { label: "Source Documents", value: "2,304", sub: "Blockchain-verified" },
             ].map(s => (
-              <div key={s.label} className="bg-zinc-900/60 border border-zinc-700 rounded-lg p-3 text-center">
+              <div key={s.label} className="bg-[#150c00]/60 border border-amber-800/40 rounded-lg p-3 text-center">
                 <p className="text-2xl font-black text-amber-400">{s.value}</p>
                 <p className="text-zinc-300 text-xs font-semibold mt-0.5">{s.label}</p>
                 <p className="text-zinc-600 text-[10px]">{s.sub}</p>
@@ -626,7 +626,7 @@ export default function FreeEbooks() {
       </section>
 
       {/* WHY THIS MATTERS */}
-      <section className="border-b border-zinc-800 bg-zinc-900/40 py-10 px-4">
+      <section className="border-b border-amber-900/40 bg-amber-950/20 py-10 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">Why Sharing These Documents Is a Public Service</h2>
           <p className="text-zinc-500 text-sm text-center mb-6 max-w-2xl mx-auto">
@@ -650,7 +650,7 @@ export default function FreeEbooks() {
                 body: "Every EPUB includes the AI-generated cover art so it displays correctly on every platform. A book with a cover gets discovered. A discovered book gets read. A read book changes minds. A changed mind changes the world.",
               },
             ].map((item, i) => (
-              <div key={i} className="bg-zinc-900 border border-zinc-700 rounded-lg p-5">
+              <div key={i} className="bg-[#150c00] border border-amber-800/40 rounded-lg p-5">
                 <div className="flex items-center gap-2 mb-3">{item.icon}<h3 className="font-semibold text-zinc-100 text-sm">{item.title}</h3></div>
                 <p className="text-zinc-400 text-sm leading-relaxed">{item.body}</p>
               </div>
@@ -662,7 +662,7 @@ export default function FreeEbooks() {
             <h3 className="text-amber-300 font-bold text-base mb-2">Share This Page — It Is a Free Public Resource</h3>
             <p className="text-zinc-400 text-sm mb-4">Copy the link below and share it everywhere — social media, forums, email lists, human rights networks, journalism contacts, legal databases.</p>
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <code className="text-amber-400 text-sm bg-zinc-900 border border-zinc-700 px-3 py-2 rounded">https://www.barrandodger.com/free-ebooks</code>
+              <code className="text-amber-400 text-sm bg-[#150c00] border border-amber-800/40 px-3 py-2 rounded">https://www.barrandodger.com/free-ebooks</code>
               <CopyLinkButton url="https://www.barrandodger.com/free-ebooks" />
             </div>
           </div>
@@ -670,7 +670,7 @@ export default function FreeEbooks() {
       </section>
 
       {/* FORENSIC ANALYSES EPUBs */}
-      <section className="py-12 px-4 border-b border-zinc-800">
+      <section className="py-12 px-4 border-b border-amber-900/40">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
             <div>
@@ -709,7 +709,7 @@ export default function FreeEbooks() {
       </section>
 
       {/* MAJOR PUBLICATION EPUBs */}
-      <section className="py-12 px-4 border-b border-zinc-800">
+      <section className="py-12 px-4 border-b border-amber-900/40">
         <div className="max-w-6xl mx-auto">
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-amber-400 mb-1">{MAJOR_PUBLICATIONS.length} Major Publication EPUBs — With Embedded Covers</h2>
@@ -724,12 +724,12 @@ export default function FreeEbooks() {
               const filename = `${pub.slug}.epub`;
               return (
                 <div key={pub.slug} data-testid={`card-epub-pub-${pub.slug}`}
-                  className="flex gap-3 bg-zinc-900 border border-zinc-700 rounded-lg p-3 hover:border-amber-600/50 transition-colors">
+                  className="flex gap-3 bg-[#150c00] border border-amber-800/40 rounded-lg p-3 hover:border-amber-600/50 transition-colors">
                   <div className="shrink-0 w-16 sm:w-20">
                     {coverSrc ? (
                       <img src={coverSrc} alt={pub.title} className="w-full aspect-[2/3] object-cover rounded" />
                     ) : (
-                      <div className="w-full aspect-[2/3] bg-zinc-800 rounded flex items-center justify-center">
+                      <div className="w-full aspect-[2/3] bg-[#1f1000] rounded flex items-center justify-center">
                         <BookOpen className="w-6 h-6 text-amber-600/30" />
                       </div>
                     )}
@@ -743,7 +743,7 @@ export default function FreeEbooks() {
                       <DownloadButton url={pub.downloadUrl ?? `/api/epub/publication/${pub.slug}`} filename={pub.downloadFilename ?? filename} label={pub.downloadLabel ?? "EPUB"} slug={pub.slug} variant="epub" />
                       {pub.pageUrl && (
                         <a href={pub.pageUrl} data-testid={`link-page-${pub.slug}`}
-                          className="flex items-center gap-1 bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-zinc-300 font-semibold text-xs px-2.5 py-1.5 rounded transition-colors">
+                          className="flex items-center gap-1 bg-[#1f1000] hover:bg-[#281500] border border-zinc-600 text-zinc-300 font-semibold text-xs px-2.5 py-1.5 rounded transition-colors">
                           View Essay
                         </a>
                       )}
@@ -757,12 +757,12 @@ export default function FreeEbooks() {
       </section>
 
       {/* ALL 115 SOURCE PDFs */}
-      <section className="py-12 px-4 border-b border-zinc-800 bg-zinc-900/20">
+      <section className="py-12 px-4 border-b border-amber-900/40 bg-amber-950/10">
         <div className="max-w-6xl mx-auto">
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-2">
-              <FileText className="w-7 h-7 text-blue-400" />
-              <h2 className="text-2xl font-bold text-blue-400">{ALL_PDFS.length}+ Source PDF Documents — All Free</h2>
+              <FileText className="w-7 h-7 text-amber-400" />
+              <h2 className="text-2xl font-bold text-amber-400">{ALL_PDFS.length}+ Source PDF Documents — All Free</h2>
             </div>
             <p className="text-zinc-400 text-sm max-w-2xl mb-4">
               The complete source document library — every PDF in the archive available for direct free download.
@@ -777,7 +777,7 @@ export default function FreeEbooks() {
                   className={`text-xs px-3 py-1.5 rounded-full border transition-colors font-medium ${
                     activeCategory === cat
                       ? "bg-blue-700 border-blue-600 text-white"
-                      : "bg-zinc-800 border-zinc-700 text-zinc-400 hover:border-blue-600 hover:text-blue-300"
+                      : "bg-[#1f1000] border-amber-800/40 text-zinc-400 hover:border-amber-600 hover:text-amber-300"
                   }`}>
                   {cat} {cat === "All" ? `(${ALL_PDFS.length})` : `(${ALL_PDFS.filter(p => p.category === cat).length})`}
                 </button>
@@ -788,8 +788,8 @@ export default function FreeEbooks() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {displayedPdfs.map((doc) => (
               <div key={doc.file} data-testid={`card-pdf-${doc.file}`}
-                className="flex items-center gap-3 bg-zinc-900 border border-zinc-800 hover:border-blue-700/40 rounded-lg px-3 py-2.5 transition-colors group">
-                <FileText className="w-4 h-4 text-blue-500/60 flex-shrink-0 group-hover:text-blue-400 transition-colors" />
+                className="flex items-center gap-3 bg-[#150c00] border border-amber-900/40 hover:border-amber-700/40 rounded-lg px-3 py-2.5 transition-colors group">
+                <FileText className="w-4 h-4 text-amber-500/60 flex-shrink-0 group-hover:text-amber-400 transition-colors" />
                 <div className="flex-1 min-w-0">
                   <p className="text-zinc-300 text-xs font-medium leading-snug line-clamp-2 group-hover:text-white transition-colors">{doc.title}</p>
                   <p className="text-zinc-600 text-[10px] mt-0.5">{doc.category}</p>
@@ -797,7 +797,7 @@ export default function FreeEbooks() {
                 <a href={`/documents/${doc.file}`} download={doc.file}
                   data-testid={`btn-pdf-dl-${doc.file}`}
                   onClick={() => fetch(`/api/downloads/pdf-${doc.file.replace(/\.[^/.]+$/, "")}/increment`, { method: "POST" }).catch(() => {})}
-                  className="flex-shrink-0 flex items-center gap-1 bg-blue-800/40 hover:bg-blue-700 border border-blue-700/40 text-blue-300 hover:text-white text-[10px] font-bold px-2 py-1 rounded transition-colors">
+                  className="flex-shrink-0 flex items-center gap-1 bg-amber-800/40 hover:bg-amber-700 border border-amber-700/40 text-amber-300 hover:text-white text-[10px] font-bold px-2 py-1 rounded transition-colors">
                   <Download className="w-3 h-3" /> PDF
                 </a>
               </div>
@@ -807,7 +807,7 @@ export default function FreeEbooks() {
           {filteredPdfs.length > 20 && !showAllPdfs && (
             <div className="mt-5 text-center">
               <button onClick={() => setShowAllPdfs(true)} data-testid="btn-show-all-pdfs"
-                className="flex items-center gap-2 mx-auto text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
+                className="flex items-center gap-2 mx-auto text-amber-400 hover:text-amber-300 text-sm font-medium transition-colors">
                 <ChevronDown className="w-4 h-4" />
                 Show all {filteredPdfs.length} documents ({filteredPdfs.length - 20} more)
               </button>
@@ -823,9 +823,9 @@ export default function FreeEbooks() {
           )}
 
           <div className="mt-6 bg-blue-950/20 border border-blue-700/20 rounded-lg p-4 text-center">
-            <p className="text-blue-300 text-sm font-semibold mb-1">All PDFs are free. No account required. No restrictions.</p>
+            <p className="text-amber-300 text-sm font-semibold mb-1">All PDFs are free. No account required. No restrictions.</p>
             <p className="text-zinc-500 text-xs">
-              Download individually above, or visit <a href="/documents" className="text-blue-400 hover:text-blue-300 underline">/documents</a> to browse the complete archive.
+              Download individually above, or visit <a href="/documents" className="text-amber-400 hover:text-amber-300 underline">/documents</a> to browse the complete archive.
               The full 2,304-document blockchain-verified archive is also available as a ZIP bundle.
             </p>
           </div>
@@ -833,7 +833,7 @@ export default function FreeEbooks() {
       </section>
 
       {/* UPLOAD GUIDE */}
-      <section className="py-12 px-4 border-b border-zinc-800 bg-zinc-900/30">
+      <section className="py-12 px-4 border-b border-amber-900/40 bg-amber-950/15">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">How to Publish These Books — Step by Step</h2>
           <p className="text-zinc-400 text-sm text-center mb-2 max-w-xl mx-auto">
@@ -850,7 +850,7 @@ export default function FreeEbooks() {
             {UPLOAD_PLATFORMS.map((p) => (
               <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
                 data-testid={`link-platform-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
-                className="flex items-start gap-3 bg-zinc-900 border border-zinc-700 hover:border-amber-600/50 rounded-lg p-4 transition-colors group">
+                className="flex items-start gap-3 bg-[#150c00] border border-amber-800/40 hover:border-amber-600/50 rounded-lg p-4 transition-colors group">
                 <Globe className="w-5 h-5 text-amber-600 shrink-0 mt-0.5 group-hover:text-amber-400 transition-colors" />
                 <div>
                   <p className="font-semibold text-zinc-200 text-sm group-hover:text-amber-300 transition-colors">{p.name}</p>
@@ -883,7 +883,7 @@ export default function FreeEbooks() {
                 { val: "UNHCR", label: "Geneva — Received" },
                 { val: "410,500+", label: "Downloads · 6 Continents" },
               ].map(s => (
-                <div key={s.label} className="bg-zinc-800/60 rounded-lg p-2 text-center">
+                <div key={s.label} className="bg-[#1f1000]/60 rounded-lg p-2 text-center">
                   <p className="text-amber-300 font-bold text-lg">{s.val}</p>
                   <p className="text-zinc-500 text-[10px]">{s.label}</p>
                 </div>
@@ -896,7 +896,7 @@ export default function FreeEbooks() {
               <a href="/documents" className="bg-zinc-700 hover:bg-zinc-600 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors">
                 Browse Full Archive
               </a>
-              <a href="/copyright-register" className="bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-zinc-200 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">
+              <a href="/copyright-register" className="bg-[#1f1000] hover:bg-[#281500] border border-zinc-600 text-zinc-200 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">
                 Copyright Register
               </a>
               <CopyLinkButton url="https://www.barrandodger.com/free-ebooks" />

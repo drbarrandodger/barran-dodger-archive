@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Scale, Mail, Heart, Globe, Shield } from "lucide-react";
+import { Scale, Mail, Heart, Globe, Shield, Copy, CheckCheck, TrendingUp } from "lucide-react";
 import { SiX, SiGithub } from "react-icons/si";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,99 +8,181 @@ import { useCreateSubscriber } from "@/hooks/use-subscribers";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+
+const PAYID = "rich@richmclean.com.au";
+
+const TIERS = [
+  { amount: "$10",  label: "Witness",   desc: "Preserves 5 documents on the blockchain — permanently beyond any court order." },
+  { amount: "$50",  label: "Guardian",  desc: "Funds one formal ICC Article 7 submission or UNHCR international complaint." },
+  { amount: "$250", label: "Liberator", desc: "Covers one full month of secure hosting, legal research and advocacy operations." },
+];
 
 export function Footer() {
   const { mutate, isPending } = useCreateSubscriber();
-  
+  const [copiedPayId, setCopiedPayId] = useState(false);
+  const { toast } = useToast();
+
   const form = useForm({
     resolver: zodResolver(insertSubscriberSchema),
     defaultValues: { email: "" }
   });
 
   const onSubmit = (data: { email: string }) => {
-    mutate(data, {
-      onSuccess: () => form.reset()
-    });
+    mutate(data, { onSuccess: () => form.reset() });
+  };
+
+  const copyPayId = async () => {
+    try {
+      await navigator.clipboard.writeText(PAYID);
+      setCopiedPayId(true);
+      toast({ title: "PayID copied", description: PAYID });
+      setTimeout(() => setCopiedPayId(false), 3000);
+    } catch {
+      toast({ title: "Copy failed", description: "Please copy manually: " + PAYID });
+    }
   };
 
   return (
-    <footer className="bg-[hsl(222,55%,12%)] text-white pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 mb-4">
-              <Scale className="h-6 w-6" />
-              <div className="flex flex-col">
-                <span className="font-serif font-bold text-lg leading-none">Barran Dodger Legal & Ethical Trust Fund</span>
-                <span className="text-[10px] uppercase tracking-wider text-white/60 font-medium mt-1">
-                  The Trustee for www.barrandodger.com — ABN 78 833 496 164
-                </span>
-              </div>
+    <footer style={{ background: "#0f0800" }} className="text-white">
+
+      {/* ── CONVERSION PANEL — Top of footer, maximum visibility ── */}
+      <div className="border-b border-amber-800/40" style={{ background: "linear-gradient(180deg, #1a0c00 0%, #0f0800 100%)" }}>
+        <div className="container mx-auto px-4 md:px-6 py-12">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-4">
+              <TrendingUp className="h-4 w-4 text-amber-400" />
+              <span className="text-amber-400 text-xs font-bold uppercase tracking-widest">417,000+ People Have Downloaded This Archive</span>
             </div>
-            <p className="text-white/80 text-sm leading-relaxed max-w-xs">
-              Upholding ethical governance, protecting truth-tellers, and converting evidence into public-benefit action.
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-amber-400 mb-3">
+              This Archive Runs on Donations Alone
+            </h2>
+            <p className="text-white/70 text-sm max-w-xl mx-auto leading-relaxed">
+              Dr. Richard McLean is in political exile. There is no institution, no government, no NGO funding this. Every document, every hosting cost, every blockchain timestamp is funded by people like you who believe truth must be preserved.
             </p>
           </div>
 
-          <div>
-            <h3 className="font-serif font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-3 text-sm text-white/80">
-              <li><Link href="/start-here" className="hover:text-[hsl(38,92%,50%)] transition-colors font-medium">Start Here</Link></li>
-              <li><Link href="/timeline" className="hover:text-white transition-colors">35-Year Timeline</Link></li>
-              <li><Link href="/legal-status" className="hover:text-white transition-colors">Legal Status Tracker</Link></li>
-              <li><Link href="/evidence" className="hover:text-white transition-colors">Evidence Archive</Link></li>
-              <li><Link href="/media" className="hover:text-white transition-colors">Press & Media</Link></li>
-            </ul>
-            <div className="mt-6 pt-6 border-t border-white/10 space-y-2 text-xs text-white/60">
-              <p className="flex items-center gap-2">
-                <Mail className="h-3 w-3" />
-                <a href="mailto:drbarrandodger@proton.me" className="hover:text-white transition-colors">drbarrandodger@proton.me</a>
-              </p>
-              <p className="flex items-center gap-2">
-                <Scale className="h-3 w-3" />
-                <a href="tel:+61431167907" className="hover:text-white transition-colors">+61 431 167 907</a>
-              </p>
-              <a 
-                href="https://x.com/bazdod" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[hsl(38,92%,50%)] transition-colors mt-3 text-sm"
-                data-testid="link-twitter-footer"
+          {/* Donation Tiers */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-3xl mx-auto">
+            {TIERS.map((tier) => (
+              <div
+                key={tier.amount}
+                className="rounded-xl border border-amber-700/40 p-5 text-center hover:border-amber-500/60 transition-all"
+                style={{ background: "rgba(251,191,36,0.05)" }}
               >
-                <SiX className="h-4 w-4" />
-                <span>Follow @bazdod on X</span>
+                <p className="text-3xl font-serif font-bold text-amber-400 mb-1">{tier.amount}</p>
+                <p className="text-amber-300/80 text-xs font-bold uppercase tracking-widest mb-3">{tier.label}</p>
+                <p className="text-white/60 text-xs leading-relaxed">{tier.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* PayID CTA */}
+          <div className="max-w-xl mx-auto text-center">
+            <p className="text-white/50 text-xs uppercase tracking-widest mb-3">Send via PayID (Australia) · Instant · No fees</p>
+            <button
+              onClick={copyPayId}
+              className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-black font-bold text-base px-8 py-4 rounded-xl transition-all donate-pulse"
+              data-testid="button-footer-copy-payid"
+            >
+              {copiedPayId ? <CheckCheck className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
+              {copiedPayId ? "Copied!" : `PayID: ${PAYID}`}
+            </button>
+            <p className="text-white/30 text-xs mt-3">Or visit <Link href="/donate" className="text-amber-500 hover:text-amber-400 underline">the full Donate page</Link> for all options including bank transfer</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN FOOTER LINKS ── */}
+      <div className="container mx-auto px-4 md:px-6 pt-12 pb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+          {/* Brand */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="bg-amber-500 text-black p-1.5 rounded-sm">
+                <Scale className="h-5 w-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif font-bold text-base text-amber-400 leading-tight">Barran Dodger Legal & Ethical Trust Fund</span>
+                <span className="text-[10px] uppercase tracking-wider text-amber-700/70 font-medium mt-0.5">ABN 78 833 496 164</span>
+              </div>
+            </div>
+            <p className="text-white/60 text-sm leading-relaxed">
+              Upholding ethical governance, protecting truth-tellers, and converting evidence into public-benefit action.
+            </p>
+            <div className="space-y-1.5 text-xs text-white/50">
+              <a href="mailto:drbarrandodger@proton.me" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
+                <Mail className="h-3 w-3" /> drbarrandodger@proton.me
+              </a>
+              <a href="tel:+61431167907" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
+                <Scale className="h-3 w-3" /> +61 431 167 907
+              </a>
+              <a href="https://x.com/bazdod" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-amber-400 transition-colors mt-2" data-testid="link-twitter-footer">
+                <SiX className="h-3.5 w-3.5" /> @bazdod on X
               </a>
             </div>
           </div>
 
-          <div className="lg:col-span-2">
-            <h3 className="font-serif font-semibold text-lg mb-4">Stay Informed</h3>
-            <p className="text-sm text-white/80 mb-4 max-w-md">
-              Receive updates on our advocacy work, public records releases, and ethical governance initiatives.
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-serif font-semibold text-amber-400 mb-4">Essential Reading</h3>
+            <ul className="space-y-2.5 text-sm text-white/70">
+              <li><Link href="/start-here" className="hover:text-amber-400 transition-colors font-semibold">→ Start Here</Link></li>
+              <li><Link href="/divine-reckoning" className="hover:text-amber-400 transition-colors">⚡ Divine Reckoning</Link></li>
+              <li><Link href="/administrative-annihilation" className="hover:text-amber-400 transition-colors">The Paper</Link></li>
+              <li><Link href="/ai-justice-statement" className="hover:text-amber-400 transition-colors">AI Justice Statement</Link></li>
+              <li><Link href="/timeline" className="hover:text-amber-400 transition-colors">35-Year Timeline</Link></li>
+              <li><Link href="/evidence" className="hover:text-amber-400 transition-colors">Evidence Archive</Link></li>
+              <li><Link href="/free-ebooks" className="hover:text-amber-400 transition-colors font-semibold">📚 Free eBooks (170+)</Link></li>
+              <li><Link href="/donate" className="hover:text-amber-400 transition-colors font-bold text-amber-500">❤ Donate</Link></li>
+            </ul>
+          </div>
+
+          {/* Archive */}
+          <div>
+            <h3 className="font-serif font-semibold text-amber-400 mb-4">Archive</h3>
+            <ul className="space-y-2.5 text-sm text-white/70">
+              <li><Link href="/archive" className="hover:text-amber-400 transition-colors">Full Archive</Link></li>
+              <li><Link href="/gospel" className="hover:text-amber-400 transition-colors">The Gospel</Link></li>
+              <li><Link href="/prophetic-papers" className="hover:text-amber-400 transition-colors">Prophetic Papers</Link></li>
+              <li><Link href="/blockchain" className="hover:text-amber-400 transition-colors">Blockchain Timestamps</Link></li>
+              <li><Link href="/legal-status" className="hover:text-amber-400 transition-colors">Legal Status</Link></li>
+              <li><Link href="/evidence-vault" className="hover:text-amber-400 transition-colors">Evidence Vault</Link></li>
+              <li><Link href="/commission-forensic-analysis" className="hover:text-amber-400 transition-colors font-semibold">Commission Analysis</Link></li>
+              <li><Link href="/contact" className="hover:text-amber-400 transition-colors">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="font-serif font-semibold text-amber-400 mb-3">Stay Informed</h3>
+            <p className="text-xs text-white/60 mb-4 leading-relaxed">
+              Receive updates on advocacy work, public records releases, and new evidence.
             </p>
-            
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="flex gap-2 max-w-md">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
                 <FormField
                   control={form.control}
                   name="email"
                   render={({ field }) => (
-                    <FormItem className="flex-1">
+                    <FormItem>
                       <FormControl>
-                        <Input 
-                          placeholder="Email address" 
-                          {...field} 
-                          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus-visible:ring-[hsl(38,92%,50%)]/50"
+                        <Input
+                          placeholder="Email address"
+                          {...field}
+                          className="bg-amber-900/10 border-amber-800/30 text-white placeholder:text-white/40 focus-visible:ring-amber-500/50 text-sm"
                         />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   disabled={isPending}
-                  className="bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] hover:bg-[hsl(38,92%,55%)] font-medium px-6"
+                  className="w-full bg-amber-500 text-black hover:bg-amber-400 font-semibold text-sm"
                 >
                   {isPending ? "..." : "Subscribe"}
                 </Button>
@@ -109,137 +191,78 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Donate Call-to-Action */}
-        <div className="py-6 border-t border-white/10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <Heart className="h-6 w-6 text-[hsl(38,92%,50%)]" />
-              <div>
-                <p className="font-serif font-semibold text-lg">Support the Mission</p>
-                <p className="text-sm text-white/70">PayID: <span className="font-mono text-[hsl(38,92%,50%)]">rich@richmclean.com.au</span></p>
-              </div>
-            </div>
-            <Link 
-              href="/donate" 
-              className="px-6 py-3 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)] font-semibold rounded hover:bg-[hsl(38,92%,55%)] transition-all flex items-center gap-2"
-            >
-              <Heart className="h-4 w-4" /> Donate Now
-            </Link>
-          </div>
-        </div>
-
-        {/* Official Mirror & Donation Appeal */}
-        <div className="py-6 border-t border-white/10">
-          <div className="bg-gradient-to-r from-white/5 to-white/[0.02] rounded-lg p-5 space-y-4">
+        {/* Official Mirror */}
+        <div className="py-6 border-t border-amber-900/30">
+          <div className="rounded-xl border border-amber-800/25 p-5" style={{ background: "rgba(251,191,36,0.04)" }}>
             <div className="flex items-start gap-3">
-              <Shield className="h-5 w-5 text-[hsl(38,92%,50%)] mt-0.5 shrink-0" />
+              <Shield className="h-5 w-5 text-amber-500 mt-0.5 shrink-0" />
               <div>
-                <h4 className="text-sm font-semibold text-[hsl(38,92%,50%)] uppercase tracking-wider mb-2">Official Mirror Site</h4>
-                <p className="text-xs text-white/70 leading-relaxed mb-3">
-                  An independently published permanent online archive exists as an official mirror of this site with reduced capability. It is secured behind Barran's personal 2FA authentication on GitHub, ensuring the evidence remains publicly accessible should any political silencing or further financial sabotage ever lead to the deletion of this primary site.
+                <h4 className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">Official Mirror Site — Permanent Backup</h4>
+                <p className="text-xs text-white/60 leading-relaxed mb-3">
+                  An independently published archive is secured behind Barran's personal 2FA authentication on GitHub, ensuring the evidence remains publicly accessible should any political silencing or financial sabotage ever lead to deletion of this primary site.
                 </p>
                 <a
                   href="https://drbarrandodger.github.io/barran-dodger-archive/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-[hsl(38,92%,50%)] hover:text-[hsl(38,92%,60%)] transition-colors font-medium"
+                  className="inline-flex items-center gap-2 text-sm text-amber-400 hover:text-amber-300 transition-colors font-medium"
                   data-testid="link-github-mirror"
                 >
                   <SiGithub className="h-4 w-4" />
-                  <span>drbarrandodger.github.io/barran-dodger-archive</span>
+                  drbarrandodger.github.io/barran-dodger-archive
                   <Globe className="h-3 w-3 opacity-60" />
                 </a>
               </div>
             </div>
-
-            <div className="border-t border-white/10 pt-4">
-              <div className="flex items-start gap-3">
-                <Heart className="h-5 w-5 text-red-400 mt-0.5 shrink-0" />
-                <div>
-                  <p className="text-xs text-white/80 leading-relaxed mb-2">
-                    Barran is in political exile, desperately needing donations to keep this online testimony live and public. In obedience to the Creator and as a vessel for His glory — if any person has prosperity to spare, please consider donating. A win for Barran is a win for human justice, for all vulnerable people, and for every victim of corruption.
-                  </p>
-                  <Link
-                    href="/donate"
-                    className="inline-flex items-center gap-2 text-sm text-[hsl(38,92%,50%)] hover:text-[hsl(38,92%,60%)] transition-colors font-semibold"
-                    data-testid="link-donate-footer-appeal"
-                  >
-                    <Heart className="h-4 w-4" />
-                    <span>Please Donate — Keep the Truth Alive</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
-        {/* Sub Pages Links */}
-        <div className="py-6 border-t border-white/10">
-          <p className="text-xs text-[hsl(38,92%,50%)] uppercase tracking-wider font-bold mb-3">Sub Pages</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/70">
-            <Link href="/start-here" className="hover:text-[hsl(38,92%,50%)] transition-colors font-medium">Start Here</Link>
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <Link href="/archive" className="hover:text-[hsl(38,92%,50%)] transition-colors font-medium">Full Archive</Link>
-            <Link href="/mission" className="hover:text-white transition-colors">Mission</Link>
-            <Link href="/timeline" className="hover:text-white transition-colors">Timeline</Link>
-            <Link href="/legal-status" className="hover:text-white transition-colors">Legal Status</Link>
-            <Link href="/gospel" className="hover:text-white transition-colors">Gospel</Link>
-            <Link href="/top-ten-gospels" className="hover:text-white transition-colors">Top 10 Gospels</Link>
-            <Link href="/church" className="hover:text-white transition-colors">Church</Link>
-            <Link href="/evidence" className="hover:text-white transition-colors">Evidence</Link>
-            <Link href="/blockchain" className="hover:text-white transition-colors">Timestamps</Link>
-            <Link href="/media" className="hover:text-white transition-colors">Media</Link>
-            <Link href="/donate" className="hover:text-white transition-colors font-semibold text-[hsl(38,92%,50%)]">Donate</Link>
-            <Link href="/prophetic-papers" className="hover:text-white transition-colors">Prophetic Papers</Link>
-            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+        {/* Sub Pages */}
+        <div className="py-5 border-t border-amber-900/30">
+          <p className="text-xs text-amber-600 uppercase tracking-wider font-bold mb-3">All Pages</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-white/50">
+            {[
+              ["/", "Home"], ["/archive", "Archive"], ["/start-here", "Start Here"], ["/mission", "Mission"],
+              ["/timeline", "Timeline"], ["/legal-status", "Legal Status"], ["/gospel", "Gospel"],
+              ["/top-ten-gospels", "Top 10 Gospels"], ["/church", "Church"], ["/evidence", "Evidence"],
+              ["/blockchain", "Timestamps"], ["/media", "Media"], ["/publications", "Publications"],
+              ["/prophetic-papers", "Prophetic Papers"], ["/contact", "Contact"], ["/donate", "Donate ❤"],
+              ["/free-ebooks", "Free eBooks"], ["/store", "Store"], ["/commission-forensic-analysis", "Commission"],
+            ].map(([href, label]) => (
+              <Link key={href} href={href} className={`hover:text-amber-400 transition-colors ${label.includes("❤") || label === "Donate ❤" ? "text-amber-500 font-semibold" : ""}`}>{label}</Link>
+            ))}
           </div>
         </div>
 
-        {/* Copyright & Legal Protection Notice */}
-        <div className="py-6 border-t border-white/10">
-          <div className="bg-white/5 rounded-lg p-4 mb-4">
-            <h4 className="text-sm font-semibold text-[hsl(38,92%,50%)] mb-2 uppercase tracking-wider">Copyright & Intellectual Property Notice</h4>
-            <p className="text-xs text-white/70 leading-relaxed mb-3">
-              &copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved.
+        {/* Copyright */}
+        <div className="py-5 border-t border-amber-900/30">
+          <div className="rounded-lg border border-amber-900/20 p-4 mb-4" style={{ background: "rgba(251,191,36,0.03)" }}>
+            <h4 className="text-xs font-semibold text-amber-500 mb-2 uppercase tracking-wider">Copyright & Intellectual Property Notice</h4>
+            <p className="text-xs text-white/50 leading-relaxed mb-2">
+              &copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved. All content — testimony documents, forensic evidence, gospel writings, blockchain-verified manuscripts, legal correspondence, and all downloadable documents — is protected under Australian and international copyright law.
             </p>
-            <p className="text-xs text-white/60 leading-relaxed mb-3">
-              All content on this website and the domains <strong className="text-white/80">www.barrandodger.com</strong> and <strong className="text-white/80">clean-text-generator--richarddrawsstu.replit.app</strong>, including but not limited to: testimony documents, witness statements, forensic evidence, gospel writings, blockchain-verified manuscripts, legal correspondence, evidence archives, photographic materials, audio/video recordings, and all downloadable documents, are protected under Australian and international copyright law.
-            </p>
-            <p className="text-xs text-white/60 leading-relaxed mb-3">
-              These materials constitute original works of authorship and sworn testimony. Unauthorised reproduction, distribution, modification, public display, or commercial use of any materials from this website is strictly prohibited without prior written consent from the Barran Dodger Legal & Ethical Trust Fund.
-            </p>
-            <p className="text-xs text-white/60 leading-relaxed">
-              Evidence documents are blockchain-timestamped and legally sealed. Any tampering, misrepresentation, or unauthorised alteration of these materials may constitute fraud and will be prosecuted to the fullest extent of the law. These materials are preserved for evidentiary purposes in ongoing and future legal proceedings.
+            <p className="text-xs text-white/40 leading-relaxed">
+              Evidence documents are blockchain-timestamped and legally sealed. Any tampering, misrepresentation, or unauthorised alteration of these materials may constitute fraud and will be prosecuted to the fullest extent of the law.
             </p>
           </div>
-        </div>
 
-        <div className="pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60">
-          <div className="flex flex-col items-center md:items-start gap-1">
-            <p>&copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund. All rights reserved.</p>
-            <div className="flex flex-col sm:flex-row gap-x-4 gap-y-1 font-mono text-white/40">
-              <a 
-                href="https://abr.business.gov.au/ABN/View?abn=78833496164" 
-                target="_blank" 
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <p>&copy; {new Date().getFullYear()} Barran Dodger Legal & Ethical Trust Fund. All rights reserved.</p>
+              <a
+                href="https://abr.business.gov.au/ABN/View?abn=78833496164"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[hsl(38,92%,50%)] transition-colors underline"
+                className="font-mono hover:text-amber-400 transition-colors underline"
               >
                 ABN: 78 833 496 164 (Verify on ABR.gov.au)
               </a>
-              <p>The Trustee for www.barrandodger.com</p>
             </div>
-          </div>
-          <div className="flex items-center gap-6">
-            <a 
-              href="/rss.xml" 
-              target="_blank"
-              className="hover:text-[hsl(38,92%,50%)] transition-colors"
-              data-testid="link-rss-feed"
-            >
-              RSS Feed
-            </a>
-            <span>Privacy Policy</span>
-            <span>Terms of Use</span>
+            <div className="flex items-center gap-5">
+              <a href="/rss.xml" target="_blank" className="hover:text-amber-400 transition-colors" data-testid="link-rss-feed">RSS Feed</a>
+              <span>Privacy Policy</span>
+              <span>Terms of Use</span>
+            </div>
           </div>
         </div>
       </div>

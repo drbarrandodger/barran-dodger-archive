@@ -5,36 +5,36 @@
 @tailwind utilities;
 
 :root {
-  /* ── DARK SOVEREIGN THEME — Creator Speaks Aesthetic ─────────────────── */
-  /* Base: Near-black with warm undertone */
-  --background: 222 25% 6%;          /* Near-black navy — entire site base */
-  --foreground: 210 20% 94%;         /* Off-white — all body text */
+  /* ── DARK SOVEREIGN THEME — Amber-Gold on Near-Black ─────────────────── */
+  /* Base: Warm near-black — amber undertone, not cold navy */
+  --background: 25 65% 4%;           /* Very dark warm amber-black */
+  --foreground: 38 30% 90%;          /* Warm off-white body text */
 
   /* Primary: Deep amber-gold — authority, testimony, truth */
   --primary: 38 92% 50%;             /* Amber gold — primary action colour */
-  --primary-foreground: 222 55% 6%;  /* Near-black text on gold buttons */
+  --primary-foreground: 25 70% 5%;   /* Near-black text on gold buttons */
 
-  /* Secondary: Dark panel surface */
-  --secondary: 222 20% 12%;          /* Very dark navy — panel backgrounds */
+  /* Secondary: Dark warm panel surface */
+  --secondary: 25 50% 8%;            /* Very dark warm brown — panel backgrounds */
   --secondary-foreground: 38 85% 65%; /* Warm gold text on dark panels */
 
-  /* Muted: Subtle dark surface */
-  --muted: 222 18% 10%;              /* Darker muted surface */
-  --muted-foreground: 210 15% 55%;   /* Medium grey for secondary text */
+  /* Muted: Subtle warm dark surface */
+  --muted: 25 45% 7%;                /* Darker warm muted surface */
+  --muted-foreground: 35 20% 52%;    /* Warm medium grey for secondary text */
 
   /* Accent: Bright gold for highlights */
   --accent: 40 90% 55%;              /* Bright gold — links, highlights */
-  --accent-foreground: 222 55% 6%;   /* Dark text on gold accent */
+  --accent-foreground: 25 70% 5%;    /* Dark text on gold accent */
 
-  /* Cards: Dark elevated surfaces */
-  --card: 222 22% 9%;
-  --card-foreground: 210 20% 92%;
-  --card-border: 222 20% 16%;
+  /* Cards: Dark warm elevated surfaces */
+  --card: 25 55% 6%;                 /* Slightly lighter warm dark */
+  --card-foreground: 38 25% 88%;     /* Warm white text */
+  --card-border: 30 35% 16%;         /* Warm visible border */
 
   /* Popovers */
-  --popover: 222 22% 8%;
-  --popover-foreground: 210 20% 92%;
-  --popover-border: 222 20% 18%;
+  --popover: 25 55% 5%;
+  --popover-foreground: 38 25% 88%;
+  --popover-border: 30 30% 18%;
 
   /* Destructive stays red */
   --destructive: 0 72% 51%;
@@ -42,8 +42,8 @@
   --destructive-border: 0 72% 40%;
 
   /* Borders & inputs */
-  --border: 222 20% 18%;             /* Dark border — visible but subtle */
-  --input: 222 20% 14%;
+  --border: 30 35% 16%;              /* Warm border — visible but subtle */
+  --input: 25 40% 10%;               /* Warm dark input */
   --ring: 38 92% 50%;                /* Gold focus ring */
 
   /* Radius */
@@ -52,9 +52,9 @@
   /* Custom semantic tokens */
   --gold: 38 92% 50%;
   --gold-light: 42 100% 70%;
-  --navy-dark: 222 55% 5%;
-  --navy-light: 222 40% 18%;
-  --body-text: 210 70% 75%;
+  --amber-dark: 25 65% 4%;
+  --amber-surface: 25 55% 8%;
+  --body-text: 38 25% 75%;
 
   /* Chart colours */
   --chart-1: 38 92% 50%;
@@ -65,8 +65,8 @@
 
   /* Borders for component variants */
   --primary-border: hsl(38 92% 35%);
-  --secondary-border: hsl(222 20% 22%);
-  --muted-border: hsl(222 18% 20%);
+  --secondary-border: hsl(30 30% 20%);
+  --muted-border: hsl(30 25% 18%);
   --accent-border: hsl(40 90% 40%);
 }
 
@@ -74,6 +74,7 @@
   body {
     @apply bg-background text-foreground antialiased selection:bg-amber-500/20 selection:text-amber-300;
     font-family: 'Inter', sans-serif;
+    background-color: hsl(25, 65%, 4%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -86,16 +87,16 @@
     @apply text-amber-400 hover:text-amber-300 transition-colors;
   }
 
-  /* Scrollbar styling for dark theme */
+  /* Scrollbar styling for dark warm theme */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: hsl(222 25% 8%);
+    background: hsl(25, 55%, 5%);
   }
   ::-webkit-scrollbar-thumb {
-    background: hsl(38 60% 35%);
+    background: hsl(38 60% 30%);
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
@@ -106,37 +107,33 @@
 /* Custom Utilities */
 @layer utilities {
   .bg-grid-pattern {
-    background-image: linear-gradient(to right, rgba(251,191,36,0.04) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(251,191,36,0.04) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(251,191,36,0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(251,191,36,0.05) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Sovereign amber glow for key CTAs */
+  .amber-glow {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.25), 0 0 40px rgba(251, 191, 36, 0.10);
+  }
+  .amber-glow:hover {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.40), 0 0 60px rgba(251, 191, 36, 0.15);
+  }
 }
 
 /* ── Animations ───────────────────────────────────────────────────────────── */
 
 @keyframes share-pulse-wave {
-  0% {
-    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.5);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 12px 4px rgba(251, 191, 36, 0.25);
-    transform: scale(1.08);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
-    transform: scale(1);
-  }
+  0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.5); transform: scale(1); }
+  50% { box-shadow: 0 0 12px 4px rgba(251, 191, 36, 0.25); transform: scale(1.08); }
+  100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); transform: scale(1); }
 }
 
-.share-icon-pulse {
-  animation: share-pulse-wave 2.5s ease-in-out infinite;
-}
-
+.share-icon-pulse { animation: share-pulse-wave 2.5s ease-in-out infinite; }
 .share-icon-pulse:nth-child(2) { animation-delay: 0.15s; }
 .share-icon-pulse:nth-child(3) { animation-delay: 0.3s; }
 .share-icon-pulse:nth-child(4) { animation-delay: 0.45s; }
@@ -144,6 +141,12 @@
 .share-icon-pulse:nth-child(6) { animation-delay: 0.75s; }
 .share-icon-pulse:nth-child(7) { animation-delay: 0.9s; }
 .share-icon-pulse:nth-child(8) { animation-delay: 1.05s; }
+
+@keyframes donate-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.6); }
+  50% { box-shadow: 0 0 0 6px rgba(251, 191, 36, 0); }
+}
+.donate-pulse { animation: donate-pulse 2s ease-in-out infinite; }
 
 @keyframes marquee {
   0% { transform: translateX(0); }

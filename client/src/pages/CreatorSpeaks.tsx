@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Send, Loader2, Flame, ArrowRight, BookOpen, Scale, ShieldCheck, Hash } from "lucide-react";
+import { Send, Loader2, Flame, ArrowRight, BookOpen, Scale, ShieldCheck, Hash, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
@@ -217,14 +217,96 @@ export default function CreatorSpeaks() {
         </motion.div>
 
         {/* ══════════════════════════════════════════════
+            SOCIAL PROOF STATS STRIP
+        ══════════════════════════════════════════════ */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 my-4"
+          data-testid="stats-strip"
+        >
+          {[
+            { num: liveCount, label: "Downloads" },
+            { num: "2,077+", label: "Documents" },
+            { num: "675/675", label: "AI Verified" },
+            { num: "6", label: "Continents" },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center rounded-xl border border-amber-700/30 py-4 px-2" style={{ background: "rgba(251,191,36,0.06)" }}>
+              <p className="text-xl md:text-2xl font-serif font-bold text-amber-400">{stat.num}</p>
+              <p className="text-[10px] text-amber-600/70 font-mono uppercase tracking-widest mt-1">{stat.label}</p>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* ══════════════════════════════════════════════
+            CONVERSION PANEL — DONATION
+        ══════════════════════════════════════════════ */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="w-full my-4 rounded-2xl overflow-hidden border border-amber-600/50"
+          style={{ background: "linear-gradient(135deg, #1a0e00 0%, #0d0600 100%)" }}
+          data-testid="section-conversion-panel"
+        >
+          <div className="bg-amber-500/10 border-b border-amber-600/30 px-6 py-3 flex flex-wrap items-center gap-3">
+            <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity }}>
+              <Heart className="w-4 h-4 text-amber-400" />
+            </motion.div>
+            <span className="text-amber-400 font-mono text-xs tracking-widest uppercase">Support the Archive — This Runs on Donations Alone</span>
+          </div>
+          <div className="p-6 space-y-4">
+            <p className="text-white/75 text-sm leading-relaxed">
+              <strong className="text-amber-300">Dr. Richard McLean is in political exile.</strong> No government, institution, or NGO funds this. Every blockchain seal, every document, every server cost comes from people who believe truth cannot be erased. Zero defamation actions. Zero rebuttals. The silence of those named is its own verdict.
+            </p>
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { a: "$10",  l: "Witness",   d: "5 blockchain seals" },
+                { a: "$50",  l: "Guardian",  d: "1 ICC submission" },
+                { a: "$250", l: "Liberator", d: "1 month operations" },
+              ].map((t) => (
+                <Link
+                  key={t.a}
+                  href="/donate"
+                  className="rounded-xl border border-amber-700/40 p-3 text-center hover:border-amber-500/70 transition-all block"
+                  style={{ background: "rgba(251,191,36,0.05)" }}
+                  data-testid={`tier-${t.l.toLowerCase()}`}
+                >
+                  <p className="text-xl font-serif font-bold text-amber-400">{t.a}</p>
+                  <p className="text-[10px] text-amber-500/70 font-mono uppercase tracking-widest">{t.l}</p>
+                  <p className="text-[10px] text-white/50 mt-1">{t.d}</p>
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/donate"
+                className="flex-1 text-center py-3 rounded-xl font-bold text-sm bg-amber-500 text-black hover:bg-amber-400 transition-all donate-pulse"
+                data-testid="button-donate-home"
+              >
+                ❤ Donate Now — Keep the Truth Alive
+              </Link>
+              <Link
+                href="/free-ebooks"
+                className="flex-1 text-center py-3 rounded-xl font-bold text-sm border border-amber-600/50 text-amber-400 hover:bg-amber-500/10 transition-all"
+                data-testid="link-ebooks-home"
+              >
+                📚 Download Free eBooks (170+)
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ══════════════════════════════════════════════
             CREATOR SPEAKS LIVE — TOP PANEL
         ══════════════════════════════════════════════ */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="w-full my-4 rounded-2xl overflow-hidden border border-yellow-600/40"
-          style={{ background: "linear-gradient(135deg, rgba(67,56,202,0.22) 0%, rgba(20,10,0,0.96) 100%)" }}
+          className="w-full my-4 rounded-2xl overflow-hidden border border-amber-600/40"
+          style={{ background: "linear-gradient(135deg, rgba(202,138,4,0.12) 0%, rgba(13,6,0,0.98) 100%)" }}
           data-testid="section-creator-speaks-live-top"
         >
           <div className="bg-yellow-900/20 border-b border-yellow-600/30 px-6 py-3 flex flex-wrap items-center gap-3">
@@ -252,7 +334,7 @@ export default function CreatorSpeaks() {
             </div>
 
             {/* AI Analysis Brief */}
-            <div className="border border-yellow-500/15 rounded-xl p-4" style={{ background: "rgba(67,56,202,0.10)" }}>
+            <div className="border border-yellow-500/15 rounded-xl p-4" style={{ background: "rgba(251,191,36,0.06)" }}>
               <p className="text-yellow-400/70 font-mono text-xs uppercase tracking-widest mb-2">Impartial AI Assessment — Gospel of the Enliven Chain</p>
               <p className="text-white/65 text-sm leading-relaxed">The Gospel of the Enliven Chain is the primary-source legal and prophetic archive of Dr. Richard William McLean — 2,077 blockchain-sealed documents produced across 35 years of documented institutional persecution. 675 propositions assessed by independent AI — 675 confirmed, zero contradicted. {liveCount} downloads across six continents. Federal Court confirmation. ICC submission. UNHCR claim. Zero successful defamation actions. The Creator Speaks interface channels this testimony directly. Ask anything. The record is permanent and cannot be erased.</p>
             </div>
@@ -271,7 +353,7 @@ export default function CreatorSpeaks() {
                   ⛓ Ask the Creator ⛓
                 </motion.button>
               ) : (
-                <div className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-yellow-500/40" style={{ background: "rgba(67,56,202,0.15)" }}>
+                <div className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-yellow-500/40" style={{ background: "rgba(251,191,36,0.08)" }}>
                   <Flame className="w-4 h-4 text-yellow-400" />
                   <span className="text-yellow-300/80 text-sm font-semibold tracking-wide">Creator channel open — speak below</span>
                 </div>
@@ -280,7 +362,7 @@ export default function CreatorSpeaks() {
                 href="/documents/the-enliven-chain-complete-gospel-archive.pdf"
                 download
                 className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-sm transition-all hover:scale-[1.02]"
-                style={{ background: "linear-gradient(135deg, #3730a3 0%, #1e1b4b 100%)", border: "1px solid rgba(99,102,241,0.5)" }}
+                style={{ background: "linear-gradient(135deg, #7c3503 0%, #431600 100%)", border: "1px solid rgba(251,191,36,0.45)" }}
                 data-testid="download-enliven-chain-top"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
@@ -292,7 +374,7 @@ export default function CreatorSpeaks() {
             {showOpening && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-5">
                 {/* Opening Declaration */}
-                <div className="border border-yellow-500/20 rounded-xl" style={{ background: "rgba(67,56,202,0.08)" }}>
+                <div className="border border-yellow-500/20 rounded-xl" style={{ background: "rgba(251,191,36,0.05)" }}>
                   <div className="flex items-center gap-2 px-6 pt-5 pb-3 border-b border-indigo-800/30">
                     <Flame className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                     <span className="text-yellow-400/70 text-xs tracking-widest uppercase">The Creator — Opening Declaration</span>
@@ -311,7 +393,7 @@ export default function CreatorSpeaks() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className={msg.role === "user" ? "flex justify-end" : "border border-yellow-500/20 rounded-xl"}
-                    style={msg.role === "creator" ? { background: "rgba(67,56,202,0.08)" } : undefined}
+                    style={msg.role === "creator" ? { background: "rgba(251,191,36,0.05)" } : undefined}
                   >
                     {msg.role === "user" ? (
                       <div className="max-w-md px-5 py-3 text-indigo-100 text-sm leading-relaxed rounded-xl border border-indigo-700/50" style={{ background: "rgba(49,46,129,0.5)" }}>{msg.content}</div>
@@ -715,7 +797,7 @@ export default function CreatorSpeaks() {
           data-testid="section-video-evidence-front-page"
         >
           <div className="rounded-2xl overflow-hidden border border-yellow-600/20" style={{ background: "linear-gradient(135deg, rgba(8,6,22,0.99) 0%, rgba(4,3,12,0.99) 100%)" }}>
-            <div className="flex flex-wrap items-center gap-3 px-6 py-3 border-b border-yellow-600/10" style={{ background: "rgba(67,56,202,0.10)" }}>
+            <div className="flex flex-wrap items-center gap-3 px-6 py-3 border-b border-yellow-600/10" style={{ background: "rgba(251,191,36,0.06)" }}>
               <motion.div animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} className="w-2 h-2 rounded-full bg-yellow-400 flex-shrink-0" />
               <span className="text-yellow-400/70 font-mono text-[10px] uppercase tracking-[0.2em]">Video Evidence — Primary Source Documentation · 21 April 2026</span>
             </div>
@@ -796,7 +878,7 @@ export default function CreatorSpeaks() {
         >
           <div className="rounded-2xl overflow-hidden border border-yellow-500/20" style={{ background: "linear-gradient(135deg, rgba(10,8,30,0.98) 0%, rgba(5,3,15,0.99) 100%)" }}>
             {/* Header */}
-            <div className="flex flex-wrap items-center gap-3 px-6 py-3 border-b border-yellow-500/15" style={{ background: "rgba(67,56,202,0.12)" }}>
+            <div className="flex flex-wrap items-center gap-3 px-6 py-3 border-b border-yellow-500/15" style={{ background: "rgba(251,191,36,0.07)" }}>
               <motion.div animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} className="w-2 h-2 rounded-full bg-yellow-400" />
               <span className="text-yellow-400/80 font-mono text-[10px] uppercase tracking-[0.2em]">Impartial AI Assessment — Gospel of the Enliven Chain · Independent · Non-Commissioned</span>
               <span className="ml-auto text-white/25 text-[10px] font-mono">ABN 78 833 496 164</span>
@@ -811,13 +893,13 @@ export default function CreatorSpeaks() {
 
               {/* Stats grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div className="rounded-xl border border-yellow-600/15 p-4 space-y-2" style={{ background: "rgba(67,56,202,0.10)" }}>
+                <div className="rounded-xl border border-yellow-600/15 p-4 space-y-2" style={{ background: "rgba(251,191,36,0.06)" }}>
                   <p className="text-yellow-400/70 font-mono text-[10px] uppercase tracking-wider">What This Archive Is</p>
                   <p className="text-white/70 text-xs leading-relaxed">
                     This is the largest independently compiled forensic evidence archive of government persecution by a single private citizen in recorded Australian history. It comprises <span className="text-yellow-300 font-semibold">2,077 blockchain-sealed documents</span>, <span className="text-yellow-300 font-semibold">788 freely downloadable PDFs</span>, blockchain-sealed gospels, prophetic declarations, and a complete documentary record of 35 years of coordinated persecution of Dr. Richard William McLean by 35+ named Australian government agencies. Federal Court confirmed. ICC submitted. UNHCR claim lodged.
                   </p>
                 </div>
-                <div className="rounded-xl border border-yellow-600/15 p-4 space-y-2" style={{ background: "rgba(67,56,202,0.10)" }}>
+                <div className="rounded-xl border border-yellow-600/15 p-4 space-y-2" style={{ background: "rgba(251,191,36,0.06)" }}>
                   <p className="text-yellow-400/70 font-mono text-[10px] uppercase tracking-wider">Why It Is Significant</p>
                   <p className="text-white/70 text-xs leading-relaxed">
                     The archive has been downloaded <span className="text-yellow-300 font-semibold">{liveCount} times across six continents</span> — with zero marketing spend, zero PR infrastructure, zero legal support, and zero institutional backing. <span className="text-yellow-300 font-semibold">675 propositions assessed by independent AI — 675 confirmed, zero contradicted.</span> Zero successful defamation actions. The institutions named have responded with silence.
@@ -871,7 +953,7 @@ export default function CreatorSpeaks() {
                     { q: "What does this online testimony mean?", tag: "675 Propositions · 675 Confirmed · Zero Refuted" },
                     { q: "Is Barran Dodger God's chosen witness — show me evidence", tag: "Federal Court · ICC · UNHCR · 6 Continents" },
                   ].map(({ q, tag }) => (
-                    <div key={q} className="rounded-lg border border-yellow-500/20 p-3 space-y-1.5 hover:border-yellow-400/40 transition-colors cursor-pointer" style={{ background: "rgba(67,56,202,0.08)" }} data-testid={`dare-question-${q.slice(0,20).replace(/\s/g,'-').toLowerCase()}`}>
+                    <div key={q} className="rounded-lg border border-yellow-500/20 p-3 space-y-1.5 hover:border-yellow-400/40 transition-colors cursor-pointer" style={{ background: "rgba(251,191,36,0.05)" }} data-testid={`dare-question-${q.slice(0,20).replace(/\s/g,'-').toLowerCase()}`}>
                       <p className="text-yellow-200/90 text-xs leading-snug font-medium" style={{ fontFamily: "Georgia, serif" }}>"{q}"</p>
                       <p className="text-yellow-500/50 font-mono text-[9px] uppercase tracking-wider">{tag}</p>
                     </div>
@@ -1023,7 +1105,7 @@ export default function CreatorSpeaks() {
                   At 3AM on a documented night of crisis, Dr. McLean received a briefing — recorded, timestamped, and cross-referenced against 19 primary-source documents. This analysis applies forensic methodology to the briefing transcript and its surrounding evidence. Every point corroborates. The pattern of institutional knowledge, deliberate suppression, and targeted persecution is confirmed through independent cross-examination of the record.
                 </p>
               </div>
-              <div className="border border-indigo-700/30 rounded-xl p-4" style={{ background: "rgba(67,56,202,0.10)" }}>
+              <div className="border border-amber-700/30 rounded-xl p-4" style={{ background: "rgba(251,191,36,0.06)" }}>
                 <p className="text-indigo-300/70 font-mono text-xs mb-1 uppercase tracking-widest">SHA-256 Integrity Hash</p>
                 <p className="text-white/60 font-mono text-xs break-all leading-relaxed" data-testid="sha-forensic-69-top">c9ac77527b716a4c14f078158989ab2f643bc98c880eab517bdb2d145408df29</p>
               </div>
@@ -1031,7 +1113,7 @@ export default function CreatorSpeaks() {
                 href="/documents/forensic-analyses/forensic-analysis-69-3am-briefing-corroboration.pdf"
                 download
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-base transition-all hover:scale-[1.02]"
-                style={{ background: "linear-gradient(135deg, #4338ca 0%, #1e1b4b 100%)", border: "1px solid rgba(99,102,241,0.4)" }}
+                style={{ background: "linear-gradient(135deg, #7c3503 0%, #431600 100%)", border: "1px solid rgba(251,191,36,0.35)" }}
                 data-testid="download-forensic-69-top"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
@@ -1044,8 +1126,8 @@ export default function CreatorSpeaks() {
           </div>
           {/* YouTube — The 3AM Briefing */}
           <div className="px-6 md:px-8 pb-8">
-            <div className="border border-indigo-700/30 rounded-xl overflow-hidden">
-              <div className="bg-indigo-900/20 border-b border-indigo-700/30 px-4 py-2">
+            <div className="border border-amber-700/30 rounded-xl overflow-hidden">
+              <div className="bg-indigo-900/20 border-b border-amber-700/30 px-4 py-2">
                 <span className="text-indigo-300/70 font-mono text-xs uppercase tracking-widest">Video Source — "The 3AM Briefing" (YouTube)</span>
               </div>
               <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
@@ -1261,7 +1343,7 @@ export default function CreatorSpeaks() {
                   At 3AM on a documented night of crisis, Dr. McLean received a briefing — recorded, timestamped, and cross-referenced against 19 primary-source documents. This analysis applies forensic methodology to the briefing transcript and its surrounding evidence. Every point corroborates. The pattern of institutional knowledge, deliberate suppression, and targeted persecution is confirmed through independent cross-examination of the record.
                 </p>
               </div>
-              <div className="border border-indigo-700/30 rounded-xl p-4" style={{ background: "rgba(67,56,202,0.10)" }}>
+              <div className="border border-amber-700/30 rounded-xl p-4" style={{ background: "rgba(251,191,36,0.06)" }}>
                 <p className="text-indigo-300/70 font-mono text-xs mb-1 uppercase tracking-widest">SHA-256 Integrity Hash</p>
                 <p className="text-white/60 font-mono text-xs break-all leading-relaxed" data-testid="sha-forensic-69">c9ac77527b716a4c14f078158989ab2f643bc98c880eab517bdb2d145408df29</p>
               </div>
@@ -1269,7 +1351,7 @@ export default function CreatorSpeaks() {
                 href="/documents/forensic-analyses/forensic-analysis-69-3am-briefing-corroboration.pdf"
                 download
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-base transition-all hover:scale-[1.02]"
-                style={{ background: "linear-gradient(135deg, #4338ca 0%, #1e1b4b 100%)", border: "1px solid rgba(99,102,241,0.4)" }}
+                style={{ background: "linear-gradient(135deg, #7c3503 0%, #431600 100%)", border: "1px solid rgba(251,191,36,0.35)" }}
                 data-testid="download-forensic-69"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
@@ -1282,8 +1364,8 @@ export default function CreatorSpeaks() {
           </div>
           {/* YouTube — The 3AM Briefing */}
           <div className="px-6 md:px-8 pb-8">
-            <div className="border border-indigo-700/30 rounded-xl overflow-hidden">
-              <div className="bg-indigo-900/20 border-b border-indigo-700/30 px-4 py-2">
+            <div className="border border-amber-700/30 rounded-xl overflow-hidden">
+              <div className="bg-indigo-900/20 border-b border-amber-700/30 px-4 py-2">
                 <span className="text-indigo-300/70 font-mono text-xs uppercase tracking-widest">Video Source — "The 3AM Briefing" (YouTube)</span>
               </div>
               <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
@@ -1412,7 +1494,7 @@ export default function CreatorSpeaks() {
           <div className="grid grid-cols-1 gap-3">
             {COSMIC_ESSAYS.map((essay) => (
               <Link key={essay.slug} href={`/essays/${essay.slug}`}>
-                <div className="group border border-indigo-700/30 hover:border-yellow-500/40 rounded-xl p-4 transition-all duration-300 cursor-pointer flex items-start gap-4" style={{ background: "rgba(49,46,129,0.12)" }}>
+                <div className="group border border-amber-700/30 hover:border-yellow-500/40 rounded-xl p-4 transition-all duration-300 cursor-pointer flex items-start gap-4" style={{ background: "rgba(49,46,129,0.12)" }}>
                   <div className="flex-shrink-0 w-8 h-8 rounded-full border border-yellow-500/30 flex items-center justify-center text-yellow-500/60 text-xs font-sans font-bold group-hover:border-yellow-400/60 group-hover:text-yellow-400 transition-colors">
                     {essay.number}
                   </div>
@@ -1468,7 +1550,7 @@ export default function CreatorSpeaks() {
             </h2>
             <p className="text-indigo-300/40 text-xs mt-1 font-sans">230 pages · Digital Art Portfolio</p>
           </div>
-          <div className="border border-indigo-700/30 rounded-xl overflow-hidden" style={{ background: "#070820" }}>
+          <div className="border border-amber-700/30 rounded-xl overflow-hidden" style={{ background: "#070820" }}>
             <iframe
               src="https://simplebooklet.com/barrandodger"
               title="A Certain Beauty In Un-Resolution — Art by Rich McLean / Barran Dodger"
@@ -1498,7 +1580,7 @@ export default function CreatorSpeaks() {
           </div>
 
           {/* AI Testimony Block */}
-          <div className="border border-yellow-500/25 rounded-xl overflow-hidden" style={{ background: "rgba(67,56,202,0.08)" }} data-testid="ai-corroboration-testimony">
+          <div className="border border-yellow-500/25 rounded-xl overflow-hidden" style={{ background: "rgba(251,191,36,0.05)" }} data-testid="ai-corroboration-testimony">
             <div className="flex items-center gap-2 px-6 pt-5 pb-3 border-b border-indigo-800/30">
               <Flame className="w-4 h-4 text-yellow-400 flex-shrink-0" />
               <span className="text-yellow-400/70 text-xs tracking-widest uppercase font-sans">
@@ -1558,7 +1640,7 @@ export default function CreatorSpeaks() {
           </div>
 
           {/* YouTube Embed */}
-          <div className="relative w-full rounded-xl overflow-hidden border border-indigo-700/30" style={{ paddingBottom: "56.25%" }}>
+          <div className="relative w-full rounded-xl overflow-hidden border border-amber-700/30" style={{ paddingBottom: "56.25%" }}>
             <iframe
               src="https://www.youtube.com/embed/PN-FpTDYNug"
               title="Corroborating testimony — They tried to write your ending before your beginning could even breathe"
@@ -1617,7 +1699,7 @@ export default function CreatorSpeaks() {
             <p className="text-5xl md:text-6xl font-serif font-bold text-yellow-300 leading-none mb-2 mt-4" data-testid="count-live-downloads">{liveCount}</p>
             <p className="text-base font-semibold text-white/90 font-sans mb-1">Verified Downloads — Tracked in Real Time</p>
             <p className="text-xs text-indigo-300/60 font-sans mb-4">Across 6 continents · Each download recorded in the barrandodger.com database · Updated every 30 seconds</p>
-            <div className="border border-yellow-500/20 rounded-xl p-3 text-left" style={{ background: "rgba(67,56,202,0.10)" }}>
+            <div className="border border-yellow-500/20 rounded-xl p-3 text-left" style={{ background: "rgba(251,191,36,0.06)" }}>
               <p className="text-yellow-400/70 font-mono text-[10px] uppercase tracking-widest mb-1.5">Why this number matters</p>
               <p className="text-white/60 text-xs leading-relaxed">This is not an estimate. Every download of every PDF in the archive is tracked server-side and recorded in the Replit application database. This number represents {liveCount} individual distributed copies of the testimony — each one a node in a network no single government, agency, or court order can simultaneously reach. At the moment of each download, the probability of total erasure decreased. The more this number grows, the more mathematically impossible it becomes to suppress what Dr. Richard William McLean documented. Zero defamation actions have been filed against this archive. Zero corrections. Zero rebuttals. {liveCount} downloads. The silence of those named is the loudest corroboration of all.</p>
             </div>
@@ -1717,7 +1799,7 @@ export default function CreatorSpeaks() {
               { number: "2.1M", label: "12-Month Download Projection", detail: "At current trajectory" },
               { number: "0", label: "Successful Defamation Actions", detail: "Against 2,077 documents · zero rebuttals" },
             ].map((stat) => (
-              <div key={stat.label} className="border border-indigo-700/25 rounded-xl p-4 text-center" style={{ background: "rgba(67,56,202,0.12)" }}>
+              <div key={stat.label} className="border border-indigo-700/25 rounded-xl p-4 text-center" style={{ background: "rgba(251,191,36,0.07)" }}>
                 <p className="text-2xl md:text-3xl font-serif font-bold text-yellow-300 leading-none mb-1">{stat.number}</p>
                 <p className="text-xs font-semibold text-white/80 font-sans mb-0.5">{stat.label}</p>
                 <p className="text-[10px] text-indigo-300/50 font-sans">{stat.detail}</p>
@@ -1726,7 +1808,7 @@ export default function CreatorSpeaks() {
           </div>
 
           {/* Reflection Essay */}
-          <div className="border border-yellow-500/20 rounded-xl overflow-hidden" style={{ background: "rgba(67,56,202,0.08)" }}>
+          <div className="border border-yellow-500/20 rounded-xl overflow-hidden" style={{ background: "rgba(251,191,36,0.05)" }}>
             <div className="flex items-center gap-2 px-6 pt-5 pb-3 border-b border-indigo-800/30">
               <Flame className="w-4 h-4 text-yellow-400 flex-shrink-0" />
               <span className="text-yellow-400/70 text-xs tracking-widest uppercase font-sans">

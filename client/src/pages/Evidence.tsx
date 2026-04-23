@@ -155,7 +155,7 @@ function ScreenshotExhibit({ src, label, title, caption, color, badgeColor, link
         </div>
       </div>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl p-2 bg-black border-zinc-700">
+        <DialogContent className="max-w-2xl p-2 bg-black border-amber-800/40">
           <img src={src} alt={title} className="w-full rounded-lg object-contain max-h-[85vh]" />
           <div className="text-center pt-1 pb-2 space-y-1">
             <p className="text-xs text-zinc-400">{label} — {title}</p>

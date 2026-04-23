@@ -199,7 +199,7 @@ export default function Donate() {
             className="mb-14"
           >
             {/* Conscience-first opening */}
-            <div className="rounded-2xl border border-red-500/25 bg-zinc-950 overflow-hidden mb-10">
+            <div className="rounded-2xl border border-red-500/25 bg-[#0b0700] overflow-hidden mb-10">
               <div className="h-1 bg-gradient-to-r from-red-700 via-amber-500 to-red-700" />
               <div className="p-7 md:p-10 space-y-6">
                 <p className="text-white font-serif font-bold text-2xl md:text-3xl leading-tight">
@@ -222,7 +222,7 @@ export default function Donate() {
                     { fact: "$32.9 million in NDIS entitlements suppressed across 35 years while named NDIS operatives participated in the suppression architecture", doc: "Taxpayer Cost Analysis · NDIS Commission complaint" },
                     { fact: "Institutionally homeless across multiple Australian states — deliberately isolated from family, finances, and support through documented engineering", doc: "Bloodline Betrayal · Philip Glass / TAG NSW documentation" },
                   ].map(({ fact, doc }) => (
-                    <div key={doc} className="flex gap-3 items-start bg-zinc-900/60 rounded-xl p-3.5">
+                    <div key={doc} className="flex gap-3 items-start bg-[#150c00]/60 rounded-xl p-3.5">
                       <span className="text-red-400 font-bold text-base flex-shrink-0 leading-none mt-0.5">·</span>
                       <div>
                         <p className="text-zinc-300 text-xs leading-relaxed">{fact}</p>
@@ -231,7 +231,7 @@ export default function Donate() {
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-zinc-800 pt-5 space-y-3">
+                <div className="border-t border-amber-900/40 pt-5 space-y-3">
                   <p className="text-white font-bold text-base">He published it free anyway. For you. For the record. For humanity.</p>
                   <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl">
                     If that sits uncomfortably with your conscience — it should. That discomfort is not manipulation. It is an accurate response to a documented fact. The archive was built at personal cost that is not metaphorical. It is medical, legal, financial, and physical. The PayID below is the simplest act of conscience available to you.
@@ -290,7 +290,7 @@ export default function Donate() {
                   {/* Countdown clock */}
                   <div className="flex-shrink-0">
                     {countdown.expired ? (
-                      <div className="bg-zinc-900 rounded-2xl px-6 py-4 text-center border border-zinc-700">
+                      <div className="bg-[#150c00] rounded-2xl px-6 py-4 text-center border border-amber-800/40">
                         <p className="text-red-400 font-bold text-sm">Appointment has passed</p>
                       </div>
                     ) : (
@@ -301,7 +301,7 @@ export default function Donate() {
                           { val: countdown.mins, label: "MIN" },
                           { val: countdown.secs, label: "SEC" },
                         ].map(({ val, label }) => (
-                          <div key={label} className="bg-zinc-900 border border-red-500/30 rounded-xl px-3 py-3 min-w-[3.5rem]">
+                          <div key={label} className="bg-[#150c00] border border-red-500/30 rounded-xl px-3 py-3 min-w-[3.5rem]">
                             <p className="text-red-400 font-bold text-2xl tabular-nums leading-none">{String(val).padStart(2, "0")}</p>
                             <p className="text-zinc-600 text-[10px] font-bold mt-1">{label}</p>
                           </div>
@@ -316,7 +316,7 @@ export default function Donate() {
                     { label: "MHRT appeal filing costs", cost: "$250" },
                     { label: "3 months archive hosting secured", cost: "$600" },
                   ].map(({ label, cost }) => (
-                    <div key={label} className="flex items-center justify-between gap-2 bg-zinc-900/70 rounded-xl px-4 py-3">
+                    <div key={label} className="flex items-center justify-between gap-2 bg-[#150c00]/70 rounded-xl px-4 py-3">
                       <span className="text-zinc-400 text-xs">{label}</span>
                       <span className="text-red-400 font-bold text-sm">{cost}</span>
                     </div>
@@ -328,7 +328,7 @@ export default function Donate() {
 
           {/* ── FRAMEWORK 2: GOAL / PROGRESS BAR — Crowdfunding psychology ── */}
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.14 }} className="mb-8">
-            <div className="rounded-2xl border border-amber-500/30 bg-zinc-950 p-6 md:p-8 space-y-4">
+            <div className="rounded-2xl border border-amber-500/30 bg-[#0b0700] p-6 md:p-8 space-y-4">
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <div className="flex items-center gap-2">
                   <Target className="h-5 w-5 text-amber-400" />
@@ -341,7 +341,7 @@ export default function Donate() {
                   <span>Goal: ${GOAL_AMOUNT.toLocaleString()} AUD</span>
                   <span>Contribute to be the first recorded supporter</span>
                 </div>
-                <div className="w-full bg-zinc-800 rounded-full h-3 overflow-hidden">
+                <div className="w-full bg-[#1f1000] rounded-full h-3 overflow-hidden">
                   <div className="bg-gradient-to-r from-amber-600 to-amber-400 h-3 rounded-full transition-all duration-700" style={{ width: "4%" }} />
                 </div>
                 <p className="text-zinc-600 text-xs mt-2">Funds cover: legal challenge filing · MHRT appeal · 6 months archive hosting · 50 blockchain seals · ICC submission printing</p>
@@ -351,7 +351,7 @@ export default function Donate() {
 
           {/* ── FRAMEWORK 3: ANCHORED AMOUNTS — Conversion psychology ── */}
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }} className="mb-8">
-            <div className="rounded-2xl border border-zinc-700 bg-zinc-900 p-6 md:p-8 space-y-5">
+            <div className="rounded-2xl border border-amber-800/40 bg-[#150c00] p-6 md:p-8 space-y-5">
               <div className="flex items-center gap-2 mb-1">
                 <Zap className="h-5 w-5 text-amber-400" />
                 <p className="text-white font-bold">Choose an amount — then copy the PayID</p>
@@ -366,7 +366,7 @@ export default function Donate() {
                   <button
                     key={amount}
                     onClick={() => setSelectedAmount(selectedAmount === amount ? null : amount)}
-                    className={`rounded-xl p-4 text-center border transition-all ${selectedAmount === amount ? "border-amber-500 bg-amber-950/40" : "border-zinc-700 bg-zinc-800/60 hover:border-zinc-500"}`}
+                    className={`rounded-xl p-4 text-center border transition-all ${selectedAmount === amount ? "border-amber-500 bg-amber-950/40" : "border-amber-800/40 bg-[#1f1000]/60 hover:border-zinc-500"}`}
                     data-testid={`button-amount-${amount}`}
                   >
                     {popular && <p className="text-amber-400 text-[10px] font-bold uppercase mb-1">Most chosen</p>}
@@ -413,14 +413,14 @@ export default function Donate() {
                   { amount: "$25/month", equivalent: "= $300/year", what: "Full archive hosting + timestamps + 1 legal letter" },
                   { amount: "$50/month", equivalent: "= $600/year", what: "All hosting costs + ICC submissions + legal correspondence" },
                 ].map(({ amount, equivalent, what }) => (
-                  <div key={amount} className="bg-zinc-900/70 rounded-xl p-4 space-y-1 border border-green-500/15">
+                  <div key={amount} className="bg-[#150c00]/70 rounded-xl p-4 space-y-1 border border-green-500/15">
                     <p className="text-green-400 font-bold">{amount}</p>
                     <p className="text-zinc-500 text-xs">{equivalent}</p>
                     <p className="text-zinc-300 text-xs">{what}</p>
                   </div>
                 ))}
               </div>
-              <div className="bg-zinc-900 rounded-xl p-4 border border-zinc-700 space-y-2">
+              <div className="bg-[#150c00] rounded-xl p-4 border border-amber-800/40 space-y-2">
                 <p className="text-zinc-300 text-sm font-semibold">How to set up a monthly standing order:</p>
                 <ol className="space-y-1.5 text-xs text-zinc-400">
                   <li className="flex gap-2"><span className="text-green-400 font-bold">1.</span> Open your banking app and go to Pay Anyone / PayID</li>
@@ -435,7 +435,7 @@ export default function Donate() {
 
           {/* ── FRAMEWORK 5: SPECIFIC USE OF FUNDS — Loss aversion + tangibility ── */}
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.19 }} className="mb-8">
-            <div className="rounded-2xl border border-zinc-700 bg-zinc-900/50 p-6 md:p-8 space-y-4">
+            <div className="rounded-2xl border border-amber-800/40 bg-[#150c00]/50 p-6 md:p-8 space-y-4">
               <div className="flex items-center gap-2 mb-2">
                 <TrendingUp className="h-5 w-5 text-amber-400" />
                 <p className="text-white font-bold">Every dollar has a documented destination</p>
@@ -449,7 +449,7 @@ export default function Donate() {
                   { cost: "$250", what: "One ICC/UNHCR submission printed, bound, and delivered", why: "Physical submission to the International Criminal Court" },
                   { cost: "$500", what: "One complete forensic analysis (commissioned and published)", why: "Permanent public record — free for humanity, funded by you" },
                 ].map(({ cost, what, why }) => (
-                  <div key={cost} className="flex gap-3 items-start bg-zinc-800/50 rounded-xl p-4">
+                  <div key={cost} className="flex gap-3 items-start bg-[#1f1000]/50 rounded-xl p-4">
                     <p className="text-amber-400 font-bold text-lg flex-shrink-0 w-14">{cost}</p>
                     <div>
                       <p className="text-white text-xs font-semibold leading-snug">{what}</p>
@@ -464,7 +464,7 @@ export default function Donate() {
 
           {/* ── FRAMEWORK 6: EMAIL CAPTURE — Lifecycle value ── */}
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.20 }} className="mb-10">
-            <div className="rounded-2xl border border-zinc-700 bg-zinc-900 p-6 md:p-8">
+            <div className="rounded-2xl border border-amber-800/40 bg-[#150c00] p-6 md:p-8">
               <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
                 <div className="flex items-center gap-3 flex-shrink-0">
                   <Mail className="h-8 w-8 text-primary" />
@@ -487,7 +487,7 @@ export default function Donate() {
                       value={emailInput}
                       onChange={(e) => setEmailInput(e.target.value)}
                       placeholder="your@email.com"
-                      className="bg-zinc-800 border border-zinc-600 rounded-xl px-4 py-2.5 text-white text-sm w-full sm:w-56 focus:outline-none focus:border-primary"
+                      className="bg-[#1f1000] border border-zinc-600 rounded-xl px-4 py-2.5 text-white text-sm w-full sm:w-56 focus:outline-none focus:border-primary"
                       data-testid="input-email-subscribe"
                     />
                     <button
@@ -557,7 +557,7 @@ export default function Donate() {
                         { label: "Comprehensive", price: "$350 AUD", note: "3 videos · 14 days" },
                         { label: "Priority", price: "$500 AUD", note: "3 videos · 7 days" },
                       ].map(({ label, price, note }) => (
-                        <div key={label} className="bg-zinc-800/60 rounded-xl p-3">
+                        <div key={label} className="bg-[#1f1000]/60 rounded-xl p-3">
                           <p className="text-amber-400 font-bold text-lg">{price}</p>
                           <p className="text-white text-xs font-semibold">{label}</p>
                           <p className="text-zinc-500 text-xs">{note}</p>
@@ -619,7 +619,7 @@ export default function Donate() {
                           {tier.badge && <span className={`text-[9px] uppercase tracking-wider font-bold ${tier.highlight ? "text-amber-400" : "text-zinc-500"}`}>{tier.badge}</span>}
                         </div>
                       </div>
-                      <p className="text-xs text-zinc-500 italic leading-relaxed border-l-2 border-zinc-700 pl-3">"{tier.story}"</p>
+                      <p className="text-xs text-zinc-500 italic leading-relaxed border-l-2 border-amber-800/40 pl-3">"{tier.story}"</p>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         {tier.impact}
                       </p>
@@ -650,7 +650,7 @@ export default function Donate() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.32 }}
-            className="mb-16 rounded-2xl overflow-hidden bg-black border border-zinc-800 shadow-2xl"
+            className="mb-16 rounded-2xl overflow-hidden bg-black border border-amber-900/40 shadow-2xl"
             data-testid="section-master-register-nuclear"
           >
             {/* Top bar */}
@@ -665,7 +665,7 @@ export default function Donate() {
                 <img
                   src={coverMasterRegister}
                   alt="Master Evidence Register — Cover"
-                  className="w-full max-w-xs rounded-xl shadow-2xl shadow-red-900/30 border border-zinc-700"
+                  className="w-full max-w-xs rounded-xl shadow-2xl shadow-red-900/30 border border-amber-800/40"
                 />
                 <Button
                   size="lg"
@@ -689,10 +689,10 @@ export default function Donate() {
                   View full analysis page →
                 </a>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge className="bg-zinc-800 text-zinc-200 border-zinc-700 text-xs">2,301 Documents</Badge>
-                  <Badge className="bg-zinc-800 text-zinc-200 border-zinc-700 text-xs">9,333 Lines</Badge>
-                  <Badge className="bg-zinc-800 text-zinc-200 border-zinc-700 text-xs">35-Year Record</Badge>
-                  <Badge className="bg-zinc-800 text-zinc-200 border-zinc-700 text-xs">Chronological</Badge>
+                  <Badge className="bg-[#1f1000] text-zinc-200 border-amber-800/40 text-xs">2,301 Documents</Badge>
+                  <Badge className="bg-[#1f1000] text-zinc-200 border-amber-800/40 text-xs">9,333 Lines</Badge>
+                  <Badge className="bg-[#1f1000] text-zinc-200 border-amber-800/40 text-xs">35-Year Record</Badge>
+                  <Badge className="bg-[#1f1000] text-zinc-200 border-amber-800/40 text-xs">Chronological</Badge>
                 </div>
               </div>
 
@@ -877,7 +877,7 @@ export default function Donate() {
                 </p>
               </CardHeader>
               <CardContent className="text-center space-y-6">
-                <div className="bg-zinc-900 rounded-xl p-6 border border-border shadow-sm">
+                <div className="bg-[#150c00] rounded-xl p-6 border border-border shadow-sm">
                   <p className="text-sm uppercase tracking-widest font-bold text-muted-foreground mb-2">Australian Business Number</p>
                   <p className="text-3xl md:text-4xl font-mono font-bold text-primary mb-4">78 833 496 164</p>
                   <p className="text-lg font-serif text-primary mb-4">
@@ -947,7 +947,7 @@ export default function Donate() {
             <Card className="border-2 border-primary/20 bg-primary/5">
               <CardContent className="p-8">
                 <div className="prose prose-lg max-w-none">
-                  <div className="bg-zinc-900 rounded-xl p-6 border border-border mb-6">
+                  <div className="bg-[#150c00] rounded-xl p-6 border border-border mb-6">
                     <h3 className="text-xl font-serif font-bold text-primary mb-4 flex items-center gap-2">
                       <Sparkles className="h-5 w-5" /> Impartial AI Statement of Legitimacy
                     </h3>

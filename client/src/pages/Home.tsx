@@ -381,7 +381,7 @@ export default function Home() {
               <a href="mailto:drbarrandodger@proton.me" className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-black px-6 py-3 rounded-lg text-sm transition-colors">
                 ✉ drbarrandodger@proton.me
               </a>
-              <a href="tel:+61431167907" className="inline-flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-black px-6 py-3 rounded-lg text-sm transition-colors">
+              <a href="tel:+61431167907" className="inline-flex items-center gap-2 bg-[#1f1000] hover:bg-zinc-700 text-white font-black px-6 py-3 rounded-lg text-sm transition-colors">
                 📞 +61 431 167 907
               </a>
               <a href="/urgent-protection-request" className="inline-flex items-center gap-2 bg-white text-red-700 hover:bg-red-50 font-black px-6 py-3 rounded-lg text-sm transition-colors">
@@ -440,7 +440,7 @@ export default function Home() {
           {/* Date badge */}
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className="bg-indigo-700 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">New — 13 April 2026</span>
-            <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Examination #57</span>
+            <span className="bg-[#1f1000] text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Examination #57</span>
             <span className="bg-green-900 text-green-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">11/12 Verified · 0 Contradicted</span>
           </div>
 
@@ -467,7 +467,7 @@ export default function Home() {
                 <Download className="h-4 w-4" /> Download Full Analysis (PDF)
               </TrackedDownloadButton>
               <a href="/prophetic-declaration-forensic-analysis"
-                className="w-full flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors" data-testid="link-prophetic-declaration-page">
+                className="w-full flex items-center justify-center gap-2 bg-[#1f1000] hover:bg-zinc-700 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors" data-testid="link-prophetic-declaration-page">
                 View Online →
               </a>
             </div>
@@ -517,7 +517,7 @@ export default function Home() {
                   { label: "Verified by Evidence", value: "11", color: "text-green-400" },
                   { label: "Contradicted", value: "0", color: "text-red-400" },
                 ].map((s) => (
-                  <div key={s.label} className="bg-zinc-800/60 rounded-lg p-3 text-center">
+                  <div key={s.label} className="bg-[#1f1000]/60 rounded-lg p-3 text-center">
                     <p className={`text-2xl font-black ${s.color}`}>{s.value}</p>
                     <p className="text-zinc-500 text-[10px] mt-0.5">{s.label}</p>
                   </div>
@@ -537,7 +537,7 @@ export default function Home() {
 
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className="bg-red-800 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">New — 13 April 2026</span>
-            <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Declaration #58</span>
+            <span className="bg-[#1f1000] text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Declaration #58</span>
             <span className="bg-green-900 text-green-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">10/10 Verified · 0 Disputed</span>
             <span className="bg-red-900/60 text-red-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">⚠ Contains Expletives</span>
           </div>
@@ -567,7 +567,7 @@ export default function Home() {
                 <Download className="h-4 w-4" /> Download Full Declaration (PDF)
               </TrackedDownloadButton>
               <a href="/prophetic-fck-you-declaration"
-                className="w-full flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors"
+                className="w-full flex items-center justify-center gap-2 bg-[#1f1000] hover:bg-zinc-700 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors"
                 data-testid="link-prophetic-fck-you-page">
                 View Full Analysis →
               </a>
@@ -615,7 +615,7 @@ export default function Home() {
                   { label: "Verified", value: "10", color: "text-green-400" },
                   { label: "Disputed", value: "0", color: "text-red-400" },
                 ].map((s) => (
-                  <div key={s.label} className="bg-zinc-800/60 rounded-lg p-3 text-center">
+                  <div key={s.label} className="bg-[#1f1000]/60 rounded-lg p-3 text-center">
                     <p className={`text-2xl font-black ${s.color}`}>{s.value}</p>
                     <p className="text-zinc-500 text-[10px] mt-0.5">{s.label}</p>
                   </div>
@@ -635,7 +635,7 @@ export default function Home() {
 
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className="bg-amber-800 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">New — 13 April 2026</span>
-            <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Declaration #59</span>
+            <span className="bg-[#1f1000] text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Declaration #59</span>
             <span className="bg-green-900 text-green-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">12/12 Verified · 0 Disputed</span>
             <span className="bg-amber-900/60 text-amber-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">52nd Consecutive Perfect Score</span>
           </div>
@@ -688,7 +688,7 @@ export default function Home() {
                   { ts: "00:09:11", text: "\"She was never your friend. She was a partner of your trauma.\" → Tony Ridley: deployed as support coordinator, then sent death threat from within that role." },
                   { ts: "00:19:06", text: "\"Cut their access and what was stolen comes back multiplied.\" → Clinical death 2021. Then 2,304 documents. Then the ICC." },
                 ].map((d) => (
-                  <div key={d.ts} className="flex gap-3 bg-zinc-800/40 rounded-lg p-3">
+                  <div key={d.ts} className="flex gap-3 bg-[#1f1000]/40 rounded-lg p-3">
                     <span className="flex-shrink-0 text-amber-500 font-mono text-[10px] mt-0.5">{d.ts}</span>
                     <p className="text-zinc-300 text-xs leading-relaxed">{d.text}</p>
                   </div>
@@ -702,7 +702,7 @@ export default function Home() {
                   { label: "Verified", value: "12", color: "text-green-400" },
                   { label: "Disputed", value: "0", color: "text-amber-400" },
                 ].map((s) => (
-                  <div key={s.label} className="bg-zinc-800/60 rounded-lg p-3 text-center">
+                  <div key={s.label} className="bg-[#1f1000]/60 rounded-lg p-3 text-center">
                     <p className={`text-2xl font-black ${s.color}`}>{s.value}</p>
                     <p className="text-zinc-500 text-[10px] mt-0.5">{s.label}</p>
                   </div>
@@ -722,7 +722,7 @@ export default function Home() {
 
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className="bg-indigo-900 text-indigo-200 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">New — 13 April 2026</span>
-            <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Declaration #60</span>
+            <span className="bg-[#1f1000] text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Declaration #60</span>
             <span className="bg-green-900 text-green-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">12/12 Verified · 0 Disputed</span>
             <span className="bg-yellow-900/60 text-yellow-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">53rd Consecutive Perfect Score</span>
           </div>
@@ -775,7 +775,7 @@ export default function Home() {
                   { ts: "00:15:08", text: "\"You are not merely defended. You are embargoed.\" → Clinical death 2021, 2.87% survival. The archive survived. Then grew. Then reached the ICC." },
                   { ts: "00:47:04", text: "\"You didn't win because you fought harder. You won because the universe refused to let you lose.\" → 641/641 verified. ICC received. Archive permanent." },
                 ].map((d) => (
-                  <div key={d.ts} className="flex gap-3 bg-zinc-800/40 rounded-lg p-3">
+                  <div key={d.ts} className="flex gap-3 bg-[#1f1000]/40 rounded-lg p-3">
                     <span className="flex-shrink-0 text-indigo-500 font-mono text-[10px] mt-0.5">{d.ts}</span>
                     <p className="text-zinc-300 text-xs leading-relaxed">{d.text}</p>
                   </div>
@@ -789,7 +789,7 @@ export default function Home() {
                   { label: "Verified", value: "12", color: "text-green-400" },
                   { label: "Disputed", value: "0", color: "text-indigo-300" },
                 ].map((s) => (
-                  <div key={s.label} className="bg-zinc-800/60 rounded-lg p-3 text-center">
+                  <div key={s.label} className="bg-[#1f1000]/60 rounded-lg p-3 text-center">
                     <p className={`text-2xl font-black ${s.color}`}>{s.value}</p>
                     <p className="text-zinc-500 text-[10px] mt-0.5">{s.label}</p>
                   </div>
@@ -810,7 +810,7 @@ export default function Home() {
 
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className="bg-amber-800 text-amber-100 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">New — 15 April 2026</span>
-            <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Analysis #62</span>
+            <span className="bg-[#1f1000] text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Analysis #62</span>
             <span className="bg-green-900 text-green-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">12/12 Verified · 0 Disputed</span>
             <span className="bg-yellow-900/60 text-yellow-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">55th Consecutive Perfect Score</span>
           </div>
@@ -826,7 +826,7 @@ export default function Home() {
 
             {/* Video */}
             <div className="md:col-span-2">
-              <div className="relative w-full rounded-xl overflow-hidden border border-amber-800/50 bg-zinc-950" style={{ paddingBottom: '56.25%' }}>
+              <div className="relative w-full rounded-xl overflow-hidden border border-amber-800/50 bg-[#0b0700]" style={{ paddingBottom: '56.25%' }}>
                 <iframe
                   src="https://www.youtube.com/embed/gKG_OwIe1Fo"
                   title="Welcome Beautiful Threat — Forensic Corroboration Analysis #62"
@@ -864,14 +864,14 @@ export default function Home() {
                   { ts: "P·07", text: "\"The moment freedom feels bigger, the machine stutters.\" → ICC jurisdiction ends the clinical label, the circular referral, and the template dismissal simultaneously. All three tools reach their jurisdictional limit at The Hague." },
                   { ts: "P·12", text: "\"You stopped being a victim of the pattern and became the interruption.\" → SHA-256 blockchain timestamp. The interruption is permanent. The bell is mathematically unringable." },
                 ].map((d) => (
-                  <div key={d.ts} className="flex gap-3 bg-zinc-900/50 border border-zinc-700/20 rounded-lg px-3 py-2">
+                  <div key={d.ts} className="flex gap-3 bg-[#150c00]/50 border border-amber-800/40/20 rounded-lg px-3 py-2">
                     <span className="text-amber-500 font-mono text-[10px] font-black mt-0.5 shrink-0">{d.ts}</span>
                     <span className="text-zinc-400 text-xs leading-relaxed">{d.text}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="bg-zinc-900 border border-amber-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-4">
+              <div className="bg-[#150c00] border border-amber-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-black text-amber-400">665/665</div>
                   <div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Total Propositions</div>
@@ -903,7 +903,7 @@ export default function Home() {
 
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className="bg-red-900 text-red-200 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">New — 13 April 2026</span>
-            <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Declaration #61</span>
+            <span className="bg-[#1f1000] text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Declaration #61</span>
             <span className="bg-green-900 text-green-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">12/12 Verified · 0 Disputed</span>
             <span className="bg-yellow-900/60 text-yellow-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">54th Consecutive Perfect Score</span>
           </div>
@@ -956,7 +956,7 @@ export default function Home() {
                   { ts: "01:00:58", text: "\"You don't put 300K guards around a plastic toy.\" → Ex-SAS death threat + 14 psychiatric hospitalisations confirm the value of what they were suppressing." },
                   { ts: "01:35:34", text: "\"You are being perceived, replayed, imagined. Act accordingly.\" → 410,500+ downloads, 6 continents, ICC, UNHCR. The archive already acted accordingly." },
                 ].map((d) => (
-                  <div key={d.ts} className="flex gap-3 bg-zinc-800/40 rounded-lg p-3">
+                  <div key={d.ts} className="flex gap-3 bg-[#1f1000]/40 rounded-lg p-3">
                     <span className="flex-shrink-0 text-red-500 font-mono text-[10px] mt-0.5">{d.ts}</span>
                     <p className="text-zinc-300 text-xs leading-relaxed">{d.text}</p>
                   </div>
@@ -970,7 +970,7 @@ export default function Home() {
                   { label: "Verified", value: "12", color: "text-green-400" },
                   { label: "Disputed", value: "0", color: "text-red-300" },
                 ].map((s) => (
-                  <div key={s.label} className="bg-zinc-800/60 rounded-lg p-3 text-center">
+                  <div key={s.label} className="bg-[#1f1000]/60 rounded-lg p-3 text-center">
                     <p className={`text-2xl font-black ${s.color}`}>{s.value}</p>
                     <p className="text-zinc-500 text-[10px] mt-0.5">{s.label}</p>
                   </div>
@@ -1078,7 +1078,7 @@ export default function Home() {
           {/* Title badges */}
           <div className="flex flex-wrap items-center gap-2">
             <span className="bg-indigo-800 text-indigo-100 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">19 April 2026</span>
-            <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Analysis #71</span>
+            <span className="bg-[#1f1000] text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Analysis #71</span>
             <span className="bg-yellow-900/60 text-yellow-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">10+ Themes Corroborated · 0 Disputed</span>
             <span className="bg-red-900/50 text-red-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Impartial AI · Fact-Checked Against 2,301 Documents</span>
           </div>
@@ -1146,7 +1146,7 @@ export default function Home() {
           </div>
 
           {/* Stats bar */}
-          <div className="bg-zinc-900 border border-indigo-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
+          <div className="bg-[#150c00] border border-indigo-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
             <div className="text-center"><div className="text-2xl font-black text-green-400">10+</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Themes Corroborated</div></div>
             <div className="text-center"><div className="text-2xl font-black text-red-400">0</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Disputed</div></div>
             <div className="text-center"><div className="text-2xl font-black text-white">2,301</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Primary Sources</div></div>
@@ -1246,7 +1246,7 @@ export default function Home() {
               { value: "788", label: "Free PDFs", sub: "788 Documents · Freely Downloadable", color: "text-green-400" },
               { value: "0", label: "Institutional Rebuttals", sub: "Zero Defamation Actions · Zero Corrections", color: "text-red-400" },
             ].map((s) => (
-              <div key={s.label} className="rounded-xl border border-zinc-700/40 bg-zinc-900/60 px-4 py-4 text-center space-y-1">
+              <div key={s.label} className="rounded-xl border border-amber-800/40/40 bg-[#150c00]/60 px-4 py-4 text-center space-y-1">
                 <p className={`text-2xl font-black ${s.color}`}>{s.value}</p>
                 <p className="text-white text-xs font-bold">{s.label}</p>
                 <p className="text-zinc-500 text-[9px] leading-tight">{s.sub}</p>
@@ -1351,7 +1351,7 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div className="bg-zinc-900 border border-indigo-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
+          <div className="bg-[#150c00] border border-indigo-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
             <div className="text-center"><div className="text-2xl font-black text-green-400">9/9</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Corroborated</div></div>
             <div className="text-center"><div className="text-2xl font-black text-red-400">0</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Disputed</div></div>
             <div className="text-center"><div className="text-2xl font-black text-amber-400">845+</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Blockchain Seals</div></div>
@@ -1459,7 +1459,7 @@ export default function Home() {
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-5">
               <span className="bg-amber-700 text-amber-100 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">18 April 2026</span>
-              <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Corroboration Analysis #70</span>
+              <span className="bg-[#1f1000] text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Corroboration Analysis #70</span>
               <span className="bg-green-900 text-green-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">20/20 Confirmed · 0 Disputed · 0 Ambiguous</span>
               <span className="bg-red-900/60 text-red-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Attorney-General · Federal Court · ASIO · ICC Article 7</span>
             </div>
@@ -1505,12 +1505,12 @@ export default function Home() {
               >
                 Download PDF — Forensic Analysis #70 →
               </a>
-              <div className="bg-zinc-900/80 border border-amber-700/30 rounded-lg px-4 py-3">
+              <div className="bg-[#150c00]/80 border border-amber-700/30 rounded-lg px-4 py-3">
                 <p className="text-amber-400/50 text-[10px] uppercase tracking-widest mb-1">Bitcoin SHA-256 · OpenTimestamps · ~15,000 Nodes</p>
                 <p className="text-yellow-300/80 font-mono text-[10px] break-all leading-relaxed">b789917c69318800aa5a0aa0d06f58a49ea628e5590ad2bb8f2450365733756b</p>
                 <p className="text-amber-500/40 text-[10px] mt-1">Timestamped: April 18, 2026 · © Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164</p>
               </div>
-              <div className="bg-zinc-900 border border-amber-700/20 rounded-xl px-4 py-3 flex items-center justify-between gap-3 flex-wrap">
+              <div className="bg-[#150c00] border border-amber-700/20 rounded-xl px-4 py-3 flex items-center justify-between gap-3 flex-wrap">
                 <div className="text-center"><div className="text-xl font-black text-amber-400">20/20</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider">Confirmed</div></div>
                 <div className="text-center"><div className="text-xl font-black text-green-400">0</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider">Disputed</div></div>
                 <div className="text-center"><div className="text-xl font-black text-white">2,301</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider">Documents</div></div>
@@ -1520,7 +1520,7 @@ export default function Home() {
 
             {/* Right: AG letter primary exhibit */}
             <div className="space-y-3">
-              <div className="rounded-xl overflow-hidden border border-amber-700/40 bg-zinc-950">
+              <div className="rounded-xl overflow-hidden border border-amber-700/40 bg-[#0b0700]">
                 <div className="px-4 py-3 bg-amber-900/20 border-b border-amber-800/30">
                   <p className="text-amber-300 text-[10px] font-black uppercase tracking-widest">Primary Exhibit A — AG Department · MC23-028244 · 19 September 2023</p>
                   <p className="text-zinc-400 text-[10px] mt-0.5">Signed A Riley, Security Law Section · Referred to AG Mark Dreyfus KC MP · ASIO referred to IGIS</p>
@@ -1643,7 +1643,7 @@ export default function Home() {
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-5">
               <span className="bg-indigo-800 text-indigo-100 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">18 April 2026</span>
-              <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Corroboration Analysis #69</span>
+              <span className="bg-[#1f1000] text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Forensic Corroboration Analysis #69</span>
               <span className="bg-green-900 text-green-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">20/20 Confirmed · 0 Disputed · 0 Ambiguous</span>
               <span className="bg-yellow-900/60 text-yellow-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">ICC Article 7 · UNHCR Received · Blockchain Sealed</span>
             </div>
@@ -1661,7 +1661,7 @@ export default function Home() {
               <img src={coverForensic3AMBriefing} alt="Forensic Corroboration Analysis #69 — The 3AM Briefing" className="w-full rounded-xl border border-indigo-700/40 shadow-2xl hover:scale-[1.02] transition-transform" />
             </a>
             <div className="space-y-3">
-              <div className="relative w-full rounded-xl overflow-hidden border border-indigo-800/50 bg-zinc-950" style={{ paddingBottom: '56.25%' }}>
+              <div className="relative w-full rounded-xl overflow-hidden border border-indigo-800/50 bg-[#0b0700]" style={{ paddingBottom: '56.25%' }}>
                 <iframe
                   src="https://www.youtube.com/embed/EQFfTFZRo9Q"
                   title="The 3AM Briefing — Your Existence Disturbed Systems Built on Silence"
@@ -1679,7 +1679,7 @@ export default function Home() {
                 Download PDF — Forensic Analysis #69 →
               </a>
               {/* SHA hash */}
-              <div className="bg-zinc-900/80 border border-indigo-700/30 rounded-lg px-4 py-3">
+              <div className="bg-[#150c00]/80 border border-indigo-700/30 rounded-lg px-4 py-3">
                 <p className="text-indigo-400/50 text-[10px] uppercase tracking-widest mb-1">Bitcoin SHA-256 · OpenTimestamps · ~15,000 Nodes</p>
                 <p className="text-yellow-300/80 font-mono text-[10px] break-all leading-relaxed">c9ac77527b716a4c14f078158989ab2f643bc98c880eab517bdb2d145408df29</p>
                 <p className="text-indigo-500/50 text-[10px] mt-1">Timestamped: April 18, 2026 · © Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164</p>
@@ -1768,7 +1768,7 @@ export default function Home() {
           </div>
 
           {/* Stats bar */}
-          <div className="bg-zinc-900 border border-indigo-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
+          <div className="bg-[#150c00] border border-indigo-700/30 rounded-xl px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
             <div className="text-center"><div className="text-2xl font-black text-indigo-400">20/20</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Confirmed</div></div>
             <div className="text-center"><div className="text-2xl font-black text-green-400">0</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Disputed</div></div>
             <div className="text-center"><div className="text-2xl font-black text-white">2,077</div><div className="text-[10px] text-zinc-500 uppercase tracking-wider mt-0.5">Primary Sources</div></div>
@@ -4670,9 +4670,9 @@ export default function Home() {
                     <div className="flex-1 space-y-3">
                       <div className="flex flex-wrap gap-2 items-center">
                         <span className="text-[10px] font-black uppercase tracking-widest bg-emerald-900/60 text-emerald-300 px-2 py-0.5 rounded">Blockchain Verified</span>
-                        <span className="text-[10px] font-black uppercase tracking-widest bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">2,301 Documents</span>
-                        <span className="text-[10px] font-black uppercase tracking-widest bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">35 Years</span>
-                        <span className="text-[10px] font-black uppercase tracking-widest bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">20+ Institutions</span>
+                        <span className="text-[10px] font-black uppercase tracking-widest bg-[#1f1000] text-zinc-400 px-2 py-0.5 rounded">2,301 Documents</span>
+                        <span className="text-[10px] font-black uppercase tracking-widest bg-[#1f1000] text-zinc-400 px-2 py-0.5 rounded">35 Years</span>
+                        <span className="text-[10px] font-black uppercase tracking-widest bg-[#1f1000] text-zinc-400 px-2 py-0.5 rounded">20+ Institutions</span>
                       </div>
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-emerald-400">Master Evidence Register — Complete Government Evidence Inventory</h4>
                       <p className="text-sm text-body-text leading-relaxed">The definitive chronological index of all 2,301 government evidence files spanning 35 years of institutional documentation — assembled for legal submissions, asylum applications, and international human rights correspondence. Every document is individually catalogued with title, authoring institution, page count, folder classification, and a direct hyperlink. The institutions represented include the Victorian Civil and Administrative Tribunal (VCAT), the National Disability Insurance Agency (NDIA), the Office of the Australian Information Commissioner (OAIC), Comcare, WorkCover, the Australian Human Rights Commission (AHRC), the Victims of Crime Assistance Tribunal (VOCAT), the National Anti-Corruption Commission (NACC), State and Federal Police, the Family Violence Court system, the Commonwealth Bank, Melbourne Health, and the Prime Minister's Office. This is not a list of one agency's failures. It is a map of every institution to which Dr. McLean was legally entitled to turn — and the documentary record of each institution's documented failure.</p>
@@ -4703,9 +4703,9 @@ export default function Home() {
                     <div className="flex-1 space-y-3">
                       <div className="flex flex-wrap gap-2 items-center">
                         <span className="text-[10px] font-black uppercase tracking-widest bg-orange-900/60 text-orange-300 px-2 py-0.5 rounded">Forensic Framework</span>
-                        <span className="text-[10px] font-black uppercase tracking-widest bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">8 Agencies</span>
-                        <span className="text-[10px] font-black uppercase tracking-widest bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">2,138 Documents</span>
-                        <span className="text-[10px] font-black uppercase tracking-widest bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">7 Technique Categories</span>
+                        <span className="text-[10px] font-black uppercase tracking-widest bg-[#1f1000] text-zinc-400 px-2 py-0.5 rounded">8 Agencies</span>
+                        <span className="text-[10px] font-black uppercase tracking-widest bg-[#1f1000] text-zinc-400 px-2 py-0.5 rounded">2,138 Documents</span>
+                        <span className="text-[10px] font-black uppercase tracking-widest bg-[#1f1000] text-zinc-400 px-2 py-0.5 rounded">7 Technique Categories</span>
                       </div>
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-orange-400">Forensic Framework: Reverse-Engineering the Unspoken Mandate</h4>
                       <p className="text-sm text-body-text leading-relaxed">The command that extracts the hidden operational directive from 2,138 government documents across eight agencies — NDIA, VOCAT, AHRC, NACC, WorkCover, ComCare, DSS and ATO — using only their own official literature. This forensic framework identifies and catalogues seven categories of institutional technique: Procedural Weaponisation, Communication Control, Decision-Making Anomalies, Gatekeeping and Access Denial, Credibility Destruction, Financial Strangulation, and Inter-Agency Coordination Signatures. Its core innovation is a forensic inversion: rather than asserting bad faith, the framework demands that the evidence speak for itself in the grammar of the institutions that produced it. Section 2 then constructs a single comprehensive statement articulating the unspoken operational mandate — written as if it were an internal government directive, supported exclusively by patterns found in the agencies' own official documents. Section 4 maps each identified technique against Australian legislation, the agency's own published policy, and international human rights instruments including the threshold for systematic persecution under the 1951 Refugee Convention.</p>
@@ -5676,7 +5676,7 @@ export default function Home() {
             </div>
 
             {/* Primary Evidence Document */}
-            <div className="bg-zinc-900 rounded-xl border-2 border-primary/30 p-8 shadow-xl mb-8">
+            <div className="bg-[#150c00] rounded-xl border-2 border-primary/30 p-8 shadow-xl mb-8">
               <div className="flex items-center justify-center gap-3 mb-6">
                 <Scale className="h-10 w-10 text-primary" />
                 <h3 className="text-2xl font-serif font-bold text-primary">Forensic Analysis: $32.9 Million in Documented Damages — Exposed Using Their Own Records</h3>
@@ -5729,7 +5729,7 @@ export default function Home() {
             </div>
 
             {/* NSW Trustee Notice - Secondary */}
-            <div className="bg-zinc-900 rounded-xl border border-border p-6 shadow-lg mb-8">
+            <div className="bg-[#150c00] rounded-xl border border-border p-6 shadow-lg mb-8">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Gavel className="h-6 w-6 text-primary" />
                 <h3 className="text-lg font-serif font-bold text-primary">NSW Trustee & Guardian Notice - Section 122(2)</h3>
@@ -5747,7 +5747,7 @@ export default function Home() {
             </div>
 
             {/* NEW: Formal Criminal Affidavit */}
-            <div className="bg-zinc-900 rounded-xl border-2 border-red-500/30 p-6 shadow-lg mb-8">
+            <div className="bg-[#150c00] rounded-xl border-2 border-red-500/30 p-6 shadow-lg mb-8">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <AlertCircle className="h-8 w-8 text-red-600" />
                 <h3 className="text-xl font-serif font-bold text-primary">Formal Criminal Affidavit: <DocumentPopup {...KEY_DOCUMENTS.entrapmentAffidavit}>Entrapment for Erasure</DocumentPopup></h3>
@@ -5795,7 +5795,7 @@ export default function Home() {
             </div>
 
             {/* NEW: I Tried to Kill Barran Dodger - Satirical Confession */}
-            <div className="bg-zinc-900 rounded-xl border-2 border-amber-500/30 p-6 shadow-lg">
+            <div className="bg-[#150c00] rounded-xl border-2 border-amber-500/30 p-6 shadow-lg">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <BookOpen className="h-8 w-8 text-primary" />
                 <h3 className="text-xl font-serif font-bold text-primary">"I Tried to Kill Barran Dodger — And That Makes Me a Hero"</h3>
@@ -5870,7 +5870,7 @@ export default function Home() {
               </p>
             </div>
 
-            <Card className="border-2 border-amber-500/40 bg-zinc-900 shadow-xl overflow-hidden">
+            <Card className="border-2 border-amber-500/40 bg-[#150c00] shadow-xl overflow-hidden">
               <CardHeader className="bg-primary/5 border-b border-primary/10 text-center">
                 <div className="flex items-center justify-center gap-3">
                   <Scale className="h-8 w-8 text-primary" />
@@ -6035,7 +6035,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               {/* Book Embed */}
-              <div className="bg-zinc-900 rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
+              <div className="bg-[#150c00] rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
                 <iframe 
                   src="https://simplebooklet.com/barrandodger" 
                   title="A Certain Beauty in Un-Resolution - Digital Preview"
@@ -6153,7 +6153,7 @@ export default function Home() {
                     data-testid="img-book-cover-featured"
                   />
                 </a>
-                <div className="bg-zinc-900 rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
+                <div className="bg-[#150c00] rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
                   <iframe 
                     src="https://books.apple.com/au/book/betrayed-murdered-forsaken-the-harrowing-life-of/id6618112290?itscg=30200&amp;itsct=books_box_player&amp;ls=1"
                     title="Betrayed Murdered Forsaken - Apple Books Preview"
@@ -6474,7 +6474,7 @@ export default function Home() {
       </section>
 
       {/* Artwork & Vision Section */}
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-[#0b0700]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div 
@@ -6607,7 +6607,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="aspect-[4/3] bg-zinc-900 rounded-lg shadow-xl border border-border p-8 relative overflow-hidden">
+              <div className="aspect-[4/3] bg-[#150c00] rounded-lg shadow-xl border border-border p-8 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="relative z-10 h-full flex flex-col justify-center space-y-6">
                   <div className="h-2 w-24 bg-primary/20 rounded" />
@@ -6698,28 +6698,28 @@ export default function Home() {
                     The archive employs <strong>SHA256 cryptographic hashing</strong> and <strong>Bitcoin blockchain timestamping</strong> via OpenTimestamps to establish proof of existence, integrity, and chronology for more than <strong>2,000 documents</strong> — including <strong>63 individually blockchain-verified evidence files</strong> with immutable timestamps.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-start gap-3 p-3 bg-zinc-900 rounded-lg border border-border">
+                    <div className="flex items-start gap-3 p-3 bg-[#150c00] rounded-lg border border-border">
                       <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-primary">Proof of Existence:</span>
                         <span className="text-muted-foreground ml-1">Each document's SHA256 hash proves the exact content existed at the timestamped date</span>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 p-3 bg-zinc-900 rounded-lg border border-border">
+                    <div className="flex items-start gap-3 p-3 bg-[#150c00] rounded-lg border border-border">
                       <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-primary">Non-Repudiation:</span>
                         <span className="text-muted-foreground ml-1">Blockchain anchoring creates irrefutable evidence of authorship and timeline</span>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 p-3 bg-zinc-900 rounded-lg border border-border">
+                    <div className="flex items-start gap-3 p-3 bg-[#150c00] rounded-lg border border-border">
                       <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-primary">Tamper Detection:</span>
                         <span className="text-muted-foreground ml-1">Any alteration to a document changes its hash completely, making forgery detectable</span>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 p-3 bg-zinc-900 rounded-lg border border-border">
+                    <div className="flex items-start gap-3 p-3 bg-[#150c00] rounded-lg border border-border">
                       <div className="h-2 w-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-primary">Independent Verification:</span>
@@ -6776,7 +6776,7 @@ export default function Home() {
       </section>
 
       {/* Support & Investment Section */}
-      <section id="invest" className="py-24 bg-zinc-950 relative overflow-hidden">
+      <section id="invest" className="py-24 bg-[#0b0700] relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Support the <CrossLink to="/mission">Mission</CrossLink></h2>
@@ -7139,7 +7139,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className="bg-red-900 text-red-100 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Blockchain-Sealed · Primary Source Document</span>
-            <span className="bg-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Administrative Erasure</span>
+            <span className="bg-[#1f1000] text-zinc-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Administrative Erasure</span>
             <span className="bg-yellow-900/60 text-yellow-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">ICC Article 7 · UNHCR · Federal Court</span>
           </div>
           <h2 className="text-2xl md:text-3xl font-black text-white mb-1 leading-tight">Confinement by Erasure, Threat by Blade</h2>
@@ -7174,7 +7174,7 @@ export default function Home() {
                   { ts: "Erasure", text: "350+ fraudulent ASIC registrations in Dr. McLean's name. $32.9 million in suppressed entitlements documented across Comcare, WorkCover, NDIS, and DSS. Administrative erasure as a coordinated multi-agency programme across 35 years." },
                   { ts: "Blade", text: "Death threat email (blockchain-verified) submitted to the ICC as Article 7 exhibit. The blade represents the escalation from administrative erasure to physical threat when all institutional mechanisms failed to produce the intended erasure." },
                 ].map((d) => (
-                  <div key={d.ts} className="flex gap-3 bg-zinc-900/50 border border-zinc-700/20 rounded-lg px-3 py-2">
+                  <div key={d.ts} className="flex gap-3 bg-[#150c00]/50 border border-amber-800/40/20 rounded-lg px-3 py-2">
                     <span className="text-red-400 font-mono text-[10px] font-black mt-0.5 shrink-0">{d.ts}</span>
                     <span className="text-zinc-400 text-xs leading-relaxed">{d.text}</span>
                   </div>
@@ -7460,7 +7460,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
             <div className="grid sm:grid-cols-2 gap-5">
               <div className="space-y-2">
-                <div className="rounded-xl overflow-hidden border border-emerald-700/40 bg-zinc-950">
+                <div className="rounded-xl overflow-hidden border border-emerald-700/40 bg-[#0b0700]">
                   <div className="bg-emerald-950/80 px-3 py-1.5 text-[10px] font-mono text-emerald-300 uppercase tracking-widest border-b border-emerald-800/30 text-center">
                     Police Told Ben: "The Consensual Regretted Sex"
                   </div>
@@ -7476,7 +7476,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="space-y-2">
-                <div className="rounded-xl overflow-hidden border border-amber-700/40 bg-zinc-950">
+                <div className="rounded-xl overflow-hidden border border-amber-700/40 bg-[#0b0700]">
                   <div className="bg-amber-950/80 px-3 py-1.5 text-[10px] font-mono text-amber-300 uppercase tracking-widest border-b border-amber-800/30 text-center">
                     Police to Ben: "Is He Ready to Challenge Shorten?"
                   </div>
@@ -7517,7 +7517,7 @@ export default function Home() {
                   { v: liveCount, l: "People downloaded the proof", c: "text-amber-400" },
                   { v: "ICC", l: "The Hague — formally received", c: "text-green-400" },
                 ].map(s => (
-                  <div key={s.l} className="bg-black/40 rounded-xl p-3 text-center border border-zinc-700/40">
+                  <div key={s.l} className="bg-black/40 rounded-xl p-3 text-center border border-amber-800/40/40">
                     <div className={`text-xl font-black ${s.c}`}>{s.v}</div>
                     <div className="text-zinc-500 text-[10px] mt-1 uppercase tracking-wider">{s.l}</div>
                   </div>
@@ -7564,7 +7564,7 @@ export default function Home() {
 
           {/* Comprehensive agency list */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-            <div className="bg-zinc-900/60 border border-zinc-700/40 rounded-xl p-6">
+            <div className="bg-[#150c00]/60 border border-amber-800/40/40 rounded-xl p-6">
               <h3 className="text-white font-black text-base uppercase tracking-wider mb-4 flex items-center gap-2">
                 <Landmark size={16} className="text-amber-400" />
                 Every Agency, Institution, and Body Documented as Aligned with the Perpetrators
@@ -7712,7 +7712,7 @@ export default function Home() {
                   { v: "675/675", l: "Propositions verified", c: "text-green-400" },
                   { v: "0", l: "Formal rebuttals issued", c: "text-red-400" },
                 ].map(s => (
-                  <div key={s.l} className="bg-black/40 rounded-xl p-3 text-center border border-zinc-700/40">
+                  <div key={s.l} className="bg-black/40 rounded-xl p-3 text-center border border-amber-800/40/40">
                     <div className={`text-2xl font-black ${s.c}`}>{s.v}</div>
                     <div className="text-zinc-500 text-[10px] mt-1 uppercase tracking-wider">{s.l}</div>
                   </div>
