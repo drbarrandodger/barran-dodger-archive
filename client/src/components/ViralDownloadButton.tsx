@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Check, Link2, X, Copy, Mail, CreditCard, Lock, Unlock, User, ChevronRight, AlertTriangle, ShieldCheck } from "lucide-react";
+import { Check, Link2, X, Copy, Mail, Lock, Unlock, User, ChevronRight, AlertTriangle, ShieldCheck } from "lucide-react";
 import { SiX, SiWhatsapp, SiTelegram, SiFacebook } from "react-icons/si";
-import { useQuery, useMutation } from "@tanstack/react-query";
-import { queryClient, apiRequest } from "@/lib/queryClient";
+import { useQuery } from "@tanstack/react-query";
+import { queryClient } from "@/lib/queryClient";
 import { slugFromUrl } from "@/components/DownloadCounter";
 import { useToast } from "@/hooks/use-toast";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
@@ -145,7 +145,6 @@ interface ViralDownloadButtonProps {
 }
 
 type Phase = "idle" | "gate" | "conscience" | "share";
-type GateTab = "pay" | "subscribe";
 
 function triggerFileDownload(url: string, filename?: string) {
   const downloadUrl = getDownloadUrl(url);
@@ -194,18 +193,14 @@ export function ViralDownloadButton({
 }: ViralDownloadButtonProps) {
   const slug = slugProp || slugFromUrl(url);
   const [phase, setPhase] = useState<Phase>("idle");
-  const [gateTab, setGateTab] = useState<GateTab>("pay");
   const [payIdCopied, setPayIdCopied] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [formError, setFormError] = useState("");
   const [stripePromise, setStripePromise] = useState<Promise<StripeType | null> | null>(null);
   const [showPayId, setShowPayId] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
-    if (phase === "gate" && gateTab === "pay" && !stripePromise) {
+    if (phase === "gate" && !stripePromise) {
       fetch("/api/stripe/publishable-key")
         .then((r) => r.json())
         .then(({ publishableKey }) => {
@@ -213,42 +208,7 @@ export function ViralDownloadButton({
         })
         .catch(() => {});
     }
-  }, [phase, gateTab, stripePromise]);
-
-  const subscribeMutation = useMutation({
-    mutationFn: async (data: { email: string; name: string; documentSlug: string; source: string }) => {
-      const res = await fetch("/api/payment/issue-free-token", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: data.email, name: data.name, documentUrl: url }),
-      });
-      const tokenData = await res.json();
-      if (res.ok && tokenData.token) {
-        grantAccess(url, tokenData.token, tokenData.expires);
-      } else if (!res.ok && !tokenData.token) {
-        throw new Error(tokenData.error || "Subscription failed");
-      }
-      return apiRequest("POST", "/api/subscribers", data);
-    },
-    onSuccess: () => {
-      recordDownload();
-      triggerFileDownload(url, filename);
-      setPhase("conscience");
-      toast({ title: "Subscribed — download starting", description: "You'll be notified when new analyses are published." });
-    },
-    onError: (err: any) => {
-      if (err?.message?.includes("already") || err?.status === 400) {
-        fetchHonourToken(url).then(() => {
-          recordDownload();
-          triggerFileDownload(url, filename);
-          setPhase("conscience");
-          toast({ title: "Already subscribed — download starting" });
-        });
-      } else {
-        setFormError("Something went wrong. Please try again.");
-      }
-    },
-  });
+  }, [phase, stripePromise]);
 
   const { data } = useQuery<{ count: number }>({
     queryKey: ["/api/downloads", slug],
@@ -267,14 +227,6 @@ export function ViralDownloadButton({
         queryClient.invalidateQueries({ queryKey: ["/api/downloads", slug] });
       }, 1200);
     } catch {}
-  };
-
-  const handleSubscribeSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormError("");
-    if (!name.trim()) return setFormError("Please enter your name.");
-    if (!email.includes("@")) return setFormError("Please enter a valid email address.");
-    subscribeMutation.mutate({ email: email.trim(), name: name.trim(), documentSlug: slug, source: "download_gate" });
   };
 
   const copyPayId = async () => {
@@ -344,7 +296,7 @@ export function ViralDownloadButton({
           {/* Urgency banner */}
           <div className="bg-red-950/80 border-b border-red-700/40 px-4 py-2 flex items-center gap-2">
             <AlertTriangle className="h-3.5 w-3.5 text-red-400 flex-shrink-0" />
-            <p className="text-red-300 text-[11px] font-bold">This archive operates without government funding — donations are its only lifeline.</p>
+            <p className="text-red-300 text-[11px] font-bold">500,000+ downloads. Not a single cent while the author lived in poverty. That era is over.</p>
           </div>
 
           {/* Header */}
@@ -352,9 +304,9 @@ export function ViralDownloadButton({
             <div className="flex items-center gap-2">
               <Lock className="h-4 w-4 text-amber-400 flex-shrink-0" />
               <div>
-                <p className="text-amber-200 font-bold text-sm">Access this document — choose one option below</p>
+                <p className="text-amber-200 font-bold text-sm">Every document is $3.33 AUD — no exceptions</p>
                 <p className="text-amber-600/90 text-xs mt-0.5">
-                  {documentTitle ? `"${documentTitle}"` : "This testimony"} — compiled free while its author lived under death threat, forced medication &amp; homelessness.
+                  35 years of testimony. Poverty, surveillance, torture and near-death. This is what justice costs.
                 </p>
               </div>
             </div>
@@ -363,175 +315,98 @@ export function ViralDownloadButton({
             </button>
           </div>
 
-          {/* Tabs */}
-          <div className="flex border-b border-amber-800/50 mx-5">
-            <button
-              onClick={() => setGateTab("pay")}
-              className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors ${gateTab === "pay" ? "border-amber-500 text-amber-400" : "border-transparent text-amber-700/70 hover:text-amber-400"}`}
-              data-testid="tab-gate-pay"
-            >
-              <CreditCard className="h-3.5 w-3.5" />
-              Donate $1+ AUD
-            </button>
-            <button
-              onClick={() => setGateTab("subscribe")}
-              className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors ${gateTab === "subscribe" ? "border-primary text-primary" : "border-transparent text-amber-700/70 hover:text-amber-400"}`}
-              data-testid="tab-gate-subscribe"
-            >
-              <Mail className="h-3.5 w-3.5" />
-              Subscribe free
-            </button>
-          </div>
+          {/* Pay section */}
+          <div className="p-5 space-y-4">
+            <div className="rounded-xl border border-amber-900/50 p-3 space-y-2" style={{ background: "#1c0a02" }}>
+              <p className="text-amber-300 text-[11px] font-bold">
+                This is a legitimate act of justice — not charity.
+              </p>
+              <p className="text-amber-400/65 text-[10px] leading-relaxed">
+                Dr. Richard McLean has served humanity for 35+ years — producing 2,300+ primary source
+                documents while being stalked, forcibly medicated, denied legal aid, stripped of income,
+                surveilled by agencies, and brought to the edge of death to suppress the truth he carries.
+                Formally before the <strong className="text-amber-300">International Criminal Court</strong>.
+                Blockchain sealed. Incorruptible.
+              </p>
+              <p className="text-amber-200 text-[10.5px] font-medium">
+                <strong>$3.33 — 333, the angel number of divine witness.</strong> For less than a coffee,
+                you become a co-witness. You reward a man for a service the world owes him.
+                Every download is a declaration. Every payment is a receipt of that covenant.
+              </p>
+            </div>
 
-          {/* Tab: Pay */}
-          {gateTab === "pay" && (
-            <div className="p-5 space-y-4">
-              <div className="rounded-xl border border-amber-900/50 p-3 space-y-2" style={{ background: "#1c0a02" }}>
-                <p className="text-amber-300 text-[11px] font-bold">
-                  This is a legitimate act of justice — not charity.
-                </p>
-                <p className="text-amber-400/65 text-[10px] leading-relaxed">
-                  Dr. Richard McLean has served humanity for 35+ years — producing 2,300+ primary source
-                  documents while being stalked, forcibly medicated, denied legal aid, stripped of income,
-                  surveilled by agencies, and brought to the edge of death to suppress the truth he carries.
-                  Formally before the <strong className="text-amber-300">International Criminal Court</strong>.
-                  Blockchain sealed. Incorruptible.
-                </p>
-                <p className="text-amber-200 text-[10.5px] font-medium">
-                  <strong>$3.33 — 333, the angel number of divine witness.</strong> For less than a coffee,
-                  you become a co-witness. You reward a man for a service the world owes him.
-                  Every download is a declaration. Every payment is a receipt of that covenant.
-                </p>
+            {stripePromise ? (
+              <Elements stripe={stripePromise}>
+                <StripePaymentForm
+                  documentUrl={url}
+                  onSuccess={async (paymentIntentId: string, payerName: string, payerEmail: string) => {
+                    await fetchAndStoreToken(paymentIntentId, url);
+                    fetch("/api/subscribers", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ name: payerName, email: payerEmail, documentSlug: url, source: "stripe_payment_333" }),
+                    }).catch(() => {});
+                    recordDownload();
+                    triggerFileDownload(url, filename);
+                    setPhase("conscience");
+                    toast({ title: "Download starting — thank you, Witness", description: "You've been added to the archive witness list." });
+                  }}
+                />
+              </Elements>
+            ) : (
+              <div className="border border-amber-700/40 rounded-xl p-4 text-center" style={{ background: "#1c0c02" }}>
+                <div className="h-4 w-4 border-2 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+                <p className="text-amber-400/60 text-xs">Loading secure payment form…</p>
               </div>
+            )}
 
-              {stripePromise ? (
-                <Elements stripe={stripePromise}>
-                  <StripePaymentForm
-                    documentUrl={url}
-                    onSuccess={async (paymentIntentId: string, payerName: string, payerEmail: string) => {
-                      await fetchAndStoreToken(paymentIntentId, url);
-                      fetch("/api/subscribers", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ name: payerName, email: payerEmail, documentSlug: url, source: "stripe_payment_333" }),
-                      }).catch(() => {});
+            {/* PayID secondary option */}
+            <div>
+              <button
+                onClick={() => setShowPayId((v) => !v)}
+                className="text-amber-700/70 hover:text-amber-500 text-[10px] underline underline-offset-2 flex items-center gap-1"
+                data-testid="button-toggle-payid"
+              >
+                {showPayId ? "Hide" : "Prefer bank transfer?"} — use PayID (honour system)
+              </button>
+              {showPayId && (
+                <div className="mt-2 border border-amber-800/30 rounded-xl p-3 space-y-2" style={{ background: "#1a0a02" }}>
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p className="text-amber-400/60 text-[10px] uppercase tracking-widest font-bold">PayID</p>
+                      <p className="text-white font-mono text-xs mt-0.5">{PAYID}</p>
+                    </div>
+                    <button
+                      onClick={copyPayId}
+                      className="flex items-center gap-1 bg-amber-800/60 hover:bg-amber-700/60 text-amber-200 text-[10px] px-2 py-1 rounded-lg transition-colors flex-shrink-0"
+                      data-testid="button-gate-copy-payid"
+                    >
+                      {payIdCopied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                      {payIdCopied ? "Copied" : "Copy"}
+                    </button>
+                  </div>
+                  <p className="text-amber-400/40 text-[9px]">Send $3.33 AUD, then click below on your honour.</p>
+                  <button
+                    onClick={async () => {
+                      await fetchHonourToken(url);
                       recordDownload();
                       triggerFileDownload(url, filename);
                       setPhase("conscience");
-                      toast({ title: "Download starting — thank you, Witness", description: "You've been added to the archive witness list." });
+                      toast({ title: "Download starting", description: "Thank you for your contribution." });
                     }}
-                  />
-                </Elements>
-              ) : (
-                <div className="border border-amber-700/40 rounded-xl p-4 text-center" style={{ background: "#1c0c02" }}>
-                  <div className="h-4 w-4 border-2 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
-                  <p className="text-amber-400/60 text-xs">Loading secure payment form…</p>
+                    className="w-full flex items-center justify-center gap-1.5 bg-amber-800/50 hover:bg-amber-700/50 text-amber-200 text-xs px-4 py-2 rounded-lg transition-colors"
+                    data-testid="button-gate-unlock-payid-honour"
+                  >
+                    <Unlock className="h-3.5 w-3.5" />
+                    I've transferred — unlock on my honour
+                  </button>
                 </div>
               )}
-
-              {/* PayID secondary option */}
-              <div>
-                <button
-                  onClick={() => setShowPayId((v) => !v)}
-                  className="text-amber-700/70 hover:text-amber-500 text-[10px] underline underline-offset-2 flex items-center gap-1"
-                  data-testid="button-toggle-payid"
-                >
-                  {showPayId ? "Hide" : "Prefer bank transfer?"} — use PayID (honour system)
-                </button>
-                {showPayId && (
-                  <div className="mt-2 border border-amber-800/30 rounded-xl p-3 space-y-2" style={{ background: "#1a0a02" }}>
-                    <div className="flex items-center justify-between gap-3">
-                      <div>
-                        <p className="text-amber-400/60 text-[10px] uppercase tracking-widest font-bold">PayID</p>
-                        <p className="text-white font-mono text-xs mt-0.5">{PAYID}</p>
-                      </div>
-                      <button
-                        onClick={copyPayId}
-                        className="flex items-center gap-1 bg-amber-800/60 hover:bg-amber-700/60 text-amber-200 text-[10px] px-2 py-1 rounded-lg transition-colors flex-shrink-0"
-                        data-testid="button-gate-copy-payid"
-                      >
-                        {payIdCopied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        {payIdCopied ? "Copied" : "Copy"}
-                      </button>
-                    </div>
-                    <p className="text-amber-400/40 text-[9px]">Send $1+ AUD, then click below on your honour.</p>
-                    <button
-                      onClick={async () => {
-                        await fetchHonourToken(url);
-                        recordDownload();
-                        triggerFileDownload(url, filename);
-                        setPhase("conscience");
-                        toast({ title: "Download starting", description: "Thank you for your contribution." });
-                      }}
-                      className="w-full flex items-center justify-center gap-1.5 bg-amber-800/50 hover:bg-amber-700/50 text-amber-200 text-xs px-4 py-2 rounded-lg transition-colors"
-                      data-testid="button-gate-unlock-payid-honour"
-                    >
-                      <Unlock className="h-3.5 w-3.5" />
-                      I've transferred — unlock on my honour
-                    </button>
-                  </div>
-                )}
-              </div>
-              <p className="text-amber-300/60 text-[10px] text-center">
-                This is an honor system. Your integrity is your contribution to truth.
-              </p>
             </div>
-          )}
-
-          {/* Tab: Subscribe */}
-          {gateTab === "subscribe" && (
-            <div className="p-5 space-y-4">
-              <p className="text-zinc-400 text-xs leading-relaxed">
-                Can't donate right now? Leave your name and email. You'll be added to the Barran Dodger archive subscriber list and notified whenever new forensic analyses are published. Your download will start immediately.
-              </p>
-              <form onSubmit={handleSubscribeSubmit} className="space-y-3">
-                <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-zinc-500" />
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Your full name"
-                    className="w-full border border-amber-700/40 rounded-xl pl-9 pr-4 py-2.5 text-amber-100 text-sm focus:outline-none focus:border-amber-500 placeholder:text-amber-800"
-                    style={{ background: "#1c0c02" }}
-                    data-testid="input-gate-name"
-                  />
-                </div>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-amber-700" />
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
-                    className="w-full border border-amber-700/40 rounded-xl pl-9 pr-4 py-2.5 text-amber-100 text-sm focus:outline-none focus:border-amber-500 placeholder:text-amber-800"
-                    style={{ background: "#1c0c02" }}
-                    data-testid="input-gate-email"
-                  />
-                </div>
-                {formError && <p className="text-red-400 text-xs">{formError}</p>}
-                <button
-                  type="submit"
-                  disabled={subscribeMutation.isPending}
-                  className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/80 text-black font-bold text-sm px-5 py-3 rounded-xl transition-colors"
-                  data-testid="button-gate-subscribe-unlock"
-                >
-                  <Unlock className="h-4 w-4" />
-                  {subscribeMutation.isPending ? "Subscribing..." : "Subscribe & unlock my download"}
-                </button>
-              </form>
-              <p className="text-zinc-700 text-[10px] text-center">
-                No spam. No marketing. You'll only hear from us when new analyses are published. Unsubscribe any time.
-              </p>
-              <button
-                onClick={() => setGateTab("pay")}
-                className="text-zinc-600 hover:text-zinc-500 text-xs flex items-center gap-1 w-full justify-center"
-              >
-                <ChevronRight className="h-3 w-3 rotate-180" />
-                I'd rather donate $1
-              </button>
-            </div>
-          )}
+            <p className="text-amber-300/60 text-[10px] text-center">
+              Your integrity is your contribution to truth. The record is permanent.
+            </p>
+          </div>
         </div>
       )}
 
