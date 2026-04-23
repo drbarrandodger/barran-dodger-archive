@@ -201,6 +201,7 @@ import CommissionForensicAnalysis from "@/pages/CommissionForensicAnalysis";
 import DyingOfShame from "@/pages/DyingOfShame";
 import { GodsGraceBarranDodger } from "@/pages/GodsGraceBarranDodger";
 import { BlockchainManifest } from "@/pages/BlockchainManifest";
+import BlockchainSealRegistry from "@/pages/BlockchainSealRegistry";
 import CreatorSpeaks from "@/pages/CreatorSpeaks";
 import CosmicEssayPage from "@/pages/CosmicEssayPage";
 import TopTenGospels from "@/pages/TopTenGospels";
@@ -507,6 +508,11 @@ function Router() {
         <Route path="/blockchain-proof" component={BitcoinProof} />
         <Route path="/bitcoin-timestamp" component={BitcoinProof} />
         <Route path="/blockchain-manifest" component={BlockchainManifest} />
+        <Route path="/blockchain-seal-registry" component={BlockchainSealRegistry} />
+        <Route path="/blockchain-timestamp-proof" component={BlockchainSealRegistry} />
+        <Route path="/every-document-sealed" component={BlockchainSealRegistry} />
+        <Route path="/bitcoin-blockchain-embedded" component={BlockchainSealRegistry} />
+        <Route path="/blockchain-of-humanity" component={BlockchainSealRegistry} />
         <Route path="/creator-speaks" component={CreatorSpeaks} />
         <Route path="/bitcoin-manifest" component={BlockchainManifest} />
         <Route path="/timestamp-manifest" component={BlockchainManifest} />

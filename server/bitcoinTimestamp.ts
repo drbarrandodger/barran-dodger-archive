@@ -301,6 +301,10 @@ const ALL_SITE_PAGES: Array<{ slug: string; label: string; category: string }> =
   { slug: "page-forensic-corroboration-fight-over-you", label: "Forensic Corroboration #72 — They Fight Over What's Powerful", category: "forensic-page" },
   { slug: "page-forensic-corroboration-making-history", label: "Forensic Corroboration #72 — Making History", category: "forensic-page" },
   { slug: "page-forensic-corroboration-silence-surrender", label: "Forensic Corroboration #73 — Silence Was My Reload", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-still-standing", label: "Forensic Corroboration #74 — Look Who's Still Standing — 3 Years of Silence", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-chosen-one-v2", label: "Forensic Corroboration #75 — Chosen One — Before the World Had a Verdict", category: "forensic-page" },
+  { slug: "page-every-secret-chooses-a-side", label: "Forensic Corroboration #76 — Every Secret Eventually Chooses a Side", category: "forensic-page" },
+  { slug: "page-forensic-corroboration-dirt-on-your-name", label: "Forensic Corroboration #77 — They Threw Dirt on Your Name Because They Feared What You Were Becoming", category: "forensic-page" },
   { slug: "page-testimony-went-global", label: "Testimony Went Global — Significance Report", category: "page" },
   { slug: "doc-testimony-went-global-significance", label: "Testimony Went Global Significance Report PDF", category: "document" },
   // Key documentary pages
@@ -317,6 +321,14 @@ const ALL_SITE_PAGES: Array<{ slug: string; label: string; category: string }> =
   { slug: "page-testimony-went-global-chapter8", label: "Testimony Went Global — Chapter 8: Bitcoin Permanence", category: "page" },
   { slug: "page-paradise-they-couldnt-map", label: "The Paradise They Couldn't Map", category: "page" },
   { slug: "page-spread-the-truth", label: "Spread The Truth — Share The Archive", category: "page" },
+  { slug: "page-blockchain-seal-registry", label: "Blockchain Seal Registry — Every Document Permanently Embedded in Bitcoin", category: "page" },
+  { slug: "page-blockchain-manifest", label: "Complete Bitcoin Blockchain Manifest — All Documents, Pages & Exhibits", category: "page" },
+  { slug: "page-blockchain-verification", label: "Blockchain Verification — SHA-256 Cryptographic Archive Proof", category: "page" },
+  { slug: "page-cto-breach-appointment", label: "CTO Breach Appointment — Mental Health Act as Political Weapon", category: "page" },
+  { slug: "page-police-complicity-death-threat", label: "Police Complicity & Death Threat Documentation — April 15, 2026", category: "page" },
+  { slug: "page-prophetic-testimony", label: "Prophetic Testimony — Biblical Evidence Correlation", category: "page" },
+  { slug: "page-apotheosis-statement", label: "Apotheosis Statement — Complete Forensic Declaration", category: "page" },
+  { slug: "page-whistleblower-comparison", label: "Whistleblower Comparison — Most Documented in Australian History", category: "page" },
 ];
 
 export async function batchTimestampAllPages(): Promise<{
