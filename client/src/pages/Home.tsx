@@ -137,7 +137,12 @@ function JosephParallelSection() {
 
   const handleDownload = () => {
     increment();
-    window.open('/documents/the_joseph_parallel_prophetic_narrative.pdf', '_blank');
+    const a = document.createElement('a');
+    a.href = '/documents/the_joseph_parallel_prophetic_narrative.pdf';
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   };
 
   return (

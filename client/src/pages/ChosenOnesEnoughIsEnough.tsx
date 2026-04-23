@@ -220,7 +220,7 @@ export default function ChosenOnesEnoughIsEnough() {
                   <Button
                     size="lg"
                     className="bg-red-700 hover:bg-red-600"
-                    onClick={() => window.open("/documents/chosen-ones-enough-is-enough.pdf", "_blank")}
+                    onClick={() => { const a = document.createElement('a'); a.href = '/documents/chosen-ones-enough-is-enough.pdf'; a.target = '_blank'; document.body.appendChild(a); a.click(); document.body.removeChild(a); }}
                     data-testid="button-download-primary"
                   >
                     <Download className="mr-2 h-4 w-4" />
@@ -740,7 +740,7 @@ export default function ChosenOnesEnoughIsEnough() {
                 </div>
                 <Button
                   className="bg-red-700 hover:bg-red-600 w-full sm:w-auto"
-                  onClick={() => window.open("/documents/chosen-ones-enough-is-enough.pdf", "_blank")}
+                  onClick={() => { const a = document.createElement('a'); a.href = '/documents/chosen-ones-enough-is-enough.pdf'; a.target = '_blank'; document.body.appendChild(a); a.click(); document.body.removeChild(a); }}
                   data-testid="button-download-evidence"
                 >
                   <Download className="mr-2 h-4 w-4" />

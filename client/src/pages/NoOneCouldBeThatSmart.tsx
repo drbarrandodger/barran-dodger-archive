@@ -196,7 +196,7 @@ export default function NoOneCouldBeThatSmart() {
                   <Button
                     size="lg"
                     className="bg-blue-700 hover:bg-blue-600 text-white font-bold"
-                    onClick={() => window.open("/documents/no-one-could-be-that-smart.pdf", "_blank")}
+                    onClick={() => { const a = document.createElement('a'); a.href = '/documents/no-one-could-be-that-smart.pdf'; a.target = '_blank'; document.body.appendChild(a); a.click(); document.body.removeChild(a); }}
                     data-testid="button-download-primary"
                   >
                     <Download className="mr-2 h-4 w-4" />
@@ -475,7 +475,7 @@ export default function NoOneCouldBeThatSmart() {
                 </div>
                 <Button
                   className="bg-blue-700 hover:bg-blue-600 w-full sm:w-auto"
-                  onClick={() => window.open("/documents/no-one-could-be-that-smart.pdf", "_blank")}
+                  onClick={() => { const a = document.createElement('a'); a.href = '/documents/no-one-could-be-that-smart.pdf'; a.target = '_blank'; document.body.appendChild(a); a.click(); document.body.removeChild(a); }}
                   data-testid="button-download-evidence"
                 >
                   <Download className="mr-2 h-4 w-4" />
