@@ -237,9 +237,24 @@ export function ViralDownloadButton({
           {/* Tab: Pay */}
           {gateTab === "pay" && (
             <div className="p-5 space-y-4">
-              <p className="text-zinc-400 text-xs leading-relaxed">
-                Send a minimum of <span className="text-amber-400 font-bold">$1 AUD</span> via PayID to the Barran Dodger Legal & Ethical Trust Fund. Then click "Unlock my download" below.
-              </p>
+              {/* Donation tiers — shown BEFORE unlocking so user picks an amount */}
+              <div>
+                <p className="text-zinc-500 text-[10px] uppercase tracking-widest font-bold mb-2">Choose your contribution</p>
+                <div className="grid grid-cols-3 gap-2">
+                  {UPSELL_TIERS.map((tier) => (
+                    <div
+                      key={tier.amount}
+                      className={`flex flex-col items-center text-center p-2.5 rounded-xl border cursor-default ${tier.highlight ? "border-amber-500/70 bg-amber-950/40 text-amber-300 ring-1 ring-amber-500/30" : "border-zinc-700/50 bg-zinc-900/50 text-zinc-400"}`}
+                    >
+                      <span className={`text-base font-black ${tier.highlight ? "text-amber-400" : "text-white"}`}>{tier.amount}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-wide mt-0.5">{tier.label}</span>
+                      <span className="text-[9px] text-zinc-600 mt-0.5 leading-tight">{tier.description}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-zinc-600 text-[10px] mt-1.5 text-center">Any amount unlocks the download. Every dollar matters.</p>
+              </div>
+
               <div className="bg-zinc-900 border border-amber-500/20 rounded-xl p-4 space-y-3">
                 <div className="flex items-center justify-between gap-3">
                   <div>
@@ -262,7 +277,7 @@ export function ViralDownloadButton({
                 <ol className="space-y-1 text-xs text-zinc-500">
                   <li className="flex gap-2"><span className="text-amber-400 font-bold">1.</span> Open your banking app</li>
                   <li className="flex gap-2"><span className="text-amber-400 font-bold">2.</span> Go to Pay Anyone / PayID</li>
-                  <li className="flex gap-2"><span className="text-amber-400 font-bold">3.</span> Paste PayID, enter $1+ AUD, send</li>
+                  <li className="flex gap-2"><span className="text-amber-400 font-bold">3.</span> Paste PayID, enter amount, send</li>
                   <li className="flex gap-2"><span className="text-amber-400 font-bold">4.</span> Return here and click Unlock</li>
                 </ol>
               </div>
