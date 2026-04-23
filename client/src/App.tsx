@@ -42,6 +42,7 @@ import CopyrightRegister from "@/pages/CopyrightRegister";
 import ForensicCorroborationStillStanding from "@/pages/ForensicCorroborationStillStanding";
 import DigitalArchive from "@/pages/DigitalArchive";
 import ArchiveIndex from "@/pages/ArchiveIndex";
+import ArchiveDetonation from "@/pages/ArchiveDetonation";
 import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
 import RetrospectiveStatement from "@/pages/RetrospectiveStatement";
@@ -523,6 +524,9 @@ function Router() {
         <Route path="/archive-index" component={ArchiveIndex} />
         <Route path="/pdf-list" component={ArchiveIndex} />
         <Route path="/complete-document-list" component={ArchiveIndex} />
+        <Route path="/archive-detonation" component={ArchiveDetonation} />
+        <Route path="/detonation-center" component={ArchiveDetonation} />
+        <Route path="/download-archive" component={ArchiveDetonation} />
         <Route path="/essays/:slug" component={CosmicEssayPage} />
         <Route path="/top-ten-gospels" component={TopTenGospels} />
         <Route path="/top-10-gospels" component={TopTenGospels} />

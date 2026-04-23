@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CheckCircle, Download, ExternalLink, Eye, Shield, Flame, Search, Diamond } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -292,17 +293,13 @@ export default function TheyDugForDirtButUnearthedDiamonds() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-              <Button
-                variant="outline"
-                className="gap-2 border-amber-500/40 text-amber-300 hover:bg-amber-500/10"
-                asChild
-                data-testid="button-download-pdf"
-              >
-                <a href={`/api/forensic/pdf/${SLUG}`} download>
-                  <Download className="h-4 w-4" />
-                  Download Forensic PDF
-                </a>
-              </Button>
+              <ViralDownloadButton
+                url={`/api/forensic/pdf/${SLUG}`}
+                filename={`${SLUG}-forensic-analysis.pdf`}
+                slug={SLUG}
+                label="Download Forensic PDF"
+                size="sm"
+              />
               <Button variant="outline" className="gap-2" asChild data-testid="button-youtube">
                 <a
                   href={`https://youtu.be/${VIDEO_ID}`}

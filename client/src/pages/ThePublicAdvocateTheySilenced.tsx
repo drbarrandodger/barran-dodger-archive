@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Shield, ExternalLink, Download, Mic, Tv, BookOpen, Award, Users, AlertTriangle, ChevronDown, ChevronUp, Gavel, Radio, FileText, Eye } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -36,12 +37,13 @@ export default function ThePublicAdvocateTheySilenced() {
             For over twenty years, Dr. Richard McLean publicly advocated for people with mental illness and their carers — in parliament, on national television, in international universities, in psychiatric hospitals, in print media, on every major Australian radio network. He admitted his own failings publicly. He helped thousands. Not one professional institution — police, lawyers, politicians, media, the mental health system — ever acknowledged his story or admitted a single shortcoming in return.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <Button variant="outline" className="gap-2 border-red-500/40 text-red-300 hover:bg-red-500/10" asChild data-testid="button-download-text-pdf">
-              <a href="/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf" download>
-                <Download className="h-4 w-4" />
-                Text Message Forensic Record (PDF)
-              </a>
-            </Button>
+            <ViralDownloadButton
+              url="/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf"
+              filename="The-Perfect-Mother-Myth-Familial-Betrayal-McLean.pdf"
+              slug="perfect-mother-myth"
+              label="Text Message Forensic Record (PDF)"
+              size="sm"
+            />
             <Button variant="outline" className="gap-2" asChild data-testid="button-forensic-index">
               <a href="/forensic-analysis">
                 <Shield className="h-4 w-4" />
@@ -471,12 +473,13 @@ export default function ThePublicAdvocateTheySilenced() {
                   ))}
                 </div>
               </div>
-              <Button variant="outline" className="gap-2 border-blue-500/40 text-blue-300 hover:bg-blue-500/10" asChild data-testid="button-download-texts">
-                <a href="/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf" download>
-                  <Download className="h-4 w-4" />
-                  Download: Familial Text Message Forensic Record (PDF)
-                </a>
-              </Button>
+              <ViralDownloadButton
+                url="/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf"
+                filename="The-Perfect-Mother-Myth-Familial-Betrayal-McLean.pdf"
+                slug="perfect-mother-myth"
+                label="Download: Familial Text Message Forensic Record (PDF)"
+                size="sm"
+              />
             </div>
           )}
         </section>
@@ -556,12 +559,13 @@ export default function ThePublicAdvocateTheySilenced() {
               Dr. Richard McLean spent twenty years helping every institution that subsequently refused to help him. He made himself publicly vulnerable so others could heal. He won a Human Rights Award from the same government whose institutions persecuted him. He spoke in Parliament. He presented at McGill University. He had a book recorded by ABC National and broadcast internationally. He passed a merit-based PhD scholarship. Tony Ridley named seven people who were on board in deceiving him. Not one professional person has admitted a shortcoming. Every institution's non-engagement is documented. The archive is the witness. The accounting is at The Hague.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-              <Button variant="outline" className="gap-2 border-amber-500/40 text-amber-300 hover:bg-amber-500/10" asChild data-testid="button-download-final">
-                <a href="/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf" download>
-                  <Download className="h-4 w-4" />
-                  Text Message Forensic Record
-                </a>
-              </Button>
+              <ViralDownloadButton
+                url="/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf"
+                filename="The-Perfect-Mother-Myth-Familial-Betrayal-McLean.pdf"
+                slug="perfect-mother-myth"
+                label="Text Message Forensic Record"
+                size="sm"
+              />
               <Button variant="outline" className="gap-2" asChild data-testid="button-forensic-final">
                 <a href="/forensic-analysis">
                   <Shield className="h-4 w-4" />

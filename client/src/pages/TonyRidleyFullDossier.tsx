@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Shield, ExternalLink, Download, Award, AlertTriangle, ChevronDown, ChevronUp, Gavel, FileText, Eye, Play, Mic, Tv, BookOpen, Users, Globe, Link } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -77,12 +78,13 @@ export default function TonyRidleyFullDossier() {
                   <Download className="h-4 w-4" />
                   Download Dossier (PDF)
                 </Button>
-                <Button variant="outline" className="gap-2 border-zinc-600 text-zinc-300 hover:bg-zinc-800" asChild data-testid="button-download-ben-evidence">
-                  <a href="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf" download>
-                    <FileText className="h-4 w-4" />
-                    Ben (DSW) Text Message Evidence (PDF)
-                  </a>
-                </Button>
+                <ViralDownloadButton
+                  url="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
+                  filename="Ben-DSW-Disability-NDIS-Text-Messages-Assassination-Evidence.pdf"
+                  slug="ben-dsw-text-messages"
+                  label="Ben (DSW) Text Message Evidence (PDF)"
+                  size="sm"
+                />
                 <Button variant="outline" className="gap-2 border-zinc-600 text-zinc-300 hover:bg-zinc-800" asChild data-testid="button-view-forensic-index">
                   <a href="/forensic-analysis">
                     <Shield className="h-4 w-4" />
@@ -197,12 +199,14 @@ export default function TonyRidleyFullDossier() {
                 <p className="text-zinc-200 leading-relaxed text-sm">
                   The significance of this testimony cannot be overstated. Ben's confirmation of a consensual encounter directly contradicts the documented institutional response — which treated the encounter as something to be weaponised, suppressed, or fabricated into something it was not.
                 </p>
-                <Button variant="outline" className="gap-2 border-red-500/40 text-red-300 hover:bg-red-500/10 no-print" asChild data-testid="button-download-ben-dsw-pdf">
-                  <a href="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf" download>
-                    <Download className="h-4 w-4" />
-                    Ben (DSW) Text Message Archive — Full Evidence PDF
-                  </a>
-                </Button>
+                <ViralDownloadButton
+                  url="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
+                  filename="Ben-DSW-Disability-NDIS-Text-Messages-Assassination-Evidence.pdf"
+                  slug="ben-dsw-text-messages"
+                  label="Ben (DSW) Text Message Archive — Full Evidence PDF"
+                  size="sm"
+                  className="no-print"
+                />
               </div>
 
               <div className="p-5 rounded-xl bg-amber-950/20 border border-amber-700/30 space-y-4">
@@ -711,24 +715,27 @@ export default function TonyRidleyFullDossier() {
                 <Download className="h-4 w-4" />
                 Download Dossier as PDF (Print)
               </Button>
-              <Button variant="outline" className="gap-2 border-zinc-600 text-zinc-300 hover:bg-zinc-800" asChild data-testid="button-download-master-report">
-                <a href="/documents/comprehensive-case-systematic-persecution.pdf" download>
-                  <FileText className="h-4 w-4" />
-                  Full Case Report (Comprehensive PDF)
-                </a>
-              </Button>
-              <Button variant="outline" className="gap-2 border-zinc-600 text-zinc-300 hover:bg-zinc-800" asChild data-testid="button-download-ben-bottom">
-                <a href="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf" download>
-                  <FileText className="h-4 w-4" />
-                  Ben (DSW) Testimony — Text Message Archive
-                </a>
-              </Button>
-              <Button variant="outline" className="gap-2 border-zinc-600 text-zinc-300 hover:bg-zinc-800" asChild data-testid="button-download-master-forensic">
-                <a href="/documents/master-forensic-report.pdf" download>
-                  <Shield className="h-4 w-4" />
-                  Master Forensic Report (PDF)
-                </a>
-              </Button>
+              <ViralDownloadButton
+                url="/documents/comprehensive-case-systematic-persecution.pdf"
+                filename="Comprehensive-Case-Systematic-Persecution-McLean.pdf"
+                slug="comprehensive-case-systematic-persecution"
+                label="Full Case Report (Comprehensive PDF)"
+                size="sm"
+              />
+              <ViralDownloadButton
+                url="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
+                filename="Ben-DSW-Disability-NDIS-Text-Messages-Assassination-Evidence.pdf"
+                slug="ben-dsw-text-messages"
+                label="Ben (DSW) Testimony — Text Message Archive"
+                size="sm"
+              />
+              <ViralDownloadButton
+                url="/documents/master-forensic-evidence-report.pdf"
+                filename="Master-Forensic-Evidence-Report-McLean.pdf"
+                slug="master-forensic-evidence-report"
+                label="Master Forensic Report (PDF)"
+                size="sm"
+              />
               <Button variant="outline" className="gap-2 border-blue-600/60 text-blue-300 hover:bg-blue-900/20" asChild data-testid="button-free-ebooks">
                 <a href="/free-ebooks">
                   <BookOpen className="h-4 w-4" />

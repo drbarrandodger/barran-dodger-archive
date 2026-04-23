@@ -462,6 +462,24 @@ export async function registerRoutes(
     }
   });
 
+  app.get('/api/download-stats', async (_req, res) => {
+    try {
+      res.set('Cache-Control', 'no-store, no-cache');
+      const [allTime, last24h, last30d] = await Promise.all([
+        db.execute(sql`SELECT COUNT(*)::int as total FROM download_events`),
+        db.execute(sql`SELECT COUNT(*)::int as total FROM download_events WHERE downloaded_at >= NOW() - INTERVAL '24 hours'`),
+        db.execute(sql`SELECT COUNT(*)::int as total FROM download_events WHERE downloaded_at >= NOW() - INTERVAL '30 days'`),
+      ]);
+      res.json({
+        allTime: Number((allTime.rows[0] as any)?.total ?? 0),
+        last24h: Number((last24h.rows[0] as any)?.total ?? 0),
+        last30d: Number((last30d.rows[0] as any)?.total ?? 0),
+      });
+    } catch {
+      res.status(500).json({ allTime: 0, last24h: 0, last30d: 0 });
+    }
+  });
+
   app.get('/api/downloads/:slug', async (req, res) => {
     try {
       res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
@@ -1574,6 +1592,122 @@ export async function registerRoutes(
         res.status(500).json({ message: 'Download failed', error: err.message });
       }
     }
+  });
+
+  // ─── Sectioned Archive ZIP Endpoints ────────────────────────────────────────
+
+  function buildSectionZip(
+    res: any,
+    matchFn: (name: string) => boolean,
+    zipFilename: string,
+    slug: string,
+    folderLabel: string,
+  ) {
+    try {
+      const docsDir = path.resolve('client/public/documents');
+      const allPdfs = findAllPDFsRecursive(docsDir);
+      const matched = allPdfs.filter(({ name }) => matchFn(name));
+
+      storage.incrementDownloadCount(slug).catch(() => {});
+      for (const { name } of matched) {
+        const s = name.replace(/\.pdf$/i, '').replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-|-$/g, '').toLowerCase().slice(0, 80);
+        storage.incrementDownloadCount(s).catch(() => {});
+      }
+
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', `attachment; filename="${zipFilename}"`);
+      res.setHeader('Cache-Control', 'no-store');
+      res.setHeader('X-Accel-Buffering', 'no');
+
+      const archive = archiver('zip', { zlib: { level: 0 } });
+      archive.on('error', (err: any) => {
+        if (!res.headersSent) res.status(500).json({ message: 'Archive error', error: err.message });
+      });
+      archive.pipe(res);
+
+      for (const { name, fullPath } of matched) {
+        if (fs.existsSync(fullPath) && fs.statSync(fullPath).size > 0) {
+          archive.file(fullPath, { name: `${folderLabel}/${name}` });
+        }
+      }
+
+      const manifest = [
+        `BarranDodger.com — ${zipFilename}`,
+        `Generated: ${new Date().toISOString()}`,
+        `Files: ${matched.length}`,
+        '',
+        '© 2026 Barran Dodger Legal & Ethical Trust Fund | ABN 78 833 496 164',
+        'www.barrandodger.com',
+      ];
+      archive.append(manifest.join('\n'), { name: 'MANIFEST.txt' });
+      archive.finalize();
+    } catch (err: any) {
+      if (!res.headersSent) res.status(500).json({ message: 'Download failed', error: err.message });
+    }
+  }
+
+  const GOSPEL_PATTERNS = [
+    'gospel', 'enliven', 'canonical', 'atherion', 'cosmic_scroll', 'cosmic-scroll',
+    'josephs', '1000_years', '1000-years', 'gods-', 'god-', 'apotheosis', 'divine-exam',
+    'eliven', 'eternal', 'heaven', 'angel', 'prophecy', 'declaration_of_sovereignty',
+    'declaration-of-sovereignty', 'declaration-of-breakthrough', 'chosen_one', 'chosen-one',
+    'alien_races', 'alien-races', 'bro-this-isnt', 'document_that_cannot',
+  ];
+
+  const GOVERNMENT_PATTERNS = [
+    'federal-court', 'letter-to-', 'attorney', 'parliament', 'icc', 'unhcr',
+    'ndis-pid', 'pid-act', 'coag', 'ohchr', 'formal-criminal', 'crimes_against',
+    'crimes-against', 'constructive_elimination', 'constructive-elimination',
+    'critical-legal', 'cto-breach', 'formal-submission', 'senator', 'minister',
+    '01-07-2023', '04-06-2023', '31-05-2022', 'letter-to-pm', 'opmc',
+  ];
+
+  app.get('/api/archive/gospels', (_req, res) => {
+    buildSectionZip(
+      res,
+      (name) => GOSPEL_PATTERNS.some(p => name.toLowerCase().includes(p)),
+      'BarranDodger_Gospels_And_Revelations.zip',
+      'archive-gospels-bundle',
+      'gospels',
+    );
+  });
+
+  app.get('/api/archive/government-evidence', (_req, res) => {
+    buildSectionZip(
+      res,
+      (name) => GOVERNMENT_PATTERNS.some(p => name.toLowerCase().includes(p)),
+      'BarranDodger_Government_Evidence.zip',
+      'archive-government-evidence-bundle',
+      'government-evidence',
+    );
+  });
+
+  app.get('/api/archive/creative-works', (_req, res) => {
+    const excluded = [...GOSPEL_PATTERNS, ...GOVERNMENT_PATTERNS];
+    buildSectionZip(
+      res,
+      (name) => {
+        const lower = name.toLowerCase();
+        return (
+          !excluded.some(p => lower.includes(p)) &&
+          !lower.includes('forensic-anal') &&
+          !lower.includes('forensic_anal')
+        );
+      },
+      'BarranDodger_Creative_Works_And_Essays.zip',
+      'archive-creative-works-bundle',
+      'creative-works',
+    );
+  });
+
+  app.get('/api/archive/forensic-analyses', (_req, res) => {
+    buildSectionZip(
+      res,
+      (name) => name.toLowerCase().includes('forensic-anal') || name.toLowerCase().includes('forensic_anal') || name.startsWith('forensic-analyses/'),
+      'BarranDodger_Forensic_Analyses.zip',
+      'archive-forensic-analyses-bundle',
+      'forensic-analyses',
+    );
   });
 
   // ─── EPUB Download Routes ───────────────────────────────────────────────────
