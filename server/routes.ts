@@ -1716,12 +1716,13 @@ export async function registerRoutes(
   app.use('/api/epub', async (req, res, next) => {
     if (req.path === '/list' || req.path === '/') return next();
     const token = (req.query.token as string) || req.headers['x-download-token'] as string;
+    const { sendGatePage } = await import('./gatePageHtml');
     if (!token) {
-      return res.status(403).json({ error: 'Download requires payment', message: 'Please complete payment at barrandodger.com', paymentUrl: 'https://barrandodger.com' });
+      return sendGatePage(res, { documentPath: req.path });
     }
     const { isValidDownloadToken } = await import('./downloadTokens');
     if (!isValidDownloadToken(token, '/api/epub' + req.path)) {
-      return res.status(403).json({ error: 'Invalid or expired download token', paymentUrl: 'https://barrandodger.com' });
+      return sendGatePage(res, { expired: true, documentPath: req.path });
     }
     next();
   });

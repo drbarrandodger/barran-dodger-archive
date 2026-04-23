@@ -59,16 +59,17 @@ app.use('/attached_assets', async (req: Request, res: Response, next: NextFuncti
   const lowerPath = req.path.toLowerCase();
   if (lowerPath.endsWith('.pdf')) {
     const token = (req.query.token as string) || req.headers['x-download-token'] as string;
+    const { sendGatePage } = await import('./gatePageHtml');
     if (!token) {
-      return res.status(403).json({ error: 'Download requires payment', paymentUrl: 'https://barrandodger.com' });
+      return sendGatePage(res, { documentPath: req.path });
     }
     try {
       const { isValidDownloadToken } = await import('./downloadTokens');
       if (!isValidDownloadToken(token, '/attached_assets' + req.path)) {
-        return res.status(403).json({ error: 'Invalid or expired download token' });
+        return sendGatePage(res, { expired: true, documentPath: req.path });
       }
     } catch {
-      return res.status(403).json({ error: 'Token validation failed' });
+      return sendGatePage(res, { expired: true, documentPath: req.path });
     }
   }
   next();
@@ -115,24 +116,17 @@ app.use('/documents', async (req: Request, res: Response, next: NextFunction) =>
   // ── Server-side payment gate ────────────────────────────────────────────────
   if (GATED_EXTENSIONS.has(ext)) {
     const token = (req.query.token as string) || req.headers['x-download-token'] as string;
+    const { sendGatePage } = await import('./gatePageHtml');
     if (!token) {
-      return res.status(403).json({
-        error: 'Download requires payment',
-        message: 'Please complete payment at barrandodger.com to download this document.',
-        paymentUrl: 'https://barrandodger.com',
-      });
+      return sendGatePage(res, { documentPath: req.path });
     }
     try {
       const { isValidDownloadToken } = await import('./downloadTokens');
       if (!isValidDownloadToken(token, '/documents' + req.path)) {
-        return res.status(403).json({
-          error: 'Invalid or expired download token',
-          message: 'Your download link has expired. Please return to barrandodger.com to re-download.',
-          paymentUrl: 'https://barrandodger.com',
-        });
+        return sendGatePage(res, { expired: true, documentPath: req.path });
       }
     } catch {
-      return res.status(403).json({ error: 'Token validation failed' });
+      return sendGatePage(res, { expired: true, documentPath: req.path });
     }
   }
 
