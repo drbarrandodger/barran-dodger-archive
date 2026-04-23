@@ -173,6 +173,21 @@ export async function registerRoutes(
     next();
   });
 
+  // ── Gate all /documents/*.pdf|zip|epub static files ──────────────────────
+  // This intercepts direct static file access BEFORE Vite/Express serves them.
+  // Every document requires a valid payment token — no free downloads.
+  app.use('/documents', async (req, res, next) => {
+    const ext = req.path.split('.').pop()?.toLowerCase() ?? '';
+    if (!['pdf', 'zip', 'epub'].includes(ext)) return next();
+    const token = (req.query.token as string) || (req.headers['x-download-token'] as string);
+    const { sendGatePage } = await import('./gatePageHtml');
+    const fullPath = '/documents' + req.path;
+    if (!token) return sendGatePage(res, { documentPath: fullPath });
+    const { isValidDownloadToken } = await import('./downloadTokens');
+    if (!isValidDownloadToken(token, fullPath)) return sendGatePage(res, { expired: true, documentPath: fullPath });
+    next();
+  });
+
   // ── Gate the root-level THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf ─────────────────
   // Must be registered here (before Vite catch-all) to intercept direct access
   app.get('/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf', async (req, res, next) => {
