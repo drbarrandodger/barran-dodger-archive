@@ -45,10 +45,10 @@ export function Footer() {
   };
 
   return (
-    <footer style={{ background: "#0f0800" }} className="text-white">
+    <footer style={{ background: "#6b0000" }} className="text-white">
 
       {/* ── CONVERSION PANEL — Top of footer, maximum visibility ── */}
-      <div className="border-b border-amber-800/40" style={{ background: "linear-gradient(180deg, #1a0c00 0%, #0f0800 100%)" }}>
+      <div className="border-b border-amber-600/40" style={{ background: "linear-gradient(180deg, #8b0000 0%, #6b0000 100%)" }}>
         <div className="container mx-auto px-4 md:px-6 py-12">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-4">

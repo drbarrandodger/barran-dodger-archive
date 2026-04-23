@@ -58,37 +58,18 @@ export function Navigation() {
   }, [scrolled]);
 
   const navLinks = [
-    { href: "/divine-reckoning", label: "⚡ Divine Reckoning", highlight: true },
-    { href: "/spread-the-truth", label: "🔥 Spread the Truth", highlight: true },
-    { href: "/ai-justice-statement", label: "⚖️ AI Justice Statement", highlight: true },
-    { href: "/video-commentary", label: "🎬 Video Commentary", highlight: true },
-    { href: "/testimony-went-global", label: "🌍 Went Global", highlight: true },
-    { href: "/private-investigator-legend", label: "🕵️ PI Legend", highlight: true },
-    { href: "/start-here", label: t("nav.startHere"), highlight: true },
-    { href: "/administrative-annihilation", label: t("nav.thePaper"), highlight: true },
-    { href: "/retrospective-statement", label: t("nav.govDocs"), highlight: true },
-    { href: "/archive", label: t("nav.fullArchive") },
-    { href: "/manifesto", label: t("nav.manifesto") },
-    { href: "/josephs-coat", label: t("nav.josephsCoat") },
-    { href: "/gospel", label: t("nav.gospel") },
-    { href: "/evidence", label: t("nav.evidence") },
-    { href: "/publications", label: t("nav.publications") },
-    { href: "/evidence-vault", label: t("nav.evidenceVault") },
-    { href: "/taxpayer-cost-analysis", label: t("nav.costAnalysis") },
-    { href: "/blockchain", label: t("nav.timestamps") },
-    { href: "/able-care-entrapment-network", label: "🕵️ Able Care Entrapment" },
-    { href: "/archive-detonation", label: "☢ Download the Archive", highlight: true },
-    { href: "/digital-archive", label: "⛓ Digital Archive — All PDFs" },
-    { href: "/archive-index", label: "📋 Archive Index" },
-    { href: "/free-ebooks", label: "📚 Free eBooks" },
-    { href: "/store", label: t("nav.store") },
-    { href: "/contact", label: t("nav.contact") },
+    { href: "/about",        label: "About" },
+    { href: "/gospel",       label: "Gospel" },
+    { href: "/testimony",    label: "Testimony" },
+    { href: "/whistleblower", label: "Whistleblower Record" },
+    { href: "/publications", label: "Publications" },
+    { href: "/evidence",     label: "Evidence Archive" },
   ];
 
   return (
     <nav ref={navRef} className={cn(
       "fixed top-[var(--banner-height,120px)] w-full z-50 transition-all duration-300 border-b-2 border-amber-500/70",
-      scrolled ? "bg-[#2d1400]/98 backdrop-blur-sm py-2 md:py-3 shadow-lg shadow-amber-800/40" : "bg-[#2d1400]/95 backdrop-blur-sm py-3 md:py-5",
+      scrolled ? "bg-[#8b0000]/98 backdrop-blur-sm py-2 md:py-3 shadow-lg shadow-red-900/40" : "bg-[#8b0000]/95 backdrop-blur-sm py-3 md:py-5",
       hideNav && !mobileMenuOpen && "opacity-0 pointer-events-none -translate-y-2"
     )}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -113,15 +94,12 @@ export function Navigation() {
               href={link.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-amber-300 relative py-1",
-                link.highlight && location !== link.href
-                  ? "text-amber-400 flex items-center gap-1 font-bold"
-                  : location === link.href 
-                    ? "text-amber-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-amber-500" 
-                    : "text-zinc-300 hover:text-amber-300"
+                location === link.href 
+                  ? "text-amber-200 font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-amber-400" 
+                  : "text-amber-100/80 hover:text-amber-200"
               )}
               data-testid={`nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
             >
-              {link.highlight && <Compass className="h-3.5 w-3.5" />}
               {link.label}
             </Link>
           ))}
@@ -170,23 +148,20 @@ export function Navigation() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#2d1400] border-t-2 border-amber-500/50">
-          <div className="container mx-auto px-4 py-4 space-y-2">
+        <div className="md:hidden bg-[#8b0000] border-t-2 border-amber-500/50">
+          <div className="container mx-auto px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
                 href={link.href}
                 className={cn(
                   "block py-3 px-4 rounded-lg text-sm font-medium transition-colors",
-                  link.highlight
-                    ? "bg-amber-500/10 text-amber-400 flex items-center gap-2 font-bold"
-                    : location === link.href 
-                      ? "bg-amber-500/10 text-amber-300" 
-                      : "text-zinc-300 hover:bg-zinc-800 hover:text-amber-300"
+                  location === link.href 
+                    ? "bg-amber-500/20 text-amber-200 font-bold" 
+                    : "text-amber-100/90 hover:bg-white/10 hover:text-amber-200"
                 )}
                 data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
               >
-                {link.highlight && <Compass className="h-4 w-4" />}
                 {link.label}
               </Link>
             ))}

@@ -224,7 +224,7 @@ export function ViralDownloadButton({
           <div className="flex border-b border-amber-800/50 mx-5">
             <button
               onClick={() => setGateTab("pay")}
-              className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors ${gateTab === "pay" ? "border-amber-500 text-amber-400" : "border-transparent text-zinc-500 hover:text-zinc-300"}`}
+              className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors ${gateTab === "pay" ? "border-amber-500 text-amber-400" : "border-transparent text-amber-700/70 hover:text-amber-400"}`}
               data-testid="tab-gate-pay"
             >
               <CreditCard className="h-3.5 w-3.5" />
@@ -232,7 +232,7 @@ export function ViralDownloadButton({
             </button>
             <button
               onClick={() => setGateTab("subscribe")}
-              className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors ${gateTab === "subscribe" ? "border-primary text-primary" : "border-transparent text-zinc-500 hover:text-zinc-300"}`}
+              className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors ${gateTab === "subscribe" ? "border-primary text-primary" : "border-transparent text-amber-700/70 hover:text-amber-400"}`}
               data-testid="tab-gate-subscribe"
             >
               <Mail className="h-3.5 w-3.5" />
@@ -245,7 +245,7 @@ export function ViralDownloadButton({
             <div className="p-5 space-y-4">
               {/* Donation tiers — shown BEFORE unlocking so user picks an amount */}
               <div>
-                <p className="text-zinc-500 text-[10px] uppercase tracking-widest font-bold mb-2">Choose your contribution</p>
+                <p className="text-amber-300/80 text-[10px] uppercase tracking-widest font-bold mb-2">Choose your contribution</p>
                 <div className="grid grid-cols-3 gap-2">
                   {UPSELL_TIERS.map((tier) => (
                     <div
@@ -254,17 +254,17 @@ export function ViralDownloadButton({
                     >
                       <span className={`text-base font-black ${tier.highlight ? "text-amber-400" : "text-white"}`}>{tier.amount}</span>
                       <span className="text-[10px] font-bold uppercase tracking-wide mt-0.5">{tier.label}</span>
-                      <span className="text-[9px] text-zinc-600 mt-0.5 leading-tight">{tier.description}</span>
+                      <span className="text-[9px] text-amber-400/70 mt-0.5 leading-tight">{tier.description}</span>
                     </div>
                   ))}
                 </div>
-                <p className="text-zinc-600 text-[10px] mt-1.5 text-center">Any amount unlocks the download. Every dollar matters.</p>
+                <p className="text-amber-300/60 text-[10px] mt-1.5 text-center">Any amount unlocks the download. Every dollar matters.</p>
               </div>
 
               <div className="border border-amber-600/40 rounded-xl p-4 space-y-3" style={{ background: "#1c0c02" }}>
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <p className="text-zinc-500 text-[10px] uppercase tracking-widest font-bold">PayID</p>
+                    <p className="text-amber-400/80 text-[10px] uppercase tracking-widest font-bold">PayID</p>
                     <p className="text-white font-mono text-sm mt-0.5">{PAYID}</p>
                   </div>
                   <button
@@ -277,10 +277,10 @@ export function ViralDownloadButton({
                   </button>
                 </div>
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-zinc-600">Minimum: <span className="text-amber-400 font-bold">$1 AUD</span></span>
-                  <span className="text-zinc-600">ABN 78 833 496 164</span>
+                  <span className="text-amber-400/60">Minimum: <span className="text-amber-400 font-bold">$1 AUD</span></span>
+                  <span className="text-amber-400/60">ABN 78 833 496 164</span>
                 </div>
-                <ol className="space-y-1 text-xs text-zinc-500">
+                <ol className="space-y-1 text-xs text-amber-300/70">
                   <li className="flex gap-2"><span className="text-amber-400 font-bold">1.</span> Open your banking app</li>
                   <li className="flex gap-2"><span className="text-amber-400 font-bold">2.</span> Go to Pay Anyone / PayID</li>
                   <li className="flex gap-2"><span className="text-amber-400 font-bold">3.</span> Paste PayID, enter amount, send</li>
@@ -295,7 +295,7 @@ export function ViralDownloadButton({
                 <Unlock className="h-4 w-4" />
                 I've transferred — unlock my download
               </button>
-              <p className="text-zinc-700 text-[10px] text-center">
+              <p className="text-amber-300/60 text-[10px] text-center">
                 This is an honor system. Your integrity is your contribution to truth.
               </p>
             </div>
@@ -402,7 +402,7 @@ export function ViralDownloadButton({
                   >
                     <span className={`text-base font-black ${tier.highlight ? "text-amber-400" : "text-white"}`}>{tier.amount}</span>
                     <span className="text-[10px] font-bold uppercase tracking-wider mt-0.5">{tier.label}</span>
-                    <span className="text-[9px] text-zinc-600 mt-0.5 leading-tight">{tier.description}</span>
+                    <span className="text-[9px] text-amber-400/70 mt-0.5 leading-tight">{tier.description}</span>
                   </a>
                 ))}
               </div>

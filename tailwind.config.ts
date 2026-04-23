@@ -11,21 +11,22 @@ export default {
         sm: ".1875rem", /* 3px */
       },
       colors: {
-        // ── ZINC REMAPPED: cold grey → warm amber-brown ──────────────────────
-        // Every bg-zinc-*, text-zinc-*, border-zinc-* across all 150+ pages
-        // automatically becomes warm amber instead of cold grey.
+        // ── ZINC REMAPPED: cold grey → golden parchment palette ─────────────
+        // Light theme: dark brown text & borders on cream — like an illuminated
+        // manuscript. Dark panels (hardcoded #2c1404 etc.) keep light zinc-100/200
+        // for internal text. zinc-400+ is dark enough to read on parchment bg.
         zinc: {
-          50:  '#faecd0',  // warm near-white cream
-          100: '#f0d8b0',  // warm light
-          200: '#ddba88',  // warm off-cream
-          300: '#c49462',  // warm tan
-          400: '#be8050',  // warm body text — readable on dark amber
-          500: '#8a5830',  // warm mid-dark text
-          600: '#6a3c18',  // warm dark
-          700: '#4a2410',  // dark warm amber
-          800: '#3a1c08',  // elevated panel bg — visible above page
-          900: '#2c1404',  // deep panel bg
-          950: '#1c0c02',  // darkest amber shadow
+          50:  '#fdf3d8',  // warm parchment (near background)
+          100: '#f0d8a8',  // light warm cream (text on dark panels)
+          200: '#ddb878',  // warm golden
+          300: '#c89840',  // medium warm gold
+          400: '#a06828',  // readable on cream (4.75:1) & large on dark (3.2:1)
+          500: '#785010',  // darker warm — readable on cream (6.9:1)
+          600: '#562c08',  // very dark warm
+          700: '#3c1804',  // dark warm (panel borders, dividers)
+          800: '#281002',  // dark panel bg — pops on parchment page
+          900: '#180c01',  // deepest panel bg
+          950: '#0e0600',  // absolute darkest
         },
         // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",

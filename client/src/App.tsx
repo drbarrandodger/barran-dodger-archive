@@ -202,6 +202,10 @@ import CosmicEssayPage from "@/pages/CosmicEssayPage";
 import TopTenGospels from "@/pages/TopTenGospels";
 import ArchiveReport from "@/pages/ArchiveReport";
 import ForensicFrameworkUnspokenMandate from "@/pages/ForensicFrameworkUnspokenMandate";
+import NewHomePage from "@/pages/NewHomePage";
+import About from "@/pages/About";
+import TestimonyHub from "@/pages/TestimonyHub";
+import WhistleblowerRecord from "@/pages/WhistleblowerRecord";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -246,7 +250,11 @@ function Router() {
     <>
       <ScrollToTop />
       <Switch>
-        <Route path="/" component={CreatorSpeaks} />
+        <Route path="/" component={NewHomePage} />
+        <Route path="/about" component={About} />
+        <Route path="/testimony" component={TestimonyHub} />
+        <Route path="/whistleblower" component={WhistleblowerRecord} />
+        <Route path="/creator-speaks" component={CreatorSpeaks} />
         <Route path="/main" component={ViralLanding} />
         <Route path="/archive" component={Home} />
         <Route path="/start-here" component={StartHere} />

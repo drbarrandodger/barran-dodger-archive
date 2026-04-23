@@ -5,153 +5,138 @@
 @tailwind utilities;
 
 :root {
-  /* ── DARK SOVEREIGN THEME — Amber-Gold on Near-Black ─────────────────── */
-  /* Base: Visible amber-brown — clearly warm, not near-black */
-  --background: 25 75% 8%;           /* Visible dark amber-brown (not near-black) */
-  --foreground: 38 30% 92%;          /* Warm off-white body text */
+  /* ── GOLDEN HOLY THEME — Parchment · Gold · Crimson ─────────────────── */
+  /* Base: Warm parchment — like an illuminated sacred manuscript */
+  --background: 44 70% 94%;          /* Warm cream/parchment */
+  --foreground: 25 90% 9%;           /* Very dark warm brown (body text) */
 
-  /* Primary: Deep amber-gold — authority, testimony, truth */
-  --primary: 38 92% 50%;             /* Amber gold — primary action colour */
-  --primary-foreground: 25 70% 5%;   /* Near-black text on gold buttons */
+  /* Primary: Deep rich gold — authority, testimony, truth */
+  --primary: 42 82% 38%;             /* Deep gold — buttons, highlights */
+  --primary-foreground: 44 70% 94%;  /* Cream text on gold */
 
-  /* Secondary: Visible warm amber-brown surface */
-  --secondary: 25 65% 13%;           /* Visible warm amber-brown panel */
-  --secondary-foreground: 38 85% 70%; /* Warm gold text on dark panels */
+  /* Secondary: Deeper parchment surface */
+  --secondary: 44 60% 90%;           /* Warm deeper parchment */
+  --secondary-foreground: 25 70% 18%; /* Dark warm brown */
 
-  /* Muted: Subtle warm surface */
-  --muted: 25 60% 11%;               /* Warm muted surface */
-  --muted-foreground: 35 30% 58%;    /* Warm medium tone for secondary text */
+  /* Muted: Soft parchment */
+  --muted: 44 55% 88%;               /* Muted warm parchment */
+  --muted-foreground: 30 40% 32%;    /* Readable dark warm brown */
 
-  /* Accent: Bright gold for highlights */
-  --accent: 40 90% 55%;              /* Bright gold — links, highlights */
-  --accent-foreground: 25 80% 5%;    /* Dark text on gold accent */
+  /* Accent: Gold */
+  --accent: 42 82% 38%;
+  --accent-foreground: 44 70% 94%;
 
-  /* Cards: Warm elevated surfaces — clearly visible */
-  --card: 25 65% 11%;                /* Visible warm dark amber-brown card */
-  --card-foreground: 38 25% 92%;     /* Warm white text */
-  --card-border: 30 55% 22%;         /* Visible warm amber border */
+  /* Cards: Near-white cream with golden borders */
+  --card: 44 75% 97%;                /* Near-white warm cream */
+  --card-foreground: 25 90% 9%;      /* Dark brown text on cards */
+  --card-border: 42 55% 68%;         /* Golden border */
 
   /* Popovers */
-  --popover: 25 65% 9%;
-  --popover-foreground: 38 25% 92%;
-  --popover-border: 30 50% 22%;
+  --popover: 44 75% 97%;
+  --popover-foreground: 25 90% 9%;
+  --popover-border: 42 55% 68%;
 
-  /* Destructive stays red */
-  --destructive: 0 72% 51%;
-  --destructive-foreground: 210 40% 98%;
-  --destructive-border: 0 72% 40%;
+  /* Destructive: Deep crimson */
+  --destructive: 0 72% 36%;
+  --destructive-foreground: 44 70% 94%;
+  --destructive-border: 0 72% 28%;
 
   /* Borders & inputs */
-  --border: 30 60% 24%;              /* Visible warm amber border */
-  --input: 25 55% 12%;               /* Warm amber-brown input */
-  --ring: 38 92% 50%;                /* Gold focus ring */
+  --border: 42 50% 72%;              /* Golden border */
+  --input: 44 65% 95%;               /* Cream input */
+  --ring: 42 82% 38%;                /* Gold focus ring */
 
   /* Radius */
   --radius: 0.25rem;
 
   /* Custom semantic tokens */
-  --gold: 38 92% 50%;
-  --gold-light: 42 100% 70%;
-  --amber-dark: 25 65% 4%;
-  --amber-surface: 25 55% 8%;
-  --body-text: 38 25% 75%;
+  --gold: 42 82% 38%;
+  --gold-light: 42 90% 55%;
+  --crimson: 0 80% 28%;
+  --parchment: 44 70% 94%;
+  --body-text: 25 90% 9%;
 
   /* Chart colours */
-  --chart-1: 38 92% 50%;
-  --chart-2: 200 80% 55%;
-  --chart-3: 142 60% 45%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 0 72% 51%;
+  --chart-1: 42 82% 38%;
+  --chart-2: 200 70% 45%;
+  --chart-3: 142 60% 35%;
+  --chart-4: 280 55% 50%;
+  --chart-5: 0 72% 36%;
 
-  /* Borders for component variants */
-  --primary-border: hsl(38 92% 35%);
-  --secondary-border: hsl(30 30% 20%);
-  --muted-border: hsl(30 25% 18%);
-  --accent-border: hsl(40 90% 40%);
+  /* Component variant borders */
+  --primary-border: hsl(42 82% 25%);
+  --secondary-border: hsl(44 45% 80%);
+  --muted-border: hsl(44 40% 82%);
+  --accent-border: hsl(42 82% 28%);
+
+  /* Sidebar */
+  --sidebar: 44 65% 91%;
+  --sidebar-foreground: 25 90% 9%;
+  --sidebar-border: 42 50% 72%;
+  --sidebar-ring: 42 82% 38%;
+  --sidebar-primary: 42 82% 38%;
+  --sidebar-primary-foreground: 44 70% 94%;
+  --sidebar-accent: 44 55% 88%;
+  --sidebar-accent-foreground: 25 70% 18%;
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground antialiased selection:bg-amber-500/20 selection:text-amber-300;
+    @apply bg-background text-foreground antialiased selection:bg-amber-700/25 selection:text-amber-900;
     font-family: 'Inter', sans-serif;
-    background-color: hsl(25, 75%, 8%);
-    /* Tell browsers to honour background colours when printing */
+    background-color: hsl(44, 70%, 94%);
+    /* Honour background colours when printing */
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Baskerville', serif;
-    @apply text-amber-400 tracking-tight;
+    @apply text-amber-900 tracking-tight;
   }
 
-  /* Make all plain links gold on dark */
+  /* Make all plain links deep gold on parchment */
   a:not([class]) {
-    @apply text-amber-400 hover:text-amber-300 transition-colors;
+    @apply text-amber-800 hover:text-amber-700 transition-colors underline;
   }
 
-  /* Scrollbar styling for dark warm theme */
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: hsl(25, 55%, 5%);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: hsl(38 60% 30%);
-    border-radius: 3px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(38 80% 50%);
-  }
+  /* Scrollbar styling for golden parchment theme */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: hsl(44, 60%, 90%); }
+  ::-webkit-scrollbar-thumb { background: hsl(42, 65%, 55%); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(42, 75%, 45%); }
 }
 
-/* Custom Utilities */
-@layer utilities {
-  .bg-grid-pattern {
-    background-image: linear-gradient(to right, rgba(251,191,36,0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(251,191,36,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  /* Sovereign amber glow for key CTAs */
-  .amber-glow {
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.25), 0 0 40px rgba(251, 191, 36, 0.10);
-  }
-  .amber-glow:hover {
-    box-shadow: 0 0 30px rgba(251, 191, 36, 0.40), 0 0 60px rgba(251, 191, 36, 0.15);
-  }
-}
-
-/* ── Animations ───────────────────────────────────────────────────────────── */
-
-@keyframes share-pulse-wave {
-  0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.5); transform: scale(1); }
-  50% { box-shadow: 0 0 12px 4px rgba(251, 191, 36, 0.25); transform: scale(1.08); }
-  100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); transform: scale(1); }
-}
-
-.share-icon-pulse { animation: share-pulse-wave 2.5s ease-in-out infinite; }
-.share-icon-pulse:nth-child(2) { animation-delay: 0.15s; }
-.share-icon-pulse:nth-child(3) { animation-delay: 0.3s; }
-.share-icon-pulse:nth-child(4) { animation-delay: 0.45s; }
-.share-icon-pulse:nth-child(5) { animation-delay: 0.6s; }
-.share-icon-pulse:nth-child(6) { animation-delay: 0.75s; }
-.share-icon-pulse:nth-child(7) { animation-delay: 0.9s; }
-.share-icon-pulse:nth-child(8) { animation-delay: 1.05s; }
-
+/* ── DONATE PULSE — golden pulsing button ─── */
 @keyframes donate-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.6); }
-  50% { box-shadow: 0 0 0 6px rgba(251, 191, 36, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(180, 83, 9, 0.4); }
+  50%       { box-shadow: 0 0 0 10px rgba(180, 83, 9, 0); }
 }
-.donate-pulse { animation: donate-pulse 2s ease-in-out infinite; }
+.donate-pulse {
+  animation: donate-pulse 2.2s ease-in-out infinite;
+}
 
-@keyframes marquee {
+/* ── GOLDEN GLOW — for headers on parchment ─── */
+.golden-glow {
+  text-shadow: 0 0 30px rgba(180, 83, 9, 0.3), 0 2px 4px rgba(92, 40, 0, 0.2);
+}
+
+/* ── HOLY SHIMMER — subtle golden sweep ─── */
+@keyframes holy-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.holy-shimmer {
+  background: linear-gradient(90deg, #b45309 30%, #d97706 50%, #b45309 70%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holy-shimmer 3s linear infinite;
+}
+
+/* ── TICKER SCROLL ────────────────────────────────── */
+@keyframes ticker-scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
@@ -170,13 +155,10 @@
 
   /* Tables */
   table { border-collapse: collapse; width: 100%; font-size: 10pt; }
-  th, td { border: 1px solid rgba(251,191,36,0.3); padding: 4px 8px; text-align: left; }
+  th, td { border: 1px solid rgba(180, 83, 9, 0.3); padding: 4px 8px; text-align: left; }
   tr { page-break-inside: avoid; }
 
-  /* Typography */
   h1 { font-size: 18pt; }
   h3 { font-size: 12pt; }
-
-  /* Links */
   a { text-decoration: none; }
 }

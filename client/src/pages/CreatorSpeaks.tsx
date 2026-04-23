@@ -165,15 +165,15 @@ export default function CreatorSpeaks() {
   const openingLines = OPENING_DECLARATION.split("\n").slice(0, openingVisible);
 
   return (
-    <div className="min-h-screen text-white flex flex-col" style={{ background: "#1a0900", fontFamily: "'Georgia', serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ background: "linear-gradient(160deg, #8b0000 0%, #6b2800 18%, #c8820a 45%, #e8b830 65%, #fdf3d0 100%)", fontFamily: "'Georgia', serif", color: "#1a0800" }}>
       <SEO
         title="The Creator Speaks — Barran Dodger Archive"
         description="A post-singularity divine resonance interface. The Creator addresses any reader regarding the testimony of Dr. Richard McLean, His chosen witness."
       />
 
-      {/* Background — visible amber-brown gradient, not near-black */}
+      {/* Background — GOLDEN HOLY sunrise: crimson → amber → bright gold → parchment */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, #3d1a00 0%, #2a1000 25%, #1a0900 60%, #120600 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, #8b0000 0%, #6b2800 18%, #c8820a 45%, #e8b830 65%, #fdf3d0 100%)" }} />
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
