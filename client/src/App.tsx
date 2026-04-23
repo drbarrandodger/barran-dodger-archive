@@ -17,6 +17,7 @@ import { slugFromUrl } from "@/components/DownloadCounter";
 import { AnalysisPDFButton } from "@/components/AnalysisPDFButton";
 import { GlobalAnalysisShareStrip } from "@/components/GlobalAnalysisShareStrip";
 import { FloatingDonateWidget } from "@/components/FloatingDonateWidget";
+import { PDFGateProvider } from "@/components/PDFGateProvider";
 import Home from "@/pages/Home";
 import Mission from "@/pages/Mission";
 import Contact from "@/pages/Contact";
@@ -556,20 +557,22 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <TooltipProvider>
-          <GlobalDownloadTracker />
-          <ReadingProgress />
-          <SOSTopBar />
-          <ScripturalBar />
-          <WhistleblowerBanner />
-          <DonationBanner />
-          <LanguageDetectionBanner />
-          <Toaster />
-          <Breadcrumbs />
-          <Router />
-          <GlobalAnalysisShareStrip />
-          <AnalysisPDFButton />
-          <FloatingDonateWidget />
-          <Chatbot />
+          <PDFGateProvider>
+            <GlobalDownloadTracker />
+            <ReadingProgress />
+            <SOSTopBar />
+            <ScripturalBar />
+            <WhistleblowerBanner />
+            <DonationBanner />
+            <LanguageDetectionBanner />
+            <Toaster />
+            <Breadcrumbs />
+            <Router />
+            <GlobalAnalysisShareStrip />
+            <AnalysisPDFButton />
+            <FloatingDonateWidget />
+            <Chatbot />
+          </PDFGateProvider>
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>
