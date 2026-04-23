@@ -115,3 +115,27 @@ export const bitcoinTimestamps = pgTable("bitcoin_timestamps", {
 export type BitcoinTimestamp = typeof bitcoinTimestamps.$inferSelect;
 
 export * from "./models/chat";
+
+export const commissionRequests = pgTable("commission_requests", {
+  id: serial("id").primaryKey(),
+  name: text("name"),
+  email: text("email").notNull(),
+  youtubeUrl: text("youtube_url").notNull(),
+  additionalUrls: text("additional_urls"),
+  situation: text("situation").notNull(),
+  tier: text("tier").notNull(),
+  amountAud: integer("amount_aud").notNull(),
+  paymentConfirmed: boolean("payment_confirmed").default(false),
+  status: text("status").notNull().default("pending"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const insertCommissionSchema = createInsertSchema(commissionRequests).omit({
+  id: true,
+  paymentConfirmed: true,
+  status: true,
+  createdAt: true,
+});
+
+export type CommissionRequest = typeof commissionRequests.$inferSelect;
+export type InsertCommission = z.infer<typeof insertCommissionSchema>;

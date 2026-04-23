@@ -7,7 +7,7 @@ import archiver from "archiver";
 import { storage } from "./storage";
 import { db } from "./db";
 import { eq, sql } from "drizzle-orm";
-import { downloadCounts, downloadEvents, insertCommentSchema } from "@shared/schema";
+import { downloadCounts, downloadEvents, insertCommentSchema, commissionRequests, insertCommissionSchema } from "@shared/schema";
 import { generateEssayPDF, generateEssayEPUB, COSMIC_ESSAY_DATA } from "./essayPdfGenerator";
 import { api } from "@shared/routes";
 import { z } from "zod";
@@ -185,6 +185,29 @@ export async function registerRoutes(
           field: err.errors[0].path.join('.'),
         });
       }
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Commission requests
+  app.post("/api/commission", async (req, res) => {
+    try {
+      const input = insertCommissionSchema.parse(req.body);
+      const [record] = await db.insert(commissionRequests).values(input).returning();
+      res.status(201).json({ id: record.id, message: "Commission request received" });
+    } catch (err) {
+      if (err instanceof z.ZodError) {
+        return res.status(400).json({ message: err.errors[0].message, field: err.errors[0].path.join(".") });
+      }
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  app.get("/api/commission", async (_req, res) => {
+    try {
+      const records = await db.select().from(commissionRequests).orderBy(commissionRequests.createdAt);
+      res.json(records);
+    } catch {
       res.status(500).json({ message: "Internal server error" });
     }
   });
