@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Scale, Mail, Heart, Globe, Shield, Copy, CheckCheck, TrendingUp } from "lucide-react";
+import { Scale, Mail, Heart, Globe, Shield, Copy, CheckCheck, TrendingUp, BadgeCheck, ExternalLink, Building2, Calendar, MapPin } from "lucide-react";
 import { SiX, SiGithub } from "react-icons/si";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -214,6 +214,79 @@ export function Footer() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* ABN Registry Verification */}
+        <div className="py-6 border-t border-amber-900/30">
+          <div className="rounded-xl border border-green-800/30 p-5" style={{ background: "rgba(20,83,45,0.15)" }}>
+            <div className="flex items-start gap-3 mb-4">
+              <BadgeCheck className="h-5 w-5 text-green-400 mt-0.5 shrink-0" />
+              <div>
+                <h4 className="text-xs font-bold text-green-400 uppercase tracking-wider">Registered Legal Entity — Australian Business Register</h4>
+                <p className="text-xs text-white/50 mt-0.5">Independently verifiable on the Australian Government ABR public registry</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-4">
+              <div className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <Building2 className="h-3.5 w-3.5 text-green-500/70 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-[10px] text-white/40 uppercase tracking-wider">Entity Name</p>
+                    <p className="text-xs text-white/80 font-semibold">The Trustee for www.barrandodger.com.au</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Scale className="h-3.5 w-3.5 text-green-500/70 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-[10px] text-white/40 uppercase tracking-wider">ABN</p>
+                    <p className="text-xs text-white/80 font-mono font-semibold">78 833 496 164</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <BadgeCheck className="h-3.5 w-3.5 text-green-500/70 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-[10px] text-white/40 uppercase tracking-wider">ABN Status</p>
+                    <p className="text-xs text-green-400 font-bold">Active from 07 Aug 2022</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <Scale className="h-3.5 w-3.5 text-green-500/70 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-[10px] text-white/40 uppercase tracking-wider">Entity Type</p>
+                    <p className="text-xs text-white/80">Fixed Unit Trust</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <MapPin className="h-3.5 w-3.5 text-green-500/70 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-[10px] text-white/40 uppercase tracking-wider">Main Business Location</p>
+                    <p className="text-xs text-white/80">VIC 3173, Australia</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Calendar className="h-3.5 w-3.5 text-green-500/70 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-[10px] text-white/40 uppercase tracking-wider">Record Last Updated</p>
+                    <p className="text-xs text-white/80">03 Oct 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              href="https://abr.business.gov.au/ABN/View?abn=78833496164"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs text-green-400 hover:text-green-300 transition-colors font-semibold border border-green-800/40 rounded-lg px-3 py-2"
+              style={{ background: "rgba(20,83,45,0.3)" }}
+              data-testid="link-abn-verify"
+            >
+              <ExternalLink className="h-3 w-3" />
+              Verify independently at abr.business.gov.au
+            </a>
+            <p className="text-[10px] text-white/30 mt-2">Record extracted: 24 Apr 2026 · Source: Australian Business Register (ABR)</p>
           </div>
         </div>
 
