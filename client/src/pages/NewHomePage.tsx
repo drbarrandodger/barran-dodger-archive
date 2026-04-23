@@ -449,13 +449,12 @@ export default function NewHomePage() {
             style={{ border: "2px solid rgba(139,105,20,0.3)", boxShadow: "0 8px 32px rgba(61,20,0,0.08)" }}
           >
             <iframe
-              src="https://simplebooklet.com/embed/barrandodger"
+              src="https://simplebooklet.com/embed.php?wpKey=VMbPqtcO0vNchOT0xF7hXt&source=embed"
               title="A Certain Beauty in UN Resolution — Art of Barran Dodger"
-              width="100%"
-              height="600"
-              style={{ display: "block", border: "none" }}
               allowFullScreen
-              loading="lazy"
+              scrolling="no"
+              height="1043"
+              style={{ display: "block", border: 0, overflow: "hidden", width: "1px", minWidth: "100%", maxWidth: "1232px" }}
               data-testid="iframe-simplebooklet"
             />
           </div>
