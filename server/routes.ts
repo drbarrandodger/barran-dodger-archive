@@ -2144,29 +2144,6 @@ export async function registerRoutes(
     }
   });
 
-  // Free token for subscribers — no payment, but requires name + email
-  app.post('/api/payment/issue-free-token', async (req, res) => {
-    const { email, name, documentUrl } = req.body || {};
-    if (!email || !name || !documentUrl) {
-      return res.status(400).json({ error: 'email, name, and documentUrl required' });
-    }
-    if (!email.includes('@')) {
-      return res.status(400).json({ error: 'Invalid email address' });
-    }
-    try {
-      // Create subscriber record
-      await fetch(`http://localhost:${process.env.PORT || 5000}/api/subscribers`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim(), name: name.trim(), documentSlug: documentUrl, source: 'pdf_gate_free' }),
-      }).catch(() => {});
-      const { issueDownloadToken } = await import('./downloadTokens');
-      const token = issueDownloadToken(documentUrl);
-      res.json({ token, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 });
-    } catch (err: any) {
-      res.status(500).json({ error: 'Could not issue free download token' });
-    }
-  });
 
 
   // ── Academy / Online Course Routes ────────────────────────────────────────

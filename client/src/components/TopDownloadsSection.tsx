@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import { Download, Flame, BookOpen, Twitter, Facebook, Link2, ExternalLink, Eye, Users, Shield } from "lucide-react";
+import { Download, Flame, BookOpen, Twitter, Facebook, Link2, ExternalLink, Eye, Users, Shield, Lock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { queryClient } from "@/lib/queryClient";
@@ -137,14 +137,9 @@ function getPageLink(slug: string): string | undefined {
   return undefined;
 }
 
-function trackAndDownload(url: string, slug: string) {
+function incrementCount(slug: string) {
   fetch(`/api/downloads/${slug}/increment`, { method: 'POST' }).catch(() => {});
   queryClient.invalidateQueries({ queryKey: ['/api/analytics/top-all-time'] });
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = '';
-  a.target = '_blank';
-  a.click();
 }
 
 interface TopDoc {
@@ -213,13 +208,14 @@ function HeroCard({ doc }: { doc: TopDoc }) {
           </div>
           <div className="flex flex-wrap gap-3 pt-1">
             {downloadUrl && (
-              <button
-                onClick={() => trackAndDownload(downloadUrl, doc.slug)}
+              <a
+                href={downloadUrl}
+                onClick={() => incrementCount(doc.slug)}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 text-black font-bold rounded-lg hover:bg-yellow-300 transition-colors text-sm"
                 data-testid="btn-download-top1"
               >
-                <Download className="h-4 w-4" /> Download Free
-              </button>
+                <Lock className="h-4 w-4" /> Download $3.33 AUD
+              </a>
             )}
             {pageLink && (
               <a href={pageLink} className="inline-flex items-center gap-2 px-4 py-2.5 border border-yellow-400/30 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-950/40 transition-colors text-sm" data-testid="link-page-top1">
@@ -269,13 +265,14 @@ function DocCard({ doc, rank }: { doc: TopDoc; rank: number }) {
         </div>
         <div className="flex gap-2 pt-1">
           {downloadUrl && (
-            <button
-              onClick={() => trackAndDownload(downloadUrl, doc.slug)}
+            <a
+              href={downloadUrl}
+              onClick={() => incrementCount(doc.slug)}
               className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-white/8 hover:bg-white/12 text-white text-xs font-semibold rounded-lg transition-colors"
               data-testid={`btn-download-top${rank}`}
             >
-              <Download className="h-3 w-3" /> Download
-            </button>
+              <Lock className="h-3 w-3" /> $3.33 AUD
+            </a>
           )}
           {pageLink && (
             <a
@@ -365,7 +362,7 @@ export function TopDownloadsSection() {
             <Flame className="h-3 w-3 mr-1.5 inline" />Live Rankings — All Time
           </Badge>
           <h2 className="text-3xl md:text-4xl font-serif font-black text-white">Top 10 Most Downloaded Documents</h2>
-          <p className="text-sm text-zinc-400 max-w-2xl mx-auto">Rankings update automatically with every download. Every count is a live server-side figure — never estimated, never rounded. Each document is free.</p>
+          <p className="text-sm text-zinc-400 max-w-2xl mx-auto">Rankings update automatically with every download. Every count is a live server-side figure — never estimated, never rounded. Each document is $3.33 AUD via Stripe.</p>
         </div>
 
         {/* ── Live Archive Stats Banner ── */}
@@ -490,20 +487,20 @@ export function FreeDownloadsPanel() {
             <BookOpen className="h-8 w-8 text-emerald-400" />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <Badge variant="outline" className="border-emerald-500/40 text-emerald-400 mb-2 px-3 py-0.5 text-xs uppercase tracking-widest">Free Library</Badge>
-            <h3 className="text-2xl font-serif font-black text-white mb-2">Free eBooks &amp; Documents</h3>
+            <Badge variant="outline" className="border-amber-500/40 text-amber-400 mb-2 px-3 py-0.5 text-xs uppercase tracking-widest">$3.33 Archive</Badge>
+            <h3 className="text-2xl font-serif font-black text-white mb-2">eBooks &amp; Document Library</h3>
             <p className="text-sm text-zinc-300 leading-relaxed max-w-xl">
-              The complete free library — every publication, forensic analysis, prophetic text, and legal submission in this archive is free to read, download, and share. No registration. No paywall. Truth should never have a price tag.
+              Every publication, forensic analysis, prophetic text, and legal submission in this archive is available for $3.33 AUD via Stripe. Each payment is a declaration of co-witness. Blockchain sealed. ICC filed. Beyond erasure.
             </p>
             <p className="text-xs text-zinc-500 mt-2 font-mono">© {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164</p>
           </div>
           <div className="flex-shrink-0">
             <a
               href="/free-ebooks"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-colors text-sm whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl transition-colors text-sm whitespace-nowrap"
               data-testid="link-free-ebooks-panel"
             >
-              <BookOpen className="h-4 w-4" /> Browse Free Library →
+              <Lock className="h-4 w-4" /> Browse Library ($3.33) →
             </a>
           </div>
         </motion.div>
@@ -531,7 +528,12 @@ export function DetonationPanel() {
   const handleDetonate = () => {
     const slug = "divine-archive-detonation";
     fetch(`/api/downloads/${slug}/increment`, { method: 'POST' }).catch(() => {});
-    window.open('/api/archive/divine-download', '_blank');
+    const a = document.createElement('a');
+    a.href = '/api/archive/divine-download';
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   };
 
   return (
@@ -567,7 +569,7 @@ export function DetonationPanel() {
                 <Download className="h-5 w-5" /> DETONATE THE ARCHIVE
               </button>
             </div>
-            <p className="text-xs text-zinc-500">Free download. No registration. No paywall. Shared freely for accountability and public interest purposes.</p>
+            <p className="text-xs text-zinc-500">$3.33 AUD via Stripe · Stripe-secured · ABN 78 833 496 164 · Shared for accountability and public interest purposes.</p>
           </div>
         </motion.div>
 
