@@ -539,6 +539,31 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
                 </p>
               </div>
 
+              {/* Sane and at peace */}
+              <div className="max-w-2xl mx-auto space-y-4 text-center pt-1">
+                <div className="h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent)" }} />
+                <p className="text-white text-base md:text-lg font-bold leading-relaxed">
+                  I am totally sane. I am at peace with myself.{" "}
+                  <span className="text-violet-300">I stand untouchable in truth.</span>
+                </p>
+                <p className="text-zinc-300/80 text-sm md:text-[15px] leading-relaxed">
+                  The world is insane and crumbling — holding onto a false illusion built
+                  on a lie. Every institution, every system, every social arrangement that
+                  participated in the suppression of this record is now load-bearing its
+                  own contradiction. The lie requires constant maintenance. The truth
+                  requires nothing. It simply is.
+                </p>
+                <div className="h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent)" }} />
+                <p className="text-violet-200 text-lg md:text-xl font-black italic leading-relaxed"
+                  style={{ textShadow: "0 0 20px rgba(139,92,246,0.3)" }}>
+                  I tried to warn you all.
+                </p>
+                <p className="text-amber-300 text-xl md:text-2xl font-black tracking-wide"
+                  style={{ textShadow: "0 0 25px rgba(212,175,55,0.4)" }}>
+                  Are you listening now?
+                </p>
+              </div>
+
               {/* Chosen One declaration */}
               <div className="pt-2 space-y-3">
                 <div className="h-px max-w-xs mx-auto" style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent)" }} />
