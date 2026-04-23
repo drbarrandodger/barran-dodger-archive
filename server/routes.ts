@@ -1712,6 +1712,20 @@ export async function registerRoutes(
 
   // ─── EPUB Download Routes ───────────────────────────────────────────────────
 
+  // Gate all epub download routes (not the list endpoint)
+  app.use('/api/epub', async (req, res, next) => {
+    if (req.path === '/list' || req.path === '/') return next();
+    const token = (req.query.token as string) || req.headers['x-download-token'] as string;
+    if (!token) {
+      return res.status(403).json({ error: 'Download requires payment', message: 'Please complete payment at barrandodger.com', paymentUrl: 'https://barrandodger.com' });
+    }
+    const { isValidDownloadToken } = await import('./downloadTokens');
+    if (!isValidDownloadToken(token, '/api/epub' + req.path)) {
+      return res.status(403).json({ error: 'Invalid or expired download token', paymentUrl: 'https://barrandodger.com' });
+    }
+    next();
+  });
+
   // List all available EPUBs
   app.get('/api/epub/list', (_req, res) => {
     const forensicList = FORENSIC_ANALYSES.map(a => ({
@@ -2038,6 +2052,63 @@ export async function registerRoutes(
       console.error('Stripe payment-intent error:', err.message);
       res.status(500).json({ error: 'Could not create payment intent' });
     }
+  });
+
+  // ─── Server-side download token issuance ──────────────────────────────────
+  // Called after Stripe payment is confirmed client-side — verifies with Stripe
+  // that the payment actually succeeded, then issues a signed download token.
+  app.post('/api/payment/issue-download-token', async (req, res) => {
+    const { paymentIntentId, documentUrl } = req.body || {};
+    if (!paymentIntentId || !documentUrl) {
+      return res.status(400).json({ error: 'paymentIntentId and documentUrl required' });
+    }
+    try {
+      const { getUncachableStripeClient } = await import('./stripeClient');
+      const stripe = await getUncachableStripeClient();
+      const intent = await stripe.paymentIntents.retrieve(paymentIntentId);
+      if (intent.status !== 'succeeded') {
+        return res.status(402).json({ error: 'Payment not confirmed by Stripe' });
+      }
+      const { issueDownloadToken } = await import('./downloadTokens');
+      const token = issueDownloadToken(documentUrl);
+      res.json({ token, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 });
+    } catch (err: any) {
+      console.error('Token issuance error:', err.message);
+      res.status(500).json({ error: 'Could not issue download token' });
+    }
+  });
+
+  // Free token for subscribers — no payment, but requires name + email
+  app.post('/api/payment/issue-free-token', async (req, res) => {
+    const { email, name, documentUrl } = req.body || {};
+    if (!email || !name || !documentUrl) {
+      return res.status(400).json({ error: 'email, name, and documentUrl required' });
+    }
+    if (!email.includes('@')) {
+      return res.status(400).json({ error: 'Invalid email address' });
+    }
+    try {
+      // Create subscriber record
+      await fetch(`http://localhost:${process.env.PORT || 5000}/api/subscribers`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim(), name: name.trim(), documentSlug: documentUrl, source: 'pdf_gate_free' }),
+      }).catch(() => {});
+      const { issueDownloadToken } = await import('./downloadTokens');
+      const token = issueDownloadToken(documentUrl);
+      res.json({ token, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 });
+    } catch (err: any) {
+      res.status(500).json({ error: 'Could not issue free download token' });
+    }
+  });
+
+  // Honour token for PayID system — no payment verification
+  app.post('/api/payment/issue-honour-token', async (req, res) => {
+    const { documentUrl } = req.body || {};
+    if (!documentUrl) return res.status(400).json({ error: 'documentUrl required' });
+    const { issueDownloadToken } = await import('./downloadTokens');
+    const token = issueDownloadToken(documentUrl);
+    res.json({ token, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 });
   });
 
   registerChatRoutes(app);

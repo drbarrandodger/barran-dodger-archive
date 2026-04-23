@@ -53,8 +53,27 @@ app.use((_req, res, next) => {
   next();
 });
 
-// Serve attached_assets as static files with correct MIME types
-app.use('/attached_assets', express.static(path.resolve(process.cwd(), 'attached_assets'), {
+// Serve attached_assets — images freely, PDFs require a download token
+const attachedAssetsDir = path.resolve(process.cwd(), 'attached_assets');
+app.use('/attached_assets', async (req: Request, res: Response, next: NextFunction) => {
+  const lowerPath = req.path.toLowerCase();
+  if (lowerPath.endsWith('.pdf')) {
+    const token = (req.query.token as string) || req.headers['x-download-token'] as string;
+    if (!token) {
+      return res.status(403).json({ error: 'Download requires payment', paymentUrl: 'https://barrandodger.com' });
+    }
+    try {
+      const { isValidDownloadToken } = await import('./downloadTokens');
+      if (!isValidDownloadToken(token, '/attached_assets' + req.path)) {
+        return res.status(403).json({ error: 'Invalid or expired download token' });
+      }
+    } catch {
+      return res.status(403).json({ error: 'Token validation failed' });
+    }
+  }
+  next();
+});
+app.use('/attached_assets', express.static(attachedAssetsDir, {
   setHeaders: (res, filePath) => {
     if (filePath.endsWith('.jpeg') || filePath.endsWith('.jpg')) {
       res.setHeader('Content-Type', 'image/jpeg');
@@ -62,6 +81,7 @@ app.use('/attached_assets', express.static(path.resolve(process.cwd(), 'attached
       res.setHeader('Content-Type', 'image/png');
     } else if (filePath.endsWith('.pdf')) {
       res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Cache-Control', 'no-store');
     }
   }
 }));
@@ -84,29 +104,64 @@ const TRACKED_EXTENSIONS: Record<string, string> = {
   '.png': 'image/png',
 };
 
-app.use('/documents', (req: Request, res: Response, next: NextFunction) => {
+// Extensions that require a valid download token before being served
+const GATED_EXTENSIONS = new Set(['.pdf', '.epub', '.docx', '.doc', '.zip']);
+
+app.use('/documents', async (req: Request, res: Response, next: NextFunction) => {
   const lowerPath = req.path.toLowerCase();
   const ext = Object.keys(TRACKED_EXTENSIONS).find(e => lowerPath.endsWith(e));
   if (!ext) return next();
 
-  const basename = path.basename(req.path);
+  // ── Server-side payment gate ────────────────────────────────────────────────
+  if (GATED_EXTENSIONS.has(ext)) {
+    const token = (req.query.token as string) || req.headers['x-download-token'] as string;
+    if (!token) {
+      return res.status(403).json({
+        error: 'Download requires payment',
+        message: 'Please complete payment at barrandodger.com to download this document.',
+        paymentUrl: 'https://barrandodger.com',
+      });
+    }
+    try {
+      const { isValidDownloadToken } = await import('./downloadTokens');
+      if (!isValidDownloadToken(token, '/documents' + req.path)) {
+        return res.status(403).json({
+          error: 'Invalid or expired download token',
+          message: 'Your download link has expired. Please return to barrandodger.com to re-download.',
+          paymentUrl: 'https://barrandodger.com',
+        });
+      }
+    } catch {
+      return res.status(403).json({ error: 'Token validation failed' });
+    }
+  }
 
-  // Derive slug from filename (strip extension, normalise to hyphens)
+  const basename = path.basename(req.path);
   const slug = path.basename(req.path, ext).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-  // Find the file — check both document directories
   const primaryPath = path.join(documentsDir, basename);
   const fallbackPath = path.join(publicDocumentsDir, basename);
-  const filePath = fs.existsSync(primaryPath) ? primaryPath : fs.existsSync(fallbackPath) ? fallbackPath : null;
+  // Also check subdirectories
+  const subdirMatch = (() => {
+    for (const subdir of ['forensic-analyses', 'gospels', 'testimony', 'evidence', 'official-documents']) {
+      const p = path.join(documentsDir, subdir, basename);
+      if (fs.existsSync(p)) return p;
+      const p2 = path.join(publicDocumentsDir, subdir, basename);
+      if (fs.existsSync(p2)) return p2;
+    }
+    return null;
+  })();
+  const filePath = fs.existsSync(primaryPath) ? primaryPath
+    : fs.existsSync(fallbackPath) ? fallbackPath
+    : subdirMatch;
 
   if (!filePath) return next();
 
-  // Fire-and-forget: track the download without blocking the response
   storage.incrementDownloadCount(slug).catch(() => {});
 
   res.setHeader('Content-Type', TRACKED_EXTENSIONS[ext]);
   res.setHeader('Content-Disposition', ['.pdf', '.mp3', '.mp4', '.jpeg', '.jpg', '.png'].includes(ext) ? 'inline' : 'attachment');
-  res.setHeader('Cache-Control', 'public, max-age=86400');
+  res.setHeader('Cache-Control', 'no-store');
   res.sendFile(filePath, (err) => {
     if (err) next();
   });

@@ -8,36 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { loadStripe, type Stripe as StripeType } from "@stripe/stripe-js";
 
-const ACCESS_KEY = "bd_doc_access_v2";
-
-function getUnlockedDocs(): Record<string, number> {
-  try {
-    const raw = localStorage.getItem(ACCESS_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
-}
-
-function hasAccess(url?: string): boolean {
-  try {
-    const docs = getUnlockedDocs();
-    const key = url || "__global__";
-    const expires = docs[key];
-    return !!expires && Date.now() < expires;
-  } catch {
-    return false;
-  }
-}
-
-function grantAccess(url?: string) {
-  try {
-    const docs = getUnlockedDocs();
-    const key = url || "__global__";
-    docs[key] = Date.now() + 7 * 24 * 60 * 60 * 1000;
-    localStorage.setItem(ACCESS_KEY, JSON.stringify(docs));
-  } catch {}
-}
+import { hasAccess, grantAccess, getDownloadUrl } from "@/components/PDFGateProvider";
 
 const CARD_ELEMENT_STYLE = {
   style: {
@@ -52,7 +23,7 @@ const CARD_ELEMENT_STYLE = {
   },
 };
 
-function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: () => void; documentUrl?: string }) {
+function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: (paymentIntentId: string) => void; documentUrl?: string }) {
   const stripe = useStripe();
   const elements = useElements();
   const [paying, setPaying] = useState(false);
@@ -69,14 +40,13 @@ function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: () => void; 
       if (!res.ok || !data.clientSecret) throw new Error(data.error || "Payment setup failed");
       const card = elements.getElement(CardElement);
       if (!card) throw new Error("Card element not found");
-      const { error } = await stripe.confirmCardPayment(data.clientSecret, {
+      const result = await stripe.confirmCardPayment(data.clientSecret, {
         payment_method: { card },
       });
-      if (error) {
-        setCardError(error.message || "Payment failed. Please try again.");
+      if (result.error) {
+        setCardError(result.error.message || "Payment failed. Please try again.");
       } else {
-        grantAccess(documentUrl);
-        onSuccess();
+        onSuccess(result.paymentIntent.id);
       }
     } catch (err: any) {
       setCardError(err.message || "Payment failed. Please try again.");
@@ -164,12 +134,37 @@ type Phase = "idle" | "gate" | "conscience" | "share";
 type GateTab = "pay" | "subscribe";
 
 function triggerFileDownload(url: string, filename?: string) {
+  const downloadUrl = getDownloadUrl(url);
   const a = document.createElement("a");
-  a.href = url;
+  a.href = downloadUrl;
   if (filename) a.download = filename;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
+}
+
+async function fetchAndStoreToken(paymentIntentId: string, documentUrl: string): Promise<void> {
+  try {
+    const res = await fetch("/api/payment/issue-download-token", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ paymentIntentId, documentUrl }),
+    });
+    const data = await res.json();
+    if (data.token) grantAccess(documentUrl, data.token, data.expires);
+  } catch {}
+}
+
+async function fetchHonourToken(documentUrl: string): Promise<void> {
+  try {
+    const res = await fetch("/api/payment/issue-honour-token", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ documentUrl }),
+    });
+    const data = await res.json();
+    if (data.token) grantAccess(documentUrl, data.token, data.expires);
+  } catch {}
 }
 
 export function ViralDownloadButton({
@@ -207,8 +202,20 @@ export function ViralDownloadButton({
   }, [phase, gateTab, stripePromise]);
 
   const subscribeMutation = useMutation({
-    mutationFn: (data: { email: string; name: string; documentSlug: string; source: string }) =>
-      apiRequest("POST", "/api/subscribers", data),
+    mutationFn: async (data: { email: string; name: string; documentSlug: string; source: string }) => {
+      const res = await fetch("/api/payment/issue-free-token", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: data.email, name: data.name, documentUrl: url }),
+      });
+      const tokenData = await res.json();
+      if (res.ok && tokenData.token) {
+        grantAccess(url, tokenData.token, tokenData.expires);
+      } else if (!res.ok && !tokenData.token) {
+        throw new Error(tokenData.error || "Subscription failed");
+      }
+      return apiRequest("POST", "/api/subscribers", data);
+    },
     onSuccess: () => {
       recordDownload();
       triggerFileDownload(url, filename);
@@ -217,10 +224,12 @@ export function ViralDownloadButton({
     },
     onError: (err: any) => {
       if (err?.message?.includes("already") || err?.status === 400) {
-        recordDownload();
-        triggerFileDownload(url, filename);
-        setPhase("conscience");
-        toast({ title: "Already subscribed — download starting" });
+        fetchHonourToken(url).then(() => {
+          recordDownload();
+          triggerFileDownload(url, filename);
+          setPhase("conscience");
+          toast({ title: "Already subscribed — download starting" });
+        });
       } else {
         setFormError("Something went wrong. Please try again.");
       }
@@ -377,7 +386,8 @@ export function ViralDownloadButton({
                 <Elements stripe={stripePromise}>
                   <StripePaymentForm
                     documentUrl={url}
-                    onSuccess={() => {
+                    onSuccess={async (paymentIntentId: string) => {
+                      await fetchAndStoreToken(paymentIntentId, url);
                       recordDownload();
                       triggerFileDownload(url, filename);
                       setPhase("conscience");
@@ -419,8 +429,8 @@ export function ViralDownloadButton({
                     </div>
                     <p className="text-amber-400/40 text-[9px]">Send $1+ AUD, then click below on your honour.</p>
                     <button
-                      onClick={() => {
-                        grantAccess(url);
+                      onClick={async () => {
+                        await fetchHonourToken(url);
                         recordDownload();
                         triggerFileDownload(url, filename);
                         setPhase("conscience");

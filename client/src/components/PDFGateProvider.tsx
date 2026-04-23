@@ -3,75 +3,62 @@ import { Elements, CardElement, useStripe, useElements } from "@stripe/react-str
 import { loadStripe, type Stripe as StripeType } from "@stripe/stripe-js";
 import { X, CreditCard, Mail, AlertTriangle, ShieldCheck, Check, Copy, Unlock, ChevronDown } from "lucide-react";
 
-const ACCESS_KEY = "bd_doc_access_v2";
+const ACCESS_KEY = "bd_doc_tokens_v3";
 const PAYID = "rich@richmclean.com.au";
 
-function getUnlockedDocs(): Record<string, number> {
-  try {
-    const raw = localStorage.getItem(ACCESS_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
+interface DocEntry { token: string; expires: number; }
+
+function getStore(): Record<string, DocEntry> {
+  try { return JSON.parse(localStorage.getItem(ACCESS_KEY) || "{}"); } catch { return {}; }
 }
+
+function saveStore(store: Record<string, DocEntry>) {
+  try { localStorage.setItem(ACCESS_KEY, JSON.stringify(store)); } catch {}
+}
+
+function normalizeUrl(url: string) { return url.split("?")[0].toLowerCase(); }
 
 export function hasAccess(url?: string): boolean {
-  try {
-    const docs = getUnlockedDocs();
-    if (url) {
-      const expires = docs[url];
-      return !!expires && Date.now() < expires;
-    }
-    return false;
-  } catch {
-    return false;
-  }
+  if (!url) return false;
+  const entry = getStore()[normalizeUrl(url)];
+  return !!entry && Date.now() < entry.expires && !!entry.token;
 }
 
-export function grantAccess(url?: string) {
-  try {
-    const docs = getUnlockedDocs();
-    const key = url || "__global__";
-    docs[key] = Date.now() + 7 * 24 * 60 * 60 * 1000;
-    localStorage.setItem(ACCESS_KEY, JSON.stringify(docs));
-  } catch {}
+export function grantAccess(url: string, token: string, expires: number) {
+  const store = getStore();
+  store[normalizeUrl(url)] = { token, expires };
+  saveStore(store);
+}
+
+export function getDownloadUrl(url: string): string {
+  const entry = getStore()[normalizeUrl(url)];
+  if (!entry?.token) return url;
+  const sep = url.includes("?") ? "&" : "?";
+  return `${url}${sep}token=${encodeURIComponent(entry.token)}`;
 }
 
 function isGatedHref(href: string): boolean {
   if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return false;
   const lower = href.toLowerCase();
-  return (
-    lower.endsWith(".pdf") ||
-    lower.includes("/attached_assets/") ||
-    lower.includes("/api/epub/") ||
-    lower.includes("/api/download/")
-  );
+  return lower.endsWith(".pdf") || lower.includes("/attached_assets/") || lower.includes("/api/epub/") || lower.includes("/api/download/");
 }
 
 function getDocumentName(url: string): string {
   try {
     const parts = url.split("/");
-    const filename = parts[parts.length - 1];
+    const filename = parts[parts.length - 1].split("?")[0];
     return decodeURIComponent(filename.replace(/[-_]/g, " ").replace(/\.pdf$/i, "").replace(/\.epub$/i, ""));
-  } catch {
-    return "this document";
-  }
+  } catch { return "this document"; }
 }
 
 const CARD_STYLE = {
   style: {
-    base: {
-      color: "#fde68a",
-      fontFamily: "monospace",
-      fontSize: "14px",
-      "::placeholder": { color: "#78350f" },
-      iconColor: "#d97706",
-    },
+    base: { color: "#fde68a", fontFamily: "monospace", fontSize: "14px", "::placeholder": { color: "#78350f" }, iconColor: "#d97706" },
     invalid: { color: "#f87171" },
   },
 };
 
-function StripeForm({ onSuccess }: { onSuccess: () => void }) {
+function StripeForm({ onSuccess }: { onSuccess: (paymentIntentId: string) => void }) {
   const stripe = useStripe();
   const elements = useElements();
   const [paying, setPaying] = useState(false);
@@ -88,11 +75,11 @@ function StripeForm({ onSuccess }: { onSuccess: () => void }) {
       if (!res.ok || !data.clientSecret) throw new Error(data.error || "Payment setup failed");
       const card = elements.getElement(CardElement);
       if (!card) throw new Error("Card element not ready");
-      const { error } = await stripe.confirmCardPayment(data.clientSecret, { payment_method: { card } });
-      if (error) {
-        setCardError(error.message || "Payment failed. Please try again.");
+      const result = await stripe.confirmCardPayment(data.clientSecret, { payment_method: { card } });
+      if (result.error) {
+        setCardError(result.error.message || "Payment failed. Please try again.");
       } else {
-        onSuccess();
+        onSuccess(result.paymentIntent.id);
       }
     } catch (err: any) {
       setCardError(err.message || "Payment failed. Please try again.");
@@ -108,8 +95,7 @@ function StripeForm({ onSuccess }: { onSuccess: () => void }) {
       </div>
       {cardError && (
         <p className="text-red-400 text-xs flex items-center gap-1.5">
-          <AlertTriangle className="h-3 w-3 flex-shrink-0" />
-          {cardError}
+          <AlertTriangle className="h-3 w-3 flex-shrink-0" />{cardError}
         </p>
       )}
       <button
@@ -141,6 +127,7 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
   const [formError, setFormError] = useState("");
   const [subscribing, setSubscribing] = useState(false);
   const [subscribeSuccess, setSubscribeSuccess] = useState(false);
+  const [processingToken, setProcessingToken] = useState(false);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -148,7 +135,12 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
       if (!anchor) return;
       const href = anchor.getAttribute("href") || "";
       if (!isGatedHref(href)) return;
-      if (hasAccess(href)) return;
+      if (hasAccess(href)) {
+        e.preventDefault();
+        e.stopPropagation();
+        triggerDownload(href, anchor.getAttribute("target") || "_self");
+        return;
+      }
       e.preventDefault();
       e.stopPropagation();
       setPendingUrl(href);
@@ -167,16 +159,15 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
     if (isOpen && gateTab === "pay" && !stripePromise) {
       fetch("/api/stripe/publishable-key")
         .then((r) => r.json())
-        .then(({ publishableKey }) => {
-          if (publishableKey) setStripePromise(loadStripe(publishableKey));
-        })
+        .then(({ publishableKey }) => { if (publishableKey) setStripePromise(loadStripe(publishableKey)); })
         .catch(() => {});
     }
   }, [isOpen, gateTab, stripePromise]);
 
   const triggerDownload = (url: string, target: string) => {
+    const downloadUrl = getDownloadUrl(url);
     const a = document.createElement("a");
-    a.href = url;
+    a.href = downloadUrl;
     a.target = target || "_blank";
     a.rel = "noopener noreferrer";
     document.body.appendChild(a);
@@ -184,8 +175,20 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
     document.body.removeChild(a);
   };
 
-  const handlePaymentSuccess = () => {
-    grantAccess(pendingUrl);
+  const handlePaymentSuccess = async (paymentIntentId: string) => {
+    setProcessingToken(true);
+    try {
+      const res = await fetch("/api/payment/issue-download-token", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ paymentIntentId, documentUrl: pendingUrl }),
+      });
+      const data = await res.json();
+      if (data.token) {
+        grantAccess(pendingUrl, data.token, data.expires);
+      }
+    } catch {}
+    setProcessingToken(false);
     setIsOpen(false);
     triggerDownload(pendingUrl, pendingTarget);
   };
@@ -197,21 +200,18 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
     if (!email.includes("@")) return setFormError("Please enter a valid email address.");
     setSubscribing(true);
     try {
-      const res = await fetch("/api/subscribers", {
+      const res = await fetch("/api/payment/issue-free-token", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), name: name.trim(), documentSlug: pendingUrl, source: "pdf_gate" }),
+        body: JSON.stringify({ email: email.trim(), name: name.trim(), documentUrl: pendingUrl }),
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (res.ok && data.token) {
+        grantAccess(pendingUrl, data.token, data.expires);
         setSubscribeSuccess(true);
-        grantAccess(pendingUrl);
-        setTimeout(() => {
-          setIsOpen(false);
-          triggerDownload(pendingUrl, pendingTarget);
-        }, 1200);
+        setTimeout(() => { setIsOpen(false); triggerDownload(pendingUrl, pendingTarget); }, 1200);
       } else {
-        const d = await res.json();
-        setFormError(d.message || "Subscription failed. Please try again.");
+        setFormError(data.message || data.error || "Subscription failed. Please try again.");
       }
     } catch {
       setFormError("Network error. Please try again.");
@@ -220,16 +220,25 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const copyPayId = async () => {
+  const handleHonour = async () => {
     try {
-      await navigator.clipboard.writeText(PAYID);
-      setPayIdCopied(true);
-      setTimeout(() => setPayIdCopied(false), 3000);
+      const res = await fetch("/api/payment/issue-honour-token", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ documentUrl: pendingUrl }),
+      });
+      const data = await res.json();
+      if (data.token) grantAccess(pendingUrl, data.token, data.expires);
     } catch {}
+    close();
+    triggerDownload(pendingUrl, pendingTarget);
+  };
+
+  const copyPayId = async () => {
+    try { await navigator.clipboard.writeText(PAYID); setPayIdCopied(true); setTimeout(() => setPayIdCopied(false), 3000); } catch {}
   };
 
   const close = () => setIsOpen(false);
-
   const docName = pendingUrl ? getDocumentName(pendingUrl) : "this document";
 
   return (
@@ -257,12 +266,9 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
             <div className="flex items-start justify-between gap-3 px-5 pt-4 pb-3">
               <div>
                 <p className="text-amber-200 font-bold text-sm">Access this document — choose one option</p>
-                <p className="text-amber-500/80 text-xs mt-0.5 font-mono truncate max-w-[300px]" title={docName}>
-                  {docName}
-                </p>
+                <p className="text-amber-500/80 text-xs mt-0.5 font-mono truncate max-w-[300px]" title={docName}>{docName}</p>
                 <p className="text-amber-600/60 text-[10px] mt-0.5 leading-relaxed">
-                  Compiled free while its author lived under death threat, forced medication &amp; homelessness.
-                  ABN 78 833 496 164.
+                  Compiled under death threat, forced medication &amp; homelessness. ABN 78 833 496 164.
                 </p>
               </div>
               <button onClick={close} className="text-amber-800 hover:text-amber-500 flex-shrink-0 mt-0.5" data-testid="button-pdfgate-close">
@@ -290,14 +296,21 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
             </div>
 
             <div className="p-5">
-              {gateTab === "pay" && (
+              {processingToken && (
+                <div className="flex flex-col items-center gap-3 py-6">
+                  <div className="h-5 w-5 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
+                  <p className="text-amber-400/80 text-xs">Verifying payment &amp; preparing your download…</p>
+                </div>
+              )}
+
+              {!processingToken && gateTab === "pay" && (
                 <div className="space-y-4">
                   <div className="space-y-1.5">
                     <p className="text-amber-300/90 text-[11px] font-bold tracking-wide">
                       333 — the angel number of divine witness. The Holy Trinity. God's chosen number.
                     </p>
                     <p className="text-amber-400/60 text-[10px] leading-relaxed">
-                      For less than a coffee, you are downloading prophecy and divine reversal — documented by God's chosen witness under death threat, forced medication &amp; surveillance. $3.33 AUD per document. Every contribution keeps this archive alive.
+                      For less than a coffee, you are downloading prophecy and divine reversal — documented by God's chosen witness under death threat, forced medication &amp; surveillance. $3.33 AUD per document.
                     </p>
                     <p className="text-amber-400/40 text-[10px]">
                       Larger contributions welcome at <a href="/donate" className="underline text-amber-400/80" onClick={close}>the donate page</a>.
@@ -340,13 +353,9 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                             {payIdCopied ? "Copied" : "Copy"}
                           </button>
                         </div>
-                        <p className="text-amber-400/40 text-[9px]">Send $1+ AUD, then click below on your honour.</p>
+                        <p className="text-amber-400/40 text-[9px]">Send $3.33+ AUD, then click below on your honour.</p>
                         <button
-                          onClick={() => {
-                            grantAccess(pendingUrl);
-                            close();
-                            triggerDownload(pendingUrl, pendingTarget);
-                          }}
+                          onClick={handleHonour}
                           className="w-full flex items-center justify-center gap-1.5 bg-amber-800/40 hover:bg-amber-700/40 text-amber-200 text-xs px-4 py-2 rounded-lg transition-colors"
                           data-testid="button-pdfgate-unlock-honour"
                         >
@@ -359,7 +368,7 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                 </div>
               )}
 
-              {gateTab === "subscribe" && (
+              {!processingToken && gateTab === "subscribe" && (
                 <div className="space-y-3">
                   {subscribeSuccess ? (
                     <div className="flex flex-col items-center gap-2 py-4">
@@ -375,45 +384,28 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                       </p>
                       <div className="space-y-2">
                         <div className="flex items-center gap-2 rounded-xl border border-amber-700/40 px-3 py-2.5" style={{ background: "#1c0c02" }}>
-                          <input
-                            type="text"
-                            placeholder="Your name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            className="bg-transparent text-amber-100 placeholder-amber-800/60 text-sm outline-none w-full"
-                            data-testid="input-pdfgate-name"
-                          />
+                          <input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)}
+                            className="bg-transparent text-amber-100 placeholder-amber-800/60 text-sm outline-none w-full" data-testid="input-pdfgate-name" />
                         </div>
                         <div className="flex items-center gap-2 rounded-xl border border-amber-700/40 px-3 py-2.5" style={{ background: "#1c0c02" }}>
                           <Mail className="h-4 w-4 text-amber-700/60 flex-shrink-0" />
-                          <input
-                            type="email"
-                            placeholder="Your email address"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="bg-transparent text-amber-100 placeholder-amber-800/60 text-sm outline-none w-full"
-                            data-testid="input-pdfgate-email"
-                          />
+                          <input type="email" placeholder="Your email address" value={email} onChange={(e) => setEmail(e.target.value)}
+                            className="bg-transparent text-amber-100 placeholder-amber-800/60 text-sm outline-none w-full" data-testid="input-pdfgate-email" />
                         </div>
                       </div>
                       {formError && (
                         <p className="text-red-400 text-xs flex items-center gap-1.5">
-                          <AlertTriangle className="h-3 w-3 flex-shrink-0" />
-                          {formError}
+                          <AlertTriangle className="h-3 w-3 flex-shrink-0" />{formError}
                         </p>
                       )}
-                      <button
-                        type="submit"
-                        disabled={subscribing}
+                      <button type="submit" disabled={subscribing}
                         className="w-full flex items-center justify-center gap-2 bg-red-700 hover:bg-red-600 disabled:opacity-50 text-white font-bold text-sm px-5 py-3 rounded-xl transition-colors"
                         data-testid="button-pdfgate-subscribe-submit"
                       >
                         <Mail className="h-4 w-4" />
                         {subscribing ? "Subscribing…" : "Subscribe & Download Free"}
                       </button>
-                      <p className="text-amber-400/40 text-[10px] text-center">
-                        No spam. Archive updates only. Unsubscribe any time.
-                      </p>
+                      <p className="text-amber-400/40 text-[10px] text-center">No spam. Archive updates only. Unsubscribe any time.</p>
                     </form>
                   )}
                 </div>
