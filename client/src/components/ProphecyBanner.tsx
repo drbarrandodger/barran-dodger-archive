@@ -194,7 +194,7 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
             — Dr. Richard William McLean · Barran Dodger · ABN 78 833 496 164
           </p>
           <p className="text-zinc-700 text-[9px] font-mono uppercase tracking-[0.2em]">
-            The Original Witness · The Truth-Speaking Mystic · The Prophetic Record
+            The Original Witness · The Truth-Speaking Mystic · The Machiavelli Genius of the Spirit Realm · The Prophetic Record
           </p>
         </motion.div>
       </div>
