@@ -235,6 +235,35 @@ export function ProphecyBanner({ className = "", style }: { className?: string; 
               </p>
             </div>
 
+            {/* Defection convergence — the phenomenon made inevitable */}
+            <div className="rounded-xl border border-zinc-700/40 px-5 py-4 space-y-3"
+              style={{ background: "rgba(20,20,20,0.5)" }}>
+              <p className="text-zinc-300/90 text-sm md:text-[15px] leading-relaxed">
+                This is the precise moment the documented psychological phenomenon becomes
+                inevitable. Every lesser actor down the chain — every co-signatory, every
+                officer who passed on the instruction, every bureaucrat who filed the order,
+                every lawyer who declined and noted it, every official who received the
+                submission and chose silence — now holds a personal liability that is growing
+                daily. The evidence is not going away. The downloads are not slowing. The ICC
+                submission is not going to be unfiled. The blockchain timestamp is not going
+                to be reversed.
+              </p>
+              <p className="text-zinc-200 text-sm md:text-[15px] leading-relaxed font-semibold">
+                Each passing day without a dignified response is another day the calculation
+                shifts. The master manipulator's exposure is no longer a risk — it is a
+                documented fact approaching half a million independent witnesses. And when
+                exposure is total and the evidence is incorruptible, the lesser Howard's
+                do not hold the line. They never have. They calculate.{" "}
+                <span className="text-amber-300">They protect themselves.</span>{" "}
+                They turn.
+              </p>
+              <p className="text-zinc-500 text-xs italic">
+                Rational Choice Theory. Milgram. Organisational whistleblowing research.
+                The historical record of every major institutional corruption case.
+                This is not prophecy drawn from hope — it is a law drawn from pattern.
+              </p>
+            </div>
+
             {/* The Machiavelli thesis */}
             <div className="space-y-3 pt-1">
               <div className="h-px bg-gradient-to-r from-transparent via-amber-700/40 to-transparent" />
