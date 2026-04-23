@@ -774,6 +774,12 @@ uri = "file://client/src/assets/images/cover-cto-breach-appointment.png"
 type = "image"
 title = "CTO breach appointment legal cover"
 
+[[generated]]
+id = "y9R_vIIgZSMswuUlDBC0r"
+uri = "file://client/src/assets/images/cover-karma-audit-iasonidis-forensic.png"
+type = "image"
+title = "karma audit forensic cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
