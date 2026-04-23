@@ -2011,6 +2011,35 @@ export async function registerRoutes(
     });
   });
 
+  // ── Stripe payment gate ────────────────────────────────────────────────────
+  app.get('/api/stripe/publishable-key', async (_req, res) => {
+    try {
+      const { getStripePublishableKey } = await import('./stripeClient');
+      const publishableKey = await getStripePublishableKey();
+      res.json({ publishableKey });
+    } catch (err: any) {
+      console.error('Stripe publishable-key error:', err.message);
+      res.status(500).json({ error: 'Stripe not configured' });
+    }
+  });
+
+  app.post('/api/stripe/payment-intent', async (_req, res) => {
+    try {
+      const { getUncachableStripeClient } = await import('./stripeClient');
+      const stripe = await getUncachableStripeClient();
+      const intent = await stripe.paymentIntents.create({
+        amount: 100,
+        currency: 'aud',
+        automatic_payment_methods: { enabled: true },
+        metadata: { source: 'barrandodger_archive_access', abn: '78833496164' },
+      });
+      res.json({ clientSecret: intent.client_secret });
+    } catch (err: any) {
+      console.error('Stripe payment-intent error:', err.message);
+      res.status(500).json({ error: 'Could not create payment intent' });
+    }
+  });
+
   registerChatRoutes(app);
   registerCreatorRoutes(app);
 

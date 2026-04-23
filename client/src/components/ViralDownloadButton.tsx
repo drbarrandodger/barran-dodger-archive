@@ -1,10 +1,105 @@
-import { useState } from "react";
-import { Download, Check, Link2, X, Copy, Mail, CreditCard, Lock, Unlock, User, ChevronRight, AlertTriangle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Check, Link2, X, Copy, Mail, CreditCard, Lock, Unlock, User, ChevronRight, AlertTriangle, ShieldCheck } from "lucide-react";
 import { SiX, SiWhatsapp, SiTelegram, SiFacebook } from "react-icons/si";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient, apiRequest } from "@/lib/queryClient";
 import { slugFromUrl } from "@/components/DownloadCounter";
 import { useToast } from "@/hooks/use-toast";
+import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { loadStripe, type Stripe as StripeType } from "@stripe/stripe-js";
+
+const ACCESS_KEY = "bd_archive_access_v1";
+const ACCESS_DURATION_MS = 24 * 60 * 60 * 1000;
+
+function hasAccess(): boolean {
+  try {
+    const raw = localStorage.getItem(ACCESS_KEY);
+    if (!raw) return false;
+    const { expires } = JSON.parse(raw);
+    return Date.now() < expires;
+  } catch {
+    return false;
+  }
+}
+
+function grantAccess() {
+  try {
+    localStorage.setItem(ACCESS_KEY, JSON.stringify({ granted: true, expires: Date.now() + ACCESS_DURATION_MS }));
+  } catch {}
+}
+
+const CARD_ELEMENT_STYLE = {
+  style: {
+    base: {
+      color: "#fde68a",
+      fontFamily: "monospace",
+      fontSize: "14px",
+      "::placeholder": { color: "#78350f" },
+      iconColor: "#d97706",
+    },
+    invalid: { color: "#f87171" },
+  },
+};
+
+function StripePaymentForm({ onSuccess }: { onSuccess: () => void }) {
+  const stripe = useStripe();
+  const elements = useElements();
+  const [paying, setPaying] = useState(false);
+  const [cardError, setCardError] = useState("");
+
+  const handlePay = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!stripe || !elements) return;
+    setPaying(true);
+    setCardError("");
+    try {
+      const res = await fetch("/api/stripe/payment-intent", { method: "POST" });
+      const data = await res.json();
+      if (!res.ok || !data.clientSecret) throw new Error(data.error || "Payment setup failed");
+      const card = elements.getElement(CardElement);
+      if (!card) throw new Error("Card element not found");
+      const { error } = await stripe.confirmCardPayment(data.clientSecret, {
+        payment_method: { card },
+      });
+      if (error) {
+        setCardError(error.message || "Payment failed. Please try again.");
+      } else {
+        grantAccess();
+        onSuccess();
+      }
+    } catch (err: any) {
+      setCardError(err.message || "Payment failed. Please try again.");
+    } finally {
+      setPaying(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handlePay} className="space-y-3">
+      <div className="border border-amber-700/50 rounded-xl p-3" style={{ background: "#1c0c02" }}>
+        <CardElement options={CARD_ELEMENT_STYLE} />
+      </div>
+      {cardError && (
+        <p className="text-red-400 text-xs flex items-center gap-1">
+          <AlertTriangle className="h-3 w-3 flex-shrink-0" />
+          {cardError}
+        </p>
+      )}
+      <button
+        type="submit"
+        disabled={paying || !stripe}
+        className="w-full flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-500 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold text-sm px-5 py-3 rounded-xl transition-colors"
+        data-testid="button-stripe-pay"
+      >
+        <ShieldCheck className="h-4 w-4" />
+        {paying ? "Processing payment…" : "Pay $1 AUD & Download"}
+      </button>
+      <p className="text-amber-400/50 text-[10px] text-center">
+        Secured by Stripe · ABN 78 833 496 164 · Card details never stored on this server
+      </p>
+    </form>
+  );
+}
 
 const BASE = "https://www.barrandodger.com";
 const PAYID = "rich@richmclean.com.au";
@@ -85,7 +180,20 @@ export function ViralDownloadButton({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [formError, setFormError] = useState("");
+  const [stripePromise, setStripePromise] = useState<Promise<StripeType | null> | null>(null);
+  const [showPayId, setShowPayId] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    if (phase === "gate" && gateTab === "pay" && !stripePromise) {
+      fetch("/api/stripe/publishable-key")
+        .then((r) => r.json())
+        .then(({ publishableKey }) => {
+          if (publishableKey) setStripePromise(loadStripe(publishableKey));
+        })
+        .catch(() => {});
+    }
+  }, [phase, gateTab, stripePromise]);
 
   const subscribeMutation = useMutation({
     mutationFn: (data: { email: string; name: string; documentSlug: string; source: string }) =>
@@ -125,13 +233,6 @@ export function ViralDownloadButton({
         queryClient.invalidateQueries({ queryKey: ["/api/downloads", slug] });
       }, 1200);
     } catch {}
-  };
-
-  const handleUnlockViaPay = () => {
-    recordDownload();
-    triggerFileDownload(url, filename);
-    setPhase("conscience");
-    toast({ title: "Download starting", description: "Thank you for your contribution." });
   };
 
   const handleSubscribeSubmit = (e: React.FormEvent) => {
@@ -178,9 +279,17 @@ export function ViralDownloadButton({
 
   return (
     <div className="space-y-3">
-      {/* ── DOWNLOAD BUTTON — opens gate, does not download directly ── */}
+      {/* ── DOWNLOAD BUTTON — bypasses gate for already-paid users ── */}
       <button
-        onClick={() => setPhase("gate")}
+        onClick={() => {
+          if (hasAccess()) {
+            recordDownload();
+            triggerFileDownload(url, filename);
+            setPhase("share");
+          } else {
+            setPhase("gate");
+          }
+        }}
         className={`inline-flex items-center font-semibold rounded-lg transition-colors ${sizeClasses[size]} ${className}`}
         data-testid={`viral-download-${slug.slice(0, 30)}`}
       >
@@ -243,58 +352,75 @@ export function ViralDownloadButton({
           {/* Tab: Pay */}
           {gateTab === "pay" && (
             <div className="p-5 space-y-4">
-              {/* Donation tiers — shown BEFORE unlocking so user picks an amount */}
               <div>
-                <p className="text-amber-300/80 text-[10px] uppercase tracking-widest font-bold mb-2">Choose your contribution</p>
-                <div className="grid grid-cols-3 gap-2">
-                  {UPSELL_TIERS.map((tier) => (
-                    <div
-                      key={tier.amount}
-                      className={`flex flex-col items-center text-center p-2.5 rounded-xl border cursor-default ${tier.highlight ? "border-amber-500/70 bg-amber-950/40 text-amber-300 ring-1 ring-amber-500/30" : "border-zinc-700/50 bg-zinc-900/50 text-zinc-400"}`}
-                    >
-                      <span className={`text-base font-black ${tier.highlight ? "text-amber-400" : "text-white"}`}>{tier.amount}</span>
-                      <span className="text-[10px] font-bold uppercase tracking-wide mt-0.5">{tier.label}</span>
-                      <span className="text-[9px] text-amber-400/70 mt-0.5 leading-tight">{tier.description}</span>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-amber-300/60 text-[10px] mt-1.5 text-center">Any amount unlocks the download. Every dollar matters.</p>
+                <p className="text-amber-300/80 text-[10px] uppercase tracking-widest font-bold mb-1">Pay $1 AUD by card — instant download</p>
+                <p className="text-amber-400/50 text-[10px] leading-relaxed">
+                  One payment unlocks all downloads on this device for 24 hours. Larger contributions welcome via{" "}
+                  <a href="/donate" className="underline text-amber-400/80">the donate page</a>.
+                </p>
               </div>
 
-              <div className="border border-amber-600/40 rounded-xl p-4 space-y-3" style={{ background: "#1c0c02" }}>
-                <div className="flex items-center justify-between gap-3">
-                  <div>
-                    <p className="text-amber-400/80 text-[10px] uppercase tracking-widest font-bold">PayID</p>
-                    <p className="text-white font-mono text-sm mt-0.5">{PAYID}</p>
+              {stripePromise ? (
+                <Elements stripe={stripePromise}>
+                  <StripePaymentForm
+                    onSuccess={() => {
+                      recordDownload();
+                      triggerFileDownload(url, filename);
+                      setPhase("conscience");
+                      toast({ title: "Download starting", description: "Payment confirmed. Thank you for supporting the archive." });
+                    }}
+                  />
+                </Elements>
+              ) : (
+                <div className="border border-amber-700/40 rounded-xl p-4 text-center" style={{ background: "#1c0c02" }}>
+                  <div className="h-4 w-4 border-2 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+                  <p className="text-amber-400/60 text-xs">Loading secure payment form…</p>
+                </div>
+              )}
+
+              {/* PayID secondary option */}
+              <div>
+                <button
+                  onClick={() => setShowPayId((v) => !v)}
+                  className="text-amber-700/70 hover:text-amber-500 text-[10px] underline underline-offset-2 flex items-center gap-1"
+                  data-testid="button-toggle-payid"
+                >
+                  {showPayId ? "Hide" : "Prefer bank transfer?"} — use PayID (honour system)
+                </button>
+                {showPayId && (
+                  <div className="mt-2 border border-amber-800/30 rounded-xl p-3 space-y-2" style={{ background: "#1a0a02" }}>
+                    <div className="flex items-center justify-between gap-3">
+                      <div>
+                        <p className="text-amber-400/60 text-[10px] uppercase tracking-widest font-bold">PayID</p>
+                        <p className="text-white font-mono text-xs mt-0.5">{PAYID}</p>
+                      </div>
+                      <button
+                        onClick={copyPayId}
+                        className="flex items-center gap-1 bg-amber-800/60 hover:bg-amber-700/60 text-amber-200 text-[10px] px-2 py-1 rounded-lg transition-colors flex-shrink-0"
+                        data-testid="button-gate-copy-payid"
+                      >
+                        {payIdCopied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        {payIdCopied ? "Copied" : "Copy"}
+                      </button>
+                    </div>
+                    <p className="text-amber-400/40 text-[9px]">Send $1+ AUD, then click below on your honour.</p>
+                    <button
+                      onClick={() => {
+                        grantAccess();
+                        recordDownload();
+                        triggerFileDownload(url, filename);
+                        setPhase("conscience");
+                        toast({ title: "Download starting", description: "Thank you for your contribution." });
+                      }}
+                      className="w-full flex items-center justify-center gap-1.5 bg-amber-800/50 hover:bg-amber-700/50 text-amber-200 text-xs px-4 py-2 rounded-lg transition-colors"
+                      data-testid="button-gate-unlock-payid-honour"
+                    >
+                      <Unlock className="h-3.5 w-3.5" />
+                      I've transferred — unlock on my honour
+                    </button>
                   </div>
-                  <button
-                    onClick={copyPayId}
-                    className="flex items-center gap-1.5 bg-amber-600 hover:bg-amber-500 text-black font-bold text-xs px-3 py-2 rounded-lg transition-colors flex-shrink-0"
-                    data-testid="button-gate-copy-payid"
-                  >
-                    {payIdCopied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
-                    {payIdCopied ? "Copied!" : "Copy PayID"}
-                  </button>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-amber-400/60">Minimum: <span className="text-amber-400 font-bold">$1 AUD</span></span>
-                  <span className="text-amber-400/60">ABN 78 833 496 164</span>
-                </div>
-                <ol className="space-y-1 text-xs text-amber-300/70">
-                  <li className="flex gap-2"><span className="text-amber-400 font-bold">1.</span> Open your banking app</li>
-                  <li className="flex gap-2"><span className="text-amber-400 font-bold">2.</span> Go to Pay Anyone / PayID</li>
-                  <li className="flex gap-2"><span className="text-amber-400 font-bold">3.</span> Paste PayID, enter amount, send</li>
-                  <li className="flex gap-2"><span className="text-amber-400 font-bold">4.</span> Return here and click Unlock</li>
-                </ol>
+                )}
               </div>
-              <button
-                onClick={handleUnlockViaPay}
-                className="w-full flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold text-sm px-5 py-3 rounded-xl transition-colors"
-                data-testid="button-gate-unlock-pay"
-              >
-                <Unlock className="h-4 w-4" />
-                I've transferred — unlock my download
-              </button>
               <p className="text-amber-300/60 text-[10px] text-center">
                 This is an honor system. Your integrity is your contribution to truth.
               </p>
