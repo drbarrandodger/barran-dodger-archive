@@ -190,6 +190,7 @@ import AbleCareMurderThreatCall from "@/pages/AbleCareMurderThreatCall";
 import CtoBreachAppointment from "@/pages/CtoBreachAppointment";
 import CtoResponseLetter from "@/pages/CtoResponseLetter";
 import KarmaAuditIasonidis from "@/pages/KarmaAuditIasonidis";
+import WaitTheyreListening from "@/pages/WaitTheyreListening";
 import DyingOfShame from "@/pages/DyingOfShame";
 import { GodsGraceBarranDodger } from "@/pages/GodsGraceBarranDodger";
 import { BlockchainManifest } from "@/pages/BlockchainManifest";
@@ -501,6 +502,7 @@ function Router() {
         <Route path="/mental-health-act-political-weapon" component={CtoBreachAppointment} />
         <Route path="/cto-response-letter" component={CtoResponseLetter} />
         <Route path="/karma-audit-iasonidis-forensic" component={KarmaAuditIasonidis} />
+        <Route path="/wait-theyre-listening-forensic" component={WaitTheyreListening} />
         <Route path="/cto-formal-response" component={CtoResponseLetter} />
         <Route path="/mental-health-response-letter" component={CtoResponseLetter} />
         <Route path="/they-are-dying-of-shame" component={DyingOfShame} />
