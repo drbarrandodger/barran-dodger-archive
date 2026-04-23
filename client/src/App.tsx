@@ -118,6 +118,7 @@ import BloodlineOfGod from "@/pages/BloodlineOfGod";
 import { TheLastGod } from "@/pages/TheLastGod";
 import PropheticTestimony from "@/pages/PropheticTestimony";
 import { EverySecretChoosesASide } from "@/pages/EverySecretChosesASide";
+import ForensicCorroborationDirtOnYourName from "@/pages/ForensicCorroborationDirtOnYourName";
 import { TheConspiracyAgainstYou } from "@/pages/TheConspiracyAgainstYou";
 import { PhantomProtocol } from "@/pages/PhantomProtocol";
 import TheyCannotProfileYou from "@/pages/TheyCannotProfileYou";
@@ -301,6 +302,8 @@ function Router() {
         <Route path="/forensic-corroboration-chosen-one" component={ForensicCorroborationChosenOne} />
         <Route path="/chosen-one-forensic-analysis" component={ForensicCorroborationChosenOne} />
         <Route path="/they-laughed-when-you-disappeared" component={ForensicCorroborationChosenOne} />
+        <Route path="/forensic-corroboration-dirt-on-your-name" component={ForensicCorroborationDirtOnYourName} />
+        <Route path="/they-threw-dirt-on-your-name" component={ForensicCorroborationDirtOnYourName} />
         <Route path="/forensic-corroboration-fight-over-you" component={ForensicCorroborationFightOverYou} />
         <Route path="/they-fight-over-whats-powerful" component={ForensicCorroborationFightOverYou} />
         <Route path="/theyre-at-war-over-you" component={ForensicCorroborationFightOverYou} />

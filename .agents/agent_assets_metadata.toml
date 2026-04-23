@@ -798,6 +798,12 @@ uri = "file://client/src/assets/images/cover-every-secret-chooses-a-side.png"
 type = "image"
 title = "secrets exposed divine justice forensic cover"
 
+[[generated]]
+id = "-ChR2Gaqvous3WcNaxl6v"
+uri = "file://client/src/assets/images/cover-forensic-corroboration-dirt-on-your-name.png"
+type = "image"
+title = "forensic corroboration dirt on your name cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
