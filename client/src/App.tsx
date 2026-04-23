@@ -504,6 +504,8 @@ function Router() {
         <Route path="/cto-response-letter" component={CtoResponseLetter} />
         <Route path="/karma-audit-iasonidis-forensic" component={KarmaAuditIasonidis} />
         <Route path="/wait-theyre-listening-forensic" component={WaitTheyreListening} />
+        <Route path="/commission-forensic-analysis" component={CommissionForensicAnalysis} />
+        <Route path="/commission" component={CommissionForensicAnalysis} />
         <Route path="/cto-formal-response" component={CtoResponseLetter} />
         <Route path="/mental-health-response-letter" component={CtoResponseLetter} />
         <Route path="/they-are-dying-of-shame" component={DyingOfShame} />

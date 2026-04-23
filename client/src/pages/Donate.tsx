@@ -173,6 +173,56 @@ export default function Donate() {
             </Card>
           </motion.section>
 
+          {/* Commission a Forensic Analysis — featured block */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.18 }}
+            className="mb-12"
+            data-testid="section-commission"
+          >
+            <Card className="border-2 border-amber-500/40 bg-amber-950/10 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600" />
+              <CardContent className="py-8 px-6 md:px-10">
+                <div className="flex flex-col md:flex-row gap-8 items-start">
+                  <div className="flex-1 space-y-4">
+                    <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/30 text-xs font-bold">New Service</Badge>
+                    <h2 className="text-2xl font-serif font-bold text-amber-400">Commission a Forensic Analysis</h2>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Dr. McLean's forensic methodology — 32 prior analyses, 242+ propositions, zero contradictions — is now available for your situation. Submit a YouTube video that mirrors your documented experience, along with your primary-source evidence. He will conduct a full forensic examination and publish the result <strong className="text-white">permanently and freely</strong> on barrandodger.com.
+                    </p>
+                    <p className="text-zinc-400 text-sm">
+                      Your commission compensates Dr. McLean's time. The resulting analysis belongs to the public record. This is not paywalled content — it is documented truth, added to the archive that has been downloaded 410,671+ times.
+                    </p>
+                    <div className="grid grid-cols-3 gap-3 text-center text-sm">
+                      {[
+                        { label: "Standard", price: "$200 AUD", note: "1 video · 14 days" },
+                        { label: "Comprehensive", price: "$350 AUD", note: "3 videos · 14 days" },
+                        { label: "Priority", price: "$500 AUD", note: "3 videos · 7 days" },
+                      ].map(({ label, price, note }) => (
+                        <div key={label} className="bg-zinc-800/60 rounded-xl p-3">
+                          <p className="text-amber-400 font-bold text-lg">{price}</p>
+                          <p className="text-white text-xs font-semibold">{label}</p>
+                          <p className="text-zinc-500 text-xs">{note}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex-shrink-0 flex flex-col items-center gap-4">
+                    <Scale className="h-16 w-16 text-amber-400 opacity-80" />
+                    <a href="/commission-forensic-analysis"
+                      className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold px-6 py-3 rounded-xl transition-colors text-sm"
+                      data-testid="link-commission-cta">
+                      <Scale className="h-4 w-4" />
+                      Commission Your Analysis
+                    </a>
+                    <p className="text-zinc-500 text-xs text-center max-w-36">Payment via PayID · Published free</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.section>
+
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
