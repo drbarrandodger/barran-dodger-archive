@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Check, Link2, X, Copy, Mail, Lock, Unlock, User, ChevronRight, AlertTriangle, ShieldCheck } from "lucide-react";
+import { Check, Link2, X, Copy, Mail, Lock, User, ChevronRight, AlertTriangle, ShieldCheck } from "lucide-react";
 import { SiX, SiWhatsapp, SiTelegram, SiFacebook } from "react-icons/si";
 import { useQuery } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
@@ -97,8 +97,6 @@ function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: (paymentInte
 }
 
 const BASE = "https://www.barrandodger.com";
-const PAYID = "rich@richmclean.com.au";
-const MIN_DONATION = 1;
 
 const CONSCIENCE_FACTS = [
   "Living under a Community Treatment Order — police authorised to forcibly transport him to psychiatric detention",
@@ -168,17 +166,6 @@ async function fetchAndStoreToken(paymentIntentId: string, documentUrl: string):
   } catch {}
 }
 
-async function fetchHonourToken(documentUrl: string): Promise<void> {
-  try {
-    const res = await fetch("/api/payment/issue-honour-token", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ documentUrl }),
-    });
-    const data = await res.json();
-    if (data.token) grantAccess(documentUrl, data.token, data.expires);
-  } catch {}
-}
 
 export function ViralDownloadButton({
   url,
@@ -193,10 +180,8 @@ export function ViralDownloadButton({
 }: ViralDownloadButtonProps) {
   const slug = slugProp || slugFromUrl(url);
   const [phase, setPhase] = useState<Phase>("idle");
-  const [payIdCopied, setPayIdCopied] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
   const [stripePromise, setStripePromise] = useState<Promise<StripeType | null> | null>(null);
-  const [showPayId, setShowPayId] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -226,15 +211,6 @@ export function ViralDownloadButton({
       setTimeout(() => {
         queryClient.invalidateQueries({ queryKey: ["/api/downloads", slug] });
       }, 1200);
-    } catch {}
-  };
-
-  const copyPayId = async () => {
-    try {
-      await navigator.clipboard.writeText(PAYID);
-      setPayIdCopied(true);
-      toast({ title: "PayID copied", description: `Open your banking app, paste, and send at least $${MIN_DONATION} AUD.` });
-      setTimeout(() => setPayIdCopied(false), 4000);
     } catch {}
   };
 
@@ -294,9 +270,17 @@ export function ViralDownloadButton({
           <div className="h-1.5 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
 
           {/* Urgency banner */}
-          <div className="bg-red-950/80 border-b border-red-700/40 px-4 py-2 flex items-center gap-2">
-            <AlertTriangle className="h-3.5 w-3.5 text-red-400 flex-shrink-0" />
-            <p className="text-red-300 text-[11px] font-bold">500,000+ downloads. Not a single cent while the author lived in poverty. That era is over.</p>
+          <div className="border-b border-amber-900/40 px-4 py-3 space-y-1.5" style={{ background: "#1a0802" }}>
+            <div className="flex items-start gap-2">
+              <AlertTriangle className="h-3.5 w-3.5 text-amber-500 flex-shrink-0 mt-0.5" />
+              <p className="text-amber-200/90 text-[11px] leading-relaxed font-bold">
+                This work was offered freely to the world. Five hundred thousand downloads. Not a single cent.
+              </p>
+            </div>
+            <p className="text-amber-400/70 text-[10.5px] leading-relaxed pl-5">
+              Anonymous recipients took the testimony, the prophecy, the concepts, the insight — and gave nothing back.
+              That is the greed this archive exists to oppose. It is the exact example by which I now refuse to give my life's work away for free.
+            </p>
           </div>
 
           {/* Header */}
@@ -319,19 +303,21 @@ export function ViralDownloadButton({
           <div className="p-5 space-y-4">
             <div className="rounded-xl border border-amber-900/50 p-3 space-y-2" style={{ background: "#1c0a02" }}>
               <p className="text-amber-300 text-[11px] font-bold">
-                This is a legitimate act of justice — not charity.
+                333 — The Angel Number of Divine Witness
               </p>
               <p className="text-amber-400/65 text-[10px] leading-relaxed">
-                Dr. Richard McLean has served humanity for 35+ years — producing 2,300+ primary source
-                documents while being stalked, forcibly medicated, denied legal aid, stripped of income,
-                surveilled by agencies, and brought to the edge of death to suppress the truth he carries.
-                Formally before the <strong className="text-amber-300">International Criminal Court</strong>.
-                Blockchain sealed. Incorruptible.
+                For less than the cost of a coffee, every person on earth can access an earth-shattering
+                prophetic testimony — 35 years of documented persecution, government corruption, murder threats,
+                and survival. Formally before the{" "}
+                <strong className="text-amber-300">International Criminal Court</strong>.
+                Blockchain-sealed. Incorruptible.{" "}
+                <strong className="text-amber-200">That is the apex of reasonable and fair.</strong>
               </p>
               <p className="text-amber-200 text-[10.5px] font-medium">
-                <strong>$3.33 — 333, the angel number of divine witness.</strong> For less than a coffee,
-                you become a co-witness. You reward a man for a service the world owes him.
-                Every download is a declaration. Every payment is a receipt of that covenant.
+                Every dollar beyond $3.33 is an{" "}
+                <span className="underline underline-offset-2 decoration-amber-700">acknowledgment of worth</span>{" "}
+                — from a world that has spent 35 years attempting to deny it. You are not paying for a file.
+                You are paying what was always owed.
               </p>
             </div>
 
@@ -360,51 +346,8 @@ export function ViralDownloadButton({
               </div>
             )}
 
-            {/* PayID secondary option */}
-            <div>
-              <button
-                onClick={() => setShowPayId((v) => !v)}
-                className="text-amber-700/70 hover:text-amber-500 text-[10px] underline underline-offset-2 flex items-center gap-1"
-                data-testid="button-toggle-payid"
-              >
-                {showPayId ? "Hide" : "Prefer bank transfer?"} — use PayID (honour system)
-              </button>
-              {showPayId && (
-                <div className="mt-2 border border-amber-800/30 rounded-xl p-3 space-y-2" style={{ background: "#1a0a02" }}>
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <p className="text-amber-400/60 text-[10px] uppercase tracking-widest font-bold">PayID</p>
-                      <p className="text-white font-mono text-xs mt-0.5">{PAYID}</p>
-                    </div>
-                    <button
-                      onClick={copyPayId}
-                      className="flex items-center gap-1 bg-amber-800/60 hover:bg-amber-700/60 text-amber-200 text-[10px] px-2 py-1 rounded-lg transition-colors flex-shrink-0"
-                      data-testid="button-gate-copy-payid"
-                    >
-                      {payIdCopied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                      {payIdCopied ? "Copied" : "Copy"}
-                    </button>
-                  </div>
-                  <p className="text-amber-400/40 text-[9px]">Send $3.33 AUD, then click below on your honour.</p>
-                  <button
-                    onClick={async () => {
-                      await fetchHonourToken(url);
-                      recordDownload();
-                      triggerFileDownload(url, filename);
-                      setPhase("conscience");
-                      toast({ title: "Download starting", description: "Thank you for your contribution." });
-                    }}
-                    className="w-full flex items-center justify-center gap-1.5 bg-amber-800/50 hover:bg-amber-700/50 text-amber-200 text-xs px-4 py-2 rounded-lg transition-colors"
-                    data-testid="button-gate-unlock-payid-honour"
-                  >
-                    <Unlock className="h-3.5 w-3.5" />
-                    I've transferred — unlock on my honour
-                  </button>
-                </div>
-              )}
-            </div>
-            <p className="text-amber-300/60 text-[10px] text-center">
-              Your integrity is your contribution to truth. The record is permanent.
+            <p className="text-amber-300/40 text-[9px] text-center">
+              Larger contributions: <a href="/donate" className="underline text-amber-400/60" onClick={() => setPhase("idle")}>/donate</a> · ABN 78 833 496 164
             </p>
           </div>
         </div>

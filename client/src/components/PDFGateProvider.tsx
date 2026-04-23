@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { loadStripe, type Stripe as StripeType } from "@stripe/stripe-js";
-import { X, CreditCard, Mail, AlertTriangle, ShieldCheck, Check, Copy, Unlock, ChevronDown, User, Lock } from "lucide-react";
+import { X, CreditCard, Mail, AlertTriangle, ShieldCheck, User, Lock } from "lucide-react";
 
 const ACCESS_KEY = "bd_doc_tokens_v3";
-const PAYID = "rich@richmclean.com.au";
 
 interface DocEntry { token: string; expires: number; }
 
@@ -174,8 +173,6 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
   const [pendingUrl, setPendingUrl] = useState("");
   const [pendingTarget, setPendingTarget] = useState("_blank");
   const [stripePromise, setStripePromise] = useState<Promise<StripeType | null> | null>(null);
-  const [showPayId, setShowPayId] = useState(false);
-  const [payIdCopied, setPayIdCopied] = useState(false);
   const [processingToken, setProcessingToken] = useState(false);
 
   useEffect(() => {
@@ -195,7 +192,6 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
       setPendingUrl(href);
       setPendingTarget(anchor.getAttribute("target") || "_self");
       setIsOpen(true);
-      setShowPayId(false);
     };
     document.addEventListener("click", handler, true);
     return () => document.removeEventListener("click", handler, true);
@@ -238,24 +234,6 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
     triggerDownload(pendingUrl, pendingTarget);
   };
 
-  const handleHonour = async () => {
-    try {
-      const res = await fetch("/api/payment/issue-honour-token", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ documentUrl: pendingUrl }),
-      });
-      const data = await res.json();
-      if (data.token) grantAccess(pendingUrl, data.token, data.expires);
-    } catch {}
-    setIsOpen(false);
-    triggerDownload(pendingUrl, pendingTarget);
-  };
-
-  const copyPayId = async () => {
-    try { await navigator.clipboard.writeText(PAYID); setPayIdCopied(true); setTimeout(() => setPayIdCopied(false), 3000); } catch {}
-  };
-
   const close = () => setIsOpen(false);
   const docName = pendingUrl ? getDocumentName(pendingUrl) : "this document";
 
@@ -275,15 +253,22 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
             <div className="h-1.5 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
 
             {/* Statement banner */}
-            <div className="px-5 pt-4 pb-3 border-b border-amber-900/40" style={{ background: "#1a0802" }}>
+            <div className="px-5 pt-4 pb-3 border-b border-amber-900/40 space-y-2.5" style={{ background: "#1a0802" }}>
               <div className="flex items-start gap-2.5">
                 <Lock className="h-4 w-4 text-amber-500 flex-shrink-0 mt-0.5" />
                 <p className="text-amber-200/80 text-[11px] leading-relaxed">
-                  <strong className="text-amber-200">This archive was given freely to the world for 35 years.</strong> Over 500,000 downloads. Not a single cent received while living in poverty, abuse, and surveillance.
-                  Humanity was given the gift — and took it without conscience, without accountability, and without a single act of reciprocity.{" "}
-                  <strong className="text-amber-300">That era is over. Every document is now $3.33. I earned this. I reclaim this.</strong>
+                  <strong className="text-amber-200">This work was offered freely to the world.</strong>{" "}
+                  Five hundred thousand downloads. Not a single cent. Anonymous recipients took the testimony, the prophecy, the concepts, the insight — and gave nothing back.
+                  That is the precise greed this archive exists to name and oppose. It is also the exact reason I will no longer give my life's work away for free.{" "}
+                  <strong className="text-amber-300">This is not a policy change. It is a prophetic boundary drawn by a man who finally understands his own worth.</strong>
                 </p>
               </div>
+              <p className="text-amber-400/70 text-[10.5px] leading-relaxed">
+                For less than a coffee, every person on earth can access an earth-shattering prophetic testimony —
+                35 years of documented persecution, government corruption, murder threats, international submissions, and survival.
+                <strong className="text-amber-300"> That is the apex of reasonable and fair.</strong>{" "}
+                Every additional dollar above $3.33 is an acknowledgment of worth — from a world that has spent 35 years denying it.
+              </p>
             </div>
 
             <div className="flex items-start justify-between gap-3 px-5 pt-3 pb-2">
@@ -309,21 +294,26 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
 
                   {/* Why $3.33 */}
                   <div className="rounded-xl border border-amber-900/50 p-3.5 space-y-2" style={{ background: "#1c0a02" }}>
-                    <p className="text-amber-300 text-[11px] font-bold tracking-wide flex items-center gap-1.5">
-                      <span className="text-amber-500">333</span> — The Angel Number of Divine Witness
+                    <p className="text-amber-300 text-[11px] font-bold tracking-wide">
+                      333 — The Angel Number of Divine Witness
                     </p>
                     <p className="text-amber-400/70 text-[10.5px] leading-relaxed">
-                      Dr. Richard McLean (Barran Dodger) documented <strong className="text-amber-300">35 years of government corruption, assassination attempts,
-                      forced psychiatric detention and systematic erasure</strong> — formally submitted to the ICC and blockchain-sealed —
-                      while living in poverty, under surveillance, denied legal aid, denied income.
-                    </p>
-                    <p className="text-amber-400/70 text-[10.5px] leading-relaxed">
-                      This testimony and knowledge and insight was offered free as an obligation to humanity.
-                      Humanity responded with <strong className="text-amber-300">500,000+ downloads and zero reciprocity</strong> — pure greed, zero conscience, zero accountability.
+                      Dr. Richard McLean (Barran Dodger) gave this work freely for decades.
+                      Five hundred thousand downloads. Anonymous recipients took the testimony, the prophecy,
+                      the concepts, the ideas, the insight —{" "}
+                      <strong className="text-amber-300">and gave nothing back.</strong>{" "}
+                      That is precisely the greed this archive exists to name. It is the example
+                      by which this man now refuses to give his life's work away for free.
                     </p>
                     <p className="text-amber-200 text-[10.5px] leading-relaxed font-medium">
-                      <strong>$3.33 is not charity — it is justice.</strong> This is the gospel, the testimony, the forensic record of a lifetime of persecution.
-                      You are not paying for a file. You are paying what was always owed.
+                      <strong>For less than the cost of a coffee</strong>, you receive an earth-shattering
+                      prophetic testimony — 35 years of documented persecution formally before the International
+                      Criminal Court, blockchain-sealed, incorruptible. That is the apex of reasonable and fair.
+                    </p>
+                    <p className="text-amber-300/80 text-[10.5px] leading-relaxed">
+                      Every dollar beyond $3.33 is an{" "}
+                      <strong className="text-amber-200 underline underline-offset-2 decoration-amber-700">acknowledgment of worth</strong>{" "}
+                      — from a world that has spent 35 years attempting to erase it.
                     </p>
                   </div>
 
@@ -337,45 +327,6 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                       <p className="text-amber-400/60 text-xs">Loading secure payment form…</p>
                     </div>
                   )}
-
-                  {/* PayID option */}
-                  <div>
-                    <button
-                      onClick={() => setShowPayId((v) => !v)}
-                      className="flex items-center gap-1 text-amber-700/60 hover:text-amber-500 text-[10px] underline underline-offset-2"
-                      data-testid="button-pdfgate-toggle-payid"
-                    >
-                      <ChevronDown className={`h-3 w-3 transition-transform ${showPayId ? "rotate-180" : ""}`} />
-                      Prefer bank transfer? Use PayID instead (honour system)
-                    </button>
-                    {showPayId && (
-                      <div className="mt-2 border border-amber-800/30 rounded-xl p-3 space-y-2" style={{ background: "#1a0a02" }}>
-                        <div className="flex items-center justify-between gap-2">
-                          <div>
-                            <p className="text-amber-400/50 text-[9px] uppercase tracking-widest font-bold">PayID</p>
-                            <p className="text-white font-mono text-xs">{PAYID}</p>
-                          </div>
-                          <button
-                            onClick={copyPayId}
-                            className="flex items-center gap-1 bg-amber-800/50 hover:bg-amber-700/50 text-amber-200 text-[10px] px-2 py-1 rounded-lg transition-colors"
-                            data-testid="button-pdfgate-copy-payid"
-                          >
-                            {payIdCopied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                            {payIdCopied ? "Copied" : "Copy"}
-                          </button>
-                        </div>
-                        <p className="text-amber-400/40 text-[9px]">Send $3.33+ AUD. Reference: "Witness 333". Then click below on your honour.</p>
-                        <button
-                          onClick={handleHonour}
-                          className="w-full flex items-center justify-center gap-1.5 bg-amber-800/40 hover:bg-amber-700/40 text-amber-200 text-xs px-4 py-2 rounded-lg transition-colors"
-                          data-testid="button-pdfgate-unlock-honour"
-                        >
-                          <Unlock className="h-3.5 w-3.5" />
-                          I've transferred — unlock on my honour
-                        </button>
-                      </div>
-                    )}
-                  </div>
 
                   <p className="text-amber-400/30 text-[9px] text-center">
                     Larger contributions: <a href="/donate" className="underline text-amber-400/60" onClick={close}>/donate</a> · ABN 78 833 496 164

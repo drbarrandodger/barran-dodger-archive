@@ -2153,14 +2153,6 @@ export async function registerRoutes(
     }
   });
 
-  // Honour token for PayID system — no payment verification
-  app.post('/api/payment/issue-honour-token', async (req, res) => {
-    const { documentUrl } = req.body || {};
-    if (!documentUrl) return res.status(400).json({ error: 'documentUrl required' });
-    const { issueDownloadToken } = await import('./downloadTokens');
-    const token = issueDownloadToken(documentUrl);
-    res.json({ token, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 });
-  });
 
   registerChatRoutes(app);
   registerCreatorRoutes(app);
