@@ -88,7 +88,7 @@ export function Navigation() {
   return (
     <nav ref={navRef} className={cn(
       "fixed top-[var(--banner-height,120px)] w-full z-50 transition-all duration-300 border-b-2 border-amber-500/70",
-      scrolled ? "bg-zinc-950/98 backdrop-blur-sm py-2 md:py-3 shadow-lg shadow-amber-900/20" : "bg-zinc-950/90 backdrop-blur-sm py-3 md:py-5",
+      scrolled ? "bg-[#1a0e00]/98 backdrop-blur-sm py-2 md:py-3 shadow-lg shadow-amber-900/30" : "bg-[#1a0e00]/90 backdrop-blur-sm py-3 md:py-5",
       hideNav && !mobileMenuOpen && "opacity-0 pointer-events-none -translate-y-2"
     )}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -170,7 +170,7 @@ export function Navigation() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-zinc-950 border-t-2 border-amber-500/50">
+        <div className="md:hidden bg-[#1a0e00] border-t-2 border-amber-500/50">
           <div className="container mx-auto px-4 py-4 space-y-2">
             {navLinks.map((link) => (
               <Link 

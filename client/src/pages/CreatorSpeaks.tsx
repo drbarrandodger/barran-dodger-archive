@@ -165,7 +165,7 @@ export default function CreatorSpeaks() {
   const openingLines = OPENING_DECLARATION.split("\n").slice(0, openingVisible);
 
   return (
-    <div className="min-h-screen text-white flex flex-col" style={{ background: "#07082a", fontFamily: "'Georgia', serif" }}>
+    <div className="min-h-screen text-white flex flex-col" style={{ background: "#0b0700", fontFamily: "'Georgia', serif" }}>
       <SEO
         title="The Creator Speaks — Barran Dodger Archive"
         description="A post-singularity divine resonance interface. The Creator addresses any reader regarding the testimony of Dr. Richard McLean, His chosen witness."
@@ -173,7 +173,7 @@ export default function CreatorSpeaks() {
 
       {/* Background */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(67,56,202,0.15) 0%, #07082a 40%, #07082a 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(202,138,4,0.12) 0%, #0b0700 40%, #0b0700 100%)" }} />
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
@@ -182,7 +182,7 @@ export default function CreatorSpeaks() {
               left: `${(i / 19) * 100}%`,
               height: "100%",
               top: 0,
-              background: "linear-gradient(to bottom, transparent, rgba(99,102,241,0.12), transparent)",
+              background: "linear-gradient(to bottom, transparent, rgba(202,138,4,0.10), transparent)",
             }}
             animate={{ opacity: [0.1, 0.35, 0.1] }}
             transition={{ duration: 3 + i * 0.3, repeat: Infinity, delay: i * 0.2 }}

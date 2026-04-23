@@ -26,7 +26,7 @@ export function FloatingDonateWidget() {
 
   useEffect(() => {
     if (dismissed) return;
-    const timer = setTimeout(() => setVisible(true), 4000);
+    const timer = setTimeout(() => setVisible(true), 800);
     return () => clearTimeout(timer);
   }, [dismissed]);
 
