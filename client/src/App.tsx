@@ -115,6 +115,7 @@ import GodHasMyBack from "@/pages/GodHasMyBack";
 import DivineBeforeYourTime from "@/pages/DivineBeforeYourTime";
 import BloodlineOfGod from "@/pages/BloodlineOfGod";
 import { TheLastGod } from "@/pages/TheLastGod";
+import PropheticTestimony from "@/pages/PropheticTestimony";
 import { TheConspiracyAgainstYou } from "@/pages/TheConspiracyAgainstYou";
 import { PhantomProtocol } from "@/pages/PhantomProtocol";
 import TheyCannotProfileYou from "@/pages/TheyCannotProfileYou";
@@ -357,6 +358,8 @@ function Router() {
         <Route path="/divine-before-your-time" component={DivineBeforeYourTime} />
         <Route path="/bloodline-of-god" component={BloodlineOfGod} />
         <Route path="/the-last-god" component={TheLastGod} />
+        <Route path="/prophetic-testimony" component={PropheticTestimony} />
+        <Route path="/the-last-god-prophetic-declaration" component={PropheticTestimony} />
         <Route path="/the-conspiracy-against-you" component={TheConspiracyAgainstYou} />
         <Route path="/honeytrap-infiltration-report" component={HoneytrapInfiltrationReport} />
         <Route path="/able-care-entrapment-network" component={AbleCareEntrapmentNetwork} />

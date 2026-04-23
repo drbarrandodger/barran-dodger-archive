@@ -786,6 +786,12 @@ uri = "file://client/src/assets/images/cover-wait-theyre-listening-forensic.png"
 type = "image"
 title = "wait theyre listening forensic cover"
 
+[[generated]]
+id = "Bncc4h-0J71VCjzFSH-7d"
+uri = "file://client/src/assets/images/cover-prophetic-testimony.png"
+type = "image"
+title = "prophetic testimony last god sacred cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
