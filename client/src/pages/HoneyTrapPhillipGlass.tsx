@@ -257,7 +257,7 @@ export function HoneyTrapPhillipGlass() {
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <div className="grid md:grid-cols-3 gap-4 text-sm">
             {[
-              { href: "/free-ebooks", icon: <FileText size={16} />, label: "Full Document Archive" },
+              { href: "/testimony-archive", icon: <FileText size={16} />, label: "Full Document Archive" },
               { href: "/forensic-analysis", icon: <Scale size={16} />, label: "62 Forensic Analyses" },
               { href: "/beautiful-threat", icon: <Link2 size={16} />, label: "Analysis #62 — Beautiful Threat" },
             ].map((l) => (

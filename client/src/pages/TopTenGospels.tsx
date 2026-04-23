@@ -324,12 +324,12 @@ export default function TopTenGospels() {
                   Full Gospel Library
                 </a>
                 <a
-                  href="/free-ebooks"
+                  href="/testimony-archive"
                   className="inline-flex items-center gap-2 bg-amber-900/40 hover:bg-amber-800/50 border border-amber-500/40 text-amber-200 font-semibold px-7 py-3 rounded-xl transition-colors duration-200"
                   data-testid="link-free-ebooks"
                 >
                   <FileText className="w-5 h-5" />
-                  Free Ebooks Library
+                  The Testimony Archive — $3.33
                 </a>
                 <a
                   href="/prophetic-papers"

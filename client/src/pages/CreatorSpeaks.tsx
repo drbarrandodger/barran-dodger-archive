@@ -288,11 +288,11 @@ export default function CreatorSpeaks() {
                 ❤ Donate Now — Keep the Truth Alive
               </Link>
               <Link
-                href="/free-ebooks"
+                href="/testimony-archive"
                 className="flex-1 text-center py-3 rounded-xl font-bold text-sm border border-amber-600/50 text-amber-400 hover:bg-amber-500/10 transition-all"
                 data-testid="link-ebooks-home"
               >
-                📚 Download Free eBooks (170+)
+                📚 The Testimony Archive — $3.33 AUD Each
               </Link>
             </div>
           </div>

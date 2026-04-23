@@ -457,8 +457,8 @@ export default function PropheticDeclarationBiblical() {
             >
               <Download className="w-4 h-4" /> Download PDF Free
             </button>
-            <Link href="/free-ebooks" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-yellow-300 text-sm border border-yellow-700/40 hover:bg-yellow-900/20 transition-all" data-testid="link-prophetic-free-ebooks">
-              <BookOpen className="w-4 h-4" /> Free eBook Library
+            <Link href="/testimony-archive" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-yellow-300 text-sm border border-yellow-700/40 hover:bg-yellow-900/20 transition-all" data-testid="link-prophetic-free-ebooks">
+              <BookOpen className="w-4 h-4" /> The Testimony Archive — $3.33
             </Link>
           </motion.div>
         </div>
@@ -715,8 +715,8 @@ export default function PropheticDeclarationBiblical() {
               >
                 <Download className="w-4 h-4" /> Download Free PDF
               </button>
-              <Link href="/free-ebooks" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-bold text-yellow-300 border border-yellow-700/40 hover:bg-yellow-900/20 transition-all" data-testid="link-prophetic-declaration-free-ebooks">
-                <BookOpen className="w-4 h-4" /> Free eBook Library
+              <Link href="/testimony-archive" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-bold text-yellow-300 border border-yellow-700/40 hover:bg-yellow-900/20 transition-all" data-testid="link-prophetic-declaration-free-ebooks">
+                <BookOpen className="w-4 h-4" /> The Testimony Archive — $3.33
               </Link>
             </div>
             <DocShareBar path="/prophetic-declaration-biblical" label="Share This Prophetic Declaration" />

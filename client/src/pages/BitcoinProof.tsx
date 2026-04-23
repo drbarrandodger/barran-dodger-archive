@@ -416,7 +416,7 @@ export default function BitcoinProof() {
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
           <div className="grid md:grid-cols-4 gap-3 text-sm">
             {[
-              { href: "/free-ebooks", label: "Full Document Archive", icon: <FileText size={15} /> },
+              { href: "/testimony-archive", label: "Full Document Archive", icon: <FileText size={15} /> },
               { href: "/forensic-analysis", label: "63 Forensic Analyses", icon: <Hash size={15} /> },
               { href: "/hashtag-index", label: "Hashtag & Share Index", icon: <Globe size={15} /> },
               { href: "/urgent-protection-request", label: "SOS — Physical Protection", icon: <Shield size={15} /> },

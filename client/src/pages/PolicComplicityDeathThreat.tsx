@@ -195,7 +195,7 @@ export function PolicComplicityDeathThreat() {
             data-testid="button-download-main"
           />
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-sm">
-            <a href="/free-ebooks" className="text-amber-400 underline hover:text-amber-300" data-testid="link-free-ebooks">← All Free Documents</a>
+            <a href="/testimony-archive" className="text-amber-400 underline hover:text-amber-300" data-testid="link-free-ebooks">← The Testimony Archive</a>
             <a href="/forensic-analysis" className="text-amber-400 underline hover:text-amber-300" data-testid="link-forensic-index">Forensic Analysis Index</a>
             <a href="/urgent-protection-request" className="text-red-400 underline hover:text-red-300" data-testid="link-sos">SOS — Urgent Protection Request</a>
           </div>

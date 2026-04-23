@@ -659,7 +659,7 @@ export default function TonyRidleyFullDossier() {
                   { label: "Silent Assassin", href: "/silent-assassin", desc: "ASIO operative documentation — Stefan/Steve Iasonidis." },
                   { label: "Evidence Vault", href: "/evidence", desc: "Primary evidence documents and exhibits." },
                   { label: "Master Evidence Register", href: "/master-evidence-register", desc: "Complete 2,304-document register." },
-                  { label: "Free Downloads — All Analyses", href: "/free-ebooks", desc: "Every forensic analysis as a downloadable PDF." },
+                  { label: "The Testimony Archive — All Analyses", href: "/testimony-archive", desc: "Every forensic analysis as a downloadable PDF." },
                   { label: "Whistleblower Comparison", href: "/whistleblower-comparison", desc: "How this archive compares to the world's most significant whistleblower cases." },
                   { label: "Blockchain Archive", href: "/blockchain", desc: "All 2,304 documents blockchain-verified." },
                   { label: "ICC Submission — What This Proves", href: "/forensic-proof-statement", desc: "The full forensic proof statement for the Hague." },
@@ -737,9 +737,9 @@ export default function TonyRidleyFullDossier() {
                 size="sm"
               />
               <Button variant="outline" className="gap-2 border-blue-600/60 text-blue-300 hover:bg-blue-900/20" asChild data-testid="button-free-ebooks">
-                <a href="/free-ebooks">
+                <a href="/testimony-archive">
                   <BookOpen className="h-4 w-4" />
-                  All 52 Forensic Analyses (Free eBook Downloads)
+                  The Testimony Archive — All 52 Forensic Analyses
                 </a>
               </Button>
             </div>

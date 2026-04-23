@@ -547,7 +547,7 @@ export default function TheyFumbledYouDownload() {
               { label: "Tony Ridley — Death Threat Confession", href: "/tony-ridley-confession" },
               { label: "Master Forensic Evidence Report", href: "/master-forensic-evidence-report" },
               { label: "100 Absurdities", href: "/hundred-absurdities" },
-              { label: "Free eBooks — All Publications", href: "/free-ebooks" },
+              { label: "The Testimony Archive — $3.33", href: "/testimony-archive" },
             ].map(l => (
               <a key={l.href} href={l.href}
                 className="flex items-center gap-2 text-sm text-indigo-400 border border-indigo-900/30 rounded-lg px-3 py-2.5 hover:bg-indigo-950/20 transition-colors"

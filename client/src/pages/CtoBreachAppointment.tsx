@@ -424,7 +424,7 @@ export default function CtoBreachAppointment() {
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
           {[
             { href: "/forensic-analysis", label: "Forensic Analysis Index", icon: BookOpen },
-            { href: "/free-ebooks", label: "All Free Publications", icon: FileText },
+            { href: "/testimony-archive", label: "The Testimony Archive — $3.33", icon: FileText },
             { href: "/urgent-protection-request", label: "Urgent Protection Request", icon: Shield },
           ].map(({ href, label, icon: Icon }) => (
             <a

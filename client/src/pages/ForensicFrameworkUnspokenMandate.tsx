@@ -305,7 +305,7 @@ export default function ForensicFrameworkUnspokenMandate() {
                 Free for public interest distribution.
               </p>
               <div className="flex justify-center gap-4 mt-4 text-xs">
-                <Link href="/free-ebooks" className="text-amber-400 underline">All Publications</Link>
+                <Link href="/testimony-archive" className="text-amber-400 underline">All Publications</Link>
                 <Link href="/forensic-analysis" className="text-amber-400 underline">Forensic Analyses</Link>
                 <Link href="/master-evidence-register" className="text-amber-400 underline">Evidence Register</Link>
               </div>

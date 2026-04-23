@@ -135,7 +135,7 @@ export function Footer() {
               <li><Link href="/ai-justice-statement" className="hover:text-amber-400 transition-colors">AI Justice Statement</Link></li>
               <li><Link href="/timeline" className="hover:text-amber-400 transition-colors">35-Year Timeline</Link></li>
               <li><Link href="/evidence" className="hover:text-amber-400 transition-colors">Evidence Archive</Link></li>
-              <li><Link href="/free-ebooks" className="hover:text-amber-400 transition-colors font-semibold">📚 Free eBooks (170+)</Link></li>
+              <li><Link href="/testimony-archive" className="hover:text-amber-400 transition-colors font-semibold">📚 The Testimony Archive — $3.33 Each</Link></li>
               <li><Link href="/donate" className="hover:text-amber-400 transition-colors font-bold text-amber-500">❤ Donate</Link></li>
             </ul>
           </div>
@@ -300,7 +300,7 @@ export function Footer() {
               ["/top-ten-gospels", "Top 10 Gospels"], ["/church", "Church"], ["/evidence", "Evidence"],
               ["/blockchain", "Timestamps"], ["/media", "Media"], ["/publications", "Publications"],
               ["/prophetic-papers", "Prophetic Papers"], ["/contact", "Contact"], ["/donate", "Donate ❤"],
-              ["/free-ebooks", "Free eBooks"], ["/store", "Store"], ["/commission-forensic-analysis", "Commission"],
+              ["/testimony-archive", "The Archive — $3.33"], ["/store", "Store"], ["/commission-forensic-analysis", "Commission"],
             ].map(([href, label]) => (
               <Link key={href} href={href} className={`hover:text-amber-400 transition-colors ${label.includes("❤") || label === "Donate ❤" ? "text-amber-500 font-semibold" : ""}`}>{label}</Link>
             ))}

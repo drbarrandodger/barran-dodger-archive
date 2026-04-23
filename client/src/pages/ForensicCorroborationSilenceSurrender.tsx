@@ -364,10 +364,10 @@ export default function ForensicCorroborationSilenceSurrender() {
 
         {/* Free Ebook / Social */}
         <div className="rounded-xl border border-indigo-600/20 bg-indigo-950/10 px-5 py-4 space-y-2 text-center">
-          <p className="text-xs text-indigo-300/60 uppercase tracking-widest font-mono">Free Ebook Archive</p>
+          <p className="text-xs text-indigo-300/60 uppercase tracking-widest font-mono">The Testimony Archive — $3.33</p>
           <p className="text-xs text-white/60 leading-relaxed">
             This analysis is part of the complete Barran Dodger archive — freely downloadable at{" "}
-            <a href="/free-ebooks" className="text-indigo-400 underline" data-testid="link-free-ebooks">barrandodger.com/free-ebooks</a>
+            <a href="/testimony-archive" className="text-indigo-400 underline" data-testid="link-free-ebooks">barrandodger.com/testimony-archive</a>
           </p>
         </div>
 

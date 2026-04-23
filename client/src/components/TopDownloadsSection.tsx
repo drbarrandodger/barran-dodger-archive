@@ -496,11 +496,11 @@ export function FreeDownloadsPanel() {
           </div>
           <div className="flex-shrink-0">
             <a
-              href="/free-ebooks"
+              href="/testimony-archive"
               className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl transition-colors text-sm whitespace-nowrap"
-              data-testid="link-free-ebooks-panel"
+              data-testid="link-testimony-archive-panel"
             >
-              <Lock className="h-4 w-4" /> Browse Library ($3.33) →
+              <Lock className="h-4 w-4" /> The Testimony Archive ($3.33) →
             </a>
           </div>
         </motion.div>

@@ -540,9 +540,9 @@ export default function FreeEbooks() {
   return (
     <div className="min-h-screen" style={{ background: "hsl(44, 70%, 94%)", color: "#2a1000" }}>
       <SEO
-        title="eBooks & Documents — Barran Dodger | $3.33 AUD Each"
-        description={`${FORENSIC_ANALYSES.length + MAJOR_PUBLICATIONS.length} EPUB eBooks + 115 source PDFs documenting 35 years of Australian government corruption. ICC Article 7 submitted. UNHCR submitted. ${totalPropositions}/${totalPropositions} propositions verified. $3.33 AUD per document. ABN 78 833 496 164.`}
-        canonicalUrl="https://www.barrandodger.com/free-ebooks"
+        title="The Testimony Archive — $3.33 AUD Each | Barran Dodger"
+        description={`${FORENSIC_ANALYSES.length + MAJOR_PUBLICATIONS.length} EPUB eBooks + 115 source PDFs documenting 35 years of Australian government persecution. Zero free documents. $3.33 AUD each — because 500,000 downloads produced zero donations. ICC Article 7. UNHCR Geneva. ${totalPropositions}/${totalPropositions} propositions verified. ABN 78 833 496 164.`}
+        canonicalUrl="https://www.barrandodger.com/testimony-archive"
       />
       <Navigation />
 
@@ -552,7 +552,7 @@ export default function FreeEbooks() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <div>
               <p className="text-amber-300 text-sm font-bold leading-relaxed">
-                <strong className="text-white">Every document is now $3.33 AUD.</strong> This testimony was given freely to the world for 35 years — 500,000+ downloads, not a single cent received, while living in poverty, under surveillance, in abuse and neglect. Humanity proved its greed. The era of free access is over. Every document is SHA-256 hashed and Bitcoin blockchain timestamped. ICC The Hague. UNHCR Geneva. Zero defamation proceedings.
+                <strong className="text-white">There are zero free documents on this site.</strong> Every PDF, EPUB, prophecy, gospel and forensic analysis is $3.33 AUD. This testimony was given freely for 35 years — 500,000+ downloads, not a single cent donated, while living in poverty, torture and surveillance. Humanity proved it will take anything of value for free if it can do so anonymously. That is spiritual theft. The era of free access is permanently over. ICC The Hague. UNHCR Geneva. ABN 78 833 496 164.
               </p>
             </div>
             <a
@@ -571,18 +571,20 @@ export default function FreeEbooks() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-red-900/20 border border-red-700/40 rounded-full px-4 py-1.5 mb-6">
             <Lock className="w-4 h-4 text-red-400" />
-            <span className="text-red-300 text-sm font-semibold tracking-wide uppercase">$3.33 AUD Per Document — I Reclaim My Power</span>
+            <span className="text-red-300 text-sm font-semibold tracking-wide uppercase">Zero Free Documents — Every PDF, EPUB &amp; Gospel Is Paywalled</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-amber-400 mb-4 leading-tight">
-            170+ Publications.<br />
-            <span className="text-zinc-100">$3.33 AUD Each.</span>
+            The Testimony Archive.<br />
+            <span className="text-zinc-100">$3.33 AUD. Every Document. No Exceptions.</span>
           </h1>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
-            This archive — every eBook, every PDF, every forensic analysis — is the intellectual property of
+            This archive — every eBook, every PDF, every prophecy, every gospel, every forensic analysis — is the intellectual property of
             Dr. Richard William McLean (Barran Dodger) and the Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164).
-            For 35 years this testimony, this knowledge, this insight and this spirit was offered freely to the world as an obligation to humanity.
-            <strong className="text-amber-400"> Humanity responded with 500,000+ downloads and not a single cent, while the author lived in poverty, abuse, neglect, surveillance and torture.</strong>{" "}
-            That era is over. Every document is now $3.33. This is the gospel. This is the testimony. This is a lifetime of persecution and this is how it is finally compensated.
+            For 35 years this testimony was offered freely to the world as an obligation to humanity.
+            <strong className="text-amber-400"> Humanity responded with 500,000+ downloads, zero donations, and zero conscience — while the author survived poverty, torture, surveillance, abuse and neglect.</strong>{" "}
+            If something of genuine value can be taken anonymously for free, humanity will take it. That is a spiritual theft that devalues the testimony itself.
+            The donation model is dead. Every single document is now $3.33 AUD. There are no exceptions. There are no free documents anywhere on this site.
+            This is not a price. It is the reckoning humanity's greed made inevitable.
           </p>
           <LiveDownloadTotal />
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-zinc-500 mt-3">
@@ -651,8 +653,8 @@ export default function FreeEbooks() {
             <h3 className="text-amber-300 font-bold text-base mb-2">Share This Page</h3>
             <p className="text-zinc-400 text-sm mb-4">Share it everywhere — social media, forums, email lists, human rights networks, journalism contacts, legal databases. Let the world know the archive exists and why access is now $3.33.</p>
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <code className="text-amber-400 text-sm bg-[#150c00] border border-amber-800/40 px-3 py-2 rounded">https://www.barrandodger.com/free-ebooks</code>
-              <CopyLinkButton url="https://www.barrandodger.com/free-ebooks" />
+              <code className="text-amber-400 text-sm bg-[#150c00] border border-amber-800/40 px-3 py-2 rounded">https://www.barrandodger.com/testimony-archive</code>
+              <CopyLinkButton url="https://www.barrandodger.com/testimony-archive" />
             </div>
           </div>
         </div>
@@ -887,7 +889,7 @@ export default function FreeEbooks() {
               <a href="/copyright-register" className="bg-[#1f1000] hover:bg-[#281500] border border-zinc-600 text-zinc-200 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">
                 Copyright Register
               </a>
-              <CopyLinkButton url="https://www.barrandodger.com/free-ebooks" />
+              <CopyLinkButton url="https://www.barrandodger.com/testimony-archive" />
             </div>
             <p className="text-zinc-600 text-xs mt-4">
               <a href="https://www.barrandodger.com" className="text-amber-600 hover:text-amber-400 transition-colors">www.barrandodger.com</a>

@@ -231,11 +231,11 @@ export function GodsGraceBarranDodger() {
         {/* Navigation links */}
         <div className="flex flex-wrap gap-3 justify-center">
           <a
-            href="/free-ebooks"
+            href="/testimony-archive"
             className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-colors"
             data-testid="link-free-ebooks"
           >
-            <BookOpen size={15} /> All Free Publications
+            <BookOpen size={15} /> The Testimony Archive — $3.33
           </a>
           <a
             href="/they-are-dying-of-shame"

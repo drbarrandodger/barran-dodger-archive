@@ -540,7 +540,7 @@ export default function PropheticTestimony() {
           </p>
           <p className="text-xs text-amber-700/60">
             For the complete 58-analysis collection, visit{" "}
-            <a href="/free-ebooks" className="text-amber-700 underline">Free Ebooks & Publications</a>
+            <a href="/testimony-archive" className="text-amber-700 underline">The Testimony Archive — $3.33</a>
             {" "}or{" "}
             <a href="/evidence-vault" className="text-amber-700 underline">Evidence Vault</a>.
           </p>

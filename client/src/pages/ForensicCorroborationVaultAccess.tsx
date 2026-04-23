@@ -217,7 +217,7 @@ export default function ForensicCorroborationVaultAccess() {
         {/* Navigation */}
         <div className="flex flex-wrap gap-4 justify-center text-xs font-sans pt-4">
           <a href="/forensic-analysis" className="text-indigo-400/60 hover:text-indigo-300 underline transition-colors">← All Forensic Analyses</a>
-          <a href="/free-ebooks" className="text-indigo-400/60 hover:text-indigo-300 underline transition-colors">Free Downloads</a>
+          <a href="/testimony-archive" className="text-indigo-400/60 hover:text-indigo-300 underline transition-colors">The Testimony Archive</a>
           <a href="/archive" className="text-indigo-400/60 hover:text-indigo-300 underline transition-colors">Full Archive</a>
           <a
             href="https://youtu.be/jN2pzoifP-I"

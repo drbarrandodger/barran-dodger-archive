@@ -229,7 +229,7 @@ export default function CosmicEssayPage() {
           <div className="flex items-center gap-2 mb-5">
             <BookMarked className="w-4 h-4 text-amber-600/50" />
             <h3 className="text-amber-600/60 text-xs uppercase tracking-widest font-sans font-semibold">
-              Free Ebooks — All 12 Cosmic Essays
+              The Testimony Archive
             </h3>
           </div>
           <div className="grid grid-cols-1 gap-2">
@@ -283,9 +283,9 @@ export default function CosmicEssayPage() {
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link href="/free-ebooks">
+            <Link href="/testimony-archive">
               <span className="inline-flex items-center gap-1.5 text-amber-600/50 hover:text-amber-400 text-xs font-sans uppercase tracking-widest cursor-pointer transition-colors">
-                <ExternalLink className="w-3 h-3" /> View All Free Ebooks &amp; Publications
+                <ExternalLink className="w-3 h-3" /> The Testimony Archive — $3.33
               </span>
             </Link>
           </div>

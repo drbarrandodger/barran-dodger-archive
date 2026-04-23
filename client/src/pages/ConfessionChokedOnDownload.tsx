@@ -270,10 +270,10 @@ export default function ConfessionChokedOnDownload() {
                 Previous Analysis
               </Button>
             </a>
-            <a href="/free-ebooks">
+            <a href="/testimony-archive">
               <Button variant="outline" className="border-zinc-700 text-zinc-300 hover:bg-zinc-900">
                 <Download className="h-4 w-4 mr-2" />
-                Free Downloads Library
+                The Testimony Archive — $3.33
               </Button>
             </a>
           </div>

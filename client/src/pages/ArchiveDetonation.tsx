@@ -338,9 +338,9 @@ export default function ArchiveDetonation() {
             </a>
           </Button>
           <Button variant="outline" className="gap-2 border-zinc-700 text-zinc-300 hover:bg-zinc-800" asChild data-testid="button-free-ebooks">
-            <a href="/free-ebooks">
+            <a href="/testimony-archive">
               <BookOpen className="h-4 w-4" />
-              Free eBook Downloads
+              The Testimony Archive — $3.33
             </a>
           </Button>
         </div>

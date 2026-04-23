@@ -74,7 +74,7 @@ const CATEGORIES = [
     links: [
       { href: "/start-here", label: "Start Here — New to the Archive?" },
       { href: "/spread-the-truth", label: "Spread the Truth — Share Tools" },
-      { href: "/free-ebooks", label: "Free eBook Library" },
+      { href: "/testimony-archive", label: "The Testimony Archive — $3.33" },
       { href: "/publications", label: "All Publications" },
       { href: "/donate", label: "Donate — Fund the Fight" },
       { href: "/contact", label: "Contact & Media Inquiries" },

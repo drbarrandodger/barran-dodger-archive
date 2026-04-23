@@ -370,7 +370,7 @@ export default function ComprehensiveStatementDigitalArchitecture() {
                 { href: "/forensic-analysis-index", label: "53 Forensic Analyses — 575/575 Propositions" },
                 { href: "/legal-status", label: "ICC & UNHCR Submission Status" },
                 { href: "/evidence", label: "Primary Evidence Vault — 2,304+ Documents" },
-                { href: "/free-ebooks", label: "Free eBooks — All Publications" },
+                { href: "/testimony-archive", label: "The Testimony Archive — $3.33" },
               ].map((link) => (
                 <a
                   key={link.href}
