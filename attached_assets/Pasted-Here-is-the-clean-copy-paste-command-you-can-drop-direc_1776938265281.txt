@@ -1,0 +1,102 @@
+Here is the clean, copy-paste command you can drop directly into Replit AI. Nothing extra—just the executable instruction.
+
+⸻
+
+Create a full React (Vite) web app that restructures an existing website into a multi-page, document-based archive while preserving all original content.
+PROJECT SETUP:
+- Use React + Vite
+- Use Tailwind CSS for styling
+- Use React Router for navigation
+- Store document metadata in /src/data/documents.json
+- Store all original files (PDFs, images, etc.) in /public/documents
+CORE REQUIREMENT:
+Do NOT delete, rewrite, paraphrase, or omit any original content. All restructuring must be done through layout, routing, and UI only. Include a raw archive view that preserves the original site exactly.
+ROUTES TO CREATE:
+- "/" (Homepage)
+- "/start" (Introduction page)
+- "/evidence" (Key documents)
+- "/archive" (Full structured archive)
+- "/archive/raw" (Unmodified original content view via iframe or static HTML)
+- "/document/:id" (Individual document page)
+- "/publications" (Books / PDFs)
+- "/support" (Support page)
+COMPONENTS TO BUILD:
+- Header.jsx (navigation menu)
+- Footer.jsx
+- DocumentCard.jsx (title, description, buttons)
+- DocumentViewer.jsx (renders PDF/image/text)
+- CategoryFilter.jsx
+- SearchBar.jsx
+- ContextBox.jsx (clearly labeled as interpretation)
+DATA STRUCTURE:
+Create /src/data/documents.json with this format:
+[
+  {
+    "id": "example-doc",
+    "title": "Document Title",
+    "date": "2023",
+    "type": "PDF",
+    "category": "Legal",
+    "description": "Short neutral description",
+    "file": "/documents/example.pdf",
+    "tags": ["evidence"]
+  }
+]
+HOMEPAGE ("/"):
+- Hero section with title, short description, and buttons:
+  - Start Here
+  - Key Evidence
+  - Full Archive
+  - Support
+- Overview section (short neutral explanation)
+- Featured documents (use DocumentCard)
+- Navigation grid linking to main sections
+- Credibility note (static text)
+START PAGE ("/start"):
+- What the site is
+- What is being presented
+- Timeline (simple chronological list)
+- Suggested reading path
+EVIDENCE PAGE ("/evidence"):
+- Filterable and searchable document list
+- Use CategoryFilter and SearchBar
+- Display DocumentCard components
+ARCHIVE PAGE ("/archive"):
+- Full list of all documents
+- Sorting and filtering enabled
+- Minimal descriptions
+RAW ARCHIVE ("/archive/raw"):
+- Embed original site using iframe OR include static HTML snapshot
+DOCUMENT PAGE ("/document/:id"):
+- Display title, date, type
+- Optional ContextBox (separate from original content)
+- Render file using DocumentViewer
+- Download button
+- Related documents section
+PUBLICATIONS PAGE:
+- List structured works with title, description, and buttons:
+  - Read
+  - Download
+  - Purchase (optional)
+SUPPORT PAGE:
+- Simple support section with:
+  - One-time support
+  - Ongoing support
+  - Purchase options
+- No popups or forced actions
+DESIGN RULES:
+- Minimalist layout
+- Black/white/neutral colors
+- Clean typography
+- Mobile responsive
+- No clutter
+FUNCTIONALITY:
+- Implement search across document titles and descriptions
+- Implement category and tag filtering
+- Lazy load large files where possible
+FINAL CHECK:
+- All original content must still exist
+- No broken links
+- Navigation must be clear
+- Site must be mobile-friendly
+Then generate all required files and folder structure.
