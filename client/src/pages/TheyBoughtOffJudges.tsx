@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import coverImage from "../assets/images/cover-they-bought-off-judges.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -179,17 +180,14 @@ export default function TheyBoughtOffJudges() {
                   className="relative w-full rounded-xl border border-zinc-700 shadow-2xl shadow-black"
                 />
               </div>
-              <a
-                href="/documents/they-bought-off-judges.pdf"
-                download="They-Bought-Off-Judges-McLean.pdf"
+              <ViralDownloadButton
+                url="/documents/they-bought-off-judges.pdf"
+                filename="They-Bought-Off-Judges-McLean.pdf"
+                slug="they-bought-off-judges"
+                label="Free PDF Download"
                 className="w-full max-w-[280px]"
-                data-testid="button-download-judges-pdf"
-              >
-                <Button className="w-full bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-base py-6">
-                  <Download className="mr-2 h-5 w-5" /> Free PDF Download
-                </Button>
-              </a>
-              <p className="text-zinc-500 text-xs text-center">No sign-up. No paywall. Freely distributable.</p>
+                size="lg"
+              />
               <a
                 href="https://youtu.be/t1ulg66bY1c?si=O0zGlb9hxvvmofFv"
                 target="_blank"
@@ -236,11 +234,12 @@ export default function TheyBoughtOffJudges() {
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <a href="/documents/they-bought-off-judges.pdf" download="They-Bought-Off-Judges-McLean.pdf">
-                  <Button className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold" data-testid="button-download-judges-hero">
-                    <Download className="mr-2 h-4 w-4" /> Download PDF
-                  </Button>
-                </a>
+                <ViralDownloadButton
+                  url="/documents/they-bought-off-judges.pdf"
+                  filename="They-Bought-Off-Judges-McLean.pdf"
+                  slug="they-bought-off-judges"
+                  label="Download PDF"
+                />
                 <Button variant="outline" asChild>
                   <a href="/evidence" data-testid="button-judges-to-archive">
                     <Shield className="mr-2 h-4 w-4" /> Full Evidence Archive
@@ -422,19 +421,15 @@ export default function TheyBoughtOffJudges() {
             <Scale className="h-10 w-10 text-[hsl(38,92%,50%)] mx-auto" />
             <h2 className="text-3xl font-serif font-bold text-white">Read the Full Forensic Report</h2>
             <p className="text-zinc-300 leading-relaxed">
-              Five parts. Nine named perpetrators. Thirty hyperlinked evidence documents. The complete financial breakdown. The international law analysis. All free. No paywall. Freely distributable.
+              Five parts. Nine named perpetrators. Thirty hyperlinked evidence documents. The complete financial breakdown. The international law analysis.
             </p>
-            <a
-              href="/documents/they-bought-off-judges.pdf"
-              download="They-Bought-Off-Judges-McLean.pdf"
-            >
-              <Button
-                className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-lg px-10 py-7"
-                data-testid="button-download-judges-cta"
-              >
-                <Download className="mr-3 h-6 w-6" /> Download Free PDF
-              </Button>
-            </a>
+            <ViralDownloadButton
+              url="/documents/they-bought-off-judges.pdf"
+              filename="They-Bought-Off-Judges-McLean.pdf"
+              slug="they-bought-off-judges"
+              label="Download Free PDF"
+              size="lg"
+            />
             <p className="text-zinc-600 text-sm">
               Part of the{" "}
               <a href="/evidence" className="text-zinc-400 hover:text-white underline">2,304-document evidence archive</a>{" "}

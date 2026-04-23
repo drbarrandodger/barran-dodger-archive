@@ -14,6 +14,7 @@ import {
 import coverImage from "../assets/images/cover-master-forensic-report.png";
 import { ChessmateHero } from "@/components/ChessmateHero";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -240,23 +241,20 @@ export default function MasterForensicEvidenceReport() {
                   className="relative w-full rounded-xl border border-zinc-700 shadow-2xl shadow-black"
                 />
               </div>
-              <a
-                href="/documents/master-forensic-evidence-report.pdf"
-                download="Master-Forensic-Evidence-Report-McLean.pdf"
+              <ViralDownloadButton
+                url="/documents/master-forensic-evidence-report.pdf"
+                filename="Master-Forensic-Evidence-Report-McLean.pdf"
+                slug="master-forensic-evidence-report"
+                label="Free PDF Download"
                 className="w-full max-w-[280px]"
-                data-testid="button-download-master-forensic-pdf"
-              >
-                <Button className="w-full bg-red-700 hover:bg-red-600 text-white font-bold text-base py-6">
-                  <Download className="mr-2 h-5 w-5" /> Free PDF Download
-                </Button>
-              </a>
+                size="lg"
+              />
               {totalDownloads > 0 && (
                 <div className="w-full max-w-[280px] bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-center" data-testid="counter-master-forensic-downloads">
                   <p className="text-2xl font-bold text-[hsl(38,92%,50%)]">{totalDownloads.toLocaleString()}</p>
                   <p className="text-zinc-400 text-xs mt-0.5">total archive downloads</p>
                 </div>
               )}
-              <p className="text-zinc-500 text-xs text-center">No sign-up. No paywall. Freely distributable.</p>
             </motion.div>
 
             {/* TITLE BLOCK */}
@@ -300,11 +298,12 @@ export default function MasterForensicEvidenceReport() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <a href="/documents/master-forensic-evidence-report.pdf" download="Master-Forensic-Evidence-Report-McLean.pdf">
-                  <Button className="bg-red-700 hover:bg-red-600 text-white font-bold" data-testid="button-download-master-hero">
-                    <Download className="mr-2 h-4 w-4" /> Download PDF
-                  </Button>
-                </a>
+                <ViralDownloadButton
+                  url="/documents/master-forensic-evidence-report.pdf"
+                  filename="Master-Forensic-Evidence-Report-McLean.pdf"
+                  slug="master-forensic-evidence-report"
+                  label="Download PDF"
+                />
                 <Button variant="outline" asChild>
                   <a href="/evidence" data-testid="button-master-to-archive">
                     <Shield className="mr-2 h-4 w-4" /> Evidence Archive
@@ -531,24 +530,20 @@ export default function MasterForensicEvidenceReport() {
               The complete chronological inventory of all 2,301 government evidence files held by Dr. Richard William McLean — formatted for copy-paste into legal submissions, asylum applications, and correspondence. Every document is titled, authored, dated, filed, and linked. This register constitutes the most comprehensive primary-source inventory of documented state persecution held by any individual in Australian legal history.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="/documents/master-evidence-register-2301.txt"
-                download="Master-Evidence-Register-2301-Documents-McLean.txt"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-black text-base transition-all hover:scale-[1.02] flex-1"
-                style={{ background: "linear-gradient(135deg, #f59e0b 0%, #b45309 100%)" }}
-                data-testid="button-download-evidence-register"
-              >
-                <Download className="h-5 w-5" /> Download Evidence Register (2,301 Documents)
-              </a>
-              <a
-                href="/documents/master-forensic-evidence-report.pdf"
-                download="Master-Forensic-Evidence-Report-McLean.pdf"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-base transition-all hover:scale-[1.02] border border-red-700/60 flex-1"
-                style={{ background: "rgba(127,29,29,0.3)" }}
-                data-testid="button-download-forensic-report-register"
-              >
-                <Download className="h-5 w-5" /> Download Master Forensic Report (PDF)
-              </a>
+              <ViralDownloadButton
+                url="/documents/master-evidence-register-2301.txt"
+                filename="Master-Evidence-Register-2301-Documents-McLean.txt"
+                slug="master-evidence-register"
+                label="Download Evidence Register (2,301 Documents)"
+                className="flex-1"
+              />
+              <ViralDownloadButton
+                url="/documents/master-forensic-evidence-report.pdf"
+                filename="Master-Forensic-Evidence-Report-McLean.pdf"
+                slug="master-forensic-evidence-report"
+                label="Download Master Forensic Report (PDF)"
+                className="flex-1"
+              />
             </div>
             <p className="text-zinc-600 text-xs">© Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164) · Non-commercial reproduction permitted and encouraged · Blockchain-sealed for evidentiary integrity</p>
             <div className="mt-6">
@@ -680,16 +675,15 @@ export default function MasterForensicEvidenceReport() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-6">
             <h2 className="text-3xl font-serif font-bold text-white">Download the Master Report</h2>
             <p className="text-zinc-300 leading-relaxed">
-              332KB. 7 sections. 2,300+ documents synthesised into a single forensic record. Free. No paywall. Freely distributable.
+              332KB. 7 sections. 2,300+ documents synthesised into a single forensic record.
             </p>
-            <a href="/documents/master-forensic-evidence-report.pdf" download="Master-Forensic-Evidence-Report-McLean.pdf">
-              <Button
-                className="bg-red-700 hover:bg-red-600 text-white font-bold text-lg px-10 py-7"
-                data-testid="button-download-master-cta"
-              >
-                <Download className="mr-3 h-6 w-6" /> Download Free PDF
-              </Button>
-            </a>
+            <ViralDownloadButton
+              url="/documents/master-forensic-evidence-report.pdf"
+              filename="Master-Forensic-Evidence-Report-McLean.pdf"
+              slug="master-forensic-evidence-report"
+              label="Download Free PDF"
+              size="lg"
+            />
             {totalDownloads > 0 && (
               <p className="text-zinc-500 text-sm">
                 Part of an archive downloaded{" "}

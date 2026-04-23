@@ -339,14 +339,15 @@ export default function Gospel() {
                 {/* Cover image + download + detonation */}
                 <div className="flex flex-col md:flex-row gap-8 items-start mb-8">
 
-                  {/* Clickable cover image → downloads the gospel */}
+                  {/* Clickable cover image → views the gospel */}
                   <div className="flex-shrink-0 flex flex-col items-center gap-3">
                     <a
                       href="/documents/the-enliven-chain-complete-gospel-archive.pdf"
-                      download="gospel-of-the-enliven-chain-barran-dodger.pdf"
-                      data-testid="cover-download-gospel-enliven"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid="cover-view-gospel-enliven"
                       className="group block"
-                      title="Click to download The Gospel of the Enliven Chain"
+                      title="Click to view The Gospel of the Enliven Chain"
                     >
                       <div className="relative">
                         <img
@@ -361,7 +362,7 @@ export default function Gospel() {
                           </div>
                         </div>
                       </div>
-                      <p className="text-center text-amber-600/50 text-xs mt-2 font-sans">Click cover to download</p>
+                      <p className="text-center text-amber-600/50 text-xs mt-2 font-sans">Click cover to view</p>
                     </a>
                   </div>
 
@@ -560,13 +561,15 @@ export default function Gospel() {
                         </p>
                       </div>
                       <div className="flex gap-3">
-                        <Button className="flex-1 gap-2" asChild data-testid={`button-download-primary-${index}`}>
-                          <a href={gospel.href} download onClick={() => trackDownload(gospel.href)}>
-                            <Download className="h-4 w-4" /> Download Gospel <DownloadBadge url={gospel.href} />
-                          </a>
-                        </Button>
+                        <ViralDownloadButton
+                          url={gospel.href}
+                          filename={gospel.href.split('/').pop() || 'gospel.pdf'}
+                          slug={`gospel-primary-${index}`}
+                          label="Download Gospel"
+                          className="flex-1"
+                        />
                         <Button variant="outline" className="gap-2" asChild data-testid={`button-view-primary-${index}`}>
-                          <a href={gospel.href} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(gospel.href)}>
+                          <a href={gospel.href} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="h-4 w-4" /> View
                           </a>
                         </Button>
@@ -633,13 +636,16 @@ export default function Gospel() {
                           </p>
                         </div>
                         <div className="flex gap-3">
-                          <Button variant="default" size="sm" className="flex-1 gap-2" asChild data-testid={`button-download-additional-${index}`}>
-                            <a href={gospel.href} download onClick={() => trackDownload(gospel.href)}>
-                              <Download className="h-4 w-4" /> Download <DownloadBadge url={gospel.href} />
-                            </a>
-                          </Button>
+                          <ViralDownloadButton
+                            url={gospel.href}
+                            filename={gospel.href.split('/').pop() || 'gospel.pdf'}
+                            slug={`gospel-additional-${index}`}
+                            label="Download"
+                            className="flex-1"
+                            size="sm"
+                          />
                           <Button variant="outline" size="sm" className="gap-2" asChild data-testid={`button-view-additional-${index}`}>
-                            <a href={gospel.href} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(gospel.href)}>
+                            <a href={gospel.href} target="_blank" rel="noopener noreferrer">
                               <ExternalLink className="h-4 w-4" /> View
                             </a>
                           </Button>
@@ -720,13 +726,15 @@ export default function Gospel() {
                         </p>
                       </div>
                       <div className="flex gap-3">
-                        <Button className="flex-1 gap-2" asChild data-testid={`button-download-cosmic-${index}`}>
-                          <a href={gospel.href} download onClick={() => trackDownload(gospel.href)}>
-                            <Download className="h-4 w-4" /> Download Revelation <DownloadBadge url={gospel.href} />
-                          </a>
-                        </Button>
+                        <ViralDownloadButton
+                          url={gospel.href}
+                          filename={gospel.href.split('/').pop() || 'gospel.pdf'}
+                          slug={`gospel-cosmic-${index}`}
+                          label="Download Revelation"
+                          className="flex-1"
+                        />
                         <Button variant="outline" className="gap-2" asChild data-testid={`button-view-cosmic-${index}`}>
-                          <a href={gospel.href} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(gospel.href)}>
+                          <a href={gospel.href} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="h-4 w-4" /> View
                           </a>
                         </Button>
@@ -764,13 +772,15 @@ export default function Gospel() {
                   </p>
                 </div>
                 <div className="flex gap-3">
-                  <Button variant="default" size="lg" className="gap-2" asChild data-testid="button-download-cosmic-scroll">
-                    <a href={docUrl("/documents/cosmic_scroll_of_ten.pdf")} download onClick={() => trackDownload("/documents/cosmic_scroll_of_ten.pdf")}>
-                      <Download className="h-5 w-5" /> Download The Cosmic Scroll of Ten (Free PDF) <DownloadBadge url="/documents/cosmic_scroll_of_ten.pdf" />
-                    </a>
-                  </Button>
+                  <ViralDownloadButton
+                    url="/documents/cosmic_scroll_of_ten.pdf"
+                    filename="cosmic_scroll_of_ten.pdf"
+                    slug="cosmic-scroll-of-ten"
+                    label="Download The Cosmic Scroll of Ten (Free PDF)"
+                    size="lg"
+                  />
                   <Button variant="outline" size="lg" className="gap-2" asChild>
-                    <a href={docUrl("/documents/cosmic_scroll_of_ten.pdf")} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload("/documents/cosmic_scroll_of_ten.pdf")}>
+                    <a href={docUrl("/documents/cosmic_scroll_of_ten.pdf")} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-5 w-5" /> View
                     </a>
                   </Button>
@@ -825,13 +835,16 @@ export default function Gospel() {
                       </div>
                     )}
                     <div className="flex gap-3">
-                      <Button variant="default" size="sm" className="flex-1 gap-2" asChild data-testid={`button-download-testimonial-${index}`}>
-                        <a href={gospel.href} download onClick={() => trackDownload(gospel.href)}>
-                          <Download className="h-3 w-3" /> Download <DownloadBadge url={gospel.href} />
-                        </a>
-                      </Button>
+                      <ViralDownloadButton
+                        url={gospel.href}
+                        filename={gospel.href.split('/').pop() || 'gospel.pdf'}
+                        slug={`gospel-testimonial-${index}`}
+                        label="Download"
+                        className="flex-1"
+                        size="sm"
+                      />
                       <Button variant="outline" size="sm" className="gap-2" asChild data-testid={`button-view-testimonial-${index}`}>
-                        <a href={gospel.href} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(gospel.href)}>
+                        <a href={gospel.href} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="h-3 w-3" /> View
                         </a>
                       </Button>

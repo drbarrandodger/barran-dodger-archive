@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import coverImage from "../assets/images/cover-forensic-meltdown.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -162,17 +163,14 @@ export default function ForensicMeltdownReport() {
                   className="relative w-full rounded-xl border border-zinc-700 shadow-2xl shadow-black"
                 />
               </div>
-              <a
-                href="/documents/forensic-meltdown-report.pdf"
-                download="Forensic-Evidence-Report-McLean.pdf"
+              <ViralDownloadButton
+                url="/documents/forensic-meltdown-report.pdf"
+                filename="Forensic-Evidence-Report-McLean.pdf"
+                slug="forensic-meltdown-report"
+                label="Free PDF Download"
                 className="w-full max-w-[280px]"
-                data-testid="button-download-meltdown-pdf"
-              >
-                <Button className="w-full bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-base py-6">
-                  <Download className="mr-2 h-5 w-5" /> Free PDF Download
-                </Button>
-              </a>
-              <p className="text-zinc-500 text-xs text-center">No sign-up. No paywall. Freely distributable.</p>
+                size="lg"
+              />
             </motion.div>
 
             {/* TITLE BLOCK */}
@@ -209,11 +207,12 @@ export default function ForensicMeltdownReport() {
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <a href="/documents/forensic-meltdown-report.pdf" download="Forensic-Evidence-Report-McLean.pdf">
-                  <Button className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold" data-testid="button-download-meltdown-hero">
-                    <Download className="mr-2 h-4 w-4" /> Download PDF
-                  </Button>
-                </a>
+                <ViralDownloadButton
+                  url="/documents/forensic-meltdown-report.pdf"
+                  filename="Forensic-Evidence-Report-McLean.pdf"
+                  slug="forensic-meltdown-report"
+                  label="Download PDF"
+                />
                 <Button variant="outline" asChild>
                   <a href="/evidence" data-testid="button-meltdown-to-archive">
                     <Shield className="mr-2 h-4 w-4" /> Full Evidence Archive
@@ -363,19 +362,15 @@ export default function ForensicMeltdownReport() {
             <Flame className="h-10 w-10 text-[hsl(38,92%,50%)] mx-auto" />
             <h2 className="text-3xl font-serif font-bold text-white">Read the Full Report</h2>
             <p className="text-zinc-300 leading-relaxed">
-              The complete forensic evidence report — five sections, fourteen exhibits, every claim sourced to a named primary document. Free. No paywall. Freely distributable.
+              The complete forensic evidence report — five sections, fourteen exhibits, every claim sourced to a named primary document.
             </p>
-            <a
-              href="/documents/forensic-meltdown-report.pdf"
-              download="Forensic-Evidence-Report-McLean.pdf"
-            >
-              <Button
-                className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-lg px-10 py-7"
-                data-testid="button-download-meltdown-cta"
-              >
-                <Download className="mr-3 h-6 w-6" /> Download Free PDF
-              </Button>
-            </a>
+            <ViralDownloadButton
+              url="/documents/forensic-meltdown-report.pdf"
+              filename="Forensic-Evidence-Report-McLean.pdf"
+              slug="forensic-meltdown-report"
+              label="Download Free PDF"
+              size="lg"
+            />
             <p className="text-zinc-600 text-sm">
               This document is part of the{" "}
               <a href="/evidence" className="text-zinc-400 hover:text-white underline">2,304-document evidence archive</a>{" "}

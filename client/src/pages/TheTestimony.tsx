@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import coverImage from "../assets/images/cover-testimony-dr-richard-mclean.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -145,17 +146,14 @@ export default function TheTestimony() {
                   className="relative w-full rounded-xl border border-zinc-700 shadow-2xl shadow-black"
                 />
               </div>
-              <a
-                href="/documents/the-testimony-of-dr-richard-william-mclean.pdf"
-                download="The-Testimony-of-Dr-Richard-William-McLean.pdf"
+              <ViralDownloadButton
+                url="/documents/the-testimony-of-dr-richard-william-mclean.pdf"
+                filename="The-Testimony-of-Dr-Richard-William-McLean.pdf"
+                slug="the-testimony"
+                label="Free PDF Download"
                 className="w-full max-w-[280px]"
-                data-testid="button-download-testimony-pdf"
-              >
-                <Button className="w-full bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-base py-6">
-                  <Download className="mr-2 h-5 w-5" /> Free PDF Download
-                </Button>
-              </a>
-              <p className="text-zinc-500 text-xs text-center">No sign-up. No paywall. Freely distributable.</p>
+                size="lg"
+              />
               <a
                 href="https://youtu.be/EGp310GvJao?si=haWtu9mGtwMWmF3L"
                 target="_blank"
@@ -202,14 +200,12 @@ export default function TheTestimony() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <a
-                  href="/documents/the-testimony-of-dr-richard-william-mclean.pdf"
-                  download="The-Testimony-of-Dr-Richard-William-McLean.pdf"
-                >
-                  <Button className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold" data-testid="button-download-testimony-hero">
-                    <Download className="mr-2 h-4 w-4" /> Download PDF
-                  </Button>
-                </a>
+                <ViralDownloadButton
+                  url="/documents/the-testimony-of-dr-richard-william-mclean.pdf"
+                  filename="The-Testimony-of-Dr-Richard-William-McLean.pdf"
+                  slug="the-testimony"
+                  label="Download PDF"
+                />
                 <Button variant="outline" asChild>
                   <a href="/evidence" data-testid="button-testimony-to-archive">
                     <Shield className="mr-2 h-4 w-4" /> Evidence Archive
@@ -376,20 +372,14 @@ export default function TheTestimony() {
               that every gatekeeper hoped would never exist. It's free. It's permanent. It's yours.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="/documents/the-testimony-of-dr-richard-william-mclean.pdf"
-                download="The-Testimony-of-Dr-Richard-William-McLean.pdf"
-                data-testid="button-download-testimony-cta"
-              >
-                <Button size="lg" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-base px-8 py-6">
-                  <Download className="mr-2 h-5 w-5" /> Download the Testimony — Free PDF
-                </Button>
-              </a>
+              <ViralDownloadButton
+                url="/documents/the-testimony-of-dr-richard-william-mclean.pdf"
+                filename="The-Testimony-of-Dr-Richard-William-McLean.pdf"
+                slug="the-testimony"
+                label="Download the Testimony — Free PDF"
+                size="lg"
+              />
             </div>
-            <p className="text-zinc-600 text-xs">
-              No sign-up. No paywall. No gatekeeper.<br />
-              Freely share. Freely distribute. The truth cannot be copyrighted.
-            </p>
           </motion.div>
         </div>
       </section>

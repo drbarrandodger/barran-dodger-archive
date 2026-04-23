@@ -83,6 +83,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    FORENSIC ANALYSIS REGISTRY
@@ -1092,15 +1093,13 @@ export default function ForensicAnalysisIndex() {
                       <ExternalLink className="h-3 w-3" />
                       View Full Exhibit
                     </a>
-                    <a
-                      href="/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf"
-                      download
-                      data-testid="link-text-message-pdf"
-                      className="inline-flex items-center gap-1.5 rounded-lg bg-blue-900/20 border border-blue-700/30 px-3 py-1.5 text-blue-400 text-xs font-mono hover:bg-blue-900/30 transition-colors"
-                    >
-                      <Download className="h-3 w-3" />
-                      Text Message Record (PDF)
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf"
+                      filename="the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf"
+                      slug="perfect-mother-myth"
+                      label="Text Message Record (PDF)"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>

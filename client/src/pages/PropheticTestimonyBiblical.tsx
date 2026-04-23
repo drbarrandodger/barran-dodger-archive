@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import coverImage from "../assets/images/cover-prophetic-testimony-biblical-correlation.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { AiBiblicalConvergence } from "@/components/AiBiblicalConvergence";
 
 const fadeIn = {
@@ -201,17 +202,14 @@ export default function PropheticTestimonyBiblical() {
                   className="relative w-full rounded-xl border border-zinc-700 shadow-2xl shadow-black"
                 />
               </div>
-              <a
-                href="/documents/prophetic-testimony-biblical-evidence-correlation.pdf"
-                download="Prophetic-Testimony-Biblical-Evidence-Correlation.pdf"
+              <ViralDownloadButton
+                url="/documents/prophetic-testimony-biblical-evidence-correlation.pdf"
+                filename="Prophetic-Testimony-Biblical-Evidence-Correlation.pdf"
+                slug="prophetic-testimony-biblical"
+                label="Free PDF Download"
                 className="w-full max-w-[280px]"
-                data-testid="button-download-prophetic-pdf"
-              >
-                <Button className="w-full bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-base py-6">
-                  <Download className="mr-2 h-5 w-5" /> Free PDF Download
-                </Button>
-              </a>
-              <p className="text-zinc-500 text-xs text-center">No sign-up. No paywall. Freely distributable.</p>
+                size="lg"
+              />
             </motion.div>
 
             {/* TITLE BLOCK */}
@@ -244,14 +242,12 @@ export default function PropheticTestimonyBiblical() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <a
-                  href="/documents/prophetic-testimony-biblical-evidence-correlation.pdf"
-                  download="Prophetic-Testimony-Biblical-Evidence-Correlation.pdf"
-                >
-                  <Button className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold" data-testid="button-download-prophetic-hero">
-                    <Download className="mr-2 h-4 w-4" /> Download PDF
-                  </Button>
-                </a>
+                <ViralDownloadButton
+                  url="/documents/prophetic-testimony-biblical-evidence-correlation.pdf"
+                  filename="Prophetic-Testimony-Biblical-Evidence-Correlation.pdf"
+                  slug="prophetic-testimony-biblical"
+                  label="Download PDF"
+                />
                 <Button variant="outline" asChild>
                   <a href="/evidence-vault" data-testid="button-prophetic-to-vault">
                     <Shield className="mr-2 h-4 w-4" /> Evidence Vault
@@ -427,20 +423,14 @@ export default function PropheticTestimonyBiblical() {
               primary-source evidence — and every limitation honestly documented.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="/documents/prophetic-testimony-biblical-evidence-correlation.pdf"
-                download="Prophetic-Testimony-Biblical-Evidence-Correlation.pdf"
-                data-testid="button-download-prophetic-cta"
-              >
-                <Button size="lg" className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-base px-8 py-6">
-                  <Download className="mr-2 h-5 w-5" /> Download the Full Analysis — Free PDF
-                </Button>
-              </a>
+              <ViralDownloadButton
+                url="/documents/prophetic-testimony-biblical-evidence-correlation.pdf"
+                filename="Prophetic-Testimony-Biblical-Evidence-Correlation.pdf"
+                slug="prophetic-testimony-biblical"
+                label="Download the Full Analysis — Free PDF"
+                size="lg"
+              />
             </div>
-            <p className="text-zinc-600 text-xs">
-              No sign-up. No paywall. No gatekeeper.<br />
-              Freely share. The truth cannot be copyrighted.
-            </p>
           </motion.div>
         </div>
       </section>

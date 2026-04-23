@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, ExternalLink, Scale, Shield, Eye, CheckSquare } from "lucide-react";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 16 },
@@ -184,11 +185,12 @@ export default function LawTheyOverlooked() {
             </blockquote>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <a href="/documents/they-bought-off-judges.pdf" download="They-Bought-Off-Judges-McLean.pdf">
-                <Button className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold" data-testid="button-download-law-pdf">
-                  <Download className="mr-2 h-4 w-4" /> Download PDF
-                </Button>
-              </a>
+              <ViralDownloadButton
+                url="/documents/they-bought-off-judges.pdf"
+                filename="They-Bought-Off-Judges-McLean.pdf"
+                slug="they-bought-off-judges"
+                label="Download PDF"
+              />
               <a href="https://youtu.be/t1ulg66bY1c?si=O0zGlb9hxvvmofFv" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" data-testid="link-law-video">
                   <Eye className="mr-2 h-4 w-4" /> Watch the Video Essay
@@ -740,11 +742,12 @@ export default function LawTheyOverlooked() {
             <p className="text-zinc-500 text-xs">Evidence Archive: 2,304 Files | 36 Years | $32.9 Million | The Truth Speaks</p>
             <p className="text-zinc-400 text-sm">www.barrandodger.com</p>
             <div className="flex flex-wrap gap-3 justify-center pt-2">
-              <a href="/documents/they-bought-off-judges.pdf" download="They-Bought-Off-Judges-McLean.pdf">
-                <Button className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold" data-testid="button-download-law-cta">
-                  <Download className="mr-2 h-4 w-4" /> Download Free PDF
-                </Button>
-              </a>
+              <ViralDownloadButton
+                url="/documents/they-bought-off-judges.pdf"
+                filename="They-Bought-Off-Judges-McLean.pdf"
+                slug="they-bought-off-judges"
+                label="Download Free PDF"
+              />
               <Button variant="outline" asChild>
                 <a href="/evidence" data-testid="link-law-to-archive">
                   <Shield className="mr-2 h-4 w-4" /> Full Evidence Archive

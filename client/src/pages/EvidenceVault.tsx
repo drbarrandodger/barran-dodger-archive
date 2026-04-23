@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
 import { CompactShare } from "@/components/FloatingShareBar";
-import { DownloadSocialProofBanner } from "@/components/ViralDownloadButton";
+import { DownloadSocialProofBanner, ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { RelatedContent } from "@/components/RelatedContent";
@@ -454,11 +454,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/master-evidence-register.txt" download="Master-Evidence-Register-2301-Barran-Dodger.txt" data-testid="button-vault-master-register-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct Download (.txt)
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/master-evidence-register.txt"
+                      filename="Master-Evidence-Register-2301-Barran-Dodger.txt"
+                      slug="master-evidence-register"
+                      label="Direct Download (.txt)"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -497,11 +499,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read on Front Page
                       </Button>
                     </a>
-                    <a href="/documents/government-called-him-delusional.pdf" download="Australian-Government-Called-Him-Delusional-McLean.pdf" data-testid="button-vault-gov-delusional-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/government-called-him-delusional.pdf"
+                      filename="Australian-Government-Called-Him-Delusional-McLean.pdf"
+                      slug="government-called-him-delusional"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -541,11 +545,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read on Front Page
                       </Button>
                     </a>
-                    <a href="/documents/the-sleeper-agent-of-truth.pdf" download="The-Sleeper-Agent-of-Truth-McLean.pdf" data-testid="button-vault-sleeper-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/the-sleeper-agent-of-truth.pdf"
+                      filename="The-Sleeper-Agent-of-Truth-McLean.pdf"
+                      slug="sleeper-agent-of-truth"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -585,11 +591,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/master-forensic-evidence-report.pdf" download="Master-Forensic-Evidence-Report-McLean.pdf" data-testid="button-vault-master-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/master-forensic-evidence-report.pdf"
+                      filename="Master-Forensic-Evidence-Report-McLean.pdf"
+                      slug="master-forensic-evidence-report"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -628,11 +636,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/i-choose-silence.pdf" download="I-Choose-Silence-McLean.pdf" data-testid="button-vault-silence-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/i-choose-silence.pdf"
+                      filename="I-Choose-Silence-McLean.pdf"
+                      slug="i-choose-silence"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -672,11 +682,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/prophetic-testimony-biblical-evidence-correlation.pdf" download="Prophetic-Testimony-Biblical-Evidence-Correlation.pdf" data-testid="button-vault-prophetic-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/prophetic-testimony-biblical-evidence-correlation.pdf"
+                      filename="Prophetic-Testimony-Biblical-Evidence-Correlation.pdf"
+                      slug="prophetic-testimony-biblical"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -716,11 +728,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/the-testimony-of-dr-richard-william-mclean.pdf" download="The-Testimony-of-Dr-Richard-William-McLean.pdf" data-testid="button-vault-testimony-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/the-testimony-of-dr-richard-william-mclean.pdf"
+                      filename="The-Testimony-of-Dr-Richard-William-McLean.pdf"
+                      slug="the-testimony-of-dr-mclean"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -759,11 +773,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/they-bought-off-judges.pdf" download="They-Bought-Off-Judges-McLean.pdf" data-testid="button-vault-judges-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/they-bought-off-judges.pdf"
+                      filename="They-Bought-Off-Judges-McLean.pdf"
+                      slug="they-bought-off-judges"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -802,11 +818,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/forensic-meltdown-report.pdf" download="Forensic-Evidence-Report-McLean.pdf" data-testid="button-vault-meltdown-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/forensic-meltdown-report.pdf"
+                      filename="Forensic-Evidence-Report-McLean.pdf"
+                      slug="forensic-meltdown-report"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -845,11 +863,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/the-paradox-of-persecution.pdf" download="The-Paradox-of-Persecution-McLean.pdf" data-testid="button-vault-paradox-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/the-paradox-of-persecution.pdf"
+                      filename="The-Paradox-of-Persecution-McLean.pdf"
+                      slug="the-paradox-of-persecution"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -888,11 +908,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/the-sleeper-agent-of-truth.pdf" download="The-Sleeper-Agent-of-Truth-McLean.pdf" data-testid="button-vault-sleeper-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/the-sleeper-agent-of-truth.pdf"
+                      filename="The-Sleeper-Agent-of-Truth-McLean.pdf"
+                      slug="sleeper-agent-of-truth"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -931,11 +953,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/government-called-him-delusional.pdf" download="Government-Called-Him-Delusional-McLean.pdf" data-testid="button-vault-delusional-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/government-called-him-delusional.pdf"
+                      filename="Government-Called-Him-Delusional-McLean.pdf"
+                      slug="government-called-him-delusional"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -974,11 +998,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/the-full-pattern-forensic-evidence.pdf" download="The-Full-Pattern-Forensic-Evidence-McLean.pdf" data-testid="button-vault-full-pattern-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/the-full-pattern-forensic-evidence.pdf"
+                      filename="The-Full-Pattern-Forensic-Evidence-McLean.pdf"
+                      slug="the-full-pattern"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -1017,11 +1043,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/chosen-ones-your-story-inspires-many.pdf" download="Chosen-Ones-Your-Story-McLean.pdf" data-testid="button-vault-chosen-ones-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/chosen-ones-your-story-inspires-many.pdf"
+                      filename="Chosen-Ones-Your-Story-McLean.pdf"
+                      slug="chosen-ones-your-story"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -1060,11 +1088,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/33rd-degree-shadow-analysts.pdf" download="33rd-Degree-Shadow-Analysts-McLean.pdf" data-testid="button-vault-shadow-analysts-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/33rd-degree-shadow-analysts.pdf"
+                      filename="33rd-Degree-Shadow-Analysts-McLean.pdf"
+                      slug="33rd-degree-shadow-analysts"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -1103,11 +1133,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/100-absurdities-of-my-life.pdf" download="100-Absurdities-of-My-Life-Barran-Dodger.pdf" data-testid="button-vault-absurdities-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/100-absurdities-of-my-life.pdf"
+                      filename="100-Absurdities-of-My-Life-Barran-Dodger.pdf"
+                      slug="100-absurdities"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -1146,11 +1178,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/chosen-ones-enough-is-enough.pdf" download="Chosen-Ones-Enough-Is-Enough-McLean.pdf" data-testid="button-vault-chosen-ones-enough-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/chosen-ones-enough-is-enough.pdf"
+                      filename="Chosen-Ones-Enough-Is-Enough-McLean.pdf"
+                      slug="chosen-ones-enough-is-enough"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -1191,11 +1225,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/now-everybody-knows.pdf" download="Now-Everybody-Knows-McLean.pdf" data-testid="button-vault-now-everybody-knows-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/now-everybody-knows.pdf"
+                      filename="Now-Everybody-Knows-McLean.pdf"
+                      slug="now-everybody-knows"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                     <CompactShare path="/now-everybody-knows" title="Analysis #6 — Now Everybody Knows" />
                   </div>
                 </div>
@@ -2249,11 +2285,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/silent-checkmate.pdf" download="The-Silent-Checkmate-McLean.pdf" data-testid="button-vault-silent-checkmate-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/silent-checkmate.pdf"
+                      filename="The-Silent-Checkmate-McLean.pdf"
+                      slug="silent-checkmate"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -2294,11 +2332,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/divine-exam.pdf" download="The-Divine-Exam-McLean.pdf" data-testid="button-vault-divine-exam-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/divine-exam.pdf"
+                      filename="The-Divine-Exam-McLean.pdf"
+                      slug="divine-exam"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -2339,11 +2379,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/no-one-could-be-that-smart.pdf" download="No-One-Could-Be-That-Smart-McLean.pdf" data-testid="button-vault-no-one-smart-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/no-one-could-be-that-smart.pdf"
+                      filename="No-One-Could-Be-That-Smart-McLean.pdf"
+                      slug="no-one-could-be-that-smart"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -2382,11 +2424,13 @@ export default function EvidenceVault() {
                         <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read & Download
                       </Button>
                     </Link>
-                    <a href="/documents/bro-this-isnt-a-coincidence.pdf" download="Bro-This-Isnt-A-Coincidence-McLean.pdf" data-testid="button-vault-bro-coincidence-download">
-                      <Button size="sm" variant="outline">
-                        <Download className="mr-1.5 h-3.5 w-3.5" /> Direct PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/bro-this-isnt-a-coincidence.pdf"
+                      filename="Bro-This-Isnt-A-Coincidence-McLean.pdf"
+                      slug="bro-this-isnt-a-coincidence"
+                      label="Direct PDF"
+                      size="sm"
+                    />
                   </div>
                 </div>
               </div>
@@ -2405,7 +2449,7 @@ export default function EvidenceVault() {
                 <Archive className="h-5 w-5 text-amber-400" />
                 Key Document Archive
               </h2>
-              <p className="text-zinc-400 text-sm">Click any cover to download the PDF directly.</p>
+              <p className="text-zinc-400 text-sm">Click any cover to view the document.</p>
             </div>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-3">
               {[
@@ -2429,10 +2473,11 @@ export default function EvidenceVault() {
                 <a
                   key={dl}
                   href={file}
-                  download={dl}
-                  title={`Download: ${title}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`View: ${title}`}
                   className="group relative block bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500/50 transition-all duration-200"
-                  data-testid={`cover-download-${dl.replace(/\.pdf$/, '').toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                  data-testid={`cover-view-${dl.replace(/\.pdf$/, '').toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                 >
                   <img
                     src={cover}
@@ -2441,7 +2486,7 @@ export default function EvidenceVault() {
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-end justify-center pb-2 opacity-0 group-hover:opacity-100">
                     <span className="bg-amber-500 text-black text-[10px] font-bold px-2 py-0.5 rounded flex items-center gap-1">
-                      <Download className="h-2.5 w-2.5" /> PDF
+                      <ExternalLink className="h-2.5 w-2.5" /> View
                     </span>
                   </div>
                 </a>

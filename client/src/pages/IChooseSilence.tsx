@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import coverImage from "../assets/images/cover-i-choose-silence.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -172,17 +173,14 @@ export default function IChooseSilence() {
                   className="relative w-full rounded-xl border border-zinc-700 shadow-2xl shadow-black"
                 />
               </div>
-              <a
-                href="/documents/i-choose-silence.pdf"
-                download="I-Choose-Silence-McLean.pdf"
+              <ViralDownloadButton
+                url="/documents/i-choose-silence.pdf"
+                filename="I-Choose-Silence-McLean.pdf"
+                slug="i-choose-silence"
+                label="Free PDF Download"
                 className="w-full max-w-[280px]"
-                data-testid="button-download-silence-pdf"
-              >
-                <Button className="w-full bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-base py-6">
-                  <Download className="mr-2 h-5 w-5" /> Free PDF Download
-                </Button>
-              </a>
-              <p className="text-zinc-500 text-xs text-center">No sign-up. No paywall. Freely distributable.</p>
+                size="lg"
+              />
               <a
                 href="https://youtu.be/Yy_YvzkN1Vw?si=CDelOeaMlwf7zR5B"
                 target="_blank"
@@ -229,11 +227,12 @@ export default function IChooseSilence() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <a href="/documents/i-choose-silence.pdf" download="I-Choose-Silence-McLean.pdf">
-                  <Button className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold" data-testid="button-download-silence-hero">
-                    <Download className="mr-2 h-4 w-4" /> Download PDF
-                  </Button>
-                </a>
+                <ViralDownloadButton
+                  url="/documents/i-choose-silence.pdf"
+                  filename="I-Choose-Silence-McLean.pdf"
+                  slug="i-choose-silence"
+                  label="Download PDF"
+                />
                 <Button variant="outline" asChild>
                   <a href="/evidence" data-testid="button-silence-to-archive">
                     <Shield className="mr-2 h-4 w-4" /> Evidence Archive
@@ -376,16 +375,15 @@ export default function IChooseSilence() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-6">
             <h2 className="text-3xl font-serif font-bold text-white">Read the Full Declaration</h2>
             <p className="text-zinc-300 leading-relaxed">
-              Eight sections. One arrow. Thirty-five years of preparation. Free. No paywall. Freely distributable.
+              Eight sections. One arrow. Thirty-five years of preparation.
             </p>
-            <a href="/documents/i-choose-silence.pdf" download="I-Choose-Silence-McLean.pdf">
-              <Button
-                className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-lg px-10 py-7"
-                data-testid="button-download-silence-cta"
-              >
-                <Download className="mr-3 h-6 w-6" /> Download Free PDF
-              </Button>
-            </a>
+            <ViralDownloadButton
+              url="/documents/i-choose-silence.pdf"
+              filename="I-Choose-Silence-McLean.pdf"
+              slug="i-choose-silence"
+              label="Download Free PDF"
+              size="lg"
+            />
             <p className="text-zinc-600 text-sm">
               Part of the{" "}
               <a href="/evidence" className="text-zinc-400 hover:text-white underline">2,304-document evidence archive</a>{" "}

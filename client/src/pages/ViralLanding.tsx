@@ -13,6 +13,7 @@ import { SectionShare } from "@/components/SectionShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { DownloadBadge, trackDownload } from "@/components/DownloadCounter";
 import { DetonationButton } from "@/components/DetonationButton";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { DownloadAnalytics } from "@/components/DownloadAnalytics";
 import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
@@ -2255,11 +2256,13 @@ export default function ViralLanding() {
                         <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
                       </Button>
                     </Link>
-                    <a href="/documents/now-everybody-knows.pdf" download="Now-Everybody-Knows-McLean.pdf" data-testid="button-now-everybody-knows-download">
-                      <Button variant="outline" size="lg" className="border-violet-500/40 text-violet-400 hover:bg-violet-950/30">
-                        <Download className="mr-2 h-4 w-4" /> Download PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/now-everybody-knows.pdf"
+                      filename="Now-Everybody-Knows-McLean.pdf"
+                      slug="now-everybody-knows"
+                      label="Download PDF"
+                      size="lg"
+                    />
                     <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/-PGJouQaIAE", "_blank")} data-testid="button-now-everybody-knows-video">
                       <Play className="mr-2 h-4 w-4" /> Watch the Video
                     </Button>
@@ -2328,11 +2331,13 @@ export default function ViralLanding() {
                         <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
                       </Button>
                     </Link>
-                    <a href="/documents/silent-checkmate.pdf" download="The-Silent-Checkmate-McLean.pdf" data-testid="button-silent-checkmate-download">
-                      <Button variant="outline" size="lg" className="border-red-500/40 text-red-400 hover:bg-red-950/30">
-                        <Download className="mr-2 h-4 w-4" /> Download PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/silent-checkmate.pdf"
+                      filename="The-Silent-Checkmate-McLean.pdf"
+                      slug="silent-checkmate"
+                      label="Download PDF"
+                      size="lg"
+                    />
                     <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/y_MCRQ5yeVE", "_blank")} data-testid="button-silent-checkmate-video">
                       <Play className="mr-2 h-4 w-4" /> Watch the Video
                     </Button>
@@ -2401,11 +2406,13 @@ export default function ViralLanding() {
                         <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
                       </Button>
                     </Link>
-                    <a href="/documents/divine-exam.pdf" download="The-Divine-Exam-McLean.pdf" data-testid="button-divine-exam-download">
-                      <Button variant="outline" size="lg" className="border-amber-500/40 text-amber-400 hover:bg-amber-950/30">
-                        <Download className="mr-2 h-4 w-4" /> Download PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/divine-exam.pdf"
+                      filename="The-Divine-Exam-McLean.pdf"
+                      slug="divine-exam"
+                      label="Download PDF"
+                      size="lg"
+                    />
                     <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/CHOU1Jsyamk", "_blank")} data-testid="button-divine-exam-video">
                       <Play className="mr-2 h-4 w-4" /> Watch the Video
                     </Button>
@@ -2474,11 +2481,13 @@ export default function ViralLanding() {
                         <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
                       </Button>
                     </Link>
-                    <a href="/documents/no-one-could-be-that-smart.pdf" download="No-One-Could-Be-That-Smart-McLean.pdf" data-testid="button-no-one-smart-download">
-                      <Button variant="outline" size="lg" className="border-blue-500/40 text-blue-400 hover:bg-blue-950/30">
-                        <Download className="mr-2 h-4 w-4" /> Download PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/no-one-could-be-that-smart.pdf"
+                      filename="No-One-Could-Be-That-Smart-McLean.pdf"
+                      slug="no-one-could-be-that-smart"
+                      label="Download PDF"
+                      size="lg"
+                    />
                     <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/bFjyAy_Jf9Q", "_blank")} data-testid="button-no-one-smart-video">
                       <Play className="mr-2 h-4 w-4" /> Watch the Video
                     </Button>
@@ -2547,11 +2556,13 @@ export default function ViralLanding() {
                         <BookOpen className="mr-2 h-4 w-4" /> Read Full Analysis
                       </Button>
                     </Link>
-                    <a href="/documents/chosen-ones-enough-is-enough.pdf" download="Chosen-Ones-Enough-Is-Enough-McLean.pdf" data-testid="button-chosen-ones-enough-download">
-                      <Button variant="outline" size="lg" className="border-yellow-500/40 text-yellow-400 hover:bg-yellow-950/30">
-                        <Download className="mr-2 h-4 w-4" /> Download PDF
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/chosen-ones-enough-is-enough.pdf"
+                      filename="Chosen-Ones-Enough-Is-Enough-McLean.pdf"
+                      slug="chosen-ones-enough-is-enough"
+                      label="Download PDF"
+                      size="lg"
+                    />
                     <Button variant="ghost" size="lg" className="text-zinc-400" onClick={() => window.open("https://youtu.be/50hRjgGe4BQ", "_blank")} data-testid="button-chosen-ones-enough-video">
                       <Play className="mr-2 h-4 w-4" /> Watch the Video
                     </Button>
@@ -2650,22 +2661,19 @@ export default function ViralLanding() {
 
                   {/* DOWNLOAD */}
                   <div className="flex flex-wrap gap-3 pt-2">
-                    <a
-                      href="/documents/the-sleeper-agent-of-truth.pdf"
-                      download="The-Sleeper-Agent-of-Truth-McLean.pdf"
-                      data-testid="button-download-sleeper-agent"
-                    >
-                      <Button className="bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-bold text-base px-8 py-6">
-                        <Download className="mr-2 h-5 w-5" /> Free PDF Download
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/the-sleeper-agent-of-truth.pdf"
+                      filename="The-Sleeper-Agent-of-Truth-McLean.pdf"
+                      slug="sleeper-agent-of-truth"
+                      label="Free PDF Download"
+                      size="lg"
+                    />
                     <Button variant="outline" asChild>
                       <a href="/evidence-vault" data-testid="button-sleeper-to-vault">
                         <Shield className="mr-2 h-4 w-4" /> Evidence Vault
                       </a>
                     </Button>
                   </div>
-                  <p className="text-zinc-600 text-xs">No sign-up. No paywall. Freely distributable.</p>
                 </div>
               </div>
             </motion.div>
@@ -2811,15 +2819,13 @@ export default function ViralLanding() {
 
                   {/* DOWNLOAD */}
                   <div className="flex flex-wrap gap-3 pt-2">
-                    <a
-                      href="/documents/government-called-him-delusional.pdf"
-                      download="Australian-Government-Called-Him-Delusional-McLean.pdf"
-                      data-testid="button-download-gov-delusional"
-                    >
-                      <Button className="bg-red-700 hover:bg-red-600 text-white font-bold text-base px-8 py-6">
-                        <Download className="mr-2 h-5 w-5" /> Free PDF Download
-                      </Button>
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/government-called-him-delusional.pdf"
+                      filename="Australian-Government-Called-Him-Delusional-McLean.pdf"
+                      slug="government-called-him-delusional"
+                      label="Free PDF Download"
+                      size="lg"
+                    />
                     <Button variant="outline" asChild>
                       <a href="/master-forensic-evidence-report" data-testid="button-delusional-to-master">
                         <FileText className="mr-2 h-4 w-4" /> Full Forensic Report
@@ -2831,7 +2837,6 @@ export default function ViralLanding() {
                       </a>
                     </Button>
                   </div>
-                  <p className="text-zinc-600 text-xs">No sign-up. No paywall. Freely distributable.</p>
                 </div>
               </div>
             </motion.div>
@@ -3658,11 +3663,13 @@ export default function ViralLanding() {
                   <p className="text-gray-300 text-sm leading-relaxed">
                     The original Public Interest Disclosure filed by Dr. McLean documenting 21+ formal allegations including threats by NDIA staff, conspiracy to pervert the course of justice, systematic denial of legal representation, and institutional fraud — all corroborated by the Federal Court's acknowledgment of his status as a public official.
                   </p>
-                  <a href={docUrl("/documents/ndis-pid-political-prisoner-dr-rich-mclean.pdf")} download>
-                    <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold gap-2 mt-2" data-testid="button-download-pid-letter">
-                      <Download className="h-4 w-4" /> Download PID Statement (PDF)
-                    </Button>
-                  </a>
+                  <ViralDownloadButton
+                    url="/documents/ndis-pid-political-prisoner-dr-rich-mclean.pdf"
+                    filename="NDIS-PID-Political-Prisoner-McLean.pdf"
+                    slug="ndis-pid-political-prisoner"
+                    label="Download PID Statement (PDF)"
+                    className="w-full mt-2"
+                  />
                 </CardContent>
               </Card>
 
@@ -3680,11 +3687,13 @@ export default function ViralLanding() {
                   <p className="text-gray-300 text-sm leading-relaxed">
                     The NDIA's formal acknowledgment and processing of Dr. McLean's disclosure under the PID Act. Confirms receipt, outlines the legal framework, details the 21+ allegations in Attachment A, and requests further information — institutional proof the disclosure was real, formal, and taken seriously.
                   </p>
-                  <a href={docUrl("/documents/ndis-pid-official-response.pdf")} download>
-                    <Button className="w-full bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,60%)] text-black font-bold gap-2 mt-2" data-testid="button-download-pid-response">
-                      <Download className="h-4 w-4" /> Download NDIA Response (PDF)
-                    </Button>
-                  </a>
+                  <ViralDownloadButton
+                    url="/documents/ndis-pid-official-response.pdf"
+                    filename="NDIS-PID-Official-Response-McLean.pdf"
+                    slug="ndis-pid-official-response"
+                    label="Download NDIA Response (PDF)"
+                    className="w-full mt-2"
+                  />
                 </CardContent>
               </Card>
             </motion.div>
@@ -4000,16 +4009,13 @@ export default function ViralLanding() {
                         Complete unredacted SMS transcript between Dr. McLean and the NDIS provider Ben from DSW Disability. Documents his initial outreach via Gumtree, the full conversation in which he corroborates the assassination attempt and police confirmation of no sexual crime, his subsequent fears for his own life, and his disclosure of being forced to sign the national security NDA. 5,000+ lines of primary-source text messages.
                       </p>
                     </div>
-                    <a
-                      href={docUrl("/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf")}
-                      download="Ben-DSW-Disability-NDIS-Text-Messages-Assassination-Evidence.pdf"
-                      onClick={() => trackDownload('/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf')}
-                      className="flex-shrink-0 inline-flex items-center gap-2 bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,42%)] text-black font-bold px-6 py-3 rounded-lg transition-colors text-sm whitespace-nowrap"
-                      data-testid="button-download-ben-transcript"
-                    >
-                      <Download className="h-4 w-4" />
-                      Download Full Transcript
-                    </a>
+                    <ViralDownloadButton
+                      url="/documents/ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
+                      filename="Ben-DSW-Disability-NDIS-Text-Messages-Assassination-Evidence.pdf"
+                      slug="ben-dsw-text-messages"
+                      label="Download Full Transcript"
+                      className="flex-shrink-0"
+                    />
                   </div>
 
                   {/* AI Statement of Significance */}
