@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Download, Check, Link2, X, Copy, Heart } from "lucide-react";
+import { Download, Check, Link2, X, Copy, Mail } from "lucide-react";
 import { SiX, SiWhatsapp, SiTelegram, SiFacebook } from "react-icons/si";
-import { useQuery } from "@tanstack/react-query";
-import { queryClient } from "@/lib/queryClient";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { queryClient, apiRequest } from "@/lib/queryClient";
 import { slugFromUrl } from "@/components/DownloadCounter";
 import { useToast } from "@/hooks/use-toast";
 
@@ -47,7 +47,18 @@ export function ViralDownloadButton({
   const [phase, setPhase] = useState<Phase>("idle");
   const [copied, setCopied] = useState(false);
   const [payIdCopied, setPayIdCopied] = useState(false);
+  const [emailInput, setEmailInput] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
   const { toast } = useToast();
+
+  const emailMutation = useMutation({
+    mutationFn: (email: string) => apiRequest("POST", "/api/subscribers", { email }),
+    onSuccess: () => {
+      setEmailSent(true);
+      toast({ title: "You're on the list", description: "We'll notify you when new analyses are published." });
+    },
+    onError: () => toast({ title: "Already subscribed", description: "This email is already on the list." }),
+  });
 
   const { data } = useQuery<{ count: number }>({
     queryKey: ["/api/downloads", slug],
@@ -170,6 +181,33 @@ export function ViralDownloadButton({
                 data-testid="button-conscience-commission">
                 Commission an Analysis
               </a>
+            </div>
+
+            {/* Email capture */}
+            <div className="border-t border-zinc-800 pt-3">
+              {emailSent ? (
+                <p className="text-green-400 text-xs flex items-center gap-1.5"><Check className="h-3 w-3" /> You're on the list — we'll notify you when new analyses are published.</p>
+              ) : (
+                <form className="flex gap-2" onSubmit={(e) => { e.preventDefault(); if (emailInput.includes("@")) emailMutation.mutate(emailInput); }}>
+                  <input
+                    type="email"
+                    value={emailInput}
+                    onChange={(e) => setEmailInput(e.target.value)}
+                    placeholder="Get notified of new analyses — your@email.com"
+                    className="flex-1 bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-white text-xs focus:outline-none focus:border-zinc-500"
+                    data-testid="input-download-email-subscribe"
+                  />
+                  <button
+                    type="submit"
+                    disabled={emailMutation.isPending}
+                    className="flex items-center gap-1.5 bg-zinc-700 hover:bg-zinc-600 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors flex-shrink-0"
+                    data-testid="button-download-email-subscribe"
+                  >
+                    <Mail className="h-3 w-3" />
+                    {emailMutation.isPending ? "..." : "Notify me"}
+                  </button>
+                </form>
+              )}
             </div>
 
             <button

@@ -3,13 +3,15 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { Heart, Shield, FileText, CheckCircle, Check, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink, Users, DollarSign, RefreshCw, ShoppingBag, Database, Download, Archive } from "lucide-react";
+import { Heart, Shield, FileText, CheckCircle, Check, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink, Users, DollarSign, RefreshCw, ShoppingBag, Database, Download, Archive, Clock, Target, Repeat, Mail, AlertTriangle, TrendingUp, Zap } from "lucide-react";
 import coverMasterRegister from "../assets/images/cover-master-evidence-register.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { SocialShare } from "@/components/SocialShare";
@@ -68,16 +70,47 @@ const externalProducts = [
   },
 ];
 
+const CTO_DEADLINE = new Date("2026-04-28T09:00:00+10:00");
+const GOAL_AMOUNT = 5000;
+const GOAL_LABEL = "April Emergency Legal & Archive Fund";
+
+function useCountdown(target: Date) {
+  const [diff, setDiff] = useState(() => Math.max(0, target.getTime() - Date.now()));
+  useEffect(() => {
+    const id = setInterval(() => setDiff(Math.max(0, target.getTime() - Date.now())), 1000);
+    return () => clearInterval(id);
+  }, [target]);
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins = Math.floor((diff % 3600000) / 60000);
+  const secs = Math.floor((diff % 60000) / 1000);
+  return { days, hours, mins, secs, expired: diff === 0 };
+}
+
 export default function Donate() {
   const [copied, setCopied] = useState(false);
+  const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
+  const [emailInput, setEmailInput] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
   const { toast } = useToast();
   const payId = "rich@richmclean.com.au";
+  const countdown = useCountdown(CTO_DEADLINE);
+
+  const emailMutation = useMutation({
+    mutationFn: (email: string) => apiRequest("POST", "/api/subscribers", { email }),
+    onSuccess: () => {
+      setEmailSent(true);
+      toast({ title: "You're on the list", description: "You'll be notified when new forensic analyses are published." });
+    },
+    onError: () => toast({ title: "Already subscribed or invalid email", variant: "destructive" }),
+  });
 
   const copyPayId = () => {
-    navigator.clipboard.writeText(payId);
+    const msg = selectedAmount ? `${payId}\nAmount: $${selectedAmount} AUD` : payId;
+    navigator.clipboard.writeText(msg);
     setCopied(true);
     toast({
-      title: "PayID Copied",
+      title: selectedAmount ? `PayID + $${selectedAmount} Copied` : "PayID Copied",
       description: "The PayID has been copied to your clipboard.",
     });
     setTimeout(() => setCopied(false), 3000);
@@ -207,6 +240,240 @@ export default function Donate() {
               </p>
             </div>
           </motion.div>
+
+          {/* ── FRAMEWORK 1: URGENCY — Real deadline, real stakes ── */}
+          <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12 }} className="mb-8">
+            <div className="rounded-2xl border border-red-600/40 bg-red-950/20 overflow-hidden">
+              <div className="flex items-center gap-3 bg-red-950/40 px-6 py-3 border-b border-red-600/30">
+                <AlertTriangle className="h-4 w-4 text-red-400 flex-shrink-0" />
+                <p className="text-red-400 font-bold text-sm uppercase tracking-widest">Active Legal Emergency</p>
+              </div>
+              <div className="p-6 md:p-8 space-y-5">
+                <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
+                  <div className="flex-1">
+                    <p className="text-white font-serif font-bold text-xl md:text-2xl leading-tight">
+                      Forced psychiatric appointment: 28 April 2026
+                    </p>
+                    <p className="text-zinc-400 text-sm mt-2 leading-relaxed">
+                      NSW Police are authorised under MHA 2007 s58(4) to forcibly transport Dr. McLean to Wyong Inpatient Mental Health Unit if he fails to attend. This appointment was scheduled one day after a murder threat that police attended but declined to record (Receipt I88267509). Funding before this date directly supports the legal challenge to the CTO mechanism.
+                    </p>
+                  </div>
+                  {/* Countdown clock */}
+                  <div className="flex-shrink-0">
+                    {countdown.expired ? (
+                      <div className="bg-zinc-900 rounded-2xl px-6 py-4 text-center border border-zinc-700">
+                        <p className="text-red-400 font-bold text-sm">Appointment has passed</p>
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-4 gap-2 text-center">
+                        {[
+                          { val: countdown.days, label: "DAYS" },
+                          { val: countdown.hours, label: "HRS" },
+                          { val: countdown.mins, label: "MIN" },
+                          { val: countdown.secs, label: "SEC" },
+                        ].map(({ val, label }) => (
+                          <div key={label} className="bg-zinc-900 border border-red-500/30 rounded-xl px-3 py-3 min-w-[3.5rem]">
+                            <p className="text-red-400 font-bold text-2xl tabular-nums leading-none">{String(val).padStart(2, "0")}</p>
+                            <p className="text-zinc-600 text-[10px] font-bold mt-1">{label}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-3 gap-3 text-sm">
+                  {[
+                    { label: "Legal correspondence drafted", cost: "$150" },
+                    { label: "MHRT appeal filing costs", cost: "$250" },
+                    { label: "3 months archive hosting secured", cost: "$600" },
+                  ].map(({ label, cost }) => (
+                    <div key={label} className="flex items-center justify-between gap-2 bg-zinc-900/70 rounded-xl px-4 py-3">
+                      <span className="text-zinc-400 text-xs">{label}</span>
+                      <span className="text-red-400 font-bold text-sm">{cost}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FRAMEWORK 2: GOAL / PROGRESS BAR — Crowdfunding psychology ── */}
+          <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.14 }} className="mb-8">
+            <div className="rounded-2xl border border-amber-500/30 bg-zinc-950 p-6 md:p-8 space-y-4">
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <div className="flex items-center gap-2">
+                  <Target className="h-5 w-5 text-amber-400" />
+                  <p className="text-white font-bold">{GOAL_LABEL}</p>
+                </div>
+                <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/30 text-xs">April 2026</Badge>
+              </div>
+              <div>
+                <div className="flex justify-between text-xs text-zinc-500 mb-2">
+                  <span>Goal: ${GOAL_AMOUNT.toLocaleString()} AUD</span>
+                  <span>Contribute to be the first recorded supporter</span>
+                </div>
+                <div className="w-full bg-zinc-800 rounded-full h-3 overflow-hidden">
+                  <div className="bg-gradient-to-r from-amber-600 to-amber-400 h-3 rounded-full transition-all duration-700" style={{ width: "4%" }} />
+                </div>
+                <p className="text-zinc-600 text-xs mt-2">Funds cover: legal challenge filing · MHRT appeal · 6 months archive hosting · 50 blockchain seals · ICC submission printing</p>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FRAMEWORK 3: ANCHORED AMOUNTS — Conversion psychology ── */}
+          <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }} className="mb-8">
+            <div className="rounded-2xl border border-zinc-700 bg-zinc-900 p-6 md:p-8 space-y-5">
+              <div className="flex items-center gap-2 mb-1">
+                <Zap className="h-5 w-5 text-amber-400" />
+                <p className="text-white font-bold">Choose an amount — then copy the PayID</p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { amount: 25, label: "Witness", impact: "1 week archive hosting" },
+                  { amount: 50, label: "Defender", impact: "1 month blockchain seals" },
+                  { amount: 100, label: "Guardian", impact: "1 ICC submission printed", popular: true },
+                  { amount: 250, label: "Champion", impact: "Full legal letter drafted" },
+                ].map(({ amount, label, impact, popular }) => (
+                  <button
+                    key={amount}
+                    onClick={() => setSelectedAmount(selectedAmount === amount ? null : amount)}
+                    className={`rounded-xl p-4 text-center border transition-all ${selectedAmount === amount ? "border-amber-500 bg-amber-950/40" : "border-zinc-700 bg-zinc-800/60 hover:border-zinc-500"}`}
+                    data-testid={`button-amount-${amount}`}
+                  >
+                    {popular && <p className="text-amber-400 text-[10px] font-bold uppercase mb-1">Most chosen</p>}
+                    <p className={`text-2xl font-bold ${selectedAmount === amount ? "text-amber-400" : "text-white"}`}>${amount}</p>
+                    <p className="text-zinc-400 text-xs font-semibold mt-0.5">{label}</p>
+                    <p className="text-zinc-500 text-[10px] mt-1 leading-tight">{impact}</p>
+                  </button>
+                ))}
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center bg-amber-950/20 border border-amber-500/25 rounded-2xl p-4">
+                <div className="flex-1">
+                  <p className="text-amber-300 font-bold text-sm">PayID · Open banking app · Paste · Send</p>
+                  <p className="text-white font-mono text-base mt-0.5">rich@richmclean.com.au</p>
+                  {selectedAmount && <p className="text-amber-400 text-xs mt-1 font-semibold">Amount selected: ${selectedAmount} AUD — will be copied with PayID</p>}
+                </div>
+                <button
+                  onClick={copyPayId}
+                  className="flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold text-sm px-6 py-3 rounded-xl transition-colors flex-shrink-0"
+                  data-testid="button-anchored-copy-payid"
+                >
+                  {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                  {copied ? "Copied!" : selectedAmount ? `Copy PayID + $${selectedAmount}` : "Copy PayID"}
+                </button>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FRAMEWORK 4: MONTHLY SUSTAINER — Wikipedia / NPR model ── */}
+          <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18 }} className="mb-8">
+            <div className="rounded-2xl border border-green-500/30 bg-green-950/10 p-6 md:p-8 space-y-5">
+              <div className="flex items-center gap-3">
+                <Repeat className="h-5 w-5 text-green-400" />
+                <div>
+                  <p className="text-white font-bold">Become a Sustaining Supporter</p>
+                  <p className="text-zinc-500 text-xs">Monthly recurring — the most powerful contribution you can make</p>
+                </div>
+              </div>
+              <p className="text-zinc-300 text-sm leading-relaxed">
+                A one-time donation funds a week. A monthly contribution funds the mission. Wikipedia runs entirely on sustainers averaging $15/month. The Australian anti-corruption record you are reading was built by one person — still actively persecuted — with zero institutional funding. Monthly giving is how archives survive.
+              </p>
+              <div className="grid sm:grid-cols-3 gap-3">
+                {[
+                  { amount: "$10/month", equivalent: "= $120/year", what: "Blockchain timestamps for every new document" },
+                  { amount: "$25/month", equivalent: "= $300/year", what: "Full archive hosting + timestamps + 1 legal letter" },
+                  { amount: "$50/month", equivalent: "= $600/year", what: "All hosting costs + ICC submissions + legal correspondence" },
+                ].map(({ amount, equivalent, what }) => (
+                  <div key={amount} className="bg-zinc-900/70 rounded-xl p-4 space-y-1 border border-green-500/15">
+                    <p className="text-green-400 font-bold">{amount}</p>
+                    <p className="text-zinc-500 text-xs">{equivalent}</p>
+                    <p className="text-zinc-300 text-xs">{what}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-zinc-900 rounded-xl p-4 border border-zinc-700 space-y-2">
+                <p className="text-zinc-300 text-sm font-semibold">How to set up a monthly standing order:</p>
+                <ol className="space-y-1.5 text-xs text-zinc-400">
+                  <li className="flex gap-2"><span className="text-green-400 font-bold">1.</span> Open your banking app and go to Pay Anyone / PayID</li>
+                  <li className="flex gap-2"><span className="text-green-400 font-bold">2.</span> Enter PayID: <span className="font-mono text-white">rich@richmclean.com.au</span></li>
+                  <li className="flex gap-2"><span className="text-green-400 font-bold">3.</span> Set your chosen amount and select "Recurring" or "Schedule"</li>
+                  <li className="flex gap-2"><span className="text-green-400 font-bold">4.</span> Set frequency: Monthly · Reference: "Sustaining Supporter"</li>
+                </ol>
+                <p className="text-zinc-600 text-xs">Commonwealth Bank, ANZ, Westpac, NAB and most Australian banks support scheduled PayID transfers. You can cancel at any time from your banking app.</p>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ── FRAMEWORK 5: SPECIFIC USE OF FUNDS — Loss aversion + tangibility ── */}
+          <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.19 }} className="mb-8">
+            <div className="rounded-2xl border border-zinc-700 bg-zinc-900/50 p-6 md:p-8 space-y-4">
+              <div className="flex items-center gap-2 mb-2">
+                <TrendingUp className="h-5 w-5 text-amber-400" />
+                <p className="text-white font-bold">Every dollar has a documented destination</p>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {[
+                  { cost: "$15", what: "One blockchain timestamp seal (OpenTimestamps · Bitcoin)", why: "Makes each document legally permanent and tamper-proof" },
+                  { cost: "$25", what: "One week of secure archive hosting (2,304 documents)", why: "410,671 people have accessed these documents. They need to stay online." },
+                  { cost: "$50", what: "One formal legal letter of demand drafted and sent", why: "Direct legal action against named suppression operatives" },
+                  { cost: "$150", what: "One CTO legal response document prepared", why: "Challenges the forced psychiatric appointment mechanism" },
+                  { cost: "$250", what: "One ICC/UNHCR submission printed, bound, and delivered", why: "Physical submission to the International Criminal Court" },
+                  { cost: "$500", what: "One complete forensic analysis (commissioned and published)", why: "Permanent public record — free for humanity, funded by you" },
+                ].map(({ cost, what, why }) => (
+                  <div key={cost} className="flex gap-3 items-start bg-zinc-800/50 rounded-xl p-4">
+                    <p className="text-amber-400 font-bold text-lg flex-shrink-0 w-14">{cost}</p>
+                    <div>
+                      <p className="text-white text-xs font-semibold leading-snug">{what}</p>
+                      <p className="text-zinc-500 text-xs mt-1">{why}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-zinc-600 text-xs pt-2">No administrative overhead. No salaries. No charity structure. Every dollar goes directly to the documented activities listed above.</p>
+            </div>
+          </motion.section>
+
+          {/* ── FRAMEWORK 6: EMAIL CAPTURE — Lifecycle value ── */}
+          <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.20 }} className="mb-10">
+            <div className="rounded-2xl border border-zinc-700 bg-zinc-900 p-6 md:p-8">
+              <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
+                <div className="flex items-center gap-3 flex-shrink-0">
+                  <Mail className="h-8 w-8 text-primary" />
+                </div>
+                <div className="flex-1 space-y-1">
+                  <p className="text-white font-bold">Get notified when new forensic analyses are published</p>
+                  <p className="text-zinc-500 text-sm">No marketing. No spam. Just a direct notification each time a new analysis is complete and published free on the archive.</p>
+                </div>
+                {emailSent ? (
+                  <div className="flex items-center gap-2 text-green-400 font-semibold text-sm flex-shrink-0">
+                    <CheckCircle className="h-5 w-5" /> You're on the list
+                  </div>
+                ) : (
+                  <form
+                    className="flex gap-2 flex-shrink-0 w-full sm:w-auto"
+                    onSubmit={(e) => { e.preventDefault(); if (emailInput.includes("@")) emailMutation.mutate(emailInput); }}
+                  >
+                    <input
+                      type="email"
+                      value={emailInput}
+                      onChange={(e) => setEmailInput(e.target.value)}
+                      placeholder="your@email.com"
+                      className="bg-zinc-800 border border-zinc-600 rounded-xl px-4 py-2.5 text-white text-sm w-full sm:w-56 focus:outline-none focus:border-primary"
+                      data-testid="input-email-subscribe"
+                    />
+                    <button
+                      type="submit"
+                      disabled={emailMutation.isPending}
+                      className="bg-primary hover:bg-primary/80 text-black font-bold text-sm px-4 py-2.5 rounded-xl transition-colors flex-shrink-0"
+                      data-testid="button-email-subscribe"
+                    >
+                      {emailMutation.isPending ? "..." : "Notify me"}
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
+          </motion.section>
 
           <motion.section
             initial={{ opacity: 0, y: 20 }}
