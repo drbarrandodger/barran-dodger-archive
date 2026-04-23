@@ -792,6 +792,12 @@ uri = "file://client/src/assets/images/cover-prophetic-testimony.png"
 type = "image"
 title = "prophetic testimony last god sacred cover"
 
+[[generated]]
+id = "FaFL4tJ1Iq2kVnurU8tlV"
+uri = "file://client/src/assets/images/cover-every-secret-chooses-a-side.png"
+type = "image"
+title = "secrets exposed divine justice forensic cover"
+
 [[outputs]]
 id = "9dlFHPL3WWcRwbr0U0BIj"
 uri = "file://medium-article-draft.md"
