@@ -14,7 +14,6 @@ import { LanguageDetectionBanner } from "@/components/LanguageDetectionBanner";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { Chatbot } from "@/components/Chatbot";
 import { slugFromUrl } from "@/components/DownloadCounter";
-import { AnalysisPDFButton } from "@/components/AnalysisPDFButton";
 import { GlobalAnalysisShareStrip } from "@/components/GlobalAnalysisShareStrip";
 import { FloatingDonateWidget } from "@/components/FloatingDonateWidget";
 import { PDFGateProvider } from "@/components/PDFGateProvider";
@@ -595,7 +594,6 @@ function App() {
             <Breadcrumbs />
             <Router />
             <GlobalAnalysisShareStrip />
-            <AnalysisPDFButton />
             <FloatingDonateWidget />
             <Chatbot />
           </PDFGateProvider>
