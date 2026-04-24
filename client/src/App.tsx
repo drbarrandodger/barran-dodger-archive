@@ -549,7 +549,6 @@ function Router() {
         <Route path="/gods-grace-resonance-christ" component={GodsGraceBarranDodger} />
         <Route path="/store" component={Store} />
         <Route path="/testimony-archive" component={FreeEbooks} />
-        <Route path="/free-ebooks" component={FreeEbooks} />
         <Route path="/copyright-register" component={CopyrightRegister} />
         <Route path="/forensic-corroboration-still-standing" component={ForensicCorroborationStillStanding} />
         <Route path="/forensic-corroboration-knives-claps" component={ForensicCorroborationKnivesClaps} />

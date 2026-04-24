@@ -117,7 +117,7 @@ const PAGES_HASHTAGS = [
   { title: "God's Grace Through Barran Dodger", url: "/gods-grace-barran-dodger", tags: ["#BDGodsGrace", "#EternalWitness", "#BarranDodger"] },
   { title: "Tony Ridley Full Dossier", url: "/tony-ridley-full-dossier", tags: ["#TonyRidleyDossier", "#AssassinationAttempt", "#BarranDodger"] },
   { title: "Holy Reckoning — NDIS Plea", url: "/holy-reckoning", tags: ["#BDHolyReckoning", "#NDISComplicity", "#BarranDodger"] },
-  { title: "The Testimony Archive — $3.33", url: "/testimony-archive", tags: ["#BDFreeEbooks", "#FreeToShare", "#BarranDodger"] },
+  { title: "The Testimony Archive — $3.33 — Zero Free Documents", url: "/testimony-archive", tags: ["#BDTestimonyArchive", "#BDPaywalled", "#NoFreeAccess", "#BarranDodger"] },
   { title: "Complete Archive Index", url: "/archive-index", tags: ["#BDArchiveIndex", "#BarranDodgerArchive", "#BarranDodger"] },
   { title: "Forensic Analysis Index", url: "/forensic-analysis", tags: ["#BDForensicIndex", "#63Analyses", "#675Propositions", "#BarranDodger"] },
   { title: "They Are Dying of Shame", url: "/they-are-dying-of-shame", tags: ["#BDDyingOfShame", "#PropheticallyPrecise", "#BarranDodger"] },

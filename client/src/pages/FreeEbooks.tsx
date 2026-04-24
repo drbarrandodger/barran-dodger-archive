@@ -552,7 +552,8 @@ export default function FreeEbooks() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <div>
               <p className="text-amber-300 text-sm font-bold leading-relaxed">
-                <strong className="text-white">There are zero free documents on this site.</strong> Every PDF, EPUB, prophecy, gospel and forensic analysis is $3.33 AUD. This testimony was given freely for 35 years — 500,000+ downloads, not a single cent donated, while living in poverty, torture and surveillance. Humanity proved it will take anything of value for free if it can do so anonymously. That is spiritual theft. The era of free access is permanently over. ICC The Hague. UNHCR Geneva. ABN 78 833 496 164.
+                <strong className="text-white">There are zero free PDFs, eBooks, or documents anywhere on this site.</strong>{" "}
+                The donation model I operated in the hope of receiving something in return for my service to humanity was abused. 500,000+ downloads occurred and not a single cent was donated — because if people can obtain something of genuine value anonymously and for free, they will. That is human greed. That is a spiritual theft that devalues my testimony and my life's work. Every single PDF, prophecy, eBook and gospel is now behind a paywall — because humanity only proved itself greedy and exploitative, which is the very reason this testimony and life's work exists. The era of free access is permanently over. $3.33 AUD. No exceptions. ICC The Hague. UNHCR Geneva. ABN 78 833 496 164.
               </p>
             </div>
             <a
