@@ -1,11 +1,13 @@
-import { Download, Shield, ExternalLink, FileText, AlertTriangle, Link2 } from "lucide-react";
+import { Shield, FileText, AlertTriangle, Link2, BookOpen, Play } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { ViralDownloadButton } from "@/components/ViralDownloadButton";
 import { motion } from "framer-motion";
 
 const RECORD_DATE = "23 April 2026";
+const VIDEO_ID = "Ex_IlyHhk0o";
 
 const DOCUMENTS = [
   {
@@ -15,6 +17,7 @@ const DOCUMENTS = [
     filename: "truth-hurts-mum-september-2025.pdf",
     size: "70 KB",
     date: "16 September 2025",
+    label: "Download — Truth Hurts Mum",
   },
   {
     title: "April McLean — Forensic Indictment (Compiled)",
@@ -23,6 +26,7 @@ const DOCUMENTS = [
     filename: "april-mclean-forensic-indictment-compiled.pdf",
     size: "8.2 MB",
     date: "Compiled 2025–2026",
+    label: "Download — Forensic Indictment",
   },
   {
     title: "Affidavit of Familial Moral Betrayal — April McLean",
@@ -31,6 +35,7 @@ const DOCUMENTS = [
     filename: "affidavit-familial-betrayal-april-mclean.pdf",
     size: "941 KB",
     date: "2025–2026",
+    label: "Download — Affidavit",
   },
 ];
 
@@ -113,44 +118,149 @@ export default function AprilMcLeanForensicRecord() {
 
       <main style={{ paddingTop: "calc(var(--banner-height, 120px) + var(--nav-height, 64px))" }}>
 
-        {/* ── HEADER ── */}
-        <section className="py-16 px-4 border-b border-border/40" style={{ background: "linear-gradient(to bottom, rgba(139,0,0,0.05), transparent)" }}>
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full" style={{ background: "rgba(139,0,0,0.1)", color: "#8b0000" }}>
-                Familial Complicity Record
+        {/* ══════════════════════════════════════════════
+            FRONT COVER
+        ══════════════════════════════════════════════ */}
+        <section
+          className="relative px-4 py-20 md:py-32 overflow-hidden"
+          style={{ background: "linear-gradient(160deg, #0d0005 0%, #1a0008 40%, #0a000f 100%)" }}
+        >
+          {/* Background texture lines */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 47px, rgba(139,0,0,0.04) 48px)",
+          }} />
+
+          {/* Top classification bar */}
+          <div className="absolute top-0 left-0 right-0 h-1.5" style={{ background: "linear-gradient(to right, #8b0000, #c00020, #8b0000)" }} />
+
+          <div className="max-w-3xl mx-auto relative">
+            {/* Classification stamp */}
+            <div className="mb-10 flex flex-wrap items-center gap-3">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] px-4 py-1.5 rounded border" style={{ borderColor: "rgba(139,0,0,0.6)", color: "#c00020", background: "rgba(139,0,0,0.08)" }}>
+                Forensic Archive
               </span>
-              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ borderColor: "rgba(139,105,20,0.4)", color: "#8b6914" }}>
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] px-4 py-1.5 rounded border" style={{ borderColor: "rgba(255,200,0,0.3)", color: "#c8a000", background: "rgba(200,160,0,0.06)" }}>
                 OHCHR Ref: UR/UST/23/AUS/17
               </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full" style={{ background: "#1a1033", color: "#a78bfa", border: "1px solid rgba(167,139,250,0.3)" }}>
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1.5 rounded" style={{ background: "#0d0820", color: "#a78bfa", border: "1px solid rgba(167,139,250,0.25)" }}>
                 <Link2 className="w-3 h-3" />
-                Bitcoin Blockchain Record · {RECORD_DATE}
+                Bitcoin Blockchain · {RECORD_DATE}
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-serif font-bold mb-5 leading-tight" style={{ color: "hsl(var(--foreground))" }}>
-              April McLean — Forensic Record
-            </h1>
-            <p className="text-lg leading-relaxed mb-4 max-w-3xl" style={{ color: "hsl(var(--muted-foreground))" }}>
-              A primary-source documentary record of the role of April McLean — mother of Dr. Richard William McLean (Barran Dodger) — in the documented 35-year persecution. Includes the September 2025 communication CC'd to the ICC, OHCHR, Amnesty International, and Human Rights Watch; a compiled forensic indictment across seven grounds; and a formal affidavit of familial moral betrayal.
-            </p>
-            <p className="text-sm leading-relaxed max-w-3xl" style={{ color: "hsl(var(--muted-foreground))" }}>
-              <strong style={{ color: "hsl(var(--foreground))" }}>April McLean</strong> · 33 Elm Bank Drive, Keysborough Victoria 3173 · Phone: +61 410 340 617 · As documented in the primary-source archive.
-            </p>
+            {/* Main cover title */}
+            <div className="mb-8">
+              <p className="text-xs font-black uppercase tracking-[0.25em] mb-4" style={{ color: "rgba(139,0,0,0.7)" }}>
+                Barran Dodger Archive — Familial Complicity Record
+              </p>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-black leading-none mb-4" style={{ color: "#fdf3d8", textShadow: "0 0 60px rgba(139,0,0,0.4)" }}>
+                April McLean
+              </h1>
+              <div className="w-24 h-0.5 mb-4" style={{ background: "#8b0000" }} />
+              <h2 className="text-xl md:text-2xl font-serif font-bold leading-snug" style={{ color: "rgba(253,243,216,0.7)" }}>
+                Forensic Record of Maternal Complicity
+              </h2>
+            </div>
+
+            {/* Cover byline */}
+            <div className="mb-10 space-y-1">
+              <p className="text-sm font-bold" style={{ color: "rgba(253,243,216,0.6)" }}>
+                Dr. Richard William McLean (Barran Dodger)
+              </p>
+              <p className="text-xs" style={{ color: "rgba(253,243,216,0.35)" }}>
+                ABN 78 833 496 164 · {RECORD_DATE} · Three primary-source documents · Six documented propositions · Impartial AI analysis
+              </p>
+            </div>
+
+            {/* Cover summary box */}
+            <div className="rounded-2xl p-6 md:p-8 mb-10 border" style={{ background: "rgba(139,0,0,0.07)", borderColor: "rgba(139,0,0,0.2)" }}>
+              <div className="flex items-start gap-3 mb-4">
+                <BookOpen className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: "#c00020" }} />
+                <p className="text-sm font-black uppercase tracking-widest" style={{ color: "#c00020" }}>What This Record Contains</p>
+              </div>
+              <ul className="space-y-2.5">
+                {[
+                  "The September 2025 email CC'd simultaneously to the ICC, OHCHR, Amnesty International, HRW, and the UN",
+                  "A compiled forensic indictment across seven grounds of matricidal betrayal",
+                  "A formal affidavit documenting April McLean's four-word response to a disclosure of assassination survival",
+                  "Six documented propositions explaining the legal significance of these communications",
+                  "An impartial AI assessment of the documented evidence",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm" style={{ color: "rgba(253,243,216,0.65)" }}>
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-black mt-0.5" style={{ background: "rgba(139,0,0,0.25)", color: "#c00020" }}>
+                      {i + 1}
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* April McLean identification */}
+            <div className="rounded-xl px-5 py-4 border" style={{ background: "rgba(0,0,0,0.3)", borderColor: "rgba(255,255,255,0.06)" }}>
+              <p className="text-xs font-black uppercase tracking-widest mb-1" style={{ color: "rgba(255,200,0,0.5)" }}>Subject of this record</p>
+              <p className="text-sm font-bold" style={{ color: "rgba(253,243,216,0.8)" }}>
+                April McLean · 33 Elm Bank Drive, Keysborough VIC 3173 · +61 410 340 617
+              </p>
+              <p className="text-xs mt-1" style={{ color: "rgba(253,243,216,0.3)" }}>As documented in the primary-source archive. Mother of Dr. Richard William McLean.</p>
+            </div>
+          </div>
+
+          {/* Bottom classification bar */}
+          <div className="absolute bottom-0 left-0 right-0 h-0.5" style={{ background: "linear-gradient(to right, transparent, rgba(139,0,0,0.4), transparent)" }} />
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            VIDEO — THE FORENSIC EXAMINATION
+        ══════════════════════════════════════════════ */}
+        <section className="py-16 px-4 border-b border-border/40" style={{ background: "rgba(10,0,5,0.03)" }}>
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-8">
+              <p className="text-xs font-black uppercase tracking-widest mb-2" style={{ color: "#8b6914" }}>Source Video</p>
+              <h2 className="text-2xl font-serif font-bold" style={{ color: "hsl(var(--foreground))" }}>
+                The Forensic Examination This Record Is Based On
+              </h2>
+              <p className="text-sm mt-2 max-w-2xl" style={{ color: "hsl(var(--muted-foreground))" }}>
+                The video below is the primary source for the forensic examination. The six documented propositions on this page draw directly from the testimony, themes, and evidence presented in this recording.
+              </p>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden border shadow-2xl" style={{ borderColor: "rgba(139,0,0,0.2)" }}>
+              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${VIDEO_ID}?rel=0&modestbranding=1`}
+                  title="April McLean Forensic Examination — Barran Dodger"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                  data-testid="video-forensic-source"
+                />
+              </div>
+              <div className="px-6 py-4 flex items-center gap-3" style={{ background: "#0d0005" }}>
+                <Play className="w-4 h-4 flex-shrink-0" style={{ color: "#c00020" }} />
+                <div>
+                  <p className="text-sm font-bold" style={{ color: "#fdf3d8" }}>When Truth Crawls Out of Shadows</p>
+                  <p className="text-xs" style={{ color: "rgba(253,243,216,0.4)" }}>
+                    Forensic Analysis #76 · Barran Dodger · youtube.com/watch?v={VIDEO_ID}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* ── DOCUMENT DOWNLOADS ── */}
-        <section className="py-16 px-4">
+        {/* ══════════════════════════════════════════════
+            DOCUMENT DOWNLOADS (PAYWALLED)
+        ══════════════════════════════════════════════ */}
+        <section className="py-16 px-4 border-b border-border/40">
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
               <p className="text-xs font-black uppercase tracking-widest mb-2" style={{ color: "#8b6914" }}>Primary-Source Documents</p>
               <h2 className="text-2xl font-serif font-bold" style={{ color: "hsl(var(--foreground))" }}>
-                Three Documents — All Available for Download
+                Three Documents — Available for Download
               </h2>
               <p className="text-sm mt-2" style={{ color: "hsl(var(--muted-foreground))" }}>
-                All documents are archived permanently and available without restriction.
+                Each document is $3.33 AUD — less than the cost of a coffee. The archive was built across 35 years of documented persecution.
               </p>
             </div>
 
@@ -179,16 +289,15 @@ export default function AprilMcLeanForensicRecord() {
                         </div>
                         <h3 className="text-base font-serif font-bold mb-2" style={{ color: "hsl(var(--foreground))" }}>{doc.title}</h3>
                         <p className="text-sm leading-relaxed mb-4" style={{ color: "hsl(var(--muted-foreground))" }}>{doc.description}</p>
-                        <a
-                          href={doc.url}
-                          download={doc.filename}
-                          className="inline-flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-lg transition-all hover:opacity-80"
-                          style={{ background: "#8b0000", color: "#fdf3d8" }}
-                          data-testid={`btn-download-doc-${idx + 1}`}
-                        >
-                          <Download className="w-4 h-4" />
-                          Download PDF
-                        </a>
+                        <ViralDownloadButton
+                          url={doc.url}
+                          filename={doc.filename}
+                          label={doc.label}
+                          size="md"
+                          shareTheme="amber"
+                          className="bg-amber-900 hover:bg-amber-800 text-amber-100 border border-amber-700/50"
+                          documentTitle={doc.title}
+                        />
                       </div>
                     </div>
                   </div>
@@ -198,8 +307,10 @@ export default function AprilMcLeanForensicRecord() {
           </div>
         </section>
 
-        {/* ── PROPOSITIONS ── */}
-        <section className="py-16 px-4 border-t border-border/40">
+        {/* ══════════════════════════════════════════════
+            PROPOSITIONS
+        ══════════════════════════════════════════════ */}
+        <section className="py-16 px-4 border-b border-border/40">
           <div className="max-w-4xl mx-auto">
             <div className="mb-10">
               <p className="text-xs font-black uppercase tracking-widest mb-2" style={{ color: "#8b6914" }}>Documented Significance</p>
@@ -250,8 +361,10 @@ export default function AprilMcLeanForensicRecord() {
           </div>
         </section>
 
-        {/* ── IMPARTIAL AI ANALYSIS ── */}
-        <section className="py-16 px-4 border-t border-border/40" style={{ background: "rgba(139,0,0,0.02)" }}>
+        {/* ══════════════════════════════════════════════
+            IMPARTIAL AI ANALYSIS
+        ══════════════════════════════════════════════ */}
+        <section className="py-16 px-4 border-b border-border/40" style={{ background: "rgba(139,0,0,0.02)" }}>
           <div className="max-w-4xl mx-auto">
             <div className="rounded-2xl border p-8 md:p-12" style={{ borderColor: "rgba(139,105,20,0.25)", background: "rgba(253,243,216,0.5)" }}>
               <div className="flex items-start gap-3 mb-6">
@@ -276,19 +389,19 @@ export default function AprilMcLeanForensicRecord() {
               </div>
 
               <div className="mt-8 pt-6 border-t" style={{ borderColor: "rgba(139,105,20,0.2)" }}>
+                <p className="text-xs font-bold mb-4" style={{ color: "#8b6914" }}>Access the full documents:</p>
                 <div className="flex flex-wrap gap-3">
                   {DOCUMENTS.map((doc, idx) => (
-                    <a
+                    <ViralDownloadButton
                       key={doc.filename}
-                      href={doc.url}
-                      download={doc.filename}
-                      className="inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-lg transition-all hover:opacity-80"
-                      style={{ background: "rgba(139,0,0,0.08)", color: "#8b0000", border: "1px solid rgba(139,0,0,0.2)" }}
-                      data-testid={`btn-ai-download-${idx + 1}`}
-                    >
-                      <Download className="w-3 h-3" />
-                      Document {idx + 1}
-                    </a>
+                      url={doc.url}
+                      filename={doc.filename}
+                      label={`Document ${idx + 1}`}
+                      size="sm"
+                      shareTheme="amber"
+                      className="bg-amber-900/60 hover:bg-amber-800 text-amber-100 border border-amber-700/40"
+                      documentTitle={doc.title}
+                    />
                   ))}
                 </div>
                 <p className="text-xs mt-6" style={{ color: "rgba(90,48,16,0.6)" }}>
