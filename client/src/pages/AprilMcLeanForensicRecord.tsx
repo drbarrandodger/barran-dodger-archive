@@ -1,9 +1,8 @@
-import { Download, Shield, ExternalLink, FileText, AlertTriangle } from "lucide-react";
+import { Download, Shield, ExternalLink, FileText, AlertTriangle, Link2 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
-import { BlockchainTimestampBadge } from "@/components/BlockchainTimestampBadge";
 import { motion } from "framer-motion";
 
 const RECORD_DATE = "23 April 2026";
@@ -124,7 +123,10 @@ export default function AprilMcLeanForensicRecord() {
               <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ borderColor: "rgba(139,105,20,0.4)", color: "#8b6914" }}>
                 OHCHR Ref: UR/UST/23/AUS/17
               </span>
-              <BlockchainTimestampBadge date={RECORD_DATE} />
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full" style={{ background: "#1a1033", color: "#a78bfa", border: "1px solid rgba(167,139,250,0.3)" }}>
+                <Link2 className="w-3 h-3" />
+                Bitcoin Blockchain Record · {RECORD_DATE}
+              </span>
             </div>
 
             <h1 className="text-3xl md:text-5xl font-serif font-bold mb-5 leading-tight" style={{ color: "hsl(var(--foreground))" }}>
