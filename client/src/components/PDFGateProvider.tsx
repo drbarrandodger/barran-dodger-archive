@@ -306,9 +306,10 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                       by which this man now refuses to give his life's work away for free.
                     </p>
                     <p className="text-amber-200 text-[10.5px] leading-relaxed font-medium">
-                      <strong>For less than the cost of a coffee</strong>, you receive an earth-shattering
-                      prophetic testimony — 35 years of documented persecution formally before the International
-                      Criminal Court, blockchain-sealed, incorruptible. That is the apex of reasonable and fair.
+                      The documented suppression of this man's NDIS entitlements alone exceeds{" "}
+                      <strong className="text-amber-300">$42.5 million AUD.</strong>{" "}
+                      $3.33 is not the price of this document.{" "}
+                      <strong>It is the minimum acknowledgment of a life's worth.</strong>
                     </p>
                     <p className="text-amber-300/80 text-[10.5px] leading-relaxed">
                       Every dollar beyond $3.33 is an{" "}
@@ -327,6 +328,26 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
                       <p className="text-amber-400/60 text-xs">Loading secure payment form…</p>
                     </div>
                   )}
+
+                  {/* Academy alternative — decoy anchor for price framing */}
+                  <a
+                    href="/academy"
+                    onClick={close}
+                    className="flex items-center gap-3 rounded-xl border border-amber-800/50 hover:border-amber-600/70 transition-colors px-3.5 py-2.5"
+                    style={{ background: "#1a0c01" }}
+                    data-testid="button-gate-academy-upsell"
+                  >
+                    <div className="text-amber-500 flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-amber-300 text-[10.5px] font-bold leading-tight">Prefer full access? Enrol in the Academy — $333 AUD</p>
+                      <p className="text-zinc-500 text-[9.5px] mt-0.5">12 forensic units · complete archive · certificate · Stripe-secured</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-amber-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </a>
 
                   <p className="text-amber-400/30 text-[9px] text-center">
                     Larger contributions: <a href="/donate" className="underline text-amber-400/60" onClick={close}>/donate</a> · ABN 78 833 496 164

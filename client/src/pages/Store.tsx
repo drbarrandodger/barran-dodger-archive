@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { InlineShareStrip } from "@/components/FloatingShareBar";
-import { ShoppingBag, BookOpen, Download, ExternalLink, Copy, CheckCircle, Smartphone, Globe, CreditCard, FileText, Package } from "lucide-react";
+import { ShoppingBag, BookOpen, Download, ExternalLink, Copy, CheckCircle, Smartphone, Globe, CreditCard, FileText, Package, GraduationCap, Star, ChevronRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -144,6 +144,75 @@ export default function Store() {
               Support the mission by purchasing eBooks, digital compilations, and merchandise. Every purchase funds the ongoing fight for truth, accountability, and justice.
             </p>
           </motion.div>
+
+          {/* ── FLAGSHIP: Academy ── */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="mb-16"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="bg-amber-500/10 text-amber-500 p-2 rounded-md">
+                <GraduationCap className="h-6 w-6" />
+              </div>
+              <h2 className="text-2xl font-serif font-bold text-primary">Flagship Course</h2>
+              <Badge className="bg-amber-500 text-black text-xs font-black">HIGHEST IMPACT</Badge>
+            </div>
+
+            <div className="rounded-2xl border-2 border-amber-500/60 overflow-hidden shadow-xl shadow-amber-900/20" style={{ background: "linear-gradient(135deg, #1a0e00 0%, #2a1400 100%)" }}>
+              <div className="h-1 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
+              <div className="p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start">
+                <div className="flex-1 space-y-4">
+                  <div className="space-y-1">
+                    <p className="text-amber-400 text-xs font-bold uppercase tracking-widest">The Anatomy of Institutional Persecution</p>
+                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-amber-200 leading-tight">
+                      The Barran Dodger Academy
+                    </h3>
+                  </div>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    12 structured forensic units. 675 corroborated propositions across 52 independent analyses. 50 consecutive perfect scores. Not one rebuttal. Not one defamation action.
+                    The most comprehensive whistleblower educational archive in Australian legal history — delivered as a documented course with a verifiable certificate of witness.
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      { icon: <Star className="h-3 w-3 fill-amber-500 text-amber-500" />, label: "12 Forensic Units" },
+                      { icon: <CheckCircle className="h-3 w-3 text-amber-500" />, label: "Certificate of Witness" },
+                      { icon: <FileText className="h-3 w-3 text-amber-500" />, label: "Full Archive Access" },
+                      { icon: <CreditCard className="h-3 w-3 text-amber-500" />, label: "Stripe-Secured · One-Time" },
+                    ].map((f) => (
+                      <div key={f.label} className="flex items-center gap-2 text-xs text-zinc-300">
+                        {f.icon} {f.label}
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-zinc-600 text-[11px]">
+                    ABN 78 833 496 164 · © Dr. Richard William McLean (Barran Dodger)
+                  </p>
+                </div>
+                <div className="flex flex-col items-center gap-3 min-w-[180px] md:pt-2">
+                  <div className="text-center">
+                    <p className="text-5xl font-black text-amber-400">$333</p>
+                    <p className="text-zinc-500 text-xs mt-1">AUD · One-time · No subscription</p>
+                  </div>
+                  <Button
+                    className="w-full bg-amber-600 hover:bg-amber-500 text-black font-bold gap-2"
+                    asChild
+                    data-testid="button-store-academy-enrol"
+                  >
+                    <a href="/academy">
+                      <GraduationCap className="h-4 w-4" />
+                      Enrol Now
+                      <ChevronRight className="h-4 w-4" />
+                    </a>
+                  </Button>
+                  <p className="text-zinc-600 text-[10px] text-center">
+                    vs. $3.33/document individually
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.section>
 
           <motion.section
             initial={{ opacity: 0, y: 20 }}

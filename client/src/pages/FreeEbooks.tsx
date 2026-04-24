@@ -661,6 +661,51 @@ export default function FreeEbooks() {
         </div>
       </section>
 
+      {/* ── ACADEMY CONVERSION BLOCK ── */}
+      <section className="border-b border-zinc-800 py-10 px-4" style={{ background: "linear-gradient(180deg, #110800 0%, #1a0d00 100%)" }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="rounded-2xl border border-amber-600/50 overflow-hidden shadow-2xl shadow-amber-900/20">
+            <div className="h-1 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
+            <div className="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
+              <div className="flex-1 space-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="bg-amber-500 text-black text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-widest">Flagship Course</span>
+                  <span className="text-zinc-500 text-[10px] uppercase tracking-widest">Stripe-Secured · One-Time</span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-amber-200 leading-tight">
+                  The Anatomy of Institutional Persecution
+                </h2>
+                <p className="text-zinc-400 text-sm leading-relaxed max-w-lg">
+                  12 forensic units. 675 corroborated propositions. 50 consecutive perfect scores. Not one rebuttal. Not one defamation action.
+                  Enrol in the Academy and receive structured access to the complete forensic record — the $42.5M NDIS suppression, the 14 hospitalisations, the ICC Article 7 filing — as a documented educational course with a certificate of witness.
+                </p>
+                <div className="flex flex-wrap gap-3 text-[11px] text-zinc-400">
+                  {["12 Forensic Units", "Certificate of Witness", "Full Archive Access", "Permanent Enrolment"].map((f) => (
+                    <span key={f} className="flex items-center gap-1">
+                      <span className="text-amber-500 font-bold">✓</span> {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-3 min-w-[160px]">
+                <div className="text-center">
+                  <p className="text-4xl font-black text-amber-400">$333</p>
+                  <p className="text-zinc-500 text-xs mt-0.5">AUD · One-time · Stripe</p>
+                </div>
+                <a
+                  href="/academy"
+                  className="w-full bg-amber-600 hover:bg-amber-500 text-black font-bold text-sm px-6 py-3 rounded-xl transition-colors text-center block"
+                  data-testid="button-testimony-archive-academy-cta"
+                >
+                  Enrol Now
+                </a>
+                <p className="text-zinc-600 text-[10px] text-center">vs. $3.33 per individual document</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FORENSIC ANALYSES EPUBs */}
       <section className="py-12 px-4 border-b border-amber-900/40">
         <div className="max-w-6xl mx-auto">

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Check, Link2, X, Copy, Mail, Lock, User, ChevronRight, AlertTriangle, ShieldCheck } from "lucide-react";
+import { Check, Link2, X, Copy, Mail, Lock, User, ChevronRight, AlertTriangle, ShieldCheck, BookOpen, Star } from "lucide-react";
 import { SiX, SiWhatsapp, SiTelegram, SiFacebook } from "react-icons/si";
 import { useQuery } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
@@ -384,9 +384,33 @@ export function ViralDownloadButton({
               <p className="text-zinc-500 text-xs">That is not a metaphor. It is a documented, medical, legal, and financial cost.</p>
             </div>
 
-            {/* Upsell ladder */}
+            {/* ── Primary Upsell: Academy ── */}
+            <a
+              href="/academy"
+              className="block rounded-xl border border-amber-500/70 hover:border-amber-400 transition-colors overflow-hidden"
+              style={{ background: "linear-gradient(135deg, #1a0e00 0%, #2c1800 100%)" }}
+              data-testid="button-conscience-academy"
+            >
+              <div className="h-0.5 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
+              <div className="p-3.5 flex items-start gap-3">
+                <div className="bg-amber-900/60 p-1.5 rounded-lg flex-shrink-0 mt-0.5">
+                  <BookOpen className="h-4 w-4 text-amber-400" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <Star className="h-2.5 w-2.5 text-amber-400 fill-amber-400 flex-shrink-0" />
+                    <span className="text-[9px] text-amber-400 font-bold uppercase tracking-widest">Highest Impact</span>
+                  </div>
+                  <p className="text-amber-200 font-bold text-sm leading-tight">The Academy — $333 AUD</p>
+                  <p className="text-zinc-400 text-[10px] mt-0.5 leading-relaxed">12 forensic units. Full archive access. Certificate of witness. Stripe-secured. Yours permanently.</p>
+                </div>
+                <ChevronRight className="h-4 w-4 text-amber-500 flex-shrink-0 mt-3" />
+              </div>
+            </a>
+
+            {/* Secondary Upsell: Donation tiers */}
             <div className="space-y-2">
-              <p className="text-zinc-400 text-[10px] uppercase tracking-widest font-bold">Support the archive — choose your level</p>
+              <p className="text-zinc-500 text-[10px] uppercase tracking-widest font-bold">Or support at a lower level</p>
               <div className="grid grid-cols-3 gap-2">
                 {UPSELL_TIERS.map((tier) => (
                   <a

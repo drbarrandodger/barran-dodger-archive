@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Heart, X, Copy, Check, ChevronDown, ChevronUp, CreditCard, ExternalLink, Flame } from "lucide-react";
+import { Heart, X, Copy, Check, ChevronDown, ChevronUp, CreditCard, ExternalLink, Flame, GraduationCap } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 
@@ -73,6 +73,22 @@ export function FloatingDonateWidget() {
                 <X className="h-4 w-4" />
               </button>
             </div>
+
+            {/* Academy — highest value product */}
+            <a
+              href="/academy"
+              className="flex items-center gap-2.5 bg-amber-950/60 border border-amber-600/50 hover:border-amber-400/70 rounded-xl px-3 py-2.5 transition-colors group"
+              data-testid="button-donate-widget-academy"
+            >
+              <div className="bg-amber-900/60 p-1.5 rounded-lg flex-shrink-0">
+                <GraduationCap className="h-3.5 w-3.5 text-amber-400" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-amber-300 text-[10.5px] font-bold leading-tight">Academy — $333 AUD</p>
+                <p className="text-zinc-500 text-[9px] mt-0.5">12 units · full access · certificate · Stripe</p>
+              </div>
+              <span className="bg-amber-500 text-black text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider flex-shrink-0">Best</span>
+            </a>
 
             {/* Tiers */}
             <div className="grid grid-cols-3 gap-1.5">
