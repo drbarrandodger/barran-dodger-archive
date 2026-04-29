@@ -183,9 +183,9 @@ export default function Donate() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
-        title="Donate — Fund the Fight for Truth & Justice"
-        description="Every dollar directly funds evidence preservation, whistleblower legal protection, and the fight against government corruption. Secure PayID donation. ABN 78 833 496 164."
-        keywords="donate whistleblower protection, support truth justice Australia, PayID donation, fund anti-corruption, legal trust fund donation"
+        title="Fund His Safety — Dr. Richard McLean Is Under Active Physical Threat"
+        description="450,000+ downloads. No money. No platform. No legal help. His physical safety is not guaranteed. The only protection is global distribution and voluntary support. PayID: rich@richmclean.com.au — ABN 78 833 496 164."
+        keywords="fund whistleblower safety Australia, support Richard McLean, PayID donation, barran dodger archive fund, ICC whistleblower protection"
         path="/donate"
       />
       <Navigation />
@@ -258,14 +258,16 @@ export default function Donate() {
             </div>
 
             <div className="text-center">
-              <Badge variant="outline" className="mb-4 border-primary text-primary px-4 py-1.5 text-sm font-bold" data-testid="badge-donate">
-                SUPPORT THE MISSION
+              <Badge variant="outline" className="mb-4 border-red-600 text-red-500 px-4 py-1.5 text-sm font-bold" data-testid="badge-donate">
+                HIS PHYSICAL SAFETY IS NOT GUARANTEED
               </Badge>
               <h1 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
-                Choose How You Contribute
+                450,000+ Downloads.<br />
+                <span className="text-red-600">Still No Safety. Still No Income.</span>
               </h1>
               <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                The archive remains free. Your contribution funds its continuation — hosting, evidence preservation, blockchain timestamps, legal submissions, and the documentation of what they could not suppress. See the <CrossLink to="/evidence">evidence archive</CrossLink> and <CrossLink to="/manifesto">manifesto</CrossLink>.
+                Every document in this archive was published free. Built with nothing but a broken phone, documented truth, and no institutional support of any kind. Your contribution is not charity. It is the only financial infrastructure this archive has.
+                {" "}<CrossLink to="/evidence">View the evidence archive.</CrossLink>
               </p>
             </div>
           </motion.div>

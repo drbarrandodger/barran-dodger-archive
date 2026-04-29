@@ -4,6 +4,7 @@ import { ProphecyBanner } from "@/components/ProphecyBanner";
 import heropropheticMain from "@/assets/images/hero-prophetic-testimony-main.png";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { SignificanceEngine } from "@/components/SignificanceEngine";
 import { ArrowRight, BookOpen, Shield, FileText, Scale, Download, Star, Lock, Unlock } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 
@@ -262,6 +263,9 @@ export default function NewHomePage() {
           </div>
         </div>
       </section>
+
+      {/* ─── SIGNIFICANCE ENGINE ──────────────────────────────── */}
+      <SignificanceEngine />
 
       {/* ─── PATHWAY NAVIGATION CARDS ─────────────────────────── */}
       <section className="py-20 px-4">

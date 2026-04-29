@@ -5,6 +5,7 @@ import { createServer } from "http";
 import path from "path";
 import fs from "fs";
 import { storage } from "./storage";
+import { prependReceiptToPDF } from "./pdfReceiptInjector";
 
 const app = express();
 
@@ -156,6 +157,19 @@ app.use('/documents', async (req: Request, res: Response, next: NextFunction) =>
   res.setHeader('Content-Type', TRACKED_EXTENSIONS[ext]);
   res.setHeader('Content-Disposition', ['.pdf', '.mp3', '.mp4', '.jpeg', '.jpg', '.png'].includes(ext) ? 'inline' : 'attachment');
   res.setHeader('Cache-Control', 'no-store');
+
+  if (ext === '.pdf') {
+    try {
+      const rawBuf = fs.readFileSync(filePath);
+      const docTitle = path.basename(req.path, '.pdf').replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      const finalBuf = await prependReceiptToPDF(rawBuf, docTitle);
+      res.setHeader('Content-Length', finalBuf.length);
+      return res.end(finalBuf);
+    } catch {
+      return res.sendFile(filePath, (err) => { if (err) next(); });
+    }
+  }
+
   res.sendFile(filePath, (err) => {
     if (err) next();
   });

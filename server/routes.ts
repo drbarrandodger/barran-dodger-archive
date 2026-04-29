@@ -12,6 +12,7 @@ import { generateEssayPDF, generateEssayEPUB, COSMIC_ESSAY_DATA } from "./essayP
 import { api } from "@shared/routes";
 import { z } from "zod";
 import { FORENSIC_ANALYSES, generateForensicPDF, getForensicPdfFilename, preGenerateAllForensicPDFs } from "./forensicPdfGenerator";
+import { prependReceiptToPDF } from "./pdfReceiptInjector";
 import { generateForensicEpub, generateMajorPublicationEpub, generateAllForensicEpubsBundle, MAJOR_PUBLICATIONS } from "./epubGenerator";
 import { generateQuietStormFullEssayPDF } from "./quietStormEssayPdf";
 import { generateFumbledYouFullEssayPDF } from "./fumbledYouEssayPdf";
@@ -1196,19 +1197,18 @@ export async function registerRoutes(
     try {
       const filename = getForensicPdfFilename(analysis);
       const staticPath = path.join(FORENSIC_PDF_DIR, filename);
-      if (fs.existsSync(staticPath) && fs.statSync(staticPath).size > 0) {
-        res.setHeader('Content-Type', 'application/pdf');
-        res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-        res.setHeader('Cache-Control', 'public, max-age=86400');
-        return res.sendFile(staticPath);
-      }
-      const buf = await generateForensicPDF(analysis);
-      // cache it for next time
-      try { fs.writeFileSync(staticPath, buf); } catch { /* ok */ }
+      const rawBuf = (fs.existsSync(staticPath) && fs.statSync(staticPath).size > 0)
+        ? fs.readFileSync(staticPath)
+        : await (async () => {
+            const b = await generateForensicPDF(analysis);
+            try { fs.writeFileSync(staticPath, b); } catch { /* ok */ }
+            return b;
+          })();
+      const finalBuf = await prependReceiptToPDF(rawBuf, analysis.title);
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-      res.setHeader('Cache-Control', 'public, max-age=86400');
-      res.end(buf);
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(finalBuf);
     } catch (err: any) {
       res.status(500).json({ message: 'PDF generation failed', error: err.message });
     }
