@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Scale, Mail, Heart, Globe, Shield, Copy, CheckCheck, TrendingUp, BadgeCheck, ExternalLink, Building2, Calendar, MapPin } from "lucide-react";
 import { SiX, SiGithub } from "react-icons/si";
 import { useForm } from "react-hook-form";
@@ -10,6 +10,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useQuery } from "@tanstack/react-query";
+import { StatementOfSignificance } from "@/components/StatementOfSignificance";
+import { AcademicCitation } from "@/components/AcademicCitation";
 
 const PAYID = "rich@richmclean.com.au";
 
@@ -44,16 +47,40 @@ export function Footer() {
     }
   };
 
+  const [location] = useLocation();
+  const { data: stats } = useQuery<{ total: number }>({ queryKey: ["/api/downloads/total"] });
+  const liveTotal = stats?.total ??
+    (typeof window !== "undefined" && (window as any).__BD_DOWNLOAD_TOTAL__
+      ? Number((window as any).__BD_DOWNLOAD_TOTAL__)
+      : 450_000);
+  const pageTitle = typeof document !== "undefined" ? document.title.split("|")[0].trim() : "Barran Dodger Archive";
+
   return (
     <footer style={{ background: "#6b0000" }} className="text-white">
+
+      {/* ── STATEMENT OF SIGNIFICANCE — Bold, site-wide, live counter ── */}
+      <div className="bg-black py-10 px-4 border-b-2 border-red-900">
+        <div className="container mx-auto max-w-5xl">
+          <StatementOfSignificance variant="full" />
+        </div>
+      </div>
+
+      {/* ── ACADEMIC CITATION BLOCK — Per-page, scholarly indexable ── */}
+      <div className="bg-zinc-900 py-8 px-4 border-b border-amber-900/40">
+        <div className="container mx-auto max-w-3xl">
+          <AcademicCitation title={pageTitle} pathname={location} year={2026} />
+        </div>
+      </div>
 
       {/* ── CONVERSION PANEL — Top of footer, maximum visibility ── */}
       <div className="border-b border-amber-600/40" style={{ background: "linear-gradient(180deg, #8b0000 0%, #6b0000 100%)" }}>
         <div className="container mx-auto px-4 md:px-6 py-12">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-4">
+            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-4" data-testid="footer-live-downloads">
               <TrendingUp className="h-4 w-4 text-amber-400" />
-              <span className="text-amber-400 text-xs font-bold uppercase tracking-widest">417,000+ People Have Downloaded This Archive</span>
+              <span className="text-amber-400 text-xs font-bold uppercase tracking-widest">
+                <span className="tabular-nums">{liveTotal.toLocaleString("en-AU")}</span>+ Verified Downloads · Live · Resonance Not Proximity
+              </span>
             </div>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-amber-400 mb-3">
               This Archive Runs on Donations Alone

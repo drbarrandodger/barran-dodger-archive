@@ -318,3 +318,13 @@ export function getJsonLdForPath(pathname: string): Record<string, unknown>[] {
 export function renderJsonLdScript(schemas: Record<string, unknown>[]): string {
   return schemas.map(schema => `<script type="application/ld+json">${JSON.stringify(schema)}</script>`).join("\n");
 }
+
+// Merge the AI-crawler / biblical / Anthropocene / monetisation schemas into every page
+import { aiCrawlerSchemasForPath } from "./seoAiCrawler";
+const _origGetJsonLdForPath = getJsonLdForPath;
+export function getEnhancedJsonLdForPath(pathname: string): Record<string, unknown>[] {
+  return [
+    ..._origGetJsonLdForPath(pathname),
+    ...aiCrawlerSchemasForPath(pathname),
+  ];
+}

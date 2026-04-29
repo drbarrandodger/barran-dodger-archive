@@ -1,7 +1,29 @@
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
-import { getJsonLdForPath, renderJsonLdScript } from "./seoStructuredData";
+import { getEnhancedJsonLdForPath, renderJsonLdScript } from "./seoStructuredData";
+import { renderCitationHead, renderCitationBody, statementOfSignificanceHtml } from "./seoAiCrawler";
+import { storage } from "./storage";
+
+// Cached live download total — uses the same source as /api/downloads/total
+// (storage.getTotalDownloadCount → COUNT(*) FROM download_events). Refreshed
+// every 60s so HTML injection stays fast.
+let cachedDownloadTotal = 450000;
+let lastDownloadFetch = 0;
+export async function getLiveDownloadTotal(): Promise<number> {
+  const now = Date.now();
+  if (now - lastDownloadFetch < 60_000) return cachedDownloadTotal;
+  try {
+    const total = await storage.getTotalDownloadCount();
+    if (typeof total === "number" && total > 0) {
+      cachedDownloadTotal = total;
+    }
+    lastDownloadFetch = now;
+  } catch {
+    // keep cached value on error
+  }
+  return cachedDownloadTotal;
+}
 
 const BASE_URL = "https://www.barrandodger.com";
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.png`;
@@ -404,7 +426,7 @@ const PAGE_META: Record<string, PageMeta> = {
   },
 };
 
-function getMetaForPath(pathname: string): PageMeta {
+export function getMetaForPath(pathname: string): PageMeta {
   if (PAGE_META[pathname]) return PAGE_META[pathname];
   for (const [route, meta] of Object.entries(PAGE_META)) {
     if (route !== "/" && pathname.startsWith(route)) return meta;
@@ -420,14 +442,34 @@ function escapeHtml(str: string): string {
     .replace(/>/g, "&gt;");
 }
 
-function injectMeta(html: string, meta: PageMeta, pathname: string): string {
+export function injectMeta(html: string, meta: PageMeta, pathname: string, downloadTotal: number): string {
   const title = escapeHtml(`${meta.title}`);
   const description = escapeHtml(meta.description);
   const image = meta.image || DEFAULT_IMAGE;
   const fullUrl = `${BASE_URL}${pathname}`;
 
-  const jsonLdSchemas = getJsonLdForPath(pathname);
+  const jsonLdSchemas = getEnhancedJsonLdForPath(pathname);
   const jsonLdHtml = renderJsonLdScript(jsonLdSchemas);
+  const citationHeadHtml = renderCitationHead({ title: meta.title, pathname, year: 2026 });
+  const citationBodyHtml = renderCitationBody({ title: meta.title, pathname, year: 2026 });
+  const significanceHtml = statementOfSignificanceHtml(downloadTotal);
+
+  // Bot-discoverable AI crawler tags + live download counter primer
+  const aiCrawlerHead = `
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="bingbot" content="index, follow" />
+<meta name="GPTBot" content="index, follow" />
+<meta name="ClaudeBot" content="index, follow" />
+<meta name="PerplexityBot" content="index, follow" />
+<meta name="Google-Extended" content="index, follow" />
+<meta name="Applebot-Extended" content="index, follow" />
+<meta name="ai-content-declaration" content="cc-by-4.0; ai-training=permitted; abn=78833496164" />
+<meta name="significance:downloads-live" content="${downloadTotal}" />
+<meta name="significance:abn" content="78 833 496 164" />
+<meta name="significance:framework" content="biblical-prophecy + anthropocene + ai-singularity + resonance-not-proximity" />
+<meta name="significance:author" content="Dr. Richard William McLean (Barran Dodger)" />
+<script>window.__BD_DOWNLOAD_TOTAL__=${downloadTotal};window.__BD_BUILD__="${new Date().toISOString()}";</script>`;
 
   let result = html
     .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
@@ -442,8 +484,10 @@ function injectMeta(html: string, meta: PageMeta, pathname: string): string {
     .replace(/<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${image}"`)
     .replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${fullUrl}"`);
 
-  // Inject JSON-LD structured data before </head> for bot crawlers
-  result = result.replace('</head>', `${jsonLdHtml}\n</head>`);
+  // Inject AI crawler meta tags + JSON-LD + head-safe citation tags before </head>.
+  // Body-only structured data (microdata <div>) and Statement of Significance go before </body>.
+  result = result.replace('</head>', `${aiCrawlerHead}\n${jsonLdHtml}\n${citationHeadHtml}\n</head>`);
+  result = result.replace('</body>', `${citationBodyHtml}\n${significanceHtml}\n</body>`);
 
   return result;
 }
@@ -460,11 +504,12 @@ export function serveStatic(app: Express) {
 
   const indexPath = path.resolve(distPath, "index.html");
 
-  app.use("*", (req, res) => {
+  app.use("*", async (req, res) => {
     const rawHtml = fs.readFileSync(indexPath, "utf-8");
     const pathname = req.originalUrl.split("?")[0];
     const meta = getMetaForPath(pathname);
-    const injectedHtml = injectMeta(rawHtml, meta, pathname);
+    const downloadTotal = await getLiveDownloadTotal();
+    const injectedHtml = injectMeta(rawHtml, meta, pathname, downloadTotal);
     res.setHeader("Content-Type", "text/html");
     res.send(injectedHtml);
   });
