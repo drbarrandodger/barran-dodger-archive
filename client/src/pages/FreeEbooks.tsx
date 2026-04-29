@@ -7,6 +7,7 @@ import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import { DocSharePanel } from "@/components/DocSharePanel";
+import { docUrl } from "@/lib/docUrl";
 
 const coverImages = import.meta.glob('../assets/images/cover-*.png', { eager: true }) as Record<string, { default: string }>;
 
@@ -556,7 +557,7 @@ function ForensicGrid({ showAll }: { showAll: boolean }) {
           const coverKey = FORENSIC_EPUB_COVER_MAP[a.number];
           const coverSrc = coverKey ? getCoverSrc(coverKey) : undefined;
           const epubFilename = `Forensic-Analysis-${String(a.number).padStart(2, "0")}-${a.slug}.epub`;
-          const pdfUrl = FORENSIC_PDF_MAP[a.number];
+          const pdfUrl = FORENSIC_PDF_MAP[a.number] ? docUrl(FORENSIC_PDF_MAP[a.number]) : undefined;
           const isShareOpen = openShare === a.number;
           return (
             <div key={a.number} data-testid={`card-epub-forensic-${a.number}`}
@@ -916,7 +917,7 @@ export default function FreeEbooks() {
                   <div className="p-1.5 flex flex-col gap-1 flex-1">
                     <p className="text-zinc-300 text-[10px] font-medium leading-tight line-clamp-2 group-hover:text-white transition-colors">{doc.title}</p>
                     <div className="mt-auto pt-1">
-                      <a href={`/documents/${doc.file}`} download={doc.file}
+                      <a href={docUrl(`/documents/${doc.file}`)} download={doc.file}
                         data-testid={`btn-pdf-dl-${doc.file}`}
                         onClick={() => fetch(`/api/downloads/pdf-${doc.file.replace(/\.[^/.]+$/, "")}/increment`, { method: "POST" }).catch(() => {})}
                         className="w-full flex items-center justify-center gap-1 bg-amber-800/40 hover:bg-amber-700 border border-amber-700/40 text-amber-300 hover:text-white text-[9px] font-bold px-1.5 py-1 rounded transition-colors">
