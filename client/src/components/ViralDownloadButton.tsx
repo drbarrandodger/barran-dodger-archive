@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Check, Link2, X, Copy, Mail, Lock, User, ChevronRight, AlertTriangle, ShieldCheck, BookOpen, Star } from "lucide-react";
+import { Check, Link2, X, Copy, Mail, Lock, User, ChevronRight, AlertTriangle, ShieldCheck, BookOpen, Star, Download } from "lucide-react";
 import { SiX, SiWhatsapp, SiTelegram, SiFacebook } from "react-icons/si";
+import { DocSharePanel } from "@/components/DocSharePanel";
 import { useQuery } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { slugFromUrl } from "@/components/DownloadCounter";
@@ -498,47 +499,27 @@ export function ViralDownloadButton({
 
       {/* ── SHARE PANEL ── */}
       {phase === "share" && (
-        <div className={`flex flex-wrap items-center gap-2 rounded-xl px-3 py-2.5 animate-in slide-in-from-bottom-2 duration-200 ${shareTheme === "amber" ? "bg-amber-950/80 border border-amber-500/40" : "bg-gray-900/90 border border-green-400/40"}`}>
-          <span className={`text-[11px] font-bold uppercase tracking-wider whitespace-nowrap ${shareTheme === "amber" ? "text-amber-400" : "text-green-400"}`}>
-            Downloaded — now spread it
-          </span>
-          <div className="flex items-center gap-1.5 flex-wrap">
-            {[
-              { href: twitterHref, label: "Share on X", icon: <SiX className="h-3 w-3" /> },
-              { href: waHref, label: "Share on WhatsApp", icon: <SiWhatsapp className="h-3 w-3" /> },
-              { href: tgHref, label: "Share on Telegram", icon: <SiTelegram className="h-3 w-3" /> },
-              { href: fbHref, label: "Share on Facebook", icon: <SiFacebook className="h-3 w-3" /> },
-            ].map(({ href, label: title, icon }) => (
-              <a
-                key={title}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={title}
-                className={`flex items-center justify-center h-7 w-7 rounded transition-colors ${shareTheme === "amber" ? "bg-black border border-amber-500/25 text-amber-400 hover:border-amber-500/60 hover:bg-amber-950" : "bg-gray-800 border border-green-400/25 text-green-400 hover:border-green-400/70 hover:bg-gray-700"}`}
-              >
-                {icon}
-              </a>
-            ))}
+        <div className="animate-in slide-in-from-bottom-2 duration-200 max-w-lg">
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">
+              Downloaded — now spread it
+            </p>
             <button
-              onClick={copyShareLink}
-              title="Copy share message"
-              className={`flex items-center justify-center h-7 w-7 rounded transition-colors ${shareTheme === "amber" ? "bg-black border border-amber-500/25 text-amber-400 hover:border-amber-500/60 hover:bg-amber-950" : "bg-gray-800 border border-green-400/25 text-green-400 hover:border-green-400/70 hover:bg-gray-700"}`}
+              onClick={() => setPhase("idle")}
+              className="text-zinc-700 hover:text-zinc-400 p-0.5"
+              title="Dismiss"
+              data-testid="button-share-dismiss"
             >
-              {shareCopied ? (
-                <Check className={`h-3 w-3 ${shareTheme === "amber" ? "text-amber-300" : "text-green-300"}`} />
-              ) : (
-                <Link2 className="h-3 w-3" />
-              )}
+              <X className="h-3.5 w-3.5" />
             </button>
           </div>
-          <button
-            onClick={() => setPhase("idle")}
-            className={`flex items-center justify-center h-6 w-6 rounded transition-colors ml-auto ${shareTheme === "amber" ? "text-amber-700 hover:text-amber-400" : "text-gray-600 hover:text-gray-400"}`}
-            title="Dismiss"
-          >
-            <X className="h-3.5 w-3.5" />
-          </button>
+          <DocSharePanel
+            documentPath={slugProp ? `/${slugProp}` : url}
+            documentTitle={documentTitle || label}
+            coverFile={slugProp ? `cover-${slugProp}` : undefined}
+            compact={false}
+            defaultExpanded={true}
+          />
         </div>
       )}
     </div>

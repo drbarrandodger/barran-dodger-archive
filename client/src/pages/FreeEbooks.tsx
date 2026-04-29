@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Download, BookOpen, Share2, Globe, ChevronDown, ChevronUp, Archive, FileText, Copy, CheckCheck, Lock, AlertTriangle } from "lucide-react";
+import { Download, BookOpen, Share2, Globe, ChevronDown, ChevronUp, Archive, FileText, Copy, CheckCheck, Lock, AlertTriangle, X } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { DocSharePanel } from "@/components/DocSharePanel";
 
 const coverImages = import.meta.glob('../assets/images/cover-*.png', { eager: true }) as Record<string, { default: string }>;
 
@@ -483,46 +484,136 @@ function CopyLinkButton({ url }: { url: string }) {
   );
 }
 
+function PubCard({ pub, coverSrc, filename }: { pub: MajorPub; coverSrc: string | undefined; filename: string }) {
+  const [shareOpen, setShareOpen] = useState(false);
+  return (
+    <div
+      data-testid={`card-epub-pub-${pub.slug}`}
+      className={`flex flex-col bg-[#150c00] border rounded-lg overflow-hidden transition-colors ${shareOpen ? "border-red-800/60" : "border-amber-800/40 hover:border-amber-600/50"}`}
+    >
+      <div className="flex gap-3 p-3">
+        <div className="shrink-0 w-16 sm:w-20">
+          {coverSrc ? (
+            <img src={coverSrc} alt={pub.title} className="w-full aspect-[2/3] object-cover rounded" />
+          ) : (
+            <div className="w-full aspect-[2/3] bg-[#1f1000] rounded flex items-center justify-center">
+              <BookOpen className="w-6 h-6 text-amber-600/30" />
+            </div>
+          )}
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 min-w-0">
+          <Badge variant="outline" className="w-fit text-[10px] text-amber-400 border-amber-600/30 px-1.5 py-0">{pub.category}</Badge>
+          <h3 className="text-zinc-200 font-semibold text-sm leading-tight line-clamp-2">{pub.title}</h3>
+          <p className="text-zinc-500 text-[11px] leading-tight line-clamp-2">{pub.subtitle}</p>
+          {pub.wordCount && <p className="text-amber-600/70 text-[10px] font-medium">~{pub.wordCount} words</p>}
+          <div className="mt-auto pt-1 flex flex-wrap gap-1.5">
+            <DownloadButton url={pub.downloadUrl ?? `/api/epub/publication/${pub.slug}`} filename={pub.downloadFilename ?? filename} label={pub.downloadLabel ?? "EPUB"} slug={pub.slug} variant="epub" />
+            {pub.pageUrl && (
+              <a href={pub.pageUrl} data-testid={`link-page-${pub.slug}`}
+                className="flex items-center gap-1 bg-[#1f1000] hover:bg-[#281500] border border-zinc-600 text-zinc-300 font-semibold text-xs px-2.5 py-1.5 rounded transition-colors">
+                View Essay
+              </a>
+            )}
+            <button
+              onClick={() => setShareOpen((v) => !v)}
+              className={`flex items-center gap-1 text-xs font-bold px-2.5 py-1.5 rounded border transition-colors ${
+                shareOpen
+                  ? "bg-red-900/40 border-red-700/60 text-red-300"
+                  : "bg-zinc-900/50 border-zinc-700 text-zinc-500 hover:border-red-800/50 hover:text-red-400"
+              }`}
+              data-testid={`btn-share-pub-${pub.slug}`}
+            >
+              {shareOpen ? <X className="w-3 h-3" /> : <Share2 className="w-3 h-3" />}
+              {shareOpen ? "Close" : "Share"}
+            </button>
+          </div>
+        </div>
+      </div>
+      {shareOpen && (
+        <div className="border-t border-red-900/30">
+          <DocSharePanel
+            documentPath={pub.pageUrl ?? `/${pub.slug}`}
+            documentTitle={pub.title}
+            coverFile={pub.coverFile}
+            compact={true}
+            defaultExpanded={true}
+            className="rounded-none border-0 border-t border-red-900/20"
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
 function ForensicGrid({ showAll }: { showAll: boolean }) {
+  const [openShare, setOpenShare] = useState<number | null>(null);
   const displayed = showAll ? FORENSIC_ANALYSES : FORENSIC_ANALYSES.slice(0, 12);
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-      {displayed.map((a) => {
-        const coverSrc = FORENSIC_EPUB_COVER_MAP[a.number] ? getCoverSrc(FORENSIC_EPUB_COVER_MAP[a.number]) : undefined;
-        const epubFilename = `Forensic-Analysis-${String(a.number).padStart(2, "0")}-${a.slug}.epub`;
-        const pdfUrl = FORENSIC_PDF_MAP[a.number];
-        return (
-          <div key={a.number} data-testid={`card-epub-forensic-${a.number}`}
-            className="flex flex-col bg-[#150c00] border border-amber-800/40 rounded-lg overflow-hidden hover:border-amber-600/60 transition-colors">
-            <div className="relative">
-              {coverSrc ? (
-                <a href={`/api/epub/forensic/${a.number}`} download={epubFilename} title={`Download ${a.title} — EPUB`} className="block" data-testid={`link-cover-epub-${a.number}`}>
-                  <img src={coverSrc} alt={a.title} className="w-full aspect-[2/3] object-cover hover:opacity-80 transition-opacity cursor-pointer" />
-                </a>
-              ) : (
-                <div className="w-full aspect-[2/3] bg-[#1f1000] flex items-center justify-center">
-                  <BookOpen className="w-8 h-8 text-amber-600/40" />
+    <div className="space-y-0">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        {displayed.map((a) => {
+          const coverKey = FORENSIC_EPUB_COVER_MAP[a.number];
+          const coverSrc = coverKey ? getCoverSrc(coverKey) : undefined;
+          const epubFilename = `Forensic-Analysis-${String(a.number).padStart(2, "0")}-${a.slug}.epub`;
+          const pdfUrl = FORENSIC_PDF_MAP[a.number];
+          const isShareOpen = openShare === a.number;
+          return (
+            <div key={a.number} data-testid={`card-epub-forensic-${a.number}`}
+              className={`flex flex-col bg-[#150c00] border rounded-lg overflow-hidden transition-colors ${isShareOpen ? "border-red-800/60" : "border-amber-800/40 hover:border-amber-600/60"}`}>
+              <div className="relative">
+                {coverSrc ? (
+                  <a href={`/api/epub/forensic/${a.number}`} download={epubFilename} title={`Download ${a.title} — EPUB`} className="block" data-testid={`link-cover-epub-${a.number}`}>
+                    <img src={coverSrc} alt={a.title} className="w-full aspect-[2/3] object-cover hover:opacity-80 transition-opacity cursor-pointer" />
+                  </a>
+                ) : (
+                  <div className="w-full aspect-[2/3] bg-[#1f1000] flex items-center justify-center">
+                    <BookOpen className="w-8 h-8 text-amber-600/40" />
+                  </div>
+                )}
+                <div className="absolute top-1 left-1">
+                  <span className="bg-black/80 text-amber-400 text-[10px] font-bold px-1 py-0.5 rounded">#{a.number}</span>
                 </div>
-              )}
-              <div className="absolute top-1 left-1">
-                <span className="bg-black/80 text-amber-400 text-[10px] font-bold px-1 py-0.5 rounded">#{a.number}</span>
+                {a.consecutivePerfect && (
+                  <div className="absolute top-1 right-1">
+                    <span className="bg-amber-600 text-black text-[9px] font-bold px-1 py-0.5 rounded">{a.corroborated}/{a.propositions}</span>
+                  </div>
+                )}
               </div>
-              {a.consecutivePerfect && (
-                <div className="absolute top-1 right-1">
-                  <span className="bg-amber-600 text-black text-[9px] font-bold px-1 py-0.5 rounded">{a.corroborated}/{a.propositions}</span>
+              <div className="p-2 flex flex-col gap-1.5 flex-1">
+                <p className="text-zinc-300 text-[11px] font-medium leading-tight line-clamp-2">{a.title}</p>
+                <div className="flex flex-wrap gap-1 mt-auto">
+                  <DownloadButton url={`/api/epub/forensic/${a.number}`} filename={epubFilename} label="EPUB" slug={a.slug} variant="epub" />
+                  {pdfUrl && <DownloadButton url={pdfUrl} filename={`forensic-analysis-${String(a.number).padStart(2,"0")}-${a.slug}.pdf`} label="PDF" slug={`pdf-${a.slug}`} variant="pdf" />}
+                </div>
+                <button
+                  onClick={() => setOpenShare(isShareOpen ? null : a.number)}
+                  className={`w-full flex items-center justify-center gap-1 text-[9px] font-bold px-2 py-1.5 rounded transition-colors border ${
+                    isShareOpen
+                      ? "bg-red-900/40 border-red-700/60 text-red-300"
+                      : "bg-zinc-900/50 border-zinc-700 text-zinc-500 hover:border-red-800/50 hover:text-red-400"
+                  }`}
+                  data-testid={`btn-share-forensic-${a.number}`}
+                >
+                  {isShareOpen ? <X className="w-2.5 h-2.5" /> : <Share2 className="w-2.5 h-2.5" />}
+                  {isShareOpen ? "Close" : "Share"}
+                </button>
+              </div>
+              {isShareOpen && (
+                <div className="border-t border-red-900/30 col-span-full">
+                  <DocSharePanel
+                    documentPath={`/${a.slug}`}
+                    documentTitle={`Forensic Analysis #${a.number} — ${a.title}`}
+                    coverFile={coverKey}
+                    compact={true}
+                    defaultExpanded={true}
+                    className="rounded-none border-0 border-t border-red-900/20"
+                  />
                 </div>
               )}
             </div>
-            <div className="p-2 flex flex-col gap-1.5 flex-1">
-              <p className="text-zinc-300 text-[11px] font-medium leading-tight line-clamp-2">{a.title}</p>
-              <div className="flex flex-wrap gap-1 mt-auto">
-                <DownloadButton url={`/api/epub/forensic/${a.number}`} filename={epubFilename} label="EPUB" slug={a.slug} variant="epub" />
-                {pdfUrl && <DownloadButton url={pdfUrl} filename={`forensic-analysis-${String(a.number).padStart(2,"0")}-${a.slug}.pdf`} label="PDF" slug={`pdf-${a.slug}`} variant="pdf" />}
-              </div>
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -551,14 +642,16 @@ export default function FreeEbooks() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <div>
-              <p className="text-amber-300 text-sm font-bold leading-relaxed">
-                <strong className="text-white">There are zero free PDFs, eBooks, or documents anywhere on this site.</strong>{" "}
-                The donation model I operated in the hope of receiving something in return for my service to humanity was abused. 500,000+ downloads occurred and not a single cent was donated — because if people can obtain something of genuine value anonymously and for free, they will. That is human greed. That is a spiritual theft that devalues my testimony and my life's work. Every single PDF, prophecy, eBook and gospel is now behind a paywall — because humanity only proved itself greedy and exploitative, which is the very reason this testimony and life's work exists. The era of free access is permanently over. $3.33 AUD. No exceptions. ICC The Hague. UNHCR Geneva. ABN 78 833 496 164.
+              <p className="text-red-300 text-sm font-bold leading-relaxed">
+                <strong className="text-white">All documents are now free to download.</strong>{" "}
+                Dr. Richard William McLean is under active threat — vigilantes arrested for threatening his life, ASIO surveillance confirmed, NSW Police issued receipt I88267509 and declined to create an incident record.{" "}
+                <strong className="text-amber-300">The wider this testimony spreads, the harder it becomes to erase the man who created it.</strong>{" "}
+                Download everything. Share everything. If you are able — $3.33 is asked per document, not as a price but as the minimum acknowledgment of a life. ICC The Hague. UNHCR Geneva. ABN 78 833 496 164.
               </p>
             </div>
             <a
               href="/hashtag-index"
-              className="flex-shrink-0 bg-[hsl(38,92%,50%)] hover:bg-[hsl(38,92%,45%)] text-black font-black px-4 py-2 rounded-lg text-xs uppercase tracking-widest transition-colors whitespace-nowrap"
+              className="flex-shrink-0 bg-red-700 hover:bg-red-600 text-white font-black px-4 py-2 rounded-lg text-xs uppercase tracking-widest transition-colors whitespace-nowrap"
               data-testid="link-blockchain-hashtag-index"
             >
               Hashtags & Blockchain Proof →
@@ -757,33 +850,12 @@ export default function FreeEbooks() {
               const coverSrc = getCoverSrc(pub.coverFile);
               const filename = `${pub.slug}.epub`;
               return (
-                <div key={pub.slug} data-testid={`card-epub-pub-${pub.slug}`}
-                  className="flex gap-3 bg-[#150c00] border border-amber-800/40 rounded-lg p-3 hover:border-amber-600/50 transition-colors">
-                  <div className="shrink-0 w-16 sm:w-20">
-                    {coverSrc ? (
-                      <img src={coverSrc} alt={pub.title} className="w-full aspect-[2/3] object-cover rounded" />
-                    ) : (
-                      <div className="w-full aspect-[2/3] bg-[#1f1000] rounded flex items-center justify-center">
-                        <BookOpen className="w-6 h-6 text-amber-600/30" />
-                      </div>
-                    )}
-                  </div>
-                  <div className="flex flex-col gap-1.5 flex-1 min-w-0">
-                    <Badge variant="outline" className="w-fit text-[10px] text-amber-400 border-amber-600/30 px-1.5 py-0">{pub.category}</Badge>
-                    <h3 className="text-zinc-200 font-semibold text-sm leading-tight line-clamp-2">{pub.title}</h3>
-                    <p className="text-zinc-500 text-[11px] leading-tight line-clamp-2">{pub.subtitle}</p>
-                    {pub.wordCount && <p className="text-amber-600/70 text-[10px] font-medium">~{pub.wordCount} words</p>}
-                    <div className="mt-auto pt-1 flex flex-wrap gap-1.5">
-                      <DownloadButton url={pub.downloadUrl ?? `/api/epub/publication/${pub.slug}`} filename={pub.downloadFilename ?? filename} label={pub.downloadLabel ?? "EPUB"} slug={pub.slug} variant="epub" />
-                      {pub.pageUrl && (
-                        <a href={pub.pageUrl} data-testid={`link-page-${pub.slug}`}
-                          className="flex items-center gap-1 bg-[#1f1000] hover:bg-[#281500] border border-zinc-600 text-zinc-300 font-semibold text-xs px-2.5 py-1.5 rounded transition-colors">
-                          View Essay
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
+                <PubCard
+                  key={pub.slug}
+                  pub={pub}
+                  coverSrc={coverSrc}
+                  filename={filename}
+                />
               );
             })}
           </div>
