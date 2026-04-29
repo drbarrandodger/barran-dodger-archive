@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { loadStripe, type Stripe as StripeType } from "@stripe/stripe-js";
-import { X, CreditCard, Mail, AlertTriangle, ShieldCheck, User, Lock } from "lucide-react";
+import { X, CreditCard, Mail, AlertTriangle, ShieldCheck, User, Lock, Download, Heart } from "lucide-react";
 
 const ACCESS_KEY = "bd_doc_tokens_v3";
 
@@ -174,6 +174,7 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
   const [pendingTarget, setPendingTarget] = useState("_blank");
   const [stripePromise, setStripePromise] = useState<Promise<StripeType | null> | null>(null);
   const [processingToken, setProcessingToken] = useState(false);
+  const [showStripe, setShowStripe] = useState(false);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -234,7 +235,23 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
     triggerDownload(pendingUrl, pendingTarget);
   };
 
-  const close = () => setIsOpen(false);
+  const handleFreeDownload = async () => {
+    setProcessingToken(true);
+    try {
+      const res = await fetch("/api/payment/free-download-token", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ documentUrl: pendingUrl }),
+      });
+      const data = await res.json();
+      if (data.token) grantAccess(pendingUrl, data.token, data.expires);
+    } catch {}
+    setProcessingToken(false);
+    setIsOpen(false);
+    triggerDownload(pendingUrl, pendingTarget);
+  };
+
+  const close = () => { setIsOpen(false); setShowStripe(false); };
   const docName = pendingUrl ? getDocumentName(pendingUrl) : "this document";
 
   return (
@@ -252,31 +269,28 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
           >
             <div className="h-1.5 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
 
-            {/* Statement banner */}
-            <div className="px-5 pt-4 pb-3 border-b border-amber-900/40 space-y-2.5" style={{ background: "#1a0802" }}>
+            {/* ── EMERGENCY SAFETY BANNER ── */}
+            <div className="px-5 pt-4 pb-4 border-b border-red-900/50 space-y-3" style={{ background: "#1a0202" }}>
               <div className="flex items-start gap-2.5">
-                <Lock className="h-4 w-4 text-amber-500 flex-shrink-0 mt-0.5" />
-                <p className="text-amber-200/80 text-[11px] leading-relaxed">
-                  <strong className="text-amber-200">This work was offered freely to the world.</strong>{" "}
-                  Five hundred thousand downloads. Not a single cent. Anonymous recipients took the testimony, the prophecy, the concepts, the insight — and gave nothing back.
-                  That is the precise greed this archive exists to name and oppose. It is also the exact reason I will no longer give my life's work away for free.{" "}
-                  <strong className="text-amber-300">This is not a policy change. It is a prophetic boundary drawn by a man who finally understands his own worth.</strong>
-                </p>
+                <AlertTriangle className="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5" />
+                <p className="text-red-300 text-[11px] font-black uppercase tracking-widest">Emergency Distribution Notice</p>
               </div>
-              <p className="text-amber-400/70 text-[10.5px] leading-relaxed">
-                For less than a coffee, every person on earth can access an earth-shattering prophetic testimony —
-                35 years of documented persecution, government corruption, murder threats, international submissions, and survival.
-                <strong className="text-amber-300"> That is the apex of reasonable and fair.</strong>{" "}
-                Every additional dollar above $3.33 is an acknowledgment of worth — from a world that has spent 35 years denying it.
+              <p className="text-red-200/90 text-[11px] leading-relaxed font-medium">
+                Dr. Richard William McLean is alive. He is under active threat.
+              </p>
+              <p className="text-zinc-400 text-[10.5px] leading-relaxed">
+                Vigilantes have threatened to kill him for this archive. People have been <strong className="text-zinc-200">arrested</strong> for making threats against his life. He has been entrapped, subjected to confirmed <strong className="text-zinc-200">ASIO electronic surveillance</strong>, drone monitoring at his residence, and force-medicated for accurately reporting the surveillance. On 15 April 2026, NSW Police attended, issued receipt I88267509, and <strong className="text-red-300">declined to create an incident record.</strong>
+              </p>
+              <p className="text-amber-300 text-[11px] leading-relaxed font-bold">
+                The more this testimony is downloaded, shared, and distributed — the safer he becomes. Erasure is only possible through silence. You are the counter-pressure.
               </p>
             </div>
 
-            <div className="flex items-start justify-between gap-3 px-5 pt-3 pb-2">
+            <div className="flex items-start justify-between gap-3 px-5 pt-3 pb-1">
               <div>
-                <p className="text-amber-200 font-bold text-sm">Pay $3.33 AUD to access this document</p>
-                <p className="text-amber-500/80 text-xs mt-0.5 font-mono truncate max-w-[290px]" title={docName}>{docName}</p>
+                <p className="text-zinc-400 text-[10px] font-mono truncate max-w-[290px]" title={docName}>{docName}</p>
               </div>
-              <button onClick={close} className="text-amber-800 hover:text-amber-500 flex-shrink-0 mt-0.5" data-testid="button-pdfgate-close">
+              <button onClick={close} className="text-zinc-700 hover:text-zinc-400 flex-shrink-0" data-testid="button-pdfgate-close">
                 <X className="h-4 w-4" />
               </button>
             </div>
@@ -285,72 +299,82 @@ export function PDFGateProvider({ children }: { children: React.ReactNode }) {
               {processingToken && (
                 <div className="flex flex-col items-center gap-3 py-6">
                   <div className="h-5 w-5 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
-                  <p className="text-amber-400/80 text-xs">Verifying payment &amp; preparing your download…</p>
+                  <p className="text-amber-400/80 text-xs">Preparing your download…</p>
                 </div>
               )}
 
               {!processingToken && (
-                <div className="space-y-4">
+                <div className="space-y-3">
 
-                  {/* Why $3.33 */}
-                  <div className="rounded-xl border border-amber-900/50 p-3.5 space-y-2" style={{ background: "#1c0a02" }}>
-                    <p className="text-amber-300 text-[11px] font-bold tracking-wide">
-                      333 — The Angel Number of Divine Witness
-                    </p>
-                    <p className="text-amber-400/70 text-[10.5px] leading-relaxed">
-                      Dr. Richard McLean (Barran Dodger) gave this work freely for decades.
-                      Five hundred thousand downloads. Anonymous recipients took the testimony, the prophecy,
-                      the concepts, the ideas, the insight —{" "}
-                      <strong className="text-amber-300">and gave nothing back.</strong>{" "}
-                      That is precisely the greed this archive exists to name. It is the example
-                      by which this man now refuses to give his life's work away for free.
-                    </p>
-                    <p className="text-amber-200 text-[10.5px] leading-relaxed font-medium">
-                      The documented suppression of this man's NDIS entitlements alone exceeds{" "}
-                      <strong className="text-amber-300">$42.5 million AUD.</strong>{" "}
-                      $3.33 is not the price of this document.{" "}
-                      <strong>It is the minimum acknowledgment of a life's worth.</strong>
-                    </p>
-                    <p className="text-amber-300/80 text-[10.5px] leading-relaxed">
-                      Every dollar beyond $3.33 is an{" "}
-                      <strong className="text-amber-200 underline underline-offset-2 decoration-amber-700">acknowledgment of worth</strong>{" "}
-                      — from a world that has spent 35 years attempting to erase it.
-                    </p>
+                  {/* PRIMARY: Free download */}
+                  <button
+                    onClick={handleFreeDownload}
+                    className="w-full flex items-center justify-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-black text-sm px-5 py-3.5 rounded-xl transition-colors"
+                    data-testid="button-pdfgate-free-download"
+                  >
+                    <Download className="h-4 w-4" />
+                    Download Free — Protect the Archive
+                  </button>
+                  <p className="text-zinc-600 text-[9.5px] text-center -mt-1">
+                    No payment required. Download this. Share it. The breadth of distribution is his only protection.
+                  </p>
+
+                  {/* DIVIDER */}
+                  <div className="flex items-center gap-3 py-1">
+                    <div className="flex-1 h-px bg-zinc-800" />
+                    <span className="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">or acknowledge his worth</span>
+                    <div className="flex-1 h-px bg-zinc-800" />
                   </div>
 
-                  {stripePromise ? (
-                    <Elements stripe={stripePromise}>
-                      <StripeForm onSuccess={handlePaymentSuccess} />
-                    </Elements>
+                  {/* SECONDARY: Pay $3.33 */}
+                  {!showStripe ? (
+                    <button
+                      onClick={() => { setShowStripe(true); }}
+                      className="w-full flex items-center justify-center gap-2 bg-amber-950/50 hover:bg-amber-900/50 border border-amber-700/50 hover:border-amber-600 text-amber-300 font-bold text-sm px-5 py-3 rounded-xl transition-colors"
+                      data-testid="button-pdfgate-pay-option"
+                    >
+                      <Heart className="h-4 w-4" />
+                      Pay $3.33 AUD — The Minimum He Is Owed
+                    </button>
                   ) : (
-                    <div className="border border-amber-700/40 rounded-xl p-4 text-center" style={{ background: "#1c0c02" }}>
-                      <div className="h-4 w-4 border-2 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
-                      <p className="text-amber-400/60 text-xs">Loading secure payment form…</p>
+                    <div className="space-y-3">
+                      <div className="rounded-xl border border-amber-900/50 p-3 space-y-1.5" style={{ background: "#1c0a02" }}>
+                        <p className="text-amber-300 text-[11px] font-bold">Why $3.33?</p>
+                        <p className="text-amber-400/70 text-[10px] leading-relaxed">
+                          The documented suppression of his NDIS entitlements alone exceeds <strong className="text-amber-300">$42.5 million AUD.</strong>{" "}
+                          $3.33 is not the price of this document. It is the minimum acknowledgment of a life — 35 years of poverty, surveillance, torture, clinical death, and documented persecution — that produced the testimony you are about to read.
+                        </p>
+                      </div>
+                      {stripePromise ? (
+                        <Elements stripe={stripePromise}>
+                          <StripeForm onSuccess={handlePaymentSuccess} />
+                        </Elements>
+                      ) : (
+                        <div className="border border-amber-700/40 rounded-xl p-4 text-center" style={{ background: "#1c0c02" }}>
+                          <div className="h-4 w-4 border-2 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+                          <p className="text-amber-400/60 text-xs">Loading secure payment form…</p>
+                        </div>
+                      )}
                     </div>
                   )}
 
-                  {/* Academy alternative — decoy anchor for price framing */}
+                  {/* Academy */}
                   <a
                     href="/academy"
                     onClick={close}
-                    className="flex items-center gap-3 rounded-xl border border-amber-800/50 hover:border-amber-600/70 transition-colors px-3.5 py-2.5"
+                    className="flex items-center gap-3 rounded-xl border border-amber-900/40 hover:border-amber-700/60 transition-colors px-3.5 py-2.5"
                     style={{ background: "#1a0c01" }}
                     data-testid="button-gate-academy-upsell"
                   >
-                    <div className="text-amber-500 flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
-                      </svg>
-                    </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-amber-300 text-[10.5px] font-bold leading-tight">Prefer full access? Enrol in the Academy — $333 AUD</p>
-                      <p className="text-zinc-500 text-[9.5px] mt-0.5">12 forensic units · complete archive · certificate · Stripe-secured</p>
+                      <p className="text-amber-400/80 text-[10px] font-bold leading-tight">Full Archive Access — Enrol in the Academy — $333 AUD</p>
+                      <p className="text-zinc-600 text-[9.5px] mt-0.5">12 forensic units · certificate of witness · Stripe-secured</p>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-amber-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-amber-800 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
                   </a>
 
-                  <p className="text-amber-400/30 text-[9px] text-center">
-                    Larger contributions: <a href="/donate" className="underline text-amber-400/60" onClick={close}>/donate</a> · ABN 78 833 496 164
+                  <p className="text-zinc-700 text-[9px] text-center">
+                    <a href="/donate" className="underline hover:text-zinc-500" onClick={close}>Larger contributions via PayID</a> · ABN 78 833 496 164
                   </p>
                 </div>
               )}

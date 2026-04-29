@@ -2120,6 +2120,25 @@ export async function registerRoutes(
     }
   });
 
+  // ─── Free download token — no payment required (emergency distribution policy) ──
+  // Issues a valid download token without requiring Stripe payment.
+  // Supports the emergency free-access policy: every document is freely downloadable
+  // so the testimony is irrevocably imprinted on humanity for Dr. McLean's safety.
+  app.post('/api/payment/free-download-token', async (req, res) => {
+    const { documentUrl } = req.body || {};
+    if (!documentUrl) {
+      return res.status(400).json({ error: 'documentUrl required' });
+    }
+    try {
+      const { issueDownloadToken } = await import('./downloadTokens');
+      const token = issueDownloadToken(documentUrl);
+      res.json({ token, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 });
+    } catch (err: any) {
+      console.error('Free token error:', err.message);
+      res.status(500).json({ error: 'Could not issue free download token' });
+    }
+  });
+
   // ─── Server-side download token issuance ──────────────────────────────────
   // Called after Stripe payment is confirmed client-side — verifies with Stripe
   // that the payment actually succeeded, then issues a signed download token.

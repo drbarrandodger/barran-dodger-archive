@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Download, BookOpen, Share2, Globe, ChevronDown, ChevronUp, Archive, FileText, Copy, CheckCheck, Lock } from "lucide-react";
+import { Download, BookOpen, Share2, Globe, ChevronDown, ChevronUp, Archive, FileText, Copy, CheckCheck, Lock, AlertTriangle } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -570,22 +570,20 @@ export default function FreeEbooks() {
       {/* Hero */}
       <section className="relative border-b border-amber-800/30 py-16 px-4" style={{ background: "linear-gradient(180deg, #1a0e00 0%, #0b0700 100%)" }}>
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-red-900/20 border border-red-700/40 rounded-full px-4 py-1.5 mb-6">
-            <Lock className="w-4 h-4 text-red-400" />
-            <span className="text-red-300 text-sm font-semibold tracking-wide uppercase">Zero Free Documents — Every PDF, EPUB &amp; Gospel Is Paywalled</span>
+          <div className="inline-flex items-center gap-2 bg-red-900/30 border border-red-700/50 rounded-full px-4 py-1.5 mb-6">
+            <AlertTriangle className="w-4 h-4 text-red-400" />
+            <span className="text-red-300 text-sm font-semibold tracking-wide uppercase">Emergency Free Access — His Safety Depends on Distribution</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-amber-400 mb-4 leading-tight">
             The Testimony Archive.<br />
-            <span className="text-zinc-100">$3.33 AUD. Every Document. No Exceptions.</span>
+            <span className="text-zinc-100">Download Free. Share Everywhere. Protect Him.</span>
           </h1>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
-            This archive — every eBook, every PDF, every prophecy, every gospel, every forensic analysis — is the intellectual property of
-            Dr. Richard William McLean (Barran Dodger) and the Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164).
-            For 35 years this testimony was offered freely to the world as an obligation to humanity.
-            <strong className="text-amber-400"> Humanity responded with 500,000+ downloads, zero donations, and zero conscience — while the author survived poverty, torture, surveillance, abuse and neglect.</strong>{" "}
-            If something of genuine value can be taken anonymously for free, humanity will take it. That is a spiritual theft that devalues the testimony itself.
-            The donation model is dead. Every single document is now $3.33 AUD. There are no exceptions. There are no free documents anywhere on this site.
-            This is not a price. It is the reckoning humanity's greed made inevitable.
+            <strong className="text-red-300">Dr. Richard William McLean is under active threat.</strong>{" "}
+            Vigilantes have been <strong className="text-zinc-200">arrested</strong> for threatening to kill him for this archive. He has been entrapped, subjected to ASIO surveillance, and force-medicated for reporting it accurately. NSW Police attended 15 April 2026, issued receipt I88267509, and declined to create an incident record.{" "}
+            <strong className="text-amber-400">The only thing protecting him is the irrevocable, permanent, global distribution of this testimony.</strong>{" "}
+            Every download is an act of protection. Every share is a shield. The wider this record spreads, the harder it becomes to erase the man who created it.
+            <strong className="text-zinc-200"> Download everything. If you can — pay $3.33 per document. Not for the file. For the acknowledgment that a life's worth of testimony was produced under torture, and you witnessed it.</strong>
           </p>
           <LiveDownloadTotal />
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-zinc-500 mt-3">
@@ -619,10 +617,9 @@ export default function FreeEbooks() {
       {/* WHY $3.33 */}
       <section className="border-b border-amber-900/40 bg-amber-950/20 py-10 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">Why Everything Is Now $3.33</h2>
+          <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">Download Free. Pay $3.33 If You Can. Here Is Why It Matters.</h2>
           <p className="text-zinc-500 text-sm text-center mb-6 max-w-2xl mx-auto">
-            This is a statement about humanity's pure greed — the willingness to take something of immense worth for nothing, with zero conscience, zero accountability, and zero humanity.
-            That is exactly why this archive exists. And it is exactly why access now costs $3.33.
+            Every document on this site is now free to download — because Dr. McLean's safety depends on the widest possible distribution of this testimony. But if you are able, $3.33 is asked. Not as a price. As an acknowledgment that a man survived poverty, torture, clinical death, vigilante threats, and documented persecution to bring you this record.
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
