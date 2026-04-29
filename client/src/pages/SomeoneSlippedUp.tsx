@@ -329,7 +329,7 @@ export default function SomeoneSlippedUp() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="Fate Sealed — Corroboration Analysis #8" className="w-full rounded-xl border border-orange-900/30 shadow-xl" />
+              <img src={coverImage} alt="Fate Sealed — Corroboration Analysis #8" className="w-full rounded-xl border border-orange-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

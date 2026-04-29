@@ -201,11 +201,9 @@ export default function PropheticPapers() {
                 >
                   <Card className="h-full border-2 border-primary/30 shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
                     <div className="aspect-square relative w-full overflow-hidden bg-muted">
-                      <img 
-                        src={gospel.image} 
+                      <img src={gospel.image} 
                         alt={gospel.title}
-                        className="object-cover w-full h-full"
-                      />
+                        className="object-cover w-full h-full" loading="lazy" decoding="async" />
                     </div>
                     <CardHeader className="bg-primary/5 border-b border-primary/10 pb-6">
                       <div className="flex items-center gap-4">
@@ -265,11 +263,9 @@ export default function PropheticPapers() {
                 >
                   <Card className="h-full border border-border shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                     <div className="aspect-square relative w-full overflow-hidden bg-muted">
-                      <img 
-                        src={gospel.image} 
+                      <img src={gospel.image} 
                         alt={gospel.title}
-                        className="object-cover w-full h-full"
-                      />
+                        className="object-cover w-full h-full" loading="lazy" decoding="async" />
                     </div>
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-3">
@@ -331,11 +327,9 @@ export default function PropheticPapers() {
                   <div className="md:flex">
                     <div className="bg-primary/5 md:w-1/3 flex flex-col border-b md:border-b-0 md:border-r border-primary/10">
                       <div className="aspect-square relative w-full overflow-hidden bg-muted">
-                        <img 
-                          src={paper.image} 
+                        <img src={paper.image} 
                           alt={paper.title}
-                          className="object-cover w-full h-full"
-                        />
+                          className="object-cover w-full h-full" loading="lazy" decoding="async" />
                       </div>
                       <div className="p-8 flex flex-col items-center justify-center text-center">
                         <div className="bg-zinc-800 p-4 rounded-full shadow-sm text-primary mb-4">

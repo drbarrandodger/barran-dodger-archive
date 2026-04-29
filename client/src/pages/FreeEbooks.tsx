@@ -494,7 +494,7 @@ function PubCard({ pub, coverSrc, filename }: { pub: MajorPub; coverSrc: string 
       <div className="flex gap-3 p-3">
         <div className="shrink-0 w-16 sm:w-20">
           {coverSrc ? (
-            <img src={coverSrc} alt={pub.title} className="w-full aspect-[2/3] object-cover rounded" />
+            <img src={coverSrc} alt={pub.title} className="w-full aspect-[2/3] object-cover rounded" loading="lazy" decoding="async" />
           ) : (
             <div className="w-full aspect-[2/3] bg-[#1f1000] rounded flex items-center justify-center">
               <BookOpen className="w-6 h-6 text-amber-600/30" />
@@ -563,7 +563,7 @@ function ForensicGrid({ showAll }: { showAll: boolean }) {
               <div className="relative">
                 {coverSrc ? (
                   <a href={`/api/epub/forensic/${a.number}`} download={epubFilename} title={`Download ${a.title} — EPUB`} className="block" data-testid={`link-cover-epub-${a.number}`}>
-                    <img src={coverSrc} alt={a.title} className="w-full aspect-[2/3] object-cover hover:opacity-80 transition-opacity cursor-pointer" />
+                    <img src={coverSrc} alt={a.title} className="w-full aspect-[2/3] object-cover hover:opacity-80 transition-opacity cursor-pointer" loading="lazy" decoding="async" />
                   </a>
                 ) : (
                   <div className="w-full aspect-[2/3] bg-[#1f1000] flex items-center justify-center">

@@ -776,12 +776,10 @@ export default function UrgentProtectionRequest() {
                 {/* Screenshot */}
                 <div className="flex-shrink-0 md:w-48">
                   <div className="rounded-xl overflow-hidden border border-zinc-700/50 shadow-2xl">
-                    <img
-                      src="/images/brett-ndis-text-murder-warning.png"
+                    <img src="/images/brett-ndis-text-murder-warning.png"
                       alt="SMS from Dr. McLean to Brett NDIS — written murder warning with barrandodger.com link"
                       className="w-full h-auto"
-                      data-testid="img-brett-sms-murder-warning"
-                    />
+                      data-testid="img-brett-sms-murder-warning" loading="lazy" decoding="async" />
                   </div>
                   <p className="text-[10px] text-zinc-500 mt-1.5 text-center">Exhibit — SMS to Brett Butler — April 15, 2026</p>
                 </div>
@@ -964,12 +962,10 @@ export default function UrgentProtectionRequest() {
               {/* Screenshot */}
               <div className="flex flex-col gap-3">
                 <div className="bg-black/60 border border-red-700/40 rounded-xl overflow-hidden">
-                  <img
-                    src={troyDeathThreat}
+                  <img src={troyDeathThreat}
                     alt="Troy — Text message death threat: 'Ur a dead man' and fabricated rape allegation"
                     className="w-full max-w-[340px] mx-auto block"
-                    data-testid="img-troy-death-threat"
-                  />
+                    data-testid="img-troy-death-threat" loading="lazy" decoding="async" />
                 </div>
                 <div className="bg-zinc-900/80 border border-zinc-700/40 rounded-lg p-3">
                   <p className="text-zinc-400 text-[10px] uppercase tracking-wider font-bold mb-1">Screenshot — Preserved Evidence</p>
@@ -1128,7 +1124,7 @@ export default function UrgentProtectionRequest() {
                   <div key={i} className="flex flex-col gap-1.5">
                     <div className="bg-black/60 border border-orange-700/30 rounded-xl overflow-hidden">
                       <img src={img.src} alt={img.label} className="w-full object-cover"
-                        data-testid={`img-houd-evidence-${i}`} />
+                        data-testid={`img-houd-evidence-${i}`} loading="lazy" decoding="async" />
                     </div>
                     <p className="text-orange-300 text-[9px] font-bold uppercase tracking-wider leading-tight">{img.label}</p>
                     <p className="text-zinc-500 text-[9px] leading-snug">{img.sub}</p>
@@ -1196,7 +1192,7 @@ export default function UrgentProtectionRequest() {
                   <div key={i} className="bg-zinc-900/80 border border-red-700/30 rounded-xl overflow-hidden flex flex-col">
                     <div className="bg-black/60">
                       <img src={w.src} alt={`Warning from ${w.visitor}`} className="w-full object-cover"
-                        data-testid={`img-warning-${i}`} />
+                        data-testid={`img-warning-${i}`} loading="lazy" decoding="async" />
                     </div>
                     <div className="p-3 flex flex-col gap-1.5 flex-1">
                       <p className="text-red-300 text-[9px] font-black uppercase tracking-wider">{w.visitor}</p>
@@ -1563,12 +1559,10 @@ export default function UrgentProtectionRequest() {
                   {/* Screenshot 1: Assassination — systematic corruption */}
                   <div className="space-y-2">
                     <div className="rounded-xl overflow-hidden border border-red-800/50 bg-zinc-950">
-                      <img
-                        src={benAssassination}
+                      <img src={benAssassination}
                         alt="Ben NDIS: You've uncovered systematic corruption — they could put a hit on me too"
                         className="w-full object-contain"
-                        data-testid="img-ben-assassination"
-                      />
+                        data-testid="img-ben-assassination" loading="lazy" decoding="async" />
                     </div>
                     <div className="bg-red-950/60 border border-red-800/40 rounded-lg px-3 py-2 text-xs space-y-1">
                       <p className="text-red-300 font-bold uppercase tracking-wide">Ben confirms: "Systematic corruption goes all the way to the top"</p>
@@ -1579,12 +1573,10 @@ export default function UrgentProtectionRequest() {
                   {/* Screenshot 2: Bill Shorten / mental health weaponisation */}
                   <div className="space-y-2">
                     <div className="rounded-xl overflow-hidden border border-amber-800/50 bg-zinc-950">
-                      <img
-                        src={benBillShorten}
+                      <img src={benBillShorten}
                         alt="Ben NDIS: Police want to know if mentally ready to challenge Bill Shorten — mental health used as excuse"
                         className="w-full object-contain"
-                        data-testid="img-ben-bill-shorten"
-                      />
+                        data-testid="img-ben-bill-shorten" loading="lazy" decoding="async" />
                     </div>
                     <div className="bg-amber-950/60 border border-amber-800/40 rounded-lg px-3 py-2 text-xs space-y-1">
                       <p className="text-amber-300 font-bold uppercase tracking-wide">Police tell Ben: Shorten's lawyers will use mental health to discredit</p>
@@ -1595,12 +1587,10 @@ export default function UrgentProtectionRequest() {
                   {/* Screenshot 3: Hitmen caught / she was paid */}
                   <div className="space-y-2">
                     <div className="rounded-xl overflow-hidden border border-red-800/50 bg-zinc-950">
-                      <img
-                        src={benHitmenCaught}
+                      <img src={benHitmenCaught}
                         alt="Ben NDIS: Remember hitmen — they got caught — I thought you were paranoid you were right — she was paid"
                         className="w-full object-contain"
-                        data-testid="img-ben-hitmen-caught"
-                      />
+                        data-testid="img-ben-hitmen-caught" loading="lazy" decoding="async" />
                     </div>
                     <div className="bg-red-950/60 border border-red-800/40 rounded-lg px-3 py-2 text-xs space-y-1">
                       <p className="text-red-300 font-bold uppercase tracking-wide">Ben: "Hitmen caught — I thought you were paranoid. You were right." + "She was paid??"</p>
@@ -1611,12 +1601,10 @@ export default function UrgentProtectionRequest() {
                   {/* Screenshot 4: Consensual sex confirmation by police */}
                   <div className="space-y-2">
                     <div className="rounded-xl overflow-hidden border border-emerald-800/50 bg-zinc-950">
-                      <img
-                        src={benConsensualSex}
+                      <img src={benConsensualSex}
                         alt="Ben NDIS 11 Feb: Police told me about the consensual regretted sex — UN meeting Switzerland — close call"
                         className="w-full object-contain"
-                        data-testid="img-ben-consensual-sex"
-                      />
+                        data-testid="img-ben-consensual-sex" loading="lazy" decoding="async" />
                     </div>
                     <div className="bg-emerald-950/60 border border-emerald-800/40 rounded-lg px-3 py-2 text-xs space-y-1">
                       <p className="text-emerald-300 font-bold uppercase tracking-wide">Ben (11 Feb): "The police told me about the consensual regretted sex"</p>
@@ -1676,12 +1664,10 @@ export default function UrgentProtectionRequest() {
                     <div className="bg-amber-950/80 px-3 py-2 text-xs font-mono text-amber-300 uppercase tracking-widest border-b border-amber-700/30 text-center">
                       Primary Evidence — Scruff Screenshot — Blockchain Archived
                     </div>
-                    <img
-                      src={scruffIasonidisEmbezzle}
+                    <img src={scruffIasonidisEmbezzle}
                       alt="Scruff gay dating app: Man bi 15km away — Embezzlement — Million$$$$ — Wants the husky — Dead"
                       className="w-full object-contain"
-                      data-testid="img-scruff-iasonidis"
-                    />
+                      data-testid="img-scruff-iasonidis" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -1753,12 +1739,10 @@ export default function UrgentProtectionRequest() {
                   <div className="bg-rose-950/80 px-3 py-1.5 text-xs font-mono text-rose-300 uppercase tracking-widest border-b border-rose-800/30 text-center">
                     Herald Sun — "My Descent Into Madness" — 2002 Defamation
                   </div>
-                  <img
-                    src={heraldSunArticle}
+                  <img src={heraldSunArticle}
                     alt="Herald Sun article My Descent Into Madness — defamatory piece based on Dr. McLean's autobiography Recovered Not Cured"
                     className="w-full object-contain"
-                    data-testid="img-herald-sun-defamation"
-                  />
+                    data-testid="img-herald-sun-defamation" loading="lazy" decoding="async" />
                   <div className="bg-red-950/70 px-3 py-2 text-xs text-red-300 text-center font-bold border-t border-red-800/30">
                     "THE HERALD SUN MY OLD EMPLOYER VILIFIES ME — IRONICALLY IT STATES THAT 'ASIO' IS FOLLOWING YOU" — ONLY WEEKS AFTER THIS, I WAS FIRED FROM THE AGE.
                   </div>
@@ -1797,12 +1781,10 @@ export default function UrgentProtectionRequest() {
                     <div className="bg-emerald-950/80 px-3 py-1.5 text-[10px] font-mono text-emerald-300 uppercase tracking-widest border-b border-emerald-800/30 text-center">
                       Ben: "The police told me about the consensual regretted sex"
                     </div>
-                    <img
-                      src={benUnSwitzerland}
+                    <img src={benUnSwitzerland}
                       alt="Ben NDIS: They're going to call you to chair the UN meeting in Switzerland — police told me about the consensual regretted sex"
                       className="w-full object-contain"
-                      data-testid="img-ben-un-switzerland-humiliation"
-                    />
+                      data-testid="img-ben-un-switzerland-humiliation" loading="lazy" decoding="async" />
                   </div>
                   <p className="text-zinc-400 text-xs leading-relaxed">
                     Ben relays police intelligence directly: <em className="text-white">"Yes even the police said it was a close call. The police told me about the consensual regretted sex."</em> Police knew the allegation was fabricated. They briefed Dr. McLean's disability support worker rather than act to protect him. This is institutional participation in the humiliation ritual.
@@ -1813,12 +1795,10 @@ export default function UrgentProtectionRequest() {
                     <div className="bg-amber-950/80 px-3 py-1.5 text-[10px] font-mono text-amber-300 uppercase tracking-widest border-b border-amber-800/30 text-center">
                       Ben: "Police want to know if you are mentally ready to challenge Shorten"
                     </div>
-                    <img
-                      src={benShortenPolice}
+                    <img src={benShortenPolice}
                       alt="Ben NDIS: The police want to know if you are mentally ready to challenge Bill Shorten — his lawyers might use your history of mental health"
                       className="w-full object-contain"
-                      data-testid="img-ben-shorten-police-humiliation"
-                    />
+                      data-testid="img-ben-shorten-police-humiliation" loading="lazy" decoding="async" />
                   </div>
                   <p className="text-zinc-400 text-xs leading-relaxed">
                     Ben relays: <em className="text-white">"The police want to know if you are mentally ready to challenge Bill Shorten in a court of law as his lawyers might use your history of mental health as an excuse to discredit your story."</em> Police knew Shorten's legal strategy before Dr. McLean did. They disclosed Shorten's plan to an NDIS worker. This is institutional intelligence sharing in service of the persecutor.
@@ -1892,12 +1872,10 @@ export default function UrgentProtectionRequest() {
                       <div className="bg-red-950/80 px-3 py-1.5 text-xs font-mono text-red-300 uppercase tracking-widest border-b border-red-800/30 text-center">
                         "She was paid??" — Dr. McLean's realisation in writing
                       </div>
-                      <img
-                        src={benHitmenCaught}
+                      <img src={benHitmenCaught}
                         alt="Ben NDIS: She was paid?? — hitmen caught — agents driving around"
                         className="w-full object-contain"
-                        data-testid="img-fabrication-paid"
-                      />
+                        data-testid="img-fabrication-paid" loading="lazy" decoding="async" />
                     </div>
                     <p className="text-xs text-zinc-400 leading-relaxed">
                       In this exchange, Dr. McLean asks Ben directly: <em className="text-white">"She was paid??"</em> — his documented realisation, in real time, that the female complainant was a paid operative. Ben's prior messages in the same exchange confirm hitmen had already been caught. This is the moment of documented understanding captured in a timestamped SMS.
@@ -1908,12 +1886,10 @@ export default function UrgentProtectionRequest() {
                       <div className="bg-emerald-950/80 px-3 py-1.5 text-xs font-mono text-emerald-300 uppercase tracking-widest border-b border-emerald-800/30 text-center">
                         "Police told me — consensual regretted sex" — Feb 11
                       </div>
-                      <img
-                        src={benConsensualSex}
+                      <img src={benConsensualSex}
                         alt="Ben NDIS 11 Feb: The police told me about the consensual regretted sex"
                         className="w-full object-contain"
-                        data-testid="img-fabrication-police-confirm"
-                      />
+                        data-testid="img-fabrication-police-confirm" loading="lazy" decoding="async" />
                     </div>
                     <p className="text-xs text-zinc-400 leading-relaxed">
                       On 11 February, Ben tells Dr. McLean: <em className="text-white">"The police told me about the consensual regretted sex."</em> Police were briefing Dr. McLean's NDIS support worker — confirming the sex was consensual at police level — rather than acting to protect him from a death threat. This screenshot is an independent third-party record that the allegation was known to be false by police before any formal investigation concluded.
@@ -2101,12 +2077,10 @@ export default function UrgentProtectionRequest() {
                     <div className="bg-amber-950/90 px-3 py-2 text-xs font-mono text-amber-300 uppercase tracking-widest border-b border-amber-700/40 text-center">
                       Primary Evidence — NSW Police Force Card — April 15, 2026 — Archived
                     </div>
-                    <img
-                      src={cstSmithCard}
+                    <img src={cstSmithCard}
                       alt="NSW Police Force card: CST Smith, date 15/4/26, Event Number blank, Tuggerah Lakes Police District, The Entrance Police Station, phone +61 2 4333 2999"
                       className="w-full object-contain"
-                      data-testid="img-cst-smith-card"
-                    />
+                      data-testid="img-cst-smith-card" loading="lazy" decoding="async" />
                     <div className="bg-red-950/80 px-3 py-2 text-xs font-mono text-red-300 uppercase tracking-widest border-t border-red-800/40 text-center">
                       Event Number field — LEFT BLANK
                     </div>

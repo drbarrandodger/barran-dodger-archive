@@ -128,12 +128,10 @@ function ScreenshotExhibit({ src, label, title, caption, color, badgeColor, link
           <span className="text-xs opacity-80 truncate">{title}</span>
         </div>
         <div className="relative overflow-hidden bg-black/60" style={{ maxHeight: "420px" }}>
-          <img
-            src={src}
+          <img src={src}
             alt={title}
             className="w-full object-contain object-top"
-            style={{ maxHeight: "420px" }}
-          />
+            style={{ maxHeight: "420px" }} loading="lazy" decoding="async" />
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
             <ZoomIn className="h-10 w-10 text-white drop-shadow-lg" />
           </div>
@@ -157,7 +155,7 @@ function ScreenshotExhibit({ src, label, title, caption, color, badgeColor, link
       </div>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-2xl p-2 bg-black border-amber-800/40">
-          <img src={src} alt={title} className="w-full rounded-lg object-contain max-h-[85vh]" />
+          <img src={src} alt={title} className="w-full rounded-lg object-contain max-h-[85vh]" loading="lazy" decoding="async" />
           <div className="text-center pt-1 pb-2 space-y-1">
             <p className="text-xs text-zinc-400">{label} — {title}</p>
             {link && (
@@ -3176,12 +3174,10 @@ export default function Evidence() {
                       </div>
                     </div>
                     <div className="flex items-start justify-center md:w-48 shrink-0">
-                      <img 
-                        src="/attached_assets/IMG_3400_1770778178369.png" 
+                      <img src="/attached_assets/IMG_3400_1770778178369.png" 
                         alt="Dr. McLean's apology email sent to all recipients after the terrorist threat email, explaining it was sent out of anxiety and frustration at not being able to see his dying father" 
                         className="rounded-lg border border-green-600/30 max-h-64 object-contain"
-                        data-testid="img-apology-email"
-                      />
+                        data-testid="img-apology-email" loading="lazy" decoding="async" />
                     </div>
                   </div>
 
@@ -3614,11 +3610,9 @@ export default function Evidence() {
                         className="relative group cursor-pointer"
                         data-testid="button-medical-record"
                       >
-                        <img 
-                          src="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" 
+                        <img src="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" 
                           alt="Mercy Health ICU Medical Record" 
-                          className="w-full rounded-lg border border-border shadow-lg group-hover:shadow-xl transition-shadow"
-                        />
+                          className="w-full rounded-lg border border-border shadow-lg group-hover:shadow-xl transition-shadow" loading="lazy" decoding="async" />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
                           <ZoomIn className="h-10 w-10 text-white" />
                         </div>
@@ -3628,11 +3622,9 @@ export default function Evidence() {
                         className="relative group cursor-pointer"
                         data-testid="button-medical-record-2"
                       >
-                        <img 
-                          src="/attached_assets/IMG_3565_1769150725663.jpeg" 
+                        <img src="/attached_assets/IMG_3565_1769150725663.jpeg" 
                           alt="Werribee Mercy Hospital Patient Progress Note - February 2021" 
-                          className="w-full rounded-lg border border-border shadow-lg group-hover:shadow-xl transition-shadow"
-                        />
+                          className="w-full rounded-lg border border-border shadow-lg group-hover:shadow-xl transition-shadow" loading="lazy" decoding="async" />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
                           <ZoomIn className="h-10 w-10 text-white" />
                         </div>
@@ -4063,11 +4055,9 @@ export default function Evidence() {
             >
               <X className="h-6 w-6 text-white" />
             </button>
-            <img 
-              src="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" 
+            <img src="/attached_assets/4B7C9374-BCBF-4A48-B36F-5461DE05D9EA_1769026604082.png" 
               alt="Mercy Health ICU Medical Record - Full Size" 
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
-            />
+              className="max-w-full max-h-[90vh] object-contain rounded-lg" loading="lazy" decoding="async" />
           </div>
         </DialogContent>
       </Dialog>
@@ -4083,11 +4073,9 @@ export default function Evidence() {
             >
               <X className="h-6 w-6 text-white" />
             </button>
-            <img 
-              src="/attached_assets/IMG_3565_1769150725663.jpeg" 
+            <img src="/attached_assets/IMG_3565_1769150725663.jpeg" 
               alt="Werribee Mercy Hospital Patient Progress Note - Full Size" 
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
-            />
+              className="max-w-full max-h-[90vh] object-contain rounded-lg" loading="lazy" decoding="async" />
           </div>
         </DialogContent>
       </Dialog>

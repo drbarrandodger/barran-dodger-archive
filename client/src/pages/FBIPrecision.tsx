@@ -237,7 +237,7 @@ export default function FBIPrecision() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="FBI Precision — Corroboration Analysis #10" className="w-full rounded-xl border border-teal-900/30 shadow-xl" />
+              <img src={coverImage} alt="FBI Precision — Corroboration Analysis #10" className="w-full rounded-xl border border-teal-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

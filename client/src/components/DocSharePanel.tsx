@@ -243,7 +243,7 @@ export function DocSharePanel({
       <div className="p-4 space-y-3.5">
         <div className="flex items-center gap-3 rounded-xl border border-zinc-800 overflow-hidden" style={{ background: "#111" }}>
           {coverSrc ? (
-            <img src={coverSrc} alt={documentTitle} className="h-[72px] w-14 object-cover flex-shrink-0" />
+            <img src={coverSrc} alt={documentTitle} className="h-[72px] w-14 object-cover flex-shrink-0" loading="lazy" decoding="async" />
           ) : (
             <div className="h-[72px] w-14 flex-shrink-0 bg-zinc-900 flex items-center justify-center">
               <Share2 className="h-5 w-5 text-zinc-700" />

@@ -611,7 +611,7 @@ export default function Publications() {
                     <Card className="h-full hover-elevate transition-all border-border/50 flex flex-col" data-testid={`card-publication-${index}`}>
                       {pub.image && (
                         <div className="relative h-48 overflow-hidden rounded-t-lg bg-muted">
-                          <img src={pub.image} alt={pub.title} className="w-full h-full object-cover" />
+                          <img src={pub.image} alt={pub.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                         </div>
                       )}
                       <CardHeader className="flex-none">
@@ -690,7 +690,7 @@ export default function Publications() {
                       <CardContent className="p-4 flex items-start gap-4">
                         {pub.image && (
                           <div className="hidden sm:block w-20 h-20 rounded-lg overflow-hidden bg-muted flex-shrink-0">
-                            <img src={pub.image} alt="" className="w-full h-full object-cover" />
+                            <img src={pub.image} alt="" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                           </div>
                         )}
                         <div className="flex-1 min-w-0">

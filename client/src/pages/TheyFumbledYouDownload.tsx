@@ -401,7 +401,7 @@ export default function TheyFumbledYouDownload() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="They Fumbled You — Analysis #9" className="w-full rounded-xl border border-indigo-900/30 shadow-xl" />
+              <img src={coverImage} alt="They Fumbled You — Analysis #9" className="w-full rounded-xl border border-indigo-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

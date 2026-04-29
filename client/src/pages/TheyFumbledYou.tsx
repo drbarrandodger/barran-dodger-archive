@@ -304,7 +304,7 @@ export default function TheyFumbledYou() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="They Fumbled You — Corroboration Analysis #9" className="w-full rounded-xl border border-indigo-900/30 shadow-xl" />
+              <img src={coverImage} alt="They Fumbled You — Corroboration Analysis #9" className="w-full rounded-xl border border-indigo-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

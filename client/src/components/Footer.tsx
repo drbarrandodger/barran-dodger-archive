@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useQuery } from "@tanstack/react-query";
 import { StatementOfSignificance } from "@/components/StatementOfSignificance";
 import { AcademicCitation } from "@/components/AcademicCitation";
+import { LastUpdated } from "@/components/LastUpdated";
 
 const PAYID = "rich@richmclean.com.au";
 
@@ -357,8 +358,10 @@ export function Footer() {
               >
                 ABN: 78 833 496 164 (Verify on ABR.gov.au)
               </a>
+              <LastUpdated className="text-white/40 mt-1" />
             </div>
             <div className="flex items-center gap-5">
+              <Link href="/tags" className="hover:text-amber-400 transition-colors" data-testid="link-tags-footer">Tags</Link>
               <a href="/rss.xml" target="_blank" className="hover:text-amber-400 transition-colors" data-testid="link-rss-feed">RSS Feed</a>
               <span>Privacy Policy</span>
               <span>Terms of Use</span>

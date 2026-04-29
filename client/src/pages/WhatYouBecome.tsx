@@ -253,7 +253,7 @@ export default function WhatYouBecome() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="This Is What You Will Become — Corroboration Analysis #14" className="w-full rounded-xl border border-sky-900/30 shadow-xl" />
+              <img src={coverImage} alt="This Is What You Will Become — Corroboration Analysis #14" className="w-full rounded-xl border border-sky-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

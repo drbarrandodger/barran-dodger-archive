@@ -306,7 +306,7 @@ export default function DivineExam() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="The Divine Exam Cover" className="w-full rounded-xl border border-amber-900/30 shadow-xl" />
+              <img src={coverImage} alt="The Divine Exam Cover" className="w-full rounded-xl border border-amber-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

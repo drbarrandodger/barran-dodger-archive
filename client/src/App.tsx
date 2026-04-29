@@ -39,6 +39,7 @@ import Publications from "@/pages/Publications";
 import EvidenceVault from "@/pages/EvidenceVault";
 import Store from "@/pages/Store";
 import FreeEbooks from "@/pages/FreeEbooks";
+import Tags from "@/pages/Tags";
 import CopyrightRegister from "@/pages/CopyrightRegister";
 import ForensicCorroborationStillStanding from "@/pages/ForensicCorroborationStillStanding";
 import { ForensicCorroborationKnivesClaps } from "@/pages/ForensicCorroborationKnivesClaps";
@@ -261,6 +262,7 @@ function Router() {
   return (
     <>
       <ScrollToTop />
+      <a id="main-content" tabIndex={-1} className="sr-only">Main content</a>
       <Switch>
         <Route path="/" component={NewHomePage} />
         <Route path="/about" component={About} />
@@ -549,6 +551,8 @@ function Router() {
         <Route path="/gods-grace-resonance-christ" component={GodsGraceBarranDodger} />
         <Route path="/store" component={Store} />
         <Route path="/testimony-archive" component={FreeEbooks} />
+        <Route path="/tags" component={Tags} />
+        <Route path="/tags/:slug" component={Tags} />
         <Route path="/copyright-register" component={CopyrightRegister} />
         <Route path="/forensic-corroboration-still-standing" component={ForensicCorroborationStillStanding} />
         <Route path="/forensic-corroboration-knives-claps" component={ForensicCorroborationKnivesClaps} />

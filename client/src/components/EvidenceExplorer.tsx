@@ -174,8 +174,7 @@ export function EvidenceExplorer() {
                 >
                   <Card className={`h-full transition-all overflow-hidden ${isSelected ? 'border-primary bg-primary/5' : 'hover-elevate'}`}>
                     <div className="aspect-square relative w-full overflow-hidden border-b border-border/50">
-                      <img 
-                        src={
+                      <img src={
                           agency.category === 'medical' ? catMedical :
                           agency.category === 'legal' ? catLegal :
                           agency.category === 'government' ? catNdis :
@@ -183,8 +182,7 @@ export function EvidenceExplorer() {
                           catNdis
                         } 
                         alt={agency.shortName} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100"
-                      />
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100" loading="lazy" decoding="async" />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
                       <div className={`absolute top-2 left-2 w-8 h-8 rounded-full flex items-center justify-center ${categoryColors[agency.category]}`}>
                         <agency.icon className="h-4 w-4 text-white" />

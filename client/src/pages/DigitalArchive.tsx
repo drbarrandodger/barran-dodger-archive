@@ -273,7 +273,7 @@ function DocCard({ doc }: { doc: Doc }) {
     >
       <div className="relative bg-zinc-950 aspect-[3/4] overflow-hidden">
         {cover ? (
-          <img src={cover} alt={doc.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <img src={cover} alt={doc.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center gap-2 p-3">
             <FileText size={28} className="text-zinc-600" />

@@ -250,7 +250,7 @@ export default function UntouchableAgents() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="33 Agents Met in Secret — Corroboration Analysis #12" className="w-full rounded-xl border border-fuchsia-900/30 shadow-xl" />
+              <img src={coverImage} alt="33 Agents Met in Secret — Corroboration Analysis #12" className="w-full rounded-xl border border-fuchsia-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

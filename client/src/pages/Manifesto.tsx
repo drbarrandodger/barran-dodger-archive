@@ -597,11 +597,9 @@ export default function Manifesto() {
               {gospels.map((gospel, index) => (
                 <Card key={gospel.title} className="border border-border hover:border-primary/30 transition-colors overflow-hidden flex flex-col">
                   <div className="aspect-square relative w-full overflow-hidden bg-muted border-b border-primary/10">
-                    <img 
-                      src={(gospel as any).image} 
+                    <img src={(gospel as any).image} 
                       alt={gospel.title}
-                      className="object-cover w-full h-full"
-                    />
+                      className="object-cover w-full h-full" loading="lazy" decoding="async" />
                   </div>
                   <CardHeader className="pb-3">
                     <div className="flex items-start gap-3">

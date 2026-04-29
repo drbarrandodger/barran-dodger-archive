@@ -176,7 +176,7 @@ function HeroCard({ doc }: { doc: TopDoc }) {
       data-testid="card-top-download-1"
     >
       <div className="absolute inset-0">
-        <img src={cover} alt="" className="w-full h-full object-cover object-center opacity-15" />
+        <img src={cover} alt="" className="w-full h-full object-cover object-center opacity-15" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50" />
       </div>
 
@@ -185,7 +185,7 @@ function HeroCard({ doc }: { doc: TopDoc }) {
           <div className="absolute -top-3 -left-3 z-20">
             <span className="flex items-center justify-center w-9 h-9 rounded-full bg-yellow-400 text-black font-black text-lg shadow-lg">1</span>
           </div>
-          <img src={cover} alt={doc.title} className="w-36 md:w-52 rounded-xl shadow-2xl shadow-yellow-500/30 border-2 border-yellow-400/30" />
+          <img src={cover} alt={doc.title} className="w-36 md:w-52 rounded-xl shadow-2xl shadow-yellow-500/30 border-2 border-yellow-400/30" loading="lazy" decoding="async" />
         </div>
 
         <div className="flex-1 space-y-3">
@@ -246,7 +246,7 @@ function DocCard({ doc, rank }: { doc: TopDoc; rank: number }) {
       data-testid={`card-top-download-${rank}`}
     >
       <div className="relative w-full aspect-[3/2] overflow-hidden">
-        <img src={cover} alt={doc.title} className="w-full h-full object-cover object-center" />
+        <img src={cover} alt={doc.title} className="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
         <div className={`absolute top-3 left-3 w-8 h-8 rounded-full flex items-center justify-center text-sm font-black border ${colorClass}`}>
           {rank}

@@ -145,7 +145,6 @@ export function generateMainSitemap(): string {
     { loc: "/blockchain", lastmod: NOW, changefreq: "weekly", priority: 0.85 },
     { loc: "/legal-status", lastmod: NOW, changefreq: "weekly", priority: 0.9 },
     { loc: "/publications", lastmod: NOW, changefreq: "weekly", priority: 0.85 },
-    { loc: "/honeytrap-infiltration-report", lastmod: LAST_WEEK, changefreq: "monthly", priority: 0.9 },
     { loc: "/the-conspiracy-against-you", lastmod: LAST_WEEK, changefreq: "monthly", priority: 0.9 },
     { loc: "/master-evidence-register", lastmod: LAST_WEEK, changefreq: "monthly", priority: 0.85 },
     { loc: "/master-forensic-evidence-report", lastmod: LAST_WEEK, changefreq: "monthly", priority: 0.85 },
@@ -231,6 +230,25 @@ export function generateMainSitemap(): string {
     { loc: "/gods-grace-barran-dodger", lastmod: LAST_WEEK, changefreq: "monthly", priority: 0.75 },
     { loc: "/god-has-my-back", lastmod: LAST_WEEK, changefreq: "monthly", priority: 0.8 },
     { loc: "/cosmic-essay", lastmod: LAST_WEEK, changefreq: "monthly", priority: 0.8 },
+    // Tags index + per-tag pages
+    { loc: "/tags", lastmod: NOW, changefreq: "weekly", priority: 0.7 },
+    ...[
+      "honeytrap",
+      "icc",
+      "blockchain",
+      "forensic-analysis",
+      "biblical-prophecy",
+      "ndis",
+      "psychiatric-detention",
+      "anthropocene",
+      "safety-threat",
+      "resonance",
+    ].map((slug): Entry => ({
+      loc: `/tags/${slug}`,
+      lastmod: NOW,
+      changefreq: "weekly",
+      priority: 0.65,
+    })),
   ];
 
   return xml(MAIN_PAGES);

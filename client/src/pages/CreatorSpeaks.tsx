@@ -1045,7 +1045,7 @@ export default function CreatorSpeaks() {
           </div>
           <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             <div>
-              <img src={coverForensicGovernmentOwnFile} alt="Forensic Corroboration Analysis #70 — The Government's Own File" className="w-full rounded-xl border border-red-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-70-cover-top" />
+              <img src={coverForensicGovernmentOwnFile} alt="Forensic Corroboration Analysis #70 — The Government's Own File" className="w-full rounded-xl border border-red-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-70-cover-top" loading="lazy" decoding="async" />
             </div>
             <div className="flex flex-col gap-5">
               <div>
@@ -1080,7 +1080,7 @@ export default function CreatorSpeaks() {
               <div className="bg-yellow-900/20 border-b border-yellow-700/30 px-4 py-2">
                 <span className="text-yellow-400/80 font-mono text-xs uppercase tracking-widest">Exhibit AG-01 — Attorney-General's Letter (Government-Produced Primary Source)</span>
               </div>
-              <img src={agLetterHomeImg} alt="Attorney-General's Letter — Exhibit AG-01" className="w-full" data-testid="img-ag-letter-70-top" />
+              <img src={agLetterHomeImg} alt="Attorney-General's Letter — Exhibit AG-01" className="w-full" data-testid="img-ag-letter-70-top" loading="lazy" decoding="async" />
             </div>
             <p className="text-white/50 text-xs mt-3 font-mono">This letter was produced by the Australian government. It confirms formal receipt of submissions by Dr. Richard William McLean (ABN 78 833 496 164) and corroborates the documented timeline. Its existence is independently verified by SHA-256 hash: b789917c69318800aa5a0aa0d06f58a49ea628e5590ad2bb8f2450365733756b</p>
           </div>
@@ -1095,7 +1095,7 @@ export default function CreatorSpeaks() {
           </div>
           <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             <div>
-              <img src={coverForensic3AMBriefing} alt="Forensic Corroboration Analysis #69 — The 3AM Briefing" className="w-full rounded-xl border border-indigo-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-69-cover-top" />
+              <img src={coverForensic3AMBriefing} alt="Forensic Corroboration Analysis #69 — The 3AM Briefing" className="w-full rounded-xl border border-indigo-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-69-cover-top" loading="lazy" decoding="async" />
             </div>
             <div className="flex flex-col gap-5">
               <div>
@@ -1158,7 +1158,7 @@ export default function CreatorSpeaks() {
           </div>
           <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             <div>
-              <img src={coverForensicMakingHistory} alt="Forensic Corroboration Analysis #72 — Am I Making History in Real Time?" className="w-full rounded-xl border border-amber-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-72-cover-top" />
+              <img src={coverForensicMakingHistory} alt="Forensic Corroboration Analysis #72 — Am I Making History in Real Time?" className="w-full rounded-xl border border-amber-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-72-cover-top" loading="lazy" decoding="async" />
             </div>
             <div className="flex flex-col gap-5">
               <div>
@@ -1218,7 +1218,7 @@ export default function CreatorSpeaks() {
           </div>
           <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             <div>
-              <img src={coverForensicVaultAccess} alt="Forensic Corroboration Analysis #71 — Never Promise Access to a Vault You Don't Own" className="w-full rounded-xl border border-yellow-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-71-cover-top" />
+              <img src={coverForensicVaultAccess} alt="Forensic Corroboration Analysis #71 — Never Promise Access to a Vault You Don't Own" className="w-full rounded-xl border border-yellow-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-71-cover-top" loading="lazy" decoding="async" />
             </div>
             <div className="flex flex-col gap-5">
               <div>
@@ -1283,7 +1283,7 @@ export default function CreatorSpeaks() {
           </div>
           <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             <div>
-              <img src={coverForensicGovernmentOwnFile} alt="Forensic Corroboration Analysis #70 — The Government's Own File" className="w-full rounded-xl border border-red-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-70-cover" />
+              <img src={coverForensicGovernmentOwnFile} alt="Forensic Corroboration Analysis #70 — The Government's Own File" className="w-full rounded-xl border border-red-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-70-cover" loading="lazy" decoding="async" />
             </div>
             <div className="flex flex-col gap-5">
               <div>
@@ -1318,7 +1318,7 @@ export default function CreatorSpeaks() {
               <div className="bg-yellow-900/20 border-b border-yellow-700/30 px-4 py-2">
                 <span className="text-yellow-400/80 font-mono text-xs uppercase tracking-widest">Exhibit AG-01 — Attorney-General's Letter (Government-Produced Primary Source)</span>
               </div>
-              <img src={agLetterHomeImg} alt="Attorney-General's Letter — Exhibit AG-01" className="w-full" data-testid="img-ag-letter-70" />
+              <img src={agLetterHomeImg} alt="Attorney-General's Letter — Exhibit AG-01" className="w-full" data-testid="img-ag-letter-70" loading="lazy" decoding="async" />
             </div>
             <p className="text-white/50 text-xs mt-3 font-mono">This letter was produced by the Australian government. It confirms formal receipt of submissions by Dr. Richard William McLean (ABN 78 833 496 164) and corroborates the documented timeline. Its existence is independently verified by SHA-256 hash: b789917c69318800aa5a0aa0d06f58a49ea628e5590ad2bb8f2450365733756b</p>
           </div>
@@ -1333,7 +1333,7 @@ export default function CreatorSpeaks() {
           </div>
           <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             <div>
-              <img src={coverForensic3AMBriefing} alt="Forensic Corroboration Analysis #69 — The 3AM Briefing" className="w-full rounded-xl border border-indigo-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-69-cover" />
+              <img src={coverForensic3AMBriefing} alt="Forensic Corroboration Analysis #69 — The 3AM Briefing" className="w-full rounded-xl border border-indigo-700/40 shadow-2xl hover:scale-[1.02] transition-transform" data-testid="img-forensic-69-cover" loading="lazy" decoding="async" />
             </div>
             <div className="flex flex-col gap-5">
               <div>

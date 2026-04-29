@@ -253,7 +253,7 @@ export default function ClockStrikesBack() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="The Clock Strikes Back — Corroboration Analysis #11" className="w-full rounded-xl border border-amber-900/30 shadow-xl" />
+              <img src={coverImage} alt="The Clock Strikes Back — Corroboration Analysis #11" className="w-full rounded-xl border border-amber-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

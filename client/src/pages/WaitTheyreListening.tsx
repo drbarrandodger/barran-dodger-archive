@@ -213,7 +213,7 @@ export default function WaitTheyreListening() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-10 items-start">
             <div className="flex-shrink-0">
-              <img src={coverImg} alt="Wait... They're Listening — Forensic Cover" className="w-48 rounded-2xl border border-zinc-700 shadow-2xl" />
+              <img src={coverImg} alt="Wait... They're Listening — Forensic Cover" className="w-48 rounded-2xl border border-zinc-700 shadow-2xl" loading="lazy" decoding="async" />
             </div>
             <div className="flex-1 space-y-4">
               <div className="flex flex-wrap gap-2">
@@ -399,7 +399,7 @@ export default function WaitTheyreListening() {
 
         {/* Download CTA */}
         <section className="bg-zinc-900/40 border border-amber-500/20 rounded-2xl p-8 text-center space-y-4">
-          <img src={coverImg} alt="Wait They're Listening Cover" className="w-28 mx-auto rounded-xl border border-zinc-700 shadow-xl" />
+          <img src={coverImg} alt="Wait They're Listening Cover" className="w-28 mx-auto rounded-xl border border-zinc-700 shadow-xl" loading="lazy" decoding="async" />
           <h3 className="text-white font-bold text-lg">Download as E-Book (PDF)</h3>
           <p className="text-zinc-400 text-sm max-w-md mx-auto">Full academic forensic examination — 10 propositions, primary-source evidence for each, corroboration assessment, and the complete documented record of an unbroken truth. Free to download, share, and distribute.</p>
           <ViralDownloadButton

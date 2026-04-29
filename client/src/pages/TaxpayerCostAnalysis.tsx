@@ -443,16 +443,16 @@ export default function TaxpayerCostAnalysis() {
               <CardContent className="pt-6 space-y-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <a href={benNdisImg1} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-white/10 transition-transform hover:scale-[1.02]" data-testid="link-sms-evidence-1">
-                    <img src={benNdisImg1} alt="SMS from Ben NDIS Provider confirming federal conspiracy to murder and systematic corruption" className="w-full h-auto" />
+                    <img src={benNdisImg1} alt="SMS from Ben NDIS Provider confirming federal conspiracy to murder and systematic corruption" className="w-full h-auto" loading="lazy" decoding="async" />
                   </a>
                   <a href={benNdisImg2} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-white/10 transition-transform hover:scale-[1.02]" data-testid="link-sms-evidence-2">
-                    <img src={benNdisImg2} alt="SMS from Ben confirming hitmen, agents driving around, 'I thought you were just paranoid. You were right'" className="w-full h-auto" />
+                    <img src={benNdisImg2} alt="SMS from Ben confirming hitmen, agents driving around, 'I thought you were just paranoid. You were right'" className="w-full h-auto" loading="lazy" decoding="async" />
                   </a>
                   <a href={benNdisImg3} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-white/10 transition-transform hover:scale-[1.02]" data-testid="link-sms-evidence-3">
-                    <img src={benNdisImg3} alt="SMS from Ben — police ask if mentally ready to challenge Bill Shorten, mental health history used to discredit" className="w-full h-auto" />
+                    <img src={benNdisImg3} alt="SMS from Ben — police ask if mentally ready to challenge Bill Shorten, mental health history used to discredit" className="w-full h-auto" loading="lazy" decoding="async" />
                   </a>
                   <a href={benNdisImg4} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-white/10 transition-transform hover:scale-[1.02]" data-testid="link-sms-evidence-4">
-                    <img src={benNdisImg4} alt="SMS from Ben — documents explain everything, police said it was a close call, UN meeting in Switzerland" className="w-full h-auto" />
+                    <img src={benNdisImg4} alt="SMS from Ben — documents explain everything, police said it was a close call, UN meeting in Switzerland" className="w-full h-auto" loading="lazy" decoding="async" />
                   </a>
                 </div>
 

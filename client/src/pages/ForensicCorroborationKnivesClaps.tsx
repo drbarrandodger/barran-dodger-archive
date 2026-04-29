@@ -165,7 +165,7 @@ export function ForensicCorroborationKnivesClaps() {
 
                 {/* Cover */}
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className="lg:w-72 shrink-0">
-                  <img src={coverImg} alt="Forensic Corroboration Analysis No. 74 Cover" className="w-full rounded-2xl shadow-2xl border border-zinc-700/40" />
+                  <img src={coverImg} alt="Forensic Corroboration Analysis No. 74 Cover" className="w-full rounded-2xl shadow-2xl border border-zinc-700/40" loading="lazy" decoding="async" />
                   <div className="mt-4 space-y-2">
                     <BlockchainTimestampBadge date={TIMESTAMP_DATE} />
                     <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer"

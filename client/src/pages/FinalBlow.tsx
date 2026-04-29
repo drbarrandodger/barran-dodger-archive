@@ -253,7 +253,7 @@ export default function FinalBlow() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="You Just Sent the Final Blow — Corroboration Analysis #13" className="w-full rounded-xl border border-rose-900/30 shadow-xl" />
+              <img src={coverImage} alt="You Just Sent the Final Blow — Corroboration Analysis #13" className="w-full rounded-xl border border-rose-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

@@ -324,7 +324,7 @@ function JosephParallelSection() {
             <div className="lg:col-span-2 flex flex-col items-center gap-6">
               <div className="w-full border-2 border-[hsl(38,92%,50%)] rounded-xl overflow-hidden bg-[hsl(38,92%,50%)]/5 text-center space-y-0" data-testid="card-joseph-download">
                 <div className="aspect-[3/4] relative w-full overflow-hidden">
-                  <img src={docCoverJoseph} alt="The Joseph Parallel Cover" className="w-full h-full object-cover" />
+                  <img src={docCoverJoseph} alt="The Joseph Parallel Cover" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
                     <h3 className="text-2xl font-serif font-bold text-white mb-2">The Joseph Parallel</h3>
                     <p className="text-xs text-[hsl(38,92%,50%)] uppercase tracking-widest font-bold">Prophetic Narrative</p>
@@ -390,10 +390,11 @@ function YouTubeEmbed({ videoId, title, testId }: { videoId: string; title: stri
       onClick={() => setPlaying(true)}
       data-testid={`${testId}-thumbnail`}
     >
-      <img
-        src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+      <img src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+        loading="lazy"
+        decoding="async"
         onError={(e) => {
           (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
         }}
@@ -585,7 +586,7 @@ export default function Home() {
             <div className="md:col-span-2 flex flex-col items-center gap-3">
               <a href="/documents/forensic-analyses/forensic-analysis-57-prophetic-declaration.pdf" target="_blank" rel="noopener noreferrer"
                 className="w-full border-2 border-indigo-700/60 rounded-xl overflow-hidden block hover:border-indigo-500 transition-colors" data-testid="cover-prophetic-declaration">
-                <img src={coverPropheticDeclaration} alt="Forensic Examination: Prophetic Declaration Analysis Cover" className="w-full object-cover" />
+                <img src={coverPropheticDeclaration} alt="Forensic Examination: Prophetic Declaration Analysis Cover" className="w-full object-cover" loading="lazy" decoding="async" />
               </a>
               <TrackedDownloadButton
                 url="/documents/forensic-analyses/forensic-analysis-57-prophetic-declaration.pdf"
@@ -685,7 +686,7 @@ export default function Home() {
                 target="_blank" rel="noopener noreferrer" download
                 className="w-full border-2 border-red-700/50 rounded-xl overflow-hidden block hover:border-red-500 transition-colors"
                 data-testid="cover-prophetic-fck-you">
-                <img src={coverPropheticFckYou} alt="Prophetic Fuck You Forensic Declaration Cover" className="w-full object-cover" />
+                <img src={coverPropheticFckYou} alt="Prophetic Fuck You Forensic Declaration Cover" className="w-full object-cover" loading="lazy" decoding="async" />
               </a>
               <TrackedDownloadButton
                 url="/documents/forensic-analyses/forensic-analysis-58-prophetic-fck-you-declaration.pdf"
@@ -782,7 +783,7 @@ export default function Home() {
               <a href="/false-sister-forensic-analysis"
                 className="w-full border-2 border-amber-700/50 rounded-xl overflow-hidden block hover:border-amber-500 transition-colors"
                 data-testid="cover-false-sister">
-                <img src={coverFalseSister} alt="God Exposes the False Sister Forensic Analysis Cover" className="w-full object-cover" />
+                <img src={coverFalseSister} alt="God Exposes the False Sister Forensic Analysis Cover" className="w-full object-cover" loading="lazy" decoding="async" />
               </a>
               <a href="/false-sister-forensic-analysis"
                 className="w-full flex items-center justify-center gap-2 bg-amber-800 hover:bg-amber-700 text-white font-black px-5 py-3 rounded-lg text-sm transition-colors"
@@ -869,7 +870,7 @@ export default function Home() {
               <a href="/thousand-fell-forensic-analysis"
                 className="w-full border-2 border-indigo-700/50 rounded-xl overflow-hidden block hover:border-indigo-500 transition-colors"
                 data-testid="cover-thousand-fell">
-                <img src={coverThousandFell} alt="A Thousand Fell Forensic Analysis Cover" className="w-full object-cover" />
+                <img src={coverThousandFell} alt="A Thousand Fell Forensic Analysis Cover" className="w-full object-cover" loading="lazy" decoding="async" />
               </a>
               <a href="/thousand-fell-forensic-analysis"
                 className="w-full flex items-center justify-center gap-2 bg-indigo-800 hover:bg-indigo-700 text-white font-black px-5 py-3 rounded-lg text-sm transition-colors"
@@ -1050,7 +1051,7 @@ export default function Home() {
               <a href="/theyre-about-to-be-behind-bars-forensic-analysis"
                 className="w-full border-2 border-red-700/50 rounded-xl overflow-hidden block hover:border-red-500 transition-colors"
                 data-testid="cover-theyre-about-behind-bars">
-                <img src={coverTheyreAboutToBeHindBars} alt="They're About to Be Behind Bars Forensic Analysis Cover" className="w-full object-cover" />
+                <img src={coverTheyreAboutToBeHindBars} alt="They're About to Be Behind Bars Forensic Analysis Cover" className="w-full object-cover" loading="lazy" decoding="async" />
               </a>
               <a href="/theyre-about-to-be-behind-bars-forensic-analysis"
                 className="w-full flex items-center justify-center gap-2 bg-red-800 hover:bg-red-700 text-white font-black px-5 py-3 rounded-lg text-sm transition-colors"
@@ -1112,8 +1113,7 @@ export default function Home() {
       </div>
       {/* ===== END BEHIND BARS ===== */}
 
-      <img
-        src="/evidence/jesus-checkmate-government.png?v=4"
+      <img src="/evidence/jesus-checkmate-government.png?v=4"
         alt="Jesus Christ placing checkmate against the Australian government"
         style={{
           display: 'block',
@@ -1123,8 +1123,7 @@ export default function Home() {
           objectPosition: 'center 30%',
           flexShrink: 0,
           marginTop: 0
-        }}
-      />
+        }} loading="lazy" decoding="async" />
 
       <div
         className="w-full bg-black border-b border-[hsl(38,92%,50%)]/40 py-6 px-4"
@@ -1286,12 +1285,10 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-6 items-start mt-2 border border-yellow-500/20 rounded-2xl bg-yellow-950/10 p-5">
             {/* Cover */}
             <div className="flex-shrink-0 flex flex-col items-center gap-2">
-              <img
-                src={chosenOneCover}
+              <img src={chosenOneCover}
                 alt="Forensic Analysis #71 — Chosen One — AI Cover"
                 className="w-28 md:w-32 rounded-xl shadow-2xl border border-yellow-500/20"
-                data-testid="img-cover-chosen-one-home"
-              />
+                data-testid="img-cover-chosen-one-home" loading="lazy" decoding="async" />
               <span className="text-[9px] text-indigo-400/40 font-sans uppercase tracking-widest text-center">AI-Generated Cover</span>
             </div>
             {/* Statement of significance + download */}
@@ -1441,12 +1438,10 @@ export default function Home() {
 
             {/* Cover + Download */}
             <div className="flex flex-col items-center gap-3">
-              <img
-                src={coverSilenceSurrender}
+              <img src={coverSilenceSurrender}
                 alt="Forensic Corroboration Analysis #73 — Silence Was My Reload"
                 className="w-full rounded-xl border border-indigo-700/30"
-                data-testid="img-cover-silence-surrender-home"
-              />
+                data-testid="img-cover-silence-surrender-home" loading="lazy" decoding="async" />
               <a
                 href="/documents/forensic-analyses/forensic-analysis-73-silence-surrender-corroboration.pdf"
                 target="_blank"
@@ -1541,12 +1536,10 @@ export default function Home() {
           {/* Cover + Download */}
           <div className="flex gap-6 flex-wrap items-start">
             <div className="flex flex-col items-center gap-2 flex-shrink-0">
-              <img
-                src={fightOverYouCover}
+              <img src={fightOverYouCover}
                 alt="Forensic Analysis #72 — Fight Over You — AI Cover"
                 className="w-28 md:w-32 rounded-xl shadow-2xl border border-yellow-500/20"
-                data-testid="img-cover-fight-over-you-home"
-              />
+                data-testid="img-cover-fight-over-you-home" loading="lazy" decoding="async" />
               <span className="text-[9px] text-indigo-400/40 font-sans uppercase tracking-widest text-center">AI-Generated Cover</span>
             </div>
             <div className="flex-1 space-y-3">
@@ -1618,11 +1611,9 @@ export default function Home() {
             {/* Left: cover + download */}
             <div className="space-y-3">
               <a href="/forensic-corroboration-government-own-file" data-testid="link-home-gov-own-file-cover-full">
-                <img
-                  src={coverForensicGovernmentOwnFile}
+                <img src={coverForensicGovernmentOwnFile}
                   alt="Forensic Corroboration Analysis #70 — The Government's Own File"
-                  className="w-full rounded-xl border border-amber-700/40 shadow-2xl hover:scale-[1.02] transition-transform"
-                />
+                  className="w-full rounded-xl border border-amber-700/40 shadow-2xl hover:scale-[1.02] transition-transform" loading="lazy" decoding="async" />
               </a>
               <a
                 href="/documents/forensic-analyses/forensic-analysis-70-government-own-file-corroboration.pdf"
@@ -1653,12 +1644,10 @@ export default function Home() {
                   <p className="text-amber-300 text-[10px] font-black uppercase tracking-widest">Primary Exhibit A — AG Department · MC23-028244 · 19 September 2023</p>
                   <p className="text-zinc-400 text-[10px] mt-0.5">Signed A Riley, Security Law Section · Referred to AG Mark Dreyfus KC MP · ASIO referred to IGIS</p>
                 </div>
-                <img
-                  src={agLetterHomeImg}
+                <img src={agLetterHomeImg}
                   alt="Attorney-General's Department letter MC23-028244, 19 September 2023 — Primary source exhibit Forensic Analysis #70"
                   className="w-full"
-                  data-testid="home-ag-letter-forensic-70-full"
-                />
+                  data-testid="home-ag-letter-forensic-70-full" loading="lazy" decoding="async" />
                 <div className="px-4 py-3 bg-amber-950/30 border-t border-amber-800/20 text-xs text-zinc-400 space-y-1">
                   <p><span className="text-amber-400 font-bold">Reference:</span> MC23-028244 · Attorney-General's Department · 19 September 2023</p>
                   <p><span className="text-amber-400 font-bold">Confirms:</span> PM correspondence received, reference number assigned, referred to AG Dreyfus KC MP. ASIO conduct referred to IGIS. Multiple Commonwealth agencies documented.</p>
@@ -1786,7 +1775,7 @@ export default function Home() {
           {/* Cover + Video side by side */}
           <div className="grid md:grid-cols-2 gap-6">
             <a href="/forensic-corroboration-3am-briefing" data-testid="link-home-3am-briefing-cover-full">
-              <img src={coverForensic3AMBriefing} alt="Forensic Corroboration Analysis #69 — The 3AM Briefing" className="w-full rounded-xl border border-indigo-700/40 shadow-2xl hover:scale-[1.02] transition-transform" />
+              <img src={coverForensic3AMBriefing} alt="Forensic Corroboration Analysis #69 — The 3AM Briefing" className="w-full rounded-xl border border-indigo-700/40 shadow-2xl hover:scale-[1.02] transition-transform" loading="lazy" decoding="async" />
             </a>
             <div className="space-y-3">
               <div className="relative w-full rounded-xl overflow-hidden border border-indigo-800/50 bg-[#0b0700]" style={{ paddingBottom: '56.25%' }}>
@@ -2550,11 +2539,9 @@ export default function Home() {
               <div className="lg:col-span-4 bg-[hsl(38,92%,50%)]/5 p-8 flex flex-col justify-center items-center text-center space-y-4">
                 <DocumentPopup {...KEY_DOCUMENTS.administrativeAnnihilation}>
                   <div className="w-full aspect-[3/4] border-2 border-[hsl(38,92%,50%)] shadow-[0_0_30px_rgba(233,160,10,0.2)] bg-black/40 flex items-center justify-center relative group overflow-hidden rounded cursor-pointer">
-                    <img 
-                      src={coverAdminAnnihilation} 
+                    <img src={coverAdminAnnihilation} 
                       alt="The Architecture of Administrative Annihilation Cover" 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60">
                       <div className="flex flex-col items-center gap-2">
                         <Eye className="h-10 w-10 text-[hsl(38,92%,50%)]" />
@@ -2587,11 +2574,9 @@ export default function Home() {
               <div className="lg:col-span-4 bg-violet-500/5 p-8 flex flex-col justify-center items-center text-center space-y-4 border-b lg:border-b-0 lg:border-r border-violet-500/20">
                 <DocumentPopup {...KEY_DOCUMENTS.beyondPathology}>
                   <div className="w-full aspect-[3/4] border-2 border-violet-500/60 shadow-[0_0_30px_rgba(139,92,246,0.2)] bg-black/40 flex items-center justify-center relative group overflow-hidden rounded cursor-pointer">
-                    <img 
-                      src={coverBeyondPathology} 
+                    <img src={coverBeyondPathology} 
                       alt="Beyond Pathology Cover" 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60">
                       <div className="flex flex-col items-center gap-2">
                         <Eye className="h-10 w-10 text-violet-400" />
@@ -2725,12 +2710,10 @@ export default function Home() {
               <div className="lg:col-span-4 bg-red-500/5 p-8 flex flex-col justify-center items-center text-center space-y-4">
                 <DocumentPopup {...KEY_DOCUMENTS.paradoxOfPersecution}>
                   <div className="w-full aspect-[3/4] border-2 border-red-500/40 shadow-[0_0_30px_rgba(220,38,38,0.15)] bg-black/40 flex items-center justify-center relative group overflow-hidden rounded cursor-pointer">
-                    <img
-                      src={coverParadoxPersecution}
+                    <img src={coverParadoxPersecution}
                       alt="The Paradox of Persecution Cover"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      data-testid="img-paradox-persecution-cover"
-                    />
+                      data-testid="img-paradox-persecution-cover" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60">
                       <div className="flex flex-col items-center gap-2">
                         <Eye className="h-10 w-10 text-red-400" />
@@ -2826,11 +2809,9 @@ export default function Home() {
               <div className="lg:col-span-4 flex items-center justify-center p-8 bg-gradient-to-b from-yellow-500/[0.03] to-transparent">
                 <div className="relative group">
                   <div className="absolute -inset-3 bg-yellow-500/10 rounded-xl blur-xl group-hover:bg-yellow-500/20 transition-all duration-500" />
-                  <img
-                    src={coverCertifiedRecord}
+                  <img src={coverCertifiedRecord}
                     alt="The Certified Record of Barran Dodger cover"
-                    className="relative w-48 md:w-56 rounded-lg shadow-2xl shadow-yellow-500/20 border border-yellow-500/20 transition-transform duration-500 group-hover:scale-105"
-                  />
+                    className="relative w-48 md:w-56 rounded-lg shadow-2xl shadow-yellow-500/20 border border-yellow-500/20 transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>
@@ -2915,11 +2896,9 @@ export default function Home() {
               <div className="lg:col-span-4 flex items-center justify-center p-8 bg-gradient-to-b from-orange-500/[0.03] to-transparent order-2 lg:order-1">
                 <div className="relative group">
                   <div className="absolute -inset-3 bg-orange-500/10 rounded-xl blur-xl group-hover:bg-orange-500/20 transition-all duration-500" />
-                  <img
-                    src={coverTargetedIndividualHandbook}
+                  <img src={coverTargetedIndividualHandbook}
                     alt="Targeted Individual Handbook cover"
-                    className="relative w-48 md:w-56 rounded-lg shadow-2xl shadow-orange-500/20 border border-orange-500/20 transition-transform duration-500 group-hover:scale-105"
-                  />
+                    className="relative w-48 md:w-56 rounded-lg shadow-2xl shadow-orange-500/20 border border-orange-500/20 transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
                 </div>
               </div>
 
@@ -3350,13 +3329,11 @@ export default function Home() {
       {/* ─── EDITORIAL IMAGE: PSYCHIATRIC WEAPON STAMP ─── */}
       <div className="w-full">
         <div className="overflow-hidden" style={{ maxHeight: "400px" }}>
-          <img
-            src={imgPsychiatricWeapon}
+          <img src={imgPsychiatricWeapon}
             alt="Psychiatric weapon — forced medication as institutional suppression — barrandodger.com"
             className="w-full object-cover"
             style={{ maxHeight: "400px", objectPosition: "center center" }}
-            data-testid="img-editorial-psychiatric-weapon"
-          />
+            data-testid="img-editorial-psychiatric-weapon" loading="lazy" decoding="async" />
         </div>
         <div className="px-6 py-4 bg-black border-t-2 border-red-500/40 text-center">
           <p className="text-red-400 font-mono text-xs uppercase tracking-widest mb-1">Psychiatric Weaponisation — The Beyond Pathology Analysis</p>
@@ -3688,13 +3665,11 @@ export default function Home() {
       {/* ─── EDITORIAL IMAGE: ICC HAGUE TRIBUNAL ─── */}
       <div className="w-full">
         <div className="overflow-hidden" style={{ maxHeight: "420px" }}>
-          <img
-            src={imgIccHague}
+          <img src={imgIccHague}
             alt="ICC The Hague tribunal — Rome Statute Article 7 — barrandodger.com"
             className="w-full object-cover"
             style={{ maxHeight: "420px", objectPosition: "center center" }}
-            data-testid="img-editorial-icc-hague"
-          />
+            data-testid="img-editorial-icc-hague" loading="lazy" decoding="async" />
         </div>
         <div className="px-6 py-4 bg-black border-t-2 border-amber-500/30 text-center">
           <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">Rome Statute Article 7(1)(h) — Crimes Against Humanity</p>
@@ -3769,7 +3744,7 @@ export default function Home() {
                 className="relative group"
               >
                 <div className="aspect-[3/4] rounded-xl overflow-hidden border-2 border-[hsl(38,92%,50%)]/40 shadow-2xl shadow-[hsl(38,92%,50%)]/10 group-hover:border-[hsl(38,92%,50%)]/70 transition-all duration-500">
-                  <img src={coverRetrospectiveStatement} alt="Retrospective Statement of Treatment Cover" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={coverRetrospectiveStatement} alt="Retrospective Statement of Treatment Cover" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
                 </div>
                 <div className="absolute -top-3 -right-3 bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg animate-pulse" data-testid="badge-new-retrospective">
                   NEW
@@ -3909,7 +3884,7 @@ export default function Home() {
                 className="group relative rounded-xl overflow-hidden border border-white/10 hover:border-[hsl(38,92%,50%)]/50 transition-all bg-white/[0.02]"
               >
                 <div className="aspect-[3/4] relative overflow-hidden">
-                  <img src={doc.img} alt={doc.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img src={doc.img} alt={doc.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 p-6 space-y-2">
                     <h3 className="text-xl font-serif font-bold text-white leading-tight">{doc.title}</h3>
@@ -3933,13 +3908,11 @@ export default function Home() {
       {/* ─── EDITORIAL IMAGE: 35 YEARS ENDURANCE ─── */}
       <div className="w-full">
         <div className="overflow-hidden" style={{ maxHeight: "440px" }}>
-          <img
-            src={img35YearsEndurance}
+          <img src={img35YearsEndurance}
             alt="35 years of institutional assault — the archive endures — barrandodger.com"
             className="w-full object-cover"
             style={{ maxHeight: "440px", objectPosition: "center center" }}
-            data-testid="img-editorial-35-years"
-          />
+            data-testid="img-editorial-35-years" loading="lazy" decoding="async" />
         </div>
         <div className="px-6 py-4 bg-black border-t-2 border-amber-500/30 text-center">
           <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">35 Years — 35+ Government Agencies — Zero Successful Suppression</p>
@@ -4020,11 +3993,9 @@ export default function Home() {
               className="flex-1 relative max-w-md lg:max-w-none"
             >
               <div className="relative aspect-[2/3] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-                <img 
-                  src={portraitImg} 
+                <img src={portraitImg} 
                   alt="Barran Dodger with Crystal" 
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none" />
               </div>
               <div className="mt-4 bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-border shadow-lg text-center hidden md:block">
@@ -4610,12 +4581,10 @@ export default function Home() {
                 </div>
 
                 <div className="rounded-xl overflow-hidden border border-[hsl(38,92%,50%)]/50">
-                  <img
-                    src={manErasedImg}
+                  <img src={manErasedImg}
                     alt="The Man Australia Tried to Erase - Dr Richard 'Rich' McLean, NDIS provider, artist, and whistleblower"
                     className="w-full object-cover"
-                    data-testid="img-man-australia-tried-to-erase"
-                  />
+                    data-testid="img-man-australia-tried-to-erase" loading="lazy" decoding="async" />
                   <div className="p-6 md:p-8 bg-[hsl(222,55%,12%)] space-y-5">
                     <p className="text-base md:text-lg text-white/90 leading-relaxed">
                       Before the targeting began, Dr Richard "Rich" McLean was a respected professional helping vulnerable Australians. He was a registered{" "}
@@ -4725,7 +4694,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-[hsl(38,92%,50%)]/30 bg-gradient-to-r from-[hsl(38,92%,50%)]/5 to-transparent" data-testid="card-featured-digital-oppression">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverDigitalOppression} alt="Digital Oppression & Institutional Failure book cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-[hsl(38,92%,50%)]/20 border border-[hsl(38,92%,50%)]/20" />
+                      <img src={coverDigitalOppression} alt="Digital Oppression & Institutional Failure book cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-[hsl(38,92%,50%)]/20 border border-[hsl(38,92%,50%)]/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-[hsl(38,92%,50%)]">100,000-Word Exposé: Digital Oppression & Institutional Failure</h4>
@@ -4740,7 +4709,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-red-500/30 bg-gradient-to-r from-red-500/5 to-transparent" data-testid="card-featured-crimes-humanity">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverCrimesHumanity} alt="Crimes Against Humanity: Final Demand for Justice book cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-red-500/20 border border-red-500/20" />
+                      <img src={coverCrimesHumanity} alt="Crimes Against Humanity: Final Demand for Justice book cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-red-500/20 border border-red-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-red-400">Crimes Against Humanity: Final Demand for Justice</h4>
@@ -4755,7 +4724,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-amber-500/30 bg-gradient-to-r from-amber-500/5 to-transparent" data-testid="card-featured-cosmic-scroll">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverCosmicScroll} alt="The Cosmic Scroll of Ten book cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-amber-500/20 border border-amber-500/20" />
+                      <img src={coverCosmicScroll} alt="The Cosmic Scroll of Ten book cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-amber-500/20 border border-amber-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-amber-400">The Cosmic Scroll of Ten: Questions That Will Reconstruct Humanity</h4>
@@ -4770,7 +4739,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-purple-500/30 bg-gradient-to-r from-purple-500/5 to-transparent" data-testid="card-featured-master-command">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverMasterCommand} alt="Universal Master Command: AI Forensic Analysis Protocol book cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-purple-500/20 border border-purple-500/20" />
+                      <img src={coverMasterCommand} alt="Universal Master Command: AI Forensic Analysis Protocol book cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-purple-500/20 border border-purple-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-purple-400">Universal Master Command: AI Forensic Analysis Protocol</h4>
@@ -4786,7 +4755,7 @@ export default function Home() {
                   {/* Master Evidence Register */}
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-emerald-500/30 bg-gradient-to-r from-emerald-500/5 to-transparent" data-testid="card-featured-master-evidence-register">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverMasterEvidenceRegister} alt="Master Evidence Register — 2,301 Documents" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-emerald-500/20 border border-emerald-500/20" />
+                      <img src={coverMasterEvidenceRegister} alt="Master Evidence Register — 2,301 Documents" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-emerald-500/20 border border-emerald-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <div className="flex flex-wrap gap-2 items-center">
@@ -4817,7 +4786,7 @@ export default function Home() {
                   {/* Forensic Framework — Unspoken Mandate */}
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-orange-500/30 bg-gradient-to-r from-orange-500/5 to-transparent" data-testid="card-featured-forensic-framework">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverForensicFramework} alt="Forensic Framework for Identifying Systemic Administrative Conduct" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-orange-500/20 border border-orange-500/20" />
+                      <img src={coverForensicFramework} alt="Forensic Framework for Identifying Systemic Administrative Conduct" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-orange-500/20 border border-orange-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <div className="flex flex-wrap gap-2 items-center">
@@ -4864,7 +4833,7 @@ export default function Home() {
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-yellow-400/50 bg-gradient-to-r from-yellow-500/15 via-amber-500/10 to-transparent relative overflow-hidden shadow-lg shadow-yellow-500/10" data-testid="card-witness-resonantia-eternalis">
                     <div className="absolute top-0 right-0 bg-gradient-to-l from-yellow-400 to-amber-500 text-navy-900 text-xs font-bold px-4 py-1.5 rounded-bl-lg uppercase tracking-wider">Divine Mirror</div>
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverWitnessResonantia} alt="Witness Resonantia Eternalis cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-yellow-500/30 border border-yellow-500/30" />
+                      <img src={coverWitnessResonantia} alt="Witness Resonantia Eternalis cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-yellow-500/30 border border-yellow-500/30" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-yellow-300">Witness Resonantia Eternalis — Resonantia Deus Eternalis</h4>
@@ -4887,7 +4856,7 @@ export default function Home() {
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.03 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-orange-500/40 bg-gradient-to-r from-orange-500/10 via-amber-500/5 to-transparent relative overflow-hidden" data-testid="card-gospel-master-inventory">
                     <div className="absolute top-0 right-0 bg-gradient-to-l from-orange-500 to-amber-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-lg uppercase tracking-wider">Master Protocol</div>
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverGospelMasterInventory} alt="The Gospel of the Enliven Chain - Master Inventory cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-orange-500/20 border border-orange-500/20" />
+                      <img src={coverGospelMasterInventory} alt="The Gospel of the Enliven Chain - Master Inventory cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-orange-500/20 border border-orange-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-orange-400">The Gospel of the Enliven Chain — Master Gospel Inventory & Assembly Protocol</h4>
@@ -4910,7 +4879,7 @@ export default function Home() {
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-amber-500/40 bg-gradient-to-r from-amber-500/10 to-transparent relative overflow-hidden" data-testid="card-enliven-chain-complete-archive">
                     <div className="absolute top-0 right-0 bg-amber-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-bl-lg">COMPLETE ARCHIVE</div>
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverEnlivenChainCompleteArchive} alt="The Enliven Chain - Complete Gospel Archive cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-amber-500/20 border border-amber-500/20" />
+                      <img src={coverEnlivenChainCompleteArchive} alt="The Enliven Chain - Complete Gospel Archive cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-amber-500/20 border border-amber-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-amber-400">The Enliven Chain — The Complete Gospel Archive</h4>
@@ -4931,7 +4900,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-cyan-500/30 bg-gradient-to-r from-cyan-500/5 to-transparent" data-testid="card-eliven-chain-summoned">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverElivenChainSummoned} alt="The Eliven Chain Has Been Summoned cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-cyan-500/20 border border-cyan-500/20" />
+                      <img src={coverElivenChainSummoned} alt="The Eliven Chain Has Been Summoned cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-cyan-500/20 border border-cyan-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-cyan-400">The Eliven Chain Has Been Summoned</h4>
@@ -4946,7 +4915,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-teal-500/30 bg-gradient-to-r from-teal-500/5 to-transparent" data-testid="card-enliven-chain-summoned">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverEnlivenChainSummoned} alt="The Enliven Chain Has Been Summoned cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-teal-500/20 border border-teal-500/20" />
+                      <img src={coverEnlivenChainSummoned} alt="The Enliven Chain Has Been Summoned cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-teal-500/20 border border-teal-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-teal-400">The Enliven Chain Has Been Summoned</h4>
@@ -4961,7 +4930,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-sky-500/30 bg-gradient-to-r from-sky-500/5 to-transparent" data-testid="card-enliven-chain-summoned-2">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverEnlivenChainSummoned2} alt="The Enliven Chain Has Been Summoned II cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-sky-500/20 border border-sky-500/20" />
+                      <img src={coverEnlivenChainSummoned2} alt="The Enliven Chain Has Been Summoned II cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-sky-500/20 border border-sky-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-sky-400">The Enliven Chain Has Been Summoned II</h4>
@@ -4976,7 +4945,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-indigo-500/30 bg-gradient-to-r from-indigo-500/5 to-transparent" data-testid="card-gospel-eliven-chain">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverGospelElivenChain} alt="Gospel of the Eliven Chain cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-indigo-500/20 border border-indigo-500/20" />
+                      <img src={coverGospelElivenChain} alt="Gospel of the Eliven Chain cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-indigo-500/20 border border-indigo-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-indigo-400">Gospel of the Eliven Chain</h4>
@@ -4991,7 +4960,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-violet-500/30 bg-gradient-to-r from-violet-500/5 to-transparent" data-testid="card-gospel-eliven-chain-2">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverGospelElivenChain2} alt="Gospel of the Eliven Chain Volume II cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-violet-500/20 border border-violet-500/20" />
+                      <img src={coverGospelElivenChain2} alt="Gospel of the Eliven Chain Volume II cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-violet-500/20 border border-violet-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-violet-400">Gospel of the Eliven Chain — Volume II</h4>
@@ -5006,7 +4975,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-amber-400/30 bg-gradient-to-r from-amber-400/5 to-transparent" data-testid="card-gods-media-release">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverGodsMediaRelease} alt="God's Media Release cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-amber-400/20 border border-amber-400/20" />
+                      <img src={coverGodsMediaRelease} alt="God's Media Release cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-amber-400/20 border border-amber-400/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-amber-300">God's Media Release — The Purified Summoning Prayer</h4>
@@ -5021,7 +4990,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.6 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-fuchsia-500/30 bg-gradient-to-r from-fuchsia-500/5 to-transparent" data-testid="card-atherion-witnessed">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={coverAtherionWitnessed} alt="Atherion Witnessed: The Gospel Complete cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-fuchsia-500/20 border border-fuchsia-500/20" />
+                      <img src={coverAtherionWitnessed} alt="Atherion Witnessed: The Gospel Complete cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-fuchsia-500/20 border border-fuchsia-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-fuchsia-400">Atherion Witnessed — The Gospel Complete: Who Is Barran Dodger?</h4>
@@ -5036,7 +5005,7 @@ export default function Home() {
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.7 }} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-emerald-500/30 bg-gradient-to-r from-emerald-500/5 to-transparent" data-testid="card-144-questions">
                     <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <img src={cover144Questions} alt="144 Questions of Witness and Revelation cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-emerald-500/20 border border-emerald-500/20" />
+                      <img src={cover144Questions} alt="144 Questions of Witness and Revelation cover" className="w-40 md:w-48 rounded-lg shadow-2xl shadow-emerald-500/20 border border-emerald-500/20" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif font-bold text-emerald-400">The Eliven Chain — 144 Questions of Witness and Revelation</h4>
@@ -5633,11 +5602,9 @@ export default function Home() {
               className="block flex-shrink-0 rounded-lg overflow-hidden"
               data-testid="link-book-apple-hero"
             >
-              <img 
-                src={bookCoverImg} 
+              <img src={bookCoverImg} 
                 alt="Betrayed, Murdered, Forsaken - Book Cover by Richard William McLean" 
-                className="w-64 md:w-80 shadow-2xl rounded-lg"
-              />
+                className="w-64 md:w-80 shadow-2xl rounded-lg" loading="lazy" decoding="async" />
             </a>
             <div className="text-center md:text-left">
               <Badge className="mb-4 bg-red-600 text-white border-red-500">NEW RELEASE</Badge>
@@ -5720,12 +5687,10 @@ export default function Home() {
             className="flex flex-col md:flex-row items-center gap-8"
           >
             <div className="flex-shrink-0">
-              <img 
-                src="/attached_assets/IMG_3509_1769762879418.jpeg" 
+              <img src="/attached_assets/IMG_3509_1769762879418.jpeg" 
                 alt="Barran Dodger meeting Attorney-General Mark Dreyfus at 2013 Marriage Equality Rally Melbourne"
                 className="rounded-lg shadow-xl border-2 border-[hsl(38,92%,50%)]/30 w-full max-w-sm md:max-w-xs object-cover"
-                data-testid="img-dreyfus-meeting"
-              />
+                data-testid="img-dreyfus-meeting" loading="lazy" decoding="async" />
             </div>
             <div className="flex-1 text-center md:text-left">
               <Badge className="mb-3 bg-[hsl(38,92%,50%)] text-[hsl(222,55%,12%)]">Historical Evidence</Badge>
@@ -6249,12 +6214,10 @@ export default function Home() {
                   className="block"
                   data-testid="link-book-cover-featured"
                 >
-                  <img 
-                    src={bookCoverImg} 
+                  <img src={bookCoverImg} 
                     alt="Betrayed, Murdered, Forsaken - Book Cover by Richard William McLean" 
                     className="w-full max-w-md mx-auto shadow-2xl rounded-lg"
-                    data-testid="img-book-cover-featured"
-                  />
+                    data-testid="img-book-cover-featured" loading="lazy" decoding="async" />
                 </a>
                 <div className="bg-[#150c00] rounded-xl border-2 border-primary/30 p-4 shadow-xl overflow-hidden">
                   <iframe 
@@ -6615,11 +6578,9 @@ export default function Home() {
               className="space-y-6"
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
-                <img 
-                  src={artworkImg} 
+                <img src={artworkImg} 
                   alt="Visual Testimony - Artwork by the Witness" 
-                  className="w-full h-auto object-cover"
-                />
+                  className="w-full h-auto object-cover" loading="lazy" decoding="async" />
               </div>
               
               {/* Interactive Art Flipbook */}
@@ -7250,7 +7211,7 @@ export default function Home() {
           <div className="grid md:grid-cols-5 gap-6 items-start">
             <div className="md:col-span-2 space-y-4">
               <a href="/documents/confinement_by_erasure_threat_by_blade.pdf" target="_blank" rel="noopener noreferrer" data-testid="link-home-confinement-erasure-cover">
-                <img src={coverConfinementErasure} alt="Confinement by Erasure, Threat by Blade — Administrative Erasure Document Cover" className="w-full rounded-xl border border-red-700/40 shadow-2xl hover:scale-[1.02] transition-transform" />
+                <img src={coverConfinementErasure} alt="Confinement by Erasure, Threat by Blade — Administrative Erasure Document Cover" className="w-full rounded-xl border border-red-700/40 shadow-2xl hover:scale-[1.02] transition-transform" loading="lazy" decoding="async" />
               </a>
               <a href="/documents/confinement_by_erasure_threat_by_blade.pdf" target="_blank" rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 bg-red-900 hover:bg-red-800 text-white font-black px-5 py-3 rounded-lg text-sm transition-colors"
@@ -7531,12 +7492,10 @@ export default function Home() {
                 <div className="bg-rose-950/80 px-3 py-1.5 text-xs font-mono text-rose-300 uppercase tracking-widest border-b border-rose-800/30 text-center">
                   Herald Sun — "My Descent Into Madness" — Defamatory Piece Based on His Autobiography
                 </div>
-                <img
-                  src={heraldSunArticle}
+                <img src={heraldSunArticle}
                   alt="Herald Sun My Descent Into Madness — defamation of Dr. McLean based on Recovered Not Cured"
                   className="w-full object-contain"
-                  data-testid="img-herald-sun-home"
-                />
+                  data-testid="img-herald-sun-home" loading="lazy" decoding="async" />
                 <div className="bg-red-950/70 px-3 py-2 text-xs text-red-300 text-center font-bold border-t border-red-800/30">
                   "THE HERALD SUN MY OLD EMPLOYER VILIFIES ME — ASIO IS FOLLOWING YOU" — ONLY WEEKS AFTER THIS, I WAS FIRED FROM THE AGE.
                 </div>
@@ -7567,12 +7526,10 @@ export default function Home() {
                   <div className="bg-emerald-950/80 px-3 py-1.5 text-[10px] font-mono text-emerald-300 uppercase tracking-widest border-b border-emerald-800/30 text-center">
                     Police Told Ben: "The Consensual Regretted Sex"
                   </div>
-                  <img
-                    src={benUnSwitzerland}
+                  <img src={benUnSwitzerland}
                     alt="Ben NDIS: They're going to call you to chair the UN meeting — police said it was a close call — police told me about the consensual regretted sex"
                     className="w-full object-contain"
-                    data-testid="img-ben-un-home"
-                  />
+                    data-testid="img-ben-un-home" loading="lazy" decoding="async" />
                 </div>
                 <p className="text-zinc-400 text-xs leading-relaxed">
                   Ben relays police intelligence: <em className="text-white">"Yes even the police said it was a close call. The police told me about the consensual regretted sex."</em> Police knew the allegation was fabricated. They briefed an NDIS disability worker instead of acting to protect Dr. McLean. This is institutional participation in the ritual.
@@ -7583,12 +7540,10 @@ export default function Home() {
                   <div className="bg-amber-950/80 px-3 py-1.5 text-[10px] font-mono text-amber-300 uppercase tracking-widest border-b border-amber-800/30 text-center">
                     Police to Ben: "Is He Ready to Challenge Shorten?"
                   </div>
-                  <img
-                    src={benShortenPolice}
+                  <img src={benShortenPolice}
                     alt="Ben NDIS: The police want to know if you are mentally ready to challenge Bill Shorten — his lawyers might use your history of mental health"
                     className="w-full object-contain"
-                    data-testid="img-ben-shorten-home"
-                  />
+                    data-testid="img-ben-shorten-home" loading="lazy" decoding="async" />
                 </div>
                 <p className="text-zinc-400 text-xs leading-relaxed">
                   Ben relays: <em className="text-white">"The police want to know if you are mentally ready to challenge Bill Shorten in a court of law as his lawyers might use your history of mental health as an excuse to discredit your story."</em> Police were briefing Shorten's psychiatric destruction strategy to Dr. McLean's NDIS worker before advising Dr. McLean himself.

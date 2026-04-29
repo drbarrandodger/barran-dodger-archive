@@ -312,7 +312,7 @@ export default function NowEverybodyKnows() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="Now Everybody Knows Cover" className="w-full rounded-xl border border-violet-900/30 shadow-xl" />
+              <img src={coverImage} alt="Now Everybody Knows Cover" className="w-full rounded-xl border border-violet-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

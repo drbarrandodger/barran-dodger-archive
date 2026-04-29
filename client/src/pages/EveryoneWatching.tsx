@@ -253,7 +253,7 @@ export default function EveryoneWatching() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="Everyone's Watching — Corroboration Analysis #15" className="w-full rounded-xl border border-lime-900/30 shadow-xl" />
+              <img src={coverImage} alt="Everyone's Watching — Corroboration Analysis #15" className="w-full rounded-xl border border-lime-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

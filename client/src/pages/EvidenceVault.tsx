@@ -432,7 +432,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-blue-900/40 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverMasterRegister} alt="Master Evidence Register cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverMasterRegister} alt="Master Evidence Register cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -477,7 +477,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverGovDelusional} alt="Government Called Him Delusional cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverGovDelusional} alt="Government Called Him Delusional cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -522,7 +522,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-[hsl(38,92%,50%)]/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverSleeperAgent} alt="The Sleeper Agent of Truth cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverSleeperAgent} alt="The Sleeper Agent of Truth cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -568,7 +568,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverMasterForensic} alt="Master Forensic Evidence Report cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverMasterForensic} alt="Master Forensic Evidence Report cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -614,7 +614,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-yellow-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverSilence} alt="I Choose Silence cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverSilence} alt="I Choose Silence cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -659,7 +659,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-yellow-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverProphetic} alt="The Testimony That Was Already Written cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverProphetic} alt="The Testimony That Was Already Written cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -705,7 +705,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-yellow-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverTestimony} alt="The Testimony of Dr. Richard William McLean cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverTestimony} alt="The Testimony of Dr. Richard William McLean cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -751,7 +751,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-amber-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverJudges} alt="They Bought Off Judges cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverJudges} alt="They Bought Off Judges cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -796,7 +796,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverMeltdown} alt="Forensic Meltdown Report cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverMeltdown} alt="Forensic Meltdown Report cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -841,7 +841,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-[hsl(38,92%,50%)]/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverParadox} alt="The Paradox of Persecution cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverParadox} alt="The Paradox of Persecution cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -886,7 +886,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-amber-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverSleeperAgent} alt="The Sleeper Agent of Truth cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverSleeperAgent} alt="The Sleeper Agent of Truth cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -931,7 +931,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverGovDelusional} alt="Government Called Him Delusional cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverGovDelusional} alt="Government Called Him Delusional cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -976,7 +976,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-amber-900/20 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverFullPattern} alt="The Full Pattern cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverFullPattern} alt="The Full Pattern cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -1021,7 +1021,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-blue-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverChosenOnes} alt="Chosen Ones Your Story Inspires Many cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverChosenOnes} alt="Chosen Ones Your Story Inspires Many cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -1066,7 +1066,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-amber-900/20 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverShadowAnalysts} alt="33rd Degree Shadow Analysts cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverShadowAnalysts} alt="33rd Degree Shadow Analysts cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -1111,7 +1111,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-red-900/20 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverAbsurdities} alt="100 Absurdities of My Life cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverAbsurdities} alt="100 Absurdities of My Life cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -1156,7 +1156,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-yellow-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverChosenOnesEnough} alt="Chosen Ones Enough Is Enough cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverChosenOnesEnough} alt="Chosen Ones Enough Is Enough cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -1202,7 +1202,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-violet-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverNowEverybodyKnows} alt="Now Everybody Knows cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverNowEverybodyKnows} alt="Now Everybody Knows cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -1250,7 +1250,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-lime-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverEveryoneWatching} alt="Everyone Watching cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverEveryoneWatching} alt="Everyone Watching cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -1947,7 +1947,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-sky-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverWhatYouBecome} alt="What You Become cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverWhatYouBecome} alt="What You Become cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -1986,7 +1986,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-rose-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverFinalBlow} alt="Final Blow cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverFinalBlow} alt="Final Blow cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2025,7 +2025,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-fuchsia-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverUntouchableAgents} alt="33 Agents Untouchable cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverUntouchableAgents} alt="33 Agents Untouchable cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2064,7 +2064,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-amber-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverClockStrikesBack} alt="The Clock Strikes Back cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverClockStrikesBack} alt="The Clock Strikes Back cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2103,7 +2103,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-teal-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverFBIPrecision} alt="FBI Precision cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverFBIPrecision} alt="FBI Precision cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2142,7 +2142,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-indigo-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverTheyFumbledYou} alt="They Fumbled You cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverTheyFumbledYou} alt="They Fumbled You cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2181,7 +2181,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-orange-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverSomeoneSlippedUp} alt="Fate Sealed cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverSomeoneSlippedUp} alt="Fate Sealed cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2221,7 +2221,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-emerald-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverChosenOneOutcastLeader} alt="Chosen One — Outcast to Leader cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverChosenOneOutcastLeader} alt="Chosen One — Outcast to Leader cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2262,7 +2262,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverSilentCheckmate} alt="The Silent Checkmate cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverSilentCheckmate} alt="The Silent Checkmate cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2309,7 +2309,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-amber-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverDivineExam} alt="The Divine Exam cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverDivineExam} alt="The Divine Exam cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2356,7 +2356,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-blue-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverNoOneSmart} alt="No One Could Be That Smart cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverNoOneSmart} alt="No One Could Be That Smart cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2402,7 +2402,7 @@ export default function EvidenceVault() {
             <div className="bg-zinc-900/60 border border-red-900/30 rounded-xl overflow-hidden">
               <div className="flex flex-col sm:flex-row gap-0">
                 <div className="sm:w-32 shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b sm:border-b-0 sm:border-r border-zinc-800">
-                  <img src={coverBroCoincidence} alt="Bro This Isn't A Coincidence cover" className="w-24 sm:w-full rounded shadow-lg" />
+                  <img src={coverBroCoincidence} alt="Bro This Isn't A Coincidence cover" className="w-24 sm:w-full rounded shadow-lg" loading="lazy" decoding="async" />
                 </div>
                 <div className="flex-1 p-5 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -2479,11 +2479,9 @@ export default function EvidenceVault() {
                   className="group relative block bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500/50 transition-all duration-200"
                   data-testid={`cover-view-${dl.replace(/\.pdf$/, '').toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                 >
-                  <img
-                    src={cover}
+                  <img src={cover}
                     alt={title}
-                    className="w-full aspect-[3/4] object-cover group-hover:opacity-80 transition-opacity"
-                  />
+                    className="w-full aspect-[3/4] object-cover group-hover:opacity-80 transition-opacity" loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-end justify-center pb-2 opacity-0 group-hover:opacity-100">
                     <span className="bg-amber-500 text-black text-[10px] font-bold px-2 py-0.5 rounded flex items-center gap-1">
                       <ExternalLink className="h-2.5 w-2.5" /> View

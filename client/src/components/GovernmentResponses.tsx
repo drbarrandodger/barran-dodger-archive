@@ -178,11 +178,9 @@ export function GovernmentResponses() {
           title="Attorney-General's Response - Prime Minister Notified"
         >
           <div className="space-y-4">
-            <img 
-              src={agLetterImg} 
+            <img src={agLetterImg} 
               alt="Attorney-General's Department Letter - 19 September 2023"
-              className="w-full rounded-lg border shadow-lg"
-            />
+              className="w-full rounded-lg border shadow-lg" loading="lazy" decoding="async" />
             <div className="bg-muted/50 p-4 rounded-lg">
               <h4 className="font-bold mb-2">Key Points from Official Letter:</h4>
               <ul className="space-y-2 text-sm">

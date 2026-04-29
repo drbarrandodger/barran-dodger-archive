@@ -155,7 +155,7 @@ export function GlobalAnalysisShareStrip() {
         {coverSrc && (
           <div className="flex justify-center">
             <div className="flex items-center gap-3 bg-zinc-900/60 border border-zinc-800 rounded-xl px-4 py-2.5 max-w-sm">
-              <img src={coverSrc} alt="Document cover" className="h-14 w-10 object-cover rounded flex-shrink-0" />
+              <img src={coverSrc} alt="Document cover" className="h-14 w-10 object-cover rounded flex-shrink-0" loading="lazy" decoding="async" />
               <div className="min-w-0">
                 <p className="text-zinc-300 text-[10px] font-bold leading-snug line-clamp-2">{msgs.email.subject.replace(/ \| .*$/, "")}</p>
                 <div className="flex gap-1 mt-1">

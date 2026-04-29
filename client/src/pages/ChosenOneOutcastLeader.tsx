@@ -276,7 +276,7 @@ export default function ChosenOneOutcastLeader() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="Chosen One — Outcast to Leader Cover" className="w-full rounded-xl border border-emerald-900/30 shadow-xl" />
+              <img src={coverImage} alt="Chosen One — Outcast to Leader Cover" className="w-full rounded-xl border border-emerald-900/30 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

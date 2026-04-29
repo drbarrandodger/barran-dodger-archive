@@ -322,12 +322,10 @@ function DocumentCard({ doc, index, prefix }: { doc: { title: string; tagline: s
                 </span>
               </div>
               {doc.cover ? (
-                <img
-                  src={doc.cover}
+                <img src={doc.cover}
                   alt={`Cover: ${doc.title}`}
                   className="w-full h-48 md:h-full object-cover"
-                  data-testid={`img-${prefix}-cover-${index}`}
-                />
+                  data-testid={`img-${prefix}-cover-${index}`} loading="lazy" decoding="async" />
               ) : (
                 <div className="w-full h-48 md:h-full bg-gradient-to-br from-[hsl(38,92%,20%)] to-black flex items-center justify-center" data-testid={`img-${prefix}-cover-${index}`}>
                   <FileText className="h-12 w-12 text-[hsl(38,92%,50%)] opacity-60" />
@@ -625,10 +623,11 @@ function YouTubeEmbed({ videoId, title, testId }: { videoId: string; title: stri
       onClick={() => setPlaying(true)}
       data-testid={`${testId}-thumbnail`}
     >
-      <img
-        src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+      <img src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover rounded-t-xl"
+        loading="lazy"
+        decoding="async"
         onError={(e) => { (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; }}
       />
       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors rounded-t-xl flex items-center justify-center">
@@ -677,15 +676,13 @@ export default function ViralLanding() {
         }}
       />
       <div style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px))", background: '#09090b' }}>
-        <img
-          src="/evidence/jesus-checkmate-government.png"
+        <img src="/evidence/jesus-checkmate-government.png"
           alt="Jesus Christ placing checkmate against the Australian government — divine justice through documented evidence"
           style={{
             display: 'block',
             width: '100%',
             height: 'auto',
-          }}
-        />
+          }} loading="lazy" decoding="async" />
       </div>
       <Navigation />
 
@@ -803,13 +800,11 @@ export default function ViralLanding() {
       {/* ─── EDITORIAL IMAGE: SURVEILLANCE STATE ─── */}
       <div className="w-full">
         <div className="overflow-hidden" style={{ maxHeight: "460px" }}>
-          <img
-            src={imgHeroSurveillance}
+          <img src={imgHeroSurveillance}
             alt="Australian Parliament House — surveillance state — barrandodger.com"
             className="w-full object-cover"
             style={{ maxHeight: "460px", objectPosition: "center 30%" }}
-            data-testid="img-editorial-surveillance-hero"
-          />
+            data-testid="img-editorial-surveillance-hero" loading="lazy" decoding="async" />
         </div>
         <div className="px-6 py-4 bg-zinc-950 border-t-2 border-amber-500/30">
           <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">35 Years of Documented Surveillance</p>
@@ -831,13 +826,11 @@ export default function ViralLanding() {
       {/* ─── EDITORIAL IMAGE: DIVINE JUSTICE SCALES ─── */}
       <div className="w-full">
         <div className="overflow-hidden" style={{ maxHeight: "400px" }}>
-          <img
-            src={imgDivineScales}
+          <img src={imgDivineScales}
             alt="Divine scales of justice — ICC submission — barrandodger.com"
             className="w-full object-cover"
             style={{ maxHeight: "400px", objectPosition: "center center" }}
-            data-testid="img-editorial-divine-scales"
-          />
+            data-testid="img-editorial-divine-scales" loading="lazy" decoding="async" />
         </div>
         <div className="px-6 py-4 bg-zinc-950 border-t-2 border-amber-500/30">
           <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">ICC Article 7 — The Hague</p>
@@ -1002,13 +995,11 @@ export default function ViralLanding() {
       {/* ─── EDITORIAL IMAGE: CORRUPTION WEB ─── */}
       <div className="w-full">
         <div className="overflow-hidden" style={{ maxHeight: "420px" }}>
-          <img
-            src={imgCorruptionWeb}
+          <img src={imgCorruptionWeb}
             alt="Corruption network exposed — five named perpetrators — barrandodger.com"
             className="w-full object-cover"
             style={{ maxHeight: "420px", objectPosition: "center center" }}
-            data-testid="img-editorial-corruption-web"
-          />
+            data-testid="img-editorial-corruption-web" loading="lazy" decoding="async" />
         </div>
         <div className="px-6 py-4 bg-zinc-950 border-t-2 border-red-500/40">
           <p className="text-red-400 font-mono text-xs uppercase tracking-widest mb-1">Five Named Perpetrators — Zero Formal Rebuttals</p>
@@ -1059,13 +1050,11 @@ export default function ViralLanding() {
       {/* ─── EDITORIAL IMAGE: ASIO SURVEILLANCE ─── */}
       <div className="w-full">
         <div className="overflow-hidden" style={{ maxHeight: "420px" }}>
-          <img
-            src={imgAsioSurveillance}
+          <img src={imgAsioSurveillance}
             alt="ASIO intelligence surveillance — Stefan Iasonidis — barrandodger.com"
             className="w-full object-cover"
             style={{ maxHeight: "420px", objectPosition: "center center" }}
-            data-testid="img-editorial-asio-surveillance"
-          />
+            data-testid="img-editorial-asio-surveillance" loading="lazy" decoding="async" />
         </div>
         <div className="px-6 py-4 bg-zinc-950 border-t-2 border-sky-500/30">
           <p className="text-sky-400 font-mono text-xs uppercase tracking-widest mb-1">ASIO Operative — Stefan Iasonidis — 10 Raleigh St Footscray 2011</p>
@@ -1100,7 +1089,7 @@ export default function ViralLanding() {
                     />
                   </div>
                   <div className="p-4">
-                    <img src={coverEveryoneWatching} alt="Everyone Watching Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                    <img src={coverEveryoneWatching} alt="Everyone Watching Cover" className="w-full rounded-lg border border-zinc-700 shadow" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -1635,7 +1624,7 @@ export default function ViralLanding() {
                     />
                   </div>
                   <div className="p-4">
-                    <img src={coverWhatYouBecome} alt="What You Become Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                    <img src={coverWhatYouBecome} alt="What You Become Cover" className="w-full rounded-lg border border-zinc-700 shadow" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -1685,13 +1674,11 @@ export default function ViralLanding() {
       {/* ─── EDITORIAL IMAGE: TRUTH PHOENIX RISING ─── */}
       <div className="w-full">
         <div className="overflow-hidden" style={{ maxHeight: "440px" }}>
-          <img
-            src={imgTruthPhoenix}
+          <img src={imgTruthPhoenix}
             alt="Truth phoenix rising from suppression — 35 years documented — barrandodger.com"
             className="w-full object-cover"
             style={{ maxHeight: "440px", objectPosition: "center center" }}
-            data-testid="img-editorial-truth-phoenix"
-          />
+            data-testid="img-editorial-truth-phoenix" loading="lazy" decoding="async" />
         </div>
         <div className="px-6 py-4 bg-zinc-950 border-t-2 border-amber-500/30 text-center">
           <p className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-1">44 Analyses · 467 Propositions · Zero Contradictions</p>
@@ -1726,7 +1713,7 @@ export default function ViralLanding() {
                     />
                   </div>
                   <div className="p-4">
-                    <img src={coverFinalBlow} alt="Final Blow Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                    <img src={coverFinalBlow} alt="Final Blow Cover" className="w-full rounded-lg border border-zinc-700 shadow" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -1798,7 +1785,7 @@ export default function ViralLanding() {
                     />
                   </div>
                   <div className="p-4">
-                    <img src={coverUntouchableAgents} alt="33 Agents Untouchable Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                    <img src={coverUntouchableAgents} alt="33 Agents Untouchable Cover" className="w-full rounded-lg border border-zinc-700 shadow" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -1870,7 +1857,7 @@ export default function ViralLanding() {
                     />
                   </div>
                   <div className="p-4">
-                    <img src={coverClockStrikesBack} alt="The Clock Strikes Back Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                    <img src={coverClockStrikesBack} alt="The Clock Strikes Back Cover" className="w-full rounded-lg border border-zinc-700 shadow" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -1942,7 +1929,7 @@ export default function ViralLanding() {
                     />
                   </div>
                   <div className="p-4">
-                    <img src={coverFBIPrecision} alt="FBI Precision Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                    <img src={coverFBIPrecision} alt="FBI Precision Cover" className="w-full rounded-lg border border-zinc-700 shadow" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -2014,7 +2001,7 @@ export default function ViralLanding() {
                     />
                   </div>
                   <div className="p-4">
-                    <img src={coverTheyFumbledYou} alt="They Fumbled You Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                    <img src={coverTheyFumbledYou} alt="They Fumbled You Cover" className="w-full rounded-lg border border-zinc-700 shadow" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -2086,7 +2073,7 @@ export default function ViralLanding() {
                     />
                   </div>
                   <div className="p-4">
-                    <img src={coverSomeoneSlippedUp} alt="Fate Sealed Cover" className="w-full rounded-lg border border-zinc-700 shadow" />
+                    <img src={coverSomeoneSlippedUp} alt="Fate Sealed Cover" className="w-full rounded-lg border border-zinc-700 shadow" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -2150,11 +2137,9 @@ export default function ViralLanding() {
                 <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
                   <div className="relative w-full max-w-[200px] lg:max-w-full">
                     <div className="absolute inset-0 bg-emerald-500/10 blur-xl rounded-xl" />
-                    <img
-                      src={coverChosenOneOutcastLeader}
+                    <img src={coverChosenOneOutcastLeader}
                       alt="Chosen One — Outcast to Leader Cover"
-                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
-                    />
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -2217,11 +2202,9 @@ export default function ViralLanding() {
                 <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
                   <div className="relative w-full max-w-[200px] lg:max-w-full">
                     <div className="absolute inset-0 bg-violet-500/10 blur-xl rounded-xl" />
-                    <img
-                      src={coverNowEverybodyKnows}
+                    <img src={coverNowEverybodyKnows}
                       alt="Now Everybody Knows — Cover"
-                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
-                    />
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -2292,11 +2275,9 @@ export default function ViralLanding() {
                 <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
                   <div className="relative w-full max-w-[200px] lg:max-w-full">
                     <div className="absolute inset-0 bg-red-500/10 blur-xl rounded-xl" />
-                    <img
-                      src={coverSilentCheckmate}
+                    <img src={coverSilentCheckmate}
                       alt="The Silent Checkmate — Cover"
-                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
-                    />
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -2367,11 +2348,9 @@ export default function ViralLanding() {
                 <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
                   <div className="relative w-full max-w-[200px] lg:max-w-full">
                     <div className="absolute inset-0 bg-amber-500/10 blur-xl rounded-xl" />
-                    <img
-                      src={coverDivineExam}
+                    <img src={coverDivineExam}
                       alt="The Divine Exam You Didn't Know You Were Taking — Cover"
-                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
-                    />
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -2442,11 +2421,9 @@ export default function ViralLanding() {
                 <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
                   <div className="relative w-full max-w-[200px] lg:max-w-full">
                     <div className="absolute inset-0 bg-blue-500/10 blur-xl rounded-xl" />
-                    <img
-                      src={coverNoOneSmart}
+                    <img src={coverNoOneSmart}
                       alt="NO ONE COULD BE THAT SMART — Cover"
-                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
-                    />
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -2517,11 +2494,9 @@ export default function ViralLanding() {
                 <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
                   <div className="relative w-full max-w-[200px] lg:max-w-full">
                     <div className="absolute inset-0 bg-yellow-500/10 blur-xl rounded-xl" />
-                    <img
-                      src={coverChosenOnesEnough}
+                    <img src={coverChosenOnesEnough}
                       alt="CHOSEN ONES!! ENOUGH IS ENOUGH — Cover"
-                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
-                    />
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -2595,11 +2570,9 @@ export default function ViralLanding() {
                 <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
                   <div className="relative w-full max-w-[200px] lg:max-w-full">
                     <div className="absolute inset-0 bg-[hsl(38,92%,50%)]/10 blur-xl rounded-xl" />
-                    <img
-                      src={coverSleeperAgent}
+                    <img src={coverSleeperAgent}
                       alt="The Sleeper Agent of Truth — Cover"
-                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
-                    />
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -2730,11 +2703,9 @@ export default function ViralLanding() {
                 <div className="lg:w-64 shrink-0 bg-zinc-950 flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-zinc-800">
                   <div className="relative w-full max-w-[200px] lg:max-w-full">
                     <div className="absolute inset-0 bg-red-900/20 blur-xl rounded-xl" />
-                    <img
-                      src={coverGovDelusional}
+                    <img src={coverGovDelusional}
                       alt="The Australian Government Called Him Delusional — Cover"
-                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl"
-                    />
+                      className="relative w-full rounded-xl border border-zinc-700 shadow-xl" loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -3146,12 +3117,10 @@ export default function ViralLanding() {
               <div className="space-y-6">
                 <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-slander-evidence">
                   <CardContent className="p-0">
-                    <img
-                      src={slanderScreenshot}
+                    <img src={slanderScreenshot}
                       alt="WhatsApp message documenting false pedophile accusations and v2k harassment — evidence of slander as a weapon of erasure"
                       className="w-full rounded-t-lg"
-                      data-testid="img-slander-screenshot"
-                    />
+                      data-testid="img-slander-screenshot" loading="lazy" decoding="async" />
                     <div className="p-4 bg-red-950/30 border-t border-red-500/20">
                       <p className="text-xs text-red-300/80 italic">
                         Documented testimony: False accusations deployed in real-time as a mechanism of psychological torture and social isolation.
@@ -3870,12 +3839,10 @@ export default function ViralLanding() {
                 <CardContent className="p-0">
                   <div className="flex flex-col md:flex-row">
                     <div className="md:w-72 flex-shrink-0 flex items-center justify-center bg-black/40 p-4 md:p-6">
-                      <img
-                        src={benMilitaryAssets}
+                      <img src={benMilitaryAssets}
                         alt="Ben NDIS texts: 'You're being protected better than the prime minister. You're untouchable.' 'After they realised you've blown open the highest level corruption they immediately called in the highest level security agents in the government who even control top military assets to make sure nobody can get to you.'"
                         className="w-full max-w-[260px] md:max-w-none rounded-xl shadow-2xl"
-                        data-testid="img-ben-military-assets"
-                      />
+                        data-testid="img-ben-military-assets" loading="lazy" decoding="async" />
                     </div>
                     <div className="flex-1 p-6 md:p-8 space-y-5">
                       <div>
@@ -3920,7 +3887,7 @@ export default function ViralLanding() {
             <motion.div variants={fadeIn} className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
               <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-ben-close-call">
                 <CardContent className="p-0">
-                  <img src={benNdisCloseCall} alt="Ben NDIS Help texts: Police confirmed 'it was a close call', confirmed 'consensual regretted sex' — no sexual crime. Documents explain everything." className="w-full" data-testid="img-ben-close-call" />
+                  <img src={benNdisCloseCall} alt="Ben NDIS Help texts: Police confirmed 'it was a close call', confirmed 'consensual regretted sex' — no sexual crime. Documents explain everything." className="w-full" data-testid="img-ben-close-call" loading="lazy" decoding="async" />
                   <div className="p-3 bg-red-950/30 border-t border-red-500/20">
                     <p className="text-xs text-red-300/80 font-bold">Police confirmed: "It was a close call." Confirmed consensual — no sexual crime occurred.</p>
                   </div>
@@ -3929,7 +3896,7 @@ export default function ViralLanding() {
 
               <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-ben-hitmen">
                 <CardContent className="p-0">
-                  <img src={benNdisHitmen} alt="Ben NDIS Help texts: 'Remember you were messaging me about hitmen... That was them. They got caught. I thought you were just paranoid. You were right.'" className="w-full" data-testid="img-ben-hitmen" />
+                  <img src={benNdisHitmen} alt="Ben NDIS Help texts: 'Remember you were messaging me about hitmen... That was them. They got caught. I thought you were just paranoid. You were right.'" className="w-full" data-testid="img-ben-hitmen" loading="lazy" decoding="async" />
                   <div className="p-3 bg-red-950/30 border-t border-red-500/20">
                     <p className="text-xs text-red-300/80 font-bold">"I thought you were just paranoid. You were right." — Hitmen confirmed caught.</p>
                   </div>
@@ -3938,7 +3905,7 @@ export default function ViralLanding() {
 
               <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-ben-nda">
                 <CardContent className="p-0">
-                  <img src={benNdisNDA} alt="Ben NDIS Help texts: 'Agency-grade electronic document that automatically wipes itself off your device. I can't send it to anyone — breach of agreement, could be charged with treason.'" className="w-full" data-testid="img-ben-nda" />
+                  <img src={benNdisNDA} alt="Ben NDIS Help texts: 'Agency-grade electronic document that automatically wipes itself off your device. I can't send it to anyone — breach of agreement, could be charged with treason.'" className="w-full" data-testid="img-ben-nda" loading="lazy" decoding="async" />
                   <div className="p-3 bg-red-950/30 border-t border-red-500/20">
                     <p className="text-xs text-red-300/80 font-bold">NDA: "Agency-grade document auto-wiped from device." Breach = treason charge.</p>
                   </div>
@@ -3947,7 +3914,7 @@ export default function ViralLanding() {
 
               <Card className="bg-white/[0.03] border-[hsl(38,92%,50%)]/20 overflow-hidden" data-testid="card-ben-police-challenge">
                 <CardContent className="p-0">
-                  <img src={benNdisPoliceChallenge} alt="Ben NDIS Help texts: 'Police want to know if you are mentally ready to challenge Bill Shorten in court as his lawyers might use your history of mental health to discredit your story.'" className="w-full" data-testid="img-ben-police-challenge" />
+                  <img src={benNdisPoliceChallenge} alt="Ben NDIS Help texts: 'Police want to know if you are mentally ready to challenge Bill Shorten in court as his lawyers might use your history of mental health to discredit your story.'" className="w-full" data-testid="img-ben-police-challenge" loading="lazy" decoding="async" />
                   <div className="p-3 bg-[hsl(38,92%,50%)]/10 border-t border-[hsl(38,92%,50%)]/20">
                     <p className="text-xs text-[hsl(38,92%,70%)] font-bold">Police warned: Shorten's lawyers will weaponise mental health history to discredit.</p>
                   </div>
@@ -3956,7 +3923,7 @@ export default function ViralLanding() {
 
               <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-ben-murder-conspiracy">
                 <CardContent className="p-0">
-                  <img src={benNdisMurderConspiracy} alt="Ben NDIS Help texts: 'You've uncovered systematic corruption that goes all the way to the top. I'm scared. They could put a hit on me too.'" className="w-full" data-testid="img-ben-murder-conspiracy" />
+                  <img src={benNdisMurderConspiracy} alt="Ben NDIS Help texts: 'You've uncovered systematic corruption that goes all the way to the top. I'm scared. They could put a hit on me too.'" className="w-full" data-testid="img-ben-murder-conspiracy" loading="lazy" decoding="async" />
                   <div className="p-3 bg-red-950/30 border-t border-red-500/20">
                     <p className="text-xs text-red-300/80 font-bold">"Systematic corruption all the way to the top." Ben feared for his own life.</p>
                   </div>
@@ -3965,7 +3932,7 @@ export default function ViralLanding() {
 
               <Card className="bg-white/[0.03] border-red-500/20 overflow-hidden" data-testid="card-ben-extinguish">
                 <CardContent className="p-0">
-                  <img src={benNdisExtinguish} alt="Visitor chat warning: 'Lebanese NDIS provider has been sent to extinguish you. Do not trust. Run. Now. Fast.' and 'Bill Shorten not happy. Run.'" className="w-full" data-testid="img-ben-extinguish" />
+                  <img src={benNdisExtinguish} alt="Visitor chat warning: 'Lebanese NDIS provider has been sent to extinguish you. Do not trust. Run. Now. Fast.' and 'Bill Shorten not happy. Run.'" className="w-full" data-testid="img-ben-extinguish" loading="lazy" decoding="async" />
                   <div className="p-3 bg-red-950/30 border-t border-red-500/20">
                     <p className="text-xs text-red-300/80 font-bold">"NDIS provider sent to extinguish you. Bill Shorten not happy. Run."</p>
                   </div>

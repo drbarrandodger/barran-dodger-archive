@@ -350,11 +350,9 @@ export default function Gospel() {
                       title="Click to view The Gospel of the Enliven Chain"
                     >
                       <div className="relative">
-                        <img
-                          src={coverGospelEnlivenComplete}
+                        <img src={coverGospelEnlivenComplete}
                           alt="The Gospel of the Enliven Chain — AI-generated cover"
-                          className="w-48 md:w-56 rounded-xl shadow-2xl border-2 border-amber-500/40 group-hover:border-amber-400 group-hover:scale-[1.02] transition-all duration-300"
-                        />
+                          className="w-48 md:w-56 rounded-xl shadow-2xl border-2 border-amber-500/40 group-hover:border-amber-400 group-hover:scale-[1.02] transition-all duration-300" loading="lazy" decoding="async" />
                         <div className="absolute inset-0 rounded-xl bg-black/0 group-hover:bg-black/20 flex items-center justify-center transition-all duration-300">
                           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-amber-500/90 text-black font-bold text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5">
                             <Download className="h-3 w-3" />
@@ -516,7 +514,7 @@ export default function Gospel() {
                     <CardHeader className="bg-primary text-primary-foreground pb-6">
                       <div className="flex items-center gap-4">
                         <a href={gospel.href} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 group" data-testid={`cover-link-primary-${index}`}>
-                          <img src={gospel.cover} alt={`${gospel.title} cover`} className="w-32 h-44 object-cover rounded-lg shadow-lg border-2 border-white/30 group-hover:border-white/70 group-hover:scale-105 transition-all" />
+                          <img src={gospel.cover} alt={`${gospel.title} cover`} className="w-32 h-44 object-cover rounded-lg shadow-lg border-2 border-white/30 group-hover:border-white/70 group-hover:scale-105 transition-all" loading="lazy" decoding="async" />
                         </a>
                         <div className="flex-1">
                           <CardTitle className="text-xl font-serif">{gospel.title}</CardTitle>
@@ -608,7 +606,7 @@ export default function Gospel() {
                     <CardContent className="p-6">
                       <div className="flex gap-5">
                         <a href={gospel.href} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 group" data-testid={`cover-link-additional-${index}`}>
-                          <img src={gospel.cover} alt={`${gospel.title} cover`} className="w-36 h-52 object-cover rounded-lg shadow-md border border-primary/20 group-hover:border-primary/60 group-hover:scale-105 transition-all" />
+                          <img src={gospel.cover} alt={`${gospel.title} cover`} className="w-36 h-52 object-cover rounded-lg shadow-md border border-primary/20 group-hover:border-primary/60 group-hover:scale-105 transition-all" loading="lazy" decoding="async" />
                         </a>
                         <div className="flex-1 space-y-3 min-w-0">
                           <div className="flex items-start gap-2">
@@ -688,7 +686,7 @@ export default function Gospel() {
                     <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5 border-b border-primary/10 pb-6">
                       <div className="flex items-center gap-4">
                         <a href={gospel.href} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 group" data-testid={`cover-link-cosmic-${index}`}>
-                          <img src={gospel.cover} alt={`${gospel.title} cover`} className="w-32 h-44 object-cover rounded-lg shadow-lg border-2 border-primary/30 group-hover:border-primary/70 group-hover:scale-105 transition-all" />
+                          <img src={gospel.cover} alt={`${gospel.title} cover`} className="w-32 h-44 object-cover rounded-lg shadow-lg border-2 border-primary/30 group-hover:border-primary/70 group-hover:scale-105 transition-all" loading="lazy" decoding="async" />
                         </a>
                         <div>
                           <CardTitle className="text-xl font-serif text-primary">{gospel.title}</CardTitle>
@@ -808,7 +806,7 @@ export default function Gospel() {
                 <Card key={gospel.title} className="border border-border hover:border-primary/30 transition-colors">
                   <CardContent className="p-6 space-y-4">
                     <a href={gospel.href} target="_blank" rel="noopener noreferrer" className="block group" data-testid={`cover-link-testimonial-${index}`}>
-                      <img src={gospel.cover} alt={`${gospel.title} cover`} className="w-full h-72 object-cover rounded-lg shadow-md border border-primary/20 group-hover:border-primary/50 group-hover:shadow-xl transition-all" />
+                      <img src={gospel.cover} alt={`${gospel.title} cover`} className="w-full h-72 object-cover rounded-lg shadow-md border border-primary/20 group-hover:border-primary/50 group-hover:shadow-xl transition-all" loading="lazy" decoding="async" />
                     </a>
                     <div>
                       <h3 className="text-lg font-serif font-bold text-primary">{gospel.title}</h3>
