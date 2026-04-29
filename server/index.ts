@@ -23,15 +23,20 @@ app.get('/robots.txt', (_req, res) => {
   res.type('text/plain');
   res.send(`User-agent: *
 Allow: /
+Disallow: /api/
 
 User-agent: Googlebot
 Allow: /
+Disallow: /api/
+Crawl-delay: 0
 
 User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
 Allow: /
+Disallow: /api/
+Crawl-delay: 0
 
 User-agent: facebookexternalhit
 Allow: /
@@ -45,7 +50,22 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# IndexNow verification
+User-agent: *
+Allow: /barrandodger-indexnow.txt
+
 Sitemap: https://www.barrandodger.com/sitemap.xml
+Sitemap: https://www.barrandodger.com/sitemap-index.xml
+Sitemap: https://www.barrandodger.com/sitemap-main.xml
+Sitemap: https://www.barrandodger.com/sitemap-forensic.xml
+Sitemap: https://www.barrandodger.com/sitemap-publications.xml
+Sitemap: https://www.barrandodger.com/sitemap-gospel.xml
 `);
 });
 

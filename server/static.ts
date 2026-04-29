@@ -1,6 +1,7 @@
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
+import { getJsonLdForPath, renderJsonLdScript } from "./seoStructuredData";
 
 const BASE_URL = "https://www.barrandodger.com";
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.png`;
@@ -425,7 +426,10 @@ function injectMeta(html: string, meta: PageMeta, pathname: string): string {
   const image = meta.image || DEFAULT_IMAGE;
   const fullUrl = `${BASE_URL}${pathname}`;
 
-  return html
+  const jsonLdSchemas = getJsonLdForPath(pathname);
+  const jsonLdHtml = renderJsonLdScript(jsonLdSchemas);
+
+  let result = html
     .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
     .replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${description}"`)
     .replace(/<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${title}"`)
@@ -437,6 +441,11 @@ function injectMeta(html: string, meta: PageMeta, pathname: string): string {
     .replace(/<meta name="twitter:url" content="[^"]*"/, `<meta name="twitter:url" content="${fullUrl}"`)
     .replace(/<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${image}"`)
     .replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${fullUrl}"`);
+
+  // Inject JSON-LD structured data before </head> for bot crawlers
+  result = result.replace('</head>', `${jsonLdHtml}\n</head>`);
+
+  return result;
 }
 
 export function serveStatic(app: Express) {

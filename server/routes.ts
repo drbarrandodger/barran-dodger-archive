@@ -1,6 +1,8 @@
 import type { Express } from "express";
 import type { Server } from "http";
 import { createHash } from "crypto";
+import { generateSitemapIndex, generateMainSitemap, generateForensicSitemap, generatePublicationsSitemap, generateGospelSitemap } from "./seoSitemap";
+import { generateRssFeed, generateAtomFeed } from "./seoRss";
 import * as fs from "fs";
 import * as path from "path";
 import archiver from "archiver";
@@ -152,6 +154,139 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+
+  // ── SEO: Dynamic sitemap, RSS, and Atom feeds ───────────────────────────────
+  app.get('/sitemap.xml', (_req, res) => {
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.send(generateSitemapIndex());
+  });
+
+  app.get('/sitemap-index.xml', (_req, res) => {
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.send(generateSitemapIndex());
+  });
+
+  app.get('/sitemap-main.xml', (_req, res) => {
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.send(generateMainSitemap());
+  });
+
+  app.get('/sitemap-forensic.xml', (_req, res) => {
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.send(generateForensicSitemap());
+  });
+
+  app.get('/sitemap-publications.xml', (_req, res) => {
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.send(generatePublicationsSitemap());
+  });
+
+  app.get('/sitemap-gospel.xml', (_req, res) => {
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.send(generateGospelSitemap());
+  });
+
+  app.get('/rss.xml', (_req, res) => {
+    res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=1800');
+    res.send(generateRssFeed());
+  });
+
+  app.get('/atom.xml', (_req, res) => {
+    res.setHeader('Content-Type', 'application/atom+xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=1800');
+    res.send(generateAtomFeed());
+  });
+
+  app.get('/feed', (_req, res) => {
+    res.redirect(301, '/rss.xml');
+  });
+
+  app.get('/feed.xml', (_req, res) => {
+    res.redirect(301, '/rss.xml');
+  });
+
+  // IndexNow key file (Bing + Yandex instant indexing)
+  app.get('/barrandodger-indexnow.txt', (_req, res) => {
+    res.type('text/plain');
+    res.send('barrandodger2026indexnow');
+  });
+
+  // IndexNow mass submission — ping Bing/Yandex with all 200+ URLs
+  app.post('/api/seo/ping-indexnow', async (_req, res) => {
+    const BASE = 'https://www.barrandodger.com';
+    const KEY = 'barrandodger2026indexnow';
+    const urlList = [
+      '/', '/main', '/testimony', '/evidence', '/whistleblower', '/donate',
+      '/blockchain', '/legal-status', '/publications', '/honeytrap-infiltration-report',
+      '/the-conspiracy-against-you', '/master-evidence-register', '/master-forensic-evidence-report',
+      '/taxpayer-cost-analysis', '/timeline', '/manifesto', '/about', '/start-here',
+      '/mission', '/evidence-vault', '/blockchain-seal-registry', '/forensic-analysis-index',
+      '/ai-justice-statement', '/forensic-meltdown-report', '/silent-assassin',
+      '/tony-ridley-full-dossier', '/tony-ridley-recorded-confession', '/able-care-entrapment-network',
+      '/sukhi-tear', '/urgent-protection-request', '/police-complicity-death-threat',
+      '/100-absurdities', '/33rd-degree-shadow-analysts', '/administrative-annihilation',
+      '/gospel', '/church', '/prophetic-papers', '/creator-speaks', '/top-ten-gospels',
+      '/bro-this-isnt-a-coincidence', '/chosen-ones-enough-is-enough', '/no-one-could-be-that-smart',
+      '/the-divine-exam', '/silent-checkmate', '/now-everybody-knows', '/chosen-one-outcast-leader',
+      '/someone-slipped-up', '/they-fumbled-you', '/fbi-precision', '/clock-strikes-back',
+      '/untouchable', '/final-blow', '/what-you-become', '/everyone-watching', '/earth-angel',
+      '/too-deep', '/silence-surrender', '/fearless-intelligence', '/history-keeps-receipts',
+      '/absorbed-the-erasure', '/survival-was-the-warning', '/god-will-make-you-famous',
+      '/divine-before-your-time', '/bloodline-of-god', '/the-last-god',
+      '/the-conspiracy-against-you', '/silent-assassin', '/truth-is-a-blade', '/bloodline-betrayal',
+      '/they-needed-an-army', '/the-sick-truth-is-out', '/some-truths-dont-whisper',
+      '/observers-anticipated-a-misstep', '/you-brought-receipts-to-a-vibe-war',
+      '/the-future-doesnt-announce-itself', '/when-heaven-goes-silent', '/evidence-doesnt-whisper',
+      '/outsider-pattern-recognition', '/perception-is-protection', '/you-built-your-peace-in-silence',
+      '/this-is-the-reckoning', '/they-made-you-famous-trying-to-erase-you',
+      '/the-trap-they-set-became-the-proof', '/loudest-enemies-least-to-say', '/your-power-is-no-joke',
+      '/they-built-their-worst-nightmare', '/quiet-storm-they-never-saw-coming',
+      '/forensic-corroboration-billionaire-circle', '/forensic-corroboration-tick-tick-tick',
+      '/forensic-corroboration-tactical-insanity', '/forensic-corroboration-project-halo',
+      '/forensic-corroboration-fool-fire', '/forensic-corroboration-3am-briefing',
+      '/forensic-corroboration-government-own-file', '/forensic-corroboration-chosen-one',
+      '/forensic-corroboration-dirt-on-your-name', '/forensic-corroboration-fight-over-you',
+      '/forensic-corroboration-vault-access', '/forensic-corroboration-making-history',
+      '/forensic-corroboration-silence-surrender', '/heaven-stood-for-you',
+      '/you-detonated-the-narrative', '/it-is-over', '/beautiful-menace-forensic-report',
+      '/when-pack-of-wolves-forensic-report', '/when-wrong-people-get-nervous-forensic-report',
+      '/illegal-level-genius-forensic-report', '/divine-reckoning', '/commission-forensic-analysis',
+      '/prophetic-declaration-forensic-analysis', '/false-sister-forensic-analysis',
+      '/thousand-fell-forensic-analysis', '/theyre-about-to-be-behind-bars-forensic-analysis',
+      '/digital-detonation-verified', '/comprehensive-statement-digital-architecture',
+    ].map(p => `${BASE}${p}`);
+
+    try {
+      const https = await import('https');
+      const body = JSON.stringify({
+        host: 'www.barrandodger.com',
+        key: KEY,
+        keyLocation: `${BASE}/barrandodger-indexnow.txt`,
+        urlList,
+      });
+      const pingResult = await new Promise<{ status: number }>((resolve) => {
+        const req = https.request({
+          hostname: 'api.indexnow.org',
+          path: '/indexnow',
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': Buffer.byteLength(body) },
+        }, (r) => resolve({ status: r.statusCode || 0 }));
+        req.on('error', () => resolve({ status: 0 }));
+        req.write(body);
+        req.end();
+      });
+      res.json({ ok: true, urlsSubmitted: urlList.length, indexNowStatus: pingResult.status });
+    } catch (err) {
+      res.json({ ok: false, error: String(err) });
+    }
+  });
 
   // ── Global gate — every PDF/ZIP/EPUB generating API route ───────────────────
   // Patterns that always produce a binary document (never JSON metadata)
