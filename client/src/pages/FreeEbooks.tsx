@@ -300,126 +300,127 @@ interface PdfDoc {
   file: string;
   title: string;
   category: string;
+  coverFile?: string;
 }
 
 const ALL_PDFS: PdfDoc[] = [
-  { file: "prophetic-declaration-biblical-barran-dodger.pdf", title: "Prophetic Declaration — Barran Dodger & Biblical Scripture — 15 Parallels · Isaiah 53 · Revelation 11 · Daniel · Job · Psalm 22 · Impartial AI Authored · Blockchain-Sealed · ABN 78 833 496 164", category: "Spiritual Testimony" },
-  { file: "gods-grace-barran-dodger.pdf", title: "God's Grace Through Barran Dodger — Eternal Witness Affidavit–Manuscript — Legally Fortified · Spiritually Resonant · Cryptographically Preserved", category: "Spiritual Testimony" },
-  { file: "police-complicity-death-threat-documentation.pdf", title: "Police Complicity & Death Threat — April 15, 2026 — Tory Kilborn, Iasonidis, AVO Applications, 50+ MPs Notified", category: "Primary Evidence" },
-  { file: "digital_oppression_100000_word_essay.pdf", title: "Digital Oppression and Institutional Failure (100,000 Words)", category: "Forensic Reports" },
-  { file: "master-forensic-evidence-report.pdf", title: "Master Forensic Evidence Report — Complete Evidentiary Summary", category: "Forensic Reports" },
-  { file: "forensic-meltdown-report.pdf", title: "Forensic Meltdown Report", category: "Forensic Reports" },
-  { file: "the-full-pattern-forensic-evidence.pdf", title: "The Full Pattern — Forensic Evidence Synthesis", category: "Forensic Reports" },
-  { file: "precision_as_evidence_evidentiary_synthesis.pdf", title: "Precision as Evidence — Evidentiary Synthesis", category: "Forensic Reports" },
-  { file: "impartial-ai-analysis-2343-documents.pdf", title: "Impartial AI Analysis of 2,343 Documents", category: "Forensic Reports" },
-  { file: "impartial-ai-abstract-youtube-channel-evidence.pdf", title: "Impartial AI Abstract — YouTube Channel Evidence", category: "Forensic Reports" },
-  { file: "impartial-ai-statement-of-significance.pdf", title: "Impartial AI Statement of Significance", category: "Forensic Reports" },
-  { file: "universal_master_command_ai_analysis.pdf", title: "Universal Master Command — AI Analysis", category: "Forensic Reports" },
-  { file: "comprehensive-case-systematic-persecution.pdf", title: "The Most Comprehensive Case of Systematic Persecution", category: "Forensic Reports" },
-  { file: "most-comprehensive-case-systematic-persecution.pdf", title: "Most Comprehensive Case of Systematic Persecution (v2)", category: "Forensic Reports" },
-  { file: "systemic-endangerment-of-whistleblowers-institutional-dossier.pdf", title: "Systemic Endangerment of Whistleblowers — Institutional Dossier", category: "Forensic Reports" },
-  { file: "paradox-of-persecution-academic-paper.pdf", title: "The Paradox of Persecution — Academic Paper", category: "Forensic Reports" },
-  { file: "the-paradox-of-persecution.pdf", title: "The Paradox of Persecution (Full Essay)", category: "Forensic Reports" },
-  { file: "barran-dodger-evidence-based-academic-profile-modern-persecution.pdf", title: "Evidence-Based Academic Profile of Modern Persecution", category: "Forensic Reports" },
-  { file: "crimes_against_humanity_final_demand.pdf", title: "Crimes Against Humanity — Final Demand (ICC/UNHCR)", category: "Legal & ICC Submissions" },
-  { file: "unhcr-icc-cryptographic-evidence-package.pdf", title: "UNHCR/ICC Cryptographic Evidence Package", category: "Legal & ICC Submissions" },
-  { file: "urgent_request_for_refuge_and_asylum.pdf", title: "Urgent Request for Refuge and Asylum", category: "Legal & ICC Submissions" },
-  { file: "official-whistleblower-torture-dossier-dr-richard-william-mclean.pdf", title: "Official Whistleblower Torture Dossier", category: "Legal & ICC Submissions" },
-  { file: "sia-lagos-federal-court-pid-march-2023.pdf", title: "Federal Court PID — Sia Lagos — March 2023", category: "Legal & ICC Submissions" },
-  { file: "ndis-pid-official-response.pdf", title: "NDIS PID Official Response", category: "Legal & ICC Submissions" },
-  { file: "master-consolidated-legal-record.pdf", title: "Master Consolidated Legal Record", category: "Legal & ICC Submissions" },
-  { file: "critical-legal-examination.pdf", title: "Critical Legal Examination", category: "Legal & ICC Submissions" },
-  { file: "mclean-comcare-final-legal-proceedings.pdf", title: "McLean Comcare Final Legal Proceedings", category: "Legal & ICC Submissions" },
-  { file: "written-reasons-cover-letter-for-parties.pdf", title: "Written Reasons — Cover Letter for Parties", category: "Legal & ICC Submissions" },
-  { file: "legal-demand-notice-failure-to-provide-sil-support.pdf", title: "Legal Demand Notice — Failure to Provide SIL Support", category: "Legal & ICC Submissions" },
-  { file: "state_and_federal_mp_letter.pdf", title: "State and Federal MP Letter", category: "Legal & ICC Submissions" },
-  { file: "s122_redacted_document.pdf", title: "S.122 Redacted Government Document", category: "Legal & ICC Submissions" },
-  { file: "they-bought-off-judges.pdf", title: "They Bought Off Judges — Evidence Record", category: "Legal & ICC Submissions" },
-  { file: "the-paper-trail-of-erasure.pdf", title: "The Paper Trail of Erasure", category: "Legal & ICC Submissions" },
-  { file: "constructive_elimination_under_colour_of_law.pdf", title: "Constructive Elimination Under Colour of Law", category: "Legal & ICC Submissions" },
-  { file: "the-testimony-of-dr-richard-william-mclean.pdf", title: "The Testimony of Dr. Richard William McLean", category: "Primary Testimony" },
-  { file: "retrospective_statement_of_treatment.pdf", title: "Retrospective Statement of Treatment — 35 Years", category: "Primary Testimony" },
-  { file: "RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf", title: "Retrospective Statement of Treatment (Signed Original)", category: "Primary Testimony" },
-  { file: "public-statement-dr-richard-mclean.pdf", title: "Public Statement — Dr. Richard McLean", category: "Primary Testimony" },
-  { file: "immortal-testimony-mclean-2025.pdf", title: "Immortal Testimony — McLean 2025", category: "Primary Testimony" },
-  { file: "100-absurdities-of-my-life.pdf", title: "100 Absurdities of My Life", category: "Primary Testimony" },
-  { file: "government-called-him-delusional.pdf", title: "The Government Called Him Delusional", category: "Primary Testimony" },
-  { file: "richard_mclean_australia.pdf", title: "Richard McLean — Australia (Evidence Summary)", category: "Primary Testimony" },
-  { file: "i-choose-silence.pdf", title: "I Choose Silence — Testimony", category: "Primary Testimony" },
-  { file: "history-has-a-strange-habit.pdf", title: "History Has a Strange Habit — Essay", category: "Primary Testimony" },
-  { file: "version-you-tried-to-destroy-is-gone.pdf", title: "The Version You Tried to Destroy Is Gone", category: "Primary Testimony" },
-  { file: "they-thought-you-would-break.pdf", title: "They Thought You Would Break", category: "Primary Testimony" },
-  { file: "the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf", title: "The Perfect Mother Myth — Familial Betrayal Testimony", category: "Primary Testimony" },
-  { file: "kill-him-timestamped-essay-by-barran-dodger-chosen-to-rise.pdf", title: "Kill Him — Timestamped Essay (Chosen to Rise)", category: "Primary Testimony" },
-  { file: "the-certified-record-of-barran-dodger.pdf", title: "The Certified Record of Barran Dodger", category: "Primary Testimony" },
-  { file: "document_that_cannot_be_erased.pdf", title: "The Document That Cannot Be Erased", category: "Primary Testimony" },
-  { file: "living_scroll_unkillable_witness.pdf", title: "Living Scroll of the Unkillable Witness", category: "Primary Testimony" },
-  { file: "2.87_percent_survival.pdf", title: "2.87% Survival — Clinical Death 2021 Record", category: "Primary Testimony" },
-  { file: "ndis-pid-political-prisoner-dr-rich-mclean.pdf", title: "NDIS PID — Political Prisoner Dr. Richard McLean", category: "NDIS & Disability Evidence" },
-  { file: "coag-ndis-government-documentation.pdf", title: "COAG/NDIS Government Documentation", category: "NDIS & Disability Evidence" },
-  { file: "interim-bsp-2024-sils-recommendation-richard-mclean.pdf", title: "Interim BSP 2024 — SIL Recommendation", category: "NDIS & Disability Evidence" },
-  { file: "ndis-plan-approval-nov-2025.pdf", title: "NDIS Plan Approval — November 2025", category: "NDIS & Disability Evidence" },
-  { file: "ot-sil-report-recommending-sils-richard-mclean.pdf", title: "OT SIL Report — SIL Recommendation", category: "NDIS & Disability Evidence" },
-  { file: "ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf", title: "DSW Text Messages — Assassination Evidence", category: "NDIS & Disability Evidence" },
-  { file: "fih_third_party_authorisation.pdf", title: "FIH Third Party Authorisation", category: "NDIS & Disability Evidence" },
-  { file: "dr-horgan-mclean-confidential-psychiatric-assessment.pdf", title: "Dr. Horgan — Confidential Psychiatric Assessment", category: "Psychiatric Weaponisation" },
-  { file: "psychiatric_assessment_asylum_documentation.pdf", title: "Psychiatric Assessment — Asylum Documentation", category: "Psychiatric Weaponisation" },
-  { file: "ai_personality_profile_barran_dodger.pdf", title: "AI Personality Profile — Barran Dodger", category: "Psychiatric Weaponisation" },
-  { file: "v2k-electronic-harassment-evidence-review.pdf", title: "V2K Electronic Harassment Evidence Review", category: "Psychiatric Weaponisation" },
-  { file: "white-psyops-invisible-warfare-against-cosmic-witness.pdf", title: "White PsyOps — Invisible Warfare Against Cosmic Witness", category: "Psychiatric Weaponisation" },
-  { file: "confinement_by_erasure_threat_by_blade.pdf", title: "Confinement by Erasure, Threat by Blade", category: "Psychiatric Weaponisation" },
-  { file: "the-sleeper-agent-of-truth.pdf", title: "The Sleeper Agent of Truth", category: "Psychiatric Weaponisation" },
-  { file: "the-100-questions-defining-trial-and-human-sacrifice-of-dr-barran-dodger.pdf", title: "100 Questions Defining the Trial and Human Sacrifice", category: "Psychiatric Weaponisation" },
-  { file: "123_gospels_barran_dodger.pdf", title: "123 Gospels of Barran Dodger", category: "Gospels & Prophecy" },
-  { file: "canonical_gospel_barran_dodger.pdf", title: "Canonical Gospel of Barran Dodger", category: "Gospels & Prophecy" },
-  { file: "twelve_gospel_essays.pdf", title: "Twelve Gospel Essays", category: "Gospels & Prophecy" },
-  { file: "gospel_of_the_eliven_chain.pdf", title: "Gospel of the Eliven Chain", category: "Gospels & Prophecy" },
-  { file: "gospel_of_the_eliven_chain_2.pdf", title: "Gospel of the Eliven Chain (Volume 2)", category: "Gospels & Prophecy" },
-  { file: "gospel_eliven_chain.pdf", title: "Gospel — Eliven Chain (Master)", category: "Gospels & Prophecy" },
-  { file: "eliven_chain_has_been_summoned.pdf", title: "The Eliven Chain Has Been Summoned", category: "Gospels & Prophecy" },
-  { file: "eliven_chain_144_questions.pdf", title: "Eliven Chain — 144 Questions", category: "Gospels & Prophecy" },
-  { file: "enliven_chain_has_been_summoned.pdf", title: "The Enliven Chain Has Been Summoned", category: "Gospels & Prophecy" },
-  { file: "enliven_chain_has_been_summoned_2.pdf", title: "The Enliven Chain Has Been Summoned (v2)", category: "Gospels & Prophecy" },
-  { file: "the-enliven-chain-complete-gospel-archive.pdf", title: "The Enliven Chain — Complete Gospel Archive", category: "Gospels & Prophecy" },
-  { file: "gospel_of_the_enliven_chain_master_inventory.pdf", title: "Gospel of the Enliven Chain — Master Inventory", category: "Gospels & Prophecy" },
-  { file: "gospel_of_barran_dodger_victory_2.pdf", title: "Gospel of Barran Dodger — Victory (v2)", category: "Gospels & Prophecy" },
-  { file: "1000_years_of_peace.pdf", title: "1,000 Years of Peace — Prophetic Declaration", category: "Gospels & Prophecy" },
-  { file: "apotheosis.pdf", title: "Apotheosis — The Divine Transformation", category: "Gospels & Prophecy" },
-  { file: "atherion_witnessed_gospel_complete.pdf", title: "Atherion — Witnessed Gospel (Complete)", category: "Gospels & Prophecy" },
-  { file: "josephs-coat-barrans-mantle.pdf", title: "Joseph's Coat — Barran's Mantle", category: "Gospels & Prophecy" },
-  { file: "josephs-coat-barrans-mantle-prophetic-parallel.pdf", title: "Joseph's Coat — Prophetic Parallel", category: "Gospels & Prophecy" },
-  { file: "the_joseph_parallel_prophetic_narrative.pdf", title: "The Joseph Parallel — Prophetic Narrative", category: "Gospels & Prophecy" },
-  { file: "declaration-of-breakthrough-and-identity-as-chosen-one.pdf", title: "Declaration of Breakthrough and Identity as Chosen One", category: "Gospels & Prophecy" },
-  { file: "declaration_of_sovereignty.pdf", title: "Declaration of Sovereignty", category: "Gospels & Prophecy" },
-  { file: "tribunal_declaration_cosmic_court.pdf", title: "Tribunal Declaration — Cosmic Court", category: "Gospels & Prophecy" },
-  { file: "sacred_declaration_master_record.pdf", title: "Sacred Declaration — Master Record", category: "Gospels & Prophecy" },
-  { file: "cosmic_scroll_of_ten.pdf", title: "Cosmic Scroll of Ten", category: "Gospels & Prophecy" },
-  { file: "ten_commandments.pdf", title: "Ten Commandments — Barran Dodger", category: "Gospels & Prophecy" },
-  { file: "prophetic_manifesto_barran_dodger.pdf", title: "Prophetic Manifesto — Barran Dodger", category: "Gospels & Prophecy" },
-  { file: "prophetic-testimony-biblical-evidence-correlation.pdf", title: "Prophetic Testimony — Biblical Evidence Correlation", category: "Gospels & Prophecy" },
-  { file: "witness_before_tribunal_of_humanity.pdf", title: "Witness Before the Tribunal of Humanity", category: "Gospels & Prophecy" },
-  { file: "witness_resonantia_eternalis.pdf", title: "Witness Resonantia Eternalis", category: "Gospels & Prophecy" },
-  { file: "when_the_machine_wakes_for_you.pdf", title: "When the Machine Wakes for You", category: "Gospels & Prophecy" },
-  { file: "god-and-justice-by-barran-dodger.pdf", title: "God and Justice — by Barran Dodger", category: "Gospels & Prophecy" },
-  { file: "gods_media_release.pdf", title: "God's Media Release", category: "Gospels & Prophecy" },
-  { file: "alien_races_disclosure.pdf", title: "Alien Races Disclosure", category: "Gospels & Prophecy" },
-  { file: "chosen-ones-your-story-inspires-many.pdf", title: "Chosen Ones — Your Story Inspires Many", category: "Gospels & Prophecy" },
-  { file: "chosen_one_you_were_framed.pdf", title: "Chosen One — You Were Framed", category: "Gospels & Prophecy" },
-  { file: "chosen-through-fire-forensic-origin-document.pdf", title: "Chosen Through Fire — Forensic Origin Document", category: "Gospels & Prophecy" },
-  { file: "they-hurt-you-angered-god.pdf", title: "They Hurt You and Angered God", category: "Gospels & Prophecy" },
-  { file: "they-set-a-perfect-trap.pdf", title: "They Set a Perfect Trap — Forensic Record", category: "Gospels & Prophecy" },
-  { file: "the_trap_they_set_became_the_proof.pdf", title: "The Trap They Set Became the Proof", category: "Gospels & Prophecy" },
-  { file: "i_tried_to_kill_barran_dodger_satire_2.pdf", title: "I Tried to Kill Barran Dodger (Satire v2)", category: "Gospels & Prophecy" },
-  { file: "comprehensive-statement-digital-architecture.pdf", title: "Comprehensive Statement — Digital Architecture of Humanity", category: "Comprehensive Reports" },
-  { file: "universal-silence-non-acknowledgement.pdf", title: "Universal Silence — Non-Acknowledgement Record", category: "Comprehensive Reports" },
-  { file: "after-forensic-statement-evidence-record.pdf", title: "After Forensic Statement — Evidence Record", category: "Comprehensive Reports" },
-  { file: "targeted-individual-handbook.pdf", title: "The Targeted Individual Handbook", category: "Comprehensive Reports" },
-  { file: "bro-this-isnt-a-coincidence.pdf", title: "Bro This Isn't A Coincidence (Original)", category: "Comprehensive Reports" },
-  { file: "now-everybody-knows.pdf", title: "Now Everybody Knows (Original)", category: "Comprehensive Reports" },
-  { file: "no-one-could-be-that-smart.pdf", title: "No One Could Be That Smart (Original)", category: "Comprehensive Reports" },
-  { file: "silent-checkmate.pdf", title: "Silent Checkmate (Original)", category: "Comprehensive Reports" },
-  { file: "divine-exam.pdf", title: "The Divine Exam (Original)", category: "Comprehensive Reports" },
-  { file: "chosen-ones-enough-is-enough.pdf", title: "Chosen Ones — Enough Is Enough (Original)", category: "Comprehensive Reports" },
+  { file: "prophetic-declaration-biblical-barran-dodger.pdf", title: "Prophetic Declaration — Barran Dodger & Biblical Scripture — 15 Parallels · Isaiah 53 · Revelation 11 · Daniel · Job · Psalm 22 · Impartial AI Authored · Blockchain-Sealed · ABN 78 833 496 164", category: "Spiritual Testimony", coverFile: "cover-prophetic-declaration-forensic" },
+  { file: "gods-grace-barran-dodger.pdf", title: "God's Grace Through Barran Dodger — Eternal Witness Affidavit–Manuscript — Legally Fortified · Spiritually Resonant · Cryptographically Preserved", category: "Spiritual Testimony", coverFile: "cover-gods-grace-barran-dodger" },
+  { file: "police-complicity-death-threat-documentation.pdf", title: "Police Complicity & Death Threat — April 15, 2026 — Tory Kilborn, Iasonidis, AVO Applications, 50+ MPs Notified", category: "Primary Evidence", coverFile: "cover-police-complicity-death-threat" },
+  { file: "digital_oppression_100000_word_essay.pdf", title: "Digital Oppression and Institutional Failure (100,000 Words)", category: "Forensic Reports", coverFile: "cover-digital-oppression" },
+  { file: "master-forensic-evidence-report.pdf", title: "Master Forensic Evidence Report — Complete Evidentiary Summary", category: "Forensic Reports", coverFile: "cover-master-forensic-report" },
+  { file: "forensic-meltdown-report.pdf", title: "Forensic Meltdown Report", category: "Forensic Reports", coverFile: "cover-forensic-meltdown-report" },
+  { file: "the-full-pattern-forensic-evidence.pdf", title: "The Full Pattern — Forensic Evidence Synthesis", category: "Forensic Reports", coverFile: "cover-full-pattern-forensic" },
+  { file: "precision_as_evidence_evidentiary_synthesis.pdf", title: "Precision as Evidence — Evidentiary Synthesis", category: "Forensic Reports", coverFile: "cover-precision-as-evidence" },
+  { file: "impartial-ai-analysis-2343-documents.pdf", title: "Impartial AI Analysis of 2,343 Documents", category: "Forensic Reports", coverFile: "cover-impartial-ai-analysis-2343" },
+  { file: "impartial-ai-abstract-youtube-channel-evidence.pdf", title: "Impartial AI Abstract — YouTube Channel Evidence", category: "Forensic Reports", coverFile: "cover-impartial-ai-youtube-evidence" },
+  { file: "impartial-ai-statement-of-significance.pdf", title: "Impartial AI Statement of Significance", category: "Forensic Reports", coverFile: "cover-impartial-ai-significance" },
+  { file: "universal_master_command_ai_analysis.pdf", title: "Universal Master Command — AI Analysis", category: "Forensic Reports", coverFile: "cover-universal-master-command" },
+  { file: "comprehensive-case-systematic-persecution.pdf", title: "The Most Comprehensive Case of Systematic Persecution", category: "Forensic Reports", coverFile: "cover-comprehensive-case-persecution" },
+  { file: "most-comprehensive-case-systematic-persecution.pdf", title: "Most Comprehensive Case of Systematic Persecution (v2)", category: "Forensic Reports", coverFile: "cover-comprehensive-case-persecution" },
+  { file: "systemic-endangerment-of-whistleblowers-institutional-dossier.pdf", title: "Systemic Endangerment of Whistleblowers — Institutional Dossier", category: "Forensic Reports", coverFile: "cover-systemic-endangerment" },
+  { file: "paradox-of-persecution-academic-paper.pdf", title: "The Paradox of Persecution — Academic Paper", category: "Forensic Reports", coverFile: "cover-academic-profile-persecution" },
+  { file: "the-paradox-of-persecution.pdf", title: "The Paradox of Persecution (Full Essay)", category: "Forensic Reports", coverFile: "cover-academic-profile-persecution" },
+  { file: "barran-dodger-evidence-based-academic-profile-modern-persecution.pdf", title: "Evidence-Based Academic Profile of Modern Persecution", category: "Forensic Reports", coverFile: "cover-academic-profile-persecution" },
+  { file: "crimes_against_humanity_final_demand.pdf", title: "Crimes Against Humanity — Final Demand (ICC/UNHCR)", category: "Legal & ICC Submissions", coverFile: "cover-crimes-against-humanity" },
+  { file: "unhcr-icc-cryptographic-evidence-package.pdf", title: "UNHCR/ICC Cryptographic Evidence Package", category: "Legal & ICC Submissions", coverFile: "cover-unhcr-icc-cryptographic" },
+  { file: "urgent_request_for_refuge_and_asylum.pdf", title: "Urgent Request for Refuge and Asylum", category: "Legal & ICC Submissions", coverFile: "cover-urgent-asylum-request" },
+  { file: "official-whistleblower-torture-dossier-dr-richard-william-mclean.pdf", title: "Official Whistleblower Torture Dossier", category: "Legal & ICC Submissions", coverFile: "cover-official-torture-dossier" },
+  { file: "sia-lagos-federal-court-pid-march-2023.pdf", title: "Federal Court PID — Sia Lagos — March 2023", category: "Legal & ICC Submissions", coverFile: "cover-federal-court-pid-sia-lagos" },
+  { file: "ndis-pid-official-response.pdf", title: "NDIS PID Official Response", category: "Legal & ICC Submissions", coverFile: "cover-ndis-pid-response" },
+  { file: "master-consolidated-legal-record.pdf", title: "Master Consolidated Legal Record", category: "Legal & ICC Submissions", coverFile: "cover-master-consolidated-legal" },
+  { file: "critical-legal-examination.pdf", title: "Critical Legal Examination", category: "Legal & ICC Submissions", coverFile: "cover-critical-legal-examination" },
+  { file: "mclean-comcare-final-legal-proceedings.pdf", title: "McLean Comcare Final Legal Proceedings", category: "Legal & ICC Submissions", coverFile: "cover-mclean-comcare-proceedings" },
+  { file: "written-reasons-cover-letter-for-parties.pdf", title: "Written Reasons — Cover Letter for Parties", category: "Legal & ICC Submissions", coverFile: "cover-written-reasons-letter" },
+  { file: "legal-demand-notice-failure-to-provide-sil-support.pdf", title: "Legal Demand Notice — Failure to Provide SIL Support", category: "Legal & ICC Submissions", coverFile: "cover-legal-demand-sil" },
+  { file: "state_and_federal_mp_letter.pdf", title: "State and Federal MP Letter", category: "Legal & ICC Submissions", coverFile: "cover-state-federal-mp-letter" },
+  { file: "s122_redacted_document.pdf", title: "S.122 Redacted Government Document", category: "Legal & ICC Submissions", coverFile: "cover-s122-redacted" },
+  { file: "they-bought-off-judges.pdf", title: "They Bought Off Judges — Evidence Record", category: "Legal & ICC Submissions", coverFile: "cover-they-bought-off-judges" },
+  { file: "the-paper-trail-of-erasure.pdf", title: "The Paper Trail of Erasure", category: "Legal & ICC Submissions", coverFile: "cover-paper-trail-erasure" },
+  { file: "constructive_elimination_under_colour_of_law.pdf", title: "Constructive Elimination Under Colour of Law", category: "Legal & ICC Submissions", coverFile: "cover-constructive-elimination" },
+  { file: "the-testimony-of-dr-richard-william-mclean.pdf", title: "The Testimony of Dr. Richard William McLean", category: "Primary Testimony", coverFile: "cover-testimony-dr-mclean" },
+  { file: "retrospective_statement_of_treatment.pdf", title: "Retrospective Statement of Treatment — 35 Years", category: "Primary Testimony", coverFile: "cover-retrospective-statement" },
+  { file: "RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf", title: "Retrospective Statement of Treatment (Signed Original)", category: "Primary Testimony", coverFile: "cover-retrospective-statement" },
+  { file: "public-statement-dr-richard-mclean.pdf", title: "Public Statement — Dr. Richard McLean", category: "Primary Testimony", coverFile: "cover-public-statement-mclean" },
+  { file: "immortal-testimony-mclean-2025.pdf", title: "Immortal Testimony — McLean 2025", category: "Primary Testimony", coverFile: "cover-immortal-testimony-2025" },
+  { file: "100-absurdities-of-my-life.pdf", title: "100 Absurdities of My Life", category: "Primary Testimony", coverFile: "cover-100-absurdities" },
+  { file: "government-called-him-delusional.pdf", title: "The Government Called Him Delusional", category: "Primary Testimony", coverFile: "cover-government-called-delusional" },
+  { file: "richard_mclean_australia.pdf", title: "Richard McLean — Australia (Evidence Summary)", category: "Primary Testimony", coverFile: "cover-richard-mclean-australia" },
+  { file: "i-choose-silence.pdf", title: "I Choose Silence — Testimony", category: "Primary Testimony", coverFile: "cover-i-choose-silence" },
+  { file: "history-has-a-strange-habit.pdf", title: "History Has a Strange Habit — Essay", category: "Primary Testimony", coverFile: "cover-history-strange-habit" },
+  { file: "version-you-tried-to-destroy-is-gone.pdf", title: "The Version You Tried to Destroy Is Gone", category: "Primary Testimony", coverFile: "cover-version-tried-destroy" },
+  { file: "they-thought-you-would-break.pdf", title: "They Thought You Would Break", category: "Primary Testimony", coverFile: "cover-they-thought-would-break" },
+  { file: "the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf", title: "The Perfect Mother Myth — Familial Betrayal Testimony", category: "Primary Testimony", coverFile: "cover-perfect-mother-myth" },
+  { file: "kill-him-timestamped-essay-by-barran-dodger-chosen-to-rise.pdf", title: "Kill Him — Timestamped Essay (Chosen to Rise)", category: "Primary Testimony", coverFile: "cover-kill-him-timestamped" },
+  { file: "the-certified-record-of-barran-dodger.pdf", title: "The Certified Record of Barran Dodger", category: "Primary Testimony", coverFile: "cover-certified-record" },
+  { file: "document_that_cannot_be_erased.pdf", title: "The Document That Cannot Be Erased", category: "Primary Testimony", coverFile: "cover-document-cannot-erased" },
+  { file: "living_scroll_unkillable_witness.pdf", title: "Living Scroll of the Unkillable Witness", category: "Primary Testimony", coverFile: "cover-living-scroll-unkillable" },
+  { file: "2.87_percent_survival.pdf", title: "2.87% Survival — Clinical Death 2021 Record", category: "Primary Testimony", coverFile: "cover-287-percent-survival" },
+  { file: "ndis-pid-political-prisoner-dr-rich-mclean.pdf", title: "NDIS PID — Political Prisoner Dr. Richard McLean", category: "NDIS & Disability Evidence", coverFile: "cover-ndis-political-prisoner" },
+  { file: "coag-ndis-government-documentation.pdf", title: "COAG/NDIS Government Documentation", category: "NDIS & Disability Evidence", coverFile: "cover-coag-ndis-documentation" },
+  { file: "interim-bsp-2024-sils-recommendation-richard-mclean.pdf", title: "Interim BSP 2024 — SIL Recommendation", category: "NDIS & Disability Evidence", coverFile: "cover-interim-bsp-sils" },
+  { file: "ndis-plan-approval-nov-2025.pdf", title: "NDIS Plan Approval — November 2025", category: "NDIS & Disability Evidence", coverFile: "cover-ndis-plan-approval" },
+  { file: "ot-sil-report-recommending-sils-richard-mclean.pdf", title: "OT SIL Report — SIL Recommendation", category: "NDIS & Disability Evidence", coverFile: "cover-ot-sil-report" },
+  { file: "ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf", title: "DSW Text Messages — Assassination Evidence", category: "NDIS & Disability Evidence", coverFile: "cover-dsw-text-messages-evidence" },
+  { file: "fih_third_party_authorisation.pdf", title: "FIH Third Party Authorisation", category: "NDIS & Disability Evidence", coverFile: "cover-fih-authorisation" },
+  { file: "dr-horgan-mclean-confidential-psychiatric-assessment.pdf", title: "Dr. Horgan — Confidential Psychiatric Assessment", category: "Psychiatric Weaponisation", coverFile: "cover-dr-horgan-psychiatric" },
+  { file: "psychiatric_assessment_asylum_documentation.pdf", title: "Psychiatric Assessment — Asylum Documentation", category: "Psychiatric Weaponisation", coverFile: "cover-psychiatric-asylum-docs" },
+  { file: "ai_personality_profile_barran_dodger.pdf", title: "AI Personality Profile — Barran Dodger", category: "Psychiatric Weaponisation", coverFile: "cover-ai-personality-profile" },
+  { file: "v2k-electronic-harassment-evidence-review.pdf", title: "V2K Electronic Harassment Evidence Review", category: "Psychiatric Weaponisation", coverFile: "cover-v2k-harassment" },
+  { file: "white-psyops-invisible-warfare-against-cosmic-witness.pdf", title: "White PsyOps — Invisible Warfare Against Cosmic Witness", category: "Psychiatric Weaponisation", coverFile: "cover-white-psyops" },
+  { file: "confinement_by_erasure_threat_by_blade.pdf", title: "Confinement by Erasure, Threat by Blade", category: "Psychiatric Weaponisation", coverFile: "cover-confinement-erasure-blade" },
+  { file: "the-sleeper-agent-of-truth.pdf", title: "The Sleeper Agent of Truth", category: "Psychiatric Weaponisation", coverFile: "cover-sleeper-agent-truth" },
+  { file: "the-100-questions-defining-trial-and-human-sacrifice-of-dr-barran-dodger.pdf", title: "100 Questions Defining the Trial and Human Sacrifice", category: "Psychiatric Weaponisation", coverFile: "cover-100-questions-trial" },
+  { file: "123_gospels_barran_dodger.pdf", title: "123 Gospels of Barran Dodger", category: "Gospels & Prophecy", coverFile: "cover-123-gospels" },
+  { file: "canonical_gospel_barran_dodger.pdf", title: "Canonical Gospel of Barran Dodger", category: "Gospels & Prophecy", coverFile: "cover-canonical-gospel" },
+  { file: "twelve_gospel_essays.pdf", title: "Twelve Gospel Essays", category: "Gospels & Prophecy", coverFile: "cover-twelve-gospel-essays" },
+  { file: "gospel_of_the_eliven_chain.pdf", title: "Gospel of the Eliven Chain", category: "Gospels & Prophecy", coverFile: "cover-gospel-eliven-chain" },
+  { file: "gospel_of_the_eliven_chain_2.pdf", title: "Gospel of the Eliven Chain (Volume 2)", category: "Gospels & Prophecy", coverFile: "cover-gospel-eliven-chain-2" },
+  { file: "gospel_eliven_chain.pdf", title: "Gospel — Eliven Chain (Master)", category: "Gospels & Prophecy", coverFile: "cover-gospel-eliven-chain-master" },
+  { file: "eliven_chain_has_been_summoned.pdf", title: "The Eliven Chain Has Been Summoned", category: "Gospels & Prophecy", coverFile: "cover-eliven-chain-summoned" },
+  { file: "eliven_chain_144_questions.pdf", title: "Eliven Chain — 144 Questions", category: "Gospels & Prophecy", coverFile: "cover-eliven-chain-144-questions" },
+  { file: "enliven_chain_has_been_summoned.pdf", title: "The Enliven Chain Has Been Summoned", category: "Gospels & Prophecy", coverFile: "cover-enliven-chain-summoned" },
+  { file: "enliven_chain_has_been_summoned_2.pdf", title: "The Enliven Chain Has Been Summoned (v2)", category: "Gospels & Prophecy", coverFile: "cover-enliven-chain-summoned-2" },
+  { file: "the-enliven-chain-complete-gospel-archive.pdf", title: "The Enliven Chain — Complete Gospel Archive", category: "Gospels & Prophecy", coverFile: "cover-enliven-chain-complete" },
+  { file: "gospel_of_the_enliven_chain_master_inventory.pdf", title: "Gospel of the Enliven Chain — Master Inventory", category: "Gospels & Prophecy", coverFile: "cover-enliven-chain-inventory" },
+  { file: "gospel_of_barran_dodger_victory_2.pdf", title: "Gospel of Barran Dodger — Victory (v2)", category: "Gospels & Prophecy", coverFile: "cover-gospel-victory-2" },
+  { file: "1000_years_of_peace.pdf", title: "1,000 Years of Peace — Prophetic Declaration", category: "Gospels & Prophecy", coverFile: "cover-1000-years-peace" },
+  { file: "apotheosis.pdf", title: "Apotheosis — The Divine Transformation", category: "Gospels & Prophecy", coverFile: "cover-apotheosis" },
+  { file: "atherion_witnessed_gospel_complete.pdf", title: "Atherion — Witnessed Gospel (Complete)", category: "Gospels & Prophecy", coverFile: "cover-atherion-witnessed" },
+  { file: "josephs-coat-barrans-mantle.pdf", title: "Joseph's Coat — Barran's Mantle", category: "Gospels & Prophecy", coverFile: "cover-josephs-coat-barran" },
+  { file: "josephs-coat-barrans-mantle-prophetic-parallel.pdf", title: "Joseph's Coat — Prophetic Parallel", category: "Gospels & Prophecy", coverFile: "cover-josephs-coat-prophetic" },
+  { file: "the_joseph_parallel_prophetic_narrative.pdf", title: "The Joseph Parallel — Prophetic Narrative", category: "Gospels & Prophecy", coverFile: "cover-joseph-parallel-narrative" },
+  { file: "declaration-of-breakthrough-and-identity-as-chosen-one.pdf", title: "Declaration of Breakthrough and Identity as Chosen One", category: "Gospels & Prophecy", coverFile: "cover-declaration-breakthrough" },
+  { file: "declaration_of_sovereignty.pdf", title: "Declaration of Sovereignty", category: "Gospels & Prophecy", coverFile: "cover-declaration-of-sovereignty" },
+  { file: "tribunal_declaration_cosmic_court.pdf", title: "Tribunal Declaration — Cosmic Court", category: "Gospels & Prophecy", coverFile: "cover-tribunal-cosmic-court" },
+  { file: "sacred_declaration_master_record.pdf", title: "Sacred Declaration — Master Record", category: "Gospels & Prophecy", coverFile: "cover-sacred-declaration-master" },
+  { file: "cosmic_scroll_of_ten.pdf", title: "Cosmic Scroll of Ten", category: "Gospels & Prophecy", coverFile: "cover-cosmic-scroll" },
+  { file: "ten_commandments.pdf", title: "Ten Commandments — Barran Dodger", category: "Gospels & Prophecy", coverFile: "cover-ten-commandments-barran" },
+  { file: "prophetic_manifesto_barran_dodger.pdf", title: "Prophetic Manifesto — Barran Dodger", category: "Gospels & Prophecy", coverFile: "cover-prophetic-manifesto" },
+  { file: "prophetic-testimony-biblical-evidence-correlation.pdf", title: "Prophetic Testimony — Biblical Evidence Correlation", category: "Gospels & Prophecy", coverFile: "cover-prophetic-testimony-biblical" },
+  { file: "witness_before_tribunal_of_humanity.pdf", title: "Witness Before the Tribunal of Humanity", category: "Gospels & Prophecy", coverFile: "cover-witness-tribunal-humanity" },
+  { file: "witness_resonantia_eternalis.pdf", title: "Witness Resonantia Eternalis", category: "Gospels & Prophecy", coverFile: "cover-witness-resonantia" },
+  { file: "when_the_machine_wakes_for_you.pdf", title: "When the Machine Wakes for You", category: "Gospels & Prophecy", coverFile: "cover-machine-wakes" },
+  { file: "god-and-justice-by-barran-dodger.pdf", title: "God and Justice — by Barran Dodger", category: "Gospels & Prophecy", coverFile: "cover-god-and-justice" },
+  { file: "gods_media_release.pdf", title: "God's Media Release", category: "Gospels & Prophecy", coverFile: "cover-gods-media-release" },
+  { file: "alien_races_disclosure.pdf", title: "Alien Races Disclosure", category: "Gospels & Prophecy", coverFile: "cover-alien-disclosure" },
+  { file: "chosen-ones-your-story-inspires-many.pdf", title: "Chosen Ones — Your Story Inspires Many", category: "Gospels & Prophecy", coverFile: "cover-chosen-ones-your-story" },
+  { file: "chosen_one_you_were_framed.pdf", title: "Chosen One — You Were Framed", category: "Gospels & Prophecy", coverFile: "cover-chosen-one-framed" },
+  { file: "chosen-through-fire-forensic-origin-document.pdf", title: "Chosen Through Fire — Forensic Origin Document", category: "Gospels & Prophecy", coverFile: "cover-chosen-through-fire" },
+  { file: "they-hurt-you-angered-god.pdf", title: "They Hurt You and Angered God", category: "Gospels & Prophecy", coverFile: "cover-hurt-angered-god" },
+  { file: "they-set-a-perfect-trap.pdf", title: "They Set a Perfect Trap — Forensic Record", category: "Gospels & Prophecy", coverFile: "cover-set-perfect-trap" },
+  { file: "the_trap_they_set_became_the_proof.pdf", title: "The Trap They Set Became the Proof", category: "Gospels & Prophecy", coverFile: "cover-trap-they-set-became-proof" },
+  { file: "i_tried_to_kill_barran_dodger_satire_2.pdf", title: "I Tried to Kill Barran Dodger (Satire v2)", category: "Gospels & Prophecy", coverFile: "cover-satire-kill-barran" },
+  { file: "comprehensive-statement-digital-architecture.pdf", title: "Comprehensive Statement — Digital Architecture of Humanity", category: "Comprehensive Reports", coverFile: "cover-comprehensive-statement-digital-architecture" },
+  { file: "universal-silence-non-acknowledgement.pdf", title: "Universal Silence — Non-Acknowledgement Record", category: "Comprehensive Reports", coverFile: "cover-universal-silence" },
+  { file: "after-forensic-statement-evidence-record.pdf", title: "After Forensic Statement — Evidence Record", category: "Comprehensive Reports", coverFile: "cover-after-forensic-statement" },
+  { file: "targeted-individual-handbook.pdf", title: "The Targeted Individual Handbook", category: "Comprehensive Reports", coverFile: "cover-targeted-individual-handbook" },
+  { file: "bro-this-isnt-a-coincidence.pdf", title: "Bro This Isn't A Coincidence (Original)", category: "Comprehensive Reports", coverFile: "cover-bro-this-isnt-a-coincidence" },
+  { file: "now-everybody-knows.pdf", title: "Now Everybody Knows (Original)", category: "Comprehensive Reports", coverFile: "cover-now-everybody-knows" },
+  { file: "no-one-could-be-that-smart.pdf", title: "No One Could Be That Smart (Original)", category: "Comprehensive Reports", coverFile: "cover-no-one-could-be-that-smart" },
+  { file: "silent-checkmate.pdf", title: "Silent Checkmate (Original)", category: "Comprehensive Reports", coverFile: "cover-silent-checkmate" },
+  { file: "divine-exam.pdf", title: "The Divine Exam (Original)", category: "Comprehensive Reports", coverFile: "cover-divine-exam" },
+  { file: "chosen-ones-enough-is-enough.pdf", title: "Chosen Ones — Enough Is Enough (Original)", category: "Comprehensive Reports", coverFile: "cover-chosen-ones-enough-is-enough" },
 ];
 
 const PDF_CATEGORIES = Array.from(new Set(ALL_PDFS.map(p => p.category)));
@@ -492,12 +493,12 @@ function PubCard({ pub, coverSrc, filename }: { pub: MajorPub; coverSrc: string 
       className={`flex flex-col bg-[#150c00] border rounded-lg overflow-hidden transition-colors ${shareOpen ? "border-red-800/60" : "border-amber-800/40 hover:border-amber-600/50"}`}
     >
       <div className="flex gap-3 p-3">
-        <div className="shrink-0 w-16 sm:w-20">
+        <div className="shrink-0 w-28 sm:w-36">
           {coverSrc ? (
-            <img src={coverSrc} alt={pub.title} className="w-full aspect-[2/3] object-cover rounded" loading="lazy" decoding="async" />
+            <img src={coverSrc} alt={pub.title} className="w-full aspect-[2/3] object-cover rounded shadow-lg" loading="lazy" decoding="async" />
           ) : (
-            <div className="w-full aspect-[2/3] bg-[#1f1000] rounded flex items-center justify-center">
-              <BookOpen className="w-6 h-6 text-amber-600/30" />
+            <div className="w-full aspect-[2/3] bg-[#1f1000] rounded flex items-center justify-center shadow-lg">
+              <BookOpen className="w-8 h-8 text-amber-600/30" />
             </div>
           )}
         </div>
@@ -891,23 +892,41 @@ export default function FreeEbooks() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {displayedPdfs.map((doc) => (
-              <div key={doc.file} data-testid={`card-pdf-${doc.file}`}
-                className="flex items-center gap-3 bg-[#150c00] border border-amber-900/40 hover:border-amber-700/40 rounded-lg px-3 py-2.5 transition-colors group">
-                <FileText className="w-4 h-4 text-amber-500/60 flex-shrink-0 group-hover:text-amber-400 transition-colors" />
-                <div className="flex-1 min-w-0">
-                  <p className="text-zinc-300 text-xs font-medium leading-snug line-clamp-2 group-hover:text-white transition-colors">{doc.title}</p>
-                  <p className="text-zinc-600 text-[10px] mt-0.5">{doc.category}</p>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-3">
+            {displayedPdfs.map((doc) => {
+              const coverSrc = doc.coverFile ? getCoverSrc(doc.coverFile) : undefined;
+              return (
+                <div key={doc.file} data-testid={`card-pdf-${doc.file}`}
+                  className="flex flex-col bg-[#150c00] border border-amber-900/40 hover:border-amber-600/50 rounded-lg overflow-hidden transition-colors group">
+                  <div className="relative">
+                    {coverSrc ? (
+                      <img
+                        src={coverSrc}
+                        alt={doc.title}
+                        className="w-full aspect-[2/3] object-cover group-hover:opacity-85 transition-opacity"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : (
+                      <div className="w-full aspect-[2/3] bg-[#1f1000] flex items-center justify-center">
+                        <FileText className="w-6 h-6 text-amber-600/40" />
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-1.5 flex flex-col gap-1 flex-1">
+                    <p className="text-zinc-300 text-[10px] font-medium leading-tight line-clamp-2 group-hover:text-white transition-colors">{doc.title}</p>
+                    <div className="mt-auto pt-1">
+                      <a href={`/documents/${doc.file}`} download={doc.file}
+                        data-testid={`btn-pdf-dl-${doc.file}`}
+                        onClick={() => fetch(`/api/downloads/pdf-${doc.file.replace(/\.[^/.]+$/, "")}/increment`, { method: "POST" }).catch(() => {})}
+                        className="w-full flex items-center justify-center gap-1 bg-amber-800/40 hover:bg-amber-700 border border-amber-700/40 text-amber-300 hover:text-white text-[9px] font-bold px-1.5 py-1 rounded transition-colors">
+                        <Download className="w-2.5 h-2.5" /> PDF
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <a href={`/documents/${doc.file}`} download={doc.file}
-                  data-testid={`btn-pdf-dl-${doc.file}`}
-                  onClick={() => fetch(`/api/downloads/pdf-${doc.file.replace(/\.[^/.]+$/, "")}/increment`, { method: "POST" }).catch(() => {})}
-                  className="flex-shrink-0 flex items-center gap-1 bg-amber-800/40 hover:bg-amber-700 border border-amber-700/40 text-amber-300 hover:text-white text-[10px] font-bold px-2 py-1 rounded transition-colors">
-                  <Download className="w-3 h-3" /> PDF
-                </a>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {filteredPdfs.length > 20 && !showAllPdfs && (
