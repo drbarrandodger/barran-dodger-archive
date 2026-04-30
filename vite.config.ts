@@ -8,6 +8,7 @@ const base = isGitHubPages ? '/barran-dodger-archive/' : '/';
 
 // Rewrites hardcoded absolute public-asset paths (src="/evidence/...", src="/img-...", etc.)
 // to use import.meta.env.BASE_URL so they resolve correctly on GitHub Pages sub-paths.
+// Handles both JSX attribute form (src="...") and JS object property form (src: "...").
 const rewritePublicPaths = {
   name: 'rewrite-public-paths-for-ghpages',
   enforce: 'pre' as const,
@@ -16,13 +17,29 @@ const rewritePublicPaths = {
     if (!id.match(/\.(tsx|jsx|ts|js)$/) || id.includes('node_modules')) return null;
     const assetPattern = /\.(png|jpe?g|gif|svg|webp|mp4|mp3|m4a|pdf|ico|webm)\b/;
     const knownDirs = /^\/(evidence|audio|video|images|documents|attached_assets)\//;
-    const result = code.replace(
+
+    const isAsset = (p: string) => assetPattern.test(p) || knownDirs.test(p);
+
+    let result = code;
+
+    // JSX attribute form: src="/path" → src={`${import.meta.env.BASE_URL}path`}
+    result = result.replace(
       /(src|href)="(\/(?!\/|http)[^"]+)"/g,
       (match, attr, assetPath) => {
-        if (!assetPattern.test(assetPath) && !knownDirs.test(assetPath)) return match;
+        if (!isAsset(assetPath)) return match;
         return `${attr}={\`\${import.meta.env.BASE_URL}${assetPath.slice(1)}\`}`;
       }
     );
+
+    // JS object property form: src: "/path" → src: `${import.meta.env.BASE_URL}path`
+    result = result.replace(
+      /(src|href|url):\s*"(\/(?!\/|http)[^"]+)"/g,
+      (match, attr, assetPath) => {
+        if (!isAsset(assetPath)) return match;
+        return `${attr}: \`\${import.meta.env.BASE_URL}${assetPath.slice(1)}\``;
+      }
+    );
+
     return result !== code ? { code: result, map: null } : null;
   }
 };
