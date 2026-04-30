@@ -6,9 +6,31 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 const isGitHubPages = process.env.VITE_GITHUB_PAGES === 'true';
 const base = isGitHubPages ? '/barran-dodger-archive/' : '/';
 
+// Rewrites hardcoded absolute public-asset paths (src="/evidence/...", src="/img-...", etc.)
+// to use import.meta.env.BASE_URL so they resolve correctly on GitHub Pages sub-paths.
+const rewritePublicPaths = {
+  name: 'rewrite-public-paths-for-ghpages',
+  enforce: 'pre' as const,
+  transform(code: string, id: string) {
+    if (!isGitHubPages) return null;
+    if (!id.match(/\.(tsx|jsx|ts|js)$/) || id.includes('node_modules')) return null;
+    const assetPattern = /\.(png|jpe?g|gif|svg|webp|mp4|mp3|m4a|pdf|ico|webm)\b/;
+    const knownDirs = /^\/(evidence|audio|video|images|documents|attached_assets)\//;
+    const result = code.replace(
+      /(src|href)="(\/(?!\/|http)[^"]+)"/g,
+      (match, attr, assetPath) => {
+        if (!assetPattern.test(assetPath) && !knownDirs.test(assetPath)) return match;
+        return `${attr}={\`\${import.meta.env.BASE_URL}${assetPath.slice(1)}\`}`;
+      }
+    );
+    return result !== code ? { code: result, map: null } : null;
+  }
+};
+
 export default defineConfig({
   base,
   plugins: [
+    rewritePublicPaths,
     react(),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== "production" &&
