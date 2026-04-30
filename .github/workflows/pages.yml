@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Copy attached_assets into public for GitHub Pages
+        run: cp -r attached_assets client/public/attached_assets
+
       - name: Build
         run: npm run build
         env:
