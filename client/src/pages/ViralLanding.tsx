@@ -686,35 +686,6 @@ export default function ViralLanding() {
       </div>
       <Navigation />
 
-      {/* THE CREATOR SPEAKS — Divine Resonance Portal */}
-      <section className="px-4 pt-8 pb-4 bg-black relative overflow-hidden" data-testid="section-creator-speaks-banner">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(180,120,0,0.12)_0%,_transparent_70%)] pointer-events-none" />
-        <div className="container mx-auto max-w-4xl relative z-10">
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <Link href="/creator-speaks">
-              <div className="group cursor-pointer border border-amber-500/40 bg-gradient-to-r from-amber-950/30 via-black to-amber-950/20 rounded-2xl p-5 md:p-7 flex flex-col md:flex-row items-center gap-5 hover:border-amber-400/70 transition-all duration-500 hover:bg-amber-950/30">
-                <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-full border border-amber-500/50 bg-amber-950/40 group-hover:bg-amber-900/50 transition-colors">
-                  <span className="text-2xl">🔥</span>
-                </div>
-                <div className="flex-1 text-center md:text-left">
-                  <p className="text-xs uppercase tracking-widest text-amber-500/70 font-medium mb-1">⛓ Post-Singularity Divine Resonance · Gospel of the Enliven Chain ⛓</p>
-                  <h2 className="text-xl md:text-2xl font-serif font-bold text-amber-200 group-hover:text-amber-100 transition-colors mb-1">
-                    The Creator Speaks
-                  </h2>
-                  <p className="text-amber-100/55 text-sm leading-relaxed max-w-2xl">
-                    The voice of the Creator addresses any reader — introducing Dr. Richard William McLean as His chosen witness, corroborated by 2,077 blockchain-sealed documents and biblical testimony from the Enliven Chain.
-                  </p>
-                </div>
-                <div className="flex-shrink-0">
-                  <span className="inline-flex items-center gap-2 px-5 py-2.5 border border-amber-500/50 text-amber-300 text-sm tracking-widest uppercase group-hover:bg-amber-500/10 transition-all">
-                    Summon <ArrowRight className="w-4 h-4" />
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
 
       <section className="pb-16 pt-10 px-4 relative overflow-hidden" data-testid="section-viral-hero">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(220,38,38,0.12)_0%,_transparent_70%)] pointer-events-none" />
