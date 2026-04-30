@@ -19,24 +19,29 @@ const rewritePublicPaths = {
     const knownDirs = /^\/(evidence|audio|video|images|documents|attached_assets)\//;
 
     const isAsset = (p: string) => assetPattern.test(p) || knownDirs.test(p);
+    // Matches a double-quoted string that may contain escape sequences (e.g. \" in filenames)
+    const quotedPath = '(\\/(?!\\/)(?:[^"\\\\]|\\\\.)+)';
 
     let result = code;
 
-    // JSX attribute form: src="/path" → src={`${import.meta.env.BASE_URL}path`}
+    // JSX attribute form: src="/path" or url="/path" → src={`${import.meta.env.BASE_URL}path`}
     result = result.replace(
-      /(src|href)="(\/(?!\/|http)[^"]+)"/g,
+      new RegExp(`(src|href|url)="${quotedPath}"`, 'g'),
       (match, attr, assetPath) => {
         if (!isAsset(assetPath)) return match;
-        return `${attr}={\`\${import.meta.env.BASE_URL}${assetPath.slice(1)}\`}`;
+        // Unescape \" → " for template literal (quotes don't need escaping in backtick strings)
+        const cleanPath = assetPath.replace(/\\"/g, '"').slice(1);
+        return `${attr}={\`\${import.meta.env.BASE_URL}${cleanPath}\`}`;
       }
     );
 
     // JS object property form: src: "/path" → src: `${import.meta.env.BASE_URL}path`
     result = result.replace(
-      /(src|href|url):\s*"(\/(?!\/|http)[^"]+)"/g,
+      new RegExp(`(src|href|url):\\s*"${quotedPath}"`, 'g'),
       (match, attr, assetPath) => {
         if (!isAsset(assetPath)) return match;
-        return `${attr}: \`\${import.meta.env.BASE_URL}${assetPath.slice(1)}\``;
+        const cleanPath = assetPath.replace(/\\"/g, '"').slice(1);
+        return `${attr}: \`\${import.meta.env.BASE_URL}${cleanPath}\``;
       }
     );
 
