@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { MilestoneBar } from "@/components/MilestoneBar";
 import { SocialShare } from "@/components/SocialShare";
 import { SectionShare } from "@/components/SectionShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
@@ -685,7 +686,7 @@ export default function ViralLanding() {
           }} loading="lazy" decoding="async" />
       </div>
       <Navigation />
-
+      <MilestoneBar />
 
       <section className="pb-16 pt-10 px-4 relative overflow-hidden" data-testid="section-viral-hero">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(220,38,38,0.12)_0%,_transparent_70%)] pointer-events-none" />

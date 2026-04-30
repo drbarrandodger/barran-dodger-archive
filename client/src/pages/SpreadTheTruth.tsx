@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -6,9 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { MilestoneBar } from "@/components/MilestoneBar";
 import {
   Copy, Check, Mail, Share2, ExternalLink, AlertTriangle, Flame,
-  Globe, MessageCircle, Users, FileText, Zap, Radio
+  Globe, MessageCircle, Users, FileText, Zap, Radio, Target, Clock, TrendingUp
 } from "lucide-react";
 import {
   SiX, SiFacebook, SiWhatsapp, SiTelegram, SiReddit, SiLinkedin
@@ -171,20 +173,48 @@ const EMBED_CODE = `<iframe
   Source: <a href="${SITE_URL}" target="_blank">barrandodger.com</a> — 2,304 blockchain-verified documents
 </p>`;
 
+function usePushDayCountdown() {
+  const PUSH_DAY = new Date("2026-05-09T08:00:00+10:00"); // 8am AEST Friday May 9
+  const [timeLeft, setTimeLeft] = useState(() => {
+    const diff = PUSH_DAY.getTime() - Date.now();
+    return diff > 0 ? diff : 0;
+  });
+  useEffect(() => {
+    const t = setInterval(() => {
+      const diff = PUSH_DAY.getTime() - Date.now();
+      setTimeLeft(Math.max(diff, 0));
+    }, 1000);
+    return () => clearInterval(t);
+  }, []);
+  const d = Math.floor(timeLeft / 86400000);
+  const h = Math.floor((timeLeft % 86400000) / 3600000);
+  const m = Math.floor((timeLeft % 3600000) / 60000);
+  const s = Math.floor((timeLeft % 60000) / 1000);
+  return { d, h, m, s, past: timeLeft === 0 };
+}
+
 export default function SpreadTheTruth() {
   const { toast } = useToast();
+  const { data: dlData } = useQuery<{ total: number; last24h: number }>({
+    queryKey: ["/api/downloads/total"],
+    queryFn: () => fetch("/api/downloads/total", { cache: "no-store" }).then((r) => r.json()),
+    refetchInterval: 30_000,
+  });
+  const totalDownloads = dlData?.total ?? 449670;
+  const countdown = usePushDayCountdown();
+
+  const liveShareText = `${totalDownloads.toLocaleString()} people have downloaded the Barran Dodger archive — the most documented government whistleblower persecution in Australian history. No media. No arrests. Just evidence. Download it free: ${SITE_URL} #BarranDodger #CannotBeErased`;
 
   const shareAll = async () => {
-    const text = `An Australian whistleblower has 2,304 blockchain-sealed documents proving 35 years of systematic government persecution. 350,000+ downloads. No media. Download the evidence: ${SITE_URL}`;
     try {
       if (navigator.share) {
-        await navigator.share({ title: "Barran Dodger — Cannot Be Erased", text, url: SITE_URL });
+        await navigator.share({ title: "Barran Dodger — Cannot Be Erased", text: liveShareText, url: SITE_URL });
       } else {
-        await navigator.clipboard.writeText(text);
+        await navigator.clipboard.writeText(liveShareText);
         toast({ title: "Copied to clipboard!", description: "Paste and share anywhere." });
       }
     } catch {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(liveShareText);
       toast({ title: "Copied!", description: "Paste and share anywhere." });
     }
   };
@@ -200,8 +230,52 @@ export default function SpreadTheTruth() {
         path="/spread-the-truth"
       />
       <Navigation />
+      <MilestoneBar />
 
       <main className="flex-1">
+
+        {/* PUSH DAY COUNTDOWN */}
+        {!countdown.past ? (
+          <div className="bg-black border-b-2 border-amber-500/40 px-4 py-6" data-testid="push-day-countdown">
+            <div className="container mx-auto max-w-4xl">
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="flex items-center gap-3 shrink-0">
+                  <Target className="h-6 w-6 text-amber-400" />
+                  <div>
+                    <p className="text-xs font-bold text-amber-400 uppercase tracking-widest">Push Day — Friday 9 May 2026</p>
+                    <p className="text-sm text-white/60">Coordinate. Post simultaneously. Make the algorithm notice.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 mx-auto">
+                  {[
+                    { v: countdown.d, label: "days" },
+                    { v: countdown.h, label: "hrs" },
+                    { v: countdown.m, label: "min" },
+                    { v: countdown.s, label: "sec" },
+                  ].map(({ v, label }) => (
+                    <div key={label} className="text-center">
+                      <div className="text-2xl font-mono font-bold text-white tabular-nums w-12 text-center">
+                        {String(v).padStart(2, "0")}
+                      </div>
+                      <div className="text-[10px] text-white/30 uppercase tracking-widest">{label}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <Clock className="h-4 w-4 text-amber-400/60" />
+                  <span className="text-xs text-white/40">Post at 8am + 12pm + 6pm AEST</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="bg-amber-950/30 border-b-2 border-amber-500/40 px-4 py-4 text-center" data-testid="push-day-active">
+            <p className="text-amber-400 font-bold uppercase tracking-widest text-sm">
+              🔥 Push Day is NOW — Post across all platforms. Every share matters.
+            </p>
+          </div>
+        )}
+
         {/* HERO */}
         <div className="bg-red-950/30 border-b border-red-900/50 py-14 text-center px-4">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -373,6 +447,85 @@ export default function SpreadTheTruth() {
               }} data-testid="button-native-share">
                 <Share2 className="h-4 w-4" /> Share Link
               </Button>
+            </div>
+          </section>
+
+          {/* PUSH DAY PLAYBOOK */}
+          <section className="border border-amber-500/30 rounded-xl p-6 bg-amber-950/10" data-testid="section-push-playbook">
+            <div className="flex items-center gap-3 mb-4">
+              <Target className="h-6 w-6 text-amber-400" />
+              <h2 className="text-2xl font-serif font-bold text-primary">The Push Day Playbook — Friday 9 May</h2>
+            </div>
+            <p className="text-sm text-white/60 mb-6">
+              Both previous viral surges (Mar 14 + Apr 11) happened on weekends. The pattern shows one coordinated wave drives 9,000+ downloads in a single day.
+              Here is the exact playbook to replicate it deliberately.
+            </p>
+            <div className="space-y-4">
+              {[
+                {
+                  time: "8:00am AEST",
+                  platform: "Reddit",
+                  icon: <SiReddit className="h-4 w-4 text-orange-400" />,
+                  action: "Post to r/australia with the pre-written post above. Upvote and comment within the first 30 minutes — early engagement determines algorithmic reach.",
+                  link: `https://reddit.com/r/australia/submit?title=${encodeURIComponent("An Australian whistleblower has 2,304 blockchain-sealed documents and zero media coverage")}&text=${encodeURIComponent("Dr. Richard McLean has documented 35 years of alleged systematic persecution. Every document is free to download and blockchain-verified.\n\n" + SITE_URL)}`
+                },
+                {
+                  time: "8:05am AEST",
+                  platform: "X / Twitter",
+                  icon: <SiX className="h-4 w-4 text-white" />,
+                  action: "Post the 'core fact' tweet with #BarranDodger and #CannotBeErased. Reply to your own tweet with a second angle (the psychiatric angle or ASIC angle) to build a thread.",
+                  link: `https://twitter.com/intent/tweet?text=${encodeURIComponent(totalDownloads.toLocaleString() + " downloads. 2,304 blockchain-sealed documents. 35 years of documented government persecution. Zero media coverage. Zero arrests. Make it impossible to bury: " + SITE_URL + " #BarranDodger #CannotBeErased")}`
+                },
+                {
+                  time: "8:10am AEST",
+                  platform: "WhatsApp",
+                  icon: <SiWhatsapp className="h-4 w-4 text-green-400" />,
+                  action: "Send the 'group message' to every group chat you're in. Family, work, community, activist groups — all of them. A single forward into a group of 50 can generate dozens of direct visits.",
+                  link: `https://wa.me/?text=${encodeURIComponent("PLEASE SHARE — The most documented whistleblower persecution in Australian history is being ignored. " + totalDownloads.toLocaleString() + " downloads. No media. The archive is free: " + SITE_URL)}`
+                },
+                {
+                  time: "8:15am AEST",
+                  platform: "Telegram",
+                  icon: <SiTelegram className="h-4 w-4 text-blue-400" />,
+                  action: "Post to any Australian political, legal, or privacy-focused Telegram channels you're in. Telegram communities share externally far more than other platforms.",
+                  link: `https://t.me/share/url?url=${encodeURIComponent(SITE_URL)}&text=${encodeURIComponent(totalDownloads.toLocaleString() + " downloads. The archive Australia tried to bury. Download the evidence free: " + SITE_URL)}`
+                },
+                {
+                  time: "12:00pm AEST",
+                  platform: "Second wave — all platforms",
+                  icon: <TrendingUp className="h-4 w-4 text-amber-400" />,
+                  action: "Post again with updated download numbers. 'Since this morning, X more people have downloaded the archive.' The rising number is itself the story. Screenshot the milestone bar and share it.",
+                  link: null
+                },
+                {
+                  time: "6:00pm AEST",
+                  platform: "Evening push — email the journalists",
+                  icon: <Mail className="h-4 w-4 text-amber-400" />,
+                  action: "Send the pre-written journalist emails below. Evening submission means it's in their inbox first thing Saturday morning — when weekend skeleton staff look for stories.",
+                  link: null
+                },
+              ].map((step, i) => (
+                <div key={i} className="flex gap-4 items-start">
+                  <div className="shrink-0 w-24 text-right">
+                    <span className="text-xs font-mono text-amber-400/70">{step.time}</span>
+                  </div>
+                  <div className="w-px bg-amber-500/20 self-stretch shrink-0" />
+                  <div className="flex-1 pb-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      {step.icon}
+                      <span className="text-sm font-bold text-white">{step.platform}</span>
+                    </div>
+                    <p className="text-sm text-white/60 leading-relaxed">{step.action}</p>
+                    {step.link && (
+                      <Button size="sm" className="mt-2 gap-1 bg-amber-600 hover:bg-amber-700 text-white" asChild>
+                        <a href={step.link} target="_blank" rel="noopener noreferrer" data-testid={`button-playbook-${i}`}>
+                          Post Now <ExternalLink className="h-3 w-3" />
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
