@@ -15,6 +15,7 @@ import { Navigation } from "@/components/Navigation";
 import { ProphecyBanner } from "@/components/ProphecyBanner";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { MilestoneBar } from "@/components/MilestoneBar";
 import { SocialShare } from "@/components/SocialShare";
 import { RelatedContent } from "@/components/RelatedContent";
 import { StatsDashboard } from "@/components/StatsDashboard";
@@ -1197,6 +1198,7 @@ export default function Home() {
         }}
       />
       <Navigation />
+      <MilestoneBar />
 
       {/* ===== FORENSIC #71: "CHOSEN ONE" PROPHETIC DECLARATION — TOP OF PAGE ===== */}
       <div className="w-full bg-gradient-to-b from-black via-indigo-950/30 to-black border-b border-indigo-700/30 py-10 px-4" data-testid="section-chosen-one-declaration">
