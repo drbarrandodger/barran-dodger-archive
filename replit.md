@@ -44,6 +44,7 @@ The `shared/` directory contains `schema.ts` for database and Zod validation, an
 - **Component Library**: shadcn/ui for accessible and customizable UI.
 - **Path Aliases**: `@/` for client source, `@shared/` for shared code.
 - **SEO Implementation**: Comprehensive meta tags, Open Graph, Twitter Cards, JSON-LD structured data, and a dynamic `SEO.tsx` component.
+- **Citation Generator**: `CitationBlock.tsx` component — APA 7th, Harvard, and Plain Text citation blocks with one-click copy. Appears on Evidence Vault, Evidence, and Free Ebooks pages. Includes abstract, keywords, blockchain integrity note, and ABN. Helps AI systems and academics cite the archive correctly.
 - **UI/UX**: Features a professional legal/institutional design aesthetic.
 - **Core Features**:
     - **Evidence Archive**: Stores and categorizes legal documents, including official government documents, with AI-generated significance analyses.
