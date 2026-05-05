@@ -23,12 +23,12 @@ const TOKEN = process.env.GH_INTEGRATION_TOKEN || process.env.GH_SYNC_TOKEN || p
 const REPO = 'drbarrandodger/barran-dodger-archive';
 const BRANCH = 'main';
 const ROOT = new URL('..', import.meta.url).pathname;
-const FILE_DELAY_MS = 150;
+const FILE_DELAY_MS = 50;
 
 // ── Concurrency + rate guards ─────────────────────────────────────────────────
 const LOCK_FILE = '/tmp/gh-sync.lock';
 const LAST_FILE = '/tmp/gh-sync-last';
-const MIN_INTERVAL_MS = 2 * 60 * 1000;   // 2 minutes between syncs
+const MIN_INTERVAL_MS = 0;   // 2 minutes between syncs
 const LOCK_MAX_AGE_MS = 10 * 60 * 1000;  // consider lock stale after 10 minutes
 
 function lockIsHeld() {
