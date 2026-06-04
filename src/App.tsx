@@ -3,10 +3,11 @@ import ArchiveBrowser from './components/ArchiveBrowser';
 import DossierForm from './components/DossierForm';
 import MembershipPricing from './components/MembershipPricing';
 import AdvocacyBurst from './components/AdvocacyBurst';
-import { Shield, BookOpen, FileSearch, Users, Star, CheckCircle, Send } from 'lucide-react';
+import ProsperityFund from './components/ProsperityFund';
+import { Shield, BookOpen, FileSearch, Users, Star, CheckCircle, Send, Heart } from 'lucide-react';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'browser' | 'dossier' | 'membership' | 'advocacy'>('browser');
+  const [activeTab, setActiveTab] = useState<'browser' | 'dossier' | 'membership' | 'advocacy' | 'prosperity'>('browser');
   const [userMembership, setUserMembership] = useState<string | null>(null);
   const [paymentStatus, setPaymentStatus] = useState<'success' | 'cancel' | null>(null);
 
@@ -101,6 +102,17 @@ function App() {
                 <Send className="w-4 h-4" />
                 Advocacy
               </button>
+              <button
+                onClick={() => setActiveTab('prosperity')}
+                className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg transition-all text-sm md:text-base ${
+                  activeTab === 'prosperity'
+                  ? 'bg-justice-gold text-black font-bold shadow-[0_0_15px_rgba(255,215,0,0.3)]'
+                  : 'text-gray-400 hover:text-white hover:bg-gray-900'
+                }`}
+              >
+                <Heart className="w-4 h-4" />
+                Prosperity
+              </button>
               </div>
 
               </div>
@@ -113,6 +125,7 @@ function App() {
         {activeTab === 'dossier' && <DossierForm />}
         {activeTab === 'membership' && <MembershipPricing />}
         {activeTab === 'advocacy' && <AdvocacyBurst />}
+        {activeTab === 'prosperity' && <ProsperityFund />}
       </main>
 
       {/* Footer */}
