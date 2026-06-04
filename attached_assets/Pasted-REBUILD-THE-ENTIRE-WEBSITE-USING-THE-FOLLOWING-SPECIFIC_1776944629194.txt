@@ -1,0 +1,205 @@
+REBUILD THE ENTIRE WEBSITE USING THE FOLLOWING SPECIFICATIONS.
+
+DO NOT REMOVE, ALTER, SUMMARISE, OR OMIT ANY EXISTING CONTENT.
+
+PRESERVE:
+- Every word
+- Every image
+- Every PDF
+- Every eBook
+- Every download button
+- Every interface element
+
+ONLY RESTRUCTURE, REORDER, AND WRAP CONTENT IN A NEW HIGH-CONVERSION ARCHITECTURE.
+
+---
+
+OBJECTIVE:
+
+Transform the current website into a structured, user-friendly, psychologically compelling platform that:
+1. Guides users through clear content pathways
+2. Increases engagement and time-on-site
+3. Maximises monetisation opportunities
+4. Uses the 450,000+ downloads as social proof
+5. Preserves full integrity of all original material
+
+---
+
+GLOBAL DESIGN RULES:
+
+- Use a clean, minimal layout
+- Strong typography hierarchy
+- Clear section separation
+- No content deletion
+- No rewriting of original documents
+- Mobile-first responsive design
+- Sticky navigation bar
+- Persistent call-to-action buttons
+
+---
+
+SITE STRUCTURE:
+
+CREATE THE FOLLOWING PAGES:
+
+1. HOME
+2. ABOUT
+3. GOSPEL
+4. TESTIMONY
+5. WHISTLEBLOWER RECORD
+6. PUBLICATIONS
+7. EVIDENCE ARCHIVE
+8. SUPPORT / ACCESS
+
+---
+
+HOME PAGE STRUCTURE:
+
+SECTION 1: HERO
+
+Headline:
+"450,000+ Downloads. One Complete Record."
+
+Subheadline:
+"A preserved digital archive of authored works, testimony, and documentation accessed globally."
+
+Buttons:
+- Read the Record
+- View the Evidence
+- Access the Books
+
+---
+
+SECTION 2: WHAT THIS WEBSITE IS
+
+Short explanatory block stating:
+- This is a complete, unedited archive
+- Nothing has been removed or altered
+- All materials are preserved in original form
+
+---
+
+SECTION 3: SOCIAL PROOF
+
+Display:
+"450,000+ Document Downloads"
+
+Supporting text:
+"This level of engagement reflects sustained global interaction with the archive."
+
+---
+
+SECTION 4: PATHWAY NAVIGATION
+
+Create 5 large visual navigation cards:
+
+1. Gospel → /gospel
+2. Testimony → /testimony
+3. Whistleblower Record → /whistleblower
+4. Publications → /publications
+5. Evidence Archive → /evidence
+
+Each card must include:
+- Title
+- One-line description
+- Button: "Enter Section"
+
+---
+
+PAGE TEMPLATE (APPLY TO ALL SECTIONS):
+
+Each page must follow this structure:
+
+1. TITLE HEADER
+
+2. ORIENTATION BLOCK
+Explain what the user is viewing
+
+3. CONTEXT BLOCK
+Explain why this content exists
+
+4. CONTENT DISPLAY
+Insert ALL ORIGINAL CONTENT EXACTLY AS IS
+
+5. ACTION BAR (BOTTOM)
+- Download
+- Purchase (if applicable)
+- Support
+
+---
+
+ABOUT PAGE:
+
+Include:
+
+- Who the author is (neutral, factual tone)
+- What the archive contains
+- Purpose of preservation
+- Scope of work (testimony, publications, structured writings)
+
+DO NOT include exaggerated or unverifiable claims.
+
+---
+
+MONETISATION STRUCTURE:
+
+IMPLEMENT 3 ACCESS LEVELS:
+
+1. FREE ACCESS
+- Partial previews
+- Selected documents
+
+2. FULL ACCESS (PAID)
+- Full PDFs
+- Full books
+- Compiled archives
+
+3. SUPPORT
+- Donation option
+- Message: "Support the continuation of this archive"
+
+---
+
+UI COMPONENTS REQUIRED:
+
+- Sticky header navigation
+- Section-based scrolling
+- Card-based layout for navigation
+- Expandable content sections for large documents
+- Download buttons clearly visible
+- Paywall/locked content indicators for premium material
+
+---
+
+PSYCHOLOGICAL FLOW:
+
+Ensure:
+- Clear entry point
+- Guided navigation
+- Progressive disclosure (do not overwhelm immediately)
+- Each page leads to another logical step
+
+---
+
+TECH REQUIREMENTS:
+
+- Use modular components
+- Separate content from layout
+- Ensure fast load times
+- Optimise images without removing them
+- Maintain all file links and downloads
+
+---
+
+FINAL CHECK:
+
+Before completion, verify:
+- No content is missing
+- No wording has been changed
+- All files are still accessible
+- Navigation is intuitive
+- Pages load correctly on mobile
+
+---
+
+END BUILD.
