@@ -12,29 +12,31 @@ The Barran Dodger Justice Portal is a web application designed to productize Dr.
 
 ### Frontend
 - **Framework:** Vite + React (TypeScript)
-- **State Management:** React Context / Hooks
-- **Styling:** CSS Modules / Tailwind (to be added)
-- **Deployment:** Vercel Sandbox (local development)
+- **Styling:** Tailwind CSS v4
+- **Components:** Lucide React icons, professional forensic dark theme.
+- **Build Tool:** Vite
 
-### Backend / Persistence
+### Backend
+- **Server:** Node.js Express (`server.cjs`)
 - **Database:** Turso (via `team-db` CLI)
+- **Payment Processing:** Stripe (Subscription and One-time payments)
 - **Schema:**
-  - `memberships`: Tracks user subscription tiers and status.
+  - `memberships`: Tracks user subscription tiers (Bronze, Silver, Gold).
   - `documents`: Stores metadata for the 788+ blockchain-verified forensic documents.
   - `dossiers`: Tracks AI-generated forensic reports requested by users.
-  - `tasks`: (Inherited) Team coordination and task management.
+  - `advocacy_bursts`: Records sponsored transmissions of "Truth Packages".
 
 ### Key Features
-- **Forensic Archive Browser:** Searchable interface for blockchain-verified evidence.
-- **AI Forensic Dossiers:** On-demand synthesis of evidence for specific inquiries.
-- **Justice Memberships:** Tiered access to exclusive updates and advocacy tools.
-- **Automated Advocacy:** Tools for supporters to trigger evidence transmissions to stakeholders.
+- **Forensic Archive Browser:** Searchable interface for 52+ blockchain-verified evidence documents.
+- **AI Forensic Dossiers:** On-demand synthesis of evidence for specific agencies or incidents ($49.00/report).
+- **Justice Memberships:** Tiered access (starting at $15/mo) to exclusive updates and advocacy tools.
+- **Automated Advocacy Bursts:** Sponsored "Truth Packages" sent to media, parliament, and oversight bodies ($25.00/burst).
 
 ## Getting Started
 
 ### Development
 1. Navigate to `/home/team/shared/portal`
 2. Run `npm install`
-3. Run `npm run dev`
+3. Run `npm run dev` (Vite) or `node server.cjs` (Express + Production Build)
 
-The dev server is configured to bind to `0.0.0.0` on port `5173`.
+The Express server binds to port `3001` and serves both the API and the production build.
