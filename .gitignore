@@ -10,6 +10,11 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+github-pages-deploy/
+temp-cname/
+temp-deploy/
+populate_batch.cjs
+public/data/
 *.local
 
 # Editor directories and files
