@@ -1,0 +1,456 @@
+{
+  "advocacy_content": {
+    "project": "Barran Dodger Justice Portal - Automated Advocacy Burst System",
+    "description": "Finalized advocacy content packages with targeted evidence summaries, mapped archive document links, and automated email/SMS templates for each stakeholder category.",
+    "last_updated": "2026-06-04",
+    "source_archive": "https://drbarrandodger.github.io/barran-dodger-archive/",
+    "main_site": "https://www.barrandodger.com",
+    "subject": "Dr Richard McLean (Barran Dodger)",
+    "abn": "78 833 496 164",
+    "contact": "drbarrandodger@proton.me"
+  },
+
+  "truth_packages": {
+    "overview": {
+      "title": "I DARE YOU TO PROVE ME WRONG — Executive Summary",
+      "short_summary": "788 blockchain-verified PDFs, 73 forensic analyses (zero contradictions), 891 Bitcoin timestamp records, 409,000+ downloads across 6 continents — exposing 35 years of systematic persecution of whistleblower Dr Richard McLean by 35+ Australian government agencies. Zero marketing. Zero PR. Zero legal help. Zero defamation actions.",
+      "key_numbers": {
+        "blockchain_verified_documents": 788,
+        "forensic_analyses": 73,
+        "forensic_propositions_assessed": 603,
+        "forensic_contradictions": 0,
+        "bitcoin_timestamps": 891,
+        "downloads": "409,000+",
+        "continents": 6,
+        "years_of_persecution": 35,
+        "agencies_involved": 35,
+        "forced_hospitalisations": 14,
+        "hospitalisation_states": 3,
+        "fraudulent_asic_registrations": 350,
+        "survival_probability": "2.87%",
+        "defamation_actions_filed": 0,
+        "marketing_spend": "$0",
+        "pr_team": 0,
+        "legal_help": "$0"
+      },
+      "primary_urls": {
+        "full_archive": "https://drbarrandodger.github.io/barran-dodger-archive/",
+        "evidence_search": "https://www.barrandodger.com/evidence",
+        "evidence_vault": "https://www.barrandodger.com/evidence-vault",
+        "blockchain_verification": "https://www.barrandodger.com/blockchain",
+        "timeline": "https://www.barrandodger.com/timeline",
+        "retrospective_statement": "https://barran-dodger-legal-ethical-trust.replit.app/documents/RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf",
+        "administrative_annihilation": "https://www.barrandodger.com/administrative-annihilation",
+        "taxpayer_cost_analysis": "https://www.barrandodger.com/taxpayer-cost-analysis",
+        "youtube_testimony": "https://youtu.be/PQ89ntM-h_c"
+      }
+    },
+
+    "nacc_package": {
+      "title": "Systemic Corruption by 35+ Government Agencies — NACC Submission Package",
+      "target_institution": "National Anti-Corruption Commission (NACC)",
+      "contact_email": "info@nacc.gov.au",
+      "urgency": "critical",
+      "summary_markdown": "## Submission to the National Anti-Corruption Commission\n\n### Subject: Systemic Corruption Involving 35+ Australian Government Agencies\n\n**Background:** Dr Richard McLean, a disabled LGBTQ+ whistleblower and PhD holder, has been systematically persecuted by 35+ Australian government agencies over 35 years. This is the most documented case of institutional persecution in Australian history.\n\n**Key Agencies Implicated in Corruption:**\n- **OAIC** — FOI refusal cover-up, corruption in information commissioner handling\n- **Commonwealth Ombudsman** — Imposed service ban on whistleblower, abusing oversight mandate\n- **NDIS/NDIA** — Fraud evidence, retaliatory support termination\n- **APRA** — Whistleblower rejection\n- **Attorney-General's Department** — Mark Dreyfus notified in 2021 with full evidence — chose silence\n- **Prime Minister's Office** — Anthony Albanese notified — no action taken\n\n**Evidence Available:** 788 blockchain-verified PDFs, 73 forensic corroboration analyses (603 propositions, zero contradictions), 891 Bitcoin timestamp records.\n\n**Relevant Legislation:** Public Interest Disclosure Act, Crimes Act (Rome Statute offences), Anti-Corruption Commission Act.",
+      "key_documents": [
+        {
+          "title": "Retrospective Statement of Treatment — Government's Own Documents",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf",
+          "description": "14-part documentary verdict built from the government's own records proving 35 years of persecution"
+        },
+        {
+          "title": "Crimes Against Humanity — Final Demand",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/crimes_against_humanity_final_demand.pdf",
+          "description": "Formal demand addressing Rome Statute crimes committed through institutional persecution (1,038 downloads)"
+        },
+        {
+          "title": "Constructive Elimination Under Colour of Law",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/constructive_elimination_under_colour_of_law.pdf",
+          "description": "Forensic document analysing how state agencies conspired to eliminate a whistleblower using legal processes as weapons"
+        },
+        {
+          "title": "Architecture of Administrative Annihilation",
+          "url": "https://www.barrandodger.com/administrative-annihilation",
+          "description": "25,000-word forensic paper analysing patterns of institutional harm across 35+ agencies"
+        },
+        {
+          "title": "Official Whistleblower Torture Dossier",
+          "description": "Documentation of torture through forced psychiatric hospitalisation, starvation, and institutional abuse (645 downloads)",
+          "url": "https://www.barrandodger.com/evidence"
+        },
+        {
+          "title": "Digital Oppression — 100,000-Word Essay",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/digital_oppression_100000_word_essay.pdf",
+          "description": "Comprehensive analysis of digital identity theft and institutional cyber-harassment (1,040 downloads)"
+        }
+      ],
+      "template_email_subject": "FORMAL SUBMISSION: Systemic Corruption by 35+ Government Agencies — Evidence Enclosed (NACC Referral)",
+      "template_email_body": "Dear National Anti-Corruption Commission,\n\nI am writing to submit evidence of systemic corruption involving 35+ Australian government agencies, documented over 35 years through 788 blockchain-verified PDFs, 73 independent forensic analyses (603 propositions assessed, zero contradictions), and 891 Bitcoin blockchain timestamps.\n\nThis is the most documented case of institutional corruption in Australian history. The evidence encompasses:\n\n- OAIC corruption and FOI refusal cover-up\n- Commonwealth Ombudsman abuse of oversight mandate (service ban on whistleblower)\n- NDIS fraud evidence with retaliatory measures\n- Attorney-General Mark Dreyfus notified in 2021 — chose silence\n- Prime Minister Anthony Albanese notified — no action taken\n\nEvery document is SHA-256 hashed and timestamped on the Bitcoin blockchain via OpenTimestamps, making them immutable and independently verifiable.\n\nI urge the NACC to initiate a formal investigation under the National Anti-Corruption Commission Act.\n\nEvidence archive: https://drbarrandodger.github.io/barran-dodger-archive/\n\nYours in truth,\nDr Richard McLean"
+    },
+
+    "ndis_package": {
+      "title": "NDIS Fraud and Whistleblower Persecution — Evidence Package",
+      "target_institution": "Inspector-General of the NDIS / Minister for the NDIS",
+      "contact_email": "minister.short@dss.gov.au",
+      "cc_email": "enquiries@igis.gov.au",
+      "urgency": "high",
+      "summary_markdown": "## NDIS Fraud Evidence and Whistleblower Retaliation\n\n**Background:** Dr Richard McLean's NDIS support was terminated as retaliation for whistleblowing. Evidence documents NDIS fraud allegations and systematic abuse of the disability scheme.\n\n**Key Officials Mentioned:** Tony Ridley (NDIA), Sukhi Tear (NDIA), Bill Shorten (Minister)\n\n**Evidence Categories:**\n- NDIS fraud documentation\n- Retaliatory support termination\n- Threats by NDIA officials\n- Systemic failure of disability support\n\nThe archive contains dedicated NDIS evidence folders with hundreds of pages of documentation.",
+      "key_documents": [
+        {
+          "title": "NDIS Evidence Folder",
+          "url": "https://myaidrive.com/QuAuf9cmDakLxBsabpeoLy/NDIS.folder.pdf",
+          "description": "Dedicated folder of NDIS-related evidence documents including correspondence and fraud documentation"
+        },
+        {
+          "title": "Taxpayer Cost Analysis — $11.5M+",
+          "url": "https://www.barrandodger.com/taxpayer-cost-analysis",
+          "description": "AI-generated breakdown showing $11.5M+ in taxpayer funds spent on persecution campaign"
+        },
+        {
+          "title": "Patient Safety and NDIS Fraud Evidence Folder",
+          "url": "https://myaidrive.com/cJe6z22QCvu642UZWGJy4t/Evidence_Ana.folder.pdf",
+          "description": "Analysis folder containing NDIS evidence and patient safety documentation"
+        }
+      ],
+      "template_email_subject": "NDIS Fraud Evidence and Whistleblower Retaliation — 788 Blockchain-Verified Documents",
+      "template_email_body": "Dear Minister Shorten / Inspector-General,\n\nI am writing to formally submit evidence documenting NDIS fraud allegations and the retaliatory treatment of whistleblower Dr Richard McLean.\n\nThe evidence includes:\n1. NDIS fraud documentation\n2. Retaliatory support termination\n3. Threats by NDIA officials (Tony Ridley, Sukhi Tear)\n4. Systemic failure across the National Disability Insurance Scheme\n\nEvery document is blockchain-verified: 788 PDFs with SHA-256 hashing and OpenTimestamps Bitcoin attestation.\n\nI request a formal investigation under the NDIS Act and referral to relevant oversight bodies.\n\nEvidence: https://www.barrandodger.com/evidence\nNDIS folder: https://myaidrive.com/QuAuf9cmDakLxBsabpeoLy/NDIS.folder.pdf\n\nDr Richard McLean"
+    },
+
+    "human_rights_package": {
+      "title": "14 Forced Psychiatric Hospitalisations — Human Rights Violations",
+      "target_institution": "UN Human Rights Council / UN Special Rapporteur on Torture",
+      "contact_email": "srtorture@ohchr.org",
+      "cc_emails": ["OHCHR-Infoline@un.org", "wgad@ohchr.org"],
+      "urgency": "critical",
+      "summary_markdown": "## Submission: Torture Through Forced Psychiatric Hospitalisation and Arbitrary Detention\n\n### Victim: Dr Richard McLean (Barran Dodger)\n\n**UNHCR Reference:** URUST23AUS17\n\n**Violations Documented:**\n1. **14 forced psychiatric hospitalisations** across 3 states (Victoria, NSW, and others)\n2. **Assassination attempt** — found with no pulse, 2.87% survival probability\n3. **Clinical death survival**\n4. **Arbitrary detention** through psychiatric incarceration\n5. **Medical abuse** — Mercy Hospital, Salt Water Clinic\n6. **Police report refusals** — rape report refused, murder report refused\n\n**Applicable International Law:**\n- UN Convention Against Torture (UNCAT)\n- International Covenant on Civil and Political Rights (ICCPR)\n- Convention on the Rights of Persons with Disabilities (CRPD)\n- Rome Statute of the International Criminal Court",
+      "key_documents": [
+        {
+          "title": "2.87% Survival — The Clinical Death Event",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/2.87_percent_survival.pdf",
+          "description": "Medical documentation of clinical death event with 2.87% survival probability"
+        },
+        {
+          "title": "Witness Before the Tribunal of Humanity",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/witness_before_tribunal_of_humanity.pdf",
+          "description": "Testimonial evidence addressing international human rights law violations"
+        },
+        {
+          "title": "Psychiatric Assessment and Asylum Documentation",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/psychiatric_assessment_asylum_documentation.pdf",
+          "description": "Medical and psychiatric assessments documenting forced hospitalisation and asylum claim"
+        },
+        {
+          "title": "Confinement by Erasure, Threat by Blade",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/confinement_by_erasure_threat_by_blade.pdf",
+          "description": "Documentation of death threats and confinement through institutional processes"
+        },
+        {
+          "title": "Medical Evidence Folder",
+          "url": "https://myaidrive.com/5XEdMwS5nEFzhcLEfdRR62/MEDICAL_EVID.folder.pdf",
+          "description": "Complete medical evidence folder with hospitalisation records"
+        },
+        {
+          "title": "Urgent Safety Folder",
+          "url": "https://myaidrive.com/8DWDVxnRn734VmsCSpNqs5/URGENT_SAFET.folder.pdf",
+          "description": "Emergency safety documentation and risk assessment records"
+        }
+      ],
+      "template_email_subject": "URGENT: 14 Forced Psychiatric Hospitalisations — Torture and Arbitrary Detention (UN Submission)",
+      "template_email_body": "Dear Special Rapporteur,\n\nI submit this communication regarding systematic torture through forced psychiatric hospitalisation — 14 times across 3 Australian states — and arbitrary detention of whistleblower Dr Richard McLean.\n\nKey facts:\n- 14 forced psychiatric hospitalisations (Mercy Hospital, Salt Water Clinic, multiple facilities)\n- Clinical death event: found with no pulse, 2.87% survival probability\n- 35+ government agencies participated in or enabled the persecution\n- UNHCR asylum reference: URUST23AUS17\n- Attorney-General notified in 2021 — chose silence\n\nEvery document is blockchain-verified for authenticity via SHA-256 and OpenTimestamps on the Bitcoin blockchain.\n\nEvidence archive: https://drbarrandodger.github.io/barran-dodger-archive/\nClinical death document: https://barran-dodger-legal-ethical-trust.replit.app/documents/2.87_percent_survival.pdf\n\nI request urgent action under UNCAT Articles 2, 11, 12, 13, 14, and 16.\n\nDr Richard McLean\nABN 78 833 496 164"
+    },
+
+    "media_package": {
+      "title": "Media Investigation Brief — Australia's Most Documented Whistleblower Case",
+      "target_journalists": ["Nick McKenzie (The Age)", "Adele Ferguson (SMH)", "ABC Four Corners", "Guardian Australia Investigations"],
+      "urgency": "high",
+      "summary_markdown": "## Media Brief: 35 Years of Silence — The Most Documented Whistleblower Persecution in Australian History\n\n### The Story\n\nDr Richard McLean (Barran Dodger), a disabled LGBTQ+ PhD holder, has been systematically persecuted by 35+ Australian government agencies for whistleblowing. He has:\n- Survived 14 forced psychiatric hospitalisations across 3 states\n- Been found with no pulse (2.87% survival probability)\n- Had 350+ fraudulent ASIC business registrations created in his name\n- Been banned from the Commonwealth Ombudsman\n- Had his NDIS support terminated\n- Reported crimes to Victoria Police — refused\n- Formally notified the Attorney-General (2021) — silence\n- Formally notified the Prime Minister — silence\n\n### The Evidence\n\n| Metric | Value |\n|--------|-------|\n| Blockchain-verified documents | 788 |\n| Forensic analyses (zero contradictions) | 73 (603 propositions) |\n| Bitcoin timestamp records | 891 |\n| Downloads (6 continents, zero marketing) | 409,000+ |\n| Defamation actions filed | Zero |\n\n### Why This Matters Now\n\nThis is the most documented case of institutional persecution in Australian history. The evidence has never been challenged — zero defamation actions despite naming 35+ agencies and senior officials including the Attorney-General and Prime Minister.\n\n### Available for Interview\n\nDr Richard McLean — contact via drbarrandodger@proton.me",
+      "key_documents": [
+        {
+          "title": "Retrospective Statement of Treatment — The Government's Own Documents",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf",
+          "description": "14-part documentary verdict using government's own records — the single most powerful document"
+        },
+        {
+          "title": "The Man Australia Tried to Erase",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf",
+          "description": "Full book documenting the complete story (936 downloads)"
+        },
+        {
+          "title": "The Architecture of Administrative Annihilation",
+          "url": "https://www.barrandodger.com/administrative-annihilation",
+          "description": "25,000-word forensic analysis of institutional harm patterns"
+        },
+        {
+          "title": "35-Year Timeline",
+          "url": "https://www.barrandodger.com/timeline",
+          "description": "Complete chronological history from 1990 to 2026"
+        },
+        {
+          "title": "Taxpayer Cost Analysis — $11.5M+",
+          "url": "https://www.barrandodger.com/taxpayer-cost-analysis",
+          "description": "AI-generated itemised breakdown of public funds spent on persecution"
+        },
+        {
+          "title": "UNHCR Submission Reference",
+          "description": "URUST23AUS17 — International asylum claim documentation",
+          "url": "https://www.barrandodger.com/evidence"
+        }
+      ],
+      "template_email_subject": "INVESTIGATION PITCH: 788 Blockchain Documents Expose 35 Years of Government Persecution — Zero Challenge",
+      "template_email_body": "Dear [Journalist Name],\n\nI am writing to offer you an exclusive investigation into the most documented case of institutional persecution in Australian history.\n\nDr Richard McLean, a disabled LGBTQ+ whistleblower with a PhD, has documented 35 years of systematic persecution by 35+ Australian government agencies — backed by 788 blockchain-verified PDFs, 73 forensic analyses (603 propositions, zero contradictions), and 891 Bitcoin blockchain timestamp records.\n\nWhy this is a major story:\n- 409,000+ downloads across 6 continents with ZERO marketing, ZERO PR, ZERO legal help\n- Zero defamation actions filed despite naming 35+ agencies and senior officials\n- Attorney-General Mark Dreyfus formally notified in 2021 — chose silence\n- Prime Minister Anthony Albanese notified — no action\n- 14 forced psychiatric hospitalisations across 3 states\n- Clinical death: found with no pulse, 2.87% survival probability\n\nThe evidence is immutable — every document SHA-256 hashed and timestamped on the Bitcoin blockchain via OpenTimestamps.\n\nFull evidence archive: https://drbarrandodger.github.io/barran-dodger-archive/\nInterview contact: drbarrandodger@proton.me\n\nI dare you to prove me wrong."
+    },
+
+    "parliamentary_package": {
+      "title": "Parliamentary Briefing — Systemic Government Corruption and Whistleblower Persecution",
+      "target_mps": ["Andrew Wilkie MP", "Senator David Shoebridge", "Helen Haines MP"],
+      "cc_emails": ["andrew.wilkie.mp@aph.gov.au", "senator.shoebridge@aph.gov.au"],
+      "urgency": "critical",
+      "summary_markdown": "## Parliamentary Briefing for Crossbench MPs\n\n### The Issue\n\nSystematic persecution of whistleblower Dr Richard McLean by 35+ Australian government agencies over 35 years, documented through 788 blockchain-verified documents.\n\n### Key Questions for Parliament\n\n1. **Attorney-General's Silence:** Why was Mark Dreyfus formally notified of Rome Statute crimes in 2021 and took no action?\n2. **Prime Minister's Inaction:** Why has Anthony Albanese not responded to notifications?\n3. **OAIC Corruption:** Why did the OAIC refuse FOI requests and cover up privacy complaints?\n4. **Commonwealth Ombudsman Abuse:** Why was a whistleblower banned from the Ombudsman service?\n5. **NDIS Fraud:** What action has been taken on documented NDIS fraud evidence?\n6. **Police Failure:** Why did Victoria Police refuse to take reports of rape and murder?\n\n### Recommended Actions\n\n1. Refer the evidence to the NACC for formal investigation\n2. Senate Estimates questions on agency conduct\n3. Parliamentary inquiry into whistleblower protection\n4. Privileges committee referral for Attorney-General conduct",
+      "key_documents": [
+        {
+          "title": "State and Federal MP Letter",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/state_and_federal_mp_letter.pdf",
+          "description": "Formal correspondence to all state and federal MPs with evidence summary"
+        },
+        {
+          "title": "Crimes Against Humanity — Final Demand",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/crimes_against_humanity_final_demand.pdf",
+          "description": "Formal demand for action under international law (1,038 downloads)"
+        },
+        {
+          "title": "Urgent Request for Refuge and Asylum",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/urgent_request_for_refuge_and_asylum.pdf",
+          "description": "UNHCR asylum submission with full evidence"
+        },
+        {
+          "title": "Declaration of Sovereignty",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/declaration_of_sovereignty.pdf",
+          "description": "Legal declaration of rights under domestic and international law (867 downloads)"
+        }
+      ],
+      "template_email_subject": "PARLIAMENTARY BRIEFING: 788 Blockchain Documents — 35 Years of Government Persecution — Request for Action"
+    },
+
+    "international_justice_package": {
+      "title": "International Criminal Court and UN Human Rights Bodies — Rome Statute Crimes",
+      "target_bodies": ["International Criminal Court", "UN Human Rights Council", "UNHCR", "Human Rights Watch"],
+      "contact_emails": ["otp.informationdesk@icc-cpi.int", "OHCHR-Infoline@un.org", "canberra@unhcr.org", "hrwnyc@hrw.org"],
+      "urgency": "high",
+      "summary_markdown": "## Submission to International Criminal Court and UN Human Rights Bodies\n\n### Rome Statute Crimes Documented\n\n**Crimes Against Humanity (Rome Statute Article 7):**\n- Persecution against an identifiable group (whistleblowers, LGBTQ+) (Article 7(1)(h))\n- Imprisonment and severe deprivation of liberty (14 forced psychiatric hospitalisations) (Article 7(1)(e))\n- Torture through psychiatric abuse and forced medical treatment (Article 7(1)(f))\n- Other inhumane acts (clinical death, starvation, homelessness) (Article 7(1)(k))\n\n**Torture (UNCAT):**\n- Forced psychiatric hospitalisation constitutes torture under UNCAT Article 1\n- 14 separate instances across 3 states\n- Medical abuse documented with forensic evidence\n\n**UNHCR:** Submission reference URUST23AUS17 — Internal displacement within Australia due to persecution by state agencies.",
+      "key_documents": [
+        {
+          "title": "Crimes Against Humanity — Final Demand (ICC)",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/crimes_against_humanity_final_demand.pdf",
+          "description": "Formal ICC submission with Rome Statute violations documented (1,038 downloads)"
+        },
+        {
+          "title": "Witness Before the Tribunal of Humanity",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/witness_before_tribunal_of_humanity.pdf",
+          "description": "Testimony for international human rights tribunals"
+        },
+        {
+          "title": "Universal Master Command AI Analysis",
+          "url": "https://barran-dodger-legal-ethical-trust.replit.app/documents/universal_master_command_ai_analysis.pdf",
+          "description": "AI forensic analysis of persecution patterns (936 downloads)"
+        },
+        {
+          "title": "International Evidence Folder",
+          "url": "https://myaidrive.com/af42GcWPibN4iGrLGr3tWU/INTERNATIONA.folder.pdf",
+          "description": "Dedicated folder of international evidence and submissions"
+        }
+      ]
+    },
+
+    "ombudsman_oversight_package": {
+      "title": "Oversight Body Referral — Abuse of Office and Service Denial",
+      "target_bodies": ["Commonwealth Ombudsman", "Victorian Ombudsman", "IBAC Victoria"],
+      "contact_emails": ["ombudsman@ombudsman.gov.au", "info@ibac.vic.gov.au"],
+      "urgency": "high",
+      "summary_markdown": "## Referral to Oversight Bodies\n\n**Issue:** Abuse of office by the Commonwealth Ombudsman in imposing a service ban on a whistleblower, and related misconduct by Victorian agencies.\n\n**Commonwealth Ombudsman:** Imposed a service ban on Dr McLean — effectively denying access to the very body designed to investigate government complaints. This represents an abuse of the Ombudsman's statutory mandate.\n\n**Victorian Agencies:** Victoria Police refused to take reports of serious crimes. VCAT proceedings documented. IBAC jurisdiction applicable.\n\n### Key Documents\n- Correspondence with Commonwealth Ombudsman\n- Police report refusals documentation\n- VCAT and AAT tribunal records",
+      "key_documents": [
+        {
+          "title": "Correspondence Folder",
+          "url": "https://myaidrive.com/rdcV8sXqqn4FUe8ksY9Qbq/CORRESPONDEN.folder.pdf",
+          "description": "Complete correspondence folder with all government agency communications"
+        },
+        {
+          "title": "Legal Proceedings Folder",
+          "url": "https://myaidrive.com/pd6byPzApFwt9sryi2FBv3/LEGAL_PROCEE.folder.pdf",
+          "description": "Legal proceedings documentation including VCAT and AAT records"
+        },
+        {
+          "title": "Published Work Folder",
+          "url": "https://myaidrive.com/EG9DitiZDfF7sTPdV33ogJ/PUBLISHED_WO.folder.pdf",
+          "description": "Published documents and official records"
+        }
+      ]
+    }
+  },
+
+  "advocacy_campaigns": {
+    "wave_1_initial_transmission": {
+      "name": "Initial Evidence Transmission Wave",
+      "trigger": "Portal Launch (immediate)",
+      "targets": [
+        {
+          "name": "Andrew Wilkie MP",
+          "package": "parliamentary_package",
+          "method": "Targeted email with brief + evidence links + blockchain verification"
+        },
+        {
+          "name": "Senator David Shoebridge",
+          "package": "parliamentary_package",
+          "method": "Targeted email with brief + evidence links"
+        },
+        {
+          "name": "National Anti-Corruption Commission",
+          "package": "nacc_package",
+          "method": "Formal submission via info@nacc.gov.au"
+        },
+        {
+          "name": "Human Rights Law Centre",
+          "package": "human_rights_package",
+          "method": "Referral for legal assistance and advocacy"
+        },
+        {
+          "name": "Whistleblowers Australia",
+          "package": "overview",
+          "method": "Membership referral and support request"
+        }
+      ],
+      "outcome_goal": "Parliamentary questions raised / Formal investigation initiated"
+    },
+    "wave_2_media_exposure": {
+      "name": "Media Exposure Wave",
+      "trigger": "After parliamentary engagement (week 1-2)",
+      "targets": [
+        {"name": "ABC Four Corners", "package": "media_package", "method": "Full investigation brief with documentary pitch"},
+        {"name": "Nick McKenzie (The Age)", "package": "media_package", "method": "Exclusive story offer with evidence access"},
+        {"name": "Adele Ferguson (SMH)", "package": "ndis_package", "method": "NDIS-focused evidence package"},
+        {"name": "Guardian Australia Investigations", "package": "media_package", "method": "Investigation brief with data visualisation"}
+      ],
+      "outcome_goal": "Major media investigation / Feature article / Documentary"
+    },
+    "wave_3_international_pressure": {
+      "name": "International Human Rights Wave",
+      "trigger": "After domestic coverage builds (week 2-4)",
+      "targets": [
+        {"name": "UN Special Rapporteur on Torture", "package": "human_rights_package", "method": "Formal UN submission"},
+        {"name": "ICC Office of the Prosecutor", "package": "international_justice_package", "method": "Rome Statute crimes submission"},
+        {"name": "Human Rights Watch", "package": "international_justice_package", "method": "Brief with interview availability"},
+        {"name": "Amnesty International", "package": "human_rights_package", "method": "Urgent action referral"}
+      ],
+      "outcome_goal": "International pressure / UN inquiry / ICC preliminary examination"
+    },
+    "wave_4_oversight_referral": {
+      "name": "Oversight Body Referral Wave",
+      "trigger": "Ongoing (parallel to waves 1-3)",
+      "targets": [
+        {"name": "NACC", "package": "nacc_package", "method": "Formal corruption referral"},
+        {"name": "IBAC Victoria", "package": "ombudsman_oversight_package", "method": "State-level corruption referral"},
+        {"name": "Inspector-General NDIS", "package": "ndis_package", "method": "NDIS fraud referral"},
+        {"name": "Commonwealth Ombudsman", "package": "ombudsman_oversight_package", "method": "Complaint re service ban abuse"}
+      ],
+      "outcome_goal": "Formal investigation by multiple oversight bodies"
+    }
+  },
+
+  "automation_config": {
+    "advocacy_burst_triggers": {
+      "portal_launch": {
+        "name": "Portal Launch",
+        "actions": [
+          "Send wave_1_initial_transmission to all targets",
+          "Log all transmissions in database",
+          "Set reminder for 48-hour follow-up"
+        ]
+      },
+      "new_document_added": {
+        "name": "New Evidence Added",
+        "actions": [
+          "Check which stakeholder packages this document relates to",
+          "Send targeted update to relevant stakeholders",
+          "Add to relevant truth package"
+        ]
+      },
+      "parliamentary_question": {
+        "name": "Parliamentary Question Raised",
+        "actions": [
+          "Escalate to media wave (wave_2)",
+          "Send update to international bodies",
+          "Log parliamentary reference"
+        ]
+      },
+      "media_coverage": {
+        "name": "Major Media Coverage",
+        "actions": [
+          "Trigger international wave (wave_3)",
+          "Send coverage to parliamentary targets",
+          "Archive media reference"
+        ]
+      }
+    },
+    "email_templates": {
+      "parliamentary_intro": {
+        "subject": "PARLIAMENTARY BRIEFING: The Most Documented Whistleblower Case in Australian History",
+        "body_template": "Dear {name},\n\nI write to brief you on a matter of urgent parliamentary concern: the systematic persecution of whistleblower Dr Richard McLean by 35+ Australian government agencies over 35 years, documented through 788 blockchain-verified PDFs.\n\nKey facts: {key_facts}\n\nEvidence archive: https://drbarrandodger.github.io/barran-dodger-archive/\n\nI request: {specific_ask}\n\nYours,\nDr Richard McLean"
+      },
+      "media_intro": {
+        "subject": "INVESTIGATION OFFER: 788 Blockchain Documents — Zero Defamation Challenges — $0 Marketing — 409,000+ Downloads",
+        "body_template": "Dear {name},\n\nI am offering you an exclusive investigation into the most documented case of institutional persecution in Australian history.\n\n{story_angle}\n\nEvidence: https://drbarrandodger.github.io/barran-dodger-archive/\nContact: drbarrandodger@proton.me\n\nI dare you to prove me wrong."
+      },
+      "nacc_submission": {
+        "subject": "FORMAL SUBMISSION: Systemic Corruption by 35+ Government Agencies — 788 Blockchain Documents",
+        "body_template": "Dear National Anti-Corruption Commission,\n\nI submit evidence of systemic corruption involving {agency_list}, documented over {years} years through {document_count} blockchain-verified documents.\n\n{specific_allegations}\n\nEvidence: https://drbarrandodger.github.io/barran-dodger-archive/\n\nI request a formal investigation under the NACC Act."
+      },
+      "human_rights_submission": {
+        "subject": "URGENT SUBMISSION: Torture Through Forced Psychiatric Hospitalisation — 14 Instances Across 3 States",
+        "body_template": "Dear {recipient},\n\nI submit evidence of systematic torture through forced psychiatric hospitalisation — 14 times across 3 Australian states — against whistleblower Dr Richard McLean.\n\n{violations}\n\nUNHCR reference: URUST23AUS17\nEvidence: {evidence_links}\n\nI request urgent action."
+      }
+    }
+  },
+
+  "evidence_folder_index": {
+    "archive_root": "https://drbarrandodger.github.io/barran-dodger-archive/",
+    "replit_app": "https://barran-dodger-legal-ethical-trust.replit.app/",
+    "folders": {
+      "NDIS Evidence": "https://myaidrive.com/QuAuf9cmDakLxBsabpeoLy/NDIS.folder.pdf",
+      "Medical Evidence": "https://myaidrive.com/5XEdMwS5nEFzhcLEfdRR62/MEDICAL_EVID.folder.pdf",
+      "ASIC/Identity Theft": "https://myaidrive.com/uWhgDqubaWq5Q2eaNbxQtP/ASIC.folder.pdf",
+      "Legal Proceedings": "https://myaidrive.com/pd6byPzApFwt9sryi2FBv3/LEGAL_PROCEE.folder.pdf",
+      "Correspondence": "https://myaidrive.com/rdcV8sXqqn4FUe8ksY9Qbq/CORRESPONDEN.folder.pdf",
+      "International": "https://myaidrive.com/af42GcWPibN4iGrLGr3tWU/INTERNATIONA.folder.pdf",
+      "Financial Documents": "https://myaidrive.com/ks54ZQBdgwHs6zUUbqZ6yR/FINANCIAL_DO.folder.pdf",
+      "Emergency Safety": "https://myaidrive.com/8DWDVxnRn734VmsCSpNqs5/URGENT_SAFET.folder.pdf",
+      "Strategic Briefs": "https://myaidrive.com/m8PBQX9gsTjcu9DBtsujbh/STRATEGIC_BR.folder.pdf",
+      "PID Documents": "https://myaidrive.com/zRsXCswY9G2sZV5mtAFo8u/PIDs-.folder.pdf",
+      "Advocacy Campaign": "https://myaidrive.com/ThSA3xooaaMuxYDHXEfvXw/ADVOCACY_CAM.folder.pdf",
+      "Timestamps/Blockchain": "https://myaidrive.com/KKBRJgdjnrBrygHcYCFtm9/Timestamps-.folder.pdf",
+      "Mission Action": "https://myaidrive.com/zAEhgzQbxLEzNzae6bbtqd/MISSION_ACTI.folder.pdf",
+      "Supporting Evidence": "https://myaidrive.com/dfkKfr8QSnGAeWmyYjiYwo/SUPPORTING_E.folder.pdf",
+      "Evidence Analysis": "https://myaidrive.com/cJe6z22QCvu642UZWGJy4t/Evidence_Ana.folder.pdf"
+    },
+    "key_pdf_documents": {
+      "Retrospective Statement of Treatment": "https://barran-dodger-legal-ethical-trust.replit.app/documents/RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf",
+      "Crimes Against Humanity": "https://barran-dodger-legal-ethical-trust.replit.app/documents/crimes_against_humanity_final_demand.pdf",
+      "The Man Australia Tried to Erase": "https://barran-dodger-legal-ethical-trust.replit.app/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf",
+      "2.87% Survival": "https://barran-dodger-legal-ethical-trust.replit.app/documents/2.87_percent_survival.pdf",
+      "Witness Before Tribunal": "https://barran-dodger-legal-ethical-trust.replit.app/documents/witness_before_tribunal_of_humanity.pdf",
+      "Declaration of Sovereignty": "https://barran-dodger-legal-ethical-trust.replit.app/documents/declaration_of_sovereignty.pdf",
+      "Digital Oppression Essay": "https://barran-dodger-legal-ethical-trust.replit.app/documents/digital_oppression_100000_word_essay.pdf",
+      "Universal Master Command AI": "https://barran-dodger-legal-ethical-trust.replit.app/documents/universal_master_command_ai_analysis.pdf",
+      "Constructive Elimination": "https://barran-dodger-legal-ethical-trust.replit.app/documents/constructive_elimination_under_colour_of_law.pdf",
+      "Confinement by Erasure": "https://barran-dodger-legal-ethical-trust.replit.app/documents/confinement_by_erasure_threat_by_blade.pdf",
+      "Psychiatric Assessment": "https://barran-dodger-legal-ethical-trust.replit.app/documents/psychiatric_assessment_asylum_documentation.pdf",
+      "State and Federal MP Letter": "https://barran-dodger-legal-ethical-trust.replit.app/documents/state_and_federal_mp_letter.pdf",
+      "Urgent Asylum Request": "https://barran-dodger-legal-ethical-trust.replit.app/documents/urgent_request_for_refuge_and_asylum.pdf",
+      "Precision as Evidence": "https://barran-dodger-legal-ethical-trust.replit.app/documents/precision_as_evidence_evidentiary_synthesis.pdf",
+      "Cosmic Scroll of Ten": "https://barran-dodger-legal-ethical-trust.replit.app/documents/cosmic_scroll_of_ten.pdf",
+      "Sacred Declaration": "https://barran-dodger-legal-ethical-trust.replit.app/documents/sacred_declaration_master_record.pdf",
+      "Document That Cannot Be Erased": "https://barran-dodger-legal-ethical-trust.replit.app/documents/document_that_cannot_be_erased.pdf",
+      "Living Scroll": "https://barran-dodger-legal-ethical-trust.replit.app/documents/living_scroll_unkillable_witness.pdf",
+      "Prophetic Manifesto": "https://barran-dodger-legal-ethical-trust.replit.app/documents/prophetic_manifesto_barran_dodger.pdf",
+      "AI Personality Profile": "https://barran-dodger-legal-ethical-trust.replit.app/documents/ai_personality_profile_barran_dodger.pdf"
+    }
+  }
+}

@@ -12,6 +12,9 @@ export const getDocuments = async () => {
 export const saveMembership = async (data: { id: string; name: string; email: string; tier: string }) => {
   return axios.post('/api/memberships', data);
 };
+export const saveAdvocacyBurst = async (data: { id: string; packageId: string; packageName: string; email: string }) => {
+  return axios.post('/api/bursts', data);
+};
 
 export const createCheckoutSession = async (data: { type: string; email: string; tier?: string; docId?: string; title?: string }) => {
   const response = await axios.post('/api/create-checkout-session', data);

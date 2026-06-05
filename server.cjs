@@ -89,9 +89,22 @@ app.post('/api/create-checkout-session', async (req, res) => {
   }
 });
 
+app.post('/api/bursts', (req, res) => {
+  const { id, packageId, packageName, email } = req.body;
+  const sql = `INSERT INTO advocacy_bursts (id, package_id, package_name, user_email, status) VALUES ('${id}', '${packageId}', '${packageName.replace(/'/g, "''")}', '${email}', 'transmitted')`;
+  console.log(`Executing SQL: ${sql}`);
+  exec(`team-db "${sql}"`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return res.status(500).json({ error: 'Failed to record advocacy burst' });
+    }
+    res.json({ success: true });
+  });
+});
+
 app.post('/api/dossiers', (req, res) => {
   const { id, title, email } = req.body;
-  const sql = `INSERT INTO dossiers (id, title, requestor_email, status) VALUES ('${id}', '${title}', '${email}', 'pending')`;
+  const sql = `INSERT INTO dossiers (id, title, requestor_email, status) VALUES ('${id}', '${title.replace(/'/g, "''")}', '${email}', 'pending')`;
   console.log(`Executing SQL: ${sql}`);
   exec(`team-db "${sql}"`, (error, stdout, stderr) => {
     if (error) {
