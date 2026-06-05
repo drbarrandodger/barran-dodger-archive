@@ -1,0 +1,180 @@
+OBJECTIVE:
+Rebuild the entire website into a high-performance, indexable, AI-readable, citation-ready digital archive that maximises legitimate discoverability, credibility, and long-term reach.
+
+---
+
+1. CORE STACK
+- Framework: Next.js (latest stable)
+- Rendering: Hybrid (SSG + SSR for critical pages)
+- Language: TypeScript
+- Styling: TailwindCSS
+- Hosting: Replit Deployments (with edge caching enabled)
+
+---
+
+2. TECHNICAL SEO FOUNDATION
+- Generate dynamic sitemap.xml (auto-updated on build)
+- Generate robots.txt:
+    Allow: /
+    Disallow: /private/
+    Include AI crawler directives (GPTBot, Google-Extended where applicable)
+
+- Canonical URLs on all pages
+- Clean URL structure:
+    /testimony/
+    /evidence/
+    /documents/
+    /timeline/
+    /downloads/
+
+---
+
+3. STRUCTURED DATA (CRITICAL FOR AI + SEARCH)
+Embed JSON-LD schema on every page:
+
+- Organization schema (site-wide)
+- Person schema (author identity)
+- CreativeWork schema (for each document)
+- Dataset schema (for evidence archives)
+- Article schema (for blog/testimony content)
+
+Include:
+- headline
+- author
+- datePublished
+- citations
+- keywords
+- description
+
+---
+
+4. FORENSIC CONTENT STRUCTURE
+Create modular sections:
+
+/testimony → narrative + personal declarations  
+/evidence → indexed exhibits (PDF, images, transcripts)  
+/timeline → chronological structured events  
+/documents → formal filings, statements  
+/downloads → all files with metadata  
+
+Each document must include:
+- Title
+- Author
+- Date
+- Abstract
+- Keywords
+- Citations (APA-style)
+- Download link
+- Hash or checksum (optional for integrity)
+
+---
+
+5. ACADEMIC & CITATION LAYER
+- Add citation blocks under each document
+- Format: APA / Harvard style
+- Add “How to Cite This Page” auto-generator
+- Internal linking between related documents
+
+---
+
+6. PERFORMANCE + INDEXABILITY
+- Lighthouse target: 95+ all categories
+- Lazy load images
+- Use next/image optimization
+- Pre-render critical pages
+- Compress assets (gzip/brotli)
+
+---
+
+7. ACCESSIBILITY (BOOSTS SEO + TRUST)
+- WCAG 2.1 compliance
+- Semantic HTML
+- Alt text for all media
+- ARIA labels where required
+
+---
+
+8. GLOBAL DISCOVERY LAYER
+- Open Graph tags (Facebook, LinkedIn)
+- Twitter/X Cards
+- Meta description + keywords per page
+- RSS feed for updates
+
+---
+
+9. LIVE DOWNLOAD COUNTER (REAL, VERIFIABLE)
+- Backend: simple API endpoint (/api/download-count)
+- Store count in database (Replit DB or SQLite)
+
+Frontend:
+- Prominent counter displayed globally:
+  “Total Verified Downloads: XXXXX”
+
+- Increment ONLY on actual file download event
+- Optional: display timestamp of last update
+
+---
+
+10. SIGNIFICANCE STATEMENT (VISIBLE + INDEXABLE)
+Embed a bold, static HTML block across key pages:
+
+“This archive has been accessed and downloaded globally at scale, reflecting sustained public engagement, independent verification interest, and ongoing relevance across digital, legal, and academic contexts.”
+
+Ensure:
+- Plain HTML text (not image)
+- Appears high on page (above fold)
+- Included in structured data description
+
+---
+
+11. INTERNAL LINKING ENGINE
+- Auto-link related documents
+- Tag system (keywords)
+- “Related Evidence” section per page
+
+---
+
+12. CONTENT VERSIONING
+- Add “Last Updated” timestamps
+- Maintain version history for key documents
+
+---
+
+13. TRUST SIGNALS
+- HTTPS enforced
+- No broken links
+- Consistent metadata
+- Author identity clearly defined
+
+---
+
+14. MONETISATION (LEGITIMATE MODELS ONLY)
+Integrate:
+- Stripe (donations / support)
+- Optional subscription access (premium documents)
+- Download gating ONLY if transparent
+
+NO deceptive practices.
+
+---
+
+15. ANALYTICS (ETHICAL)
+- Use privacy-respecting analytics (e.g. Plausible)
+- Track:
+    page views
+    downloads
+    referral sources
+
+---
+
+16. DEPLOYMENT
+- Auto-build on commit
+- Validate:
+    sitemap
+    structured data
+    performance score
+
+---
+
+END GOAL:
+A technically sound, highly indexable, citation-ready, globally accessible digital archive that earns visibility through structure, clarity, and verifiable content—not manipulation.
