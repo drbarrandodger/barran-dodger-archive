@@ -1,57 +1,139 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send, CreditCard, CheckCircle, AlertCircle, Loader2, Target, Mail } from 'lucide-react';
-import { createCheckoutSession } from '../lib/db';
+import { createCheckoutSession, saveAdvocacyBurst } from '../lib/db';
 
-const BURST_PACKAGES = [
-  {
-    id: 'parliamentary',
-    name: 'Parliamentary Truth Package',
-    description: 'Direct transmission to State and Federal MPs highlighting systemic persecution.',
-    targets: '50+ Key Political Representatives',
-    fee: 2500, // in cents
-    displayFee: '$25.00'
-  },
-  {
-    id: 'media',
-    name: 'Investigative Media Package',
-    description: 'Exclusive investigation offer sent to major news outlets and independent journalists.',
-    targets: '100+ Investigative Journalists',
-    fee: 2500,
-    displayFee: '$25.00'
-  },
-  {
-    id: 'nacc',
-    name: 'NACC Corruption Submission',
-    description: 'Formal evidence submission to the National Anti-Corruption Commission.',
-    targets: 'NACC & Oversight Bodies',
-    fee: 2500,
-    displayFee: '$25.00'
-  },
-  {
-    id: 'human_rights',
-    name: 'Human Rights Alert',
-    description: 'Urgent submission detailing forced psychiatric hospitalisation and torture.',
-    targets: 'International Human Rights Watchdogs',
-    fee: 2500,
-    displayFee: '$25.00'
-  }
-];
+interface BurstPackage {
+  id: string;
+  name: string;
+  description: string;
+  targets: string;
+  fee: number;
+  displayFee: string;
+}
 
 const AdvocacyBurst: React.FC = () => {
   const [email, setEmail] = useState('');
   const [selectedPackageId, setSelectedPackageId] = useState('');
   const [status, setStatus] = useState<'idle' | 'processing' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [burstPackages, setBurstPackages] = useState<BurstPackage[]>([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const [_, stakeholdersRes] = await Promise.all([
+          fetch('/data/advocacy_content.json').then(r => r.json()),
+          fetch('/data/stakeholders.json').then(r => r.json())
+        ]);
+
+        const counts = {
+          parliamentary: (stakeholdersRes.members_of_parliament?.federal_mp_senate?.length || 0) + 
+                         (stakeholdersRes.members_of_parliament?.key_portfolio_ministers?.length || 0) +
+                         (stakeholdersRes.members_of_parliament?.shadow_ministers?.length || 0) +
+                         (stakeholdersRes.members_of_parliament?.state_mp_victoria?.length || 0),
+          media: (stakeholdersRes.journalists_and_media?.national_investigative?.length || 0) + 
+                 (stakeholdersRes.journalists_and_media?.abc_correspondents?.length || 0) +
+                 (stakeholdersRes.journalists_and_media?.guardian_australia?.length || 0) +
+                 (stakeholdersRes.journalists_and_media?.freelance_and_independent?.length || 0) +
+                 (stakeholdersRes.journalists_and_media?.international_media?.length || 0),
+          nacc: stakeholdersRes.oversight_and_integrity_bodies?.length || 0,
+          human_rights: (stakeholdersRes.human_rights_and_advocacy_organizations?.domestic?.length || 0) +
+                        (stakeholdersRes.human_rights_and_advocacy_organizations?.international?.length || 0)
+        };
+
+        const packages: BurstPackage[] = [
+          {
+            id: 'parliamentary',
+            name: 'Parliamentary Truth Package',
+            description: 'Direct transmission to State and Federal MPs highlighting systemic persecution.',
+            targets: `${counts.parliamentary}+ Key Political Representatives`,
+            fee: 2500,
+            displayFee: '$25.00'
+          },
+          {
+            id: 'media',
+            name: 'Investigative Media Package',
+            description: 'Exclusive investigation offer sent to major news outlets and independent journalists.',
+            targets: `${counts.media}+ Investigative Journalists`,
+            fee: 2500,
+            displayFee: '$25.00'
+          },
+          {
+            id: 'nacc',
+            name: 'NACC Corruption Submission',
+            description: 'Formal evidence submission to the National Anti-Corruption Commission.',
+            targets: `${counts.nacc} Oversight Bodies`,
+            fee: 2500,
+            displayFee: '$25.00'
+          },
+          {
+            id: 'human_rights',
+            name: 'Human Rights Alert',
+            description: 'Urgent submission detailing forced psychiatric hospitalisation and torture.',
+            targets: `${counts.human_rights}+ Human Rights Watchdogs`,
+            fee: 2500,
+            displayFee: '$25.00'
+          }
+        ];
+        setBurstPackages(packages);
+      } catch (err) {
+        console.error('Failed to load advocacy data:', err);
+        setBurstPackages([
+          { id: 'parliamentary', name: 'Parliamentary Truth Package', description: 'Direct transmission to State and Federal MPs.', targets: '50+ Targets', fee: 2500, displayFee: '$25.00' },
+          { id: 'media', name: 'Investigative Media Package', description: 'Sent to major news outlets.', targets: '100+ Targets', fee: 2500, displayFee: '$25.00' },
+          { id: 'nacc', name: 'NACC Corruption Submission', description: 'Evidence submission to NACC.', targets: 'NACC & Oversight', fee: 2500, displayFee: '$25.00' },
+          { id: 'human_rights', name: 'Human Rights Alert', description: 'Detailing forced psychiatric hospitalisation.', targets: 'Human Rights Watchdogs', fee: 2500, displayFee: '$25.00' }
+        ]);
+      }
+    };
+    loadData();
+  }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('payment') === 'success' && params.get('type') === 'burst') {
+      setStatus('processing');
+      const recordBurst = async () => {
+        try {
+          const storedEmail = localStorage.getItem('pending_burst_email') || 'verified@supporter.org';
+          const storedPackageId = localStorage.getItem('pending_burst_packageId') || 'post-payment-sync';
+          const storedPackageName = localStorage.getItem('pending_burst_packageName') || 'Verified Advocacy Burst';
+
+          await saveAdvocacyBurst({
+            id: `burst-${Date.now()}`,
+            packageId: storedPackageId,
+            packageName: storedPackageName,
+            email: storedEmail
+          });
+          setStatus('success');
+          
+          localStorage.removeItem('pending_burst_email');
+          localStorage.removeItem('pending_burst_packageId');
+          localStorage.removeItem('pending_burst_packageName');
+          
+          window.history.replaceState({}, '', window.location.pathname);
+        } catch (err) {
+          console.error('Failed to record burst:', err);
+          setStatus('error');
+          setErrorMessage('Payment succeeded but failed to record the burst in the database.');
+        }
+      };
+      recordBurst();
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedPackageId) return;
-
     setStatus('processing');
-    setErrorMessage('');
 
     try {
-      const selectedPackage = BURST_PACKAGES.find(p => p.id === selectedPackageId);
+      const selectedPackage = burstPackages.find(p => p.id === selectedPackageId);
+      
+      localStorage.setItem('pending_burst_email', email);
+      localStorage.setItem('pending_burst_packageId', selectedPackageId);
+      localStorage.setItem('pending_burst_packageName', selectedPackage?.name || 'Advocacy Burst');
+
       const session = await createCheckoutSession({
         type: 'burst',
         email,
@@ -102,7 +184,7 @@ const AdvocacyBurst: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        {BURST_PACKAGES.map((pkg) => (
+        {burstPackages.map((pkg) => (
           <div
             key={pkg.id}
             onClick={() => setSelectedPackageId(pkg.id)}
@@ -152,13 +234,13 @@ const AdvocacyBurst: React.FC = () => {
 
         <button
           type="submit"
-          disabled={status === 'processing' || !selectedPackageId}
+          disabled={status === 'processing' || !selectedPackageId || burstPackages.length === 0}
           className="w-full bg-justice-gold hover:bg-justice-gold/80 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all transform active:scale-[0.98]"
         >
           {status === 'processing' ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
-              Sequencing Burst...
+              {new URLSearchParams(window.location.search).get('payment') === 'success' ? 'Transmitting Burst...' : 'Sequencing Burst...'}
             </>
           ) : (
             <>
