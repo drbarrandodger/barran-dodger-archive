@@ -1,6 +1,8 @@
 import { Switch, Route, useLocation } from "wouter";
 import { useEffect } from "react";
 import { queryClient } from "./lib/queryClient";
+import { useSiteStats } from "@/hooks/useSiteStats";
+import { LiveTextReplacer } from "@/components/LiveTextReplacer";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,9 +18,19 @@ import { Chatbot } from "@/components/Chatbot";
 import { slugFromUrl } from "@/components/DownloadCounter";
 import { GlobalAnalysisShareStrip } from "@/components/GlobalAnalysisShareStrip";
 import { FloatingDonateWidget } from "@/components/FloatingDonateWidget";
+import { FloatingShareBar } from "@/components/FloatingShareBar";
+import { TextSelectionShare } from "@/components/TextSelectionShare";
+import { MilestoneBar } from "@/components/MilestoneBar";
+import { CourtCountdownStrip } from "@/components/CourtCountdownStrip";
+import DareYouBanner from "@/components/DareYouBanner";
+import { AblePointExposureBanner } from "@/components/AblePointExposureBanner";
+import { ScrollShareCTA } from "@/components/ScrollShareCTA";
 import { PDFGateProvider } from "@/components/PDFGateProvider";
+import { GlobalBlockchainStamp } from "@/components/GlobalBlockchainStamp";
 import Home from "@/pages/Home";
 import Mission from "@/pages/Mission";
+import PressKit from "@/pages/PressKit";
+import Undeniable from "@/pages/Undeniable";
 import Contact from "@/pages/Contact";
 import LegalResearch from "@/pages/LegalResearch";
 import Evidence from "@/pages/Evidence";
@@ -38,6 +50,8 @@ import TaxpayerCostAnalysis from "@/pages/TaxpayerCostAnalysis";
 import Publications from "@/pages/Publications";
 import EvidenceVault from "@/pages/EvidenceVault";
 import Store from "@/pages/Store";
+import MonetisationHub from "@/pages/MonetisationHub";
+import CreativePortfolio from "@/pages/CreativePortfolio";
 import FreeEbooks from "@/pages/FreeEbooks";
 import Tags from "@/pages/Tags";
 import CopyrightRegister from "@/pages/CopyrightRegister";
@@ -47,9 +61,11 @@ import ForensicCorroborationBuriedLies from "@/pages/ForensicCorroborationBuried
 import ForensicCorroborationTruthCrawlsOutOfShadows from "@/pages/ForensicCorroborationTruthCrawlsOutOfShadows";
 import AprilMcLeanForensicRecord from "@/pages/AprilMcLeanForensicRecord";
 import TheyCalledYouCrazyProphesied from "@/pages/TheyCalledYouCrazyProphesied";
+import ForensicCorroborationGoingToJail from "@/pages/ForensicCorroborationGoingToJail";
 import DigitalArchive from "@/pages/DigitalArchive";
 import ArchiveIndex from "@/pages/ArchiveIndex";
 import ArchiveDetonation from "@/pages/ArchiveDetonation";
+import NuclearDownloadPage from "@/pages/NuclearDownloadPage";
 import AdminSubscribers from "@/pages/AdminSubscribers";
 import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
@@ -57,6 +73,7 @@ import RetrospectiveStatement from "@/pages/RetrospectiveStatement";
 import VisitorStats from "@/pages/VisitorStats";
 import SpreadTheTruth from "@/pages/SpreadTheTruth";
 import AIJusticeStatement from "@/pages/AIJusticeStatement";
+import VerdictBeforeTheCourt from "@/pages/VerdictBeforeTheCourt";
 import VideoCommentary from "@/pages/VideoCommentary";
 import ChosenOnesPerfectTrap from "@/pages/ChosenOnesPerfectTrap";
 import PrivateInvestigatorLegend from "@/pages/PrivateInvestigatorLegend";
@@ -108,6 +125,8 @@ import DivineExam from "@/pages/DivineExam";
 import SilentCheckmate from "@/pages/SilentCheckmate";
 import NowEverybodyKnows from "@/pages/NowEverybodyKnows";
 import ChosenOneOutcastLeader from "@/pages/ChosenOneOutcastLeader";
+import ChosenOneSoloMission from "@/pages/ChosenOneSoloMission";
+import ChosenVesselDeclaration from "@/pages/ChosenVesselDeclaration";
 import SomeoneSlippedUp from "@/pages/SomeoneSlippedUp";
 import TheyFumbledYou from "@/pages/TheyFumbledYou";
 import FBIPrecision from "@/pages/FBIPrecision";
@@ -142,6 +161,7 @@ import BoazAndRuth from "@/pages/BoazAndRuth";
 import ProfessionalAccountability from "@/pages/ProfessionalAccountability";
 import LetterToTheWorld from "@/pages/LetterToTheWorld";
 import WhistleblowerComparison from "@/pages/WhistleblowerComparison";
+import InversionParadox from "@/pages/InversionParadox";
 import HoneytrapInfiltrationReport from "@/pages/HoneytrapInfiltrationReport";
 import AbleCareEntrapmentNetwork from "@/pages/AbleCareEntrapmentNetwork";
 import SilentAssassin from "@/pages/SilentAssassin";
@@ -155,12 +175,20 @@ import ComprehensiveStatementDigitalArchitecture from "@/pages/ComprehensiveStat
 import HeavenStoodForYou from "@/pages/HeavenStoodForYou";
 import YouDetonatedTheNarrative from "@/pages/YouDetonatedTheNarrative";
 import ChosenOneItIsOver from "@/pages/ChosenOneItIsOver";
+import ChosenOneMirrorTransmission from "@/pages/ChosenOneMirrorTransmission";
+import ChosenOneWelcomeOnBoard from "@/pages/ChosenOneWelcomeOnBoard";
+import MirrorRespondsArchive from "@/pages/MirrorRespondsArchive";
+import GameOverCheckmate from "@/pages/GameOverCheckmate";
+import MirrorLieUnmasking from "@/pages/MirrorLieUnmasking";
+import MirrorUnmarkedOne from "@/pages/MirrorUnmarkedOne";
+import MirrorBillIsDue from "@/pages/MirrorBillIsDue";
 import BeautifulMenaceForensicReport from "@/pages/BeautifulMenaceForensicReport";
 import WhenPackOfWolvesForensicReport from "@/pages/WhenPackOfWolvesForensicReport";
 import WhenWrongPeopleGetNervousForensicReport from "@/pages/WhenWrongPeopleGetNervousForensicReport";
 import IllegalLevelGeniusForensicReport from "@/pages/IllegalLevelGeniusForensicReport";
 import UrgentProtectionRequest from "@/pages/UrgentProtectionRequest";
 import HowSheWillBeRemembered from "@/pages/HowSheWillBeRemembered";
+import SukhiTearHorseHasBolted from "@/pages/SukhiTearHorseHasBolted";
 import TheyFinallyKnow from "@/pages/TheyFinallyKnow";
 import BloodlineBetrayal from "@/pages/BloodlineBetrayal";
 import FamilialInnerCircleExposed from "@/pages/FamilialInnerCircleExposed";
@@ -177,11 +205,22 @@ import PerceptionIsProtection from "@/pages/PerceptionIsProtection";
 import HeavenExposesTheSister from "@/pages/HeavenExposesTheSister";
 import YouBuiltYourPeaceInSilence from "@/pages/YouBuiltYourPeaceInSilence";
 import ThisIsTheReckoning from "@/pages/ThisIsTheReckoning";
+import InvestmentProspectus from "@/pages/InvestmentProspectus";
+import TheyCalledYouDelusional from "@/pages/TheyCalledYouDelusional";
+import StillBreathingNotTheSameSpecies from "@/pages/StillBreathingNotTheSameSpecies";
+import TheyTriedToBreakYou from "@/pages/TheyTriedToBreakYou";
+import IfTheWallsCouldTalk from "@/pages/IfTheWallsCouldTalk";
+import YouBeautifulClassifiedThreat from "@/pages/YouBeautifulClassifiedThreat";
 import TheyMadeYouFamousTryingToEraseYou from "@/pages/TheyMadeYouFamousTryingToEraseYou";
 import TheTrapTheySetBecameTheProof from "@/pages/TheTrapTheySetBecameTheProof";
 import LoudestEnemiesLeastToSay from "@/pages/LoudestEnemiesLeastToSay";
 import YourPowerIsNoJoke from "@/pages/YourPowerIsNoJoke";
 import TheyBuiltTheirWorstNightmare from "@/pages/TheyBuiltTheirWorstNightmare";
+import TheyBuiltTheirEmpireInTheDark from "@/pages/TheyBuiltTheirEmpireInTheDark";
+import MothersDayPrayer2026 from "@/pages/MothersDayPrayer2026";
+import CrimesAgainstHumanityConfirmed from "@/pages/CrimesAgainstHumanityConfirmed";
+import ElivenChainPortalSummoning from "@/pages/ElivenChainPortalSummoning";
+import TheyThoughtBuryingYouForensicReport from "@/pages/TheyThoughtBuryingYouForensicReport";
 import QuietStormTheyNeverSawComing from "@/pages/QuietStormTheyNeverSawComing";
 import QuietStormDownload from "@/pages/QuietStormDownload";
 import TheyFumbledYouDownload from "@/pages/TheyFumbledYouDownload";
@@ -209,12 +248,23 @@ import HoneyTrapPhillipGlass from "@/pages/HoneyTrapPhillipGlass";
 import BitcoinProof from "@/pages/BitcoinProof";
 import HolyReckoning from "@/pages/HolyReckoning";
 import AbleCareMurderThreatCall from "@/pages/AbleCareMurderThreatCall";
+import TheyWillKillMeJosh from "@/pages/TheyWillKillMeJosh";
+import CourtDutyOfficerStatement from "@/pages/CourtDutyOfficerStatement";
+import PraiseJesusAblePointExposure from "@/pages/PraiseJesusAblePointExposure";
+import ChosenOneProtheticDeclaration from "@/pages/ChosenOneProtheticDeclaration";
+import SeasonOfPayback from "@/pages/SeasonOfPayback";
+import JohnGottiSpiritualRealm from "@/pages/JohnGottiSpiritualRealm";
+import SacredGospelsForensicThesis from "@/pages/SacredGospelsForensicThesis";
+import TheRatsWillCome from "@/pages/TheRatsWillCome";
+import ForensicPerceptionAnalysis from "@/pages/ForensicPerceptionAnalysis";
 import CtoBreachAppointment from "@/pages/CtoBreachAppointment";
 import CtoResponseLetter from "@/pages/CtoResponseLetter";
 import KarmaAuditIasonidis from "@/pages/KarmaAuditIasonidis";
 import WaitTheyreListening from "@/pages/WaitTheyreListening";
 import CommissionForensicAnalysis from "@/pages/CommissionForensicAnalysis";
 import DyingOfShame from "@/pages/DyingOfShame";
+import GodsFuryForensicAnalysis from "@/pages/GodsFuryForensicAnalysis";
+import YouBuiltABonfireForensicAnalysis from "@/pages/YouBuiltABonfireForensicAnalysis";
 import { GodsGraceBarranDodger } from "@/pages/GodsGraceBarranDodger";
 import { BlockchainManifest } from "@/pages/BlockchainManifest";
 import BlockchainSealRegistry from "@/pages/BlockchainSealRegistry";
@@ -224,6 +274,7 @@ import CosmicEssayPage from "@/pages/CosmicEssayPage";
 import TopTenGospels from "@/pages/TopTenGospels";
 import ArchiveReport from "@/pages/ArchiveReport";
 import ForensicFrameworkUnspokenMandate from "@/pages/ForensicFrameworkUnspokenMandate";
+import ForensicSignificance2301Exhibit from "@/pages/ForensicSignificance2301Exhibit";
 import NewHomePage from "@/pages/NewHomePage";
 import EntryLanding from "@/pages/EntryLanding";
 import About from "@/pages/About";
@@ -233,6 +284,21 @@ import Academy from "@/pages/Academy";
 import AcademyUnit from "@/pages/AcademyUnit";
 import AcademyCertificate from "@/pages/AcademyCertificate";
 import Support from "@/pages/Support";
+import AcademicSignificanceAnalysis from "@/pages/AcademicSignificanceAnalysis";
+import ForensicPropheticAdjudication from "@/pages/ForensicPropheticAdjudication";
+import CropCirclesDisclosure from "@/pages/CropCirclesDisclosure";
+import BenDisclosure from "@/pages/BenDisclosure";
+import ForensicVideoAnalysis from "@/pages/ForensicVideoAnalysis";
+import OpenAccessPolicy from "@/pages/OpenAccessPolicy";
+import ParadoxOfSilence from "@/pages/ParadoxOfSilence";
+import CostOfErasure from "@/pages/CostOfErasure";
+import CivicRecord from "@/pages/CivicRecord";
+import OpenChallenge from "@/pages/OpenChallenge";
+import FormalStatement from "@/pages/FormalStatement";
+import GodsChosenWitness from "@/pages/GodsChosenWitness";
+import TheUnlikelyVessel from "@/pages/TheUnlikelyVessel";
+import TheReckoningPaper from "@/pages/TheReckoningPaper";
+import QrPage from "@/pages/QrPage";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -288,6 +354,8 @@ function Router() {
         <Route path="/archive" component={Home} />
         <Route path="/start-here" component={StartHere} />
         <Route path="/mission" component={Mission} />
+        <Route path="/press" component={PressKit} />
+        <Route path="/undeniable" component={Undeniable} />
         <Route path="/research" component={LegalResearch} />
         <Route path="/evidence" component={Evidence} />
         <Route path="/blockchain" component={Blockchain} />
@@ -312,6 +380,8 @@ function Router() {
         <Route path="/visitors" component={VisitorStats} />
         <Route path="/spread-the-truth" component={SpreadTheTruth} />
         <Route path="/ai-justice-statement" component={AIJusticeStatement} />
+        <Route path="/verdict-before-the-court" component={VerdictBeforeTheCourt} />
+        <Route path="/the-verdict-before-the-court-speaks" component={VerdictBeforeTheCourt} />
         <Route path="/video-commentary" component={VideoCommentary} />
         <Route path="/chosen-ones-perfect-trap" component={ChosenOnesPerfectTrap} />
         <Route path="/private-investigator-legend" component={PrivateInvestigatorLegend} />
@@ -361,12 +431,15 @@ function Router() {
         <Route path="/bro-this-isnt-a-coincidence" component={BroThisIsntACoincidence} />
         <Route path="/master-evidence-register" component={MasterEvidenceRegister} />
         <Route path="/forensic-framework-unspoken-mandate" component={ForensicFrameworkUnspokenMandate} />
+        <Route path="/forensic-significance-2301-exhibit" component={ForensicSignificance2301Exhibit} />
         <Route path="/chosen-ones-enough-is-enough" component={ChosenOnesEnoughIsEnough} />
         <Route path="/no-one-could-be-that-smart" component={NoOneCouldBeThatSmart} />
         <Route path="/the-divine-exam" component={DivineExam} />
         <Route path="/silent-checkmate" component={SilentCheckmate} />
         <Route path="/now-everybody-knows" component={NowEverybodyKnows} />
         <Route path="/chosen-one-outcast-leader" component={ChosenOneOutcastLeader} />
+        <Route path="/chosen-one-solo-mission" component={ChosenOneSoloMission} />
+        <Route path="/chosen-vessel-declaration" component={ChosenVesselDeclaration} />
         <Route path="/someone-slipped-up" component={SomeoneSlippedUp} />
         <Route path="/they-fumbled-you" component={TheyFumbledYou} />
         <Route path="/fbi-precision" component={FBIPrecision} />
@@ -422,6 +495,19 @@ function Router() {
         <Route path="/your-power-is-no-joke" component={YourPowerIsNoJoke} />
         <Route path="/they-built-their-worst-nightmare" component={TheyBuiltTheirWorstNightmare} />
         <Route path="/forensic-analysis/they-built-their-worst-nightmare" component={TheyBuiltTheirWorstNightmare} />
+        <Route path="/they-built-their-empire-in-the-dark" component={TheyBuiltTheirEmpireInTheDark} />
+        <Route path="/forensic-analysis/they-built-their-empire-in-the-dark" component={TheyBuiltTheirEmpireInTheDark} />
+        <Route path="/forensic-analysis-57-empire-in-the-dark" component={TheyBuiltTheirEmpireInTheDark} />
+        <Route path="/mothers-day-prayer-2026" component={MothersDayPrayer2026} />
+        <Route path="/the-prayer-that-was-heard" component={MothersDayPrayer2026} />
+        <Route path="/prayer-was-answered" component={MothersDayPrayer2026} />
+        <Route path="/they-thought-burying-you-would-end-the-story" component={TheyThoughtBuryingYouForensicReport} />
+        <Route path="/forensic-analysis/they-thought-burying-you" component={TheyThoughtBuryingYouForensicReport} />
+        <Route path="/forensic-analysis-58-burying-you" component={TheyThoughtBuryingYouForensicReport} />
+        <Route path="/eliven-chain-portal" component={ElivenChainPortalSummoning} />
+        <Route path="/portal-summoning" component={ElivenChainPortalSummoning} />
+        <Route path="/gospel-opens-the-portal" component={ElivenChainPortalSummoning} />
+        <Route path="/creator-responds-to-the-portal" component={ElivenChainPortalSummoning} />
         <Route path="/quiet-storm-they-never-saw-coming" component={QuietStormTheyNeverSawComing} />
         <Route path="/forensic-analysis/quiet-storm-they-never-saw-coming" component={QuietStormTheyNeverSawComing} />
         <Route path="/forensic-analysis-48-quiet-storm-download" component={QuietStormDownload} />
@@ -471,6 +557,27 @@ function Router() {
         <Route path="/chosen-one-it-is-over" component={ChosenOneItIsOver} />
         <Route path="/it-is-over-reflection" component={ChosenOneItIsOver} />
         <Route path="/tam-whole-complete-paid-in-full" component={ChosenOneItIsOver} />
+        <Route path="/mirror-of-god-chosen-one-vindication" component={ChosenOneMirrorTransmission} />
+        <Route path="/the-mirror-speaks-chosen-one" component={ChosenOneMirrorTransmission} />
+        <Route path="/chosen-one-vindication-mirror" component={ChosenOneMirrorTransmission} />
+        <Route path="/mirror-of-god-welcome-on-board" component={ChosenOneWelcomeOnBoard} />
+        <Route path="/welcome-on-board-mirror-responds" component={ChosenOneWelcomeOnBoard} />
+        <Route path="/ten-sections-impossible-survival" component={ChosenOneWelcomeOnBoard} />
+        <Route path="/mirror-of-god-responds-to-the-archive" component={MirrorRespondsArchive} />
+        <Route path="/mirror-faces-the-archive" component={MirrorRespondsArchive} />
+        <Route path="/eight-lenses-one-verdict" component={MirrorRespondsArchive} />
+        <Route path="/mirror-of-god-game-over-checkmate" component={GameOverCheckmate} />
+        <Route path="/game-over-mirror-confirms" component={GameOverCheckmate} />
+        <Route path="/checkmate-confirmed-mirror-of-god" component={GameOverCheckmate} />
+        <Route path="/mirror-of-god-lie-unmasking" component={MirrorLieUnmasking} />
+        <Route path="/lie-doesnt-collapse-when-challenged" component={MirrorLieUnmasking} />
+        <Route path="/mirror-names-the-unmasking" component={MirrorLieUnmasking} />
+        <Route path="/mirror-of-god-unmarked-one" component={MirrorUnmarkedOne} />
+        <Route path="/mirror-confirms-the-unmarked-one" component={MirrorUnmarkedOne} />
+        <Route path="/thirteen-agencies-no-category" component={MirrorUnmarkedOne} />
+        <Route path="/mirror-of-god-bill-is-due" component={MirrorBillIsDue} />
+        <Route path="/you-rang-the-alarm-bill-is-due" component={MirrorBillIsDue} />
+        <Route path="/mirror-names-the-consequence" component={MirrorBillIsDue} />
         <Route path="/they-finally-know" component={TheyFinallyKnow} />
         <Route path="/message-to-perpetrators" component={TheyFinallyKnow} />
         <Route path="/the-shift-they-never-saw-coming" component={TheyFinallyKnow} />
@@ -492,12 +599,52 @@ function Router() {
         <Route path="/police-complicity-death-threat-documentation" component={PolicComplicityDeathThreat} />
         <Route path="/death-threat-april-2026" component={PolicComplicityDeathThreat} />
         <Route path="/tory-kilborn-death-threat" component={PolicComplicityDeathThreat} />
+        <Route path="/they-will-kill-me-josh" component={TheyWillKillMeJosh} />
+        <Route path="/they-will-kill-me" component={TheyWillKillMeJosh} />
+        <Route path="/ablepoint-entrapment" component={TheyWillKillMeJosh} />
+        <Route path="/praise-jesus-ablepoint-exposure" component={PraiseJesusAblePointExposure} />
+        <Route path="/praise-jesus" component={PraiseJesusAblePointExposure} />
+        <Route path="/forensic-perception-analysis" component={ForensicPerceptionAnalysis} />
+        <Route path="/the-depth-they-couldnt-hold" component={ForensicPerceptionAnalysis} />
+        <Route path="/depth-perception-corroboration" component={ForensicPerceptionAnalysis} />
+        <Route path="/youtube-corroboration-analysis" component={ForensicPerceptionAnalysis} />
+        <Route path="/the-rats-will-come" component={TheRatsWillCome} />
+        <Route path="/rats-will-come" component={TheRatsWillCome} />
+        <Route path="/institutional-accountability-essay" component={TheRatsWillCome} />
+        <Route path="/the-building-is-sinking" component={TheRatsWillCome} />
+        <Route path="/sacred-gospels-forensic-thesis" component={SacredGospelsForensicThesis} />
+        <Route path="/all-faiths-analysis" component={SacredGospelsForensicThesis} />
+        <Route path="/interfaith-forensic-thesis" component={SacredGospelsForensicThesis} />
+        <Route path="/prophetic-significance-all-traditions" component={SacredGospelsForensicThesis} />
+        <Route path="/all-gospels-one-witness" component={SacredGospelsForensicThesis} />
+        <Route path="/22-traditions-corroborated" component={SacredGospelsForensicThesis} />
+        <Route path="/john-gotti-spiritual-realm" component={JohnGottiSpiritualRealm} />
+        <Route path="/everyone-is-shook" component={JohnGottiSpiritualRealm} />
+        <Route path="/aura-shift-forensic-report" component={JohnGottiSpiritualRealm} />
+        <Route path="/makaveli-soul-plane" component={JohnGottiSpiritualRealm} />
+        <Route path="/quiet-apocalypse" component={JohnGottiSpiritualRealm} />
+        <Route path="/season-of-payback" component={SeasonOfPayback} />
+        <Route path="/they-threw-dirt-on-your-name" component={SeasonOfPayback} />
+        <Route path="/forensic-corroboration-season-of-payback" component={SeasonOfPayback} />
+        <Route path="/dirt-on-your-name-forensic-report" component={SeasonOfPayback} />
+        <Route path="/chosen-one-payback-corroboration" component={SeasonOfPayback} />
+        <Route path="/i-am-gods-chosen-one" component={ChosenOneProtheticDeclaration} />
+        <Route path="/chosen-one-declaration" component={ChosenOneProtheticDeclaration} />
+        <Route path="/prophetic-forensic-declaration" component={ChosenOneProtheticDeclaration} />
+        <Route path="/gods-chosen-one" component={ChosenOneProtheticDeclaration} />
+        <Route path="/soul-contract-declaration" component={ChosenOneProtheticDeclaration} />
+        <Route path="/court-duty-officer-statement" component={CourtDutyOfficerStatement} />
+        <Route path="/print-court-statement" component={CourtDutyOfficerStatement} />
+        <Route path="/wyong-court-statement" component={CourtDutyOfficerStatement} />
         <Route path="/illegal-level-genius-forensic-report" component={IllegalLevelGeniusForensicReport} />
         <Route path="/genius-forged-in-suppression-forensic-analysis" component={IllegalLevelGeniusForensicReport} />
         <Route path="/divine-reckoning" component={DivineReckoning} />
         <Route path="/a-divine-reckoning" component={DivineReckoning} />
         <Route path="/to-those-who-chose-this" component={DivineReckoning} />
         <Route path="/how-she-will-be-remembered" component={HowSheWillBeRemembered} />
+        <Route path="/sukhi-tear-horse-has-bolted" component={SukhiTearHorseHasBolted} />
+        <Route path="/sukhi-tear-too-late" component={SukhiTearHorseHasBolted} />
+        <Route path="/sukhi-tear-reckoning" component={SukhiTearHorseHasBolted} />
         <Route path="/phantom-protocol" component={PhantomProtocol} />
         <Route path="/they-cannot-profile-you" component={TheyCannotProfileYou} />
         <Route path="/the-architecture-of-resolution" component={ArchitectureOfResolution} />
@@ -508,6 +655,7 @@ function Router() {
         <Route path="/professional-accountability" component={ProfessionalAccountability} />
         <Route path="/letter-to-the-world" component={LetterToTheWorld} />
         <Route path="/whistleblower-comparison" component={WhistleblowerComparison} />
+        <Route path="/inversion-paradox" component={InversionParadox} />
         <Route path="/the-truth" component={ViralLanding} />
         <Route path="/prophetic-declaration-forensic-analysis" component={PropheticDeclarationForensicAnalysis} />
         <Route path="/they-used-to-whisper-forensic-analysis" component={PropheticDeclarationForensicAnalysis} />
@@ -550,6 +698,10 @@ function Router() {
         <Route path="/holy-reckoning" component={HolyReckoning} />
         <Route path="/holy-reckoning-ndis-plea" component={HolyReckoning} />
         <Route path="/ndis-provider-entrapment-plea" component={HolyReckoning} />
+        <Route path="/forensic-prophetic-declaration" component={HolyReckoning} />
+        <Route path="/you-picked-a-fight-with-god" component={HolyReckoning} />
+        <Route path="/god-of-divine-justice" component={HolyReckoning} />
+        <Route path="/chosen-witness-declaration" component={HolyReckoning} />
         <Route path="/ablecare-murder-threat-call" component={AbleCareMurderThreatCall} />
         <Route path="/ablecare-transcript" component={AbleCareMurderThreatCall} />
         <Route path="/ablecare-ceo-duty-of-care-breach" component={AbleCareMurderThreatCall} />
@@ -568,10 +720,20 @@ function Router() {
         <Route path="/dying-of-shame-forensic-analysis" component={DyingOfShame} />
         <Route path="/forensic-analysis-63" component={DyingOfShame} />
         <Route path="/prophetic-testimony-shame" component={DyingOfShame} />
+        <Route path="/gods-fury-forensic-analysis" component={GodsFuryForensicAnalysis} />
+        <Route path="/forensic-analysis-79" component={GodsFuryForensicAnalysis} />
+        <Route path="/gods-fury-14-declarations" component={GodsFuryForensicAnalysis} />
+        <Route path="/you-built-a-bonfire-forensic-analysis" component={YouBuiltABonfireForensicAnalysis} />
+        <Route path="/forensic-analysis-80" component={YouBuiltABonfireForensicAnalysis} />
+        <Route path="/bonfire-forensic-analysis" component={YouBuiltABonfireForensicAnalysis} />
+        <Route path="/chosen-ones-bonfire" component={YouBuiltABonfireForensicAnalysis} />
+        <Route path="/you-burned-your-own-house-down" component={YouBuiltABonfireForensicAnalysis} />
         <Route path="/gods-grace-barran-dodger" component={GodsGraceBarranDodger} />
         <Route path="/eternal-witness-affidavit" component={GodsGraceBarranDodger} />
         <Route path="/gods-grace-resonance-christ" component={GodsGraceBarranDodger} />
         <Route path="/store" component={Store} />
+        <Route path="/income" component={MonetisationHub} />
+        <Route path="/creative-portfolio" component={CreativePortfolio} />
         <Route path="/testimony-archive" component={FreeEbooks} />
         <Route path="/tags" component={Tags} />
         <Route path="/tags/:slug" component={Tags} />
@@ -592,10 +754,13 @@ function Router() {
         <Route path="/forensic-corroboration-truth-crawls-out-of-shadows" component={ForensicCorroborationTruthCrawlsOutOfShadows} />
         <Route path="/april-mclean-forensic-record" component={AprilMcLeanForensicRecord} />
         <Route path="/forensic-analysis-78-they-called-you-crazy-prophesied" component={TheyCalledYouCrazyProphesied} />
+        <Route path="/forensic-corroboration-going-to-jail" component={ForensicCorroborationGoingToJail} />
         <Route path="/digital-archive" component={DigitalArchive} />
         <Route path="/archive-index" component={ArchiveIndex} />
         <Route path="/pdf-list" component={ArchiveIndex} />
         <Route path="/complete-document-list" component={ArchiveIndex} />
+        <Route path="/nuclear-download" component={NuclearDownloadPage} />
+        <Route path="/download-all" component={NuclearDownloadPage} />
         <Route path="/archive-detonation" component={ArchiveDetonation} />
         <Route path="/detonation-center" component={ArchiveDetonation} />
         <Route path="/download-archive" component={ArchiveDetonation} />
@@ -607,10 +772,90 @@ function Router() {
         <Route path="/academy" component={Academy} />
         <Route path="/academy/unit/:id" component={AcademyUnit} />
         <Route path="/academy/certificate" component={AcademyCertificate} />
+        <Route path="/academic-significance-analysis" component={AcademicSignificanceAnalysis} />
+        <Route path="/impartial-ai-analysis" component={AcademicSignificanceAnalysis} />
+        <Route path="/archive-significance-statement" component={AcademicSignificanceAnalysis} />
+        <Route path="/forensic-academic-assessment" component={AcademicSignificanceAnalysis} />
+        <Route path="/ai-authored-significance-analysis" component={AcademicSignificanceAnalysis} />
+        <Route path="/barran-dodger-academic-analysis" component={AcademicSignificanceAnalysis} />
+        <Route path="/forensic-prophetic-adjudication" component={ForensicPropheticAdjudication} />
+        <Route path="/impartial-ai-prophetic-assessment" component={ForensicPropheticAdjudication} />
+        <Route path="/heaven-files-a-case" component={ForensicPropheticAdjudication} />
+        <Route path="/divine-justice-evidence-mapping" component={ForensicPropheticAdjudication} />
+        <Route path="/14-findings-documented" component={ForensicPropheticAdjudication} />
+        <Route path="/crop-circles-coded-glyphs-disclosure" component={CropCirclesDisclosure} />
+        <Route path="/ben-disclosure" component={BenDisclosure} />
+        <Route path="/forensic-video-analysis" component={ForensicVideoAnalysis} />
+        <Route path="/open-access-policy" component={OpenAccessPolicy} />
+        <Route path="/free-documents" component={OpenAccessPolicy} />
+        <Route path="/document-access-policy" component={OpenAccessPolicy} />
+        <Route path="/paradox-of-silence" component={ParadoxOfSilence} />
+        <Route path="/inversion-theory" component={ParadoxOfSilence} />
+        <Route path="/universal-betrayal-paradox" component={ParadoxOfSilence} />
+        <Route path="/the-cost-of-my-silence" component={ParadoxOfSilence} />
+        <Route path="/gods-chosen-witness" component={GodsChosenWitness} />
+        <Route path="/forensic-theology" component={GodsChosenWitness} />
+        <Route path="/chosen-one-analysis" component={GodsChosenWitness} />
+        <Route path="/the-prophetic-record" component={GodsChosenWitness} />
+        <Route path="/chosen-one-forensic-paper" component={GodsChosenWitness} />
+        <Route path="/the-unlikely-vessel" component={TheUnlikelyVessel} />
+        <Route path="/the-reckoning-paper" component={TheReckoningPaper} />
+        <Route path="/vessel-silence-reckoning" component={TheReckoningPaper} />
+        <Route path="/broken-phone-reckoning" component={TheReckoningPaper} />
+        <Route path="/god-does-not-call-the-equipped" component={TheUnlikelyVessel} />
+        <Route path="/unlikely-vessel-theology" component={TheUnlikelyVessel} />
+        <Route path="/cost-of-erasure" component={CostOfErasure} />
+        <Route path="/civic-record" component={CivicRecord} />
+        <Route path="/qr" component={QrPage} />
+        <Route path="/statement-of-contributions" component={CivicRecord} />
+        <Route path="/democratic-contradiction" component={CivicRecord} />
+        <Route path="/open-challenge" component={OpenChallenge} />
+        <Route path="/prove-this-wrong" component={OpenChallenge} />
+        <Route path="/ethical-challenge" component={OpenChallenge} />
+        <Route path="/formal-statement" component={FormalStatement} />
+        <Route path="/statement-of-entrapment" component={FormalStatement} />
+        <Route path="/v2k-statement" component={FormalStatement} />
+        <Route path="/government-accountability-report" component={CostOfErasure} />
+        <Route path="/administrative-annihilation-cost-analysis" component={CostOfErasure} />
+        <Route path="/survival-calculus" component={CostOfErasure} />
+        <Route path="/the-cost-of-killing-me" component={CostOfErasure} />
+        <Route path="/crop-circles-nhi-disclosure" component={CropCirclesDisclosure} />
+        <Route path="/glyphs-from-the-future" component={CropCirclesDisclosure} />
+        <Route path="/crimes-against-humanity-confirmed" component={CrimesAgainstHumanityConfirmed} />
+        <Route path="/state-documents-confirm-crimes" component={CrimesAgainstHumanityConfirmed} />
+        <Route path="/2077-documents-mandate" component={CrimesAgainstHumanityConfirmed} />
+        <Route path="/investment-prospectus" component={InvestmentProspectus} />
+        <Route path="/financial-valuation" component={InvestmentProspectus} />
+        <Route path="/investor-appeal" component={InvestmentProspectus} />
+        <Route path="/they-called-you-delusional" component={TheyCalledYouDelusional} />
+        <Route path="/paranoid-was-prophecy" component={TheyCalledYouDelusional} />
+        <Route path="/they-laughed-now-theyre-trembling" component={TheyCalledYouDelusional} />
+        <Route path="/youtube-prophecy-corroborated" component={TheyCalledYouDelusional} />
+        <Route path="/you-beautiful-classified-threat" component={YouBeautifulClassifiedThreat} />
+        <Route path="/ghost-in-their-machine" component={YouBeautifulClassifiedThreat} />
+        <Route path="/17-intelligence-databases" component={YouBeautifulClassifiedThreat} />
+        <Route path="/the-file-they-cant-close" component={YouBeautifulClassifiedThreat} />
+        <Route path="/if-the-walls-could-talk" component={IfTheWallsCouldTalk} />
+        <Route path="/enemies-cry-in-silence" component={IfTheWallsCouldTalk} />
+        <Route path="/their-tears-are-choking" component={IfTheWallsCouldTalk} />
+        <Route path="/the-mask-they-lost" component={IfTheWallsCouldTalk} />
+        <Route path="/they-tried-to-break-you" component={TheyTriedToBreakYou} />
+        <Route path="/exposed-as-fools" component={TheyTriedToBreakYou} />
+        <Route path="/the-spotlight-was-exposing-them" component={TheyTriedToBreakYou} />
+        <Route path="/the-ritual-backfired" component={TheyTriedToBreakYou} />
+        <Route path="/still-breathing-not-the-same-species" component={StillBreathingNotTheSameSpecies} />
+        <Route path="/you-metabolised-it" component={StillBreathingNotTheSameSpecies} />
+        <Route path="/radiation-from-a-failed-experiment" component={StillBreathingNotTheSameSpecies} />
+        <Route path="/the-leash-snapped" component={StillBreathingNotTheSameSpecies} />
         <Route component={ViralLanding} />
       </Switch>
     </>
   );
+}
+
+function SiteStatsLoader() {
+  useSiteStats();
+  return <LiveTextReplacer />;
 }
 
 function App() {
@@ -619,19 +864,24 @@ function App() {
       <ThemeProvider>
         <TooltipProvider>
           <PDFGateProvider>
+            <SiteStatsLoader />
             <GlobalDownloadTracker />
             <ReadingProgress />
-            <SOSTopBar />
-            <ScripturalBar />
-            <WhistleblowerBanner />
-            <DonationBanner />
             <LanguageDetectionBanner />
+            <AblePointExposureBanner />
             <Toaster />
             <Breadcrumbs />
             <Router />
+            <GlobalBlockchainStamp />
+            <div className="hidden sm:block"><MilestoneBar /></div>
             <GlobalAnalysisShareStrip />
             <FloatingDonateWidget />
+            <div className="hidden sm:block"><FloatingShareBar /></div>
+            <TextSelectionShare />
             <Chatbot />
+            <CourtCountdownStrip />
+            <div className="hidden sm:block"><ScrollShareCTA /></div>
+            <DareYouBanner />
           </PDFGateProvider>
         </TooltipProvider>
       </ThemeProvider>
