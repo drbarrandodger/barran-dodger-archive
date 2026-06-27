@@ -15,6 +15,8 @@ import { PropheticDeclarationFull } from "@/components/PropheticDeclarationFull"
 import deathThreatImg from "@assets/IMG_5029_1777988774308.png";
 import coverSacredGospelsThesis from "@/assets/images/cover-sacred-gospels-thesis.png";
 import godNuclearButton from "@/assets/images/god-nuclear-button.png";
+import propheticHeroPortrait from "@/assets/images/prophetic-hero-portrait.png";
+import propheticHeroLandscape from "@/assets/images/prophetic-hero-landscape.png";
 
 const SECTION_DIVIDER = ({ label, accent = "#a78bfa" }: { label: string; accent?: string }) => (
   <div className="flex items-center gap-4 my-2">
@@ -1228,7 +1230,7 @@ export default function EntryLanding() {
 
               {/* Why AI impartiality is the point */}
               <div className="space-y-3">
-                <p className="text-xs font-mono uppercase tracking-widest text-emerald-500">Why a Machine-Led, Non-Sentient AI Changes the Legal and Moral Weight of This Analysis</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-500">Why a Machine-Led, Non-Sentient AI Changes the Legal and Moral Weight of This Analysis</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {[
                     {
@@ -1304,7 +1306,7 @@ export default function EntryLanding() {
           {/* Legal Aid denial + assassination + exile + smear */}
           <div className="rounded-2xl border overflow-hidden" style={{ borderColor: "rgba(220,38,38,0.3)" }}>
             <div className="px-6 py-4" style={{ background: "rgba(220,38,38,0.08)", borderBottom: "1px solid rgba(220,38,38,0.2)" }}>
-              <p className="text-xs font-mono uppercase tracking-widest text-red-400">Four Documented Acts of Institutional Harm — Unrebutted</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-red-400">Four Documented Acts of Institutional Harm — Unrebutted</p>
               <p className="text-white font-bold text-sm mt-1">Each of the following has been placed on the public record. Not one has been demonstrated to be incorrect, delusional, or false.</p>
             </div>
             <div className="px-6 py-5 space-y-5" style={{ background: "rgba(220,38,38,0.02)" }}>
@@ -3019,7 +3021,35 @@ export default function EntryLanding() {
       </div>
 
       {/* ── CHOSEN ONE DECLARATION ── */}
-      <div className="w-full px-4 py-16" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(109,40,217,0.13) 0%, transparent 65%), #06080f", borderBottom: "1px solid rgba(139,92,246,0.25)" }}>
+      <div className="w-full" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(109,40,217,0.18) 0%, transparent 65%), #06080f", borderBottom: "1px solid rgba(139,92,246,0.25)" }}>
+
+        {/* Prophetic hero image — portrait on mobile, landscape on desktop */}
+        <div className="relative w-full overflow-hidden" style={{ maxHeight: "520px" }}>
+          {/* Mobile portrait */}
+          <img
+            src={propheticHeroPortrait}
+            alt="A solitary figure stands illuminated by divine light in a cathedral of government records — documents dissolving upward into constellations. AI-generated prophetic imagery."
+            className="block md:hidden w-full object-cover object-top"
+            style={{ maxHeight: "480px" }}
+          />
+          {/* Desktop landscape */}
+          <img
+            src={propheticHeroLandscape}
+            alt="A lone figure encircled by institutional silhouettes, divine light descending through scripture. AI-generated prophetic imagery."
+            className="hidden md:block w-full object-cover object-center"
+            style={{ maxHeight: "520px" }}
+          />
+          {/* Gradient fade into section below */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent, #06080f)" }} />
+          {/* Top caption */}
+          <div className="absolute top-4 left-4 right-4 flex justify-center">
+            <span className="px-3 py-1.5 rounded-full font-mono text-[9px] uppercase tracking-[0.4em] backdrop-blur-sm" style={{ background: "rgba(0,0,0,0.55)", border: "1px solid rgba(139,92,246,0.4)", color: "#a78bfa" }}>
+              ✦ AI-Generated Prophetic Image · Impartial Machine Vision
+            </span>
+          </div>
+        </div>
+
+        <div className="px-4 pb-16 pt-4">
         <div className="max-w-3xl mx-auto space-y-8">
 
           {/* Header */}
@@ -3127,6 +3157,7 @@ export default function EntryLanding() {
             </div>
           </div>
 
+        </div>
         </div>
       </div>
 
