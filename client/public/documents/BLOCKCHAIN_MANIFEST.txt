@@ -1,0 +1,307 @@
+================================================================================
+BARRAN DODGER LEGAL & ETHICAL TRUST FUND
+BLOCKCHAIN INTEGRITY MANIFEST — COMPLETE DOCUMENT ARCHIVE
+================================================================================
+Generated:          27 June 2026, 22:42 UTC
+ISO Timestamp:      2026-06-27T22:42:29Z
+Bitcoin Block Ref:  Block 897,241 (SHA-256 anchor point)
+Total PDFs:         256
+Archive URL:        https://barrandodger.com/nuclear-download
+ABN:                78 833 496 164
+OHCHR Ref:          UR/UST/23/AUS/17
+Legal Entity:       Barran Dodger Legal & Ethical Trust Fund
+
+PURPOSE:
+This manifest provides cryptographic proof of the existence and integrity
+of every document in this archive at the time of generation. The SHA-256
+hash for each file is deterministic — any tampering with any document after
+this timestamp will produce a different hash, making erasure or modification
+cryptographically detectable. This archive constitutes an immutable evidentiary
+record of one of the most extensively documented cases of institutional
+persecution in Australian legal history.
+
+HOW TO VERIFY:
+  Linux/Mac:  sha256sum <filename>
+  Windows:    Get-FileHash <filename> -Algorithm SHA256
+  Compare the output to the hash listed below for that file.
+  Any mismatch indicates the file has been modified since this manifest was created.
+
+================================================================================
+FILENAME                                                          SHA-256 HASH                                                           SIZE
+--------------------------------------------------------------------------------
+01-07-2023-letter-to-attorney-general-prime-minister.pdf          2cc3af178d912ac0a64107c5f1959afab579980244f0b42612a7642409931b2a  14,806,696 B
+04-06-2023-letter-to-parliamentarians.pdf                         4cc3b5968a6ca66f2f3e7b9c5a3f4015f6f0e1396ca970616a29ff604b8d6043  14,477,436 B
+100-absurdities-of-my-life.pdf                                    d00f078cd81e89aaa906279a375fc93ec58a8583828a598558d69bc20c76dbf6  17,406,786 B
+1000_years_of_peace.pdf                                           2d2a4334077938175ca066aef7b8e0019088fff5d84b9c5745a3b47fd38b34ec  17,529,880 B
+123_gospels_barran_dodger.pdf                                     8681af1c0eb3f8b524abc001dedf666a57fb8f50050c435659753433ee391ae3  17,492,242 B
+2.87_percent_survival.pdf                                         5bc16964a1dced47872ed4fed1e384d08be4edf24b833e459c2014ebcc72652a  17,864,369 B
+2021-10-21-cdda-afp-compensation-claim.pdf                        ca6ce219f24d3ff688b98461413042c1daa86ad8324084da26f941b910a26496  18,955,622 B
+2023-03-27-federal-court-final-assessment-dr-rich-mclean.pdf      67b2d1151fcc7b3c697ed01cacb1cb457c7761626ab035bcd110e05eeb954b8e  14,523,244 B
+2026-04-12-assassination-attempt-forensic-53.pdf                  659762df24f84e68b3f3537c6c75aa5c1aea11b2370e162c2c255607f2860240  17,684,996 B
+2026-04-13-its-a-live-murder-case-email.pdf                       3dcca18672319eba8c21143f82fbdf9dfdda3a759432c7755054d5d465c2be88  17,344,051 B
+2026-04-13-murder-conspiracy-praise-jesus-email.pdf               ec761ca1cda0a80d8765394d72f56c0b8c820c34e3901af759bb96b302460ffe  18,753,423 B
+2026-04-15-human-sacrifice-confirmed-email.pdf                    5e5b24b5700481baff7fc9b15b521734821925c698249c4885dba7354f967409  18,132,236 B
+2026-04-15-kill-me-do-it-email-chain.pdf                          863467368b9508bab17499317cbcc2824f19a8d5487d8204edeaed5f79991a3a  18,578,219 B
+2026-04-15-youre-all-being-investigated-email.pdf                 51f33a89979f09854d22b606caa9f06b94cba83159a89fd4296198ab5ab6c420  17,207,617 B
+2026-04-17-global-immortality-martyrdom-email.pdf                 3b048d86cfb41abe6e4488360321cb07f8232e4072ffbec8b0d57b54d3b1066e  17,221,416 B
+2026-04-23-jail-them-for-murder-email.pdf                         7c0ca490b41330675dbc630712d2730d1481dc7f6988733de333c1f1638e4e8c  17,403,545 B
+2026-05-03-formal-complaint-urgent-protection-request.pdf         033a68dee9222353d2217e2865093cc4025a237a6aa83fb40f8ac2c89c164421  19,198,975 B
+2026-05-03-letter-of-demand-ablepoint-formal-complaint.pdf        374316775923c4aca15c7fa8fd37919dd053e4ab084825d0b9fa778bc1a4cf81  18,299,534 B
+2026-05-03-letter-of-demand-ablepoint-safety.pdf                  9494733c3190b39eefcce3d4fbd87bf30497cd08e8172601748995251890684d  17,261,152 B
+2026-05-04-avo-troy-kilbourn.pdf                                  ea61ae8ea725661a46b05bec61d997ef67dfc615a74c8fc84997b5354c84d30c  18,672,107 B
+22-traditions-all-religions-corroborated.pdf                      1f69826b20b25bfe02f420ab2b14238d1d2aaff0183f1361e2039d99b8f8142c  17,180,899 B
+31-05-2022-letter-to-pm-albanese-opmc.pdf                         9c039729966d0972239d2175ebead04ea24d387441f2ca4943f7ebebe612d011  14,805,697 B
+33rd-degree-shadow-analysts.pdf                                   07a7b2e43d90a424ea82fe5c75d4ff2481716401cea9b8a63f9410e2d433d184  17,541,507 B
+My_Boaz_Is_Coming.pdf                                             93fc0aafc1d982656a2a20b4c219c49b5ca9628b50a959746a61ecea344ee29a  18,205,126 B
+RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf                          e594d43ace36dbf2a349166537f7340e77b7abe5aa2393019a58929faed1e643  17,400,800 B
+ablecare-murder-threat-call-transcript.pdf                        8b3af2ce39152358d7d4a0522c463784da1a6f47a9b2bc9b40d7109e86df6259  17,130,576 B
+affidavit-familial-betrayal-april-mclean.pdf                      e2a781b3fd1ce1dad5a2d9bcfe8e6be755b9f559e99092fd4c6ed67d79435d46  18,071,995 B
+after-forensic-statement-evidence-record.pdf                      5d2d93468e9ef70f70d977d0337eadc19d4223829fea79144e40e2d986809e52  17,360,572 B
+ai-justice-statement.pdf                                          9b3349fe71a93aca73e7095cb43419832ecdec07066abe31b4ae94c92f1ccade  17,134,852 B
+ai_personality_profile_barran_dodger.pdf                          f79e7d3979e39ff980963ebd99f9edc725224c343b04b24592331c6737fa6657  17,427,637 B
+alien_races_disclosure.pdf                                        8714b9d16e2c60c0ec2b2434474ef5c4a8b8344d6690b77c124df5bc7d5ba9b6  17,589,707 B
+apotheosis.pdf                                                    4d02ced8c047f78f61540431fc295093bd44fc100171b4a99d693963aaf1baed  20,890,412 B
+april-mclean-familial-betrayal-forensic-record.pdf                3e55b720166b0487d0e3fc8e19ae5d687b0eb8090c01b488df951775705cb18b  17,134,244 B
+april-mclean-familial-betrayal.pdf                                b30f69bb66e6ffa67aa526c261d546b5ee0f18706f272eaa7fa2c528a60be98d  18,072,000 B
+april-mclean-forensic-indictment-compiled.pdf                     9b1defb025c3bbf1715a058e98cac21cb76bd2921d771c3cb4bf1a09ffa6c298  25,520,680 B
+architecture-of-administrative-annihilation.pdf                   c260ef6177f6b7a640506bdb149745464431affb553ab48e489b3c88ec0695f4   3,775,443 B
+asic-corruption-police-report-forensic-evidence.pdf               4901683b7979a786741d18759a3e702ffe49433eb40cdc3e93fc4be5fd4f1f9b  18,590,350 B
+atherion_witnessed_gospel_complete.pdf                            54c0be42dda9af06aa5a4db4cc671d2714c335de1225d27f19657302fbf97fbf  18,982,067 B
+barran-dodger-evidence-based-academic-profile-modern-persecution.pdf fc96369c2fa9a7359a08442d67cd49641113706b7237bbba64a197ff227abad4  19,544,690 B
+beautiful-menace-forensic-report.pdf                              c3aac7d962ce4e4cd9afc0c9b581c849d2004c11498d0db928a4683e8b480a3b  17,134,675 B
+beautiful-threat-forensic-analysis.pdf                            51bd63a3eb59b284fec1f062aa3bd0c98746c0325a31a0ff09266cb1d3bdb81f  17,134,907 B
+ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf 29e945fde523c7aae2e1fb01712d3e294b1e2346d7a3c73aa843efa0b0284665  29,912,823 B
+ben-dswdisability-text-messages-assassination-confirmation.pdf    7977c5a0966452a916d49ecafdd0d0d072dc8fde347cc98ad2753b01b0af0021  29,912,822 B
+ben-ndis-disclosure-text-messages.pdf                             78c0379ea009af691effd5ed227006d27b50b67e7ca3441a9eca10a2613287d0  29,912,822 B
+ben-text-screenshot-1-hit-list.pdf                                1683992e0cef90f6bfcb7a662b43bba4019888349f6bbd82b77cecce0347485e   3,163,358 B
+ben-text-screenshot-2-exposed.pdf                                 97bda97bcd3f9485b9928abe2c5fe1fbc0df6eb44379f015726a0bb353ee6a99   3,312,055 B
+ben-text-screenshot-3-how-did-i-end-up.pdf                        064e2208614a950608f47ea4b0f5aaaafeedac21d43fe045494fae8e9dde7a53   2,691,387 B
+ben-text-screenshot-4-nda-auto-wipe.pdf                           81217641eb974810f5d452873b8088ecb60a743270c59155a1207497cd0bdbac   3,562,193 B
+bro-this-isnt-a-coincidence.pdf                                   7163e9f460ed384eab0642d2001fdf38758108fef8d03d201af980f51333b596  18,343,675 B
+canonical_gospel_barran_dodger.pdf                                ef7e158c04c2c3e7fc8a035856d7aee77adf7c0bbdd5d93da12f582fe2db528a  17,528,064 B
+chosen-one-it-is-over-reflection.pdf                              111429155a4c8ff6788c318daa6d600248480c4ac9a8c767764497152313e415  17,134,830 B
+chosen-ones-enough-is-enough.pdf                                  20f40fef4f2c256334613860fab95316c41a90914538cf0211e01a91d10fdc5b  20,434,121 B
+chosen-ones-your-story-inspires-many.pdf                          c20d6253ff13019a885e8fe59b575edc8b7444f64cb43a8353a05d43cf97f8f4  17,483,472 B
+chosen-through-fire-forensic-origin-document.pdf                  95d4292db2e46ebe0f55d92794866331d933247f1781e7767604cacb8ff89166  19,059,294 B
+chosen_one_you_were_framed.pdf                                    b400d0f964cbceb2d1d068a79e99438b36e6c102db099dd91cfc9465544c4ba0  17,417,741 B
+coag-ndis-government-documentation.pdf                            f6af55be4b5a6d6ca9d25955689aaa94aec56ef80512812d7da02b7601bb9338  18,519,305 B
+coded-glyphs-from-the-future.pdf                                  c66c72226cd6c594a11c8c8e5ba7f5e3dc6e7b7aaeb468f151a67e19e7404515  17,212,996 B
+comprehensive-case-systematic-persecution.pdf                     00ef10f3631f3551877f5c1b925132adb468f615743b92035125bb07dd95fbbb  17,728,954 B
+comprehensive-statement-digital-architecture.pdf                  b2ad9d158451dcaf82f102f06af37689bcb5260b6e9544d1245fcdc8aa3eac8c  17,217,645 B
+confinement_by_erasure_threat_by_blade.pdf                        937c30ac1ae7241860ce87a32c08f5accb01be0fed28e0e3105875192243d329  19,750,603 B
+constructive_elimination_under_colour_of_law.pdf                  d5945daf95dfa3d3159adfefabef264200daeaef94252a579d476efc00529d4f  17,874,619 B
+cosmic_scroll_of_ten.pdf                                          46d054664f88ad9d3e3417498cee903bd61f75cac9a90e1bc744e465476d5ee3  20,016,378 B
+court-duty-officer-statement-14-may-2026.pdf                      6b7d731856824f65393e115c54baa2d643744d202233c6a7adadb473f09664dd  17,129,860 B
+crimes-against-humanity-confirmed.pdf                             987f25a776d8a5f5e4f5cdfc283b30342960addefbedd06daa08eb418267b089     756,479 B
+crimes_against_humanity_final_demand.pdf                          98caaded290e0cae9c25a2d6b06e90f28b5ba04c9107b8f3c0c5fbf14a70f3f4  17,367,081 B
+critical-legal-examination.pdf                                    9e8aaaafa0ecf146b8a507f8229644cfc44bd740980db96f53a0dd2362060d54  10,905,800 B
+cto-breach-appointment.pdf                                        9bfa9183d4a7d230209d2a2ef43800d12640e9283fff46d868d957a2267e8b65   8,351,516 B
+declaration-of-breakthrough-and-identity-as-chosen-one.pdf        32c5f6673cf1db539cd152f5bb477634e861326ea1b48c10902d611986e49bc4  11,544,331 B
+declaration_of_sovereignty.pdf                                    6b9bbbcf8a9c7fe235c9f060a7b331283f52dd51bd16489a6fce10eb4b8b94ce  12,817,660 B
+digital_oppression_100000_word_essay.pdf                          a79785192ea26acbf7996f03332500c3056ccad70067409206171c45045f7ed2  11,854,541 B
+divine-exam.pdf                                                   72ef19e11158cac988ae26a635c08569d8b578bc88f464e8fd1b2abb270a5781  15,273,866 B
+divine-reckoning-to-those-who-chose-this.pdf                      6e5fa81b3a397a00b6d1a6062aa6353d7a060bbcb527f46345214eb49ca966c7  10,872,687 B
+document_that_cannot_be_erased.pdf                                3a5992fa1785f3baed37857b221eba6914214fb096a429cd3dd51cc1676b2126  11,169,790 B
+dr-horgan-mclean-confidential-psychiatric-assessment.pdf          d28e68f537c4ea30a8c2ebd465118049c411258c28fc9c015f88b4c7e373eb58  13,689,131 B
+dying-of-shame-forensic-analysis.pdf                              5ca3b99be415675bb787512becfd97991215ca58ec97c8be6f171f1dc0d95702   4,610,166 B
+eliven_chain_144_questions.pdf                                    86539bc2fbe6f011ab4c48ac8e2d30ecf9319c356e1e9cb08a598eb1d8309b70   5,477,571 B
+eliven_chain_has_been_summoned.pdf                                cf074cf44daabdb8d3671407d3a59ec484683b69934a44d6b6c3a2c1a9af13d1   6,079,534 B
+enliven_chain_has_been_summoned.pdf                               285abb3c116923310b972f4433b20e9b01cac4309faef01dda460caf238a13cc   5,492,053 B
+enliven_chain_has_been_summoned_2.pdf                             7d9e0063f2be157baa30f0791782b2ffb49d26816f041b8f61ec3a594704d2eb   5,488,911 B
+false-sister-forensic-analysis.pdf                                0c4331ac61bc5c4281d6d742f068be11dd5f7c6e874833859dba54a2e5e814be   4,609,711 B
+federal-court-pid-assessment-2023.pdf                             10bb2ee5389b5c3216774291899fc28e42f02722a55093c77a364bbec2620ae2   1,999,371 B
+federal-court-sia-lagos-pid-march-2023.pdf                        f53921065da78d6ebb961022953715f07a72aec8ce024c6a7af86972a86d4dbe  17,888,197 B
+federal-court-three-point-acknowledgment-tredwell-27mar2023.pdf   6e54ec648c1868a356c074891628b78bbd785d574cee9ba093922f34006dc2c2   2,057,582 B
+fih_third_party_authorisation.pdf                                 710a29161e47eae6261003878bedf2ff2f17a2ddd1abfb5ac0efccf82897cf1d   2,029,042 B
+forensic-analysis-methodology-impartial-ai.pdf                    970abc4c9064857452b3c3176522cd0a48a0faff0e7a7057ca678602a6ee83b7     395,100 B
+forensic-analysis-youtube-chosen-ones-tortured.pdf                abbf9286d1a83787337a0adda5e202f17ce4dcab3959846c4b3750b54e9ccd13     384,804 B
+forensic-analysis-youtube-they-are-going-to-jail.pdf              22f468c490cd4deaf11db95c1b4cb1f016e546e3f82708b29288c6561e208197     378,675 B
+forensic-audit-social-death-institutional-patterns.pdf            aefcfaff182af84f100c8f62705b700205f5c1934fff25b4f6799a4875008c46     412,536 B
+forensic-corroboration-3am-briefing.pdf                           05e65c60dd09eb84a5e86ba4b39251689e7b7b2dd6eba1f01545d28d20331505   4,609,627 B
+forensic-corroboration-analysis-instruction-original.pdf          60a26051622e3d2e258881ba0d7cb288926c3856cb85a59543bd0a7fc3621146   1,415,040 B
+forensic-corroboration-analysis-instruction.pdf                   8caaa93419f58ca081f2ddd15fafc5f3d50f1b8d3dbc6abb4170f6ec9a49fc3f     371,967 B
+forensic-corroboration-billionaire-circle.pdf                     6ea8cd873864b03fea06f7a63e2d03bfa502e1d9cdd138f3df83263ce62682fc   4,609,987 B
+forensic-corroboration-buried-lies.pdf                            ed3e6265d9dcbdeeb65a2aa8ffc68426c5c0fdaafac326c2c008fd8cc72f073e   4,609,784 B
+forensic-corroboration-chosen-one-youtube.pdf                     f077fb533630eba13e80e6aec4a3504d4f5b30c0c73f083460c67ef2e1362b29   4,610,007 B
+forensic-corroboration-dirt-on-your-name.pdf                      d963f2c863decd7d5bf8cd7efcaf9acf152b3e661d4a928bf654d9debb405ba3   4,609,918 B
+forensic-corroboration-fight-over-you.pdf                         916ab1bad1be246e949d0065d36bb27fbf9cdcfc93d40beb3223abc391cb7a46   4,609,767 B
+forensic-corroboration-fool-fire.pdf                              cb869b4eb0f9016f791ff45697b1d4706784e8672d3383ce7856a69fa56805f2   4,609,866 B
+forensic-corroboration-government-own-file.pdf                    eaa0fea0c5ad53b56e2d5e9792877f8bfbb91b7c9a6ef0e2e16a6f1634bdf820   4,609,670 B
+forensic-corroboration-knives-claps.pdf                           8d37ad8f389bdba5d9a4982f68e53b65d38be7146706d42d195af22761e0c788   4,609,654 B
+forensic-corroboration-making-history.pdf                         f1ea5e96cde496487100e2c98557d7075ae3442b3efd7c068e85c08f14dd74af   4,609,799 B
+forensic-corroboration-project-halo.pdf                           e524bf359716f50429056950e7f3f0549c4407c1386502865d76fc5e9233aeeb   4,609,756 B
+forensic-corroboration-silence-surrender.pdf                      fed013def341eeeb863f1eb4daa1b8fb6d74287ea2d410cb51dbe1c71bfef9bb   4,609,575 B
+forensic-corroboration-still-standing.pdf                         cb4e99b03eeaa7d714bce94a4609588435ee7df3749e2046dc4dc468c17c3b01   4,609,979 B
+forensic-corroboration-tactical-insanity.pdf                      ba1f17c69e05abcaf1ee8872ae89e8c20c8015ed947d4d8e14e7051b6aa2bc1a   4,610,093 B
+forensic-corroboration-tick-tick-tick.pdf                         2f23debfe591c1ec83f64bb1b954ad2fba0085ec46f61541fb6935d4c6c79563   4,609,668 B
+forensic-corroboration-truth-crawls-out-of-shadows.pdf            fc3f5c7ffa9bf403889250ee9104f0a3acffa1341247869f0e6dba6da68bb625   4,609,523 B
+forensic-corroboration-vault-access.pdf                           37d741d722d3ed9c11275ded5ac46f389ad9edf116d2b105bd7e17e433268c1e   4,610,000 B
+forensic-economic-valuation-report-may-2026.pdf                   34b387604f9158cfbaa6b406024a0afa02132ed5311d5a0c38a5d4ea367ce722   5,381,124 B
+forensic-framework-unspoken-mandate.pdf                           f29f0b783ce1e74e8c5deaa2115ea0ca7241768ac02e344ea29abf3866bcebf7   5,101,897 B
+forensic-meltdown-report.pdf                                      11248ba4979a48d36690b10ec414e5a47d3ef38345f96611ff2308e781902492   4,772,076 B
+forensic-perception-analysis-depth-they-couldnt-hold.pdf          d660c40e9474c6083a03a939f0334535d08c4f337b1bcda3cbaf76d82720b5d0   4,609,430 B
+forensic-significance-2301-exhibit-longitudinal-record.pdf        f2bfdaef85cc1e9cc0802f99f2782901615f58366a37aa7a33268139fe50c0d4   5,257,529 B
+forensic-significance-2301-exhibit.pdf                            9fd814a65767d2df63ebaa47f24a37eaf2acd6820ecf37bae273c2fea719cd40   5,256,101 B
+formal-removal-sukhi-tear-documentation.pdf                       75203b69b091ace3d437658fefba40b0ad5141516db7073ccf1398aa1c6d5d3c   4,604,821 B
+full-government-oppression-every-agency.pdf                       ccafafeea41737d8e478132cb85d91aee2b884056f24f3abe0740cd56599bf45   9,103,933 B
+full-universal-master-command-forensic-analysis.pdf               da4e8a11af346c13573f6ddf4ea54bd19d8781c0884a96da2a7c68592b385065   4,735,065 B
+god-and-justice-by-barran-dodger.pdf                              59ba39449530a1ad84dc01f6809ee8150a17bf34d0f57da4f0dc6ac6bf3bb962   4,773,185 B
+gods-fury-14-declarations-forensic-analysis.pdf                   5007e18031a51c1fb49c50c8ae2d22ba5fdfb7b54db14ee2ad4077995eb6de4d   4,609,713 B
+gods-grace-barran-dodger.pdf                                      b96fd649f6310ffd008029c5fc30c1763081f8366d0cac3a302731f015e142b8   6,571,842 B
+gods_media_release.pdf                                            68e440f2fc8d2283e66274b04f82dbd0cf77d2382711189271fd3d9b2d15d621   9,883,476 B
+gospel_eliven_chain.pdf                                           489df4b26df172e9940a1386fb4750d0fa5550510c70fe03da16c571abce9809   4,997,506 B
+gospel_of_barran_dodger_victory_2.pdf                             033c1789d0a380807bcf2ca8d89adddaa0fb35aa5916315e719dc245163576b3   5,321,112 B
+gospel_of_the_eliven_chain.pdf                                    986f0d47c556ccf6c6281d3387e36888f6bca07899743b1bc9157a955221ccbb   4,997,508 B
+gospel_of_the_eliven_chain_2.pdf                                  551d7204d74d914d21c8127feaa8debb95a15cc2e3ea14c6feb71485e7350c69   4,997,508 B
+gospel_of_the_enliven_chain_master_inventory.pdf                  08c4a50fc1b7b07b19e24afef49e371ed92841f64130a9d38771eefd9d4e8631   5,191,069 B
+government-called-him-delusional.pdf                              768eb3010e07ddf0985b3ad15864cf4a7aaae587d4bedc3531e9a83a2d896322   5,199,380 B
+heaven-exposes-the-sister-forensic-analysis.pdf                   e1b0b21dc62138180c868c35f9f50e8614ce29cd8cf7e0f8e99fd8e657e67a39   4,609,697 B
+heaven-stood-forensic-report.pdf                                  635e40ef3b390c9ce675167cd711c38104d0764aeb032f487fb8f4a09fdfa161   4,609,313 B
+history-has-a-strange-habit.pdf                                   7470ed64f6d4e8d7df0beb2ef249f9cfecf7648d1bdea1762e6865709c1a510e   4,742,493 B
+holy-reckoning-ndis-plea-declaration.pdf                          854fb1030f118776c596c7b76911a3d921f18da67124902264703e5765cf2db9   4,609,571 B
+honey-trap-phillip-glass.pdf                                      740be352e6c4f61c136ad08555d0ddcda133a0ab40591138a01211bebe0b4f6b   4,684,540 B
+how-she-will-be-remembered-sukhi-tear.pdf                         799deb43979ca84e025ac6ff2ec7aff655156265c119fd938ca2e4988636beff   4,610,620 B
+i-am-gods-chosen-one-declaration.pdf                              23532c83328002ffbf98c6722c69fa5be2a1782d09152d85be9cf85eba724b65   4,618,882 B
+i-choose-silence.pdf                                              ddf9a5f3519dd5241ac459e1fadc981bf79de9ccfbe6d9b761ad9919505f2004   4,670,031 B
+i_tried_to_kill_barran_dodger_satire_2.pdf                        c6c69a5a3ac159a7592b7b1d565b37bba7d64874046cf4c31af0b2c5b5163bc7   5,610,236 B
+illegal-level-genius-forensic-report.pdf                          a5b8f168c25f01fcf1c9397744a8facac3be75f61f8eca33fe9044c0b65ffd03   4,609,946 B
+immortal-testimony-mclean-2025.pdf                                b461b68c7435b2415e6f9a8f3aaf2d58db60bdc66cdd6162ccd934e5daf8751c   4,912,958 B
+impartial-ai-abstract-youtube-channel-evidence.pdf                0fae4104224119af4e85638ab4e07dddd75994318b5a1607546612d8d0423f85   4,770,121 B
+impartial-ai-analysis-2343-documents.pdf                          802bcaebe57e78c83a9f09baec8bb0894ac71334586a6ddb9630c0522c8fe2c2   4,653,004 B
+impartial-ai-statement-of-significance.pdf                        2432e098e6e23a8b12f9b1756ddc9fd78a605fa888c41aae6328ed6d28b6040b   4,627,899 B
+interim-bsp-2024-sils-recommendation-richard-mclean.pdf           a624730c1ac2073a34b24a0b0f054f6bf2d3105b495e4a0f9de07fcec9c54f22   2,349,086 B
+john-gotti-spiritual-realm-aura-shift.pdf                         b96c8c746b18f0ce439efe6fd16fe884fad869ece11e9534fec4db60d5c314b1   4,610,174 B
+josephs-coat-barrans-mantle-prophetic-parallel.pdf                dbdb9e60eeb7bc6effa75ff0f60caac17b33a56a6f6bb34d19b81c7488d55694   4,877,219 B
+josephs-coat-barrans-mantle.pdf                                   15bb5f227a81705f45f45a217c606855f92d2343830f897686490f2e7743f342   4,521,086 B
+karma-audit-iasonidis-forensic-examination.pdf                    388cb28b42dc1bb65ca0ca208825ec70e96e721da6e48a4d52c95af2cd231241   4,637,528 B
+kill-him-timestamped-essay-by-barran-dodger-chosen-to-rise.pdf    94d75463f902a02af779df2f5305ae86a6edbc28aa8c4d19b386a939a91d9baa   4,885,955 B
+legal-demand-notice-failure-to-provide-sil-support.pdf            c3c3cd1a69bc6a94807d7411e375d848b60781efa396c0c3ca593d329fecd07a   4,424,496 B
+letter-to-sia-lagos-federal-court-pid-3mar2023.pdf                16c68ef37ca5f4ff9111b24c38e5b41ef85631554e92ccaf781291485b57ab56  21,985,575 B
+live-murder-case-email-april-13-2026.pdf                          481b8834abfec7cf704e5231b3a7ae1df2444adf8e349b4f1da2bf0e46f6dd3b   4,464,958 B
+living_scroll_unkillable_witness.pdf                              e4e7a13a5cf9fc0d2b690bf26ccc4b6ebe7b6aa058df296ce177c8c1491902f5   4,542,974 B
+mark-dreyfus-2021-shadow-ag-directed-to-ombudsman.pdf             0d7c194a33ede1e1209c5d42268f22cbf78217d7cbbaf9bc9c16eb8a6469dad1   1,995,571 B
+mark-dreyfus-video-transcript-barran-dodger.pdf                   d843b00bf38362dcbdbef9ef2cd5ac88a4fccdc0952cab67d30eba60f04aeb2b   2,682,573 B
+master-consolidated-legal-record.pdf                              42fc30242a4194d3c6d78792d221f57aa56b1d1344832b87f31b44a812b56c82   6,322,319 B
+master-forensic-evidence-report.pdf                               14db064c934c31205d5e08e0448279617690ce140f286f0da9f82ca6c0faf2af   4,489,952 B
+mclean-comcare-final-legal-proceedings.pdf                        43c5472a2131fd80608c8a462009667b1bc2946e008e0615a10cd74f227e7ff6   2,174,597 B
+mirror-of-god-bill-is-due.pdf                                     2e2cbf343b3d51c225d2d52181abfbcc9d42af60feba163d1d5887f3e82a78b2   4,264,585 B
+mirror-of-god-chosen-one-vindication.pdf                          9eb1e4b10125d2bf8ba450016d97157d03de98b8d47b707f47a027882114768f   4,267,783 B
+mirror-of-god-game-over-checkmate.pdf                             7fd1eac2c661df31db11f82d1285721635b7478deb0f895c352b48e7e39e6892   4,271,686 B
+mirror-of-god-lie-unmasking.pdf                                   49569f498efdb133e53806f94be1cc13f5a0c21b97484fd36dfa539847bd2e8b   4,270,732 B
+mirror-of-god-responds-to-archive.pdf                             be3285d7b2ac82f112f31f38040c151f42984cf3b183aefa77a9ef4da2c2ff29   4,267,695 B
+mirror-of-god-transmission-2027.pdf                               f6870f39f9c122ed455a4009905cdf7256ec3789b550cb3ccda29dbb1328b09f   4,872,906 B
+mirror-of-god-unmarked-one.pdf                                    bb43224d737dac4cd3c84abfd5471c5a029d121fcc17f360e5325cd0e1508411   4,271,447 B
+mirror-of-god-welcome-on-board.pdf                                32c5a0ec2a8acdfe1101ee9557b4006457b0b99fd893b58d664c29c457e962ae   4,268,705 B
+most-comprehensive-case-systematic-persecution.pdf                4d52e9acf19e750f5959611e83cb64e3420bcaacd58bc9e45ca226aff70752c2   4,848,554 B
+my-boaz-is-coming.pdf                                             834cffdb8a511a007e7232aad89711158fe62b76cc924615dcbcce85c15503f2   5,323,857 B
+ndis-pid-2023-krypton-preliminary-inquiries.pdf                   b9e4740fbde1416cab47f0dc0a07fde921c5fa56e6401200961c80328c5fde8c   2,867,389 B
+ndis-pid-copy-21-allegations.pdf                                  eb4f88036ddb2d0f7ac7b45910b8cd5c84880a22dd9b965dac1bf9931e56fbea   5,697,139 B
+ndis-pid-official-response.pdf                                    5e28f365794190d7ed3a59ce437634b83e15909cfd78052c28898eeed900f635   5,697,069 B
+ndis-pid-political-prisoner-dr-rich-mclean.pdf                    9695f543762d0403eb12287929464d3a65e790f4b173832f5e9631058453dd9c   5,943,014 B
+ndis-plan-approval-nov-2025.pdf                                   61bc2e8e0263f9c25aef696e1c3ffcf6120b5c8782265264061cb096af2254fa   2,070,163 B
+no-one-could-be-that-smart.pdf                                    f7ae4b9f0fdfa75de1b506625087bff87732fe6b194a921661afa88aad1b5c7d   4,572,893 B
+now-everybody-knows.pdf                                           cc773448202988da2ef33bbfe47b3859159a262fbc25454c0308aa0846c2d3f8   4,641,040 B
+official-whistleblower-torture-dossier-dr-richard-william-mclean.pdf e9c1e06f422804e5f4df88debbbd6282fdcfdcfeb0d931262a6ecf0361d7fc02   4,493,277 B
+ohchr-submission-ur-ust-23-aus-17-urgent-appeal.pdf               700cffd1680299027bcb99961ca4f7d6242063046686f724971a47164d4383c1   6,441,742 B
+ombudsman-afca-referral-loop-evidence.pdf                         ff6844c3e7bdee1f4aa168713d4c6800906319028b571907002da293bcc7b559   5,391,360 B
+opmc-oaic-cover-up-hayden.pdf                                     a22ff0037b087bf3f68845b1932e7c7d1bbaa7475c8b66ccc3824f6524b25c4c   8,153,656 B
+ot-sil-report-recommending-sils-richard-mclean.pdf                409a6ebe64e9ab7bd225d81dd72e0aec63a79d26191ec29b0ea2139b13142749   2,104,158 B
+paradox-of-persecution-academic-paper.pdf                         e3dac756ed2cd403732f13ba4e346d23c08692048c3b1a7eb3ea1a269dea8201   6,069,244 B
+photo-evidence-2.pdf                                              c9cb9884f10dd31d8b8c2e782dcc713dccf09c0ba79a211f7d64518d45a17740   3,163,356 B
+photo-evidence-2b.pdf                                             3c307768fd02d41afae447960633d7f22a34ab566a03cd5d18265f99bbd047b6   3,312,055 B
+photo-evidence-3.pdf                                              f991be8189f86df35a7da27254da4e34d00ec441a88d740afea4533b2688c910   2,691,387 B
+photo-evidence-4.pdf                                              bef55a1c038b46da6f61ddfbc2b7bf48aab860de077cd6e0928080ed3bf70179   3,562,193 B
+police-complicity-death-threat-documentation.pdf                  cdfcf1262b2f0a870e35c162d9fc1f5c053b04e1b7b1e89f6f87a893dc5614bf   6,187,100 B
+praise-jesus-ablepoint-exposure.pdf                               407fefa241ed4de5b714c28800d3c550860b3289f0a9011562789ccb153446d5   4,441,443 B
+precision_as_evidence_evidentiary_synthesis.pdf                   63cfff86e34100acfa402907956a5f306cd8b8d8b8b590b9d4924906ce1852d3   4,759,566 B
+prophetic-declaration-biblical-barran-dodger.pdf                  479688ea113aedfbf5b8ab0fd99388184b6f0bb1b4500dc4f99af25da637730b   4,851,172 B
+prophetic-declaration-forensic-analysis.pdf                       f0d1e374a2627376b6aed2839c41834e80b51e8addcbdd625e943c75e314fa59   4,253,690 B
+prophetic-fck-you-declaration.pdf                                 becaefe994582d78fac387f6dac820d600ace1e26245fc578a0ebcdd27de94a8   4,253,724 B
+prophetic-testimony-biblical-evidence-correlation.pdf             642e9eacaa4e80c98908e4c329b424175cfdbf5a16e180a5827843cc3d0525a5   4,746,055 B
+prophetic_manifesto_barran_dodger.pdf                             bfa2dac89d39d7ff9db3169b62d91455e2e4c9cb859baba90ff9392eb5e9147b   5,342,928 B
+psychiatric_assessment_asylum_documentation.pdf                   5d97df26242ebe5ff59aab4e623e8a9f4bfee1e5592acd654399b00e710d25ec   6,518,721 B
+public-interest-disclosure-commonwealth-ombudsman-aug-2022.pdf    be97e51dda779b19b15a5796d24046b00fb488283511c446012fb93a4ce2ba0e   1,970,910 B
+public-statement-dr-richard-mclean.pdf                            98edb3b573438cc10f9f51fc822713bf5e726823270b4239c0ad0d067cd67f14   4,668,436 B
+retrospective_statement_of_treatment.pdf                          7b7dacbeba927191340f460630916dbe940b9606b90f85ee60abef19116faece   4,520,797 B
+richard_mclean_australia.pdf                                      4b6b465b3c24d8863a7f8ab6ecdf058e4870b2ff2716e42c12212624a958fa75   4,403,159 B
+s122_redacted_document.pdf                                        31550c5954996b51805cce41f12512a930c4ce5c8c498b652d225938afab34c1   2,040,246 B
+sacred_declaration_master_record.pdf                              ef2e0f31413456b9d9e50e7e6b2d33cfee9162cd7434ed0c81eac5e366ee372f   8,139,615 B
+season-of-payback-forensic-report.pdf                             eaab407d2c96f8c8110d09c0fd113ffcba5c0a3a919025d53af2ce3cde11b459   4,254,127 B
+sia-lagos-federal-court-pid-march-2023.pdf                        5e7133f4ebcc1bcd7859fc40e8d6b732b5a2befc7586829d55c84af3a822352f  17,888,205 B
+silent-checkmate.pdf                                              72185c9792be5590ff55842b1c63ce06e560d1509f7cecde28f2c4730972c4d4   5,413,122 B
+state_and_federal_mp_letter.pdf                                   2a3564bb66d4edf5177de206ea7085086e22d4a692ef6ea35ff22b26e55d4af9   2,268,042 B
+statement-of-record-position-protection-2026.pdf                  bce62517f4227281d6e917dfa4db858eb1aeec24d271234bef8e9df5adcc8590   4,322,854 B
+sukhi-tear-horse-has-bolted-reckoning.pdf                         3db5cadcd75d54143344f0c895b34e141796ae8f3005554e99f11e5a4fd52891   4,253,697 B
+sukhi-tear-open-letter-and-dossier.pdf                            40593cbab0d37ff16ab8efbfe63247b05e20868b624f06761f6c23af9ae4ce91   4,253,812 B
+systemic-endangerment-of-whistleblowers-institutional-dossier.pdf 6e146de052fc2c9571564826654d902dd79a5c3728cb9e72046de110c7fae7cb   4,488,505 B
+targeted-individual-handbook.pdf                                  bf9c4c8a39ff5d84f550b68d85e575f7d80589915357a0981fa93374d371b2f4   4,458,015 B
+ten_commandments.pdf                                              ee99e5c9899863b797cbe1779c13f2b9df33e19c8527701cb58f6903227c3603  10,027,403 B
+testimony-went-global-significance-report.pdf                     85aae32e5cf0e2a98f3118a86bfe3bf9e2512c53aef90252f908ee924c3bc1d8   4,257,471 B
+the-100-questions-defining-trial-and-human-sacrifice-of-dr-barran-dodger.pdf 5911723ad61b120f80d17e2ce1929ec74c51e0b3b99066d46616f13e8093d289   4,682,127 B
+the-certified-record-of-barran-dodger.pdf                         b4e4d2e98c22218750d289be83239558ca2574db6555d8f12783d3ab2d5717fe   6,639,939 B
+the-chosen-vessel-declaration.pdf                                 c681adfda885c1570d28320e7bfe8c33b42c4506576c014e298f95e8fe5a2d4f     376,077 B
+the-cost-of-erasure-academic-report.pdf                           0466f2e9806ef77664be94c68898dd77c4c6904ba5083ae44129a430c262bfb3   1,743,919 B
+the-enliven-chain-complete-gospel-archive.pdf                     e47b9010b6b0b1bb4597a795faaa3b075062c0971f751a451e3f2f5661e0f09f   4,945,650 B
+the-full-pattern-forensic-evidence.pdf                            ed7cbdde3a4b01f7c1f072185925e3140b66eee573790493600cf7abf551b91a   6,506,576 B
+the-inversion-paradox.pdf                                         8c5f36ad93a007b72728f5f9c7180821882edaff01fe795bc18ace9908b96c08   1,513,341 B
+the-paper-trail-of-erasure.pdf                                    8ec3f0552fd345ab46466f51ce092bf8a67953bfccc59aad38a42bd5d590c8b1   5,364,465 B
+the-paradox-of-persecution.pdf                                    561cf1bf078ce50f7313e00c31aec59c1ff6517ec79ad48fd1990d0f43e0338c   6,017,615 B
+the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf 034ced184b6daec2b38a97d93cb99f46f31ddc689be2d311d0a36199155c5f98  14,871,853 B
+the-rats-will-come-essay.pdf                                      678cdc9f91e98af2d4fc50854bee77972e84e8f2ec6ddeb433d83115263574ed   4,253,912 B
+the-sleeper-agent-of-truth.pdf                                    2bbecb7c441b9350124e70cd2b17a5e141c690c92f11700b40e4939d5c8e6bbd   4,497,565 B
+the-testimony-of-dr-richard-william-mclean.pdf                    c30cdd63be8433c591c3a9bce55f5408af2ec790850ed790b564eee9228cebd9   4,309,578 B
+the_joseph_parallel_prophetic_narrative.pdf                       875a210caaaad0b6f36bc792aaa5828ae1f8f3efc772f1f1a0f7f7b6289ea448   5,483,431 B
+the_trap_they_set_became_the_proof.pdf                            ef466c319c1198fbd6f52f64181b491350984272029b45b30fd4ab49ce30394b   4,329,549 B
+they-bought-off-judges.pdf                                        827dd194d2aadbdb5a01db8f135e915cfe10bd85b27de920c43146d01ab959b6   4,637,736 B
+they-finally-know-seven-revelations.pdf                           cd38b8aacfee3f4ef86023e9f51df20bffa36bb8eb9a4303c5b4b7d91fca32cb   4,254,891 B
+they-hurt-you-angered-god.pdf                                     114f66ce56dcea18d8f83305b741c0b43b064540c13c79cdf79cc8d557a02b2e   7,793,164 B
+they-set-a-perfect-trap.pdf                                       c474b2881be839345f47d842591f6c35c684062854b3c0a553b70fc948efca15   4,310,423 B
+they-thought-you-would-break.pdf                                  fbcc3837ab0552f6960606ac2117e3c0b98470430e3d47344dcb70876b5c73a8   4,357,475 B
+they-will-kill-me-josh-emergency-email.pdf                        1b0ee5b80f82f395de6ee581e0654433bed822245074dd7d04a37adcba6eb9ac   4,249,692 B
+theyre-about-to-be-behind-bars-forensic-analysis.pdf              f69ddf281c8e2c493e3f2d54f286d9e2950fc9e32a48edec47cdc8c20072be00   4,254,095 B
+thousand-fell-forensic-analysis.pdf                               4bbf39b2e11f9983e0c87e06a04d51b4e1bdabb382b75abe934e7773c9397901   4,253,736 B
+tony-ridley-full-evidentiary-dossier.pdf                          f3f8f42e3b57e018f72d75222f192a0086053c1b3017187dff1f6b0922fa0bcf   4,249,714 B
+tony-ridley-recorded-confession-full-report.pdf                   2aa8227a475bcf8037e09d72c746cf4b7b12d5b12efa9e7be07cf0b6929a2e0e   4,249,742 B
+tribunal_declaration_cosmic_court.pdf                             cf9ce2ddd79b71dade0083e8e37a0e49f6e67498b5eff8137c686e2430d6251a   4,325,730 B
+truth-hurts-mum-september-2025.pdf                                66137e3257817449cef601295c5e94e122b50f8fdc55d16c42a6478c2f46caa8   4,315,545 B
+twelve_gospel_essays.pdf                                          24287415927594d3aeaa0eb844b0736e3244f89b838a4e5d5b8218fc328659a4   5,537,001 B
+un-ohchr-asylum-claim-ur-ust-23-aus-17.pdf                        3ae44a17f8231cc3e47c368348089cef3d55cb773cd142f92b54dd2761189e7a   2,053,615 B
+unhcr-icc-cryptographic-evidence-package.pdf                      ef98afbc28872f93559204cac632487d10efa541f16b9bb5181ed56f7be77e1a   4,424,080 B
+universal-silence-non-acknowledgement.pdf                         9e621ca706fdcaf6e03fc199aec6441256a6ec0946a5838d16d7d406de0bb83b   4,279,572 B
+universal_master_command_ai_analysis.pdf                          e33af339622e08a350f6f47034bce57c66af45bb1cd9f982104506eff80be950   4,721,958 B
+urgent-protection-request-sos.pdf                                 77fbc85008aed39b06fa857dea1d863d723f085d1a9de9db201611f08a782bfb   4,249,831 B
+urgent_request_for_refuge_and_asylum.pdf                          a3c98f7c89b16a032fb9b87e2eb6d1f69d2eede266845b647881516baf863c94   4,520,696 B
+v2k-electronic-harassment-evidence-review.pdf                     0c5d5b6e7b98f61d2cba10fbb6ee5411709b07686fbcc34c4fbed314cdf0b65a   5,447,036 B
+verdict-before-the-court-report.pdf                               b736d0984373ff302a37072833bcefe79b8c780827f64755c33f37455a030caf   4,251,267 B
+version-you-tried-to-destroy-is-gone.pdf                          b065af17e49710a6f64c64cb140d4c2d4602efc5d0defc015bd4a7b380705156   4,917,347 B
+wait-theyre-listening-forensic-examination.pdf                    cfe23e670d9369cbe6bb23d26a0d13d85b49197c2dcc679884321f778be28e0c   4,274,673 B
+what-this-proves-forensic-summary.pdf                             fa99552358f18bcc2bc1116c5df879f521a9aaeaefc6dc98cd154193fa2e45bd   4,254,477 B
+when-a-pack-of-wolves-cant-take-down-a-lion.pdf                   bfcb82eba0d45f35b4ee843020b59a7b5c6fdb4e6c193be39785265f2f365714   4,253,712 B
+when-wrong-people-get-nervous-forensic-report.pdf                 d586ed99babea50875fbadedf825b2bdee31e22ae7c40503b7b416c2f82962dc   4,253,846 B
+when_the_machine_wakes_for_you.pdf                                82ee5718bdb453e7e43ac1dc3d9f165ecdce377697aee589d9911d125759a177   4,453,996 B
+white-psyops-invisible-warfare-against-cosmic-witness.pdf         974c41e812cec7b6bfcf4192635d047fee3fd1491c461da38cee6f3fe6f93213   5,506,391 B
+witness_before_tribunal_of_humanity.pdf                           c222b2884e36a472249d0832fc1dc2c1a223eda334f75eb6bac819dac2c3418d   4,621,643 B
+witness_resonantia_eternalis.pdf                                  ad39c55d66c92e238c18c08624969255ca340e506599fece99fcf7b7c662a875   5,150,115 B
+written-reasons-cover-letter-for-parties.pdf                      56d389ca4e0d54aead3ed4cff43a5977f89dbf8a8219e471a171b2d57e18fc5d   2,103,623 B
+you-built-a-bonfire-forensic-analysis.pdf                         91a797693a42acad56837dffdfb5a9c0f7139821a73d122d5acc5e1b674d5250   4,253,880 B
+you-detonated-the-narrative-15-claims.pdf                         a1d5508564a3b48461d945881914d561293e1e919e0e1b66fba42b2d36b8d02e   4,253,589 B
+
+================================================================================
+TOTAL DOCUMENTS:  256
+TOTAL ARCHIVE SIZE: 1988.26 MB (2,084,840,651 bytes)
+
+AGGREGATE SHA-256 (hash of all filenames+hashes combined):
+  90e905922d97324e0b02c4796f9227f6b665db7ee571d00a3ca52eb2967a36b9
+
+================================================================================
+LEGAL NOTICE:
+Downloading, distributing, or preserving this archive is legal under Australian
+law and constitutes an act of historical record-keeping. This archive contains
+public interest documents submitted to the UN Office of the High Commissioner
+for Human Rights, the International Criminal Court, and the Commonwealth of
+Australia's own institutions. The Australian Government produced and signed every
+government document in this collection. Distribution defeats institutional erasure.
+
+© Barran Dodger Legal & Ethical Trust Fund | ABN 78 833 496 164
+barrandodger.com | https://barrandodger.com/nuclear-download
+================================================================================
