@@ -820,9 +820,9 @@ function FollowTheStorySection() {
               </div>
               <div>
                 <p className="font-black text-white text-sm">YouTube</p>
-                <p className="font-mono text-[10px] text-white/30 uppercase tracking-widest">@barrandodger</p>
+                <p className="text-[10px] text-white/30 uppercase tracking-widest">@barrandodger</p>
               </div>
-              <span className="ml-auto font-mono text-[9px] uppercase tracking-widest text-red-500/60 group-hover:text-red-500 transition-colors">Watch →</span>
+              <span className="ml-auto text-[9px] uppercase tracking-widest text-red-500/60 group-hover:text-red-500 transition-colors">Watch →</span>
             </div>
             <p className="text-white/55 text-sm leading-relaxed">
               Video testimony, court evidence walkthroughs, personal statements of peace and faith, and real-time documentation of the ongoing institutional response. The channel the government cannot deplatform.
@@ -849,9 +849,9 @@ function FollowTheStorySection() {
               </div>
               <div>
                 <p className="font-black text-white text-sm">Medium</p>
-                <p className="font-mono text-[10px] text-white/30 uppercase tracking-widest">@barrandodger</p>
+                <p className="text-[10px] text-white/30 uppercase tracking-widest">@barrandodger</p>
               </div>
-              <span className="ml-auto font-mono text-[9px] uppercase tracking-widest group-hover:opacity-100 transition-colors opacity-60" style={{ color: "#00ab6c" }}>Read →</span>
+              <span className="ml-auto text-[9px] uppercase tracking-widest group-hover:opacity-100 transition-colors opacity-60" style={{ color: "#00ab6c" }}>Read →</span>
             </div>
             <p className="text-white/55 text-sm leading-relaxed">
               Published declarations, institutional denials mapped to agency names, legal demands sent to ministers, and the full written record of the systemic erasure — in Dr. McLean's own words.
@@ -869,7 +869,7 @@ function FollowTheStorySection() {
           <div className="px-6 py-4 flex items-center gap-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", background: "rgba(0,171,108,0.06)" }}>
             <span className="font-black text-sm" style={{ color: "#00ab6c" }}>M</span>
             <p className="font-black text-white text-sm uppercase tracking-widest">Key Articles on Medium</p>
-            <a href="https://medium.com/@barrandodger" target="_blank" rel="noopener noreferrer" className="ml-auto font-mono text-[9px] uppercase tracking-widest hover:underline" style={{ color: "rgba(0,171,108,0.6)" }}>
+            <a href="https://medium.com/@barrandodger" target="_blank" rel="noopener noreferrer" className="ml-auto text-[9px] uppercase tracking-widest hover:underline" style={{ color: "rgba(0,171,108,0.6)" }}>
               View all →
             </a>
           </div>
