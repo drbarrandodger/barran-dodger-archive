@@ -150,7 +150,7 @@ export function Navigation() {
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-1.5">
           {desktopNavLinks.map((link) => (
             <Link
               key={link.href}
@@ -193,7 +193,7 @@ export function Navigation() {
           </Link>
           <Link
             href="/the-reckoning-paper"
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded text-[11px] font-black uppercase tracking-wider transition-all whitespace-nowrap reckoning-pulse"
+            className="hidden xl:flex items-center gap-1 px-2 py-1.5 rounded text-[10px] font-black uppercase tracking-wider transition-all whitespace-nowrap reckoning-pulse"
             style={{
               background: "rgba(251,191,36,0.12)",
               border: "1px solid rgba(251,191,36,0.55)",
@@ -202,63 +202,38 @@ export function Navigation() {
             data-testid="nav-link-reckoning"
           >
             <Zap className="h-3 w-3" />
-            The Reckoning
+            Reckoning
           </Link>
           <GlobalSearch />
           <LanguageSwitcher />
           <ThemeToggle />
-          <div className="flex items-center gap-0 border-l pl-2 ml-1" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-            <a
-              href="https://x.com/bazdod"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1 transition-colors rounded"
-              style={{ color: "rgba(220,235,255,0.4)" }}
+          {/* Social icons — compact group */}
+          <div className="flex items-center border-l border-white/[0.08] pl-1.5 ml-0.5">
+            <a href="https://x.com/bazdod" target="_blank" rel="noopener noreferrer"
+              className="p-1 transition-colors rounded" style={{ color: "rgba(220,235,255,0.4)" }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#e9a00a"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(220,235,255,0.4)"; }}
-              data-testid="link-twitter-nav"
-              title="Follow @bazdod on X"
-            >
-              <TwitterX className="h-3.5 w-3.5" />
+              data-testid="link-twitter-nav" title="Follow @bazdod on X">
+              <TwitterX className="h-3 w-3" />
             </a>
-            <a
-              href="https://youtube.com/@barrandodger"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1 transition-colors rounded"
-              style={{ color: "rgba(220,235,255,0.4)" }}
+            <a href="https://youtube.com/@barrandodger" target="_blank" rel="noopener noreferrer"
+              className="p-1 transition-colors rounded" style={{ color: "rgba(220,235,255,0.4)" }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#FF0000"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(220,235,255,0.4)"; }}
-              data-testid="link-youtube-nav"
-              title="Barran Dodger on YouTube"
-            >
-              <SiYoutube className="h-3.5 w-3.5" />
+              data-testid="link-youtube-nav" title="Barran Dodger on YouTube">
+              <SiYoutube className="h-3 w-3" />
             </a>
-            <a
-              href="https://medium.com/@barrandodger"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1 transition-colors rounded"
-              style={{ color: "rgba(220,235,255,0.4)" }}
+            <a href="https://medium.com/@barrandodger" target="_blank" rel="noopener noreferrer"
+              className="p-1 transition-colors rounded" style={{ color: "rgba(220,235,255,0.4)" }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#00ab6c"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(220,235,255,0.4)"; }}
-              data-testid="link-medium-nav"
-              title="Barran Dodger on Medium"
-            >
-              <SiMedium className="h-3.5 w-3.5" />
+              data-testid="link-medium-nav" title="Barran Dodger on Medium">
+              <SiMedium className="h-3 w-3" />
             </a>
           </div>
           <Link
-            href="/support"
-            className="px-4 py-2.5 text-sm font-bold rounded transition-all flex items-center gap-1.5"
-            style={{ background: "#1d4ed8", color: "#fff" }}
-            data-testid="button-nav-support"
-          >
-            Support
-          </Link>
-          <Link
             href="/nuclear-download"
-            className="px-4 py-2.5 text-sm font-black rounded transition-all flex items-center gap-1.5 whitespace-nowrap"
+            className="hidden xl:flex px-3 py-2 text-xs font-black rounded transition-all items-center gap-1 whitespace-nowrap"
             style={{
               background: "rgba(168,85,247,0.12)",
               border: "1px solid rgba(168,85,247,0.45)",
