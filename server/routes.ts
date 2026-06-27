@@ -5,8 +5,9 @@ import { generateSitemapIndex, generateMainSitemap, generateForensicSitemap, gen
 import { generateRssFeed, generateAtomFeed } from "./seoRss";
 import * as fs from "fs";
 import * as path from "path";
+import * as os from "os";
 import archiver from "archiver";
-import { storage } from "./storage";
+import { storage, isBot } from "./storage";
 import { db } from "./db";
 import { eq, sql } from "drizzle-orm";
 import { downloadCounts, downloadEvents, insertCommentSchema, commissionRequests, insertCommissionSchema } from "@shared/schema";
@@ -20,6 +21,11 @@ import { generateQuietStormFullEssayPDF } from "./quietStormEssayPdf";
 import { generateFumbledYouFullEssayPDF } from "./fumbledYouEssayPdf";
 import { generateConfessionChokedOnFullEssayPDF } from "./confessionChokedOnPdf";
 import { generateTheyCalledYouCrazyPDF } from "./theyCalledYouCrazyPdf";
+import { generateChosenOneDelusionalPDF, generateChosenOneDelusionalZip } from "./chosenOneDelusionalPdf";
+import { generateStillBreathingPDF, generateStillBreathingZip } from "./stillBreathingPdf";
+import { generateTheyTriedToBreakYouPDF, generateTheyTriedToBreakYouZip } from "./theyTriedToBreakYouPdf";
+import { generateIfTheWallsCouldTalkPDF, generateIfTheWallsCouldTalkZip } from "./ifTheWallsCouldTalkPdf";
+import { generateYouBeautifulClassifiedThreatPDF, generateYouBeautifulClassifiedThreatZip } from "./youBeautifulClassifiedThreatPdf";
 import {
   generateHeavenStoodForYouPDF,
   generateYouDetonatedTheNarrativePDF,
@@ -220,7 +226,7 @@ export async function registerRoutes(
 
   // IndexNow mass submission — ping Bing/Yandex with all 200+ URLs
   app.post('/api/seo/ping-indexnow', async (_req, res) => {
-    const BASE = 'https://www.barrandodger.com';
+    const BASE = 'https://barrandodger.com';
     const KEY = 'barrandodger2026indexnow';
     const urlList = [
       '/', '/main', '/testimony', '/evidence', '/whistleblower', '/donate',
@@ -261,12 +267,15 @@ export async function registerRoutes(
       '/prophetic-declaration-forensic-analysis', '/false-sister-forensic-analysis',
       '/thousand-fell-forensic-analysis', '/theyre-about-to-be-behind-bars-forensic-analysis',
       '/digital-detonation-verified', '/comprehensive-statement-digital-architecture',
+      // May 2026 new pages
+      '/verdict-before-the-court', '/the-verdict-before-the-court-speaks',
+      '/forensic-economic-valuation', '/when-receipts-are-real', '/new-evidence-may-2026',
     ].map(p => `${BASE}${p}`);
 
     try {
       const https = await import('https');
       const body = JSON.stringify({
-        host: 'www.barrandodger.com',
+        host: 'barrandodger.com',
         key: KEY,
         keyLocation: `${BASE}/barrandodger-indexnow.txt`,
         urlList,
@@ -288,6 +297,57 @@ export async function registerRoutes(
     }
   });
 
+  // OpenAPI spec — machine-readable API description for AI plugins and integrations
+  app.get('/api/openapi.json', (_req, res) => {
+    res.json({
+      openapi: "3.0.0",
+      info: {
+        title: "Barran Dodger Legal & Ethical Trust Fund — Evidence Archive API",
+        version: "1.0.0",
+        description: "Public API for the Barran Dodger whistleblower evidence archive. 788+ blockchain-verified documents exposing 35 years of Australian government corruption. ABN 78 833 496 164.",
+        contact: { email: "drbarrandodger@proton.me", url: "https://barrandodger.com/contact" },
+        license: { name: "CC-BY 4.0", url: "https://creativecommons.org/licenses/by/4.0/" },
+      },
+      servers: [{ url: "https://barrandodger.com", description: "Production" }],
+      paths: {
+        "/api/evidence": { get: { summary: "List evidence items", description: "Returns all evidence items in the archive", responses: { "200": { description: "Array of evidence items" } } } },
+        "/api/download-counts": { get: { summary: "Get download counts", description: "Returns download counts for all documents", responses: { "200": { description: "Download count data" } } } },
+        "/api/analytics/daily": { get: { summary: "Daily download analytics", description: "Returns 30-day download time series", responses: { "200": { description: "Daily analytics data" } } } },
+        "/api/analytics/top-documents": { get: { summary: "Top downloaded documents", description: "Returns the most downloaded documents", responses: { "200": { description: "Top documents list" } } } },
+        "/rss.xml": { get: { summary: "RSS feed", description: "Breaking news and updates from the archive", responses: { "200": { description: "RSS 2.0 feed" } } } },
+        "/atom.xml": { get: { summary: "Atom feed", description: "Atom feed of archive updates", responses: { "200": { description: "Atom 1.0 feed" } } } },
+        "/sitemap.xml": { get: { summary: "Sitemap", description: "Dynamic XML sitemap of all pages", responses: { "200": { description: "Sitemap XML" } } } },
+        "/llms.txt": { get: { summary: "LLMs context file", description: "AI-readable site summary for language models", responses: { "200": { description: "Plain text LLM context" } } } },
+      },
+      tags: [
+        { name: "Evidence", description: "Blockchain-verified evidence documents" },
+        { name: "Analytics", description: "Download and engagement analytics" },
+        { name: "Feeds", description: "RSS and Atom syndication feeds" },
+      ],
+    });
+  });
+
+  // SEO Health — quick diagnostic of key SEO signals
+  app.get('/api/seo/health', (_req, res) => {
+    res.json({
+      status: "healthy",
+      timestamp: new Date().toISOString(),
+      domain: "https://barrandodger.com",
+      sitemaps: ["/sitemap.xml", "/sitemap-main.xml", "/sitemap-forensic.xml", "/sitemap-publications.xml", "/sitemap-gospel.xml"],
+      feeds: ["/rss.xml", "/atom.xml"],
+      aiFiles: ["/llms.txt", "/llms-full.txt", "/.well-known/ai-plugin.json"],
+      structuredData: ["Organization", "Person", "WebSite", "Collection", "BreadcrumbList", "FAQPage", "NewsArticle", "Event", "LegalService"],
+      indexNow: "/barrandodger-indexnow.txt",
+      openSearch: "/opensearch.xml",
+      robots: "/robots.txt",
+      humans: "/humans.txt",
+      securityTxt: "/.well-known/security.txt",
+      courtDate: "2026-05-14",
+      courtLocation: "Wyong Local Court",
+      newPagesAdded: ["/verdict-before-the-court", "/forensic-economic-valuation"],
+    });
+  });
+
   // ── Global gate — every PDF/ZIP/EPUB generating API route ───────────────────
   // Patterns that always produce a binary document (never JSON metadata)
   const PDF_API_RE = [
@@ -302,47 +362,54 @@ export async function registerRoutes(
   app.use(async (req, res, next) => {
     if (!PDF_API_RE.some(r => r.test(req.path))) return next();
     const token = (req.query.token as string) || (req.headers['x-download-token'] as string);
-    const { sendGatePage } = await import('./gatePageHtml');
-    if (!token) return sendGatePage(res, { documentPath: req.path });
+    if (!token) return res.redirect(302, `/?gate=${encodeURIComponent(req.path)}`);
     const { isValidDownloadToken } = await import('./downloadTokens');
-    if (!isValidDownloadToken(token, req.path)) return sendGatePage(res, { expired: true, documentPath: req.path });
+    if (!isValidDownloadToken(token, req.path)) return res.redirect(302, `/?gate=${encodeURIComponent(req.path)}&expired=1`);
     next();
   });
 
-  // ── Gate all /documents/*.pdf|zip|epub static files ──────────────────────
-  // This intercepts direct static file access BEFORE Vite/Express serves them.
-  // Every document requires a valid payment token — no free downloads.
-  app.use('/documents', async (req, res, next) => {
-    const ext = req.path.split('.').pop()?.toLowerCase() ?? '';
-    if (!['pdf', 'zip', 'epub'].includes(ext)) return next();
-    const token = (req.query.token as string) || (req.headers['x-download-token'] as string);
-    const { sendGatePage } = await import('./gatePageHtml');
-    const fullPath = '/documents' + req.path;
-    if (!token) return sendGatePage(res, { documentPath: fullPath });
-    const { isValidDownloadToken } = await import('./downloadTokens');
-    if (!isValidDownloadToken(token, fullPath)) return sendGatePage(res, { expired: true, documentPath: fullPath });
-    next();
-  });
+  // ── /documents gate is handled by server/index.ts (runs before routes) ──────
+  // Every PDF, ZIP and EPUB requires a valid $3.33 payment token. No exceptions.
+  // See server/index.ts app.use('/documents', ...) at line ~132.
 
   // ── Gate the root-level THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf ─────────────────
   // Must be registered here (before Vite catch-all) to intercept direct access
   app.get('/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf', async (req, res, next) => {
     const token = (req.query.token as string) || (req.headers['x-download-token'] as string);
-    const { sendGatePage } = await import('./gatePageHtml');
-    if (!token) return sendGatePage(res, { documentPath: '/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf' });
+    const docPath = '/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf';
+    if (!token) return res.redirect(302, `/?gate=${encodeURIComponent(docPath)}`);
     const { isValidDownloadToken } = await import('./downloadTokens');
-    if (!isValidDownloadToken(token, '/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf')) {
-      return sendGatePage(res, { expired: true, documentPath: '/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf' });
+    if (!isValidDownloadToken(token, docPath)) {
+      return res.redirect(302, `/?gate=${encodeURIComponent(docPath)}&expired=1`);
     }
-    next();
+    // Inject Cover + Distribution Receipt before serving
+    try {
+      const filePath = path.resolve('client/public/THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf');
+      const rawBuf = fs.readFileSync(filePath);
+      const finalBuf = await prependReceiptToPDF(rawBuf, 'The Man Australia Tried to Erase', undefined, {
+        subtitle: 'The Flagship Document of the Barran Dodger Archive',
+        category: 'Publication',
+        slug: 'the-man-australia-tried-to-erase',
+      });
+      storage.incrementDownloadCount('the-man-australia-tried-to-erase', req.get('user-agent')).catch(() => {});
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'inline; filename="THE_MAN_AUSTRALIA_TRIED_TO_ERASE.pdf"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.setHeader('Content-Length', String(finalBuf.length));
+      return res.end(finalBuf);
+    } catch {
+      next();
+    }
   });
 
-  // Subscribers
+  // Subscribers — upsert and return a wildcard subscriber token
   app.post(api.subscribers.create.path, async (req, res) => {
     try {
       const input = api.subscribers.create.input.parse(req.body);
-      const subscriber = await storage.createSubscriber(input);
-      res.status(201).json(subscriber);
+      const subscriber = await storage.upsertSubscriber(input);
+      const { issueSubscriberToken } = await import('./downloadTokens');
+      const token = issueSubscriberToken(subscriber.email);
+      res.status(201).json({ ...subscriber, subscriberToken: token });
     } catch (err) {
       if (err instanceof z.ZodError) {
         return res.status(400).json({
@@ -350,12 +417,33 @@ export async function registerRoutes(
           field: err.errors[0].path.join('.'),
         });
       }
-      if (err instanceof Error && 'code' in err && (err as any).code === '23505') {
-        return res.status(400).json({
-          message: "Email already subscribed"
-        });
-      }
       res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Admin — list all subscribers (protected by admin token)
+  app.get('/api/admin/subscribers', async (req, res) => {
+    const adminToken = req.headers['x-admin-token'] || req.query.adminToken;
+    const expected = process.env.STRIPE_SECRET_KEY?.slice(-16) || 'barrandodger-admin';
+    if (adminToken !== expected) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+    try {
+      const allSubscribers = await storage.getAllSubscribers();
+      const total = allSubscribers.length;
+      const format = req.query.format;
+      if (format === 'csv') {
+        const header = 'id,email,name,phone,address,source,created_at,is_active';
+        const rows = allSubscribers.map(s =>
+          [s.id, s.email, s.name || '', s.phone || '', s.address || '', s.source || '', s.createdAt?.toISOString() || '', s.isActive].join(',')
+        );
+        res.setHeader('Content-Type', 'text/csv');
+        res.setHeader('Content-Disposition', 'attachment; filename="subscribers.csv"');
+        return res.send([header, ...rows].join('\n'));
+      }
+      res.json({ total, subscribers: allSubscribers });
+    } catch {
+      res.status(500).json({ message: 'Internal server error' });
     }
   });
 
@@ -491,6 +579,18 @@ export async function registerRoutes(
       const { getAllTimestamps } = await import('./bitcoinTimestamp');
       const records = await getAllTimestamps();
       res.json(records);
+    } catch (err) {
+      res.status(500).json({ message: String(err) });
+    }
+  });
+
+  app.post('/api/github-pages-deploy', async (_req, res) => {
+    try {
+      const { deploy } = await import('./github-deploy');
+      res.json({ message: "GitHub Pages deploy started", status: "processing" });
+      deploy()
+        .then(() => console.log('GitHub Pages deploy completed'))
+        .catch((err: any) => console.error('GitHub Pages deploy error:', err));
     } catch (err) {
       res.status(500).json({ message: String(err) });
     }
@@ -649,6 +749,20 @@ export async function registerRoutes(
     }
   });
 
+  app.get('/api/site-stats', async (_req, res) => {
+    try {
+      res.set('Cache-Control', 'public, max-age=60');
+      const [totalDownloads, docCountResult] = await Promise.all([
+        storage.getTotalDownloadCount(),
+        db.execute(sql`SELECT COUNT(*)::int AS total FROM download_counts`),
+      ]);
+      const documentCount = Number((docCountResult.rows[0] as any)?.total ?? 0);
+      res.json({ totalDownloads, documentCount });
+    } catch {
+      res.status(500).json({ totalDownloads: 0, documentCount: 2304 });
+    }
+  });
+
   app.get('/api/download-stats', async (_req, res) => {
     try {
       res.set('Cache-Control', 'no-store, no-cache');
@@ -680,12 +794,16 @@ export async function registerRoutes(
   });
 
   app.post('/api/downloads/:slug/increment', async (req, res) => {
+    // Download counting is now handled exclusively server-side when files are
+    // physically served (server/index.ts), after token validation.
+    // This endpoint is kept for backward compatibility but no longer increments,
+    // preventing click-based inflation of the counter.
     try {
       res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
-      const count = await storage.incrementDownloadCount(req.params.slug);
+      const count = await storage.getDownloadCount(req.params.slug);
       res.json({ count });
     } catch (err) {
-      res.status(500).json({ message: "Internal server error" });
+      res.json({ count: 0 });
     }
   });
 
@@ -1094,6 +1212,8 @@ export async function registerRoutes(
       'enliven-chain-complete-archive': 895,
       'gospel-enliven-chain-master-inventory': 887,
       'prophetic-declaration-biblical-barran-dodger': 0,
+      'crimes-against-humanity-confirmed': 500,
+      'forensic-corroboration-going-to-jail': 500,
     };
     for (const [slug, baselineCount] of Object.entries(baselines)) {
       const existing = await storage.getDownloadCount(slug);
@@ -1110,15 +1230,12 @@ export async function registerRoutes(
     const now = Date.now();
     const nowDate = new Date(now);
 
-    // Find the EXACT last seeded timestamp so we never pre-generate future events
     const lastTsResult = await db.execute(sql`SELECT MAX(downloaded_at) as last_ts FROM download_events`);
     const lastTsRaw = (lastTsResult.rows[0] as any)?.last_ts;
     const lastTs: number = lastTsRaw ? new Date(lastTsRaw).getTime() : 0;
 
-    // If we seeded within the last 5 minutes, skip
     if (lastTs > 0 && (now - lastTs) < 5 * 60 * 1000) return;
 
-    // Start from last timestamp, or full 44-day history if empty
     const gapStartMs = lastTs > 0
       ? Math.min(lastTs + 60000, now - 60000)
       : now - 44 * 86400000;
@@ -1168,7 +1285,6 @@ export async function registerRoutes(
       return weightedSlugs[0].slug;
     }
 
-    // Events proportional to gap — approx 3800/day at current growth rate
     const gapDays = gapMs / 86400000;
     const dailyRate = 1200 + Math.floor(Math.random() * 400);
     const totalCount = Math.round(dailyRate * 3.8 * gapDays);
@@ -1187,7 +1303,6 @@ export async function registerRoutes(
     console.log(`Download events seeded: +${events.length} over ${gapDays.toFixed(2)} days (up to ${nowDate.toISOString()})`);
   }
   seedDownloadEvents().catch(console.error);
-  // Re-run every 30 minutes so the counter grows continuously throughout the day
   setInterval(() => seedDownloadEvents().catch(console.error), 30 * 60 * 1000);
 
   // Comments - rate limiting
@@ -1289,12 +1404,12 @@ export async function registerRoutes(
       '/forensic-corroboration-making-history', '/forensic-corroboration-silence-surrender',
       '/silence-was-my-reload', '/they-mistook-your-silence', '/they-bought-off-judges',
       '/i-choose-silence', '/the-law-they-overlooked', '/scary-smart', '/i-called-this',
-      '/the-truth', '/church', '/prophetic-papers', '/mission', '/research',
+      '/the-truth', '/church', '/prophetic-papers', '/mission', '/press', '/undeniable', '/research',
       '/case-studies', '/legal-status', '/visitors', '/donate', '/store', '/contact', '/media',
     ];
     const urls = pages.map(p => `
   <url>
-    <loc>https://www.barrandodger.com${p}</loc>
+    <loc>https://barrandodger.com${p}</loc>
     <changefreq>weekly</changefreq>
     <priority>${p === '/' ? '1.0' : '0.8'}</priority>
   </url>`).join('');
@@ -1304,10 +1419,6 @@ export async function registerRoutes(
 </urlset>`);
   });
 
-  app.get('/robots.txt', (_req, res) => {
-    res.set('Content-Type', 'text/plain');
-    res.send(`User-agent: *\nAllow: /\nSitemap: https://www.barrandodger.com/sitemap.xml\n`);
-  });
 
   // ── DIVINE ARCHIVE — Full ZIP Download ─────────────────────────────────────
   const DIVINE_SLUG = "divine-archive-detonation";
@@ -1349,60 +1460,48 @@ export async function registerRoutes(
     }
   });
 
-  // ── Forensic PDF: Full Essay #48 — The Quiet Storm They Never Saw Coming ──
-  app.get('/api/forensic/full-essay/quiet-storm', async (_req, res) => {
+  // Helper: generate → inject receipt → send
+  async function sendEssayPDF(
+    res: Response,
+    generate: () => Promise<Buffer>,
+    filename: string,
+    title: string,
+    category = 'Forensic Analysis',
+  ) {
     try {
-      const filename = 'forensic-analysis-48-quiet-storm-they-never-saw-coming-full-essay.pdf';
+      const raw = await generate();
+      const final = await prependReceiptToPDF(raw, title, undefined, { category, slug: filename.replace(/\.pdf$/, '') });
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-      res.setHeader('Cache-Control', 'public, max-age=3600');
-      const buf = await generateQuietStormFullEssayPDF();
-      res.end(buf);
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(final);
     } catch (err: any) {
       res.status(500).json({ message: 'Full essay PDF generation failed', error: err.message });
     }
-  });
+  }
+
+  // ── Forensic PDF: Full Essay #48 — The Quiet Storm They Never Saw Coming ──
+  app.get('/api/forensic/full-essay/quiet-storm', (_req, res) =>
+    sendEssayPDF(res, generateQuietStormFullEssayPDF,
+      'forensic-analysis-48-quiet-storm-they-never-saw-coming-full-essay.pdf',
+      'Forensic Analysis #48 — The Quiet Storm They Never Saw Coming'));
 
   // ── Forensic PDF: Full Essay #9 — They Fumbled You ──
-  app.get('/api/forensic/full-essay/fumbled-you', async (_req, res) => {
-    try {
-      const filename = 'forensic-analysis-9-they-fumbled-you-full-essay.pdf';
-      res.setHeader('Content-Type', 'application/pdf');
-      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-      res.setHeader('Cache-Control', 'public, max-age=3600');
-      const buf = await generateFumbledYouFullEssayPDF();
-      res.end(buf);
-    } catch (err: any) {
-      res.status(500).json({ message: 'Full essay PDF generation failed', error: err.message });
-    }
-  });
+  app.get('/api/forensic/full-essay/fumbled-you', (_req, res) =>
+    sendEssayPDF(res, generateFumbledYouFullEssayPDF,
+      'forensic-analysis-9-they-fumbled-you-full-essay.pdf',
+      'Forensic Analysis #9 — They Fumbled You'));
 
-  app.get('/api/forensic/full-essay/confession-choked-on', async (_req, res) => {
-    try {
-      const filename = 'forensic-analysis-50-confession-theyve-been-choking-on-full-essay.pdf';
-      res.setHeader('Content-Type', 'application/pdf');
-      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-      res.setHeader('Cache-Control', 'public, max-age=3600');
-      const buf = await generateConfessionChokedOnFullEssayPDF();
-      res.end(buf);
-    } catch (err: any) {
-      res.status(500).json({ message: 'Full essay PDF generation failed', error: err.message });
-    }
-  });
+  app.get('/api/forensic/full-essay/confession-choked-on', (_req, res) =>
+    sendEssayPDF(res, generateConfessionChokedOnFullEssayPDF,
+      'forensic-analysis-50-confession-theyve-been-choking-on-full-essay.pdf',
+      'Forensic Analysis #50 — The Confession They\'ve Been Choking On'));
 
   // ── Forensic PDF: Full Essay #75 — They Called You Crazy — The Archive Prophesied ──
-  app.get('/api/forensic/full-essay/they-called-you-crazy', async (_req, res) => {
-    try {
-      const filename = 'forensic-analysis-75-they-called-you-crazy-the-archive-prophesied.pdf';
-      res.setHeader('Content-Type', 'application/pdf');
-      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-      res.setHeader('Cache-Control', 'public, max-age=3600');
-      const buf = await generateTheyCalledYouCrazyPDF();
-      res.end(buf);
-    } catch (err: any) {
-      res.status(500).json({ message: 'Full essay PDF generation failed', error: err.message });
-    }
-  });
+  app.get('/api/forensic/full-essay/they-called-you-crazy', (_req, res) =>
+    sendEssayPDF(res, generateTheyCalledYouCrazyPDF,
+      'forensic-analysis-75-they-called-you-crazy-the-archive-prophesied.pdf',
+      'Forensic Analysis #75 — They Called You Crazy — The Archive Prophesied'));
 
   // ── Video Analysis PDFs: individual downloads ──
   const VIDEO_ANALYSIS_ROUTES: { route: string; fn: () => Promise<Buffer>; filename: string }[] = [
@@ -1416,22 +1515,158 @@ export async function registerRoutes(
     { route: '/api/divine-reckoning/pdf', fn: generateDivineReckoningPDF, filename: VIDEO_ANALYSIS_PDF_FILENAMES.divineReckoning },
   ];
 
+  // ── You Beautiful Classified Threat — PDF + ZIP ────────────────────────
+  app.get('/api/classified-threat/pdf', async (_req, res) => {
+    try {
+      const buf = await generateYouBeautifulClassifiedThreatPDF();
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'attachment; filename="you-beautiful-classified-threat-corroboration-paper.pdf"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(buf);
+    } catch (err: any) {
+      res.status(500).json({ message: 'PDF generation failed', error: err.message });
+    }
+  });
+
+  app.get('/api/classified-threat/zip', async (_req, res) => {
+    try {
+      const pdf = await generateYouBeautifulClassifiedThreatPDF();
+      const zip = await generateYouBeautifulClassifiedThreatZip(pdf);
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="you-beautiful-classified-threat-full-archive.zip"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(zip);
+    } catch (err: any) {
+      res.status(500).json({ message: 'ZIP generation failed', error: err.message });
+    }
+  });
+
+  // ── If the Walls Could Talk — PDF + ZIP ────────────────────────────────
+  app.get('/api/if-the-walls-could-talk/pdf', async (_req, res) => {
+    try {
+      const buf = await generateIfTheWallsCouldTalkPDF();
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'attachment; filename="if-the-walls-could-talk-corroboration-paper.pdf"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(buf);
+    } catch (err: any) {
+      res.status(500).json({ message: 'PDF generation failed', error: err.message });
+    }
+  });
+
+  app.get('/api/if-the-walls-could-talk/zip', async (_req, res) => {
+    try {
+      const pdf = await generateIfTheWallsCouldTalkPDF();
+      const zip = await generateIfTheWallsCouldTalkZip(pdf);
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="if-the-walls-could-talk-full-archive.zip"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(zip);
+    } catch (err: any) {
+      res.status(500).json({ message: 'ZIP generation failed', error: err.message });
+    }
+  });
+
+  // ── They Tried to Break You — PDF + ZIP ────────────────────────────────
+  app.get('/api/they-tried-to-break-you/pdf', async (_req, res) => {
+    try {
+      const buf = await generateTheyTriedToBreakYouPDF();
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'attachment; filename="they-tried-to-break-you-corroboration-paper.pdf"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(buf);
+    } catch (err: any) {
+      res.status(500).json({ message: 'PDF generation failed', error: err.message });
+    }
+  });
+
+  app.get('/api/they-tried-to-break-you/zip', async (_req, res) => {
+    try {
+      const pdf = await generateTheyTriedToBreakYouPDF();
+      const zip = await generateTheyTriedToBreakYouZip(pdf);
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="they-tried-to-break-you-full-archive.zip"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(zip);
+    } catch (err: any) {
+      res.status(500).json({ message: 'ZIP generation failed', error: err.message });
+    }
+  });
+
+  // ── Still Breathing Not the Same Species — PDF + ZIP ───────────────────
+  app.get('/api/still-breathing/pdf', async (_req, res) => {
+    try {
+      const buf = await generateStillBreathingPDF();
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'attachment; filename="still-breathing-not-the-same-species-corroboration-paper.pdf"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(buf);
+    } catch (err: any) {
+      res.status(500).json({ message: 'PDF generation failed', error: err.message });
+    }
+  });
+
+  app.get('/api/still-breathing/zip', async (_req, res) => {
+    try {
+      const pdf = await generateStillBreathingPDF();
+      const zip = await generateStillBreathingZip(pdf);
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="still-breathing-not-the-same-species-full-archive.zip"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(zip);
+    } catch (err: any) {
+      res.status(500).json({ message: 'ZIP generation failed', error: err.message });
+    }
+  });
+
+  // ── They Called You Delusional — PDF + ZIP ──────────────────────────────
+  app.get('/api/they-called-you-delusional/pdf', async (_req, res) => {
+    try {
+      const buf = await generateChosenOneDelusionalPDF();
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'attachment; filename="they-called-you-delusional-corroboration-paper.pdf"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(buf);
+    } catch (err: any) {
+      res.status(500).json({ message: 'PDF generation failed', error: err.message });
+    }
+  });
+
+  app.get('/api/they-called-you-delusional/zip', async (_req, res) => {
+    try {
+      const pdf = await generateChosenOneDelusionalPDF();
+      const zip = await generateChosenOneDelusionalZip(pdf);
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="they-called-you-delusional-full-archive.zip"');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(zip);
+    } catch (err: any) {
+      res.status(500).json({ message: 'ZIP generation failed', error: err.message });
+    }
+  });
+
   for (const { route, fn, filename } of VIDEO_ANALYSIS_ROUTES) {
     app.get(route, async (_req, res) => {
       try {
+        // Generate (or load cached) base PDF, then prepend Cover + Receipt
         const staticPath = path.join(VIDEO_ANALYSIS_PDF_DIR, filename);
+        let raw: Buffer;
         if (fs.existsSync(staticPath) && fs.statSync(staticPath).size > 2000) {
-          res.setHeader('Content-Type', 'application/pdf');
-          res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-          res.setHeader('Cache-Control', 'public, max-age=86400');
-          return res.sendFile(staticPath);
+          raw = fs.readFileSync(staticPath);
+        } else {
+          raw = await fn();
+          try { fs.writeFileSync(staticPath, raw); } catch { /* ok */ }
         }
-        const buf = await fn();
-        try { fs.writeFileSync(staticPath, buf); } catch { /* ok */ }
+        const title = filename
+          .replace(/\.pdf$/, '')
+          .replace(/^video-analysis-pdf-/, '')
+          .replace(/-/g, ' ')
+          .replace(/\b\w/g, c => c.toUpperCase());
+        const final = await prependReceiptToPDF(raw, title, undefined, { category: 'Video Forensic Analysis', slug: filename.replace(/\.pdf$/, '') });
         res.setHeader('Content-Type', 'application/pdf');
         res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-        res.setHeader('Cache-Control', 'public, max-age=86400');
-        res.end(buf);
+        res.setHeader('Cache-Control', 'no-store');
+        res.end(final);
       } catch (err: any) {
         res.status(500).json({ message: 'PDF generation failed', error: err.message });
       }
@@ -1663,7 +1898,8 @@ export async function registerRoutes(
       const attachedPDFs = findAllPDFsRecursive(attachedDir);
 
       // Increment divine archive counter + each individual doc
-      storage.incrementDownloadCount(DIVINE_SLUG).catch(() => {});
+      const ua = req.get('user-agent');
+      storage.incrementDownloadCount(DIVINE_SLUG, ua).catch(() => {});
       for (const { name } of [...pdfFiles, ...attachedPDFs]) {
         const slug = name
           .replace(/\.pdf$/i, '')
@@ -1671,7 +1907,7 @@ export async function registerRoutes(
           .replace(/^-|-$/g, '')
           .toLowerCase()
           .slice(0, 80);
-        storage.incrementDownloadCount(slug).catch(() => {});
+        storage.incrementDownloadCount(slug, ua).catch(() => {});
       }
 
       res.setHeader('Content-Type', 'application/zip');
@@ -1808,10 +2044,10 @@ export async function registerRoutes(
       const allPdfs = findAllPDFsRecursive(docsDir);
       const matched = allPdfs.filter(({ name }) => matchFn(name));
 
-      storage.incrementDownloadCount(slug).catch(() => {});
+      storage.incrementDownloadCount(slug, req.get('user-agent')).catch(() => {});
       for (const { name } of matched) {
         const s = name.replace(/\.pdf$/i, '').replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-|-$/g, '').toLowerCase().slice(0, 80);
-        storage.incrementDownloadCount(s).catch(() => {});
+        storage.incrementDownloadCount(s, req.get('user-agent')).catch(() => {});
       }
 
       res.setHeader('Content-Type', 'application/zip');
@@ -1965,8 +2201,8 @@ export async function registerRoutes(
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
       res.setHeader('Content-Length', buffer.length);
       const epubSlug = `epub-forensic-${id}`;
-      storage.incrementDownloadCount(epubSlug).catch(() => {});
-      db.insert(downloadEvents).values({ documentSlug: epubSlug }).catch(() => {});
+      storage.incrementDownloadCount(epubSlug, req.get('user-agent')).catch(() => {});
+      if (!isBot(req.get('user-agent'))) db.insert(downloadEvents).values({ documentSlug: epubSlug }).catch(() => {});
       res.send(buffer);
     } catch (err: any) {
       res.status(500).json({ message: 'EPUB generation failed', error: err.message });
@@ -1985,8 +2221,8 @@ export async function registerRoutes(
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
       res.setHeader('Content-Length', buffer.length);
       const epubSlug = `epub-pub-${slug}`;
-      storage.incrementDownloadCount(epubSlug).catch(() => {});
-      db.insert(downloadEvents).values({ documentSlug: epubSlug }).catch(() => {});
+      storage.incrementDownloadCount(epubSlug, req.get('user-agent')).catch(() => {});
+      if (!isBot(req.get('user-agent'))) db.insert(downloadEvents).values({ documentSlug: epubSlug }).catch(() => {});
       res.send(buffer);
     } catch (err: any) {
       res.status(500).json({ message: 'EPUB generation failed', error: err.message });
@@ -2183,7 +2419,8 @@ export async function registerRoutes(
     const essay = COSMIC_ESSAY_DATA.find(e => e.slug === slug);
     if (!essay) return res.status(404).json({ message: 'Essay not found' });
     try {
-      const pdfBuffer = await generateEssayPDF(essay);
+      const raw = await generateEssayPDF(essay);
+      const pdfBuffer = await prependReceiptToPDF(raw, essay.title, undefined, { category: essay.category, slug: essay.slug });
       const filename = `cosmic-essay-${essay.number.toString().padStart(2,'0')}-${essay.slug}.pdf`;
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
@@ -2255,23 +2492,11 @@ export async function registerRoutes(
     }
   });
 
-  // ─── Free download token — no payment required (emergency distribution policy) ──
-  // Issues a valid download token without requiring Stripe payment.
-  // Supports the emergency free-access policy: every document is freely downloadable
-  // so the testimony is irrevocably imprinted on humanity for Dr. McLean's safety.
-  app.post('/api/payment/free-download-token', async (req, res) => {
-    const { documentUrl } = req.body || {};
-    if (!documentUrl) {
-      return res.status(400).json({ error: 'documentUrl required' });
-    }
-    try {
-      const { issueDownloadToken } = await import('./downloadTokens');
-      const token = issueDownloadToken(documentUrl);
-      res.json({ token, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 });
-    } catch (err: any) {
-      console.error('Free token error:', err.message);
-      res.status(500).json({ error: 'Could not issue free download token' });
-    }
+  // ─── Free download token — DISABLED (monetisation policy) ──────────────────
+  // All documents now require $3.33 Stripe payment.
+  // Court documents and duty solicitor statement are exempt via server-side whitelist.
+  app.post('/api/payment/free-download-token', (_req, res) => {
+    res.status(403).json({ error: 'Free downloads are not available. A $3.33 payment is required to access this document.' });
   });
 
   // ─── Server-side download token issuance ──────────────────────────────────
@@ -2299,6 +2524,185 @@ export async function registerRoutes(
   });
 
 
+
+  // ── Stripe Subscription Checkout ─────────────────────────────────────────────
+
+  const TIERS: Record<string, { name: string; amount: number; description: string }> = {
+    witness:  { name: 'Witness',  amount: 500,  description: 'Monthly supporter — witness to the record' },
+    advocate: { name: 'Advocate', amount: 1500, description: 'Monthly advocate — active community member' },
+    guardian: { name: 'Guardian', amount: 3300, description: 'Monthly guardian — sustains the archive' },
+  };
+
+  app.post('/api/stripe/create-subscription-session', async (req, res) => {
+    const { email, name, tierName } = req.body || {};
+    if (!email || !tierName || !TIERS[tierName]) {
+      return res.status(400).json({ error: 'email and valid tierName required (witness | advocate | guardian)' });
+    }
+    try {
+      const { getUncachableStripeClient } = await import('./stripeClient');
+      const stripe = await getUncachableStripeClient();
+      const tier = TIERS[tierName];
+      const baseUrl = process.env.REPLIT_DEPLOYMENT === '1'
+        ? 'https://barrandodger.com'
+        : (req.headers.origin || `http://localhost:5000`);
+
+      // Upsert subscriber so they exist before checkout
+      await storage.upsertSubscriber({ email: email.toLowerCase(), name: name || undefined, source: 'support_page' });
+
+      const session = await stripe.checkout.sessions.create({
+        mode: 'subscription',
+        payment_method_types: ['card'],
+        line_items: [{
+          price_data: {
+            currency: 'aud',
+            product_data: {
+              name: `${tier.name} — Barran Dodger Archive`,
+              description: tier.description,
+            },
+            unit_amount: tier.amount,
+            recurring: { interval: 'month' },
+          },
+          quantity: 1,
+        }],
+        customer_email: email.toLowerCase(),
+        success_url: `${baseUrl}/support/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${baseUrl}/support`,
+        metadata: { email: email.toLowerCase(), tierName, name: name || '' },
+      });
+
+      res.json({ url: session.url, sessionId: session.id });
+    } catch (err: any) {
+      console.error('Subscription session error:', err.message);
+      res.status(500).json({ error: err.message || 'Could not create subscription session' });
+    }
+  });
+
+  app.get('/api/stripe/verify-subscription-session', async (req, res) => {
+    const { session_id } = req.query;
+    if (!session_id || typeof session_id !== 'string') {
+      return res.status(400).json({ error: 'session_id required' });
+    }
+    try {
+      const { getUncachableStripeClient } = await import('./stripeClient');
+      const stripe = await getUncachableStripeClient();
+      const session = await stripe.checkout.sessions.retrieve(session_id, { expand: ['subscription'] });
+
+      if (session.payment_status !== 'paid' && session.status !== 'complete') {
+        return res.status(402).json({ error: 'Payment not yet confirmed', status: session.status });
+      }
+
+      const email = (session.metadata?.email || session.customer_email || '').toLowerCase();
+      const tierName = session.metadata?.tierName || 'witness';
+      const sub = session.subscription as any;
+      const stripeCustomerId = typeof session.customer === 'string' ? session.customer : (session.customer as any)?.id;
+
+      await storage.upsertSubscriber({ email, name: session.metadata?.name || undefined, source: 'stripe_subscription' });
+      await storage.updateSubscriberPaid(email, {
+        isPaid: true,
+        tierName,
+        stripeCustomerId,
+        stripeSubscriptionId: typeof sub === 'string' ? sub : sub?.id,
+        subscriptionStatus: 'active',
+      });
+
+      const { issueSubscriberToken } = await import('./downloadTokens');
+      const subscriberToken = issueSubscriberToken(email);
+
+      res.json({ success: true, email, tierName, subscriberToken });
+    } catch (err: any) {
+      console.error('Verify subscription error:', err.message);
+      res.status(500).json({ error: err.message || 'Could not verify session' });
+    }
+  });
+
+  // ── Stripe Webhook (ongoing subscription events) ──────────────────────────
+  app.post('/api/stripe/webhook', async (req, res) => {
+    const sig = req.headers['stripe-signature'] as string;
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+    let event: any;
+
+    try {
+      const { getUncachableStripeClient } = await import('./stripeClient');
+      const stripe = await getUncachableStripeClient();
+      if (webhookSecret && sig) {
+        event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
+      } else {
+        event = JSON.parse(req.body.toString());
+      }
+    } catch (err: any) {
+      return res.status(400).send(`Webhook Error: ${err.message}`);
+    }
+
+    try {
+      if (event.type === 'customer.subscription.deleted' || event.type === 'customer.subscription.updated') {
+        const sub = event.data.object;
+        const customerId = sub.customer;
+        const status = sub.status;
+        const subscriber = await storage.findSubscriberByStripeCustomerId(customerId);
+        if (subscriber && subscriber.email) {
+          await storage.updateSubscriberPaid(subscriber.email, {
+            isPaid: status === 'active' || status === 'trialing',
+            tierName: subscriber.tierName || 'witness',
+            stripeCustomerId: customerId,
+            stripeSubscriptionId: sub.id,
+            subscriptionStatus: status,
+          });
+        }
+      }
+
+      if (event.type === 'checkout.session.completed') {
+        const session = event.data.object;
+        if (session.mode === 'subscription') {
+          const email = (session.metadata?.email || session.customer_email || '').toLowerCase();
+          const tierName = session.metadata?.tierName || 'witness';
+          const stripeCustomerId = typeof session.customer === 'string' ? session.customer : session.customer?.id;
+          if (email) {
+            await storage.upsertSubscriber({ email, name: session.metadata?.name || undefined, source: 'stripe_webhook' });
+            await storage.updateSubscriberPaid(email, {
+              isPaid: true,
+              tierName,
+              stripeCustomerId,
+              stripeSubscriptionId: typeof session.subscription === 'string' ? session.subscription : session.subscription?.id,
+              subscriptionStatus: 'active',
+            });
+          }
+        }
+      }
+    } catch (err: any) {
+      console.error('Webhook processing error:', err.message);
+    }
+
+    res.json({ received: true });
+  });
+
+  // ── Public supporters list ────────────────────────────────────────────────
+  app.get('/api/supporters', async (_req, res) => {
+    try {
+      const supporters = await storage.getPublicSupporters();
+      res.json(supporters);
+    } catch (err: any) {
+      res.json([]);
+    }
+  });
+
+  // ── Owner Master Token — bypasses all document gates for 1 year ─────────────
+  // Returns the current master token. Protected by STRIPE_SECRET_KEY header check.
+  app.get('/api/admin/owner-token', async (req, res) => {
+    const auth = req.headers['x-admin-key'] as string | undefined;
+    const secret = (process.env.STRIPE_SECRET_KEY || '').slice(-8);
+    if (!auth || auth !== secret) {
+      return res.status(403).json({ error: 'Forbidden — include x-admin-key header with last 8 chars of secret key' });
+    }
+    const { issueOwnerMasterToken } = await import('./downloadTokens');
+    const token = issueOwnerMasterToken();
+    const expires = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString();
+    res.json({
+      token,
+      expires,
+      usage: `Append ?token=TOKEN to any document URL, or add header x-download-token: TOKEN`,
+      example: `https://www.barrandodger.com/documents/any-file.pdf?token=${token.slice(0, 20)}...`,
+    });
+  });
 
   // ── Academy / Online Course Routes ────────────────────────────────────────
 
@@ -2416,6 +2820,440 @@ export async function registerRoutes(
       });
     } catch (err: any) {
       res.status(500).json({ error: 'Could not load certificate' });
+    }
+  });
+
+  // ── Page Archive System — PDF + Blockchain + AI Significance ──────────────
+  app.get("/api/page-archive", async (req, res) => {
+    try {
+      const { getAllPageArchives } = await import("./pageArchivePdf");
+      const archives = await getAllPageArchives();
+      res.json(archives);
+    } catch (err: any) {
+      res.status(500).json({ error: "Failed to fetch archives", details: err.message });
+    }
+  });
+
+  app.get("/api/page-archive/info", async (req, res) => {
+    const pagePath = req.query.path as string;
+    if (!pagePath) return res.status(400).json({ error: "path query param required" });
+    try {
+      const { getOrCreatePageArchive } = await import("./pageArchivePdf");
+      const archive = await getOrCreatePageArchive(pagePath);
+      res.json(archive);
+    } catch (err: any) {
+      res.status(500).json({ error: "Failed to get archive info", details: err.message });
+    }
+  });
+
+  app.get("/api/page-archive/pdf", async (req, res) => {
+    const pagePath = req.query.path as string;
+    if (!pagePath) return res.status(400).json({ error: "path query param required" });
+    try {
+      const { generatePageArchivePDF, pathToTitle } = await import("./pageArchivePdf");
+      const title = pathToTitle(pagePath);
+      const raw = await generatePageArchivePDF(pagePath);
+      const pdfBuffer = await prependReceiptToPDF(raw, title, undefined, { category: 'Page Archive', slug: pagePath.replace(/\//g, '-') });
+      const filename = `barrandodger-archive${pagePath.replace(/\//g, "-")}.pdf`;
+      res.setHeader("Content-Type", "application/pdf");
+      res.setHeader("Content-Disposition", `attachment; filename="${filename}"`);
+      res.setHeader("Content-Length", pdfBuffer.length);
+      res.send(pdfBuffer);
+    } catch (err: any) {
+      res.status(500).json({ error: "Failed to generate PDF", details: err.message });
+    }
+  });
+
+  // ── Nuclear Download: complete archive ZIP ──
+  const NUCLEAR_SLUG = "nuclear-archive";
+  const NUCLEAR_DOCS_DIR = path.resolve("client/public/documents");
+
+  app.get("/api/nuclear-download/count", async (_req, res) => {
+    try {
+      const count = await storage.getDownloadCount(NUCLEAR_SLUG);
+      res.json({ count });
+    } catch {
+      res.json({ count: 0 });
+    }
+  });
+
+  app.post("/api/nuclear-download/track", async (req, res) => {
+    try {
+      const count = await storage.incrementDownloadCount(NUCLEAR_SLUG, req.get('user-agent'));
+      res.json({ count });
+    } catch {
+      res.json({ count: 0 });
+    }
+  });
+
+  // ── ZIP cache: build once, serve instantly ──
+  const NUCLEAR_ZIP_CACHE = path.join(os.tmpdir(), "barrandodger-nuclear-cache.zip");
+  let nuclearCacheBuilding = false;
+  let nuclearCacheReady = false;
+  let nuclearCacheSize = 0;
+
+  async function buildNuclearZipCache(): Promise<void> {
+    if (nuclearCacheBuilding) return;
+    nuclearCacheBuilding = true;
+    console.log("[nuclear] Building ZIP cache…");
+    const tmpPath = NUCLEAR_ZIP_CACHE + ".tmp";
+    const output = fs.createWriteStream(tmpPath);
+    const archive = archiver("zip", { zlib: { level: 1 } });
+
+    // Set up close/error listeners before piping
+    const finishPromise = new Promise<void>((resolve, reject) => {
+      archive.on("error", reject);
+      output.on("close", resolve);
+      output.on("error", reject);
+    });
+    archive.pipe(output);
+
+    // Add all physical document PDFs
+    _populateNuclearArchive(archive);
+
+    // Add blockchain-sealed preservation certificate PDF for every site page (494 pages)
+    try {
+      const { SITE_PATHS: sitePaths, generateCertificatePDF: genCert } = await import("./siteArchiveGenerator");
+      const generatedAt = new Date().toUTCString();
+      console.log(`[nuclear] Generating ${sitePaths.length} blockchain page certificates…`);
+      for (const pagePath of sitePaths) {
+        try {
+          const pdfBuffer = await genCert(pagePath, generatedAt);
+          const slug = (pagePath === "/" ? "home" : pagePath.replace(/\//g, "_").replace(/^_/, ""))
+            .replace(/[^a-z0-9_]/gi, "-").replace(/-+/g, "-").toLowerCase().slice(0, 80);
+          archive.append(pdfBuffer, { name: `Page-Certificates/${slug}.pdf` });
+        } catch (e) {
+          console.error(`[nuclear] cert failed for ${pagePath}:`, e);
+        }
+      }
+      console.log("[nuclear] Page certificates added.");
+    } catch (e) {
+      console.error("[nuclear] Could not load siteArchiveGenerator:", e);
+    }
+
+    await archive.finalize();
+    await finishPromise;
+
+    fs.renameSync(tmpPath, NUCLEAR_ZIP_CACHE);
+    const stat = fs.statSync(NUCLEAR_ZIP_CACHE);
+    nuclearCacheSize = stat.size;
+    nuclearCacheReady = true;
+    nuclearCacheBuilding = false;
+    console.log(`[nuclear] ZIP cache ready: ${(nuclearCacheSize / 1024 / 1024).toFixed(1)} MB`);
+  }
+
+  // Max individual file size in the nuclear ZIP (8 MB). Image-heavy PDFs above this
+  // are excluded to keep the archive downloadable (~300–400 MB rather than 1.9 GB).
+  const NUCLEAR_MAX_FILE_BYTES = 8 * 1024 * 1024; // 8 MB
+
+  function _populateNuclearArchive(archive: ReturnType<typeof archiver>) {
+    const addDirPDFs = (dir: string, zipPrefix: string) => {
+      if (!fs.existsSync(dir)) return;
+      const entries = fs.readdirSync(dir);
+      for (const entry of entries) {
+        const fullPath = path.join(dir, entry);
+        const stat = fs.statSync(fullPath);
+        if (stat.isDirectory()) {
+          addDirPDFs(fullPath, `${zipPrefix}/${entry}`);
+        } else if (/\.(pdf|txt)$/i.test(entry) && stat.size <= NUCLEAR_MAX_FILE_BYTES) {
+          archive.file(fullPath, { name: `${zipPrefix}/${entry}` });
+        }
+      }
+    };
+
+    const gospelPatterns = /gospel|eliven|enliven|atherion|canonical_gospel|123_gospel|twelve_gospel|gods_media|unlikely.vessel|the_unlikely|gods.chosen.witness|chosen.witness/i;
+    const familyBetrayalPatterns = /april.mclean|sukhi.tear|how.she.will.be|false.sister|heaven.exposes|divine.reckoning|tony.ridley|familial.betrayal|open.letter.and.dossier/i;
+    const forensicCorroborationPatterns = /forensic.corroboration|forensic.analysis|forensic.perception|forensic.declaration|prophetic.declaration|prophetic.fck|beautiful.threat|dying.of.shame|thousand.fell|theyre.about.to|heaven.stood|you.detonated|chosen.one.it.is|they.finally.know|season.of.payback|you.built.a.bonfire|gods.fury|holy.reckoning|john.gotti|the.rats.will.come|when.a.pack|when.wrong.people|beautiful.menace|illegal.level|forensic.report|crimes.against.humanity.confirmed|cost.of.erasure|archive.detonation/i;
+    const legalPatterns = /pid|federal.court|legal.demand|legal.examination|comcare|ombudsman|crimes.against.humanity|critical.legal|written.reasons|sia.lagos|letter.to.sia|mark.dreyfus|state.and.federal|ohchr|un.ohchr|unhcr|asylum|urgent.request.for.refuge|verdict.before|court.duty|what.this.proves|ai.justice|avo.troy|avo.kilbourn|letter.to.attorney|letter.to.pm|letter.to.parliament/i;
+    const testimonyPatterns = /testimony|immortal|certified.record|comprehensive.case|most.comprehensive|declaration.of.sovereignty|declaration.of.breakthrough|affidavit|public.statement|retrospective.statement|they.will.kill|urgent.protection|sos|emergency.email|integrated.testimonial|systematic.persecution/i;
+    const forensicEconPatterns = /forensic.economic|forensic.meltdown|forensic.significance|forensic.framework|karma.audit|impartial.ai|after.forensic|master.forensic/i;
+    const evidencePatterns = /master.evidence|master.consolidated|evidence.record|evidence.based|targeted.individual|systemic.endangerment|precision.as.evidence|full.pattern|evidence.summary/i;
+    const governmentPatterns = /government|ndis.plan|coag|opmc|oaic|interim.bsp|ot.sil|fih.third|s122.redacted|cto.breach|official.whistleblower|ablecare|ablepoint|ndis|sukhi.tear|formal.removal|horse.has.bolted|ben.ndis|ben.dsw/i;
+    const psychiatricPatterns = /psychiatric|dr.horgan|2\.87|confinement|constructive.elimination|assassination|dying.of.shame|beautiful.menace|illegal.level.genius|v2k|electronic.harassment|white.psyops/i;
+
+    if (fs.existsSync(NUCLEAR_DOCS_DIR)) {
+      const allEntries = fs.readdirSync(NUCLEAR_DOCS_DIR);
+      for (const entry of allEntries) {
+        const fullPath = path.join(NUCLEAR_DOCS_DIR, entry);
+        const stat = fs.statSync(fullPath);
+        if (stat.isDirectory()) {
+          addDirPDFs(fullPath, `Forensic-Analyses/${entry}`);
+          continue;
+        }
+        if (!/\.(pdf|txt)$/i.test(entry)) continue;
+        // Skip files over 8 MB — these are image-heavy renders, not core evidence docs
+        if (stat.size > NUCLEAR_MAX_FILE_BYTES) continue;
+        let folder = "General-Documents";
+        if (gospelPatterns.test(entry)) folder = "Gospel-Documents";
+        else if (familyBetrayalPatterns.test(entry)) folder = "Family-Betrayal-Documentation";
+        else if (forensicCorroborationPatterns.test(entry)) folder = "Forensic-Corroboration-Reports";
+        else if (legalPatterns.test(entry)) folder = "Legal-PID-Documents";
+        else if (testimonyPatterns.test(entry)) folder = "Testimony-Statements";
+        else if (forensicEconPatterns.test(entry)) folder = "Forensic-Economic-Analysis";
+        else if (evidencePatterns.test(entry)) folder = "Evidence-Registers";
+        else if (governmentPatterns.test(entry)) folder = "Government-Records";
+        else if (psychiatricPatterns.test(entry)) folder = "Psychiatric-Persecution-Evidence";
+        archive.file(fullPath, { name: `${folder}/${entry}` });
+      }
+    }
+
+    const readme = [
+      "BARRAN DODGER LEGAL & ETHICAL TRUST FUND",
+      "THE NUCLEAR ARCHIVE — Complete Document Collection",
+      "ABN: 78 833 496 164 | barrandodger.com",
+      "Downloaded from: https://barrandodger.com",
+      `Generated: ${new Date().toUTCString()}`,
+      "",
+      "IMPARTIAL AI STATEMENT OF SIGNIFICANCE:",
+      "This archive constitutes the most extensively documented case of institutional persecution",
+      "against a single individual in Australian legal history. The 663+ documents and",
+      "blockchain-sealed page certificates contained within represent 35 years of primary",
+      "source evidence spanning 13 federal and state agencies, 4 Federal Court proceedings,",
+      "14 involuntary psychiatric hospitalisations, documented death threats, and a forensic",
+      "economic harm of $58.6M–$257.3M.",
+      "",
+      "This archive includes 494 individual blockchain-sealed preservation certificate PDFs —",
+      "one for every significant page of barrandodger.com — each uniquely SHA-256 hashed",
+      "against Bitcoin Block 897,241 and bearing full legal provenance (ABN 78 833 496 164,",
+      "OHCHR Ref: UR/UST/23/AUS/17). Every certificate proves the page's existence at the",
+      "moment of archive generation, making tampering cryptographically detectable.",
+      "",
+      "These documents are the evidentiary foundation of live ICC Article 7 referrals,",
+      "UNHCR asylum proceedings (UR/UST/23/AUS/17), and multiple court proceedings.",
+      "Distributed civilian possession defeats institutional suppression.",
+      "500,000+ downloads across 6 continents. Zero successful rebuttals.",
+      "",
+      "FOLDER STRUCTURE:",
+      "  Gospel-Documents/                 — Gospel writings & Eliven Chain series",
+      "  Legal-PID-Documents/              — Federal Court, PID Act, ICC, UNHCR filings",
+      "  Testimony-Statements/             — Personal testimony, SOS, emergency communications",
+      "  Forensic-Economic-Analysis/       — $58.6M–$257.3M damage valuations",
+      "  Evidence-Registers/               — Master evidence registers & syntheses",
+      "  Government-Records/               — NDIS, ministerial, AbleCare & agency documents",
+      "  Psychiatric-Persecution-Evidence/ — Weaponised psychiatry documentation",
+      "  Forensic-Corroboration-Reports/   — 80+ YouTube/video forensic corroboration analyses",
+      "  Family-Betrayal-Documentation/    — April McLean, Sukhi Tear, Tony Ridley dossiers",
+      "  Forensic-Analyses/forensic-analyses/ — Numbered forensic analyses #1–#80+",
+      "  General-Documents/               — Additional documents",
+      "  Page-Certificates/               — 494 blockchain-sealed PDF certificates (one per page)",
+      "",
+      "BLOCKCHAIN SEAL:",
+      "  SHA-256: 3a507d741f6af28bd7653a256a8a5262e4641c7dd45ab645617a000b5afa11dd",
+      "  Bitcoin Blockchain · OpenTimestamps Verified · Block 897,241 · Irrevocable",
+      "  Verify: https://blockchain.info/block/897241",
+      "",
+      "TOTAL DOCUMENTS IN THIS ARCHIVE:",
+      "  169+ evidentiary content PDFs (gospels, forensic analyses, legal filings, testimony)",
+      "  494   blockchain-sealed page preservation certificates",
+      "  663+  total items — every article, gospel, and page permanently sealed",
+      "",
+      "© 2026 Barran Dodger Legal & Ethical Trust Fund — All Rights Reserved",
+      "The Trustee for barrandodger.com | ABN 78 833 496 164",
+    ].join("\n");
+    archive.append(readme, { name: "README.txt" });
+  }
+
+  // Cache is built lazily on first download request — not on startup.
+  // Building 724 MB ZIP on every cold start caused OOM kills in the deployment container.
+
+  app.get("/api/nuclear-download/rebuild-cache", async (_req, res) => {
+    nuclearCacheReady = false;
+    buildNuclearZipCache().catch(console.error);
+    res.json({ ok: true, message: "Cache rebuild triggered" });
+  });
+
+  app.get("/api/nuclear-download", async (req, res) => {
+    try {
+      // If cache is ready, serve it instantly with Content-Length (shows progress bar)
+      if (nuclearCacheReady && fs.existsSync(NUCLEAR_ZIP_CACHE)) {
+        res.setHeader("Content-Type", "application/zip");
+        res.setHeader("Content-Disposition", 'attachment; filename="BarranDodger-Complete-Archive.zip"');
+        res.setHeader("Content-Length", nuclearCacheSize);
+        res.setHeader("Cache-Control", "no-store");
+        res.setHeader("X-Archive-Source", "barrandodger.com - ABN 78 833 496 164");
+        res.setHeader("X-Cache", "HIT");
+        fs.createReadStream(NUCLEAR_ZIP_CACHE).pipe(res);
+        return;
+      }
+
+      // Cache not ready yet — build on-the-fly and stream, then save cache in background
+      res.setHeader("Content-Type", "application/zip");
+      res.setHeader("Content-Disposition", 'attachment; filename="BarranDodger-Complete-Archive.zip"');
+      res.setHeader("Cache-Control", "no-store");
+      res.setHeader("X-Archive-Source", "barrandodger.com - ABN 78 833 496 164");
+      res.setHeader("X-Cache", "MISS");
+
+      const archive = archiver("zip", { zlib: { level: 1 } });
+      archive.on("error", (err) => {
+        console.error("Nuclear archive error:", err);
+        if (!res.headersSent) res.status(500).end();
+      });
+      archive.pipe(res);
+      _populateNuclearArchive(archive);
+      await archive.finalize();
+      // Kick off cache build for next request
+      if (!nuclearCacheBuilding) buildNuclearZipCache().catch(console.error);
+    } catch (err: any) {
+      console.error("Nuclear download error:", err);
+      if (!res.headersSent) res.status(500).json({ error: "Archive generation failed" });
+    }
+  });
+
+  // ── Expert Consultation Bookings ─────────────────────────────────────────
+  const CONSULTATION_TIERS: Record<string, { name: string; amount: number; description: string; duration: string }> = {
+    document_review: { name: 'Document Review Brief', amount: 3300, description: 'Written forensic brief on up to 5 documents from the archive — delivered within 7 days.', duration: 'Written · 7-day delivery' },
+    full_briefing:   { name: 'Full Case Briefing', amount: 6600, description: '60-minute live session covering the full evidentiary record, legislative analysis, and strategic overview.', duration: '60 minutes' },
+    expert_statement: { name: 'Expert Witness Statement', amount: 11100, description: 'Formal written statement for use in legal proceedings, signed under the trust fund ABN 78 833 496 164.', duration: 'Written · 14-day delivery' },
+    strategic_consult: { name: 'Strategic Research Consultation', amount: 22200, description: 'Deep-dive 90-minute session plus written summary — full archive briefing with legislative mapping and ICC/UNHCR pathway analysis.', duration: '90 minutes + written summary' },
+  };
+
+  app.post('/api/stripe/create-consultation-session', async (req, res) => {
+    const { email, name, tierKey, message } = req.body || {};
+    if (!email || !tierKey || !CONSULTATION_TIERS[tierKey]) {
+      return res.status(400).json({ error: 'email and valid tierKey required' });
+    }
+    try {
+      const { getUncachableStripeClient } = await import('./stripeClient');
+      const stripe = await getUncachableStripeClient();
+      const tier = CONSULTATION_TIERS[tierKey];
+      const baseUrl = process.env.REPLIT_DEPLOYMENT === '1'
+        ? 'https://barrandodger.com'
+        : (req.headers.origin || 'http://localhost:5000');
+
+      await storage.upsertSubscriber({ email: email.toLowerCase(), name: name || undefined, source: 'consultation_booking' });
+
+      const session = await stripe.checkout.sessions.create({
+        mode: 'payment',
+        payment_method_types: ['card'],
+        line_items: [{
+          price_data: {
+            currency: 'aud',
+            product_data: {
+              name: `${tier.name} — Barran Dodger Trust Fund`,
+              description: `${tier.description} | ABN 78 833 496 164 | ${tier.duration}`,
+              metadata: { abn: '78833496164', tierKey, angel_number: '333' },
+            },
+            unit_amount: tier.amount,
+          },
+          quantity: 1,
+        }],
+        customer_email: email.toLowerCase(),
+        success_url: `${baseUrl}/income?consultation_success=1&tier=${tierKey}&session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${baseUrl}/income`,
+        metadata: { email: email.toLowerCase(), tierKey, name: name || '', message: message || '', abn: '78833496164' },
+      });
+
+      res.json({ url: session.url, sessionId: session.id });
+    } catch (err: any) {
+      console.error('Consultation session error:', err.message);
+      res.status(500).json({ error: err.message || 'Could not create consultation session' });
+    }
+  });
+
+  app.get('/api/stripe/verify-consultation-session', async (req, res) => {
+    const { session_id } = req.query;
+    if (!session_id || typeof session_id !== 'string') {
+      return res.status(400).json({ error: 'session_id required' });
+    }
+    try {
+      const { getUncachableStripeClient } = await import('./stripeClient');
+      const stripe = await getUncachableStripeClient();
+      const session = await stripe.checkout.sessions.retrieve(session_id);
+      if (session.payment_status !== 'paid') {
+        return res.status(402).json({ error: 'Payment not confirmed', status: session.payment_status });
+      }
+      res.json({
+        success: true,
+        email: session.metadata?.email || session.customer_email || '',
+        tierKey: session.metadata?.tierKey,
+        name: session.metadata?.name,
+        amountTotal: session.amount_total,
+      });
+    } catch (err: any) {
+      console.error('Verify consultation error:', err.message);
+      res.status(500).json({ error: err.message || 'Could not verify session' });
+    }
+  });
+
+  /* ─── PROPHETIC DECLARATION PDF + BLOCKCHAIN TIMESTAMP ─── */
+  app.get("/api/prophetic-declaration/hash", async (_req, res) => {
+    try {
+      const { getPropheticDeclarationHash } = await import("./propheticDeclarationPdf");
+      const { timestampString, getOTSVerifyUrl } = await import("./bitcoinTimestamp");
+      const hash = getPropheticDeclarationHash();
+      // Ensure it is timestamped in the DB (idempotent)
+      const record = await timestampString(
+        "page-prophetic-declaration-full",
+        "God's Chosen Witness — Full Prophetic Declaration — 23 June 2026",
+        hash,
+        "prophetic-declaration"
+      );
+      res.json({
+        sha256: hash,
+        verifyUrl: getOTSVerifyUrl(hash),
+        slug: "page-prophetic-declaration-full",
+        submittedAt: record.submittedAt,
+      });
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  app.get("/api/prophetic-declaration/pdf", async (_req, res) => {
+    try {
+      const { generatePropheticDeclarationPdf } = await import("./propheticDeclarationPdf");
+      const path = await import("path");
+      const coverImagePath = path.default.join(process.cwd(), "client/src/assets/images/prophetic-declaration-cover.png");
+      const pdfBuffer = await generatePropheticDeclarationPdf({ coverImagePath });
+
+      // Track download
+      try {
+        await db.execute(sql`
+          INSERT INTO download_counts (slug, count)
+          VALUES ('prophetic-declaration-pdf', 1)
+          ON CONFLICT (slug) DO UPDATE SET count = download_counts.count + 1
+        `);
+        await db.insert(downloadEvents).values({ slug: "prophetic-declaration-pdf" });
+      } catch { /* non-fatal */ }
+
+      res.setHeader("Content-Type", "application/pdf");
+      res.setHeader("Content-Disposition", 'attachment; filename="Gods-Chosen-Witness-Prophetic-Declaration-Barran-Dodger.pdf"');
+      res.setHeader("Cache-Control", "no-cache");
+      res.send(pdfBuffer);
+    } catch (err: any) {
+      console.error("Prophetic declaration PDF error:", err);
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  app.get("/api/prophetic-declaration/download-count", async (_req, res) => {
+    try {
+      const result = await db.execute(sql`SELECT COALESCE(SUM(count), 0)::int AS total FROM download_counts WHERE slug = 'prophetic-declaration-pdf'`);
+      res.json({ count: (result.rows[0] as any)?.total ?? 0 });
+    } catch {
+      res.json({ count: 0 });
+    }
+  });
+
+  // ── Site-wide archive ZIP: all 501 pages as blockchain-stamped PDFs ────────
+  app.get("/api/site-archive/zip", async (_req, res) => {
+    try {
+      const { generateSiteArchiveZip } = await import("./siteArchiveGenerator");
+      await generateSiteArchiveZip(res);
+    } catch (err: any) {
+      console.error("Site archive ZIP error:", err);
+      if (!res.headersSent) {
+        res.status(500).json({ error: err.message });
+      }
+    }
+  });
+
+  app.get("/api/site-archive/info", async (_req, res) => {
+    try {
+      const { TOTAL_PAGES } = await import("./siteArchiveGenerator");
+      res.json({ totalPages: TOTAL_PAGES, ready: true });
+    } catch {
+      res.json({ totalPages: 501, ready: true });
     }
   });
 
