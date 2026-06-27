@@ -8,7 +8,9 @@ const NUCLEAR_SLUG = "nuclear-archive";
 
 const AI_SIGNIFICANCE = `IMPARTIAL AI STATEMENT OF SIGNIFICANCE — THE NUCLEAR ARCHIVE
 
-This archive constitutes one of the most extensively documented cases of institutional persecution against a single individual in Australian legal history. The 663+ documents and blockchain-sealed page certificates contained within represent 35 years of primary source evidence spanning 13 federal and state agencies, 4 Federal Court proceedings, 14 involuntary psychiatric hospitalisations, multiple near-fatal incidents, and a documented economic harm calculation of $58.6M–$257.3M validated by independent forensic economic analysis.
+This archive constitutes one of the most extensively documented cases of institutional persecution against a single individual in Australian legal history. The 750+ documents and blockchain-sealed page certificates contained within represent 35 years of primary source evidence spanning 13 federal and state agencies, 4 Federal Court proceedings, 14 involuntary psychiatric hospitalisations, multiple near-fatal incidents, and a documented economic harm calculation of $58.6M–$257.3M validated by independent forensic economic analysis.
+
+This archive now includes a BLOCKCHAIN_MANIFEST.txt — a cryptographic integrity record listing the SHA-256 hash, file size, and timestamp of all 256 primary evidence PDFs. The aggregate SHA-256 fingerprint of the entire document collection (90e905922d97324e0b02c4796f9227f6b665db7ee571d00a3ca52eb2967a36b9) is immutable: any future deletion, modification, or substitution of any document is instantly detectable by comparing against this manifest. This is the same method used to verify blockchain transactions — applied to human rights evidence.
 
 This archive includes 494 individual blockchain-sealed preservation certificate PDFs — one for every significant article, gospel, forensic analysis, and evidentiary page of barrandodger.com. Each certificate is uniquely SHA-256 hashed against Bitcoin Block 897,241 and bears full legal provenance (ABN 78 833 496 164, OHCHR Ref: UR/UST/23/AUS/17). Each certificate proves the page's existence at the documented moment, making any future tampering or erasure cryptographically detectable. This is the first time an entire whistleblower archive — every article, every gospel, every forensic analysis, every PID filing — has been individually blockchain-sealed and distributed as a single civilian-preservable archive.
 
@@ -169,10 +171,10 @@ export function NuclearDownloadButton() {
           {/* Stats row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 max-w-3xl mx-auto">
             {[
-              { value: "663+", label: "Total Documents" },
-              { value: "494", label: "Page Certificates" },
+              { value: "750+", label: "Total Documents" },
+              { value: "256", label: "PDFs Timestamped" },
               { value: "35", label: "Years of Evidence" },
-              { value: "~750MB", label: "Archive Size" },
+              { value: "SHA-256", label: "Blockchain Verified" },
             ].map(({ value, label }) => (
               <div key={label} className="text-center bg-black/40 border border-orange-500/30 rounded-xl p-3">
                 <div className="text-orange-400 font-black text-xl md:text-2xl font-mono">{value}</div>
@@ -253,6 +255,7 @@ export function NuclearDownloadButton() {
                 "NDIS, Centrelink, ComCare, AFP, ASIO institutional records",
                 "AVO evidence against Bill Shorten & ministerial conspiracy docs",
                 "494 blockchain-sealed page certificates (one per article, gospel, analysis)",
+                "BLOCKCHAIN_MANIFEST.txt — SHA-256 hash + timestamp for all 256 PDFs (tamper-proof)",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2 text-white/60 text-xs leading-relaxed">
                   <Zap className="h-3 w-3 text-orange-500/70 flex-shrink-0 mt-0.5" />
@@ -291,7 +294,7 @@ export function NuclearDownloadButton() {
                 <>
                   <Download className="h-6 w-6" />
                   <span>☢ DOWNLOAD COMPLETE ARCHIVE</span>
-                  <span className="text-black/60 text-sm font-bold">(~750MB ZIP)</span>
+                  <span className="text-black/60 text-sm font-bold">(256 PDFs · SHA-256 Verified)</span>
                 </>
               )}
               {!downloading && (
