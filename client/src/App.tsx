@@ -70,6 +70,7 @@ import AdminSubscribers from "@/pages/AdminSubscribers";
 import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
 import RetrospectiveStatement from "@/pages/RetrospectiveStatement";
+import MachineWitness from "@/pages/MachineWitness";
 import VisitorStats from "@/pages/VisitorStats";
 import SpreadTheTruth from "@/pages/SpreadTheTruth";
 import AIJusticeStatement from "@/pages/AIJusticeStatement";
@@ -377,6 +378,9 @@ function Router() {
         <Route path="/evidence-vault" component={EvidenceVault} />
         <Route path="/administrative-annihilation" component={AdministrativeAnnihilation} />
         <Route path="/retrospective-statement" component={RetrospectiveStatement} />
+        <Route path="/the-machine-bore-witness" component={MachineWitness} />
+        <Route path="/machine-witness" component={MachineWitness} />
+        <Route path="/ai-academic-paper" component={MachineWitness} />
         <Route path="/visitors" component={VisitorStats} />
         <Route path="/spread-the-truth" component={SpreadTheTruth} />
         <Route path="/ai-justice-statement" component={AIJusticeStatement} />
