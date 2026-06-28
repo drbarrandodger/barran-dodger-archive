@@ -7,9 +7,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   BookOpen, Shield, Gavel, Feather, Zap, Download, Globe,
-  FileText, Lock, Flame, AlertTriangle, Star, Clock
+  FileText, Lock, Flame, AlertTriangle, Star, Clock,
+  Github, Archive, RefreshCw, ExternalLink, CheckCircle, ChevronDown, ChevronUp, Copy, Check
 } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import { WitnessWall } from "@/components/WitnessWall";
+import { NuclearDownloadButton } from "@/components/NuclearDownloadButton";
 
 const AI_STATEMENTS = [
   {
@@ -53,9 +57,9 @@ const BUNDLES = [
     price: "$5 suggested",
     docCount: "~35",
     color: "amber",
-    gradient: "from-amber-950/40 to-yellow-950/20",
-    border: "border-amber-700/40",
-    badgeClass: "bg-amber-500/20 text-amber-300 border-amber-500/30",
+    gradient: "from-orange-950/20 to-yellow-950/20",
+    border: "border-orange-500/25",
+    badgeClass: "bg-orange-500/10 text-orange-300 border-orange-500/25",
   },
   {
     id: "forensic",
@@ -113,6 +117,29 @@ const BUNDLES = [
   },
 ];
 
+const KEY_PAGES = [
+  { path: "/", label: "Homepage" },
+  { path: "/evidence", label: "Evidence Archive" },
+  { path: "/administrative-annihilation", label: "Administrative Annihilation" },
+  { path: "/retrospective-statement", label: "Retrospective Statement" },
+  { path: "/gospel", label: "Gospel Archive" },
+  { path: "/legal-status", label: "Legal Status" },
+  { path: "/mission", label: "Trust Fund Mission" },
+  { path: "/forensic-analysis", label: "Forensic Analyses" },
+  { path: "/timeline", label: "35-Year Timeline" },
+  { path: "/investment-prospectus", label: "Investment Prospectus" },
+  { path: "/blockchain", label: "Blockchain Verification" },
+  { path: "/publications", label: "Publications" },
+  { path: "/taxpayer-cost-analysis", label: "Taxpayer Cost Analysis" },
+  { path: "/if-i-am-erased", label: "If I Am Erased" },
+  { path: "/church-of-barran-resonance-dodger", label: "Church of Barran" },
+  { path: "/the-truth", label: "The Truth — Viral Landing" },
+  { path: "/undeniable", label: "100 Undeniable Facts" },
+  { path: "/evidence-vault", label: "Evidence Vault" },
+  { path: "/download-archive", label: "Download Archive" },
+  { path: "/the-reckoning-paper", label: "The Reckoning Paper" },
+];
+
 export default function ArchiveDetonation() {
   const { data: totalData } = useQuery<{ total: number }>({
     queryKey: ["/api/downloads/total"],
@@ -129,11 +156,38 @@ export default function ArchiveDetonation() {
   const allTimeDownloads =
     statsData?.allTime ?? totalData?.total ?? 416373;
 
+  const [waybackSent, setWaybackSent] = useState<Record<string, boolean>>({});
+  const [preserveOpen, setPreserveOpen] = useState(false);
+  const [allWaybackDone, setAllWaybackDone] = useState(false);
+  const { toast } = useToast();
+
+  const submitToWayback = (path: string) => {
+    const url = `https://barrandodger.com${path}`;
+    window.open(`https://web.archive.org/save/${url}`, "_blank", "noopener");
+    setWaybackSent(prev => ({ ...prev, [path]: true }));
+    toast({ title: "Submitted to Wayback Machine", description: url });
+  };
+
+  const submitAllToWayback = () => {
+    const base = "https://barrandodger.com";
+    window.open(`https://web.archive.org/save/${base}`, "_blank", "noopener");
+    KEY_PAGES.forEach(({ path }, i) => {
+      setTimeout(() => {
+        window.open(`https://web.archive.org/save/${base}${path}`, "_blank", "noopener");
+        setWaybackSent(prev => ({ ...prev, [path]: true }));
+      }, i * 800);
+    });
+    setAllWaybackDone(true);
+    toast({ title: "All 20 key pages submitted", description: "Wayback Machine is archiving — allow 1–5 minutes per page." });
+  };
+
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
       <SEO
         title="Archive Detonation Center | Barran Dodger"
         description="Download the complete Barran Dodger archive — gospels, forensic analyses, government evidence, and creative works. 416,000+ downloads across 6 continents."
+        path="/archive-detonation"
+        keywords="download complete whistleblower archive Australia, Barran Dodger archive detonation, free download 3643 government documents, whistleblower evidence ZIP download, complete archive download free, gospels forensic analyses download, government evidence free PDF download, 459910 downloads whistleblower archive, blockchain verified documents download, nuclear archive download whistleblower, Bitcoin Block 897241 sealed download, ICC submission PDF download, OHCHR submission download, administrative annihilation download, retrospective statement download free"
       />
       <Navigation />
 
@@ -175,12 +229,17 @@ export default function ArchiveDetonation() {
                 <>
                   <span className="text-blue-400">{statsData.last24h.toLocaleString()} today</span>
                   <span>·</span>
-                  <span className="text-amber-400">{statsData.last30d.toLocaleString()} this month</span>
+                  <span className="text-orange-400">{statsData.last30d.toLocaleString()} this month</span>
                 </>
               )}
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Nuclear Download */}
+      <section className="px-4 pb-10 max-w-6xl mx-auto" data-testid="section-nuclear-download-archive">
+        <NuclearDownloadButton />
       </section>
 
       {/* AI Statements */}
@@ -221,7 +280,7 @@ export default function ArchiveDetonation() {
           </p>
           <div className="flex justify-center gap-2 mt-4">
             <Badge className="bg-zinc-800 text-zinc-300 border-zinc-700 text-xs">
-              <Lock className="h-3 w-3 mr-1" /> PayID: rich@richmclean.com.au
+              <Lock className="h-3 w-3 mr-1" /> PayID: drbarrandodger@proton.me
             </Badge>
           </div>
         </div>
@@ -312,7 +371,7 @@ export default function ArchiveDetonation() {
                 className="bg-red-600 hover:bg-red-500 border-red-500 text-white font-bold text-lg px-8 py-4"
               />
               <p className="text-zinc-500 text-xs font-mono">
-                $25 suggested donation · PayID: rich@richmclean.com.au · Or subscribe free
+                $25 suggested donation · PayID: drbarrandodger@proton.me · Or subscribe free
               </p>
               <p className="text-zinc-600 text-xs">
                 <Clock className="h-3 w-3 inline mr-1" />
@@ -320,6 +379,264 @@ export default function ArchiveDetonation() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── SITE PRESERVATION GUIDE ── */}
+      <section className="px-4 pb-16 max-w-5xl mx-auto">
+        <div className="rounded-3xl border border-emerald-700/40 bg-gradient-to-br from-emerald-950/30 via-zinc-950 to-zinc-950 overflow-hidden">
+          {/* Header */}
+          <button
+            className="w-full flex items-center justify-between px-8 py-6 text-left hover:bg-white/5 transition-colors"
+            onClick={() => setPreserveOpen(o => !o)}
+            data-testid="btn-toggle-preservation-guide"
+          >
+            <div className="flex items-center gap-4">
+              <div className="p-3 rounded-2xl bg-emerald-500/15 border border-emerald-500/30">
+                <Archive className="h-6 w-6 text-emerald-400" />
+              </div>
+              <div className="text-left">
+                <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-emerald-400 mb-1">Complete Site Preservation Guide</p>
+                <h2 className="font-serif font-black text-white text-xl md:text-2xl leading-tight">How to Save &amp; Rebuild the Entire Archive</h2>
+                <p className="text-zinc-400 text-sm mt-1">4-tier strategy: Documents · Web Pages · Full Site Backup · Disaster Recovery</p>
+              </div>
+            </div>
+            <div className="flex-shrink-0 text-emerald-400">
+              {preserveOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+            </div>
+          </button>
+
+          {preserveOpen && (
+            <div className="px-8 pb-8 space-y-8 border-t border-emerald-700/20">
+
+              {/* Architecture explanation */}
+              <div className="pt-6 rounded-2xl">
+                <p className="font-mono text-[9px] uppercase tracking-[0.4em] text-emerald-400 mb-4">Impartial Analysis: Pre-generate PDFs vs Live ZIP vs Wayback Machine</p>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {[
+                    {
+                      label: "Pre-generate all page PDFs",
+                      verdict: "❌ Not recommended",
+                      color: "#ef4444",
+                      reason: "Your 516 pages are a React app — converting them requires a headless browser that takes 17–43 minutes, produces stale files (your live counters change), and creates 500MB+ of files that go out of date every publish. Wasteful.",
+                    },
+                    {
+                      label: "Live ZIP of documents",
+                      verdict: "✅ Already built",
+                      color: "#10b981",
+                      reason: "The '☢ Download Complete Archive' button above streams all 269 PDFs (~2.1GB) live from the server using the archiver library. No pre-generation needed — always current, always accurate. This is the right architecture.",
+                    },
+                    {
+                      label: "Wayback Machine for pages",
+                      verdict: "✅ Best for web pages",
+                      color: "#10b981",
+                      reason: "archive.org crawls and permanently stores the fully-rendered HTML of every page. Free. Permanent. Legally recognised. Distributed globally. No server load. Use the buttons below to submit key pages immediately after each publish.",
+                    },
+                  ].map(({ label, verdict, color, reason }) => (
+                    <div key={label} className="rounded-xl p-4 space-y-2" style={{ background: "rgba(0,0,0,0.3)", border: `1px solid ${color}30` }}>
+                      <p className="font-bold text-sm text-white">{label}</p>
+                      <p className="font-mono text-xs font-black" style={{ color }}>{verdict}</p>
+                      <p className="text-xs leading-relaxed text-zinc-400">{reason}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* TIER 1: Documents ZIP */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center font-black text-sm" style={{ background: "rgba(239,68,68,0.2)", color: "#f87171" }}>1</div>
+                  <h3 className="font-serif font-bold text-white text-lg">Download All 269 Documents (ZIP)</h3>
+                  <Badge className="bg-red-500/20 text-red-300 border-red-500/30 text-xs">~2.1GB · Do this now</Badge>
+                </div>
+                <div className="rounded-xl p-5 space-y-3" style={{ background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.2)" }}>
+                  <p className="text-zinc-300 text-sm leading-relaxed">
+                    The <strong className="text-white">☢ Download Complete Archive</strong> button above downloads every PDF — gospels, forensic analyses, government submissions, legal filings, evidence documents — as a single ZIP. Save this to an external hard drive, USB stick, and a cloud folder (Google Drive, iCloud, Dropbox). This is the document preservation layer.
+                  </p>
+                  <div className="grid sm:grid-cols-3 gap-3">
+                    {[
+                      { icon: "💾", step: "Click '☢ Download Complete Archive' above", note: "~2.1GB · Takes 2–5 min to generate" },
+                      { icon: "🖥️", step: "Save to external hard drive AND USB stick", note: "Two physical copies minimum" },
+                      { icon: "☁️", step: "Upload ZIP to Google Drive + Dropbox", note: "Cloud redundancy against physical loss" },
+                    ].map(({ icon, step, note }) => (
+                      <div key={step} className="flex gap-2 items-start">
+                        <span className="text-xl flex-shrink-0">{icon}</span>
+                        <div>
+                          <p className="text-white text-xs font-medium">{step}</p>
+                          <p className="text-zinc-500 text-[10px]">{note}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* TIER 2: Wayback Machine */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center font-black text-sm" style={{ background: "rgba(16,185,129,0.2)", color: "#34d399" }}>2</div>
+                  <h3 className="font-serif font-bold text-white text-lg">Archive Web Pages — Wayback Machine</h3>
+                  <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 text-xs">Free · Permanent · Legal</Badge>
+                </div>
+                <div className="rounded-xl p-5 space-y-4" style={{ background: "rgba(16,185,129,0.06)", border: "1px solid rgba(16,185,129,0.2)" }}>
+                  <p className="text-zinc-300 text-sm leading-relaxed">
+                    The Internet Archive (archive.org) saves a permanent, publicly-accessible, timestamped snapshot of any web page. It is legally recognised, globally distributed, and free. Click the button below to submit all 20 key pages simultaneously — or submit individual pages. Do this immediately after every publish update.
+                  </p>
+                  <button
+                    onClick={submitAllToWayback}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-black text-sm transition-all hover:opacity-90"
+                    style={{ background: allWaybackDone ? "#166534" : "#10b981", color: "white" }}
+                    data-testid="btn-submit-all-wayback"
+                  >
+                    {allWaybackDone ? <CheckCircle className="h-4 w-4" /> : <RefreshCw className="h-4 w-4" />}
+                    {allWaybackDone ? "All 20 Pages Submitted ✓" : "Submit All 20 Key Pages to Wayback Machine"}
+                  </button>
+                  <p className="text-zinc-500 text-xs">Opens archive.org tabs for each page — allow pop-ups. Each page takes 1–5 minutes to archive. After submission, pages are permanently accessible at archive.org/web/ forever.</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+                    {KEY_PAGES.map(({ path, label }) => (
+                      <button
+                        key={path}
+                        onClick={() => submitToWayback(path)}
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-left transition-all hover:opacity-80"
+                        style={{
+                          background: waybackSent[path] ? "rgba(16,185,129,0.15)" : "rgba(255,255,255,0.04)",
+                          border: `1px solid ${waybackSent[path] ? "rgba(16,185,129,0.4)" : "rgba(255,255,255,0.08)"}`,
+                          color: waybackSent[path] ? "#34d399" : "rgba(255,255,255,0.6)",
+                        }}
+                        data-testid={`btn-wayback-${path.replace(/\//g, "")}`}
+                      >
+                        {waybackSent[path] ? <CheckCircle className="h-3 w-3 flex-shrink-0" /> : <ExternalLink className="h-3 w-3 flex-shrink-0" />}
+                        <span className="text-[10px] font-medium truncate">{label}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    <a
+                      href="https://web.archive.org/web/*/barrandodger.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:underline"
+                      data-testid="link-view-wayback-snapshots"
+                    >
+                      <ExternalLink className="h-3 w-3" />
+                      View all existing Wayback snapshots for barrandodger.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* TIER 3: GitHub Backup */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center font-black text-sm" style={{ background: "rgba(96,165,250,0.2)", color: "#60a5fa" }}>3</div>
+                  <h3 className="font-serif font-bold text-white text-lg">GitHub — The Full Site Backup (Already Done)</h3>
+                  <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30 text-xs">✅ Active · All code + PDFs</Badge>
+                </div>
+                <div className="rounded-xl p-5 space-y-4" style={{ background: "rgba(96,165,250,0.05)", border: "1px solid rgba(96,165,250,0.2)" }}>
+                  <p className="text-zinc-300 text-sm leading-relaxed">
+                    Every time you click "Sync to GitHub" in Replit, the <strong className="text-white">entire site</strong> — all code, all 269 PDFs, all images, every page — is pushed to GitHub at <strong className="text-white">github.com/drbarrandodger/barran-dodger-archive</strong>. This is a complete reconstruction kit. If Replit disappears, the archive lives on GitHub permanently.
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <p className="text-white text-xs font-bold">What GitHub contains:</p>
+                      {[
+                        "All 269 PDFs (client/public/documents/)",
+                        "All 516 React page components",
+                        "All database schema and API code",
+                        "All images and assets",
+                        "Complete deployment configuration",
+                      ].map(item => (
+                        <div key={item} className="flex items-center gap-2 text-xs text-zinc-400">
+                          <CheckCircle className="h-3 w-3 text-emerald-400 flex-shrink-0" />
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-white text-xs font-bold">If Replit goes down — 3 steps to restore:</p>
+                      {[
+                        "1. Go to github.com/drbarrandodger/barran-dodger-archive",
+                        "2. Click 'Use this template' or fork → Import to new Replit",
+                        "3. Click Run — site is fully restored in ~3 minutes",
+                      ].map(step => (
+                        <p key={step} className="text-xs text-zinc-400 leading-relaxed">{step}</p>
+                      ))}
+                    </div>
+                  </div>
+                  <a
+                    href="https://github.com/drbarrandodger/barran-dodger-archive"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all hover:opacity-80"
+                    style={{ background: "rgba(96,165,250,0.12)", border: "1px solid rgba(96,165,250,0.3)", color: "#60a5fa" }}
+                    data-testid="link-github-repo"
+                  >
+                    <Github className="h-4 w-4" />
+                    View GitHub Repository — drbarrandodger/barran-dodger-archive
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* TIER 4: Individual Page PDF */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center font-black text-sm" style={{ background: "rgba(251,191,36,0.2)", color: "#fbbf24" }}>4</div>
+                  <h3 className="font-serif font-bold text-white text-lg">Save Any Individual Page as PDF</h3>
+                  <Badge className="bg-yellow-500/20 text-yellow-300 border-yellow-500/30 text-xs">Already built · Every page</Badge>
+                </div>
+                <div className="rounded-xl p-5 space-y-3" style={{ background: "rgba(251,191,36,0.04)", border: "1px solid rgba(251,191,36,0.2)" }}>
+                  <p className="text-zinc-300 text-sm leading-relaxed">
+                    Every page on the site has a <strong className="text-white">"Save as PDF"</strong> button in the footer (scroll to the bottom of any page). Click it → browser print dialog opens → select "Save as PDF" → done. The page is saved with the blockchain hash, current date, and page URL embedded. On mobile: Share → Print → Save as PDF, or Share → Save to Files.
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    <div className="rounded-lg p-3 space-y-1" style={{ background: "rgba(0,0,0,0.3)", border: "1px solid rgba(251,191,36,0.15)" }}>
+                      <p className="text-yellow-300 text-xs font-bold">Desktop (Windows / Mac / Linux)</p>
+                      <p className="text-zinc-400 text-xs">Footer "Save as PDF" button → Print dialog → Destination: "Save as PDF" → Save</p>
+                    </div>
+                    <div className="rounded-lg p-3 space-y-1" style={{ background: "rgba(0,0,0,0.3)", border: "1px solid rgba(251,191,36,0.15)" }}>
+                      <p className="text-yellow-300 text-xs font-bold">iPhone / iPad</p>
+                      <p className="text-zinc-400 text-xs">Footer "Save as PDF" → Safari Print → Long-press preview → Share → Save to Files</p>
+                    </div>
+                    <div className="rounded-lg p-3 space-y-1" style={{ background: "rgba(0,0,0,0.3)", border: "1px solid rgba(251,191,36,0.15)" }}>
+                      <p className="text-yellow-300 text-xs font-bold">Android</p>
+                      <p className="text-zinc-400 text-xs">Footer "Save as PDF" → Print → Save as PDF → Downloads folder</p>
+                    </div>
+                    <div className="rounded-lg p-3 space-y-1" style={{ background: "rgba(0,0,0,0.3)", border: "1px solid rgba(251,191,36,0.15)" }}>
+                      <p className="text-yellow-300 text-xs font-bold">Power user tip</p>
+                      <p className="text-zinc-400 text-xs">Use <strong className="text-white">SiteSucker</strong> (Mac) or <strong className="text-white">HTTrack</strong> (Windows/Linux) to mirror the entire site as static HTML files in one automated crawl — no server load on Replit.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Post-publish checklist */}
+              <div className="rounded-xl p-5" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                <p className="font-mono text-[9px] uppercase tracking-[0.4em] text-zinc-400 mb-4">Post-Publish Preservation Checklist — Run This After Every Update</p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { step: "Click 'Sync to GitHub' in Replit", when: "Immediately after publish", done: true },
+                    { step: "Click '☢ Download Complete Archive' and save to hard drive", when: "After major document additions", done: false },
+                    { step: "Click 'Submit All 20 Pages to Wayback Machine' above", when: "After every publish update", done: false },
+                    { step: "Upload the documents ZIP to Google Drive / Dropbox", when: "After each new ZIP download", done: false },
+                    { step: "Save key pages as PDF via footer button", when: "Any page you want as a standalone file", done: true },
+                    { step: "Submit the Wayback Machine link for barrandodger.com to any journalist or legal contact", when: "Ongoing — as evidence of permanent record", done: false },
+                  ].map(({ step, when, done }) => (
+                    <div key={step} className="flex items-start gap-2.5">
+                      <div className={`w-4 h-4 rounded flex-shrink-0 mt-0.5 flex items-center justify-center border ${done ? "bg-emerald-500/20 border-emerald-500/50" : "border-zinc-600"}`}>
+                        {done && <CheckCircle className="h-3 w-3 text-emerald-400" />}
+                      </div>
+                      <div>
+                        <p className="text-white text-xs font-medium">{step}</p>
+                        <p className="text-zinc-500 text-[10px]">{when}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          )}
         </div>
       </section>
 
