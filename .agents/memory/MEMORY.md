@@ -1,0 +1,4 @@
+- [Homepage is EntryLanding.tsx](homepage-routing.md) — barrandodger.com root `/` loads EntryLanding.tsx, NOT Home.tsx (Home.tsx is at `/archive`)
+- [Undeniable Facts Page Pattern](undeniable-facts-pattern.md) — rules for adding facts to /undeniable; 4 files must always be updated together
+- [Church of Barran page](church-of-barran-page.md) — Foundation charter at /church-of-barran-resonance-dodger; content data file + page renderer pattern
+- [OG image filenames](og-images.md) — Page-specific OG images exist for admin-annihilation, retrospective, evidence, verdict, publications; SEO image prop needs absolute URL (https://barrandodger.com/...)

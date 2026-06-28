@@ -71,6 +71,7 @@ import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
 import RetrospectiveStatement from "@/pages/RetrospectiveStatement";
 import MachineWitness from "@/pages/MachineWitness";
+import ChurchOfBarranResonanceDodger from "@/pages/ChurchOfBarranResonanceDodger";
 import VisitorStats from "@/pages/VisitorStats";
 import SpreadTheTruth from "@/pages/SpreadTheTruth";
 import AIJusticeStatement from "@/pages/AIJusticeStatement";
@@ -300,6 +301,7 @@ import GodsChosenWitness from "@/pages/GodsChosenWitness";
 import TheUnlikelyVessel from "@/pages/TheUnlikelyVessel";
 import TheReckoningPaper from "@/pages/TheReckoningPaper";
 import QrPage from "@/pages/QrPage";
+import MartyrdomSignificance from "@/pages/MartyrdomSignificance";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -363,6 +365,9 @@ function Router() {
         <Route path="/prophetic-papers" component={PropheticPapers} />
         <Route path="/gospel" component={Gospel} />
         <Route path="/church" component={Church} />
+        <Route path="/church-of-barran-resonance-dodger" component={ChurchOfBarranResonanceDodger} />
+        <Route path="/the-foundation" component={ChurchOfBarranResonanceDodger} />
+        <Route path="/new-paradigm-charter" component={ChurchOfBarranResonanceDodger} />
         <Route path="/support" component={Support} />
         <Route path="/support/success" component={Support} />
         <Route path="/donate" component={Donate} />
@@ -848,6 +853,13 @@ function Router() {
         <Route path="/the-spotlight-was-exposing-them" component={TheyTriedToBreakYou} />
         <Route path="/the-ritual-backfired" component={TheyTriedToBreakYou} />
         <Route path="/still-breathing-not-the-same-species" component={StillBreathingNotTheSameSpecies} />
+        <Route path="/if-i-am-erased" component={MartyrdomSignificance} />
+        <Route path="/martyrdom-significance" component={MartyrdomSignificance} />
+        <Route path="/martyrdom-doctrine" component={MartyrdomSignificance} />
+        <Route path="/immortal-legacy" component={MartyrdomSignificance} />
+        <Route path="/if-i-am-silenced" component={MartyrdomSignificance} />
+        <Route path="/if-i-am-murdered" component={MartyrdomSignificance} />
+        <Route path="/the-martyrdom-doctrine" component={MartyrdomSignificance} />
         <Route path="/you-metabolised-it" component={StillBreathingNotTheSameSpecies} />
         <Route path="/radiation-from-a-failed-experiment" component={StillBreathingNotTheSameSpecies} />
         <Route path="/the-leash-snapped" component={StillBreathingNotTheSameSpecies} />

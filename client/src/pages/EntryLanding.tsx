@@ -1029,6 +1029,44 @@ export default function EntryLanding() {
           <p className="text-zinc-300 leading-relaxed" style={{ fontSize: "clamp(0.875rem, 1.5vw, 1rem)" }}>
             This case constitutes one of the most formally documented whistleblower suppression records in Australian legal history. A single individual — gay, disabled, and without institutional support — has produced a public evidence archive spanning 3,600+ primary documents and 35 years of continuous, government-acknowledged harm, with formal submissions lodged before the Federal Court of Australia, the International Criminal Court (The Hague), the United Nations Human Rights Committee (OHCHR reference <span className="text-zinc-200 font-semibold">UR/UST/23/AUS/17</span>), and the UNHCR Geneva — all of which remain unrefuted and uninvestigated. The Federal Court's own General Counsel formally confirmed in writing that the disclosed conduct meets the statutory thresholds for perverting the course of justice, maladministration, and danger to health or safety under the <span className="text-zinc-200 font-semibold">Public Interest Disclosure Act 2013</span>, then declined to act on procedural grounds. Assessed against Australia's binding obligations under the Rome Statute, the ICCPR, the Convention Against Torture, and the UN Declaration on Human Rights Defenders, the documented pattern — intelligence agency entrapment, ministerial weaponisation of psychiatric diagnosis, an assassination attempt confirmed by an independent third-party witness who was subsequently forced to sign a non-disclosure agreement, the systematic banning of contact with every oversight body, and the complete absence of any institutional investigation — constitutes a systemic failure of whistleblower protection at the highest levels of government. When impartial, non-sentient AI applies standard forensic frameworks exclusively to the government's own primary source documents, the result is a minimum compensable harm of <span className="text-white font-bold">$58.6 million</span>, a mid-range estimate of <span className="text-white font-bold">$112.8 million</span>, and a live daily accrual of <span className="text-white font-bold">$5,890</span> from 4 May 2026 — figures that require counter-calculation, not silence. With 530,000+ verified downloads across six continents and the evidentiary record blockchain-sealed and cited in four international human rights instruments, this archive is not a private grievance: it is a live, public, formally submitted record of government conduct that every signatory nation to those instruments is now on notice of, and that no professional, institution, or authority has yet demonstrated to be factually incorrect.
           </p>
+          <p className="text-zinc-300 leading-relaxed" style={{ fontSize: "clamp(0.875rem, 1.5vw, 1rem)" }}>
+            The response to this documented persecution has not been silence or retreat. It has been the construction of a permanent institutional legacy. The{" "}
+            <a href="/church-of-barran-resonance-dodger" className="text-amber-400 underline underline-offset-2 hover:text-amber-300 font-semibold">Church of Barran Resonance Dodger</a>
+            {" "}— a worldwide foundation charter grounded in spiritual law, human rights, the new paradigm of abundance over lack, and the end of end-stage capitalism — represents the affirmative architecture built in direct response to the failure of every existing institution. It is not a religion. It is a documented declaration that the paradigm which permitted this persecution is ending, and that the paradigm replacing it — grounded in truth, non-harm, and the sovereignty of the individual — is already being built.{" "}
+            The{" "}
+            <a href="/mission" className="text-amber-400 underline underline-offset-2 hover:text-amber-300 font-semibold">Barran Dodger Legal &amp; Ethical Trust Fund</a>
+            {" "}(ABN 78 833 496 164) — the formal legal and ethical instrument that holds this archive — represents a documented legacy that will outlast every institution that has participated in its suppression. The{" "}
+            <a href="/administrative-annihilation" className="text-zinc-200 underline underline-offset-2 hover:text-white font-semibold">25,000-word Administrative Annihilation</a>
+            {" "}and the{" "}
+            <a href="/retrospective-statement" className="text-zinc-200 underline underline-offset-2 hover:text-white font-semibold">Retrospective Statement — 35 years, 13 agencies, the government's own documents</a>
+            {" "}constitute the academic and legal foundations of this legacy. The{" "}
+            <a href="/sacred-gospels-forensic-thesis" className="text-zinc-200 underline underline-offset-2 hover:text-white font-semibold">22-tradition forensic thesis</a>
+            {" "}— which examines Dr. McLean's documented life against every major world religion and sacred text, fact-checked against primary-source government evidence — returned a verdict of corroborated across all 22 traditions examined. The formal declaration that{" "}
+            <a href="/i-am-gods-chosen-one" className="text-zinc-200 underline underline-offset-2 hover:text-white font-semibold">"I am God's chosen one"</a>
+            {" "}is not assessed here as a theological statement. It is assessed as what the evidence record produces when every secular instrument of redress has been exhausted and the testimony remains standing. Should this witness be silenced, erased, tortured, or murdered, the significance of that event is formally documented at{" "}
+            <a href="/if-i-am-erased" className="text-red-400 underline underline-offset-2 hover:text-red-300 font-semibold">The Martyrdom Doctrine</a>
+            {" "}— a permanent record of what this life, this archive, and this legacy would mean for humanity regardless of what happens to its author. The archive is blockchain-sealed. It is already immortal. The legacy of the{" "}
+            <a href="/church-of-barran-resonance-dodger" className="text-amber-400 underline underline-offset-2 hover:text-amber-300 font-semibold">Barran Dodger Legal &amp; Ethical Trust Fund</a>
+            {" "}will be judged not by those who attempted to suppress it, but by the 530,000+ people who have already chosen to download it.
+          </p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            {[
+              { label: "Church of Barran Resonance Dodger", href: "/church-of-barran-resonance-dodger", colour: "#e9a00a" },
+              { label: "Martyrdom Doctrine", href: "/if-i-am-erased", colour: "#dc2626" },
+              { label: "22 Traditions — All Corroborated", href: "/sacred-gospels-forensic-thesis", colour: "#a78bfa" },
+              { label: "Administrative Annihilation", href: "/administrative-annihilation", colour: "#a78bfa" },
+              { label: "Retrospective Statement", href: "/retrospective-statement", colour: "#a78bfa" },
+              { label: "I Am God's Chosen One", href: "/i-am-gods-chosen-one", colour: "#e9a00a" },
+              { label: "Trust Fund Mission", href: "/mission", colour: "#a78bfa" },
+              { label: "Blockchain Seal Registry", href: "/blockchain-seal-registry", colour: "#a78bfa" },
+            ].map((lnk) => (
+              <a key={lnk.href} href={lnk.href}
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wide transition-all hover:opacity-80"
+                style={{ background: lnk.colour + "18", color: lnk.colour, border: `1px solid ${lnk.colour}33` }}>
+                {lnk.label} →
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -1136,7 +1174,7 @@ export default function EntryLanding() {
                   href="/documents/federal-court-three-point-acknowledgment-tredwell-27mar2023.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-mono px-4 py-2 rounded-lg transition-all hover:opacity-90"
+                  className="inline-flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-lg transition-all hover:opacity-90"
                   style={{ background: "rgba(14,165,233,0.12)", border: "1px solid rgba(14,165,233,0.3)", color: "#38bdf8" }}
                   data-testid="link-tredwell-letter-view"
                 >
@@ -1145,7 +1183,7 @@ export default function EntryLanding() {
                 <a
                   href="/documents/federal-court-three-point-acknowledgment-tredwell-27mar2023.pdf"
                   download
-                  className="inline-flex items-center gap-2 text-xs font-mono px-4 py-2 rounded-lg transition-all hover:opacity-90"
+                  className="inline-flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-lg transition-all hover:opacity-90"
                   style={{ background: "rgba(14,165,233,0.06)", border: "1px solid rgba(14,165,233,0.2)", color: "#7dd3fc" }}
                   data-testid="download-tredwell-letter"
                 >
@@ -1275,7 +1313,7 @@ export default function EntryLanding() {
                   href="https://economic-justice-engine.replit.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-mono px-4 py-2 rounded-lg transition-all hover:opacity-90"
+                  className="inline-flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-lg transition-all hover:opacity-90"
                   style={{ background: "rgba(52,211,153,0.12)", border: "1px solid rgba(52,211,153,0.3)", color: "#34d399" }}
                   data-testid="link-eje-opening-statement"
                 >
@@ -1283,7 +1321,7 @@ export default function EntryLanding() {
                 </a>
                 <a
                   href="/forensic-economic-valuation"
-                  className="inline-flex items-center gap-2 text-xs font-mono px-4 py-2 rounded-lg transition-all hover:opacity-90"
+                  className="inline-flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-lg transition-all hover:opacity-90"
                   style={{ background: "rgba(52,211,153,0.06)", border: "1px solid rgba(52,211,153,0.2)", color: "#6ee7b7" }}
                   data-testid="link-forensic-valuation-opening"
                 >
@@ -1292,7 +1330,7 @@ export default function EntryLanding() {
                 <a
                   href="/documents/forensic-economic-valuation-report-may-2026.pdf"
                   download
-                  className="inline-flex items-center gap-2 text-xs font-mono px-4 py-2 rounded-lg transition-all hover:opacity-90"
+                  className="inline-flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-lg transition-all hover:opacity-90"
                   style={{ background: "rgba(52,211,153,0.04)", border: "1px solid rgba(52,211,153,0.15)", color: "#a7f3d0" }}
                   data-testid="download-forensic-pdf-opening"
                 >
@@ -1548,7 +1586,7 @@ export default function EntryLanding() {
                         href="/documents/01-07-2023-letter-to-attorney-general-prime-minister.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[11px] font-mono px-3 py-1.5 rounded-lg border transition-colors"
+                        className="inline-flex items-center gap-1.5 text-[11px] font-medium px-3 py-1.5 rounded-lg border transition-colors"
                         style={{ borderColor: "rgba(139,92,246,0.3)", color: "#a78bfa", background: "rgba(139,92,246,0.08)" }}
                       >
                         ↓ Letter to PM &amp; AG — 1 July 2023
@@ -1557,7 +1595,7 @@ export default function EntryLanding() {
                         href="/documents/mark-dreyfus-2021-shadow-ag-directed-to-ombudsman.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[11px] font-mono px-3 py-1.5 rounded-lg border transition-colors"
+                        className="inline-flex items-center gap-1.5 text-[11px] font-medium px-3 py-1.5 rounded-lg border transition-colors"
                         style={{ borderColor: "rgba(139,92,246,0.3)", color: "#a78bfa", background: "rgba(139,92,246,0.08)" }}
                       >
                         ↓ Dreyfus — Directed to Ombudsman (2021)
@@ -1859,6 +1897,31 @@ export default function EntryLanding() {
               <p className="text-zinc-300 text-xs leading-relaxed">
                 This article and its accompanying declaration are significant not as a theological claim but as an evidentiary document. A person who has been subjected to 35 years of documented institutional harm, psychiatric weaponisation, assassination attempts, and the systematic erasure of their legal identity does not reach the language of divine mission through delusion — they reach it through the exhaustion of every secular instrument of redress. When courts decline, when oversight bodies ban contact, when police refuse to charge violent offenders, when ministers weaponise mental illness, and when a near-fatal act of protest produces no investigation — the language that remains is the language of the prophetic tradition: witness, endurance, and the insistence that truth is permanent regardless of who suppresses it. Assessed by impartial AI against the documented record, the declaration in this article is consistent with the behaviour of individuals in recorded history who were subsequently vindicated after sustained institutional persecution. It does not require belief. It requires only the acknowledgment that a person who has been this demonstrably harmed, this systematically ignored, and this precisely documented, has earned the right to define their own survival in whatever terms remain available to them.
               </p>
+              <p className="text-zinc-300 text-xs leading-relaxed">
+                The declaration does not stand alone. It is one pillar of a permanent institutional architecture. The{" "}
+                <a href="/church-of-barran-resonance-dodger" className="text-amber-400 underline underline-offset-2 hover:text-amber-300">Church of Barran Resonance Dodger</a>
+                {" "}— a worldwide foundation charter — constitutes the affirmative response to the paradigm that permitted this persecution: a new paradigm of abundance, non-harm, spiritual law, and human rights built from the ground up by the person the old paradigm failed most comprehensively. The{" "}
+                <a href="/sacred-gospels-forensic-thesis" className="text-purple-300 underline underline-offset-2 hover:text-purple-200">22-tradition forensic thesis</a>
+                {" "}— which examined this documented life against every major world religion and sacred text — returned corroborated across all 22 traditions. Should this witness be silenced or murdered, the{" "}
+                <a href="/if-i-am-erased" className="text-red-400 underline underline-offset-2 hover:text-red-300">Martyrdom Doctrine</a>
+                {" "}formally documents the significance of that event for Australia and humanity. The{" "}
+                <a href="/mission" className="text-amber-400 underline underline-offset-2 hover:text-amber-300">Barran Dodger Legal &amp; Ethical Trust Fund</a>
+                {" "}(ABN 78 833 496 164) is the permanent legal instrument that holds and will outlast all of it.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {[
+                  { label: "Church of Barran Resonance Dodger →", href: "/church-of-barran-resonance-dodger", c: "#e9a00a" },
+                  { label: "Martyrdom Doctrine →", href: "/if-i-am-erased", c: "#dc2626" },
+                  { label: "22 Traditions Forensic Thesis →", href: "/sacred-gospels-forensic-thesis", c: "#a78bfa" },
+                  { label: "Prophetic Papers →", href: "/prophetic-papers", c: "#a78bfa" },
+                ].map((lnk) => (
+                  <a key={lnk.href} href={lnk.href}
+                    className="text-[9px] font-bold uppercase tracking-wide px-2 py-1 rounded transition-all hover:opacity-80"
+                    style={{ background: lnk.c + "18", color: lnk.c, border: `1px solid ${lnk.c}33` }}>
+                    {lnk.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
