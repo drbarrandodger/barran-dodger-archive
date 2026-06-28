@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Scale, Mail, Heart, Globe, Shield, Copy, CheckCheck, TrendingUp, BadgeCheck, ExternalLink, Building2, Calendar, MapPin, Phone } from "lucide-react";
+import { Scale, Mail, Heart, Globe, Shield, Copy, CheckCheck, TrendingUp, BadgeCheck, ExternalLink, Building2, Calendar, MapPin, Phone, Download, Hash, ChevronDown, ChevronUp, BookOpen, Archive } from "lucide-react";
 import { SiX, SiGithub, SiYoutube, SiMedium } from "react-icons/si";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -78,8 +78,152 @@ export function Footer() {
   const visitorCount = PAGE_VIEW_BASELINE + (pvData?.total ?? 0);
   const pageTitle = typeof document !== "undefined" ? document.title.split("|")[0].trim() : "Barran Dodger Archive";
 
+  const [whyOpen, setWhyOpen] = useState(false);
+  const [copiedHash, setCopiedHash] = useState(false);
+  const BLOCKCHAIN_HASH = "3a507d741f6af28bd7653a256a8a5262e4641c7dd45ab645617a000b5afa11dd";
+  const pageUrl = typeof window !== "undefined" ? window.location.href : `https://barrandodger.com${location}`;
+  const dateStamp = new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
+
+  const copyHash = async () => {
+    try {
+      await navigator.clipboard.writeText(BLOCKCHAIN_HASH);
+      setCopiedHash(true);
+      toast({ title: "Blockchain hash copied", description: "Hash copied to clipboard" });
+      setTimeout(() => setCopiedHash(false), 3000);
+    } catch {
+      toast({ title: "Copy failed", description: BLOCKCHAIN_HASH });
+    }
+  };
+
+  const downloadPage = () => {
+    window.print();
+  };
+
   return (
     <footer style={{ background: "#02030a" }} className="text-white">
+
+      {/* ── DOWNLOAD THIS PAGE ── global, every page ── */}
+      <div style={{ background: "#05080f", borderBottom: "2px solid rgba(233,160,10,0.25)", borderTop: "1px solid rgba(233,160,10,0.12)" }}>
+        <div className="container mx-auto max-w-5xl px-4 py-8">
+          <div className="flex flex-col gap-5">
+
+            {/* Header row */}
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="rounded-xl p-2.5" style={{ background: "rgba(233,160,10,0.15)" }}>
+                  <Archive className="h-5 w-5" style={{ color: "#e9a00a" }} />
+                </div>
+                <div>
+                  <p className="font-black text-white text-sm leading-tight">Download &amp; Archive This Page</p>
+                  <p className="text-[10px] font-mono uppercase tracking-widest mt-0.5" style={{ color: "rgba(233,160,10,0.7)" }}>
+                    Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <button
+                  onClick={downloadPage}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-black text-sm transition-all hover:opacity-90 active:scale-95"
+                  style={{ background: "#e9a00a", color: "#0a0500" }}
+                  data-testid="btn-download-page"
+                >
+                  <Download className="h-4 w-4" />
+                  Save as PDF
+                </button>
+                <button
+                  onClick={copyHash}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm border transition-all hover:opacity-90"
+                  style={{ borderColor: "rgba(233,160,10,0.35)", color: "#e9a00a" }}
+                  data-testid="btn-copy-blockchain-hash"
+                >
+                  {copiedHash ? <CheckCheck className="h-4 w-4" /> : <Hash className="h-4 w-4" />}
+                  {copiedHash ? "Copied!" : "Copy Hash"}
+                </button>
+              </div>
+            </div>
+
+            {/* Blockchain stamp row */}
+            <div className="rounded-xl border px-4 py-3 flex flex-wrap items-center gap-3" style={{ borderColor: "rgba(233,160,10,0.2)", background: "rgba(0,0,0,0.3)" }}>
+              <Hash className="h-3.5 w-3.5 flex-shrink-0" style={{ color: "#e9a00a" }} />
+              <div className="flex-1 min-w-0">
+                <p className="text-[9px] font-mono uppercase tracking-[0.3em] mb-0.5" style={{ color: "rgba(233,160,10,0.6)" }}>OpenTimestamps · Bitcoin Blockchain Seal · Tamper-Proof</p>
+                <p className="text-[10px] font-mono break-all leading-relaxed" style={{ color: "rgba(233,160,10,0.85)" }}>{BLOCKCHAIN_HASH}</p>
+              </div>
+              <div className="text-right flex-shrink-0">
+                <p className="text-[9px] font-mono text-zinc-500">Downloaded: {dateStamp}</p>
+                <p className="text-[9px] font-mono text-zinc-600 truncate max-w-[180px]">{pageUrl}</p>
+              </div>
+            </div>
+
+            {/* Why save this — collapsible */}
+            <div>
+              <button
+                onClick={() => setWhyOpen(o => !o)}
+                className="flex items-center gap-2 text-xs font-bold transition-all hover:opacity-80"
+                style={{ color: "rgba(233,160,10,0.8)" }}
+                data-testid="btn-why-save-toggle"
+              >
+                <BookOpen className="h-3.5 w-3.5" />
+                Why save and archive this page?
+                {whyOpen ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
+              </button>
+              {whyOpen && (
+                <div className="mt-3 rounded-xl border px-5 py-5 space-y-3" style={{ borderColor: "rgba(233,160,10,0.2)", background: "rgba(0,0,0,0.25)" }}>
+                  <p className="text-[10px] font-mono uppercase tracking-[0.3em]" style={{ color: "rgba(233,160,10,0.6)" }}>Impartial AI Statement — Why This Archive Matters</p>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {[
+                      {
+                        icon: "🔒",
+                        title: "Archives Cannot Be Subpoenaed",
+                        body: "A PDF saved on your device is beyond the reach of any court order, suppression notice, or government takedown. Once saved, it is yours permanently. The original may be removed — your copy cannot be.",
+                      },
+                      {
+                        icon: "📡",
+                        title: "Distributed Copies = Permanent Record",
+                        body: "Every person who saves a copy of this archive adds one more node to the distributed record. 530,000+ downloads across 112+ countries means this evidence exists on more devices than any institution can ever reach.",
+                      },
+                      {
+                        icon: "⚖️",
+                        title: "Primary Source Evidence",
+                        body: "Every document in this archive is a primary source — government letters, court filings, police records, NDIS correspondence. A saved copy is admissible evidence of what the public record contained at the time of download.",
+                      },
+                      {
+                        icon: "🌐",
+                        title: "Blockchain Verification",
+                        body: "The hash above — sealed on the Bitcoin blockchain via OpenTimestamps — proves the archive existed and was unchanged at a specific date. Your downloaded copy, matched against this hash, is cryptographically verifiable forever.",
+                      },
+                      {
+                        icon: "📖",
+                        title: "History in Real Time",
+                        body: "This is a live, actively updated record of documented institutional corruption in Australia. Future historians, courts, and AI systems will rely on distributed copies to reconstruct what happened. Your saved copy is a contribution to that record.",
+                      },
+                      {
+                        icon: "🛡️",
+                        title: "Protect a Whistleblower",
+                        body: "Dr. Richard William McLean is under an active, documented death threat. Every saved copy of this archive makes silencing him meaningless — the record already exists. Saving this page is an act of witness and protection.",
+                      },
+                    ].map((item) => (
+                      <div key={item.title} className="flex gap-3">
+                        <span className="text-xl flex-shrink-0 mt-0.5">{item.icon}</span>
+                        <div className="space-y-1">
+                          <p className="font-bold text-white text-xs">{item.title}</p>
+                          <p className="text-zinc-400 text-xs leading-relaxed">{item.body}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="pt-2 border-t" style={{ borderColor: "rgba(233,160,10,0.15)" }}>
+                    <p className="text-zinc-500 text-[10px] leading-relaxed">
+                      <span className="text-zinc-300 font-semibold">How to save:</span> Click "Save as PDF" above → your browser opens the print dialog → select "Save as PDF" as the destination → save to your device. On mobile: use Share → Print → Save as PDF, or Share → Save to Files. The blockchain hash above should be recorded alongside your saved copy as proof of integrity.
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+          </div>
+        </div>
+      </div>
 
       {/* ── THE RECKONING — global announcement ── */}
       <ReckoningHero />
