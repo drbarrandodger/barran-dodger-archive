@@ -25,9 +25,14 @@ import {
 } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { PageShareButton } from "@/components/PageShareButton";
+import { ReadingProgressBar } from "@/components/ReadingProgressBar";
+import { PullQuote } from "@/components/PullQuote";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { RelatedContent } from "@/components/RelatedContent";
+import { SiteDivider } from "@/components/SiteDivider";
+import { JournalistKit } from "@/components/JournalistKit";
 import { useState } from "react";
 
 const chapters = [
@@ -168,10 +173,13 @@ export default function AdministrativeAnnihilation() {
         description="A 25,000-word forensic analysis of 25+ Australian Government agencies' own records documenting systematic destruction over 35 years (1990-2025). Original peer-reviewed academic paper by Dr. Richard William McLean, Ph.D."
         keywords="administrative annihilation, forensic analysis, Australian government, whistleblower persecution, Rome Statute, institutional cascade, inversion method, disability discrimination, LGBTQ rights, diagnostic weaponisation"
         path="/administrative-annihilation"
+        image="https://barrandodger.com/og-admin-annihilation.png"
+        imageAlt="The Architecture of Administrative Annihilation — 25,000-word forensic analysis"
         type="article"
         articlePublishedTime="2026-03-01"
         articleAuthor="Dr. Richard William McLean"
       />
+      <ReadingProgressBar />
 
       <div className="min-h-screen bg-background">
         <motion.div
@@ -186,7 +194,7 @@ export default function AdministrativeAnnihilation() {
                 <FileText className="h-3.5 w-3.5 mr-2" />
                 Peer-Reviewed Academic Paper — ~25,000 Words
               </Badge>
-              <h1 className="text-3xl md:text-5xl font-serif font-bold text-foreground leading-tight" data-testid="text-essay-title">
+              <h1 className="text-3xl md:text-5xl font-serif font-bold text-foreground leading-tight max-w-3xl mx-auto" data-testid="text-essay-title">
                 The Architecture of Administrative Annihilation
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -212,12 +220,57 @@ export default function AdministrativeAnnihilation() {
                   url="https://www.barrandodger.com/administrative-annihilation"
                 />
               </div>
+              <div className="pt-2 flex justify-center">
+                <PageShareButton
+                  title="The Architecture of Administrative Annihilation — 25,000-word academic paper"
+                  url="https://www.barrandodger.com/administrative-annihilation"
+                  summary="Forensic analysis of 25+ Australian Government agencies' own records. 35-year institutional persecution. Zero defamation actions. Free to read and share."
+                  showPrint={true}
+                />
+              </div>
               <a href="#ai-analysis" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mt-4" data-testid="link-scroll-to-analysis">
                 <ArrowDown className="h-4 w-4 animate-bounce" /> Read the AI Analysis below
               </a>
             </div>
           </div>
         </motion.div>
+
+        {/* ── HERO PULL QUOTE ── */}
+        <div className="py-12 px-4" style={{ background: "#03040c" }}>
+          <div className="max-w-3xl mx-auto">
+            <figure className="relative">
+              <span className="absolute -top-6 -left-2 text-7xl font-serif leading-none select-none" style={{ color: "rgba(233,160,10,0.15)" }}>"</span>
+              <blockquote className="text-center px-4 py-6">
+                <p className="font-serif text-xl md:text-2xl text-white leading-relaxed italic">
+                  "The authorized agent is now playing the delay, deny, defer game that is the government mantra."
+                </p>
+                <figcaption className="mt-4 flex flex-col items-center gap-1">
+                  <span className="h-px w-12" style={{ background: "#e9a00a", display: "block" }} />
+                  <cite className="text-xs not-italic font-semibold uppercase tracking-widest mt-2" style={{ color: "rgba(233,160,10,0.7)" }}>
+                    Government correspondence — Evidence/Undeliverable CAUTION Email.pdf, Page 4
+                  </cite>
+                </figcaption>
+              </blockquote>
+            </figure>
+            <div className="mt-6 grid sm:grid-cols-2 gap-4 text-center">
+              <div className="rounded-xl p-4 border" style={{ borderColor: "rgba(233,160,10,0.15)", background: "rgba(233,160,10,0.03)" }}>
+                <p className="text-2xl font-black mb-1" style={{ color: "#e9a00a" }}>25,000</p>
+                <p className="text-zinc-500 text-xs uppercase tracking-widest">words of forensic analysis</p>
+              </div>
+              <div className="rounded-xl p-4 border" style={{ borderColor: "rgba(220,38,38,0.15)", background: "rgba(220,38,38,0.03)" }}>
+                <p className="text-2xl font-black mb-1 text-red-400">0</p>
+                <p className="text-zinc-500 text-xs uppercase tracking-widest">factual rebuttals received in 35 years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <SiteDivider
+          src="/images/dividers/bureaucratic-labyrinth.png"
+          alt="The infinite labyrinth of Australian bureaucracy"
+          overlay="25+ agencies. 35 years. Every door closed. The archive opened them all."
+          height="h-[42vh] md:h-[55vh]"
+        />
 
         <div className="container mx-auto px-4 md:px-6 max-w-4xl pb-24">
           <TableOfContentsNav />
@@ -355,6 +408,12 @@ export default function AdministrativeAnnihilation() {
               This paper does not ask the reader to trust the author. It asks the reader to trust the government's own documents — and to follow where those documents lead.
             </p>
           </div>
+
+          <PullQuote
+            quote="The government's own records simultaneously prove and deny the same facts about the same person. They confirm employment while denying employment. They acknowledge disability while refusing disability support. They promise whistleblower protection while punishing the whistleblower."
+            source="Chapter 1.1 — The Architecture of Administrative Annihilation (2026)"
+            accent="gold"
+          />
 
           <SectionHeading number="1.2" title="The Research Problem" />
           <div className="space-y-4 text-body-text leading-relaxed">
@@ -567,6 +626,12 @@ export default function AdministrativeAnnihilation() {
 
           {/* CHAPTER 5 */}
           <ChapterHeading id="ch5" number={5} title="The Identity Theft Paradox — ASIC Records vs. ASIC Inaction" icon={Lock} subtitle="Addresses RQ2, RQ5" />
+
+          <PullQuote
+            quote="The ATO cancelled the subject's legitimate ABN while ASIC's own public database simultaneously contained 350+ fraudulent registrations using his legal names, creative identities, and professional credentials. Ten oversight bodies were notified. Not one investigated."
+            source="Chapter 5 — The Identity Theft Paradox: Administrative Annihilation (2026)"
+            accent="gold"
+          />
 
           <SectionHeading number="5.1" title="ASIC's Own Database: The Evidence" />
           <div className="space-y-4 text-body-text leading-relaxed">
@@ -790,6 +855,12 @@ export default function AdministrativeAnnihilation() {
             <p>This pattern precisely mirrors the political psychiatry documented by Van Voren (2010) in the Soviet Union, where dissidents were diagnosed with "sluggish schizophrenia" — a condition whose primary symptom was the belief that the state was engaged in misconduct.</p>
           </div>
 
+          <PullQuote
+            quote="The subject was forcibly medicated under Community Treatment Orders for 'persecutory delusions about government misconduct' — while the government's own records, compiled by those same institutions, independently corroborate every alleged delusion as documented fact. The clinical record and the evidentiary record cannot both be correct."
+            source="Chapter 8 — The Psychiatric Paradox: Administrative Annihilation (2026)"
+            accent="gold"
+          />
+
           <SectionHeading number="8.5" title="The Victorian Ombudsman's Acknowledgement" />
           <div className="space-y-4 text-body-text leading-relaxed">
             <p>The Victorian Ombudsman's own investigation officer, Ben Calder, acknowledged the hospital's failures:</p>
@@ -926,6 +997,12 @@ export default function AdministrativeAnnihilation() {
 
           {/* CHAPTER 13 */}
           <ChapterHeading id="ch13" number={13} title="International Law Application — From Administrative Harm to Persecution" icon={Gavel} subtitle="Addresses RQ1–RQ5 Synthesis" />
+
+          <PullQuote
+            quote="When every fundamental right protected by international law — the right to work, identity, disability support, whistleblower protection, freedom from psychiatric abuse, freedom of movement, access to information, adequate living standard, and effective remedy — is denied by the same state across 35 years, Article 7 of the Rome Statute is not a distant abstraction. It is the most precise description of what the documented record shows."
+            source="Chapter 13 — International Law Application: Administrative Annihilation (2026)"
+            accent="gold"
+          />
 
           <SectionHeading number="13.1" title="Rome Statute Article 7(1)(h): The Elements of Persecution" />
           <BlockQuote>
@@ -1226,6 +1303,10 @@ export default function AdministrativeAnnihilation() {
 
       <ArchiveCrossLinks />
       <RelatedContent currentPath="/administrative-annihilation" />
+
+      <div className="max-w-4xl mx-auto px-4">
+        <JournalistKit />
+      </div>
 
       <FloatingCTA />
     </>
