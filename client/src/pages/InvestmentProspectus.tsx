@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Copy, Check, ExternalLink, Download, TrendingUp, Scale, BookOpen, Globe, Shield, Zap } from "lucide-react";
+import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { useToast } from "@/hooks/use-toast";
 
 const BLOCKCHAIN_SEAL = {
@@ -1323,6 +1324,12 @@ export default function InvestmentProspectus() {
         </section>
 
       </div>
+
+      <InlineShareStrip
+        path="/investment-prospectus"
+        message="💰 The $112M legal claim — AI-verified, accruing $5,890/day. Share the prospectus with anyone who values documented evidence."
+        id="investment-prospectus-main"
+      />
 
       <Footer />
     </div>
