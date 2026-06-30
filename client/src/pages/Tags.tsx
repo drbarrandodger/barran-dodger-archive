@@ -25,9 +25,9 @@ export function Tags() {
           </Link>
 
           <header className="mb-10 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700/50">
-              <Tag className="h-3.5 w-3.5 text-amber-700 dark:text-amber-400" />
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950 dark:bg-orange-500/10 border border-orange-500 dark:border-orange-500/25">
+              <Tag className="h-3.5 w-3.5 text-orange-600 dark:text-orange-400" />
+              <span className="text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">
                 Tag
               </span>
             </div>
@@ -55,16 +55,16 @@ export function Tags() {
                 <li key={page.path}>
                   <Link
                     href={page.path}
-                    className="group flex items-center justify-between gap-4 p-4 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-amber-400 dark:hover:border-amber-600 hover:bg-amber-50/40 dark:hover:bg-amber-950/20 transition-colors"
+                    className="group flex items-center justify-between gap-4 p-4 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-orange-500 dark:hover:border-orange-500 hover:bg-orange-950/40 dark:hover:bg-orange-500/10 transition-colors"
                     data-testid={`link-tag-page-${page.path.replace(/\//g, "")}`}
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <FileText className="h-4 w-4 text-amber-700 dark:text-amber-400 shrink-0" />
+                      <FileText className="h-4 w-4 text-orange-600 dark:text-orange-400 shrink-0" />
                       <span className="font-semibold text-zinc-900 dark:text-zinc-100 truncate">
                         {page.title}
                       </span>
                     </div>
-                    <ArrowRight className="h-4 w-4 text-zinc-400 group-hover:text-amber-700 dark:group-hover:text-amber-400 shrink-0" />
+                    <ArrowRight className="h-4 w-4 text-zinc-400 group-hover:text-orange-600 dark:group-hover:text-orange-400 shrink-0" />
                   </Link>
                 </li>
               ))}
@@ -82,9 +82,9 @@ export function Tags() {
       <Navigation />
       <main className="container mx-auto px-4 py-12 max-w-5xl">
         <header className="mb-10 space-y-3 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700/50">
-            <Tag className="h-3.5 w-3.5 text-amber-700 dark:text-amber-400" />
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950 dark:bg-orange-500/10 border border-orange-500 dark:border-orange-500/25">
+            <Tag className="h-3.5 w-3.5 text-orange-600 dark:text-orange-400" />
+            <span className="text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">
               Browse by Topic
             </span>
           </div>
@@ -110,14 +110,14 @@ export function Tags() {
             <li key={tag.slug}>
               <Link
                 href={`/tags/${tag.slug}`}
-                className="group block h-full p-5 rounded-xl border-2 border-zinc-200 dark:border-zinc-800 hover:border-amber-400 dark:hover:border-amber-600 hover:bg-amber-50/40 dark:hover:bg-amber-950/20 transition-colors"
+                className="group block h-full p-5 rounded-xl border-2 border-zinc-200 dark:border-zinc-800 hover:border-orange-500 dark:hover:border-orange-500 hover:bg-orange-950/40 dark:hover:bg-orange-500/10 transition-colors"
                 data-testid={`link-tag-${tag.slug}`}
               >
                 <div className="flex items-start justify-between gap-3 mb-2">
-                  <h2 className="text-xl font-serif font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-amber-700 dark:group-hover:text-amber-400">
+                  <h2 className="text-xl font-serif font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-orange-600 dark:group-hover:text-orange-400">
                     {tag.label}
                   </h2>
-                  <span className="text-[10px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/40 px-2 py-0.5 rounded shrink-0">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-orange-600 dark:text-orange-400 bg-orange-950 dark:bg-orange-500/10 px-2 py-0.5 rounded shrink-0">
                     {tag.pages.length} pages
                   </span>
                 </div>
