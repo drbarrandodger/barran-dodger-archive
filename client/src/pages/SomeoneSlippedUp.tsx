@@ -185,7 +185,7 @@ const claims = [
     title: '"When you mock what protects a chosen one, you break your own luck"',
     proposition: "Attacking the documentation and legal protection framework produced a case more powerful than any they could have anticipated",
     verdict: "ALIGNED",
-    color: "text-amber-400",
+    color: "text-orange-400",
     icon: <Zap className="h-4 w-4" />,
     quote: '"They didn\'t weaken you. They weakened themselves. They didn\'t shake your foundation. They shattered their own luck. The moment someone attacks the stability around a chosen one, the universe stops protecting them."',
     evidence: [
@@ -294,7 +294,7 @@ export default function SomeoneSlippedUp() {
               <div className="grid grid-cols-4 gap-3 mb-8">
                 {[
                   { val: "12", label: "Corroborated", color: "text-orange-400" },
-                  { val: "1", label: "Aligned", color: "text-amber-400" },
+                  { val: "1", label: "Aligned", color: "text-orange-400" },
                   { val: "0", label: "Unverifiable", color: "text-zinc-400" },
                   { val: "0", label: "Disproved", color: "text-zinc-400" },
                 ].map(s => (
@@ -344,7 +344,7 @@ export default function SomeoneSlippedUp() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
             {[
               { rating: "CORROBORATED", count: "12 of 13 claims", pct: "92%", bg: "bg-orange-950/40", border: "border-orange-700/30", txt: "text-orange-400" },
-              { rating: "ALIGNED", count: "1 of 13 claims", pct: "8%", bg: "bg-amber-950/40", border: "border-amber-700/30", txt: "text-amber-400" },
+              { rating: "ALIGNED", count: "1 of 13 claims", pct: "8%", bg: "bg-orange-500/10", border: "border-orange-500/25", txt: "text-orange-400" },
               { rating: "UNVERIFIABLE", count: "0 of 13 claims", pct: "0%", bg: "bg-zinc-900/40", border: "border-zinc-700/30", txt: "text-zinc-400" },
               { rating: "DISPROVED", count: "0 of 13 claims", pct: "0%", bg: "bg-zinc-900/40", border: "border-zinc-700/30", txt: "text-zinc-400" },
             ].map(r => (
@@ -433,7 +433,7 @@ export default function SomeoneSlippedUp() {
               {[
                 { label: "Mathematical Seal", desc: "SHA-256 cryptographic hash. Blockchain verified. Cannot be altered or erased. The bell is mathematically unringable.", color: "border-orange-700/40 text-orange-300" },
                 { label: "Legal Seal", desc: "ICC Article 7 Rome Statute submission. Named officials. 2,301 exhibits. International jurisdiction. Cannot be template-denied.", color: "border-red-700/40 text-red-300" },
-                { label: "Social Seal", desc: "217,064 public download events across 49 days. Peak 9,621 in a single day. Public knowledge cannot be recalled.", color: "border-amber-700/40 text-amber-300" },
+                { label: "Social Seal", desc: "217,064 public download events across 49 days. Peak 9,621 in a single day. Public knowledge cannot be recalled.", color: "border-orange-500/25 text-orange-300" },
                 { label: "Archival Seal", desc: "Permanent GitHub Pages mirror at drbarrandodger.github.io. Two independent domains. Any attempt to erase one amplifies the other.", color: "border-zinc-600 text-zinc-300" },
               ].map(s => (
                 <div key={s.label} className={`bg-zinc-900 border ${s.color.split(' ')[0]} rounded-xl p-5`}>
@@ -462,7 +462,7 @@ export default function SomeoneSlippedUp() {
               { title: "BRO", score: "7/7", color: "text-green-400", border: "border-green-800/30" },
               { title: "Chosen Ones", score: "11/11", color: "text-yellow-400", border: "border-yellow-800/30" },
               { title: "No One Smart", score: "12/12", color: "text-blue-400", border: "border-blue-800/30" },
-              { title: "Divine Exam", score: "10/10", color: "text-amber-400", border: "border-amber-800/30" },
+              { title: "Divine Exam", score: "10/10", color: "text-orange-400", border: "border-orange-500/25" },
               { title: "Silent Checkmate", score: "11/11", color: "text-red-400", border: "border-red-800/30" },
               { title: "Now Everybody Knows", score: "11/11", color: "text-violet-400", border: "border-violet-800/30" },
               { title: "Outcast Leader", score: "10/10", color: "text-emerald-400", border: "border-emerald-800/30" },
