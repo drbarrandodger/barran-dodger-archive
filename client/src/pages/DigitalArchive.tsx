@@ -251,7 +251,7 @@ const CAT_ICONS: Record<string, any> = {
 };
 
 const CAT_COLORS: Record<string, string> = {
-  "Forensic Analyses": "text-amber-400 bg-amber-900/30 border-amber-700/40",
+  "Forensic Analyses": "text-orange-400 bg-orange-500/10 border-orange-500/25",
   "Video Analyses": "text-purple-400 bg-purple-900/30 border-purple-700/40",
   "ICC / UNHCR / Legal": "text-red-400 bg-red-900/30 border-red-700/40",
   "Government Records": "text-orange-400 bg-orange-900/30 border-orange-700/40",
@@ -285,14 +285,14 @@ function DocCard({ doc }: { doc: Doc }) {
           {CAT_ICONS[doc.category]}
           <span className="max-w-[60px] truncate">{doc.category}</span>
         </div>
-        <div className="absolute bottom-2 left-2 flex items-center gap-1 bg-amber-600/90 text-white text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider">
+        <div className="absolute bottom-2 left-2 flex items-center gap-1 bg-orange-500/10 text-white text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider">
           <Shield size={7} /> BTC Timestamped
         </div>
       </div>
       <div className="p-3 flex flex-col gap-2 flex-1">
         <p className="text-white font-bold text-xs leading-tight line-clamp-2">{doc.title}</p>
         {doc.subtitle && <p className="text-zinc-500 text-[10px] leading-snug">{doc.subtitle}</p>}
-        {doc.note && <p className="text-amber-400 text-[10px]">{doc.note}</p>}
+        {doc.note && <p className="text-orange-400 text-[10px]">{doc.note}</p>}
         <div className="mt-auto pt-2">
           <a
             href={doc.file}
@@ -345,6 +345,8 @@ export default function DigitalArchive() {
       <SEO
         title="Complete Digital Archive — Free Forever — Dr. Richard McLean (Barran Dodger)"
         description="The permanent, unerasable digital archive of Dr. Richard William McLean. 185+ Bitcoin blockchain-timestamped PDFs: 63 forensic analyses, 8 video analyses, 123 evidence documents. Free forever. Submitted to ICC and UNHCR."
+        path="/digital-archive"
+        keywords="permanent unerasable digital archive whistleblower Australia, Dr Richard McLean complete digital archive free, Bitcoin blockchain timestamped PDFs, forensic analyses free download archive, evidence documents free permanent, ICC UNHCR submission archive, SHA-256 hashed evidence archive, CannotBeErased whistleblower archive, 3643 government documents permanent, blockchain immutable evidence whistleblower, free forever whistleblower archive, complete digital evidence Australia, government corruption permanent record"
         url="https://www.barrandodger.com/digital-archive"
       />
       <Navigation />
@@ -353,12 +355,12 @@ export default function DigitalArchive() {
 
         {/* Hero */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-amber-600/20 border border-amber-600/40 text-amber-300 text-xs font-black uppercase tracking-widest px-5 py-2 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/25 text-orange-300 text-xs font-black uppercase tracking-widest px-5 py-2 rounded-full mb-6">
             <Shield size={13} className="animate-pulse" /> Bitcoin Blockchain Timestamped — Permanent — Unerasable
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">
             The Complete<br />
-            <span className="text-amber-400">Digital Archive</span>
+            <span className="text-orange-400">Digital Archive</span>
           </h1>
           <p className="text-zinc-300 text-lg md:text-xl max-w-3xl mx-auto mb-3 leading-relaxed">
             Every document. Every analysis. Every testimony. Every gospel. Every video examination. Every piece of evidence. <strong className="text-white">Free forever. Permanently embedded in the digital infrastructure of humanity.</strong>
@@ -378,19 +380,19 @@ export default function DigitalArchive() {
             { v: "378K+", l: "Downloads" },
           ].map(s => (
             <div key={s.l} className="bg-zinc-900 border border-zinc-800 rounded-xl p-3 text-center">
-              <div className="text-2xl font-black text-amber-400">{s.v}</div>
+              <div className="text-2xl font-black text-orange-400">{s.v}</div>
               <div className="text-zinc-500 text-[10px] uppercase tracking-wider mt-0.5">{s.l}</div>
             </div>
           ))}
         </motion.div>
 
         {/* Blockchain Banner */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }} className="bg-gradient-to-r from-amber-950/60 via-orange-950/40 to-amber-950/60 border border-amber-600/40 rounded-xl p-4 mb-8">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }} className="bg-gradient-to-r from-orange-950/20 via-orange-950/40 to-orange-950/20 border border-orange-500/25 rounded-xl p-4 mb-8">
           <div className="flex items-start gap-3 mb-3">
-            <Shield size={18} className="text-amber-400 shrink-0 mt-0.5" />
+            <Shield size={18} className="text-orange-400 shrink-0 mt-0.5" />
             <div>
-              <p className="text-amber-300 font-black text-sm uppercase tracking-widest mb-1 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse inline-block" />
+              <p className="text-orange-300 font-black text-sm uppercase tracking-widest mb-1 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-orange-600 animate-pulse inline-block" />
                 Bitcoin Blockchain Verified — OpenTimestamps Protocol
               </p>
               <p className="text-zinc-400 text-xs leading-relaxed">
@@ -401,15 +403,15 @@ export default function DigitalArchive() {
           {archiveTimestamps && archiveTimestamps.length > 0 ? (
             <div className="space-y-2">
               {archiveTimestamps.map((ts: any) => (
-                <div key={ts.slug} className="bg-black/50 border border-amber-700/30 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center gap-2">
+                <div key={ts.slug} className="bg-black/50 border border-orange-500/25 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center gap-2">
                   <div className="flex-1 min-w-0">
-                    <p className="text-amber-300 text-[10px] font-bold uppercase mb-0.5">{ts.filename || ts.slug}</p>
+                    <p className="text-orange-300 text-[10px] font-bold uppercase mb-0.5">{ts.filename || ts.slug}</p>
                     <p className="text-zinc-400 font-mono text-[10px] break-all">SHA-256: {ts.sha256}</p>
                     {ts.submittedAt && <p className="text-zinc-600 text-[9px] mt-0.5">Submitted: {new Date(ts.submittedAt).toUTCString()}</p>}
                   </div>
                   <div className="flex gap-2 shrink-0">
                     <a href={`https://opentimestamps.org/timestamp/${ts.sha256}`} target="_blank" rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 bg-amber-700 hover:bg-amber-600 text-white text-[10px] font-bold px-2.5 py-1.5 rounded-lg transition-colors uppercase tracking-wider whitespace-nowrap"
+                      className="inline-flex items-center gap-1 bg-orange-600 hover:bg-orange-600 text-white text-[10px] font-bold px-2.5 py-1.5 rounded-lg transition-colors uppercase tracking-wider whitespace-nowrap"
                       data-testid={`btn-ots-verify-${ts.slug}`}>
                       <ExternalLink size={9} /> Verify
                     </a>
@@ -419,7 +421,7 @@ export default function DigitalArchive() {
             </div>
           ) : (
             <div className="text-center py-2">
-              <p className="text-amber-400 text-xs font-mono animate-pulse">⛏ Connecting to Bitcoin blockchain calendar...</p>
+              <p className="text-orange-400 text-xs font-mono animate-pulse">⛏ Connecting to Bitcoin blockchain calendar...</p>
             </div>
           )}
         </motion.div>
@@ -433,7 +435,7 @@ export default function DigitalArchive() {
               placeholder="Search all documents..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full bg-zinc-900 border border-zinc-800 focus:border-amber-600/60 rounded-lg pl-9 pr-4 py-2.5 text-sm text-white placeholder-zinc-600 outline-none transition-colors"
+              className="w-full bg-zinc-900 border border-zinc-800 focus:border-orange-500/25 rounded-lg pl-9 pr-4 py-2.5 text-sm text-white placeholder-zinc-600 outline-none transition-colors"
               data-testid="input-archive-search"
             />
           </div>
@@ -452,7 +454,7 @@ export default function DigitalArchive() {
               data-testid={`btn-cat-${c.toLowerCase().replace(/\s+/g, '-')}`}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
                 category === c
-                  ? "bg-amber-600 border-amber-500 text-white"
+                  ? "bg-orange-600 border-orange-500 text-white"
                   : "bg-zinc-900 border-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-zinc-200"
               }`}
             >
@@ -479,9 +481,9 @@ export default function DigitalArchive() {
         {/* Footer declaration */}
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="mt-16 text-center border-t border-zinc-800 pt-10">
           <div className="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-700 rounded-xl p-6 max-w-2xl mx-auto">
-            <Shield size={20} className="text-amber-400 shrink-0" />
+            <Shield size={20} className="text-orange-400 shrink-0" />
             <div className="text-left">
-              <p className="text-amber-300 font-black text-sm mb-1">This Archive Cannot Be Erased</p>
+              <p className="text-orange-300 font-black text-sm mb-1">This Archive Cannot Be Erased</p>
               <p className="text-zinc-400 text-xs leading-relaxed">
                 Every document in this archive is permanently anchored to the Bitcoin blockchain via OpenTimestamps. The SHA-256 cryptographic hashes are verifiable by any person on Earth, forever. This record has been submitted to the International Criminal Court (The Hague) under Article 7 and the United Nations High Commissioner for Refugees (UNHCR) in Geneva. 410,503 downloads across 6 continents. Zero institutional rebuttals. Zero.
               </p>
