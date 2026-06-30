@@ -6,6 +6,7 @@ import { InlineShareStrip } from "@/components/FloatingShareBar";
 import { CommentSection } from "@/components/CommentSection";
 import { EssayCrossLinks } from "@/components/EssayCrossLinks";
 import { RelatedContent } from "@/components/RelatedContent";
+import { BrutalAssessment } from "@/components/BrutalAssessment";
 import { Link } from "wouter";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
 import { trackDownload, DownloadBadge } from "@/components/DownloadCounter";
@@ -239,7 +240,7 @@ export default function TaxpayerCostAnalysis() {
         path="/taxpayer-cost-analysis"
       />
       <Navigation />
-      
+      <BrutalAssessment isFirst={true} />
       <section className="bg-black pb-12 md:pb-16 px-4" style={{ paddingTop: "calc(var(--banner-height, 40px) + var(--nav-height, 64px) + 16px)" }}>
         <div className="container mx-auto max-w-5xl">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="text-center space-y-6">
