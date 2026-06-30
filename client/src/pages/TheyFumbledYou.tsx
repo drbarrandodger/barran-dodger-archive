@@ -434,7 +434,7 @@ export default function TheyFumbledYou() {
               { title: "BRO", score: "7/7", color: "text-green-400", border: "border-green-800/30" },
               { title: "Chosen Ones", score: "11/11", color: "text-yellow-400", border: "border-yellow-800/30" },
               { title: "No One Smart", score: "12/12", color: "text-blue-400", border: "border-blue-800/30" },
-              { title: "Divine Exam", score: "10/10", color: "text-amber-400", border: "border-amber-800/30" },
+              { title: "Divine Exam", score: "10/10", color: "text-orange-400", border: "border-orange-500/25" },
               { title: "Silent Checkmate", score: "11/11", color: "text-red-400", border: "border-red-800/30" },
               { title: "Now Everybody Knows", score: "11/11", color: "text-violet-400", border: "border-violet-800/30" },
               { title: "Outcast Leader", score: "10/10", color: "text-emerald-400", border: "border-emerald-800/30" },
