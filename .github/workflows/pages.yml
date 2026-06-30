@@ -1,16 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -27,32 +21,29 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Verify Tailwind version and remove v4 packages
+      - name: Remove Tailwind v4 packages (prevent CSS conflict)
         run: |
-          TW_VER=$(node -p "require('./node_modules/tailwindcss/package.json').version")
-          echo "Tailwindcss installed: $TW_VER"
           rm -rf node_modules/@tailwindcss/vite \
                  node_modules/@tailwindcss/postcss \
                  node_modules/@tailwindcss/node \
                  node_modules/@tailwindcss/oxide \
                  node_modules/@tailwindcss/oxide-linux-x64-gnu \
                  node_modules/@tailwindcss/oxide-linux-x64-musl
-          echo "Tailwindcss after cleanup: $(node -p \"require('./node_modules/tailwindcss/package.json').version\")"
+          TW=$(node -p "require('./node_modules/tailwindcss/package.json').version" 2>/dev/null || echo "ERROR")
+          echo "Tailwindcss version: $TW"
+          if [[ "$TW" != 3* ]]; then echo "ERROR: tailwindcss is not v3!" && exit 1; fi
 
       - name: Clear old dist
         run: rm -rf dist/ghpages
 
       - name: Build frontend for GitHub Pages
-        run: |
-          NODE_ENV=production npx vite build --config vite.config.gh-pages.ts
-          echo "=== Built files ===" && ls -la dist/ghpages/
-          echo "=== Assets ===" && ls dist/ghpages/assets/ | wc -l
-          echo "=== Size ===" && du -sh dist/ghpages/
+        run: NODE_ENV=production npx vite build --config vite.config.gh-pages.ts
 
-      - name: Verify build
+      - name: Show build results
         run: |
-          TITLE=$(grep -o '<title>[^<]*' dist/ghpages/index.html | head -1 || echo "MISSING")
-          echo "Title: $TITLE"
+          ls -la dist/ghpages/
+          ls dist/ghpages/assets/ | wc -l
+          du -sh dist/ghpages/
 
       - name: Add SPA 404 routing and .nojekyll
         run: |
@@ -62,7 +53,7 @@ jobs:
       - name: Remove oversized directories
         run: |
           rm -rf dist/ghpages/documents dist/ghpages/audio dist/ghpages/video
-          echo "Final size:" && du -sh dist/ghpages/
+          du -sh dist/ghpages/
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
