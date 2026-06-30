@@ -23,54 +23,47 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install dependencies (fresh, no cache)
         run: npm ci
 
       - name: Clear old dist (prevent stale artifacts)
-        run: rm -rf dist && mkdir -p dist/public
+        run: rm -rf dist/ghpages
 
       - name: Build frontend for GitHub Pages
         run: |
           NODE_ENV=production npx vite build \
-            --config vite.config.gh-pages.ts \
-            --outDir dist/public \
-            --emptyOutDir
+            --config vite.config.gh-pages.ts
           echo "=== Built files ==="
-          ls -la dist/public/
-          ls -la dist/public/assets/ | head -20
-          du -sh dist/public/
+          ls -la dist/ghpages/
+          ls dist/ghpages/assets/ | wc -l
+          du -sh dist/ghpages/
 
-      - name: Verify build output
+      - name: Verify build has correct title
         run: |
-          if [ ! -f dist/public/index.html ]; then
-            echo "ERROR: index.html not found in dist/public/"
-            exit 1
-          fi
-          TITLE=$(grep -o '<title>[^<]*' dist/public/index.html | head -1)
+          TITLE=$(grep -o '<title>[^<]*' dist/ghpages/index.html | head -1 || echo "MISSING")
           echo "Title: $TITLE"
-          if echo "$TITLE" | grep -qi "portal"; then
-            echo "ERROR: index.html still has old portal title!"
+          if echo "$TITLE" | grep -qi "portal\|MISSING"; then
+            echo "ERROR: index.html still has wrong title!"
             exit 1
           fi
           echo "Build verified OK"
 
       - name: Add SPA 404 routing + .nojekyll
         run: |
-          cp dist/public/index.html dist/public/404.html
-          touch dist/public/.nojekyll
+          cp dist/ghpages/index.html dist/ghpages/404.html
+          touch dist/ghpages/.nojekyll
 
-      - name: Remove directories too large for GitHub Pages
+      - name: Remove directories too large for GitHub Pages (>100MB)
         run: |
-          rm -rf dist/public/documents dist/public/evidence dist/public/audio dist/public/video
-          echo "=== Final size ===" && du -sh dist/public/
+          rm -rf dist/ghpages/documents dist/ghpages/audio dist/ghpages/video
+          echo "=== Final size ===" && du -sh dist/ghpages/
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/public
+          publish_dir: ./dist/ghpages
           force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
