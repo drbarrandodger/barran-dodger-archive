@@ -2,3 +2,7 @@
 - [Undeniable Facts Page Pattern](undeniable-facts-pattern.md) — rules for adding facts to /undeniable; 4 files must always be updated together
 - [Church of Barran page](church-of-barran-page.md) — Foundation charter at /church-of-barran-resonance-dodger; content data file + page renderer pattern
 - [OG image filenames](og-images.md) — Page-specific OG images exist for admin-annihilation, retrospective, evidence, verdict, publications; SEO image prop needs absolute URL (https://barrandodger.com/...)
+- [Pull quote components](pull-quotes.md) — AdministrativeAnnihilation uses `<PullQuote quote="..." source="..." accent="gold" />`; RetrospectiveStatement uses inline blockquote JSX; both patterns already established in those files
+- [Subscriber token system](subscriber-tokens.md) — custom HMAC tokens (NOT JWT); use isValidDownloadToken() + parse base64url payload for email (field "em"); issued by issueSubscriberToken(); stored in localStorage as bd_sub_token_v1
+- [Membership system](membership-system.md) — /membership (Stripe tiers), /members (portal); ntfy.sh push notifications on signup (topic: barrandodger-members-2026); admin at /api/admin/subscribers (x-admin-token: last 16 chars of STRIPE_SECRET_KEY)
+- [GitHub Pages mirror deploy](ghpages-deploy.md) — gh-pages branch at drbarrandodger/barran-dodger-archive; must pre-build locally and push via Git Data API; GitHub Actions build broken (Replit plugins + npm cache issues)
