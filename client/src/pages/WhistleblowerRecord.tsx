@@ -99,6 +99,8 @@ export default function WhistleblowerRecord() {
       <SEO
         title="Whistleblower Record — Barran Dodger Archive"
         description="The complete formal whistleblower record of Dr. Richard McLean — documented systemic misconduct, forensic evidence, and corroborated records."
+        path="/whistleblower-record"
+        keywords="formal whistleblower record Dr Richard McLean, documented systemic misconduct Australia, official whistleblower declaration, Public Interest Disclosure PID Act 2013 record, Federal Court whistleblower confirmation, Commonwealth Ombudsman complaint record, APRA whistleblower submission, OAIC complaint record, most formal whistleblower record Australian history, corroborated whistleblower evidence, 623 propositions formal record, zero defamation formal whistleblower, whistleblower legal status Australia confirmed, institutional misconduct documented record"
       />
       <Navigation />
 
