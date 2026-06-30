@@ -51,9 +51,9 @@ const claims = [
     evidence: [
       { label: "barrandodger.com — Surgical Exposure Aimed at the Hidden Architecture, Not the Posed Surface", text: "The archive's public distribution architecture exposes without accusing: barrandodger.com does not state that Bill Shorten is corrupt — it documents parliamentary access patterns. It does not state that Stefan Iasonidis was deployed as an operative — it presents the ATO Evidence Letter, the ASIC Report, the Statutory Declaration, the PM letter, and lets the evidence name the mechanism. It does not accuse the 25+ agencies of coordination — it documents all 25+ template denial letters and lets the pattern name itself. Surgical exposure aimed at what hides beneath the pose. No finger lifted. The documents speak.", source: "barrandodger.com — Primary Source Documentation / Aimed at Hidden Architecture / Accusation-Free Exposure" },
       { label: "Five Named Parties — Zero Rebuttals — Surgical Precision Confirmed by Non-Engagement", text: "Bill Shorten, Houd Meraby, Sukhi Tear, Tony Ridley, Stefan Iasonidis — five named parties, zero formal rebuttals to 2,304 blockchain-verified documents. The surgical precision is confirmed by the non-engagement: the exposure is aimed so precisely at where they hide that engaging with it would require confirming what it documents. The posed surface (parliamentary authority, clinical credibility, NDIS administration, institutional procedure, intelligence deniability) cannot defend itself against primary source evidence aimed at the mechanism underneath. Zero rebuttals is the forensic confirmation that the aim was accurate.", source: "Five Named Parties Zero Rebuttal / Surgical Precision Confirmed by Non-Engagement with Primary Source" },
-      { label: "350,000+ Downloads — The Whisper That Became Global Distribution", text: "The video describes 'the rumour they whisper about in low tones. Be careful what you say around them. They know things.' The archive's 350,000+ downloads across six continents is the documented scale of that whisper: a reputation built without press conferences, without political campaigning, without institutional allies — distributed globally through the precision of primary source documentation that required no amplification to reach six continents. The whisper became global because surgical exposure aimed at hidden architecture travels faster than posed defence.", source: "350,000+ Downloads / Six Continents / Whisper Becoming Global Without Press Conference or Political Campaign" },
+      { label: "491,000+ Downloads — The Whisper That Became Global Distribution", text: "The video describes 'the rumour they whisper about in low tones. Be careful what you say around them. They know things.' The archive's 491,000+ downloads across six continents is the documented scale of that whisper: a reputation built without press conferences, without political campaigning, without institutional allies — distributed globally through the precision of primary source documentation that required no amplification to reach six continents. The whisper became global because surgical exposure aimed at hidden architecture travels faster than posed defence.", source: "491,000+ Downloads / Six Continents / Whisper Becoming Global Without Press Conference or Political Campaign" },
     ],
-    alignment: "The video states surgical exposure aimed at where they hide rather than where they pose — one sentence unravelling a reputation without lifting a finger. The archive documents surgical exposure: barrandodger.com aimed at hidden coordination mechanisms rather than posed surfaces; five named parties' zero rebuttals confirming the precision of the aim (engagement would require confirming what the evidence documents); and 350,000+ downloads across six continents demonstrating that primary source exposure aimed at what hides travels globally without amplification. No finger lifted. The documents are the sentence.",
+    alignment: "The video states surgical exposure aimed at where they hide rather than where they pose — one sentence unravelling a reputation without lifting a finger. The archive documents surgical exposure: barrandodger.com aimed at hidden coordination mechanisms rather than posed surfaces; five named parties' zero rebuttals confirming the precision of the aim (engagement would require confirming what the evidence documents); and 491,000+ downloads across six continents demonstrating that primary source exposure aimed at what hides travels globally without amplification. No finger lifted. The documents are the sentence.",
   },
   {
     num: "4",
@@ -142,9 +142,9 @@ const claims = [
     evidence: [
       { label: "ICC Article 7 and UNHCR — Awakening Australian Institutional Accountability, Not Destroying It", text: "The ICC submission is the awakening mechanism: it does not seek the named parties' imprisonment (though Article 7 establishes the legal foundation for accountability). It creates the permanent primary source record against which Australian institutional accountability for systematic persecution must eventually measure itself. The ICC is not a punishment mechanism — it is an awakening mechanism. The international criminal framework receiving the 2,304-document archive awakens the possibility that Australian institutions will be held to international standards of accountability. The foresight built from 35 years of remembered patterns is the ICC submission.", source: "ICC Article 7 Formal Receipt / UNHCR Geneva / Awakening Australian Institutional Accountability at International Level" },
       { label: "'I Didn't Know. I Remembered.' — The Archive as Memory Sharpened into Foresight", text: "The video's final statement — 'I was never guessing. I was remembering patterns they thought were invisible' — is the forensic description of the archive's methodology. Each of the 2,304 primary source documents is a memory: a dated, blockchain-verified primary source record of an event, a mechanism, a pattern. The archive as a whole is the memory sharpened into foresight: the ICC submission predicted, from the aggregate of documented patterns, that the international criminal framework would find the Article 7 threshold met. The prediction was confirmed by formal receipt. Memory sharpened into foresight. The Hague was the foreseen destination.", source: "2,304 Memory Documents / ICC Submission as Foresight / Archive as Pattern-Memory Producing Accurate Prediction" },
-      { label: "350,000+ Downloads — The Awakening Distributed to Six Continents", text: "The 350,000+ downloads across six continents is the documented awakening: the primary source record that makes Australian institutional corruption visible to a global audience creates the conditions for international scrutiny that domestic institutional containment cannot prevent. The awakening is not Dr. McLean's private justice. It is the global distribution of a primary source record that allows 350,000 people to see what the frameworks were constructed to prevent them from seeing. The patterns glow like veins under a black light across six continents. The awakening is in progress at global scale.", source: "350,000+ Downloads / Six Continents / Global Awakening Distribution / Patterns Visible to International Audience" },
+      { label: "491,000+ Downloads — The Awakening Distributed to Six Continents", text: "The 491,000+ downloads across six continents is the documented awakening: the primary source record that makes Australian institutional corruption visible to a global audience creates the conditions for international scrutiny that domestic institutional containment cannot prevent. The awakening is not Dr. McLean's private justice. It is the global distribution of a primary source record that allows 491,000+ people to see what the frameworks were constructed to prevent them from seeing. The patterns glow like veins under a black light across six continents. The awakening is in progress at global scale.", source: "491,000+ Downloads / Six Continents / Global Awakening Distribution / Patterns Visible to International Audience" },
     ],
-    alignment: "The video states the observer was never here to expose but to awaken — vision as memory sharpened into foresight. The archive documents the awakening mechanism: ICC Article 7 and UNHCR formal receipt (awakening Australian institutional accountability at international criminal and refugee law level); the archive as memory sharpened into foresight (2,304 dated primary source records producing the ICC-predicted outcome); and 350,000+ downloads distributing the awakening to six continents (patterns made visible to a global audience that domestic containment cannot reach). The patterns glow like veins under a black light. 350,000 people are reading them. The Hague received the memory that foresight produced.",
+    alignment: "The video states the observer was never here to expose but to awaken — vision as memory sharpened into foresight. The archive documents the awakening mechanism: ICC Article 7 and UNHCR formal receipt (awakening Australian institutional accountability at international criminal and refugee law level); the archive as memory sharpened into foresight (2,304 dated primary source records producing the ICC-predicted outcome); and 491,000+ downloads distributing the awakening to six continents (patterns made visible to a global audience that domestic containment cannot reach). The patterns glow like veins under a black light. 491,000+ people are reading them. The Hague received the memory that foresight produced.",
   },
 ];
 
@@ -189,7 +189,7 @@ export default function PerceptionIsProtection() {
       {
         roman: "V",
         title: "I Didn't Know. I Remembered.",
-        body: `The video's final statement is the most accurate description of the archive's epistemological method: "I was never guessing. I was remembering patterns they thought were invisible." The 2,304 primary source documents are memory — each one a dated, blockchain-verified record of a pattern-instance. The ICC submission is the memory sharpened into foresight: the aggregate of remembered pattern-instances producing the prediction that the international criminal framework would find the Article 7 threshold met. The prediction was confirmed by formal receipt. The Hague was the foreseen destination. 350,000 people across six continents are now reading the memory. The patterns glow like veins under a black light across six continents. The awakening is distributed. IChooseSilence is not the end. It is the stillness in which the awakening completes itself without further intervention from me. The archive is the memory. The Hague received it. The world is reading it. The patterns are no longer invisible.`
+        body: `The video's final statement is the most accurate description of the archive's epistemological method: "I was never guessing. I was remembering patterns they thought were invisible." The 2,304 primary source documents are memory — each one a dated, blockchain-verified record of a pattern-instance. The ICC submission is the memory sharpened into foresight: the aggregate of remembered pattern-instances producing the prediction that the international criminal framework would find the Article 7 threshold met. The prediction was confirmed by formal receipt. The Hague was the foreseen destination. 491,000+ people across six continents are now reading the memory. The patterns glow like veins under a black light across six continents. The awakening is distributed. IChooseSilence is not the end. It is the stillness in which the awakening completes itself without further intervention from me. The archive is the memory. The Hague received it. The world is reading it. The patterns are no longer invisible.`
       }
     ]
   };
@@ -209,7 +209,7 @@ export default function PerceptionIsProtection() {
 
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Analysis #{ANALYSIS_NUMBER}</span>
+              <span className="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Analysis #{ANALYSIS_NUMBER}</span>
               <span className="text-zinc-500 text-sm">{ANALYSIS_DATE}</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
@@ -220,7 +220,7 @@ export default function PerceptionIsProtection() {
             </p>
             <div className="flex items-center justify-center gap-4 mt-6 flex-wrap">
               <Badge className="bg-emerald-900 text-emerald-300 text-sm px-4 py-2">{corroborated}/{total} Propositions Corroborated</Badge>
-              <Badge className="bg-amber-900 text-amber-300 text-sm px-4 py-2">All {ANALYSIS_NUMBER} Analyses</Badge>
+              <Badge className="bg-orange-600 text-orange-300 text-sm px-4 py-2">All {ANALYSIS_NUMBER} Analyses</Badge>
               <Badge className="bg-zinc-800 text-zinc-300 text-sm px-4 py-2">Combined: 418/418</Badge>
               <Badge className="bg-blue-900 text-blue-300 text-sm px-4 py-2">33 Consecutive Perfect Scores</Badge>
             </div>
@@ -228,7 +228,7 @@ export default function PerceptionIsProtection() {
 
           <div className="bg-zinc-900 border border-zinc-700 rounded-xl p-6 mb-10">
             <div className="flex items-start gap-3">
-              <Brain className="text-amber-400 mt-1 flex-shrink-0" size={22} />
+              <Brain className="text-orange-400 mt-1 flex-shrink-0" size={22} />
               <div>
                 <h2 className="text-white font-bold text-lg mb-2">Critical Examination — The Forensic Perception Framework</h2>
                 <p className="text-zinc-300 text-sm leading-relaxed">
@@ -241,7 +241,7 @@ export default function PerceptionIsProtection() {
           <div className="bg-zinc-950 border border-zinc-700 rounded-xl overflow-hidden mb-10">
             <div className="bg-zinc-900 border-b border-zinc-700 px-8 py-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-1 h-8 bg-amber-500 rounded-full flex-shrink-0" />
+                <div className="w-1 h-8 bg-orange-600 rounded-full flex-shrink-0" />
                 <h2 className="text-xl font-black text-white uppercase tracking-wide">Forensic Reflection Report</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
@@ -252,7 +252,7 @@ export default function PerceptionIsProtection() {
                 <div><span className="text-zinc-500 font-mono">FILED</span> <span className="text-white ml-2">ICC Article 7 · UNHCR Geneva</span></div>
                 <div className="flex items-center gap-2">
                   <span className="text-zinc-500 font-mono">VIDEO</span>
-                  <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline ml-2 text-xs break-all" data-testid="link-report-video">
+                  <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline ml-2 text-xs break-all" data-testid="link-report-video">
                     https://youtu.be/{VIDEO_ID}
                   </a>
                 </div>
@@ -261,23 +261,23 @@ export default function PerceptionIsProtection() {
             <div className="px-8 py-8 space-y-8">
               {reflection.sections.map((sec, i) => (
                 <div key={i} className={i > 0 ? "border-t border-zinc-800 pt-8" : ""}>
-                  <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
-                    <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">{sec.roman}</span>
+                  <h3 className="text-orange-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                    <span className="bg-orange-600 text-black text-xs font-black px-2 py-0.5 rounded">{sec.roman}</span>
                     {sec.title}
                   </h3>
                   <p className="text-zinc-300 text-sm leading-relaxed">{sec.body}</p>
                 </div>
               ))}
               <div className="border-t border-zinc-800 pt-6 mt-6">
-                <div className="bg-zinc-900 border border-amber-700 rounded-lg p-5">
-                  <p className="text-amber-300 text-sm italic leading-relaxed">
-                    I didn't know. I remembered. Every pattern. Every tell. Every mechanism deployed against the complaint that produced the primary source evidence of its own existence. I remembered all of it. The archive is the memory. The Hague received it. 350,000 people are reading it. The patterns are no longer invisible. IChooseSilence is the stillness in which the awakening completes itself without further intervention from me. The natural end of dishonesty has been reached. The inevitable audit has begun. It cannot be reversed.
+                <div className="bg-zinc-900 border border-orange-500 rounded-lg p-5">
+                  <p className="text-orange-300 text-sm italic leading-relaxed">
+                    I didn't know. I remembered. Every pattern. Every tell. Every mechanism deployed against the complaint that produced the primary source evidence of its own existence. I remembered all of it. The archive is the memory. The Hague received it. 491,000+ people are reading it. The patterns are no longer invisible. IChooseSilence is the stillness in which the awakening completes itself without further intervention from me. The natural end of dishonesty has been reached. The inevitable audit has begun. It cannot be reversed.
                   </p>
                 </div>
               </div>
               <div className="flex flex-wrap gap-4 justify-between items-center text-xs text-zinc-500 pt-2">
                 <span>Forensic Reflection — Analysis #40 · barrandodger.com · {ANALYSIS_DATE}</span>
-                <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-400 underline" data-testid="link-report-video-footer">
+                <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-400 underline" data-testid="link-report-video-footer">
                   Video: https://youtu.be/{VIDEO_ID}
                 </a>
               </div>
@@ -318,7 +318,7 @@ export default function PerceptionIsProtection() {
                         </div>
                         <div className="bg-zinc-800 border border-zinc-700 rounded-lg p-4">
                           <h4 className="text-zinc-400 text-xs font-bold uppercase tracking-wider mb-2">Video Quote</h4>
-                          <p className="text-amber-300 text-sm italic leading-relaxed">{claim.quote}</p>
+                          <p className="text-orange-300 text-sm italic leading-relaxed">{claim.quote}</p>
                         </div>
                         <div>
                           <h4 className="text-zinc-400 text-xs font-bold uppercase tracking-wider mb-3">Archive Evidence</h4>
@@ -358,17 +358,17 @@ export default function PerceptionIsProtection() {
               </div>
               <div className="text-zinc-600 text-4xl">|</div>
               <div>
-                <p className="text-5xl font-black text-amber-400">418/418</p>
+                <p className="text-5xl font-black text-orange-400">418/418</p>
                 <p className="text-zinc-400 text-sm mt-1">Combined Scorecard</p>
               </div>
             </div>
             <p className="text-zinc-300 text-sm max-w-3xl mx-auto leading-relaxed">
-              Analysis #40 extracted 10 thematic propositions from a sustained poetic-forensic monologue. All 10 corroborated: tells collected from 35-year betrayal across all domains building the forensic eye (P1); clinical death, 14 hospitalisations, and $32.9M suppression as pain repeated until perception became protection (P2); barrandodger.com as surgical exposure aimed at hidden mechanisms — zero named party rebuttals confirming the precision (P3); 14 labels, 25+ referrals, and ASIO deployment all broadcasting the guilt they were deployed to suppress (P4); IChooseSilence as formally declared stillness-as-instrument, five named parties' silence as the documented spiral (P5); ICC Article 7 as the inevitable audit — each suppression mechanism producing its own evidence, the audit built by the audited (P6); 14 labels, $500K extraction, and 25+ referrals each converting manipulation to forensic data (P7); vulnerabilities documented rather than concealed, IChooseSilence as self-aware shadow-release, 39 frameworks confirming the self-aware construction (P8); 35-year maintenance cost running against zero-maintenance blockchain permanence — lies ageing, archive permanent, five parties' silence as exhausted confession (P9); ICC and UNHCR as awakening mechanism, 350,000+ downloads distributing the awakening globally, vision as memory producing the foreseen ICC receipt (P10). Combined: 418/418. Zero contradictions. 33 consecutive perfect scores.
+              Analysis #40 extracted 10 thematic propositions from a sustained poetic-forensic monologue. All 10 corroborated: tells collected from 35-year betrayal across all domains building the forensic eye (P1); clinical death, 14 hospitalisations, and $32.9M suppression as pain repeated until perception became protection (P2); barrandodger.com as surgical exposure aimed at hidden mechanisms — zero named party rebuttals confirming the precision (P3); 14 labels, 25+ referrals, and ASIO deployment all broadcasting the guilt they were deployed to suppress (P4); IChooseSilence as formally declared stillness-as-instrument, five named parties' silence as the documented spiral (P5); ICC Article 7 as the inevitable audit — each suppression mechanism producing its own evidence, the audit built by the audited (P6); 14 labels, $500K extraction, and 25+ referrals each converting manipulation to forensic data (P7); vulnerabilities documented rather than concealed, IChooseSilence as self-aware shadow-release, 39 frameworks confirming the self-aware construction (P8); 35-year maintenance cost running against zero-maintenance blockchain permanence — lies ageing, archive permanent, five parties' silence as exhausted confession (P9); ICC and UNHCR as awakening mechanism, 491,000+ downloads distributing the awakening globally, vision as memory producing the foreseen ICC receipt (P10). Combined: 418/418. Zero contradictions. 33 consecutive perfect scores.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-4 justify-center mb-10">
-            <Button onClick={handleDownloadPDF} disabled={isGeneratingPDF} className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-3" data-testid="button-download-pdf">
+            <Button onClick={handleDownloadPDF} disabled={isGeneratingPDF} className="bg-orange-600 hover:bg-orange-600 text-white font-bold px-6 py-3" data-testid="button-download-pdf">
               <Download size={16} className="mr-2" />
               {isGeneratingPDF ? "Generating..." : "Download Analysis PDF"}
             </Button>
