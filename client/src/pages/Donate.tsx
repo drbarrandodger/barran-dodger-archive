@@ -3,7 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CrossLink, DocumentPopup, KEY_DOCUMENTS } from "@/components/CrossLink";
-import { Heart, Shield, FileText, CheckCircle, Check, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink, Users, DollarSign, RefreshCw, ShoppingBag, Database, Download, Archive, Clock, Target, Repeat, Mail, AlertTriangle, TrendingUp, Zap } from "lucide-react";
+import { Heart, Shield, FileText, CheckCircle, Check, Scale, BookOpen, Globe, Sparkles, Copy, ExternalLink, Users, DollarSign, RefreshCw, ShoppingBag, Database, Download, Archive, Clock, Target, Repeat, Mail, AlertTriangle, TrendingUp, Zap, Phone, Handshake } from "lucide-react";
 import coverMasterRegister from "../assets/images/cover-master-evidence-register.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -122,7 +122,7 @@ export default function Donate() {
   const [emailInput, setEmailInput] = useState("");
   const [emailSent, setEmailSent] = useState(false);
   const { toast } = useToast();
-  const payId = "rich@richmclean.com.au";
+  const payId = "drbarrandodger@proton.me";
   const countdown = useCountdown(CTO_DEADLINE);
 
   const emailMutation = useMutation({
@@ -165,7 +165,7 @@ export default function Donate() {
     },
     {
       title: "International Human Rights Recognition",
-      description: "Formal submissions to UN Special Rapporteurs, UNHCR, and ICC demonstrate the case meets international standards for systematic persecution.",
+      description: <>Formal submissions to <a href="https://www.ohchr.org/en/special-procedures/special-rapporteurs" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-medium">UN Special Rapporteurs</a>, <a href="https://www.unhcr.org/" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-medium">UNHCR</a>, and <a href="https://www.icc-cpi.int/" target="_blank" rel="noopener noreferrer" className="text-[hsl(38,92%,50%)] hover:underline font-medium">ICC</a> demonstrate the case meets international standards for systematic persecution.</>,
       icon: <Globe className="h-6 w-6" />
     },
     {
@@ -184,9 +184,34 @@ export default function Donate() {
     <div className="min-h-screen bg-background flex flex-col">
       <SEO 
         title="Fund His Safety — Dr. Richard McLean Is Under Active Physical Threat"
-        description="450,000+ downloads. No money. No platform. No legal help. His physical safety is not guaranteed. The only protection is global distribution and voluntary support. PayID: rich@richmclean.com.au — ABN 78 833 496 164."
+        description="450,000+ downloads. No money. No platform. No legal help. His physical safety is not guaranteed. The only protection is global distribution and voluntary support. PayID: drbarrandodger@proton.me — ABN 78 833 496 164."
         keywords="fund whistleblower safety Australia, support Richard McLean, PayID donation, barran dodger archive fund, ICC whistleblower protection"
         path="/donate"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "DonateAction",
+          "name": "Support the Barran Dodger Legal & Ethical Trust Fund",
+          "description": "Fund the safety and continued operation of the most documented whistleblower archive in Australian history. ABN 78 833 496 164.",
+          "url": "https://barrandodger.com/donate",
+          "recipient": {
+            "@type": "Organization",
+            "name": "Barran Dodger Legal & Ethical Trust Fund",
+            "url": "https://barrandodger.com",
+            "identifier": "ABN 78 833 496 164",
+            "foundingDate": "2021",
+            "description": "Non-profit public benefit organisation exposing systemic government corruption through blockchain-verified evidence.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "donations",
+              "email": "drbarrandodger@proton.me"
+            }
+          },
+          "agent": {
+            "@type": "Person",
+            "name": "Dr. Richard William McLean",
+            "alternateName": "Barran Dodger"
+          }
+        }}
       />
       <Navigation />
       
@@ -200,13 +225,13 @@ export default function Donate() {
           >
             {/* Conscience-first opening */}
             <div className="rounded-2xl border border-red-500/25 bg-[#0b0700] overflow-hidden mb-10">
-              <div className="h-1 bg-gradient-to-r from-red-700 via-amber-500 to-red-700" />
+              <div className="h-1 bg-gradient-to-r from-red-700 via-orange-600 to-red-700" />
               <div className="p-7 md:p-10 space-y-6">
                 <p className="text-white font-serif font-bold text-2xl md:text-3xl leading-tight">
                   Every person who has downloaded this archive has done so for free.
                 </p>
                 <p className="text-zinc-400 text-base leading-relaxed max-w-3xl">
-                  410,671 downloads. 125 published works. 32 forensic analyses. 2,304 primary-source documents. 845 blockchain timestamp seals. A formal ICC Article 7 submission. A UNHCR Geneva filing. A Federal Court PID acknowledgment of maladministration. All of it — published without a paywall, without a subscription, without a price.
+                  492,544 downloads. 125 published works. 32 forensic analyses. 2,304 primary-source documents. 845 blockchain timestamp seals. A formal <a href="https://www.icc-cpi.int/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline font-medium">ICC</a> Article 7 submission. A <a href="https://www.unhcr.org/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline font-medium">UNHCR Geneva</a> filing. A <a href="https://www.fedcourt.gov.au/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline font-medium">Federal Court</a> PID acknowledgment of maladministration. All of it — published without a paywall, without a subscription, without a price.
                 </p>
                 <div className="border-l-4 border-red-500/50 pl-5 space-y-2">
                   <p className="text-zinc-300 text-sm font-semibold">While this was being compiled, Dr. Richard William McLean was living under all of the following — simultaneously and continuously:</p>
@@ -231,7 +256,7 @@ export default function Donate() {
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-amber-900/40 pt-5 space-y-3">
+                <div className="border-t border-orange-500/30 pt-5 space-y-3">
                   <p className="text-white font-bold text-base">He published it free anyway. For you. For the record. For humanity.</p>
                   <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl">
                     If that sits uncomfortably with your conscience — it should. That discomfort is not manipulation. It is an accurate response to a documented fact. The archive was built at personal cost that is not metaphorical. It is medical, legal, financial, and physical. The PayID below is the simplest act of conscience available to you.
@@ -239,15 +264,15 @@ export default function Donate() {
                 </div>
 
                 {/* Prominent PayID block */}
-                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-amber-950/30 border border-amber-500/30 rounded-2xl p-5">
+                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-orange-500/10 border border-orange-500/30 rounded-2xl p-5">
                   <div className="flex-1">
-                    <p className="text-amber-400 font-bold text-sm">Donate via PayID — instant, no accounts required</p>
-                    <p className="text-white font-mono text-lg mt-1">rich@richmclean.com.au</p>
+                    <p className="text-orange-400 font-bold text-sm">Donate via PayID — instant, no accounts required</p>
+                    <p className="text-white font-mono text-lg mt-1">drbarrandodger@proton.me</p>
                     <p className="text-zinc-500 text-xs mt-1">ABN 78 833 496 164 · Barran Dodger Legal &amp; Ethical Trust Fund · Any amount.</p>
                   </div>
                   <button
                     onClick={copyPayId}
-                    className="flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold text-sm px-5 py-3 rounded-xl transition-colors flex-shrink-0"
+                    className="flex items-center gap-2 bg-orange-600 hover:bg-orange-600 text-black font-bold text-sm px-5 py-3 rounded-xl transition-colors flex-shrink-0"
                     data-testid="button-top-copy-payid"
                   >
                     {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
@@ -292,7 +317,7 @@ export default function Donate() {
                   {/* Countdown clock */}
                   <div className="flex-shrink-0">
                     {countdown.expired ? (
-                      <div className="bg-[#150c00] rounded-2xl px-6 py-4 text-center border border-amber-800/40">
+                      <div className="bg-[#150c00] rounded-2xl px-6 py-4 text-center border border-orange-500/30">
                         <p className="text-red-400 font-bold text-sm">Appointment has passed</p>
                       </div>
                     ) : (
@@ -330,13 +355,13 @@ export default function Donate() {
 
           {/* ── FRAMEWORK 2: GOAL / PROGRESS BAR — Crowdfunding psychology ── */}
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.14 }} className="mb-8">
-            <div className="rounded-2xl border border-amber-500/30 bg-[#0b0700] p-6 md:p-8 space-y-4">
+            <div className="rounded-2xl border border-orange-500/30 bg-[#0b0700] p-6 md:p-8 space-y-4">
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <div className="flex items-center gap-2">
-                  <Target className="h-5 w-5 text-amber-400" />
+                  <Target className="h-5 w-5 text-orange-400" />
                   <p className="text-white font-bold">{GOAL_LABEL}</p>
                 </div>
-                <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/30 text-xs">April 2026</Badge>
+                <Badge className="bg-orange-500/10 text-orange-400 border-orange-500/30 text-xs">April 2026</Badge>
               </div>
               <div>
                 <div className="flex justify-between text-xs text-zinc-500 mb-2">
@@ -344,7 +369,7 @@ export default function Donate() {
                   <span>Contribute to be the first recorded supporter</span>
                 </div>
                 <div className="w-full bg-[#1f1000] rounded-full h-3 overflow-hidden">
-                  <div className="bg-gradient-to-r from-amber-600 to-amber-400 h-3 rounded-full transition-all duration-700" style={{ width: "4%" }} />
+                  <div className="bg-gradient-to-r from-orange-600 to-orange-600 h-3 rounded-full transition-all duration-700" style={{ width: "4%" }} />
                 </div>
                 <p className="text-zinc-600 text-xs mt-2">Funds cover: legal challenge filing · MHRT appeal · 6 months archive hosting · 50 blockchain seals · ICC submission printing</p>
               </div>
@@ -353,9 +378,9 @@ export default function Donate() {
 
           {/* ── FRAMEWORK 3: ANCHORED AMOUNTS — Conversion psychology ── */}
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }} className="mb-8">
-            <div className="rounded-2xl border border-amber-800/40 bg-[#150c00] p-6 md:p-8 space-y-5">
+            <div className="rounded-2xl border border-orange-500/30 bg-[#150c00] p-6 md:p-8 space-y-5">
               <div className="flex items-center gap-2 mb-1">
-                <Zap className="h-5 w-5 text-amber-400" />
+                <Zap className="h-5 w-5 text-orange-400" />
                 <p className="text-white font-bold">Choose an amount — then copy the PayID</p>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -368,25 +393,25 @@ export default function Donate() {
                   <button
                     key={amount}
                     onClick={() => setSelectedAmount(selectedAmount === amount ? null : amount)}
-                    className={`rounded-xl p-4 text-center border transition-all ${selectedAmount === amount ? "border-amber-500 bg-amber-950/40" : "border-amber-800/40 bg-[#1f1000]/60 hover:border-zinc-500"}`}
+                    className={`rounded-xl p-4 text-center border transition-all ${selectedAmount === amount ? "border-orange-500 bg-orange-500/10" : "border-orange-500/30 bg-[#1f1000]/60 hover:border-zinc-500"}`}
                     data-testid={`button-amount-${amount}`}
                   >
-                    {popular && <p className="text-amber-400 text-[10px] font-bold uppercase mb-1">Most chosen</p>}
-                    <p className={`text-2xl font-bold ${selectedAmount === amount ? "text-amber-400" : "text-white"}`}>${amount}</p>
+                    {popular && <p className="text-orange-400 text-[10px] font-bold uppercase mb-1">Most chosen</p>}
+                    <p className={`text-2xl font-bold ${selectedAmount === amount ? "text-orange-400" : "text-white"}`}>${amount}</p>
                     <p className="text-zinc-400 text-xs font-semibold mt-0.5">{label}</p>
                     <p className="text-zinc-500 text-[10px] mt-1 leading-tight">{impact}</p>
                   </button>
                 ))}
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center bg-amber-950/20 border border-amber-500/25 rounded-2xl p-4">
+              <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center bg-orange-500/10 border border-orange-500/30 rounded-2xl p-4">
                 <div className="flex-1">
-                  <p className="text-amber-300 font-bold text-sm">PayID · Open banking app · Paste · Send</p>
-                  <p className="text-white font-mono text-base mt-0.5">rich@richmclean.com.au</p>
-                  {selectedAmount && <p className="text-amber-400 text-xs mt-1 font-semibold">Amount selected: ${selectedAmount} AUD — will be copied with PayID</p>}
+                  <p className="text-orange-300 font-bold text-sm">PayID · Open banking app · Paste · Send</p>
+                  <p className="text-white font-mono text-base mt-0.5">drbarrandodger@proton.me</p>
+                  {selectedAmount && <p className="text-orange-400 text-xs mt-1 font-semibold">Amount selected: ${selectedAmount} AUD — will be copied with PayID</p>}
                 </div>
                 <button
                   onClick={copyPayId}
-                  className="flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold text-sm px-6 py-3 rounded-xl transition-colors flex-shrink-0"
+                  className="flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-600 text-black font-bold text-sm px-6 py-3 rounded-xl transition-colors flex-shrink-0"
                   data-testid="button-anchored-copy-payid"
                 >
                   {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
@@ -422,11 +447,11 @@ export default function Donate() {
                   </div>
                 ))}
               </div>
-              <div className="bg-[#150c00] rounded-xl p-4 border border-amber-800/40 space-y-2">
+              <div className="bg-[#150c00] rounded-xl p-4 border border-orange-500/30 space-y-2">
                 <p className="text-zinc-300 text-sm font-semibold">How to set up a monthly standing order:</p>
                 <ol className="space-y-1.5 text-xs text-zinc-400">
                   <li className="flex gap-2"><span className="text-green-400 font-bold">1.</span> Open your banking app and go to Pay Anyone / PayID</li>
-                  <li className="flex gap-2"><span className="text-green-400 font-bold">2.</span> Enter PayID: <span className="font-mono text-white">rich@richmclean.com.au</span></li>
+                  <li className="flex gap-2"><span className="text-green-400 font-bold">2.</span> Enter PayID: <span className="font-mono text-white">drbarrandodger@proton.me</span></li>
                   <li className="flex gap-2"><span className="text-green-400 font-bold">3.</span> Set your chosen amount and select "Recurring" or "Schedule"</li>
                   <li className="flex gap-2"><span className="text-green-400 font-bold">4.</span> Set frequency: Monthly · Reference: "Sustaining Supporter"</li>
                 </ol>
@@ -437,22 +462,22 @@ export default function Donate() {
 
           {/* ── FRAMEWORK 5: SPECIFIC USE OF FUNDS — Loss aversion + tangibility ── */}
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.19 }} className="mb-8">
-            <div className="rounded-2xl border border-amber-800/40 bg-[#150c00]/50 p-6 md:p-8 space-y-4">
+            <div className="rounded-2xl border border-orange-500/30 bg-[#150c00]/50 p-6 md:p-8 space-y-4">
               <div className="flex items-center gap-2 mb-2">
-                <TrendingUp className="h-5 w-5 text-amber-400" />
+                <TrendingUp className="h-5 w-5 text-orange-400" />
                 <p className="text-white font-bold">Every dollar has a documented destination</p>
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
                   { cost: "$15", what: "One blockchain timestamp seal (OpenTimestamps · Bitcoin)", why: "Makes each document legally permanent and tamper-proof" },
-                  { cost: "$25", what: "One week of secure archive hosting (2,304 documents)", why: "410,671 people have accessed these documents. They need to stay online." },
+                  { cost: "$25", what: "One week of secure archive hosting (2,304 documents)", why: "492,544 people have accessed these documents. They need to stay online." },
                   { cost: "$50", what: "One formal legal letter of demand drafted and sent", why: "Direct legal action against named suppression operatives" },
                   { cost: "$150", what: "One CTO legal response document prepared", why: "Challenges the forced psychiatric appointment mechanism" },
                   { cost: "$250", what: "One ICC/UNHCR submission printed, bound, and delivered", why: "Physical submission to the International Criminal Court" },
                   { cost: "$500", what: "One complete forensic analysis (commissioned and published)", why: "Permanent public record — free for humanity, funded by you" },
                 ].map(({ cost, what, why }) => (
                   <div key={cost} className="flex gap-3 items-start bg-[#1f1000]/50 rounded-xl p-4">
-                    <p className="text-amber-400 font-bold text-lg flex-shrink-0 w-14">{cost}</p>
+                    <p className="text-orange-400 font-bold text-lg flex-shrink-0 w-14">{cost}</p>
                     <div>
                       <p className="text-white text-xs font-semibold leading-snug">{what}</p>
                       <p className="text-zinc-500 text-xs mt-1">{why}</p>
@@ -466,7 +491,7 @@ export default function Donate() {
 
           {/* ── FRAMEWORK 6: EMAIL CAPTURE — Lifecycle value ── */}
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.20 }} className="mb-10">
-            <div className="rounded-2xl border border-amber-800/40 bg-[#150c00] p-6 md:p-8">
+            <div className="rounded-2xl border border-orange-500/30 bg-[#150c00] p-6 md:p-8">
               <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
                 <div className="flex items-center gap-3 flex-shrink-0">
                   <Mail className="h-8 w-8 text-primary" />
@@ -540,18 +565,18 @@ export default function Donate() {
             className="mb-12"
             data-testid="section-commission"
           >
-            <Card className="border-2 border-amber-500/40 bg-amber-950/10 relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600" />
+            <Card className="border-2 border-orange-500/30 bg-orange-500/10 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-600 via-orange-600 to-orange-600" />
               <CardContent className="py-8 px-6 md:px-10">
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                   <div className="flex-1 space-y-4">
-                    <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/30 text-xs font-bold">New Service</Badge>
-                    <h2 className="text-2xl font-serif font-bold text-amber-400">Commission a Forensic Analysis</h2>
+                    <Badge className="bg-orange-500/10 text-orange-400 border-orange-500/30 text-xs font-bold">New Service</Badge>
+                    <h2 className="text-2xl font-serif font-bold text-orange-400">Commission a Forensic Analysis</h2>
                     <p className="text-muted-foreground leading-relaxed">
                       Dr. McLean's forensic methodology — 32 prior analyses, 242+ propositions, zero contradictions — is now available for your situation. Submit a YouTube video that mirrors your documented experience, along with your primary-source evidence. He will conduct a full forensic examination and publish the result <strong className="text-white">permanently and freely</strong> on barrandodger.com.
                     </p>
                     <p className="text-zinc-400 text-sm">
-                      Your commission compensates Dr. McLean's time. The resulting analysis belongs to the public record. This is not paywalled content — it is documented truth, added to the archive that has been downloaded 410,671+ times.
+                      Your commission compensates Dr. McLean's time. The resulting analysis belongs to the public record. This is not paywalled content — it is documented truth, added to the archive that has been downloaded 492,544 times.
                     </p>
                     <div className="grid grid-cols-3 gap-3 text-center text-sm">
                       {[
@@ -560,7 +585,7 @@ export default function Donate() {
                         { label: "Priority", price: "$500 AUD", note: "3 videos · 7 days" },
                       ].map(({ label, price, note }) => (
                         <div key={label} className="bg-[#1f1000]/60 rounded-xl p-3">
-                          <p className="text-amber-400 font-bold text-lg">{price}</p>
+                          <p className="text-orange-400 font-bold text-lg">{price}</p>
                           <p className="text-white text-xs font-semibold">{label}</p>
                           <p className="text-zinc-500 text-xs">{note}</p>
                         </div>
@@ -568,9 +593,9 @@ export default function Donate() {
                     </div>
                   </div>
                   <div className="flex-shrink-0 flex flex-col items-center gap-4">
-                    <Scale className="h-16 w-16 text-amber-400 opacity-80" />
+                    <Scale className="h-16 w-16 text-orange-400 opacity-80" />
                     <a href="/commission-forensic-analysis"
-                      className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold px-6 py-3 rounded-xl transition-colors text-sm"
+                      className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-600 text-black font-bold px-6 py-3 rounded-xl transition-colors text-sm"
                       data-testid="link-commission-cta">
                       <Scale className="h-4 w-4" />
                       Commission Your Analysis
@@ -604,24 +629,24 @@ export default function Donate() {
                   <Card
                     className={`h-full border hover-elevate cursor-pointer relative overflow-hidden ${
                       tier.highlight
-                        ? "border-amber-500/60 bg-amber-950/10 shadow-md shadow-amber-900/20"
+                        ? "border-orange-500/30 bg-orange-500/10 shadow-md shadow-orange-500/20"
                         : "border-border"
                     }`}
                     onClick={copyPayId}
                     data-testid={`card-tier-${tier.amount.replace("$", "")}`}
                   >
                     {tier.highlight && (
-                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600" />
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-600 via-orange-600 to-orange-600" />
                     )}
                     <CardContent className="p-6 space-y-3">
                       <div className="flex items-center justify-between gap-2 flex-wrap">
-                        <span className={`text-3xl font-black ${tier.highlight ? "text-amber-400" : "text-primary"}`}>{tier.amount}</span>
+                        <span className={`text-3xl font-black ${tier.highlight ? "text-orange-400" : "text-primary"}`}>{tier.amount}</span>
                         <div className="flex flex-col items-end gap-1">
                           <Badge variant="secondary" className="text-xs font-bold">{tier.label}</Badge>
-                          {tier.badge && <span className={`text-[9px] uppercase tracking-wider font-bold ${tier.highlight ? "text-amber-400" : "text-zinc-500"}`}>{tier.badge}</span>}
+                          {tier.badge && <span className={`text-[9px] uppercase tracking-wider font-bold ${tier.highlight ? "text-orange-400" : "text-zinc-500"}`}>{tier.badge}</span>}
                         </div>
                       </div>
-                      <p className="text-xs text-zinc-500 italic leading-relaxed border-l-2 border-amber-800/40 pl-3">"{tier.story}"</p>
+                      <p className="text-xs text-zinc-500 italic leading-relaxed border-l-2 border-orange-500/30 pl-3">"{tier.story}"</p>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         {tier.impact}
                       </p>
@@ -652,7 +677,7 @@ export default function Donate() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.32 }}
-            className="mb-16 rounded-2xl overflow-hidden bg-black border border-amber-900/40 shadow-2xl"
+            className="mb-16 rounded-2xl overflow-hidden bg-black border border-orange-500/30 shadow-2xl"
             data-testid="section-master-register-nuclear"
           >
             {/* Top bar */}
@@ -667,7 +692,7 @@ export default function Donate() {
                 <img
                   src={coverMasterRegister}
                   alt="Master Evidence Register — Cover"
-                  className="w-full max-w-xs rounded-xl shadow-2xl shadow-red-900/30 border border-amber-800/40"
+                  className="w-full max-w-xs rounded-xl shadow-2xl shadow-red-900/30 border border-orange-500/30"
                 />
                 <Button
                   size="lg"
@@ -691,10 +716,10 @@ export default function Donate() {
                   View full analysis page →
                 </a>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge className="bg-[#1f1000] text-zinc-200 border-amber-800/40 text-xs">2,301 Documents</Badge>
-                  <Badge className="bg-[#1f1000] text-zinc-200 border-amber-800/40 text-xs">9,333 Lines</Badge>
-                  <Badge className="bg-[#1f1000] text-zinc-200 border-amber-800/40 text-xs">35-Year Record</Badge>
-                  <Badge className="bg-[#1f1000] text-zinc-200 border-amber-800/40 text-xs">Chronological</Badge>
+                  <Badge className="bg-[#1f1000] text-zinc-200 border-orange-500/30 text-xs">2,301 Documents</Badge>
+                  <Badge className="bg-[#1f1000] text-zinc-200 border-orange-500/30 text-xs">9,333 Lines</Badge>
+                  <Badge className="bg-[#1f1000] text-zinc-200 border-orange-500/30 text-xs">35-Year Record</Badge>
+                  <Badge className="bg-[#1f1000] text-zinc-200 border-orange-500/30 text-xs">Chronological</Badge>
                 </div>
               </div>
 
@@ -1077,6 +1102,39 @@ export default function Donate() {
                   <ExternalLink className="h-5 w-5" /> View Evidence Archive
                 </a>
               </Button>
+            </div>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12 rounded-2xl p-8 border"
+            style={{ background: "rgba(233,160,10,0.05)", borderColor: "rgba(233,160,10,0.2)" }}
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <Handshake className="h-6 w-6 flex-shrink-0" style={{ color: "#e9a00a" }} />
+              <h3 className="text-xl font-serif font-bold" style={{ color: "#e9a00a" }}>Connect Directly</h3>
+            </div>
+            <p className="text-sm text-zinc-400 leading-relaxed mb-5">
+              Support, collaborations, enquiries and opportunities are welcomed — from media, legal professionals, researchers, documentary makers, advocates, and international bodies. Dr Richard McLean personally receives all approaches with discretion.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a href="tel:+61431300940"
+                className="inline-flex items-center gap-2 font-bold text-sm px-5 py-3 rounded-xl transition-colors"
+                style={{ background: "rgba(233,160,10,0.15)", color: "#e9a00a", border: "1px solid rgba(233,160,10,0.3)" }}>
+                <Phone className="h-4 w-4" /> +61 431 300 940
+              </a>
+              <a href="mailto:drbarrandodger@proton.me"
+                className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-3 rounded-xl transition-colors"
+                style={{ background: "rgba(132,204,22,0.08)", color: "#84cc16", border: "1px solid rgba(132,204,22,0.2)" }}>
+                <Mail className="h-4 w-4" /> drbarrandodger@proton.me
+              </a>
+              <a href="/contact"
+                className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-3 rounded-xl transition-colors"
+                style={{ background: "rgba(196,212,239,0.05)", color: "rgba(196,212,239,0.7)", border: "1px solid rgba(196,212,239,0.15)" }}>
+                Contact Page →
+              </a>
             </div>
           </motion.section>
 
