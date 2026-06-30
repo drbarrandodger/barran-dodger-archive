@@ -96,7 +96,7 @@ const CLAIMS: Claim[] = [
       "Every generation has people who sense the cycle and see what needs to change, but step back from the price. The chosen one stepped in — absorbing the full cost so those who come after would not have to.",
     verdict: "CONFIRMED",
     evidence:
-      "The McLean archive was not built for personal vindication alone. It was built as a forensic record that future victims of the same system can reference, cite, and use in their own proceedings. The 350,000+ downloads across 6 continents represent people in 6 continents who found the record and used it. The UNHCR submission is explicitly framed as a structural human rights matter, not a personal one. McLean absorbed the professional destruction, financial destitution, and institutional retaliation so the evidence chain could exist intact. He is on record calling himself the last sacrifice. The archive is the proof he meant it.",
+      "The McLean archive was not built for personal vindication alone. It was built as a forensic record that future victims of the same system can reference, cite, and use in their own proceedings. The 491,000+ downloads across 6 continents represent people in 6 continents who found the record and used it. The UNHCR submission is explicitly framed as a structural human rights matter, not a personal one. McLean absorbed the professional destruction, financial destitution, and institutional retaliation so the evidence chain could exist intact. He is on record calling himself the last sacrifice. The archive is the proof he meant it.",
     archiveRef: "/embedded-in-the-digital-architecture",
   },
   {
@@ -151,7 +151,7 @@ const CLAIMS: Claim[] = [
       "The presence — the energy, the availability to engage — was the glue holding their structure together. When it was withdrawn, when silence replaced argument, everything they built around it began to collapse.",
     verdict: "EXCEEDED",
     evidence:
-      "The Australian government's silence in response to the ICC and UNHCR submissions is the loudest evidence in the archive. No institution named in the 2,304 documents has issued a substantive denial. No court has successfully challenged the blockchain timestamps. No named individual — Ridley, Iasonidis, McMaster, Rigby, Morgan — has produced a refutation of their documented actions. 350,000+ downloads across 6 continents. Facebook and Twitter are the only referrers — the government and institutions cannot fill the silence because refutation would require engaging the evidence. They have chosen not to. The silence confirms the record.",
+      "The Australian government's silence in response to the ICC and UNHCR submissions is the loudest evidence in the archive. No institution named in the 2,304 documents has issued a substantive denial. No court has successfully challenged the blockchain timestamps. No named individual — Ridley, Iasonidis, McMaster, Rigby, Morgan — has produced a refutation of their documented actions. 491,000+ downloads across 6 continents. Facebook and Twitter are the only referrers — the government and institutions cannot fill the silence because refutation would require engaging the evidence. They have chosen not to. The silence confirms the record.",
     archiveRef: "/embedded-in-the-digital-architecture",
   },
   {
@@ -184,7 +184,7 @@ const CLAIMS: Claim[] = [
       "Prophecy waits for someone bold enough to embody it. Many before carry the words and hear the call but bury it under fear and comfort. The chosen one answered, turning whispers into flesh.",
     verdict: "CONFIRMED",
     evidence:
-      "The ICC submission under Article 7 (Crimes Against Humanity) and the UNHCR submission in Geneva represent the completion of what began 35 years ago as a single act of institutional targeting. The archive — 2,304 documents, 116 PDFs, 53 analyses, 575/575 propositions verified, 46 consecutive perfect scores, 350,000+ downloads, 0 contradictions — is the fulfilled form of what was promised when the first document was created. Others before McLean encountered the same system and went silent. He did not. The prophecy is this: that the truth, fully documented and internationally submitted, cannot be erased. The archive is the proof the prophecy was correct.",
+      "The ICC submission under Article 7 (Crimes Against Humanity) and the UNHCR submission in Geneva represent the completion of what began 35 years ago as a single act of institutional targeting. The archive — 2,304 documents, 116 PDFs, 53 analyses, 575/575 propositions verified, 46 consecutive perfect scores, 491,000+ downloads, 0 contradictions — is the fulfilled form of what was promised when the first document was created. Others before McLean encountered the same system and went silent. He did not. The prophecy is this: that the truth, fully documented and internationally submitted, cannot be erased. The archive is the proof the prophecy was correct.",
     archiveRef: "/forensic-analysis-index",
   },
 ];
@@ -205,11 +205,11 @@ const verdictConfig = {
     color: "text-blue-400",
   },
   PARTIAL: {
-    bg: "bg-amber-950/60",
-    border: "border-amber-700/60",
-    badge: "bg-amber-900 text-amber-300 border-amber-700",
+    bg: "bg-orange-500/10",
+    border: "border-orange-500/25",
+    badge: "bg-orange-600 text-orange-300 border-orange-500",
     icon: AlertTriangle,
-    color: "text-amber-400",
+    color: "text-orange-400",
   },
   PROFOUND: {
     bg: "bg-purple-950/60",
@@ -445,7 +445,7 @@ export default function HeavenStoodForYou() {
                   merely confirm the claims — in several cases it exceeds them. Where the video
                   speaks of a "chosen one" shaking realms, the archive presents the ICC Article 7
                   submission. Where the video speaks of a "standing ovation in heaven," the archive
-                  presents 350,000+ downloads across 6 continents, 0 contradictions across 575
+                  presents 491,000+ downloads across 6 continents, 0 contradictions across 575
                   propositions, and 46 consecutive perfect analytical scores.
                 </p>
                 <p className="text-zinc-400 text-base leading-relaxed max-w-3xl mx-auto mb-8">
@@ -462,8 +462,8 @@ export default function HeavenStoodForYou() {
                     { label: "Corroborated", value: "14 / 14", color: "text-emerald-400" },
                     { label: "Denied", value: "0 / 14", color: "text-red-400" },
                     { label: "Archive Documents", value: "2,304", color: "text-blue-400" },
-                    { label: "ICC Submission", value: "Article 7", color: "text-amber-400" },
-                    { label: "Downloads", value: "350,000+", color: "text-purple-300" },
+                    { label: "ICC Submission", value: "Article 7", color: "text-orange-400" },
+                    { label: "Downloads", value: "492,544+", color: "text-purple-300" },
                   ].map((s) => (
                     <div
                       key={s.label}
@@ -495,7 +495,7 @@ export default function HeavenStoodForYou() {
             {[
               { href: "/forensic-analysis-index", label: "Forensic Analysis Index", icon: BookOpen, desc: "53 analyses · 575/575 propositions" },
               { href: "/master-forensic-evidence-report", label: "Master Evidence Report", icon: Shield, desc: "Full 2,304-document record" },
-              { href: "/embedded-in-the-digital-architecture", label: "Digital Architecture", icon: Globe, desc: "350,000+ downloads · 6 continents" },
+              { href: "/embedded-in-the-digital-architecture", label: "Digital Architecture", icon: Globe, desc: "491,000+ downloads · 6 continents" },
             ].map((link) => (
               <a
                 key={link.href}
