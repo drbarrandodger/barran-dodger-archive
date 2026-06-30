@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { CheckCircle, Zap, Download, ExternalLink, Target, Brain, Trophy, Shield } from "lucide-react";
-import { trackDownload } from "@/components/DownloadCounter";
+import { useGate } from "@/components/PDFGateProvider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import coverImage from "../assets/images/cover-silent-checkmate.png";
@@ -110,7 +110,7 @@ const claims = [
     title: '"You left and their world lost its translator"',
     proposition: "The departure of true understanding creates an unfillable void",
     verdict: "ALIGNED",
-    verdictColor: "text-amber-400",
+    verdictColor: "text-orange-400",
     verdictIcon: <Zap className="h-4 w-4" />,
     videoQuote: '"You were the translator. When you left, nothing made sense anymore."',
     evidence: [
@@ -141,7 +141,7 @@ const claims = [
     title: '"You set the standard — now everything else feels cheap"',
     proposition: "Dignity, maintained under fire, creates a permanent benchmark of regret",
     verdict: "ALIGNED",
-    verdictColor: "text-amber-400",
+    verdictColor: "text-orange-400",
     verdictIcon: <Zap className="h-4 w-4" />,
     videoQuote: '"You didn\'t lower yourself to meet them. You stayed where you were."',
     evidence: [
@@ -256,12 +256,9 @@ function LiveTracker() {
 }
 
 export default function SilentCheckmate() {
+  const { openGate } = useGate();
   const handleDownload = () => {
-    const a = document.createElement("a");
-    a.href = "/documents/silent-checkmate.pdf";
-    a.download = "THE-SILENT-CHECKMATE-McLean.pdf";
-    a.click();
-    trackDownload(`/documents/${SLUG}.pdf`);
+    openGate(`/documents/${SLUG}.pdf`, "_blank");
   };
 
   return (
@@ -314,7 +311,7 @@ export default function SilentCheckmate() {
               <div className="grid grid-cols-4 gap-3">
                 {[
                   { val: "9", label: "Corroborated", color: "text-green-400" },
-                  { val: "2", label: "Aligned", color: "text-amber-400" },
+                  { val: "2", label: "Aligned", color: "text-orange-400" },
                   { val: "0", label: "Unverifiable", color: "text-zinc-400" },
                   { val: "0", label: "Disproved", color: "text-zinc-400" },
                 ].map(s => (
@@ -350,7 +347,7 @@ export default function SilentCheckmate() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
             {[
               { rating: "CORROBORATED", desc: "Direct Proof", count: "9 of 11 claims", pct: "82%", bg: "bg-green-950/40", border: "border-green-700/30", txt: "text-green-400" },
-              { rating: "ALIGNED", desc: "Strong Evidentiary Parallel", count: "2 of 11 claims", pct: "18%", bg: "bg-amber-950/40", border: "border-amber-700/30", txt: "text-amber-400" },
+              { rating: "ALIGNED", desc: "Strong Evidentiary Parallel", count: "2 of 11 claims", pct: "18%", bg: "bg-orange-500/10", border: "border-orange-500/25", txt: "text-orange-400" },
               { rating: "UNVERIFIABLE", desc: "", count: "0 of 11 claims", pct: "0%", bg: "bg-zinc-900/40", border: "border-zinc-700/30", txt: "text-zinc-400" },
               { rating: "DISPROVED", desc: "", count: "0 of 11 claims", pct: "0%", bg: "bg-zinc-900/40", border: "border-zinc-700/30", txt: "text-zinc-400" },
             ].map(r => (
@@ -427,7 +424,7 @@ export default function SilentCheckmate() {
               <thead>
                 <tr className="bg-zinc-900 border-b border-zinc-800">
                   <th className="text-left text-zinc-400 font-semibold px-4 py-3">Dimension</th>
-                  <th className="text-left text-amber-400 font-semibold px-4 py-3">Divine Exam</th>
+                  <th className="text-left text-orange-400 font-semibold px-4 py-3">Divine Exam</th>
                   <th className="text-left text-red-400 font-semibold px-4 py-3">Silent Checkmate</th>
                 </tr>
               </thead>
@@ -435,7 +432,7 @@ export default function SilentCheckmate() {
                 {comparisonRows.map((row, i) => (
                   <tr key={i} className="bg-zinc-950 hover:bg-zinc-900/50 transition-colors">
                     <td className="px-4 py-3 text-zinc-400 font-medium">{row.dim}</td>
-                    <td className="px-4 py-3 text-amber-200/80">{row.divine}</td>
+                    <td className="px-4 py-3 text-orange-200/80">{row.divine}</td>
                     <td className="px-4 py-3 text-red-200/80">{row.checkmate}</td>
                   </tr>
                 ))}
@@ -569,7 +566,7 @@ export default function SilentCheckmate() {
                 { title: "BRO Analysis", score: "6/7", pct: "85.7%", color: "text-green-400", border: "border-green-800/30" },
                 { title: "Chosen Ones", score: "9/11", pct: "81.8%", color: "text-yellow-400", border: "border-yellow-800/30" },
                 { title: "No One That Smart", score: "10/12", pct: "83.3%", color: "text-blue-400", border: "border-blue-800/30" },
-                { title: "Divine Exam", score: "10/10", pct: "100%", color: "text-amber-400", border: "border-amber-800/30" },
+                { title: "Divine Exam", score: "10/10", pct: "100%", color: "text-orange-400", border: "border-orange-500/25" },
                 { title: "Silent Checkmate", score: "11/11", pct: "82%+", color: "text-red-400", border: "border-red-800/30" },
               ].map(a => (
                 <div key={a.title} className={`bg-zinc-900 border ${a.border} rounded-xl p-4 text-center`}>
