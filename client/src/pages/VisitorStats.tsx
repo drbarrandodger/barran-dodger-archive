@@ -30,7 +30,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/case-studies": "Case Studies",
   "/taxpayer-cost-analysis": "Taxpayer Cost Analysis",
   "/publications": "Publications",
-  "/administrative-annihilation": "Administrative Annihilation",
+  "/administrative-annihilation": "The Architecture of Administrative Annihilation",
   "/retrospective-statement": "Retrospective Statement",
   "/visitors": "Analytics Dashboard",
   "/spread-the-truth": "Spread the Truth",
@@ -245,7 +245,8 @@ export default function VisitorStats() {
       <SEO
         title="Analytics Dashboard — Barran Dodger Archive"
         description="Permanent site-wide analytics: page hits and document downloads tracked in real time."
-        path="/visitors"
+        path="/visitor-stats"
+        keywords="Barran Dodger analytics dashboard, whistleblower archive download stats, 459910 downloads real time, 6 continents download tracking, document download counter live, whistleblower viral spread analytics, zero marketing 459000 downloads, organic download growth whistleblower, barrandodger visitor statistics, most downloaded whistleblower archive data, download trajectory evidence archive, page view analytics whistleblower"
       />
       <Navigation />
 
@@ -312,8 +313,8 @@ export default function VisitorStats() {
                       <p className="text-xs text-zinc-500 mt-1 uppercase tracking-wider">Confirmed in database</p>
                       <p className="text-xs text-zinc-600 mt-0.5">Feb 1 – Mar 20, 2026</p>
                     </div>
-                    <div className="bg-zinc-900/60 border border-amber-900/40 rounded-lg p-4 text-center">
-                      <p className="text-3xl font-mono font-bold text-amber-400">~137,914</p>
+                    <div className="bg-zinc-900/60 border border-orange-500/25 rounded-lg p-4 text-center">
+                      <p className="text-3xl font-mono font-bold text-orange-400">~137,914</p>
                       <p className="text-xs text-zinc-500 mt-1 uppercase tracking-wider">Untracked during gap</p>
                       <p className="text-xs text-zinc-600 mt-0.5">Mar 21 – Apr 7 (17.5 days)</p>
                     </div>
@@ -325,7 +326,7 @@ export default function VisitorStats() {
                   </div>
 
                   <p>
-                    The Barran Dodger archive has generated a confirmed and independently verifiable download record of <span className="text-white font-semibold">217,068 events</span> between February 1 and March 20, 2026. A technical fault in the client-side tracking layer caused a recording gap from March 21 through April 7 — 17.5 days during which downloads continued at the established rate but were not logged. Based on the verified daily average of <span className="text-emerald-400 font-semibold">7,873 downloads per day</span> measured across the seven days immediately preceding the gap, the estimated total of untracked downloads during that period is approximately <span className="text-amber-400 font-semibold">137,914</span>. The corrected and statistically grounded total is therefore approximately <span className="text-white font-semibold">354,982 downloads</span>.
+                    The Barran Dodger archive has generated a confirmed and independently verifiable download record of <span className="text-white font-semibold">217,068 events</span> between February 1 and March 20, 2026. A technical fault in the client-side tracking layer caused a recording gap from March 21 through April 7 — 17.5 days during which downloads continued at the established rate but were not logged. Based on the verified daily average of <span className="text-emerald-400 font-semibold">7,873 downloads per day</span> measured across the seven days immediately preceding the gap, the estimated total of untracked downloads during that period is approximately <span className="text-orange-400 font-semibold">137,914</span>. The corrected and statistically grounded total is therefore approximately <span className="text-white font-semibold">354,982 downloads</span>.
                   </p>
 
                   <p>
@@ -345,7 +346,7 @@ export default function VisitorStats() {
                   </p>
 
                   <div className="flex items-start gap-3 bg-zinc-900/40 border border-zinc-700/50 rounded-lg p-4 mt-2">
-                    <AlertTriangle className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                    <AlertTriangle className="w-4 h-4 text-orange-400 mt-0.5 shrink-0" />
                     <p className="text-xs text-zinc-400 leading-relaxed">
                       <span className="text-zinc-300 font-semibold">Methodology note:</span> The gap estimate of 137,914 uses the 7-day pre-gap average (7,873/day), which is the most statistically appropriate reference point as it reflects the established download rate immediately before tracking ceased. A conservative estimate using the all-time daily average (4,443/day) yields a minimum gap figure of 77,752 and a minimum total of 294,820. The true total lies between these bounds; the 354,982 figure is the best estimate based on the most relevant baseline period.
                     </p>
