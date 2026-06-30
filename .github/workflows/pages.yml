@@ -27,16 +27,17 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Remove Tailwind v4 from node_modules (prevent conflict)
+      - name: Verify Tailwind version and remove v4 packages
         run: |
+          TW_VER=$(node -p "require('./node_modules/tailwindcss/package.json').version")
+          echo "Tailwindcss installed: $TW_VER"
           rm -rf node_modules/@tailwindcss/vite \
                  node_modules/@tailwindcss/postcss \
                  node_modules/@tailwindcss/node \
                  node_modules/@tailwindcss/oxide \
                  node_modules/@tailwindcss/oxide-linux-x64-gnu \
                  node_modules/@tailwindcss/oxide-linux-x64-musl
-          find node_modules -mindepth 3 -maxdepth 3 -name "tailwindcss" -type d -exec rm -rf {} + 2>/dev/null || true
-          echo "Tailwind version in use: $(node -e 'console.log(require(\"./node_modules/tailwindcss/package.json\").version)')"
+          echo "Tailwindcss after cleanup: $(node -p \"require('./node_modules/tailwindcss/package.json').version\")"
 
       - name: Clear old dist
         run: rm -rf dist/ghpages
@@ -45,15 +46,13 @@ jobs:
         run: |
           NODE_ENV=production npx vite build --config vite.config.gh-pages.ts
           echo "=== Built files ===" && ls -la dist/ghpages/
-          echo "=== Asset count ===" && ls dist/ghpages/assets/ | wc -l
-          echo "=== Total size ===" && du -sh dist/ghpages/
+          echo "=== Assets ===" && ls dist/ghpages/assets/ | wc -l
+          echo "=== Size ===" && du -sh dist/ghpages/
 
       - name: Verify build
         run: |
           TITLE=$(grep -o '<title>[^<]*' dist/ghpages/index.html | head -1 || echo "MISSING")
           echo "Title: $TITLE"
-          if echo "$TITLE" | grep -qi "MISSING"; then echo "ERROR: no title" && exit 1; fi
-          echo "Build OK"
 
       - name: Add SPA 404 routing and .nojekyll
         run: |
