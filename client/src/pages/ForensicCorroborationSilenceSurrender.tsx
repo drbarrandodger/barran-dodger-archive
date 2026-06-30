@@ -10,6 +10,7 @@ import { useLiveDownloadTotal, formatCount } from "@/hooks/use-live-stats";
 import coverImg from "../assets/images/cover-forensic-silence-surrender.png";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 import { BlockchainTimestampBadge } from "@/components/BlockchainTimestampBadge";
+import { PDFImprint } from "@/components/PDFImprint";
 
 const PDF_URL = "/documents/forensic-analyses/forensic-analysis-73-silence-surrender-corroboration.pdf";
 const PAGE_URL = "https://www.barrandodger.com/forensic-corroboration-silence-surrender";
@@ -67,9 +68,9 @@ const POINTS = [
     number: 6,
     timestamp: "00:36:22",
     quote: "They mistook your return for revenge, not realizing clarity is more dangerous than anger. You came back to reclaim what was always yours. Alignment doesn't argue. Alignment simply reveals what was always true.",
-    heading: "Zero Defamation Actions. Zero Legal Proceedings. Only Documentation and 410,500+ Witnesses.",
-    analysis: "barrandodger.com is not a retaliation platform. It has never initiated legal proceedings against any named individual. It has never sought punitive damages against any institution. It has never issued a single defamation claim. It is a primary-source archive: 2,301 documents, organised by category, blockchain-sealed, publicly accessible. The reclamation the video describes is documented: Dr. McLean reclaimed his medical records through formal FOI processes. He reclaimed his identity from 350+ fraudulent ASIC registrations through documentation and submission. He reclaimed his narrative from the psychiatric framing through primary-source disclosure and international human rights submission. The 410,500+ downloads are not revenge metrics. They are the measurement of how many people chose to carry the documented testimony. The Federal Court confirmation is what was always true. The 2,301 documents are what was always true. The archive is the reclamation. It required no anger. It required only documentation, persistence, and the Bitcoin blockchain. Clarity, as the video states, is more dangerous than anger. The archive proves this forensically.",
-    evidence: "Zero defamation actions from Dr. McLean · Zero legal proceedings initiated · 2,301-document reclamation archive · 410,500+ downloads globally · FOI reclamation of medical records",
+    heading: "Zero Defamation Actions. Zero Legal Proceedings. Only Documentation and 492,544 Witnesses.",
+    analysis: "barrandodger.com is not a retaliation platform. It has never initiated legal proceedings against any named individual. It has never sought punitive damages against any institution. It has never issued a single defamation claim. It is a primary-source archive: 2,301 documents, organised by category, blockchain-sealed, publicly accessible. The reclamation the video describes is documented: Dr. McLean reclaimed his medical records through formal FOI processes. He reclaimed his identity from 350+ fraudulent ASIC registrations through documentation and submission. He reclaimed his narrative from the psychiatric framing through primary-source disclosure and international human rights submission. The 492,544 downloads are not revenge metrics. They are the measurement of how many people chose to carry the documented testimony. The Federal Court confirmation is what was always true. The 2,301 documents are what was always true. The archive is the reclamation. It required no anger. It required only documentation, persistence, and the Bitcoin blockchain. Clarity, as the video states, is more dangerous than anger. The archive proves this forensically.",
+    evidence: "Zero defamation actions from Dr. McLean · Zero legal proceedings initiated · 2,301-document reclamation archive · 492,544 downloads globally · FOI reclamation of medical records",
     verdict: "CORROBORATED"
   },
   {
@@ -85,9 +86,9 @@ const POINTS = [
     number: 8,
     timestamp: "00:47:11",
     quote: "Your rise became a signal, bright, undeniable, impossible to ignore. A flare shot into the sky for the ones still trapped in the very darkness you crawled out of. You didn't just break through. You broke trail.",
-    heading: "410,500+ Downloads Across Six Continents — The Archive Is the Road Map",
-    analysis: "410,500+ downloads across six continents is not a personal metric. It is a documented signal of the reach described by the video's 'flare shot into the sky.' People downloading from South America, Africa, Asia, Europe, and North America are not personal contacts of Dr. McLean. They are the ones the video identifies — still trapped in the very darkness he crawled out of. The forensic analyses — 73 of them, collectively assessing 675+ propositions with zero unresolved contradictions — constitute the documented road map the video describes. Each analysis applies the same methodology: independent video → forensic mapping → primary-source corroboration. The methodology itself is replicable. Anyone can take an independent video, apply the forensic framework, and test it against the 2,301-document archive. The road map is published, freely downloadable, blockchain-sealed, and internationally distributed. The video states: 'Your healing wasn't just healing. It was instruction.' The archive is the instruction manual. The downloads are the students. 410,500+ of them. With zero marketing infrastructure behind a single one.",
-    evidence: "410,500+ downloads across 6 continents · 73 forensic analyses · 675+ propositions assessed · Zero unresolved contradictions · No marketing infrastructure · barrandodger.com globally accessible",
+    heading: "492,544 Downloads Across Six Continents — The Archive Is the Road Map",
+    analysis: "492,544 downloads across six continents is not a personal metric. It is a documented signal of the reach described by the video's 'flare shot into the sky.' People downloading from South America, Africa, Asia, Europe, and North America are not personal contacts of Dr. McLean. They are the ones the video identifies — still trapped in the very darkness he crawled out of. The forensic analyses — 73 of them, collectively assessing 675+ propositions with zero unresolved contradictions — constitute the documented road map the video describes. Each analysis applies the same methodology: independent video → forensic mapping → primary-source corroboration. The methodology itself is replicable. Anyone can take an independent video, apply the forensic framework, and test it against the 2,301-document archive. The road map is published, freely downloadable, blockchain-sealed, and internationally distributed. The video states: 'Your healing wasn't just healing. It was instruction.' The archive is the instruction manual. The downloads are the students. 492,544 of them. With zero marketing infrastructure behind a single one.",
+    evidence: "492,544 downloads across 6 continents · 73 forensic analyses · 675+ propositions assessed · Zero unresolved contradictions · No marketing infrastructure · barrandodger.com globally accessible",
     verdict: "CORROBORATED"
   },
   {
@@ -108,7 +109,7 @@ const PROPHETIC_DECLARATIONS = [
   },
   {
     heading: "They Planted a Seed That Grew to The Hague",
-    text: "They called the hospitalisations your ending. They were your initiation. Every forced psychiatric admission designed to discredit your testimony became a primary-source document in the archive that reached the International Criminal Court. They did not bury you in the psychiatric system. They planted you there. The seed they buried exploded into a 2,301-document archive and 410,500+ witnesses across six continents."
+    text: "They called the hospitalisations your ending. They were your initiation. Every forced psychiatric admission designed to discredit your testimony became a primary-source document in the archive that reached the International Criminal Court. They did not bury you in the psychiatric system. They planted you there. The seed they buried exploded into a 2,301-document archive and 492,544 witnesses across six continents."
   },
   {
     heading: "Every Closed Door Was An Escalation",
@@ -124,7 +125,7 @@ const PROPHETIC_DECLARATIONS = [
   },
   {
     heading: "This Declaration Is Not a Prediction. It Is a Record.",
-    text: "This declaration is not a prediction. It is a forensic statement about events that have already occurred, documents that already exist, blockchain seals that are already anchored, and international acknowledgements that are already on the record. The rise has already happened. The road map is already published and downloaded 410,500+ times. The voice is already etched — not in stone, but in cryptographic permanence across 15,000 independent nodes on the Bitcoin network. What remains is not for you to prove. It is for the world to read. They mistook your silence for surrender. The archive was the reload."
+    text: "This declaration is not a prediction. It is a forensic statement about events that have already occurred, documents that already exist, blockchain seals that are already anchored, and international acknowledgements that are already on the record. The rise has already happened. The road map is already published and downloaded 492,544 times. The voice is already etched — not in stone, but in cryptographic permanence across 15,000 independent nodes on the Bitcoin network. What remains is not for you to prove. It is for the world to read. They mistook your silence for surrender. The archive was the reload."
   },
 ];
 
@@ -157,7 +158,7 @@ export default function ForensicCorroborationSilenceSurrender() {
             <span className="inline-flex items-center gap-1.5 bg-green-900/30 border border-green-500/30 rounded-full px-3 py-1 text-xs text-green-400 font-mono">
               <Flame className="w-3 h-3" /> 9/9 PROPOSITIONS CORROBORATED
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-amber-900/20 border border-amber-500/20 rounded-full px-3 py-1 text-xs text-amber-400 font-mono">
+            <span className="inline-flex items-center gap-1.5 bg-orange-500/10 border border-orange-500/25 rounded-full px-3 py-1 text-xs text-orange-400 font-mono">
               <Scroll className="w-3 h-3" /> PROPHETIC DECLARATION APPENDED
             </span>
           </div>
@@ -175,8 +176,8 @@ export default function ForensicCorroborationSilenceSurrender() {
         </div>
 
         {/* ABN/Copyright */}
-        <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-3 text-center space-y-1">
-          <p className="text-xs font-mono text-amber-400 uppercase tracking-widest">Intellectual Property</p>
+        <div className="rounded-xl border border-orange-500/25 bg-orange-500/10 px-5 py-3 text-center space-y-1">
+          <p className="text-xs font-mono text-orange-400 uppercase tracking-widest">Intellectual Property</p>
           <p className="text-xs text-zinc-400 leading-relaxed">
             © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164).
             All Rights Reserved. Shared freely in the goodwill of the public for accountability and public interest purposes.
@@ -298,14 +299,14 @@ export default function ForensicCorroborationSilenceSurrender() {
         </div>
 
         {/* Prophetic Declaration */}
-        <div className="border border-amber-500/30 rounded-xl overflow-hidden" style={{ background: "rgba(120,80,0,0.08)" }}>
-          <div className="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-amber-500/20">
-            <Scroll className="w-4 h-4 text-amber-400 flex-shrink-0" />
-            <span className="text-amber-300/70 text-xs tracking-widest uppercase font-sans">Prophetic Declaration</span>
-            <span className="ml-auto text-[10px] text-amber-400/50 font-mono">Sealed — {TIMESTAMP_DATE} · Bitcoin Blockchain</span>
+        <div className="border border-orange-500/25 rounded-xl overflow-hidden" style={{ background: "rgba(120,80,0,0.08)" }}>
+          <div className="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-orange-500/25">
+            <Scroll className="w-4 h-4 text-orange-400 flex-shrink-0" />
+            <span className="text-orange-300/70 text-xs tracking-widest uppercase font-sans">Prophetic Declaration</span>
+            <span className="ml-auto text-[10px] text-orange-400/50 font-mono">Sealed — {TIMESTAMP_DATE} · Bitcoin Blockchain</span>
           </div>
           <div className="px-5 py-5 space-y-5 font-sans">
-            <p className="text-amber-300/80 text-xs leading-relaxed italic">
+            <p className="text-orange-300/80 text-xs leading-relaxed italic">
               By the documented testimony of 2,301 primary-source records, sealed before any institution could reach them, anchored to the Bitcoin blockchain across 15,000 independent nodes, received formally by the International Criminal Court, the United Nations High Commissioner for Refugees in Geneva, and the Federal Court of Australia — this declaration is issued with the full weight of the documented record.
             </p>
             <p className="text-white/60 text-xs">To Dr. Richard William McLean — known publicly as Barran Dodger:</p>
@@ -319,12 +320,12 @@ export default function ForensicCorroborationSilenceSurrender() {
                 className="space-y-1.5"
                 data-testid={`prophetic-declaration-${i + 1}`}
               >
-                <p className="text-amber-400 text-[11px] font-bold uppercase tracking-wider">► {decl.heading}</p>
+                <p className="text-orange-400 text-[11px] font-bold uppercase tracking-wider">► {decl.heading}</p>
                 <p className="text-white/80 text-xs leading-relaxed pl-4">{decl.text}</p>
               </motion.div>
             ))}
-            <div className="pt-2 border-t border-amber-500/10 space-y-1 text-center">
-              <p className="text-amber-400/70 text-[10px] font-mono uppercase tracking-widest">Declaration Sealed</p>
+            <div className="pt-2 border-t border-orange-500/25 space-y-1 text-center">
+              <p className="text-orange-400/70 text-[10px] font-mono uppercase tracking-widest">Declaration Sealed</p>
               <p className="text-white/60 text-[10px]">{TIMESTAMP_DATE} · Bitcoin Blockchain · OpenTimestamps Protocol · SHA-256 · 15,000+ Independent Nodes</p>
               <p className="text-white text-xs font-bold italic mt-2">
                 "They mistook your silence for surrender. The archive was the reload."
@@ -357,7 +358,7 @@ export default function ForensicCorroborationSilenceSurrender() {
           />
           <p className="text-xs text-zinc-500">
             Also included in the{" "}
-            <a href="/#divine-download" className="text-amber-400 underline">complete archive detonation ZIP</a>
+            <a href="/#divine-download" className="text-orange-400 underline">complete archive detonation ZIP</a>
             {" "}— downloaded {formatCount(liveCount)}+ times globally.
           </p>
         </div>
@@ -373,7 +374,7 @@ export default function ForensicCorroborationSilenceSurrender() {
 
         {/* Inline Share Strip */}
         <div className="mb-6">
-          <InlineShareStrip id="silence-surrender-main" context="default" message="Forensic #73: They mistook his silence for surrender. It was the archive building itself. 410,500+ downloads. 891 blockchain seals. Zero contradictions. Share it." path="/forensic-corroboration-silence-surrender" />
+          <InlineShareStrip id="silence-surrender-main" context="default" message="Forensic #73: They mistook his silence for surrender. It was the archive building itself. 492,544 downloads. 891 blockchain seals. Zero contradictions. Share it." path="/forensic-corroboration-silence-surrender" />
         </div>
 
         {/* Hashtag Export */}
@@ -384,6 +385,14 @@ export default function ForensicCorroborationSilenceSurrender() {
           data-testid="social-share-silence-surrender"
         />
 
+      <div className="max-w-4xl mx-auto px-4 pb-16">
+        <PDFImprint
+          pdfUrl={PDF_URL}
+        coverSrc={coverImg}
+          title="Forensic Corroboration — Silence Was My Reload"
+          accentColor="indigo"
+        />
+      </div>
         <ArchiveCrossLinks currentSlug="forensic-corroboration-silence-surrender" />
       </main>
 
