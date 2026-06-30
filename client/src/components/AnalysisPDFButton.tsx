@@ -65,7 +65,7 @@ const PAGE_TITLES: Record<string, string> = {
   "/letter-to-the-world": "Letter to the World",
   "/whistleblower-comparison": "Whistleblower Comparison",
   "/ai-justice-statement": "AI Justice Statement",
-  "/administrative-annihilation": "Administrative Annihilation",
+  "/administrative-annihilation": "The Architecture of Administrative Annihilation",
   "/manifesto": "McLean Manifesto",
   "/master-evidence-register": "Master Evidence Register",
   "/timeline": "Case Timeline",
