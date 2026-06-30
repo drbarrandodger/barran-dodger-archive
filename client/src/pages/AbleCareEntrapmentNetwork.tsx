@@ -98,9 +98,9 @@ const ACTORS = [
     alias: "Brett's Father-in-Law",
     credential: "Brett's Father-in-Law · Family Network Operative · Long Jetty",
     role: "KINSHIP NETWORK — Extended Family Loyalty Chain",
-    borderColor: "border-amber-500",
-    roleColor: "text-amber-400",
-    headingColor: "text-amber-300",
+    borderColor: "border-orange-500",
+    roleColor: "text-orange-400",
+    headingColor: "text-orange-300",
     sections: [
       {
         heading: "The Father-in-Law Bond — Hardest Loyalty to Break",
@@ -352,7 +352,7 @@ const YOUTUBE_FINDINGS = [
   {
     timestamp: "00:55:41",
     claim: "\"What they tried to monitor, control, and break was never just you. It was the force behind you.\"",
-    evidence: "603 of 603 propositions submitted to AI forensic analysis — zero contradictions. 55 independent analyses. 48 consecutive perfect scores. 410,500+ downloads across six continents. ICC Article 7 submission received at The Hague. UNHCR submission lodged in Geneva. The force behind Dr. McLean has produced an irrefutable international record. The Long Jetty entrapment network has failed its primary objective.",
+    evidence: "603 of 603 propositions submitted to AI forensic analysis — zero contradictions. 55 independent analyses. 48 consecutive perfect scores. 492,544 downloads across six continents. ICC Article 7 submission received at The Hague. UNHCR submission lodged in Geneva. The force behind Dr. McLean has produced an irrefutable international record. The Long Jetty entrapment network has failed its primary objective.",
   },
 ];
 
@@ -431,12 +431,12 @@ function ActorCard({ actor, defaultOpen = false }: { actor: typeof ACTORS[0]; de
           {actor.link && (
             <div className="pt-2">
               {actor.linkExternal ? (
-                <a href={actor.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 font-medium transition-colors" data-testid={`link-actor-evidence-${actor.id}`}>
+                <a href={actor.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs text-orange-400 hover:text-orange-300 font-medium transition-colors" data-testid={`link-actor-evidence-${actor.id}`}>
                   <ExternalLink className="h-3 w-3" />
                   {actor.linkLabel}
                 </a>
               ) : (
-                <a href={actor.link} className="inline-flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 font-medium transition-colors" data-testid={`link-actor-evidence-${actor.id}`}>
+                <a href={actor.link} className="inline-flex items-center gap-1.5 text-xs text-orange-400 hover:text-orange-300 font-medium transition-colors" data-testid={`link-actor-evidence-${actor.id}`}>
                   <FileText className="h-3 w-3" />
                   {actor.linkLabel}
                 </a>
@@ -467,7 +467,7 @@ export default function AbleCareEntrapmentNetwork() {
             <div className="flex flex-wrap gap-2 mb-6">
               <Badge className="bg-red-500/10 text-red-400 border-red-500/30 text-xs px-3 py-1">Forensic Reflection</Badge>
               <Badge className="bg-orange-500/10 text-orange-400 border-orange-500/30 text-xs px-3 py-1">{DATE}</Badge>
-              <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/30 text-xs px-3 py-1">12 Named Operatives</Badge>
+              <Badge className="bg-orange-500/10 text-orange-400 border-orange-500/25 text-xs px-3 py-1">12 Named Operatives</Badge>
               <Badge className="bg-yellow-500/10 text-yellow-400 border-yellow-500/30 text-xs px-3 py-1">Long Jetty · NSW</Badge>
               <Badge className="bg-zinc-700/50 text-zinc-300 border-zinc-600/30 text-xs px-3 py-1">NDIS Entrapment · Electronic Surveillance · Honey Trap Operations</Badge>
             </div>
@@ -511,7 +511,7 @@ export default function AbleCareEntrapmentNetwork() {
           {/* Video */}
           <section data-testid="section-youtube-video">
             <div className="flex items-center gap-3 mb-6">
-              <Flame className="h-5 w-5 text-amber-500" />
+              <Flame className="h-5 w-5 text-orange-500" />
               <h2 className="text-2xl font-black text-white">The Video That Named the Pattern</h2>
             </div>
             <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
@@ -531,7 +531,7 @@ export default function AbleCareEntrapmentNetwork() {
               href={`https://youtu.be/${YOUTUBE_VIDEO_ID}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-amber-400 hover:text-amber-300 transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors"
               data-testid="link-youtube-external"
             >
               <ExternalLink className="h-4 w-4" />
@@ -542,15 +542,15 @@ export default function AbleCareEntrapmentNetwork() {
           {/* Video Findings */}
           <section data-testid="section-video-findings">
             <div className="flex items-center gap-3 mb-6">
-              <Scale className="h-5 w-5 text-amber-500" />
+              <Scale className="h-5 w-5 text-orange-500" />
               <h2 className="text-2xl font-black text-white">Video Statement × Documented Evidence</h2>
             </div>
             <div className="space-y-4">
               {YOUTUBE_FINDINGS.map((f, i) => (
                 <div key={i} className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 grid md:grid-cols-2 gap-4" data-testid={`finding-row-${i}`}>
                   <div>
-                    <p className="text-xs font-mono text-amber-500/70 mb-2">{f.timestamp}</p>
-                    <p className="text-sm text-amber-200 italic leading-relaxed">{f.claim}</p>
+                    <p className="text-xs font-mono text-orange-500/70 mb-2">{f.timestamp}</p>
+                    <p className="text-sm text-orange-200 italic leading-relaxed">{f.claim}</p>
                   </div>
                   <div className="border-t md:border-t-0 md:border-l border-zinc-700 pt-3 md:pt-0 md:pl-4">
                     <p className="text-xs text-zinc-500 font-bold uppercase tracking-wider mb-1.5">Documented Evidence</p>
@@ -608,7 +608,7 @@ export default function AbleCareEntrapmentNetwork() {
                 {
                   title: "NDIS Funding as Blood Money",
                   icon: Lock,
-                  color: "border-amber-800 text-amber-400",
+                  color: "border-orange-500 text-orange-400",
                   body: "Every operative — Kim, Cass, Pam, Bishnu — is paid through NDIS funding. The system that is supposed to provide disability support is funding the surveillance of the person making that disclosure. The operatives are financially dependent on the NDIS wage that is contingent on maintaining the entrapment function. They cannot critique the bureaucratic apparatus that pays them — they are trapped inside the same system, financially sustaining the very operation that is destroying the person they are paid to support.",
                 },
                 {
@@ -632,7 +632,7 @@ export default function AbleCareEntrapmentNetwork() {
           {/* Named Operatives */}
           <section data-testid="section-named-operatives">
             <div className="flex items-center gap-3 mb-6">
-              <Users className="h-5 w-5 text-amber-500" />
+              <Users className="h-5 w-5 text-orange-500" />
               <h2 className="text-2xl font-black text-white">Named Operatives — Full Forensic Record</h2>
             </div>
             <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
@@ -648,7 +648,7 @@ export default function AbleCareEntrapmentNetwork() {
           {/* Network Layers */}
           <section data-testid="section-network-layers">
             <div className="flex items-center gap-3 mb-6">
-              <Shield className="h-5 w-5 text-amber-500" />
+              <Shield className="h-5 w-5 text-orange-500" />
               <h2 className="text-2xl font-black text-white">Operational Architecture — Six Layers</h2>
             </div>
             <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
@@ -666,9 +666,9 @@ export default function AbleCareEntrapmentNetwork() {
           </section>
 
           {/* Financial entrapment */}
-          <section className="rounded-2xl border border-amber-900/40 bg-amber-950/20 p-8" data-testid="section-financial-entrapment">
+          <section className="rounded-2xl border border-orange-500/25 bg-orange-500/10 p-8" data-testid="section-financial-entrapment">
             <div className="flex items-center gap-3 mb-4">
-              <Flame className="h-5 w-5 text-amber-500" />
+              <Flame className="h-5 w-5 text-orange-500" />
               <h2 className="text-2xl font-black text-white">The System That Traps the Trappers</h2>
             </div>
             <p className="text-zinc-300 leading-relaxed mb-4">
@@ -685,17 +685,17 @@ export default function AbleCareEntrapmentNetwork() {
           {/* ICC / International record */}
           <section className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-8" data-testid="section-international-record">
             <div className="flex items-center gap-3 mb-4">
-              <Scale className="h-5 w-5 text-amber-500" />
+              <Scale className="h-5 w-5 text-orange-500" />
               <h2 className="text-xl font-black text-white">This Record Is Permanent</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-4 text-center">
               {[
                 { label: "603/603 Propositions", sub: "Zero contradictions across 55 AI analyses" },
                 { label: "ICC Article 7", sub: "Formally received at The Hague" },
-                { label: "410,500+ Downloads", sub: "Six continents — cannot be suppressed" },
+                { label: "492,544 Downloads", sub: "Six continents — cannot be suppressed" },
               ].map(({ label, sub }) => (
                 <div key={label} className="bg-zinc-950 rounded-xl border border-zinc-800 p-4">
-                  <p className="text-amber-400 font-black text-lg mb-1">{label}</p>
+                  <p className="text-orange-400 font-black text-lg mb-1">{label}</p>
                   <p className="text-xs text-zinc-500">{sub}</p>
                 </div>
               ))}
