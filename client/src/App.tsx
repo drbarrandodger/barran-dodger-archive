@@ -22,6 +22,7 @@ import { FloatingShareBar } from "@/components/FloatingShareBar";
 import { TextSelectionShare } from "@/components/TextSelectionShare";
 import { MilestoneBar } from "@/components/MilestoneBar";
 import { CourtCountdownStrip } from "@/components/CourtCountdownStrip";
+import { FloatingAudioPlayer } from "@/components/FloatingAudioPlayer";
 import DareYouBanner from "@/components/DareYouBanner";
 import { AblePointExposureBanner } from "@/components/AblePointExposureBanner";
 import { ScrollShareCTA } from "@/components/ScrollShareCTA";
@@ -209,6 +210,9 @@ import YouBuiltYourPeaceInSilence from "@/pages/YouBuiltYourPeaceInSilence";
 import ThisIsTheReckoning from "@/pages/ThisIsTheReckoning";
 import InvestmentProspectus from "@/pages/InvestmentProspectus";
 import TheyCalledYouDelusional from "@/pages/TheyCalledYouDelusional";
+import ForensicEntrapmentPoverty from "@/pages/ForensicEntrapmentPoverty";
+import MobbingPuppetMastersPaper from "@/pages/MobbingPuppetMastersPaper";
+import InternationalAcademicMonograph from "@/pages/InternationalAcademicMonograph";
 import StillBreathingNotTheSameSpecies from "@/pages/StillBreathingNotTheSameSpecies";
 import TheyTriedToBreakYou from "@/pages/TheyTriedToBreakYou";
 import IfTheWallsCouldTalk from "@/pages/IfTheWallsCouldTalk";
@@ -286,6 +290,8 @@ import Academy from "@/pages/Academy";
 import AcademyUnit from "@/pages/AcademyUnit";
 import AcademyCertificate from "@/pages/AcademyCertificate";
 import Support from "@/pages/Support";
+import Membership from "@/pages/Membership";
+import MembersPortal from "@/pages/MembersPortal";
 import AcademicSignificanceAnalysis from "@/pages/AcademicSignificanceAnalysis";
 import ForensicPropheticAdjudication from "@/pages/ForensicPropheticAdjudication";
 import CropCirclesDisclosure from "@/pages/CropCirclesDisclosure";
@@ -370,6 +376,8 @@ function Router() {
         <Route path="/new-paradigm-charter" component={ChurchOfBarranResonanceDodger} />
         <Route path="/support" component={Support} />
         <Route path="/support/success" component={Support} />
+        <Route path="/membership" component={Membership} />
+        <Route path="/members" component={MembersPortal} />
         <Route path="/donate" component={Donate} />
         <Route path="/contact" component={Contact} />
         <Route path="/media" component={Media} />
@@ -836,6 +844,19 @@ function Router() {
         <Route path="/investment-prospectus" component={InvestmentProspectus} />
         <Route path="/financial-valuation" component={InvestmentProspectus} />
         <Route path="/investor-appeal" component={InvestmentProspectus} />
+        <Route path="/forensic-entrapment-poverty-v2k" component={ForensicEntrapmentPoverty} />
+        <Route path="/poverty-trap-failed" component={ForensicEntrapmentPoverty} />
+        <Route path="/v2k-gang-stalking-forensic-analysis" component={ForensicEntrapmentPoverty} />
+        <Route path="/318571-downloads" component={ForensicEntrapmentPoverty} />
+        <Route path="/international-academic-monograph" component={InternationalAcademicMonograph} />
+        <Route path="/un-grade-academic-monograph" component={InternationalAcademicMonograph} />
+        <Route path="/interdisciplinary-forensic-examination" component={InternationalAcademicMonograph} />
+        <Route path="/apex-moral-cowardice-mobbing-paper" component={MobbingPuppetMastersPaper} />
+        <Route path="/the-pawns-will-defect" component={MobbingPuppetMastersPaper} />
+        <Route path="/group-mobbing-forensic-analysis" component={MobbingPuppetMastersPaper} />
+        <Route path="/puppet-masters-and-pawns" component={MobbingPuppetMastersPaper} />
+        <Route path="/rats-will-come" component={MobbingPuppetMastersPaper} />
+        <Route path="/mobbing-defection-paper" component={MobbingPuppetMastersPaper} />
         <Route path="/they-called-you-delusional" component={TheyCalledYouDelusional} />
         <Route path="/paranoid-was-prophecy" component={TheyCalledYouDelusional} />
         <Route path="/they-laughed-now-theyre-trembling" component={TheyCalledYouDelusional} />
@@ -891,13 +912,14 @@ function App() {
             <GlobalBlockchainStamp />
             <div className="hidden sm:block"><MilestoneBar /></div>
             <GlobalAnalysisShareStrip />
-            <FloatingDonateWidget />
+            <div className="hidden sm:block"><FloatingDonateWidget /></div>
             <div className="hidden sm:block"><FloatingShareBar /></div>
             <TextSelectionShare />
             <Chatbot />
+            <FloatingAudioPlayer />
             <CourtCountdownStrip />
             <div className="hidden sm:block"><ScrollShareCTA /></div>
-            <DareYouBanner />
+            <div className="hidden sm:block"><DareYouBanner /></div>
           </PDFGateProvider>
         </TooltipProvider>
       </ThemeProvider>
