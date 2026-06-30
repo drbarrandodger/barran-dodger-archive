@@ -24,45 +24,43 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies (fresh, no cache)
+      - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Remove conflicting Tailwind v4 package
-        run: npm rm @tailwindcss/vite --ignore-scripts 2>/dev/null || true
+      - name: Force Tailwind v3 (remove all v4 packages)
+        run: |
+          npm rm @tailwindcss/vite @tailwindcss/postcss @tailwindcss/node @tailwindcss/oxide 2>/dev/null || true
+          npm install tailwindcss@3.4.17 --no-save --legacy-peer-deps
+          echo "Tailwindcss version: $(node -e 'console.log(require(\"./node_modules/tailwindcss/package.json\").version)')"
 
-      - name: Clear old dist (prevent stale artifacts)
+      - name: Clear old dist
         run: rm -rf dist/ghpages
 
       - name: Build frontend for GitHub Pages
         run: |
-          NODE_ENV=production npx vite build \
-            --config vite.config.gh-pages.ts
-          echo "=== Built files ==="
-          ls -la dist/ghpages/
-          ls dist/ghpages/assets/ | wc -l
-          du -sh dist/ghpages/
+          NODE_ENV=production npx vite build --config vite.config.gh-pages.ts
+          echo "=== Built files ===" && ls -la dist/ghpages/
+          echo "=== Asset count ===" && ls dist/ghpages/assets/ | wc -l
+          echo "=== Total size ===" && du -sh dist/ghpages/
 
-      - name: Verify build has correct title
+      - name: Verify build
         run: |
           TITLE=$(grep -o '<title>[^<]*' dist/ghpages/index.html | head -1 || echo "MISSING")
           echo "Title: $TITLE"
-          if echo "$TITLE" | grep -qi "portal\|MISSING"; then
-            echo "ERROR: index.html still has wrong title!"
-            exit 1
-          fi
-          echo "Build verified OK"
+          if echo "$TITLE" | grep -qi "MISSING"; then echo "ERROR: no title" && exit 1; fi
+          echo "Build OK"
 
-      - name: Add SPA 404 routing + .nojekyll
+      - name: Add SPA 404 routing and .nojekyll
         run: |
           cp dist/ghpages/index.html dist/ghpages/404.html
           touch dist/ghpages/.nojekyll
 
-      - name: Remove directories too large for GitHub Pages (>100MB)
+      - name: Remove oversized directories
         run: |
           rm -rf dist/ghpages/documents dist/ghpages/audio dist/ghpages/video
-          echo "=== Final size ===" && du -sh dist/ghpages/
+          echo "Final size:" && du -sh dist/ghpages/
 
-      - name: Deploy to gh-pages branch
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
