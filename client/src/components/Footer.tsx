@@ -335,7 +335,7 @@ export function Footer() {
                 <Phone className="h-3 w-3" /> +61 431 300 940
               </a>
               <a href="https://x.com/73trustfund" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 transition-colors mt-2" style={{ color: "rgba(196,212,239,0.5)" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#ff6914"; }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#e9a00a"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(196,212,239,0.5)"; }}
                 data-testid="link-twitter-footer">
                 <SiX className="h-3.5 w-3.5" /> @73trustfund on X
@@ -664,14 +664,14 @@ export function Footer() {
                 </p>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs" style={{ color: "rgba(196,212,239,0.6)" }}>
                   <a href="https://abr.business.gov.au/ABN/View?abn=78833496164" target="_blank" rel="noopener noreferrer"
-                    className="font-mono underline transition-colors" style={{ color: "rgba(255,105,20,0.8)" }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#ff6914"; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(255,105,20,0.8)"; }}>
+                    className="font-mono underline transition-colors" style={{ color: "rgba(233,160,10,0.8)" }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#e9a00a"; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(233,160,10,0.8)"; }}>
                     ABN: 78 833 496 164
                   </a>
                   <span style={{ color: "rgba(255,255,255,0.3)" }}>·</span>
                   <a href="tel:+61431300940" className="font-mono font-semibold transition-colors" style={{ color: "rgba(196,212,239,0.7)" }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#ff6914"; }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#e9a00a"; }}
                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(196,212,239,0.7)"; }}>
                     +61 431 300 940
                   </a>
@@ -687,7 +687,7 @@ export function Footer() {
                   <span style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
                   <a href="https://economic-justice-engine.replit.app" target="_blank" rel="noopener noreferrer"
                     className="transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#ff6914"; }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#e9a00a"; }}
                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)"; }}>
                     economic-justice-engine.replit.app
                   </a>
