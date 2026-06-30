@@ -77,7 +77,7 @@ function RegistryEntryCard({ entry }: { entry: EvidenceEntry }) {
   return (
     <div
       data-testid={`registry-entry-${entry.number}`}
-      className="border border-zinc-700/60 rounded-lg bg-zinc-900/50 p-4 hover:border-amber-700/50 transition-colors"
+      className="border border-zinc-700/60 rounded-lg bg-zinc-900/50 p-4 hover:border-orange-500/25 transition-colors"
     >
       <div className="flex flex-wrap items-start gap-2 mb-2">
         <span className="text-xs font-mono text-zinc-500 shrink-0 mt-0.5">#{entry.number}</span>
@@ -86,7 +86,7 @@ function RegistryEntryCard({ entry }: { entry: EvidenceEntry }) {
         >
           {entry.category.split(";")[0].trim()}
         </span>
-        <span className="flex items-center gap-1 text-xs text-amber-400/80 shrink-0">
+        <span className="flex items-center gap-1 text-xs text-orange-400/80 shrink-0">
           <Calendar size={11} />
           {entry.date}
         </span>
@@ -105,7 +105,7 @@ function RegistryEntryCard({ entry }: { entry: EvidenceEntry }) {
       )}
 
       <div className="mt-2 border-t border-zinc-700/40 pt-2">
-        <p className="text-xs font-semibold text-amber-400 uppercase tracking-wider mb-1">AI Statement of Significance</p>
+        <p className="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-1">AI Statement of Significance</p>
         <p className="text-xs text-zinc-300 leading-relaxed">{entry.significance}</p>
       </div>
 
@@ -156,7 +156,7 @@ function LocalPDFCard({ entry }: { entry: LocalPDFEntry }) {
         >
           {entry.category}
         </span>
-        <span className="flex items-center gap-1 text-xs text-amber-400/80 shrink-0">
+        <span className="flex items-center gap-1 text-xs text-orange-400/80 shrink-0">
           <Calendar size={11} />
           Added {entry.dateAdded}
         </span>
@@ -248,6 +248,8 @@ export default function EvidenceSignificanceRegistry() {
       <SEO
         title="Evidence Significance Registry — 2,301 Timestamped Documents | Barran Dodger"
         description="Complete AI-annotated registry of 2,301 blockchain-verified timestamped documents submitted to the ICC under Article 7 and UNHCR Geneva. Includes significance statements for all locally hosted PDFs."
+        path="/evidence-significance-registry"
+        keywords="evidence significance registry whistleblower Australia, AI annotated evidence registry, 2301 blockchain timestamped documents, Bitcoin Block 897241 evidence registry, ICC Article 7 document significance, OHCHR UR/UST/23/AUS/17 evidence list, SHA-256 document registry, significance statements government documents, primary source document registry, each document AI significance statement, 3643 government documents registry, whistleblower evidence annotated, forensic significance per document, NDIS fraud evidence registry, psychiatric abuse evidence list, 35 years evidence significance"
         url="https://www.barrandodger.com/evidence-significance-registry"
       />
       <ReadingProgress />
@@ -257,13 +259,13 @@ export default function EvidenceSignificanceRegistry() {
 
         {/* Hero Header */}
         <div className="mb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-900/30 border border-amber-700/50 rounded-full px-4 py-1.5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6">
+          <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/25 rounded-full px-4 py-1.5 text-orange-400 text-xs font-semibold uppercase tracking-widest mb-6">
             <Shield size={13} />
             Blockchain-Verified Archive
           </div>
           <h1 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
             Evidence Significance<br />
-            <span className="text-amber-400">Registry</span>
+            <span className="text-orange-400">Registry</span>
           </h1>
           <p className="text-zinc-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             Complete AI-annotated registry of <strong className="text-white">2,301 timestamped documents</strong> from
@@ -277,7 +279,7 @@ export default function EvidenceSignificanceRegistry() {
         {stats && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
             <div className="bg-zinc-900/70 border border-zinc-700/50 rounded-lg p-4 text-center">
-              <div className="text-2xl font-black text-amber-400">{stats.totalRegisterEntries.toLocaleString()}</div>
+              <div className="text-2xl font-black text-orange-400">{stats.totalRegisterEntries.toLocaleString()}</div>
               <div className="text-xs text-zinc-400 mt-1">Archive Documents</div>
             </div>
             <div className="bg-zinc-900/70 border border-zinc-700/50 rounded-lg p-4 text-center">
@@ -300,7 +302,7 @@ export default function EvidenceSignificanceRegistry() {
         )}
 
         {/* Download ZIP CTA */}
-        <div className="bg-zinc-900/80 border border-amber-700/50 rounded-xl p-6 mb-8">
+        <div className="bg-zinc-900/80 border border-orange-500/25 rounded-xl p-6 mb-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <h2 className="text-base font-bold text-white mb-1">
@@ -317,7 +319,7 @@ export default function EvidenceSignificanceRegistry() {
             <a
               href="/api/evidence-registry/analyses-bundle"
               data-testid="btn-download-analyses-bundle"
-              className="shrink-0 inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-white font-bold px-6 py-3 rounded-lg transition-colors text-sm whitespace-nowrap shadow-lg shadow-amber-900/30"
+              className="shrink-0 inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg transition-colors text-sm whitespace-nowrap shadow-lg shadow-orange-500/30"
             >
               <Download size={16} />
               Download All Analyses ZIP
@@ -325,7 +327,7 @@ export default function EvidenceSignificanceRegistry() {
           </div>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-center">
             <div className="bg-zinc-800/60 rounded px-3 py-2 border border-zinc-700/40">
-              <div className="font-bold text-amber-400 text-base">54</div>
+              <div className="font-bold text-orange-400 text-base">54</div>
               <div className="text-zinc-400">Forensic Analyses</div>
             </div>
             <div className="bg-zinc-800/60 rounded px-3 py-2 border border-zinc-700/40">
@@ -344,10 +346,10 @@ export default function EvidenceSignificanceRegistry() {
         </div>
 
         {/* AI Note */}
-        <div className="bg-amber-950/30 border border-amber-800/40 rounded-lg p-4 mb-8 flex gap-3">
-          <AlertCircle size={16} className="text-amber-400 shrink-0 mt-0.5" />
+        <div className="bg-orange-500/10 border border-orange-500/25 rounded-lg p-4 mb-8 flex gap-3">
+          <AlertCircle size={16} className="text-orange-400 shrink-0 mt-0.5" />
           <p className="text-xs text-zinc-300 leading-relaxed">
-            <strong className="text-amber-400">AI Statements of Significance:</strong> Each document in this registry has been assessed
+            <strong className="text-orange-400">AI Statements of Significance:</strong> Each document in this registry has been assessed
             by AI against the ICC Article 7 submission framework, the 35-year documented persecution record, and the
             forensic archive of Dr. Richard William McLean (Barran Dodger). Statements are generated from document
             metadata, archival summaries, category classification, and cross-reference patterns within the 2,304-document blockchain-verified record.
@@ -359,7 +361,7 @@ export default function EvidenceSignificanceRegistry() {
           <button
             data-testid="tab-register"
             onClick={() => { setActiveTab("register"); setPage(1); setSearch(""); setSelectedCategory("All"); }}
-            className={`px-5 py-2 rounded-md text-sm font-semibold transition-all ${activeTab === "register" ? "bg-amber-600 text-white shadow" : "text-zinc-400 hover:text-white"}`}
+            className={`px-5 py-2 rounded-md text-sm font-semibold transition-all ${activeTab === "register" ? "bg-orange-600 text-white shadow" : "text-zinc-400 hover:text-white"}`}
           >
             <span className="flex items-center gap-2">
               <Database size={14} />
@@ -390,7 +392,7 @@ export default function EvidenceSignificanceRegistry() {
               placeholder={activeTab === "register" ? "Search by title, authors, date, summary…" : "Search locally hosted PDFs…"}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2.5 bg-zinc-900/70 border border-zinc-700/60 rounded-lg text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-amber-600/60"
+              className="w-full pl-9 pr-4 py-2.5 bg-zinc-900/70 border border-zinc-700/60 rounded-lg text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-orange-500/25"
             />
           </div>
           {activeTab === "register" && categories && categories.length > 0 && (
@@ -400,7 +402,7 @@ export default function EvidenceSignificanceRegistry() {
                 data-testid="select-category-filter"
                 value={selectedCategory}
                 onChange={(e) => { setSelectedCategory(e.target.value); setPage(1); }}
-                className="pl-9 pr-8 py-2.5 bg-zinc-900/70 border border-zinc-700/60 rounded-lg text-sm text-zinc-100 focus:outline-none focus:border-amber-600/60 appearance-none min-w-[180px]"
+                className="pl-9 pr-8 py-2.5 bg-zinc-900/70 border border-zinc-700/60 rounded-lg text-sm text-zinc-100 focus:outline-none focus:border-orange-500/25 appearance-none min-w-[180px]"
               >
                 <option value="All">All Categories</option>
                 {categories.map((c) => (
@@ -432,7 +434,7 @@ export default function EvidenceSignificanceRegistry() {
                     href="/documents/master-evidence-register.txt"
                     download
                     data-testid="download-register"
-                    className="flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 transition-colors"
+                    className="flex items-center gap-1.5 text-xs text-orange-400 hover:text-orange-300 transition-colors"
                   >
                     <Download size={12} />
                     Download full register
@@ -452,7 +454,7 @@ export default function EvidenceSignificanceRegistry() {
                       data-testid="btn-prev-page"
                       onClick={() => setPage((p) => Math.max(1, p - 1))}
                       disabled={page === 1}
-                      className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-zinc-700/60 bg-zinc-900/60 text-sm text-zinc-300 hover:border-amber-600/50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                      className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-zinc-700/60 bg-zinc-900/60 text-sm text-zinc-300 hover:border-orange-500/25 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                     >
                       <ChevronLeft size={14} />
                       Previous
@@ -465,7 +467,7 @@ export default function EvidenceSignificanceRegistry() {
                       data-testid="btn-next-page"
                       onClick={() => setPage((p) => Math.min(registerData.totalPages, p + 1))}
                       disabled={page === registerData.totalPages}
-                      className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-zinc-700/60 bg-zinc-900/60 text-sm text-zinc-300 hover:border-amber-600/50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                      className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-zinc-700/60 bg-zinc-900/60 text-sm text-zinc-300 hover:border-orange-500/25 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                     >
                       Next
                       <ChevronRight size={14} />
