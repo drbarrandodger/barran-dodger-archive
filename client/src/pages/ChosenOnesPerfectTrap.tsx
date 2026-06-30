@@ -568,7 +568,7 @@ export default function ChosenOnesPerfectTrap() {
                 </p>
                 <div className="flex flex-wrap gap-3" data-testid="cta-buttons-perfect-trap">
                   <Button asChild>
-                    <Link href="/" data-testid="button-view-archive">
+                    <Link href="/archive-home" data-testid="button-view-archive">
                       <FileText className="mr-2 h-4 w-4" /> View the Archive
                     </Link>
                   </Button>
