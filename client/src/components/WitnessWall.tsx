@@ -4,13 +4,13 @@ import { Globe, Download, Shield, Lock, Zap } from "lucide-react";
 const GLOBAL_FACTS = [
   { icon: Globe, text: "416,000+ downloads across 6 continents", color: "text-emerald-400" },
   { icon: Shield, text: "52 forensic analyses — 675/675 propositions corroborated", color: "text-blue-400" },
-  { icon: Lock, text: "Bitcoin blockchain sealed — beyond deletion, beyond suppression", color: "text-amber-400" },
+  { icon: Lock, text: "Bitcoin blockchain sealed — beyond deletion, beyond suppression", color: "text-orange-400" },
   { icon: Zap, text: "ICC Article 7 formal receipt confirmed — The Hague", color: "text-red-400" },
   { icon: Globe, text: "UNHCR Geneva submission lodged", color: "text-emerald-400" },
   { icon: Shield, text: "Not one rebuttal. Not one defamation action. Because the record is accurate.", color: "text-blue-400" },
-  { icon: Download, text: "ABC National broadcast. McGill University. Australian Parliament.", color: "text-amber-400" },
+  { icon: Download, text: "ABC National broadcast. McGill University. Australian Parliament.", color: "text-orange-400" },
   { icon: Zap, text: "Human Rights Award — from the same government that persecuted him", color: "text-purple-400" },
-  { icon: Lock, text: "845 Bitcoin blockchain timestamps. Every document. Verified.", color: "text-amber-400" },
+  { icon: Lock, text: "845 Bitcoin blockchain timestamps. Every document. Verified.", color: "text-orange-400" },
   { icon: Globe, text: "Formally studied in Australian Parliament", color: "text-emerald-400" },
 ];
 
@@ -28,7 +28,7 @@ export function WitnessWall({ variant = "strip", className = "" }: WitnessWallPr
   if (variant === "card") {
     return (
       <div className={`rounded-2xl border border-zinc-700/40 bg-zinc-900/40 overflow-hidden ${className}`}>
-        <div className="h-0.5 bg-gradient-to-r from-emerald-600 via-blue-500 to-amber-500" />
+        <div className="h-0.5 bg-gradient-to-r from-emerald-600 via-blue-500 to-orange-600" />
         <div className="p-5 space-y-4">
           <div className="flex items-center gap-2">
             <Globe className="h-4 w-4 text-emerald-400" />
@@ -48,7 +48,7 @@ export function WitnessWall({ variant = "strip", className = "" }: WitnessWallPr
               <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Today</div>
             </div>
             <div>
-              <div className="text-2xl font-mono font-black text-amber-400" data-testid="text-witness-month">
+              <div className="text-2xl font-mono font-black text-orange-400" data-testid="text-witness-month">
                 {statsData ? `${Math.round(statsData.last30d / 1000)}K+` : "187K+"}
               </div>
               <div className="text-[10px] text-zinc-500 uppercase tracking-wider">This month</div>
