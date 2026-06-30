@@ -45,6 +45,8 @@ import { Link } from "wouter";
 import { useState } from "react";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { SiteDivider } from "@/components/SiteDivider";
+import heroCasestudiesCorruption from "@/assets/images/hero-casestudies-corruption.png";
 
 const caseStudies = [
   {
@@ -357,6 +359,14 @@ export default function CaseStudies() {
       <Navigation />
       
       <main className="flex-grow pt-44 pb-20">
+        <SiteDivider
+          src={heroCasestudiesCorruption}
+          alt="Crumbling institutional pillars — truth breaking through the ruins of corruption"
+          overlay="Thirteen agencies. Thirty-five years. The institutions' own records proved the case."
+          fullBleed
+          height="h-[40vh] md:h-[50vh]"
+          className="mb-12"
+        />
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
 
           <motion.section
@@ -419,6 +429,14 @@ export default function CaseStudies() {
               </CardContent>
             </Card>
           </motion.section>
+
+          <SiteDivider
+            src="/images/dividers/courtroom-evidence.png"
+            alt="Empty courtroom at night — classified documents on the table"
+            overlay="The paradox is simple: the more thoroughly they persecuted, the more thoroughly they documented their own guilt."
+            fullBleed
+            className="mb-8"
+          />
 
           <motion.section
             initial={{ opacity: 0, y: 20 }}
