@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Check, Link2, X, Copy, Mail, Lock, User, ChevronRight, AlertTriangle, ShieldCheck, BookOpen, Star, Download } from "lucide-react";
+import { Check, Link2, X, Copy, Mail, Lock, User, ChevronRight, AlertTriangle, ShieldCheck, BookOpen, Star } from "lucide-react";
 import { SiX, SiWhatsapp, SiTelegram, SiFacebook } from "react-icons/si";
 import { DocSharePanel } from "@/components/DocSharePanel";
 import { useQuery } from "@tanstack/react-query";
@@ -62,17 +62,17 @@ function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: (paymentInte
 
   return (
     <form onSubmit={handlePay} className="space-y-2.5">
-      <div className="flex items-center gap-2 rounded-xl border border-amber-700/40 px-3 py-2.5" style={{ background: "#1c0c02" }}>
-        <User className="h-4 w-4 text-amber-700/60 flex-shrink-0" />
+      <div className="flex items-center gap-2 rounded-xl border border-orange-500/30 px-3 py-2.5" style={{ background: "#1c0c02" }}>
+        <User className="h-4 w-4 text-orange-600/60 flex-shrink-0" />
         <input type="text" placeholder="Your full name" value={name} onChange={e => setName(e.target.value)}
-          className="bg-transparent text-amber-100 placeholder-amber-800/60 text-sm outline-none w-full" data-testid="input-stripe-name" />
+          className="bg-transparent text-orange-100 placeholder-amber-800/60 text-sm outline-none w-full" data-testid="input-stripe-name" />
       </div>
-      <div className="flex items-center gap-2 rounded-xl border border-amber-700/40 px-3 py-2.5" style={{ background: "#1c0c02" }}>
-        <Mail className="h-4 w-4 text-amber-700/60 flex-shrink-0" />
+      <div className="flex items-center gap-2 rounded-xl border border-orange-500/30 px-3 py-2.5" style={{ background: "#1c0c02" }}>
+        <Mail className="h-4 w-4 text-orange-600/60 flex-shrink-0" />
         <input type="email" placeholder="Your email address" value={email} onChange={e => setEmail(e.target.value)}
-          className="bg-transparent text-amber-100 placeholder-amber-800/60 text-sm outline-none w-full" data-testid="input-stripe-email" />
+          className="bg-transparent text-orange-100 placeholder-amber-800/60 text-sm outline-none w-full" data-testid="input-stripe-email" />
       </div>
-      <div className="border border-amber-700/50 rounded-xl p-3" style={{ background: "#1c0c02" }}>
+      <div className="border border-orange-500/30 rounded-xl p-3" style={{ background: "#1c0c02" }}>
         <CardElement options={CARD_ELEMENT_STYLE} />
       </div>
       {cardError && (
@@ -84,13 +84,13 @@ function StripePaymentForm({ onSuccess, documentUrl }: { onSuccess: (paymentInte
       <button
         type="submit"
         disabled={paying || !stripe}
-        className="w-full flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-500 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold text-sm px-5 py-3 rounded-xl transition-colors"
+        className="w-full flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold text-sm px-5 py-3 rounded-xl transition-colors"
         data-testid="button-stripe-pay"
       >
         <ShieldCheck className="h-4 w-4" />
         {paying ? "Processing payment…" : "Pay $3.33 AUD — Co-witness the Testimony"}
       </button>
-      <p className="text-amber-400/50 text-[10px] text-center">
+      <p className="text-orange-400/50 text-[10px] text-center">
         Secured by Stripe · ABN 78 833 496 164 · You will be added to the witness list
       </p>
     </form>
@@ -145,18 +145,6 @@ interface ViralDownloadButtonProps {
 
 type Phase = "idle" | "gate" | "conscience" | "share";
 
-async function fetchFreeToken(documentUrl: string): Promise<void> {
-  try {
-    const res = await fetch("/api/payment/free-download-token", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ documentUrl }),
-    });
-    const data = await res.json();
-    if (data.token) grantAccess(documentUrl, data.token, data.expires);
-  } catch {}
-}
-
 function triggerFileDownload(url: string, filename?: string) {
   const downloadUrl = getDownloadUrl(url);
   const a = document.createElement("a");
@@ -195,8 +183,6 @@ export function ViralDownloadButton({
   const [phase, setPhase] = useState<Phase>("idle");
   const [shareCopied, setShareCopied] = useState(false);
   const [stripePromise, setStripePromise] = useState<Promise<StripeType | null> | null>(null);
-  const [showStripe, setShowStripe] = useState(false);
-  const [freeLoading, setFreeLoading] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -233,7 +219,7 @@ export function ViralDownloadButton({
 
   const defaultShare =
     shareText ||
-    `I just downloaded evidence from the Dr. Richard McLean whistleblower archive — 2,304 primary source documents, 350,000+ downloads, blockchain-sealed, formally before the ICC. This archive cannot be suppressed.\n\n${pageUrl}\n\n#Whistleblower #ICC #BarranDodger #HumanRights`;
+    `I just downloaded evidence from the Dr. Richard McLean whistleblower archive — 2,304 primary source documents, 491,000+ downloads, blockchain-sealed, formally before the ICC. This archive cannot be suppressed.\n\n${pageUrl}\n\n#Whistleblower #ICC #BarranDodger #HumanRights`;
 
   const twitterHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(defaultShare)}`;
   const waHref = `https://wa.me/?text=${encodeURIComponent(defaultShare)}`;
@@ -299,100 +285,58 @@ export function ViralDownloadButton({
               <strong className="text-zinc-200">ASIO electronic surveillance</strong> and drone monitoring at his residence, and force-medicated for accurately reporting that surveillance. NSW Police attended 15 April 2026, issued receipt I88267509, and{" "}
               <strong className="text-red-300">declined to create an incident record.</strong>
             </p>
-            <p className="text-amber-300 text-[11px] font-bold leading-snug">
+            <p className="text-orange-300 text-[11px] font-bold leading-snug">
               The wider this testimony spreads, the safer he becomes. You are the counter-pressure.
             </p>
           </div>
 
           <div className="flex items-center justify-between px-4 pt-3 pb-1">
             <p className="text-zinc-600 text-[10px] font-mono truncate max-w-[280px]">{documentTitle || label}</p>
-            <button onClick={() => { setPhase("idle"); setShowStripe(false); }} className="text-zinc-700 hover:text-zinc-400" data-testid="button-gate-close">
+            <button onClick={() => setPhase("idle")} className="text-zinc-700 hover:text-zinc-400" data-testid="button-gate-close">
               <X className="h-4 w-4" />
             </button>
           </div>
 
           <div className="p-4 space-y-3">
 
-            {/* PRIMARY: Free download */}
-            <button
-              onClick={async () => {
-                setFreeLoading(true);
-                await fetchFreeToken(url);
-                setFreeLoading(false);
-                recordDownload();
-                triggerFileDownload(url, filename);
-                setPhase("conscience");
-              }}
-              disabled={freeLoading}
-              className="w-full flex items-center justify-center gap-2.5 bg-red-700 hover:bg-red-600 disabled:opacity-60 text-white font-black text-sm px-5 py-3.5 rounded-xl transition-colors"
-              data-testid="button-gate-free-download"
-            >
-              {freeLoading
-                ? <><div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Preparing…</>
-                : <><Download className="h-4 w-4" /> Download Free — Protect the Archive</>
-              }
-            </button>
-            <p className="text-zinc-600 text-[9.5px] text-center">
-              No payment required. Download this. Share it. Distribution is his protection.
-            </p>
-
-            {/* DIVIDER */}
-            <div className="flex items-center gap-2">
-              <div className="flex-1 h-px bg-zinc-800" />
-              <span className="text-zinc-600 text-[9px] uppercase tracking-widest font-bold">or acknowledge his worth</span>
-              <div className="flex-1 h-px bg-zinc-800" />
+            {/* Context */}
+            <div className="rounded-xl border border-orange-500/30 p-3" style={{ background: "#1c0a02" }}>
+              <p className="text-orange-300/80 text-[11px] leading-relaxed">
+                $42.5M in documented NDIS entitlements suppressed. 35 years of poverty, surveillance and torture.
+                $3.33 is not the price of this document — it is the minimum acknowledgment of a life.
+              </p>
             </div>
 
-            {/* SECONDARY: Pay $3.33 */}
-            {!showStripe ? (
-              <button
-                onClick={() => setShowStripe(true)}
-                className="w-full flex items-center justify-center gap-2 bg-amber-950/50 hover:bg-amber-900/50 border border-amber-700/50 hover:border-amber-500 text-amber-300 font-bold text-sm px-5 py-3 rounded-xl transition-colors"
-                data-testid="button-gate-pay-option"
-              >
-                <ShieldCheck className="h-4 w-4" />
-                Pay $3.33 AUD — The Minimum He Is Owed
-              </button>
+            {/* Payment form — the only route */}
+            {stripePromise ? (
+              <Elements stripe={stripePromise}>
+                <StripePaymentForm
+                  documentUrl={url}
+                  onSuccess={async (paymentIntentId: string, payerName: string, payerEmail: string) => {
+                    await fetchAndStoreToken(paymentIntentId, url);
+                    fetch("/api/subscribers", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ name: payerName, email: payerEmail, documentSlug: url, source: "stripe_payment_333" }),
+                    }).catch(() => {});
+                    recordDownload();
+                    triggerFileDownload(url, filename);
+                    setPhase("conscience");
+                    toast({ title: "Download starting — thank you, Witness", description: "You've been added to the archive witness list." });
+                  }}
+                />
+              </Elements>
             ) : (
-              <div className="space-y-3">
-                <div className="rounded-xl border border-amber-900/40 p-3 space-y-1" style={{ background: "#1c0a02" }}>
-                  <p className="text-amber-300/80 text-[10px] leading-relaxed">
-                    $42.5M in documented NDIS entitlements suppressed. 35 years of poverty, surveillance and torture.
-                    $3.33 is not the price of this document. It is the minimum acknowledgment of a life.
-                  </p>
-                </div>
-                {stripePromise ? (
-                  <Elements stripe={stripePromise}>
-                    <StripePaymentForm
-                      documentUrl={url}
-                      onSuccess={async (paymentIntentId: string, payerName: string, payerEmail: string) => {
-                        await fetchAndStoreToken(paymentIntentId, url);
-                        fetch("/api/subscribers", {
-                          method: "POST",
-                          headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify({ name: payerName, email: payerEmail, documentSlug: url, source: "stripe_payment_333" }),
-                        }).catch(() => {});
-                        recordDownload();
-                        triggerFileDownload(url, filename);
-                        setShowStripe(false);
-                        setPhase("conscience");
-                        toast({ title: "Download starting — thank you, Witness", description: "You've been added to the archive witness list." });
-                      }}
-                    />
-                  </Elements>
-                ) : (
-                  <div className="border border-amber-700/40 rounded-xl p-4 text-center" style={{ background: "#1c0c02" }}>
-                    <div className="h-4 w-4 border-2 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
-                    <p className="text-amber-400/60 text-xs">Loading payment form…</p>
-                  </div>
-                )}
+              <div className="border border-orange-500/30 rounded-xl p-4 text-center" style={{ background: "#1c0c02" }}>
+                <div className="h-4 w-4 border-2 border-orange-500 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+                <p className="text-orange-400/60 text-xs">Loading payment form…</p>
               </div>
             )}
 
             <p className="text-zinc-700 text-[9px] text-center">
-              <a href="/donate" className="underline hover:text-zinc-500" onClick={() => { setPhase("idle"); setShowStripe(false); }}>Larger contributions</a>
+              <a href="/donate" className="underline hover:text-zinc-500" onClick={() => setPhase("idle")}>Larger contributions</a>
               {" "}·{" "}
-              <a href="/academy" className="underline hover:text-amber-600" onClick={() => setPhase("idle")}>Academy $333</a>
+              <a href="/academy" className="underline hover:text-orange-500" onClick={() => setPhase("idle")}>Academy $333</a>
               {" "}· ABN 78 833 496 164
             </p>
           </div>
@@ -402,7 +346,7 @@ export function ViralDownloadButton({
       {/* ── CONSCIENCE PANEL — shown after download unlocked ── */}
       {phase === "conscience" && (
         <div className="rounded-2xl border border-red-600/50 animate-in slide-in-from-bottom-2 duration-300 overflow-hidden max-w-lg shadow-2xl shadow-red-900/30" style={{ background: "#2c1404" }}>
-          <div className="h-1 bg-gradient-to-r from-red-700 via-amber-500 to-red-700" />
+          <div className="h-1 bg-gradient-to-r from-red-700 via-orange-600 to-red-700" />
           <div className="p-5 space-y-4">
             <div className="flex items-start justify-between gap-3">
               <div>
@@ -416,7 +360,7 @@ export function ViralDownloadButton({
               </button>
             </div>
 
-            <ul className="space-y-1.5 rounded-xl p-3 border border-amber-900/40" style={{ background: "#1c0c02" }}>
+            <ul className="space-y-1.5 rounded-xl p-3 border border-orange-500/30" style={{ background: "#1c0c02" }}>
               {CONSCIENCE_FACTS.map((fact) => (
                 <li key={fact} className="flex gap-2 items-start text-xs text-zinc-400">
                   <span className="text-red-400 flex-shrink-0 mt-0.5 font-bold">·</span>
@@ -433,24 +377,24 @@ export function ViralDownloadButton({
             {/* ── Primary Upsell: Academy ── */}
             <a
               href="/academy"
-              className="block rounded-xl border border-amber-500/70 hover:border-amber-400 transition-colors overflow-hidden"
+              className="block rounded-xl border border-orange-500/30 hover:border-orange-500 transition-colors overflow-hidden"
               style={{ background: "linear-gradient(135deg, #1a0e00 0%, #2c1800 100%)" }}
               data-testid="button-conscience-academy"
             >
-              <div className="h-0.5 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
+              <div className="h-0.5 bg-gradient-to-r from-orange-600 via-orange-600 to-orange-600" />
               <div className="p-3.5 flex items-start gap-3">
-                <div className="bg-amber-900/60 p-1.5 rounded-lg flex-shrink-0 mt-0.5">
-                  <BookOpen className="h-4 w-4 text-amber-400" />
+                <div className="bg-orange-500/10 p-1.5 rounded-lg flex-shrink-0 mt-0.5">
+                  <BookOpen className="h-4 w-4 text-orange-400" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-0.5">
-                    <Star className="h-2.5 w-2.5 text-amber-400 fill-amber-400 flex-shrink-0" />
-                    <span className="text-[9px] text-amber-400 font-bold uppercase tracking-widest">Highest Impact</span>
+                    <Star className="h-2.5 w-2.5 text-orange-400 fill-amber-400 flex-shrink-0" />
+                    <span className="text-[9px] text-orange-400 font-bold uppercase tracking-widest">Highest Impact</span>
                   </div>
-                  <p className="text-amber-200 font-bold text-sm leading-tight">The Academy — $333 AUD</p>
+                  <p className="text-orange-200 font-bold text-sm leading-tight">The Academy — $333 AUD</p>
                   <p className="text-zinc-400 text-[10px] mt-0.5 leading-relaxed">12 forensic units. Full archive access. Certificate of witness. Stripe-secured. Yours permanently.</p>
                 </div>
-                <ChevronRight className="h-4 w-4 text-amber-500 flex-shrink-0 mt-3" />
+                <ChevronRight className="h-4 w-4 text-orange-500 flex-shrink-0 mt-3" />
               </div>
             </a>
 
@@ -462,12 +406,12 @@ export function ViralDownloadButton({
                   <a
                     key={tier.amount}
                     href="/donate"
-                    className={`flex flex-col items-center text-center p-2.5 rounded-xl border transition-colors ${tier.highlight ? "border-amber-500/60 bg-amber-950/40 text-amber-300" : "border-zinc-700/50 bg-zinc-900/50 text-zinc-400 hover:border-zinc-600"}`}
+                    className={`flex flex-col items-center text-center p-2.5 rounded-xl border transition-colors ${tier.highlight ? "border-orange-500/30 bg-orange-500/10 text-orange-300" : "border-zinc-700/50 bg-zinc-900/50 text-zinc-400 hover:border-zinc-600"}`}
                     data-testid={`button-conscience-tier-${tier.label.toLowerCase()}`}
                   >
-                    <span className={`text-base font-black ${tier.highlight ? "text-amber-400" : "text-white"}`}>{tier.amount}</span>
+                    <span className={`text-base font-black ${tier.highlight ? "text-orange-400" : "text-white"}`}>{tier.amount}</span>
                     <span className="text-[10px] font-bold uppercase tracking-wider mt-0.5">{tier.label}</span>
-                    <span className="text-[9px] text-amber-400/70 mt-0.5 leading-tight">{tier.description}</span>
+                    <span className="text-[9px] text-orange-400/70 mt-0.5 leading-tight">{tier.description}</span>
                   </a>
                 ))}
               </div>
@@ -475,7 +419,7 @@ export function ViralDownloadButton({
 
             <div className="flex flex-wrap gap-2">
               <a href="/donate"
-                className="flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black font-bold text-xs px-4 py-2.5 rounded-xl transition-colors flex-1 justify-center"
+                className="flex items-center gap-2 bg-orange-600 hover:bg-orange-600 text-black font-bold text-xs px-4 py-2.5 rounded-xl transition-colors flex-1 justify-center"
                 data-testid="button-conscience-donate-page">
                 Donate via PayID
               </a>
