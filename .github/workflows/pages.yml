@@ -30,25 +30,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build frontend only (bypasses server build + pruning)
-        run: npx vite build
-        env:
-          NODE_ENV: production
-          VITE_GITHUB_PAGES: "true"
+      - name: Build frontend for GitHub Pages
+        run: |
+          mkdir -p dist/public
+          VITE_GITHUB_PAGES=true NODE_ENV=production \
+            npx vite build --outDir "$(pwd)/dist/public" --emptyOutDir
+          echo "=== Build output ==="
+          ls dist/public/ && du -sh dist/public/
 
-      - name: Debug build output
-        run: ls dist/public/ && du -sh dist/public/
+      - name: Add SPA 404 routing + nojekyll
+        run: |
+          cp dist/public/index.html dist/public/404.html
+          touch dist/public/.nojekyll
 
-      - name: Add SPA 404 routing
-        run: cp dist/public/index.html dist/public/404.html
-
-      - name: Add .nojekyll
-        run: touch dist/public/.nojekyll
-
-      - name: Remove dirs too large for Pages (keep images/assets intact)
+      - name: Remove dirs too large for Pages (keep all images in assets/)
         run: |
           rm -rf dist/public/documents dist/public/evidence dist/public/audio dist/public/video
-          echo "Final size:" && du -sh dist/public/
+          echo "=== Final size ===" && du -sh dist/public/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
