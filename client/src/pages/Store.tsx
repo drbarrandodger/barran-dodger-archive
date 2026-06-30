@@ -17,7 +17,7 @@ import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
 export default function Store() {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
-  const payId = "rich@richmclean.com.au";
+  const payId = "drbarrandodger@proton.me";
 
   const copyPayId = () => {
     navigator.clipboard.writeText(payId);
@@ -153,20 +153,20 @@ export default function Store() {
             className="mb-16"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="bg-amber-500/10 text-amber-500 p-2 rounded-md">
+              <div className="bg-orange-500/10 text-orange-500 p-2 rounded-md">
                 <GraduationCap className="h-6 w-6" />
               </div>
               <h2 className="text-2xl font-serif font-bold text-primary">Flagship Course</h2>
-              <Badge className="bg-amber-500 text-black text-xs font-black">HIGHEST IMPACT</Badge>
+              <Badge className="bg-orange-600 text-black text-xs font-black">HIGHEST IMPACT</Badge>
             </div>
 
-            <div className="rounded-2xl border-2 border-amber-500/60 overflow-hidden shadow-xl shadow-amber-900/20" style={{ background: "linear-gradient(135deg, #1a0e00 0%, #2a1400 100%)" }}>
-              <div className="h-1 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
+            <div className="rounded-2xl border-2 border-orange-500/25 overflow-hidden shadow-xl shadow-orange-500/20" style={{ background: "linear-gradient(135deg, #1a0e00 0%, #2a1400 100%)" }}>
+              <div className="h-1 bg-gradient-to-r from-orange-600 via-orange-600 to-orange-600" />
               <div className="p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start">
                 <div className="flex-1 space-y-4">
                   <div className="space-y-1">
-                    <p className="text-amber-400 text-xs font-bold uppercase tracking-widest">The Anatomy of Institutional Persecution</p>
-                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-amber-200 leading-tight">
+                    <p className="text-orange-400 text-xs font-bold uppercase tracking-widest">The Anatomy of Institutional Persecution</p>
+                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-orange-200 leading-tight">
                       The Barran Dodger Academy
                     </h3>
                   </div>
@@ -176,10 +176,10 @@ export default function Store() {
                   </p>
                   <div className="grid grid-cols-2 gap-2">
                     {[
-                      { icon: <Star className="h-3 w-3 fill-amber-500 text-amber-500" />, label: "12 Forensic Units" },
-                      { icon: <CheckCircle className="h-3 w-3 text-amber-500" />, label: "Certificate of Witness" },
-                      { icon: <FileText className="h-3 w-3 text-amber-500" />, label: "Full Archive Access" },
-                      { icon: <CreditCard className="h-3 w-3 text-amber-500" />, label: "Stripe-Secured · One-Time" },
+                      { icon: <Star className="h-3 w-3 fill-amber-500 text-orange-500" />, label: "12 Forensic Units" },
+                      { icon: <CheckCircle className="h-3 w-3 text-orange-500" />, label: "Certificate of Witness" },
+                      { icon: <FileText className="h-3 w-3 text-orange-500" />, label: "Full Archive Access" },
+                      { icon: <CreditCard className="h-3 w-3 text-orange-500" />, label: "Stripe-Secured · One-Time" },
                     ].map((f) => (
                       <div key={f.label} className="flex items-center gap-2 text-xs text-zinc-300">
                         {f.icon} {f.label}
@@ -192,11 +192,11 @@ export default function Store() {
                 </div>
                 <div className="flex flex-col items-center gap-3 min-w-[180px] md:pt-2">
                   <div className="text-center">
-                    <p className="text-5xl font-black text-amber-400">$333</p>
+                    <p className="text-5xl font-black text-orange-400">$333</p>
                     <p className="text-zinc-500 text-xs mt-1">AUD · One-time · No subscription</p>
                   </div>
                   <Button
-                    className="w-full bg-amber-600 hover:bg-amber-500 text-black font-bold gap-2"
+                    className="w-full bg-orange-600 hover:bg-orange-600 text-black font-bold gap-2"
                     asChild
                     data-testid="button-store-academy-enrol"
                   >
@@ -317,22 +317,22 @@ export default function Store() {
                 return (
                   <Card
                     key={product.title}
-                    className={`h-full relative overflow-hidden ${isNuclear ? "border-red-600/50 bg-red-950/10 md:col-span-2" : product.highlight ? "border-amber-500/50" : ""}`}
+                    className={`h-full relative overflow-hidden ${isNuclear ? "border-red-600/50 bg-red-950/10 md:col-span-2" : product.highlight ? "border-orange-500/25" : ""}`}
                     data-testid={`card-download-${product.title.toLowerCase().replace(/[\s☢]+/g, '-')}`}
                   >
                     {product.highlight && (
-                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600" />
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-600 via-orange-600 to-orange-600" />
                     )}
                     {isNuclear && (
-                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-700 via-amber-500 to-red-700" />
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-700 via-orange-600 to-red-700" />
                     )}
                     <CardContent className={`p-6 flex flex-col h-full ${isNuclear ? "md:flex-row md:items-center md:gap-8" : ""}`}>
                       <div className={`flex-1 ${isNuclear ? "" : "flex flex-col h-full"}`}>
                         <div className="flex items-start justify-between gap-2 mb-3">
-                          <Badge variant="outline" className={`text-xs ${product.highlight ? "border-amber-500/50 text-amber-400" : isNuclear ? "border-red-500/50 text-red-400" : ""}`}>{product.badge}</Badge>
+                          <Badge variant="outline" className={`text-xs ${product.highlight ? "border-orange-500/25 text-orange-400" : isNuclear ? "border-red-500/50 text-red-400" : ""}`}>{product.badge}</Badge>
                           <Badge variant="secondary" className="text-xs shrink-0">{product.format}</Badge>
                         </div>
-                        <h3 className={`font-bold mb-2 ${isNuclear ? "text-xl text-red-300" : product.highlight ? "text-amber-300" : "text-primary"}`} data-testid={`text-download-title-${product.title.toLowerCase().replace(/[\s☢]+/g, '-')}`}>
+                        <h3 className={`font-bold mb-2 ${isNuclear ? "text-xl text-red-300" : product.highlight ? "text-orange-300" : "text-primary"}`} data-testid={`text-download-title-${product.title.toLowerCase().replace(/[\s☢]+/g, '-')}`}>
                           {product.title}
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">
@@ -342,7 +342,7 @@ export default function Store() {
                       <div className={`flex items-center gap-3 ${isNuclear ? "flex-col min-w-[180px] shrink-0" : "mt-auto"}`}>
                         <div className={`text-xs font-mono text-zinc-400 ${isNuclear ? "text-center" : ""}`}>{product.price}</div>
                         <Button
-                          className={`gap-2 w-full ${isNuclear ? "bg-red-700 hover:bg-red-600 text-white border-0" : product.highlight ? "bg-amber-600 hover:bg-amber-500 text-black border-0" : ""}`}
+                          className={`gap-2 w-full ${isNuclear ? "bg-red-700 hover:bg-red-600 text-white border-0" : product.highlight ? "bg-orange-600 hover:bg-orange-600 text-black border-0" : ""}`}
                           variant={product.highlight || isNuclear ? "default" : "outline"}
                           asChild
                           data-testid={`button-download-${product.title.toLowerCase().replace(/[\s☢]+/g, '-')}`}
