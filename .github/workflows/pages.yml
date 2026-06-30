@@ -25,7 +25,10 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies (fresh, no cache)
-        run: npm ci
+        run: npm ci --legacy-peer-deps
+
+      - name: Remove conflicting Tailwind v4 package
+        run: npm rm @tailwindcss/vite --ignore-scripts 2>/dev/null || true
 
       - name: Clear old dist (prevent stale artifacts)
         run: rm -rf dist/ghpages
