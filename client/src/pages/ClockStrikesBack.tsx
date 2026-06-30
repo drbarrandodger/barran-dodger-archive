@@ -168,15 +168,15 @@ function LiveTracker() {
         title="Play Stupid Games, Win Brutal Prizes — The Clock Strikes Back | Corroboration Analysis"
         description="Forensic corroboration analysis: This is not bad luck — this is what happens when someone ignores every warning sign. Every claim mapped against Dr. McLean primary-source government archive. Zero contradictions."
       />
-      <div className="bg-zinc-900 border border-amber-900/40 rounded-lg p-4">
-        <div className="text-3xl font-black text-amber-500">11</div>
+      <div className="bg-zinc-900 border border-orange-500/25 rounded-lg p-4">
+        <div className="text-3xl font-black text-orange-500">11</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Analyses Total</div>
       </div>
-      <div className="bg-zinc-900 border border-amber-900/40 rounded-lg p-4">
-        <div className="text-3xl font-black text-amber-500">{(data?.downloads ?? 0) > 0 ? (data!.downloads).toLocaleString() : "—"}</div>
+      <div className="bg-zinc-900 border border-orange-500/25 rounded-lg p-4">
+        <div className="text-3xl font-black text-orange-500">{(data?.downloads ?? 0) > 0 ? (data!.downloads).toLocaleString() : "—"}</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Downloads</div>
       </div>
-      <div className="bg-zinc-900 border border-amber-900/40 rounded-lg p-4">
+      <div className="bg-zinc-900 border border-orange-500/25 rounded-lg p-4">
         <div className="text-3xl font-black text-green-400">0</div>
         <div className="text-xs text-zinc-400 mt-1 uppercase tracking-wider">Contradictions</div>
       </div>
@@ -188,13 +188,13 @@ export default function ClockStrikesBack() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero */}
-      <div className="relative bg-black border-b border-amber-900/30 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-950/20 via-black to-yellow-950/10 pointer-events-none" />
+      <div className="relative bg-black border-b border-orange-500/25 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-950/20 via-black to-yellow-950/10 pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex flex-wrap gap-2 mb-6">
-                <Badge className="bg-amber-950 text-amber-300 border border-amber-700/50 text-xs uppercase tracking-widest">
+                <Badge className="bg-orange-600 text-orange-300 border border-orange-500/25 text-xs uppercase tracking-widest">
                   Corroboration Analysis #11
                 </Badge>
                 <Badge className="bg-yellow-950 text-yellow-300 border border-yellow-700/50 text-xs uppercase tracking-widest">
@@ -206,7 +206,7 @@ export default function ClockStrikesBack() {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
                 THE CLOCK<br />
-                <span className="text-amber-500">STRIKES</span><br />
+                <span className="text-orange-500">STRIKES</span><br />
                 BACK
               </h1>
               <p className="text-zinc-300 text-xl mb-2 font-medium">
@@ -217,7 +217,7 @@ export default function ClockStrikesBack() {
               </p>
               <div className="grid grid-cols-4 gap-3 mb-8">
                 {[
-                  { val: "10", label: "Corroborated", color: "text-amber-500" },
+                  { val: "10", label: "Corroborated", color: "text-orange-500" },
                   { val: "0", label: "Aligned", color: "text-zinc-400" },
                   { val: "0", label: "Unverifiable", color: "text-zinc-400" },
                   { val: "0", label: "Disproved", color: "text-zinc-400" },
@@ -230,13 +230,13 @@ export default function ClockStrikesBack() {
               </div>
               <div className="flex flex-wrap gap-3">
                 <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-amber-700 hover:bg-amber-600 text-white font-bold px-6 py-3" data-testid="button-watch-clock-strikes-back">
+                  <Button className="bg-orange-600 hover:bg-orange-600 text-white font-bold px-6 py-3" data-testid="button-watch-clock-strikes-back">
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Watch Source Video
                   </Button>
                 </a>
                 <a href="/evidence">
-                  <Button variant="outline" className="border-amber-700/50 text-amber-300 hover:bg-amber-950/50 px-6 py-3">
+                  <Button variant="outline" className="border-orange-500/25 text-orange-300 hover:bg-orange-500/10 px-6 py-3">
                     <Eye className="h-4 w-4 mr-2" />
                     Full Archive
                   </Button>
@@ -244,7 +244,7 @@ export default function ClockStrikesBack() {
               </div>
             </div>
             <div className="space-y-4">
-              <div className="aspect-video w-full rounded-xl overflow-hidden border border-amber-900/30 shadow-2xl">
+              <div className="aspect-video w-full rounded-xl overflow-hidden border border-orange-500/25 shadow-2xl">
                 <iframe
                   src={`https://www.youtube.com/embed/${VIDEO_ID}`}
                   title="The Clock Strikes Back — Corroboration Analysis #11"
@@ -253,7 +253,7 @@ export default function ClockStrikesBack() {
                   className="w-full h-full"
                 />
               </div>
-              <img src={coverImage} alt="The Clock Strikes Back — Corroboration Analysis #11" className="w-full rounded-xl border border-amber-900/30 shadow-xl" loading="lazy" decoding="async" />
+              <img src={coverImage} alt="The Clock Strikes Back — Corroboration Analysis #11" className="w-full rounded-xl border border-orange-500/25 shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -262,12 +262,12 @@ export default function ClockStrikesBack() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
         {/* Executive Verdict */}
-        <div className="bg-zinc-950 border border-amber-900/30 rounded-2xl p-8 mb-16">
-          <h2 className="text-2xl font-black text-amber-500 mb-2 uppercase tracking-wider">Executive Verdict</h2>
-          <div className="w-16 h-0.5 bg-amber-700 mb-6" />
+        <div className="bg-zinc-950 border border-orange-500/25 rounded-2xl p-8 mb-16">
+          <h2 className="text-2xl font-black text-orange-500 mb-2 uppercase tracking-wider">Executive Verdict</h2>
+          <div className="w-16 h-0.5 bg-orange-600 mb-6" />
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
             {[
-              { rating: "CORROBORATED", count: "10 of 10 claims", pct: "100%", bg: "bg-amber-950/40", border: "border-amber-700/30", txt: "text-amber-500" },
+              { rating: "CORROBORATED", count: "10 of 10 claims", pct: "100%", bg: "bg-orange-500/10", border: "border-orange-500/25", txt: "text-orange-500" },
               { rating: "ALIGNED", count: "0 of 10 claims", pct: "0%", bg: "bg-zinc-900/40", border: "border-zinc-700/30", txt: "text-zinc-400" },
               { rating: "UNVERIFIABLE", count: "0 of 10 claims", pct: "0%", bg: "bg-zinc-900/40", border: "border-zinc-700/30", txt: "text-zinc-400" },
               { rating: "DISPROVED", count: "0 of 10 claims", pct: "0%", bg: "bg-zinc-900/40", border: "border-zinc-700/30", txt: "text-zinc-400" },
@@ -282,8 +282,8 @@ export default function ClockStrikesBack() {
           <p className="text-zinc-300 text-base leading-relaxed">
             Analysis #11 examines "CHOSEN ONE! YOU'RE THE ONE EVERYONE'S TALKING ABOUT — PEOPLE FROM THE PAST WANT BACK" — a mass-audience YouTube motivational video with nine numbered sections plus an introduction. All 10 extracted claims are directly corroborated with named primary-source documents. Third consecutive perfect score. Zero aligned, zero unverifiable, zero disproved.
           </p>
-          <div className="mt-4 bg-amber-950/20 border border-amber-900/20 rounded-xl p-5">
-            <p className="text-amber-200 text-sm leading-relaxed font-medium">
+          <div className="mt-4 bg-orange-500/10 border border-orange-500/25 rounded-xl p-5">
+            <p className="text-orange-200 text-sm leading-relaxed font-medium">
               The defining proposition: Claim 9 — "there is no cure for a collapse born from their own hands." The institutional actors cannot remedy the situation because the evidence exists in their own systems: their own ASIC registry, their own clinical records, their own template letters. The blockchain hash cannot be edited. The ICC submission cannot be recalled by the agencies that made it necessary. The only cure — accountability — requires the one medicine their position prevents them from taking.
             </p>
           </div>
@@ -295,33 +295,33 @@ export default function ClockStrikesBack() {
             <div key={claim.num} className="bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden">
               <div className="bg-zinc-900 border-b border-zinc-800 px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
                 <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-amber-800 shrink-0" />
-                  <span className="text-sm font-black text-amber-900 tracking-widest">{claim.num}</span>
+                  <Clock className="h-4 w-4 text-orange-700 shrink-0" />
+                  <span className="text-sm font-black text-orange-900 tracking-widest">{claim.num}</span>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-white font-bold text-base leading-snug">{claim.title}</h3>
                   <p className="text-zinc-500 text-sm mt-0.5">{claim.proposition}</p>
                 </div>
-                <div className="flex items-center gap-1.5 font-bold text-sm text-amber-500">
+                <div className="flex items-center gap-1.5 font-bold text-sm text-orange-500">
                   <CheckCircle className="h-4 w-4" />
                   CORROBORATED
                 </div>
               </div>
               <div className="px-6 py-6 space-y-4">
-                <blockquote className="border-l-2 border-amber-700 pl-4 text-amber-200/80 italic text-sm leading-relaxed">
+                <blockquote className="border-l-2 border-orange-500 pl-4 text-orange-200/80 italic text-sm leading-relaxed">
                   {claim.quote}
                 </blockquote>
                 <div className="space-y-3">
                   {claim.evidence.map((ev, i) => (
                     <div key={i} className="bg-zinc-900/50 rounded-lg p-4">
-                      <div className="text-amber-500 text-xs font-bold uppercase tracking-wider mb-1">{ev.label}</div>
+                      <div className="text-orange-500 text-xs font-bold uppercase tracking-wider mb-1">{ev.label}</div>
                       <p className="text-zinc-300 text-sm leading-relaxed italic mb-1">"{ev.text}"</p>
                       <p className="text-zinc-500 text-xs">— {ev.source}</p>
                     </div>
                   ))}
                 </div>
-                <div className="bg-amber-950/20 border border-amber-900/20 rounded-lg p-4">
-                  <div className="text-amber-600 text-xs font-bold uppercase tracking-wider mb-1">Forensic Alignment</div>
+                <div className="bg-orange-500/10 border border-orange-500/25 rounded-lg p-4">
+                  <div className="text-orange-600 text-xs font-bold uppercase tracking-wider mb-1">Forensic Alignment</div>
                   <p className="text-zinc-300 text-sm leading-relaxed">{claim.alignment}</p>
                 </div>
               </div>
@@ -332,23 +332,23 @@ export default function ClockStrikesBack() {
         {/* Combined Scorecard */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-6">
-            <Clock className="h-6 w-6 text-amber-500" />
+            <Clock className="h-6 w-6 text-orange-500" />
             <h2 className="text-xl font-black text-white uppercase tracking-wider">Combined Score: All 11 Corroboration Analyses</h2>
           </div>
-          <div className="w-16 h-0.5 bg-amber-700 mb-6" />
+          <div className="w-16 h-0.5 bg-orange-600 mb-6" />
           <div className="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-11 gap-2 mb-6">
             {[
               { title: "BRO", score: "7/7", color: "text-green-400", border: "border-green-800/30" },
               { title: "Chosen Ones", score: "11/11", color: "text-yellow-400", border: "border-yellow-800/30" },
               { title: "No One Smart", score: "12/12", color: "text-blue-400", border: "border-blue-800/30" },
-              { title: "Divine Exam", score: "10/10", color: "text-amber-400", border: "border-amber-800/30" },
+              { title: "Divine Exam", score: "10/10", color: "text-orange-400", border: "border-orange-500/25" },
               { title: "Checkmate", score: "11/11", color: "text-red-400", border: "border-red-800/30" },
               { title: "Now Knows", score: "11/11", color: "text-violet-400", border: "border-violet-800/30" },
               { title: "Outcast", score: "10/10", color: "text-emerald-400", border: "border-emerald-800/30" },
               { title: "Fate Sealed", score: "13/13", color: "text-orange-400", border: "border-orange-800/30" },
               { title: "Fumbled", score: "13/13", color: "text-indigo-400", border: "border-indigo-800/30" },
               { title: "FBI Precision", score: "10/10", color: "text-teal-400", border: "border-teal-800/30" },
-              { title: "Clock Back", score: "10/10", color: "text-amber-500", border: "border-amber-700/30" },
+              { title: "Clock Back", score: "10/10", color: "text-orange-500", border: "border-orange-500/25" },
             ].map(a => (
               <div key={a.title} className={`bg-zinc-900 border ${a.border} rounded-xl p-3 text-center`}>
                 <div className={`text-xl font-black ${a.color}`}>{a.score}</div>
@@ -358,7 +358,7 @@ export default function ClockStrikesBack() {
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-black/50 border border-zinc-800 rounded-xl p-6">
             <div className="text-center">
-              <div className="text-5xl font-black text-amber-500">118/118</div>
+              <div className="text-5xl font-black text-orange-500">118/118</div>
               <div className="text-zinc-400 text-sm mt-1">Claims with evidentiary support</div>
             </div>
             <div className="text-center">
@@ -374,9 +374,9 @@ export default function ClockStrikesBack() {
 
         {/* AI Significance Statement */}
         <div className="mb-16">
-          <div className="bg-zinc-950 border border-amber-800/30 rounded-2xl overflow-hidden">
-            <div className="bg-amber-950/30 border-b border-amber-800/30 px-6 py-4">
-              <div className="text-amber-500 text-xs font-bold uppercase tracking-widest mb-1">AI-Authored · Impartial Statement of Significance</div>
+          <div className="bg-zinc-950 border border-orange-500/25 rounded-2xl overflow-hidden">
+            <div className="bg-orange-500/10 border-b border-orange-500/25 px-6 py-4">
+              <div className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-1">AI-Authored · Impartial Statement of Significance</div>
               <h2 className="text-white font-black text-lg">Why the Eleventh Analysis Returns Its Fourth Consecutive Perfect Score</h2>
             </div>
             <div className="px-6 py-8 space-y-5 text-zinc-300 leading-relaxed text-base">
