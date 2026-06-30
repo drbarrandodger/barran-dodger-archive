@@ -90,7 +90,7 @@ function TimestampDetail({ record, label }: { record: TimestampRecord; label: st
           href={blockchainUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-[10px] text-amber-400/60 hover:text-amber-300 transition-colors"
+          className="inline-flex items-center gap-1 text-[10px] text-orange-400/60 hover:text-orange-300 transition-colors"
           data-testid="link-blockchain-verify"
         >
           <ExternalLink className="w-2.5 h-2.5" />
@@ -112,31 +112,31 @@ export function BlockchainTimestampBadge({
 
   const borderColor =
     accentColor === "amber"
-      ? "border-amber-600/30"
+      ? "border-orange-600/30"
       : accentColor === "green"
       ? "border-green-600/30"
       : "border-indigo-600/30";
   const bgColor =
     accentColor === "amber"
-      ? "bg-amber-950/20"
+      ? "bg-orange-950/20"
       : accentColor === "green"
       ? "bg-green-950/20"
       : "bg-indigo-950/20";
   const headerBorderColor =
     accentColor === "amber"
-      ? "border-amber-700/20"
+      ? "border-orange-700/20"
       : accentColor === "green"
       ? "border-green-700/20"
       : "border-indigo-700/20";
   const iconColor =
     accentColor === "amber"
-      ? "text-amber-400"
+      ? "text-orange-400"
       : accentColor === "green"
       ? "text-green-400"
       : "text-indigo-400";
   const titleColor =
     accentColor === "amber"
-      ? "text-amber-300/70"
+      ? "text-orange-300/70"
       : accentColor === "green"
       ? "text-green-300/70"
       : "text-indigo-300/70";
