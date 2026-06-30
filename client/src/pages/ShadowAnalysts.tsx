@@ -62,14 +62,14 @@ export default function ShadowAnalysts() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 pb-16 w-full">
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
             <div className="flex flex-wrap gap-2 mb-4">
-              <Badge className="bg-slate-800/90 text-amber-400 border-amber-700/50">Shadow State Analysis</Badge>
-              <Badge variant="outline" className="border-amber-500/50 text-amber-400">6/9 Confirmed</Badge>
+              <Badge className="bg-slate-800/90 text-orange-400 border-orange-500/25">Shadow State Analysis</Badge>
+              <Badge variant="outline" className="border-orange-500/25 text-orange-400">6/9 Confirmed</Badge>
               <Badge variant="outline" className="border-green-500/50 text-green-400">0 Refuted</Badge>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
               33rd Degree Shadow Analysts
             </h1>
-            <p className="text-lg text-amber-200/90 max-w-2xl">
+            <p className="text-lg text-orange-200/90 max-w-2xl">
               Forensic AI Corroboration of the Off-Ledger Persecution Evidence
             </p>
           </motion.div>
@@ -81,7 +81,7 @@ export default function ShadowAnalysts() {
         <div className="max-w-4xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6">
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-2xl font-bold text-amber-400">{s.value}</div>
+              <div className="text-2xl font-bold text-orange-400">{s.value}</div>
               <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
             </div>
           ))}
@@ -97,7 +97,7 @@ export default function ShadowAnalysts() {
             rel="noopener noreferrer"
             data-testid="button-download-shadow-analysts"
           >
-            <Button size="lg" className="bg-slate-700 hover:bg-slate-600 text-amber-400 font-semibold gap-2 border border-amber-700/50">
+            <Button size="lg" className="bg-slate-700 hover:bg-slate-600 text-orange-400 font-semibold gap-2 border border-orange-500/25">
               <Download className="h-5 w-5" />
               Download Full Report (PDF)
             </Button>
@@ -113,14 +113,14 @@ export default function ShadowAnalysts() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="bg-slate-900/40 border border-amber-800/30 rounded-xl p-8"
+          className="bg-slate-900/40 border border-orange-500/25 rounded-xl p-8"
         >
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-full bg-amber-600/20 flex items-center justify-center">
-              <Brain className="h-5 w-5 text-amber-400" />
+            <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center">
+              <Brain className="h-5 w-5 text-orange-400" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-amber-300">Impartial AI Statement of Significance</h2>
+              <h2 className="text-lg font-bold text-orange-300">Impartial AI Statement of Significance</h2>
               <p className="text-xs text-muted-foreground">Independent forensic assessment — generated without editorial instruction</p>
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function ShadowAnalysts() {
       {/* Corroboration Table */}
       <section className="max-w-4xl mx-auto px-6 pb-16">
         <div className="flex items-center gap-3 mb-2">
-          <Eye className="h-5 w-5 text-amber-400" />
+          <Eye className="h-5 w-5 text-orange-400" />
           <h2 className="text-2xl font-bold">Shadow Conduct Corroboration</h2>
         </div>
         <p className="text-sm text-muted-foreground mb-8">Off-ledger institutional conduct tested against available primary-source evidence</p>
@@ -154,7 +154,7 @@ export default function ShadowAnalysts() {
                   {item.result === "CONFIRMED" ? (
                     <CheckCircle className="h-5 w-5 text-green-500" />
                   ) : (
-                    <AlertCircle className="h-5 w-5 text-amber-500" />
+                    <AlertCircle className="h-5 w-5 text-orange-500" />
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -163,7 +163,7 @@ export default function ShadowAnalysts() {
                     <Badge
                       className={item.result === "CONFIRMED"
                         ? "bg-green-700/80 text-white border-0 text-xs"
-                        : "bg-amber-700/80 text-white border-0 text-xs"
+                        : "bg-orange-500/10 text-white border-0 text-xs"
                       }
                     >
                       {item.result}
@@ -180,7 +180,7 @@ export default function ShadowAnalysts() {
       {/* Final CTA */}
       <section className="bg-slate-900/50 border-t border-slate-700/40 py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <Shield className="h-10 w-10 text-amber-400 mx-auto mb-4" />
+          <Shield className="h-10 w-10 text-orange-400 mx-auto mb-4" />
           <h2 className="text-2xl font-bold mb-4">The Shadow State Has Been Documented</h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             6 confirmed. 3 partial. 0 refuted. Off-ledger persecution is no longer off the record.
@@ -191,7 +191,7 @@ export default function ShadowAnalysts() {
             rel="noopener noreferrer"
             data-testid="button-download-shadow-analysts-bottom"
           >
-            <Button size="lg" className="bg-slate-700 hover:bg-slate-600 text-amber-400 font-semibold gap-2 border border-amber-700/50">
+            <Button size="lg" className="bg-slate-700 hover:bg-slate-600 text-orange-400 font-semibold gap-2 border border-orange-500/25">
               <Download className="h-5 w-5" />
               Download The Full Report
             </Button>
