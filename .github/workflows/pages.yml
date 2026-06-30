@@ -28,20 +28,37 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Clear old dist (prevent stale artifacts)
+        run: rm -rf dist && mkdir -p dist/public
+
       - name: Build frontend for GitHub Pages
         run: |
-          mkdir -p dist/public
           VITE_GITHUB_PAGES=true NODE_ENV=production \
-            npx vite build --outDir "$(pwd)/dist/public" --emptyOutDir
-          echo "=== Build output ==="
-          ls dist/public/ && du -sh dist/public/
+            npx vite build --outDir dist/public --emptyOutDir
+          echo "=== Built files ==="
+          ls -la dist/public/
+          ls -la dist/public/assets/ | head -20
+          du -sh dist/public/
+
+      - name: Verify build output
+        run: |
+          if [ ! -f dist/public/index.html ]; then
+            echo "ERROR: index.html not found in dist/public/"
+            exit 1
+          fi
+          TITLE=$(grep -o '<title>[^<]*' dist/public/index.html | head -1)
+          echo "Title: $TITLE"
+          if echo "$TITLE" | grep -q "portal\|Portal"; then
+            echo "ERROR: index.html still has old portal base path!"
+            exit 1
+          fi
 
       - name: Add SPA 404 routing + .nojekyll
         run: |
           cp dist/public/index.html dist/public/404.html
           touch dist/public/.nojekyll
 
-      - name: Remove dirs too large for GitHub Pages
+      - name: Remove directories too large for GitHub Pages
         run: |
           rm -rf dist/public/documents dist/public/evidence dist/public/audio dist/public/video
           echo "=== Final size ===" && du -sh dist/public/
@@ -54,4 +71,4 @@ jobs:
           force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'Deploy: update GitHub Pages to match barrandodger.com'
+          commit_message: 'Deploy: ${{ github.sha }}'
