@@ -174,8 +174,8 @@ export default function UrgentProtectionRequest() {
               <Badge className="bg-red-800 text-red-100 border-red-600 text-sm px-4 py-1.5">
                 <MapPin size={13} className="mr-1.5" /> 55B Archbold Road, Long Jetty NSW
               </Badge>
-              <Badge className="bg-amber-900 text-amber-100 border-amber-600 text-sm px-4 py-1.5">
-                <Phone size={13} className="mr-1.5" /> +61 431 167 907
+              <Badge className="bg-orange-600 text-orange-100 border-orange-500 text-sm px-4 py-1.5">
+                <Phone size={13} className="mr-1.5" /> +61 431 300 940
               </Badge>
               <Badge className="bg-zinc-800 text-zinc-200 border-zinc-600 text-sm px-4 py-1.5">
                 <Mail size={13} className="mr-1.5" /> drbarrandodger@proton.me
@@ -186,14 +186,14 @@ export default function UrgentProtectionRequest() {
 
         {/* ===== BITCOIN BLOCKCHAIN TIMESTAMP BANNER ===== */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
-          <div className="bg-gradient-to-r from-amber-950/60 via-orange-950/40 to-amber-950/60 border border-amber-600/50 rounded-xl p-4 md:p-5">
+          <div className="bg-gradient-to-r from-orange-950/30 via-orange-950/40 to-orange-950/30 border border-orange-500/30 rounded-xl p-4 md:p-5">
             <div className="flex items-start gap-3 mb-3">
-              <div className="bg-amber-600/20 p-2 rounded-lg shrink-0 mt-0.5">
-                <Shield size={18} className="text-amber-400" />
+              <div className="bg-orange-500/10 p-2 rounded-lg shrink-0 mt-0.5">
+                <Shield size={18} className="text-orange-400" />
               </div>
               <div>
-                <p className="text-amber-300 font-black text-sm uppercase tracking-widest mb-0.5 flex items-center gap-2">
-                  <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                <p className="text-orange-300 font-black text-sm uppercase tracking-widest mb-0.5 flex items-center gap-2">
+                  <span className="inline-block w-2 h-2 rounded-full bg-orange-600 animate-pulse" />
                   Bitcoin Blockchain Timestamped — OpenTimestamps Protocol
                 </p>
                 <p className="text-zinc-400 text-xs leading-relaxed">
@@ -205,9 +205,9 @@ export default function UrgentProtectionRequest() {
             {sosTimestamps && sosTimestamps.length > 0 ? (
               <div className="space-y-2">
                 {sosTimestamps.map((ts: any) => (
-                  <div key={ts.slug} className="bg-black/50 border border-amber-700/30 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center gap-2">
+                  <div key={ts.slug} className="bg-black/50 border border-orange-500/30 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center gap-2">
                     <div className="flex-1 min-w-0">
-                      <p className="text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-0.5">{ts.filename || ts.slug}</p>
+                      <p className="text-orange-300 text-[10px] font-bold uppercase tracking-wider mb-0.5">{ts.filename || ts.slug}</p>
                       <p className="text-zinc-300 font-mono text-[10px] break-all leading-relaxed"
                          data-testid={`hash-sos-${ts.slug}`}>
                         SHA-256: {ts.sha256}
@@ -223,7 +223,7 @@ export default function UrgentProtectionRequest() {
                         href={`https://opentimestamps.org/timestamp/${ts.sha256}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 bg-amber-700 hover:bg-amber-600 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg transition-colors uppercase tracking-wider whitespace-nowrap"
+                        className="inline-flex items-center gap-1 bg-orange-600 hover:bg-orange-600 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg transition-colors uppercase tracking-wider whitespace-nowrap"
                         data-testid={`btn-verify-ots-${ts.slug}`}
                       >
                         <ExternalLink size={10} /> Verify OTS
@@ -242,8 +242,8 @@ export default function UrgentProtectionRequest() {
                 ))}
               </div>
             ) : (
-              <div className="bg-black/40 border border-amber-700/20 rounded-lg p-3 text-center">
-                <p className="text-amber-400 text-xs font-mono animate-pulse">
+              <div className="bg-black/40 border border-orange-500/30 rounded-lg p-3 text-center">
+                <p className="text-orange-400 text-xs font-mono animate-pulse">
                   {timestampMutation.isPending
                     ? "⛏ Submitting to Bitcoin blockchain via OpenTimestamps..."
                     : "⛏ Loading blockchain records..."}
@@ -257,8 +257,8 @@ export default function UrgentProtectionRequest() {
                 { v: "3 OTS", l: "Calendar servers" },
                 { v: "∞", l: "Permanent record" },
               ].map(s => (
-                <div key={s.l} className="bg-black/30 rounded-lg p-2 border border-amber-700/20">
-                  <div className="text-amber-400 font-black text-sm">{s.v}</div>
+                <div key={s.l} className="bg-black/30 rounded-lg p-2 border border-orange-500/30">
+                  <div className="text-orange-400 font-black text-sm">{s.v}</div>
                   <div className="text-zinc-600 text-[9px] uppercase tracking-wider">{s.l}</div>
                 </div>
               ))}
@@ -325,6 +325,158 @@ export default function UrgentProtectionRequest() {
         </motion.div>
         {/* ===== END SHARE THIS SOS ===== */}
 
+        {/* ===== THE SIGNIFICANCE OF BEGGING THE WORLD ===== */}
+        <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
+          <div className="rounded-2xl overflow-hidden border-2 border-red-600/70" style={{ background: "linear-gradient(135deg, #1a0000 0%, #0f0000 100%)" }}>
+            <div className="px-6 pt-6 pb-2 border-b border-red-900/40">
+              <div className="inline-flex items-center gap-2 bg-red-700 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-4 animate-pulse">
+                <AlertTriangle size={11} /> NEW DEVELOPMENT — READ THIS FIRST
+              </div>
+              <h2 className="text-2xl md:text-3xl font-black text-white leading-tight mb-2">
+                What It Means to Beg the World<br />
+                <span className="text-red-400">to Remove You from Your Own Address</span>
+              </h2>
+              <p className="text-red-200/80 text-sm leading-relaxed mb-4">
+                This is not a metaphor. This page is a forensic record of a disabled Australian man, publicly publishing his own address, begging churches, journalists, lawyers, and private citizens to physically come and take him somewhere safer — because every institution whose job it is to protect him has refused to act.
+              </p>
+            </div>
+
+            {/* Three-panel narrative */}
+            <div className="divide-y divide-red-900/30">
+
+              {/* Panel 1 — The Begging Itself */}
+              <div className="px-6 py-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-800 flex items-center justify-center font-black text-white text-lg">1</div>
+                  <div className="flex-1">
+                    <h3 className="text-red-300 font-black text-base uppercase tracking-wider mb-3">
+                      The Significance of Publicly Begging for Removal
+                    </h3>
+                    <div className="space-y-3 text-sm text-zinc-300 leading-relaxed">
+                      <p>
+                        A person does not publicly list their home address on an international website and beg strangers to remove them unless every formal channel has failed. Dr. Richard McLean — PhD holder, internationally certified professional, award-winning human rights advocate — has done exactly this.
+                      </p>
+                      <p>
+                        He has contacted police. He has contacted the NDIS. He has contacted his disability support provider, AbleCare. He has filed with the ICC in The Hague. He has filed with the UNHCR in Geneva. He has submitted 2,304 blockchain-verified forensic documents to every relevant authority he can reach. He has done all of this while living at an address that a named individual has threatened to "sacrifice" him at.
+                      </p>
+                      <p className="text-orange-300 font-semibold">
+                        The fact that this page exists — that it is necessary to publish an address and beg the world — is itself the most damning evidence of systemic failure in this archive.
+                      </p>
+                      <p className="text-zinc-400 text-xs">
+                        Governments, agencies, and institutions designed to protect people like Dr. McLean have not just failed — they have been documented as active participants in his persecution. This page is what remains when every formal mechanism is exhausted. It is a public record of institutional abandonment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Panel 2 — AbleCare Refusing to Remove */}
+              <div className="px-6 py-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-800 flex items-center justify-center font-black text-white text-lg">2</div>
+                  <div className="flex-1">
+                    <h3 className="text-red-300 font-black text-base uppercase tracking-wider mb-3">
+                      AbleCare Refuses Removal — Active Court Case · Documented Death Threat
+                    </h3>
+                    <div className="space-y-3 text-sm text-zinc-300 leading-relaxed">
+                      <p>
+                        Dr. McLean's disability support provider, <span className="text-white font-bold">AbleCare</span>, has been explicitly informed of:
+                      </p>
+                      <ul className="space-y-2 ml-4">
+                        {[
+                          "An active court case — currently before Wyong Local Court (14 May 2026)",
+                          "A documented, archived death threat: \"You will be sacrificed\" — named perpetrator, named co-conspirators",
+                          "A formal written request by Dr. McLean to be physically relocated outside NSW",
+                          "The existence of the ICC Article 7 submission and UNHCR Geneva filing",
+                          "The specific risk posed by remaining at 55B Archbold Road, Long Jetty NSW",
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="text-red-500 mt-0.5 flex-shrink-0 font-black">✗</span>
+                            <span className="text-zinc-300">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="bg-red-950/60 border border-red-700/50 rounded-xl p-4 mt-4">
+                        <p className="text-red-300 font-black text-xs uppercase tracking-widest mb-2">⚠ AbleCare's Response</p>
+                        <p className="text-zinc-200 text-sm leading-relaxed">
+                          Despite being informed of all of the above — including an active criminal court proceeding and a documented death threat from a named former SAS operative — <span className="text-red-300 font-bold">AbleCare has refused to facilitate Dr. McLean's removal from the property.</span>
+                        </p>
+                        <p className="text-zinc-400 text-xs mt-3 leading-relaxed">
+                          A disability support provider has a duty of care to the people it supports. That duty of care does not end when the person in danger is also a whistleblower. That duty of care does not end because acting would be inconvenient. The failure to act — with documented knowledge of the threat — is itself a documented event in this archive.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Panel 3 — Troy's Arrest */}
+              <div className="px-6 py-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-800 flex items-center justify-center font-black text-white text-lg">3</div>
+                  <div className="flex-1">
+                    <h3 className="text-red-300 font-black text-base uppercase tracking-wider mb-3">
+                      The Death Threat Arrived. The Threatener Was Arrested. The Evidence Is Filed.
+                    </h3>
+                    <div className="space-y-3 text-sm text-zinc-300 leading-relaxed">
+                      <p>
+                        This is no longer a theoretical threat. An individual — referred to in the court record as <span className="text-white font-bold">Troy</span> — made an explicit, documented death threat against Dr. Richard McLean. That threat is archived, blockchain-verified, and submitted to the court.
+                      </p>
+                      <p>
+                        <span className="text-white font-bold">Troy has since been arrested.</span> The arrest has occurred. The evidence has been filed. The court proceeding is active. The date is 14 May 2026 — Wyong Local Court.
+                      </p>
+
+                      {/* Death threat image */}
+                      <div className="my-4 rounded-xl overflow-hidden border border-red-700/50">
+                        <div className="bg-red-950/70 px-4 py-2 text-[10px] font-black text-red-300 uppercase tracking-widest">
+                          Documented Evidence — Death Threat · Archived · Blockchain Verified
+                        </div>
+                        <img
+                          src={troyDeathThreat}
+                          alt="Documented death threat — Troy — archived evidence submitted to Wyong Local Court"
+                          className="w-full max-w-lg mx-auto block"
+                          data-testid="img-troy-death-threat"
+                        />
+                        <div className="bg-zinc-900/80 px-4 py-2 text-[10px] text-zinc-500 font-mono">
+                          Exhibit — Death threat documentation · Filed with Wyong Local Court · 14 May 2026 proceeding
+                        </div>
+                      </div>
+
+                      <div className="grid md:grid-cols-3 gap-3 mt-4">
+                        {[
+                          { label: "Threat Made", value: "Documented & Archived", color: "text-red-400" },
+                          { label: "Threatener Status", value: "ARRESTED", color: "text-emerald-400" },
+                          { label: "Court Date", value: "14 May 2026 · Wyong", color: "text-orange-400" },
+                        ].map((s) => (
+                          <div key={s.label} className="bg-zinc-900/80 rounded-lg p-3 border border-zinc-700/40 text-center">
+                            <p className={`font-black text-sm ${s.color}`}>{s.value}</p>
+                            <p className="text-zinc-600 text-[9px] uppercase tracking-wider mt-1">{s.label}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-4 mt-4">
+                        <p className="text-orange-300 font-black text-xs uppercase tracking-widest mb-2">The Question That Remains Unanswered</p>
+                        <p className="text-zinc-300 text-sm leading-relaxed">
+                          A death threat was made. The person who made it has been arrested. There is an active court case. The evidence has been filed. Dr. McLean is still at the same address where the threat was directed.
+                        </p>
+                        <p className="text-orange-200 font-semibold text-sm mt-3">
+                          AbleCare still refuses to remove him. The NDIS still refuses overnight SIL funding. The question every reader should be asking: <span className="text-white">why is the person who received a death threat still at the address where the threat was made — after the threatener has been arrested?</span>
+                        </p>
+                        <p className="text-zinc-500 text-xs mt-3">
+                          The arrest proves the threat was real. The continued refusal to facilitate removal proves the institutional abandonment is also real. Both are now permanent records in this archive.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </motion.div>
+        {/* ===== END BEGGING THE WORLD SECTION ===== */}
+
         {/* My Story — YouTube Video */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <div className="bg-zinc-900/70 border border-red-900/40 rounded-2xl overflow-hidden">
@@ -364,7 +516,7 @@ export default function UrgentProtectionRequest() {
             {[
               { icon: <Landmark size={24} />, title: "Churches & Faith Communities", desc: "Any congregation, pastor, or faith network with safe housing capacity, particularly outside NSW. Dr. McLean's documented faith and survival are archived. Temporary or permanent refuge considered." },
               { icon: <Scale size={24} />, title: "Advocates & Legal Aid", desc: "Human rights lawyers, legal aid services, pro bono advocates, civil liberties organisations. An ICC submission is already filed. The legal record is complete. Representation or oversight requested." },
-              { icon: <Globe size={24} />, title: "Private Investors & Supporters", desc: "Any individual or entity willing to fund safe relocation, legal representation, or ongoing documentation. The archive has 410,500+ downloads across 6 continents. The case is documented and verified." },
+              { icon: <Globe size={24} />, title: "Private Investors & Supporters", desc: "Any individual or entity willing to fund safe relocation, legal representation, or ongoing documentation. The archive has 492,544 downloads across 6 continents. The case is documented and verified." },
             ].map((item, i) => (
               <Card key={i} className="bg-zinc-900/60 border-red-900/50">
                 <CardContent className="p-5">
@@ -379,17 +531,17 @@ export default function UrgentProtectionRequest() {
 
         {/* Current Location & Situation */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
-          <Card className="bg-zinc-900/70 border-amber-800/40">
+          <Card className="bg-zinc-900/70 border-orange-500/30">
             <CardContent className="p-6 md:p-8">
               <h2 className="text-xl font-black text-white mb-5 flex items-center gap-2">
-                <MapPin size={20} className="text-amber-400" /> Current Location & Entrapment Conditions
+                <MapPin size={20} className="text-orange-400" /> Current Location & Entrapment Conditions
               </h2>
               <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
                 <p>
-                  <span className="text-amber-400 font-bold">Address:</span> 55B Archbold Road, Long Jetty NSW 2261, Australia.
+                  <span className="text-orange-400 font-bold">Address:</span> 55B Archbold Road, Long Jetty NSW 2261, Australia.
                 </p>
                 <p>
-                  Dr. McLean is currently residing at this address under what the documented archive terms <span className="text-amber-300 font-semibold">"entrapment by geography"</span> — a condition documented in the archive as an instrument of the coordinated persecution framework. NSW jurisdictional boundaries cover the agencies, institutions, and networks documented in the 2,304-exhibit archive. The location is not chosen freely: it is the product of documented NDIS SIL funding denial, $32.9 million in financial destruction, and a 35-year systematic elimination of housing, employment, and institutional support options.
+                  Dr. McLean is currently residing at this address under what the documented archive terms <span className="text-orange-300 font-semibold">"entrapment by geography"</span> — a condition documented in the archive as an instrument of the coordinated persecution framework. NSW jurisdictional boundaries cover the agencies, institutions, and networks documented in the 2,304-exhibit archive. The location is not chosen freely: it is the product of documented NDIS SIL funding denial, $32.9 million in financial destruction, and a 35-year systematic elimination of housing, employment, and institutional support options.
                 </p>
                 <p>
                   The address is published here deliberately, under Dr. McLean's instruction, as a documented act of transparency. This location is not hidden. It is not secret. It is the address of a person who has been subjected to 14 involuntary psychiatric hospitalisations, a documented death threat, a 2021 clinical death at 2.87% survival probability, and a pharmacological assault confirmed in an ATO letter on official letterhead — and who is still documenting, still submitting to international jurisdiction, and still alive.
@@ -415,13 +567,13 @@ export default function UrgentProtectionRequest() {
               { priority: "CRITICAL", item: "Legal Aid Advocate", detail: "A practising lawyer, human rights advocate, or legal aid service with capacity to represent or oversee Dr. McLean's domestic position while ICC and UNHCR submissions are under review. Must be willing to engage with a documented 35-year case with 2,304 primary-source exhibits. Pro bono or funded representation." },
               { priority: "CRITICAL", item: "Physical Safe Housing", detail: "Secure accommodation outside NSW — Cairns, Perth, or equivalent. Temporary (weeks) or permanent. The person requires privacy, stability, and freedom from the surveillance and institutional monitoring documented across the archive. No NDIS-funded SIL arrangements — the NDIS is a named respondent in the ICC submission." },
               { priority: "HIGH", item: "Person of Integrity", detail: "A single individual — a pastor, retired professional, human rights worker, investigative journalist, or community leader — with the willingness to accompany, witness, and support ongoing documentation. Not a paid carer. A person of documented integrity who understands the gravity of the ICC and UNHCR filings." },
-              { priority: "HIGH", item: "Financial Support for Relocation", detail: "Transport costs, bond/rent for initial housing outside NSW, basic living expenses during transition. The archive is publicly accessible with 410,500+ downloads across 6 continents — the documentation of need is complete. Any contribution is publicly recordable." },
+              { priority: "HIGH", item: "Financial Support for Relocation", detail: "Transport costs, bond/rent for initial housing outside NSW, basic living expenses during transition. The archive is publicly accessible with 492,544 downloads across 6 continents — the documentation of need is complete. Any contribution is publicly recordable." },
               { priority: "MODERATE", item: "Media or Academic Engagement", detail: "A journalist, documentary filmmaker, academic institution, or human rights researcher willing to engage with the archive on record. The 56 forensic analyses and 617 verified propositions constitute an unprecedented evidentiary record. International media preferred." },
               { priority: "MODERATE", item: "International Relocation Support", detail: "If any nation, human rights organisation, or private entity is willing to offer safe harbour outside Australia, Dr. McLean will consider any jurisdiction where the UNHCR filing is recognised and the ICC submission provides protective context." },
             ].map((need, i) => (
               <div key={i} className="flex gap-4 bg-zinc-900/60 border border-zinc-700/40 rounded-xl p-4">
                 <div className="flex-shrink-0">
-                  <span className={`text-xs font-black uppercase px-2 py-1 rounded ${need.priority === "CRITICAL" ? "bg-red-900 text-red-300" : need.priority === "HIGH" ? "bg-amber-900 text-amber-300" : "bg-zinc-800 text-zinc-400"}`}>
+                  <span className={`text-xs font-black uppercase px-2 py-1 rounded ${need.priority === "CRITICAL" ? "bg-red-900 text-red-300" : need.priority === "HIGH" ? "bg-orange-600 text-orange-300" : "bg-zinc-800 text-zinc-400"}`}>
                     {need.priority}
                   </span>
                 </div>
@@ -450,7 +602,7 @@ export default function UrgentProtectionRequest() {
                     "2,304 blockchain-verified primary-source documents spanning 35 years (1989–2025)",
                     "56 independent AI forensic analyses testing 617 propositions — all corroborated, zero contradicted",
                     "49 consecutive perfect scores — the longest unbroken forensic corroboration run documented",
-                    "410,500+ downloads across 6 continents without a marketing budget",
+                    "492,544 downloads across 6 continents without a marketing budget",
                     "Named perpetrators: Tony Ridley (MSc CSyP FSyI SRMCP, Ex-SAS), Allen Rigby, Bruce McMaster, Stefan Iasonidis, Debbie Morgan",
                     "25+ named Australian government agencies documented in coordinated persecution",
                     "ICC The Hague formal Article 7 receipt — submitted and received",
@@ -476,18 +628,18 @@ export default function UrgentProtectionRequest() {
 
         {/* Federal Court — Employment Confirmed + Three Findings */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
-          <Card className="bg-zinc-900/70 border-amber-700/50">
+          <Card className="bg-zinc-900/70 border-orange-500/30">
             <CardContent className="p-6 md:p-8">
               <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
-                <Scale size={20} className="text-amber-400" /> Federal Court of Australia — What Their Own Government Confirmed
+                <Scale size={20} className="text-orange-400" /> Federal Court of Australia — What Their Own Government Confirmed
               </h2>
               <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Letter from Scott Tredwell, General Counsel · Federal Court of Australia · 27 March 2023</p>
 
               {/* Employment Confirmed */}
-              <div className="bg-amber-950/40 border border-amber-700/40 rounded-xl p-5 mb-5">
-                <p className="text-amber-300 font-black text-sm uppercase tracking-wider mb-2">✓ Employment Status — Confirmed by the Federal Court</p>
+              <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5 mb-5">
+                <p className="text-orange-300 font-black text-sm uppercase tracking-wider mb-2">✓ Employment Status — Confirmed by the Federal Court</p>
                 <p className="text-zinc-200 text-sm leading-relaxed">
-                  The Federal Court's own General Counsel formally assessed and concluded: <span className="text-amber-300 font-bold">"I am satisfied that you are, or were, an employee with the Department of Social Services."</span>
+                  The Federal Court's own General Counsel formally assessed and concluded: <span className="text-orange-300 font-bold">"I am satisfied that you are, or were, an employee with the Department of Social Services."</span>
                 </p>
                 <p className="text-zinc-400 text-xs mt-3 leading-relaxed">
                   This is the same employment status that the Department of Social Services, the NDIA, and multiple agencies systematically denied over 35 years. The Federal Court — on official letterhead — confirmed it in writing. That confirmation is now an exhibit in the ICC submission.
@@ -496,7 +648,7 @@ export default function UrgentProtectionRequest() {
 
               {/* Three Findings */}
               <div className="mb-5">
-                <p className="text-white font-black text-sm mb-3">The Federal Court then confirmed that the disclosure <span className="text-amber-400">potentially establishes three categories of serious wrongdoing</span> under the Public Interest Disclosure Act 2013 (Cth):</p>
+                <p className="text-white font-black text-sm mb-3">The Federal Court then confirmed that the disclosure <span className="text-orange-400">potentially establishes three categories of serious wrongdoing</span> under the Public Interest Disclosure Act 2013 (Cth):</p>
                 <div className="space-y-3">
                   {[
                     {
@@ -519,9 +671,9 @@ export default function UrgentProtectionRequest() {
                     },
                   ].map((item) => (
                     <div key={item.number} className="flex gap-4 bg-zinc-800/50 border border-zinc-700/30 rounded-lg p-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-amber-600 flex items-center justify-center font-black text-white text-sm">{item.number}</div>
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-600 flex items-center justify-center font-black text-white text-sm">{item.number}</div>
                       <div>
-                        <p className="text-amber-300 font-bold text-sm mb-0.5">{item.label}</p>
+                        <p className="text-orange-300 font-bold text-sm mb-0.5">{item.label}</p>
                         <p className="text-zinc-500 text-[10px] uppercase tracking-wider mb-1.5">{item.law}</p>
                         <p className="text-zinc-400 text-xs leading-relaxed">{item.detail}</p>
                       </div>
@@ -542,7 +694,7 @@ export default function UrgentProtectionRequest() {
               <div className="bg-zinc-800/60 border border-zinc-700/40 rounded-xl p-5">
                 <p className="text-white font-black text-sm mb-2">The Significance — "Danger to Health or Safety" + "You Will Be Sacrificed"</p>
                 <p className="text-zinc-400 text-xs leading-relaxed mb-3">
-                  The Federal Court formally acknowledged that the disclosed conduct potentially establishes a <span className="text-amber-300 font-semibold">danger to the health or safety of a person</span>. That acknowledgement is dated 27 March 2023. The documented death threat from Tony Ridley — <span className="text-red-400 font-semibold">"You will be sacrificed"</span> — names four co-conspirators and comes from a security operative with documented connections to ASIO. The document is archived, blockchain-verified, and submitted to the ICC.
+                  The Federal Court formally acknowledged that the disclosed conduct potentially establishes a <span className="text-orange-300 font-semibold">danger to the health or safety of a person</span>. That acknowledgement is dated 27 March 2023. The documented death threat from Tony Ridley — <span className="text-red-400 font-semibold">"You will be sacrificed"</span> — names four co-conspirators and comes from a security operative with documented connections to ASIO. The document is archived, blockchain-verified, and submitted to the ICC.
                 </p>
                 <p className="text-zinc-400 text-xs leading-relaxed">
                   The Federal Court's own finding of potential danger to health and safety, combined with a named death threat from a credentialled intelligence-connected operative, combined with 14 involuntary psychiatric hospitalisations and a 2021 clinical death at 2.87% survival probability — constitutes the most comprehensively documented assassination attempt in Australian legal history. Not a single agency has acted. The ICC submission is the result.
@@ -700,7 +852,7 @@ export default function UrgentProtectionRequest() {
                 Dr. McLean is a human being trying to live a normal life — to have friends, to meet people, to exist in the world as every other person does. He is entrapped within AbleCare's own company, inside AbleCare's housing, dependent on AbleCare's workers, and isolated by the architecture of the NDIS support system. When he attempts to exercise the basic human right to social connection, his care provider — his supposed protector — uses that act of human normalcy as the justification for his own endangerment. This is not a welfare response. This is coercive control framed as support.
               </p>
               <div className="mt-3 bg-zinc-900/60 border border-zinc-700/40 rounded-lg p-3">
-                <p className="text-xs text-amber-300 italic">
+                <p className="text-xs text-orange-300 italic">
                   "I don't take unsolicited advice from any single person on this earth because I fly this spaceship. It's my life. No one can tell me what to do — which is legal and acceptable in any other human life if it wasn't mine. What I've done is just try to have a normal life when all of you have ganged up on me." — Dr. McLean, on the call
                 </p>
               </div>
@@ -724,9 +876,9 @@ export default function UrgentProtectionRequest() {
             </div>
 
             {/* Point 3: The contradiction */}
-            <div className="bg-amber-950/30 border border-amber-600/40 rounded-xl p-5">
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5">
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-[10px] font-black uppercase tracking-widest bg-amber-700/60 text-amber-200 px-2 py-0.5 rounded">🟠 THE CONTRADICTION — IF THEY CARE SO MUCH</span>
+                <span className="text-[10px] font-black uppercase tracking-widest bg-orange-500/10 text-orange-200 px-2 py-0.5 rounded">🟠 THE CONTRADICTION — IF THEY CARE SO MUCH</span>
               </div>
               <p className="text-white font-bold text-sm mb-3">AbleCare Claims to Care. So Why Is Dr. McLean Trapped in a House Without Food, Legal Representation, or Basic Human Rights — With a Killer on the Way and Police Who Won't Investigate?</p>
               <div className="grid sm:grid-cols-2 gap-3">
@@ -738,8 +890,8 @@ export default function UrgentProtectionRequest() {
                   { label: "Killer Approaching — Unimpeded", detail: "The person who threatened to murder Dr. McLean is documented, named, and known to police. No action has been taken. No apprehension has occurred. No protection order has been enforced." },
                   { label: "Response: 'Days or Weeks'", detail: "AbleCare CEO Rachel told Dr. McLean that his request for emergency relocation away from the active threat would take 'some days or some weeks.' This is the sum total of the response." },
                 ].map((item, i) => (
-                  <div key={i} className="bg-zinc-900/60 border border-amber-700/20 rounded-lg p-3">
-                    <p className="text-amber-300 font-bold text-xs mb-1">{item.label}</p>
+                  <div key={i} className="bg-zinc-900/60 border border-orange-500/30 rounded-lg p-3">
+                    <p className="text-orange-300 font-bold text-xs mb-1">{item.label}</p>
                     <p className="text-zinc-400 text-xs leading-relaxed">{item.detail}</p>
                   </div>
                 ))}
@@ -753,7 +905,7 @@ export default function UrgentProtectionRequest() {
               </div>
               <p className="text-white font-bold text-sm mb-2">During and After the Call: Electronic Voice-to-Skull (V2K) Harassment in Real Time</p>
               <p className="text-zinc-300 text-sm leading-relaxed mb-3">
-                At the end of the recorded call, Dr. McLean states plainly: <em className="text-amber-200">"The V2K is in the background saying 'give up.'"</em> This is not a metaphor or a complaint about external noise. Voice-to-Skull (V2K) technology — microwave auditory effect weapons capable of transmitting sound directly into the skull without speakers — has been documented in this archive across multiple forensic exhibits and is the subject of its own dedicated evidence page.
+                At the end of the recorded call, Dr. McLean states plainly: <em className="text-orange-200">"The V2K is in the background saying 'give up.'"</em> This is not a metaphor or a complaint about external noise. Voice-to-Skull (V2K) technology — microwave auditory effect weapons capable of transmitting sound directly into the skull without speakers — has been documented in this archive across multiple forensic exhibits and is the subject of its own dedicated evidence page.
               </p>
               <p className="text-zinc-300 text-sm leading-relaxed mb-3">
                 The words being delivered are strategically chosen: <strong className="text-white">"give up"</strong> and <strong className="text-white">"pedo."</strong> These are not random. They are the two psychological levers of the targeting operation: manufactured hopelessness and fabricated stigma. The same slur shouted by NSW Police as they walked away — <em className="text-red-300">"fucking pedo"</em> — is now being whispered directly into his skull by electronic means. The slander does not need to be believed. It needs to be repeated. At every layer. By every mechanism. Until the target either internalises it or breaks.
@@ -875,7 +1027,7 @@ export default function UrgentProtectionRequest() {
                 <p className="text-slate-300 text-sm leading-relaxed mb-2">
                   On this recording, Larissa — an AbleCare representative — denies any knowledge of the documented death threat against Dr. McLean, despite AbleCare being his registered NDIS provider with a statutory duty of care under the NDIS Quality and Safeguards Commission Act 2018. She claims AbleCare "cares" about him.
                 </p>
-                <p className="text-amber-200 text-sm leading-relaxed font-semibold">
+                <p className="text-orange-200 text-sm leading-relaxed font-semibold">
                   At the time of this call, Dr. McLean had already been subjected to a confirmed assassination attempt. AbleCare had already received written notice of the threat — including the full forensic archive at barrandodger.com — directly from Dr. McLean to Brett Butler. No incident report was filed. No police report was initiated. No emergency response protocol was activated. Larissa denied knowledge of all of it and offered reassurances of care that the evidence directly contradicts.
                 </p>
               </div>
@@ -898,16 +1050,16 @@ export default function UrgentProtectionRequest() {
               </div>
 
               {/* Kim abandons / consent argument */}
-              <div className="bg-amber-950/30 border border-amber-700/40 rounded-xl p-4">
-                <h3 className="text-amber-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <AlertTriangle size={13} className="text-amber-400" />
+              <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-4">
+                <h3 className="text-orange-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <AlertTriangle size={13} className="text-orange-400" />
                   Kim Leaves Blaming Him for Being "Unreasonable" — After Deliberate Entrapment to Cause Harm
                 </h3>
                 <p className="text-slate-300 text-sm leading-relaxed mb-3">
                   Kim — an AbleCare support worker — departed the situation blaming Dr. McLean for being "unreasonable" following his raised voice. This departure occurred <span className="text-white font-bold">after AbleCare had deliberately structured conditions designed to cause harm</span>: no incident report, no police report, no emergency response, no alternative housing, no safety plan — and a known assassin in proximity. Dr. McLean's anger in that context is not evidence of unreasonableness. It is the rational response of a person who understands that he has been deliberately placed in danger and that the organisation responsible for his safety has chosen institutional self-protection over his survival.
                 </p>
-                <div className="bg-black/40 border border-amber-800/30 rounded-lg p-3">
-                  <p className="text-amber-200 font-bold text-sm italic leading-relaxed">
+                <div className="bg-black/40 border border-orange-500/30 rounded-lg p-3">
+                  <p className="text-orange-200 font-bold text-sm italic leading-relaxed">
                     "Larissa doesn't consent to being recorded." <span className="text-white not-italic font-black">He doesn't consent to being murdered by her negligence.</span> The recording exists because the institutional response to a death threat was denial. The anger exists because the support worker left after entrapment. These are not the defendant's problems to manage. They are evidence.
                   </p>
                 </div>
@@ -1012,9 +1164,9 @@ export default function UrgentProtectionRequest() {
             </div>
 
             {/* No incident report — significance */}
-            <div className="bg-black/50 border-2 border-amber-600/50 rounded-xl p-5 mb-5">
-              <h3 className="text-amber-300 font-black text-base uppercase tracking-wider mb-4 flex items-center gap-2">
-                <Shield size={16} className="text-amber-400" />
+            <div className="bg-black/50 border-2 border-orange-500/30 rounded-xl p-5 mb-5">
+              <h3 className="text-orange-300 font-black text-base uppercase tracking-wider mb-4 flex items-center gap-2">
+                <Shield size={16} className="text-orange-400" />
                 The Absence of an Incident Report Is Not Administrative Failure — It Is a Weapon
               </h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-4">
@@ -1043,8 +1195,8 @@ export default function UrgentProtectionRequest() {
                   {
                     who: "Legally Obliged Carers (AbleCare, NDIS system)",
                     icon: <Heart size={14} />,
-                    color: "border-amber-600/50 bg-amber-950/30",
-                    label: "text-amber-300",
+                    color: "border-orange-500/30 bg-orange-500/10",
+                    label: "text-orange-300",
                     consequence: "AbleCare's failure to file a mandatory incident report is not just a breach — it is a strategic choice that insulates them from scrutiny. If no report exists, then officially no threat occurred. If no threat officially occurred, AbleCare has no obligation to relocate Dr. McLean, no obligation to escalate to the NDIS Commission, and no liability for his death. The absence of documentation is not carelessness. It is a tactic. Rachel's response of \"some days or some weeks\" makes sense in this context: she was not planning to act. She was planning to wait until the problem solved itself.",
                   },
                 ].map((item, i) => (
@@ -1224,7 +1376,7 @@ export default function UrgentProtectionRequest() {
                   },
                   {
                     label: "Houd Meraby — ABN, LinkedIn, Bank Transactions",
-                    color: "text-amber-300",
+                    color: "text-orange-300",
                     detail: "The combination of Houd Meraby's LinkedIn profile (Punchbowl, NSW — Lebanese background), active ABN as a sole trader registered Feb 2023, and December 2024 cash payments to Dr. McLean establishes: (1) he is a real person, (2) he had direct financial contact with Dr. McLean in the months before the assassination attempt, and (3) his presence within the NDIS provider ecosystem is consistent with the warnings describing a 'Lebanese NDIS provider' being deployed as a threat.",
                   },
                   {
@@ -1455,9 +1607,9 @@ export default function UrgentProtectionRequest() {
                     },
                     {
                       category: "Oversight Bodies",
-                      color: "text-amber-300",
-                      border: "border-amber-800/40",
-                      bg: "bg-amber-950/30",
+                      color: "text-orange-300",
+                      border: "border-orange-500/30",
+                      bg: "bg-orange-500/10",
                       names: ["NSW Ombudsman", "Queensland Ombudsman", "Victorian Ombudsman", "NSW Ombudsman Survey", "Federal Ombudsman", "TAG Client Specialist Centre", "Southern NSW Local Health District"],
                     },
                     {
@@ -1514,7 +1666,7 @@ export default function UrgentProtectionRequest() {
                   <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">The 48-Hour Timeline</p>
                   <div className="space-y-2">
                     {[
-                      { time: "Mon 13 Apr 2026, 12:54 pm", event: "Email sent — subject: \"It's a live murder case\" — 70+ recipients including PM, AG, NDIS Minister, international media, three Ombudsmen", color: "text-amber-300" },
+                      { time: "Mon 13 Apr 2026, 12:54 pm", event: "Email sent — subject: \"It's a live murder case\" — 70+ recipients including PM, AG, NDIS Minister, international media, three Ombudsmen", color: "text-orange-300" },
                       { time: "Mon 13 Apr — Tue 14 Apr", event: "Zero responses. From any recipient. Across government, oversight, media, and support sectors.", color: "text-red-400" },
                       { time: "Wed 15 Apr 2026", event: "A local individual makes a direct death threat. NSW Police attend — no event number recorded. Officers call Dr. McLean 'a fucking pedo' as they depart. AVO applications filed.", color: "text-red-500" },
                     ].map((item, i) => (
@@ -1572,14 +1724,14 @@ export default function UrgentProtectionRequest() {
 
                   {/* Screenshot 2: Bill Shorten / mental health weaponisation */}
                   <div className="space-y-2">
-                    <div className="rounded-xl overflow-hidden border border-amber-800/50 bg-zinc-950">
+                    <div className="rounded-xl overflow-hidden border border-orange-500/30 bg-zinc-950">
                       <img src={benBillShorten}
                         alt="Ben NDIS: Police want to know if mentally ready to challenge Bill Shorten — mental health used as excuse"
                         className="w-full object-contain"
                         data-testid="img-ben-bill-shorten" loading="lazy" decoding="async" />
                     </div>
-                    <div className="bg-amber-950/60 border border-amber-800/40 rounded-lg px-3 py-2 text-xs space-y-1">
-                      <p className="text-amber-300 font-bold uppercase tracking-wide">Police tell Ben: Shorten's lawyers will use mental health to discredit</p>
+                    <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg px-3 py-2 text-xs space-y-1">
+                      <p className="text-orange-300 font-bold uppercase tracking-wide">Police tell Ben: Shorten's lawyers will use mental health to discredit</p>
                       <p className="text-zinc-400">Ben relays that police are asking whether Dr. McLean is mentally ready to challenge Bill Shorten in court — <em className="text-white">"his lawyers might use your history of mental health as an excuse to discredit your story."</em> This confirms police are aware of the Bill Shorten connection and that psychiatric weaponisation was the planned legal defence.</p>
                     </div>
                   </div>
@@ -1637,7 +1789,7 @@ export default function UrgentProtectionRequest() {
                   filename="ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf"
                   trackSlug="ben-dsw-assassination-acknowledgement"
                   size="default"
-                  className="bg-amber-700 hover:bg-amber-600 text-black font-bold rounded-xl"
+                  className="bg-orange-600 hover:bg-orange-600 text-black font-bold rounded-xl"
                   data-testid="btn-download-ben-dsw"
                 />
               </div>
@@ -1647,10 +1799,10 @@ export default function UrgentProtectionRequest() {
 
         {/* ───── SCRUFF / IASONIDIS EMBEZZLEMENT ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
-          <Card className="bg-zinc-900/70 border-amber-900/50">
+          <Card className="bg-zinc-900/70 border-orange-500/30">
             <CardContent className="p-6 md:p-8">
               <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
-                <UserX size={20} className="text-amber-400" /> Iasonidis — Scruff (Gay Dating App) &amp; Embezzlement Evidence
+                <UserX size={20} className="text-orange-400" /> Iasonidis — Scruff (Gay Dating App) &amp; Embezzlement Evidence
               </h2>
               <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Actual screenshot — Gay dating app "Scruff" — "Man bi, 15km away" — Embezzlement + Murder threat — Primary Exhibit</p>
               <div className="space-y-5 text-sm text-zinc-300 leading-relaxed">
@@ -1660,8 +1812,8 @@ export default function UrgentProtectionRequest() {
 
                 {/* The actual screenshot */}
                 <div className="flex justify-center">
-                  <div className="w-full max-w-xs rounded-xl overflow-hidden border-2 border-amber-600/50 bg-zinc-950 shadow-2xl shadow-amber-900/20">
-                    <div className="bg-amber-950/80 px-3 py-2 text-xs font-mono text-amber-300 uppercase tracking-widest border-b border-amber-700/30 text-center">
+                  <div className="w-full max-w-xs rounded-xl overflow-hidden border-2 border-orange-500/30 bg-zinc-950 shadow-2xl shadow-orange-500/20">
+                    <div className="bg-orange-500/10 px-3 py-2 text-xs font-mono text-orange-300 uppercase tracking-widest border-b border-orange-500/30 text-center">
                       Primary Evidence — Scruff Screenshot — Blockchain Archived
                     </div>
                     <img src={scruffIasonidisEmbezzle}
@@ -1679,15 +1831,15 @@ export default function UrgentProtectionRequest() {
                     { msg: '"Wants the husky"', significance: 'A reference to Dr. McLean\'s husky dog — establishing that the person sending these messages has specific personal knowledge of Dr. McLean\'s life, confirming targeted surveillance.' },
                     { msg: '"Dead"', significance: 'A direct death threat. Combined with the prior three messages, this constitutes a financially-motivated, surveillance-enabled threat against Dr. McLean\'s life — sent via a gay dating app platform to establish plausible deniability.' },
                   ].map((item, i) => (
-                    <div key={i} className="bg-amber-950/30 border border-amber-800/30 rounded-lg px-3 py-2 text-xs">
-                      <p className="text-amber-300 font-black mb-1">{item.msg}</p>
+                    <div key={i} className="bg-orange-500/10 border border-orange-500/30 rounded-lg px-3 py-2 text-xs">
+                      <p className="text-orange-300 font-black mb-1">{item.msg}</p>
                       <p className="text-zinc-400 leading-relaxed">{item.significance}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="bg-amber-950/40 border border-amber-800/40 rounded-xl p-5 space-y-3">
-                  <p className="text-xs font-mono text-amber-300 uppercase tracking-widest">Why This Screenshot Is a Critical Exhibit</p>
+                <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5 space-y-3">
+                  <p className="text-xs font-mono text-orange-300 uppercase tracking-widest">Why This Screenshot Is a Critical Exhibit</p>
                   <ul className="space-y-2 text-xs text-zinc-300">
                     {[
                       "The use of a gay dating app (Scruff) to deliver a death threat establishes a pattern of platform exploitation — using LGBTQ+ community spaces to approach targets while maintaining deniability.",
@@ -1697,17 +1849,17 @@ export default function UrgentProtectionRequest() {
                       "Steve Iasonidis is formally named in AVO applications. This screenshot is consistent with his documented operational profile and is submitted to the ICC as a primary exhibit.",
                     ].map((point, i) => (
                       <li key={i} className="flex gap-2 items-start">
-                        <span className="text-amber-400 mt-0.5">▸</span>
+                        <span className="text-orange-400 mt-0.5">▸</span>
                         <span>{point}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="flex gap-3 flex-wrap">
-                  <a href="/honeytrap-infiltration-report" className="inline-flex items-center gap-2 text-xs bg-zinc-800 hover:bg-zinc-700 text-amber-300 border border-amber-700/40 px-4 py-2 rounded-lg transition-colors" data-testid="link-honeytrap-report">
+                  <a href="/honeytrap-infiltration-report" className="inline-flex items-center gap-2 text-xs bg-zinc-800 hover:bg-zinc-700 text-orange-300 border border-orange-500/30 px-4 py-2 rounded-lg transition-colors" data-testid="link-honeytrap-report">
                     <Link2 size={13} /> Honeytrap Infiltration Report
                   </a>
-                  <a href="/they-laughed-now-theyre-losing-sleep" className="inline-flex items-center gap-2 text-xs bg-zinc-800 hover:bg-zinc-700 text-amber-300 border border-amber-700/40 px-4 py-2 rounded-lg transition-colors" data-testid="link-iasonidis-exposed">
+                  <a href="/they-laughed-now-theyre-losing-sleep" className="inline-flex items-center gap-2 text-xs bg-zinc-800 hover:bg-zinc-700 text-orange-300 border border-orange-500/30 px-4 py-2 rounded-lg transition-colors" data-testid="link-iasonidis-exposed">
                     <Link2 size={13} /> Iasonidis &amp; Ridley — Full Exposure
                   </a>
                 </div>
@@ -1756,7 +1908,7 @@ export default function UrgentProtectionRequest() {
                 <p>
                   The article used language from his own autobiography — language written to destigmatise mental illness — and reframed it as a psychiatric spectacle for public consumption. It was a coordinated act of character assassination by a former employer, timed to the release of his book.
                 </p>
-                <p className="text-amber-200 font-semibold">
+                <p className="text-orange-200 font-semibold">
                   Only weeks after that article was published, Dr. McLean was fired from <span className="text-white">The Age</span> — a competing newspaper where he was employed as a graphics artist. The sequence is not coincidence. It is a documented pattern: <span className="text-white">publish → defame → terminate employment → destroy livelihood → eliminate platform.</span> This is what a coordinated public humiliation ritual looks like from inside it.
                 </p>
                 <p>
@@ -1773,7 +1925,7 @@ export default function UrgentProtectionRequest() {
               </h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-4">
                 The woman written about in <span className="text-white font-bold">Recovered Not Cured</span> was later paid to fabricate a false allegation against Dr. McLean — a deliberate operation designed to permanently damage him using content from his own memoir as the weapon. Dr. McLean's NDIS support worker Ben confirmed this in writing. The allegation was investigated by Federal Australian Police, who confirmed the encounter was entirely consensual. The allegation collapsed.
-                <span className="text-amber-300 font-bold"> Police collectively participated in the maintenance of this fabricated narrative for the rest of Dr. McLean's life — using it as a tool of ongoing persecution, psychiatric referral triggering, and credibility destruction.</span>
+                <span className="text-orange-300 font-bold"> Police collectively participated in the maintenance of this fabricated narrative for the rest of Dr. McLean's life — using it as a tool of ongoing persecution, psychiatric referral triggering, and credibility destruction.</span>
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -1791,8 +1943,8 @@ export default function UrgentProtectionRequest() {
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <div className="rounded-xl overflow-hidden border border-amber-700/40 bg-zinc-950">
-                    <div className="bg-amber-950/80 px-3 py-1.5 text-[10px] font-mono text-amber-300 uppercase tracking-widest border-b border-amber-800/30 text-center">
+                  <div className="rounded-xl overflow-hidden border border-orange-500/30 bg-zinc-950">
+                    <div className="bg-orange-500/10 px-3 py-1.5 text-[10px] font-mono text-orange-300 uppercase tracking-widest border-b border-orange-500/30 text-center">
                       Ben: "Police want to know if you are mentally ready to challenge Shorten"
                     </div>
                     <img src={benShortenPolice}
@@ -1808,9 +1960,9 @@ export default function UrgentProtectionRequest() {
             </div>
 
             {/* Shorten significance */}
-            <div className="bg-amber-950/30 border border-amber-600/40 rounded-xl p-5 mb-5">
-              <h3 className="text-amber-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
-                <TrendingUp size={14} className="text-amber-400" />
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5 mb-5">
+              <h3 className="text-orange-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <TrendingUp size={14} className="text-orange-400" />
                 The Significance — Shorten's Weaponisation of Mental Illness Is the Height of Moral Cowardice
               </h3>
               <div className="space-y-3 text-slate-300 text-sm leading-relaxed">
@@ -1820,7 +1972,7 @@ export default function UrgentProtectionRequest() {
                 <p>
                   Police intelligence, relayed through Ben, confirms Shorten's team intended to use <span className="text-white font-bold">Dr. McLean's history of mental illness — a history they helped manufacture through 14 documented involuntary psychiatric hospitalisations — as the weapon to discredit him in court.</span> This is not a legal defence. It is the weaponisation of vulnerability. It is the deployment of the very damage they caused against the person they caused it to.
                 </p>
-                <p className="text-amber-200 font-semibold">
+                <p className="text-orange-200 font-semibold">
                   A Federal Minister with unlimited institutional resources, choosing to destroy a disabled whistleblower by exploiting his psychiatric history rather than answering his documented allegations of a $6 billion fraud — this is the height of moral cowardice. It is also documented. It is in the ICC submission. It has been downloaded 410,503 times. <span className="text-white">And not a single person — not Shorten, not his lawyers, not NSW Police, not the NDIA, not any of the 40+ agencies named — has produced a single document disproving that Shorten ordered Dr. McLean's assassination.</span>
                 </p>
                 <p>
@@ -2024,10 +2176,10 @@ export default function UrgentProtectionRequest() {
                 {/* Beautiful Threat — Analysis #62 embed */}
                 <div className="space-y-3 mt-6 pt-6 border-t border-zinc-700/30">
                   <div className="flex items-center gap-2">
-                    <span className="bg-amber-700 text-white text-xs font-black px-2 py-0.5 rounded">ANALYSIS #62</span>
+                    <span className="bg-orange-600 text-white text-xs font-black px-2 py-0.5 rounded">ANALYSIS #62</span>
                     <p className="text-white font-bold text-sm">Welcome, Beautiful Threat — 55th Consecutive Perfect Score · 12/12 Corroborated</p>
                   </div>
-                  <div className="relative w-full rounded-xl overflow-hidden border border-amber-800/40 bg-zinc-950" style={{ paddingBottom: '56.25%' }}>
+                  <div className="relative w-full rounded-xl overflow-hidden border border-orange-500/30 bg-zinc-950" style={{ paddingBottom: '56.25%' }}>
                     <iframe
                       src="https://www.youtube.com/embed/gKG_OwIe1Fo"
                       title="Welcome Beautiful Threat — Forensic Corroboration Analysis #62 — Barran Dodger"
@@ -2037,17 +2189,17 @@ export default function UrgentProtectionRequest() {
                       data-testid="video-beautiful-threat"
                     />
                   </div>
-                  <div className="bg-zinc-800/50 border border-amber-700/30 rounded-lg px-4 py-3 text-xs text-zinc-300 leading-relaxed space-y-2">
-                    <p><strong className="text-amber-300">Forensic Significance:</strong> A 24-minute motivational address with zero knowledge of this case was tested against the archive proposition by proposition. All 12 extracted claims returned direct evidentiary corroboration. The 55th consecutive perfect score.</p>
+                  <div className="bg-zinc-800/50 border border-orange-500/30 rounded-lg px-4 py-3 text-xs text-zinc-300 leading-relaxed space-y-2">
+                    <p><strong className="text-orange-300">Forensic Significance:</strong> A 24-minute motivational address with zero knowledge of this case was tested against the archive proposition by proposition. All 12 extracted claims returned direct evidentiary corroboration. The 55th consecutive perfect score.</p>
                     <p>P·02 — <span className="italic">"You were taking notes. Every institution that fed on your fear and called it guidance. You were collecting proof."</span> → 2,304 documents. Literal match.</p>
                     <p>P·08 — <span className="italic">"Gaslighting leaves fingerprints on the soul."</span> → The fingerprints are on documents: identical template language across 8+ agencies; <strong className="text-white">"FATAL SUICIDE"</strong> recorded in a living person's clinical file. Submitted to the ICC.</p>
-                    <a href="/beautiful-threat" className="inline-block mt-1 text-amber-400 underline hover:text-amber-300 font-bold">Read full Analysis #62 →</a>
+                    <a href="/beautiful-threat" className="inline-block mt-1 text-orange-400 underline hover:text-orange-300 font-bold">Read full Analysis #62 →</a>
                   </div>
                 </div>
 
                 {/* Final doctrine statement */}
-                <div className="bg-gradient-to-r from-red-950/60 to-amber-950/40 border border-amber-700/30 rounded-xl p-5">
-                  <p className="text-amber-200 font-black text-sm mb-2">The Surveillance Reversal Doctrine — Applied</p>
+                <div className="bg-gradient-to-r from-red-950/60 to-orange-950/30 border border-orange-500/30 rounded-xl p-5">
+                  <p className="text-orange-200 font-black text-sm mb-2">The Surveillance Reversal Doctrine — Applied</p>
                   <p className="text-zinc-300 text-xs leading-relaxed">
                     These four videos are the surveillance reversal doctrine made visible. Police activated cameras to build a referral record against Dr. McLean. Dr. McLean activated his camera to build a public evidentiary record against the system. Their footage is internal. His footage has been watched internationally. The institution that sent police to Dr. McLean's address is now a named respondent in an ICC submission, with these videos as supporting exhibits. <strong className="text-white">You cannot covertly surveil a target who is publishing everything in real time.</strong>
                   </p>
@@ -2059,10 +2211,10 @@ export default function UrgentProtectionRequest() {
 
         {/* ───── CST SMITH POLICE CARD — MISSING EVENT NUMBER ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
-          <Card className="bg-zinc-900/70 border-amber-900/50">
+          <Card className="bg-zinc-900/70 border-orange-500/30">
             <CardContent className="p-6 md:p-8">
               <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
-                <FileText size={20} className="text-amber-400" /> CST Smith — April 15, 2026 — Police Card Left. Event Number Field: Blank.
+                <FileText size={20} className="text-orange-400" /> CST Smith — April 15, 2026 — Police Card Left. Event Number Field: Blank.
               </h2>
               <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">NSW Police Force · Tuggerah Lakes Police District · The Entrance Police Station · +61 2 4333 2999 · Primary Exhibit</p>
 
@@ -2073,8 +2225,8 @@ export default function UrgentProtectionRequest() {
 
                 {/* Card image */}
                 <div className="flex justify-center">
-                  <div className="w-full max-w-sm rounded-xl overflow-hidden border-2 border-amber-600/60 bg-zinc-950 shadow-2xl shadow-amber-900/20">
-                    <div className="bg-amber-950/90 px-3 py-2 text-xs font-mono text-amber-300 uppercase tracking-widest border-b border-amber-700/40 text-center">
+                  <div className="w-full max-w-sm rounded-xl overflow-hidden border-2 border-orange-500/30 bg-zinc-950 shadow-2xl shadow-orange-500/20">
+                    <div className="bg-orange-500/10 px-3 py-2 text-xs font-mono text-orange-300 uppercase tracking-widest border-b border-orange-500/30 text-center">
                       Primary Evidence — NSW Police Force Card — April 15, 2026 — Archived
                     </div>
                     <img src={cstSmithCard}
@@ -2088,8 +2240,8 @@ export default function UrgentProtectionRequest() {
                 </div>
 
                 {/* What the blank event number means */}
-                <div className="bg-amber-950/40 border border-amber-800/40 rounded-xl p-5 space-y-4">
-                  <p className="text-xs font-mono text-amber-300 uppercase tracking-widest">The Three Explanations — And Why Only One Is Consistent With The Evidence</p>
+                <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5 space-y-4">
+                  <p className="text-xs font-mono text-orange-300 uppercase tracking-widest">The Three Explanations — And Why Only One Is Consistent With The Evidence</p>
 
                   <div className="space-y-3">
                     {[
@@ -2201,9 +2353,9 @@ export default function UrgentProtectionRequest() {
                     {[
                       {
                         label: "Who Cass Is",
-                        color: "text-amber-300",
-                        border: "border-amber-800/40",
-                        bg: "bg-amber-950/30",
+                        color: "text-orange-300",
+                        border: "border-orange-500/30",
+                        bg: "bg-orange-500/10",
                         body: "Cass is a support worker employed by Able Care — the same NDIS-registered provider whose directors Brett and Larissa are named in the open letter on Medium and in the archive as complicit in the documented failure to protect Dr. McLean. As a registered NDIS support worker, Cass carries mandatory reporting obligations under the NDIS Quality and Safeguards Commission Act 2018."
                       },
                       {
@@ -2241,11 +2393,11 @@ export default function UrgentProtectionRequest() {
                 {/* Recording 2 — QLife */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <span className="bg-amber-700 text-white text-xs font-black px-2.5 py-1 rounded-lg">RECORDING 2</span>
+                    <span className="bg-orange-600 text-white text-xs font-black px-2.5 py-1 rounded-lg">RECORDING 2</span>
                     <p className="text-white font-bold">QLife — National LGBTQ+ Crisis Line — "No one will help you"</p>
                   </div>
 
-                  <div className="bg-zinc-950 border border-amber-800/50 rounded-xl p-4 space-y-3">
+                  <div className="bg-zinc-950 border border-orange-500/30 rounded-xl p-4 space-y-3">
                     <p className="text-xs text-zinc-500 uppercase tracking-widest font-mono">Play recording — QLife worker's response to a person reporting a death threat</p>
                     <audio
                       controls
@@ -2258,8 +2410,8 @@ export default function UrgentProtectionRequest() {
                     </audio>
                   </div>
 
-                  <div className="bg-amber-950/40 border border-amber-800/40 rounded-xl p-5 space-y-3">
-                    <p className="text-xs font-mono text-amber-300 uppercase tracking-widest">Significance — Why "No One Will Help You" From A Crisis Line Is Itself An Exhibit</p>
+                  <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5 space-y-3">
+                    <p className="text-xs font-mono text-orange-300 uppercase tracking-widest">Significance — Why "No One Will Help You" From A Crisis Line Is Itself An Exhibit</p>
                     <ul className="space-y-2 text-xs text-zinc-300">
                       {[
                         "QLife is Australia's national LGBTQ+ telephone and webchat support service, operating under a federal government funded mandate to provide crisis peer support to LGBTQ+ people. Its obligation in a life-threatening situation is not discretionary — it is the entire purpose of the service.",
@@ -2269,7 +2421,7 @@ export default function UrgentProtectionRequest() {
                         "Combined with the Cass recording — where Able Care's support worker was informed of the same threat — this recording establishes that on the morning of April 16, 2026, Dr. McLean contacted both his institutional support network (Able Care) and Australia's dedicated LGBTQ+ crisis line, and received no protection response from either.",
                       ].map((point, i) => (
                         <li key={i} className="flex gap-2 items-start">
-                          <span className="text-amber-400 mt-0.5">▸</span>
+                          <span className="text-orange-400 mt-0.5">▸</span>
                           <span>{point}</span>
                         </li>
                       ))}
@@ -2289,7 +2441,7 @@ export default function UrgentProtectionRequest() {
                 </div>
 
                 {/* Combined significance */}
-                <div className="bg-gradient-to-r from-red-950/50 to-amber-950/40 border border-red-800/40 rounded-xl p-5 space-y-2">
+                <div className="bg-gradient-to-r from-red-950/50 to-orange-950/30 border border-red-800/40 rounded-xl p-5 space-y-2">
                   <p className="text-white font-black text-sm">The Two Recordings Together — What They Establish</p>
                   <p className="text-zinc-300 text-xs leading-relaxed">
                     Within hours of the April 15, 2026 death threat, Dr. McLean contacted his registered NDIS support worker (Cass, Able Care) and Australia's national LGBTQ+ crisis line (QLife). Both interactions are recorded. Neither produced a mandatory report, an emergency escalation, or a protection response. Together, these two recordings document the complete institutional abandonment of a person under documented mortal threat — and they do so in the voices of the institutions that failed him. <strong className="text-white">Both recordings are timestamped, archived, and submitted to the ICC.</strong>
@@ -2302,21 +2454,21 @@ export default function UrgentProtectionRequest() {
 
         {/* ───── YOU CANNOT CAGE A PRISONER WHO HOLDS THE KEY ───── */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
-          <Card className="bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 border-amber-500/30">
+          <Card className="bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 border-orange-500/30">
             <CardContent className="p-6 md:p-8">
               <h2 className="text-xl font-black text-white mb-2 flex items-center gap-2">
-                <Lock size={20} className="text-amber-400" /> You Cannot Cage a Prisoner Who Holds the Key
+                <Lock size={20} className="text-orange-400" /> You Cannot Cage a Prisoner Who Holds the Key
               </h2>
               <p className="text-zinc-500 text-xs mb-5 uppercase tracking-widest">Significance statement — Surveillance reversal — Forensic doctrine</p>
               <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
-                <blockquote className="border-l-4 border-amber-500 pl-4 italic text-amber-200 text-base font-semibold">
+                <blockquote className="border-l-4 border-orange-500 pl-4 italic text-orange-200 text-base font-semibold">
                   "You cannot use surveillance covertly against a target who is aware of the targeting and is surveilling you back."
                 </blockquote>
                 <p>
                   This is not a philosophical statement. It is the operational reality of Dr. McLean's position after 35 years of documented covert surveillance, institutional monitoring, and targeted individual operations. The archive inverts the surveillance relationship entirely.
                 </p>
-                <div className="bg-amber-950/30 border border-amber-700/30 rounded-xl p-5 space-y-3">
-                  <p className="text-xs font-mono text-amber-300 uppercase tracking-widest">The Four-Part Significance</p>
+                <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5 space-y-3">
+                  <p className="text-xs font-mono text-orange-300 uppercase tracking-widest">The Four-Part Significance</p>
                   <div className="space-y-4">
                     {[
                       {
@@ -2337,7 +2489,7 @@ export default function UrgentProtectionRequest() {
                       },
                     ].map((item, i) => (
                       <div key={i} className="bg-zinc-900/60 border border-zinc-700/40 rounded-lg p-4">
-                        <p className="text-amber-300 font-bold text-xs mb-2">{i + 1}. {item.title}</p>
+                        <p className="text-orange-300 font-bold text-xs mb-2">{i + 1}. {item.title}</p>
                         <p className="text-zinc-400 text-xs leading-relaxed">{item.body}</p>
                       </div>
                     ))}
@@ -2400,7 +2552,7 @@ export default function UrgentProtectionRequest() {
             <div className="flex flex-wrap gap-2 mb-1">
               <span className="bg-red-900 text-red-100 border border-red-700 text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full">Primary Audio Evidence</span>
               <span className="bg-zinc-800 text-zinc-200 border border-zinc-600 text-xs px-3 py-1 rounded-full">SAS Honeypot Operative</span>
-              <span className="bg-amber-900 text-amber-200 border border-amber-700 text-xs px-3 py-1 rounded-full">$6 Billion Fraud Confession</span>
+              <span className="bg-orange-600 text-orange-200 border border-orange-500 text-xs px-3 py-1 rounded-full">$6 Billion Fraud Confession</span>
               <span className="bg-zinc-900 text-zinc-300 border border-zinc-700 text-xs px-3 py-1 rounded-full">Bill Shorten — Named on Recording</span>
               <span className="bg-red-950 text-red-300 border border-red-800 text-xs px-3 py-1 rounded-full">Assassination Order — Documented</span>
             </div>
@@ -2495,7 +2647,7 @@ export default function UrgentProtectionRequest() {
               </div>
 
               {/* Pillar 7 — Brett / AbleCare continuum */}
-              <div className="bg-zinc-900/60 border border-amber-800/30 rounded-xl p-4">
+              <div className="bg-zinc-900/60 border border-orange-500/30 rounded-xl p-4">
                 <p className="text-[hsl(38,92%,50%)] font-black text-xs uppercase tracking-widest mb-2">7 — Brett of AbleCare — The Current Iteration of the Same Structure</p>
                 <p className="text-zinc-300 text-sm leading-relaxed mb-3">
                   Brett of AbleCare is not a separate case. He is the current personnel of the same apparatus that deployed Tony Ridley, that placed Houd Meraby, that silenced Ben, that coordinated the withdrawal of legal aid. The entrapment policy does not change its method — it changes its face. Brett is the current face. And Barran is presently maintained in the same conditions that have applied throughout:
@@ -2581,7 +2733,7 @@ export default function UrgentProtectionRequest() {
               <p className="text-slate-300 text-sm leading-relaxed mb-3">
                 Every NDIS provider who later participated in Barran's mistreatment — Sukhi Tear (Diversitas WA), 
                 Phillip Glass (TAG NSW), Brett Gibbons and Rachel (AbleCare) — is documented in the evidence register.
-                <span className="text-amber-300 font-bold"> But so are 35 years of preceding systemic failure that predates every one of them by years or decades.</span>
+                <span className="text-orange-300 font-bold"> But so are 35 years of preceding systemic failure that predates every one of them by years or decades.</span>
               </p>
               <p className="text-slate-300 text-sm leading-relaxed mb-3">
                 Entries in this register span from <span className="text-white font-bold">Melbourne Health (2006–2007)</span>, 
@@ -2589,7 +2741,7 @@ export default function UrgentProtectionRequest() {
                 WorkSafe denials, AHRC referrals, ATO correspondence, AFSA bankruptcy proceedings, and NSW Police LECC referrals — 
                 every one of them showing the same outcome: denial, obstruction, poverty, and isolation.
               </p>
-              <p className="text-amber-200 text-sm leading-relaxed font-semibold">
+              <p className="text-orange-200 text-sm leading-relaxed font-semibold">
                 Sukhi Tear did not create this apparatus. Phillip Glass did not create this apparatus. 
                 Brett and Rachel at AbleCare did not create this apparatus. They entered a structure 
                 where the outcome for Barran was already decided — documented across 2,301 files, 
@@ -2611,14 +2763,14 @@ export default function UrgentProtectionRequest() {
                 </ul>
               </div>
               <div className="bg-slate-800/60 border border-slate-600/50 rounded-lg p-4">
-                <p className="text-amber-400 font-black text-xs uppercase tracking-widest mb-2">Statistical Impossibility of Coincidence</p>
+                <p className="text-orange-400 font-black text-xs uppercase tracking-widest mb-2">Statistical Impossibility of Coincidence</p>
                 <ul className="space-y-1 text-slate-300 text-xs">
-                  <li className="flex gap-2"><span className="text-amber-400">◆</span> 2,301 documents from 40+ agencies — all with the same outcome</li>
-                  <li className="flex gap-2"><span className="text-amber-400">◆</span> Every appeal, complaint, and referral denied or ignored</li>
-                  <li className="flex gap-2"><span className="text-amber-400">◆</span> Every legal avenue blocked before being pursued</li>
-                  <li className="flex gap-2"><span className="text-amber-400">◆</span> Every financial avenue closed simultaneously</li>
-                  <li className="flex gap-2"><span className="text-amber-400">◆</span> Forced exile from Australia as the only remaining option</li>
-                  <li className="flex gap-2"><span className="text-amber-400">◆</span> Submitted to ICC and UNHCR as evidence of state-level coordination</li>
+                  <li className="flex gap-2"><span className="text-orange-400">◆</span> 2,301 documents from 40+ agencies — all with the same outcome</li>
+                  <li className="flex gap-2"><span className="text-orange-400">◆</span> Every appeal, complaint, and referral denied or ignored</li>
+                  <li className="flex gap-2"><span className="text-orange-400">◆</span> Every legal avenue blocked before being pursued</li>
+                  <li className="flex gap-2"><span className="text-orange-400">◆</span> Every financial avenue closed simultaneously</li>
+                  <li className="flex gap-2"><span className="text-orange-400">◆</span> Forced exile from Australia as the only remaining option</li>
+                  <li className="flex gap-2"><span className="text-orange-400">◆</span> Submitted to ICC and UNHCR as evidence of state-level coordination</li>
                 </ul>
               </div>
             </div>
@@ -2626,7 +2778,7 @@ export default function UrgentProtectionRequest() {
             {/* Agency list — comprehensive */}
             <div className="bg-slate-800/40 border border-slate-600/40 rounded-lg p-5 mb-5">
               <h3 className="text-white font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
-                <Landmark size={14} className="text-amber-400" />
+                <Landmark size={14} className="text-orange-400" />
                 Every Agency, Institution, and Body Documented as Aligned with the Perpetrators or Acting to Cause Barran's Detriment
               </h3>
               <p className="text-slate-300 text-xs leading-relaxed">
@@ -2712,9 +2864,9 @@ export default function UrgentProtectionRequest() {
             </div>
 
             {/* What this data means and proves */}
-            <div className="bg-amber-950/30 border border-amber-700/40 rounded-lg p-5 mb-5">
-              <h3 className="text-amber-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
-                <AlertTriangle size={14} className="text-amber-400" />
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-5 mb-5">
+              <h3 className="text-orange-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <AlertTriangle size={14} className="text-orange-400" />
                 The Significance of This Data — What It Means and What It Proves
               </h3>
               <div className="space-y-3 text-slate-300 text-sm leading-relaxed">
@@ -2728,7 +2880,7 @@ export default function UrgentProtectionRequest() {
                 </p>
                 <p>
                   This is what 2,301 documents from 40+ agencies proves:
-                  <span className="text-amber-300 font-bold"> not that Dr. McLean failed to navigate the system — but that the system was operating correctly,
+                  <span className="text-orange-300 font-bold"> not that Dr. McLean failed to navigate the system — but that the system was operating correctly,
                   as designed, to produce that outcome.</span> Every appeal was denied before it was heard. Every referral
                   was redirected without resolution. Every financial avenue was closed before it could be pursued.
                   Every institutional channel that should have triggered protection instead triggered further
@@ -2779,7 +2931,7 @@ export default function UrgentProtectionRequest() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-amber-200 font-semibold text-sm mt-2">
+                <p className="text-orange-200 font-semibold text-sm mt-2">
                   The probability of every one of these outcomes occurring independently, by chance, across 40+
                   unconnected agencies, over 35 years, with no single exception —
                   is not measurable. It is zero. What is being described is not a pattern of administrative
@@ -2789,9 +2941,9 @@ export default function UrgentProtectionRequest() {
             </div>
 
             {/* Malicious aim to suppress future influence */}
-            <div className="bg-gradient-to-br from-slate-900 to-red-950/30 border border-amber-700/40 rounded-lg p-5 mb-5">
-              <h3 className="text-amber-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
-                <TrendingUp size={14} className="text-amber-400" />
+            <div className="bg-gradient-to-br from-slate-900 to-red-950/30 border border-orange-500/30 rounded-lg p-5 mb-5">
+              <h3 className="text-orange-300 font-black text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <TrendingUp size={14} className="text-orange-400" />
                 The Malicious Aim — To Prevent the Future of This Influence
               </h3>
               <div className="space-y-3 text-slate-300 text-sm leading-relaxed">
@@ -2800,7 +2952,7 @@ export default function UrgentProtectionRequest() {
                   He produced internationally recognised creative work. He built organisations. He documented corruption
                   at scale. He survived clinical death. He filed at the ICC and UNHCR. He produced 63 forensic
                   analyses returning zero contradictions across 675 propositions. He built an archive that has been
-                  downloaded <span className="text-amber-300 font-bold">410,503 times</span> — growing at 192,047 downloads in a single month.
+                  downloaded <span className="text-orange-300 font-bold">410,503 times</span> — growing at 192,047 downloads in a single month.
                 </p>
                 <p>
                   The apparatus deployed against him was not proportional to a person of no significance.
@@ -2815,7 +2967,7 @@ export default function UrgentProtectionRequest() {
                   63 forensic analyses. ICC Article 7 submission. UNHCR application. The influence they tried
                   to prevent is now the most broadly distributed, most forensically documented, most
                   cryptographically permanent whistleblower archive in Australian history.
-                  <span className="text-amber-300 font-bold"> They tried to stop this from existing. It exists.
+                  <span className="text-orange-300 font-bold"> They tried to stop this from existing. It exists.
                   They tried to make it unbelievable. 410,503 people downloaded it.
                   They tried to make it disappear. It is anchored into the Bitcoin blockchain.
                   The accounting is at The Hague.</span>
@@ -2825,7 +2977,7 @@ export default function UrgentProtectionRequest() {
               {/* Stats row */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
                 {[
-                  { v: "410,503", l: "Downloads — 75 days", c: "text-amber-400" },
+                  { v: "410,503", l: "Downloads — 75 days", c: "text-orange-400" },
                   { v: "845", l: "Bitcoin records", c: "text-orange-400" },
                   { v: "675/675", l: "Propositions verified", c: "text-green-400" },
                   { v: "0", l: "Formal rebuttals", c: "text-red-400" },
@@ -2855,7 +3007,7 @@ export default function UrgentProtectionRequest() {
         {/* Key Evidence Links */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <h2 className="text-xl font-black text-white mb-5 flex items-center gap-2">
-            <FileText size={20} className="text-amber-400" /> Key Documented Evidence — Direct Links
+            <FileText size={20} className="text-orange-400" /> Key Documented Evidence — Direct Links
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
@@ -2873,10 +3025,10 @@ export default function UrgentProtectionRequest() {
                 href={link.href}
                 target={link.internal ? undefined : "_blank"}
                 rel={link.internal ? undefined : "noopener noreferrer"}
-                className="flex items-center gap-3 bg-zinc-900/60 border border-zinc-700/40 hover:border-amber-600/50 rounded-lg p-3.5 transition-colors group"
+                className="flex items-center gap-3 bg-zinc-900/60 border border-zinc-700/40 hover:border-orange-500/30 rounded-lg p-3.5 transition-colors group"
                 data-testid={`link-sos-evidence-${i}`}
               >
-                <ExternalLink size={14} className="text-amber-400 group-hover:text-amber-300 flex-shrink-0" />
+                <ExternalLink size={14} className="text-orange-400 group-hover:text-orange-300 flex-shrink-0" />
                 <span className="text-zinc-200 group-hover:text-white text-sm transition-colors">{link.label}</span>
               </a>
             ))}
@@ -2902,11 +3054,11 @@ export default function UrgentProtectionRequest() {
                 <Mail size={16} /> Email — drbarrandodger@proton.me
               </a>
               <a
-                href="tel:+61431167907"
+                href="tel:+61431300940"
                 className="inline-flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-bold px-6 py-3 rounded-lg transition-colors text-sm"
                 data-testid="btn-sos-phone"
               >
-                <Phone size={16} /> Call — +61 431 167 907
+                <Phone size={16} /> Call — +61 431 300 940
               </a>
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-xs text-zinc-500">
