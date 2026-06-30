@@ -33,8 +33,10 @@ jobs:
 
       - name: Build frontend for GitHub Pages
         run: |
-          VITE_GITHUB_PAGES=true NODE_ENV=production \
-            npx vite build --outDir dist/public --emptyOutDir
+          NODE_ENV=production npx vite build \
+            --config vite.config.gh-pages.ts \
+            --outDir dist/public \
+            --emptyOutDir
           echo "=== Built files ==="
           ls -la dist/public/
           ls -la dist/public/assets/ | head -20
@@ -48,10 +50,11 @@ jobs:
           fi
           TITLE=$(grep -o '<title>[^<]*' dist/public/index.html | head -1)
           echo "Title: $TITLE"
-          if echo "$TITLE" | grep -q "portal\|Portal"; then
-            echo "ERROR: index.html still has old portal base path!"
+          if echo "$TITLE" | grep -qi "portal"; then
+            echo "ERROR: index.html still has old portal title!"
             exit 1
           fi
+          echo "Build verified OK"
 
       - name: Add SPA 404 routing + .nojekyll
         run: |
