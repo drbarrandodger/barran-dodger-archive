@@ -27,11 +27,16 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Force Tailwind v3 (remove all v4 packages)
+      - name: Remove Tailwind v4 from node_modules (prevent conflict)
         run: |
-          npm rm @tailwindcss/vite @tailwindcss/postcss @tailwindcss/node @tailwindcss/oxide 2>/dev/null || true
-          npm install tailwindcss@3.4.17 --no-save --legacy-peer-deps
-          echo "Tailwindcss version: $(node -e 'console.log(require(\"./node_modules/tailwindcss/package.json\").version)')"
+          rm -rf node_modules/@tailwindcss/vite \
+                 node_modules/@tailwindcss/postcss \
+                 node_modules/@tailwindcss/node \
+                 node_modules/@tailwindcss/oxide \
+                 node_modules/@tailwindcss/oxide-linux-x64-gnu \
+                 node_modules/@tailwindcss/oxide-linux-x64-musl
+          find node_modules -mindepth 3 -maxdepth 3 -name "tailwindcss" -type d -exec rm -rf {} + 2>/dev/null || true
+          echo "Tailwind version in use: $(node -e 'console.log(require(\"./node_modules/tailwindcss/package.json\").version)')"
 
       - name: Clear old dist
         run: rm -rf dist/ghpages
