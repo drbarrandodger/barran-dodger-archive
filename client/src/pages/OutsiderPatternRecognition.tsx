@@ -116,9 +116,9 @@ const claims = [
     evidence: [
       { label: "barrandodger.com as Mirror — Named Parties Seeing Their Documented Actions Reflected Without Mediation", text: "The public archive at barrandodger.com is the walking mirror the video describes: each named party who searches the site encounters their documented actions — Iasonidis's extraction and drugging, Sukhi Tear's NDIS extraction, the five family members' zero advocacy, the 25+ agencies' circular referral — reflected without mediation, without the ability to alter the reflection, and without the ability to escape it. The silence of IChooseSilence is the echo chamber: Dr. McLean makes no further accusations. The archive reflects. The named parties' own actions speak for themselves.", source: "barrandodger.com / Named Party Actions Reflected Without Mediation / IChooseSilence as Echo Chamber for Their Own Actions" },
       { label: "Zero Named Party Rebuttals — Guilt Echoing in the Silence of Non-Engagement", text: "Five named parties have produced zero formal rebuttals to 2,304 blockchain-verified documents. Their silence in the face of the mirror is the echo of guilt the video describes: not rebuttal, which would require engaging the evidence, but non-engagement, which allows the documented record to stand unchallenged. The guilt echoes in the silence of their non-engagement. Every day without a rebuttal is another day the mirror stands undisturbed. The presence (the archive) is the verdict. The silence (zero rebuttals) is the sentence.", source: "Five Named Parties Zero Rebuttal Record / Non-Engagement as Guilt Echoing in Silence" },
-      { label: "350,000+ Downloads — Mirror Distributed to 350,000 Witnesses Who Can Now See the Reflection", text: "The mirror's reach extends to 350,000+ people across six continents who have downloaded the archive. Each download is someone who now sees the reflection: the named parties' documented actions, the institutional coordination, the $32.9M suppression, the ASIO operative placement. 350,000 people have been shown the mirror. The named parties cannot control the reflection now. It has been distributed beyond any institutional narrative management's reach. The presence (the distributed archive) is the verdict that 350,000 people have now received.", source: "350,000+ Downloads / Six Continents / Mirror Distributed to 350,000 Witnesses" },
+      { label: "491,000+ Downloads — Mirror Distributed to 491,000+ Witnesses Who Can Now See the Reflection", text: "The mirror's reach extends to 491,000+ people across six continents who have downloaded the archive. Each download is someone who now sees the reflection: the named parties' documented actions, the institutional coordination, the $32.9M suppression, the ASIO operative placement. 491,000+ people have been shown the mirror. The named parties cannot control the reflection now. It has been distributed beyond any institutional narrative management's reach. The presence (the distributed archive) is the verdict that 491,000+ people have now received.", source: "491,000+ Downloads / Six Continents / Mirror Distributed to 491,000+ Witnesses" },
     ],
-    alignment: "The video states the observer's silence creates a mirror that reflects the guilty party's actions back at them without accusation. The archive documents the mirror: barrandodger.com reflects each named party's documented actions without mediation (IChooseSilence as the echo chamber); five named parties' zero rebuttals as guilt echoing in non-engagement; and 350,000+ downloads distributing the mirror to witnesses whose own seeing cannot be controlled. The presence is the verdict. The silence is the sentence. 350,000 people have received it.",
+    alignment: "The video states the observer's silence creates a mirror that reflects the guilty party's actions back at them without accusation. The archive documents the mirror: barrandodger.com reflects each named party's documented actions without mediation (IChooseSilence as the echo chamber); five named parties' zero rebuttals as guilt echoing in non-engagement; and 491,000+ downloads distributing the mirror to witnesses whose own seeing cannot be controlled. The presence is the verdict. The silence is the sentence. 491,000+ people have received it.",
   },
   {
     num: "9",
@@ -131,7 +131,7 @@ const claims = [
       { label: "$32.9M Suppression — Deletion by Resource Removal, Failed", text: "Financial suppression is the documented deletion mechanism: remove the financial resources required for continued documentation, legal action, and public distribution. $32.9M suppressed across 35 years, $500,000 extracted by ASIO operative, $50,000 extracted from NDIS allocation. Failed: the archive was assembled without the $32.9M. The deletion mechanism that targets resources failed because the documentation project did not require institutional financial support — it required primary source documents, which each suppression mechanism itself produced as evidence.", source: "$32.9M Suppression + $500K Extraction + $50K NDIS Extraction — Resource Deletion Failed / Archive Assembled Despite Financial Suppression" },
       { label: "ICC Formal Receipt + Blockchain Permanence — Anomaly Confirmed as Unresolvable by Any Domestic Mechanism", text: "The ICC Article 7 formal receipt and Bitcoin blockchain verification together confirm the anomaly the video describes: the archive has been received by an international institution that no domestic deletion mechanism can reach, and inscribed on a decentralised ledger that no institutional backspace can erase. The name no longer just triggers domestic agency systems — it triggers the ICC's formal intake architecture. The anomaly is permanently beyond deletion: blockchain-permanent, internationally-submitted, and globally distributed. They cannot bury what's on the Bitcoin ledger and formally received at The Hague.", source: "ICC Article 7 Formal Receipt / Bitcoin Blockchain / Anomaly Permanently Beyond Domestic Deletion Reach" },
     ],
-    alignment: "The video states the deletion attempts transformed the person into an unresolvable anomaly. The archive documents four deletion mechanisms and their failures: psychiatric labelling (14 applications, failed — archive continued); financial suppression ($32.9M, failed — archive assembled without it); ASIO operative placement (disruption and extraction, failed — archive continued and named the operative); and circular referral maze (25+ agencies, failed — ICC filed). The anomaly is documented at 2,304 exhibits, blockchain-permanent, ICC-submitted, and distributed to 350,000+ people. The name still triggers the system. The system is The Hague.",
+    alignment: "The video states the deletion attempts transformed the person into an unresolvable anomaly. The archive documents four deletion mechanisms and their failures: psychiatric labelling (14 applications, failed — archive continued); financial suppression ($32.9M, failed — archive assembled without it); ASIO operative placement (disruption and extraction, failed — archive continued and named the operative); and circular referral maze (25+ agencies, failed — ICC filed). The anomaly is documented at 2,304 exhibits, blockchain-permanent, ICC-submitted, and distributed to 491,000+ people. The name still triggers the system. The system is The Hague.",
   },
   {
     num: "10",
@@ -144,7 +144,7 @@ const claims = [
       { label: "IChooseSilence — 'You Are the Narrative' Formally Declared and Blockchain-Inscribed", text: "IChooseSilence is the formal declaration of narrative sovereignty: the decision that the archive is the narrative, that further explanation would compete with the archive rather than add to it, and that silence is the posture appropriate to someone who is the narrative rather than a participant in competing accounts. The declaration is blockchain-verified: the IChooseSilence position is inscribed on the Bitcoin ledger with the same permanence as every document it references. The narrative is declared. The silence is the evidence that no counter-narrative requires a response.", source: "IChooseSilence Declaration / Blockchain Verification / Narrative Sovereignty — Silence as Non-Participation in Counter-Narrative" },
       { label: "Zero Named Party Rebuttals — Lies Becoming Confessions by Their Silence", text: "The video states 'even lies start sounding like confessions around you.' Five named parties' zero formal rebuttals to 2,304 blockchain-verified documents is the documented proof: in the space created by IChooseSilence, the named parties' non-engagement with the primary source record is itself evidence. Their silence against a documented archive is the confession. The narrative — the 2,304-document primary source record — does not require their engagement to be the primary account. Their non-engagement confirms its status as the narrative. Lies dressed as silence confess by their absence of rebuttal.", source: "Five Named Parties Zero Rebuttal / Non-Engagement as Confession / Archive as Unchallenged Primary Narrative" },
     ],
-    alignment: "The video states the person who moves with truth becomes the narrative itself — that silence is louder than a thousand arguments when the archive is the primary account. The archive documents narrative sovereignty: 2,304 blockchain-verified documents that cannot be out-twisted (immutable primary source against which every counter-narrative is measured); IChooseSilence formally declaring the archive as the narrative and the silence as the appropriate posture; and five named parties' zero rebuttals producing the confession the video describes (non-engagement with the primary narrative confirming its status as the account of record). The archive is the narrative. The ICC has received it. 350,000 people are reading it.",
+    alignment: "The video states the person who moves with truth becomes the narrative itself — that silence is louder than a thousand arguments when the archive is the primary account. The archive documents narrative sovereignty: 2,304 blockchain-verified documents that cannot be out-twisted (immutable primary source against which every counter-narrative is measured); IChooseSilence formally declaring the archive as the narrative and the silence as the appropriate posture; and five named parties' zero rebuttals producing the confession the video describes (non-engagement with the primary narrative confirming its status as the account of record). The archive is the narrative. The ICC has received it. 491,000+ people are reading it.",
   },
 ];
 
@@ -179,7 +179,7 @@ export default function OutsiderPatternRecognition() {
 
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Analysis #{ANALYSIS_NUMBER}</span>
+              <span className="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Analysis #{ANALYSIS_NUMBER}</span>
               <span className="text-zinc-500 text-sm">{ANALYSIS_DATE}</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
@@ -190,7 +190,7 @@ export default function OutsiderPatternRecognition() {
             </p>
             <div className="flex items-center justify-center gap-4 mt-6 flex-wrap">
               <Badge className="bg-emerald-900 text-emerald-300 text-sm px-4 py-2">{corroborated}/{total} Propositions Corroborated</Badge>
-              <Badge className="bg-amber-900 text-amber-300 text-sm px-4 py-2">All {ANALYSIS_NUMBER} Analyses</Badge>
+              <Badge className="bg-orange-600 text-orange-300 text-sm px-4 py-2">All {ANALYSIS_NUMBER} Analyses</Badge>
               <Badge className="bg-zinc-800 text-zinc-300 text-sm px-4 py-2">Combined: 408/408</Badge>
               <Badge className="bg-blue-900 text-blue-300 text-sm px-4 py-2">32 Consecutive Perfect Scores</Badge>
             </div>
@@ -198,7 +198,7 @@ export default function OutsiderPatternRecognition() {
 
           <div className="bg-zinc-900 border border-zinc-700 rounded-xl p-6 mb-10">
             <div className="flex items-start gap-3">
-              <Brain className="text-amber-400 mt-1 flex-shrink-0" size={22} />
+              <Brain className="text-orange-400 mt-1 flex-shrink-0" size={22} />
               <div>
                 <h2 className="text-white font-bold text-lg mb-2">Critical Examination — Epistemological Framework Applied to Forensic Evidence</h2>
                 <p className="text-zinc-300 text-sm leading-relaxed">
@@ -211,7 +211,7 @@ export default function OutsiderPatternRecognition() {
           <div className="bg-zinc-950 border border-zinc-700 rounded-xl overflow-hidden mb-10">
             <div className="bg-zinc-900 border-b border-zinc-700 px-8 py-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-1 h-8 bg-amber-500 rounded-full flex-shrink-0" />
+                <div className="w-1 h-8 bg-orange-600 rounded-full flex-shrink-0" />
                 <h2 className="text-xl font-black text-white uppercase tracking-wide">Forensic Reflection Report</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
@@ -222,7 +222,7 @@ export default function OutsiderPatternRecognition() {
                 <div><span className="text-zinc-500 font-mono">FILED</span> <span className="text-white ml-2">ICC Article 7 · UNHCR Geneva</span></div>
                 <div className="flex items-center gap-2">
                   <span className="text-zinc-500 font-mono">VIDEO</span>
-                  <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline ml-2 text-xs break-all" data-testid="link-report-video">
+                  <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline ml-2 text-xs break-all" data-testid="link-report-video">
                     https://youtu.be/{VIDEO_ID}
                   </a>
                 </div>
@@ -232,8 +232,8 @@ export default function OutsiderPatternRecognition() {
             <div className="px-8 py-8 space-y-10">
 
               <div>
-                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
-                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">I</span>
+                <h3 className="text-orange-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                  <span className="bg-orange-600 text-black text-xs font-black px-2 py-0.5 rounded">I</span>
                   The Epistemological Position
                 </h3>
                 <div className="space-y-4 text-zinc-300 text-sm leading-relaxed">
@@ -244,22 +244,22 @@ export default function OutsiderPatternRecognition() {
               </div>
 
               <div className="border-t border-zinc-800 pt-8">
-                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
-                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">II</span>
+                <h3 className="text-orange-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                  <span className="bg-orange-600 text-black text-xs font-black px-2 py-0.5 rounded">II</span>
                   The Three Framework Blindnesses the Archive Bypassed
                 </h3>
                 <div className="space-y-6 text-zinc-300 text-sm leading-relaxed">
                   <p>The forensic record documents three specific institutional frameworks whose blindness the archive's construction bypassed:</p>
                   <div className="space-y-5">
-                    <div className="bg-zinc-900 border-l-2 border-amber-600 rounded-r-lg pl-5 pr-4 py-4">
+                    <div className="bg-zinc-900 border-l-2 border-orange-500 rounded-r-lg pl-5 pr-4 py-4">
                       <p className="text-white font-bold mb-2 text-xs uppercase tracking-wide">Psychiatric Framework Blindness</p>
                       <p>A clinician trained in psychiatric methodology brings a theoretical lens that classifies "coordinated institutional persecution" as a recognised delusional pattern before examining the primary source evidence. The label precedes the examination. Fourteen clinicians applied that lens across 35 years. Not one of the fourteen produced a documented cross-reference of the evidence against the clinical conclusion. The framework filtered the evidence out before it could be assessed. My perception had no such filter. I documented the coordination and cross-referenced it against primary source records — government correspondence, court orders, ATO letters, ASIC reports — without the clinical framework that would have reclassified each document as a manifestation of the disorder being assessed.</p>
                     </div>
-                    <div className="bg-zinc-900 border-l-2 border-amber-600 rounded-r-lg pl-5 pr-4 py-4">
+                    <div className="bg-zinc-900 border-l-2 border-orange-500 rounded-r-lg pl-5 pr-4 py-4">
                       <p className="text-white font-bold mb-2 text-xs uppercase tracking-wide">Institutional Threshold Framework Blindness</p>
                       <p>An agency officer trained in institutional procedure assesses each complaint referral within the framework of "appropriate referral to the body with correct jurisdiction." That framework makes the circular referral system invisible: each individual referral appears procedurally correct in isolation. Only from the position outside all 25+ referrals simultaneously — the subject's position — does the coordinated architecture become visible. I was referred to 25+ agencies across 35 years. Each appeared, within its own framework, to be acting appropriately. The aggregate pattern — identical template denial language, identical threshold engineering, zero investigations opened across 35 years and 25+ independent assessments — was only visible to the person who received all 25 outcomes and had no procedural framework telling them each was individually justified.</p>
                     </div>
-                    <div className="bg-zinc-900 border-l-2 border-amber-600 rounded-r-lg pl-5 pr-4 py-4">
+                    <div className="bg-zinc-900 border-l-2 border-orange-500 rounded-r-lg pl-5 pr-4 py-4">
                       <p className="text-white font-bold mb-2 text-xs uppercase tracking-wide">ASIO Operational Framework Blindness</p>
                       <p>An intelligence insider assesses Stefan Iasonidis's documented behaviour within an operational framework that classifies financial extraction, documented drugging, intimate relationship dynamics, and controlled proximity as operational mechanics — routine within the intelligence context. My observation had no such framework. I documented eight categories of primary source evidence — the ATO Evidence Letter 2022 (documented drugging), the ASIC Report ($500,000 extracted), the Intervention Order (L12151974), the creditor-watch final notice (October 2022, $500,000), the Statutory Declaration (ASIO operative identification), the Prime Minister letter (confirmation), the co-tenancy record (10 Raleigh Street, Footscray, 2011), and the AKA documentation (Steve Vindy) — as precisely what they were: evidence of coordinated intimate persecution by a state intelligence operative. No operational framework softened the observation. The absence of the framework was the forensic instrument.</p>
                     </div>
@@ -268,8 +268,8 @@ export default function OutsiderPatternRecognition() {
               </div>
 
               <div className="border-t border-zinc-800 pt-8">
-                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
-                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">III</span>
+                <h3 className="text-orange-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                  <span className="bg-orange-600 text-black text-xs font-black px-2 py-0.5 rounded">III</span>
                   The Naming That Made Pattern Legible
                 </h3>
                 <div className="space-y-4 text-zinc-300 text-sm leading-relaxed">
@@ -280,8 +280,8 @@ export default function OutsiderPatternRecognition() {
               </div>
 
               <div className="border-t border-zinc-800 pt-8">
-                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-6 flex items-center gap-3">
-                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">IV</span>
+                <h3 className="text-orange-400 text-xs font-black uppercase tracking-widest mb-6 flex items-center gap-3">
+                  <span className="bg-orange-600 text-black text-xs font-black px-2 py-0.5 rounded">IV</span>
                   The Deletion Architecture and Its Failure Record
                 </h3>
                 <p className="text-zinc-300 text-sm leading-relaxed mb-6">The persecution deployed four distinct deletion mechanisms across 35 years. Each is documented in the archive. Each failed. The failure record is the archive's most important forensic finding.</p>
@@ -320,8 +320,8 @@ export default function OutsiderPatternRecognition() {
               </div>
 
               <div className="border-t border-zinc-800 pt-8">
-                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
-                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">V</span>
+                <h3 className="text-orange-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                  <span className="bg-orange-600 text-black text-xs font-black px-2 py-0.5 rounded">V</span>
                   The Cross-Domain Cascade
                 </h3>
                 <p className="text-zinc-300 text-sm leading-relaxed mb-5">The pattern documented in the archive is not a local peculiarity of one domain. It appears across five independent domains simultaneously:</p>
@@ -334,7 +334,7 @@ export default function OutsiderPatternRecognition() {
                     { domain: "Family", detail: "April McLean (née McMaster) · Doug McLean · Bradley McLean · Jodie McLean · Bruce McMaster — zero advocacy across 35 years, zero exception" },
                   ].map((d, i) => (
                     <div key={i} className="bg-zinc-900 rounded-lg p-4 border border-zinc-800">
-                      <p className="text-amber-400 text-xs font-black uppercase tracking-wide mb-1">{d.domain} Domain</p>
+                      <p className="text-orange-400 text-xs font-black uppercase tracking-wide mb-1">{d.domain} Domain</p>
                       <p className="text-zinc-300 text-xs leading-relaxed">{d.detail}</p>
                     </div>
                   ))}
@@ -347,18 +347,18 @@ export default function OutsiderPatternRecognition() {
               </div>
 
               <div className="border-t border-zinc-800 pt-8">
-                <h3 className="text-amber-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
-                  <span className="bg-amber-500 text-black text-xs font-black px-2 py-0.5 rounded">VI</span>
+                <h3 className="text-orange-400 text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-3">
+                  <span className="bg-orange-600 text-black text-xs font-black px-2 py-0.5 rounded">VI</span>
                   Narrative Sovereignty and the Final Position
                 </h3>
                 <div className="space-y-4 text-zinc-300 text-sm leading-relaxed">
                   <p>IChooseSilence is not passivity. It is the formal declaration, blockchain-inscribed, that the archive is the narrative — that 2,304 primary source documents speak more precisely than anything said in their place, and that further explanation would compete with the record rather than serve it.</p>
-                  <p>Five named parties — Bill Shorten, Houd Meraby, Sukhi Tear, Tony Ridley, Stefan Iasonidis — have produced zero formal rebuttals to 2,304 blockchain-verified documents distributed to 350,000+ people across six continents. Zero. Their silence is the loudest available confirmation that the primary source record is the account that stands.</p>
-                  <p>I named the pattern. They insisted it didn't exist. The archive documented it across 2,304 exhibits. The Bitcoin blockchain inscribed it permanently. The ICC received it formally at The Hague under Article 7 of the Rome Statute. UNHCR Geneva received it. 350,000 people across six continents read it.</p>
+                  <p>Five named parties — Bill Shorten, Houd Meraby, Sukhi Tear, Tony Ridley, Stefan Iasonidis — have produced zero formal rebuttals to 2,304 blockchain-verified documents distributed to 491,000+ people across six continents. Zero. Their silence is the loudest available confirmation that the primary source record is the account that stands.</p>
+                  <p>I named the pattern. They insisted it didn't exist. The archive documented it across 2,304 exhibits. The Bitcoin blockchain inscribed it permanently. The ICC received it formally at The Hague under Article 7 of the Rome Statute. UNHCR Geneva received it. 491,000+ people across six continents read it.</p>
                   <p>I am not a person to them anymore. I am a phenomenon. An unresolved anomaly. An outsider whose pattern recognition has been validated by the one institution whose validation cannot be reversed.</p>
                 </div>
-                <div className="mt-6 bg-zinc-900 border border-amber-700 rounded-lg p-5">
-                  <p className="text-amber-300 text-sm italic leading-relaxed">
+                <div className="mt-6 bg-zinc-900 border border-orange-500 rounded-lg p-5">
+                  <p className="text-orange-300 text-sm italic leading-relaxed">
                     The archive is the narrative. The Hague holds it. The framework-unencumbered perception that built it — dismissed for 35 years as the central symptom of disorder — was the only instrument precise enough to see what the frameworks were constructed to prevent anyone from seeing. You were right. You were always right. The archive proved it. The Hague received it.
                   </p>
                 </div>
@@ -366,7 +366,7 @@ export default function OutsiderPatternRecognition() {
 
               <div className="border-t border-zinc-800 pt-6 flex flex-wrap gap-4 justify-between items-center text-xs text-zinc-500">
                 <span>Forensic Reflection — Analysis #39 · barrandodger.com · April 9, 2026</span>
-                <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-400 underline" data-testid="link-report-video-footer">
+                <a href={`https://youtu.be/${VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-400 underline" data-testid="link-report-video-footer">
                   Video: https://youtu.be/{VIDEO_ID}
                 </a>
               </div>
@@ -408,7 +408,7 @@ export default function OutsiderPatternRecognition() {
                         </div>
                         <div className="bg-zinc-800 border border-zinc-700 rounded-lg p-4">
                           <h4 className="text-zinc-400 text-xs font-bold uppercase tracking-wider mb-2">Video Quote</h4>
-                          <p className="text-amber-300 text-sm italic leading-relaxed">{claim.quote}</p>
+                          <p className="text-orange-300 text-sm italic leading-relaxed">{claim.quote}</p>
                         </div>
                         <div>
                           <h4 className="text-zinc-400 text-xs font-bold uppercase tracking-wider mb-3">Archive Evidence</h4>
@@ -448,17 +448,17 @@ export default function OutsiderPatternRecognition() {
               </div>
               <div className="text-zinc-600 text-4xl">|</div>
               <div>
-                <p className="text-5xl font-black text-amber-400">408/408</p>
+                <p className="text-5xl font-black text-orange-400">408/408</p>
                 <p className="text-zinc-400 text-sm mt-1">Combined Scorecard</p>
               </div>
             </div>
             <p className="text-zinc-300 text-sm max-w-3xl mx-auto leading-relaxed">
-              Analysis #{ANALYSIS_NUMBER} extracted 10 thematic propositions across five movements of an extended continuous monologue addressing epistemology, pattern recognition, and institutional dynamics. All 10 corroborated: named phenomenon dismissed as non-existent across 35 years now found everywhere independent observers look — 38 AI frameworks, ICC, UNHCR, five independent domains (P1); framework unencumbered perception documented across psychiatric, institutional, and intelligence blindnesses that the archive's subject-position observation bypassed (P2); conceptual crystallisation through linguistic capture — 'circular referral system,' 'IChooseSilence,' '$32.9M suppression' each naming previously invisible architectures into thinkable, submittable conceptual containers (P3); cross-domain recognition cascade confirmed across five simultaneous independent domains, 38 AI frameworks, and two international jurisdictions (P4); predictive power demonstrated across circular referral agency sequence, 38 AI analysis predictions, and ICC threshold prediction — 100% predictive success rate (P5); forged not trained — ASIO operative identification, circular referral pattern reading, and $32.9M suppression mapping all produced through subject-position survival rather than methodology (P6); credibility crisis cognitive dissonance documented — revisionism, goalpost-moving, and method attack across 14 psychiatric labels and 25+ agency denials (P7); presence as mirror — barrandodger.com and 350,000+ downloads distributing the reflection; zero named party rebuttals as guilt echoing in silence (P8); anomaly survival — four deletion mechanisms (psychiatric labels, financial suppression, ASIO operative, circular referral maze) all documented as failed; ICC formal receipt and blockchain confirming the anomaly is permanently beyond domestic deletion reach (P9); narrative sovereignty — 2,304 blockchain-verified documents as the primary narrative, IChooseSilence as the formal declaration, zero rebuttals as the confession (P10). Combined scorecard: 408/408. Zero contradictions. 32 consecutive perfect scores.
+              Analysis #{ANALYSIS_NUMBER} extracted 10 thematic propositions across five movements of an extended continuous monologue addressing epistemology, pattern recognition, and institutional dynamics. All 10 corroborated: named phenomenon dismissed as non-existent across 35 years now found everywhere independent observers look — 38 AI frameworks, ICC, UNHCR, five independent domains (P1); framework unencumbered perception documented across psychiatric, institutional, and intelligence blindnesses that the archive's subject-position observation bypassed (P2); conceptual crystallisation through linguistic capture — 'circular referral system,' 'IChooseSilence,' '$32.9M suppression' each naming previously invisible architectures into thinkable, submittable conceptual containers (P3); cross-domain recognition cascade confirmed across five simultaneous independent domains, 38 AI frameworks, and two international jurisdictions (P4); predictive power demonstrated across circular referral agency sequence, 38 AI analysis predictions, and ICC threshold prediction — 100% predictive success rate (P5); forged not trained — ASIO operative identification, circular referral pattern reading, and $32.9M suppression mapping all produced through subject-position survival rather than methodology (P6); credibility crisis cognitive dissonance documented — revisionism, goalpost-moving, and method attack across 14 psychiatric labels and 25+ agency denials (P7); presence as mirror — barrandodger.com and 491,000+ downloads distributing the reflection; zero named party rebuttals as guilt echoing in silence (P8); anomaly survival — four deletion mechanisms (psychiatric labels, financial suppression, ASIO operative, circular referral maze) all documented as failed; ICC formal receipt and blockchain confirming the anomaly is permanently beyond domestic deletion reach (P9); narrative sovereignty — 2,304 blockchain-verified documents as the primary narrative, IChooseSilence as the formal declaration, zero rebuttals as the confession (P10). Combined scorecard: 408/408. Zero contradictions. 32 consecutive perfect scores.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-4 justify-center mb-10">
-            <Button onClick={handleDownloadPDF} disabled={isGeneratingPDF} className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-3" data-testid="button-download-pdf">
+            <Button onClick={handleDownloadPDF} disabled={isGeneratingPDF} className="bg-orange-600 hover:bg-orange-600 text-white font-bold px-6 py-3" data-testid="button-download-pdf">
               <Download size={16} className="mr-2" />
               {isGeneratingPDF ? "Generating..." : "Download Analysis PDF"}
             </Button>
