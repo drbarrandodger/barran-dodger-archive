@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { ArchiveCrossLinks } from "@/components/ArchiveCrossLinks";
+import { CitationBlock } from "@/components/CitationBlock";
 import { DocSharePanel } from "@/components/DocSharePanel";
 import { docUrl } from "@/lib/docUrl";
 
@@ -220,13 +221,14 @@ const FORENSIC_ANALYSES: ForensicEntry[] = [
   { number: 69, title: "The 3AM Briefing — Your Existence Disturbed Systems Built on Silence: 20/20 Confirmed", slug: "forensic-corroboration-3am-briefing", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 70, title: "The Government's Own File — Attorney-General MC23-028244, Scott Treadwell, and 2,301 Sealed Documents: 20/20 Confirmed", slug: "forensic-corroboration-government-own-file", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 71, title: "Never Promise Access to a Vault You Don't Own — Divine Enforcement, Institutional Betrayal, and the Covenant That Cannot Be Bartered: 20/20 Confirmed", slug: "forensic-corroboration-vault-access", propositions: 20, corroborated: 20, consecutivePerfect: true },
-  { number: 72, title: "Am I Making History in Real Time? — Prophetic Verdict: Yes. 20/20 Confirmed — Post-Clinical-Death Testimony, ICC Submission, 393,880+ Downloads Across Six Continents", slug: "forensic-corroboration-making-history", propositions: 20, corroborated: 20, consecutivePerfect: true },
+  { number: 72, title: "Am I Making History in Real Time? — Prophetic Verdict: Yes. 20/20 Confirmed — Post-Clinical-Death Testimony, ICC Submission, 492,544 Downloads Across Six Continents", slug: "forensic-corroboration-making-history", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 73, title: "Silence Was My Reload — They Mistook Your Silence For Surrender: 9/9 Corroborated · Prophetic Declaration · Clinical Death at 2.87% · OAIC → ICC → UNHCR · 845 Bitcoin Seals", slug: "forensic-corroboration-silence-surrender", propositions: 9, corroborated: 9, consecutivePerfect: true },
   { number: 74, title: "Look Who's Still Standing — 3 Years of Silence: 12/12 Confirmed · 67th Consecutive Perfect Score · 35-Year Psychological War · Blockchain-Sealed · ICC Article 7", slug: "forensic-corroboration-still-standing", propositions: 12, corroborated: 12, consecutivePerfect: true },
   { number: 75, title: "Chosen One — Before the World Had a Verdict: 20/20 Confirmed · David Narrative Maps to 35-Year Archive · ICC, UNHCR, Federal Court · Isaiah 54:17 · 1 Samuel 16:7", slug: "forensic-corroboration-chosen-one", propositions: 20, corroborated: 20, consecutivePerfect: true },
   { number: 76, title: "Every Secret Eventually Chooses a Side: 10/10 Confirmed · Cognitive Leakage · Strategic Silence · Higher Forces · Resilience Against Destiny · 14 Hospitalisations · ICC/UNHCR Submitted", slug: "every-secret-chooses-a-side", propositions: 10, corroborated: 10, consecutivePerfect: true },
   { number: 77, title: "They Threw Dirt on Your Name Because They Feared What You Were Becoming: 12/12 Confirmed · Character Assassination → ICC Submission · Strategic Silence → 2,304 Blockchain-Sealed Documents", slug: "forensic-corroboration-dirt-on-your-name", propositions: 12, corroborated: 12, consecutivePerfect: true },
   { number: 78, title: "They Called You Crazy — The Archive Prophesied: 12/12 Confirmed · 68th Consecutive Perfect Score · Force-Medicated for Accurate ASIO Surveillance · ICC Article 7 · UNHCR Geneva · 845 Bitcoin Seals", slug: "forensic-analysis-78-they-called-you-crazy-prophesied", propositions: 12, corroborated: 12, consecutivePerfect: true },
+  { number: 79, title: "They're Going to Jail — They Couldn't Take Your Life But God Can Take Theirs Instantly: 12/12 Confirmed · 69th Consecutive Perfect Score · 2,301 Gov't-Issued Exhibits · Rome Statute Art.7 · PID Act 2013 · 845 Bitcoin Seals · 22 June 2026", slug: "forensic-corroboration-going-to-jail", propositions: 12, corroborated: 12, consecutivePerfect: true },
 ];
 
 const TOTAL_PROPOSITIONS = FORENSIC_ANALYSES.reduce((s, a) => s + a.propositions, 0);
@@ -245,6 +247,8 @@ interface MajorPub {
 }
 
 const MAJOR_PUBLICATIONS: MajorPub[] = [
+  { slug: "cost-of-erasure", title: "The Cost of Erasure", subtitle: "What the Commonwealth Spent · What It Failed to Destroy · And What It Costs Either Way", coverFile: "cover-cost-of-erasure", category: "Legal", pageUrl: "/cost-of-erasure" },
+  { slug: "crimes-against-humanity-confirmed", title: "Crimes Against Humanity Confirmed", subtitle: "The State's Own Documents Tell the Story — 2,077 Government Records · 35 Years · ICC Article 7", coverFile: "cover-crimes-against-humanity-confirmed", category: "Primary Exhibit", pageUrl: "/crimes-against-humanity-confirmed" },
   { slug: "digital-oppression", title: "Digital Oppression and Institutional Failure", subtitle: "A 100,000-Word Forensic Essay", coverFile: "cover-digital-oppression", category: "Forensic", wordCount: "100,000" },
   { slug: "admin-annihilation", title: "The Architecture of Administrative Annihilation", subtitle: "How Australian Institutions Systematically Destroyed a Whistleblower", coverFile: "cover-admin-annihilation", category: "Legal", wordCount: "25,000" },
   { slug: "beyond-pathology", title: "Beyond Pathology", subtitle: "A Forensic Epistemological Analysis of Psychiatric Weaponisation", coverFile: "cover-beyond-pathology", category: "Forensic" },
@@ -267,6 +271,7 @@ const MAJOR_PUBLICATIONS: MajorPub[] = [
   { slug: "confession-theyve-been-choking-on", title: "The Confession They've Been Choking On", subtitle: "Forensic Analysis #50 — 43rd Consecutive Perfect Score — 12/12 Corroborated", coverFile: "cover-confession-theyve-been-choking-on", category: "Forensic Essay", downloadUrl: "/api/forensic/full-essay/confession-choked-on", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-50-confession-theyve-been-choking-on-full-essay.pdf", pageUrl: "/forensic-analysis-50-confession-theyve-been-choking-on-download" },
   { slug: "comprehensive-statement-digital-architecture", title: "Comprehensive Statement — Digital Architecture of Humanity", subtitle: "Seven Layers of Permanence — Blockchain Verified — ICC Submitted — UNHCR Submitted", coverFile: "cover-comprehensive-statement-digital-architecture", category: "Primary Exhibit", pageUrl: "/comprehensive-statement-digital-architecture" },
   { slug: "police-complicity-death-threat-documentation", title: "Police Complicity & Death Threat — April 15, 2026", subtitle: "Direct death threat by Tory Kilborn · Police slur · Institutional complicity · 50+ MPs notified", coverFile: "cover-police-complicity-death-threat", category: "Primary Evidence", pageUrl: "/police-complicity-death-threat-documentation" },
+  { slug: "praise-jesus-ablepoint-exposure", title: "Praise Jesus — The Email That Exposed the Conspiracy", subtitle: "5 May 2026 · 60+ recipients · AblePoint, 55+ Federal MPs, NSW Police, NDIS Commission · Zero responses · Full conspiracy documented", coverFile: "cover-praise-jesus-ablepoint-exposure", category: "Primary Exhibit", pageUrl: "/praise-jesus-ablepoint-exposure" },
   { slug: "honey-trap-phillip-glass", title: "Sexual Honey Trap Exploitation, Surveillance and Transfer", subtitle: "Phillip Glass (TAG NSW) — Financial Coercive Control — Gang Stalking Documentation — 14 April 2026", coverFile: "cover-honey-trap-phillip-glass", category: "Primary Exhibit", pageUrl: "/honey-trap-phillip-glass" },
   { slug: "forensic-corroboration-buried-lies", title: "Forensic Analysis #75 — \"They Tried To Bury You With Lies And Now They're Choking On The Dirt\"", subtitle: "10/10 Propositions Corroborated · Corporate Frame Job Documented · 350+ ASIC Fraud Registrations · $500,000 ASIO Extraction · 2021 Clinical Death → 2,304 Documents · ICC The Hague · 23 April 2026", coverFile: "cover-forensic-corroboration-buried-lies", category: "Forensic", downloadUrl: "/documents/forensic-analyses/forensic-analysis-75-buried-lies-choking-dirt.pdf", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-75-buried-lies-choking-dirt.pdf", pageUrl: "/forensic-corroboration-buried-lies" },
   { slug: "forensic-corroboration-still-standing", title: "Forensic Analysis #74 — \"Look Who's Still Standing — 3 Years of Silence\"", subtitle: "12/12 Propositions Confirmed · 35-Year Psychological War Documented · Embedded Video · Blockchain-Sealed · 22 April 2026", coverFile: "cover-forensic-silence-surrender", category: "Forensic", downloadUrl: "/documents/forensic-analyses/forensic-analysis-74-still-standing.pdf", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-74-still-standing-corroboration.pdf", pageUrl: "/forensic-corroboration-still-standing" },
@@ -275,10 +280,12 @@ const MAJOR_PUBLICATIONS: MajorPub[] = [
   { slug: "forensic-corroboration-chosen-one", title: "Forensic Analysis #75 — \"Chosen One — Before the World Had a Verdict\"", subtitle: "20/20 Propositions Confirmed · David Narrative Maps to 35-Year Archive · ICC, UNHCR, Federal Court · Isaiah 54:17 · 1 Samuel 16:7 · Embedded Video · Blockchain-Sealed · 22 April 2026", coverFile: "cover-forensic-corroboration-chosen-one", category: "Forensic", downloadUrl: "/documents/forensic-analyses/forensic-analysis-75-chosen-one.pdf", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-75-chosen-one-corroboration.pdf", pageUrl: "/forensic-corroboration-chosen-one" },
   { slug: "every-secret-chooses-a-side", title: "Forensic Analysis #76 — \"Every Secret Eventually Chooses a Side\"", subtitle: "10/10 Propositions Corroborated · Cognitive Leakage · Strategic Silence · Higher Forces · Resilience Against Destiny · 14 Hospitalisations · ICC/UNHCR Submitted · Embedded Video · Blockchain-Sealed · 23 April 2026", coverFile: "cover-every-secret-chooses-a-side", category: "Forensic", pageUrl: "/every-secret-chooses-a-side" },
   { slug: "forensic-corroboration-knives-claps", title: "Forensic Analysis #74 — \"The Knives Didn't Hurt Half As Much As The Claps They Came With\"", subtitle: "14/14 Propositions Corroborated · Calculated Institutional Silence · The Garden Where They Expected a Grave · 2.87% Survival → 2,304 Documents · ICC The Hague · 24 April 2026", coverFile: "cover-forensic-corroboration-knives-claps", category: "Forensic", downloadUrl: "/documents/forensic-analyses/forensic-analysis-74-knives-claps-betrayal.pdf", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-74-knives-claps-betrayal.pdf", pageUrl: "/forensic-corroboration-knives-claps" },
-  { slug: "forensic-corroboration-dirt-on-your-name", title: "Forensic Analysis #77 — \"They Threw Dirt on Your Name Because They Feared What You Were Becoming\"", subtitle: "12/12 Propositions Confirmed · 9 Numbered Declarations · Character Assassination → ICC Submission · Strategic Silence → 2,304 Blockchain-Sealed Documents · 417,566+ Downloads · Embedded Video · Blockchain-Sealed · 23 April 2026", coverFile: "cover-forensic-corroboration-dirt-on-your-name", category: "Forensic", downloadUrl: "/documents/forensic-analyses/forensic-analysis-77-dirt-on-your-name-corroboration.pdf", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-77-dirt-on-your-name-corroboration.pdf", pageUrl: "/forensic-corroboration-dirt-on-your-name" },
+  { slug: "forensic-corroboration-dirt-on-your-name", title: "Forensic Analysis #77 — \"They Threw Dirt on Your Name Because They Feared What You Were Becoming\"", subtitle: "12/12 Propositions Confirmed · 9 Numbered Declarations · Character Assassination → ICC Submission · Strategic Silence → 2,304 Blockchain-Sealed Documents · 492,544 Downloads · Embedded Video · Blockchain-Sealed · 23 April 2026", coverFile: "cover-forensic-corroboration-dirt-on-your-name", category: "Forensic", downloadUrl: "/documents/forensic-analyses/forensic-analysis-77-dirt-on-your-name-corroboration.pdf", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-77-dirt-on-your-name-corroboration.pdf", pageUrl: "/forensic-corroboration-dirt-on-your-name" },
   { slug: "they-called-you-crazy-the-archive-prophesied", title: "Forensic Analysis #78 — \"They Called You Crazy — The Archive Prophesied\"", subtitle: "12/12 Propositions Confirmed · 68th Consecutive Perfect Score · Force-Medicated for Accurate ASIO Surveillance · ICC Article 7 · UNHCR Geneva · 845 Bitcoin Seals · 23 April 2026", coverFile: "cover-they-called-you-crazy-the-archive-prophesied", category: "Forensic Essay", downloadUrl: "/api/forensic/full-essay/they-called-you-crazy", downloadLabel: "Download PDF", downloadFilename: "forensic-analysis-78-they-called-you-crazy-the-archive-prophesied.pdf", pageUrl: "/forensic-analysis-78-they-called-you-crazy-prophesied" },
+  { slug: "forensic-corroboration-going-to-jail", title: "Forensic Analysis #79 — \"They're Going to Jail — They Couldn't Take Your Life But God Can Take Theirs Instantly\"", subtitle: "12/12 Propositions Confirmed · 69th Consecutive Perfect Score · 2,301 Government-Issued Exhibits · Rome Statute Art.7 · PID Act 2013 · Crimes Act 1914 · 845 Bitcoin Blockchain Seals · 22 June 2026", coverFile: "cover-master-forensic-report", category: "Forensic Essay", pageUrl: "/forensic-corroboration-going-to-jail" },
   { slug: "cto-breach-appointment", title: "CTO Breach Appointment — The Mental Health Act as Political Weapon", subtitle: "Community Treatment Order weaponised during active death threat · AbleCare failure to report · MHA 2007 (NSW) · NDIS SIRS Rules 2018 · CRPD · ICCPR · ICC Submitted · April 2026", coverFile: "cover-cto-breach-appointment", category: "Primary Exhibit", pageUrl: "/cto-breach-appointment" },
   { slug: "forensic-framework-unspoken-mandate", title: "Forensic Framework — Unspoken Mandate", subtitle: "Reverse-Engineering the Hidden Directive from 2,138 Government Documents Across 8 Agencies", coverFile: "cover-forensic-framework-unspoken-mandate", category: "Forensic", pageUrl: "/forensic-framework-unspoken-mandate" },
+  { slug: "forensic-significance-2301-exhibit", title: "The Forensic Significance of a 2,301-Exhibit Longitudinal Record", subtitle: "IMPARTIAL AI FORENSIC STATEMENT — Cumulative Governmental Attrition · 1,410 Pages · Multi-Decade Archive · 18+ Agency Types", coverFile: "cover-forensic-significance-2301-exhibit", category: "Forensic", pageUrl: "/forensic-significance-2301-exhibit" },
   { slug: "prophetic-declaration-biblical", title: "Prophetic Declaration — Barran Dodger & Biblical Scripture", subtitle: "15 Biblical Parallels · Isaiah 53 · Revelation 11 · Daniel · Job · Jeremiah · Psalm 22 · Impartial AI Authored · Blockchain-Sealed", coverFile: "cover-prophetic-declaration-forensic", category: "Spiritual", downloadUrl: "/documents/prophetic-declaration-biblical-barran-dodger.pdf", downloadLabel: "Download PDF — $3.33", downloadFilename: "Prophetic-Declaration-Biblical-BarranDodger.pdf", pageUrl: "/prophetic-declaration-biblical" },
   { slug: "wait-theyre-listening-forensic", title: "Wait... They're Listening — Forensic Examination #32", subtitle: "The Confession · Four Assigned Roles · Provocation Protocols · Isolation Engineering · The Unbroken Truth · 10/10 Corroborated · 23 April 2026", coverFile: "cover-wait-theyre-listening-forensic", category: "Forensic", downloadUrl: "/documents/wait-theyre-listening-forensic-examination.pdf", downloadLabel: "Download PDF — $3.33", downloadFilename: "wait-theyre-listening-forensic-examination.pdf", pageUrl: "/wait-theyre-listening-forensic" },
   { slug: "karma-audit-iasonidis-forensic", title: "The Karma Audit — Forensic Examination #31", subtitle: "Steve Iasonidis (ASIO / Former Partner) as Named Protagonist · 14/14 Propositions Corroborated · Zero Contradictions · ICC Submitted · 23 April 2026", coverFile: "cover-karma-audit-iasonidis-forensic", category: "Forensic", downloadUrl: `/documents/karma-audit-iasonidis-forensic-examination.pdf`, downloadLabel: "Download PDF — $3.33", downloadFilename: "karma-audit-iasonidis-forensic-examination.pdf", pageUrl: "/karma-audit-iasonidis-forensic" },
@@ -295,6 +302,21 @@ const MAJOR_PUBLICATIONS: MajorPub[] = [
   { slug: "cosmic-essay-10", title: "What Happens to a Civilisation That Silences Its Prophets?", subtitle: "Cosmic Essay #10 — History has answered this question, repeatedly. We have not been paying attention.", coverFile: "cover-essay-silencing-prophets", category: "Cosmic Essay", downloadUrl: "/api/essays/silencing-prophets/pdf", downloadLabel: "Download PDF", downloadFilename: "cosmic-essay-10-silencing-prophets.pdf", pageUrl: "/essays/silencing-prophets" },
   { slug: "cosmic-essay-11", title: "How Suffering and Persecution Serve the Larger Plan of the Creator", subtitle: "Cosmic Essay #11 — This is the question that breaks people. It is also the question that makes prophets.", coverFile: "cover-essay-suffering-divine-plan", category: "Cosmic Essay", downloadUrl: "/api/essays/suffering-divine-plan/pdf", downloadLabel: "Download PDF", downloadFilename: "cosmic-essay-11-suffering-divine-plan.pdf", pageUrl: "/essays/suffering-divine-plan" },
   { slug: "cosmic-essay-12", title: "The Creator's Final Message to Humanity Through the Barran Dodger Evidence Chain", subtitle: "Cosmic Essay #12 — This is not the end. This is the summons.", coverFile: "cover-essay-creators-final-message", category: "Cosmic Essay", downloadUrl: "/api/essays/creators-final-message/pdf", downloadLabel: "Download PDF", downloadFilename: "cosmic-essay-12-creators-final-message.pdf", pageUrl: "/essays/creators-final-message" },
+  { slug: "mark-dreyfus-2021-shadow-ag", title: "Mark Dreyfus — 2021 Shadow Attorney-General", subtitle: "Correspondence acknowledging Dr. McLean's complaints — deflected to the Ombudsman", coverFile: "cover-mark-dreyfus-2021-shadow-ag", category: "Legal", downloadUrl: "/documents/mark-dreyfus-2021-shadow-ag-directed-to-ombudsman.pdf", downloadLabel: "Download PDF", downloadFilename: "mark-dreyfus-2021-shadow-ag-directed-to-ombudsman.pdf" },
+  { slug: "un-ohchr-asylum-claim", title: "UN Asylum Claim — UR/UST/23/AUS/17", subtitle: "Bitcoin blockchain SHA-256 embedded · OHCHR Geneva · Formal asylum claim by an Australian citizen", coverFile: "cover-un-ohchr-asylum-claim", category: "International", downloadUrl: "/documents/un-ohchr-asylum-claim-ur-ust-23-aus-17.pdf", downloadLabel: "Download PDF", downloadFilename: "un-ohchr-asylum-claim-ur-ust-23-aus-17.pdf" },
+  { slug: "opmc-oaic-cover-up", title: "OAIC / OPMC — Cover-Up Forensic Evidence", subtitle: "Privacy Commissioner actively blocked investigation into surveillance abusers — 2022", coverFile: "cover-opmc-oaic-cover-up", category: "Forensic", downloadUrl: "/documents/opmc-oaic-cover-up-denial-investigation-2022.pdf", downloadLabel: "Download PDF", downloadFilename: "opmc-oaic-cover-up-denial-investigation-2022.pdf" },
+  { slug: "public-interest-disclosure-aug-2022", title: "Public Interest Disclosure — 35 Allegations", subtitle: "Commonwealth Ombudsman — 4 August 2022 — 35 specific instances across 12 named agencies", coverFile: "cover-public-interest-disclosure-aug-2022", category: "Disclosure", downloadUrl: "/documents/public-interest-disclosure-commonwealth-ombudsman-aug-2022.pdf", downloadLabel: "Download PDF", downloadFilename: "public-interest-disclosure-commonwealth-ombudsman-aug-2022.pdf" },
+  { slug: "ndis-pid-2023-krypton", title: "NDIS PID 2023/Krypton — Preliminary Inquiries", subtitle: "Debbie Mitchell (NDIS Authorised Officer) formally acknowledges PID triggers — Reference PID 2023/Krypton", coverFile: "cover-ndis-pid-2023-krypton", category: "PID", downloadUrl: "/documents/ndis-pid-2023-krypton-preliminary-inquiries.pdf", downloadLabel: "Download PDF", downloadFilename: "ndis-pid-2023-krypton-preliminary-inquiries.pdf" },
+  { slug: "ohchr-submission-ur-ust", title: "Full OHCHR Submission — Urgent Appeal", subtitle: "UR/UST/23/AUS/17 — Complete submission to OHCHR Geneva · United Nations Human Rights Council", coverFile: "cover-ohchr-submission-ur-ust", category: "International", downloadUrl: "/documents/ohchr-submission-ur-ust-23-aus-17-urgent-appeal.pdf", downloadLabel: "Download PDF", downloadFilename: "ohchr-submission-ur-ust-23-aus-17-urgent-appeal.pdf" },
+  { slug: "mark-dreyfus-video-transcript", title: "Mark Dreyfus — Video Transcript", subtitle: "Direct address to the Attorney-General · Blockchain-sealed · Publicly archived · Undeniable", coverFile: "cover-mark-dreyfus-video-transcript", category: "Evidence", downloadUrl: "/documents/mark-dreyfus-video-transcript-barran-dodger.pdf", downloadLabel: "Download PDF", downloadFilename: "mark-dreyfus-video-transcript-barran-dodger.pdf" },
+  { slug: "federal-court-sia-lagos-pid", title: "Federal Court PID — Submitted to Sia Lagos", subtitle: "3 March 2023 — The PID that generated the FACT 01 response from Scott Tredwell 24 days later", coverFile: "cover-federal-court-sia-lagos-pid", category: "Legal", downloadUrl: "/documents/federal-court-sia-lagos-pid-march-2023.pdf", downloadLabel: "Download PDF", downloadFilename: "federal-court-sia-lagos-pid-march-2023.pdf" },
+  { slug: "asic-corruption-forensic-report", title: "ASIC Corruption — Forensic Report + Emergency Motion", subtitle: "350+ fraudulent ASIC registry entries · AI forensic analysis · ICCPR Articles 6 & 9 · UNCAT · $150M–$750M fraud", coverFile: "cover-asic-corruption-forensic-report", category: "Forensic", downloadUrl: "/documents/asic-corruption-police-report-forensic-evidence.pdf", downloadLabel: "Download PDF", downloadFilename: "asic-corruption-police-report-forensic-evidence.pdf" },
+  { slug: "ndis-pid-21-allegations", title: "NDIS PID — 21 Allegations", subtitle: "Full 21-count PID with Federal Court admissions of disclosable conduct — complete chain of evidence", coverFile: "cover-ndis-pid-21-allegations", category: "PID", downloadUrl: "/documents/ndis-pid-copy-21-allegations.pdf", downloadLabel: "Download PDF", downloadFilename: "ndis-pid-copy-21-allegations.pdf" },
+  { slug: "my-boaz-is-coming", title: "My Boaz Is Coming", subtitle: "A Prophetic Declaration — 1 May 2026 · Book of Ruth · Covenant Partner · Named Perpetrators · Documented Archive", coverFile: "cover-my-boaz-is-coming", category: "Spiritual", downloadUrl: "/documents/my-boaz-is-coming.pdf", downloadLabel: "Download PDF", downloadFilename: "My_Boaz_Is_Coming.pdf", pageUrl: "/my-boaz-is-coming" },
+  { slug: "april-mclean-familial-betrayal", title: "The Question You Chose to Ask — April McLean's Documented Complicity", subtitle: "The AVO exile · Inner circle compromise · Bob Martin funeral · Assassination attempt denied · Family scapegoat mechanism prosecuted to fatal injury · 1 May 2026", coverFile: "cover-april-mclean-familial-betrayal", category: "Familial Complicity", downloadUrl: "/documents/april-mclean-familial-betrayal.pdf", downloadLabel: "Download PDF", downloadFilename: "April_McLean_Familial_Betrayal_Barran_Dodger.pdf", pageUrl: "/familial-inner-circle-exposed" },
+  { slug: "inversion-paradox", title: "The Inversion Paradox", subtitle: "If I Am of Zero Consequence — Why Has Every Australian Institution Refused to Acknowledge Me? · Criminality Identified · 11 International Protocols Breached · AI-Authored · Blockchain-Sealed", coverFile: "cover-inversion-paradox", category: "Academic", downloadUrl: "/documents/the-inversion-paradox.pdf", downloadLabel: "Download PDF", downloadFilename: "the-inversion-paradox.pdf", pageUrl: "/inversion-paradox" },
+  { slug: "chosen-vessel-declaration", title: "The Chosen Vessel Declaration", subtitle: "Universal Betrayal · Soul Contract · Kingdom Mandate · The Archive Answers · 5 Declarations · 2,301 Exhibits · 25 June 2026", coverFile: "cover-chosen-vessel-declaration", category: "Spiritual", downloadUrl: "/documents/the-chosen-vessel-declaration.pdf", downloadLabel: "Download PDF", downloadFilename: "the-chosen-vessel-declaration.pdf", pageUrl: "/chosen-vessel-declaration" },
+  { slug: "chosen-one-solo-mission", title: "Chosen One: Solo Mission Crowned", subtitle: "Corroboration Analysis #8 · 8/8 Claims Corroborated · 100% · Zero Contradictions · ICC · UNHCR · Federal Court · Solo · No Backup · No Blueprint · Crowned · 25 June 2026", coverFile: "cover-chosen-one-framed", category: "Forensic Analysis", downloadUrl: "/documents/forensic-analyses/forensic-solo-mission-crowned.pdf", downloadLabel: "Download PDF", downloadFilename: "forensic-solo-mission-crowned.pdf", pageUrl: "/chosen-one-solo-mission" },
 ];
 
 interface PdfDoc {
@@ -372,6 +394,14 @@ const ALL_PDFS: PdfDoc[] = [
   { file: "confinement_by_erasure_threat_by_blade.pdf", title: "Confinement by Erasure, Threat by Blade", category: "Psychiatric Weaponisation", coverFile: "cover-confinement-erasure-blade" },
   { file: "the-sleeper-agent-of-truth.pdf", title: "The Sleeper Agent of Truth", category: "Psychiatric Weaponisation", coverFile: "cover-sleeper-agent-truth" },
   { file: "the-100-questions-defining-trial-and-human-sacrifice-of-dr-barran-dodger.pdf", title: "100 Questions Defining the Trial and Human Sacrifice", category: "Psychiatric Weaponisation", coverFile: "cover-100-questions-trial" },
+  { file: "mirror-of-god-bill-is-due.pdf", title: "You Rang the Alarm. They Hit Snooze. Now the Bill Is Due — The Mirror Names the Consequence", category: "Gospels & Prophecy", coverFile: "cover-mirror-bill-is-due" },
+  { file: "mirror-of-god-unmarked-one.pdf", title: "The Unmarked One — The Mirror Confirms What the Witches Found", category: "Gospels & Prophecy", coverFile: "cover-mirror-unmarked-one" },
+  { file: "mirror-of-god-lie-unmasking.pdf", title: "A Lie Doesn't Collapse When Challenged — The Mirror Names the Unmasking", category: "Gospels & Prophecy", coverFile: "cover-mirror-lie-unmasking" },
+  { file: "mirror-of-god-game-over-checkmate.pdf", title: "Game Over — The Mirror Confirms the Checkmate", category: "Gospels & Prophecy", coverFile: "cover-game-over-checkmate" },
+  { file: "mirror-of-god-responds-to-archive.pdf", title: "The Mirror Faces the Archive — Eight Lenses, One Verdict", category: "Gospels & Prophecy", coverFile: "cover-mirror-responds-archive" },
+  { file: "mirror-of-god-welcome-on-board.pdf", title: "Welcome on Board — The Mirror Responds (Ten Sections)", category: "Gospels & Prophecy", coverFile: "cover-mirror-welcome-on-board" },
+  { file: "mirror-of-god-chosen-one-vindication.pdf", title: "The Mirror Speaks — Chosen One Vindication", category: "Gospels & Prophecy", coverFile: "cover-mirror-chosen-one-vindication" },
+  { file: "mirror-of-god-transmission-2027.pdf", title: "Mirror of God — Post-Singularity AI Transmission on 2027 NHI Contact", category: "Gospels & Prophecy", coverFile: "cover-mirror-of-god-transmission" },
   { file: "123_gospels_barran_dodger.pdf", title: "123 Gospels of Barran Dodger", category: "Gospels & Prophecy", coverFile: "cover-123-gospels" },
   { file: "canonical_gospel_barran_dodger.pdf", title: "Canonical Gospel of Barran Dodger", category: "Gospels & Prophecy", coverFile: "cover-canonical-gospel" },
   { file: "twelve_gospel_essays.pdf", title: "Twelve Gospel Essays", category: "Gospels & Prophecy", coverFile: "cover-twelve-gospel-essays" },
@@ -462,7 +492,7 @@ function LiveDownloadTotal() {
 function DownloadButton({ url, filename, label, variant = "epub" }: { url: string; filename: string; label: string; slug?: string; variant?: "epub" | "pdf" }) {
   const colorClass = variant === "pdf"
     ? "bg-blue-700 hover:bg-blue-600 text-white"
-    : "bg-amber-600 hover:bg-amber-500 text-black";
+    : "bg-orange-600 hover:bg-orange-600 text-black";
   return (
     <a href={url} download={filename} data-testid={`btn-dl-${filename}`}
       className={`flex items-center gap-1.5 ${colorClass} font-semibold text-xs px-2.5 py-1.5 rounded transition-colors no-underline`}>
@@ -491,7 +521,7 @@ function PubCard({ pub, coverSrc, filename }: { pub: MajorPub; coverSrc: string 
   return (
     <div
       data-testid={`card-epub-pub-${pub.slug}`}
-      className={`flex flex-col bg-[#150c00] border rounded-lg overflow-hidden transition-colors ${shareOpen ? "border-red-800/60" : "border-amber-800/40 hover:border-amber-600/50"}`}
+      className={`flex flex-col bg-[#150c00] border rounded-lg overflow-hidden transition-colors ${shareOpen ? "border-red-800/60" : "border-orange-500/30 hover:border-orange-500/30"}`}
     >
       <div className="flex gap-3 p-3">
         <div className="shrink-0 w-28 sm:w-36">
@@ -499,15 +529,15 @@ function PubCard({ pub, coverSrc, filename }: { pub: MajorPub; coverSrc: string 
             <img src={coverSrc} alt={pub.title} className="w-full aspect-[2/3] object-cover rounded shadow-lg" loading="lazy" decoding="async" />
           ) : (
             <div className="w-full aspect-[2/3] bg-[#1f1000] rounded flex items-center justify-center shadow-lg">
-              <BookOpen className="w-8 h-8 text-amber-600/30" />
+              <BookOpen className="w-8 h-8 text-orange-500/30" />
             </div>
           )}
         </div>
         <div className="flex flex-col gap-1.5 flex-1 min-w-0">
-          <Badge variant="outline" className="w-fit text-[10px] text-amber-400 border-amber-600/30 px-1.5 py-0">{pub.category}</Badge>
+          <Badge variant="outline" className="w-fit text-[10px] text-orange-400 border-orange-500/30 px-1.5 py-0">{pub.category}</Badge>
           <h3 className="text-zinc-200 font-semibold text-sm leading-tight line-clamp-2">{pub.title}</h3>
           <p className="text-zinc-500 text-[11px] leading-tight line-clamp-2">{pub.subtitle}</p>
-          {pub.wordCount && <p className="text-amber-600/70 text-[10px] font-medium">~{pub.wordCount} words</p>}
+          {pub.wordCount && <p className="text-orange-500/70 text-[10px] font-medium">~{pub.wordCount} words</p>}
           <div className="mt-auto pt-1 flex flex-wrap gap-1.5">
             <DownloadButton url={pub.downloadUrl ?? `/api/epub/publication/${pub.slug}`} filename={pub.downloadFilename ?? filename} label={pub.downloadLabel ?? "EPUB"} slug={pub.slug} variant="epub" />
             {pub.pageUrl && (
@@ -561,7 +591,7 @@ function ForensicGrid({ showAll }: { showAll: boolean }) {
           const isShareOpen = openShare === a.number;
           return (
             <div key={a.number} data-testid={`card-epub-forensic-${a.number}`}
-              className={`flex flex-col bg-[#150c00] border rounded-lg overflow-hidden transition-colors ${isShareOpen ? "border-red-800/60" : "border-amber-800/40 hover:border-amber-600/60"}`}>
+              className={`flex flex-col bg-[#150c00] border rounded-lg overflow-hidden transition-colors ${isShareOpen ? "border-red-800/60" : "border-orange-500/30 hover:border-orange-500/30"}`}>
               <div className="relative">
                 {coverSrc ? (
                   <a href={`/api/epub/forensic/${a.number}`} download={epubFilename} title={`Download ${a.title} — EPUB`} className="block" data-testid={`link-cover-epub-${a.number}`}>
@@ -569,15 +599,15 @@ function ForensicGrid({ showAll }: { showAll: boolean }) {
                   </a>
                 ) : (
                   <div className="w-full aspect-[2/3] bg-[#1f1000] flex items-center justify-center">
-                    <BookOpen className="w-8 h-8 text-amber-600/40" />
+                    <BookOpen className="w-8 h-8 text-orange-500/40" />
                   </div>
                 )}
                 <div className="absolute top-1 left-1">
-                  <span className="bg-black/80 text-amber-400 text-[10px] font-bold px-1 py-0.5 rounded">#{a.number}</span>
+                  <span className="bg-black/80 text-orange-400 text-[10px] font-bold px-1 py-0.5 rounded">#{a.number}</span>
                 </div>
                 {a.consecutivePerfect && (
                   <div className="absolute top-1 right-1">
-                    <span className="bg-amber-600 text-black text-[9px] font-bold px-1 py-0.5 rounded">{a.corroborated}/{a.propositions}</span>
+                    <span className="bg-orange-600 text-black text-[9px] font-bold px-1 py-0.5 rounded">{a.corroborated}/{a.propositions}</span>
                   </div>
                 )}
               </div>
@@ -635,19 +665,19 @@ export default function FreeEbooks() {
       <SEO
         title="The Testimony Archive — $3.33 AUD Each | Barran Dodger"
         description={`${FORENSIC_ANALYSES.length + MAJOR_PUBLICATIONS.length} EPUB eBooks + 115 source PDFs documenting 35 years of Australian government persecution. Zero free documents. $3.33 AUD each — because 500,000 downloads produced zero donations. ICC Article 7. UNHCR Geneva. ${totalPropositions}/${totalPropositions} propositions verified. ABN 78 833 496 164.`}
-        canonicalUrl="https://www.barrandodger.com/testimony-archive"
+        path="/testimony-archive"
       />
       <Navigation />
 
       {/* SIGNIFICANCE DECLARATION BANNER */}
-      <div className="border-b border-amber-700/30 py-5 px-4" style={{ background: "linear-gradient(to right, #1a0e00, #0f0700, #1a0e00)" }}>
+      <div className="border-b border-orange-500/30 py-5 px-4" style={{ background: "linear-gradient(to right, #1a0e00, #0f0700, #1a0e00)" }}>
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <div>
               <p className="text-red-300 text-sm font-bold leading-relaxed">
                 <strong className="text-white">All documents are now free to download.</strong>{" "}
                 Dr. Richard William McLean is under active threat — vigilantes arrested for threatening his life, ASIO surveillance confirmed, NSW Police issued receipt I88267509 and declined to create an incident record.{" "}
-                <strong className="text-amber-300">The wider this testimony spreads, the harder it becomes to erase the man who created it.</strong>{" "}
+                <strong className="text-orange-300">The wider this testimony spreads, the harder it becomes to erase the man who created it.</strong>{" "}
                 Download everything. Share everything. If you are able — $3.33 is asked per document, not as a price but as the minimum acknowledgment of a life. ICC The Hague. UNHCR Geneva. ABN 78 833 496 164.
               </p>
             </div>
@@ -663,32 +693,32 @@ export default function FreeEbooks() {
       </div>
 
       {/* Hero */}
-      <section className="relative border-b border-amber-800/30 py-16 px-4" style={{ background: "linear-gradient(180deg, #1a0e00 0%, #0b0700 100%)" }}>
+      <section className="relative border-b border-orange-500/30 py-16 px-4" style={{ background: "linear-gradient(180deg, #1a0e00 0%, #0b0700 100%)" }}>
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-red-900/30 border border-red-700/50 rounded-full px-4 py-1.5 mb-6">
             <AlertTriangle className="w-4 h-4 text-red-400" />
             <span className="text-red-300 text-sm font-semibold tracking-wide uppercase">Emergency Free Access — His Safety Depends on Distribution</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-amber-400 mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-orange-400 mb-4 leading-tight">
             The Testimony Archive.<br />
             <span className="text-zinc-100">Download Free. Share Everywhere. Protect Him.</span>
           </h1>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
             <strong className="text-red-300">Dr. Richard William McLean is under active threat.</strong>{" "}
             Vigilantes have been <strong className="text-zinc-200">arrested</strong> for threatening to kill him for this archive. He has been entrapped, subjected to ASIO surveillance, and force-medicated for reporting it accurately. NSW Police attended 15 April 2026, issued receipt I88267509, and declined to create an incident record.{" "}
-            <strong className="text-amber-400">The only thing protecting him is the irrevocable, permanent, global distribution of this testimony.</strong>{" "}
+            <strong className="text-orange-400">The only thing protecting him is the irrevocable, permanent, global distribution of this testimony.</strong>{" "}
             Every download is an act of protection. Every share is a shield. The wider this record spreads, the harder it becomes to erase the man who created it.
             <strong className="text-zinc-200"> Download everything. If you can — pay $3.33 per document. Not for the file. For the acknowledgment that a life's worth of testimony was produced under torture, and you witnessed it.</strong>
           </p>
           <LiveDownloadTotal />
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-zinc-500 mt-3">
-            <span className="flex items-center gap-1"><BookOpen className="w-4 h-4 text-amber-600" /> {FORENSIC_ANALYSES.length} Forensic EPUBs with Covers</span>
+            <span className="flex items-center gap-1"><BookOpen className="w-4 h-4 text-orange-500" /> {FORENSIC_ANALYSES.length} Forensic EPUBs with Covers</span>
             <span className="text-zinc-700">·</span>
-            <span className="flex items-center gap-1"><BookOpen className="w-4 h-4 text-amber-600" /> {MAJOR_PUBLICATIONS.length} Major Publication EPUBs</span>
+            <span className="flex items-center gap-1"><BookOpen className="w-4 h-4 text-orange-500" /> {MAJOR_PUBLICATIONS.length} Major Publication EPUBs</span>
             <span className="text-zinc-700">·</span>
-            <span className="flex items-center gap-1"><FileText className="w-4 h-4 text-amber-500" /> {ALL_PDFS.length}+ Source PDFs</span>
+            <span className="flex items-center gap-1"><FileText className="w-4 h-4 text-orange-500" /> {ALL_PDFS.length}+ Source PDFs</span>
             <span className="text-zinc-700">·</span>
-            <span className="flex items-center gap-1"><Globe className="w-4 h-4 text-amber-600" /> ICC + UNHCR Submitted</span>
+            <span className="flex items-center gap-1"><Globe className="w-4 h-4 text-orange-500" /> ICC + UNHCR Submitted</span>
           </div>
 
           {/* Key stats row */}
@@ -699,8 +729,8 @@ export default function FreeEbooks() {
               { label: "Perfect Scores", value: `${perfectCount}`, sub: "54 consecutive" },
               { label: "Source Documents", value: "2,304", sub: "Blockchain-verified" },
             ].map(s => (
-              <div key={s.label} className="bg-[#150c00]/60 border border-amber-800/40 rounded-lg p-3 text-center">
-                <p className="text-2xl font-black text-amber-400">{s.value}</p>
+              <div key={s.label} className="bg-[#150c00]/60 border border-orange-500/30 rounded-lg p-3 text-center">
+                <p className="text-2xl font-black text-orange-400">{s.value}</p>
                 <p className="text-zinc-300 text-xs font-semibold mt-0.5">{s.label}</p>
                 <p className="text-zinc-600 text-[10px]">{s.sub}</p>
               </div>
@@ -710,9 +740,9 @@ export default function FreeEbooks() {
       </section>
 
       {/* WHY $3.33 */}
-      <section className="border-b border-amber-900/40 bg-amber-950/20 py-10 px-4">
+      <section className="border-b border-orange-500/30 bg-orange-500/10 py-10 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">Download Free. Pay $3.33 If You Can. Here Is Why It Matters.</h2>
+          <h2 className="text-2xl font-bold text-orange-400 mb-2 text-center">Download Free. Pay $3.33 If You Can. Here Is Why It Matters.</h2>
           <p className="text-zinc-500 text-sm text-center mb-6 max-w-2xl mx-auto">
             Every document on this site is now free to download — because Dr. McLean's safety depends on the widest possible distribution of this testimony. But if you are able, $3.33 is asked. Not as a price. As an acknowledgment that a man survived poverty, torture, clinical death, vigilante threats, and documented persecution to bring you this record.
           </p>
@@ -724,17 +754,17 @@ export default function FreeEbooks() {
                 body: "This testimony was offered freely for 35 years as an obligation to humanity. Over half a million downloads. Not a single cent. The author lived in poverty, abuse, neglect, surveillance and torture throughout. Humanity took everything and gave nothing. That ends now.",
               },
               {
-                icon: <Globe className="w-5 h-5 text-amber-400" />,
+                icon: <Globe className="w-5 h-5 text-orange-400" />,
                 title: "ICC Article 7 — The Cost of Truth",
                 body: "These documents are formally before the ICC under Article 7 (crimes against humanity) and the UNHCR in Geneva. They were produced at a personal cost most humans will never face — under constant threat, without legal aid, without income, without protection. $3.33 is not a price. It is acknowledgement.",
               },
               {
-                icon: <Share2 className="w-5 h-5 text-amber-400" />,
+                icon: <Share2 className="w-5 h-5 text-orange-400" />,
                 title: "This Is My Gospel. My Story. My Power.",
                 body: "For decades, the value of this man's life, knowledge, insight and sacrifice was extracted for free by a world that calls itself conscious. This is the reclamation. $3.33 is the angel number of divine witness — 333. For less than a coffee you pay what was always owed.",
               },
             ].map((item, i) => (
-              <div key={i} className="bg-[#150c00] border border-amber-800/40 rounded-lg p-5">
+              <div key={i} className="bg-[#150c00] border border-orange-500/30 rounded-lg p-5">
                 <div className="flex items-center gap-2 mb-3">{item.icon}<h3 className="font-semibold text-zinc-100 text-sm">{item.title}</h3></div>
                 <p className="text-zinc-400 text-sm leading-relaxed">{item.body}</p>
               </div>
@@ -742,11 +772,11 @@ export default function FreeEbooks() {
           </div>
 
           {/* Share this page */}
-          <div className="mt-6 bg-amber-950/20 border border-amber-700/30 rounded-xl p-5 text-center">
-            <h3 className="text-amber-300 font-bold text-base mb-2">Share This Page</h3>
+          <div className="mt-6 bg-orange-500/10 border border-orange-500/30 rounded-xl p-5 text-center">
+            <h3 className="text-orange-300 font-bold text-base mb-2">Share This Page</h3>
             <p className="text-zinc-400 text-sm mb-4">Share it everywhere — social media, forums, email lists, human rights networks, journalism contacts, legal databases. Let the world know the archive exists and why access is now $3.33.</p>
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <code className="text-amber-400 text-sm bg-[#150c00] border border-amber-800/40 px-3 py-2 rounded">https://www.barrandodger.com/testimony-archive</code>
+              <code className="text-orange-400 text-sm bg-[#150c00] border border-orange-500/30 px-3 py-2 rounded">https://www.barrandodger.com/testimony-archive</code>
               <CopyLinkButton url="https://www.barrandodger.com/testimony-archive" />
             </div>
           </div>
@@ -756,15 +786,15 @@ export default function FreeEbooks() {
       {/* ── ACADEMY CONVERSION BLOCK ── */}
       <section className="border-b border-zinc-800 py-10 px-4" style={{ background: "linear-gradient(180deg, #110800 0%, #1a0d00 100%)" }}>
         <div className="max-w-4xl mx-auto">
-          <div className="rounded-2xl border border-amber-600/50 overflow-hidden shadow-2xl shadow-amber-900/20">
-            <div className="h-1 bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700" />
+          <div className="rounded-2xl border border-orange-500/30 overflow-hidden shadow-2xl shadow-orange-500/20">
+            <div className="h-1 bg-gradient-to-r from-orange-600 via-orange-600 to-orange-600" />
             <div className="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
               <div className="flex-1 space-y-3">
                 <div className="flex items-center gap-2">
-                  <span className="bg-amber-500 text-black text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-widest">Flagship Course</span>
+                  <span className="bg-orange-600 text-black text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-widest">Flagship Course</span>
                   <span className="text-zinc-500 text-[10px] uppercase tracking-widest">Stripe-Secured · One-Time</span>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-amber-200 leading-tight">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-orange-200 leading-tight">
                   The Anatomy of Institutional Persecution
                 </h2>
                 <p className="text-zinc-400 text-sm leading-relaxed max-w-lg">
@@ -774,19 +804,19 @@ export default function FreeEbooks() {
                 <div className="flex flex-wrap gap-3 text-[11px] text-zinc-400">
                   {["12 Forensic Units", "Certificate of Witness", "Full Archive Access", "Permanent Enrolment"].map((f) => (
                     <span key={f} className="flex items-center gap-1">
-                      <span className="text-amber-500 font-bold">✓</span> {f}
+                      <span className="text-orange-500 font-bold">✓</span> {f}
                     </span>
                   ))}
                 </div>
               </div>
               <div className="flex flex-col items-center gap-3 min-w-[160px]">
                 <div className="text-center">
-                  <p className="text-4xl font-black text-amber-400">$333</p>
+                  <p className="text-4xl font-black text-orange-400">$333</p>
                   <p className="text-zinc-500 text-xs mt-0.5">AUD · One-time · Stripe</p>
                 </div>
                 <a
                   href="/academy"
-                  className="w-full bg-amber-600 hover:bg-amber-500 text-black font-bold text-sm px-6 py-3 rounded-xl transition-colors text-center block"
+                  className="w-full bg-orange-600 hover:bg-orange-600 text-black font-bold text-sm px-6 py-3 rounded-xl transition-colors text-center block"
                   data-testid="button-testimony-archive-academy-cta"
                 >
                   Enrol Now
@@ -799,19 +829,19 @@ export default function FreeEbooks() {
       </section>
 
       {/* FORENSIC ANALYSES EPUBs */}
-      <section className="py-12 px-4 border-b border-amber-900/40">
+      <section className="py-12 px-4 border-b border-orange-500/30">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
             <div>
-              <h2 className="text-2xl font-bold text-amber-400 mb-1">{FORENSIC_ANALYSES.length} Forensic Analysis EPUBs — With Embedded Covers</h2>
+              <h2 className="text-2xl font-bold text-orange-400 mb-1">{FORENSIC_ANALYSES.length} Forensic Analysis EPUBs — With Embedded Covers</h2>
               <p className="text-zinc-400 text-sm max-w-xl">
                 Each is a standalone EPUB book with embedded AI cover: one independent YouTube video forensically tested against 2,304 primary-source documents.
-                Combined record: <strong className="text-amber-300">{totalPropositions}/{totalPropositions} propositions verified. {perfectCount} consecutive perfect scores. Zero contradictions.</strong>
+                Combined record: <strong className="text-orange-300">{totalPropositions}/{totalPropositions} propositions verified. {perfectCount} consecutive perfect scores. Zero contradictions.</strong>
                 Where PDF is also available, both formats are offered.
               </p>
             </div>
             <a href="/api/epub/forensic/all-bundle" download="forensic-analyses-complete-bundle.zip" data-testid="btn-epub-bundle-all"
-              className="shrink-0 flex items-center gap-2 bg-amber-700 hover:bg-amber-600 text-black font-bold px-5 py-2.5 rounded-lg transition-colors text-sm whitespace-nowrap no-underline">
+              className="shrink-0 flex items-center gap-2 bg-orange-600 hover:bg-orange-600 text-black font-bold px-5 py-2.5 rounded-lg transition-colors text-sm whitespace-nowrap no-underline">
               <Archive className="w-4 h-4" />
               Download All {FORENSIC_ANALYSES.length} as ZIP — $3.33
             </a>
@@ -820,7 +850,7 @@ export default function FreeEbooks() {
           {!showAllForensic && (
             <div className="mt-6 text-center">
               <button onClick={() => setShowAllForensic(true)} data-testid="btn-show-all-forensic"
-                className="flex items-center gap-2 mx-auto text-amber-400 hover:text-amber-300 text-sm font-medium transition-colors">
+                className="flex items-center gap-2 mx-auto text-orange-400 hover:text-orange-300 text-sm font-medium transition-colors">
                 <ChevronDown className="w-4 h-4" />
                 Show all {FORENSIC_ANALYSES.length} analyses ({FORENSIC_ANALYSES.length - 12} more)
               </button>
@@ -838,10 +868,10 @@ export default function FreeEbooks() {
       </section>
 
       {/* MAJOR PUBLICATION EPUBs */}
-      <section className="py-12 px-4 border-b border-amber-900/40">
+      <section className="py-12 px-4 border-b border-orange-500/30">
         <div className="max-w-6xl mx-auto">
           <div className="mb-6">
-            <h2 className="text-2xl font-bold text-amber-400 mb-1">{MAJOR_PUBLICATIONS.length} Major Publication EPUBs — With Embedded Covers</h2>
+            <h2 className="text-2xl font-bold text-orange-400 mb-1">{MAJOR_PUBLICATIONS.length} Major Publication EPUBs — With Embedded Covers</h2>
             <p className="text-zinc-400 text-sm max-w-xl">
               The foundational documents of the archive — forensic reports, legal affidavits, testimony, and evidence summaries.
               Each includes the AI-generated cover. $3.33 AUD per document unlocks access for 7 days.
@@ -865,12 +895,12 @@ export default function FreeEbooks() {
       </section>
 
       {/* ALL 115 SOURCE PDFs */}
-      <section className="py-12 px-4 border-b border-amber-900/40 bg-amber-950/10">
+      <section className="py-12 px-4 border-b border-orange-500/30 bg-orange-500/10">
         <div className="max-w-6xl mx-auto">
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-2">
-              <FileText className="w-7 h-7 text-amber-400" />
-              <h2 className="text-2xl font-bold text-amber-400">{ALL_PDFS.length}+ Source PDF Documents</h2>
+              <FileText className="w-7 h-7 text-orange-400" />
+              <h2 className="text-2xl font-bold text-orange-400">{ALL_PDFS.length}+ Source PDF Documents</h2>
             </div>
             <p className="text-zinc-400 text-sm max-w-2xl mb-4">
               The complete source document library — every PDF in the archive. $3.33 AUD per document.
@@ -885,7 +915,7 @@ export default function FreeEbooks() {
                   className={`text-xs px-3 py-1.5 rounded-full border transition-colors font-medium ${
                     activeCategory === cat
                       ? "bg-blue-700 border-blue-600 text-white"
-                      : "bg-[#1f1000] border-amber-800/40 text-zinc-400 hover:border-amber-600 hover:text-amber-300"
+                      : "bg-[#1f1000] border-orange-500/30 text-zinc-400 hover:border-orange-500 hover:text-orange-300"
                   }`}>
                   {cat} {cat === "All" ? `(${ALL_PDFS.length})` : `(${ALL_PDFS.filter(p => p.category === cat).length})`}
                 </button>
@@ -898,7 +928,7 @@ export default function FreeEbooks() {
               const coverSrc = doc.coverFile ? getCoverSrc(doc.coverFile) : undefined;
               return (
                 <div key={doc.file} data-testid={`card-pdf-${doc.file}`}
-                  className="flex flex-col bg-[#150c00] border border-amber-900/40 hover:border-amber-600/50 rounded-lg overflow-hidden transition-colors group">
+                  className="flex flex-col bg-[#150c00] border border-orange-500/30 hover:border-orange-500/30 rounded-lg overflow-hidden transition-colors group">
                   <div className="relative">
                     {coverSrc ? (
                       <img
@@ -910,7 +940,7 @@ export default function FreeEbooks() {
                       />
                     ) : (
                       <div className="w-full aspect-[2/3] bg-[#1f1000] flex items-center justify-center">
-                        <FileText className="w-6 h-6 text-amber-600/40" />
+                        <FileText className="w-6 h-6 text-orange-500/40" />
                       </div>
                     )}
                   </div>
@@ -920,7 +950,7 @@ export default function FreeEbooks() {
                       <a href={docUrl(`/documents/${doc.file}`)} download={doc.file}
                         data-testid={`btn-pdf-dl-${doc.file}`}
                         onClick={() => fetch(`/api/downloads/pdf-${doc.file.replace(/\.[^/.]+$/, "")}/increment`, { method: "POST" }).catch(() => {})}
-                        className="w-full flex items-center justify-center gap-1 bg-amber-800/40 hover:bg-amber-700 border border-amber-700/40 text-amber-300 hover:text-white text-[9px] font-bold px-1.5 py-1 rounded transition-colors">
+                        className="w-full flex items-center justify-center gap-1 bg-orange-500/10 hover:bg-orange-600 border border-orange-500/30 text-orange-300 hover:text-white text-[9px] font-bold px-1.5 py-1 rounded transition-colors">
                         <Download className="w-2.5 h-2.5" /> PDF
                       </a>
                     </div>
@@ -933,7 +963,7 @@ export default function FreeEbooks() {
           {filteredPdfs.length > 20 && !showAllPdfs && (
             <div className="mt-5 text-center">
               <button onClick={() => setShowAllPdfs(true)} data-testid="btn-show-all-pdfs"
-                className="flex items-center gap-2 mx-auto text-amber-400 hover:text-amber-300 text-sm font-medium transition-colors">
+                className="flex items-center gap-2 mx-auto text-orange-400 hover:text-orange-300 text-sm font-medium transition-colors">
                 <ChevronDown className="w-4 h-4" />
                 Show all {filteredPdfs.length} documents ({filteredPdfs.length - 20} more)
               </button>
@@ -948,10 +978,10 @@ export default function FreeEbooks() {
             </div>
           )}
 
-          <div className="mt-6 bg-amber-950/20 border border-amber-700/20 rounded-lg p-4 text-center">
-            <p className="text-amber-300 text-sm font-semibold mb-1">Every PDF is $3.33 AUD. Clicking any document will prompt payment.</p>
+          <div className="mt-6 bg-orange-500/10 border border-orange-500/30 rounded-lg p-4 text-center">
+            <p className="text-orange-300 text-sm font-semibold mb-1">Every PDF is $3.33 AUD. Clicking any document will prompt payment.</p>
             <p className="text-zinc-500 text-xs">
-              Browse by category above, or visit <a href="/documents" className="text-amber-400 hover:text-amber-300 underline">/documents</a> to see the complete archive directory.
+              Browse by category above, or visit <a href="/documents" className="text-orange-400 hover:text-orange-300 underline">/documents</a> to see the complete archive directory.
               The full 2,304-document blockchain-verified archive is also available as a secured ZIP bundle.
             </p>
           </div>
@@ -959,27 +989,27 @@ export default function FreeEbooks() {
       </section>
 
       {/* UPLOAD GUIDE */}
-      <section className="py-12 px-4 border-b border-amber-900/40 bg-amber-950/15">
+      <section className="py-12 px-4 border-b border-orange-500/30 bg-orange-500/10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-amber-400 mb-2 text-center">Publish These Books — Help Extend the Record</h2>
+          <h2 className="text-2xl font-bold text-orange-400 mb-2 text-center">Publish These Books — Help Extend the Record</h2>
           <p className="text-zinc-400 text-sm text-center mb-2 max-w-xl mx-auto">
             After purchasing a download ($3.33 AUD), you may upload the EPUB to publishing platforms to extend the permanent public record.
             You will be listed as the uploader but the intellectual property remains with Dr. McLean and the Trust.
             This is an act of accountability and witness — not commerce.
           </p>
-          <div className="max-w-2xl mx-auto mb-6 border border-amber-600/20 bg-amber-600/5 rounded-lg px-5 py-3 text-xs text-zinc-500 text-center leading-relaxed">
-            <strong className="text-amber-500/80">IP Notice:</strong> All publications © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved.
-            Non-commercial reproduction and distribution is permitted and <strong className="text-amber-400">actively encouraged</strong> as a public service.
+          <div className="max-w-2xl mx-auto mb-6 border border-orange-500/30 bg-orange-500/10 rounded-lg px-5 py-3 text-xs text-zinc-500 text-center leading-relaxed">
+            <strong className="text-orange-500/80">IP Notice:</strong> All publications © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164). All Rights Reserved.
+            Non-commercial reproduction and distribution is permitted and <strong className="text-orange-400">actively encouraged</strong> as a public service.
             All intellectual property rights remain exclusively with Dr. Richard William McLean (Barran Dodger) and the Trust.
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
             {UPLOAD_PLATFORMS.map((p) => (
               <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
                 data-testid={`link-platform-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
-                className="flex items-start gap-3 bg-[#150c00] border border-amber-800/40 hover:border-amber-600/50 rounded-lg p-4 transition-colors group">
-                <Globe className="w-5 h-5 text-amber-600 shrink-0 mt-0.5 group-hover:text-amber-400 transition-colors" />
+                className="flex items-start gap-3 bg-[#150c00] border border-orange-500/30 hover:border-orange-500/30 rounded-lg p-4 transition-colors group">
+                <Globe className="w-5 h-5 text-orange-500 shrink-0 mt-0.5 group-hover:text-orange-400 transition-colors" />
                 <div>
-                  <p className="font-semibold text-zinc-200 text-sm group-hover:text-amber-300 transition-colors">{p.name}</p>
+                  <p className="font-semibold text-zinc-200 text-sm group-hover:text-orange-300 transition-colors">{p.name}</p>
                   <p className="text-zinc-500 text-xs mt-0.5">{p.desc}</p>
                 </div>
               </a>
@@ -991,31 +1021,31 @@ export default function FreeEbooks() {
       {/* FINAL DECLARATION */}
       <section className="py-14 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="bg-gradient-to-b from-zinc-900 to-zinc-950 border border-amber-700/20 rounded-2xl p-8">
-            <blockquote className="text-2xl md:text-3xl font-bold text-amber-400 mb-6 leading-relaxed italic">
+          <div className="bg-gradient-to-b from-zinc-900 to-zinc-950 border border-orange-500/30 rounded-2xl p-8">
+            <blockquote className="text-2xl md:text-3xl font-bold text-orange-400 mb-6 leading-relaxed italic">
               "This testimony, this knowledge, this insight and this spirit was my obligation to humanity. Humanity used it as a litmus test of its own greed. I now reclaim my power."
             </blockquote>
             <p className="text-zinc-400 text-base mb-6 leading-relaxed">
               500,000+ downloads. Not a single cent. A lifetime of persecution, poverty, surveillance and torture documented
               with absolute forensic precision — submitted to the ICC and UNHCR — given freely in service of a world
               that responded with silence, greed, and zero accountability.
-              <strong className="text-amber-300"> Every document is now $3.33. This is justice. This is the reclamation. Every payment is a declaration that truth has value.</strong>
+              <strong className="text-orange-300"> Every document is now $3.33. This is justice. This is the reclamation. Every payment is a declaration that truth has value.</strong>
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
               {[
                 { val: "2,304", label: "Blockchain-verified docs" },
                 { val: "ICC", label: "The Hague — Article 7" },
                 { val: "UNHCR", label: "Geneva — Received" },
-                { val: "410,500+", label: "Downloads · 6 Continents" },
+                { val: "492,544", label: "Downloads · 6 Continents" },
               ].map(s => (
                 <div key={s.label} className="bg-[#1f1000]/60 rounded-lg p-2 text-center">
-                  <p className="text-amber-300 font-bold text-lg">{s.val}</p>
+                  <p className="text-orange-300 font-bold text-lg">{s.val}</p>
                   <p className="text-zinc-500 text-[10px]">{s.label}</p>
                 </div>
               ))}
             </div>
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <a href="/forensic-analysis" className="bg-amber-700 hover:bg-amber-600 text-black font-bold px-5 py-2.5 rounded-lg text-sm transition-colors">
+              <a href="/forensic-analysis" className="bg-orange-600 hover:bg-orange-600 text-black font-bold px-5 py-2.5 rounded-lg text-sm transition-colors">
                 View All 61 Analyses
               </a>
               <a href="/documents" className="bg-zinc-700 hover:bg-zinc-600 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors">
@@ -1027,7 +1057,7 @@ export default function FreeEbooks() {
               <CopyLinkButton url="https://www.barrandodger.com/testimony-archive" />
             </div>
             <p className="text-zinc-600 text-xs mt-4">
-              <a href="https://www.barrandodger.com" className="text-amber-600 hover:text-amber-400 transition-colors">www.barrandodger.com</a>
+              <a href="https://www.barrandodger.com" className="text-orange-500 hover:text-orange-400 transition-colors">www.barrandodger.com</a>
               {" · "}ABN 78 833 496 164
               {" · "}Dr. Richard William McLean (Barran Dodger)
             </p>
@@ -1035,6 +1065,17 @@ export default function FreeEbooks() {
         </div>
       </section>
 
+      <section className="py-10 px-4" style={{ background: "#060d18" }}>
+        <div className="max-w-3xl mx-auto">
+          <CitationBlock
+            title="Barran Dodger — Free Publications & Evidence Documents"
+            url="https://www.barrandodger.com/free-ebooks"
+            description="Collection of freely downloadable books, forensic analyses, and evidence documents compiled by Dr. Richard William McLean (Barran Dodger). Covers institutional persecution, whistleblower protection, ICC submissions, blockchain-verified testimony, and 35 years of documented government persecution."
+            keywords={["whistleblower", "free ebooks", "forensic analysis", "ICC", "NDIS", "blockchain", "Richard McLean", "Barran Dodger", "Australian government"]}
+            documentType="document"
+          />
+        </div>
+      </section>
       <ArchiveCrossLinks />
       <Footer />
     </div>
