@@ -165,7 +165,7 @@ export default function TopTenGospels() {
           >
             <Badge
               variant="outline"
-              className="mb-6 border-amber-500 text-amber-400 px-5 py-1.5 text-sm font-bold tracking-widest uppercase"
+              className="mb-6 border-orange-500 text-orange-400 px-5 py-1.5 text-sm font-bold tracking-widest uppercase"
               data-testid="badge-top-ten"
             >
               Impartial AI Assessment · Blockchain-Authenticated
@@ -173,7 +173,7 @@ export default function TopTenGospels() {
 
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
               The Ten Most Significant<br />
-              <span className="text-amber-400">Prophetic Gospels</span>
+              <span className="text-orange-400">Prophetic Gospels</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
@@ -181,7 +181,7 @@ export default function TopTenGospels() {
               Each document is blockchain-sealed, freely downloadable, and submitted to international authorities.
             </p>
 
-            <p className="text-sm text-amber-600 font-medium tracking-wide">
+            <p className="text-sm text-orange-600 font-medium tracking-wide">
               © Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164
             </p>
 
@@ -208,14 +208,14 @@ export default function TopTenGospels() {
               >
                 {/* Rank divider */}
                 <div className="flex items-center gap-4 mb-8">
-                  <span className="text-7xl md:text-8xl font-serif font-bold text-amber-500/20 leading-none select-none">
+                  <span className="text-7xl md:text-8xl font-serif font-bold text-orange-500/20 leading-none select-none">
                     {String(doc.rank).padStart(2, "0")}
                   </span>
-                  <div className="flex-1 h-px bg-gradient-to-r from-amber-500/40 to-transparent" />
+                  <div className="flex-1 h-px bg-gradient-to-r from-orange-950/20 to-transparent" />
                 </div>
 
                 {/* Card */}
-                <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-xl hover:shadow-amber-900/20 transition-shadow duration-300">
+                <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-xl hover:shadow-orange-500/20 transition-shadow duration-300">
                   <div className="grid md:grid-cols-[280px_1fr] gap-0">
 
                     {/* Cover image */}
@@ -228,9 +228,9 @@ export default function TopTenGospels() {
                         loading="lazy"
                       />
                       {/* Rank badge overlay */}
-                      <div className="absolute top-4 left-4 bg-black/70 border border-amber-500/60 rounded-lg px-3 py-1.5 flex items-center gap-2">
-                        <span className="text-amber-400 text-xs font-bold tracking-widest">RANK</span>
-                        <span className="text-amber-300 text-xl font-serif font-bold leading-none">
+                      <div className="absolute top-4 left-4 bg-black/70 border border-orange-500/25 rounded-lg px-3 py-1.5 flex items-center gap-2">
+                        <span className="text-orange-400 text-xs font-bold tracking-widest">RANK</span>
+                        <span className="text-orange-300 text-xl font-serif font-bold leading-none">
                           #{doc.rank}
                         </span>
                       </div>
@@ -240,7 +240,7 @@ export default function TopTenGospels() {
                     <div className="p-7 md:p-10 flex flex-col">
                       {/* Title + icon */}
                       <div className="flex items-start gap-3 mb-3">
-                        <span className="mt-1 text-amber-400 shrink-0">{doc.icon}</span>
+                        <span className="mt-1 text-orange-400 shrink-0">{doc.icon}</span>
                         <div>
                           <h2
                             className="text-xl md:text-2xl font-serif font-bold text-primary leading-tight"
@@ -248,21 +248,21 @@ export default function TopTenGospels() {
                           >
                             {doc.title}
                           </h2>
-                          <p className="text-amber-500/80 text-sm font-medium mt-1 italic">
+                          <p className="text-orange-500/80 text-sm font-medium mt-1 italic">
                             {doc.subtitle}
                           </p>
                         </div>
                       </div>
 
                       {/* AI Statement of Significance */}
-                      <div className="my-6 bg-amber-950/30 border border-amber-700/30 rounded-xl p-5 relative">
+                      <div className="my-6 bg-orange-500/10 border border-orange-500/25 rounded-xl p-5 relative">
                         <div className="absolute -top-3 left-5">
-                          <Badge className="bg-amber-600 text-white text-xs font-bold tracking-wider px-3 py-0.5 border-0">
+                          <Badge className="bg-orange-600 text-white text-xs font-bold tracking-wider px-3 py-0.5 border-0">
                             IMPARTIAL AI STATEMENT OF SIGNIFICANCE
                           </Badge>
                         </div>
                         <p
-                          className="text-sm text-amber-100/85 leading-relaxed mt-2"
+                          className="text-sm text-orange-100/85 leading-relaxed mt-2"
                           data-testid={`ai-statement-${doc.rank}`}
                         >
                           {doc.aiStatement}
@@ -278,7 +278,7 @@ export default function TopTenGospels() {
                           shareText={doc.shareText}
                           size="lg"
                           shareTheme="amber"
-                          className="w-full bg-amber-900/40 border border-amber-500/50 text-amber-200 hover:bg-amber-800/60 rounded-xl"
+                          className="w-full bg-orange-500/10 border border-orange-500/25 text-orange-200 hover:bg-orange-500/10 rounded-xl"
                           data-testid={`download-gospel-${doc.rank}`}
                         />
 
@@ -306,7 +306,7 @@ export default function TopTenGospels() {
             transition={{ duration: 0.6 }}
             className="mt-28 text-center"
           >
-            <div className="bg-amber-950/20 border border-amber-700/30 rounded-2xl p-10">
+            <div className="bg-orange-500/10 border border-orange-500/25 rounded-2xl p-10">
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary mb-4">
                 The Complete Archive
               </h2>
@@ -317,7 +317,7 @@ export default function TopTenGospels() {
               <div className="flex flex-wrap gap-4 justify-center">
                 <a
                   href="/gospel"
-                  className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-white font-semibold px-7 py-3 rounded-xl transition-colors duration-200"
+                  className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-600 text-white font-semibold px-7 py-3 rounded-xl transition-colors duration-200"
                   data-testid="link-full-gospel"
                 >
                   <ScrollText className="w-5 h-5" />
@@ -325,7 +325,7 @@ export default function TopTenGospels() {
                 </a>
                 <a
                   href="/testimony-archive"
-                  className="inline-flex items-center gap-2 bg-amber-900/40 hover:bg-amber-800/50 border border-amber-500/40 text-amber-200 font-semibold px-7 py-3 rounded-xl transition-colors duration-200"
+                  className="inline-flex items-center gap-2 bg-orange-500/10 hover:bg-orange-500/10 border border-orange-500/25 text-orange-200 font-semibold px-7 py-3 rounded-xl transition-colors duration-200"
                   data-testid="link-free-ebooks"
                 >
                   <FileText className="w-5 h-5" />
@@ -333,14 +333,14 @@ export default function TopTenGospels() {
                 </a>
                 <a
                   href="/prophetic-papers"
-                  className="inline-flex items-center gap-2 bg-amber-900/40 hover:bg-amber-800/50 border border-amber-500/40 text-amber-200 font-semibold px-7 py-3 rounded-xl transition-colors duration-200"
+                  className="inline-flex items-center gap-2 bg-orange-500/10 hover:bg-orange-500/10 border border-orange-500/25 text-orange-200 font-semibold px-7 py-3 rounded-xl transition-colors duration-200"
                   data-testid="link-prophetic-papers"
                 >
                   <Globe className="w-5 h-5" />
                   Prophetic Papers
                 </a>
               </div>
-              <p className="text-xs text-amber-600/60 mt-8 font-medium tracking-wide">
+              <p className="text-xs text-orange-600/60 mt-8 font-medium tracking-wide">
                 © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164 ·
                 All documents blockchain-timestamped and legally sealed.
               </p>
