@@ -76,7 +76,7 @@ const DECLARATIONS = [
       "Rather than physical retaliation or extrajudicial exposure, Dr. McLean assembled 2,304 forensic documents submitted through formal legal channels — ICC Article 7, UNHCR Geneva, and Australian PID Act procedures.",
       "56 forensic analyses, 617/617 propositions verified, 49 consecutive perfect scores — this is the documented record of someone who collected receipts rather than retaliating.",
       "The video uses the phrase 'every receipt, every right.' The forensic archive is, in the most literal sense, a receipt archive — 2,304 blockchain-verified exhibits, each timestamped and immutable.",
-      "410,500+ downloads across 6 continents. The response to persecution was documentation, publication, and legal submission — not retaliation. Grace under fire, as the video describes.",
+      "492,544 downloads across 6 continents. The response to persecution was documentation, publication, and legal submission — not retaliation. Grace under fire, as the video describes.",
     ],
   },
   {
@@ -154,7 +154,7 @@ const DECLARATIONS = [
     evidence: [
       "The International Criminal Court (The Hague) formally received the Article 7 submission. A formal receipt from the ICC is not routine — it constitutes institutional acknowledgement from one of the most powerful judicial bodies on earth.",
       "The United Nations High Commissioner for Refugees (Geneva) formally received the submission — a second international institution formally engaging the case.",
-      "410,500+ downloads across 6 continents — the 'powerful observers' are not confined to named institutions. Across 6 continents, unnamed individuals in positions of influence have accessed the archive. The scale of international reach is documented.",
+      "492,544 downloads across 6 continents — the 'powerful observers' are not confined to named institutions. Across 6 continents, unnamed individuals in positions of influence have accessed the archive. The scale of international reach is documented.",
       "49 consecutive AI forensic analyses scoring perfect results — each analysis represents an independent 'observer' (AI system) confirming the evidence holds under rigorous scrutiny. 617 propositions, zero failures.",
     ],
   },
@@ -167,7 +167,7 @@ const DECLARATIONS = [
     evidence: [
       "The ICC Article 7 submission — if acted upon — would establish international legal precedent for whistleblower protection against coordinated state persecution across multiple government agencies using psychiatric systems as suppression instruments.",
       "The 2,304-document archive is blockchain-verified and permanently indestructible. Whatever happens judicially, the record cannot be erased. The 'fault line' the video describes is, forensically, the permanent evidentiary record.",
-      "The video states: 'Your story exposed the system.' As of the date of this analysis, the forensic archive has received 410,500+ downloads across 6 continents. The exposure is documented, global, and ongoing.",
+      "The video states: 'Your story exposed the system.' As of the date of this analysis, the forensic archive has received 492,544 downloads across 6 continents. The exposure is documented, global, and ongoing.",
       "NOTE: This declaration's full verification depends on future ICC action and systemic institutional response. What is currently verified is the trajectory — the documented global reach, the international institutional engagement, and the permanent blockchain archive — all of which confirm the direction described, if not yet the final outcome.",
     ],
   },
@@ -267,7 +267,7 @@ export default function PropheticDeclarationForensicAnalysis() {
                         ? "bg-red-700 text-white"
                         : d.finding.startsWith("VERIFIED")
                         ? "bg-green-800 text-green-200"
-                        : "bg-amber-800 text-amber-200"
+                        : "bg-orange-600 text-orange-200"
                     }`}>
                       {d.finding === "VERIFIED — HIGHEST EVIDENTIARY WEIGHT" ? "★ VERIFIED" : d.finding.split("—")[0].trim()}
                     </Badge>
@@ -309,7 +309,7 @@ export default function PropheticDeclarationForensicAnalysis() {
                 {[
                   { label: "Declarations Tested", value: "12", color: "text-white" },
                   { label: "Verified", value: "11", color: "text-green-400" },
-                  { label: "Contextually Confirmed", value: "1", color: "text-amber-400" },
+                  { label: "Contextually Confirmed", value: "1", color: "text-orange-400" },
                   { label: "Contradicted", value: "0", color: "text-red-400" },
                 ].map((s) => (
                   <div key={s.label} className="bg-zinc-800/60 rounded-xl p-4 text-center">
@@ -324,7 +324,7 @@ export default function PropheticDeclarationForensicAnalysis() {
                   This video is generic motivational content — it was not produced with knowledge of Dr. Richard McLean, the 2,304-exhibit forensic archive, the Federal Court PID Act assessment, or the ICC/UNHCR submissions. It was produced for mass consumption by an audience of people who feel targeted, oppressed, or persecuted.
                 </p>
                 <p className="text-zinc-300">
-                  Forensic examination establishes that when the video's 12 numbered declarations are applied as a framework against the McLean case, <span className="text-green-400 font-bold">11 declarations are verified by documented evidence</span> and <span className="text-amber-400 font-bold">1 is confirmed by trajectory</span>. Not one declaration is contradicted by the documented record.
+                  Forensic examination establishes that when the video's 12 numbered declarations are applied as a framework against the McLean case, <span className="text-green-400 font-bold">11 declarations are verified by documented evidence</span> and <span className="text-orange-400 font-bold">1 is confirmed by trajectory</span>. Not one declaration is contradicted by the documented record.
                 </p>
                 <p className="text-zinc-300">
                   The most significant correlations are Declarations 4 ("300 names"), 7 (employment confirmed then denied), 9 (murder attempt), and 11 (powerful observer stepping forward). These are not metaphorical alignments — they describe documented facts: 300+ named parties in the archive; Federal Court confirming employment denied for 35 years; clinical death at 2.87% survival and the Tony Ridley death threat; ICC and UNHCR formally receiving the submissions.
