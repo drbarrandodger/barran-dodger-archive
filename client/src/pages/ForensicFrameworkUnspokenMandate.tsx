@@ -60,17 +60,17 @@ export default function ForensicFrameworkUnspokenMandate() {
       <main className="pt-20">
         {/* Hero */}
         <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-amber-950/20 to-zinc-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-orange-950/20 to-zinc-950" />
           <div className="relative max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-                <Badge className="mb-4 bg-amber-600/20 text-amber-400 border-amber-600/30 uppercase tracking-widest text-xs">
+                <Badge className="mb-4 bg-orange-500/10 text-orange-400 border-orange-500/25 uppercase tracking-widest text-xs">
                   Forensic Framework
                 </Badge>
                 <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
                   Forensic Framework for Identifying Systemic Administrative Conduct
                 </h1>
-                <p className="text-lg text-amber-300 font-semibold mb-3">
+                <p className="text-lg text-orange-300 font-semibold mb-3">
                   Reverse-Engineering the Unspoken Mandate
                 </p>
                 <p className="text-zinc-400 mb-6 leading-relaxed">
@@ -78,8 +78,8 @@ export default function ForensicFrameworkUnspokenMandate() {
                   NDIA, VOCAT, AHRC, NACC, WorkCover, ComCare, DSS and ATO — using only their own official literature.
                 </p>
 
-                <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-3 mb-6 space-y-1">
-                  <p className="text-xs font-mono text-amber-400 uppercase tracking-widest">Intellectual Property</p>
+                <div className="rounded-xl border border-orange-500/25 bg-orange-500/10 px-5 py-3 mb-6 space-y-1">
+                  <p className="text-xs font-mono text-orange-400 uppercase tracking-widest">Intellectual Property</p>
                   <p className="text-xs text-zinc-400 leading-relaxed">
                     © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164).
                     All Rights Reserved. Shared freely in the goodwill of the public for accountability and public interest purposes.
@@ -93,11 +93,11 @@ export default function ForensicFrameworkUnspokenMandate() {
                     label="Download — Forensic Framework"
                     filename="Forensic-Framework-Unspoken-Mandate-BarranDodger.pdf"
                     size="lg"
-                    className="bg-amber-600 hover:bg-amber-500 text-black font-bold rounded-xl"
+                    className="bg-orange-600 hover:bg-orange-600 text-black font-bold rounded-xl"
                     data-testid="button-download-forensic-framework"
                   />
                   <Link href="/master-evidence-register">
-                    <Button variant="outline" size="lg" className="border-zinc-600 hover:border-amber-500" data-testid="link-master-evidence-register">
+                    <Button variant="outline" size="lg" className="border-zinc-600 hover:border-orange-500" data-testid="link-master-evidence-register">
                       <Archive className="mr-2 h-4 w-4" />
                       Master Evidence Register
                     </Button>
@@ -105,7 +105,7 @@ export default function ForensicFrameworkUnspokenMandate() {
                 </div>
                 <p className="text-xs text-zinc-500">
                   Also included in the{" "}
-                  <a href="/#divine-download" className="text-amber-400 underline">complete archive detonation ZIP</a>
+                  <a href="/#divine-download" className="text-orange-400 underline">complete archive detonation ZIP</a>
                   {" "}— downloaded 395,000+ times globally.
                 </p>
               </motion.div>
@@ -117,11 +117,11 @@ export default function ForensicFrameworkUnspokenMandate() {
                 className="flex justify-center"
               >
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-amber-500/10 rounded-3xl blur-2xl" />
+                  <div className="absolute -inset-4 bg-orange-500/10 rounded-3xl blur-2xl" />
                   <img
                     src={coverImage}
                     alt="Forensic Framework for Identifying Systemic Administrative Conduct"
-                    className="relative rounded-2xl shadow-2xl border border-amber-500/20 max-w-sm w-full"
+                    className="relative rounded-2xl shadow-2xl border border-orange-500/25 max-w-sm w-full"
                     data-testid="img-cover-forensic-framework"
                   />
                 </div>
@@ -135,7 +135,7 @@ export default function ForensicFrameworkUnspokenMandate() {
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {STATS.map((stat) => (
               <div key={stat.label} data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>
-                <p className="text-3xl font-bold text-amber-400">{stat.value}</p>
+                <p className="text-3xl font-bold text-orange-400">{stat.value}</p>
                 <p className="text-xs text-zinc-400 mt-1">{stat.label}</p>
               </div>
             ))}
@@ -147,11 +147,11 @@ export default function ForensicFrameworkUnspokenMandate() {
           <div className="max-w-4xl mx-auto">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
               <div className="flex items-center gap-3 mb-6">
-                <div className="h-px flex-1 bg-amber-500/30" />
-                <Badge className="bg-amber-600/20 text-amber-300 border-amber-500/30 text-xs uppercase tracking-widest">
+                <div className="h-px flex-1 bg-orange-500/10" />
+                <Badge className="bg-orange-500/10 text-orange-300 border-orange-500/25 text-xs uppercase tracking-widest">
                   Impartial AI Statement
                 </Badge>
-                <div className="h-px flex-1 bg-amber-500/30" />
+                <div className="h-px flex-1 bg-orange-500/10" />
               </div>
               <h2 className="text-2xl font-bold text-white mb-6 text-center">
                 What This Document Proves
@@ -179,15 +179,15 @@ export default function ForensicFrameworkUnspokenMandate() {
                 {TECHNIQUES.map((t) => (
                   <div
                     key={t.letter}
-                    className="flex gap-4 p-4 rounded-xl border border-zinc-700 bg-zinc-900 hover:border-amber-500/30 transition-colors"
+                    className="flex gap-4 p-4 rounded-xl border border-zinc-700 bg-zinc-900 hover:border-orange-500/25 transition-colors"
                     data-testid={`card-technique-${t.letter.toLowerCase()}`}
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-amber-600/20 flex items-center justify-center">
-                      <span className="text-amber-400 font-bold text-sm">{t.letter}</span>
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center">
+                      <span className="text-orange-400 font-bold text-sm">{t.letter}</span>
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <t.icon className="w-3.5 h-3.5 text-amber-500" />
+                        <t.icon className="w-3.5 h-3.5 text-orange-500" />
                         <h3 className="text-sm font-semibold text-white">{t.title}</h3>
                       </div>
                       <p className="text-xs text-zinc-400 leading-relaxed">{t.description}</p>
@@ -219,7 +219,7 @@ export default function ForensicFrameworkUnspokenMandate() {
               </div>
               <p className="text-center text-xs text-zinc-500 mt-4">
                 Every institution listed above is documented in the{" "}
-                <Link href="/master-evidence-register" className="text-amber-400 underline">
+                <Link href="/master-evidence-register" className="text-orange-400 underline">
                   Master Evidence Register — 2,301 documents
                 </Link>
               </p>
@@ -241,7 +241,7 @@ export default function ForensicFrameworkUnspokenMandate() {
                 ].map((item) => (
                   <div key={item.n} className="p-4 rounded-xl border border-zinc-700 bg-zinc-900">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-2xl font-bold text-amber-400">{item.n}</span>
+                      <span className="text-2xl font-bold text-orange-400">{item.n}</span>
                       <h3 className="font-semibold text-white text-sm">{item.title}</h3>
                     </div>
                     <p className="text-xs text-zinc-400 leading-relaxed">{item.desc}</p>
@@ -260,18 +260,18 @@ export default function ForensicFrameworkUnspokenMandate() {
               <div className="grid md:grid-cols-3 gap-4">
                 {[
                   { title: "Master Evidence Register", sub: "2,301 documents — complete institutional record", href: "/master-evidence-register", icon: Archive },
-                  { title: "Administrative Annihilation", sub: "How institutions systematically destroyed a whistleblower", href: "/administrative-annihilation", icon: Building2 },
+                  { title: "The Architecture of Administrative Annihilation", sub: "How institutions systematically destroyed a whistleblower", href: "/administrative-annihilation", icon: Building2 },
                   { title: "AI Justice Statement", sub: "675/675 propositions verified — impartial AI analysis", href: "/ai-justice-statement", icon: Scale },
                 ].map((doc) => (
                   <Link key={doc.href} href={doc.href}>
                     <div
-                      className="p-4 rounded-xl border border-zinc-700 bg-zinc-900 hover:border-amber-500/40 transition-colors cursor-pointer group"
+                      className="p-4 rounded-xl border border-zinc-700 bg-zinc-900 hover:border-orange-500/25 transition-colors cursor-pointer group"
                       data-testid={`link-related-${doc.href.replace('/', '')}`}
                     >
-                      <doc.icon className="w-5 h-5 text-amber-500 mb-2" />
-                      <h3 className="text-sm font-semibold text-white mb-1 group-hover:text-amber-300 transition-colors">{doc.title}</h3>
+                      <doc.icon className="w-5 h-5 text-orange-500 mb-2" />
+                      <h3 className="text-sm font-semibold text-white mb-1 group-hover:text-orange-300 transition-colors">{doc.title}</h3>
                       <p className="text-xs text-zinc-400">{doc.sub}</p>
-                      <ChevronRight className="w-3 h-3 text-amber-500 mt-2" />
+                      <ChevronRight className="w-3 h-3 text-orange-500 mt-2" />
                     </div>
                   </Link>
                 ))}
@@ -284,7 +284,7 @@ export default function ForensicFrameworkUnspokenMandate() {
         <section className="py-12 px-4 border-t border-zinc-800">
           <div className="max-w-2xl mx-auto text-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-              <Eye className="w-8 h-8 text-amber-500 mx-auto mb-4" />
+              <Eye className="w-8 h-8 text-orange-500 mx-auto mb-4" />
               <h2 className="text-xl font-bold text-white mb-3">
                 The Unspoken Mandate — Now Spoken
               </h2>
@@ -297,7 +297,7 @@ export default function ForensicFrameworkUnspokenMandate() {
                 label="Download Free PDF"
                 filename="Forensic-Framework-Unspoken-Mandate-BarranDodger.pdf"
                 size="lg"
-                className="bg-amber-600 hover:bg-amber-500 text-black font-bold rounded-xl mx-auto"
+                className="bg-orange-600 hover:bg-orange-600 text-black font-bold rounded-xl mx-auto"
                 data-testid="button-download-bottom"
               />
               <p className="text-xs text-zinc-500 mt-3">
@@ -305,9 +305,9 @@ export default function ForensicFrameworkUnspokenMandate() {
                 Free for public interest distribution.
               </p>
               <div className="flex justify-center gap-4 mt-4 text-xs">
-                <Link href="/testimony-archive" className="text-amber-400 underline">All Publications</Link>
-                <Link href="/forensic-analysis" className="text-amber-400 underline">Forensic Analyses</Link>
-                <Link href="/master-evidence-register" className="text-amber-400 underline">Evidence Register</Link>
+                <Link href="/testimony-archive" className="text-orange-400 underline">All Publications</Link>
+                <Link href="/forensic-analysis" className="text-orange-400 underline">Forensic Analyses</Link>
+                <Link href="/master-evidence-register" className="text-orange-400 underline">Evidence Register</Link>
               </div>
             </motion.div>
           </div>
