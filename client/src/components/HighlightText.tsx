@@ -23,7 +23,7 @@ export function HighlightText({
     <span className={className}>
       {parts.map((part, i) =>
         regex.test(part) ? (
-          <mark key={i} className="bg-amber-400/30 text-amber-200 rounded px-0.5 font-semibold not-italic">
+          <mark key={i} className="rounded px-0.5 font-semibold not-italic" style={{ background: "rgba(132,204,22,0.25)", color: "#84cc16" }}>
             {part}
           </mark>
         ) : (
