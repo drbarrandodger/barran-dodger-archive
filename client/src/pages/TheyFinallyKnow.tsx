@@ -14,10 +14,10 @@ const SEVEN_REVELATIONS = [
   {
     number: "01",
     icon: Eye,
-    color: "text-amber-400",
-    border: "border-amber-500/30",
-    bg: "bg-amber-500/5",
-    glow: "shadow-amber-500/10",
+    color: "text-orange-400",
+    border: "border-orange-500/25",
+    bg: "bg-orange-500/10",
+    glow: "shadow-orange-500/10",
     title: "The Gentle Mask That Lured Your Arrogance In",
     subtitle: "The smile that led you straight into your own trap.",
     videoLine: "They thought that gentle smile on your face meant they had you figured out. They thought your calm was cluelessness. They thought your quiet was emptiness.",
@@ -123,7 +123,7 @@ Your tools — the financial strangulation, the suspended payments, the retroact
 
 He doesn't need your approval. He doesn't need your acknowledgment. He does not need you to believe him. He never did.
 
-350,000 downloads is not a petition for your belief. It is a proof of concept. The world is already reading. Your opinion of the material is no longer a factor in its circulation.
+491,000+ downloads is not a petition for your belief. It is a proof of concept. The world is already reading. Your opinion of the material is no longer a factor in its circulation.
 
 What you're experiencing now is not resistance. It is irrelevance. And there is no response to irrelevance, because there is nothing to push against.
 
@@ -205,24 +205,24 @@ export default function TheyFinallyKnow() {
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-            <Badge variant="outline" className="border-amber-500/40 text-amber-400 mb-6 px-4 py-1.5 text-xs uppercase tracking-widest">Direct Message · April 2026</Badge>
+            <Badge variant="outline" className="border-orange-500/25 text-orange-400 mb-6 px-4 py-1.5 text-xs uppercase tracking-widest">Direct Message · April 2026</Badge>
 
             <p className="text-sm text-zinc-400 uppercase tracking-widest mb-4 font-mono">Addressed to</p>
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               <span className="px-4 py-1.5 rounded-full bg-red-900/30 border border-red-500/30 text-red-300 text-sm font-semibold">The Cowardly Family</span>
               <span className="px-4 py-1.5 rounded-full bg-orange-900/30 border border-orange-500/30 text-orange-300 text-sm font-semibold">The Perpetrators</span>
-              <span className="px-4 py-1.5 rounded-full bg-amber-900/30 border border-amber-500/30 text-amber-300 text-sm font-semibold">The NDIS Surveillance Operatives</span>
+              <span className="px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-300 text-sm font-semibold">The NDIS Surveillance Operatives</span>
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-black text-white leading-tight mb-6">
               They Finally<br />
-              <span className="text-amber-400">Know.</span>
+              <span className="text-orange-400">Know.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed mb-8">
               "When they drew their lines, you sharpened your edges. Funny how your silence was the lullaby they mistook for weakness — and now your evolution is the alarm they can't shut off."
             </p>
-            <p className="text-xs text-zinc-500 italic mb-10">— Based on the documentary: <span className="text-amber-400/80">youtu.be/ptd4mxthdvQ</span></p>
+            <p className="text-xs text-zinc-500 italic mb-10">— Based on the documentary: <span className="text-orange-400/80">youtu.be/ptd4mxthdvQ</span></p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
               {[
@@ -232,7 +232,7 @@ export default function TheyFinallyKnow() {
                 { label: "Agencies", value: "8" },
               ].map((stat) => (
                 <div key={stat.label} className="p-3 rounded-lg bg-white/5 border border-white/10 text-center">
-                  <p className="text-2xl font-black text-amber-400 font-mono">{stat.value}</p>
+                  <p className="text-2xl font-black text-orange-400 font-mono">{stat.value}</p>
                   <p className="text-xs text-zinc-500 uppercase tracking-wider">{stat.label}</p>
                 </div>
               ))}
@@ -244,8 +244,8 @@ export default function TheyFinallyKnow() {
       {/* OPENING */}
       <section className="py-14 px-4 bg-zinc-950 border-t border-white/5">
         <div className="max-w-3xl mx-auto">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="p-6 rounded-xl bg-amber-950/20 border border-amber-500/20">
-            <p className="text-xs font-mono uppercase tracking-widest text-amber-500 mb-3">Preamble</p>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="p-6 rounded-xl bg-orange-500/10 border border-orange-500/25">
+            <p className="text-xs font-mono uppercase tracking-widest text-orange-500 mb-3">Preamble</p>
             <p className="text-base text-zinc-200 leading-loose">
               This message is not written in anger. Anger would require that you still matter enough to upset someone. This message is written in the same spirit as the archive itself — forensic, precise, and designed to endure. You will read it once in discomfort. The 395,000 people who have downloaded this archive will read what follows with recognition. The International Criminal Court has already received the evidence it describes. The UNHCR in Geneva has already received it. What you hold in your hands is not a complaint. It is a record. And records do not require your belief to exist.
             </p>
@@ -312,15 +312,15 @@ export default function TheyFinallyKnow() {
 
             <blockquote className="text-2xl md:text-3xl font-serif font-bold text-white leading-relaxed">
               "You're not the danger they feared. You're the danger they{" "}
-              <span className="text-amber-400">created.</span>"
+              <span className="text-orange-400">created.</span>"
             </blockquote>
 
             <p className="text-base text-zinc-300 leading-loose max-w-2xl mx-auto">
               They spent 35 years building the conditions that produced this archive. Every dismissal letter sharpened the methodology. Every circular referral refined the pattern-recognition. Every weaponised psychiatric assessment added a chapter to the legal framework. Every silence from the family added context to the evidence of complicity. They didn't create a broken man. They created an archivist. And the archive is already in The Hague.
             </p>
 
-            <div className="p-6 rounded-xl bg-black border border-amber-500/20 text-left max-w-xl mx-auto">
-              <p className="text-xs font-mono text-amber-500 uppercase tracking-widest mb-3">Blockchain Verified Evidence Archive</p>
+            <div className="p-6 rounded-xl bg-black border border-orange-500/25 text-left max-w-xl mx-auto">
+              <p className="text-xs font-mono text-orange-500 uppercase tracking-widest mb-3">Blockchain Verified Evidence Archive</p>
               <div className="space-y-1.5">
                 {[
                   "2,301 Documents — Chronological Evidence Register",
@@ -333,7 +333,7 @@ export default function TheyFinallyKnow() {
                   "617/617 Propositions — Zero Contradicted",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <AlertTriangle className="h-3 w-3 text-amber-500 flex-shrink-0 mt-0.5" />
+                    <AlertTriangle className="h-3 w-3 text-orange-500 flex-shrink-0 mt-0.5" />
                     <p className="text-xs text-zinc-300 font-mono">{item}</p>
                   </div>
                 ))}
@@ -347,7 +347,7 @@ export default function TheyFinallyKnow() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <a href="/archive" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 text-black font-bold rounded-lg hover:bg-amber-500 transition-colors text-sm" data-testid="link-archive-from-message">
+              <a href="/archive" className="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-600 text-black font-bold rounded-lg hover:bg-orange-600 transition-colors text-sm" data-testid="link-archive-from-message">
                 <FileText className="h-4 w-4" /> Read the Archive
               </a>
               <a href="/forensic-framework-unspoken-mandate" className="inline-flex items-center gap-2 px-5 py-2.5 border border-orange-500/40 text-orange-400 font-semibold rounded-lg hover:bg-orange-900/20 transition-colors text-sm" data-testid="link-forensic-from-message">
