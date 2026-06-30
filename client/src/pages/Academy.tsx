@@ -60,32 +60,32 @@ function EnrollForm({ onSuccess }: { onSuccess: (token: string, name: string) =>
   return (
     <form onSubmit={handleSubmit} className="space-y-4" data-testid="enroll-form">
       <div>
-        <label className="block text-sm text-amber-300 mb-1">Full Name</label>
+        <label className="block text-sm text-orange-300 mb-1">Full Name</label>
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Your full name (for certificate)"
-          className="w-full bg-black/40 border border-amber-900/50 rounded px-3 py-2 text-white placeholder:text-stone-500 focus:outline-none focus:border-amber-600"
+          className="w-full bg-black/40 border border-orange-500/30 rounded px-3 py-2 text-white placeholder:text-stone-500 focus:outline-none focus:border-orange-500"
           required
           data-testid="input-enroll-name"
         />
       </div>
       <div>
-        <label className="block text-sm text-amber-300 mb-1">Email Address</label>
+        <label className="block text-sm text-orange-300 mb-1">Email Address</label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="your@email.com (for access restoration)"
-          className="w-full bg-black/40 border border-amber-900/50 rounded px-3 py-2 text-white placeholder:text-stone-500 focus:outline-none focus:border-amber-600"
+          className="w-full bg-black/40 border border-orange-500/30 rounded px-3 py-2 text-white placeholder:text-stone-500 focus:outline-none focus:border-orange-500"
           required
           data-testid="input-enroll-email"
         />
       </div>
       <div>
-        <label className="block text-sm text-amber-300 mb-1">Card Details</label>
-        <div className="bg-black/40 border border-amber-900/50 rounded px-3 py-3">
+        <label className="block text-sm text-orange-300 mb-1">Card Details</label>
+        <div className="bg-black/40 border border-orange-500/30 rounded px-3 py-3">
           <CardElement options={CARD_ELEMENT_STYLE} />
         </div>
       </div>
@@ -93,7 +93,7 @@ function EnrollForm({ onSuccess }: { onSuccess: (token: string, name: string) =>
       <button
         type="submit"
         disabled={status === "loading" || !stripe}
-        className="w-full py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-white font-semibold rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full py-3 bg-gradient-to-r from-orange-600 to-orange-600 hover:from-orange-600 hover:to-orange-600 text-white font-semibold rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         data-testid="button-enroll-pay"
       >
         {status === "loading" ? "Processing…" : "Enrol Now — $333 AUD"}
@@ -136,7 +136,7 @@ function RestoreForm({ onSuccess }: { onSuccess: (token: string, name: string) =
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your enrolment email"
-        className="w-full bg-black/40 border border-stone-700 rounded px-3 py-2 text-white placeholder:text-stone-500 focus:outline-none focus:border-amber-600"
+        className="w-full bg-black/40 border border-stone-700 rounded px-3 py-2 text-white placeholder:text-stone-500 focus:outline-none focus:border-orange-500"
         required
         data-testid="input-restore-email"
       />
@@ -144,7 +144,7 @@ function RestoreForm({ onSuccess }: { onSuccess: (token: string, name: string) =
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full py-2 border border-amber-700 text-amber-400 hover:bg-amber-900/30 rounded transition-all text-sm disabled:opacity-50"
+        className="w-full py-2 border border-orange-500 text-orange-400 hover:bg-orange-500/10 rounded transition-all text-sm disabled:opacity-50"
         data-testid="button-restore-access"
       >
         {status === "loading" ? "Searching…" : "Restore My Access"}
@@ -198,20 +198,20 @@ export default function Academy() {
       {/* Header */}
       <header className="border-b border-stone-800 bg-black/60 backdrop-blur sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="text-amber-400 hover:text-amber-300 text-sm flex items-center gap-1">
+          <Link href="/archive-home" className="text-orange-400 hover:text-orange-300 text-sm flex items-center gap-1">
             ← barrandodger.com
           </Link>
           <span className="text-stone-400 text-sm flex items-center gap-2">
-            <GraduationCap className="w-4 h-4 text-amber-500" /> Academy
+            <GraduationCap className="w-4 h-4 text-orange-500" /> Academy
           </span>
           {accessToken ? (
-            <span className="text-amber-300 text-sm flex items-center gap-1">
+            <span className="text-orange-300 text-sm flex items-center gap-1">
               <CheckCircle className="w-4 h-4" /> Enrolled: {studentName}
             </span>
           ) : (
             <button
               onClick={() => paySection.current?.scrollIntoView({ behavior: "smooth" })}
-              className="text-sm bg-amber-800 hover:bg-amber-700 text-white px-3 py-1 rounded transition-colors"
+              className="text-sm bg-orange-600 hover:bg-orange-600 text-white px-3 py-1 rounded transition-colors"
               data-testid="button-enroll-header"
             >
               Enrol — $333
@@ -230,11 +230,11 @@ export default function Academy() {
       )}
 
       {/* Hero */}
-      <section className="relative py-20 px-4 text-center bg-gradient-to-b from-black via-stone-950 to-stone-950 border-b border-amber-900/30">
+      <section className="relative py-20 px-4 text-center bg-gradient-to-b from-black via-stone-950 to-stone-950 border-b border-orange-500/30">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <GraduationCap className="w-8 h-8 text-amber-500" />
-            <span className="text-amber-500 text-sm uppercase tracking-widest font-semibold">Barran Dodger Academy</span>
+            <GraduationCap className="w-8 h-8 text-orange-500" />
+            <span className="text-orange-500 text-sm uppercase tracking-widest font-semibold">Barran Dodger Academy</span>
           </div>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
             {COURSE_META.title}
@@ -243,30 +243,30 @@ export default function Academy() {
           <p className="text-stone-400 max-w-2xl mx-auto leading-relaxed mb-8 text-sm">{COURSE_META.description}</p>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm mb-10">
-            <div className="flex items-center gap-2 text-amber-300" data-testid="badge-units">
+            <div className="flex items-center gap-2 text-orange-300" data-testid="badge-units">
               <BookOpen className="w-4 h-4" /> 12 Graduate Units
             </div>
-            <div className="flex items-center gap-2 text-amber-300" data-testid="badge-hours">
+            <div className="flex items-center gap-2 text-orange-300" data-testid="badge-hours">
               <Clock className="w-4 h-4" /> {totalHours} Study Hours
             </div>
-            <div className="flex items-center gap-2 text-amber-300" data-testid="badge-cert">
+            <div className="flex items-center gap-2 text-orange-300" data-testid="badge-cert">
               <Award className="w-4 h-4" /> Certificate on Completion
             </div>
-            <div className="flex items-center gap-2 text-amber-300" data-testid="badge-price">
+            <div className="flex items-center gap-2 text-orange-300" data-testid="badge-price">
               <Star className="w-4 h-4" /> $333 AUD Full Access
             </div>
           </div>
 
           {accessToken ? (
             <Link href="/academy/unit/1">
-              <button className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-white font-bold rounded-lg text-lg transition-all shadow-lg shadow-amber-900/30" data-testid="button-go-to-unit1">
+              <button className="px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-600 hover:from-orange-600 hover:to-orange-600 text-white font-bold rounded-lg text-lg transition-all shadow-lg shadow-orange-500/30" data-testid="button-go-to-unit1">
                 {completedUnitIds.length > 0 ? `Continue — Unit ${Math.max(...completedUnitIds) + 1 <= 12 ? Math.max(...completedUnitIds) + 1 : 12}` : "Begin Unit 1"}
               </button>
             </Link>
           ) : (
             <button
               onClick={() => paySection.current?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-white font-bold rounded-lg text-lg transition-all shadow-lg shadow-amber-900/30"
+              className="px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-600 hover:from-orange-600 hover:to-orange-600 text-white font-bold rounded-lg text-lg transition-all shadow-lg shadow-orange-500/30"
               data-testid="button-enroll-hero"
             >
               Enrol Now — $333 AUD
@@ -278,11 +278,11 @@ export default function Academy() {
       {/* Frameworks */}
       <section className="py-12 px-4 border-b border-stone-800 bg-stone-950/80">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-xl font-bold text-amber-400 mb-6 text-center">Pedagogical & Legal Frameworks</h2>
+          <h2 className="text-xl font-bold text-orange-400 mb-6 text-center">Pedagogical & Legal Frameworks</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {COURSE_META.frameworks.map((f, i) => (
               <div key={i} className="flex items-start gap-3 bg-black/30 rounded p-3 border border-stone-800" data-testid={`framework-${i}`}>
-                <Shield className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
+                <Shield className="w-4 h-4 text-orange-500 mt-0.5 shrink-0" />
                 <span className="text-stone-300 text-sm">{f}</span>
               </div>
             ))}
@@ -293,8 +293,8 @@ export default function Academy() {
       {/* Fair Pricing Note */}
       <section className="py-8 px-4 border-b border-stone-800 bg-black/40">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-amber-950/30 border border-amber-900/40 rounded-lg p-6">
-            <h3 className="text-amber-400 font-semibold mb-3 flex items-center gap-2">
+          <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-6">
+            <h3 className="text-orange-400 font-semibold mb-3 flex items-center gap-2">
               <Globe className="w-5 h-5" /> Independent Cost Assessment
             </h3>
             <p className="text-stone-300 text-sm leading-relaxed">{COURSE_META.impartialCostEstimate}</p>
@@ -314,11 +314,11 @@ export default function Academy() {
               return (
                 <div
                   key={unit.id}
-                  className={`relative rounded-lg border p-4 transition-all group ${isCompleted ? "border-emerald-700 bg-emerald-950/20" : "border-stone-800 bg-black/30 hover:border-amber-800"}`}
+                  className={`relative rounded-lg border p-4 transition-all group ${isCompleted ? "border-emerald-700 bg-emerald-950/20" : "border-stone-800 bg-black/30 hover:border-orange-500"}`}
                   data-testid={`unit-card-${unit.id}`}
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <span className="text-xs text-amber-600 font-mono uppercase tracking-wider">Unit {unit.id}</span>
+                    <span className="text-xs text-orange-500 font-mono uppercase tracking-wider">Unit {unit.id}</span>
                     <div className="flex items-center gap-1">
                       {isCompleted && <CheckCircle className="w-4 h-4 text-emerald-500" />}
                       {isLocked && <Lock className="w-3 h-3 text-stone-600" />}
@@ -329,11 +329,11 @@ export default function Academy() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3 text-xs text-stone-500">
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{unit.studyTimeHours}h</span>
-                      <span className="text-amber-800">{unit.bloomsLevel}</span>
+                      <span className="text-orange-700">{unit.bloomsLevel}</span>
                     </div>
                     {accessToken ? (
                       <Link href={`/academy/unit/${unit.id}`}>
-                        <button className="text-xs text-amber-400 hover:text-amber-300 flex items-center gap-1 group-hover:gap-2 transition-all" data-testid={`button-go-unit-${unit.id}`}>
+                        <button className="text-xs text-orange-400 hover:text-orange-300 flex items-center gap-1 group-hover:gap-2 transition-all" data-testid={`button-go-unit-${unit.id}`}>
                           {isCompleted ? "Review" : "Study"} <ChevronRight className="w-3 h-3" />
                         </button>
                       </Link>
@@ -368,7 +368,7 @@ export default function Academy() {
               { icon: Users, title: "Multi-Disciplinary Synthesis", body: "Integrate legal, spiritual, financial, technical, and psychological frameworks into a unified understanding of institutional persecution — a rare graduate-level competency." },
             ].map((item, i) => (
               <div key={i} className="bg-black/30 border border-stone-800 rounded-lg p-5" data-testid={`gain-card-${i}`}>
-                <item.icon className="w-6 h-6 text-amber-500 mb-3" />
+                <item.icon className="w-6 h-6 text-orange-500 mb-3" />
                 <h3 className="text-white font-semibold mb-2">{item.title}</h3>
                 <p className="text-stone-400 text-sm leading-relaxed">{item.body}</p>
               </div>
@@ -379,10 +379,10 @@ export default function Academy() {
 
       {/* Enrolment Panel */}
       {!accessToken && (
-        <section ref={paySection} className="py-16 px-4 bg-gradient-to-b from-stone-950 to-black border-b border-amber-900/30" id="enroll" data-testid="enroll-section">
+        <section ref={paySection} className="py-16 px-4 bg-gradient-to-b from-stone-950 to-black border-b border-orange-500/30" id="enroll" data-testid="enroll-section">
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-8">
-              <GraduationCap className="w-10 h-10 text-amber-500 mx-auto mb-3" />
+              <GraduationCap className="w-10 h-10 text-orange-500 mx-auto mb-3" />
               <h2 className="text-3xl font-bold text-white mb-2">Enrol in the Academy</h2>
               <p className="text-stone-400 text-sm">Full access to all 12 units, assessments, and Graduate Certificate</p>
               <div className="mt-4 flex items-center justify-center gap-4 text-sm text-stone-400">
@@ -391,9 +391,9 @@ export default function Academy() {
               </div>
             </div>
 
-            <div className="bg-black/60 border border-amber-900/40 rounded-xl p-8 mb-6">
+            <div className="bg-black/60 border border-orange-500/30 rounded-xl p-8 mb-6">
               <div className="text-center mb-6">
-                <span className="text-5xl font-bold text-amber-400">$333</span>
+                <span className="text-5xl font-bold text-orange-400">$333</span>
                 <span className="text-stone-400 ml-2">AUD</span>
                 <p className="text-stone-500 text-xs mt-1">One payment — full course, no subscription</p>
               </div>
@@ -415,7 +415,7 @@ export default function Academy() {
               ) : (
                 <button
                   onClick={() => setShowRestore(true)}
-                  className="text-sm text-amber-700 hover:text-amber-500 underline"
+                  className="text-sm text-orange-600 hover:text-orange-500 underline"
                   data-testid="button-show-restore"
                 >
                   Enter your enrolment email to restore access
@@ -434,7 +434,7 @@ export default function Academy() {
             <p className="text-stone-400 text-sm mb-4">{completedUnitIds.length} of 12 units completed</p>
             <div className="w-full bg-stone-800 rounded-full h-3 mb-4">
               <div
-                className="bg-gradient-to-r from-amber-700 to-amber-500 h-3 rounded-full transition-all"
+                className="bg-gradient-to-r from-orange-600 to-orange-600 h-3 rounded-full transition-all"
                 style={{ width: `${(completedUnitIds.length / 12) * 100}%` }}
                 data-testid="progress-bar"
               />
@@ -453,7 +453,7 @@ export default function Academy() {
       {/* Footer */}
       <footer className="py-10 px-4 text-center border-t border-stone-800 bg-black/40">
         <p className="text-stone-500 text-sm mb-1">
-          <strong className="text-amber-700">{COURSE_META.accreditingBody}</strong>
+          <strong className="text-orange-600">{COURSE_META.accreditingBody}</strong>
         </p>
         <p className="text-stone-600 text-xs">
           ABN {COURSE_META.abn} · All materials © 2024–2026 Dr. Richard William McLean (Barran Dodger). All rights reserved.
