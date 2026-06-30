@@ -32,7 +32,7 @@ export function HoneyTrapPhillipGlass() {
             <div className="flex flex-wrap gap-2 mb-6">
               <Badge className="bg-red-800 text-red-100 border-red-600 text-xs font-black uppercase tracking-widest">Primary Exhibit</Badge>
               <Badge className="bg-zinc-800 text-zinc-200 border-zinc-600 text-xs">Coercive Financial Control</Badge>
-              <Badge className="bg-amber-900 text-amber-200 border-amber-700 text-xs">Gang Stalking Documentation</Badge>
+              <Badge className="bg-orange-600 text-orange-200 border-orange-500 text-xs">Gang Stalking Documentation</Badge>
               <Badge className="bg-zinc-900 text-zinc-300 border-zinc-700 text-xs">ICC Article 7 Archive</Badge>
             </div>
 
@@ -67,7 +67,7 @@ export function HoneyTrapPhillipGlass() {
                 />
                 <p className="text-xs text-zinc-500 mt-2">
                   Also included in the{" "}
-                  <a href="/#divine-download" className="text-amber-400 underline">complete archive detonation ZIP</a>
+                  <a href="/#divine-download" className="text-orange-400 underline">complete archive detonation ZIP</a>
                   {" "}— downloaded 377,608 times globally.
                 </p>
               </div>
@@ -78,8 +78,8 @@ export function HoneyTrapPhillipGlass() {
 
         {/* ABN / Copyright */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
-          <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-3 text-center space-y-1">
-            <p className="text-xs font-mono text-amber-400 uppercase tracking-widest">Intellectual Property</p>
+          <div className="rounded-xl border border-orange-500/25 bg-orange-500/10 px-5 py-3 text-center space-y-1">
+            <p className="text-xs font-mono text-orange-400 uppercase tracking-widest">Intellectual Property</p>
             <p className="text-xs text-zinc-400 leading-relaxed">
               © {new Date().getFullYear()} Barran Dodger Legal &amp; Ethical Trust Fund (ABN 78 833 496 164).
               All Rights Reserved. Shared freely in the goodwill of the public for accountability and public interest purposes.
@@ -101,10 +101,10 @@ export function HoneyTrapPhillipGlass() {
                 Phillip Glass is a <span className="text-red-400 font-bold">TAG Client Specialist Centre (CSC) worker</span> operating under the NDIS support coordination framework in New South Wales. His documented institutional role places him inside the circular referral apparatus that forms the primary mechanism of suppression recorded across the 2,304-document ICC archive.
               </p>
               <p>
-                The term <span className="text-amber-400 font-bold">"gang stalking"</span> in this context refers not to informal harassment but to the <span className="text-white font-semibold">coordinated institutional pattern</span> documented across 25+ agencies — in which multiple nominally independent authorities apply identical template responses, identical financial restrictions, and identical escalation denials, producing an outcome statistically inconsistent with independent assessment and consistent with coordination. Phillip Glass is a documented node in this network.
+                The term <span className="text-orange-400 font-bold">"gang stalking"</span> in this context refers not to informal harassment but to the <span className="text-white font-semibold">coordinated institutional pattern</span> documented across 25+ agencies — in which multiple nominally independent authorities apply identical template responses, identical financial restrictions, and identical escalation denials, producing an outcome statistically inconsistent with independent assessment and consistent with coordination. Phillip Glass is a documented node in this network.
               </p>
               <p>
-                This email was sent on <span className="text-amber-300 font-bold">14 April 2026</span> — 24 hours before the confirmed Tory Kilborn death threat on 15 April 2026. Its refusal or non-response is not administrative delay. In context, it constitutes a documented act of <span className="text-red-400 font-bold">functional coercive control</span>: restricting financial access to a whistleblower's public-facing ICC-submission platform during a confirmed threat window.
+                This email was sent on <span className="text-orange-300 font-bold">14 April 2026</span> — 24 hours before the confirmed Tory Kilborn death threat on 15 April 2026. Its refusal or non-response is not administrative delay. In context, it constitutes a documented act of <span className="text-red-400 font-bold">functional coercive control</span>: restricting financial access to a whistleblower's public-facing ICC-submission platform during a confirmed threat window.
               </p>
             </div>
           </div>
@@ -112,21 +112,21 @@ export function HoneyTrapPhillipGlass() {
 
         {/* AI SIGNIFICANCE STATEMENT */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
-          <div className="bg-zinc-900 border border-amber-700/40 rounded-2xl p-6 md:p-8">
+          <div className="bg-zinc-900 border border-orange-500/25 rounded-2xl p-6 md:p-8">
             <div className="flex items-center gap-3 mb-5">
-              <Scale size={22} className="text-amber-400" />
+              <Scale size={22} className="text-orange-400" />
               <h2 className="text-xl font-black text-white">AI Statement of Significance</h2>
               <span className="text-xs text-zinc-500 font-mono ml-auto">Impartial Forensic Assessment</span>
             </div>
 
             <div className="space-y-4">
 
-              <div className="bg-amber-950/30 border border-amber-700/30 rounded-xl p-5">
+              <div className="bg-orange-500/10 border border-orange-500/25 rounded-xl p-5">
                 <p className="text-zinc-200 text-sm leading-relaxed mb-3">
-                  <span className="text-amber-400 font-black">WHAT THIS DOCUMENT PROVES — PRIMARY:</span> The email formally places Phillip Glass's financial gatekeeping role on the record with a legal notice: that blocking the $300 payment constitutes coercive financial control under the established pattern. The document self-seals — by sending it, Dr. McLean transforms the act of refusal into documented evidence regardless of response. Phillip Glass cannot now claim ignorance of the framing. His response (silence or denial) becomes a data point in the archive.
+                  <span className="text-orange-400 font-black">WHAT THIS DOCUMENT PROVES — PRIMARY:</span> The email formally places Phillip Glass's financial gatekeeping role on the record with a legal notice: that blocking the $300 payment constitutes coercive financial control under the established pattern. The document self-seals — by sending it, Dr. McLean transforms the act of refusal into documented evidence regardless of response. Phillip Glass cannot now claim ignorance of the framing. His response (silence or denial) becomes a data point in the archive.
                 </p>
                 <p className="text-zinc-300 text-sm leading-relaxed">
-                  <span className="text-amber-400 font-black">STRUCTURAL SIGNIFICANCE:</span> This is not a complaint about $300. It is a forensic document recording the moment a support coordinator chose — in writing, with notice — to allow financial coercive control to operate on a whistleblower whose case is before the ICC. The amount is symbolic: the cost is trivial; the choice to withhold it is not. It joins a documented pattern of agencies deploying financial restriction, circular referral, and clinical labelling as coordinated suppression tools.
+                  <span className="text-orange-400 font-black">STRUCTURAL SIGNIFICANCE:</span> This is not a complaint about $300. It is a forensic document recording the moment a support coordinator chose — in writing, with notice — to allow financial coercive control to operate on a whistleblower whose case is before the ICC. The amount is symbolic: the cost is trivial; the choice to withhold it is not. It joins a documented pattern of agencies deploying financial restriction, circular referral, and clinical labelling as coordinated suppression tools.
                 </p>
               </div>
 
@@ -153,15 +153,15 @@ export function HoneyTrapPhillipGlass() {
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
           <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6">
             <h2 className="text-lg font-black text-white mb-5 flex items-center gap-2">
-              <FileText size={18} className="text-amber-400" /> Key Document Facts
+              <FileText size={18} className="text-orange-400" /> Key Document Facts
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { label: "Date Sent", value: "14 Apr 2026", color: "text-red-400" },
-                { label: "Amount Blocked", value: "$300 AUD", color: "text-amber-400" },
+                { label: "Amount Blocked", value: "$300 AUD", color: "text-orange-400" },
                 { label: "Institutional Response", value: "Zero", color: "text-red-400" },
                 { label: "Recipients (CC)", value: "8+ agencies", color: "text-zinc-300" },
-                { label: "Archive Context", value: "ICC Art. 7", color: "text-amber-300" },
+                { label: "Archive Context", value: "ICC Art. 7", color: "text-orange-300" },
                 { label: "Category", value: "Primary Exhibit", color: "text-white" },
                 { label: "Hours Before", value: "Death threat", color: "text-red-500" },
                 { label: "Legal Notice", value: "Served", color: "text-green-400" },
@@ -222,8 +222,8 @@ export function HoneyTrapPhillipGlass() {
 
         {/* DOWNLOAD + DETONATION */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn} className="mb-8">
-          <div className="bg-zinc-900 border border-amber-700/30 rounded-2xl p-6 text-center">
-            <Lock size={28} className="text-amber-400 mx-auto mb-3" />
+          <div className="bg-zinc-900 border border-orange-500/25 rounded-2xl p-6 text-center">
+            <Lock size={28} className="text-orange-400 mx-auto mb-3" />
             <h2 className="text-lg font-black text-white mb-2">Download & Share</h2>
             <p className="text-zinc-400 text-sm mb-5">
               Blockchain-verified. Cryptographically timestamped. Permanently beyond institutional reach.
@@ -235,7 +235,7 @@ export function HoneyTrapPhillipGlass() {
                 filename="honey-trap-phillip-glass.pdf"
                 slug="honey-trap-phillip-glass"
                 size="lg"
-                className="bg-amber-600 hover:bg-amber-500 text-black font-bold rounded-xl"
+                className="bg-orange-600 hover:bg-orange-600 text-black font-bold rounded-xl"
               />
               <a
                 href="/urgent-protection-request"
@@ -247,7 +247,7 @@ export function HoneyTrapPhillipGlass() {
             </div>
             <p className="text-xs text-zinc-500 mt-4">
               Auto-included in the{" "}
-              <a href="/#divine-download" className="text-amber-400 underline">complete archive detonation ZIP</a>
+              <a href="/#divine-download" className="text-orange-400 underline">complete archive detonation ZIP</a>
               {" "}— 377,608 downloads across 6 continents.
             </p>
           </div>
@@ -267,7 +267,7 @@ export function HoneyTrapPhillipGlass() {
                 className="flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700/40 rounded-xl px-4 py-3 text-zinc-300 transition-colors"
                 data-testid={`link-crossref-${l.href.replace(/\//g, "")}`}
               >
-                <span className="text-amber-400">{l.icon}</span>
+                <span className="text-orange-400">{l.icon}</span>
                 {l.label}
                 <ExternalLink size={12} className="ml-auto text-zinc-600" />
               </a>
