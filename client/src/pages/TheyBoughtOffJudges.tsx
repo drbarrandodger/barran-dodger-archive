@@ -173,7 +173,7 @@ export default function TheyBoughtOffJudges() {
             {/* COVER */}
             <motion.div initial="hidden" animate="visible" variants={fadeIn} className="flex flex-col items-center gap-4">
               <div className="relative w-full max-w-[280px]">
-                <div className="absolute inset-0 bg-amber-900/20 blur-2xl rounded-xl" />
+                <div className="absolute inset-0 bg-orange-500/10 blur-2xl rounded-xl" />
                 <img
                   src={coverImage}
                   alt="They Bought Off Judges, Cops & Media — Cover"
