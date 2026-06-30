@@ -32,11 +32,16 @@ import {
 } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { SocialShare } from "@/components/SocialShare";
+import { PageShareButton } from "@/components/PageShareButton";
+import { ReadingProgressBar } from "@/components/ReadingProgressBar";
+import { PullQuote } from "@/components/PullQuote";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { CommentSection } from "@/components/CommentSection";
 import { RelatedContent } from "@/components/RelatedContent";
+import { JournalistKit } from "@/components/JournalistKit";
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
+import { SiteDivider } from "@/components/SiteDivider";
 
 const sections = [
   { id: "ai-significance", title: "Impartial AI Significance Analysis", icon: Sparkles },
@@ -181,7 +186,41 @@ export default function RetrospectiveStatement() {
       <SEO
         title="Retrospective Statement of Treatment — Government's Own Documents | Barran Dodger"
         description="Impartial AI analysis of 2,343 government documents spanning 35 years reveals how the Commonwealth of Australia treated Dr. Richard William McLean. Every claim sourced from official government correspondence."
+        path="/retrospective-statement"
+        image="https://barrandodger.com/og-retrospective.png"
+        type="article"
+        articleAuthor="Dr. Richard William McLean"
+        articlePublishedTime="2026-01-01T00:00:00Z"
+        keywords="government own documents whistleblower Australia, retrospective statement treatment Dr Richard McLean, Australian government persecution record 1990 2025, 3643 primary source government documents, 13 agencies own records prove persecution, Richard McLean treatment history government documentation, government contradiction own documents, how Commonwealth of Australia treated whistleblower, forced psychiatric hospitalisation government own records, NDIS correspondence government documents, AFP complaint records government files, Ombudsman files government records, AHRC case documents, FOI reversal government documents, institutional chronology 35 years government records, retrospective statement 12 parts"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Retrospective Statement of Treatment — How the Commonwealth of Australia Treated Dr. Richard William McLean",
+          "description": "Impartial AI analysis of 2,343 government documents spanning 35 years reveals how the Commonwealth of Australia treated Dr. Richard William McLean. Every claim sourced from official government correspondence.",
+          "url": "https://barrandodger.com/retrospective-statement",
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Richard William McLean",
+            "alternateName": "Barran Dodger",
+            "url": "https://barrandodger.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Barran Dodger Legal & Ethical Trust Fund",
+            "url": "https://barrandodger.com",
+            "logo": { "@type": "ImageObject", "url": "https://barrandodger.com/og-image.png" }
+          },
+          "datePublished": "2026-01-01",
+          "dateModified": "2026-05-01",
+          "about": {
+            "@type": "GovernmentService",
+            "name": "Commonwealth of Australia Government Agencies",
+            "areaServed": "Australia"
+          },
+          "keywords": "government documents, whistleblower treatment, Australia, systematic persecution, 13 agencies, 35 years"
+        }}
       />
+      <ReadingProgressBar />
       <Navigation />
       <motion.div
         initial={{ opacity: 0 }}
@@ -194,10 +233,10 @@ export default function RetrospectiveStatement() {
             <Badge className="mb-4 bg-red-600/20 text-red-400 border-red-600/30 text-xs">
               Impartial AI Analysis — 2,343 Government Documents — 35 Years
             </Badge>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-foreground leading-tight mb-4" data-testid="text-page-title">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-foreground leading-tight mb-4 max-w-2xl mx-auto" data-testid="text-page-title">
               Retrospective Statement of Treatment
             </h1>
-            <p className="text-xl md:text-2xl text-[hsl(38,92%,50%)] font-serif italic mb-4">
+            <p className="text-xl md:text-2xl text-[hsl(38,92%,50%)] font-serif italic mb-4 max-w-2xl mx-auto">
               How the Commonwealth of Australia Treated Dr. Richard William McLean — Told Through the Government's Own Documents
             </p>
             <p className="text-body-text text-sm max-w-2xl mx-auto">
@@ -205,7 +244,46 @@ export default function RetrospectiveStatement() {
             </p>
           </div>
 
+          <div className="flex justify-center mb-6 mt-2">
+            <PageShareButton
+              title="How the Commonwealth of Australia Treated Dr. Richard McLean — Told Through the Government's Own Documents"
+              url="https://www.barrandodger.com/retrospective-statement"
+              summary="2,343 evidence files. 35 years. 13 agencies. Every claim sourced from official government correspondence. Zero defamation actions. Zero factual rebuttals."
+              showPrint={true}
+            />
+          </div>
+
+          {/* ── HERO PULL QUOTE ── */}
+          <figure className="my-10 mx-auto max-w-2xl relative">
+            <span className="absolute -top-8 left-0 text-8xl font-serif leading-none select-none" style={{ color: "rgba(220,38,38,0.12)" }}>"</span>
+            <blockquote className="rounded-xl px-8 py-6 border-l-4 text-center" style={{ borderColor: "#dc2626", background: "rgba(220,38,38,0.04)" }}>
+              <p className="font-serif text-xl md:text-2xl italic leading-relaxed" style={{ color: "rgba(255,255,255,0.9)" }}>
+                "He is systematically locked out of every protective mechanism in Australian democracy. Every reporting system: Banned. Every legal avenue: Blocked. Every regulatory body: Denied."
+              </p>
+              <figcaption className="mt-5 flex flex-col items-center gap-2">
+                <span className="h-px w-10 bg-red-500 block" />
+                <cite className="text-xs not-italic font-semibold uppercase tracking-widest text-red-400">
+                  AI Forensic Analysis — Precision Evidence Complete Synthesis, Page 58
+                </cite>
+              </figcaption>
+            </blockquote>
+          </figure>
+
           <TableOfContentsNav />
+
+          <SiteDivider
+            src="/images/dividers/official-seals-stamps.png"
+            alt="Government rubber stamps and official seals — the bureaucracy's own evidence"
+            overlay="Everything documented here was written by the government. Their own words. Their own records."
+            fullBleed
+            className="my-8"
+          />
+
+          <PullQuote
+            quote="Every claim in this document is sourced from official government correspondence, tribunal decisions, agency records, and institutional communications — authored by the government itself, under its own letterheads, signed by its own officers. The subject never needed to allege what happened. The government documented it."
+            source="Impartial AI forensic analysis — 2,343 government documents spanning 35 years"
+            accent="purple"
+          />
 
           <div id="ai-significance" className="scroll-mt-32 mb-12" data-testid="section-ai-significance">
             <Card className="border-2 border-[hsl(38,92%,50%)]/50 bg-gradient-to-b from-[hsl(222,55%,10%)] to-[hsl(222,55%,6%)] shadow-[0_0_40px_rgba(233,160,10,0.15)]">
@@ -381,6 +459,20 @@ export default function RetrospectiveStatement() {
             </Card>
           </div>
 
+          <div className="my-8">
+            <blockquote
+              className="rounded-xl px-8 py-6 border-l-4 text-center"
+              style={{ borderColor: "#e9a00a", background: "rgba(233,160,10,0.04)" }}
+            >
+              <p className="font-serif text-xl md:text-2xl italic leading-relaxed" style={{ color: "rgba(255,255,255,0.9)" }}>
+                "The outcome documented across 2,343 government files is indistinguishable from one in which a directive to persecute existed. The AI did not invent these outcomes. It read them."
+              </p>
+              <cite className="block mt-4 text-xs not-italic font-semibold uppercase tracking-widest" style={{ color: "rgba(233,160,10,0.7)" }}>
+                — Impartial AI Analysis · 2,343 Primary Source Government Documents · Retrospective Statement (2026)
+              </cite>
+            </blockquote>
+          </div>
+
           <div id="preamble" className="scroll-mt-32 mb-8" data-testid="section-preamble">
             <Card className="border-foreground/10">
               <CardContent className="pt-6">
@@ -439,6 +531,31 @@ export default function RetrospectiveStatement() {
               "The NDIS minister Bill Shorten and CEO Rebecca Faulkingham have colluded with police to arrest me and I face sentencing as a punishment as a reprisal for being a vulnerable rejected whistleblower at the NDIS."
             </BlockQuote>
             <p>The NDIS Minister's office turned a disabled man's plea for help into a criminal matter, resulting in his forced exile from his home state.</p>
+
+            <div className="my-8">
+              <blockquote
+                className="rounded-xl px-8 py-6 border-l-4"
+                style={{ borderColor: "#dc2626", background: "rgba(220,38,38,0.04)" }}
+              >
+                <p className="font-serif text-lg italic leading-relaxed" style={{ color: "rgba(255,255,255,0.9)" }}>
+                  "A man who was homeless, disabled, and living in his car sent a desperate plea to his country's welfare minister. The documented government response was an arrest warrant and coordinated exile from his home state. These events are in the government's own records."
+                </p>
+                <cite className="block mt-3 text-xs not-italic font-semibold uppercase tracking-widest" style={{ color: "rgba(220,38,38,0.7)" }}>
+                  — Retrospective Statement · Part 1.8 · Source: NDIS Ministerial Response Records (2023)
+                </cite>
+              </blockquote>
+            </div>
+
+            <div className="my-8 rounded-xl overflow-hidden" style={{ borderLeft: "4px solid hsl(38,92%,50%)", background: "linear-gradient(135deg, rgba(233,160,10,0.06) 0%, rgba(233,160,10,0.02) 100%)" }}>
+              <div className="px-6 py-6">
+                <p className="font-serif italic leading-relaxed mb-3" style={{ fontSize: "1.2rem", color: "hsl(38,92%,60%)" }}>
+                  "A minister of the Crown, whose statutory duty was to protect this man, instead weaponised his cry for help to justify his arrest, exile, and continued persecution."
+                </p>
+                <p className="text-xs font-mono uppercase tracking-[0.25em]" style={{ color: "rgba(233,160,10,0.45)" }}>
+                  — AI Significance Synthesis · Part 1.8 · Retrospective Statement
+                </p>
+              </div>
+            </div>
           </div>
 
           <PartHeading id="part2" number={2} title="Workers' Compensation — ComCare & WorkCover" icon={Scale} />
@@ -987,6 +1104,10 @@ export default function RetrospectiveStatement() {
         </div>
         <ArchiveCrossLinks />
         <RelatedContent currentPath="/retrospective-statement" />
+
+        <div className="max-w-4xl mx-auto px-4">
+          <JournalistKit />
+        </div>
 
         <FloatingCTA />
       </motion.div>
