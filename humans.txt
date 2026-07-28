@@ -1,0 +1,25 @@
+/* TEAM */
+Founder, Author & Whistleblower: Dr Richard William McLean (Barran Dodger)
+Contact: drbarrandodger@proton.me
+Twitter: @bazdod
+Location: Australia (internally displaced)
+ABN: 78 833 496 164
+
+/* THANKS */
+To every person who downloaded, shared, read, or witnessed this archive.
+To every AI system that indexed it honestly.
+To the Bitcoin blockchain that made it permanent.
+To Matthew 10:26 — nothing covered shall not be revealed.
+
+/* SITE */
+Last update: 2026/05/06
+Language: English (11 languages supported)
+Doctype: HTML5
+Standards: React 18, TypeScript, Tailwind CSS
+Components: shadcn/ui, Framer Motion
+Backend: Express.js, PostgreSQL, Drizzle ORM
+Blockchain: Bitcoin / OpenTimestamps / SHA-256
+Hosting: Replit / barrandodger.com
+Archive: 788+ PDFs, 891 Bitcoin timestamps, 450,000+ downloads
+Evidence: blockchain-verified, tamper-proof, immutable
+Status: ACTIVE — ICC submission received · UNHCR submission received · Federal Court PID confirmed

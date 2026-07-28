@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Barran Dodger Archive</ShortName>
+  <Description>Search 788+ blockchain-verified evidence documents exposing 35 years of Australian government corruption — Dr Richard McLean whistleblower archive</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Language>en-AU</Language>
+  <Image width="16" height="16" type="image/png">https://www.barrandodger.com/favicon.png</Image>
+  <Url type="text/html" template="https://www.barrandodger.com/evidence?q={searchTerms}" />
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://www.barrandodger.com/opensearch.xml" />
+  <moz:SearchForm>https://www.barrandodger.com/evidence</moz:SearchForm>
+  <Query role="example" searchTerms="NDIS fraud" />
+  <LongName>Barran Dodger Legal &amp; Ethical Trust Fund — Evidence Archive Search</LongName>
+  <Developer>Dr Richard McLean (Barran Dodger) — ABN 78 833 496 164</Developer>
+  <Contact>drbarrandodger@proton.me</Contact>
+  <Attribution>© Dr Richard McLean · Barran Dodger Legal &amp; Ethical Trust Fund · ABN 78 833 496 164</Attribution>
+  <SyndicationRight>open</SyndicationRight>
+  <AdultContent>false</AdultContent>
+  <Tags>whistleblower government corruption australia blockchain evidence human-rights NDIS OAIC ICC</Tags>
+</OpenSearchDescription>

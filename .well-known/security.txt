@@ -1,0 +1,13 @@
+Contact: mailto:drbarrandodger@proton.me
+Contact: https://www.barrandodger.com/contact
+Expires: 2027-12-31T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.barrandodger.com/.well-known/security.txt
+Policy: https://www.barrandodger.com/legal-status
+
+# Barran Dodger Legal & Ethical Trust Fund
+# ABN 78 833 496 164
+# All content on this site is public interest material.
+# This archive contains blockchain-verified evidence of Australian government corruption.
+# Journalists, researchers, and investigators are encouraged to contact us directly.
+# Whistleblower tip-line: drbarrandodger@proton.me (ProtonMail encrypted)

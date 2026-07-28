@@ -1,0 +1,1547 @@
+{
+  "generated": "2026-06-27T22:42:29Z",
+  "total_documents": 256,
+  "total_size_bytes": 2084840651,
+  "aggregate_sha256": "90e905922d97324e0b02c4796f9227f6b665db7ee571d00a3ca52eb2967a36b9",
+  "bitcoin_block_ref": "897241",
+  "abn": "78 833 496 164",
+  "ohchr_ref": "UR/UST/23/AUS/17",
+  "documents": [
+    {
+      "file": "01-07-2023-letter-to-attorney-general-prime-minister.pdf",
+      "sha256": "2cc3af178d912ac0a64107c5f1959afab579980244f0b42612a7642409931b2a",
+      "size": 14806696,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "04-06-2023-letter-to-parliamentarians.pdf",
+      "sha256": "4cc3b5968a6ca66f2f3e7b9c5a3f4015f6f0e1396ca970616a29ff604b8d6043",
+      "size": 14477436,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "100-absurdities-of-my-life.pdf",
+      "sha256": "d00f078cd81e89aaa906279a375fc93ec58a8583828a598558d69bc20c76dbf6",
+      "size": 17406786,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "1000_years_of_peace.pdf",
+      "sha256": "2d2a4334077938175ca066aef7b8e0019088fff5d84b9c5745a3b47fd38b34ec",
+      "size": 17529880,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "123_gospels_barran_dodger.pdf",
+      "sha256": "8681af1c0eb3f8b524abc001dedf666a57fb8f50050c435659753433ee391ae3",
+      "size": 17492242,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2.87_percent_survival.pdf",
+      "sha256": "5bc16964a1dced47872ed4fed1e384d08be4edf24b833e459c2014ebcc72652a",
+      "size": 17864369,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2021-10-21-cdda-afp-compensation-claim.pdf",
+      "sha256": "ca6ce219f24d3ff688b98461413042c1daa86ad8324084da26f941b910a26496",
+      "size": 18955622,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2023-03-27-federal-court-final-assessment-dr-rich-mclean.pdf",
+      "sha256": "67b2d1151fcc7b3c697ed01cacb1cb457c7761626ab035bcd110e05eeb954b8e",
+      "size": 14523244,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-04-12-assassination-attempt-forensic-53.pdf",
+      "sha256": "659762df24f84e68b3f3537c6c75aa5c1aea11b2370e162c2c255607f2860240",
+      "size": 17684996,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-04-13-its-a-live-murder-case-email.pdf",
+      "sha256": "3dcca18672319eba8c21143f82fbdf9dfdda3a759432c7755054d5d465c2be88",
+      "size": 17344051,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-04-13-murder-conspiracy-praise-jesus-email.pdf",
+      "sha256": "ec761ca1cda0a80d8765394d72f56c0b8c820c34e3901af759bb96b302460ffe",
+      "size": 18753423,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-04-15-human-sacrifice-confirmed-email.pdf",
+      "sha256": "5e5b24b5700481baff7fc9b15b521734821925c698249c4885dba7354f967409",
+      "size": 18132236,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-04-15-kill-me-do-it-email-chain.pdf",
+      "sha256": "863467368b9508bab17499317cbcc2824f19a8d5487d8204edeaed5f79991a3a",
+      "size": 18578219,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-04-15-youre-all-being-investigated-email.pdf",
+      "sha256": "51f33a89979f09854d22b606caa9f06b94cba83159a89fd4296198ab5ab6c420",
+      "size": 17207617,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-04-17-global-immortality-martyrdom-email.pdf",
+      "sha256": "3b048d86cfb41abe6e4488360321cb07f8232e4072ffbec8b0d57b54d3b1066e",
+      "size": 17221416,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-04-23-jail-them-for-murder-email.pdf",
+      "sha256": "7c0ca490b41330675dbc630712d2730d1481dc7f6988733de333c1f1638e4e8c",
+      "size": 17403545,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-05-03-formal-complaint-urgent-protection-request.pdf",
+      "sha256": "033a68dee9222353d2217e2865093cc4025a237a6aa83fb40f8ac2c89c164421",
+      "size": 19198975,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-05-03-letter-of-demand-ablepoint-formal-complaint.pdf",
+      "sha256": "374316775923c4aca15c7fa8fd37919dd053e4ab084825d0b9fa778bc1a4cf81",
+      "size": 18299534,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-05-03-letter-of-demand-ablepoint-safety.pdf",
+      "sha256": "9494733c3190b39eefcce3d4fbd87bf30497cd08e8172601748995251890684d",
+      "size": 17261152,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "2026-05-04-avo-troy-kilbourn.pdf",
+      "sha256": "ea61ae8ea725661a46b05bec61d997ef67dfc615a74c8fc84997b5354c84d30c",
+      "size": 18672107,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "22-traditions-all-religions-corroborated.pdf",
+      "sha256": "1f69826b20b25bfe02f420ab2b14238d1d2aaff0183f1361e2039d99b8f8142c",
+      "size": 17180899,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "31-05-2022-letter-to-pm-albanese-opmc.pdf",
+      "sha256": "9c039729966d0972239d2175ebead04ea24d387441f2ca4943f7ebebe612d011",
+      "size": 14805697,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "33rd-degree-shadow-analysts.pdf",
+      "sha256": "07a7b2e43d90a424ea82fe5c75d4ff2481716401cea9b8a63f9410e2d433d184",
+      "size": 17541507,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "My_Boaz_Is_Coming.pdf",
+      "sha256": "93fc0aafc1d982656a2a20b4c219c49b5ca9628b50a959746a61ecea344ee29a",
+      "size": 18205126,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "RETROSPECTIVE_STATEMENT_OF_TREATMENT.pdf",
+      "sha256": "e594d43ace36dbf2a349166537f7340e77b7abe5aa2393019a58929faed1e643",
+      "size": 17400800,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ablecare-murder-threat-call-transcript.pdf",
+      "sha256": "8b3af2ce39152358d7d4a0522c463784da1a6f47a9b2bc9b40d7109e86df6259",
+      "size": 17130576,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "affidavit-familial-betrayal-april-mclean.pdf",
+      "sha256": "e2a781b3fd1ce1dad5a2d9bcfe8e6be755b9f559e99092fd4c6ed67d79435d46",
+      "size": 18071995,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "after-forensic-statement-evidence-record.pdf",
+      "sha256": "5d2d93468e9ef70f70d977d0337eadc19d4223829fea79144e40e2d986809e52",
+      "size": 17360572,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ai-justice-statement.pdf",
+      "sha256": "9b3349fe71a93aca73e7095cb43419832ecdec07066abe31b4ae94c92f1ccade",
+      "size": 17134852,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ai_personality_profile_barran_dodger.pdf",
+      "sha256": "f79e7d3979e39ff980963ebd99f9edc725224c343b04b24592331c6737fa6657",
+      "size": 17427637,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "alien_races_disclosure.pdf",
+      "sha256": "8714b9d16e2c60c0ec2b2434474ef5c4a8b8344d6690b77c124df5bc7d5ba9b6",
+      "size": 17589707,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "apotheosis.pdf",
+      "sha256": "4d02ced8c047f78f61540431fc295093bd44fc100171b4a99d693963aaf1baed",
+      "size": 20890412,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "april-mclean-familial-betrayal-forensic-record.pdf",
+      "sha256": "3e55b720166b0487d0e3fc8e19ae5d687b0eb8090c01b488df951775705cb18b",
+      "size": 17134244,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "april-mclean-familial-betrayal.pdf",
+      "sha256": "b30f69bb66e6ffa67aa526c261d546b5ee0f18706f272eaa7fa2c528a60be98d",
+      "size": 18072000,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "april-mclean-forensic-indictment-compiled.pdf",
+      "sha256": "9b1defb025c3bbf1715a058e98cac21cb76bd2921d771c3cb4bf1a09ffa6c298",
+      "size": 25520680,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "architecture-of-administrative-annihilation.pdf",
+      "sha256": "c260ef6177f6b7a640506bdb149745464431affb553ab48e489b3c88ec0695f4",
+      "size": 3775443,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "asic-corruption-police-report-forensic-evidence.pdf",
+      "sha256": "4901683b7979a786741d18759a3e702ffe49433eb40cdc3e93fc4be5fd4f1f9b",
+      "size": 18590350,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "atherion_witnessed_gospel_complete.pdf",
+      "sha256": "54c0be42dda9af06aa5a4db4cc671d2714c335de1225d27f19657302fbf97fbf",
+      "size": 18982067,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "barran-dodger-evidence-based-academic-profile-modern-persecution.pdf",
+      "sha256": "fc96369c2fa9a7359a08442d67cd49641113706b7237bbba64a197ff227abad4",
+      "size": 19544690,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "beautiful-menace-forensic-report.pdf",
+      "sha256": "c3aac7d962ce4e4cd9afc0c9b581c849d2004c11498d0db928a4683e8b480a3b",
+      "size": 17134675,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "beautiful-threat-forensic-analysis.pdf",
+      "sha256": "51bd63a3eb59b284fec1f062aa3bd0c98746c0325a31a0ff09266cb1d3bdb81f",
+      "size": 17134907,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ben-dsw-disability-ndis-provider-text-messages-assassination-evidence.pdf",
+      "sha256": "29e945fde523c7aae2e1fb01712d3e294b1e2346d7a3c73aa843efa0b0284665",
+      "size": 29912823,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ben-dswdisability-text-messages-assassination-confirmation.pdf",
+      "sha256": "7977c5a0966452a916d49ecafdd0d0d072dc8fde347cc98ad2753b01b0af0021",
+      "size": 29912822,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ben-ndis-disclosure-text-messages.pdf",
+      "sha256": "78c0379ea009af691effd5ed227006d27b50b67e7ca3441a9eca10a2613287d0",
+      "size": 29912822,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ben-text-screenshot-1-hit-list.pdf",
+      "sha256": "1683992e0cef90f6bfcb7a662b43bba4019888349f6bbd82b77cecce0347485e",
+      "size": 3163358,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ben-text-screenshot-2-exposed.pdf",
+      "sha256": "97bda97bcd3f9485b9928abe2c5fe1fbc0df6eb44379f015726a0bb353ee6a99",
+      "size": 3312055,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ben-text-screenshot-3-how-did-i-end-up.pdf",
+      "sha256": "064e2208614a950608f47ea4b0f5aaaafeedac21d43fe045494fae8e9dde7a53",
+      "size": 2691387,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ben-text-screenshot-4-nda-auto-wipe.pdf",
+      "sha256": "81217641eb974810f5d452873b8088ecb60a743270c59155a1207497cd0bdbac",
+      "size": 3562193,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "bro-this-isnt-a-coincidence.pdf",
+      "sha256": "7163e9f460ed384eab0642d2001fdf38758108fef8d03d201af980f51333b596",
+      "size": 18343675,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "canonical_gospel_barran_dodger.pdf",
+      "sha256": "ef7e158c04c2c3e7fc8a035856d7aee77adf7c0bbdd5d93da12f582fe2db528a",
+      "size": 17528064,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "chosen-one-it-is-over-reflection.pdf",
+      "sha256": "111429155a4c8ff6788c318daa6d600248480c4ac9a8c767764497152313e415",
+      "size": 17134830,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "chosen-ones-enough-is-enough.pdf",
+      "sha256": "20f40fef4f2c256334613860fab95316c41a90914538cf0211e01a91d10fdc5b",
+      "size": 20434121,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "chosen-ones-your-story-inspires-many.pdf",
+      "sha256": "c20d6253ff13019a885e8fe59b575edc8b7444f64cb43a8353a05d43cf97f8f4",
+      "size": 17483472,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "chosen-through-fire-forensic-origin-document.pdf",
+      "sha256": "95d4292db2e46ebe0f55d92794866331d933247f1781e7767604cacb8ff89166",
+      "size": 19059294,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "chosen_one_you_were_framed.pdf",
+      "sha256": "b400d0f964cbceb2d1d068a79e99438b36e6c102db099dd91cfc9465544c4ba0",
+      "size": 17417741,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "coag-ndis-government-documentation.pdf",
+      "sha256": "f6af55be4b5a6d6ca9d25955689aaa94aec56ef80512812d7da02b7601bb9338",
+      "size": 18519305,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "coded-glyphs-from-the-future.pdf",
+      "sha256": "c66c72226cd6c594a11c8c8e5ba7f5e3dc6e7b7aaeb468f151a67e19e7404515",
+      "size": 17212996,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "comprehensive-case-systematic-persecution.pdf",
+      "sha256": "00ef10f3631f3551877f5c1b925132adb468f615743b92035125bb07dd95fbbb",
+      "size": 17728954,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "comprehensive-statement-digital-architecture.pdf",
+      "sha256": "b2ad9d158451dcaf82f102f06af37689bcb5260b6e9544d1245fcdc8aa3eac8c",
+      "size": 17217645,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "confinement_by_erasure_threat_by_blade.pdf",
+      "sha256": "937c30ac1ae7241860ce87a32c08f5accb01be0fed28e0e3105875192243d329",
+      "size": 19750603,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "constructive_elimination_under_colour_of_law.pdf",
+      "sha256": "d5945daf95dfa3d3159adfefabef264200daeaef94252a579d476efc00529d4f",
+      "size": 17874619,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "cosmic_scroll_of_ten.pdf",
+      "sha256": "46d054664f88ad9d3e3417498cee903bd61f75cac9a90e1bc744e465476d5ee3",
+      "size": 20016378,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "court-duty-officer-statement-14-may-2026.pdf",
+      "sha256": "6b7d731856824f65393e115c54baa2d643744d202233c6a7adadb473f09664dd",
+      "size": 17129860,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "crimes-against-humanity-confirmed.pdf",
+      "sha256": "987f25a776d8a5f5e4f5cdfc283b30342960addefbedd06daa08eb418267b089",
+      "size": 756479,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "crimes_against_humanity_final_demand.pdf",
+      "sha256": "98caaded290e0cae9c25a2d6b06e90f28b5ba04c9107b8f3c0c5fbf14a70f3f4",
+      "size": 17367081,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "critical-legal-examination.pdf",
+      "sha256": "9e8aaaafa0ecf146b8a507f8229644cfc44bd740980db96f53a0dd2362060d54",
+      "size": 10905800,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "cto-breach-appointment.pdf",
+      "sha256": "9bfa9183d4a7d230209d2a2ef43800d12640e9283fff46d868d957a2267e8b65",
+      "size": 8351516,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "declaration-of-breakthrough-and-identity-as-chosen-one.pdf",
+      "sha256": "32c5f6673cf1db539cd152f5bb477634e861326ea1b48c10902d611986e49bc4",
+      "size": 11544331,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "declaration_of_sovereignty.pdf",
+      "sha256": "6b9bbbcf8a9c7fe235c9f060a7b331283f52dd51bd16489a6fce10eb4b8b94ce",
+      "size": 12817660,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "digital_oppression_100000_word_essay.pdf",
+      "sha256": "a79785192ea26acbf7996f03332500c3056ccad70067409206171c45045f7ed2",
+      "size": 11854541,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "divine-exam.pdf",
+      "sha256": "72ef19e11158cac988ae26a635c08569d8b578bc88f464e8fd1b2abb270a5781",
+      "size": 15273866,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "divine-reckoning-to-those-who-chose-this.pdf",
+      "sha256": "6e5fa81b3a397a00b6d1a6062aa6353d7a060bbcb527f46345214eb49ca966c7",
+      "size": 10872687,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "document_that_cannot_be_erased.pdf",
+      "sha256": "3a5992fa1785f3baed37857b221eba6914214fb096a429cd3dd51cc1676b2126",
+      "size": 11169790,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "dr-horgan-mclean-confidential-psychiatric-assessment.pdf",
+      "sha256": "d28e68f537c4ea30a8c2ebd465118049c411258c28fc9c015f88b4c7e373eb58",
+      "size": 13689131,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "dying-of-shame-forensic-analysis.pdf",
+      "sha256": "5ca3b99be415675bb787512becfd97991215ca58ec97c8be6f171f1dc0d95702",
+      "size": 4610166,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "eliven_chain_144_questions.pdf",
+      "sha256": "86539bc2fbe6f011ab4c48ac8e2d30ecf9319c356e1e9cb08a598eb1d8309b70",
+      "size": 5477571,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "eliven_chain_has_been_summoned.pdf",
+      "sha256": "cf074cf44daabdb8d3671407d3a59ec484683b69934a44d6b6c3a2c1a9af13d1",
+      "size": 6079534,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "enliven_chain_has_been_summoned.pdf",
+      "sha256": "285abb3c116923310b972f4433b20e9b01cac4309faef01dda460caf238a13cc",
+      "size": 5492053,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "enliven_chain_has_been_summoned_2.pdf",
+      "sha256": "7d9e0063f2be157baa30f0791782b2ffb49d26816f041b8f61ec3a594704d2eb",
+      "size": 5488911,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "false-sister-forensic-analysis.pdf",
+      "sha256": "0c4331ac61bc5c4281d6d742f068be11dd5f7c6e874833859dba54a2e5e814be",
+      "size": 4609711,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "federal-court-pid-assessment-2023.pdf",
+      "sha256": "10bb2ee5389b5c3216774291899fc28e42f02722a55093c77a364bbec2620ae2",
+      "size": 1999371,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "federal-court-sia-lagos-pid-march-2023.pdf",
+      "sha256": "f53921065da78d6ebb961022953715f07a72aec8ce024c6a7af86972a86d4dbe",
+      "size": 17888197,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "federal-court-three-point-acknowledgment-tredwell-27mar2023.pdf",
+      "sha256": "6e54ec648c1868a356c074891628b78bbd785d574cee9ba093922f34006dc2c2",
+      "size": 2057582,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "fih_third_party_authorisation.pdf",
+      "sha256": "710a29161e47eae6261003878bedf2ff2f17a2ddd1abfb5ac0efccf82897cf1d",
+      "size": 2029042,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-analysis-methodology-impartial-ai.pdf",
+      "sha256": "970abc4c9064857452b3c3176522cd0a48a0faff0e7a7057ca678602a6ee83b7",
+      "size": 395100,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-analysis-youtube-chosen-ones-tortured.pdf",
+      "sha256": "abbf9286d1a83787337a0adda5e202f17ce4dcab3959846c4b3750b54e9ccd13",
+      "size": 384804,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-analysis-youtube-they-are-going-to-jail.pdf",
+      "sha256": "22f468c490cd4deaf11db95c1b4cb1f016e546e3f82708b29288c6561e208197",
+      "size": 378675,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-audit-social-death-institutional-patterns.pdf",
+      "sha256": "aefcfaff182af84f100c8f62705b700205f5c1934fff25b4f6799a4875008c46",
+      "size": 412536,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-3am-briefing.pdf",
+      "sha256": "05e65c60dd09eb84a5e86ba4b39251689e7b7b2dd6eba1f01545d28d20331505",
+      "size": 4609627,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-analysis-instruction-original.pdf",
+      "sha256": "60a26051622e3d2e258881ba0d7cb288926c3856cb85a59543bd0a7fc3621146",
+      "size": 1415040,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-analysis-instruction.pdf",
+      "sha256": "8caaa93419f58ca081f2ddd15fafc5f3d50f1b8d3dbc6abb4170f6ec9a49fc3f",
+      "size": 371967,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-billionaire-circle.pdf",
+      "sha256": "6ea8cd873864b03fea06f7a63e2d03bfa502e1d9cdd138f3df83263ce62682fc",
+      "size": 4609987,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-buried-lies.pdf",
+      "sha256": "ed3e6265d9dcbdeeb65a2aa8ffc68426c5c0fdaafac326c2c008fd8cc72f073e",
+      "size": 4609784,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-chosen-one-youtube.pdf",
+      "sha256": "f077fb533630eba13e80e6aec4a3504d4f5b30c0c73f083460c67ef2e1362b29",
+      "size": 4610007,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-dirt-on-your-name.pdf",
+      "sha256": "d963f2c863decd7d5bf8cd7efcaf9acf152b3e661d4a928bf654d9debb405ba3",
+      "size": 4609918,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-fight-over-you.pdf",
+      "sha256": "916ab1bad1be246e949d0065d36bb27fbf9cdcfc93d40beb3223abc391cb7a46",
+      "size": 4609767,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-fool-fire.pdf",
+      "sha256": "cb869b4eb0f9016f791ff45697b1d4706784e8672d3383ce7856a69fa56805f2",
+      "size": 4609866,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-government-own-file.pdf",
+      "sha256": "eaa0fea0c5ad53b56e2d5e9792877f8bfbb91b7c9a6ef0e2e16a6f1634bdf820",
+      "size": 4609670,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-knives-claps.pdf",
+      "sha256": "8d37ad8f389bdba5d9a4982f68e53b65d38be7146706d42d195af22761e0c788",
+      "size": 4609654,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-making-history.pdf",
+      "sha256": "f1ea5e96cde496487100e2c98557d7075ae3442b3efd7c068e85c08f14dd74af",
+      "size": 4609799,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-project-halo.pdf",
+      "sha256": "e524bf359716f50429056950e7f3f0549c4407c1386502865d76fc5e9233aeeb",
+      "size": 4609756,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-silence-surrender.pdf",
+      "sha256": "fed013def341eeeb863f1eb4daa1b8fb6d74287ea2d410cb51dbe1c71bfef9bb",
+      "size": 4609575,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-still-standing.pdf",
+      "sha256": "cb4e99b03eeaa7d714bce94a4609588435ee7df3749e2046dc4dc468c17c3b01",
+      "size": 4609979,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-tactical-insanity.pdf",
+      "sha256": "ba1f17c69e05abcaf1ee8872ae89e8c20c8015ed947d4d8e14e7051b6aa2bc1a",
+      "size": 4610093,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-tick-tick-tick.pdf",
+      "sha256": "2f23debfe591c1ec83f64bb1b954ad2fba0085ec46f61541fb6935d4c6c79563",
+      "size": 4609668,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-truth-crawls-out-of-shadows.pdf",
+      "sha256": "fc3f5c7ffa9bf403889250ee9104f0a3acffa1341247869f0e6dba6da68bb625",
+      "size": 4609523,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-corroboration-vault-access.pdf",
+      "sha256": "37d741d722d3ed9c11275ded5ac46f389ad9edf116d2b105bd7e17e433268c1e",
+      "size": 4610000,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-economic-valuation-report-may-2026.pdf",
+      "sha256": "34b387604f9158cfbaa6b406024a0afa02132ed5311d5a0c38a5d4ea367ce722",
+      "size": 5381124,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-framework-unspoken-mandate.pdf",
+      "sha256": "f29f0b783ce1e74e8c5deaa2115ea0ca7241768ac02e344ea29abf3866bcebf7",
+      "size": 5101897,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-meltdown-report.pdf",
+      "sha256": "11248ba4979a48d36690b10ec414e5a47d3ef38345f96611ff2308e781902492",
+      "size": 4772076,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-perception-analysis-depth-they-couldnt-hold.pdf",
+      "sha256": "d660c40e9474c6083a03a939f0334535d08c4f337b1bcda3cbaf76d82720b5d0",
+      "size": 4609430,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-significance-2301-exhibit-longitudinal-record.pdf",
+      "sha256": "f2bfdaef85cc1e9cc0802f99f2782901615f58366a37aa7a33268139fe50c0d4",
+      "size": 5257529,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "forensic-significance-2301-exhibit.pdf",
+      "sha256": "9fd814a65767d2df63ebaa47f24a37eaf2acd6820ecf37bae273c2fea719cd40",
+      "size": 5256101,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "formal-removal-sukhi-tear-documentation.pdf",
+      "sha256": "75203b69b091ace3d437658fefba40b0ad5141516db7073ccf1398aa1c6d5d3c",
+      "size": 4604821,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "full-government-oppression-every-agency.pdf",
+      "sha256": "ccafafeea41737d8e478132cb85d91aee2b884056f24f3abe0740cd56599bf45",
+      "size": 9103933,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "full-universal-master-command-forensic-analysis.pdf",
+      "sha256": "da4e8a11af346c13573f6ddf4ea54bd19d8781c0884a96da2a7c68592b385065",
+      "size": 4735065,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "god-and-justice-by-barran-dodger.pdf",
+      "sha256": "59ba39449530a1ad84dc01f6809ee8150a17bf34d0f57da4f0dc6ac6bf3bb962",
+      "size": 4773185,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "gods-fury-14-declarations-forensic-analysis.pdf",
+      "sha256": "5007e18031a51c1fb49c50c8ae2d22ba5fdfb7b54db14ee2ad4077995eb6de4d",
+      "size": 4609713,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "gods-grace-barran-dodger.pdf",
+      "sha256": "b96fd649f6310ffd008029c5fc30c1763081f8366d0cac3a302731f015e142b8",
+      "size": 6571842,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "gods_media_release.pdf",
+      "sha256": "68e440f2fc8d2283e66274b04f82dbd0cf77d2382711189271fd3d9b2d15d621",
+      "size": 9883476,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "gospel_eliven_chain.pdf",
+      "sha256": "489df4b26df172e9940a1386fb4750d0fa5550510c70fe03da16c571abce9809",
+      "size": 4997506,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "gospel_of_barran_dodger_victory_2.pdf",
+      "sha256": "033c1789d0a380807bcf2ca8d89adddaa0fb35aa5916315e719dc245163576b3",
+      "size": 5321112,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "gospel_of_the_eliven_chain.pdf",
+      "sha256": "986f0d47c556ccf6c6281d3387e36888f6bca07899743b1bc9157a955221ccbb",
+      "size": 4997508,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "gospel_of_the_eliven_chain_2.pdf",
+      "sha256": "551d7204d74d914d21c8127feaa8debb95a15cc2e3ea14c6feb71485e7350c69",
+      "size": 4997508,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "gospel_of_the_enliven_chain_master_inventory.pdf",
+      "sha256": "08c4a50fc1b7b07b19e24afef49e371ed92841f64130a9d38771eefd9d4e8631",
+      "size": 5191069,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "government-called-him-delusional.pdf",
+      "sha256": "768eb3010e07ddf0985b3ad15864cf4a7aaae587d4bedc3531e9a83a2d896322",
+      "size": 5199380,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "heaven-exposes-the-sister-forensic-analysis.pdf",
+      "sha256": "e1b0b21dc62138180c868c35f9f50e8614ce29cd8cf7e0f8e99fd8e657e67a39",
+      "size": 4609697,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "heaven-stood-forensic-report.pdf",
+      "sha256": "635e40ef3b390c9ce675167cd711c38104d0764aeb032f487fb8f4a09fdfa161",
+      "size": 4609313,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "history-has-a-strange-habit.pdf",
+      "sha256": "7470ed64f6d4e8d7df0beb2ef249f9cfecf7648d1bdea1762e6865709c1a510e",
+      "size": 4742493,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "holy-reckoning-ndis-plea-declaration.pdf",
+      "sha256": "854fb1030f118776c596c7b76911a3d921f18da67124902264703e5765cf2db9",
+      "size": 4609571,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "honey-trap-phillip-glass.pdf",
+      "sha256": "740be352e6c4f61c136ad08555d0ddcda133a0ab40591138a01211bebe0b4f6b",
+      "size": 4684540,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "how-she-will-be-remembered-sukhi-tear.pdf",
+      "sha256": "799deb43979ca84e025ac6ff2ec7aff655156265c119fd938ca2e4988636beff",
+      "size": 4610620,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "i-am-gods-chosen-one-declaration.pdf",
+      "sha256": "23532c83328002ffbf98c6722c69fa5be2a1782d09152d85be9cf85eba724b65",
+      "size": 4618882,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "i-choose-silence.pdf",
+      "sha256": "ddf9a5f3519dd5241ac459e1fadc981bf79de9ccfbe6d9b761ad9919505f2004",
+      "size": 4670031,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "i_tried_to_kill_barran_dodger_satire_2.pdf",
+      "sha256": "c6c69a5a3ac159a7592b7b1d565b37bba7d64874046cf4c31af0b2c5b5163bc7",
+      "size": 5610236,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "illegal-level-genius-forensic-report.pdf",
+      "sha256": "a5b8f168c25f01fcf1c9397744a8facac3be75f61f8eca33fe9044c0b65ffd03",
+      "size": 4609946,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "immortal-testimony-mclean-2025.pdf",
+      "sha256": "b461b68c7435b2415e6f9a8f3aaf2d58db60bdc66cdd6162ccd934e5daf8751c",
+      "size": 4912958,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "impartial-ai-abstract-youtube-channel-evidence.pdf",
+      "sha256": "0fae4104224119af4e85638ab4e07dddd75994318b5a1607546612d8d0423f85",
+      "size": 4770121,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "impartial-ai-analysis-2343-documents.pdf",
+      "sha256": "802bcaebe57e78c83a9f09baec8bb0894ac71334586a6ddb9630c0522c8fe2c2",
+      "size": 4653004,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "impartial-ai-statement-of-significance.pdf",
+      "sha256": "2432e098e6e23a8b12f9b1756ddc9fd78a605fa888c41aae6328ed6d28b6040b",
+      "size": 4627899,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "interim-bsp-2024-sils-recommendation-richard-mclean.pdf",
+      "sha256": "a624730c1ac2073a34b24a0b0f054f6bf2d3105b495e4a0f9de07fcec9c54f22",
+      "size": 2349086,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "john-gotti-spiritual-realm-aura-shift.pdf",
+      "sha256": "b96c8c746b18f0ce439efe6fd16fe884fad869ece11e9534fec4db60d5c314b1",
+      "size": 4610174,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "josephs-coat-barrans-mantle-prophetic-parallel.pdf",
+      "sha256": "dbdb9e60eeb7bc6effa75ff0f60caac17b33a56a6f6bb34d19b81c7488d55694",
+      "size": 4877219,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "josephs-coat-barrans-mantle.pdf",
+      "sha256": "15bb5f227a81705f45f45a217c606855f92d2343830f897686490f2e7743f342",
+      "size": 4521086,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "karma-audit-iasonidis-forensic-examination.pdf",
+      "sha256": "388cb28b42dc1bb65ca0ca208825ec70e96e721da6e48a4d52c95af2cd231241",
+      "size": 4637528,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "kill-him-timestamped-essay-by-barran-dodger-chosen-to-rise.pdf",
+      "sha256": "94d75463f902a02af779df2f5305ae86a6edbc28aa8c4d19b386a939a91d9baa",
+      "size": 4885955,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "legal-demand-notice-failure-to-provide-sil-support.pdf",
+      "sha256": "c3c3cd1a69bc6a94807d7411e375d848b60781efa396c0c3ca593d329fecd07a",
+      "size": 4424496,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "letter-to-sia-lagos-federal-court-pid-3mar2023.pdf",
+      "sha256": "16c68ef37ca5f4ff9111b24c38e5b41ef85631554e92ccaf781291485b57ab56",
+      "size": 21985575,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "live-murder-case-email-april-13-2026.pdf",
+      "sha256": "481b8834abfec7cf704e5231b3a7ae1df2444adf8e349b4f1da2bf0e46f6dd3b",
+      "size": 4464958,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "living_scroll_unkillable_witness.pdf",
+      "sha256": "e4e7a13a5cf9fc0d2b690bf26ccc4b6ebe7b6aa058df296ce177c8c1491902f5",
+      "size": 4542974,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mark-dreyfus-2021-shadow-ag-directed-to-ombudsman.pdf",
+      "sha256": "0d7c194a33ede1e1209c5d42268f22cbf78217d7cbbaf9bc9c16eb8a6469dad1",
+      "size": 1995571,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mark-dreyfus-video-transcript-barran-dodger.pdf",
+      "sha256": "d843b00bf38362dcbdbef9ef2cd5ac88a4fccdc0952cab67d30eba60f04aeb2b",
+      "size": 2682573,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "master-consolidated-legal-record.pdf",
+      "sha256": "42fc30242a4194d3c6d78792d221f57aa56b1d1344832b87f31b44a812b56c82",
+      "size": 6322319,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "master-forensic-evidence-report.pdf",
+      "sha256": "14db064c934c31205d5e08e0448279617690ce140f286f0da9f82ca6c0faf2af",
+      "size": 4489952,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mclean-comcare-final-legal-proceedings.pdf",
+      "sha256": "43c5472a2131fd80608c8a462009667b1bc2946e008e0615a10cd74f227e7ff6",
+      "size": 2174597,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mirror-of-god-bill-is-due.pdf",
+      "sha256": "2e2cbf343b3d51c225d2d52181abfbcc9d42af60feba163d1d5887f3e82a78b2",
+      "size": 4264585,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mirror-of-god-chosen-one-vindication.pdf",
+      "sha256": "9eb1e4b10125d2bf8ba450016d97157d03de98b8d47b707f47a027882114768f",
+      "size": 4267783,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mirror-of-god-game-over-checkmate.pdf",
+      "sha256": "7fd1eac2c661df31db11f82d1285721635b7478deb0f895c352b48e7e39e6892",
+      "size": 4271686,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mirror-of-god-lie-unmasking.pdf",
+      "sha256": "49569f498efdb133e53806f94be1cc13f5a0c21b97484fd36dfa539847bd2e8b",
+      "size": 4270732,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mirror-of-god-responds-to-archive.pdf",
+      "sha256": "be3285d7b2ac82f112f31f38040c151f42984cf3b183aefa77a9ef4da2c2ff29",
+      "size": 4267695,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mirror-of-god-transmission-2027.pdf",
+      "sha256": "f6870f39f9c122ed455a4009905cdf7256ec3789b550cb3ccda29dbb1328b09f",
+      "size": 4872906,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mirror-of-god-unmarked-one.pdf",
+      "sha256": "bb43224d737dac4cd3c84abfd5471c5a029d121fcc17f360e5325cd0e1508411",
+      "size": 4271447,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "mirror-of-god-welcome-on-board.pdf",
+      "sha256": "32c5a0ec2a8acdfe1101ee9557b4006457b0b99fd893b58d664c29c457e962ae",
+      "size": 4268705,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "most-comprehensive-case-systematic-persecution.pdf",
+      "sha256": "4d52e9acf19e750f5959611e83cb64e3420bcaacd58bc9e45ca226aff70752c2",
+      "size": 4848554,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "my-boaz-is-coming.pdf",
+      "sha256": "834cffdb8a511a007e7232aad89711158fe62b76cc924615dcbcce85c15503f2",
+      "size": 5323857,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ndis-pid-2023-krypton-preliminary-inquiries.pdf",
+      "sha256": "b9e4740fbde1416cab47f0dc0a07fde921c5fa56e6401200961c80328c5fde8c",
+      "size": 2867389,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ndis-pid-copy-21-allegations.pdf",
+      "sha256": "eb4f88036ddb2d0f7ac7b45910b8cd5c84880a22dd9b965dac1bf9931e56fbea",
+      "size": 5697139,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ndis-pid-official-response.pdf",
+      "sha256": "5e28f365794190d7ed3a59ce437634b83e15909cfd78052c28898eeed900f635",
+      "size": 5697069,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ndis-pid-political-prisoner-dr-rich-mclean.pdf",
+      "sha256": "9695f543762d0403eb12287929464d3a65e790f4b173832f5e9631058453dd9c",
+      "size": 5943014,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ndis-plan-approval-nov-2025.pdf",
+      "sha256": "61bc2e8e0263f9c25aef696e1c3ffcf6120b5c8782265264061cb096af2254fa",
+      "size": 2070163,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "no-one-could-be-that-smart.pdf",
+      "sha256": "f7ae4b9f0fdfa75de1b506625087bff87732fe6b194a921661afa88aad1b5c7d",
+      "size": 4572893,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "now-everybody-knows.pdf",
+      "sha256": "cc773448202988da2ef33bbfe47b3859159a262fbc25454c0308aa0846c2d3f8",
+      "size": 4641040,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "official-whistleblower-torture-dossier-dr-richard-william-mclean.pdf",
+      "sha256": "e9c1e06f422804e5f4df88debbbd6282fdcfdcfeb0d931262a6ecf0361d7fc02",
+      "size": 4493277,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ohchr-submission-ur-ust-23-aus-17-urgent-appeal.pdf",
+      "sha256": "700cffd1680299027bcb99961ca4f7d6242063046686f724971a47164d4383c1",
+      "size": 6441742,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ombudsman-afca-referral-loop-evidence.pdf",
+      "sha256": "ff6844c3e7bdee1f4aa168713d4c6800906319028b571907002da293bcc7b559",
+      "size": 5391360,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "opmc-oaic-cover-up-hayden.pdf",
+      "sha256": "a22ff0037b087bf3f68845b1932e7c7d1bbaa7475c8b66ccc3824f6524b25c4c",
+      "size": 8153656,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ot-sil-report-recommending-sils-richard-mclean.pdf",
+      "sha256": "409a6ebe64e9ab7bd225d81dd72e0aec63a79d26191ec29b0ea2139b13142749",
+      "size": 2104158,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "paradox-of-persecution-academic-paper.pdf",
+      "sha256": "e3dac756ed2cd403732f13ba4e346d23c08692048c3b1a7eb3ea1a269dea8201",
+      "size": 6069244,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "photo-evidence-2.pdf",
+      "sha256": "c9cb9884f10dd31d8b8c2e782dcc713dccf09c0ba79a211f7d64518d45a17740",
+      "size": 3163356,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "photo-evidence-2b.pdf",
+      "sha256": "3c307768fd02d41afae447960633d7f22a34ab566a03cd5d18265f99bbd047b6",
+      "size": 3312055,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "photo-evidence-3.pdf",
+      "sha256": "f991be8189f86df35a7da27254da4e34d00ec441a88d740afea4533b2688c910",
+      "size": 2691387,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "photo-evidence-4.pdf",
+      "sha256": "bef55a1c038b46da6f61ddfbc2b7bf48aab860de077cd6e0928080ed3bf70179",
+      "size": 3562193,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "police-complicity-death-threat-documentation.pdf",
+      "sha256": "cdfcf1262b2f0a870e35c162d9fc1f5c053b04e1b7b1e89f6f87a893dc5614bf",
+      "size": 6187100,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "praise-jesus-ablepoint-exposure.pdf",
+      "sha256": "407fefa241ed4de5b714c28800d3c550860b3289f0a9011562789ccb153446d5",
+      "size": 4441443,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "precision_as_evidence_evidentiary_synthesis.pdf",
+      "sha256": "63cfff86e34100acfa402907956a5f306cd8b8d8b8b590b9d4924906ce1852d3",
+      "size": 4759566,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "prophetic-declaration-biblical-barran-dodger.pdf",
+      "sha256": "479688ea113aedfbf5b8ab0fd99388184b6f0bb1b4500dc4f99af25da637730b",
+      "size": 4851172,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "prophetic-declaration-forensic-analysis.pdf",
+      "sha256": "f0d1e374a2627376b6aed2839c41834e80b51e8addcbdd625e943c75e314fa59",
+      "size": 4253690,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "prophetic-fck-you-declaration.pdf",
+      "sha256": "becaefe994582d78fac387f6dac820d600ace1e26245fc578a0ebcdd27de94a8",
+      "size": 4253724,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "prophetic-testimony-biblical-evidence-correlation.pdf",
+      "sha256": "642e9eacaa4e80c98908e4c329b424175cfdbf5a16e180a5827843cc3d0525a5",
+      "size": 4746055,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "prophetic_manifesto_barran_dodger.pdf",
+      "sha256": "bfa2dac89d39d7ff9db3169b62d91455e2e4c9cb859baba90ff9392eb5e9147b",
+      "size": 5342928,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "psychiatric_assessment_asylum_documentation.pdf",
+      "sha256": "5d97df26242ebe5ff59aab4e623e8a9f4bfee1e5592acd654399b00e710d25ec",
+      "size": 6518721,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "public-interest-disclosure-commonwealth-ombudsman-aug-2022.pdf",
+      "sha256": "be97e51dda779b19b15a5796d24046b00fb488283511c446012fb93a4ce2ba0e",
+      "size": 1970910,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "public-statement-dr-richard-mclean.pdf",
+      "sha256": "98edb3b573438cc10f9f51fc822713bf5e726823270b4239c0ad0d067cd67f14",
+      "size": 4668436,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "retrospective_statement_of_treatment.pdf",
+      "sha256": "7b7dacbeba927191340f460630916dbe940b9606b90f85ee60abef19116faece",
+      "size": 4520797,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "richard_mclean_australia.pdf",
+      "sha256": "4b6b465b3c24d8863a7f8ab6ecdf058e4870b2ff2716e42c12212624a958fa75",
+      "size": 4403159,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "s122_redacted_document.pdf",
+      "sha256": "31550c5954996b51805cce41f12512a930c4ce5c8c498b652d225938afab34c1",
+      "size": 2040246,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "sacred_declaration_master_record.pdf",
+      "sha256": "ef2e0f31413456b9d9e50e7e6b2d33cfee9162cd7434ed0c81eac5e366ee372f",
+      "size": 8139615,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "season-of-payback-forensic-report.pdf",
+      "sha256": "eaab407d2c96f8c8110d09c0fd113ffcba5c0a3a919025d53af2ce3cde11b459",
+      "size": 4254127,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "sia-lagos-federal-court-pid-march-2023.pdf",
+      "sha256": "5e7133f4ebcc1bcd7859fc40e8d6b732b5a2befc7586829d55c84af3a822352f",
+      "size": 17888205,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "silent-checkmate.pdf",
+      "sha256": "72185c9792be5590ff55842b1c63ce06e560d1509f7cecde28f2c4730972c4d4",
+      "size": 5413122,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "state_and_federal_mp_letter.pdf",
+      "sha256": "2a3564bb66d4edf5177de206ea7085086e22d4a692ef6ea35ff22b26e55d4af9",
+      "size": 2268042,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "statement-of-record-position-protection-2026.pdf",
+      "sha256": "bce62517f4227281d6e917dfa4db858eb1aeec24d271234bef8e9df5adcc8590",
+      "size": 4322854,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "sukhi-tear-horse-has-bolted-reckoning.pdf",
+      "sha256": "3db5cadcd75d54143344f0c895b34e141796ae8f3005554e99f11e5a4fd52891",
+      "size": 4253697,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "sukhi-tear-open-letter-and-dossier.pdf",
+      "sha256": "40593cbab0d37ff16ab8efbfe63247b05e20868b624f06761f6c23af9ae4ce91",
+      "size": 4253812,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "systemic-endangerment-of-whistleblowers-institutional-dossier.pdf",
+      "sha256": "6e146de052fc2c9571564826654d902dd79a5c3728cb9e72046de110c7fae7cb",
+      "size": 4488505,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "targeted-individual-handbook.pdf",
+      "sha256": "bf9c4c8a39ff5d84f550b68d85e575f7d80589915357a0981fa93374d371b2f4",
+      "size": 4458015,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "ten_commandments.pdf",
+      "sha256": "ee99e5c9899863b797cbe1779c13f2b9df33e19c8527701cb58f6903227c3603",
+      "size": 10027403,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "testimony-went-global-significance-report.pdf",
+      "sha256": "85aae32e5cf0e2a98f3118a86bfe3bf9e2512c53aef90252f908ee924c3bc1d8",
+      "size": 4257471,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-100-questions-defining-trial-and-human-sacrifice-of-dr-barran-dodger.pdf",
+      "sha256": "5911723ad61b120f80d17e2ce1929ec74c51e0b3b99066d46616f13e8093d289",
+      "size": 4682127,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-certified-record-of-barran-dodger.pdf",
+      "sha256": "b4e4d2e98c22218750d289be83239558ca2574db6555d8f12783d3ab2d5717fe",
+      "size": 6639939,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-chosen-vessel-declaration.pdf",
+      "sha256": "c681adfda885c1570d28320e7bfe8c33b42c4506576c014e298f95e8fe5a2d4f",
+      "size": 376077,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-cost-of-erasure-academic-report.pdf",
+      "sha256": "0466f2e9806ef77664be94c68898dd77c4c6904ba5083ae44129a430c262bfb3",
+      "size": 1743919,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-enliven-chain-complete-gospel-archive.pdf",
+      "sha256": "e47b9010b6b0b1bb4597a795faaa3b075062c0971f751a451e3f2f5661e0f09f",
+      "size": 4945650,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-full-pattern-forensic-evidence.pdf",
+      "sha256": "ed7cbdde3a4b01f7c1f072185925e3140b66eee573790493600cf7abf551b91a",
+      "size": 6506576,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-inversion-paradox.pdf",
+      "sha256": "8c5f36ad93a007b72728f5f9c7180821882edaff01fe795bc18ace9908b96c08",
+      "size": 1513341,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-paper-trail-of-erasure.pdf",
+      "sha256": "8ec3f0552fd345ab46466f51ce092bf8a67953bfccc59aad38a42bd5d590c8b1",
+      "size": 5364465,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-paradox-of-persecution.pdf",
+      "sha256": "561cf1bf078ce50f7313e00c31aec59c1ff6517ec79ad48fd1990d0f43e0338c",
+      "size": 6017615,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-perfect-mother-myth-familial-betrayal-whistleblower-testimony.pdf",
+      "sha256": "034ced184b6daec2b38a97d93cb99f46f31ddc689be2d311d0a36199155c5f98",
+      "size": 14871853,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-rats-will-come-essay.pdf",
+      "sha256": "678cdc9f91e98af2d4fc50854bee77972e84e8f2ec6ddeb433d83115263574ed",
+      "size": 4253912,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-sleeper-agent-of-truth.pdf",
+      "sha256": "2bbecb7c441b9350124e70cd2b17a5e141c690c92f11700b40e4939d5c8e6bbd",
+      "size": 4497565,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the-testimony-of-dr-richard-william-mclean.pdf",
+      "sha256": "c30cdd63be8433c591c3a9bce55f5408af2ec790850ed790b564eee9228cebd9",
+      "size": 4309578,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the_joseph_parallel_prophetic_narrative.pdf",
+      "sha256": "875a210caaaad0b6f36bc792aaa5828ae1f8f3efc772f1f1a0f7f7b6289ea448",
+      "size": 5483431,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "the_trap_they_set_became_the_proof.pdf",
+      "sha256": "ef466c319c1198fbd6f52f64181b491350984272029b45b30fd4ab49ce30394b",
+      "size": 4329549,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "they-bought-off-judges.pdf",
+      "sha256": "827dd194d2aadbdb5a01db8f135e915cfe10bd85b27de920c43146d01ab959b6",
+      "size": 4637736,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "they-finally-know-seven-revelations.pdf",
+      "sha256": "cd38b8aacfee3f4ef86023e9f51df20bffa36bb8eb9a4303c5b4b7d91fca32cb",
+      "size": 4254891,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "they-hurt-you-angered-god.pdf",
+      "sha256": "114f66ce56dcea18d8f83305b741c0b43b064540c13c79cdf79cc8d557a02b2e",
+      "size": 7793164,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "they-set-a-perfect-trap.pdf",
+      "sha256": "c474b2881be839345f47d842591f6c35c684062854b3c0a553b70fc948efca15",
+      "size": 4310423,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "they-thought-you-would-break.pdf",
+      "sha256": "fbcc3837ab0552f6960606ac2117e3c0b98470430e3d47344dcb70876b5c73a8",
+      "size": 4357475,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "they-will-kill-me-josh-emergency-email.pdf",
+      "sha256": "1b0ee5b80f82f395de6ee581e0654433bed822245074dd7d04a37adcba6eb9ac",
+      "size": 4249692,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "theyre-about-to-be-behind-bars-forensic-analysis.pdf",
+      "sha256": "f69ddf281c8e2c493e3f2d54f286d9e2950fc9e32a48edec47cdc8c20072be00",
+      "size": 4254095,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "thousand-fell-forensic-analysis.pdf",
+      "sha256": "4bbf39b2e11f9983e0c87e06a04d51b4e1bdabb382b75abe934e7773c9397901",
+      "size": 4253736,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "tony-ridley-full-evidentiary-dossier.pdf",
+      "sha256": "f3f8f42e3b57e018f72d75222f192a0086053c1b3017187dff1f6b0922fa0bcf",
+      "size": 4249714,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "tony-ridley-recorded-confession-full-report.pdf",
+      "sha256": "2aa8227a475bcf8037e09d72c746cf4b7b12d5b12efa9e7be07cf0b6929a2e0e",
+      "size": 4249742,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "tribunal_declaration_cosmic_court.pdf",
+      "sha256": "cf9ce2ddd79b71dade0083e8e37a0e49f6e67498b5eff8137c686e2430d6251a",
+      "size": 4325730,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "truth-hurts-mum-september-2025.pdf",
+      "sha256": "66137e3257817449cef601295c5e94e122b50f8fdc55d16c42a6478c2f46caa8",
+      "size": 4315545,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "twelve_gospel_essays.pdf",
+      "sha256": "24287415927594d3aeaa0eb844b0736e3244f89b838a4e5d5b8218fc328659a4",
+      "size": 5537001,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "un-ohchr-asylum-claim-ur-ust-23-aus-17.pdf",
+      "sha256": "3ae44a17f8231cc3e47c368348089cef3d55cb773cd142f92b54dd2761189e7a",
+      "size": 2053615,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "unhcr-icc-cryptographic-evidence-package.pdf",
+      "sha256": "ef98afbc28872f93559204cac632487d10efa541f16b9bb5181ed56f7be77e1a",
+      "size": 4424080,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "universal-silence-non-acknowledgement.pdf",
+      "sha256": "9e621ca706fdcaf6e03fc199aec6441256a6ec0946a5838d16d7d406de0bb83b",
+      "size": 4279572,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "universal_master_command_ai_analysis.pdf",
+      "sha256": "e33af339622e08a350f6f47034bce57c66af45bb1cd9f982104506eff80be950",
+      "size": 4721958,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "urgent-protection-request-sos.pdf",
+      "sha256": "77fbc85008aed39b06fa857dea1d863d723f085d1a9de9db201611f08a782bfb",
+      "size": 4249831,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "urgent_request_for_refuge_and_asylum.pdf",
+      "sha256": "a3c98f7c89b16a032fb9b87e2eb6d1f69d2eede266845b647881516baf863c94",
+      "size": 4520696,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "v2k-electronic-harassment-evidence-review.pdf",
+      "sha256": "0c5d5b6e7b98f61d2cba10fbb6ee5411709b07686fbcc34c4fbed314cdf0b65a",
+      "size": 5447036,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "verdict-before-the-court-report.pdf",
+      "sha256": "b736d0984373ff302a37072833bcefe79b8c780827f64755c33f37455a030caf",
+      "size": 4251267,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "version-you-tried-to-destroy-is-gone.pdf",
+      "sha256": "b065af17e49710a6f64c64cb140d4c2d4602efc5d0defc015bd4a7b380705156",
+      "size": 4917347,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "wait-theyre-listening-forensic-examination.pdf",
+      "sha256": "cfe23e670d9369cbe6bb23d26a0d13d85b49197c2dcc679884321f778be28e0c",
+      "size": 4274673,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "what-this-proves-forensic-summary.pdf",
+      "sha256": "fa99552358f18bcc2bc1116c5df879f521a9aaeaefc6dc98cd154193fa2e45bd",
+      "size": 4254477,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "when-a-pack-of-wolves-cant-take-down-a-lion.pdf",
+      "sha256": "bfcb82eba0d45f35b4ee843020b59a7b5c6fdb4e6c193be39785265f2f365714",
+      "size": 4253712,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "when-wrong-people-get-nervous-forensic-report.pdf",
+      "sha256": "d586ed99babea50875fbadedf825b2bdee31e22ae7c40503b7b416c2f82962dc",
+      "size": 4253846,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "when_the_machine_wakes_for_you.pdf",
+      "sha256": "82ee5718bdb453e7e43ac1dc3d9f165ecdce377697aee589d9911d125759a177",
+      "size": 4453996,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "white-psyops-invisible-warfare-against-cosmic-witness.pdf",
+      "sha256": "974c41e812cec7b6bfcf4192635d047fee3fd1491c461da38cee6f3fe6f93213",
+      "size": 5506391,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "witness_before_tribunal_of_humanity.pdf",
+      "sha256": "c222b2884e36a472249d0832fc1dc2c1a223eda334f75eb6bac819dac2c3418d",
+      "size": 4621643,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "witness_resonantia_eternalis.pdf",
+      "sha256": "ad39c55d66c92e238c18c08624969255ca340e506599fece99fcf7b7c662a875",
+      "size": 5150115,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "written-reasons-cover-letter-for-parties.pdf",
+      "sha256": "56d389ca4e0d54aead3ed4cff43a5977f89dbf8a8219e471a171b2d57e18fc5d",
+      "size": 2103623,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "you-built-a-bonfire-forensic-analysis.pdf",
+      "sha256": "91a797693a42acad56837dffdfb5a9c0f7139821a73d122d5acc5e1b674d5250",
+      "size": 4253880,
+      "timestamp": "2026-06-27T22:42:29Z"
+    },
+    {
+      "file": "you-detonated-the-narrative-15-claims.pdf",
+      "sha256": "a1d5508564a3b48461d945881914d561293e1e919e0e1b66fba42b2d36b8d02e",
+      "size": 4253589,
+      "timestamp": "2026-06-27T22:42:29Z"
+    }
+  ]
+}
