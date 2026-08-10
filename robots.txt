@@ -277,8 +277,12 @@ Allow: /images/
 
 # ==================== DISCOVERY FILES ====================
 
+Sitemap: https://barran-dodger-legal-ethical-trust.replit.app/sitemap-index.xml
 Sitemap: https://barran-dodger-legal-ethical-trust.replit.app/sitemap.xml
+Sitemap: https://barran-dodger-legal-ethical-trust.replit.app/sitemap-pdfs.xml
+Sitemap: https://www.barrandodger.com/sitemap-index.xml
 Sitemap: https://www.barrandodger.com/sitemap.xml
+Sitemap: https://www.barrandodger.com/sitemap-pdfs.xml
 
 # LLMs.txt — AI-readable site summary
 # https://barran-dodger-legal-ethical-trust.replit.app/llms.txt
