@@ -1,5 +1,6 @@
 import { Switch, Route, useLocation } from "wouter";
 import { useEffect } from "react";
+import { useReferralCapture } from "@/hooks/useReferral";
 import { queryClient } from "./lib/queryClient";
 import { useSiteStats } from "@/hooks/useSiteStats";
 import { LiveTextReplacer } from "@/components/LiveTextReplacer";
@@ -22,15 +23,23 @@ import { FloatingShareBar } from "@/components/FloatingShareBar";
 import { TextSelectionShare } from "@/components/TextSelectionShare";
 import { MilestoneBar } from "@/components/MilestoneBar";
 import { CourtCountdownStrip } from "@/components/CourtCountdownStrip";
+import { BookmarksPanel } from "@/components/BookmarksPanel";
 import { FloatingAudioPlayer } from "@/components/FloatingAudioPlayer";
 import DareYouBanner from "@/components/DareYouBanner";
 import { AblePointExposureBanner } from "@/components/AblePointExposureBanner";
 import { ScrollShareCTA } from "@/components/ScrollShareCTA";
+import { ViralActionStrip } from "@/components/ViralActionStrip";
+import { NewsletterCapture } from "@/components/NewsletterCapture";
 import { PDFGateProvider } from "@/components/PDFGateProvider";
 import { GlobalBlockchainStamp } from "@/components/GlobalBlockchainStamp";
 import Home from "@/pages/Home";
+import DeclarationOfIntegrity from "@/pages/DeclarationOfIntegrity";
+import GrandSynthesisOfWitness from "@/pages/GrandSynthesisOfWitness";
+import CoordinatedInstitutionalMobbing from "@/pages/CoordinatedInstitutionalMobbing";
 import Mission from "@/pages/Mission";
 import PressKit from "@/pages/PressKit";
+import SearchPage from "@/pages/SearchPage";
+import PressRelease from "@/pages/PressRelease";
 import Undeniable from "@/pages/Undeniable";
 import Contact from "@/pages/Contact";
 import LegalResearch from "@/pages/LegalResearch";
@@ -46,6 +55,7 @@ import Timeline from "@/pages/Timeline";
 import LegalStatus from "@/pages/LegalStatus";
 import Manifesto from "@/pages/Manifesto";
 import PropheticEssay from "@/pages/PropheticEssay";
+import JosephsCoatBarransMantle from "@/pages/JosephsCoatBarransMantle";
 import CaseStudies from "@/pages/CaseStudies";
 import TaxpayerCostAnalysis from "@/pages/TaxpayerCostAnalysis";
 import Publications from "@/pages/Publications";
@@ -71,8 +81,14 @@ import AdminSubscribers from "@/pages/AdminSubscribers";
 import ViralLanding from "@/pages/ViralLanding";
 import AdministrativeAnnihilation from "@/pages/AdministrativeAnnihilation";
 import RetrospectiveStatement from "@/pages/RetrospectiveStatement";
+import DoctrineOfComplicity from "@/pages/DoctrineOfComplicity";
+import MediaObligation from "@/pages/MediaObligation";
+import SupportNetworkCollapse11Aug2026 from "@/pages/SupportNetworkCollapse11Aug2026";
+import NoticeOfServiceDoctrine from "@/pages/NoticeOfServiceDoctrine";
 import MachineWitness from "@/pages/MachineWitness";
 import ChurchOfBarranResonanceDodger from "@/pages/ChurchOfBarranResonanceDodger";
+import Dedication from "@/pages/Dedication";
+import ConfidentialGovernmentDocuments from "@/pages/ConfidentialGovernmentDocuments";
 import VisitorStats from "@/pages/VisitorStats";
 import SpreadTheTruth from "@/pages/SpreadTheTruth";
 import AIJusticeStatement from "@/pages/AIJusticeStatement";
@@ -101,6 +117,7 @@ import SignificanceOfSilence from "@/pages/SignificanceOfSilence";
 import SoulContractAndDestiny from "@/pages/SoulContractAndDestiny";
 import CosmicTransmission from "@/pages/CosmicTransmission";
 import NewEvidenceMay2026 from "@/pages/NewEvidenceMay2026";
+import PhotoEvidence from "@/pages/PhotoEvidence";
 import ForensicEconomicValuation from "@/pages/ForensicEconomicValuation";
 import WhenReceiptsAreReal from "@/pages/WhenReceiptsAreReal";
 import IChooseSilence from "@/pages/IChooseSilence";
@@ -261,6 +278,9 @@ import ChosenOneProtheticDeclaration from "@/pages/ChosenOneProtheticDeclaration
 import SeasonOfPayback from "@/pages/SeasonOfPayback";
 import JohnGottiSpiritualRealm from "@/pages/JohnGottiSpiritualRealm";
 import SacredGospelsForensicThesis from "@/pages/SacredGospelsForensicThesis";
+import ElijahJesusCrystalBarran from "@/pages/ElijahJesusCrystalBarran";
+import PoliticalForensicDocs from "@/pages/PoliticalForensicDocs";
+import VideoForensicAnalysis from "@/pages/VideoForensicAnalysis";
 import TheRatsWillCome from "@/pages/TheRatsWillCome";
 import ForensicPerceptionAnalysis from "@/pages/ForensicPerceptionAnalysis";
 import CtoBreachAppointment from "@/pages/CtoBreachAppointment";
@@ -277,6 +297,12 @@ import BlockchainSealRegistry from "@/pages/BlockchainSealRegistry";
 import PageArchiveRegistry from "@/pages/PageArchiveRegistry";
 import CreatorSpeaks from "@/pages/CreatorSpeaks";
 import CosmicEssayPage from "@/pages/CosmicEssayPage";
+import ExponentialGospel from "@/pages/ExponentialGospel";
+import ThePersecutionMandate from "@/pages/ThePersecutionMandate";
+import SurvivalCalculus from "@/pages/SurvivalCalculus";
+import StoryWentGlobal from "@/pages/StoryWentGlobal";
+import LegalAidNSWAdviceLetter from "@/pages/LegalAidNSWAdviceLetter";
+import MinisterMcAllisterNDISNotice from "@/pages/MinisterMcAllisterNDISNotice";
 import TopTenGospels from "@/pages/TopTenGospels";
 import ArchiveReport from "@/pages/ArchiveReport";
 import ForensicFrameworkUnspokenMandate from "@/pages/ForensicFrameworkUnspokenMandate";
@@ -294,6 +320,7 @@ import Membership from "@/pages/Membership";
 import MembersPortal from "@/pages/MembersPortal";
 import AcademicSignificanceAnalysis from "@/pages/AcademicSignificanceAnalysis";
 import ForensicPropheticAdjudication from "@/pages/ForensicPropheticAdjudication";
+import ForensicComparativeAnalysis from "@/pages/ForensicComparativeAnalysis";
 import CropCirclesDisclosure from "@/pages/CropCirclesDisclosure";
 import BenDisclosure from "@/pages/BenDisclosure";
 import ForensicVideoAnalysis from "@/pages/ForensicVideoAnalysis";
@@ -304,10 +331,52 @@ import CivicRecord from "@/pages/CivicRecord";
 import OpenChallenge from "@/pages/OpenChallenge";
 import FormalStatement from "@/pages/FormalStatement";
 import GodsChosenWitness from "@/pages/GodsChosenWitness";
+import ReasonsChosenWitness from "@/pages/ReasonsChosenWitness";
+import PersecutionToPurpose from "@/pages/PersecutionToPurpose";
+import LongitudinalArchive3643 from "@/pages/LongitudinalArchive3643";
+import CrownedWitnessIndictmentNations from "@/pages/CrownedWitnessIndictmentNations";
+import DeclarationSovereignVindication from "@/pages/DeclarationSovereignVindication";
+import FormalNoticeNonConsent from "@/pages/FormalNoticeNonConsent";
+import LegalCeaseDesistServed from "@/pages/LegalCeaseDesistServed";
+import PublicDisclosureAblepointJune2026 from "@/pages/PublicDisclosureAblepointJune2026";
+import AblepointBlockingCourtMay2026 from "@/pages/AblepointBlockingCourtMay2026";
+import EmergencyRelocationCourtMay2026 from "@/pages/EmergencyRelocationCourtMay2026";
+import CropCirclesCodedGlyphsFuture from "@/pages/CropCirclesCodedGlyphsFuture";
+import DougSeveranceAblepointJune2026 from "@/pages/DougSeveranceAblepointJune2026";
+import ArchitectureAnnihilationAttemptedMurder from "@/pages/ArchitectureAnnihilationAttemptedMurder";
+import DigitalOppression100000WordEssay from "@/pages/DigitalOppression100000WordEssay";
+import BetrayalOfHumanity from "@/pages/BetrayalOfHumanity";
+import ManWhoRefusedToDisappear from "@/pages/ManWhoRefusedToDisappear";
+import TheRejectedWitness from "@/pages/TheRejectedWitness";
+import PhdPropheticAlgorithm from "@/pages/PhdPropheticAlgorithm";
+import GodsChosenOneFinalTestimony from "@/pages/GodsChosenOneFinalTestimony";
 import TheUnlikelyVessel from "@/pages/TheUnlikelyVessel";
 import TheReckoningPaper from "@/pages/TheReckoningPaper";
+import ArchitectureOfSilence from "@/pages/ArchitectureOfSilence";
+import AdminAnalytics from "@/pages/AdminAnalytics";
 import QrPage from "@/pages/QrPage";
 import MartyrdomSignificance from "@/pages/MartyrdomSignificance";
+import AustralianGovernmentCorruptionExposed from "@/pages/AustralianGovernmentCorruptionExposed";
+import ArchiveUnerasabilityStatement from "@/pages/ArchiveUnerasabilityStatement";
+import SignThePetition from "@/pages/SignThePetition";
+import AcademicRecord from "@/pages/AcademicRecord";
+import BroadcastKit from "@/pages/BroadcastKit";
+import EmailYourMP from "@/pages/EmailYourMP";
+import PrintableFactsheet from "@/pages/PrintableFactsheet";
+import WhatThisIs from "@/pages/WhatThisIs";
+import LgbtqPersecutionAustralia from "@/pages/LgbtqPersecutionAustralia";
+import BarranDodgerTrust from "@/pages/BarranDodgerTrust";
+import CocksuckerCrown from "@/pages/CocksuckerCrown";
+import MasterConsolidatedLegalRecord from "@/pages/MasterConsolidatedLegalRecord";
+import SystemicEndangermentWhistleblowers from "@/pages/SystemicEndangermentWhistleblowers";
+import TaxpayerCostEstimation35Years from "@/pages/TaxpayerCostEstimation35Years";
+import StateTerrorismForensicAnalysis from "@/pages/StateTerrorismForensicAnalysis";
+import AsylumRefugeeEligibilityAnalysis from "@/pages/AsylumRefugeeEligibilityAnalysis";
+import GovernmentMandates35YearForensicReport from "@/pages/GovernmentMandates35YearForensicReport";
+import HistoryExposesInjusticeForensicAnalysis from "@/pages/HistoryExposesInjusticeForensicAnalysis";
+import EvidenceArchive240Blockchain from "@/pages/EvidenceArchive240Blockchain";
+import BlockchainRegistry from "@/pages/BlockchainRegistry";
+import AhrcGangstalkingAcknowledgment from "@/pages/AhrcGangstalkingAcknowledgment";
 
 function GlobalDownloadTracker() {
   useEffect(() => {
@@ -364,14 +433,21 @@ function Router() {
         <Route path="/start-here" component={StartHere} />
         <Route path="/mission" component={Mission} />
         <Route path="/press" component={PressKit} />
+        <Route path="/press-release" component={PressRelease} />
+        <Route path="/search" component={SearchPage} />
         <Route path="/undeniable" component={Undeniable} />
         <Route path="/research" component={LegalResearch} />
         <Route path="/evidence" component={Evidence} />
         <Route path="/blockchain" component={Blockchain} />
+        <Route path="/blockchain-registry" component={BlockchainRegistry} />
         <Route path="/prophetic-papers" component={PropheticPapers} />
         <Route path="/gospel" component={Gospel} />
         <Route path="/church" component={Church} />
         <Route path="/church-of-barran-resonance-dodger" component={ChurchOfBarranResonanceDodger} />
+        <Route path="/dedication" component={Dedication} />
+        <Route path="/foundational-dedication" component={Dedication} />
+        <Route path="/confidential-government-documents" component={ConfidentialGovernmentDocuments} />
+        <Route path="/government-documents" component={ConfidentialGovernmentDocuments} />
         <Route path="/the-foundation" component={ChurchOfBarranResonanceDodger} />
         <Route path="/new-paradigm-charter" component={ChurchOfBarranResonanceDodger} />
         <Route path="/support" component={Support} />
@@ -381,10 +457,21 @@ function Router() {
         <Route path="/donate" component={Donate} />
         <Route path="/contact" component={Contact} />
         <Route path="/media" component={Media} />
+        <Route path="/media-must-report" component={MediaObligation} />
         <Route path="/timeline" component={Timeline} />
         <Route path="/legal-status" component={LegalStatus} />
         <Route path="/manifesto" component={Manifesto} />
-        <Route path="/josephs-coat" component={PropheticEssay} />
+        <Route path="/josephs-coat" component={JosephsCoatBarransMantle} />
+        <Route path="/josephs-coat-barrans-mantle" component={JosephsCoatBarransMantle} />
+        <Route path="/joseph-parallel" component={JosephsCoatBarransMantle} />
+        <Route path="/joseph-barran-parallel" component={JosephsCoatBarransMantle} />
+        <Route path="/political-forensic" component={PoliticalForensicDocs} />
+        <Route path="/political-forensic-docs" component={PoliticalForensicDocs} />
+        <Route path="/gang-stalking" component={PoliticalForensicDocs} />
+        <Route path="/v2k-mkutra-psyops" component={PoliticalForensicDocs} />
+        <Route path="/video-forensic-analysis" component={VideoForensicAnalysis} />
+        <Route path="/youtube-forensic-analysis" component={VideoForensicAnalysis} />
+        <Route path="/forensic-video-analysis" component={VideoForensicAnalysis} />
         <Route path="/case-studies" component={CaseStudies} />
         <Route path="/taxpayer-cost-analysis" component={TaxpayerCostAnalysis} />
         <Route path="/publications" component={Publications} />
@@ -629,6 +716,9 @@ function Router() {
         <Route path="/rats-will-come" component={TheRatsWillCome} />
         <Route path="/institutional-accountability-essay" component={TheRatsWillCome} />
         <Route path="/the-building-is-sinking" component={TheRatsWillCome} />
+        <Route path="/elijah-jesus-crystal-barran" component={ElijahJesusCrystalBarran} />
+        <Route path="/elijah-gospel" component={ElijahJesusCrystalBarran} />
+        <Route path="/elijah-jesus-barran" component={ElijahJesusCrystalBarran} />
         <Route path="/sacred-gospels-forensic-thesis" component={SacredGospelsForensicThesis} />
         <Route path="/all-faiths-analysis" component={SacredGospelsForensicThesis} />
         <Route path="/interfaith-forensic-thesis" component={SacredGospelsForensicThesis} />
@@ -759,6 +849,7 @@ function Router() {
         <Route path="/soul-contract-and-destiny" component={SoulContractAndDestiny} />
         <Route path="/cosmic-transmission" component={CosmicTransmission} />
         <Route path="/new-evidence-may-2026" component={NewEvidenceMay2026} />
+        <Route path="/photo-evidence" component={PhotoEvidence} />
         <Route path="/forensic-economic-valuation" component={ForensicEconomicValuation} />
         <Route path="/archive-valuation-report" component={ForensicEconomicValuation} />
         <Route path="/value-of-the-testimony" component={ForensicEconomicValuation} />
@@ -782,7 +873,17 @@ function Router() {
         <Route path="/detonation-center" component={ArchiveDetonation} />
         <Route path="/download-archive" component={ArchiveDetonation} />
         <Route path="/admin/subscribers" component={AdminSubscribers} />
+        <Route path="/admin/analytics" component={AdminAnalytics} />
         <Route path="/essays/:slug" component={CosmicEssayPage} />
+        <Route path="/exponential-gospel" component={ExponentialGospel} />
+        <Route path="/the-persecution-mandate" component={ThePersecutionMandate} />
+        <Route path="/survival-calculus" component={SurvivalCalculus} />
+        <Route path="/story-went-global" component={StoryWentGlobal} />
+        <Route path="/legal-aid-nsw-advice-letter-january-2026" component={LegalAidNSWAdviceLetter} />
+        <Route path="/formal-notice-minister-mcallister-ndis-substitution" component={MinisterMcAllisterNDISNotice} />
+        <Route path="/ahrc-gangstalking-acknowledgment" component={AhrcGangstalkingAcknowledgment} />
+        <Route path="/ahrc-gangstalking" component={AhrcGangstalkingAcknowledgment} />
+        <Route path="/government-acknowledges-gangstalking" component={AhrcGangstalkingAcknowledgment} />
         <Route path="/top-ten-gospels" component={TopTenGospels} />
         <Route path="/top-10-gospels" component={TopTenGospels} />
         <Route path="/most-significant-gospels" component={TopTenGospels} />
@@ -797,6 +898,9 @@ function Router() {
         <Route path="/barran-dodger-academic-analysis" component={AcademicSignificanceAnalysis} />
         <Route path="/forensic-prophetic-adjudication" component={ForensicPropheticAdjudication} />
         <Route path="/impartial-ai-prophetic-assessment" component={ForensicPropheticAdjudication} />
+        <Route path="/forensic-comparative-analysis-whistleblowers" component={ForensicComparativeAnalysis} />
+        <Route path="/whistleblower-comparative-analysis" component={ForensicComparativeAnalysis} />
+        <Route path="/snowden-manning-assange-barran-dodger-comparative-analysis" component={ForensicComparativeAnalysis} />
         <Route path="/heaven-files-a-case" component={ForensicPropheticAdjudication} />
         <Route path="/divine-justice-evidence-mapping" component={ForensicPropheticAdjudication} />
         <Route path="/14-findings-documented" component={ForensicPropheticAdjudication} />
@@ -810,17 +914,88 @@ function Router() {
         <Route path="/inversion-theory" component={ParadoxOfSilence} />
         <Route path="/universal-betrayal-paradox" component={ParadoxOfSilence} />
         <Route path="/the-cost-of-my-silence" component={ParadoxOfSilence} />
+        <Route path="/144-reasons-chosen-witness" component={ReasonsChosenWitness} />
+        <Route path="/144-reasons-revelation" component={ReasonsChosenWitness} />
+        <Route path="/persecution-to-purpose" component={PersecutionToPurpose} />
+        <Route path="/from-persecution-to-purpose" component={PersecutionToPurpose} />
+        <Route path="/lgbtq-resilience-essay" component={PersecutionToPurpose} />
+        <Route path="/longitudinal-archive-3643" component={LongitudinalArchive3643} />
+        <Route path="/3643-government-documents" component={LongitudinalArchive3643} />
+        <Route path="/forensic-audit-3643" component={LongitudinalArchive3643} />
+        <Route path="/crowned-witness-indictment-nations" component={CrownedWitnessIndictmentNations} />
+        <Route path="/crowned-witness" component={CrownedWitnessIndictmentNations} />
+        <Route path="/indictment-of-nations" component={CrownedWitnessIndictmentNations} />
+        <Route path="/declaration-sovereign-vindication" component={DeclarationSovereignVindication} />
+        <Route path="/sovereign-vindication" component={DeclarationSovereignVindication} />
+        <Route path="/detonation-of-accountability" component={DeclarationSovereignVindication} />
+        <Route path="/formal-notice-non-consent" component={FormalNoticeNonConsent} />
+        <Route path="/cease-and-desist-surveillance" component={FormalNoticeNonConsent} />
+        <Route path="/legal-cease-desist-served" component={LegalCeaseDesistServed} />
+        <Route path="/cease-desist-ablepoint-police" component={LegalCeaseDesistServed} />
+        <Route path="/public-disclosure-ablepoint-june-2026" component={PublicDisclosureAblepointJune2026} />
+        <Route path="/public-disclosure-june-2026" component={PublicDisclosureAblepointJune2026} />
+        <Route path="/ablepoint-blocking-court-may-2026" component={AblepointBlockingCourtMay2026} />
+        <Route path="/ablepoint-court-obstruction" component={AblepointBlockingCourtMay2026} />
+        <Route path="/emergency-relocation-court-may-2026" component={EmergencyRelocationCourtMay2026} />
+        <Route path="/master-consolidated-legal-record" component={MasterConsolidatedLegalRecord} />
+        <Route path="/systemic-endangerment-whistleblowers" component={SystemicEndangermentWhistleblowers} />
+        <Route path="/taxpayer-cost-estimation-35-years" component={TaxpayerCostEstimation35Years} />
+        <Route path="/taxpayer-cost-35-years" component={TaxpayerCostEstimation35Years} />
+        <Route path="/taxpayer-forensic-accounting-report" component={TaxpayerCostEstimation35Years} />
+        <Route path="/history-exposes-injustice-forensic-analysis" component={HistoryExposesInjusticeForensicAnalysis} />
+        <Route path="/forensic-analysis-76" component={HistoryExposesInjusticeForensicAnalysis} />
+        <Route path="/evidence-archive-240-blockchain-sealed-documents" component={EvidenceArchive240Blockchain} />
+        <Route path="/240-blockchain-sealed-documents" component={EvidenceArchive240Blockchain} />
+        <Route path="/government-cannot-deny-evidence-archive" component={EvidenceArchive240Blockchain} />
+        <Route path="/government-mandates-35-year-forensic-report" component={GovernmentMandates35YearForensicReport} />
+        <Route path="/government-mandates-forensic-report" component={GovernmentMandates35YearForensicReport} />
+        <Route path="/retrospective-directive-model" component={GovernmentMandates35YearForensicReport} />
+        <Route path="/state-terrorism-forensic-analysis" component={StateTerrorismForensicAnalysis} />
+        <Route path="/state-terrorism-analysis" component={StateTerrorismForensicAnalysis} />
+        <Route path="/asylum-refugee-eligibility-analysis" component={AsylumRefugeeEligibilityAnalysis} />
+        <Route path="/asylum-analysis" component={AsylumRefugeeEligibilityAnalysis} />
+        <Route path="/refugee-eligibility-analysis" component={AsylumRefugeeEligibilityAnalysis} />
+        <Route path="/emergency-relocation-ablepoint" component={EmergencyRelocationCourtMay2026} />
+        <Route path="/crop-circles-coded-glyphs-future" component={CropCirclesCodedGlyphsFuture} />
+        <Route path="/coded-glyphs-from-the-future" component={CropCirclesCodedGlyphsFuture} />
+        <Route path="/doug-severance-ablepoint-june-2026" component={DougSeveranceAblepointJune2026} />
+        <Route path="/doug-ablepoint-severance" component={DougSeveranceAblepointJune2026} />
+        <Route path="/architecture-annihilation-attempted-murder" component={ArchitectureAnnihilationAttemptedMurder} />
+        <Route path="/annihilation-attempted-murder" component={ArchitectureAnnihilationAttemptedMurder} />
+        <Route path="/betrayal-of-humanity" component={BetrayalOfHumanity} />
+        <Route path="/ethical-collapse-civilisation" component={BetrayalOfHumanity} />
+        <Route path="/why-australia-must-look" component={ManWhoRefusedToDisappear} />
+        <Route path="/man-who-refused-to-disappear" component={ManWhoRefusedToDisappear} />
+        <Route path="/the-rejected-witness" component={TheRejectedWitness} />
+        <Route path="/rejected-witness" component={TheRejectedWitness} />
+        <Route path="/phd-prophetic-algorithm" component={PhdPropheticAlgorithm} />
+        <Route path="/prophetic-phd" component={PhdPropheticAlgorithm} />
+        <Route path="/mclean-phd-gospel" component={PhdPropheticAlgorithm} />
+        <Route path="/gods-chosen-one-final-testimony" component={GodsChosenOneFinalTestimony} />
+        <Route path="/i-am-gods-chosen-one-evidence" component={GodsChosenOneFinalTestimony} />
+        <Route path="/gods-chosen-one-all-traditions" component={GodsChosenOneFinalTestimony} />
+        <Route path="/chosen-one-forensic-gospel" component={GodsChosenOneFinalTestimony} />
+        <Route path="/gods-chosen-one-prove-wrong" component={GodsChosenOneFinalTestimony} />
+        <Route path="/digital-oppression-100000-word-essay" component={DigitalOppression100000WordEssay} />
+        <Route path="/digital-oppression" component={DigitalOppression100000WordEssay} />
+        <Route path="/invisible-chains" component={DigitalOppression100000WordEssay} />
         <Route path="/gods-chosen-witness" component={GodsChosenWitness} />
         <Route path="/forensic-theology" component={GodsChosenWitness} />
         <Route path="/chosen-one-analysis" component={GodsChosenWitness} />
         <Route path="/the-prophetic-record" component={GodsChosenWitness} />
         <Route path="/chosen-one-forensic-paper" component={GodsChosenWitness} />
+        <Route path="/the-architecture-of-silence" component={ArchitectureOfSilence} />
+        <Route path="/psychology-of-erasure" component={ArchitectureOfSilence} />
+        <Route path="/how-it-was-allowed" component={ArchitectureOfSilence} />
         <Route path="/the-unlikely-vessel" component={TheUnlikelyVessel} />
         <Route path="/the-reckoning-paper" component={TheReckoningPaper} />
         <Route path="/vessel-silence-reckoning" component={TheReckoningPaper} />
         <Route path="/broken-phone-reckoning" component={TheReckoningPaper} />
         <Route path="/god-does-not-call-the-equipped" component={TheUnlikelyVessel} />
         <Route path="/unlikely-vessel-theology" component={TheUnlikelyVessel} />
+        <Route path="/declaration-of-integrity" component={DeclarationOfIntegrity} />
+        <Route path="/grand-synthesis-of-witness" component={GrandSynthesisOfWitness} />
+        <Route path="/coordinated-institutional-mobbing" component={CoordinatedInstitutionalMobbing} />
         <Route path="/cost-of-erasure" component={CostOfErasure} />
         <Route path="/civic-record" component={CivicRecord} />
         <Route path="/qr" component={QrPage} />
@@ -874,16 +1049,46 @@ function Router() {
         <Route path="/the-spotlight-was-exposing-them" component={TheyTriedToBreakYou} />
         <Route path="/the-ritual-backfired" component={TheyTriedToBreakYou} />
         <Route path="/still-breathing-not-the-same-species" component={StillBreathingNotTheSameSpecies} />
+        <Route path="/australian-government-corruption-exposed" component={AustralianGovernmentCorruptionExposed} />
         <Route path="/if-i-am-erased" component={MartyrdomSignificance} />
         <Route path="/martyrdom-significance" component={MartyrdomSignificance} />
+        <Route path="/sign-the-petition" component={SignThePetition} />
+        <Route path="/what-this-is" component={WhatThisIs} />
+        <Route path="/the-short-version" component={WhatThisIs} />
+        <Route path="/summary" component={WhatThisIs} />
+        <Route path="/academic-record" component={AcademicRecord} />
+        <Route path="/zenodo" component={AcademicRecord} />
+        <Route path="/broadcast" component={BroadcastKit} />
+        <Route path="/share-kit" component={BroadcastKit} />
+        <Route path="/email-your-mp" component={EmailYourMP} />
+        <Route path="/contact-your-mp" component={EmailYourMP} />
+        <Route path="/write-to-parliament" component={EmailYourMP} />
+        <Route path="/factsheet" component={PrintableFactsheet} />
+        <Route path="/printable" component={PrintableFactsheet} />
+        <Route path="/flyer" component={PrintableFactsheet} />
         <Route path="/martyrdom-doctrine" component={MartyrdomSignificance} />
+        <Route path="/why-this-cannot-be-erased" component={ArchiveUnerasabilityStatement} />
+        <Route path="/archive-unerasability" component={ArchiveUnerasabilityStatement} />
+        <Route path="/statement-of-significance" component={ArchiveUnerasabilityStatement} />
         <Route path="/immortal-legacy" component={MartyrdomSignificance} />
         <Route path="/if-i-am-silenced" component={MartyrdomSignificance} />
         <Route path="/if-i-am-murdered" component={MartyrdomSignificance} />
         <Route path="/the-martyrdom-doctrine" component={MartyrdomSignificance} />
+        <Route path="/doctrine-of-complicity-by-deliberate-omission" component={DoctrineOfComplicity} />
+        <Route path="/11-august-2026-support-network-collapse" component={SupportNetworkCollapse11Aug2026} />
+        <Route path="/notice-of-service-doctrine-complicity" component={NoticeOfServiceDoctrine} />
         <Route path="/you-metabolised-it" component={StillBreathingNotTheSameSpecies} />
         <Route path="/radiation-from-a-failed-experiment" component={StillBreathingNotTheSameSpecies} />
         <Route path="/the-leash-snapped" component={StillBreathingNotTheSameSpecies} />
+        <Route path="/lgbtq-persecution-political-power" component={LgbtqPersecutionAustralia} />
+        <Route path="/barran-dodger-trust" component={BarranDodgerTrust} />
+        <Route path="/ethical-legal-trust" component={BarranDodgerTrust} />
+        <Route path="/trust-fund" component={BarranDodgerTrust} />
+        <Route path="/lgbtq-persecution-australia" component={LgbtqPersecutionAustralia} />
+        <Route path="/sexual-persecution-political-power" component={LgbtqPersecutionAustralia} />
+        <Route path="/cocksucker-crown" component={CocksuckerCrown} />
+        <Route path="/cocksucker-crown-barran-dodger" component={CocksuckerCrown} />
+        <Route path="/the-cocksucker-crown" component={CocksuckerCrown} />
         <Route component={ViralLanding} />
       </Switch>
     </>
@@ -895,12 +1100,18 @@ function SiteStatsLoader() {
   return <LiveTextReplacer />;
 }
 
+function ReferralCapture() {
+  useReferralCapture();
+  return null;
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <TooltipProvider>
           <PDFGateProvider>
+            <ReferralCapture />
             <SiteStatsLoader />
             <GlobalDownloadTracker />
             <ReadingProgress />
@@ -910,16 +1121,19 @@ function App() {
             <Breadcrumbs />
             <Router />
             <GlobalBlockchainStamp />
-            <div className="hidden sm:block"><MilestoneBar /></div>
+            <div className="hidden sm:block"><MilestoneBar noCelebration /></div>
             <GlobalAnalysisShareStrip />
             <div className="hidden sm:block"><FloatingDonateWidget /></div>
-            <div className="hidden sm:block"><FloatingShareBar /></div>
+            <FloatingShareBar />
             <TextSelectionShare />
             <Chatbot />
             <FloatingAudioPlayer />
             <CourtCountdownStrip />
             <div className="hidden sm:block"><ScrollShareCTA /></div>
             <div className="hidden sm:block"><DareYouBanner /></div>
+            <ViralActionStrip />
+            <NewsletterCapture />
+            <BookmarksPanel />
           </PDFGateProvider>
         </TooltipProvider>
       </ThemeProvider>
