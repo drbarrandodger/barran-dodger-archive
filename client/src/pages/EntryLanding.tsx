@@ -2498,6 +2498,36 @@ export default function EntryLanding() {
         </div>
       </div>
 
+      {/* ── Media Obligation — AI Legal Analysis ── */}
+      <div
+        className="border-b"
+        style={{ background: "linear-gradient(90deg, #1a0a06 0%, #220e07 50%, #1a0a06 100%)", borderColor: "rgba(249,115,22,0.30)" }}
+      >
+        <div className="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-3 min-w-0">
+            <span className="text-lg flex-shrink-0">📰</span>
+            <div className="min-w-0">
+              <p className="text-white font-bold text-xs md:text-sm leading-tight">
+                AI Legal Analysis — Why Every Australian Media Outlet Is Obligated by Law to Report This Archive
+              </p>
+              <p className="text-zinc-500 text-[11px] hidden sm:block mt-0.5">
+                14 statutes cited · 6 international instruments · Suspected media ban exposed · $7B–$12B estimated cost of silence · Suspected bribes analysed
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <a
+              href="/media-must-report"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg font-bold text-xs transition-all whitespace-nowrap"
+              style={{ background: "#f97316", color: "#000" }}
+              data-testid="link-media-obligation-cta"
+            >
+              Read the Legal Case →
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* ── NEW: Grand Synthesis of Witness — 4 July 2026 ── */}
       <div
         className="border-b"
