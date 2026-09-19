@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PDF Archive — Barran Dodger</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#101827;color:white}
+header{padding:30px 20px;text-align:center;background:#18243a}
+main{max-width:1000px;margin:auto;padding:20px}
+input,select{width:100%;padding:14px;margin:7px 0 15px;background:#172238;color:white;border:1px solid #456;border-radius:7px;font-size:16px}
+.card{background:#172238;padding:16px;margin:12px 0;border-radius:8px;border:1px solid #293953}
+.card strong{font-size:18px}
+.card p{color:#b9c5d8}
+a{color:#8ecaff;font-weight:bold}
+.error{padding:20px;background:#321923;border-radius:8px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>PDF Archive</h1>
+<p>Public PDF catalogue — Barrandodger &amp; Wezzo72</p>
+<p><a href="index.html">← Back to Public Archive</a></p>
+</header>
+
+<main>
+
+<h2>Search the Documents</h2>
+
+<input id="search" type="search" placeholder="Search documents...">
+
+<select id="owner">
+<option value="">All sources</option>
+<option value="Barrandodger">Barrandodger</option>
+<option value="Wezzo72">Wezzo72</option>
+</select>
+
+<p id="count">Loading...</p>
+
+<div id="list">Loading PDFs...</div>
+
+</main>
+
+<script>
+
+let documents=[];
+
+async function load(){
+
+try{
+
+const response=await fetch(
+"public/data/documents.json",
+{cache:"no-store"}
+);
+
+if(!response.ok)
+throw new Error("PDF index could not be loaded.");
+
+const data=await response.json();
+
+documents=data.documents||[];
+
+render();
+
+}catch(error){
+
+document.getElementById("list").innerHTML=
+'<div class="error"><strong>'+
+error.message+
+'</strong></div>';
+
+document.getElementById("count").textContent="";
+
+}
+
+}
+
+
+function render(){
+
+const search=
+document.getElementById("search")
+.value.toLowerCase()
+.trim();
+
+const owner=
+document.getElementById("owner").value;
+
+const results=documents.filter(doc=>{
+
+const text=[
+doc.title,
+doc.path,
+doc.owner,
+doc.repository,
+doc.source
+]
+.filter(Boolean)
+.join(" ")
+.toLowerCase();
+
+return(
+(!search||text.includes(search)) &&
+(!owner||doc.owner===owner)
+);
+
+});
+
+
+document.getElementById("count").textContent=
+"Showing "+
+results.length+
+" of "+
+documents.length+
+" indexed PDFs";
+
+
+if(!results.length){
+
+document.getElementById("list").innerHTML=
+"<div class='card'>No matching documents found.</div>";
+
+return;
+
+}
+
+
+document.getElementById("list").innerHTML=
+results.map((doc,i)=>{
+
+const title=
+escapeHTML(doc.title||"Untitled PDF");
+
+const owner=
+escapeHTML(doc.owner||"");
+
+const repo=
+escapeHTML(doc.repository||"");
+
+const pdf=
+escapeURL(doc.raw_url||doc.url||"#");
+
+const github=
+escapeURL(doc.url||"#");
+
+return`
+
+<div class="card">
+
+<strong>
+${i+1}. ${title}
+</strong>
+
+<p>
+Owner: ${owner}<br>
+Repository: ${repo}
+</p>
+
+<p>
+<a href="${pdf}" target="_blank" rel="noopener">
+View / Download PDF
+</a>
+</p>
+
+<p>
+<a href="${github}" target="_blank" rel="noopener">
+View on GitHub
+</a>
+</p>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+function escapeHTML(value){
+
+return String(value)
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;")
+.replaceAll("'","&#039;");
+
+}
+
+
+function escapeURL(value){
+
+try{
+
+const url=new URL(value);
+
+if(url.protocol==="https:"||url.protocol==="http:")
+return escapeHTML(url.href);
+
+return "#";
+
+}catch{
+
+return "#";
+
+}
+
+}
+
+
+document.getElementById("search")
+.addEventListener("input",render);
+
+document.getElementById("owner")
+.addEventListener("change",render);
+
+load();
+
+</script>
+
+</body>
+</html>
