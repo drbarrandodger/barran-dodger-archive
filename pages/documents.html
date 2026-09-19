@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Archive — Barran Dodger</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #f4f6fb;
+      line-height: 1.5;
+    }
+
+    header {
+      padding: 35px 20px;
+      text-align: center;
+      background: #111a35;
+    }
+
+    header a {
+      color: #8ec5ff;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #394766;
+      background: #121a2e;
+      color: white;
+      font-size: 16px;
+    }
+
+    .stats {
+      margin: 15px 0;
+      color: #b8c4d8;
+    }
+
+    .document {
+      background: #121a2e;
+      border: 1px solid #293653;
+      border-radius: 10px;
+      padding: 18px;
+      margin: 12px 0;
+    }
+
+    .document h3 {
+      margin-top: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .meta {
+      color: #aebbd0;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 9px 13px;
+      margin-right: 7px;
+      margin-bottom: 5px;
+      border-radius: 7px;
+      background: #2459a6;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      text-decoration: underline;
+    }
+
+    .loading {
+      padding: 25px;
+      text-align: center;
+    }
+
+    .error {
+      background: #321722;
+      border: 1px solid #8b4055;
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 650px) {
+      .controls {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Document Archive</h1>
+  <p>Public PDF catalogue — Barrandodger &amp; Wezzo72</p>
+  <p><a href="../index.html">← Back to Public Archive</a></p>
+</header>
+
+<main>
+
+  <h2>Search the Documents</h2>
+
+  <div class="controls">
+    <input
+      id="search"
+      type="search"
+      placeholder="Search title, repository, owner or path..."
+      autocomplete="off"
+    >
+
+    <select id="owner">
+      <option value="all">All sources</option>
+      <option value="Barrandodger">Barrandodger</option>
+      <option value="Wezzo72">Wezzo72</option>
+    </select>
+  </div>
+
+  <div class="stats" id="stats">
+    Loading document catalogue...
+  </div>
+
+  <div id="documents">
+    <div class="loading">Loading PDFs...</div>
+  </div>
+
+</main>
+
+<script>
+  const searchBox = document.getElementById("search");
+  const ownerBox = document.getElementById("owner");
+  const stats = document.getElementById("stats");
+  const documentsBox = document.getElementById("documents");
+
+  let documents = [];
+
+  async function loadDocuments() {
+    try {
+      const response = await fetch("../data/documents.json", {
+        cache: "no-store"
+      });
+
+      if (!response.ok) {
+        throw new Error("Could not load documents.json");
+      }
+
+      const data = await response.json();
+      documents = Array.isArray(data.documents) ? data.documents : [];
+
+      render();
+    } catch (error) {
+      stats.textContent = "";
+      documentsBox.innerHTML = `
+        <div class="error">
+          <strong>Document catalogue could not be loaded.</strong>
+          <p>${escapeHtml(error.message)}</p>
+        </div>
+      `;
+    }
+  }
+
+  function render() {
+    const query = searchBox.value.trim().toLowerCase();
+    const owner = ownerBox.value;
+
+    const filtered = documents.filter(doc => {
+      const matchesOwner =
+        owner === "all" || doc.owner === owner;
+
+      const searchable = [
+        doc.title,
+        doc.path,
+        doc.owner,
+        doc.repository,
+        doc.source
+      ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+
+      const matchesSearch =
+        !query || searchable.includes(query);
+
+      return matchesOwner && matchesSearch;
+    });
+
+    stats.textContent =
+      `Showing ${filtered.length} of ${documents.length} indexed PDFs`;
+
+    if (!filtered.length) {
+      documentsBox.innerHTML = `
+        <div class="document">
+          <strong>No matching documents found.</strong>
+        </div>
+      `;
+      return;
+    }
+
+    documentsBox.innerHTML = filtered.map((doc, index) => {
+      const title = escapeHtml(doc.title || "Untitled PDF");
+      const owner = escapeHtml(doc.owner || "");
+      const repository = escapeHtml(doc.repository || "");
+      const path = escapeHtml(doc.path || "");
+      const source = escapeHtml(doc.source || "");
+
+      const pdfUrl = doc.raw_url || doc.url || "#";
+      const githubUrl = doc.url || "#";
+
+      return `
+        <article class="document">
+          <h3>${index + 1}. ${title}</h3>
+
+          <div class="meta">
+            <strong>Owner:</strong> ${owner}<br>
+            <strong>Repository:</strong> ${repository}<br>
+            <strong>Path:</strong> ${path}<br>
+            <strong>Source:</strong> ${source}
+          </div>
+
+          <a class="button"
+             href="${safeUrl(pdfUrl)}"
+             target="_blank"
+             rel="noopener">
+             View / Download PDF
+          </a>
+
+          <a class="button"
+             href="${safeUrl(githubUrl)}"
+             target="_blank"
+             rel="noopener">
+             View on GitHub
+          </a>
+        </article>
+      `;
+    }).join("");
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function safeUrl(value) {
+    try {
+      const url = new URL(value, window.location.href);
+
+      if (
+        url.protocol === "https:" ||
+        url.protocol === "http:"
+      ) {
+        return escapeHtml(url.href);
+      }
+
+      return "#";
+    } catch {
+      return "#";
+    }
+  }
+
+  searchBox.addEventListener("input", render);
+  ownerBox.addEventListener("change", render);
+
+  loadDocuments();
+</script>
+
+</body>
+</html>
