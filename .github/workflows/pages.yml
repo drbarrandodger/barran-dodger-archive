@@ -9,6 +9,7 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,7 +20,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: npm install --legacy-peer-deps
 
       - name: Remove Tailwind v4 packages (prevent CSS conflict)
         run: |
@@ -29,9 +30,14 @@ jobs:
                  node_modules/@tailwindcss/oxide \
                  node_modules/@tailwindcss/oxide-linux-x64-gnu \
                  node_modules/@tailwindcss/oxide-linux-x64-musl
+
           TW=$(node -p "require('./node_modules/tailwindcss/package.json').version" 2>/dev/null || echo "ERROR")
           echo "Tailwindcss version: $TW"
-          if [[ "$TW" != 3* ]]; then echo "ERROR: tailwindcss is not v3!" && exit 1; fi
+
+          if [[ "$TW" != 3* ]]; then
+            echo "ERROR: tailwindcss is not v3!"
+            exit 1
+          fi
 
       - name: Clear old dist
         run: rm -rf dist/ghpages
