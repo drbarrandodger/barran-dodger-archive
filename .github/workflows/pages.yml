@@ -1,60 +1,46 @@
-name: Deploy to GitHub Pages
+name: Deploy Simple GitHub Pages Site
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Prepare website
+        run: |
+          mkdir -p _site/data
+          cp index.html _site/index.html
+          cp public/data/documents.json _site/data/documents.json
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
         with:
-          node-version: '20'
+          path: ./_site
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
-
-      - name: Check Tailwind version
-        run: |
-          TW=$(node -p "require('./node_modules/tailwindcss/package.json').version" 2>/dev/null || echo "ERROR")
-          echo "Tailwindcss version: $TW"
-
-      - name: Clear old dist
-        run: rm -rf dist/ghpages
-
-      - name: Build frontend for GitHub Pages
-        run: NODE_ENV=production npx vite build --config vite.config.gh-pages.ts
-
-      - name: Show build results
-        run: |
-          ls -la dist/ghpages/
-          ls dist/ghpages/assets/ | wc -l
-          du -sh dist/ghpages/
-
-      - name: Add SPA 404 routing and .nojekyll
-        run: |
-          cp dist/ghpages/index.html dist/ghpages/404.html
-          touch dist/ghpages/.nojekyll
-
-      - name: Remove oversized directories
-        run: |
-          rm -rf dist/ghpages/documents dist/ghpages/audio dist/ghpages/video
-          du -sh dist/ghpages/
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/ghpages
-          force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'Deploy: ${{ github.sha }}'
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
