@@ -5,239 +5,523 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Barran Dodger — Public Archive</title>
 <meta name="description" content="Public archive of research, publications, books, art and documentary materials associated with Barran Dodger.">
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f7f3ea;color:#252018}
-header{background:#241b14;color:white;padding:35px 20px;text-align:center}
-header h1{margin:0 0 10px;font-size:clamp(2rem,7vw,4rem)}
-header p{margin:0;color:#ddd;font-size:1.05rem}
-nav{background:#3b2a1d;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
-nav a{color:white;text-decoration:none;margin:0 10px;display:inline-block;padding:7px}
-main{max-width:1100px;margin:auto;padding:25px 16px}
-.hero{background:white;border-radius:14px;padding:30px;margin-bottom:25px;box-shadow:0 3px 15px #0001}
-.hero h2{font-size:2rem;margin-top:0}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin:25px 0}
-.stat{background:#fff;padding:20px;border-radius:12px;text-align:center;box-shadow:0 2px 10px #0001}
-.stat strong{display:block;font-size:2rem;color:#7b481f}
-.controls{background:white;padding:20px;border-radius:12px;margin-bottom:20px}
-input,select{width:100%;padding:13px;margin-top:8px;margin-bottom:15px;border:1px solid #bbb;border-radius:8px;font-size:16px}
-.grid{display:grid;gap:15px}
-.document{background:white;padding:18px;border-radius:10px;border-left:5px solid #8a5727;box-shadow:0 2px 8px #0001}
-.document h3{margin:0 0 8px;font-size:1.05rem;word-break:break-word}
-.document p{margin:5px 0;color:#665d54;font-size:.9rem}
-.button{display:inline-block;margin-top:10px;padding:10px 15px;background:#7b481f;color:white;text-decoration:none;border-radius:7px}
-section{margin:45px 0}
-footer{background:#241b14;color:#ddd;text-align:center;padding:30px 20px;margin-top:50px}
-.small{color:#756d64;font-size:.9rem}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f3ea;
+  color:#252018;
+  line-height:1.6;
+}
+
+header{
+  background:#241b14;
+  color:white;
+  padding:45px 20px;
+  text-align:center;
+}
+
+header h1{
+  margin:0 0 10px;
+  font-size:clamp(2.2rem,8vw,4.5rem);
+}
+
+header p{
+  margin:0;
+  color:#ddd;
+  font-size:1.05rem;
+}
+
+nav{
+  background:#3b2a1d;
+  padding:12px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:4px 8px;
+  display:inline-block;
+  padding:7px 10px;
+}
+
+nav a:hover{
+  background:#5b402c;
+  border-radius:6px;
+}
+
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:25px 16px;
+}
+
+.hero{
+  background:white;
+  border-radius:14px;
+  padding:30px;
+  margin-bottom:25px;
+  box-shadow:0 3px 15px #0001;
+}
+
+.hero h2{
+  font-size:2rem;
+  margin-top:0;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+  margin:25px 0;
+}
+
+.stat{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 2px 10px #0001;
+}
+
+.stat strong{
+  display:block;
+  font-size:2rem;
+  color:#7b481f;
+}
+
+.controls{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 2px 10px #0001;
+}
+
+input,select{
+  width:100%;
+  padding:13px;
+  margin-top:8px;
+  margin-bottom:15px;
+  border:1px solid #bbb;
+  border-radius:8px;
+  font-size:16px;
+}
+
+.grid{
+  display:grid;
+  gap:15px;
+}
+
+.document{
+  background:white;
+  padding:18px;
+  border-radius:10px;
+  border-left:5px solid #8a5727;
+  box-shadow:0 2px 8px #0001;
+}
+
+.document h3{
+  margin:0 0 8px;
+  font-size:1.05rem;
+  word-break:break-word;
+}
+
+.document p{
+  margin:5px 0;
+  color:#665d54;
+  font-size:.9rem;
+  word-break:break-word;
+}
+
+.button{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 15px;
+  background:#7b481f;
+  color:white;
+  text-decoration:none;
+  border-radius:7px;
+}
+
+.button:hover{
+  background:#573116;
+}
+
+section{
+  margin:45px 0;
+}
+
+.small{
+  color:#756d64;
+  font-size:.9rem;
+}
+
+footer{
+  background:#241b14;
+  color:#ddd;
+  text-align:center;
+  padding:35px 20px;
+  margin-top:50px;
+}
+
+.loading{
+  padding:20px;
+  background:white;
+  border-radius:10px;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Barran Dodger</h1>
-<p>Public Archive • Research • Books • Art • Documentary Record</p>
+  <h1>Barran Dodger</h1>
+  <p>Public Archive • Research • Books • Art • Documentary Record</p>
 </header>
 
 <nav>
-<a href="#archive">Archive</a>
-<a href="#books">Books</a>
-<a href="#art">Art</a>
-<a href="#research">Research</a>
-<a href="#about">About</a>
+  <a href="#archive">Archive</a>
+  <a href="#books">Books</a>
+  <a href="#art">Art</a>
+  <a href="#research">Research</a>
+  <a href="#about">About</a>
 </nav>
 
 <main>
 
 <section class="hero">
-<h2>Public Archive</h2>
-<p>
-This website provides public access to research, publications, artwork,
-books and documentary materials associated with Barran Dodger.
-</p>
-<p class="small">
-The document catalogue is generated automatically from publicly accessible
-GitHub repositories associated with the Barrandodger and Wezzo72 accounts.
-</p>
+  <h2>Public Archive</h2>
+
+  <p>
+    This website provides public access to research, publications,
+    artwork, books and documentary materials associated with Barran Dodger.
+  </p>
+
+  <p class="small">
+    The document catalogue is generated automatically from publicly
+    accessible GitHub repositories associated with the Barrandodger
+    and Wezzo72 accounts.
+  </p>
 </section>
 
 <div class="stats">
-<div class="stat">
-<strong id="pdfCount">Loading…</strong>
-PDF documents
-</div>
-<div class="stat">
-<strong>2</strong>
-GitHub profiles
-</div>
-<div class="stat">
-<strong>Public</strong>
-Archive
-</div>
+
+  <div class="stat">
+    <strong id="pdfCount">Loading…</strong>
+    <span>PDF documents</span>
+  </div>
+
+  <div class="stat">
+    <strong>2</strong>
+    <span>GitHub profiles</span>
+  </div>
+
+  <div class="stat">
+    <strong>Public</strong>
+    <span>Archive</span>
+  </div>
+
 </div>
 
 <section id="archive">
+
 <h2>📚 PDF Archive</h2>
 
 <div class="controls">
-<label for="search">Search the archive</label>
-<input id="search" type="search" placeholder="Search documents, repositories or filenames…">
 
-<label for="owner">Filter by account</label>
-<select id="owner">
-<option value="">All accounts</option>
-<option value="Barrandodger">Barrandodger</option>
-<option value="Wezzo72">Wezzo72</option>
-</select>
+  <label for="search">
+    <strong>Search the archive</strong>
+  </label>
+
+  <input
+    id="search"
+    type="search"
+    placeholder="Search documents, repositories or filenames…"
+  >
+
+  <label for="owner">
+    <strong>Filter by account</strong>
+  </label>
+
+  <select id="owner">
+    <option value="">All accounts</option>
+    <option value="Barrandodger">Barrandodger</option>
+    <option value="Wezzo72">Wezzo72</option>
+  </select>
+
 </div>
 
-<p id="status">Loading documents…</p>
-<div id="documents" class="grid"></div>
+<p id="status" class="small">Loading documents…</p>
+
+<div id="documents" class="grid">
+  <div class="loading">
+    Loading PDF archive…
+  </div>
+</div>
+
 </section>
 
 <section id="books">
+
 <h2>📖 Books & Publications</h2>
+
 <div class="hero">
+
 <h3>Recovered, Not Cured</h3>
-<p>A Journey Through Schizophrenia.</p>
-<p class="small">
-This section can be expanded with links to books, publishers,
-Apple Books, Simplebooklet and other publications.
+
+<p>
+  <strong>A Journey Through Schizophrenia</strong>
 </p>
+
+<p>
+  This section provides a place for books, publications and
+  related literary work.
+</p>
+
 </div>
+
 </section>
 
 <section id="art">
+
 <h2>🎨 Art & Creative Work</h2>
+
 <div class="hero">
+
 <p>
-A public catalogue for artwork, visual material and creative projects
-associated with Barran Dodger.
+  A public catalogue for artwork, visual material and creative
+  projects associated with Barran Dodger.
 </p>
+
 </div>
+
 </section>
 
 <section id="research">
+
 <h2>🔬 Research & Documentary Record</h2>
+
 <div class="hero">
+
 <p>
-This section provides access to research material and documentary records.
-Individual documents should be assessed according to their source,
-provenance, context and evidentiary status.
+  This section provides access to research material and documentary
+  records. Individual documents should be assessed according to
+  their source, provenance, context and evidentiary status.
 </p>
+
 </div>
+
 </section>
 
 <section id="about">
+
 <h2>About</h2>
+
 <div class="hero">
+
 <p>
-Barran Dodger is the public-facing name associated with this archive.
-The archive is intended to preserve and make discoverable documentary,
-creative and research materials.
+  Barran Dodger is the public-facing name associated with this archive.
+  The archive is intended to preserve and make discoverable documentary,
+  creative and research materials.
 </p>
+
 </div>
+
 </section>
 
 </main>
 
 <footer>
+
 <p>© Barran Dodger — Public Archive</p>
-<p class="small">Documents remain hosted at their respective public GitHub repositories.</p>
+
+<p class="small">
+  Documents remain hosted at their respective public GitHub repositories.
+</p>
+
 </footer>
 
+
 <script>
+
 let documents = [];
 
-async function loadDocuments() {
-  const locations = [
-    "data/documents.json",
-    "public/data/documents.json",
-    "../data/documents.json"
-  ];
+async function loadDocuments(){
 
-  for (const location of locations) {
-    try {
-      const response = await fetch(location);
-      if (!response.ok) continue;
+  try{
 
-      const data = await response.json();
-      documents = data.documents || [];
+    const response = await fetch(
+      "data/documents.json"
+    );
 
-      document.getElementById("pdfCount").textContent = documents.length;
-      render();
-      return;
-    } catch (error) {}
+    if(!response.ok){
+      throw new Error("PDF index unavailable");
+    }
+
+    const data = await response.json();
+
+    documents = data.documents || [];
+
+    document.getElementById("pdfCount").textContent =
+      documents.length;
+
+    render();
+
+  }catch(error){
+
+    document.getElementById("pdfCount").textContent = "—";
+
+    document.getElementById("status").textContent =
+      "PDF catalogue is temporarily unavailable.";
+
+    document.getElementById("documents").innerHTML =
+      "<div class='hero'><p>The archive index could not be loaded.</p></div>";
+
   }
 
-  document.getElementById("pdfCount").textContent = "0";
-  document.getElementById("status").textContent =
-    "The PDF catalogue could not be loaded yet.";
 }
 
-function render() {
-  const search = document.getElementById("search").value.toLowerCase();
-  const owner = document.getElementById("owner").value;
 
-  const filtered = documents.filter(doc => {
-    const text = [
-      doc.title,
-      doc.path,
-      doc.owner,
-      doc.repository,
-      doc.source
-    ].join(" ").toLowerCase();
+function render(){
 
-    return text.includes(search) &&
-           (!owner || doc.owner === owner);
-  });
+  const search =
+    document
+      .getElementById("search")
+      .value
+      .toLowerCase()
+      .trim();
+
+  const owner =
+    document
+      .getElementById("owner")
+      .value;
+
+  const filtered =
+    documents.filter(function(doc){
+
+      const searchable = [
+
+        doc.title,
+        doc.path,
+        doc.owner,
+        doc.repository,
+        doc.source
+
+      ].join(" ").toLowerCase();
+
+      return searchable.includes(search) &&
+        (!owner || doc.owner === owner);
+
+    });
+
 
   document.getElementById("status").textContent =
-    `${filtered.length} document${filtered.length === 1 ? "" : "s"} found`;
+    filtered.length +
+    " document" +
+    (filtered.length === 1 ? "" : "s") +
+    " found";
 
-  const container = document.getElementById("documents");
+
+  const container =
+    document.getElementById("documents");
+
   container.innerHTML = "";
 
-  if (!filtered.length) {
+
+  if(!filtered.length){
+
     container.innerHTML =
       "<div class='hero'><p>No matching documents found.</p></div>";
+
     return;
+
   }
 
-  filtered.forEach(doc => {
-    const item = document.createElement("article");
+
+  filtered.forEach(function(doc){
+
+    const item =
+      document.createElement("article");
+
     item.className = "document";
 
-    const title = document.createElement("h3");
-    title.textContent = doc.title || "PDF document";
 
-    const info = document.createElement("p");
+    const title =
+      document.createElement("h3");
+
+    title.textContent =
+      doc.title || "PDF document";
+
+
+    const info =
+      document.createElement("p");
+
     info.textContent =
-      `${doc.owner || ""} • ${doc.repository || ""}`;
+      (doc.owner || "") +
+      " • " +
+      (doc.repository || "");
 
-    const path = document.createElement("p");
-    path.textContent = doc.path || "";
 
-    const link = document.createElement("a");
+    const path =
+      document.createElement("p");
+
+    path.textContent =
+      doc.path || "";
+
+
+    const link =
+      document.createElement("a");
+
     link.className = "button";
-    link.href = doc.url || doc.raw_url || "#";
+
+    link.href =
+      doc.url ||
+      doc.raw_url ||
+      "#";
+
     link.target = "_blank";
-    link.rel = "noopener";
-    link.textContent = "View PDF";
+
+    link.rel = "noopener noreferrer";
+
+    link.textContent =
+      "View PDF";
+
 
     item.appendChild(title);
+
     item.appendChild(info);
+
     item.appendChild(path);
+
     item.appendChild(link);
 
     container.appendChild(item);
+
   });
+
 }
 
-document.getElementById("search").addEventListener("input", render);
-document.getElementById("owner").addEventListener("change", render);
+
+document
+  .getElementById("search")
+  .addEventListener("input", render);
+
+
+document
+  .getElementById("owner")
+  .addEventListener("change", render);
+
 
 loadDocuments();
+
 </script>
 
 </body>
