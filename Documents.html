@@ -1,225 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PDF Archive — Barran Dodger</title>
-<style>
-body{font-family:Arial,sans-serif;margin:0;background:#101827;color:white}
-header{padding:30px 20px;text-align:center;background:#18243a}
-main{max-width:1000px;margin:auto;padding:20px}
-input,select{width:100%;padding:14px;margin:7px 0 15px;background:#172238;color:white;border:1px solid #456;border-radius:7px;font-size:16px}
-.card{background:#172238;padding:16px;margin:12px 0;border-radius:8px;border:1px solid #293953}
-.card strong{font-size:18px}
-.card p{color:#b9c5d8}
-a{color:#8ecaff;font-weight:bold}
-.error{padding:20px;background:#321923;border-radius:8px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barran Dodger Archive — Phase 3 Review</title>
+  <meta name="description" content="Phase 3 provenance, taxonomy, and route review for the Barran Dodger archive. Collection routes and family routes are layered on top of preserved paths and summary-first metadata.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/archive-foundation.css">
 </head>
 <body>
-
-<header>
-<h1>PDF Archive</h1>
-<p>Public PDF catalogue — Barrandodger &amp; Wezzo72</p>
-<p><a href="index.html">← Back to Public Archive</a></p>
-</header>
-
-<main>
-
-<h2>Search the Documents</h2>
-
-<input id="search" type="search" placeholder="Search documents...">
-
-<select id="owner">
-<option value="">All sources</option>
-<option value="Barrandodger">Barrandodger</option>
-<option value="Wezzo72">Wezzo72</option>
-</select>
-
-<p id="count">Loading...</p>
-
-<div id="list">Loading PDFs...</div>
-
-</main>
-
-<script>
-
-let documents=[];
-
-async function load(){
-
-try{
-
-const response=await fetch(
-"public/data/documents.json",
-{cache:"no-store"}
-);
-
-if(!response.ok)
-throw new Error("PDF index could not be loaded.");
-
-const data=await response.json();
-
-documents=data.documents||[];
-
-render();
-
-}catch(error){
-
-document.getElementById("list").innerHTML=
-'<div class="error"><strong>'+
-error.message+
-'</strong></div>';
-
-document.getElementById("count").textContent="";
-
-}
-
-}
-
-
-function render(){
-
-const search=
-document.getElementById("search")
-.value.toLowerCase()
-.trim();
-
-const owner=
-document.getElementById("owner").value;
-
-const results=documents.filter(doc=>{
-
-const text=[
-doc.title,
-doc.path,
-doc.owner,
-doc.repository,
-doc.source
-]
-.filter(Boolean)
-.join(" ")
-.toLowerCase();
-
-return(
-(!search||text.includes(search)) &&
-(!owner||doc.owner===owner)
-);
-
-});
-
-
-document.getElementById("count").textContent=
-"Showing "+
-results.length+
-" of "+
-documents.length+
-" indexed PDFs";
-
-
-if(!results.length){
-
-document.getElementById("list").innerHTML=
-"<div class='card'>No matching documents found.</div>";
-
-return;
-
-}
-
-
-document.getElementById("list").innerHTML=
-results.map((doc,i)=>{
-
-const title=
-escapeHTML(doc.title||"Untitled PDF");
-
-const owner=
-escapeHTML(doc.owner||"");
-
-const repo=
-escapeHTML(doc.repository||"");
-
-const pdf=
-escapeURL(doc.raw_url||doc.url||"#");
-
-const github=
-escapeURL(doc.url||"#");
-
-return`
-
-<div class="card">
-
-<strong>
-${i+1}. ${title}
-</strong>
-
-<p>
-Owner: ${owner}<br>
-Repository: ${repo}
-</p>
-
-<p>
-<a href="${pdf}" target="_blank" rel="noopener">
-View / Download PDF
-</a>
-</p>
-
-<p>
-<a href="${github}" target="_blank" rel="noopener">
-View on GitHub
-</a>
-</p>
-
-</div>
-
-`;
-
-}).join("");
-
-}
-
-
-function escapeHTML(value){
-
-return String(value)
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;")
-.replaceAll('"',"&quot;")
-.replaceAll("'","&#039;");
-
-}
-
-
-function escapeURL(value){
-
-try{
-
-const url=new URL(value);
-
-if(url.protocol==="https:"||url.protocol==="http:")
-return escapeHTML(url.href);
-
-return "#";
-
-}catch{
-
-return "#";
-
-}
-
-}
-
-
-document.getElementById("search")
-.addEventListener("input",render);
-
-document.getElementById("owner")
-.addEventListener("change",render);
-
-load();
-
-</script>
-
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-kicker">Phase 3 · Provenance and route review</p>
+      <h1 class="site-title">Archive review</h1>
+      <p class="site-summary">
+        Phase 3 refines provenance review, route-level collection pages, taxonomy review and publication controls
+        without altering the underlying archive files. Full record metadata remains an on-demand layer.
+      </p>
+    </div>
+  </header>
+
+  <div class="site-nav-wrap">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="./index.html">Home</a>
+      <a href="#publication-controls">Publication controls</a>
+      <a href="#collections">Collections</a>
+      <a href="#writing-families">Writing families</a>
+      <a href="#search-shell">Record search</a>
+    </nav>
+  </div>
+
+  <main class="page-main" id="main-content">
+    <section class="section">
+      <div class="notice">
+        <strong>Phase 3 boundary:</strong>
+        this page loads collection summaries first, then points into Phase 3 collection and family routes. The full record inventory is still fetched only when you request it through the record-search controls.
+      </div>
+    </section>
+
+    <section class="section" id="publication-controls">
+      <h2>Publication controls</h2>
+      <p>
+        Publication scope is now separated from preservation scope. Some records are public records, some are public metadata only,
+        and some remain internal-only inventory references.
+      </p>
+      <div class="grid grid-3" id="publication-control-cards"></div>
+    </section>
+
+    <section class="section" id="collections">
+      <h2>Collection summaries</h2>
+      <div class="grid grid-3" id="collection-summary-cards"></div>
+      <div class="notice small" id="collection-government-evidence">Government evidence remains catalogued with public metadata-sensitive handling until later per-record review.</div>
+      <div class="notice small" id="collection-attached-assets">Attached assets remain preserved as metadata-only entries in the public shell unless later review explicitly broadens publication.</div>
+    </section>
+
+    <section class="section" id="writing-families">
+      <h2>Writing families</h2>
+      <p>
+        Phase 2 explicitly carries forward preserved families including gospels, prophetic writing, and essays on technology and targeting.
+      </p>
+      <div class="grid grid-3" id="genre-family-cards"></div>
+      <div class="notice small" id="family-gospels">Gospel writing records are preserved as a distinct family for later review and article-level presentation.</div>
+      <div class="notice small" id="family-prophetic-writing">Prophetic writing records are preserved distinctly from official records and general essays.</div>
+      <div class="notice small" id="family-technology-targeting-essays">Technology and targeting essays remain preserved as a separate family for later curation.</div>
+      <div class="notice small" id="route-mapping-summary"></div>
+    </section>
+
+    <section class="section" id="search-shell">
+      <h2>On-demand record search</h2>
+      <form class="search-shell" id="catalogue-search-form">
+        <div class="search-shell-controls">
+          <div>
+            <label for="catalogue-search">Search record title or path</label>
+            <input id="catalogue-search" type="search" placeholder="Search titles, paths, families, or source repositories">
+          </div>
+          <div>
+            <label for="catalogue-collection">Filter collection</label>
+            <select id="catalogue-collection">
+              <option value="">All collections</option>
+            </select>
+          </div>
+          <div>
+            <label for="catalogue-family">Filter writing family</label>
+            <select id="catalogue-family">
+              <option value="">All families</option>
+            </select>
+          </div>
+          <div>
+            <label for="catalogue-publication">Filter publication status</label>
+            <select id="catalogue-publication">
+              <option value="">All publication states</option>
+            </select>
+          </div>
+        </div>
+        <p><button type="submit" class="card-link" id="button-search-inventory">Search inventory</button> <button type="button" class="card-link" id="button-load-inventory">Load full record inventory</button></p>
+        <p class="search-results-count" id="catalogue-count" role="status" aria-live="polite">Loading summary inventory…</p>
+        <p class="small" id="inventory-load-state">The full record inventory has not been loaded yet.</p>
+        <div class="result-list" id="catalogue-results"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="footer-note">Phase 3 keeps original evidence in place while adding provenance review, route-level collection pages, and tighter publication-boundary summaries.</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/archive-foundation.js"></script>
+  <script>
+    const collectionsUrl = './data/archive-collections.json';
+    const recordsUrl = './data/archive-records.json';
+
+    const collectionSummaryCards = document.getElementById('collection-summary-cards');
+    const publicationControlCards = document.getElementById('publication-control-cards');
+    const genreFamilyCards = document.getElementById('genre-family-cards');
+    const routeMappingSummary = document.getElementById('route-mapping-summary');
+    const searchForm = document.getElementById('catalogue-search-form');
+    const countEl = document.getElementById('catalogue-count');
+    const loadStateEl = document.getElementById('inventory-load-state');
+    const resultsEl = document.getElementById('catalogue-results');
+    const buttonLoadInventory = document.getElementById('button-load-inventory');
+    const searchInput = document.getElementById('catalogue-search');
+    const collectionFilter = document.getElementById('catalogue-collection');
+    const familyFilter = document.getElementById('catalogue-family');
+    const publicationFilter = document.getElementById('catalogue-publication');
+
+    let summaryData = null;
+    let recordData = null;
+    let recordsPromise = null;
+
+    function escapeHtml(value) {
+      return ArchiveFoundation.escapeHtml(value);
+    }
+
+    function optionMarkup(value, label) {
+      return '<option value="' + escapeHtml(value) + '">' + escapeHtml(label) + '</option>';
+    }
+
+    function handleAsyncError(error) {
+      const message = error && error.message ? error.message : 'Unable to load the requested archive inventory data.';
+      loadStateEl.textContent = message;
+      countEl.textContent = message;
+      resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Inventory unavailable</h3><p>' + escapeHtml(message) + '</p></article>';
+    }
+
+    function populateFilters() {
+      if (!summaryData) return;
+      collectionFilter.innerHTML = '<option value="">All collections</option>' + summaryData.collection_summaries.map(function (entry) {
+        return optionMarkup(entry.collection_key, entry.collection_label + ' (' + entry.record_count + ')');
+      }).join('');
+      familyFilter.innerHTML = '<option value="">All families</option>' + summaryData.genre_family_summaries.map(function (entry) {
+        return optionMarkup(entry.genre_family, entry.genre_family + ' (' + entry.record_count + ')');
+      }).join('');
+      const publicationEntries = Array.from(new Map(summaryData.publication_controls.map(function (entry) {
+        return [entry.publication_status, entry.publication_status];
+      })).keys());
+      publicationFilter.innerHTML = '<option value="">All publication states</option>' + publicationEntries.map(function (status) {
+        return optionMarkup(status, status);
+      }).join('');
+    }
+
+    function renderSummary(data) {
+      summaryData = data;
+      countEl.textContent = 'Summary inventory loaded: ' + data.summary.total_catalogue_records + ' catalogue records across ' + data.summary.collection_count + ' collections.';
+      ArchiveFoundation.renderCards(collectionSummaryCards, data.collection_summaries.map(function (entry) {
+        return {
+          title: entry.collection_label,
+          description: entry.record_count + ' catalogue records · ' + entry.sensitive_record_count + ' with sensitivity markers.',
+          meta: 'Publication: ' + entry.publication_status + ' · Families: ' + entry.genre_families.join(', '),
+          href: entry.primary_route || null
+        };
+      }));
+      ArchiveFoundation.renderCards(publicationControlCards, data.publication_controls.map(function (entry) {
+        return {
+          title: entry.collection_label,
+          description: 'Publication status: ' + entry.publication_status + '. Sensitive records flagged: ' + entry.sensitive_record_count + '.',
+          meta: entry.route_targets.length ? 'Routes: ' + entry.route_targets.join(', ') : 'No dedicated route target yet.'
+        };
+      }));
+      ArchiveFoundation.renderCards(genreFamilyCards, data.genre_family_summaries.map(function (entry) {
+        return {
+          title: entry.genre_family,
+          description: entry.record_count + ' catalogue records currently grouped under this family.',
+          meta: 'Collections: ' + entry.collection_keys.join(', '),
+          href: entry.primary_route || null
+        };
+      }));
+      routeMappingSummary.textContent = 'Route mappings available: ' + data.route_mappings.map(function (entry) { return entry.title + ' → ' + entry.route; }).join(' · ');
+      populateFilters();
+    }
+
+    function renderRecords(records) {
+      const query = searchInput.value.trim().toLowerCase();
+      const collection = collectionFilter.value;
+      const family = familyFilter.value;
+      const publication = publicationFilter.value;
+      const filtered = records.filter(function (record) {
+        const haystack = [record.title, record.original_path, record.genre_family, record.collection_label, record.source, record.repository_owner, record.repository_name].join(' ').toLowerCase();
+        return (!query || haystack.includes(query)) &&
+          (!collection || record.collection_key === collection) &&
+          (!family || record.genre_family === family) &&
+          (!publication || record.publication_status === publication);
+      });
+      const displayLimit = 50;
+      const limited = filtered.slice(0, displayLimit);
+      const truncated = filtered.length > displayLimit;
+      countEl.textContent = 'Showing ' + limited.length + ' of ' + filtered.length + ' matching records (' + records.length + ' total in published record inventory).' + (truncated ? ' Display limited to the first ' + displayLimit + ' matches.' : '');
+      resultsEl.setAttribute('role', 'list');
+      resultsEl.innerHTML = limited.map(function (record) {
+        const sensitivity = record.sensitivity_flags.length ? '<div class="pill-row">' + record.sensitivity_flags.map(function (flag) { return '<span class="pill">' + escapeHtml(flag) + '</span>'; }).join('') + '</div>' : '<p class="small">No sensitivity flags inferred from path/title.</p>';
+        const routeInfo = record.route_mappings.length ? '<p class="small"><strong>Routes:</strong> ' + escapeHtml(record.route_mappings.join(', ')) + '</p>' : '';
+        const rawLink = record.public_urls && record.public_urls.raw_url ? '<a class="card-link" href="' + escapeHtml(record.public_urls.raw_url) + '" target="_blank" rel="noopener noreferrer">Open raw source</a>' : '';
+        const githubLink = record.public_urls && record.public_urls.github_blob_url ? '<a class="card-link" href="' + escapeHtml(record.public_urls.github_blob_url) + '" target="_blank" rel="noopener noreferrer">Open GitHub source</a>' : '';
+        const linkRow = rawLink || githubLink ? '<div class="pill-row">' + githubLink + rawLink + '</div>' : '';
+        const sourceLabel = record.repository_owner && record.repository_name
+          ? record.repository_owner + '/' + record.repository_name
+          : (record.source || 'Source metadata');
+        return '<article class="result-card" role="listitem">' +
+          '<h3>' + escapeHtml(record.title) + '</h3>' +
+          '<div class="result-meta">' + escapeHtml(record.record_id) + ' · ' + escapeHtml(record.collection_label) + ' · ' + escapeHtml(record.genre_family) + '</div>' +
+          '<p><strong>Original path:</strong> <code>' + escapeHtml(record.original_path) + '</code></p>' +
+          '<p><strong>Publication status:</strong> ' + escapeHtml(record.publication_status) + '</p>' +
+          '<p><strong>Local preserved path present:</strong> ' + escapeHtml(record.local_repository_match ? 'yes' : 'no / remote-catalogue only') + '</p>' +
+          sensitivity + routeInfo +
+          '<div class="pill-row"><span class="pill">' + escapeHtml(sourceLabel) + '</span></div>' +
+          linkRow +
+        '</article>';
+      }).join('') || '<article class="result-card" role="listitem"><h3>No matching records</h3><p>Try changing the filters or load the record inventory if it has not been fetched yet.</p></article>';
+    }
+
+    async function ensureRecordInventoryLoaded() {
+      if (recordData) return recordData;
+      if (!recordsPromise) {
+        loadStateEl.textContent = 'Loading full published record inventory…';
+        recordsPromise = fetch(recordsUrl, { cache: 'no-store' }).then(function (response) {
+          if (!response.ok) throw new Error('Unable to load Phase 2 record inventory.');
+          return response.json();
+        }).then(function (data) {
+          recordData = data;
+          loadStateEl.textContent = 'Full published record inventory loaded on demand.';
+          return data;
+        }).catch(function (error) {
+          loadStateEl.textContent = error.message;
+          throw error;
+        });
+      }
+      return recordsPromise;
+    }
+
+    async function requestRender(options) {
+      const mode = options && options.mode ? options.mode : 'passive';
+      const hasSearchQuery = Boolean(searchInput.value.trim());
+      const hasFilterSelection = Boolean(collectionFilter.value || familyFilter.value || publicationFilter.value);
+      if (!recordData) {
+        if (mode === 'passive') {
+          const detail = hasSearchQuery || hasFilterSelection
+            ? 'Your search criteria are staged. Submit the form or use the load button to fetch the published record inventory.'
+            : 'Use the button above, a text search submission, or filter selections followed by submit to load the published record inventory on demand.';
+          resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Inventory not loaded yet</h3><p>' + escapeHtml(detail) + '</p></article>';
+          return;
+        }
+        const data = await ensureRecordInventoryLoaded();
+        renderRecords(data.records || []);
+        return;
+      }
+      renderRecords(recordData.records || []);
+    }
+
+    function announcePendingControls() {
+      if (recordData) {
+        renderRecords(recordData.records || []);
+        return;
+      }
+      const hasSearchQuery = Boolean(searchInput.value.trim());
+      const hasFilterSelection = Boolean(collectionFilter.value || familyFilter.value || publicationFilter.value);
+      if (hasSearchQuery || hasFilterSelection) {
+        countEl.textContent = 'Search criteria ready. Submit the form or use the load button to fetch the published record inventory.';
+        resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Search ready</h3><p>Your search text and filters are staged. Submit the form to run the search against the published record inventory.</p></article>';
+        return;
+      }
+      countEl.textContent = 'Summary inventory loaded: ' + summaryData.summary.total_catalogue_records + ' catalogue records across ' + summaryData.summary.collection_count + ' collections.';
+      resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Inventory not loaded yet</h3><p>Use the button above, a text search submission, or filter selections followed by submit to load the published record inventory on demand.</p></article>';
+    }
+
+    buttonLoadInventory.addEventListener('click', function () {
+      requestRender({ mode: 'load' }).catch(handleAsyncError);
+    });
+    searchInput.addEventListener('input', announcePendingControls);
+    searchForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      requestRender({ mode: 'search' }).catch(handleAsyncError);
+    });
+    [collectionFilter, familyFilter, publicationFilter].forEach(function (element) {
+      element.addEventListener('change', function () {
+        if (recordData) {
+          requestRender({ mode: 'search' }).catch(handleAsyncError);
+          return;
+        }
+        announcePendingControls();
+      });
+    });
+
+    fetch(collectionsUrl, { cache: 'no-store' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Unable to load Phase 2 collection summaries.');
+        return response.json();
+      })
+      .then(function (data) {
+        renderSummary(data);
+        requestRender().catch(handleAsyncError);
+      })
+      .catch(function (error) {
+        countEl.textContent = error.message;
+        resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Collection summaries unavailable</h3><p>' + escapeHtml(error.message) + '</p></article>';
+      });
+  </script>
 </body>
 </html>

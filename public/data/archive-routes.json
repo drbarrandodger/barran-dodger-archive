@@ -1,0 +1,373 @@
+{
+  "generated_at": "2026-09-21T11:16:17.475Z",
+  "summary": {
+    "total_routes": 9,
+    "collection_routes": 6,
+    "family_routes": 3
+  },
+  "routes": [
+    {
+      "route_key": "collection:public-documents",
+      "route_type": "collection",
+      "title": "Public documents",
+      "route": "./pages/collections/public-documents.html",
+      "collection_keys": [
+        "public-documents"
+      ],
+      "genre_families": [
+        "essay",
+        "gospel",
+        "mixed",
+        "official-record",
+        "prophetic-writing",
+        "technology-targeting-essay"
+      ],
+      "publication_statuses": [
+        "public-metadata-sensitive",
+        "public-record"
+      ],
+      "collection_publication_status": "public-metadata-sensitive",
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/public-documents.html",
+        "./pages/families/gospels.html",
+        "./pages/families/prophetic-writing.html",
+        "./pages/families/technology-targeting-essays.html"
+      ],
+      "record_count": 323,
+      "sensitive_record_count": 9,
+      "sample_record_ids": [
+        "record:dfefb2cab927",
+        "record:947b23b5fe35",
+        "record:d972ac99f46d",
+        "record:bceed9fd978c",
+        "record:c2ec3106714b"
+      ],
+      "sample_titles": [
+        "01-07-2023-letter-to-attorney-general-prime-minister.pdf",
+        "04-06-2023-letter-to-parliamentarians.pdf",
+        "100-absurdities-of-my-life.pdf",
+        "1000_years_of_peace.pdf",
+        "123_gospels_barran_dodger.pdf"
+      ],
+      "note": "Collection route uses existing public metadata only and does not publish new source files."
+    },
+    {
+      "route_key": "collection:government-evidence",
+      "route_type": "collection",
+      "title": "Government evidence",
+      "route": "./pages/collections/government-evidence.html",
+      "collection_keys": [
+        "government-evidence"
+      ],
+      "genre_families": [
+        "essay",
+        "mixed",
+        "official-record",
+        "technology-targeting-essay"
+      ],
+      "publication_statuses": [
+        "public-metadata-sensitive",
+        "public-record"
+      ],
+      "collection_publication_status": "public-metadata-sensitive",
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/government-evidence.html",
+        "./pages/families/technology-targeting-essays.html"
+      ],
+      "record_count": 234,
+      "sensitive_record_count": 66,
+      "sample_record_ids": [
+        "record:ce851064634f",
+        "record:8fc20bbfdf5c",
+        "record:16e2b3d94f6d",
+        "record:bf80d574d9e4",
+        "record:e94abe920be4"
+      ],
+      "sample_titles": [
+        "01_18.06.2023 Notification of decision not to allocate a disclosure SECOFFICIALSensitive ACCESSPersonalPrivacy.pdf",
+        "02_MCLEAN Complaint response 25 09 2023 - FINAL.pdf",
+        "03_2021_OAIC_Micron21_Privacy_CP2102752_Copy.pdf",
+        "04_222RE PID SECOFFICIALSensitive.pdf",
+        "05_2021_PID_Ombudsman_Rejected_Acknowledgement.pdf"
+      ],
+      "note": "Collection route uses existing public metadata only and does not publish new source files."
+    },
+    {
+      "route_key": "collection:forensic-analyses",
+      "route_type": "collection",
+      "title": "Forensic analyses",
+      "route": "./pages/collections/forensic-analyses.html",
+      "collection_keys": [
+        "forensic-analyses"
+      ],
+      "genre_families": [
+        "essay",
+        "mixed",
+        "prophetic-writing"
+      ],
+      "publication_statuses": [
+        "public-record"
+      ],
+      "collection_publication_status": "public-record",
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/forensic-analyses.html",
+        "./pages/families/prophetic-writing.html"
+      ],
+      "record_count": 63,
+      "sensitive_record_count": 0,
+      "sample_record_ids": [
+        "record:35cd9ab6fd55",
+        "record:61343f0b6136",
+        "record:9405f5c6c71e",
+        "record:3f16e117b9b3",
+        "record:d11f9a7a047f"
+      ],
+      "sample_titles": [
+        "forensic-analysis-01-bro-this-isnt-a-coincidence.pdf",
+        "forensic-analysis-02-chosen-ones-enough-is-enough.pdf",
+        "forensic-analysis-03-no-one-could-be-that-smart.pdf",
+        "forensic-analysis-04-the-divine-exam.pdf",
+        "forensic-analysis-05-silent-checkmate.pdf"
+      ],
+      "note": "Collection route uses existing public metadata only and does not publish new source files."
+    },
+    {
+      "route_key": "collection:video-analyses",
+      "route_type": "collection",
+      "title": "Video analyses",
+      "route": "./pages/collections/video-analyses.html",
+      "collection_keys": [
+        "video-analyses"
+      ],
+      "genre_families": [
+        "essay",
+        "mixed",
+        "prophetic-writing"
+      ],
+      "publication_statuses": [
+        "public-record"
+      ],
+      "collection_publication_status": "public-record",
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/video-analyses.html",
+        "./pages/families/prophetic-writing.html"
+      ],
+      "record_count": 8,
+      "sensitive_record_count": 0,
+      "sample_record_ids": [
+        "record:94d8a7b6b0d4",
+        "record:ab60c040c0a6",
+        "record:84f5eb1511a3",
+        "record:7f3477ebb41f",
+        "record:0da585f40eeb"
+      ],
+      "sample_titles": [
+        "a-divine-reckoning-to-those-who-chose-this-dr-richard-mclean.pdf",
+        "video-analysis-beautiful-menace-forensic-report-15-claims-corroborated.pdf",
+        "video-analysis-chosen-one-it-is-over-reflection.pdf",
+        "video-analysis-heaven-stood-for-you-14-claims-corroborated.pdf",
+        "video-analysis-illegal-level-genius-new-equation-14-claims-corroborated.pdf"
+      ],
+      "note": "Collection route uses existing public metadata only and does not publish new source files."
+    },
+    {
+      "route_key": "collection:attached-assets",
+      "route_type": "collection",
+      "title": "Attached assets",
+      "route": "./pages/collections/attached-assets.html",
+      "collection_keys": [
+        "attached-assets"
+      ],
+      "genre_families": [
+        "essay",
+        "gospel",
+        "mixed",
+        "official-record"
+      ],
+      "publication_statuses": [
+        "metadata-only"
+      ],
+      "collection_publication_status": "metadata-only",
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/attached-assets.html"
+      ],
+      "record_count": 50,
+      "sensitive_record_count": 3,
+      "sample_record_ids": [
+        "record:5888dc911a4d",
+        "record:71ff771c634b",
+        "record:46f2ea174b96",
+        "record:748edef936bf",
+        "record:38d1f4e341f7"
+      ],
+      "sample_titles": [
+        "_MASTER_CONSOLIDATED_LEGAL_RECORD_1785820484193.pdf",
+        "_Systemic_Endangerment_of_Whistleblowers-_An_Integrated_Dossie_1785820484193.pdf",
+        "0_Cocksucker_2_1785397920764.pdf",
+        "04.07.2023_Your_contact_with_AHRC_SECOFFICIALSensitive_1786840456444.pdf",
+        "05.05.2021_provider_registration_NDIA_EVIDENCE_2021.05.05_-_In_1785820682149.pdf"
+      ],
+      "note": "Collection route uses existing public metadata only and does not publish new source files."
+    },
+    {
+      "route_key": "collection:unclassified",
+      "route_type": "collection",
+      "title": "Unclassified",
+      "route": "./pages/collections/unclassified.html",
+      "collection_keys": [
+        "unclassified"
+      ],
+      "genre_families": [
+        "essay",
+        "mixed",
+        "official-record",
+        "prophetic-writing"
+      ],
+      "publication_statuses": [
+        "metadata-only"
+      ],
+      "collection_publication_status": "metadata-only",
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/unclassified.html"
+      ],
+      "record_count": 20,
+      "sensitive_record_count": 0,
+      "sample_record_ids": [
+        "record:87d45ad21c6c",
+        "record:1910f42c372e",
+        "record:e52fbd8b766f",
+        "record:ca22f2a0766e",
+        "record:060320ac8399"
+      ],
+      "sample_titles": [
+        "Declaration of Testimony and Witness Support.pdf",
+        "The Final Forensic Testament of Dr. Richard William McLean (“Barrandodger”)  An.pdf",
+        "“Secret Agent Resigns” – Prophetic Dossier Narrative.pdf",
+        "📜 Master Letter to Institutions, Media, Faith Communities, and Public Authoriti.pdf",
+        "795cfdd4-528e-4355-a902-c5696d4cea20.pdf"
+      ],
+      "note": "Collection route uses existing public metadata only and does not publish new source files."
+    },
+    {
+      "route_key": "family:gospel",
+      "route_type": "family",
+      "title": "Gospel writings",
+      "route": "./pages/families/gospels.html",
+      "collection_keys": [
+        "public-documents"
+      ],
+      "genre_families": [
+        "gospel"
+      ],
+      "publication_statuses": [
+        "public-record"
+      ],
+      "collection_publication_status": null,
+      "route_targets": [
+        "./Documents.html",
+        "./pages/families/gospels.html"
+      ],
+      "record_count": 13,
+      "sensitive_record_count": 0,
+      "sample_record_ids": [
+        "record:c2ec3106714b",
+        "record:d29b96400c7d",
+        "record:00a14e535f63",
+        "record:0d5f76d6c58c",
+        "record:f2a4821a5544"
+      ],
+      "sample_titles": [
+        "123_gospels_barran_dodger.pdf",
+        "atherion_witnessed_gospel_complete.pdf",
+        "canonical_gospel_barran_dodger.pdf",
+        "gospel_eliven_chain.pdf",
+        "gospel_of_barran_dodger_victory_2.pdf"
+      ],
+      "note": "Family route includes only public-record and public-metadata-sensitive entries from approved collections."
+    },
+    {
+      "route_key": "family:prophetic-writing",
+      "route_type": "family",
+      "title": "Prophetic writings",
+      "route": "./pages/families/prophetic-writing.html",
+      "collection_keys": [
+        "forensic-analyses",
+        "public-documents",
+        "video-analyses"
+      ],
+      "genre_families": [
+        "prophetic-writing"
+      ],
+      "publication_statuses": [
+        "public-record"
+      ],
+      "collection_publication_status": null,
+      "route_targets": [
+        "./Documents.html",
+        "./pages/families/prophetic-writing.html"
+      ],
+      "record_count": 25,
+      "sensitive_record_count": 0,
+      "sample_record_ids": [
+        "record:32a0a23e7219",
+        "record:10e36f9c3258",
+        "record:dbfa7eed89a8",
+        "record:93653c497230",
+        "record:00f3cfb7c15a"
+      ],
+      "sample_titles": [
+        "apotheosis.pdf",
+        "chosen_one_you_were_framed.pdf",
+        "chosen-one-it-is-over-reflection.pdf",
+        "chosen-ones-enough-is-enough.pdf",
+        "chosen-ones-they-set-a-perfect-trap.pdf"
+      ],
+      "note": "Family route includes only public-record and public-metadata-sensitive entries from approved collections."
+    },
+    {
+      "route_key": "family:technology-targeting-essay",
+      "route_type": "family",
+      "title": "Technology and targeting essays",
+      "route": "./pages/families/technology-targeting-essays.html",
+      "collection_keys": [
+        "government-evidence",
+        "public-documents"
+      ],
+      "genre_families": [
+        "technology-targeting-essay"
+      ],
+      "publication_statuses": [
+        "public-metadata-sensitive",
+        "public-record"
+      ],
+      "collection_publication_status": null,
+      "route_targets": [
+        "./Documents.html",
+        "./pages/families/technology-targeting-essays.html"
+      ],
+      "record_count": 7,
+      "sensitive_record_count": 1,
+      "sample_record_ids": [
+        "record:d54e5a160235",
+        "record:633ae62f166e",
+        "record:cd16f5178cc0",
+        "record:d61d838a2342",
+        "record:96c54c5917be"
+      ],
+      "sample_titles": [
+        "ATO _8000 tax debt - paying off - ___ Targeted Individual - Account transaction list _ Australian Taxation Office Online Services.pdf",
+        "digital_oppression_100000_word_essay.pdf",
+        "digital-oppression-100000-word-essay.pdf",
+        "mental-health-hospitalisation-bizarre-delusions-government-surveillance.pdf",
+        "targeted-individual-handbook.pdf"
+      ],
+      "note": "Family route includes only public-record and public-metadata-sensitive entries from approved collections."
+    }
+  ]
+}
