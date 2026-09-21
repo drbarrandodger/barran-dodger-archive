@@ -95,11 +95,25 @@ function inferSensitivityFlags(value) {
   return flags;
 }
 
-function inferPublicationStatus(collectionKey, sensitivityFlags, isPublicRecord) {
-  if (!isPublicRecord) return 'internal-only';
+function inferPublicationStatus(collectionKey, sensitivityFlags, isPublishedCollection, allowMetadataFallback = false) {
   if (collectionKey === 'attached-assets') return 'metadata-only';
+  if (!isPublishedCollection) {
+    if (!allowMetadataFallback) return 'internal-only';
+    return sensitivityFlags.length ? 'public-metadata-sensitive' : 'metadata-only';
+  }
   if (sensitivityFlags.length) return 'public-metadata-sensitive';
   return 'public-record';
+}
+
+function combinePublicationStatus(currentStatus, nextStatus) {
+  const rank = {
+    'internal-only': 4,
+    'metadata-only': 3,
+    'public-metadata-sensitive': 2,
+    'public-record': 1
+  };
+  if (!currentStatus) return nextStatus;
+  return (rank[nextStatus] || 0) > (rank[currentStatus] || 0) ? nextStatus : currentStatus;
 }
 
 function normaliseTitle(title, recordPath) {
@@ -124,6 +138,7 @@ function summariseCollections(records) {
     }
     const entry = map.get(key);
     entry.record_count += 1;
+    entry.publication_status = combinePublicationStatus(entry.publication_status, record.publication_status);
     if (record.sensitivity_flags.length) entry.sensitive_record_count += 1;
     entry.genre_families.add(record.genre_family);
     if (entry.example_paths.length < 3) entry.example_paths.push(record.original_path);
@@ -192,7 +207,7 @@ async function main() {
     const title = normaliseTitle(document.title, recordPath);
     const genreFamily = inferGenreFamily(`${title} ${recordPath}`, mediaType);
     const sensitivityFlags = inferSensitivityFlags(`${title} ${recordPath}`);
-    const publicationStatus = inferPublicationStatus(collection.key, sensitivityFlags, true);
+    const publicationStatus = inferPublicationStatus(collection.key, sensitivityFlags, collection.published, true);
     return {
       record_id: stableId(`${document.source}:${recordPath}`),
       title,
@@ -213,15 +228,20 @@ async function main() {
         github_blob_url: document.url,
         raw_url: document.raw_url
       },
-      route_mappings: routeMappings.filter((mapping) => mapping.collectionKeys.includes(collection.key) || mapping.genreFamilies.includes(genreFamily)).map((mapping) => mapping.route)
+      route_mappings: routeMappings.filter((mapping) => {
+        const collectionMatches = !mapping.collectionKeys.length || mapping.collectionKeys.includes(collection.key);
+        const familyMatches = !mapping.genreFamilies.length || mapping.genreFamilies.includes(genreFamily);
+        return collectionMatches && familyMatches;
+      }).map((mapping) => mapping.route)
     };
   });
 
   const collectionSummaries = summariseCollections(publicRecords);
   const genreSummaries = summariseGenreFamilies(publicRecords);
+  const generatedAt = new Date().toISOString();
 
   const publicationControls = {
-    generated_at: new Date().toISOString(),
+    generated_at: generatedAt,
     policy: {
       preservation_rule: 'Original evidence stays preserved in place; derived inventory and presentation layers must reference original paths rather than rewrite source artefacts.',
       public_rule: 'Only already surfaced metadata and curated shell outputs are published by default. Internal inventories remain under spec/.',
@@ -237,7 +257,7 @@ async function main() {
   };
 
   const internalInventory = {
-    generated_at: new Date().toISOString(),
+    generated_at: generatedAt,
     based_on_snapshot: phase1Inventory.summary?.generatedAt || null,
     summary: {
       total_records: internalRecords.length,
@@ -251,7 +271,7 @@ async function main() {
   };
 
   const publicCollections = {
-    generated_at: new Date().toISOString(),
+    generated_at: generatedAt,
     summary: {
       total_catalogue_records: publicRecords.length,
       collection_count: collectionSummaries.length,
@@ -265,7 +285,7 @@ async function main() {
   };
 
   const publicRecordInventory = {
-    generated_at: new Date().toISOString(),
+    generated_at: generatedAt,
     summary: {
       total_records: publicRecords.length,
       local_repository_matches: publicRecords.filter((record) => record.local_repository_match).length,

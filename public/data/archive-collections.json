@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:29:21.626Z",
+  "generated_at": "2026-09-21T10:31:01.986Z",
   "summary": {
     "total_catalogue_records": 698,
     "collection_count": 6,
@@ -10,7 +10,7 @@
     {
       "collection_key": "public-documents",
       "collection_label": "Public documents",
-      "publication_status": "public-record",
+      "publication_status": "public-metadata-sensitive",
       "record_count": 322,
       "sensitive_record_count": 9,
       "genre_families": [
@@ -48,7 +48,7 @@
     {
       "collection_key": "unclassified",
       "collection_label": "Unclassified",
-      "publication_status": "public-record",
+      "publication_status": "metadata-only",
       "record_count": 69,
       "sensitive_record_count": 48,
       "genre_families": [
@@ -259,7 +259,7 @@
     {
       "collection_key": "public-documents",
       "collection_label": "Public documents",
-      "publication_status": "public-record",
+      "publication_status": "public-metadata-sensitive",
       "sensitive_record_count": 9,
       "route_targets": [
         "./Documents.html",
@@ -281,7 +281,7 @@
     {
       "collection_key": "unclassified",
       "collection_label": "Unclassified",
-      "publication_status": "public-record",
+      "publication_status": "metadata-only",
       "sensitive_record_count": 48,
       "route_targets": []
     },

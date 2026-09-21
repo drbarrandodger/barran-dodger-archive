@@ -235,22 +235,32 @@
       return recordsPromise;
     }
 
-    async function requestRender() {
-      const shouldLoad = searchInput.value.trim() || collectionFilter.value || familyFilter.value || publicationFilter.value;
-      if (!recordData && !shouldLoad) {
-        resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Inventory not loaded yet</h3><p>Use the button above or apply a filter to load the published record inventory on demand.</p></article>';
+    async function requestRender(options) {
+      const mode = options && options.mode ? options.mode : 'passive';
+      const hasSearchQuery = Boolean(searchInput.value.trim());
+      const hasFilterSelection = Boolean(collectionFilter.value || familyFilter.value || publicationFilter.value);
+      if (!recordData) {
+        if (mode !== 'load' && !hasSearchQuery) {
+          const detail = hasFilterSelection
+            ? 'Filters are ready, but the full record inventory will stay unloaded until you press the load button or run a text search.'
+            : 'Use the button above or enter a text search to load the published record inventory on demand.';
+          resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Inventory not loaded yet</h3><p>' + escapeHtml(detail) + '</p></article>';
+          return;
+        }
+        const data = await ensureRecordInventoryLoaded();
+        renderRecords(data.records || []);
         return;
       }
-      const data = await ensureRecordInventoryLoaded();
-      renderRecords(data.records || []);
+      renderRecords(recordData.records || []);
     }
 
     buttonLoadInventory.addEventListener('click', function () {
-      requestRender().catch(function () {});
+      requestRender({ mode: 'load' }).catch(function () {});
     });
-    [searchInput, collectionFilter, familyFilter, publicationFilter].forEach(function (element) {
-      element.addEventListener('input', function () { requestRender().catch(function () {}); });
-      element.addEventListener('change', function () { requestRender().catch(function () {}); });
+    searchInput.addEventListener('input', function () { requestRender({ mode: 'search' }).catch(function () {}); });
+    searchInput.addEventListener('change', function () { requestRender({ mode: 'search' }).catch(function () {}); });
+    [collectionFilter, familyFilter, publicationFilter].forEach(function (element) {
+      element.addEventListener('change', function () { requestRender({ mode: 'passive' }).catch(function () {}); });
     });
 
     fetch(collectionsUrl, { cache: 'no-store' })

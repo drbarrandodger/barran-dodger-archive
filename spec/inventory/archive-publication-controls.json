@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:29:21.617Z",
+  "generated_at": "2026-09-21T10:31:01.986Z",
   "policy": {
     "preservation_rule": "Original evidence stays preserved in place; derived inventory and presentation layers must reference original paths rather than rewrite source artefacts.",
     "public_rule": "Only already surfaced metadata and curated shell outputs are published by default. Internal inventories remain under spec/.",
@@ -9,7 +9,7 @@
     {
       "collection_key": "public-documents",
       "collection_label": "Public documents",
-      "publication_status": "public-record",
+      "publication_status": "public-metadata-sensitive",
       "sensitive_record_count": 9,
       "route_targets": [
         "./Documents.html",
@@ -31,7 +31,7 @@
     {
       "collection_key": "unclassified",
       "collection_label": "Unclassified",
-      "publication_status": "public-record",
+      "publication_status": "metadata-only",
       "sensitive_record_count": 48,
       "route_targets": []
     },

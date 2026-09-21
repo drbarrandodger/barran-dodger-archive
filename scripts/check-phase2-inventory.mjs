@@ -30,7 +30,9 @@ async function main() {
     throw new Error('Phase 2 collection summary and public record inventory disagree on total record count.');
   }
 
-  if (documentsIndex.total_pdfs !== publicRecordInventory.summary.total_records) {
+  const expectedDocumentCount = documentsIndex.total_pdfs ?? documentsIndex.summary?.total_pdfs ?? documentsIndex.summary?.total_records;
+
+  if (expectedDocumentCount !== publicRecordInventory.summary.total_records) {
     throw new Error('Phase 2 public record inventory does not match public/data/documents.json total_pdfs.');
   }
 
