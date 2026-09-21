@@ -12,10 +12,12 @@ const publicRecordsOutputPath = path.join(repoRoot, 'public/data/archive-records
 
 const collectionRules = [
   { prefix: 'attached_assets/', key: 'attached-assets', label: 'Attached assets', published: false },
+  { prefix: 'docs/official-drive/', key: 'government-evidence', label: 'Government evidence', published: true },
   { prefix: 'client/public/documents/government-evidence/', key: 'government-evidence', label: 'Government evidence', published: true },
   { prefix: 'client/public/documents/forensic-analyses/', key: 'forensic-analyses', label: 'Forensic analyses', published: true },
   { prefix: 'client/public/documents/video-analyses/', key: 'video-analyses', label: 'Video analyses', published: true },
   { prefix: 'client/public/documents/', key: 'public-documents', label: 'Public documents', published: true },
+  { prefix: 'client/public/', key: 'public-documents', label: 'Public documents', published: true },
   { prefix: 'client/public/evidence/', key: 'public-evidence', label: 'Public evidence', published: true },
   { prefix: 'client/public/audio/', key: 'public-audio', label: 'Public audio', published: true },
   { prefix: 'client/public/video/', key: 'public-video', label: 'Public video', published: true },
@@ -27,13 +29,32 @@ const collectionRules = [
   { prefix: 'pages/', key: 'presentation-routes', label: 'Presentation routes', published: true }
 ];
 
+const familyPageRouteMap = {
+  gospel: './pages/families/gospels.html',
+  'prophetic-writing': './pages/families/prophetic-writing.html',
+  'technology-targeting-essay': './pages/families/technology-targeting-essays.html'
+};
+
+const collectionPageRouteMap = {
+  'public-documents': './pages/collections/public-documents.html',
+  'government-evidence': './pages/collections/government-evidence.html',
+  'forensic-analyses': './pages/collections/forensic-analyses.html',
+  'video-analyses': './pages/collections/video-analyses.html',
+  'attached-assets': './pages/collections/attached-assets.html',
+  'unclassified': './pages/collections/unclassified.html'
+};
+
 const routeMappings = [
-  { route: './Documents.html', title: 'Archive catalogue shell', collectionKeys: ['attached-assets', 'government-evidence', 'forensic-analyses', 'video-analyses', 'public-documents', 'public-evidence', 'public-audio', 'public-video'], genreFamilies: ['gospel', 'prophetic-writing', 'technology-targeting-essay', 'essay', 'official-record', 'media'] },
-  { route: './Documents.html#family-gospels', title: 'Gospel writings', collectionKeys: ['public-documents', 'attached-assets'], genreFamilies: ['gospel'] },
-  { route: './Documents.html#family-prophetic-writing', title: 'Prophetic writings', collectionKeys: ['public-documents', 'forensic-analyses', 'video-analyses', 'attached-assets', 'unclassified'], genreFamilies: ['prophetic-writing'] },
-  { route: './Documents.html#family-technology-targeting-essays', title: 'Technology and targeting essays', collectionKeys: ['public-documents', 'forensic-analyses', 'government-evidence', 'attached-assets'], genreFamilies: ['technology-targeting-essay'] },
-  { route: './Documents.html#collection-government-evidence', title: 'Government evidence collection', collectionKeys: ['government-evidence'], genreFamilies: ['official-record'] },
-  { route: './Documents.html#collection-attached-assets', title: 'Attached assets (metadata only)', collectionKeys: ['attached-assets'], genreFamilies: [] }
+  { route: './Documents.html', title: 'Archive catalogue shell', collectionKeys: ['attached-assets', 'government-evidence', 'forensic-analyses', 'video-analyses', 'public-documents', 'unclassified'], genreFamilies: [] },
+  { route: './pages/collections/public-documents.html', title: 'Public documents collection', collectionKeys: ['public-documents'], genreFamilies: [] },
+  { route: './pages/collections/government-evidence.html', title: 'Government evidence collection', collectionKeys: ['government-evidence'], genreFamilies: [] },
+  { route: './pages/collections/forensic-analyses.html', title: 'Forensic analyses collection', collectionKeys: ['forensic-analyses'], genreFamilies: [] },
+  { route: './pages/collections/video-analyses.html', title: 'Video analyses collection', collectionKeys: ['video-analyses'], genreFamilies: [] },
+  { route: './pages/collections/attached-assets.html', title: 'Attached assets collection', collectionKeys: ['attached-assets'], genreFamilies: [] },
+  { route: './pages/collections/unclassified.html', title: 'Unclassified collection', collectionKeys: ['unclassified'], genreFamilies: [] },
+  { route: './pages/families/gospels.html', title: 'Gospel writings', collectionKeys: ['public-documents', 'attached-assets'], genreFamilies: ['gospel'] },
+  { route: './pages/families/prophetic-writing.html', title: 'Prophetic writings', collectionKeys: ['public-documents', 'forensic-analyses', 'video-analyses', 'unclassified'], genreFamilies: ['prophetic-writing'] },
+  { route: './pages/families/technology-targeting-essays.html', title: 'Technology and targeting essays', collectionKeys: ['public-documents', 'government-evidence'], genreFamilies: ['technology-targeting-essay'] }
 ];
 
 function stableId(input) {
@@ -48,7 +69,7 @@ function getCollectionInfo(recordPath) {
 }
 
 function getSourceLayer(recordPath) {
-  if (recordPath.startsWith('attached_assets/') || recordPath.startsWith('client/public/documents/') || recordPath.startsWith('client/public/evidence/') || recordPath.startsWith('client/public/audio/') || recordPath.startsWith('client/public/video/')) return 'primary';
+  if (recordPath.startsWith('attached_assets/') || recordPath.startsWith('client/public/') || recordPath.startsWith('docs/official-drive/')) return 'primary';
   if (recordPath.startsWith('public/data/')) return 'metadata';
   if (recordPath.startsWith('spec/')) return 'specification';
   if (recordPath.startsWith('.github/') || recordPath.startsWith('scripts/') || recordPath === 'package.json') return 'workflow';
@@ -81,8 +102,8 @@ function inferGenreFamily(value, mediaType) {
   if (/(gospel|gospels|biblical|scripture)/.test(text)) return 'gospel';
   if (/(prophetic|prophecy|apotheosis|chosen[_ -]?one|tribunal of humanity)/.test(text)) return 'prophetic-writing';
   if (/(target|targeted|surveillance|digital[_ -]?oppression|technology|v2k|electronic|psyops|mkultra|pegasus|neuro)/.test(text)) return 'technology-targeting-essay';
-  if (/(government evidence|ombudsman|official|court|tribunal|commission|federal|pid|oaic|notice|decision)/.test(text)) return 'official-record';
-  if (/(essay|analysis|manifesto|statement|declaration|report|dossier)/.test(text)) return 'essay';
+  if (/(government evidence|ombudsman|official|court|tribunal|commission|federal|pid|oaic|notice|decision|foi|comcare|ibac|aat|apra|ndis)/.test(text)) return 'official-record';
+  if (/(essay|analysis|manifesto|statement|declaration|report|dossier|testimony|affidavit|letter)/.test(text)) return 'essay';
   return 'mixed';
 }
 
@@ -105,6 +126,23 @@ function inferPublicationStatus(collectionKey, sensitivityFlags, isPublishedColl
   return 'public-record';
 }
 
+function inferProvenanceStatus({ publicationStatus, localRepositoryMatch }) {
+  if (localRepositoryMatch) return 'local-preserved-copy';
+  if (publicationStatus === 'metadata-only') return 'remote-metadata-reference';
+  return 'remote-public-reference';
+}
+
+function inferReviewFlags({ collectionKey, publicationStatus, localRepositoryMatch, sensitivityFlags, sourceVerified }) {
+  const flags = [];
+  if (collectionKey === 'unclassified') flags.push('needs-collection-review');
+  if (!localRepositoryMatch) flags.push('needs-local-preservation-review');
+  if (!sourceVerified) flags.push('needs-external-source-verification');
+  if (publicationStatus === 'metadata-only') flags.push('metadata-only-publication-review');
+  if (publicationStatus === 'public-metadata-sensitive') flags.push('sensitive-public-metadata-review');
+  if (sensitivityFlags.length) flags.push('sensitivity-review');
+  return flags;
+}
+
 function combinePublicationStatus(currentStatus, nextStatus) {
   const rank = {
     'internal-only': 4,
@@ -122,16 +160,21 @@ function routeMatches(mapping, collectionKey, genreFamily) {
   return collectionMatches && familyMatches;
 }
 
-function getMatchingRoutes(collectionKey, genreFamily) {
-  return routeMappings.filter((mapping) => routeMatches(mapping, collectionKey, genreFamily)).map((mapping) => mapping.route);
+function collectionPageRoute(collectionKey) {
+  return collectionPageRouteMap[collectionKey] || null;
 }
 
-function getCollectionRouteTargets(collectionKey, genreFamilies) {
-  return [...new Set(routeMappings.filter((mapping) => {
-    if (mapping.collectionKeys.length && !mapping.collectionKeys.includes(collectionKey)) return false;
-    if (!mapping.genreFamilies.length) return true;
-    return genreFamilies.some((genreFamily) => mapping.genreFamilies.includes(genreFamily));
-  }).map((mapping) => mapping.route))];
+function familyPageRoute(genreFamily) {
+  return familyPageRouteMap[genreFamily] || null;
+}
+
+function getRouteMappingsForRecord(collectionKey, genreFamily, publicationStatus) {
+  const matches = routeMappings.filter((mapping) => routeMatches(mapping, collectionKey, genreFamily));
+  if (publicationStatus === 'public-record' || publicationStatus === 'public-metadata-sensitive') {
+    return matches.map((mapping) => mapping.route);
+  }
+  const collectionRoute = collectionPageRoute(collectionKey);
+  return collectionRoute ? [collectionRoute] : [];
 }
 
 function normaliseTitle(title, recordPath) {
@@ -151,7 +194,8 @@ function summariseCollections(records) {
         record_count: 0,
         sensitive_record_count: 0,
         genre_families: new Set(),
-        example_paths: []
+        example_paths: [],
+        provenance_statuses: new Set()
       });
     }
     const entry = map.get(key);
@@ -159,15 +203,18 @@ function summariseCollections(records) {
     entry.publication_status = combinePublicationStatus(entry.publication_status, record.publication_status);
     if (record.sensitivity_flags.length) entry.sensitive_record_count += 1;
     entry.genre_families.add(record.genre_family);
+    if (record.provenance_status) entry.provenance_statuses.add(record.provenance_status);
     if (entry.example_paths.length < 3) entry.example_paths.push(record.original_path);
   }
   return [...map.values()].sort((a, b) => b.record_count - a.record_count || a.collection_label.localeCompare(b.collection_label)).map((entry) => ({
     collection_key: entry.collection_key,
     collection_label: entry.collection_label,
     publication_status: entry.publication_status,
+    primary_route: collectionPageRoute(entry.collection_key),
     record_count: entry.record_count,
     sensitive_record_count: entry.sensitive_record_count,
     genre_families: [...entry.genre_families].sort(),
+    provenance_statuses: [...entry.provenance_statuses].sort(),
     example_paths: entry.example_paths
   }));
 }
@@ -177,16 +224,19 @@ function summariseGenreFamilies(records) {
   for (const record of records) {
     const key = record.genre_family;
     if (!map.has(key)) {
-      map.set(key, { genre_family: key, record_count: 0, collection_keys: new Set() });
+      map.set(key, { genre_family: key, record_count: 0, collection_keys: new Set(), publication_statuses: new Set() });
     }
     const entry = map.get(key);
     entry.record_count += 1;
     entry.collection_keys.add(record.collection_key);
+    entry.publication_statuses.add(record.publication_status);
   }
   return [...map.values()].sort((a, b) => b.record_count - a.record_count || a.genre_family.localeCompare(b.genre_family)).map((entry) => ({
     genre_family: entry.genre_family,
+    primary_route: familyPageRoute(entry.genre_family),
     record_count: entry.record_count,
-    collection_keys: [...entry.collection_keys].sort()
+    collection_keys: [...entry.collection_keys].sort(),
+    publication_statuses: [...entry.publication_statuses].sort()
   }));
 }
 
@@ -195,6 +245,7 @@ async function main() {
   const documentsIndex = JSON.parse(await fs.readFile(documentsIndexPath, 'utf8'));
   const fileEntries = phase1Inventory.files || [];
   const localFileSet = new Set(fileEntries.map((entry) => entry.path));
+  const generatedAt = new Date().toISOString();
 
   const internalRecords = fileEntries.map((entry) => {
     const collection = getCollectionInfo(entry.path);
@@ -202,6 +253,7 @@ async function main() {
     const title = normaliseTitle('', entry.path);
     const genreFamily = inferGenreFamily(`${entry.path} ${title}`, mediaType);
     const sensitivityFlags = inferSensitivityFlags(entry.path);
+    const publicationStatus = inferPublicationStatus(collection.key, sensitivityFlags, collection.published);
     return {
       record_id: stableId(entry.path),
       original_path: entry.path,
@@ -211,10 +263,17 @@ async function main() {
       collection_label: collection.label,
       media_type: mediaType,
       size_bytes: entry.size,
-      provenance_status: 'preserved-path',
+      provenance_status: 'repository-preserved-copy',
       genre_family: genreFamily,
       sensitivity_flags: sensitivityFlags,
-      publication_status: inferPublicationStatus(collection.key, sensitivityFlags, collection.published)
+      publication_status: publicationStatus,
+      review_flags: inferReviewFlags({
+        collectionKey: collection.key,
+        publicationStatus,
+        localRepositoryMatch: true,
+        sensitivityFlags,
+        sourceVerified: true
+      })
     };
   });
 
@@ -226,6 +285,9 @@ async function main() {
     const genreFamily = inferGenreFamily(`${title} ${recordPath}`, mediaType);
     const sensitivityFlags = inferSensitivityFlags(`${title} ${recordPath}`);
     const publicationStatus = inferPublicationStatus(collection.key, sensitivityFlags, collection.published, true);
+    const localRepositoryMatch = localFileSet.has(recordPath);
+    const sourceVerified = false;
+    const provenanceStatus = inferProvenanceStatus({ publicationStatus, localRepositoryMatch });
     return {
       record_id: stableId(`${document.source}:${recordPath}`),
       title,
@@ -237,22 +299,30 @@ async function main() {
       collection_key: collection.key,
       collection_label: collection.label,
       media_type: mediaType,
+      provenance_status: provenanceStatus,
       genre_family: genreFamily,
       sensitivity_flags: sensitivityFlags,
       publication_status: publicationStatus,
-      source_verified: false,
-      local_repository_match: localFileSet.has(recordPath),
+      source_verified: sourceVerified,
+      source_review_status: sourceVerified ? 'externally-verified' : 'not-externally-verified',
+      local_repository_match: localRepositoryMatch,
+      review_flags: inferReviewFlags({
+        collectionKey: collection.key,
+        publicationStatus,
+        localRepositoryMatch,
+        sensitivityFlags,
+        sourceVerified
+      }),
       public_urls: {
         github_blob_url: document.url,
         raw_url: document.raw_url
       },
-      route_mappings: ['public-record', 'public-metadata-sensitive'].includes(publicationStatus) ? getMatchingRoutes(collection.key, genreFamily) : []
+      route_mappings: getRouteMappingsForRecord(collection.key, genreFamily, publicationStatus)
     };
   });
 
   const collectionSummaries = summariseCollections(publicRecords);
   const genreSummaries = summariseGenreFamilies(publicRecords);
-  const generatedAt = new Date().toISOString();
 
   const publicationControls = {
     generated_at: generatedAt,
@@ -262,25 +332,19 @@ async function main() {
       sensitive_rule: 'Records with sensitivity flags may appear as metadata-only or public-metadata-sensitive and require later review before expanded public presentation.'
     },
     collections: collectionSummaries.map((collection) => {
-      const catalogueRoutes = routeMappings
-        .filter((mapping) => mapping.route === './Documents.html' && mapping.collectionKeys.includes(collection.collection_key))
-        .map((mapping) => mapping.route);
-      const collectionRoutes = routeMappings
-        .filter((mapping) => mapping.route.includes('#collection-') && mapping.collectionKeys.includes(collection.collection_key))
-        .map((mapping) => mapping.route);
-      const publishedFamilyRoutes = ['public-record', 'public-metadata-sensitive'].includes(collection.publication_status)
-        ? routeMappings
-          .filter((mapping) => mapping.route.includes('#family-') && mapping.collectionKeys.includes(collection.collection_key))
-          .filter((mapping) => publicRecords.some((record) => record.collection_key === collection.collection_key && ['public-record', 'public-metadata-sensitive'].includes(record.publication_status) && routeMatches(mapping, record.collection_key, record.genre_family)))
-          .map((mapping) => mapping.route)
-        : []
-        ;
+      const collectionRoute = collectionPageRoute(collection.collection_key);
+      const familyRoutes = (collection.publication_status === 'public-record' || collection.publication_status === 'public-metadata-sensitive')
+        ? collection.genre_families
+          .map((genreFamily) => familyPageRoute(genreFamily))
+          .filter(Boolean)
+        : [];
+      const routeTargets = ['./Documents.html', collectionRoute, ...familyRoutes].filter(Boolean);
       return {
         collection_key: collection.collection_key,
         collection_label: collection.collection_label,
         publication_status: collection.publication_status,
         sensitive_record_count: collection.sensitive_record_count,
-        route_targets: [...new Set([...catalogueRoutes, ...collectionRoutes, ...publishedFamilyRoutes])]
+        route_targets: [...new Set(routeTargets)]
       };
     })
   };
@@ -319,7 +383,8 @@ async function main() {
       total_records: publicRecords.length,
       local_repository_matches: publicRecords.filter((record) => record.local_repository_match).length,
       metadata_only_records: publicRecords.filter((record) => record.publication_status === 'metadata-only').length,
-      sensitive_metadata_records: publicRecords.filter((record) => record.publication_status === 'public-metadata-sensitive').length
+      sensitive_metadata_records: publicRecords.filter((record) => record.publication_status === 'public-metadata-sensitive').length,
+      unclassified_records: publicRecords.filter((record) => record.collection_key === 'unclassified').length
     },
     records: publicRecords
   };
