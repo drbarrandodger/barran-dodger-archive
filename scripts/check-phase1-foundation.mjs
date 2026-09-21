@@ -20,7 +20,7 @@ const requiredSpecFiles = [
 ];
 const htmlChecks = [
   ['index.html', ['./assets/css/archive-foundation.css', './assets/js/archive-foundation.js', './Documents.html']],
-  ['Documents.html', ['./assets/css/archive-foundation.css', './assets/js/archive-foundation.js', './data/documents.json']],
+  ['Documents.html', ['./assets/css/archive-foundation.css', './assets/js/archive-foundation.js']],
   ['404.html', ['./assets/css/archive-foundation.css', './pages/documents.html']],
   ['Index.html', ['./index.html']],
   ['pages/documents.html', ['../Documents.html']]

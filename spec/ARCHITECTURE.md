@@ -25,6 +25,18 @@ Shared foundation assets:
 - `assets/css/archive-foundation.css`
 - `assets/js/archive-foundation.js`
 
+
+## Phase 2 inventory layer
+
+Phase 2 keeps the same curated Pages shell and adds a summary-first inventory layer:
+
+- `public/data/archive-collections.json` — public collection summaries, route mappings, and publication controls
+- `public/data/archive-records.json` — public record inventory with stable IDs, loaded only on demand by `Documents.html`
+- `spec/inventory/archive-records-phase2.json` — internal full inventory for repository work
+- `spec/inventory/archive-publication-controls.json` — internal publication-boundary summary
+
+The catalogue page must load only collection summaries by default and fetch record-level inventory lazily so the archive shell does not eagerly load the full corpus into the browser.
+
 ## Deployment boundary
 
 GitHub Pages should publish only the curated shell and approved metadata files copied into `.site-build/`.
@@ -34,9 +46,11 @@ Included in `.site-build/`:
 - the three public shell pages and legacy alias
 - shared CSS/JS assets
 - `public/data/documents.json` copied to `data/documents.json`
+- `public/data/archive-collections.json` copied to `data/archive-collections.json`
+- `public/data/archive-records.json` copied to `data/archive-records.json`
 - favicon / icon assets
 
-Explicitly not published by this Phase 1 shell:
+Explicitly not published by this curated shell:
 
 - `spec/` documents
 - `spec/inventory/repository-pre-phase1.json`

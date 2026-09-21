@@ -52,6 +52,8 @@
     <section class="section" id="collections">
       <h2>Collection summaries</h2>
       <div class="grid grid-3" id="collection-summary-cards"></div>
+      <div class="notice small" id="collection-government-evidence">Government evidence remains catalogued with public metadata-sensitive handling until later per-record review.</div>
+      <div class="notice small" id="collection-attached-assets">Attached assets remain preserved as metadata-only entries in the public shell unless later review explicitly broadens publication.</div>
     </section>
 
     <section class="section" id="writing-families">
@@ -60,6 +62,9 @@
         Phase 2 explicitly carries forward preserved families including gospels, prophetic writing, and essays on technology and targeting.
       </p>
       <div class="grid grid-3" id="genre-family-cards"></div>
+      <div class="notice small" id="family-gospels">Gospel writing records are preserved as a distinct family for later review and article-level presentation.</div>
+      <div class="notice small" id="family-prophetic-writing">Prophetic writing records are preserved distinctly from official records and general essays.</div>
+      <div class="notice small" id="family-technology-targeting-essays">Technology and targeting essays remain preserved as a separate family for later curation.</div>
       <div class="notice small" id="route-mapping-summary"></div>
     </section>
 
@@ -142,8 +147,11 @@
       familyFilter.innerHTML = '<option value="">All families</option>' + summaryData.genre_family_summaries.map(function (entry) {
         return optionMarkup(entry.genre_family, entry.genre_family + ' (' + entry.record_count + ')');
       }).join('');
-      publicationFilter.innerHTML = '<option value="">All publication states</option>' + summaryData.publication_controls.map(function (entry) {
-        return optionMarkup(entry.publication_status, entry.publication_status + ' (' + entry.collection_label + ')');
+      const publicationEntries = Array.from(new Map(summaryData.publication_controls.map(function (entry) {
+        return [entry.publication_status, entry.publication_status];
+      })).keys());
+      publicationFilter.innerHTML = '<option value="">All publication states</option>' + publicationEntries.map(function (status) {
+        return optionMarkup(status, status);
       }).join('');
     }
 
@@ -154,8 +162,7 @@
         return {
           title: entry.collection_label,
           description: entry.record_count + ' catalogue records · ' + entry.sensitive_record_count + ' with sensitivity markers.',
-          meta: 'Publication: ' + entry.publication_status + ' · Families: ' + entry.genre_families.join(', '),
-          href: '#collection-' + entry.collection_key
+          meta: 'Publication: ' + entry.publication_status + ' · Families: ' + entry.genre_families.join(', ')
         };
       }));
       ArchiveFoundation.renderCards(publicationControlCards, data.publication_controls.map(function (entry) {
@@ -169,8 +176,7 @@
         return {
           title: entry.genre_family,
           description: entry.record_count + ' catalogue records currently grouped under this family.',
-          meta: 'Collections: ' + entry.collection_keys.join(', '),
-          href: '#family-' + entry.genre_family.replace(/[^a-z0-9]+/gi, '-').toLowerCase()
+          meta: 'Collections: ' + entry.collection_keys.join(', ')
         };
       }));
       routeMappingSummary.textContent = 'Route mappings available: ' + data.route_mappings.map(function (entry) { return entry.title + ' → ' + entry.route; }).join(' · ');
