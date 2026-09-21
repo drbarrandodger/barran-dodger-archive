@@ -264,9 +264,24 @@
       renderRecords(recordData.records || []);
     }
 
+    function announcePendingSearch() {
+      if (recordData) {
+        renderRecords(recordData.records || []);
+        return;
+      }
+      const hasSearchQuery = Boolean(searchInput.value.trim());
+      countEl.textContent = hasSearchQuery
+        ? 'Search text entered. Submit the form or load the inventory to search the full published record set.'
+        : 'Summary inventory loaded: ' + summaryData.summary.total_catalogue_records + ' catalogue records across ' + summaryData.summary.collection_count + ' collections.';
+      if (hasSearchQuery) {
+        resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Search ready</h3><p>Submit the form to load the published record inventory for this search.</p></article>';
+      }
+    }
+
     buttonLoadInventory.addEventListener('click', function () {
       requestRender({ mode: 'load' }).catch(handleAsyncError);
     });
+    searchInput.addEventListener('input', announcePendingSearch);
     searchForm.addEventListener('submit', function (event) {
       event.preventDefault();
       requestRender({ mode: 'search' }).catch(handleAsyncError);

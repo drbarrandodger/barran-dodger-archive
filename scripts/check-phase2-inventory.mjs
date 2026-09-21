@@ -19,6 +19,30 @@ function stableId(input) {
   return `record:${createHash('sha1').update(input).digest('hex').slice(0, 12)}`;
 }
 
+function extractHtmlTargets(html) {
+  const targets = new Set();
+  for (const match of html.matchAll(/(?:href|src)=['"]([^'"]+)['"]/g)) {
+    targets.add(match[1]);
+  }
+  return targets;
+}
+
+function extractHtmlIds(html) {
+  const ids = new Set();
+  for (const match of html.matchAll(/ id=['"]([^'"]+)['"]/g)) {
+    ids.add(match[1]);
+  }
+  return ids;
+}
+
+function extractScriptStrings(html) {
+  const strings = new Set();
+  for (const match of html.matchAll(/['"](\.\/data\/[^'"]+)['"]/g)) {
+    strings.add(match[1]);
+  }
+  return strings;
+}
+
 async function main() {
   for (const relativePath of requiredJsonFiles) {
     await fs.access(path.join(repoRoot, relativePath));
@@ -58,16 +82,17 @@ async function main() {
     throw new Error('Publication controls are missing collection entries.');
   }
 
-  const requiredReferences = [
-    './data/archive-collections.json',
-    './data/archive-records.json',
-    'button-search-inventory',
-    'button-load-inventory',
-    'catalogue-publication'
-  ];
-  for (const reference of requiredReferences) {
-    if (!documentsHtml.includes(reference)) {
-      throw new Error(`Documents.html is missing required Phase 2 reference: ${reference}`);
+  const htmlTargets = extractHtmlTargets(documentsHtml);
+  const htmlIds = extractHtmlIds(documentsHtml);
+  const scriptStrings = extractScriptStrings(documentsHtml);
+  for (const target of ['./data/archive-collections.json', './data/archive-records.json']) {
+    if (!htmlTargets.has(target) && !scriptStrings.has(target)) {
+      throw new Error(`Documents.html is missing required Phase 2 target: ${target}`);
+    }
+  }
+  for (const id of ['button-search-inventory', 'button-load-inventory', 'catalogue-publication']) {
+    if (!htmlIds.has(id)) {
+      throw new Error(`Documents.html is missing required Phase 2 control: ${id}`);
     }
   }
 

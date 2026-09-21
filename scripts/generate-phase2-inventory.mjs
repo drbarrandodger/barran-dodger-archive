@@ -267,7 +267,7 @@ async function main() {
         .map((mapping) => mapping.route);
       const publishedFamilyRoutes = routeMappings
         .filter((mapping) => mapping.collectionKeys.includes(collection.collection_key) && mapping.genreFamilies.length)
-        .filter((mapping) => publicRecords.some((record) => record.collection_key === collection.collection_key && record.publication_status === 'public-record' && routeMatches(mapping, record.collection_key, record.genre_family)))
+        .filter((mapping) => publicRecords.some((record) => record.collection_key === collection.collection_key && ['public-record', 'public-metadata-sensitive'].includes(record.publication_status) && routeMatches(mapping, record.collection_key, record.genre_family)))
         .map((mapping) => mapping.route);
       return {
         collection_key: collection.collection_key,
