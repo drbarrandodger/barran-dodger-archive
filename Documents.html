@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barran Dodger Archive — Phase 2 Inventory</title>
-  <meta name="description" content="Phase 2 archive inventory for the Barran Dodger archive. Stable record IDs, collection summaries, publication controls, and on-demand record search are layered on top of preserved paths.">
+  <title>Barran Dodger Archive — Phase 3 Review</title>
+  <meta name="description" content="Phase 3 provenance, taxonomy, and route review for the Barran Dodger archive. Collection routes and family routes are layered on top of preserved paths and summary-first metadata.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/css/archive-foundation.css">
 </head>
@@ -13,11 +13,11 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <p class="site-kicker">Phase 2 · Archive inventory</p>
-      <h1 class="site-title">Archive inventory</h1>
+      <p class="site-kicker">Phase 3 · Provenance and route review</p>
+      <h1 class="site-title">Archive review</h1>
       <p class="site-summary">
-        Phase 2 adds stable record IDs, collection summaries, genre-family taxonomy, route-to-record mapping and publication controls
-        without altering the underlying archive files. The full record list remains an on-demand inventory layer.
+        Phase 3 refines provenance review, route-level collection pages, taxonomy review and publication controls
+        without altering the underlying archive files. Full record metadata remains an on-demand layer.
       </p>
     </div>
   </header>
@@ -35,8 +35,8 @@
   <main class="page-main" id="main-content">
     <section class="section">
       <div class="notice">
-        <strong>Phase 2 boundary:</strong>
-        this page loads collection summaries first. The full record inventory is fetched only when you request it through the record-search controls.
+        <strong>Phase 3 boundary:</strong>
+        this page loads collection summaries first, then points into Phase 3 collection and family routes. The full record inventory is still fetched only when you request it through the record-search controls.
       </div>
     </section>
 
@@ -105,7 +105,7 @@
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p class="footer-note">Phase 2 keeps original evidence in place while adding machine-readable record inventory layers and collection-level publication boundaries.</p>
+      <p class="footer-note">Phase 3 keeps original evidence in place while adding provenance review, route-level collection pages, and tighter publication-boundary summaries.</p>
     </div>
   </footer>
 
@@ -170,7 +170,8 @@
         return {
           title: entry.collection_label,
           description: entry.record_count + ' catalogue records · ' + entry.sensitive_record_count + ' with sensitivity markers.',
-          meta: 'Publication: ' + entry.publication_status + ' · Families: ' + entry.genre_families.join(', ')
+          meta: 'Publication: ' + entry.publication_status + ' · Families: ' + entry.genre_families.join(', '),
+          href: entry.primary_route || null
         };
       }));
       ArchiveFoundation.renderCards(publicationControlCards, data.publication_controls.map(function (entry) {
@@ -184,7 +185,8 @@
         return {
           title: entry.genre_family,
           description: entry.record_count + ' catalogue records currently grouped under this family.',
-          meta: 'Collections: ' + entry.collection_keys.join(', ')
+          meta: 'Collections: ' + entry.collection_keys.join(', '),
+          href: entry.primary_route || null
         };
       }));
       routeMappingSummary.textContent = 'Route mappings available: ' + data.route_mappings.map(function (entry) { return entry.title + ' → ' + entry.route; }).join(' · ');

@@ -11,4 +11,5 @@ The repository is the archive's source of truth. Presentation shells, cards, ind
 - keep internal inventory and public publication scopes separate
 - load public collection summaries before record-level inventory in the catalogue shell
 - publish only what is intentionally included in the Pages build output
+- route-level collection or family pages may summarise already-published metadata, but must not republish new source artefacts
 - treat metadata-only and public-metadata-sensitive records as review boundaries, not invitations to broaden publication automatically

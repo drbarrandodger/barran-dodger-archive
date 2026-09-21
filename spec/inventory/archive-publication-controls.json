@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:38:24.175Z",
+  "generated_at": "2026-09-21T11:14:31.021Z",
   "policy": {
     "preservation_rule": "Original evidence stays preserved in place; derived inventory and presentation layers must reference original paths rather than rewrite source artefacts.",
     "public_rule": "Only already surfaced metadata and curated shell outputs are published by default. Internal inventories remain under spec/.",
@@ -13,28 +13,22 @@
       "sensitive_record_count": 9,
       "route_targets": [
         "./Documents.html",
-        "./Documents.html#family-gospels",
-        "./Documents.html#family-prophetic-writing",
-        "./Documents.html#family-technology-targeting-essays"
+        "./pages/collections/public-documents.html",
+        "./pages/families/gospels.html",
+        "./pages/families/prophetic-writing.html",
+        "./pages/families/technology-targeting-essays.html"
       ]
     },
     {
       "collection_key": "government-evidence",
       "collection_label": "Government evidence",
       "publication_status": "public-metadata-sensitive",
-      "sensitive_record_count": 18,
+      "sensitive_record_count": 66,
       "route_targets": [
         "./Documents.html",
-        "./Documents.html#collection-government-evidence",
-        "./Documents.html#family-technology-targeting-essays"
+        "./pages/collections/government-evidence.html",
+        "./pages/families/technology-targeting-essays.html"
       ]
-    },
-    {
-      "collection_key": "unclassified",
-      "collection_label": "Unclassified",
-      "publication_status": "metadata-only",
-      "sensitive_record_count": 48,
-      "route_targets": []
     },
     {
       "collection_key": "forensic-analyses",
@@ -43,7 +37,8 @@
       "sensitive_record_count": 0,
       "route_targets": [
         "./Documents.html",
-        "./Documents.html#family-prophetic-writing"
+        "./pages/collections/forensic-analyses.html",
+        "./pages/families/prophetic-writing.html"
       ]
     },
     {
@@ -53,7 +48,17 @@
       "sensitive_record_count": 3,
       "route_targets": [
         "./Documents.html",
-        "./Documents.html#collection-attached-assets"
+        "./pages/collections/attached-assets.html"
+      ]
+    },
+    {
+      "collection_key": "unclassified",
+      "collection_label": "Unclassified",
+      "publication_status": "metadata-only",
+      "sensitive_record_count": 0,
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/unclassified.html"
       ]
     },
     {
@@ -63,7 +68,8 @@
       "sensitive_record_count": 0,
       "route_targets": [
         "./Documents.html",
-        "./Documents.html#family-prophetic-writing"
+        "./pages/collections/video-analyses.html",
+        "./pages/families/prophetic-writing.html"
       ]
     }
   ]

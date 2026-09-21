@@ -37,6 +37,18 @@ Phase 2 keeps the same curated Pages shell and adds a summary-first inventory la
 
 The catalogue page must load only collection summaries by default and fetch record-level inventory lazily so the archive shell does not eagerly load the full corpus into the browser.
 
+
+## Phase 3 provenance and route review
+
+Phase 3 builds on the Phase 2 inventory by adding:
+
+- route-level collection pages under `pages/collections/`
+- route-level preserved writing pages under `pages/families/`
+- `public/data/archive-routes.json` for published route summaries
+- `spec/inventory/archive-provenance-phase3.json` for internal provenance and review queues
+
+These routes organise already-published metadata only. They do not publish new evidence files or broaden collection scope beyond the approved Pages boundary.
+
 ## Deployment boundary
 
 GitHub Pages should publish only the curated shell and approved metadata files copied into `.site-build/`.
@@ -48,6 +60,8 @@ Included in `.site-build/`:
 - `public/data/documents.json` copied to `data/documents.json`
 - `public/data/archive-collections.json` copied to `data/archive-collections.json`
 - `public/data/archive-records.json` copied to `data/archive-records.json`
+- `public/data/archive-routes.json` copied to `data/archive-routes.json`
+- route pages under `pages/collections/` and `pages/families/`
 - favicon / icon assets
 
 Explicitly not published by this curated shell:

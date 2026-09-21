@@ -19,6 +19,8 @@ Fields:
 - `publication_status` — for example `public-record`, `metadata-only`, `public-metadata-sensitive`, or `internal-only`
 - `sensitivity_flags[]`
 - `route_mappings[]`
+- `provenance_status` — for example `local-preserved-copy`, `remote-public-reference`, or `remote-metadata-reference`
+- `review_flags[]`
 - `public_urls`
 
 ### PresentationNode
@@ -58,6 +60,20 @@ Fields:
 - `genre_families[]`
 - `publication_status`
 - `example_paths[]`
+
+### RoutePage
+
+Represents a published collection or family route built from existing public metadata.
+
+Fields:
+
+- `route_key`
+- `route_type`
+- `route`
+- `collection_keys[]`
+- `genre_families[]`
+- `publication_statuses[]`
+- `record_count`
 
 ### PublicationControl
 
