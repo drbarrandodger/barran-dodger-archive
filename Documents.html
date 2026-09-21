@@ -70,7 +70,7 @@
 
     <section class="section" id="search-shell">
       <h2>On-demand record search</h2>
-      <div class="search-shell">
+      <form class="search-shell" id="catalogue-search-form">
         <div class="search-shell-controls">
           <div>
             <label for="catalogue-search">Search record title or path</label>
@@ -95,11 +95,11 @@
             </select>
           </div>
         </div>
+        <p><button type="submit" class="card-link" id="button-search-inventory">Search inventory</button> <button type="button" class="card-link" id="button-load-inventory">Load full record inventory</button></p>
         <p class="search-results-count" id="catalogue-count">Loading summary inventory…</p>
         <p class="small" id="inventory-load-state">The full record inventory has not been loaded yet.</p>
-        <p><button type="button" class="card-link" id="button-load-inventory">Load full record inventory</button></p>
         <div class="result-list" id="catalogue-results"></div>
-      </div>
+      </form>
     </section>
   </main>
 
@@ -118,6 +118,7 @@
     const publicationControlCards = document.getElementById('publication-control-cards');
     const genreFamilyCards = document.getElementById('genre-family-cards');
     const routeMappingSummary = document.getElementById('route-mapping-summary');
+    const searchForm = document.getElementById('catalogue-search-form');
     const countEl = document.getElementById('catalogue-count');
     const loadStateEl = document.getElementById('inventory-load-state');
     const resultsEl = document.getElementById('catalogue-results');
@@ -256,8 +257,10 @@
     buttonLoadInventory.addEventListener('click', function () {
       requestRender({ mode: 'load' }).catch(function () {});
     });
-    searchInput.addEventListener('input', function () { requestRender({ mode: 'search' }).catch(function () {}); });
-    searchInput.addEventListener('change', function () { requestRender({ mode: 'search' }).catch(function () {}); });
+    searchForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      requestRender({ mode: 'search' }).catch(function () {});
+    });
     [collectionFilter, familyFilter, publicationFilter].forEach(function (element) {
       element.addEventListener('change', function () { requestRender({ mode: 'passive' }).catch(function () {}); });
     });

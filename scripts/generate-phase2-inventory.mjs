@@ -261,13 +261,22 @@ async function main() {
       public_rule: 'Only already surfaced metadata and curated shell outputs are published by default. Internal inventories remain under spec/.',
       sensitive_rule: 'Records with sensitivity flags may appear as metadata-only or public-metadata-sensitive and require later review before expanded public presentation.'
     },
-    collections: collectionSummaries.map((collection) => ({
-      collection_key: collection.collection_key,
-      collection_label: collection.collection_label,
-      publication_status: collection.publication_status,
-      sensitive_record_count: collection.sensitive_record_count,
-      route_targets: getCollectionRouteTargets(collection.collection_key, collection.genre_families)
-    }))
+    collections: collectionSummaries.map((collection) => {
+      const genericRoutes = routeMappings
+        .filter((mapping) => mapping.collectionKeys.includes(collection.collection_key) && !mapping.genreFamilies.length)
+        .map((mapping) => mapping.route);
+      const publishedFamilyRoutes = routeMappings
+        .filter((mapping) => mapping.collectionKeys.includes(collection.collection_key) && mapping.genreFamilies.length)
+        .filter((mapping) => publicRecords.some((record) => record.collection_key === collection.collection_key && record.publication_status === 'public-record' && routeMatches(mapping, record.collection_key, record.genre_family)))
+        .map((mapping) => mapping.route);
+      return {
+        collection_key: collection.collection_key,
+        collection_label: collection.collection_label,
+        publication_status: collection.publication_status,
+        sensitive_record_count: collection.sensitive_record_count,
+        route_targets: [...new Set([...genericRoutes, ...publishedFamilyRoutes])]
+      };
+    })
   };
 
   const internalInventory = {

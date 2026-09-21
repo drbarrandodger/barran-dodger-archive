@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 const repoRoot = process.cwd();
 const requiredJsonFiles = [
@@ -12,6 +13,10 @@ const requiredJsonFiles = [
 async function readJson(relativePath) {
   const raw = await fs.readFile(path.join(repoRoot, relativePath), 'utf8');
   return JSON.parse(raw);
+}
+
+function stableId(input) {
+  return `record:${createHash('sha1').update(input).digest('hex').slice(0, 12)}`;
 }
 
 async function main() {
@@ -39,6 +44,12 @@ async function main() {
     throw new Error('Phase 2 public record inventory does not match public/data/documents.json total_pdfs.');
   }
 
+  const expectedIds = new Set((documentsIndex.documents || []).map((document) => stableId(`${document.source}:${document.path || document.title || `${document.owner}/${document.repository}`}`)));
+  const actualIds = new Set((publicRecordInventory.records || []).map((record) => record.record_id));
+  if (expectedIds.size !== actualIds.size || [...expectedIds].some((recordId) => !actualIds.has(recordId))) {
+    throw new Error('Phase 2 public record inventory is inconsistent with public/data/documents.json record identities.');
+  }
+
   if (!Array.isArray(internalInventory.records) || internalInventory.records.length === 0) {
     throw new Error('Internal Phase 2 inventory is missing records.');
   }
@@ -50,6 +61,7 @@ async function main() {
   const requiredReferences = [
     './data/archive-collections.json',
     './data/archive-records.json',
+    'button-search-inventory',
     'button-load-inventory',
     'catalogue-publication'
   ];
