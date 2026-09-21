@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barran Dodger Archive — Catalogue Shell</title>
-  <meta name="description" content="Phase 1 catalogue shell for the Barran Dodger archive. Preserved metadata remains available while full browser-side corpus loading is intentionally deferred.">
+  <title>Barran Dodger Archive — Phase 2 Inventory</title>
+  <meta name="description" content="Phase 2 archive inventory for the Barran Dodger archive. Stable record IDs, collection summaries, publication controls, and on-demand record search are layered on top of preserved paths.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/css/archive-foundation.css">
 </head>
@@ -13,11 +13,11 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <p class="site-kicker">Phase 1 · Catalogue shell</p>
-      <h1 class="site-title">Archive catalogue shell</h1>
+      <p class="site-kicker">Phase 2 · Archive inventory</p>
+      <h1 class="site-title">Archive inventory</h1>
       <p class="site-summary">
-        This page preserves discovery paths and metadata references without treating the full corpus as a browser-loaded search index.
-        Later phases can add structured record-level search on top of the preserved source directories.
+        Phase 2 adds stable record IDs, collection summaries, genre-family taxonomy, route-to-record mapping and publication controls
+        without altering the underlying archive files. The full record list remains an on-demand inventory layer.
       </p>
     </div>
   </header>
@@ -25,172 +25,241 @@
   <div class="site-nav-wrap">
     <nav class="site-nav" aria-label="Primary">
       <a href="./index.html">Home</a>
+      <a href="#publication-controls">Publication controls</a>
       <a href="#collections">Collections</a>
-      <a href="#metadata">Metadata</a>
-      <a href="#search-shell">Search shell</a>
-      <a href="#privacy">Privacy</a>
+      <a href="#writing-families">Writing families</a>
+      <a href="#search-shell">Record search</a>
     </nav>
   </div>
 
   <main class="page-main" id="main-content">
     <section class="section">
       <div class="notice">
-        <strong>Phase 1 boundary:</strong>
-        the catalogue shell does not load the entire archive corpus into the browser by default. It preserves collection boundaries,
-        points to existing machine-readable metadata, and leaves full indexing to later phases.
+        <strong>Phase 2 boundary:</strong>
+        this page loads collection summaries first. The full record inventory is fetched only when you request it through the record-search controls.
       </div>
+    </section>
+
+    <section class="section" id="publication-controls">
+      <h2>Publication controls</h2>
+      <p>
+        Publication scope is now separated from preservation scope. Some records are public records, some are public metadata only,
+        and some remain internal-only inventory references.
+      </p>
+      <div class="grid grid-3" id="publication-control-cards"></div>
     </section>
 
     <section class="section" id="collections">
-      <h2>Preserved collections</h2>
-      <div class="grid grid-3" id="collection-cards"></div>
+      <h2>Collection summaries</h2>
+      <div class="grid grid-3" id="collection-summary-cards"></div>
     </section>
 
-    <section class="section" id="metadata">
-      <h2>Existing machine-readable metadata</h2>
+    <section class="section" id="writing-families">
+      <h2>Writing families</h2>
       <p>
-        The current PDF catalogue remains preserved at <code>public/data/documents.json</code>. For Phase 1 it is exposed as a source metadata file,
-        not rewritten as newly verified descriptive content.
+        Phase 2 explicitly carries forward preserved families including gospels, prophetic writing, and essays on technology and targeting.
       </p>
-      <p>
-        <a class="card-link" href="./data/documents.json">Open preserved metadata JSON →</a>
-      </p>
-      <div class="notice notice-danger">
-        <strong>Privacy and evidence caution:</strong>
-        some filenames and source paths contain official classifications or personal/privacy cues already present in the repository.
-        Later phases should decide what can be surfaced publicly at record level before broadening the browser experience.
-      </div>
+      <div class="grid grid-3" id="genre-family-cards"></div>
+      <div class="notice small" id="route-mapping-summary"></div>
     </section>
 
     <section class="section" id="search-shell">
-      <h2>Catalogue search shell</h2>
+      <h2>On-demand record search</h2>
       <div class="search-shell">
         <div class="search-shell-controls">
           <div>
-            <label for="catalogue-search">Search preserved collection surfaces</label>
-            <input id="catalogue-search" type="search" placeholder="Search collections, metadata or preserved paths">
+            <label for="catalogue-search">Search record title or path</label>
+            <input id="catalogue-search" type="search" placeholder="Search titles, paths, families, or source repositories">
           </div>
           <div>
-            <label for="catalogue-group">Filter group</label>
-            <select id="catalogue-group">
-              <option value="">All groups</option>
-              <option value="Collection">Collection</option>
-              <option value="Metadata">Metadata</option>
-              <option value="Build / route">Build / route</option>
+            <label for="catalogue-collection">Filter collection</label>
+            <select id="catalogue-collection">
+              <option value="">All collections</option>
+            </select>
+          </div>
+          <div>
+            <label for="catalogue-family">Filter writing family</label>
+            <select id="catalogue-family">
+              <option value="">All families</option>
+            </select>
+          </div>
+          <div>
+            <label for="catalogue-publication">Filter publication status</label>
+            <select id="catalogue-publication">
+              <option value="">All publication states</option>
             </select>
           </div>
         </div>
-        <p class="search-results-count" id="catalogue-count"></p>
+        <p class="search-results-count" id="catalogue-count">Loading summary inventory…</p>
+        <p class="small" id="inventory-load-state">The full record inventory has not been loaded yet.</p>
+        <p><button type="button" class="card-link" id="button-load-inventory">Load full record inventory</button></p>
         <div class="result-list" id="catalogue-results"></div>
       </div>
-    </section>
-
-    <section class="section" id="privacy">
-      <h2>What Phase 1 deliberately does not do</h2>
-      <ul class="key-points">
-        <li>It does not normalise or rename documentary artefacts.</li>
-        <li>It does not treat repository filenames as validated legal or factual conclusions.</li>
-        <li>It does not publish a new broad browse view of potentially sensitive source material by default.</li>
-        <li>It does not implement forensic modules or full archive indexing yet.</li>
-      </ul>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p class="footer-note">Next recommended phase: Archive Inventory.</p>
+      <p class="footer-note">Phase 2 keeps original evidence in place while adding machine-readable record inventory layers and collection-level publication boundaries.</p>
     </div>
   </footer>
 
   <script src="./assets/js/archive-foundation.js"></script>
   <script>
-    const collectionCards = [
-      {
-        title: 'attached_assets/',
-        description: 'High-volume preserved evidence and documentary assets retained at their original repository path.',
-        meta: 'Collection · preserved source path'
-      },
-      {
-        title: 'client/public/documents/',
-        description: 'Existing public document corpus retained for later stable-ID modelling and record views.',
-        meta: 'Collection · public document root'
-      },
-      {
-        title: 'Gospels, prophetic writing, and technology / targeting essays',
-        description: 'Preserved writing families are acknowledged in Phase 1 as distinct archive collections even where later record-level tagging is still pending.',
-        meta: 'Collection · preserved writing families'
-      },
-      {
-        title: 'public/data/documents.json',
-        description: 'Current machine-readable PDF catalogue preserved as source metadata.',
-        href: './data/documents.json',
-        meta: 'Metadata · raw JSON'
-      }
-    ];
+    const collectionsUrl = './data/archive-collections.json';
+    const recordsUrl = './data/archive-records.json';
 
-    const catalogueItems = [
-      {
-        title: 'Preserved PDF metadata catalogue',
-        description: 'Existing JSON index of publicly discoverable PDF items as already generated by the repository.',
-        group: 'Metadata',
-        path: 'public/data/documents.json',
-        href: './data/documents.json',
-        tags: ['json', 'pdf', 'catalogue']
-      },
-      {
-        title: 'Root catalogue shell page',
-        description: 'Public shell page for catalogue orientation and later indexing work.',
-        group: 'Build / route',
-        path: 'Documents.html',
-        href: './Documents.html',
-        tags: ['route', 'catalogue', 'phase 1']
-      },
-      {
-        title: 'Legacy pages path',
-        description: 'Preserved route alias for older references to the catalogue page.',
-        group: 'Build / route',
-        path: 'pages/documents.html',
-        href: './pages/documents.html',
-        tags: ['legacy route', 'alias']
-      },
-      {
-        title: 'Evidence assets collection',
-        description: 'Original source directory for preserved evidence files outside the public shell.',
-        group: 'Collection',
-        path: 'attached_assets/',
-        tags: ['evidence', 'original path', 'preserved']
-      },
-      {
-        title: 'Public document collection',
-        description: 'Existing public document directory retained for later record-level archive views.',
-        group: 'Collection',
-        path: 'client/public/documents/',
-        tags: ['documents', 'public tree']
-      },
-      {
-        title: 'Gospel and prophetic writing families',
-        description: 'Phase 1 records gospel, prophetic, and technology / targeting essay material as preserved writing families pending later record-level classification.',
-        group: 'Collection',
-        path: 'client/public/documents/',
-        tags: ['gospels', 'prophetic', 'technology', 'targeting', 'essays']
-      },
-      {
-        title: 'Repository inventory snapshot',
-        description: 'Machine-readable pre-restructure inventory stored under spec/ rather than in the public shell.',
-        group: 'Metadata',
-        path: 'spec/inventory/repository-pre-phase1.json',
-        tags: ['inventory', 'internal metadata']
-      }
-    ];
+    const collectionSummaryCards = document.getElementById('collection-summary-cards');
+    const publicationControlCards = document.getElementById('publication-control-cards');
+    const genreFamilyCards = document.getElementById('genre-family-cards');
+    const routeMappingSummary = document.getElementById('route-mapping-summary');
+    const countEl = document.getElementById('catalogue-count');
+    const loadStateEl = document.getElementById('inventory-load-state');
+    const resultsEl = document.getElementById('catalogue-results');
+    const buttonLoadInventory = document.getElementById('button-load-inventory');
+    const searchInput = document.getElementById('catalogue-search');
+    const collectionFilter = document.getElementById('catalogue-collection');
+    const familyFilter = document.getElementById('catalogue-family');
+    const publicationFilter = document.getElementById('catalogue-publication');
 
-    ArchiveFoundation.renderCards(document.getElementById('collection-cards'), collectionCards);
-    ArchiveFoundation.attachSearch({
-      inputId: 'catalogue-search',
-      filterId: 'catalogue-group',
-      countId: 'catalogue-count',
-      resultsId: 'catalogue-results',
-      items: catalogueItems
+    let summaryData = null;
+    let recordData = null;
+    let recordsPromise = null;
+
+    function escapeHtml(value) {
+      return ArchiveFoundation.escapeHtml(value);
+    }
+
+    function optionMarkup(value, label) {
+      return '<option value="' + escapeHtml(value) + '">' + escapeHtml(label) + '</option>';
+    }
+
+    function populateFilters() {
+      if (!summaryData) return;
+      collectionFilter.innerHTML = '<option value="">All collections</option>' + summaryData.collection_summaries.map(function (entry) {
+        return optionMarkup(entry.collection_key, entry.collection_label + ' (' + entry.record_count + ')');
+      }).join('');
+      familyFilter.innerHTML = '<option value="">All families</option>' + summaryData.genre_family_summaries.map(function (entry) {
+        return optionMarkup(entry.genre_family, entry.genre_family + ' (' + entry.record_count + ')');
+      }).join('');
+      publicationFilter.innerHTML = '<option value="">All publication states</option>' + summaryData.publication_controls.map(function (entry) {
+        return optionMarkup(entry.publication_status, entry.publication_status + ' (' + entry.collection_label + ')');
+      }).join('');
+    }
+
+    function renderSummary(data) {
+      summaryData = data;
+      countEl.textContent = 'Summary inventory loaded: ' + data.summary.total_catalogue_records + ' catalogue records across ' + data.summary.collection_count + ' collections.';
+      ArchiveFoundation.renderCards(collectionSummaryCards, data.collection_summaries.map(function (entry) {
+        return {
+          title: entry.collection_label,
+          description: entry.record_count + ' catalogue records · ' + entry.sensitive_record_count + ' with sensitivity markers.',
+          meta: 'Publication: ' + entry.publication_status + ' · Families: ' + entry.genre_families.join(', '),
+          href: '#collection-' + entry.collection_key
+        };
+      }));
+      ArchiveFoundation.renderCards(publicationControlCards, data.publication_controls.map(function (entry) {
+        return {
+          title: entry.collection_label,
+          description: 'Publication status: ' + entry.publication_status + '. Sensitive records flagged: ' + entry.sensitive_record_count + '.',
+          meta: entry.route_targets.length ? 'Routes: ' + entry.route_targets.join(', ') : 'No dedicated route target yet.'
+        };
+      }));
+      ArchiveFoundation.renderCards(genreFamilyCards, data.genre_family_summaries.map(function (entry) {
+        return {
+          title: entry.genre_family,
+          description: entry.record_count + ' catalogue records currently grouped under this family.',
+          meta: 'Collections: ' + entry.collection_keys.join(', '),
+          href: '#family-' + entry.genre_family.replace(/[^a-z0-9]+/gi, '-').toLowerCase()
+        };
+      }));
+      routeMappingSummary.textContent = 'Route mappings available: ' + data.route_mappings.map(function (entry) { return entry.title + ' → ' + entry.route; }).join(' · ');
+      populateFilters();
+    }
+
+    function renderRecords(records) {
+      const query = searchInput.value.trim().toLowerCase();
+      const collection = collectionFilter.value;
+      const family = familyFilter.value;
+      const publication = publicationFilter.value;
+      const filtered = records.filter(function (record) {
+        const haystack = [record.title, record.original_path, record.genre_family, record.collection_label, record.source, record.repository_owner, record.repository_name].join(' ').toLowerCase();
+        return (!query || haystack.includes(query)) &&
+          (!collection || record.collection_key === collection) &&
+          (!family || record.genre_family === family) &&
+          (!publication || record.publication_status === publication);
+      });
+      const limited = filtered.slice(0, 50);
+      countEl.textContent = 'Showing ' + limited.length + ' of ' + filtered.length + ' matching records (' + records.length + ' total in published record inventory).';
+      resultsEl.setAttribute('role', 'list');
+      resultsEl.innerHTML = limited.map(function (record) {
+        const sensitivity = record.sensitivity_flags.length ? '<div class="pill-row">' + record.sensitivity_flags.map(function (flag) { return '<span class="pill">' + escapeHtml(flag) + '</span>'; }).join('') + '</div>' : '<p class="small">No sensitivity flags inferred from path/title.</p>';
+        const routeInfo = record.route_mappings.length ? '<p class="small"><strong>Routes:</strong> ' + escapeHtml(record.route_mappings.join(', ')) + '</p>' : '';
+        const rawLink = record.public_urls && record.public_urls.raw_url ? '<a class="card-link" href="' + escapeHtml(record.public_urls.raw_url) + '" target="_blank" rel="noopener noreferrer">Open raw source</a>' : '';
+        const githubLink = record.public_urls && record.public_urls.github_blob_url ? '<a class="card-link" href="' + escapeHtml(record.public_urls.github_blob_url) + '" target="_blank" rel="noopener noreferrer">Open GitHub source</a>' : '';
+        return '<article class="result-card" role="listitem">' +
+          '<h3>' + escapeHtml(record.title) + '</h3>' +
+          '<div class="result-meta">' + escapeHtml(record.record_id) + ' · ' + escapeHtml(record.collection_label) + ' · ' + escapeHtml(record.genre_family) + '</div>' +
+          '<p><strong>Original path:</strong> <code>' + escapeHtml(record.original_path) + '</code></p>' +
+          '<p><strong>Publication status:</strong> ' + escapeHtml(record.publication_status) + '</p>' +
+          '<p><strong>Local preserved path present:</strong> ' + escapeHtml(record.local_repository_match ? 'yes' : 'no / remote-catalogue only') + '</p>' +
+          sensitivity + routeInfo +
+          '<div class="pill-row"><span class="pill">' + escapeHtml(record.repository_owner + '/' + record.repository_name) + '</span></div>' +
+          '<div class="pill-row">' + githubLink + rawLink + '</div>' +
+        '</article>';
+      }).join('') || '<article class="result-card" role="listitem"><h3>No matching records</h3><p>Try changing the filters or load the record inventory if it has not been fetched yet.</p></article>';
+    }
+
+    async function ensureRecordInventoryLoaded() {
+      if (recordData) return recordData;
+      if (!recordsPromise) {
+        loadStateEl.textContent = 'Loading full published record inventory…';
+        recordsPromise = fetch(recordsUrl, { cache: 'no-store' }).then(function (response) {
+          if (!response.ok) throw new Error('Unable to load Phase 2 record inventory.');
+          return response.json();
+        }).then(function (data) {
+          recordData = data;
+          loadStateEl.textContent = 'Full published record inventory loaded on demand.';
+          return data;
+        }).catch(function (error) {
+          loadStateEl.textContent = error.message;
+          throw error;
+        });
+      }
+      return recordsPromise;
+    }
+
+    async function requestRender() {
+      const shouldLoad = searchInput.value.trim() || collectionFilter.value || familyFilter.value || publicationFilter.value;
+      if (!recordData && !shouldLoad) {
+        resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Inventory not loaded yet</h3><p>Use the button above or apply a filter to load the published record inventory on demand.</p></article>';
+        return;
+      }
+      const data = await ensureRecordInventoryLoaded();
+      renderRecords(data.records || []);
+    }
+
+    buttonLoadInventory.addEventListener('click', function () {
+      requestRender().catch(function () {});
     });
+    [searchInput, collectionFilter, familyFilter, publicationFilter].forEach(function (element) {
+      element.addEventListener('input', function () { requestRender().catch(function () {}); });
+      element.addEventListener('change', function () { requestRender().catch(function () {}); });
+    });
+
+    fetch(collectionsUrl, { cache: 'no-store' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Unable to load Phase 2 collection summaries.');
+        return response.json();
+      })
+      .then(function (data) {
+        renderSummary(data);
+        requestRender().catch(function () {});
+      })
+      .catch(function (error) {
+        countEl.textContent = error.message;
+        resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Collection summaries unavailable</h3><p>' + escapeHtml(error.message) + '</p></article>';
+      });
   </script>
 </body>
 </html>

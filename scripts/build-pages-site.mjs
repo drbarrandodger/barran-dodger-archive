@@ -12,6 +12,8 @@ const filesToCopy = [
   ['assets/css/archive-foundation.css', 'assets/css/archive-foundation.css'],
   ['assets/js/archive-foundation.js', 'assets/js/archive-foundation.js'],
   ['public/data/documents.json', 'data/documents.json'],
+  ['public/data/archive-collections.json', 'data/archive-collections.json'],
+  ['public/data/archive-records.json', 'data/archive-records.json'],
   ['public/favicon.svg', 'favicon.svg'],
   ['public/icons.svg', 'icons.svg']
 ];

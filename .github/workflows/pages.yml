@@ -31,6 +31,10 @@ jobs:
         run: |
           node scripts/check-phase1-foundation.mjs
 
+      - name: Validate Phase 2 inventory
+        run: |
+          node scripts/check-phase2-inventory.mjs
+
       - name: Build curated Pages site
         run: |
           node scripts/build-pages-site.mjs

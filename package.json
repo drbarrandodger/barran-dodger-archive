@@ -11,7 +11,8 @@
     "inventory:generate": "node scripts/generate-phase1-inventory.mjs --overwrite",
     "check:phase1": "node scripts/check-phase1-foundation.mjs",
     "build:pages:static": "node scripts/build-pages-site.mjs",
-    "inventory:phase2": "node scripts/generate-phase2-inventory.mjs"
+    "inventory:phase2": "node scripts/generate-phase2-inventory.mjs",
+    "check:phase2": "node scripts/check-phase2-inventory.mjs"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^6.6.0",
