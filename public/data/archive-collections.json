@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:35:38.045Z",
+  "generated_at": "2026-09-21T10:36:50.117Z",
   "summary": {
     "total_catalogue_records": 698,
     "collection_count": 6,
@@ -301,6 +301,7 @@
       "publication_status": "metadata-only",
       "sensitive_record_count": 3,
       "route_targets": [
+        "./Documents.html",
         "./Documents.html#collection-attached-assets"
       ]
     },

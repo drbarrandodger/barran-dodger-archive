@@ -252,8 +252,10 @@
       const hasSearchQuery = Boolean(searchInput.value.trim());
       const hasFilterSelection = Boolean(collectionFilter.value || familyFilter.value || publicationFilter.value);
       if (!recordData) {
-        if (mode !== 'load' && !hasSearchQuery && !hasFilterSelection) {
-          const detail = 'Use the button above, a text search, or a filter selection to load the published record inventory on demand.';
+        if (mode === 'passive') {
+          const detail = hasSearchQuery || hasFilterSelection
+            ? 'Your search criteria are staged. Submit the form or use the load button to fetch the published record inventory.'
+            : 'Use the button above, a text search submission, or filter selections followed by submit to load the published record inventory on demand.';
           resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Inventory not loaded yet</h3><p>' + escapeHtml(detail) + '</p></article>';
           return;
         }
@@ -264,30 +266,32 @@
       renderRecords(recordData.records || []);
     }
 
-    function announcePendingSearch() {
+    function announcePendingControls() {
       if (recordData) {
         renderRecords(recordData.records || []);
         return;
       }
       const hasSearchQuery = Boolean(searchInput.value.trim());
-      countEl.textContent = hasSearchQuery
-        ? 'Search text entered. Submit the form or load the inventory to search the full published record set.'
-        : 'Summary inventory loaded: ' + summaryData.summary.total_catalogue_records + ' catalogue records across ' + summaryData.summary.collection_count + ' collections.';
-      if (hasSearchQuery) {
-        resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Search ready</h3><p>Submit the form to load the published record inventory for this search.</p></article>';
+      const hasFilterSelection = Boolean(collectionFilter.value || familyFilter.value || publicationFilter.value);
+      if (hasSearchQuery || hasFilterSelection) {
+        countEl.textContent = 'Search criteria ready. Submit the form or use the load button to fetch the published record inventory.';
+        resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Search ready</h3><p>Your search text and filters are staged. Submit the form to run the search against the published record inventory.</p></article>';
+        return;
       }
+      countEl.textContent = 'Summary inventory loaded: ' + summaryData.summary.total_catalogue_records + ' catalogue records across ' + summaryData.summary.collection_count + ' collections.';
+      resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Inventory not loaded yet</h3><p>Use the button above, a text search submission, or filter selections followed by submit to load the published record inventory on demand.</p></article>';
     }
 
     buttonLoadInventory.addEventListener('click', function () {
       requestRender({ mode: 'load' }).catch(handleAsyncError);
     });
-    searchInput.addEventListener('input', announcePendingSearch);
+    searchInput.addEventListener('input', announcePendingControls);
     searchForm.addEventListener('submit', function (event) {
       event.preventDefault();
       requestRender({ mode: 'search' }).catch(handleAsyncError);
     });
     [collectionFilter, familyFilter, publicationFilter].forEach(function (element) {
-      element.addEventListener('change', function () { requestRender({ mode: 'passive' }).catch(handleAsyncError); });
+      element.addEventListener('change', announcePendingControls);
     });
 
     fetch(collectionsUrl, { cache: 'no-store' })

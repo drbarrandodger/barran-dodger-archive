@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:35:38.045Z",
+  "generated_at": "2026-09-21T10:36:50.117Z",
   "policy": {
     "preservation_rule": "Original evidence stays preserved in place; derived inventory and presentation layers must reference original paths rather than rewrite source artefacts.",
     "public_rule": "Only already surfaced metadata and curated shell outputs are published by default. Internal inventories remain under spec/.",
@@ -51,6 +51,7 @@
       "publication_status": "metadata-only",
       "sensitive_record_count": 3,
       "route_targets": [
+        "./Documents.html",
         "./Documents.html#collection-attached-assets"
       ]
     },

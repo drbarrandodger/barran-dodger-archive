@@ -246,7 +246,7 @@ async function main() {
         github_blob_url: document.url,
         raw_url: document.raw_url
       },
-      route_mappings: publicationStatus === 'public-record' ? getMatchingRoutes(collection.key, genreFamily) : []
+      route_mappings: ['public-record', 'public-metadata-sensitive'].includes(publicationStatus) ? getMatchingRoutes(collection.key, genreFamily) : []
     };
   });
 
@@ -262,19 +262,24 @@ async function main() {
       sensitive_rule: 'Records with sensitivity flags may appear as metadata-only or public-metadata-sensitive and require later review before expanded public presentation.'
     },
     collections: collectionSummaries.map((collection) => {
-      const genericRoutes = routeMappings
-        .filter((mapping) => mapping.collectionKeys.includes(collection.collection_key) && !mapping.genreFamilies.length)
+      const catalogueRoutes = routeMappings
+        .filter((mapping) => mapping.route === './Documents.html' && mapping.collectionKeys.includes(collection.collection_key))
         .map((mapping) => mapping.route);
-      const publishedFamilyRoutes = routeMappings
-        .filter((mapping) => mapping.collectionKeys.includes(collection.collection_key) && mapping.genreFamilies.length)
-        .filter((mapping) => publicRecords.some((record) => record.collection_key === collection.collection_key && ['public-record', 'public-metadata-sensitive'].includes(record.publication_status) && routeMatches(mapping, record.collection_key, record.genre_family)))
+      const collectionRoutes = routeMappings
+        .filter((mapping) => mapping.route.includes('#collection-') && mapping.collectionKeys.includes(collection.collection_key))
         .map((mapping) => mapping.route);
+      const publishedFamilyRoutes = collection.publication_status === 'metadata-only'
+        ? []
+        : routeMappings
+          .filter((mapping) => mapping.route.includes('#family-') && mapping.collectionKeys.includes(collection.collection_key))
+          .filter((mapping) => publicRecords.some((record) => record.collection_key === collection.collection_key && ['public-record', 'public-metadata-sensitive'].includes(record.publication_status) && routeMatches(mapping, record.collection_key, record.genre_family)))
+          .map((mapping) => mapping.route);
       return {
         collection_key: collection.collection_key,
         collection_label: collection.collection_label,
         publication_status: collection.publication_status,
         sensitive_record_count: collection.sensitive_record_count,
-        route_targets: [...new Set([...genericRoutes, ...publishedFamilyRoutes])]
+        route_targets: [...new Set([...catalogueRoutes, ...collectionRoutes, ...publishedFamilyRoutes])]
       };
     })
   };
