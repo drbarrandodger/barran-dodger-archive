@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:37:43.560Z",
+  "generated_at": "2026-09-21T10:38:24.175Z",
   "summary": {
     "total_catalogue_records": 698,
     "collection_count": 6,
@@ -218,7 +218,9 @@
       "collectionKeys": [
         "public-documents",
         "forensic-analyses",
-        "attached-assets"
+        "video-analyses",
+        "attached-assets",
+        "unclassified"
       ],
       "genreFamilies": [
         "prophetic-writing"
@@ -230,6 +232,7 @@
       "collectionKeys": [
         "public-documents",
         "forensic-analyses",
+        "government-evidence",
         "attached-assets"
       ],
       "genreFamilies": [
@@ -275,7 +278,8 @@
       "sensitive_record_count": 18,
       "route_targets": [
         "./Documents.html",
-        "./Documents.html#collection-government-evidence"
+        "./Documents.html#collection-government-evidence",
+        "./Documents.html#family-technology-targeting-essays"
       ]
     },
     {
@@ -311,7 +315,8 @@
       "publication_status": "public-record",
       "sensitive_record_count": 0,
       "route_targets": [
-        "./Documents.html"
+        "./Documents.html",
+        "./Documents.html#family-prophetic-writing"
       ]
     }
   ]

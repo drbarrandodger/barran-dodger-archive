@@ -30,8 +30,8 @@ const collectionRules = [
 const routeMappings = [
   { route: './Documents.html', title: 'Archive catalogue shell', collectionKeys: ['attached-assets', 'government-evidence', 'forensic-analyses', 'video-analyses', 'public-documents', 'public-evidence', 'public-audio', 'public-video'], genreFamilies: ['gospel', 'prophetic-writing', 'technology-targeting-essay', 'essay', 'official-record', 'media'] },
   { route: './Documents.html#family-gospels', title: 'Gospel writings', collectionKeys: ['public-documents', 'attached-assets'], genreFamilies: ['gospel'] },
-  { route: './Documents.html#family-prophetic-writing', title: 'Prophetic writings', collectionKeys: ['public-documents', 'forensic-analyses', 'attached-assets'], genreFamilies: ['prophetic-writing'] },
-  { route: './Documents.html#family-technology-targeting-essays', title: 'Technology and targeting essays', collectionKeys: ['public-documents', 'forensic-analyses', 'attached-assets'], genreFamilies: ['technology-targeting-essay'] },
+  { route: './Documents.html#family-prophetic-writing', title: 'Prophetic writings', collectionKeys: ['public-documents', 'forensic-analyses', 'video-analyses', 'attached-assets', 'unclassified'], genreFamilies: ['prophetic-writing'] },
+  { route: './Documents.html#family-technology-targeting-essays', title: 'Technology and targeting essays', collectionKeys: ['public-documents', 'forensic-analyses', 'government-evidence', 'attached-assets'], genreFamilies: ['technology-targeting-essay'] },
   { route: './Documents.html#collection-government-evidence', title: 'Government evidence collection', collectionKeys: ['government-evidence'], genreFamilies: ['official-record'] },
   { route: './Documents.html#collection-attached-assets', title: 'Attached assets (metadata only)', collectionKeys: ['attached-assets'], genreFamilies: [] }
 ];

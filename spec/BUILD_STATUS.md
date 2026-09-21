@@ -19,7 +19,7 @@
   - `spec/inventory/archive-publication-controls.json`
   - `public/data/archive-collections.json`
   - `public/data/archive-records.json`
-- updated `Documents.html` to load collection summaries first and fetch the record-level inventory only on demand
+- updated `Documents.html` to load collection summaries and an initial empty-state shell immediately, while deferring the full record-level inventory fetch until explicit load/search actions
 - extended validation and Pages publishing allowlists for the Phase 2 public inventory files
 
 ## Files created
