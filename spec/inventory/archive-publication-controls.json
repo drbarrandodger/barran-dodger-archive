@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:33:25.180Z",
+  "generated_at": "2026-09-21T10:34:14.997Z",
   "policy": {
     "preservation_rule": "Original evidence stays preserved in place; derived inventory and presentation layers must reference original paths rather than rewrite source artefacts.",
     "public_rule": "Only already surfaced metadata and curated shell outputs are published by default. Internal inventories remain under spec/.",

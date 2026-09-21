@@ -96,9 +96,9 @@
           </div>
         </div>
         <p><button type="submit" class="card-link" id="button-search-inventory">Search inventory</button> <button type="button" class="card-link" id="button-load-inventory">Load full record inventory</button></p>
-        <p class="search-results-count" id="catalogue-count">Loading summary inventory…</p>
-        <p class="small" id="inventory-load-state">The full record inventory has not been loaded yet.</p>
-        <div class="result-list" id="catalogue-results"></div>
+        <p class="search-results-count" id="catalogue-count" role="status" aria-live="polite">Loading summary inventory…</p>
+        <p class="small" id="inventory-load-state" role="status" aria-live="polite">The full record inventory has not been loaded yet.</p>
+        <div class="result-list" id="catalogue-results" aria-live="polite"></div>
       </form>
     </section>
   </main>
@@ -138,6 +138,13 @@
 
     function optionMarkup(value, label) {
       return '<option value="' + escapeHtml(value) + '">' + escapeHtml(label) + '</option>';
+    }
+
+    function handleAsyncError(error) {
+      const message = error && error.message ? error.message : 'Unable to load the requested archive inventory data.';
+      loadStateEl.textContent = message;
+      countEl.textContent = message;
+      resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Inventory unavailable</h3><p>' + escapeHtml(message) + '</p></article>';
     }
 
     function populateFilters() {
@@ -255,14 +262,14 @@
     }
 
     buttonLoadInventory.addEventListener('click', function () {
-      requestRender({ mode: 'load' }).catch(function () {});
+      requestRender({ mode: 'load' }).catch(handleAsyncError);
     });
     searchForm.addEventListener('submit', function (event) {
       event.preventDefault();
-      requestRender({ mode: 'search' }).catch(function () {});
+      requestRender({ mode: 'search' }).catch(handleAsyncError);
     });
     [collectionFilter, familyFilter, publicationFilter].forEach(function (element) {
-      element.addEventListener('change', function () { requestRender({ mode: 'passive' }).catch(function () {}); });
+      element.addEventListener('change', function () { requestRender({ mode: 'passive' }).catch(handleAsyncError); });
     });
 
     fetch(collectionsUrl, { cache: 'no-store' })
@@ -272,7 +279,7 @@
       })
       .then(function (data) {
         renderSummary(data);
-        requestRender().catch(function () {});
+        requestRender().catch(handleAsyncError);
       })
       .catch(function (error) {
         countEl.textContent = error.message;

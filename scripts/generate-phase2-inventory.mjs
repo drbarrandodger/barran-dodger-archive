@@ -246,7 +246,7 @@ async function main() {
         github_blob_url: document.url,
         raw_url: document.raw_url
       },
-      route_mappings: getMatchingRoutes(collection.key, genreFamily)
+      route_mappings: publicationStatus === 'public-record' ? getMatchingRoutes(collection.key, genreFamily) : []
     };
   });
 

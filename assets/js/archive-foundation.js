@@ -34,6 +34,10 @@
     var results = document.getElementById(config.resultsId);
     if (!input || !count || !results) return;
 
+    count.setAttribute('role', 'status');
+    count.setAttribute('aria-live', 'polite');
+    results.setAttribute('aria-live', 'polite');
+
     function render() {
       var query = input.value.trim().toLowerCase();
       var group = filter ? filter.value : '';
