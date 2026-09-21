@@ -240,10 +240,8 @@
       const hasSearchQuery = Boolean(searchInput.value.trim());
       const hasFilterSelection = Boolean(collectionFilter.value || familyFilter.value || publicationFilter.value);
       if (!recordData) {
-        if (mode !== 'load' && !hasSearchQuery) {
-          const detail = hasFilterSelection
-            ? 'Filters are ready, but the full record inventory will stay unloaded until you press the load button or run a text search.'
-            : 'Use the button above or enter a text search to load the published record inventory on demand.';
+        if (mode !== 'load' && !hasSearchQuery && !hasFilterSelection) {
+          const detail = 'Use the button above, a text search, or a filter selection to load the published record inventory on demand.';
           resultsEl.innerHTML = '<article class="result-card" role="listitem"><h3>Inventory not loaded yet</h3><p>' + escapeHtml(detail) + '</p></article>';
           return;
         }

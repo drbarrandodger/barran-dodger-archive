@@ -31,6 +31,9 @@ async function main() {
   }
 
   const expectedDocumentCount = documentsIndex.total_pdfs ?? documentsIndex.summary?.total_pdfs ?? documentsIndex.summary?.total_records;
+  if (typeof expectedDocumentCount !== 'number') {
+    throw new Error('public/data/documents.json is missing a recognised total count field.');
+  }
 
   if (expectedDocumentCount !== publicRecordInventory.summary.total_records) {
     throw new Error('Phase 2 public record inventory does not match public/data/documents.json total_pdfs.');

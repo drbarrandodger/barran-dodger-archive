@@ -116,6 +116,16 @@ function combinePublicationStatus(currentStatus, nextStatus) {
   return (rank[nextStatus] || 0) > (rank[currentStatus] || 0) ? nextStatus : currentStatus;
 }
 
+function routeMatches(mapping, collectionKey, genreFamily) {
+  const collectionMatches = !mapping.collectionKeys.length || mapping.collectionKeys.includes(collectionKey);
+  const familyMatches = !mapping.genreFamilies.length || mapping.genreFamilies.includes(genreFamily);
+  return collectionMatches && familyMatches;
+}
+
+function getMatchingRoutes(collectionKey, genreFamily) {
+  return routeMappings.filter((mapping) => routeMatches(mapping, collectionKey, genreFamily)).map((mapping) => mapping.route);
+}
+
 function normaliseTitle(title, recordPath) {
   if (title && title.trim()) return title.trim();
   return path.basename(recordPath);
@@ -228,11 +238,7 @@ async function main() {
         github_blob_url: document.url,
         raw_url: document.raw_url
       },
-      route_mappings: routeMappings.filter((mapping) => {
-        const collectionMatches = !mapping.collectionKeys.length || mapping.collectionKeys.includes(collection.key);
-        const familyMatches = !mapping.genreFamilies.length || mapping.genreFamilies.includes(genreFamily);
-        return collectionMatches && familyMatches;
-      }).map((mapping) => mapping.route)
+      route_mappings: getMatchingRoutes(collection.key, genreFamily)
     };
   });
 
@@ -252,7 +258,7 @@ async function main() {
       collection_label: collection.collection_label,
       publication_status: collection.publication_status,
       sensitive_record_count: collection.sensitive_record_count,
-      route_targets: routeMappings.filter((mapping) => mapping.collectionKeys.includes(collection.collection_key)).map((mapping) => mapping.route)
+      route_targets: [...new Set(collection.genre_families.flatMap((genreFamily) => getMatchingRoutes(collection.collection_key, genreFamily)))]
     }))
   };
 

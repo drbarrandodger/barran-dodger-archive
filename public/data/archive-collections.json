@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:31:01.986Z",
+  "generated_at": "2026-09-21T10:31:51.486Z",
   "summary": {
     "total_catalogue_records": 698,
     "collection_count": 6,
@@ -292,8 +292,7 @@
       "sensitive_record_count": 0,
       "route_targets": [
         "./Documents.html",
-        "./Documents.html#family-prophetic-writing",
-        "./Documents.html#family-technology-targeting-essays"
+        "./Documents.html#family-prophetic-writing"
       ]
     },
     {
@@ -303,10 +302,8 @@
       "sensitive_record_count": 3,
       "route_targets": [
         "./Documents.html",
-        "./Documents.html#family-gospels",
-        "./Documents.html#family-prophetic-writing",
-        "./Documents.html#family-technology-targeting-essays",
-        "./Documents.html#collection-attached-assets"
+        "./Documents.html#collection-attached-assets",
+        "./Documents.html#family-gospels"
       ]
     },
     {
