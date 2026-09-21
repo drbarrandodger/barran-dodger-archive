@@ -14,6 +14,7 @@ Fields:
 - `media_type`
 - `size_bytes`
 - `provenance_status`
+- `genre_family` — for example `gospel`, `prophetic-writing`, `technology-targeting-essay`, `essay`, `official-record`, or `mixed`
 - `sensitivity_flags[]`
 
 ### PresentationNode

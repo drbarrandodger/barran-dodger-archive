@@ -18,7 +18,7 @@ const excludePrefixes = [
   'client/github-pages-deploy/',
   '.site-build/'
 ];
-const sensitiveRegex = /(secret|token|password|credential|private[-_ ]?key|access|personal|privacy|sec|official|sensitive)/i;
+const sensitiveRegex = /(secret|token|password|credential|private[-_ ]?key|personal|privacy|sec|official|sensitive|access[-_ ]?(?:token|key))/i;
 const blockchainRegex = /(hash|sha256|timestamp|blockchain|ots|bitcoin)/i;
 const buildConfigs = [
   'package.json',
@@ -53,11 +53,30 @@ async function walk(directory, fileEntries = [], htmlFiles = []) {
       sensitivePathCandidate: sensitiveRegex.test(relativePath),
       blockchainOrHashCandidate: blockchainRegex.test(relativePath)
     });
-    if ((ext === '.html' || ext === '.md') && stats.size < 1_000_000) {
+    if (ext === '.html' && stats.size < 1_000_000) {
       htmlFiles.push(relativePath);
     }
   }
   return { fileEntries, htmlFiles };
+}
+
+function resolveRootRelativeCandidates(target) {
+  const clean = target.replace(/^\//, '');
+  const candidates = [
+    path.join(repoRoot, clean),
+    path.join(repoRoot, 'public', clean),
+    path.join(repoRoot, 'pages', clean)
+  ];
+
+  if (clean.startsWith('data/')) {
+    candidates.push(path.join(repoRoot, 'public', clean));
+  }
+
+  if (clean === 'favicon.svg' || clean === 'icons.svg') {
+    candidates.push(path.join(repoRoot, 'public', clean));
+  }
+
+  return candidates;
 }
 
 function collectBrokenLocalReferences(htmlPath, sourceText) {
@@ -67,11 +86,7 @@ function collectBrokenLocalReferences(htmlPath, sourceText) {
     const target = match[1].trim();
     if (!target || target.startsWith('#') || /^(https?:|mailto:|tel:|javascript:)/i.test(target)) continue;
     const absoluteCandidates = target.startsWith('/')
-      ? [
-          path.join(repoRoot, target.slice(1)),
-          path.join(repoRoot, 'public', target.slice(1)),
-          path.join(repoRoot, 'pages', target.slice(1))
-        ]
+      ? resolveRootRelativeCandidates(target)
       : [path.resolve(path.dirname(path.join(repoRoot, htmlPath)), target)];
     if (!absoluteCandidates.some((candidate) => requireExists(candidate))) {
       results.push({ source: htmlPath, target });
@@ -85,17 +100,19 @@ function requireExists(candidate) {
 }
 
 function summariseDuplicates(entries) {
-  const byBasename = new Map();
+  const byCandidateKey = new Map();
   for (const entry of entries) {
     const basename = path.basename(entry.path);
-    if (!byBasename.has(basename)) byBasename.set(basename, []);
-    byBasename.get(basename).push(entry.path);
+    const key = `${basename}::${entry.size}`;
+    if (!byCandidateKey.has(key)) {
+      byCandidateKey.set(key, { basename, size: entry.size, paths: [] });
+    }
+    byCandidateKey.get(key).paths.push(entry.path);
   }
-  return [...byBasename.entries()]
-    .filter(([, paths]) => paths.length > 1)
-    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
-    .slice(0, 200)
-    .map(([basename, paths]) => ({ basename, paths }));
+  return [...byCandidateKey.values()]
+    .filter((candidate) => candidate.paths.length > 1)
+    .sort((a, b) => b.paths.length - a.paths.length || a.basename.localeCompare(b.basename))
+    .slice(0, 200);
 }
 
 async function main() {
@@ -115,6 +132,7 @@ async function main() {
     const text = await fs.readFile(path.join(repoRoot, htmlPath), 'utf8');
     brokenLocalReferences.push(...collectBrokenLocalReferences(htmlPath, text));
   }
+  const duplicateCandidates = summariseDuplicates(fileEntries);
   const report = {
     summary: {
       generatedAt: new Date().toISOString(),
@@ -135,13 +153,13 @@ async function main() {
         'public/data'
       ],
       buildConfigs,
-      duplicateCandidateCount: summariseDuplicates(fileEntries).length,
+      duplicateCandidateCount: duplicateCandidates.length,
       brokenLocalReferenceCount: brokenLocalReferences.length,
       sensitivePathCandidateCount: fileEntries.filter((entry) => entry.sensitivePathCandidate).length,
       blockchainOrHashCandidateCount: fileEntries.filter((entry) => entry.blockchainOrHashCandidate).length
     },
     brokenLocalReferences: brokenLocalReferences.slice(0, 200),
-    duplicateCandidates: summariseDuplicates(fileEntries),
+    duplicateCandidates,
     sensitivePathCandidates: fileEntries.filter((entry) => entry.sensitivePathCandidate).map((entry) => entry.path).slice(0, 200),
     blockchainOrHashCandidates: fileEntries.filter((entry) => entry.blockchainOrHashCandidate).map((entry) => entry.path).slice(0, 200),
     files: fileEntries

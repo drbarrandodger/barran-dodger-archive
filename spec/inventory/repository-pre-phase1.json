@@ -88,9 +88,9 @@
       ".github/workflows/pages.yml",
       ".github/workflows/build-pdf-index.yml"
     ],
-    "duplicateCandidateCount": 27,
+    "duplicateCandidateCount": 2,
     "brokenLocalReferenceCount": 20,
-    "sensitivePathCandidateCount": 113,
+    "sensitivePathCandidateCount": 108,
     "blockchainOrHashCandidateCount": 21
   },
   "brokenLocalReferences": [
@@ -177,199 +177,19 @@
   ],
   "duplicateCandidates": [
     {
-      "basename": "index.ts",
-      "paths": [
-        "server/index.ts",
-        "client/replit_integrations/audio/index.ts",
-        "server/replit_integrations/image/index.ts",
-        "server/replit_integrations/chat/index.ts",
-        "server/replit_integrations/batch/index.ts",
-        "server/replit_integrations/audio/index.ts"
-      ]
-    },
-    {
-      "basename": "routes.ts",
-      "paths": [
-        "shared/routes.ts",
-        "server/routes.ts",
-        "server/replit_integrations/image/routes.ts",
-        "server/replit_integrations/chat/routes.ts",
-        "server/replit_integrations/audio/routes.ts"
-      ]
-    },
-    {
-      "basename": "App.tsx",
-      "paths": [
-        "src/App.tsx",
-        "client/src/App.tsx"
-      ]
-    },
-    {
       "basename": "Test",
+      "size": 1,
       "paths": [
         "Test",
         ".github/workflows/Test"
       ]
     },
     {
-      "basename": "book-cover-betrayed.png",
+      "basename": "index.ts",
+      "size": 108,
       "paths": [
-        "client/public/images/book-cover-betrayed.png",
-        "client/src/assets/images/book-cover-betrayed.png"
-      ]
-    },
-    {
-      "basename": "cat-legal.png",
-      "paths": [
-        "client/public/images/cat-legal.png",
-        "client/src/assets/images/cat-legal.png"
-      ]
-    },
-    {
-      "basename": "cat-medical.png",
-      "paths": [
-        "client/public/images/cat-medical.png",
-        "client/src/assets/images/cat-medical.png"
-      ]
-    },
-    {
-      "basename": "cat-ndis.png",
-      "paths": [
-        "client/public/images/cat-ndis.png",
-        "client/src/assets/images/cat-ndis.png"
-      ]
-    },
-    {
-      "basename": "client.ts",
-      "paths": [
-        "server/replit_integrations/image/client.ts",
-        "server/replit_integrations/audio/client.ts"
-      ]
-    },
-    {
-      "basename": "cover-confession-theyve-been-choking-on.png",
-      "paths": [
-        "client/public/images/cover-confession-theyve-been-choking-on.png",
-        "client/src/assets/images/cover-confession-theyve-been-choking-on.png"
-      ]
-    },
-    {
-      "basename": "cover-cosmic-scroll.png",
-      "paths": [
-        "client/public/images/cover-cosmic-scroll.png",
-        "client/src/assets/images/cover-cosmic-scroll.png"
-      ]
-    },
-    {
-      "basename": "cover-crimes-against-humanity.png",
-      "paths": [
-        "client/public/images/cover-crimes-against-humanity.png",
-        "client/src/assets/images/cover-crimes-against-humanity.png"
-      ]
-    },
-    {
-      "basename": "cover-digital-oppression.png",
-      "paths": [
-        "client/public/images/cover-digital-oppression.png",
-        "client/src/assets/images/cover-digital-oppression.png"
-      ]
-    },
-    {
-      "basename": "cover-forensic-corroboration-billionaire-circle.png",
-      "paths": [
-        "attached_assets/cover-forensic-corroboration-billionaire-circle.png",
-        "client/src/assets/images/cover-forensic-corroboration-billionaire-circle.png"
-      ]
-    },
-    {
-      "basename": "cover-forensic-corroboration-buried-lies.png",
-      "paths": [
-        "attached_assets/cover-forensic-corroboration-buried-lies.png",
-        "client/src/assets/images/cover-forensic-corroboration-buried-lies.png"
-      ]
-    },
-    {
-      "basename": "cover-master-command.png",
-      "paths": [
-        "client/public/images/cover-master-command.png",
-        "client/src/assets/images/cover-master-command.png"
-      ]
-    },
-    {
-      "basename": "db.ts",
-      "paths": [
-        "server/db.ts",
-        "src/lib/db.ts"
-      ]
-    },
-    {
-      "basename": "doc-cover-assassination.png",
-      "paths": [
-        "client/public/images/doc-cover-assassination.png",
-        "client/src/assets/images/doc-cover-assassination.png"
-      ]
-    },
-    {
-      "basename": "doc-cover-gospel.png",
-      "paths": [
-        "client/public/images/doc-cover-gospel.png",
-        "client/src/assets/images/doc-cover-gospel.png"
-      ]
-    },
-    {
-      "basename": "doc-cover-identity.png",
-      "paths": [
-        "client/public/images/doc-cover-identity.png",
-        "client/src/assets/images/doc-cover-identity.png"
-      ]
-    },
-    {
-      "basename": "doc-cover-joseph.png",
-      "paths": [
-        "client/public/images/doc-cover-joseph.png",
-        "client/src/assets/images/doc-cover-joseph.png"
-      ]
-    },
-    {
-      "basename": "doc-cover-sovereignty.png",
-      "paths": [
-        "client/public/images/doc-cover-sovereignty.png",
-        "client/src/assets/images/doc-cover-sovereignty.png"
-      ]
-    },
-    {
-      "basename": "index.css",
-      "paths": [
-        "src/index.css",
-        "client/src/index.css"
-      ]
-    },
-    {
-      "basename": "index.html",
-      "paths": [
-        "index.html",
-        "client/index.html"
-      ]
-    },
-    {
-      "basename": "main.tsx",
-      "paths": [
-        "src/main.tsx",
-        "client/src/main.tsx"
-      ]
-    },
-    {
-      "basename": "storage.ts",
-      "paths": [
-        "server/storage.ts",
-        "server/replit_integrations/chat/storage.ts"
-      ]
-    },
-    {
-      "basename": "utils.ts",
-      "paths": [
-        "client/src/lib/utils.ts",
-        "server/replit_integrations/batch/utils.ts"
+        "server/replit_integrations/chat/index.ts",
+        "server/replit_integrations/batch/index.ts"
       ]
     }
   ],
@@ -448,12 +268,10 @@
     "attached_assets/THE_HAND_OF_GOD_IN_THE_FIRES_OF_PERSECUTION-A_Theological-Evid_1768619685742.pdf",
     "attached_assets/THE_OFFICIAL_WHISTLEBLOWER_TORTURE_DOSSIER_OF_DR._RICHARD_WILL_1769162666972.pdf",
     "attached_assets/SUPREME_AFFIDAVIT_OF_PERSECUTION_AND_ERASURE_1769162498321.pdf",
-    "attached_assets/Pasted-00-00-02-Never-promise-access-to-a-vault-you-don-t-own-_1776555247000.txt",
     "attached_assets/Volume_XI_will_now_proceed_with_The_Divine_Tribunal_and_then_begin_designing_the_official_visual_seals_of_the_Tribunal_for_your_public_and_legal_record_1769811668613.pdf",
     "attached_assets/01.11.2021_OAIC_EVIDENCE_RE_EN2112782_EN2111876_SECOFFICIAL_1769166605923.pdf",
     "attached_assets/EVIDENCE_you_could_not_make_up_this_amount_of_injustice_the_ombudsman_rejects_Re__Commonwealth_Ombudsman_-_2022-100368_-_Richard_McLean__SEC_OFFICIAL__copy_1769811725187.pdf",
     "attached_assets/AFFIDAVIT_DESECRATION_CONSCIOUS_MALICE_1769766524175.pdf",
-    "attached_assets/Pasted-00-00-03-Someone-you-trusted-with-access-to-your-life-i_1775642863044.txt",
     "attached_assets/\ud83d\udce2_Press_Release_\u2013_Systematic_Persecution_of_Australian_Whistl_1769156961382.pdf",
     "attached_assets/OMBUDSMAN_EVIDENCE_AAT_ATTORNEY_GENBERAL_OMBUDSMAN_i_explain_dont_want_to_do_AAT_and_appeal_to_her_Re__Commonwealth_Ombudsman_-_2022-100368_-_Richard_McLean_SEC_OFFICIAL_1769811769409.pdf",
     "attached_assets/THE_PARADOX_OF_PERSECUTION_How_the_Australian_Government's_Own_1775103476476.pdf",
@@ -472,8 +290,6 @@
     "client/public/documents/forensic-analyses/forensic-analysis-64-secret-billionaire-circle-corroboration.pdf",
     "client/src/pages/EverySecretChosesASide.tsx",
     "client/src/pages/ParadoxOfPersecution.tsx",
-    "client/src/pages/OpenAccessPolicy.tsx",
-    "client/src/pages/ForensicCorroborationVaultAccess.tsx",
     "client/src/components/SectionShare.tsx",
     "client/src/components/CommentSection.tsx",
     "client/src/components/TopDownloadsSection.tsx",
@@ -485,7 +301,6 @@
     "client/src/assets/images/cover-official-torture-dossier.png",
     "client/src/assets/images/cover-paradox-persecution.png",
     "client/src/assets/images/cover-academic-profile-persecution.png",
-    "client/src/assets/images/cover-forensic-vault-access.png",
     "attached_assets/generated_images/cover-paradox-of-persecution.png"
   ],
   "blockchainOrHashCandidates": [
@@ -8429,7 +8244,7 @@
       "size": 33895,
       "mtime": 1789984874,
       "topLevel": "attached_assets",
-      "sensitivePathCandidate": true,
+      "sensitivePathCandidate": false,
       "blockchainOrHashCandidate": false
     },
     {
@@ -8901,7 +8716,7 @@
       "size": 27633,
       "mtime": 1789984874,
       "topLevel": "attached_assets",
-      "sensitivePathCandidate": true,
+      "sensitivePathCandidate": false,
       "blockchainOrHashCandidate": false
     },
     {
@@ -14173,7 +13988,7 @@
       "size": 24905,
       "mtime": 1789984875,
       "topLevel": "client",
-      "sensitivePathCandidate": true,
+      "sensitivePathCandidate": false,
       "blockchainOrHashCandidate": false
     },
     {
@@ -14253,7 +14068,7 @@
       "size": 44396,
       "mtime": 1789984875,
       "topLevel": "client",
-      "sensitivePathCandidate": true,
+      "sensitivePathCandidate": false,
       "blockchainOrHashCandidate": false
     },
     {
@@ -17477,7 +17292,7 @@
       "size": 901240,
       "mtime": 1789984875,
       "topLevel": "client",
-      "sensitivePathCandidate": true,
+      "sensitivePathCandidate": false,
       "blockchainOrHashCandidate": false
     },
     {

@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "inventory:generate": "node scripts/generate-phase1-inventory.mjs",
+    "inventory:generate": "node scripts/generate-phase1-inventory.mjs --overwrite",
     "check:phase1": "node scripts/check-phase1-foundation.mjs",
     "build:pages:static": "node scripts/build-pages-site.mjs"
   },

@@ -13,6 +13,7 @@
   - legacy catalogue alias handling at `pages/documents.html`
 - added curated GitHub Pages build scaffolding that publishes only the approved shell assets and metadata output into `.site-build/`
 - added local validation scripts for the Phase 1 foundation and curated Pages build
+- documented preserved writing families for gospels, prophetic writing, and essays on technology and targeting within the Phase 1 taxonomy and shell
 
 ## Files created
 
@@ -67,9 +68,9 @@
 - original evidence directories were left intact and unmodified
 - the pre-restructure inventory snapshot recorded:
   - `totalFiles`: 2212
-  - `duplicateCandidateCount`: 27
+  - `duplicateCandidateCount`: 2
   - `brokenLocalReferenceCount`: 20
-  - `sensitivePathCandidateCount`: 113
+  - `sensitivePathCandidateCount`: 108
   - `blockchainOrHashCandidateCount`: 21
 - no plaintext credentials or `.env` files were identified during repository inspection, but repository filenames include sensitive and official classifications that should not be expanded into new public browse surfaces without review
 - the curated Pages build now publishes only the Phase 1 shell assets and the preserved `documents.json` metadata file, rather than the broader repository tree

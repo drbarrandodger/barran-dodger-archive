@@ -4,7 +4,7 @@ This repository is the source of truth for the archive. Phase 1 establishes the 
 
 ## Preservation principle
 
-Original evidence, documentary artefacts, filenames, repository paths, and primary-source records remain preserved. Presentation structure may change, but the underlying record layer must not be silently altered, overwritten, normalised, or renamed.
+Original evidence, documentary artefacts, filenames, repository paths, and primary-source records remain preserved. This includes preserved writing families such as gospels, prophetic writing, and essays concerning technology and targeting. Presentation structure may change, but the underlying record layer must not be silently altered, overwritten, normalised, or renamed.
 
 ## Phase 1 outputs
 

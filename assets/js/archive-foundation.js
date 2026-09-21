@@ -42,12 +42,13 @@
         return (!query || haystack.includes(query)) && (!group || item.group === group);
       });
       count.textContent = 'Showing ' + items.length + ' Phase 1 shell item' + (items.length === 1 ? '' : 's') + '.';
+      results.setAttribute('role', 'list');
       results.innerHTML = items.map(function (item) {
         var path = item.path ? '<div class="result-meta"><strong>Preserved path:</strong> <code>' + escapeHtml(item.path) + '</code></div>' : '';
         var href = item.href ? '<a class="card-link" href="' + escapeHtml(item.href) + '">Open section →</a>' : '';
         var pills = item.tags && item.tags.length ? '<div class="pill-row">' + item.tags.map(function (tag) { return '<span class="pill">' + escapeHtml(tag) + '</span>'; }).join('') + '</div>' : '';
-        return '<article class="result-card"><h3>' + escapeHtml(item.title) + '</h3><div class="result-meta">' + escapeHtml(item.group) + '</div><p>' + escapeHtml(item.description) + '</p>' + path + pills + href + '</article>';
-      }).join('') || '<article class="result-card"><h3>No matching shell items</h3><p>Phase 1 deliberately limits browser search to a small navigation shell. Full-record indexing is reserved for a later phase.</p></article>';
+        return '<article class="result-card" role="listitem"><h3>' + escapeHtml(item.title) + '</h3><div class="result-meta">' + escapeHtml(item.group) + '</div><p>' + escapeHtml(item.description) + '</p>' + path + pills + href + '</article>';
+      }).join('') || '<article class="result-card" role="listitem"><h3>No matching shell items</h3><p>Phase 1 deliberately limits browser search to a small navigation shell. Full-record indexing is reserved for a later phase.</p></article>';
     }
 
     input.addEventListener('input', render);
@@ -55,18 +56,10 @@
     render();
   }
 
-  function loadJson(url) {
-    return fetch(url, { cache: 'no-store' }).then(function (response) {
-      if (!response.ok) throw new Error('Unable to load ' + url);
-      return response.json();
-    });
-  }
-
   window.ArchiveFoundation = {
     escapeHtml: escapeHtml,
     renderStatusBadges: renderStatusBadges,
     renderCards: renderCards,
     attachSearch: attachSearch,
-    loadJson: loadJson,
   };
 })();

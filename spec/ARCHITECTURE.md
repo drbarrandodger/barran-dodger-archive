@@ -49,3 +49,12 @@ Explicitly not published by this Phase 1 shell:
 - catalogue remains available at `Documents.html`
 - legacy references to `pages/documents.html` are preserved through redirect aliasing
 - the published shell uses relative links to avoid GitHub Pages base-path breakage
+
+## Preserved writing families
+
+Phase 1 explicitly recognises preserved literary / documentary families that later phases may model separately without relocating their source files:
+
+- gospels
+- prophetic writing
+- essays on technology and targeting
+- other essays and documentary statements
