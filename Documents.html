@@ -293,7 +293,13 @@
       requestRender({ mode: 'search' }).catch(handleAsyncError);
     });
     [collectionFilter, familyFilter, publicationFilter].forEach(function (element) {
-      element.addEventListener('change', announcePendingControls);
+      element.addEventListener('change', function () {
+        if (recordData) {
+          requestRender({ mode: 'search' }).catch(handleAsyncError);
+          return;
+        }
+        announcePendingControls();
+      });
     });
 
     fetch(collectionsUrl, { cache: 'no-store' })

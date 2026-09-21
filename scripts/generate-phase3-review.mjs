@@ -49,6 +49,9 @@ async function main() {
     const genreFamilies = [...new Set(matchingRecords.map((record) => record.genre_family))].sort();
     const publicationStatuses = [...new Set(matchingRecords.map((record) => record.publication_status))].sort();
     const control = definition.collection_key ? controlMap.get(definition.collection_key) : null;
+    const routeTargets = definition.route_type === 'collection'
+      ? (control?.route_targets || [])
+      : [...new Set(matchingRecords.flatMap((record) => record.route_mappings || []).filter((route) => route.includes('/families/') || route === './Documents.html'))];
     return {
       route_key: definition.route_key,
       route_type: definition.route_type,
@@ -60,7 +63,7 @@ async function main() {
       genre_families: genreFamilies,
       publication_statuses: publicationStatuses,
       collection_publication_status: control?.publication_status || null,
-      route_targets: control?.route_targets || [],
+      route_targets: routeTargets,
       record_count: matchingRecords.length,
       sensitive_record_count: matchingRecords.filter((record) => record.sensitivity_flags.length).length,
       sample_record_ids: matchingRecords.slice(0, 5).map((record) => record.record_id),

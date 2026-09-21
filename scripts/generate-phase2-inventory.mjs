@@ -116,10 +116,12 @@ function inferSensitivityFlags(value) {
   return flags;
 }
 
+const metadataFallbackCollections = new Set(['unclassified']);
+
 function inferPublicationStatus(collectionKey, sensitivityFlags, isPublishedCollection, allowMetadataFallback = false) {
   if (collectionKey === 'attached-assets') return 'metadata-only';
   if (!isPublishedCollection) {
-    if (!allowMetadataFallback) return 'internal-only';
+    if (!allowMetadataFallback || !metadataFallbackCollections.has(collectionKey)) return 'internal-only';
     return sensitivityFlags.length ? 'public-metadata-sensitive' : 'metadata-only';
   }
   if (sensitivityFlags.length) return 'public-metadata-sensitive';

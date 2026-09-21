@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T11:14:31.238Z",
+  "generated_at": "2026-09-21T11:15:18.790Z",
   "summary": {
     "total_routes": 9,
     "collection_routes": 6,
@@ -269,7 +269,10 @@
         "public-record"
       ],
       "collection_publication_status": null,
-      "route_targets": [],
+      "route_targets": [
+        "./Documents.html",
+        "./pages/families/gospels.html"
+      ],
       "record_count": 13,
       "sensitive_record_count": 0,
       "sample_record_ids": [
@@ -305,7 +308,10 @@
         "public-record"
       ],
       "collection_publication_status": null,
-      "route_targets": [],
+      "route_targets": [
+        "./Documents.html",
+        "./pages/families/prophetic-writing.html"
+      ],
       "record_count": 25,
       "sensitive_record_count": 0,
       "sample_record_ids": [
@@ -341,7 +347,10 @@
         "public-record"
       ],
       "collection_publication_status": null,
-      "route_targets": [],
+      "route_targets": [
+        "./Documents.html",
+        "./pages/families/technology-targeting-essays.html"
+      ],
       "record_count": 7,
       "sensitive_record_count": 1,
       "sample_record_ids": [
