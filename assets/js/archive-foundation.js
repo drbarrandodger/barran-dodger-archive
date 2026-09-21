@@ -36,7 +36,6 @@
 
     count.setAttribute('role', 'status');
     count.setAttribute('aria-live', 'polite');
-    results.setAttribute('aria-live', 'polite');
 
     function render() {
       var query = input.value.trim().toLowerCase();

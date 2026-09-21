@@ -268,12 +268,13 @@ async function main() {
       const collectionRoutes = routeMappings
         .filter((mapping) => mapping.route.includes('#collection-') && mapping.collectionKeys.includes(collection.collection_key))
         .map((mapping) => mapping.route);
-      const publishedFamilyRoutes = collection.publication_status === 'metadata-only'
-        ? []
-        : routeMappings
+      const publishedFamilyRoutes = ['public-record', 'public-metadata-sensitive'].includes(collection.publication_status)
+        ? routeMappings
           .filter((mapping) => mapping.route.includes('#family-') && mapping.collectionKeys.includes(collection.collection_key))
           .filter((mapping) => publicRecords.some((record) => record.collection_key === collection.collection_key && ['public-record', 'public-metadata-sensitive'].includes(record.publication_status) && routeMatches(mapping, record.collection_key, record.genre_family)))
-          .map((mapping) => mapping.route);
+          .map((mapping) => mapping.route)
+        : []
+        ;
       return {
         collection_key: collection.collection_key,
         collection_label: collection.collection_label,
