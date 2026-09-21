@@ -30,6 +30,7 @@
     const buttonLoad = document.getElementById('button-load-route-inventory');
     const searchScope = document.getElementById('route-scope');
 
+    var DISPLAY_LIMIT = 50;
     let routeEntry = null;
     let recordInventory = null;
     let inventoryPromise = null;
@@ -62,7 +63,7 @@
       return records.filter(function (record) {
         const routeMatch = routeType === 'collection'
           ? record.collection_key === routeEntry.collection_keys[0]
-          : record.genre_family === routeEntry.genre_families[0] && ['public-record', 'public-metadata-sensitive'].includes(record.publication_status);
+          : routeEntry.collection_keys.includes(record.collection_key) && record.genre_family === routeEntry.genre_families[0] && ['public-record', 'public-metadata-sensitive'].includes(record.publication_status);
         const scopeMatch = !scope || record.publication_status === scope;
         const haystack = [record.title, record.original_path, record.collection_label, record.genre_family, record.provenance_status].join(' ').toLowerCase();
         return routeMatch && scopeMatch && (!query || haystack.includes(query));
@@ -71,8 +72,9 @@
 
     function renderRecords(records) {
       const filtered = filterRecords(records);
-      const limited = filtered.slice(0, 50);
-      setStatus('Showing ' + limited.length + ' of ' + filtered.length + ' routed records.');
+      const limited = filtered.slice(0, DISPLAY_LIMIT);
+      const truncated = filtered.length > DISPLAY_LIMIT;
+      setStatus('Showing ' + limited.length + ' of ' + filtered.length + ' routed records.' + (truncated ? ' Display limited to the first ' + DISPLAY_LIMIT + ' matches.' : ''));
       resultsEl.setAttribute('role', 'list');
       resultsEl.innerHTML = limited.map(function (record) {
         const reviewPills = record.review_flags && record.review_flags.length

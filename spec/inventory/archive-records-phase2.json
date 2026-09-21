@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T11:15:18.580Z",
+  "generated_at": "2026-09-21T11:16:17.273Z",
   "based_on_snapshot": "2026-09-21T10:04:44.234070Z",
   "summary": {
     "total_records": 2212,
@@ -185,7 +185,7 @@
     {
       "collection_key": "public-metadata",
       "collection_label": "Public metadata",
-      "publication_status": "public-record",
+      "publication_status": "internal-only",
       "primary_route": null,
       "record_count": 1,
       "sensitive_record_count": 0,
@@ -37281,7 +37281,7 @@
       "provenance_status": "repository-preserved-copy",
       "genre_family": "mixed",
       "sensitivity_flags": [],
-      "publication_status": "public-record",
+      "publication_status": "internal-only",
       "review_flags": []
     },
     {

@@ -15,9 +15,9 @@ const routeDefinitions = [
   { route_key: 'collection:video-analyses', route_type: 'collection', slug: 'video-analyses', title: 'Video analyses', collection_key: 'video-analyses' },
   { route_key: 'collection:attached-assets', route_type: 'collection', slug: 'attached-assets', title: 'Attached assets', collection_key: 'attached-assets' },
   { route_key: 'collection:unclassified', route_type: 'collection', slug: 'unclassified', title: 'Unclassified', collection_key: 'unclassified' },
-  { route_key: 'family:gospel', route_type: 'family', slug: 'gospels', title: 'Gospel writings', genre_family: 'gospel' },
-  { route_key: 'family:prophetic-writing', route_type: 'family', slug: 'prophetic-writing', title: 'Prophetic writings', genre_family: 'prophetic-writing' },
-  { route_key: 'family:technology-targeting-essay', route_type: 'family', slug: 'technology-targeting-essays', title: 'Technology and targeting essays', genre_family: 'technology-targeting-essay' }
+  { route_key: 'family:gospel', route_type: 'family', slug: 'gospels', title: 'Gospel writings', genre_family: 'gospel', collection_keys: ['public-documents', 'attached-assets'] },
+  { route_key: 'family:prophetic-writing', route_type: 'family', slug: 'prophetic-writing', title: 'Prophetic writings', genre_family: 'prophetic-writing', collection_keys: ['public-documents', 'forensic-analyses', 'video-analyses', 'unclassified'] },
+  { route_key: 'family:technology-targeting-essay', route_type: 'family', slug: 'technology-targeting-essays', title: 'Technology and targeting essays', genre_family: 'technology-targeting-essay', collection_keys: ['public-documents', 'government-evidence'] }
 ];
 
 function groupCounts(items, key) {
@@ -43,7 +43,7 @@ async function main() {
   const routePages = routeDefinitions.map((definition) => {
     const matchingRecords = records.filter((record) => {
       if (definition.route_type === 'collection') return record.collection_key === definition.collection_key;
-      return record.genre_family === definition.genre_family && ['public-record', 'public-metadata-sensitive'].includes(record.publication_status);
+      return definition.collection_keys.includes(record.collection_key) && record.genre_family === definition.genre_family && ['public-record', 'public-metadata-sensitive'].includes(record.publication_status) && (record.route_mappings || []).includes(`./pages/families/${definition.slug}.html`);
     });
     const collectionKeys = [...new Set(matchingRecords.map((record) => record.collection_key))].sort();
     const genreFamilies = [...new Set(matchingRecords.map((record) => record.genre_family))].sort();

@@ -47,8 +47,10 @@ async function main() {
   }
 
   const collectionRoutes = routeInventory.routes.filter((route) => route.route_type === 'collection');
-  if (collectionRoutes.length !== collections.collection_summaries.length) {
-    throw new Error('Phase 3 collection route count does not match collection summaries.');
+  const expectedCollectionKeys = new Set((collections.collection_summaries || []).map((entry) => entry.collection_key));
+  const actualCollectionKeys = new Set(collectionRoutes.map((route) => route.collection_keys[0]));
+  if (expectedCollectionKeys.size !== actualCollectionKeys.size || [...expectedCollectionKeys].some((key) => !actualCollectionKeys.has(key))) {
+    throw new Error('Phase 3 collection routes do not match collection summary keys.');
   }
 
   for (const route of routeInventory.routes) {

@@ -205,8 +205,10 @@
           (!family || record.genre_family === family) &&
           (!publication || record.publication_status === publication);
       });
-      const limited = filtered.slice(0, 50);
-      countEl.textContent = 'Showing ' + limited.length + ' of ' + filtered.length + ' matching records (' + records.length + ' total in published record inventory).';
+      const displayLimit = 50;
+      const limited = filtered.slice(0, displayLimit);
+      const truncated = filtered.length > displayLimit;
+      countEl.textContent = 'Showing ' + limited.length + ' of ' + filtered.length + ' matching records (' + records.length + ' total in published record inventory).' + (truncated ? ' Display limited to the first ' + displayLimit + ' matches.' : '');
       resultsEl.setAttribute('role', 'list');
       resultsEl.innerHTML = limited.map(function (record) {
         const sensitivity = record.sensitivity_flags.length ? '<div class="pill-row">' + record.sensitivity_flags.map(function (flag) { return '<span class="pill">' + escapeHtml(flag) + '</span>'; }).join('') + '</div>' : '<p class="small">No sensitivity flags inferred from path/title.</p>';
