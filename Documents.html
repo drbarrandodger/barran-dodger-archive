@@ -203,6 +203,7 @@
         const routeInfo = record.route_mappings.length ? '<p class="small"><strong>Routes:</strong> ' + escapeHtml(record.route_mappings.join(', ')) + '</p>' : '';
         const rawLink = record.public_urls && record.public_urls.raw_url ? '<a class="card-link" href="' + escapeHtml(record.public_urls.raw_url) + '" target="_blank" rel="noopener noreferrer">Open raw source</a>' : '';
         const githubLink = record.public_urls && record.public_urls.github_blob_url ? '<a class="card-link" href="' + escapeHtml(record.public_urls.github_blob_url) + '" target="_blank" rel="noopener noreferrer">Open GitHub source</a>' : '';
+        const linkRow = rawLink || githubLink ? '<div class="pill-row">' + githubLink + rawLink + '</div>' : '';
         return '<article class="result-card" role="listitem">' +
           '<h3>' + escapeHtml(record.title) + '</h3>' +
           '<div class="result-meta">' + escapeHtml(record.record_id) + ' · ' + escapeHtml(record.collection_label) + ' · ' + escapeHtml(record.genre_family) + '</div>' +
@@ -211,7 +212,7 @@
           '<p><strong>Local preserved path present:</strong> ' + escapeHtml(record.local_repository_match ? 'yes' : 'no / remote-catalogue only') + '</p>' +
           sensitivity + routeInfo +
           '<div class="pill-row"><span class="pill">' + escapeHtml(record.repository_owner + '/' + record.repository_name) + '</span></div>' +
-          '<div class="pill-row">' + githubLink + rawLink + '</div>' +
+          linkRow +
         '</article>';
       }).join('') || '<article class="result-card" role="listitem"><h3>No matching records</h3><p>Try changing the filters or load the record inventory if it has not been fetched yet.</p></article>';
     }

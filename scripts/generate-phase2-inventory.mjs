@@ -126,6 +126,14 @@ function getMatchingRoutes(collectionKey, genreFamily) {
   return routeMappings.filter((mapping) => routeMatches(mapping, collectionKey, genreFamily)).map((mapping) => mapping.route);
 }
 
+function getCollectionRouteTargets(collectionKey, genreFamilies) {
+  return [...new Set(routeMappings.filter((mapping) => {
+    if (mapping.collectionKeys.length && !mapping.collectionKeys.includes(collectionKey)) return false;
+    if (!mapping.genreFamilies.length) return true;
+    return genreFamilies.some((genreFamily) => mapping.genreFamilies.includes(genreFamily));
+  }).map((mapping) => mapping.route))];
+}
+
 function normaliseTitle(title, recordPath) {
   if (title && title.trim()) return title.trim();
   return path.basename(recordPath);
@@ -258,7 +266,7 @@ async function main() {
       collection_label: collection.collection_label,
       publication_status: collection.publication_status,
       sensitive_record_count: collection.sensitive_record_count,
-      route_targets: [...new Set(collection.genre_families.flatMap((genreFamily) => getMatchingRoutes(collection.collection_key, genreFamily)))]
+      route_targets: getCollectionRouteTargets(collection.collection_key, collection.genre_families)
     }))
   };
 

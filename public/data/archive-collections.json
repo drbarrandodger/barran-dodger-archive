@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:31:51.486Z",
+  "generated_at": "2026-09-21T10:32:30.505Z",
   "summary": {
     "total_catalogue_records": 698,
     "collection_count": 6,
@@ -302,8 +302,8 @@
       "sensitive_record_count": 3,
       "route_targets": [
         "./Documents.html",
-        "./Documents.html#collection-attached-assets",
-        "./Documents.html#family-gospels"
+        "./Documents.html#family-gospels",
+        "./Documents.html#collection-attached-assets"
       ]
     },
     {
