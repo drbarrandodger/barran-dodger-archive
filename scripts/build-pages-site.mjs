@@ -39,10 +39,12 @@ async function copyFileRelative(fromRelative, toRelative) {
 }
 
 async function main() {
-  try {
-    await fs.access(path.join(repoRoot, 'public/data/documents.json'));
-  } catch {
-    throw new Error('Required metadata file missing: public/data/documents.json');
+  for (const [from] of filesToCopy) {
+    try {
+      await fs.access(path.join(repoRoot, from));
+    } catch {
+      throw new Error(`Required Pages input missing: ${from}`);
+    }
   }
 
   await fs.rm(buildRoot, { recursive: true, force: true });
