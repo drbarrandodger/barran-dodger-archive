@@ -1,225 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PDF Archive — Barran Dodger</title>
-<style>
-body{font-family:Arial,sans-serif;margin:0;background:#101827;color:white}
-header{padding:30px 20px;text-align:center;background:#18243a}
-main{max-width:1000px;margin:auto;padding:20px}
-input,select{width:100%;padding:14px;margin:7px 0 15px;background:#172238;color:white;border:1px solid #456;border-radius:7px;font-size:16px}
-.card{background:#172238;padding:16px;margin:12px 0;border-radius:8px;border:1px solid #293953}
-.card strong{font-size:18px}
-.card p{color:#b9c5d8}
-a{color:#8ecaff;font-weight:bold}
-.error{padding:20px;background:#321923;border-radius:8px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barran Dodger Archive — Catalogue Shell</title>
+  <meta name="description" content="Phase 1 catalogue shell for the Barran Dodger archive. Preserved metadata remains available while full browser-side corpus loading is intentionally deferred.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/archive-foundation.css">
 </head>
 <body>
-
-<header>
-<h1>PDF Archive</h1>
-<p>Public PDF catalogue — Barrandodger &amp; Wezzo72</p>
-<p><a href="index.html">← Back to Public Archive</a></p>
-</header>
-
-<main>
-
-<h2>Search the Documents</h2>
-
-<input id="search" type="search" placeholder="Search documents...">
-
-<select id="owner">
-<option value="">All sources</option>
-<option value="Barrandodger">Barrandodger</option>
-<option value="Wezzo72">Wezzo72</option>
-</select>
-
-<p id="count">Loading...</p>
-
-<div id="list">Loading PDFs...</div>
-
-</main>
-
-<script>
-
-let documents=[];
-
-async function load(){
-
-try{
-
-const response=await fetch(
-"public/data/documents.json",
-{cache:"no-store"}
-);
-
-if(!response.ok)
-throw new Error("PDF index could not be loaded.");
-
-const data=await response.json();
-
-documents=data.documents||[];
-
-render();
-
-}catch(error){
-
-document.getElementById("list").innerHTML=
-'<div class="error"><strong>'+
-error.message+
-'</strong></div>';
-
-document.getElementById("count").textContent="";
-
-}
-
-}
-
-
-function render(){
-
-const search=
-document.getElementById("search")
-.value.toLowerCase()
-.trim();
-
-const owner=
-document.getElementById("owner").value;
-
-const results=documents.filter(doc=>{
-
-const text=[
-doc.title,
-doc.path,
-doc.owner,
-doc.repository,
-doc.source
-]
-.filter(Boolean)
-.join(" ")
-.toLowerCase();
-
-return(
-(!search||text.includes(search)) &&
-(!owner||doc.owner===owner)
-);
-
-});
-
-
-document.getElementById("count").textContent=
-"Showing "+
-results.length+
-" of "+
-documents.length+
-" indexed PDFs";
-
-
-if(!results.length){
-
-document.getElementById("list").innerHTML=
-"<div class='card'>No matching documents found.</div>";
-
-return;
-
-}
-
-
-document.getElementById("list").innerHTML=
-results.map((doc,i)=>{
-
-const title=
-escapeHTML(doc.title||"Untitled PDF");
-
-const owner=
-escapeHTML(doc.owner||"");
-
-const repo=
-escapeHTML(doc.repository||"");
-
-const pdf=
-escapeURL(doc.raw_url||doc.url||"#");
-
-const github=
-escapeURL(doc.url||"#");
-
-return`
-
-<div class="card">
-
-<strong>
-${i+1}. ${title}
-</strong>
-
-<p>
-Owner: ${owner}<br>
-Repository: ${repo}
-</p>
-
-<p>
-<a href="${pdf}" target="_blank" rel="noopener">
-View / Download PDF
-</a>
-</p>
-
-<p>
-<a href="${github}" target="_blank" rel="noopener">
-View on GitHub
-</a>
-</p>
-
-</div>
-
-`;
-
-}).join("");
-
-}
-
-
-function escapeHTML(value){
-
-return String(value)
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;")
-.replaceAll('"',"&quot;")
-.replaceAll("'","&#039;");
-
-}
-
-
-function escapeURL(value){
-
-try{
-
-const url=new URL(value);
-
-if(url.protocol==="https:"||url.protocol==="http:")
-return escapeHTML(url.href);
-
-return "#";
-
-}catch{
-
-return "#";
-
-}
-
-}
-
-
-document.getElementById("search")
-.addEventListener("input",render);
-
-document.getElementById("owner")
-.addEventListener("change",render);
-
-load();
-
-</script>
-
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-kicker">Phase 1 · Catalogue shell</p>
+      <h1 class="site-title">Archive catalogue shell</h1>
+      <p class="site-summary">
+        This page preserves discovery paths and metadata references without treating the full corpus as a browser-loaded search index.
+        Later phases can add structured record-level search on top of the preserved source directories.
+      </p>
+    </div>
+  </header>
+
+  <div class="site-nav-wrap">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="./index.html">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#metadata">Metadata</a>
+      <a href="#search-shell">Search shell</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+  </div>
+
+  <main class="page-main" id="main-content">
+    <section class="section">
+      <div class="notice">
+        <strong>Phase 1 boundary:</strong>
+        the catalogue shell does not load the entire archive corpus into the browser by default. It preserves collection boundaries,
+        points to existing machine-readable metadata, and leaves full indexing to later phases.
+      </div>
+    </section>
+
+    <section class="section" id="collections">
+      <h2>Preserved collections</h2>
+      <div class="grid grid-3" id="collection-cards"></div>
+    </section>
+
+    <section class="section" id="metadata">
+      <h2>Existing machine-readable metadata</h2>
+      <p>
+        The current PDF catalogue remains preserved at <code>public/data/documents.json</code>. For Phase 1 it is exposed as a source metadata file,
+        not rewritten as newly verified descriptive content.
+      </p>
+      <p>
+        <a class="card-link" href="./data/documents.json">Open preserved metadata JSON →</a>
+      </p>
+      <div class="notice notice-danger">
+        <strong>Privacy and evidence caution:</strong>
+        some filenames and source paths contain official classifications or personal/privacy cues already present in the repository.
+        Later phases should decide what can be surfaced publicly at record level before broadening the browser experience.
+      </div>
+    </section>
+
+    <section class="section" id="search-shell">
+      <h2>Catalogue search shell</h2>
+      <div class="search-shell">
+        <div class="search-shell-controls">
+          <div>
+            <label for="catalogue-search">Search preserved collection surfaces</label>
+            <input id="catalogue-search" type="search" placeholder="Search collections, metadata or preserved paths">
+          </div>
+          <div>
+            <label for="catalogue-group">Filter group</label>
+            <select id="catalogue-group">
+              <option value="">All groups</option>
+              <option value="Collection">Collection</option>
+              <option value="Metadata">Metadata</option>
+              <option value="Build / route">Build / route</option>
+            </select>
+          </div>
+        </div>
+        <p class="search-results-count" id="catalogue-count"></p>
+        <div class="result-list" id="catalogue-results"></div>
+      </div>
+    </section>
+
+    <section class="section" id="privacy">
+      <h2>What Phase 1 deliberately does not do</h2>
+      <ul class="key-points">
+        <li>It does not normalise or rename documentary artefacts.</li>
+        <li>It does not treat repository filenames as validated legal or factual conclusions.</li>
+        <li>It does not publish a new broad browse view of potentially sensitive source material by default.</li>
+        <li>It does not implement forensic modules or full archive indexing yet.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="footer-note">Next recommended phase: Archive Inventory.</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/archive-foundation.js"></script>
+  <script>
+    const collectionCards = [
+      {
+        title: 'attached_assets/',
+        description: 'High-volume preserved evidence and documentary assets retained at their original repository path.',
+        meta: 'Collection · preserved source path'
+      },
+      {
+        title: 'client/public/documents/',
+        description: 'Existing public document corpus retained for later stable-ID modelling and record views.',
+        meta: 'Collection · public document root'
+      },
+      {
+        title: 'public/data/documents.json',
+        description: 'Current machine-readable PDF catalogue preserved as source metadata.',
+        href: './data/documents.json',
+        meta: 'Metadata · raw JSON'
+      }
+    ];
+
+    const catalogueItems = [
+      {
+        title: 'Preserved PDF metadata catalogue',
+        description: 'Existing JSON index of publicly discoverable PDF items as already generated by the repository.',
+        group: 'Metadata',
+        path: 'public/data/documents.json',
+        href: './data/documents.json',
+        tags: ['json', 'pdf', 'catalogue']
+      },
+      {
+        title: 'Root catalogue shell page',
+        description: 'Public shell page for catalogue orientation and later indexing work.',
+        group: 'Build / route',
+        path: 'Documents.html',
+        href: './Documents.html',
+        tags: ['route', 'catalogue', 'phase 1']
+      },
+      {
+        title: 'Legacy pages path',
+        description: 'Preserved route alias for older references to the catalogue page.',
+        group: 'Build / route',
+        path: 'pages/documents.html',
+        href: './pages/documents.html',
+        tags: ['legacy route', 'alias']
+      },
+      {
+        title: 'Evidence assets collection',
+        description: 'Original source directory for preserved evidence files outside the public shell.',
+        group: 'Collection',
+        path: 'attached_assets/',
+        tags: ['evidence', 'original path', 'preserved']
+      },
+      {
+        title: 'Public document collection',
+        description: 'Existing public document directory retained for later record-level archive views.',
+        group: 'Collection',
+        path: 'client/public/documents/',
+        tags: ['documents', 'public tree']
+      },
+      {
+        title: 'Repository inventory snapshot',
+        description: 'Machine-readable pre-restructure inventory stored under spec/ rather than in the public shell.',
+        group: 'Metadata',
+        path: 'spec/inventory/repository-pre-phase1.json',
+        tags: ['inventory', 'internal metadata']
+      }
+    ];
+
+    ArchiveFoundation.renderCards(document.getElementById('collection-cards'), collectionCards);
+    ArchiveFoundation.attachSearch({
+      inputId: 'catalogue-search',
+      filterId: 'catalogue-group',
+      countId: 'catalogue-count',
+      resultsId: 'catalogue-results',
+      items: catalogueItems
+    });
+  </script>
 </body>
 </html>

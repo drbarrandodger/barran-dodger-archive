@@ -1,528 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barran Dodger — Public Archive</title>
-<meta name="description" content="Public archive of research, publications, books, art and documentary materials associated with Barran Dodger.">
-
-<style>
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f7f3ea;
-  color:#252018;
-  line-height:1.6;
-}
-
-header{
-  background:#241b14;
-  color:white;
-  padding:45px 20px;
-  text-align:center;
-}
-
-header h1{
-  margin:0 0 10px;
-  font-size:clamp(2.2rem,8vw,4.5rem);
-}
-
-header p{
-  margin:0;
-  color:#ddd;
-  font-size:1.05rem;
-}
-
-nav{
-  background:#3b2a1d;
-  padding:12px;
-  text-align:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin:4px 8px;
-  display:inline-block;
-  padding:7px 10px;
-}
-
-nav a:hover{
-  background:#5b402c;
-  border-radius:6px;
-}
-
-main{
-  max-width:1100px;
-  margin:auto;
-  padding:25px 16px;
-}
-
-.hero{
-  background:white;
-  border-radius:14px;
-  padding:30px;
-  margin-bottom:25px;
-  box-shadow:0 3px 15px #0001;
-}
-
-.hero h2{
-  font-size:2rem;
-  margin-top:0;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
-  margin:25px 0;
-}
-
-.stat{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  text-align:center;
-  box-shadow:0 2px 10px #0001;
-}
-
-.stat strong{
-  display:block;
-  font-size:2rem;
-  color:#7b481f;
-}
-
-.controls{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  margin-bottom:20px;
-  box-shadow:0 2px 10px #0001;
-}
-
-input,select{
-  width:100%;
-  padding:13px;
-  margin-top:8px;
-  margin-bottom:15px;
-  border:1px solid #bbb;
-  border-radius:8px;
-  font-size:16px;
-}
-
-.grid{
-  display:grid;
-  gap:15px;
-}
-
-.document{
-  background:white;
-  padding:18px;
-  border-radius:10px;
-  border-left:5px solid #8a5727;
-  box-shadow:0 2px 8px #0001;
-}
-
-.document h3{
-  margin:0 0 8px;
-  font-size:1.05rem;
-  word-break:break-word;
-}
-
-.document p{
-  margin:5px 0;
-  color:#665d54;
-  font-size:.9rem;
-  word-break:break-word;
-}
-
-.button{
-  display:inline-block;
-  margin-top:10px;
-  padding:10px 15px;
-  background:#7b481f;
-  color:white;
-  text-decoration:none;
-  border-radius:7px;
-}
-
-.button:hover{
-  background:#573116;
-}
-
-section{
-  margin:45px 0;
-}
-
-.small{
-  color:#756d64;
-  font-size:.9rem;
-}
-
-footer{
-  background:#241b14;
-  color:#ddd;
-  text-align:center;
-  padding:35px 20px;
-  margin-top:50px;
-}
-
-.loading{
-  padding:20px;
-  background:white;
-  border-radius:10px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barran Dodger Archive — Phase 1 Architecture Foundation</title>
+  <meta name="description" content="Phase 1 architecture foundation for the Barran Dodger archive. Original evidence remains preserved while the public presentation layer is rebuilt cautiously, accessibly and without altering source records.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/archive-foundation.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<header>
-  <h1>Barran Dodger</h1>
-  <p>Public Archive • Research • Books • Art • Documentary Record</p>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-kicker">Phase 1 · Architecture only</p>
+      <h1 class="site-title">Barran Dodger Archive</h1>
+      <p class="site-summary">
+        This repository remains the source of truth for the archive. Phase 1 establishes a cautious presentation shell,
+        machine-readable inventory, evidence-status language and deployment boundary without altering the underlying records.
+      </p>
+    </div>
+  </header>
 
-<nav>
-  <a href="#archive">Archive</a>
-  <a href="#books">Books</a>
-  <a href="#art">Art</a>
-  <a href="#research">Research</a>
-  <a href="#about">About</a>
-</nav>
-
-<main>
-
-<section class="hero">
-  <h2>Public Archive</h2>
-
-  <p>
-    This website provides public access to research, publications,
-    artwork, books and documentary materials associated with Barran Dodger.
-  </p>
-
-  <p class="small">
-    The document catalogue is generated automatically from publicly
-    accessible GitHub repositories associated with the Barrandodger
-    and Wezzo72 accounts.
-  </p>
-</section>
-
-<div class="stats">
-
-  <div class="stat">
-    <strong id="pdfCount">Loading…</strong>
-    <span>PDF documents</span>
+  <div class="site-nav-wrap">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#preservation">Preservation</a>
+      <a href="#navigation">Navigation model</a>
+      <a href="#status-legend">Evidence statuses</a>
+      <a href="#search-shell">Search shell</a>
+      <a href="#inventory">Inventory</a>
+      <a href="./Documents.html">Catalogue shell</a>
+    </nav>
   </div>
 
-  <div class="stat">
-    <strong>2</strong>
-    <span>GitHub profiles</span>
-  </div>
-
-  <div class="stat">
-    <strong>Public</strong>
-    <span>Archive</span>
-  </div>
-
-</div>
-
-<section id="archive">
-
-<h2>📚 PDF Archive</h2>
-
-<div class="controls">
-
-  <label for="search">
-    <strong>Search the archive</strong>
-  </label>
-
-  <input
-    id="search"
-    type="search"
-    placeholder="Search documents, repositories or filenames…"
-  >
-
-  <label for="owner">
-    <strong>Filter by account</strong>
-  </label>
-
-  <select id="owner">
-    <option value="">All accounts</option>
-    <option value="Barrandodger">Barrandodger</option>
-    <option value="Wezzo72">Wezzo72</option>
-  </select>
-
-</div>
-
-<p id="status" class="small">Loading documents…</p>
-
-<div id="documents" class="grid">
-  <div class="loading">
-    Loading PDF archive…
-  </div>
-</div>
-
-</section>
-
-<section id="books">
-
-<h2>📖 Books & Publications</h2>
-
-<div class="hero">
-
-<h3>Recovered, Not Cured</h3>
-
-<p>
-  <strong>A Journey Through Schizophrenia</strong>
-</p>
-
-<p>
-  This section provides a place for books, publications and
-  related literary work.
-</p>
-
-</div>
-
-</section>
-
-<section id="art">
-
-<h2>🎨 Art & Creative Work</h2>
-
-<div class="hero">
-
-<p>
-  A public catalogue for artwork, visual material and creative
-  projects associated with Barran Dodger.
-</p>
-
-</div>
-
-</section>
-
-<section id="research">
-
-<h2>🔬 Research & Documentary Record</h2>
-
-<div class="hero">
-
-<p>
-  This section provides access to research material and documentary
-  records. Individual documents should be assessed according to
-  their source, provenance, context and evidentiary status.
-</p>
-
-</div>
-
-</section>
-
-<section id="about">
-
-<h2>About</h2>
-
-<div class="hero">
-
-<p>
-  Barran Dodger is the public-facing name associated with this archive.
-  The archive is intended to preserve and make discoverable documentary,
-  creative and research materials.
-</p>
-
-</div>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>© Barran Dodger — Public Archive</p>
-
-<p class="small">
-  Documents remain hosted at their respective public GitHub repositories.
-</p>
-
-</footer>
-
-
-<script>
-
-let documents = [];
-
-async function loadDocuments(){
-
-  try{
-
-    const response = await fetch(
-      "data/documents.json"
-    );
-
-    if(!response.ok){
-      throw new Error("PDF index unavailable");
-    }
-
-    const data = await response.json();
-
-    documents = data.documents || [];
-
-    document.getElementById("pdfCount").textContent =
-      documents.length;
-
-    render();
-
-  }catch(error){
-
-    document.getElementById("pdfCount").textContent = "—";
-
-    document.getElementById("status").textContent =
-      "PDF catalogue is temporarily unavailable.";
-
-    document.getElementById("documents").innerHTML =
-      "<div class='hero'><p>The archive index could not be loaded.</p></div>";
-
-  }
-
-}
-
-
-function render(){
-
-  const search =
-    document
-      .getElementById("search")
-      .value
-      .toLowerCase()
-      .trim();
-
-  const owner =
-    document
-      .getElementById("owner")
-      .value;
-
-  const filtered =
-    documents.filter(function(doc){
-
-      const searchable = [
-
-        doc.title,
-        doc.path,
-        doc.owner,
-        doc.repository,
-        doc.source
-
-      ].join(" ").toLowerCase();
-
-      return searchable.includes(search) &&
-        (!owner || doc.owner === owner);
-
+  <main class="page-main" id="main-content">
+    <section class="section" id="preservation">
+      <h2>Preservation principle</h2>
+      <div class="callout">
+        <strong>Original evidence remains preserved.</strong>
+        Presentation structure, navigation and descriptive copy may change over time, but underlying records, filenames,
+        source paths and documentary artefacts must not be overwritten, renamed or silently normalised.
+      </div>
+      <ul class="key-points">
+        <li>Primary-source files stay in place and are referenced by stable repository paths.</li>
+        <li>Phase 1 introduces only architecture, inventory, navigation and status-language foundations.</li>
+        <li>Potentially sensitive material is not newly surfaced by default in this shell.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="navigation">
+      <h2>Initial navigation model</h2>
+      <p class="small">The public shell is intentionally limited to high-trust orientation pages until later archive phases are implemented.</p>
+      <div class="grid grid-3" id="navigation-cards"></div>
+    </section>
+
+    <section class="section" id="status-legend">
+      <h2>Evidence-status foundation</h2>
+      <p>
+        These labels distinguish provenance and certainty without relying on colour alone. They are architectural definitions only;
+        applying them across the corpus is reserved for later phases.
+      </p>
+      <div class="status-grid" id="status-badges" aria-live="polite"></div>
+    </section>
+
+    <section class="section" id="search-shell">
+      <h2>Basic search framework / shell</h2>
+      <p>
+        Phase 1 intentionally limits browser-side search to navigation, preserved collections and architectural surfaces.
+        The full documentary corpus is <strong>not</strong> loaded into the browser by default here.
+      </p>
+      <div class="search-shell">
+        <div class="search-shell-controls">
+          <div>
+            <label for="shell-search">Search Phase 1 shell</label>
+            <input id="shell-search" type="search" placeholder="Search sections, preserved paths or planned archive surfaces">
+          </div>
+          <div>
+            <label for="shell-group">Filter group</label>
+            <select id="shell-group">
+              <option value="">All groups</option>
+              <option value="Public shell">Public shell</option>
+              <option value="Preserved source">Preserved source</option>
+              <option value="Specification">Specification</option>
+            </select>
+          </div>
+        </div>
+        <p class="search-results-count" id="shell-count"></p>
+        <div class="result-list" id="shell-results"></div>
+      </div>
+    </section>
+
+    <section class="section" id="inventory">
+      <h2>Inventory and preservation references</h2>
+      <p>
+        A machine-readable pre-restructure repository snapshot has been created and kept outside the published shell so it can preserve
+        original internal paths without automatically surfacing additional sensitive material.
+      </p>
+      <p>
+        <span class="path-chip"><code>spec/inventory/repository-pre-phase1.json</code></span>
+        <span class="path-chip"><code>public/data/documents.json</code></span>
+        <span class="path-chip"><code>attached_assets/</code></span>
+        <span class="path-chip"><code>client/public/documents/</code></span>
+        <span class="path-chip"><code>.github/workflows/pages.yml</code></span>
+      </p>
+      <div class="notice notice-danger">
+        <strong>Privacy boundary:</strong>
+        filenames and classifications already present in the repository may identify sensitive or official material.
+        Phase 1 therefore keeps the inventory in repository documentation rather than publishing it as a new browsable public index.
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="footer-note">
+        Phase 1 complete means architecture only: preservation rules, inventory, navigation shell, evidence-status language and deployment scaffolding.
+        Phase 2 is reserved for deeper archive inventory and record-level modelling.
+      </p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/archive-foundation.js"></script>
+  <script>
+    const navigationCards = [
+      {
+        title: 'Archive catalogue shell',
+        description: 'A limited public catalogue shell that preserves source references while avoiding automatic publication of additional repository material.',
+        href: './Documents.html',
+        meta: 'Public shell · catalogue orientation'
+      },
+      {
+        title: 'Repository inventory',
+        description: 'Machine-readable pre-restructure snapshot stored under spec/ for internal preservation and later archive modelling.',
+        meta: 'Specification · not published by default'
+      },
+      {
+        title: 'Evidence status legend',
+        description: 'Shared language for documented fact, primary-source record, allegation, interpretation, disputed and unverified material.',
+        href: '#status-legend',
+        meta: 'Public shell · trust language'
+      },
+      {
+        title: 'Preserved source paths',
+        description: 'Original directory boundaries such as attached_assets and client/public/documents are preserved as the record layer.',
+        href: '#inventory',
+        meta: 'Preserved source · repository paths'
+      },
+      {
+        title: 'GitHub Pages build boundary',
+        description: 'Deployment is restricted to the curated shell and approved metadata outputs rather than the full repository tree.',
+        meta: 'Specification · deploy scaffold'
+      },
+      {
+        title: '404 / path recovery',
+        description: 'Phase 1 includes a repository-aware 404 surface and legacy path handling for the catalogue shell.',
+        href: './404.html',
+        meta: 'Public shell · routing support'
+      }
+    ];
+
+    const statusBadges = [
+      { symbol: 'F', label: 'Documented fact', tone: 'fact', description: 'Supported directly by cited evidence and stated without interpretive expansion.' },
+      { symbol: 'P', label: 'Primary-source record', tone: 'record', description: 'A source artefact created at or near the relevant event or by a direct participant.' },
+      { symbol: 'O', label: 'Official record', tone: 'record', description: 'Issued by a public authority, court, regulator, institution or comparable body.' },
+      { symbol: 'J', label: 'Judicial finding', tone: 'record', description: 'A finding or statement traceable to a court or tribunal determination.' },
+      { symbol: 'D', label: 'Official determination', tone: 'record', description: 'A formal decision, notice or determination by an authorised body.' },
+      { symbol: 'C', label: 'Corroborated material', tone: 'fact', description: 'Supported by more than one independent source or evidentiary strand.' },
+      { symbol: 'A', label: 'Author\'s account', tone: 'analysis', description: 'A first-person statement or authored account that must be distinguished from official records.' },
+      { symbol: 'L', label: 'Allegation', tone: 'warning', description: 'A claim asserted in the record that requires careful attribution and may remain contested.' },
+      { symbol: 'I', label: 'Inference', tone: 'analysis', description: 'A reasoned conclusion drawn from evidence rather than an explicit statement in a source.' },
+      { symbol: 'T', label: 'Interpretation', tone: 'analysis', description: 'An analytical reading that should remain separate from factual record descriptions.' },
+      { symbol: 'K', label: 'Possible legal characterisation', tone: 'warning', description: 'A potential legal framing for later expert assessment, not a concluded legal finding.' },
+      { symbol: 'U', label: 'Unverified material', tone: 'warning', description: 'Included for preservation or research follow-up but not yet verified against source standards.' },
+      { symbol: 'X', label: 'Disputed material', tone: 'disputed', description: 'Material known to be contested, contradicted or challenged in the record.' },
+      { symbol: '?', label: 'Research question', tone: 'analysis', description: 'An open question recorded to guide later archival or forensic work.' }
+    ];
+
+    const shellItems = [
+      {
+        title: 'Public homepage shell',
+        description: 'Restrained orientation page describing the archive boundary and preservation rules.',
+        group: 'Public shell',
+        path: 'index.html',
+        tags: ['homepage', 'navigation', 'preservation']
+      },
+      {
+        title: 'Catalogue shell',
+        description: 'A shell for archive discovery that points to preserved metadata and later indexing work.',
+        group: 'Public shell',
+        path: 'Documents.html',
+        href: './Documents.html',
+        tags: ['catalogue', 'search', 'metadata']
+      },
+      {
+        title: 'Machine-readable repository inventory',
+        description: 'Pre-restructure snapshot of files, directories, duplicates and broken local references.',
+        group: 'Specification',
+        path: 'spec/inventory/repository-pre-phase1.json',
+        tags: ['inventory', 'machine-readable', 'pre-restructure']
+      },
+      {
+        title: 'Primary evidence asset directory',
+        description: 'High-volume preserved archive material retained at its original repository path.',
+        group: 'Preserved source',
+        path: 'attached_assets/',
+        tags: ['evidence', 'original path', 'assets']
+      },
+      {
+        title: 'Public document corpus directory',
+        description: 'Existing public documents retained under the client public tree for later modelling.',
+        group: 'Preserved source',
+        path: 'client/public/documents/',
+        tags: ['documents', 'public', 'preserved path']
+      },
+      {
+        title: 'Existing PDF metadata catalogue',
+        description: 'Current machine-readable PDF catalogue preserved as source metadata rather than re-authored facts.',
+        group: 'Preserved source',
+        path: 'public/data/documents.json',
+        tags: ['json', 'catalogue', 'metadata']
+      },
+      {
+        title: 'Build status record',
+        description: 'Phase 1 change log, validation results and next-phase recommendation.',
+        group: 'Specification',
+        path: 'spec/BUILD_STATUS.md',
+        tags: ['status', 'checks', 'phase 2']
+      }
+    ];
+
+    ArchiveFoundation.renderCards(document.getElementById('navigation-cards'), navigationCards);
+    ArchiveFoundation.renderStatusBadges(document.getElementById('status-badges'), statusBadges);
+    ArchiveFoundation.attachSearch({
+      inputId: 'shell-search',
+      filterId: 'shell-group',
+      countId: 'shell-count',
+      resultsId: 'shell-results',
+      items: shellItems
     });
-
-
-  document.getElementById("status").textContent =
-    filtered.length +
-    " document" +
-    (filtered.length === 1 ? "" : "s") +
-    " found";
-
-
-  const container =
-    document.getElementById("documents");
-
-  container.innerHTML = "";
-
-
-  if(!filtered.length){
-
-    container.innerHTML =
-      "<div class='hero'><p>No matching documents found.</p></div>";
-
-    return;
-
-  }
-
-
-  filtered.forEach(function(doc){
-
-    const item =
-      document.createElement("article");
-
-    item.className = "document";
-
-
-    const title =
-      document.createElement("h3");
-
-    title.textContent =
-      doc.title || "PDF document";
-
-
-    const info =
-      document.createElement("p");
-
-    info.textContent =
-      (doc.owner || "") +
-      " • " +
-      (doc.repository || "");
-
-
-    const path =
-      document.createElement("p");
-
-    path.textContent =
-      doc.path || "";
-
-
-    const link =
-      document.createElement("a");
-
-    link.className = "button";
-
-    link.href =
-      doc.url ||
-      doc.raw_url ||
-      "#";
-
-    link.target = "_blank";
-
-    link.rel = "noopener noreferrer";
-
-    link.textContent =
-      "View PDF";
-
-
-    item.appendChild(title);
-
-    item.appendChild(info);
-
-    item.appendChild(path);
-
-    item.appendChild(link);
-
-    container.appendChild(item);
-
-  });
-
-}
-
-
-document
-  .getElementById("search")
-  .addEventListener("input", render);
-
-
-document
-  .getElementById("owner")
-  .addEventListener("change", render);
-
-
-loadDocuments();
-
-</script>
-
+  </script>
 </body>
 </html>

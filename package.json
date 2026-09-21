@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "inventory:generate": "node scripts/generate-phase1-inventory.mjs",
+    "check:phase1": "node scripts/check-phase1-foundation.mjs",
+    "build:pages:static": "node scripts/build-pages-site.mjs"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^6.6.0",
