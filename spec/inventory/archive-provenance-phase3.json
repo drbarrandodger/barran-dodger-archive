@@ -1,0 +1,1796 @@
+{
+  "generated_at": "2026-09-21T11:16:17.475Z",
+  "summary": {
+    "total_records": 698,
+    "collection_count": 6,
+    "route_page_count": 9,
+    "provenance_status_count": 3,
+    "review_flag_count": 6,
+    "unclassified_records": 20
+  },
+  "provenance_statuses": [
+    {
+      "value": "remote-public-reference",
+      "count": 414
+    },
+    {
+      "value": "local-preserved-copy",
+      "count": 214
+    },
+    {
+      "value": "remote-metadata-reference",
+      "count": 70
+    }
+  ],
+  "publication_statuses": [
+    {
+      "value": "public-record",
+      "count": 553
+    },
+    {
+      "value": "public-metadata-sensitive",
+      "count": 75
+    },
+    {
+      "value": "metadata-only",
+      "count": 70
+    }
+  ],
+  "source_repositories": [
+    {
+      "value": "Wezzo72/Backup",
+      "count": 630
+    },
+    {
+      "value": "Wezzo72/Barrandodger",
+      "count": 48
+    },
+    {
+      "value": "Barrandodger/Testimony2025",
+      "count": 19
+    },
+    {
+      "value": "Barrandodger/Testimony",
+      "count": 1
+    }
+  ],
+  "review_queues": {
+    "unclassified_records": [
+      {
+        "record_id": "record:87d45ad21c6c",
+        "title": "Declaration of Testimony and Witness Support.pdf",
+        "original_path": " Declaration of Testimony and Witness Support.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:1910f42c372e",
+        "title": "The Final Forensic Testament of Dr. Richard William McLean (“Barrandodger”)  An.pdf",
+        "original_path": " The Final Forensic Testament of Dr. Richard William McLean (“Barrandodger”)  An.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:e52fbd8b766f",
+        "title": "“Secret Agent Resigns” – Prophetic Dossier Narrative.pdf",
+        "original_path": "“Secret Agent Resigns” – Prophetic Dossier Narrative.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:ca22f2a0766e",
+        "title": "📜 Master Letter to Institutions, Media, Faith Communities, and Public Authoriti.pdf",
+        "original_path": "📜 Master Letter to Institutions, Media, Faith Communities, and Public Authoriti.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:060320ac8399",
+        "title": "795cfdd4-528e-4355-a902-c5696d4cea20.pdf",
+        "original_path": "795cfdd4-528e-4355-a902-c5696d4cea20.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:d7e909d6f1ff",
+        "title": "AFFIDAVIT OF CONTINUITY OF IDENTITY AND TESTIMONY.pdf",
+        "original_path": "AFFIDAVIT OF CONTINUITY OF IDENTITY AND TESTIMONY.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:779a9b91e2bc",
+        "title": "Affitdavit testimony servant of God  i forgive everyone I am vindicated .pdf",
+        "original_path": "Affitdavit testimony servant of God  i forgive everyone I am vindicated .pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:bf2990855c46",
+        "title": "Allegiance Declaration of Barran Dodger and Covenant Mantle Declaration Allegian.pdf",
+        "original_path": "Allegiance Declaration of Barran Dodger and Covenant Mantle Declaration Allegian.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:9dc45a0f91fe",
+        "title": "Annex Q144 — The Eternal Questions and Answers - A Tribunal Archive of Justice, .pdf",
+        "original_path": "Annex Q144 — The Eternal Questions and Answers - A Tribunal Archive of Justice, .pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:84b6bc31f847",
+        "title": "Betrayal as Currency The Immutable Testimony of Dr. Richard William McLean (Barr.pdf",
+        "original_path": "Betrayal as Currency The Immutable Testimony of Dr. Richard William McLean (Barr.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:38e9c353f868",
+        "title": "Career ending .pdf",
+        "original_path": "Career ending .pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:99a59267fac7",
+        "title": "David.pdf",
+        "original_path": "David.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:0c4cba2fc599",
+        "title": "Impartial AI-Authored Forensic Dossier on Dr. Richard William McLean (Barran Dod.pdf",
+        "original_path": "Impartial AI-Authored Forensic Dossier on Dr. Richard William McLean (Barran Dod.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:684d4cc22710",
+        "title": "Master essay.pdf",
+        "original_path": "Master essay.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:b37bff44047e",
+        "title": "Speak this .pdf",
+        "original_path": "Speak this .pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:21fc2ef5ef00",
+        "title": "Statement .pdf",
+        "original_path": "Statement .pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:e0294bc00afa",
+        "title": "Ten essays of spiritual rekoning .pdf",
+        "original_path": "Ten essays of spiritual rekoning .pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:02e6eb262857",
+        "title": "The Covenant of the Enliven Chain -  An Eternal Witness for Humanity.pdf",
+        "original_path": "The Covenant of the Enliven Chain -  An Eternal Witness for Humanity.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:7de69db301cb",
+        "title": "The Covenant of the Enliven Chain -  An Eternal Witness for Humanity.pdf",
+        "original_path": "The Covenant of the Enliven Chain -  An Eternal Witness for Humanity.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:9cb7fb22edfe",
+        "title": "The Final Declaration of Wealth and Obligation - My Testimony of Truth, Justice,.pdf",
+        "original_path": "The Final Declaration of Wealth and Obligation - My Testimony of Truth, Justice,.pdf",
+        "publication_status": "metadata-only",
+        "provenance_status": "remote-metadata-reference",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      }
+    ],
+    "sensitive_public_metadata": [
+      {
+        "record_id": "record:ce851064634f",
+        "title": "01_18.06.2023 Notification of decision not to allocate a disclosure SECOFFICIALSensitive ACCESSPersonalPrivacy.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/Government Evidence/01_18.06.2023 Notification of decision not to allocate a disclosure SECOFFICIALSensitive ACCESSPersonalPrivacy.pdf",
+        "sensitivity_flags": [
+          "personal-privacy-marker",
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:16e2b3d94f6d",
+        "title": "03_2021_OAIC_Micron21_Privacy_CP2102752_Copy.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/Government Evidence/03_2021_OAIC_Micron21_Privacy_CP2102752_Copy.pdf",
+        "sensitivity_flags": [
+          "personal-privacy-marker"
+        ]
+      },
+      {
+        "record_id": "record:bf80d574d9e4",
+        "title": "04_222RE PID SECOFFICIALSensitive.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/Government Evidence/04_222RE PID SECOFFICIALSensitive.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:86562f222a12",
+        "title": "18.06.2023 Notification of decision not to allocate a disclosure SECOFFICIALSensitive ACCESSPersonalPrivacy.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/Government Evidence/18.06.2023 Notification of decision not to allocate a disclosure SECOFFICIALSensitive ACCESSPersonalPrivacy.pdf",
+        "sensitivity_flags": [
+          "personal-privacy-marker",
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:63ea872f29c1",
+        "title": "2020-04-09-IBAC-CASE-2020712-Outcome-letter.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2020-04-09-IBAC-CASE-2020712-Outcome-letter.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:2b10febc46d0",
+        "title": "2021_OAIC_Micron21_Privacy_CP2102752.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/Government Evidence/2021_OAIC_Micron21_Privacy_CP2102752.pdf",
+        "sensitivity_flags": [
+          "personal-privacy-marker"
+        ]
+      },
+      {
+        "record_id": "record:ed553ca9b69f",
+        "title": "2021-03-OAIC-Micron21-Privacy-CP2102752.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/drive-import-2026-09-20/2021-03-OAIC-Micron21-Privacy-CP2102752.pdf",
+        "sensitivity_flags": [
+          "personal-privacy-marker"
+        ]
+      },
+      {
+        "record_id": "record:37709733ecb1",
+        "title": "2021-03-OAIC-Micron21-Privacy-CP2102752.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-03-OAIC-Micron21-Privacy-CP2102752.pdf",
+        "sensitivity_flags": [
+          "personal-privacy-marker",
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:a9f2a7a9d33d",
+        "title": "2021-05-20-NDIA-work-safe-EVIDENCE-REJECTED-ACA-letter-FOI.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-05-20-NDIA-work-safe-EVIDENCE-REJECTED-ACA-letter-FOI.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:465a6a3a3d02",
+        "title": "2021-05-25-Comcare-Claim-1326583-SEC-OFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/drive-import-2026-09-20/2021-05-25-Comcare-Claim-1326583-SEC-OFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:d2ab115e90d1",
+        "title": "2021-05-25-Comcare-Claim-1326583-SEC-OFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-05-25-Comcare-Claim-1326583-SEC-OFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:eef23672987f",
+        "title": "2021-05-PID-Ombudsman-Rejected-Acknowledgement.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-05-PID-Ombudsman-Rejected-Acknowledgement.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:87882cfc250d",
+        "title": "2021-06-03-NDIS-Quality-Safeguards-Commission-not-an-employee.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-06-03-NDIS-Quality-Safeguards-Commission-not-an-employee.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:83d933768df4",
+        "title": "2021-10-15-ASBFEO-Small-Business-Ombudsman-Micron21-rejection.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-10-15-ASBFEO-Small-Business-Ombudsman-Micron21-rejection.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:6a998365068a",
+        "title": "2021-10-22-APRA-OAIC-PID-whistleblower-response-SEC-OFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/drive-import-2026-09-20/2021-10-22-APRA-OAIC-PID-whistleblower-response-SEC-OFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:39e076551fc5",
+        "title": "2021-10-22-APRA-OAIC-PID-whistleblower-response-SEC-OFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-10-22-APRA-OAIC-PID-whistleblower-response-SEC-OFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:e3ad369c27a1",
+        "title": "2021-10-22-PID-whistleblower-intentions-multiple-agencies-SEC-OFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/drive-import-2026-09-20/2021-10-22-PID-whistleblower-intentions-multiple-agencies-SEC-OFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:22dd15fb76ba",
+        "title": "2021-10-22-PID-whistleblower-intentions-multiple-agencies-SEC-OFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-10-22-PID-whistleblower-intentions-multiple-agencies-SEC-OFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:0e8fdffb96db",
+        "title": "2021-11-13-APRA-reject-Whistleblower-Status.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-11-13-APRA-reject-Whistleblower-Status.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:dceb45fb1855",
+        "title": "2021-11-15-Commonwealth-Ombudsman-Complaint-2021103546.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-11-15-Commonwealth-Ombudsman-Complaint-2021103546.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:e0125a5fa59f",
+        "title": "2021-11-18-IBAC-PID-Rejection-400008R.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2021-11-18-IBAC-PID-Rejection-400008R.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:57c932274d89",
+        "title": "2022-01-25-AAT-Comcare-prehearing-check.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2022-01-25-AAT-Comcare-prehearing-check.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:b1b4e40dbb94",
+        "title": "2022-04-02-EVIDENCE-letter-to-AAT.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2022-04-02-EVIDENCE-letter-to-AAT.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:7c8f682421d7",
+        "title": "2022-04-12-Assessment-outcome-CASE-20213522-and-CASE-20215102.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2022-04-12-Assessment-outcome-CASE-20213522-and-CASE-20215102.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:8565f5af491f",
+        "title": "2022-06-14-Vic-Ombudsman-Rejects-FOI-s29A.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2022-06-14-Vic-Ombudsman-Rejects-FOI-s29A.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:64e511d46542",
+        "title": "2022-08-14-statement-to-police.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2022-08-14-statement-to-police.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:da177c10b37b",
+        "title": "2022-10-05-VOCAT-Ombudsman-BenCalder-ComplaintRejection.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2022-10-05-VOCAT-Ombudsman-BenCalder-ComplaintRejection.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:46d9d1575e38",
+        "title": "2023-07-04-AHRC-contact-SECOFFICIALSensitive.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/drive-import-2026-09-20/2023-07-04-AHRC-contact-SECOFFICIALSensitive.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:8ceb22d840af",
+        "title": "2023-07-04-AHRC-contact-SECOFFICIALSensitive.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2023-07-04-AHRC-contact-SECOFFICIALSensitive.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:3cf7b1874880",
+        "title": "2023-10-29-IBAC-CASE-20231101-CASE-20233846.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2023-10-29-IBAC-CASE-20231101-CASE-20233846.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:dac1dc8eb3aa",
+        "title": "2025-02-06-AG-Department-correspondence.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2025-02-06-AG-Department-correspondence.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:0304d22c099e",
+        "title": "2025-08-08-Commonwealth-Ombudsman-Service-Restriction.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2025-08-08-Commonwealth-Ombudsman-Service-Restriction.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:c02e6175ca74",
+        "title": "2025-11-14-FOI-2022-045IC-Revised-Decision.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/2025-11-14-FOI-2022-045IC-Revised-Decision.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:478073ab19c6",
+        "title": "2026-01-24_NSW_Mental_Health_Services_Report.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/Government Evidence/2026-01-24_NSW_Mental_Health_Services_Report.pdf",
+        "sensitivity_flags": [
+          "health-marker"
+        ]
+      },
+      {
+        "record_id": "record:89095e4b3649",
+        "title": "ai_personality_profile_barran_dodger.pdf",
+        "collection_key": "public-documents",
+        "original_path": "client/public/documents/ai_personality_profile_barran_dodger.pdf",
+        "sensitivity_flags": [
+          "personal-privacy-marker"
+        ]
+      },
+      {
+        "record_id": "record:3cc59720c155",
+        "title": "APRA-PID-rejection-Peter-Dunstan-EVIDENCE.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/APRA-PID-rejection-Peter-Dunstan-EVIDENCE.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:46d288204b6e",
+        "title": "ART-2021-7478-McLean-and-Comcare-Decision-12-July-2023.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/ART-2021-7478-McLean-and-Comcare-Decision-12-July-2023.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:0567261002ce",
+        "title": "barran dodger sasha currie liverpool communict mental health team breach of depot police involvement BD 58_3_ August 2024.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/Government Evidence/barran dodger sasha currie liverpool communict mental health team breach of depot police involvement BD 58_3_ August 2024.pdf",
+        "sensitivity_flags": [
+          "health-marker"
+        ]
+      },
+      {
+        "record_id": "record:fe6084c60c5d",
+        "title": "claim number 13265831 determination outcome letterSECOFFICIALSensitive copy.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/Government Evidence/claim number 13265831 determination outcome letterSECOFFICIALSensitive copy.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:71a528a53277",
+        "title": "Comcare-claim-13265831-determination-outcome-SEC-OFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/drive-import-2026-09-20/Comcare-claim-13265831-determination-outcome-SEC-OFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:f240b72dd4fb",
+        "title": "Comcare-claim-13265831-determination-outcome-SEC-OFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/Comcare-claim-13265831-determination-outcome-SEC-OFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:2419e78c89de",
+        "title": "Commonwealth-Ombudsman-Complaint-2021705589.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/Commonwealth-Ombudsman-Complaint-2021705589.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:d0c508d85d9a",
+        "title": "Commonwealth-Ombudsman-PID-notification-not-to-allocate.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/Commonwealth-Ombudsman-PID-notification-not-to-allocate.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:fdd98875bc03",
+        "title": "Disability-Royal-Commission-submission-SUB00101440-SEC-OFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/drive-import-2026-09-20/Disability-Royal-Commission-submission-SUB00101440-SEC-OFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:47efdfa4f08a",
+        "title": "Disability-Royal-Commission-submission-SUB00101440-SEC-OFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/Disability-Royal-Commission-submission-SUB00101440-SEC-OFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:0a741f428e73",
+        "title": "dr-horgan-mclean-confidential-psychiatric-assessment.pdf",
+        "collection_key": "public-documents",
+        "original_path": "client/public/documents/dr-horgan-mclean-confidential-psychiatric-assessment.pdf",
+        "sensitivity_flags": [
+          "health-marker"
+        ]
+      },
+      {
+        "record_id": "record:0ca81852c2bd",
+        "title": "EVIDENCE-disabilityadvocacy-dss-gov-au-URGENT.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/EVIDENCE-disabilityadvocacy-dss-gov-au-URGENT.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:7f60e0ea9f67",
+        "title": "EVIDENCE-NDIS-SOCIAL-SERVICES-MINISTER-JEFF-TRICKER-URGENT-SECOFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/drive-import-2026-09-20/EVIDENCE-NDIS-SOCIAL-SERVICES-MINISTER-JEFF-TRICKER-URGENT-SECOFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:5520de9e6a38",
+        "title": "EVIDENCE-NDIS-SOCIAL-SERVICES-MINISTER-JEFF-TRICKER-URGENT-SECOFFICIAL.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/EVIDENCE-NDIS-SOCIAL-SERVICES-MINISTER-JEFF-TRICKER-URGENT-SECOFFICIAL.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:6a9041e3ab14",
+        "title": "FINAL-EVIDENTIARY-NOTICE-OBJECTION-REQUEST-FORMAL-INVESTIGATION.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/FINAL-EVIDENTIARY-NOTICE-OBJECTION-REQUEST-FORMAL-INVESTIGATION.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:d0308deacf92",
+        "title": "FOI-2022-045-Decision.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/FOI-2022-045-Decision.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:10d4d479c37a",
+        "title": "FOI-2022-045IC-Documents-for-release.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/FOI-2022-045IC-Documents-for-release.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:2172c97a21ad",
+        "title": "FOI-22-01-IR-decision-letter-6-May-2022.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/FOI-22-01-IR-decision-letter-6-May-2022.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:81192a11d1fc",
+        "title": "FOI-appeal-MR2200677-FOI-2022045-Finalisation-IC-review.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/FOI-appeal-MR2200677-FOI-2022045-Finalisation-IC-review.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:f5f7ea74b64a",
+        "title": "ibac-police-secofficial-2021.pdf",
+        "collection_key": "public-documents",
+        "original_path": "client/public/documents/ibac-police-secofficial-2021.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:2045c786fca2",
+        "title": "Letter-to-PM-and-Attorney-General-response-directing-to-Ombudsman.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/Letter-to-PM-and-Attorney-General-response-directing-to-Ombudsman.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:822a6271e0b4",
+        "title": "McLean-and-Comcare-FINAL-Decision.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/McLean-and-Comcare-FINAL-Decision.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:6a80bb51ab65",
+        "title": "McLean-determination-Comcare-rejection-26May2021.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/McLean-determination-Comcare-rejection-26May2021.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:04ae164f64e6",
+        "title": "Medical certificate for compensation.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/Government Evidence/Medical certificate for compensation.pdf",
+        "sensitivity_flags": [
+          "health-marker"
+        ]
+      },
+      {
+        "record_id": "record:d61d838a2342",
+        "title": "mental-health-hospitalisation-bizarre-delusions-government-surveillance.pdf",
+        "collection_key": "public-documents",
+        "original_path": "client/public/documents/mental-health-hospitalisation-bizarre-delusions-government-surveillance.pdf",
+        "sensitivity_flags": [
+          "health-marker"
+        ]
+      },
+      {
+        "record_id": "record:b9531211d0c1",
+        "title": "mhlc-mental-health-legal-centre.pdf",
+        "collection_key": "public-documents",
+        "original_path": "client/public/documents/mhlc-mental-health-legal-centre.pdf",
+        "sensitivity_flags": [
+          "health-marker"
+        ]
+      },
+      {
+        "record_id": "record:a0460b4bcf82",
+        "title": "My-PID-for-commonwealth-Ombudsman.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/My-PID-for-commonwealth-Ombudsman.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:a031571d3fd9",
+        "title": "ndis-pid-official-response.pdf",
+        "collection_key": "public-documents",
+        "original_path": "client/public/documents/ndis-pid-official-response.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:9ce77659a151",
+        "title": "NDIS-PID-response-not-in-time-appeal-to-ombudsman-2023Krypton.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/NDIS-PID-response-not-in-time-appeal-to-ombudsman-2023Krypton.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:910b79317d47",
+        "title": "NDIS-Summary-of-FOI-Decision-Letter.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/NDIS-Summary-of-FOI-Decision-Letter.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:e19653b93752",
+        "title": "Notice-of-FOI-decision-R-Mclean-FOI-ref-2023-0072.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/Notice-of-FOI-decision-R-Mclean-FOI-ref-2023-0072.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:6e8c73f30ac3",
+        "title": "OAIC-43704714.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/OAIC-43704714.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:29336f2e2fd4",
+        "title": "OAIC-IC-review-Department-Prime-Minister-Cabinet.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/OAIC-IC-review-Department-Prime-Minister-Cabinet.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:4220df756bcc",
+        "title": "official-whistleblower-torture-dossier-dr-richard-william-mclean.pdf",
+        "collection_key": "public-documents",
+        "original_path": "client/public/documents/official-whistleblower-torture-dossier-dr-richard-william-mclean.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:ac3a1aa9251c",
+        "title": "Ombudsman Ref 2023104906 SECOFFICIALSensitive.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "client/public/documents/government-evidence/Government Evidence/Ombudsman Ref 2023104906 SECOFFICIALSensitive.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:caf8f27ef5b5",
+        "title": "Ombudsman-AFCA-referral-loop-evidence.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/Ombudsman-AFCA-referral-loop-evidence.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:13a72ea22c19",
+        "title": "Outcome-of-complaint-to-NSW-Ombudsman-NSWO10704000690.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/Outcome-of-complaint-to-NSW-Ombudsman-NSWO10704000690.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:298e08b729c4",
+        "title": "psychiatric_assessment_asylum_documentation.pdf",
+        "collection_key": "public-documents",
+        "original_path": "client/public/documents/psychiatric_assessment_asylum_documentation.pdf",
+        "sensitivity_flags": [
+          "health-marker"
+        ]
+      },
+      {
+        "record_id": "record:eb4658181bef",
+        "title": "THE-DIGITAL-APOCALYPSE-OF-ADMINISTRATIVE-ANNIHILATION.pdf",
+        "collection_key": "government-evidence",
+        "original_path": "docs/official-drive/THE-DIGITAL-APOCALYPSE-OF-ADMINISTRATIVE-ANNIHILATION.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      },
+      {
+        "record_id": "record:3a11f3959b85",
+        "title": "zac-avo-demand-violence-warning-official-announcement.pdf",
+        "collection_key": "public-documents",
+        "original_path": "client/public/documents/zac-avo-demand-violence-warning-official-announcement.pdf",
+        "sensitivity_flags": [
+          "official-sensitivity-marker"
+        ]
+      }
+    ],
+    "metadata_only_publication": [
+      {
+        "record_id": "record:87d45ad21c6c",
+        "title": "Declaration of Testimony and Witness Support.pdf",
+        "collection_key": "unclassified",
+        "original_path": " Declaration of Testimony and Witness Support.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:1910f42c372e",
+        "title": "The Final Forensic Testament of Dr. Richard William McLean (“Barrandodger”)  An.pdf",
+        "collection_key": "unclassified",
+        "original_path": " The Final Forensic Testament of Dr. Richard William McLean (“Barrandodger”)  An.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:5888dc911a4d",
+        "title": "_MASTER_CONSOLIDATED_LEGAL_RECORD_1785820484193.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/_MASTER_CONSOLIDATED_LEGAL_RECORD_1785820484193.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:71ff771c634b",
+        "title": "_Systemic_Endangerment_of_Whistleblowers-_An_Integrated_Dossie_1785820484193.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/_Systemic_Endangerment_of_Whistleblowers-_An_Integrated_Dossie_1785820484193.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:e52fbd8b766f",
+        "title": "“Secret Agent Resigns” – Prophetic Dossier Narrative.pdf",
+        "collection_key": "unclassified",
+        "original_path": "“Secret Agent Resigns” – Prophetic Dossier Narrative.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:ca22f2a0766e",
+        "title": "📜 Master Letter to Institutions, Media, Faith Communities, and Public Authoriti.pdf",
+        "collection_key": "unclassified",
+        "original_path": "📜 Master Letter to Institutions, Media, Faith Communities, and Public Authoriti.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:46f2ea174b96",
+        "title": "0_Cocksucker_2_1785397920764.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/0_Cocksucker_2_1785397920764.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:748edef936bf",
+        "title": "04.07.2023_Your_contact_with_AHRC_SECOFFICIALSensitive_1786840456444.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/04.07.2023_Your_contact_with_AHRC_SECOFFICIALSensitive_1786840456444.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review",
+          "sensitivity-review"
+        ]
+      },
+      {
+        "record_id": "record:38d1f4e341f7",
+        "title": "05.05.2021_provider_registration_NDIA_EVIDENCE_2021.05.05_-_In_1785820682149.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/05.05.2021_provider_registration_NDIA_EVIDENCE_2021.05.05_-_In_1785820682149.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:40db58a6bb7b",
+        "title": "1_Cock_sucker_block_chained__1785397920765.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/1_Cock_sucker_block_chained__1785397920765.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:a5cb64217d41",
+        "title": "20260114_Letter_to_Client_Confirming_advice_1786413683812.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/20260114_Letter_to_Client_Confirming_advice_1786413683812.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:060320ac8399",
+        "title": "795cfdd4-528e-4355-a902-c5696d4cea20.pdf",
+        "collection_key": "unclassified",
+        "original_path": "795cfdd4-528e-4355-a902-c5696d4cea20.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:1ddfa8598b66",
+        "title": "Able_points_permanent_disgrace_1786151213890.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Able_points_permanent_disgrace_1786151213890.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:27d779700cb9",
+        "title": "AFCA_letter_21_May_2021_1785820682149.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/AFCA_letter_21_May_2021_1785820682149.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:d7e909d6f1ff",
+        "title": "AFFIDAVIT OF CONTINUITY OF IDENTITY AND TESTIMONY.pdf",
+        "collection_key": "unclassified",
+        "original_path": "AFFIDAVIT OF CONTINUITY OF IDENTITY AND TESTIMONY.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:779a9b91e2bc",
+        "title": "Affitdavit testimony servant of God  i forgive everyone I am vindicated .pdf",
+        "collection_key": "unclassified",
+        "original_path": "Affitdavit testimony servant of God  i forgive everyone I am vindicated .pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:785f433898f2",
+        "title": "Ai_and_democracy_by_Barran_Resonance_Dodger_1785235786072.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Ai_and_democracy_by_Barran_Resonance_Dodger_1785235786072.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:6a301ae4a634",
+        "title": "AI_Drive__Built_for_Legal_&_Professional_Workflows_1785720863003.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/AI_Drive__Built_for_Legal_&_Professional_Workflows_1785720863003.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:bf2990855c46",
+        "title": "Allegiance Declaration of Barran Dodger and Covenant Mantle Declaration Allegian.pdf",
+        "collection_key": "unclassified",
+        "original_path": "Allegiance Declaration of Barran Dodger and Covenant Mantle Declaration Allegian.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:9dc45a0f91fe",
+        "title": "Annex Q144 — The Eternal Questions and Answers - A Tribunal Archive of Justice, .pdf",
+        "collection_key": "unclassified",
+        "original_path": "Annex Q144 — The Eternal Questions and Answers - A Tribunal Archive of Justice, .pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:cf96e200f651",
+        "title": "Australian_Government_Corruption_Exposed_|_Dr._Richard_McLean__1785737729083.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Australian_Government_Corruption_Exposed_|_Dr._Richard_McLean__1785737729083.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:66881dcf3e30",
+        "title": "Australian_Government_Corruption_Exposed_|_Dr._Richard_McLean__1786856791170.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Australian_Government_Corruption_Exposed_|_Dr._Richard_McLean__1786856791170.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:84b6bc31f847",
+        "title": "Betrayal as Currency The Immutable Testimony of Dr. Richard William McLean (Barr.pdf",
+        "collection_key": "unclassified",
+        "original_path": "Betrayal as Currency The Immutable Testimony of Dr. Richard William McLean (Barr.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:38e9c353f868",
+        "title": "Career ending .pdf",
+        "collection_key": "unclassified",
+        "original_path": "Career ending .pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:fb3c775a101d",
+        "title": "CONFIDENTIAL_-_ADV-2229668_DODGER_1786413683812.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/CONFIDENTIAL_-_ADV-2229668_DODGER_1786413683812.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:6858a096cbcc",
+        "title": "Crystal_needs_a_vet_1786090707479.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Crystal_needs_a_vet_1786090707479.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:cf0e834db1cb",
+        "title": "Crystal_needs_a_vet_2_1786149714063.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Crystal_needs_a_vet_2_1786149714063.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:5d8052fd5193",
+        "title": "Crystal_vet_please_deposit.pdf_1786090281211.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Crystal_vet_please_deposit.pdf_1786090281211.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:99a59267fac7",
+        "title": "David.pdf",
+        "collection_key": "unclassified",
+        "original_path": "David.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:f587a048665d",
+        "title": "DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_1786418914121.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_1786418914121.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:bad1d0042daf",
+        "title": "DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_1786423265447.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_1786423265447.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:96ae3f80eadc",
+        "title": "DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_1786424122267.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_1786424122267.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:bf3ede3bceec",
+        "title": "DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_1786434358466.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_1786434358466.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:6d7f8581b65c",
+        "title": "DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_2_1786422461030.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_2_1786422461030.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:4ef5c3c8d92e",
+        "title": "DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_2_1786422503691.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/DOCTRINE_OF_COMPLICITY_BY_DELIBERATE_OMISSION_2_1786422503691.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:a1f1f233c6e3",
+        "title": "Elijah_Jesus_Crystal_&_Barran__1785226637029.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Elijah_Jesus_Crystal_&_Barran__1785226637029.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:0c36f28c673c",
+        "title": "Evidence_Archive_—_240+_Blockchain-Sealed_Documents_The_Govern_1786067842047.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Evidence_Archive_—_240+_Blockchain-Sealed_Documents_The_Govern_1786067842047.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:c79dc8be769c",
+        "title": "Evidence_Archive_—_240+_Blockchain-Sealed_Documents_The_Govern_1786069731513.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Evidence_Archive_—_240+_Blockchain-Sealed_Documents_The_Govern_1786069731513.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:c10c65db9a4d",
+        "title": "Evidence_Archive_—_240+_Blockchain-Sealed_Documents_The_Govern_1786071349629.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Evidence_Archive_—_240+_Blockchain-Sealed_Documents_The_Govern_1786071349629.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:2e0a96e70c6f",
+        "title": "Forensic_report_based_on_governments_own_documents_over_35_yea_1785920050219.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Forensic_report_based_on_governments_own_documents_over_35_yea_1785920050219.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:76105d3e12e1",
+        "title": "Gmail_3_1786151059868.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Gmail_3_1786151059868.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:ce64d733f733",
+        "title": "Gmail_3_1786151136022.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Gmail_3_1786151136022.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:3d8738b879f2",
+        "title": "Google_1785217520937.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Google_1785217520937.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:0c4cba2fc599",
+        "title": "Impartial AI-Authored Forensic Dossier on Dr. Richard William McLean (Barran Dod.pdf",
+        "collection_key": "unclassified",
+        "original_path": "Impartial AI-Authored Forensic Dossier on Dr. Richard William McLean (Barran Dod.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:370e0edeac56",
+        "title": "jane.abbott_was_the_ombudsman_TPD_1785820682149.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/jane.abbott_was_the_ombudsman_TPD_1785820682149.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:05ad000e30e1",
+        "title": "Kel_graham_and_UnNamed_NDIS_ministers_guilty_of_soliciting_mur_1786090466399.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Kel_graham_and_UnNamed_NDIS_ministers_guilty_of_soliciting_mur_1786090466399.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:44a649852df0",
+        "title": "Kill_me_-_do_it_God_and_I_are_good_2_1786090466399.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Kill_me_-_do_it_God_and_I_are_good_2_1786090466399.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:65119d3d794a",
+        "title": "Legal_cease_and_desist_1785979421178.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Legal_cease_and_desist_1785979421178.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:684d4cc22710",
+        "title": "Master essay.pdf",
+        "collection_key": "unclassified",
+        "original_path": "Master essay.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:f0caa09db2b8",
+        "title": "Mental_health_document_hospitalising_me_for_bizarre_delusions__1786309749112.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Mental_health_document_hospitalising_me_for_bizarre_delusions__1786309749112.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review",
+          "sensitivity-review"
+        ]
+      },
+      {
+        "record_id": "record:d56c3bc2c02c",
+        "title": "MHLC_1785820682149.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/MHLC_1785820682149.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:0fcfcf8cb254",
+        "title": "Potential_violence_with_Zac_1786150903436.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Potential_violence_with_Zac_1786150903436.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:51652183f332",
+        "title": "Praise_Jesus_1786090466399.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Praise_Jesus_1786090466399.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:d1181b24e452",
+        "title": "prime_minister_1785820682149.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/prime_minister_1785820682149.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:a01287586751",
+        "title": "RE_Police_SECOFFICIAL_1785820682149.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/RE_Police_SECOFFICIAL_1785820682149.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review",
+          "sensitivity-review"
+        ]
+      },
+      {
+        "record_id": "record:ab1466fbb209",
+        "title": "Sacred_Gospels_Forensic_Thesis_—_All_World_Traditions_|_Dr._Ri_1785226772982.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Sacred_Gospels_Forensic_Thesis_—_All_World_Traditions_|_Dr._Ri_1785226772982.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:bfa9a9568160",
+        "title": "SGC_guarantee_and_catherine_Mcdoinald_from_mh.org.au_she_says__1785820682149.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/SGC_guarantee_and_catherine_Mcdoinald_from_mh.org.au_she_says__1785820682149.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:b37bff44047e",
+        "title": "Speak this .pdf",
+        "collection_key": "unclassified",
+        "original_path": "Speak this .pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:21fc2ef5ef00",
+        "title": "Statement .pdf",
+        "collection_key": "unclassified",
+        "original_path": "Statement .pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:8a16e056c4de",
+        "title": "Story_went_global_.pdf_1786359380034.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Story_went_global_.pdf_1786359380034.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:fc726b6ce5e7",
+        "title": "Sukhi_attempted_murder_1786074022780.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Sukhi_attempted_murder_1786074022780.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:d6147e1a6072",
+        "title": "TAL_and_ausuper_settlement_agreement_after_being_rejected_by_A_1785820682149.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/TAL_and_ausuper_settlement_agreement_after_being_rejected_by_A_1785820682149.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:e0294bc00afa",
+        "title": "Ten essays of spiritual rekoning .pdf",
+        "collection_key": "unclassified",
+        "original_path": "Ten essays of spiritual rekoning .pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:02e6eb262857",
+        "title": "The Covenant of the Enliven Chain -  An Eternal Witness for Humanity.pdf",
+        "collection_key": "unclassified",
+        "original_path": "The Covenant of the Enliven Chain -  An Eternal Witness for Humanity.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:7de69db301cb",
+        "title": "The Covenant of the Enliven Chain -  An Eternal Witness for Humanity.pdf",
+        "collection_key": "unclassified",
+        "original_path": "The Covenant of the Enliven Chain -  An Eternal Witness for Humanity.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:9cb7fb22edfe",
+        "title": "The Final Declaration of Wealth and Obligation - My Testimony of Truth, Justice,.pdf",
+        "collection_key": "unclassified",
+        "original_path": "The Final Declaration of Wealth and Obligation - My Testimony of Truth, Justice,.pdf",
+        "review_flags": [
+          "needs-collection-review",
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:2c343a3132d0",
+        "title": "The_Documents_Australia_Doesn't_Want_You_to_See_|_Barran_Dodge_1785215537539.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/The_Documents_Australia_Doesn't_Want_You_to_See_|_Barran_Dodge_1785215537539.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:ee7fbc69a300",
+        "title": "The_Documents_Australia_Doesn't_Want_You_to_See_|_Barran_Dodge_1787018674483.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/The_Documents_Australia_Doesn't_Want_You_to_See_|_Barran_Dodge_1787018674483.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:262594697275",
+        "title": "Top_10_Most_Significant_Prophetic_Gospels_—_Barran_Dodger_|_Bl_1785977718545.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/Top_10_Most_Significant_Prophetic_Gospels_—_Barran_Dodger_|_Bl_1785977718545.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      },
+      {
+        "record_id": "record:1e004435131a",
+        "title": "whistleblower_Re_Commonwealth_Ombudsman_Complaint_2021705589_R_1785820682149.pdf",
+        "collection_key": "attached-assets",
+        "original_path": "attached_assets/whistleblower_Re_Commonwealth_Ombudsman_Complaint_2021705589_R_1785820682149.pdf",
+        "review_flags": [
+          "needs-local-preservation-review",
+          "needs-external-source-verification",
+          "metadata-only-publication-review"
+        ]
+      }
+    ]
+  }
+}

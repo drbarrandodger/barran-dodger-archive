@@ -1,4 +1,4 @@
-name: Deploy Simple GitHub Pages Site
+name: Deploy archive shell to GitHub Pages
 
 on:
   push:
@@ -16,31 +16,51 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare website
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Validate Phase 1 foundation
         run: |
-          mkdir -p _site/data
-          cp index.html _site/index.html
-          cp public/data/documents.json _site/data/documents.json
+          node scripts/check-phase1-foundation.mjs
+
+      - name: Validate Phase 2 inventory
+        run: |
+          node scripts/check-phase2-inventory.mjs
+
+      - name: Validate Phase 3 routes
+        run: |
+          node scripts/check-phase3-routes.mjs
+
+      - name: Build curated Pages site
+        run: |
+          node scripts/build-pages-site.mjs
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload website
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site
+          path: ./.site-build
 
-      - name: Deploy
+  deploy:
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
