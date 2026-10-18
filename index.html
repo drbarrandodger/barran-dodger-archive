@@ -181,6 +181,23 @@ footer{
 </head>
 
 <body>
+<div id="ogdr-banner" role="navigation" aria-label="Official Government Documents Register" style="margin:0;background:#8B2E2A;color:#f3eee4;font-family:Georgia,'Times New Roman',serif;text-align:center;">
+<a href="https://wezzo72.github.io/Barrandodger/official-government-documents-register.html" style="display:block;padding:16px 18px;color:#f3eee4;text-decoration:none;font-weight:700;letter-spacing:.04em;font-size:clamp(15px,4vw,18px);line-height:1.35;">OFFICIAL GOVERNMENT DOCUMENTS REGISTER</a>
+</div>
+<script>
+(function(){
+  function pin(){
+    var el=document.getElementById("ogdr-banner");
+    if(el&&document.body&&document.body.firstChild!==el){
+      document.body.insertBefore(el, document.body.firstChild);
+    }
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", pin);
+  else pin();
+  window.addEventListener("load", pin);
+})();
+</script>
+
 
 <header>
   <h1>Barran Dodger</h1>
