@@ -1,0 +1,405 @@
+{
+  "generated_at": "2026-09-21T11:16:17.273Z",
+  "summary": {
+    "total_catalogue_records": 698,
+    "collection_count": 6,
+    "genre_family_count": 6,
+    "default_load_mode": "summary-only"
+  },
+  "collection_summaries": [
+    {
+      "collection_key": "public-documents",
+      "collection_label": "Public documents",
+      "publication_status": "public-metadata-sensitive",
+      "primary_route": "./pages/collections/public-documents.html",
+      "record_count": 323,
+      "sensitive_record_count": 9,
+      "genre_families": [
+        "essay",
+        "gospel",
+        "mixed",
+        "official-record",
+        "prophetic-writing",
+        "technology-targeting-essay"
+      ],
+      "provenance_statuses": [
+        "local-preserved-copy",
+        "remote-public-reference"
+      ],
+      "example_paths": [
+        "client/public/documents/01-07-2023-letter-to-attorney-general-prime-minister.pdf",
+        "client/public/documents/04-06-2023-letter-to-parliamentarians.pdf",
+        "client/public/documents/100-absurdities-of-my-life.pdf"
+      ]
+    },
+    {
+      "collection_key": "government-evidence",
+      "collection_label": "Government evidence",
+      "publication_status": "public-metadata-sensitive",
+      "primary_route": "./pages/collections/government-evidence.html",
+      "record_count": 234,
+      "sensitive_record_count": 66,
+      "genre_families": [
+        "essay",
+        "mixed",
+        "official-record",
+        "technology-targeting-essay"
+      ],
+      "provenance_statuses": [
+        "remote-public-reference"
+      ],
+      "example_paths": [
+        "client/public/documents/government-evidence/Government Evidence/01_18.06.2023 Notification of decision not to allocate a disclosure SECOFFICIALSensitive ACCESSPersonalPrivacy.pdf",
+        "client/public/documents/government-evidence/Government Evidence/02_MCLEAN Complaint response 25 09 2023 - FINAL.pdf",
+        "client/public/documents/government-evidence/Government Evidence/03_2021_OAIC_Micron21_Privacy_CP2102752_Copy.pdf"
+      ]
+    },
+    {
+      "collection_key": "forensic-analyses",
+      "collection_label": "Forensic analyses",
+      "publication_status": "public-record",
+      "primary_route": "./pages/collections/forensic-analyses.html",
+      "record_count": 63,
+      "sensitive_record_count": 0,
+      "genre_families": [
+        "essay",
+        "mixed",
+        "prophetic-writing"
+      ],
+      "provenance_statuses": [
+        "local-preserved-copy",
+        "remote-public-reference"
+      ],
+      "example_paths": [
+        "client/public/documents/forensic-analyses/forensic-analysis-01-bro-this-isnt-a-coincidence.pdf",
+        "client/public/documents/forensic-analyses/forensic-analysis-02-chosen-ones-enough-is-enough.pdf",
+        "client/public/documents/forensic-analyses/forensic-analysis-03-no-one-could-be-that-smart.pdf"
+      ]
+    },
+    {
+      "collection_key": "attached-assets",
+      "collection_label": "Attached assets",
+      "publication_status": "metadata-only",
+      "primary_route": "./pages/collections/attached-assets.html",
+      "record_count": 50,
+      "sensitive_record_count": 3,
+      "genre_families": [
+        "essay",
+        "gospel",
+        "mixed",
+        "official-record"
+      ],
+      "provenance_statuses": [
+        "remote-metadata-reference"
+      ],
+      "example_paths": [
+        "attached_assets/_MASTER_CONSOLIDATED_LEGAL_RECORD_1785820484193.pdf",
+        "attached_assets/_Systemic_Endangerment_of_Whistleblowers-_An_Integrated_Dossie_1785820484193.pdf",
+        "attached_assets/0_Cocksucker_2_1785397920764.pdf"
+      ]
+    },
+    {
+      "collection_key": "unclassified",
+      "collection_label": "Unclassified",
+      "publication_status": "metadata-only",
+      "primary_route": "./pages/collections/unclassified.html",
+      "record_count": 20,
+      "sensitive_record_count": 0,
+      "genre_families": [
+        "essay",
+        "mixed",
+        "official-record",
+        "prophetic-writing"
+      ],
+      "provenance_statuses": [
+        "remote-metadata-reference"
+      ],
+      "example_paths": [
+        " Declaration of Testimony and Witness Support.pdf",
+        " The Final Forensic Testament of Dr. Richard William McLean (“Barrandodger”)  An.pdf",
+        "“Secret Agent Resigns” – Prophetic Dossier Narrative.pdf"
+      ]
+    },
+    {
+      "collection_key": "video-analyses",
+      "collection_label": "Video analyses",
+      "publication_status": "public-record",
+      "primary_route": "./pages/collections/video-analyses.html",
+      "record_count": 8,
+      "sensitive_record_count": 0,
+      "genre_families": [
+        "essay",
+        "mixed",
+        "prophetic-writing"
+      ],
+      "provenance_statuses": [
+        "local-preserved-copy"
+      ],
+      "example_paths": [
+        "client/public/documents/video-analyses/a-divine-reckoning-to-those-who-chose-this-dr-richard-mclean.pdf",
+        "client/public/documents/video-analyses/video-analysis-beautiful-menace-forensic-report-15-claims-corroborated.pdf",
+        "client/public/documents/video-analyses/video-analysis-chosen-one-it-is-over-reflection.pdf"
+      ]
+    }
+  ],
+  "genre_family_summaries": [
+    {
+      "genre_family": "official-record",
+      "primary_route": null,
+      "record_count": 270,
+      "collection_keys": [
+        "attached-assets",
+        "government-evidence",
+        "public-documents",
+        "unclassified"
+      ],
+      "publication_statuses": [
+        "metadata-only",
+        "public-metadata-sensitive",
+        "public-record"
+      ]
+    },
+    {
+      "genre_family": "mixed",
+      "primary_route": null,
+      "record_count": 234,
+      "collection_keys": [
+        "attached-assets",
+        "forensic-analyses",
+        "government-evidence",
+        "public-documents",
+        "unclassified",
+        "video-analyses"
+      ],
+      "publication_statuses": [
+        "metadata-only",
+        "public-metadata-sensitive",
+        "public-record"
+      ]
+    },
+    {
+      "genre_family": "essay",
+      "primary_route": null,
+      "record_count": 146,
+      "collection_keys": [
+        "attached-assets",
+        "forensic-analyses",
+        "government-evidence",
+        "public-documents",
+        "unclassified",
+        "video-analyses"
+      ],
+      "publication_statuses": [
+        "metadata-only",
+        "public-record"
+      ]
+    },
+    {
+      "genre_family": "prophetic-writing",
+      "primary_route": "./pages/families/prophetic-writing.html",
+      "record_count": 26,
+      "collection_keys": [
+        "forensic-analyses",
+        "public-documents",
+        "unclassified",
+        "video-analyses"
+      ],
+      "publication_statuses": [
+        "metadata-only",
+        "public-record"
+      ]
+    },
+    {
+      "genre_family": "gospel",
+      "primary_route": "./pages/families/gospels.html",
+      "record_count": 15,
+      "collection_keys": [
+        "attached-assets",
+        "public-documents"
+      ],
+      "publication_statuses": [
+        "metadata-only",
+        "public-record"
+      ]
+    },
+    {
+      "genre_family": "technology-targeting-essay",
+      "primary_route": "./pages/families/technology-targeting-essays.html",
+      "record_count": 7,
+      "collection_keys": [
+        "government-evidence",
+        "public-documents"
+      ],
+      "publication_statuses": [
+        "public-metadata-sensitive",
+        "public-record"
+      ]
+    }
+  ],
+  "route_mappings": [
+    {
+      "route": "./Documents.html",
+      "title": "Archive catalogue shell",
+      "collectionKeys": [
+        "attached-assets",
+        "government-evidence",
+        "forensic-analyses",
+        "video-analyses",
+        "public-documents",
+        "unclassified"
+      ],
+      "genreFamilies": []
+    },
+    {
+      "route": "./pages/collections/public-documents.html",
+      "title": "Public documents collection",
+      "collectionKeys": [
+        "public-documents"
+      ],
+      "genreFamilies": []
+    },
+    {
+      "route": "./pages/collections/government-evidence.html",
+      "title": "Government evidence collection",
+      "collectionKeys": [
+        "government-evidence"
+      ],
+      "genreFamilies": []
+    },
+    {
+      "route": "./pages/collections/forensic-analyses.html",
+      "title": "Forensic analyses collection",
+      "collectionKeys": [
+        "forensic-analyses"
+      ],
+      "genreFamilies": []
+    },
+    {
+      "route": "./pages/collections/video-analyses.html",
+      "title": "Video analyses collection",
+      "collectionKeys": [
+        "video-analyses"
+      ],
+      "genreFamilies": []
+    },
+    {
+      "route": "./pages/collections/attached-assets.html",
+      "title": "Attached assets collection",
+      "collectionKeys": [
+        "attached-assets"
+      ],
+      "genreFamilies": []
+    },
+    {
+      "route": "./pages/collections/unclassified.html",
+      "title": "Unclassified collection",
+      "collectionKeys": [
+        "unclassified"
+      ],
+      "genreFamilies": []
+    },
+    {
+      "route": "./pages/families/gospels.html",
+      "title": "Gospel writings",
+      "collectionKeys": [
+        "public-documents",
+        "attached-assets"
+      ],
+      "genreFamilies": [
+        "gospel"
+      ]
+    },
+    {
+      "route": "./pages/families/prophetic-writing.html",
+      "title": "Prophetic writings",
+      "collectionKeys": [
+        "public-documents",
+        "forensic-analyses",
+        "video-analyses",
+        "unclassified"
+      ],
+      "genreFamilies": [
+        "prophetic-writing"
+      ]
+    },
+    {
+      "route": "./pages/families/technology-targeting-essays.html",
+      "title": "Technology and targeting essays",
+      "collectionKeys": [
+        "public-documents",
+        "government-evidence"
+      ],
+      "genreFamilies": [
+        "technology-targeting-essay"
+      ]
+    }
+  ],
+  "publication_controls": [
+    {
+      "collection_key": "public-documents",
+      "collection_label": "Public documents",
+      "publication_status": "public-metadata-sensitive",
+      "sensitive_record_count": 9,
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/public-documents.html",
+        "./pages/families/gospels.html",
+        "./pages/families/prophetic-writing.html",
+        "./pages/families/technology-targeting-essays.html"
+      ]
+    },
+    {
+      "collection_key": "government-evidence",
+      "collection_label": "Government evidence",
+      "publication_status": "public-metadata-sensitive",
+      "sensitive_record_count": 66,
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/government-evidence.html",
+        "./pages/families/technology-targeting-essays.html"
+      ]
+    },
+    {
+      "collection_key": "forensic-analyses",
+      "collection_label": "Forensic analyses",
+      "publication_status": "public-record",
+      "sensitive_record_count": 0,
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/forensic-analyses.html",
+        "./pages/families/prophetic-writing.html"
+      ]
+    },
+    {
+      "collection_key": "attached-assets",
+      "collection_label": "Attached assets",
+      "publication_status": "metadata-only",
+      "sensitive_record_count": 3,
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/attached-assets.html"
+      ]
+    },
+    {
+      "collection_key": "unclassified",
+      "collection_label": "Unclassified",
+      "publication_status": "metadata-only",
+      "sensitive_record_count": 0,
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/unclassified.html"
+      ]
+    },
+    {
+      "collection_key": "video-analyses",
+      "collection_label": "Video analyses",
+      "publication_status": "public-record",
+      "sensitive_record_count": 0,
+      "route_targets": [
+        "./Documents.html",
+        "./pages/collections/video-analyses.html",
+        "./pages/families/prophetic-writing.html"
+      ]
+    }
+  ]
+}
