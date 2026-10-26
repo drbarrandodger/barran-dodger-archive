@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prophetic writings — Barran Dodger Archive</title>
+  <meta name="description" content="Phase 3 route page for prophetic writings within the Barran Dodger archive.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/archive-foundation.css">
+</head>
+<body data-route-type="family" data-route-key="family:prophetic-writing" data-route-title="Prophetic writings">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-kicker" id="route-kicker">Phase 3 route</p>
+      <h1 class="site-title" id="route-title">Prophetic writings</h1>
+      <p class="site-summary" id="route-summary">Loading route summary…</p>
+    </div>
+  </header>
+  <div class="site-nav-wrap">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../Documents.html">Archive catalogue</a>
+      <a href="#route-search">Route search</a>
+    </nav>
+  </div>
+  <main class="page-main" id="main-content">
+    <section class="section">
+      <div class="notice">
+        <strong>Phase 3 route review:</strong>
+        this page presents routed public metadata only. Original evidence remains preserved in place and is not republished here.
+      </div>
+      <p class="small" id="route-meta"></p>
+      <p class="small" id="route-note"></p>
+    </section>
+    <section class="section">
+      <h2>Sample routed records</h2>
+      <div id="route-samples"></div>
+    </section>
+    <section class="section" id="route-search">
+      <h2>On-demand routed record search</h2>
+      <form class="search-shell" id="route-search-form">
+        <div class="search-shell-controls">
+          <div>
+            <label for="route-search">Search routed metadata</label>
+            <input id="route-search" type="search" placeholder="Search titles, paths, or provenance statuses">
+          </div>
+          <div>
+            <label for="route-scope">Filter publication status</label>
+            <select id="route-scope">
+              <option value="">All routed publication states</option>
+              <option value="public-record">public-record</option>
+              <option value="public-metadata-sensitive">public-metadata-sensitive</option>
+              <option value="metadata-only">metadata-only</option>
+            </select>
+          </div>
+        </div>
+        <p><button type="submit" class="card-link">Search routed inventory</button> <button type="button" class="card-link" id="button-load-route-inventory">Load routed record inventory</button></p>
+        <p class="search-results-count" id="route-count" role="status" aria-live="polite">Loading route summary…</p>
+        <p class="small" id="route-status">The routed record inventory has not been loaded yet.</p>
+        <div class="result-list" id="route-results"></div>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="footer-note">Phase 3 route pages organise already-published metadata into reviewable collection and family views without altering preserved source records.</p>
+    </div>
+  </footer>
+  <script src="../../assets/js/archive-foundation.js"></script>
+  <script src="../../assets/js/archive-route-page.js"></script>
+</body>
+</html>

@@ -7,7 +7,14 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "inventory:generate": "node scripts/generate-phase1-inventory.mjs --overwrite",
+    "check:phase1": "node scripts/check-phase1-foundation.mjs",
+    "build:pages:static": "node scripts/build-pages-site.mjs",
+    "inventory:phase2": "node scripts/generate-phase2-inventory.mjs",
+    "check:phase2": "node scripts/check-phase2-inventory.mjs",
+    "inventory:phase3": "node scripts/generate-phase3-review.mjs",
+    "check:phase3": "node scripts/check-phase3-routes.mjs"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^6.6.0",
